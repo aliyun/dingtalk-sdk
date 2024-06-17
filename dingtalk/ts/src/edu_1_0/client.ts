@@ -106,6 +106,187 @@ export class ActivateDeviceResponse extends $tea.Model {
   }
 }
 
+export class AddCollegeAlumniDeptsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeAlumniDeptsRequest extends $tea.Model {
+  depts?: AddCollegeAlumniDeptsRequestDepts[];
+  operator?: string;
+  static names(): { [key: string]: string } {
+    return {
+      depts: 'depts',
+      operator: 'operator',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      depts: { 'type': 'array', 'itemType': AddCollegeAlumniDeptsRequestDepts },
+      operator: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeAlumniDeptsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddCollegeAlumniDeptsResponseBody[];
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: { 'type': 'array', 'itemType': AddCollegeAlumniDeptsResponseBody },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeAlumniUserInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeAlumniUserInfoRequest extends $tea.Model {
+  address?: string;
+  deptIds?: number[];
+  email?: string;
+  intake?: string;
+  mobile?: string;
+  name?: string;
+  operator?: string;
+  outtake?: string;
+  studentNumber?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      deptIds: 'deptIds',
+      email: 'email',
+      intake: 'intake',
+      mobile: 'mobile',
+      name: 'name',
+      operator: 'operator',
+      outtake: 'outtake',
+      studentNumber: 'studentNumber',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+      email: 'string',
+      intake: 'string',
+      mobile: 'string',
+      name: 'string',
+      operator: 'string',
+      outtake: 'string',
+      studentNumber: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeAlumniUserInfoResponseBody extends $tea.Model {
+  success?: boolean;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeAlumniUserInfoResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddCollegeAlumniUserInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddCollegeAlumniUserInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddCompetitionRecordHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4207,6 +4388,185 @@ export class DeductPointResponse extends $tea.Model {
   }
 }
 
+export class DeleteCollegeAlumniDeptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteCollegeAlumniDeptRequest extends $tea.Model {
+  deptId?: number;
+  operator?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      operator: 'operator',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      operator: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteCollegeAlumniDeptResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteCollegeAlumniDeptResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteCollegeAlumniDeptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeleteCollegeAlumniDeptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteCollegeAlumniUserInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteCollegeAlumniUserInfoRequest extends $tea.Model {
+  deptId?: number;
+  operator?: string;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      operator: 'operator',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      operator: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteCollegeAlumniUserInfoResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteCollegeAlumniUserInfoResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteCollegeAlumniUserInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeleteCollegeAlumniUserInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteDeptHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -5804,6 +6164,196 @@ export class GetBindChildInfoResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetBindChildInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeAlumniDeptsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeAlumniDeptsRequest extends $tea.Model {
+  deptId?: number;
+  operator?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      operator: 'operator',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      operator: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeAlumniDeptsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetCollegeAlumniDeptsResponseBody[];
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: { 'type': 'array', 'itemType': GetCollegeAlumniDeptsResponseBody },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeAlumniUserInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeAlumniUserInfoRequest extends $tea.Model {
+  operator?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operator: 'operator',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operator: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeAlumniUserInfoResponseBody extends $tea.Model {
+  address?: string;
+  avatar?: string;
+  corpId?: string;
+  depts?: GetCollegeAlumniUserInfoResponseBodyDepts[];
+  email?: string;
+  intake?: string;
+  inviteId?: string;
+  mobile?: string;
+  name?: string;
+  outtake?: string;
+  studentNumber?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      avatar: 'avatar',
+      corpId: 'corpId',
+      depts: 'depts',
+      email: 'email',
+      intake: 'intake',
+      inviteId: 'inviteId',
+      mobile: 'mobile',
+      name: 'name',
+      outtake: 'outtake',
+      studentNumber: 'studentNumber',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      avatar: 'string',
+      corpId: 'string',
+      depts: { 'type': 'array', 'itemType': GetCollegeAlumniUserInfoResponseBodyDepts },
+      email: 'string',
+      intake: 'string',
+      inviteId: 'string',
+      mobile: 'string',
+      name: 'string',
+      outtake: 'string',
+      studentNumber: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeAlumniUserInfoResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetCollegeAlumniUserInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetCollegeAlumniUserInfoResponseBody,
     };
   }
 
@@ -11627,6 +12177,115 @@ export class UnsubscribeUniversityCourseGroupResponse extends $tea.Model {
   }
 }
 
+export class UpdateCollegeAlumniUserInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeAlumniUserInfoRequest extends $tea.Model {
+  address?: string;
+  deptIds?: number[];
+  email?: string;
+  intake?: string;
+  name?: string;
+  operator?: string;
+  outtake?: string;
+  studentNumber?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      deptIds: 'deptIds',
+      email: 'email',
+      intake: 'intake',
+      name: 'name',
+      operator: 'operator',
+      outtake: 'outtake',
+      studentNumber: 'studentNumber',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      deptIds: { 'type': 'array', 'itemType': 'number' },
+      email: 'string',
+      intake: 'string',
+      name: 'string',
+      operator: 'string',
+      outtake: 'string',
+      studentNumber: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeAlumniUserInfoResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeAlumniUserInfoResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateCollegeAlumniUserInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateCollegeAlumniUserInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCoursesOfClassHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -12492,6 +13151,62 @@ export class ValidateUserRoleResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: ValidateUserRoleResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeAlumniDeptsRequestDepts extends $tea.Model {
+  name?: string;
+  superId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      superId: 'superId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      superId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeAlumniDeptsResponseBody extends $tea.Model {
+  corpId?: string;
+  deptId?: number;
+  name?: string;
+  superId?: number;
+  hasSubDept?: boolean;
+  deptType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      deptId: 'deptId',
+      name: 'name',
+      superId: 'superId',
+      hasSubDept: 'hasSubDept',
+      deptType: 'deptType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      deptId: 'number',
+      name: 'string',
+      superId: 'number',
+      hasSubDept: 'boolean',
+      deptType: 'string',
     };
   }
 
@@ -14011,6 +14726,71 @@ export class EndCourseResponseBodyUniversityCourseCommonResponse extends $tea.Mo
     return {
       courseCode: 'string',
       success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeAlumniDeptsResponseBody extends $tea.Model {
+  corpId?: string;
+  deptId?: string;
+  name?: string;
+  superId?: string;
+  hasSubDept?: string;
+  deptType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      deptId: 'deptId',
+      name: 'name',
+      superId: 'superId',
+      hasSubDept: 'hasSubDept',
+      deptType: 'deptType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      deptId: 'string',
+      name: 'string',
+      superId: 'string',
+      hasSubDept: 'string',
+      deptType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeAlumniUserInfoResponseBodyDepts extends $tea.Model {
+  corpId?: string;
+  deptId?: number;
+  hasSubDept?: boolean;
+  isIndustryDept?: boolean;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      deptId: 'deptId',
+      hasSubDept: 'hasSubDept',
+      isIndustryDept: 'isIndustryDept',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      deptId: 'number',
+      hasSubDept: 'boolean',
+      isIndustryDept: 'boolean',
+      name: 'string',
     };
   }
 
@@ -16839,6 +17619,150 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ActivateDeviceHeaders({ });
     return await this.activateDeviceWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 高校校友会批量创建部门
+   *
+   * @param request AddCollegeAlumniDeptsRequest
+   * @param headers AddCollegeAlumniDeptsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddCollegeAlumniDeptsResponse
+   */
+  async addCollegeAlumniDeptsWithOptions(request: AddCollegeAlumniDeptsRequest, headers: AddCollegeAlumniDeptsHeaders, runtime: $Util.RuntimeOptions): Promise<AddCollegeAlumniDeptsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.depts)) {
+      body["depts"] = request.depts;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddCollegeAlumniDepts",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeAlumni/depts/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "array",
+    });
+    return $tea.cast<AddCollegeAlumniDeptsResponse>(await this.execute(params, req, runtime), new AddCollegeAlumniDeptsResponse({}));
+  }
+
+  /**
+   * @summary 高校校友会批量创建部门
+   *
+   * @param request AddCollegeAlumniDeptsRequest
+   * @return AddCollegeAlumniDeptsResponse
+   */
+  async addCollegeAlumniDepts(request: AddCollegeAlumniDeptsRequest): Promise<AddCollegeAlumniDeptsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddCollegeAlumniDeptsHeaders({ });
+    return await this.addCollegeAlumniDeptsWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 高校校友会新增校友信息
+   *
+   * @param request AddCollegeAlumniUserInfoRequest
+   * @param headers AddCollegeAlumniUserInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddCollegeAlumniUserInfoResponse
+   */
+  async addCollegeAlumniUserInfoWithOptions(request: AddCollegeAlumniUserInfoRequest, headers: AddCollegeAlumniUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<AddCollegeAlumniUserInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.address)) {
+      body["address"] = request.address;
+    }
+
+    if (!Util.isUnset(request.deptIds)) {
+      body["deptIds"] = request.deptIds;
+    }
+
+    if (!Util.isUnset(request.email)) {
+      body["email"] = request.email;
+    }
+
+    if (!Util.isUnset(request.intake)) {
+      body["intake"] = request.intake;
+    }
+
+    if (!Util.isUnset(request.mobile)) {
+      body["mobile"] = request.mobile;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.outtake)) {
+      body["outtake"] = request.outtake;
+    }
+
+    if (!Util.isUnset(request.studentNumber)) {
+      body["studentNumber"] = request.studentNumber;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddCollegeAlumniUserInfo",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeAlumni/userInfos`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddCollegeAlumniUserInfoResponse>(await this.execute(params, req, runtime), new AddCollegeAlumniUserInfoResponse({}));
+  }
+
+  /**
+   * @summary 高校校友会新增校友信息
+   *
+   * @param request AddCollegeAlumniUserInfoRequest
+   * @return AddCollegeAlumniUserInfoResponse
+   */
+  async addCollegeAlumniUserInfo(request: AddCollegeAlumniUserInfoRequest): Promise<AddCollegeAlumniUserInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddCollegeAlumniUserInfoHeaders({ });
+    return await this.addCollegeAlumniUserInfoWithOptions(request, headers, runtime);
   }
 
   /**
@@ -19768,6 +20692,126 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 高校校友会删除当前部门
+   *
+   * @param request DeleteCollegeAlumniDeptRequest
+   * @param headers DeleteCollegeAlumniDeptHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteCollegeAlumniDeptResponse
+   */
+  async deleteCollegeAlumniDeptWithOptions(request: DeleteCollegeAlumniDeptRequest, headers: DeleteCollegeAlumniDeptHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteCollegeAlumniDeptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      query["operator"] = request.operator;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteCollegeAlumniDept",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeAlumni/depts`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteCollegeAlumniDeptResponse>(await this.execute(params, req, runtime), new DeleteCollegeAlumniDeptResponse({}));
+  }
+
+  /**
+   * @summary 高校校友会删除当前部门
+   *
+   * @param request DeleteCollegeAlumniDeptRequest
+   * @return DeleteCollegeAlumniDeptResponse
+   */
+  async deleteCollegeAlumniDept(request: DeleteCollegeAlumniDeptRequest): Promise<DeleteCollegeAlumniDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteCollegeAlumniDeptHeaders({ });
+    return await this.deleteCollegeAlumniDeptWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 高校校友会删除校友信息
+   *
+   * @param request DeleteCollegeAlumniUserInfoRequest
+   * @param headers DeleteCollegeAlumniUserInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteCollegeAlumniUserInfoResponse
+   */
+  async deleteCollegeAlumniUserInfoWithOptions(request: DeleteCollegeAlumniUserInfoRequest, headers: DeleteCollegeAlumniUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteCollegeAlumniUserInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteCollegeAlumniUserInfo",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeAlumni/userInfos/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteCollegeAlumniUserInfoResponse>(await this.execute(params, req, runtime), new DeleteCollegeAlumniUserInfoResponse({}));
+  }
+
+  /**
+   * @summary 高校校友会删除校友信息
+   *
+   * @param request DeleteCollegeAlumniUserInfoRequest
+   * @return DeleteCollegeAlumniUserInfoResponse
+   */
+  async deleteCollegeAlumniUserInfo(request: DeleteCollegeAlumniUserInfoRequest): Promise<DeleteCollegeAlumniUserInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteCollegeAlumniUserInfoHeaders({ });
+    return await this.deleteCollegeAlumniUserInfoWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 删除家校部门
    *
    * @param request DeleteDeptRequest
@@ -20831,6 +21875,122 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetBindChildInfoHeaders({ });
     return await this.getBindChildInfoWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 高校校友会获取当前部门的所有子部门
+   *
+   * @param request GetCollegeAlumniDeptsRequest
+   * @param headers GetCollegeAlumniDeptsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetCollegeAlumniDeptsResponse
+   */
+  async getCollegeAlumniDeptsWithOptions(request: GetCollegeAlumniDeptsRequest, headers: GetCollegeAlumniDeptsHeaders, runtime: $Util.RuntimeOptions): Promise<GetCollegeAlumniDeptsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      query["operator"] = request.operator;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetCollegeAlumniDepts",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeAlumni/subDepts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "array",
+    });
+    return $tea.cast<GetCollegeAlumniDeptsResponse>(await this.execute(params, req, runtime), new GetCollegeAlumniDeptsResponse({}));
+  }
+
+  /**
+   * @summary 高校校友会获取当前部门的所有子部门
+   *
+   * @param request GetCollegeAlumniDeptsRequest
+   * @return GetCollegeAlumniDeptsResponse
+   */
+  async getCollegeAlumniDepts(request: GetCollegeAlumniDeptsRequest): Promise<GetCollegeAlumniDeptsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCollegeAlumniDeptsHeaders({ });
+    return await this.getCollegeAlumniDeptsWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 高校校友会查询校友信息
+   *
+   * @param request GetCollegeAlumniUserInfoRequest
+   * @param headers GetCollegeAlumniUserInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetCollegeAlumniUserInfoResponse
+   */
+  async getCollegeAlumniUserInfoWithOptions(request: GetCollegeAlumniUserInfoRequest, headers: GetCollegeAlumniUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetCollegeAlumniUserInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operator)) {
+      query["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetCollegeAlumniUserInfo",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeAlumni/userInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCollegeAlumniUserInfoResponse>(await this.execute(params, req, runtime), new GetCollegeAlumniUserInfoResponse({}));
+  }
+
+  /**
+   * @summary 高校校友会查询校友信息
+   *
+   * @param request GetCollegeAlumniUserInfoRequest
+   * @return GetCollegeAlumniUserInfoResponse
+   */
+  async getCollegeAlumniUserInfo(request: GetCollegeAlumniUserInfoRequest): Promise<GetCollegeAlumniUserInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCollegeAlumniUserInfoHeaders({ });
+    return await this.getCollegeAlumniUserInfoWithOptions(request, headers, runtime);
   }
 
   /**
@@ -24640,6 +25800,92 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UnsubscribeUniversityCourseGroupHeaders({ });
     return await this.unsubscribeUniversityCourseGroupWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 高校校友会更新校友信息
+   *
+   * @param request UpdateCollegeAlumniUserInfoRequest
+   * @param headers UpdateCollegeAlumniUserInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateCollegeAlumniUserInfoResponse
+   */
+  async updateCollegeAlumniUserInfoWithOptions(request: UpdateCollegeAlumniUserInfoRequest, headers: UpdateCollegeAlumniUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCollegeAlumniUserInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.address)) {
+      body["address"] = request.address;
+    }
+
+    if (!Util.isUnset(request.deptIds)) {
+      body["deptIds"] = request.deptIds;
+    }
+
+    if (!Util.isUnset(request.email)) {
+      body["email"] = request.email;
+    }
+
+    if (!Util.isUnset(request.intake)) {
+      body["intake"] = request.intake;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.outtake)) {
+      body["outtake"] = request.outtake;
+    }
+
+    if (!Util.isUnset(request.studentNumber)) {
+      body["studentNumber"] = request.studentNumber;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateCollegeAlumniUserInfo",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeAlumni/userInfos`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCollegeAlumniUserInfoResponse>(await this.execute(params, req, runtime), new UpdateCollegeAlumniUserInfoResponse({}));
+  }
+
+  /**
+   * @summary 高校校友会更新校友信息
+   *
+   * @param request UpdateCollegeAlumniUserInfoRequest
+   * @return UpdateCollegeAlumniUserInfoResponse
+   */
+  async updateCollegeAlumniUserInfo(request: UpdateCollegeAlumniUserInfoRequest): Promise<UpdateCollegeAlumniUserInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateCollegeAlumniUserInfoHeaders({ });
+    return await this.updateCollegeAlumniUserInfoWithOptions(request, headers, runtime);
   }
 
   /**

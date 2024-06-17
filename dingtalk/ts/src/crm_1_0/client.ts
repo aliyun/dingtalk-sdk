@@ -12390,6 +12390,7 @@ export class GetCustomerTracksByRelationIdResponseBodyResultList extends $tea.Mo
   detail?: { [key: string]: string };
   format?: string;
   gmtCreate?: string;
+  id?: string;
   isvInfo?: GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo;
   title?: string;
   type?: number;
@@ -12401,6 +12402,7 @@ export class GetCustomerTracksByRelationIdResponseBodyResultList extends $tea.Mo
       detail: 'detail',
       format: 'format',
       gmtCreate: 'gmtCreate',
+      id: 'id',
       isvInfo: 'isvInfo',
       title: 'title',
       type: 'type',
@@ -12415,6 +12417,7 @@ export class GetCustomerTracksByRelationIdResponseBodyResultList extends $tea.Mo
       detail: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       format: 'string',
       gmtCreate: 'string',
+      id: 'string',
       isvInfo: GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo,
       title: 'string',
       type: 'number',

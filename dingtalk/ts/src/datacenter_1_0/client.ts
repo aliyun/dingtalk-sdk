@@ -4509,6 +4509,97 @@ export class QueryOfficialFormDataResponse extends $tea.Model {
   }
 }
 
+export class QueryOfficialFormDataDirectHoloHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOfficialFormDataDirectHoloRequest extends $tea.Model {
+  param?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      param: 'param',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      param: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOfficialFormDataDirectHoloResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOfficialFormDataDirectHoloResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryOfficialFormDataDirectHoloResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryOfficialFormDataDirectHoloResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryOnlineUserStatisticalDataHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -13647,6 +13738,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryOfficialFormDataHeaders({ });
     return await this.queryOfficialFormDataWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 获取HOLO中官方OA表单数据集数据
+   *
+   * @param request QueryOfficialFormDataDirectHoloRequest
+   * @param headers QueryOfficialFormDataDirectHoloHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryOfficialFormDataDirectHoloResponse
+   */
+  async queryOfficialFormDataDirectHoloWithOptions(request: QueryOfficialFormDataDirectHoloRequest, headers: QueryOfficialFormDataDirectHoloHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialFormDataDirectHoloResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryOfficialFormDataDirectHolo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/oaDatas/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOfficialFormDataDirectHoloResponse>(await this.execute(params, req, runtime), new QueryOfficialFormDataDirectHoloResponse({}));
+  }
+
+  /**
+   * @summary 获取HOLO中官方OA表单数据集数据
+   *
+   * @param request QueryOfficialFormDataDirectHoloRequest
+   * @return QueryOfficialFormDataDirectHoloResponse
+   */
+  async queryOfficialFormDataDirectHolo(request: QueryOfficialFormDataDirectHoloRequest): Promise<QueryOfficialFormDataDirectHoloResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryOfficialFormDataDirectHoloHeaders({ });
+    return await this.queryOfficialFormDataDirectHoloWithOptions(request, headers, runtime);
   }
 
   /**

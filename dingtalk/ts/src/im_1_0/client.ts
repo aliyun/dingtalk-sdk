@@ -4249,6 +4249,185 @@ export class QueryMembersOfGroupRoleResponse extends $tea.Model {
   }
 }
 
+export class QueryOpenConversationReceiveUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOpenConversationReceiveUserRequest extends $tea.Model {
+  openConversationId?: string;
+  sendUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      sendUserId: 'sendUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      sendUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOpenConversationReceiveUserResponseBody extends $tea.Model {
+  result?: QueryOpenConversationReceiveUserResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryOpenConversationReceiveUserResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOpenConversationReceiveUserResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryOpenConversationReceiveUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryOpenConversationReceiveUserResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOpenGroupBaseInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOpenGroupBaseInfoRequest extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOpenGroupBaseInfoResponseBody extends $tea.Model {
+  result?: QueryOpenGroupBaseInfoResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryOpenGroupBaseInfoResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOpenGroupBaseInfoResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryOpenGroupBaseInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryOpenGroupBaseInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryRecentConversationsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4272,15 +4451,21 @@ export class QueryRecentConversationsHeaders extends $tea.Model {
 }
 
 export class QueryRecentConversationsRequest extends $tea.Model {
+  onlyHuman?: boolean;
+  onlyInnerGroup?: boolean;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      onlyHuman: 'onlyHuman',
+      onlyInnerGroup: 'onlyInnerGroup',
       userId: 'userId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      onlyHuman: 'boolean',
+      onlyInnerGroup: 'boolean',
       userId: 'string',
     };
   }
@@ -7573,6 +7758,84 @@ export class QueryInnerGroupRecentListResponseBodyGroupInfos extends $tea.Model 
       icon: 'string',
       memberAmount: 'string',
       openConversationId: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOpenConversationReceiveUserResponseBodyResultReceiveUser extends $tea.Model {
+  icon?: string;
+  name?: string;
+  nickName?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      icon: 'icon',
+      name: 'name',
+      nickName: 'nickName',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      icon: 'string',
+      name: 'string',
+      nickName: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOpenConversationReceiveUserResponseBodyResult extends $tea.Model {
+  receiveUser?: QueryOpenConversationReceiveUserResponseBodyResultReceiveUser;
+  static names(): { [key: string]: string } {
+    return {
+      receiveUser: 'receiveUser',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      receiveUser: QueryOpenConversationReceiveUserResponseBodyResultReceiveUser,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryOpenGroupBaseInfoResponseBodyResult extends $tea.Model {
+  icon?: string;
+  memberCount?: number;
+  openConversationId?: string;
+  tag?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      icon: 'icon',
+      memberCount: 'memberCount',
+      openConversationId: 'openConversationId',
+      tag: 'tag',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      icon: 'string',
+      memberCount: 'number',
+      openConversationId: 'string',
+      tag: 'string',
       title: 'string',
     };
   }
@@ -10900,18 +11163,22 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取最近联系人及群组
+   * @summary  根据单聊会话及发送方获取接收方用户信息
    *
-   * @param request QueryRecentConversationsRequest
-   * @param headers QueryRecentConversationsHeaders
+   * @param request QueryOpenConversationReceiveUserRequest
+   * @param headers QueryOpenConversationReceiveUserHeaders
    * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryRecentConversationsResponse
+   * @return QueryOpenConversationReceiveUserResponse
    */
-  async queryRecentConversationsWithOptions(request: QueryRecentConversationsRequest, headers: QueryRecentConversationsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRecentConversationsResponse> {
+  async queryOpenConversationReceiveUserWithOptions(request: QueryOpenConversationReceiveUserRequest, headers: QueryOpenConversationReceiveUserHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOpenConversationReceiveUserResponse> {
     Util.validateModel(request);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.userId)) {
-      query["userId"] = request.userId;
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.sendUserId)) {
+      body["sendUserId"] = request.sendUserId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -10925,14 +11192,130 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryOpenConversationReceiveUser",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/otoChat/receiveUsers/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOpenConversationReceiveUserResponse>(await this.execute(params, req, runtime), new QueryOpenConversationReceiveUserResponse({}));
+  }
+
+  /**
+   * @summary  根据单聊会话及发送方获取接收方用户信息
+   *
+   * @param request QueryOpenConversationReceiveUserRequest
+   * @return QueryOpenConversationReceiveUserResponse
+   */
+  async queryOpenConversationReceiveUser(request: QueryOpenConversationReceiveUserRequest): Promise<QueryOpenConversationReceiveUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryOpenConversationReceiveUserHeaders({ });
+    return await this.queryOpenConversationReceiveUserWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 获取群基础信息
+   *
+   * @param request QueryOpenGroupBaseInfoRequest
+   * @param headers QueryOpenGroupBaseInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryOpenGroupBaseInfoResponse
+   */
+  async queryOpenGroupBaseInfoWithOptions(request: QueryOpenGroupBaseInfoRequest, headers: QueryOpenGroupBaseInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOpenGroupBaseInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryOpenGroupBaseInfo",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/baseInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOpenGroupBaseInfoResponse>(await this.execute(params, req, runtime), new QueryOpenGroupBaseInfoResponse({}));
+  }
+
+  /**
+   * @summary 获取群基础信息
+   *
+   * @param request QueryOpenGroupBaseInfoRequest
+   * @return QueryOpenGroupBaseInfoResponse
+   */
+  async queryOpenGroupBaseInfo(request: QueryOpenGroupBaseInfoRequest): Promise<QueryOpenGroupBaseInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryOpenGroupBaseInfoHeaders({ });
+    return await this.queryOpenGroupBaseInfoWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 获取最近联系人及群组
+   *
+   * @param request QueryRecentConversationsRequest
+   * @param headers QueryRecentConversationsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryRecentConversationsResponse
+   */
+  async queryRecentConversationsWithOptions(request: QueryRecentConversationsRequest, headers: QueryRecentConversationsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRecentConversationsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.onlyHuman)) {
+      body["onlyHuman"] = request.onlyHuman;
+    }
+
+    if (!Util.isUnset(request.onlyInnerGroup)) {
+      body["onlyInnerGroup"] = request.onlyInnerGroup;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
     });
     let params = new $OpenApi.Params({
       action: "QueryRecentConversations",
       version: "im_1.0",
       protocol: "HTTP",
-      pathname: `/v1.0/im/conversations/recentLists`,
-      method: "GET",
+      pathname: `/v1.0/im/conversations/recentLists/query`,
+      method: "POST",
       authType: "AK",
       style: "ROA",
       reqBodyType: "none",
