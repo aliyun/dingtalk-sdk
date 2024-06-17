@@ -2605,7 +2605,6 @@ class DeleteDirRequest(TeaModel):
         dir_id: str = None,
         operate_user_id: str = None,
     ):
-        # This parameter is required.
         self.dir_id = dir_id
         # This parameter is required.
         self.operate_user_id = operate_user_id
@@ -6398,10 +6397,8 @@ class InsertOrUpdateDirRequest(TeaModel):
         name_18n: str = None,
         operate_user_id: str = None,
     ):
-        # This parameter is required.
         self.biz_group = biz_group
         self.description = description
-        # This parameter is required.
         self.name = name
         # This parameter is required.
         self.name_18n = name_18n

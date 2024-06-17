@@ -159,6 +159,270 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.ActivateDeviceHeaders()
         return await self.activate_device_with_options_async(request, headers, runtime)
 
+    def add_college_alumni_depts_with_options(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeAlumniDeptsRequest,
+        headers: dingtalkedu__1__0_models.AddCollegeAlumniDeptsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddCollegeAlumniDeptsResponse:
+        """
+        @summary 高校校友会批量创建部门
+        
+        @param request: AddCollegeAlumniDeptsRequest
+        @param headers: AddCollegeAlumniDeptsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCollegeAlumniDeptsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.depts):
+            body['depts'] = request.depts
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCollegeAlumniDepts',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/depts/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='array'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddCollegeAlumniDeptsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_college_alumni_depts_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeAlumniDeptsRequest,
+        headers: dingtalkedu__1__0_models.AddCollegeAlumniDeptsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddCollegeAlumniDeptsResponse:
+        """
+        @summary 高校校友会批量创建部门
+        
+        @param request: AddCollegeAlumniDeptsRequest
+        @param headers: AddCollegeAlumniDeptsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCollegeAlumniDeptsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.depts):
+            body['depts'] = request.depts
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCollegeAlumniDepts',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/depts/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='array'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddCollegeAlumniDeptsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_college_alumni_depts(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeAlumniDeptsRequest,
+    ) -> dingtalkedu__1__0_models.AddCollegeAlumniDeptsResponse:
+        """
+        @summary 高校校友会批量创建部门
+        
+        @param request: AddCollegeAlumniDeptsRequest
+        @return: AddCollegeAlumniDeptsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddCollegeAlumniDeptsHeaders()
+        return self.add_college_alumni_depts_with_options(request, headers, runtime)
+
+    async def add_college_alumni_depts_async(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeAlumniDeptsRequest,
+    ) -> dingtalkedu__1__0_models.AddCollegeAlumniDeptsResponse:
+        """
+        @summary 高校校友会批量创建部门
+        
+        @param request: AddCollegeAlumniDeptsRequest
+        @return: AddCollegeAlumniDeptsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddCollegeAlumniDeptsHeaders()
+        return await self.add_college_alumni_depts_with_options_async(request, headers, runtime)
+
+    def add_college_alumni_user_info_with_options(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeAlumniUserInfoRequest,
+        headers: dingtalkedu__1__0_models.AddCollegeAlumniUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会新增校友信息
+        
+        @param request: AddCollegeAlumniUserInfoRequest
+        @param headers: AddCollegeAlumniUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCollegeAlumniUserInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.intake):
+            body['intake'] = request.intake
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.outtake):
+            body['outtake'] = request.outtake
+        if not UtilClient.is_unset(request.student_number):
+            body['studentNumber'] = request.student_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCollegeAlumniUserInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/userInfos',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddCollegeAlumniUserInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_college_alumni_user_info_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeAlumniUserInfoRequest,
+        headers: dingtalkedu__1__0_models.AddCollegeAlumniUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会新增校友信息
+        
+        @param request: AddCollegeAlumniUserInfoRequest
+        @param headers: AddCollegeAlumniUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCollegeAlumniUserInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.intake):
+            body['intake'] = request.intake
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.outtake):
+            body['outtake'] = request.outtake
+        if not UtilClient.is_unset(request.student_number):
+            body['studentNumber'] = request.student_number
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCollegeAlumniUserInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/userInfos',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddCollegeAlumniUserInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_college_alumni_user_info(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeAlumniUserInfoRequest,
+    ) -> dingtalkedu__1__0_models.AddCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会新增校友信息
+        
+        @param request: AddCollegeAlumniUserInfoRequest
+        @return: AddCollegeAlumniUserInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddCollegeAlumniUserInfoHeaders()
+        return self.add_college_alumni_user_info_with_options(request, headers, runtime)
+
+    async def add_college_alumni_user_info_async(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeAlumniUserInfoRequest,
+    ) -> dingtalkedu__1__0_models.AddCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会新增校友信息
+        
+        @param request: AddCollegeAlumniUserInfoRequest
+        @return: AddCollegeAlumniUserInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddCollegeAlumniUserInfoHeaders()
+        return await self.add_college_alumni_user_info_with_options_async(request, headers, runtime)
+
     def add_competition_record_with_options(
         self,
         request: dingtalkedu__1__0_models.AddCompetitionRecordRequest,
@@ -5433,6 +5697,246 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.DeductPointHeaders()
         return await self.deduct_point_with_options_async(request, headers, runtime)
 
+    def delete_college_alumni_dept_with_options(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeAlumniDeptRequest,
+        headers: dingtalkedu__1__0_models.DeleteCollegeAlumniDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeAlumniDeptResponse:
+        """
+        @summary 高校校友会删除当前部门
+        
+        @param request: DeleteCollegeAlumniDeptRequest
+        @param headers: DeleteCollegeAlumniDeptHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCollegeAlumniDeptResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteCollegeAlumniDept',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/depts',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteCollegeAlumniDeptResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_college_alumni_dept_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeAlumniDeptRequest,
+        headers: dingtalkedu__1__0_models.DeleteCollegeAlumniDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeAlumniDeptResponse:
+        """
+        @summary 高校校友会删除当前部门
+        
+        @param request: DeleteCollegeAlumniDeptRequest
+        @param headers: DeleteCollegeAlumniDeptHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCollegeAlumniDeptResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteCollegeAlumniDept',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/depts',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteCollegeAlumniDeptResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_college_alumni_dept(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeAlumniDeptRequest,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeAlumniDeptResponse:
+        """
+        @summary 高校校友会删除当前部门
+        
+        @param request: DeleteCollegeAlumniDeptRequest
+        @return: DeleteCollegeAlumniDeptResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteCollegeAlumniDeptHeaders()
+        return self.delete_college_alumni_dept_with_options(request, headers, runtime)
+
+    async def delete_college_alumni_dept_async(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeAlumniDeptRequest,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeAlumniDeptResponse:
+        """
+        @summary 高校校友会删除当前部门
+        
+        @param request: DeleteCollegeAlumniDeptRequest
+        @return: DeleteCollegeAlumniDeptResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteCollegeAlumniDeptHeaders()
+        return await self.delete_college_alumni_dept_with_options_async(request, headers, runtime)
+
+    def delete_college_alumni_user_info_with_options(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoRequest,
+        headers: dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会删除校友信息
+        
+        @param request: DeleteCollegeAlumniUserInfoRequest
+        @param headers: DeleteCollegeAlumniUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCollegeAlumniUserInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteCollegeAlumniUserInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/userInfos/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_college_alumni_user_info_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoRequest,
+        headers: dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会删除校友信息
+        
+        @param request: DeleteCollegeAlumniUserInfoRequest
+        @param headers: DeleteCollegeAlumniUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCollegeAlumniUserInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteCollegeAlumniUserInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/userInfos/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_college_alumni_user_info(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoRequest,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会删除校友信息
+        
+        @param request: DeleteCollegeAlumniUserInfoRequest
+        @return: DeleteCollegeAlumniUserInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoHeaders()
+        return self.delete_college_alumni_user_info_with_options(request, headers, runtime)
+
+    async def delete_college_alumni_user_info_async(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoRequest,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会删除校友信息
+        
+        @param request: DeleteCollegeAlumniUserInfoRequest
+        @return: DeleteCollegeAlumniUserInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoHeaders()
+        return await self.delete_college_alumni_user_info_with_options_async(request, headers, runtime)
+
     def delete_dept_with_options(
         self,
         dept_id: str,
@@ -7612,6 +8116,242 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.GetBindChildInfoHeaders()
         return await self.get_bind_child_info_with_options_async(request, headers, runtime)
+
+    def get_college_alumni_depts_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeAlumniDeptsRequest,
+        headers: dingtalkedu__1__0_models.GetCollegeAlumniDeptsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetCollegeAlumniDeptsResponse:
+        """
+        @summary 高校校友会获取当前部门的所有子部门
+        
+        @param request: GetCollegeAlumniDeptsRequest
+        @param headers: GetCollegeAlumniDeptsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCollegeAlumniDeptsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCollegeAlumniDepts',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/subDepts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='array'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetCollegeAlumniDeptsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_college_alumni_depts_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeAlumniDeptsRequest,
+        headers: dingtalkedu__1__0_models.GetCollegeAlumniDeptsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetCollegeAlumniDeptsResponse:
+        """
+        @summary 高校校友会获取当前部门的所有子部门
+        
+        @param request: GetCollegeAlumniDeptsRequest
+        @param headers: GetCollegeAlumniDeptsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCollegeAlumniDeptsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCollegeAlumniDepts',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/subDepts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='array'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetCollegeAlumniDeptsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_college_alumni_depts(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeAlumniDeptsRequest,
+    ) -> dingtalkedu__1__0_models.GetCollegeAlumniDeptsResponse:
+        """
+        @summary 高校校友会获取当前部门的所有子部门
+        
+        @param request: GetCollegeAlumniDeptsRequest
+        @return: GetCollegeAlumniDeptsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetCollegeAlumniDeptsHeaders()
+        return self.get_college_alumni_depts_with_options(request, headers, runtime)
+
+    async def get_college_alumni_depts_async(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeAlumniDeptsRequest,
+    ) -> dingtalkedu__1__0_models.GetCollegeAlumniDeptsResponse:
+        """
+        @summary 高校校友会获取当前部门的所有子部门
+        
+        @param request: GetCollegeAlumniDeptsRequest
+        @return: GetCollegeAlumniDeptsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetCollegeAlumniDeptsHeaders()
+        return await self.get_college_alumni_depts_with_options_async(request, headers, runtime)
+
+    def get_college_alumni_user_info_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeAlumniUserInfoRequest,
+        headers: dingtalkedu__1__0_models.GetCollegeAlumniUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会查询校友信息
+        
+        @param request: GetCollegeAlumniUserInfoRequest
+        @param headers: GetCollegeAlumniUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCollegeAlumniUserInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCollegeAlumniUserInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/userInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetCollegeAlumniUserInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_college_alumni_user_info_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeAlumniUserInfoRequest,
+        headers: dingtalkedu__1__0_models.GetCollegeAlumniUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会查询校友信息
+        
+        @param request: GetCollegeAlumniUserInfoRequest
+        @param headers: GetCollegeAlumniUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCollegeAlumniUserInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCollegeAlumniUserInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/userInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetCollegeAlumniUserInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_college_alumni_user_info(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeAlumniUserInfoRequest,
+    ) -> dingtalkedu__1__0_models.GetCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会查询校友信息
+        
+        @param request: GetCollegeAlumniUserInfoRequest
+        @return: GetCollegeAlumniUserInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetCollegeAlumniUserInfoHeaders()
+        return self.get_college_alumni_user_info_with_options(request, headers, runtime)
+
+    async def get_college_alumni_user_info_async(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeAlumniUserInfoRequest,
+    ) -> dingtalkedu__1__0_models.GetCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会查询校友信息
+        
+        @param request: GetCollegeAlumniUserInfoRequest
+        @return: GetCollegeAlumniUserInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetCollegeAlumniUserInfoHeaders()
+        return await self.get_college_alumni_user_info_with_options_async(request, headers, runtime)
 
     def get_default_child_with_options(
         self,
@@ -15002,6 +15742,152 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.UnsubscribeUniversityCourseGroupHeaders()
         return await self.unsubscribe_university_course_group_with_options_async(request, headers, runtime)
+
+    def update_college_alumni_user_info_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会更新校友信息
+        
+        @param request: UpdateCollegeAlumniUserInfoRequest
+        @param headers: UpdateCollegeAlumniUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeAlumniUserInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.intake):
+            body['intake'] = request.intake
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.outtake):
+            body['outtake'] = request.outtake
+        if not UtilClient.is_unset(request.student_number):
+            body['studentNumber'] = request.student_number
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeAlumniUserInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/userInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_college_alumni_user_info_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会更新校友信息
+        
+        @param request: UpdateCollegeAlumniUserInfoRequest
+        @param headers: UpdateCollegeAlumniUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeAlumniUserInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.intake):
+            body['intake'] = request.intake
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.outtake):
+            body['outtake'] = request.outtake
+        if not UtilClient.is_unset(request.student_number):
+            body['studentNumber'] = request.student_number
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeAlumniUserInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeAlumni/userInfos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_college_alumni_user_info(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会更新校友信息
+        
+        @param request: UpdateCollegeAlumniUserInfoRequest
+        @return: UpdateCollegeAlumniUserInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoHeaders()
+        return self.update_college_alumni_user_info_with_options(request, headers, runtime)
+
+    async def update_college_alumni_user_info_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoResponse:
+        """
+        @summary 高校校友会更新校友信息
+        
+        @param request: UpdateCollegeAlumniUserInfoRequest
+        @return: UpdateCollegeAlumniUserInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoHeaders()
+        return await self.update_college_alumni_user_info_with_options_async(request, headers, runtime)
 
     def update_courses_of_class_with_options(
         self,

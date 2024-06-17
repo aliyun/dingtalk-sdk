@@ -5503,6 +5503,238 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.QueryMembersOfGroupRoleHeaders()
         return await self.query_members_of_group_role_with_options_async(request, headers, runtime)
 
+    def query_open_conversation_receive_user_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryOpenConversationReceiveUserRequest,
+        headers: dingtalkim__1__0_models.QueryOpenConversationReceiveUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryOpenConversationReceiveUserResponse:
+        """
+        @summary  根据单聊会话及发送方获取接收方用户信息
+        
+        @param request: QueryOpenConversationReceiveUserRequest
+        @param headers: QueryOpenConversationReceiveUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOpenConversationReceiveUserResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.send_user_id):
+            body['sendUserId'] = request.send_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOpenConversationReceiveUser',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/otoChat/receiveUsers/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryOpenConversationReceiveUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_open_conversation_receive_user_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryOpenConversationReceiveUserRequest,
+        headers: dingtalkim__1__0_models.QueryOpenConversationReceiveUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryOpenConversationReceiveUserResponse:
+        """
+        @summary  根据单聊会话及发送方获取接收方用户信息
+        
+        @param request: QueryOpenConversationReceiveUserRequest
+        @param headers: QueryOpenConversationReceiveUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOpenConversationReceiveUserResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.send_user_id):
+            body['sendUserId'] = request.send_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOpenConversationReceiveUser',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/otoChat/receiveUsers/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryOpenConversationReceiveUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_open_conversation_receive_user(
+        self,
+        request: dingtalkim__1__0_models.QueryOpenConversationReceiveUserRequest,
+    ) -> dingtalkim__1__0_models.QueryOpenConversationReceiveUserResponse:
+        """
+        @summary  根据单聊会话及发送方获取接收方用户信息
+        
+        @param request: QueryOpenConversationReceiveUserRequest
+        @return: QueryOpenConversationReceiveUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryOpenConversationReceiveUserHeaders()
+        return self.query_open_conversation_receive_user_with_options(request, headers, runtime)
+
+    async def query_open_conversation_receive_user_async(
+        self,
+        request: dingtalkim__1__0_models.QueryOpenConversationReceiveUserRequest,
+    ) -> dingtalkim__1__0_models.QueryOpenConversationReceiveUserResponse:
+        """
+        @summary  根据单聊会话及发送方获取接收方用户信息
+        
+        @param request: QueryOpenConversationReceiveUserRequest
+        @return: QueryOpenConversationReceiveUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryOpenConversationReceiveUserHeaders()
+        return await self.query_open_conversation_receive_user_with_options_async(request, headers, runtime)
+
+    def query_open_group_base_info_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryOpenGroupBaseInfoRequest,
+        headers: dingtalkim__1__0_models.QueryOpenGroupBaseInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryOpenGroupBaseInfoResponse:
+        """
+        @summary 获取群基础信息
+        
+        @param request: QueryOpenGroupBaseInfoRequest
+        @param headers: QueryOpenGroupBaseInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOpenGroupBaseInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOpenGroupBaseInfo',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/baseInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryOpenGroupBaseInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_open_group_base_info_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryOpenGroupBaseInfoRequest,
+        headers: dingtalkim__1__0_models.QueryOpenGroupBaseInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryOpenGroupBaseInfoResponse:
+        """
+        @summary 获取群基础信息
+        
+        @param request: QueryOpenGroupBaseInfoRequest
+        @param headers: QueryOpenGroupBaseInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOpenGroupBaseInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOpenGroupBaseInfo',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/baseInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryOpenGroupBaseInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_open_group_base_info(
+        self,
+        request: dingtalkim__1__0_models.QueryOpenGroupBaseInfoRequest,
+    ) -> dingtalkim__1__0_models.QueryOpenGroupBaseInfoResponse:
+        """
+        @summary 获取群基础信息
+        
+        @param request: QueryOpenGroupBaseInfoRequest
+        @return: QueryOpenGroupBaseInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryOpenGroupBaseInfoHeaders()
+        return self.query_open_group_base_info_with_options(request, headers, runtime)
+
+    async def query_open_group_base_info_async(
+        self,
+        request: dingtalkim__1__0_models.QueryOpenGroupBaseInfoRequest,
+    ) -> dingtalkim__1__0_models.QueryOpenGroupBaseInfoResponse:
+        """
+        @summary 获取群基础信息
+        
+        @param request: QueryOpenGroupBaseInfoRequest
+        @return: QueryOpenGroupBaseInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryOpenGroupBaseInfoHeaders()
+        return await self.query_open_group_base_info_with_options_async(request, headers, runtime)
+
     def query_recent_conversations_with_options(
         self,
         request: dingtalkim__1__0_models.QueryRecentConversationsRequest,
@@ -5518,9 +5750,13 @@ class Client(OpenApiClient):
         @return: QueryRecentConversationsResponse
         """
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
+        if not UtilClient.is_unset(request.only_human):
+            body['onlyHuman'] = request.only_human
+        if not UtilClient.is_unset(request.only_inner_group):
+            body['onlyInnerGroup'] = request.only_inner_group
         if not UtilClient.is_unset(request.user_id):
-            query['userId'] = request.user_id
+            body['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -5528,14 +5764,14 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='QueryRecentConversations',
             version='im_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/im/conversations/recentLists',
-            method='GET',
+            pathname=f'/v1.0/im/conversations/recentLists/query',
+            method='POST',
             auth_type='AK',
             style='ROA',
             req_body_type='none',
@@ -5561,9 +5797,13 @@ class Client(OpenApiClient):
         @return: QueryRecentConversationsResponse
         """
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
+        if not UtilClient.is_unset(request.only_human):
+            body['onlyHuman'] = request.only_human
+        if not UtilClient.is_unset(request.only_inner_group):
+            body['onlyInnerGroup'] = request.only_inner_group
         if not UtilClient.is_unset(request.user_id):
-            query['userId'] = request.user_id
+            body['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -5571,14 +5811,14 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='QueryRecentConversations',
             version='im_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/im/conversations/recentLists',
-            method='GET',
+            pathname=f'/v1.0/im/conversations/recentLists/query',
+            method='POST',
             auth_type='AK',
             style='ROA',
             req_body_type='none',

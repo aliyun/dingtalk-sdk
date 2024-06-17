@@ -8008,6 +8008,413 @@ class QueryMembersOfGroupRoleResponse(TeaModel):
         return self
 
 
+class QueryOpenConversationReceiveUserHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryOpenConversationReceiveUserRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        send_user_id: str = None,
+    ):
+        self.open_conversation_id = open_conversation_id
+        self.send_user_id = send_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.send_user_id is not None:
+            result['sendUserId'] = self.send_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('sendUserId') is not None:
+            self.send_user_id = m.get('sendUserId')
+        return self
+
+
+class QueryOpenConversationReceiveUserResponseBodyResultReceiveUser(TeaModel):
+    def __init__(
+        self,
+        icon: str = None,
+        name: str = None,
+        nick_name: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.icon = icon
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.nick_name = nick_name
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.name is not None:
+            result['name'] = self.name
+        if self.nick_name is not None:
+            result['nickName'] = self.nick_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nickName') is not None:
+            self.nick_name = m.get('nickName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryOpenConversationReceiveUserResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        receive_user: QueryOpenConversationReceiveUserResponseBodyResultReceiveUser = None,
+    ):
+        self.receive_user = receive_user
+
+    def validate(self):
+        if self.receive_user:
+            self.receive_user.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.receive_user is not None:
+            result['receiveUser'] = self.receive_user.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('receiveUser') is not None:
+            temp_model = QueryOpenConversationReceiveUserResponseBodyResultReceiveUser()
+            self.receive_user = temp_model.from_map(m['receiveUser'])
+        return self
+
+
+class QueryOpenConversationReceiveUserResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryOpenConversationReceiveUserResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryOpenConversationReceiveUserResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryOpenConversationReceiveUserResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryOpenConversationReceiveUserResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryOpenConversationReceiveUserResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryOpenGroupBaseInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryOpenGroupBaseInfoRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+    ):
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class QueryOpenGroupBaseInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        icon: str = None,
+        member_count: int = None,
+        open_conversation_id: str = None,
+        tag: str = None,
+        title: str = None,
+    ):
+        self.icon = icon
+        self.member_count = member_count
+        self.open_conversation_id = open_conversation_id
+        self.tag = tag
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.member_count is not None:
+            result['memberCount'] = self.member_count
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.tag is not None:
+            result['tag'] = self.tag
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('memberCount') is not None:
+            self.member_count = m.get('memberCount')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('tag') is not None:
+            self.tag = m.get('tag')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryOpenGroupBaseInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryOpenGroupBaseInfoResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryOpenGroupBaseInfoResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryOpenGroupBaseInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryOpenGroupBaseInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryOpenGroupBaseInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryRecentConversationsHeaders(TeaModel):
     def __init__(
         self,
@@ -8044,9 +8451,12 @@ class QueryRecentConversationsHeaders(TeaModel):
 class QueryRecentConversationsRequest(TeaModel):
     def __init__(
         self,
+        only_human: bool = None,
+        only_inner_group: bool = None,
         user_id: str = None,
     ):
-        # This parameter is required.
+        self.only_human = only_human
+        self.only_inner_group = only_inner_group
         self.user_id = user_id
 
     def validate(self):
@@ -8058,12 +8468,20 @@ class QueryRecentConversationsRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.only_human is not None:
+            result['onlyHuman'] = self.only_human
+        if self.only_inner_group is not None:
+            result['onlyInnerGroup'] = self.only_inner_group
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('onlyHuman') is not None:
+            self.only_human = m.get('onlyHuman')
+        if m.get('onlyInnerGroup') is not None:
+            self.only_inner_group = m.get('onlyInnerGroup')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self

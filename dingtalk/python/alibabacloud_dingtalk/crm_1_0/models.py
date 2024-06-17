@@ -16440,6 +16440,7 @@ class GetCustomerTracksByRelationIdResponseBodyResultList(TeaModel):
         detail: Dict[str, str] = None,
         format: str = None,
         gmt_create: str = None,
+        id: str = None,
         isv_info: GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo = None,
         title: str = None,
         type: int = None,
@@ -16454,6 +16455,7 @@ class GetCustomerTracksByRelationIdResponseBodyResultList(TeaModel):
         self.format = format
         # This parameter is required.
         self.gmt_create = gmt_create
+        self.id = id
         self.isv_info = isv_info
         self.title = title
         # This parameter is required.
@@ -16481,6 +16483,8 @@ class GetCustomerTracksByRelationIdResponseBodyResultList(TeaModel):
             result['format'] = self.format
         if self.gmt_create is not None:
             result['gmtCreate'] = self.gmt_create
+        if self.id is not None:
+            result['id'] = self.id
         if self.isv_info is not None:
             result['isvInfo'] = self.isv_info.to_map()
         if self.title is not None:
@@ -16503,6 +16507,8 @@ class GetCustomerTracksByRelationIdResponseBodyResultList(TeaModel):
             self.format = m.get('format')
         if m.get('gmtCreate') is not None:
             self.gmt_create = m.get('gmtCreate')
+        if m.get('id') is not None:
+            self.id = m.get('id')
         if m.get('isvInfo') is not None:
             temp_model = GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo()
             self.isv_info = temp_model.from_map(m['isvInfo'])
