@@ -738,6 +738,138 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
         }
 
         /**
+         * @summary 完成工单审查接口
+         *
+         * @param request FinishReviewOrderRequest
+         * @param headers FinishReviewOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return FinishReviewOrderResponse
+         */
+        public FinishReviewOrderResponse FinishReviewOrderWithOptions(FinishReviewOrderRequest request, FinishReviewOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndFiles))
+            {
+                body["endFiles"] = request.EndFiles;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderId))
+            {
+                body["orderId"] = request.OrderId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "FinishReviewOrder",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/reviews/finish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<FinishReviewOrderResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 完成工单审查接口
+         *
+         * @param request FinishReviewOrderRequest
+         * @param headers FinishReviewOrderHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return FinishReviewOrderResponse
+         */
+        public async Task<FinishReviewOrderResponse> FinishReviewOrderWithOptionsAsync(FinishReviewOrderRequest request, FinishReviewOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndFiles))
+            {
+                body["endFiles"] = request.EndFiles;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderId))
+            {
+                body["orderId"] = request.OrderId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "FinishReviewOrder",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/reviews/finish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<FinishReviewOrderResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 完成工单审查接口
+         *
+         * @param request FinishReviewOrderRequest
+         * @return FinishReviewOrderResponse
+         */
+        public FinishReviewOrderResponse FinishReviewOrder(FinishReviewOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            FinishReviewOrderHeaders headers = new FinishReviewOrderHeaders();
+            return FinishReviewOrderWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 完成工单审查接口
+         *
+         * @param request FinishReviewOrderRequest
+         * @return FinishReviewOrderResponse
+         */
+        public async Task<FinishReviewOrderResponse> FinishReviewOrderAsync(FinishReviewOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            FinishReviewOrderHeaders headers = new FinishReviewOrderHeaders();
+            return await FinishReviewOrderWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary e签宝查询智能合同版本接口
          *
          * @param request QueryAdvancedContractVersionRequest

@@ -5268,6 +5268,294 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
         }
 
         /**
+         * @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+         *
+         * @param request QueryGeneralDataServiceBatchRequest
+         * @param headers QueryGeneralDataServiceBatchHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryGeneralDataServiceBatchResponse
+         */
+        public QueryGeneralDataServiceBatchResponse QueryGeneralDataServiceBatchWithOptions(QueryGeneralDataServiceBatchRequest request, QueryGeneralDataServiceBatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ServiceId))
+            {
+                body["serviceId"] = request.ServiceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryGeneralDataServiceBatch",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/generalDataServicesBatch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryGeneralDataServiceBatchResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+         *
+         * @param request QueryGeneralDataServiceBatchRequest
+         * @param headers QueryGeneralDataServiceBatchHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryGeneralDataServiceBatchResponse
+         */
+        public async Task<QueryGeneralDataServiceBatchResponse> QueryGeneralDataServiceBatchWithOptionsAsync(QueryGeneralDataServiceBatchRequest request, QueryGeneralDataServiceBatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ServiceId))
+            {
+                body["serviceId"] = request.ServiceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryGeneralDataServiceBatch",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/generalDataServicesBatch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryGeneralDataServiceBatchResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+         *
+         * @param request QueryGeneralDataServiceBatchRequest
+         * @return QueryGeneralDataServiceBatchResponse
+         */
+        public QueryGeneralDataServiceBatchResponse QueryGeneralDataServiceBatch(QueryGeneralDataServiceBatchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryGeneralDataServiceBatchHeaders headers = new QueryGeneralDataServiceBatchHeaders();
+            return QueryGeneralDataServiceBatchWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+         *
+         * @param request QueryGeneralDataServiceBatchRequest
+         * @return QueryGeneralDataServiceBatchResponse
+         */
+        public async Task<QueryGeneralDataServiceBatchResponse> QueryGeneralDataServiceBatchAsync(QueryGeneralDataServiceBatchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryGeneralDataServiceBatchHeaders headers = new QueryGeneralDataServiceBatchHeaders();
+            return await QueryGeneralDataServiceBatchWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 数据资产平台数据服务接口(查询数据更新日期)
+         *
+         * @param request QueryGeneralDataUpdateDateRequest
+         * @param headers QueryGeneralDataUpdateDateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryGeneralDataUpdateDateResponse
+         */
+        public QueryGeneralDataUpdateDateResponse QueryGeneralDataUpdateDateWithOptions(QueryGeneralDataUpdateDateRequest request, QueryGeneralDataUpdateDateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ServiceId))
+            {
+                query["serviceId"] = request.ServiceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryGeneralDataUpdateDate",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/queryDataUpdateDates",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryGeneralDataUpdateDateResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 数据资产平台数据服务接口(查询数据更新日期)
+         *
+         * @param request QueryGeneralDataUpdateDateRequest
+         * @param headers QueryGeneralDataUpdateDateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryGeneralDataUpdateDateResponse
+         */
+        public async Task<QueryGeneralDataUpdateDateResponse> QueryGeneralDataUpdateDateWithOptionsAsync(QueryGeneralDataUpdateDateRequest request, QueryGeneralDataUpdateDateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ServiceId))
+            {
+                query["serviceId"] = request.ServiceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryGeneralDataUpdateDate",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/queryDataUpdateDates",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryGeneralDataUpdateDateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 数据资产平台数据服务接口(查询数据更新日期)
+         *
+         * @param request QueryGeneralDataUpdateDateRequest
+         * @return QueryGeneralDataUpdateDateResponse
+         */
+        public QueryGeneralDataUpdateDateResponse QueryGeneralDataUpdateDate(QueryGeneralDataUpdateDateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryGeneralDataUpdateDateHeaders headers = new QueryGeneralDataUpdateDateHeaders();
+            return QueryGeneralDataUpdateDateWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 数据资产平台数据服务接口(查询数据更新日期)
+         *
+         * @param request QueryGeneralDataUpdateDateRequest
+         * @return QueryGeneralDataUpdateDateResponse
+         */
+        public async Task<QueryGeneralDataUpdateDateResponse> QueryGeneralDataUpdateDateAsync(QueryGeneralDataUpdateDateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryGeneralDataUpdateDateHeaders headers = new QueryGeneralDataUpdateDateHeaders();
+            return await QueryGeneralDataUpdateDateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取企业群直播统计数据
          *
          * @param request QueryGroupLiveStatisticalDataRequest

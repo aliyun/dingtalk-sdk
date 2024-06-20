@@ -1674,6 +1674,226 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0
         }
 
         /**
+         * @summary 企业金融助贷业务进件通知接口
+         *
+         * @param request FinanceLoanNotifyRegisterRequest
+         * @param headers FinanceLoanNotifyRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return FinanceLoanNotifyRegisterResponse
+         */
+        public FinanceLoanNotifyRegisterResponse FinanceLoanNotifyRegisterWithOptions(FinanceLoanNotifyRegisterRequest request, FinanceLoanNotifyRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompleteTime))
+            {
+                body["completeTime"] = request.CompleteTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IdCardNo))
+            {
+                body["idCardNo"] = request.IdCardNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenChannelName))
+            {
+                body["openChannelName"] = request.OpenChannelName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenProductCode))
+            {
+                body["openProductCode"] = request.OpenProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenProductName))
+            {
+                body["openProductName"] = request.OpenProductName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenProductType))
+            {
+                body["openProductType"] = request.OpenProductType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessingStatus))
+            {
+                body["processingStatus"] = request.ProcessingStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RefuseCode))
+            {
+                body["refuseCode"] = request.RefuseCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RefuseReason))
+            {
+                body["refuseReason"] = request.RefuseReason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RegisterNo))
+            {
+                body["registerNo"] = request.RegisterNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTime))
+            {
+                body["submitTime"] = request.SubmitTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserMobile))
+            {
+                body["userMobile"] = request.UserMobile;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "FinanceLoanNotifyRegister",
+                Version = "finance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/finance/loans/notifications/register",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<FinanceLoanNotifyRegisterResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 企业金融助贷业务进件通知接口
+         *
+         * @param request FinanceLoanNotifyRegisterRequest
+         * @param headers FinanceLoanNotifyRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return FinanceLoanNotifyRegisterResponse
+         */
+        public async Task<FinanceLoanNotifyRegisterResponse> FinanceLoanNotifyRegisterWithOptionsAsync(FinanceLoanNotifyRegisterRequest request, FinanceLoanNotifyRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompleteTime))
+            {
+                body["completeTime"] = request.CompleteTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IdCardNo))
+            {
+                body["idCardNo"] = request.IdCardNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenChannelName))
+            {
+                body["openChannelName"] = request.OpenChannelName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenProductCode))
+            {
+                body["openProductCode"] = request.OpenProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenProductName))
+            {
+                body["openProductName"] = request.OpenProductName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenProductType))
+            {
+                body["openProductType"] = request.OpenProductType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessingStatus))
+            {
+                body["processingStatus"] = request.ProcessingStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RefuseCode))
+            {
+                body["refuseCode"] = request.RefuseCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RefuseReason))
+            {
+                body["refuseReason"] = request.RefuseReason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RegisterNo))
+            {
+                body["registerNo"] = request.RegisterNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubmitTime))
+            {
+                body["submitTime"] = request.SubmitTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserMobile))
+            {
+                body["userMobile"] = request.UserMobile;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "FinanceLoanNotifyRegister",
+                Version = "finance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/finance/loans/notifications/register",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<FinanceLoanNotifyRegisterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 企业金融助贷业务进件通知接口
+         *
+         * @param request FinanceLoanNotifyRegisterRequest
+         * @return FinanceLoanNotifyRegisterResponse
+         */
+        public FinanceLoanNotifyRegisterResponse FinanceLoanNotifyRegister(FinanceLoanNotifyRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            FinanceLoanNotifyRegisterHeaders headers = new FinanceLoanNotifyRegisterHeaders();
+            return FinanceLoanNotifyRegisterWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 企业金融助贷业务进件通知接口
+         *
+         * @param request FinanceLoanNotifyRegisterRequest
+         * @return FinanceLoanNotifyRegisterResponse
+         */
+        public async Task<FinanceLoanNotifyRegisterResponse> FinanceLoanNotifyRegisterAsync(FinanceLoanNotifyRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            FinanceLoanNotifyRegisterHeaders headers = new FinanceLoanNotifyRegisterHeaders();
+            return await FinanceLoanNotifyRegisterWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 修改子机构信息
          *
          * @param request ModifySubInstitutionRequest

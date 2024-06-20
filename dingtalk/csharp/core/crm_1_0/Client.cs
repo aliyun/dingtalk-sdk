@@ -950,6 +950,162 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
         }
 
         /**
+         * @summary 追加客户数据权限
+         *
+         * @param request AppendCustomerDataAuthRequest
+         * @param headers AppendCustomerDataAuthHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AppendCustomerDataAuthResponse
+         */
+        public AppendCustomerDataAuthResponse AppendCustomerDataAuthWithOptions(AppendCustomerDataAuthRequest request, AppendCustomerDataAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerIds))
+            {
+                body["customerIds"] = request.CustomerIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataAuthUserIds))
+            {
+                body["dataAuthUserIds"] = request.DataAuthUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
+            {
+                body["formCode"] = request.FormCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationType))
+            {
+                body["relationType"] = request.RelationType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleType))
+            {
+                body["roleType"] = request.RoleType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppendCustomerDataAuth",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/customers/dataAuth/append",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AppendCustomerDataAuthResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 追加客户数据权限
+         *
+         * @param request AppendCustomerDataAuthRequest
+         * @param headers AppendCustomerDataAuthHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AppendCustomerDataAuthResponse
+         */
+        public async Task<AppendCustomerDataAuthResponse> AppendCustomerDataAuthWithOptionsAsync(AppendCustomerDataAuthRequest request, AppendCustomerDataAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerIds))
+            {
+                body["customerIds"] = request.CustomerIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataAuthUserIds))
+            {
+                body["dataAuthUserIds"] = request.DataAuthUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
+            {
+                body["formCode"] = request.FormCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationType))
+            {
+                body["relationType"] = request.RelationType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleType))
+            {
+                body["roleType"] = request.RoleType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppendCustomerDataAuth",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/customers/dataAuth/append",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AppendCustomerDataAuthResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 追加客户数据权限
+         *
+         * @param request AppendCustomerDataAuthRequest
+         * @return AppendCustomerDataAuthResponse
+         */
+        public AppendCustomerDataAuthResponse AppendCustomerDataAuth(AppendCustomerDataAuthRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AppendCustomerDataAuthHeaders headers = new AppendCustomerDataAuthHeaders();
+            return AppendCustomerDataAuthWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 追加客户数据权限
+         *
+         * @param request AppendCustomerDataAuthRequest
+         * @return AppendCustomerDataAuthResponse
+         */
+        public async Task<AppendCustomerDataAuthResponse> AppendCustomerDataAuthAsync(AppendCustomerDataAuthRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AppendCustomerDataAuthHeaders headers = new AppendCustomerDataAuthHeaders();
+            return await AppendCustomerDataAuthWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 批量新增联系人
          *
          * @param request BatchAddContactsRequest
@@ -6610,6 +6766,162 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
         }
 
         /**
+         * @summary 覆盖更新客户数据权限
+         *
+         * @param request OverrideUpdateCustomerDataAuthRequest
+         * @param headers OverrideUpdateCustomerDataAuthHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OverrideUpdateCustomerDataAuthResponse
+         */
+        public OverrideUpdateCustomerDataAuthResponse OverrideUpdateCustomerDataAuthWithOptions(OverrideUpdateCustomerDataAuthRequest request, OverrideUpdateCustomerDataAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerIds))
+            {
+                body["customerIds"] = request.CustomerIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataAuthUserIds))
+            {
+                body["dataAuthUserIds"] = request.DataAuthUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
+            {
+                body["formCode"] = request.FormCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationType))
+            {
+                body["relationType"] = request.RelationType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleType))
+            {
+                body["roleType"] = request.RoleType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OverrideUpdateCustomerDataAuth",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/customers/dataAuth/overrideUpdate",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OverrideUpdateCustomerDataAuthResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 覆盖更新客户数据权限
+         *
+         * @param request OverrideUpdateCustomerDataAuthRequest
+         * @param headers OverrideUpdateCustomerDataAuthHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OverrideUpdateCustomerDataAuthResponse
+         */
+        public async Task<OverrideUpdateCustomerDataAuthResponse> OverrideUpdateCustomerDataAuthWithOptionsAsync(OverrideUpdateCustomerDataAuthRequest request, OverrideUpdateCustomerDataAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerIds))
+            {
+                body["customerIds"] = request.CustomerIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataAuthUserIds))
+            {
+                body["dataAuthUserIds"] = request.DataAuthUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
+            {
+                body["formCode"] = request.FormCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationType))
+            {
+                body["relationType"] = request.RelationType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleType))
+            {
+                body["roleType"] = request.RoleType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OverrideUpdateCustomerDataAuth",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/customers/dataAuth/overrideUpdate",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OverrideUpdateCustomerDataAuthResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 覆盖更新客户数据权限
+         *
+         * @param request OverrideUpdateCustomerDataAuthRequest
+         * @return OverrideUpdateCustomerDataAuthResponse
+         */
+        public OverrideUpdateCustomerDataAuthResponse OverrideUpdateCustomerDataAuth(OverrideUpdateCustomerDataAuthRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OverrideUpdateCustomerDataAuthHeaders headers = new OverrideUpdateCustomerDataAuthHeaders();
+            return OverrideUpdateCustomerDataAuthWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 覆盖更新客户数据权限
+         *
+         * @param request OverrideUpdateCustomerDataAuthRequest
+         * @return OverrideUpdateCustomerDataAuthResponse
+         */
+        public async Task<OverrideUpdateCustomerDataAuthResponse> OverrideUpdateCustomerDataAuthAsync(OverrideUpdateCustomerDataAuthRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OverrideUpdateCustomerDataAuthHeaders headers = new OverrideUpdateCustomerDataAuthHeaders();
+            return await OverrideUpdateCustomerDataAuthWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 分页获取全量客户数据，根据不同的类型可以获取私海个人客户、企业客户，以及公海个人客户、企业客户，最多一次可获取100条数据
          *
          * @param request QueryAllCustomerRequest
@@ -8631,6 +8943,146 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ServiceWindowMessageBatchPushHeaders headers = new ServiceWindowMessageBatchPushHeaders();
             return await ServiceWindowMessageBatchPushWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 二阶段提交权益库存结果
+         *
+         * @param request TwoPhaseCommitInventoryRequest
+         * @param headers TwoPhaseCommitInventoryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return TwoPhaseCommitInventoryResponse
+         */
+        public TwoPhaseCommitInventoryResponse TwoPhaseCommitInventoryWithOptions(TwoPhaseCommitInventoryRequest request, TwoPhaseCommitInventoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BenefitCode))
+            {
+                body["benefitCode"] = request.BenefitCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizRequestId))
+            {
+                body["bizRequestId"] = request.BizRequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExecuteResult))
+            {
+                body["executeResult"] = request.ExecuteResult;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Quota))
+            {
+                body["quota"] = request.Quota;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TwoPhaseCommitInventory",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/benefitInventories/twoPhases/commit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TwoPhaseCommitInventoryResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 二阶段提交权益库存结果
+         *
+         * @param request TwoPhaseCommitInventoryRequest
+         * @param headers TwoPhaseCommitInventoryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return TwoPhaseCommitInventoryResponse
+         */
+        public async Task<TwoPhaseCommitInventoryResponse> TwoPhaseCommitInventoryWithOptionsAsync(TwoPhaseCommitInventoryRequest request, TwoPhaseCommitInventoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BenefitCode))
+            {
+                body["benefitCode"] = request.BenefitCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizRequestId))
+            {
+                body["bizRequestId"] = request.BizRequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExecuteResult))
+            {
+                body["executeResult"] = request.ExecuteResult;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Quota))
+            {
+                body["quota"] = request.Quota;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TwoPhaseCommitInventory",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/benefitInventories/twoPhases/commit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TwoPhaseCommitInventoryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 二阶段提交权益库存结果
+         *
+         * @param request TwoPhaseCommitInventoryRequest
+         * @return TwoPhaseCommitInventoryResponse
+         */
+        public TwoPhaseCommitInventoryResponse TwoPhaseCommitInventory(TwoPhaseCommitInventoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TwoPhaseCommitInventoryHeaders headers = new TwoPhaseCommitInventoryHeaders();
+            return TwoPhaseCommitInventoryWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 二阶段提交权益库存结果
+         *
+         * @param request TwoPhaseCommitInventoryRequest
+         * @return TwoPhaseCommitInventoryResponse
+         */
+        public async Task<TwoPhaseCommitInventoryResponse> TwoPhaseCommitInventoryAsync(TwoPhaseCommitInventoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TwoPhaseCommitInventoryHeaders headers = new TwoPhaseCommitInventoryHeaders();
+            return await TwoPhaseCommitInventoryWithOptionsAsync(request, headers, runtime);
         }
 
         /**

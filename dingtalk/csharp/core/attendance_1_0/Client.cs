@@ -4370,6 +4370,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["freeCheckTypeId"] = request.FreeCheckTypeId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreecheckDayStartMinOffset))
+            {
+                body["freecheckDayStartMinOffset"] = request.FreecheckDayStartMinOffset;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
             {
                 body["groupId"] = request.GroupId;
@@ -4536,6 +4540,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreeCheckTypeId))
             {
                 body["freeCheckTypeId"] = request.FreeCheckTypeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreecheckDayStartMinOffset))
+            {
+                body["freecheckDayStartMinOffset"] = request.FreecheckDayStartMinOffset;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupId))
             {

@@ -89,6 +89,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public int? FreeCheckTypeId { get; set; }
 
+        [NameInMap("freecheckDayStartMinOffset")]
+        [Validation(Required=false)]
+        public int? FreecheckDayStartMinOffset { get; set; }
+
         [NameInMap("groupId")]
         [Validation(Required=false)]
         public long? GroupId { get; set; }
