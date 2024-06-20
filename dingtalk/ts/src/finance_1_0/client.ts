@@ -1080,6 +1080,133 @@ export class DecodePayCodeResponse extends $tea.Model {
   }
 }
 
+export class FinanceLoanNotifyRegisterHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinanceLoanNotifyRegisterRequest extends $tea.Model {
+  completeTime?: string;
+  extension?: string;
+  idCardNo?: string;
+  openChannelName?: string;
+  openProductCode?: string;
+  openProductName?: string;
+  openProductType?: string;
+  processingStatus?: string;
+  refuseCode?: string;
+  refuseReason?: string;
+  registerNo?: string;
+  status?: string;
+  submitTime?: string;
+  userMobile?: string;
+  static names(): { [key: string]: string } {
+    return {
+      completeTime: 'completeTime',
+      extension: 'extension',
+      idCardNo: 'idCardNo',
+      openChannelName: 'openChannelName',
+      openProductCode: 'openProductCode',
+      openProductName: 'openProductName',
+      openProductType: 'openProductType',
+      processingStatus: 'processingStatus',
+      refuseCode: 'refuseCode',
+      refuseReason: 'refuseReason',
+      registerNo: 'registerNo',
+      status: 'status',
+      submitTime: 'submitTime',
+      userMobile: 'userMobile',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      completeTime: 'string',
+      extension: 'string',
+      idCardNo: 'string',
+      openChannelName: 'string',
+      openProductCode: 'string',
+      openProductName: 'string',
+      openProductType: 'string',
+      processingStatus: 'string',
+      refuseCode: 'string',
+      refuseReason: 'string',
+      registerNo: 'string',
+      status: 'string',
+      submitTime: 'string',
+      userMobile: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinanceLoanNotifyRegisterResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinanceLoanNotifyRegisterResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: FinanceLoanNotifyRegisterResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: FinanceLoanNotifyRegisterResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ModifySubInstitutionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6127,6 +6254,112 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DecodePayCodeHeaders({ });
     return await this.decodePayCodeWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 企业金融助贷业务进件通知接口
+   *
+   * @param request FinanceLoanNotifyRegisterRequest
+   * @param headers FinanceLoanNotifyRegisterHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return FinanceLoanNotifyRegisterResponse
+   */
+  async financeLoanNotifyRegisterWithOptions(request: FinanceLoanNotifyRegisterRequest, headers: FinanceLoanNotifyRegisterHeaders, runtime: $Util.RuntimeOptions): Promise<FinanceLoanNotifyRegisterResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.completeTime)) {
+      body["completeTime"] = request.completeTime;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.idCardNo)) {
+      body["idCardNo"] = request.idCardNo;
+    }
+
+    if (!Util.isUnset(request.openChannelName)) {
+      body["openChannelName"] = request.openChannelName;
+    }
+
+    if (!Util.isUnset(request.openProductCode)) {
+      body["openProductCode"] = request.openProductCode;
+    }
+
+    if (!Util.isUnset(request.openProductName)) {
+      body["openProductName"] = request.openProductName;
+    }
+
+    if (!Util.isUnset(request.openProductType)) {
+      body["openProductType"] = request.openProductType;
+    }
+
+    if (!Util.isUnset(request.processingStatus)) {
+      body["processingStatus"] = request.processingStatus;
+    }
+
+    if (!Util.isUnset(request.refuseCode)) {
+      body["refuseCode"] = request.refuseCode;
+    }
+
+    if (!Util.isUnset(request.refuseReason)) {
+      body["refuseReason"] = request.refuseReason;
+    }
+
+    if (!Util.isUnset(request.registerNo)) {
+      body["registerNo"] = request.registerNo;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.submitTime)) {
+      body["submitTime"] = request.submitTime;
+    }
+
+    if (!Util.isUnset(request.userMobile)) {
+      body["userMobile"] = request.userMobile;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "FinanceLoanNotifyRegister",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/loans/notifications/register`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<FinanceLoanNotifyRegisterResponse>(await this.execute(params, req, runtime), new FinanceLoanNotifyRegisterResponse({}));
+  }
+
+  /**
+   * @summary 企业金融助贷业务进件通知接口
+   *
+   * @param request FinanceLoanNotifyRegisterRequest
+   * @return FinanceLoanNotifyRegisterResponse
+   */
+  async financeLoanNotifyRegister(request: FinanceLoanNotifyRegisterRequest): Promise<FinanceLoanNotifyRegisterResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new FinanceLoanNotifyRegisterHeaders({ });
+    return await this.financeLoanNotifyRegisterWithOptions(request, headers, runtime);
   }
 
   /**

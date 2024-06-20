@@ -3790,6 +3790,203 @@ export class QueryGeneralDataServiceResponse extends $tea.Model {
   }
 }
 
+export class QueryGeneralDataServiceBatchHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGeneralDataServiceBatchRequest extends $tea.Model {
+  deptIds?: string[];
+  endDate?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  serviceId?: string;
+  startDate?: string;
+  userId?: string;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptIds: 'deptIds',
+      endDate: 'endDate',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      serviceId: 'serviceId',
+      startDate: 'startDate',
+      userId: 'userId',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptIds: { 'type': 'array', 'itemType': 'string' },
+      endDate: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      serviceId: 'string',
+      startDate: 'string',
+      userId: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGeneralDataServiceBatchResponseBody extends $tea.Model {
+  dataList?: { [key: string]: any }[];
+  metaList?: QueryGeneralDataServiceBatchResponseBodyMetaList[];
+  static names(): { [key: string]: string } {
+    return {
+      dataList: 'dataList',
+      metaList: 'metaList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dataList: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'any' } },
+      metaList: { 'type': 'array', 'itemType': QueryGeneralDataServiceBatchResponseBodyMetaList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGeneralDataServiceBatchResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryGeneralDataServiceBatchResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryGeneralDataServiceBatchResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGeneralDataUpdateDateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGeneralDataUpdateDateRequest extends $tea.Model {
+  serviceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      serviceId: 'serviceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      serviceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGeneralDataUpdateDateResponseBody extends $tea.Model {
+  success?: boolean;
+  updateDate?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      updateDate: 'updateDate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      updateDate: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryGeneralDataUpdateDateResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryGeneralDataUpdateDateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryGeneralDataUpdateDateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGroupLiveStatisticalDataHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9173,6 +9370,34 @@ export class QueryGeneralDataServiceResponseBodyMetaList extends $tea.Model {
   }
 }
 
+export class QueryGeneralDataServiceBatchResponseBodyMetaList extends $tea.Model {
+  fieldDesc?: string;
+  fieldId?: string;
+  fieldName?: string;
+  fieldType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldDesc: 'fieldDesc',
+      fieldId: 'fieldId',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldDesc: 'string',
+      fieldId: 'string',
+      fieldName: 'string',
+      fieldType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGroupLiveStatisticalDataResponseBodyMetaList extends $tea.Model {
   kpiCaliber?: string;
   kpiId?: string;
@@ -13286,6 +13511,142 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryGeneralDataServiceHeaders({ });
     return await this.queryGeneralDataServiceWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+   *
+   * @param request QueryGeneralDataServiceBatchRequest
+   * @param headers QueryGeneralDataServiceBatchHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryGeneralDataServiceBatchResponse
+   */
+  async queryGeneralDataServiceBatchWithOptions(request: QueryGeneralDataServiceBatchRequest, headers: QueryGeneralDataServiceBatchHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGeneralDataServiceBatchResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptIds)) {
+      body["deptIds"] = request.deptIds;
+    }
+
+    if (!Util.isUnset(request.endDate)) {
+      body["endDate"] = request.endDate;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.serviceId)) {
+      body["serviceId"] = request.serviceId;
+    }
+
+    if (!Util.isUnset(request.startDate)) {
+      body["startDate"] = request.startDate;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryGeneralDataServiceBatch",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/generalDataServicesBatch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryGeneralDataServiceBatchResponse>(await this.execute(params, req, runtime), new QueryGeneralDataServiceBatchResponse({}));
+  }
+
+  /**
+   * @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+   *
+   * @param request QueryGeneralDataServiceBatchRequest
+   * @return QueryGeneralDataServiceBatchResponse
+   */
+  async queryGeneralDataServiceBatch(request: QueryGeneralDataServiceBatchRequest): Promise<QueryGeneralDataServiceBatchResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryGeneralDataServiceBatchHeaders({ });
+    return await this.queryGeneralDataServiceBatchWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 数据资产平台数据服务接口(查询数据更新日期)
+   *
+   * @param request QueryGeneralDataUpdateDateRequest
+   * @param headers QueryGeneralDataUpdateDateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryGeneralDataUpdateDateResponse
+   */
+  async queryGeneralDataUpdateDateWithOptions(request: QueryGeneralDataUpdateDateRequest, headers: QueryGeneralDataUpdateDateHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGeneralDataUpdateDateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.serviceId)) {
+      query["serviceId"] = request.serviceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryGeneralDataUpdateDate",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/queryDataUpdateDates`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryGeneralDataUpdateDateResponse>(await this.execute(params, req, runtime), new QueryGeneralDataUpdateDateResponse({}));
+  }
+
+  /**
+   * @summary 数据资产平台数据服务接口(查询数据更新日期)
+   *
+   * @param request QueryGeneralDataUpdateDateRequest
+   * @return QueryGeneralDataUpdateDateResponse
+   */
+  async queryGeneralDataUpdateDate(request: QueryGeneralDataUpdateDateRequest): Promise<QueryGeneralDataUpdateDateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryGeneralDataUpdateDateHeaders({ });
+    return await this.queryGeneralDataUpdateDateWithOptions(request, headers, runtime);
   }
 
   /**

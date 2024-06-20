@@ -2895,6 +2895,7 @@ export class GroupUpdateRequest extends $tea.Model {
   forbidHideOutSideAddress?: boolean;
   freeCheckSetting?: GroupUpdateRequestFreeCheckSetting;
   freeCheckTypeId?: number;
+  freecheckDayStartMinOffset?: number;
   groupId?: number;
   groupName?: string;
   managerList?: string[];
@@ -2928,6 +2929,7 @@ export class GroupUpdateRequest extends $tea.Model {
       forbidHideOutSideAddress: 'forbidHideOutSideAddress',
       freeCheckSetting: 'freeCheckSetting',
       freeCheckTypeId: 'freeCheckTypeId',
+      freecheckDayStartMinOffset: 'freecheckDayStartMinOffset',
       groupId: 'groupId',
       groupName: 'groupName',
       managerList: 'managerList',
@@ -2964,6 +2966,7 @@ export class GroupUpdateRequest extends $tea.Model {
       forbidHideOutSideAddress: 'boolean',
       freeCheckSetting: GroupUpdateRequestFreeCheckSetting,
       freeCheckTypeId: 'number',
+      freecheckDayStartMinOffset: 'number',
       groupId: 'number',
       groupName: 'string',
       managerList: { 'type': 'array', 'itemType': 'string' },
@@ -9506,6 +9509,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.freeCheckTypeId)) {
       body["freeCheckTypeId"] = request.freeCheckTypeId;
+    }
+
+    if (!Util.isUnset(request.freecheckDayStartMinOffset)) {
+      body["freecheckDayStartMinOffset"] = request.freecheckDayStartMinOffset;
     }
 
     if (!Util.isUnset(request.groupId)) {

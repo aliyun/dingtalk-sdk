@@ -139,16 +139,19 @@ export class GetKnowledgeListRequest extends $tea.Model {
 }
 
 export class GetKnowledgeListResponseBody extends $tea.Model {
-  knowledgeList?: GetKnowledgeListResponseBodyKnowledgeList[];
+  result?: GetKnowledgeListResponseBodyResult;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      knowledgeList: 'knowledgeList',
+      result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      knowledgeList: { 'type': 'array', 'itemType': GetKnowledgeListResponseBodyKnowledgeList },
+      result: GetKnowledgeListResponseBodyResult,
+      success: 'boolean',
     };
   }
 
@@ -440,7 +443,7 @@ export class RelearnKnowledgeResponse extends $tea.Model {
   }
 }
 
-export class GetKnowledgeListResponseBodyKnowledgeList extends $tea.Model {
+export class GetKnowledgeListResponseBodyResultKnowledgeList extends $tea.Model {
   docFormat?: string;
   docName?: string;
   docUrl?: string;
@@ -463,6 +466,25 @@ export class GetKnowledgeListResponseBodyKnowledgeList extends $tea.Model {
       docUrl: 'string',
       status: 'string',
       studyId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetKnowledgeListResponseBodyResult extends $tea.Model {
+  knowledgeList?: GetKnowledgeListResponseBodyResultKnowledgeList[];
+  static names(): { [key: string]: string } {
+    return {
+      knowledgeList: 'knowledgeList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      knowledgeList: { 'type': 'array', 'itemType': GetKnowledgeListResponseBodyResultKnowledgeList },
     };
   }
 

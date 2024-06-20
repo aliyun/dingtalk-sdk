@@ -497,6 +497,97 @@ export class EsignSyncEventResponse extends $tea.Model {
   }
 }
 
+export class FinishReviewOrderHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinishReviewOrderRequest extends $tea.Model {
+  endFiles?: FinishReviewOrderRequestEndFiles[];
+  extension?: string;
+  orderId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endFiles: 'endFiles',
+      extension: 'extension',
+      orderId: 'orderId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endFiles: { 'type': 'array', 'itemType': FinishReviewOrderRequestEndFiles },
+      extension: 'string',
+      orderId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinishReviewOrderResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinishReviewOrderResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: FinishReviewOrderResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: FinishReviewOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryAdvancedContractVersionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -805,6 +896,37 @@ export class EsignSyncEventResponseBodyResult extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class FinishReviewOrderRequestEndFiles extends $tea.Model {
+  fileName?: string;
+  fileSize?: string;
+  fileType?: string;
+  fileVersion?: number;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      fileSize: 'fileSize',
+      fileType: 'fileType',
+      fileVersion: 'fileVersion',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      fileSize: 'string',
+      fileType: 'string',
+      fileVersion: 'number',
+      url: 'string',
     };
   }
 
@@ -1264,6 +1386,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EsignSyncEventHeaders({ });
     return await this.esignSyncEventWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 完成工单审查接口
+   *
+   * @param request FinishReviewOrderRequest
+   * @param headers FinishReviewOrderHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return FinishReviewOrderResponse
+   */
+  async finishReviewOrderWithOptions(request: FinishReviewOrderRequest, headers: FinishReviewOrderHeaders, runtime: $Util.RuntimeOptions): Promise<FinishReviewOrderResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endFiles)) {
+      body["endFiles"] = request.endFiles;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.orderId)) {
+      body["orderId"] = request.orderId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "FinishReviewOrder",
+      version: "contract_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/contract/reviews/finish`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<FinishReviewOrderResponse>(await this.execute(params, req, runtime), new FinishReviewOrderResponse({}));
+  }
+
+  /**
+   * @summary 完成工单审查接口
+   *
+   * @param request FinishReviewOrderRequest
+   * @return FinishReviewOrderResponse
+   */
+  async finishReviewOrder(request: FinishReviewOrderRequest): Promise<FinishReviewOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new FinishReviewOrderHeaders({ });
+    return await this.finishReviewOrderWithOptions(request, headers, runtime);
   }
 
   /**

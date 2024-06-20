@@ -603,6 +603,106 @@ export class AddRelationMetaFieldResponse extends $tea.Model {
   }
 }
 
+export class AppendCustomerDataAuthHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendCustomerDataAuthRequest extends $tea.Model {
+  customerIds?: string[];
+  dataAuthUserIds?: string[];
+  formCode?: string;
+  operateUserId?: string;
+  relationType?: string;
+  roleType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customerIds: 'customerIds',
+      dataAuthUserIds: 'dataAuthUserIds',
+      formCode: 'formCode',
+      operateUserId: 'operateUserId',
+      relationType: 'relationType',
+      roleType: 'roleType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customerIds: { 'type': 'array', 'itemType': 'string' },
+      dataAuthUserIds: { 'type': 'array', 'itemType': 'string' },
+      formCode: 'string',
+      operateUserId: 'string',
+      relationType: 'string',
+      roleType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendCustomerDataAuthResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppendCustomerDataAuthResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AppendCustomerDataAuthResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AppendCustomerDataAuthResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchAddContactsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4727,6 +4827,106 @@ export class ListGroupSetResponse extends $tea.Model {
   }
 }
 
+export class OverrideUpdateCustomerDataAuthHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OverrideUpdateCustomerDataAuthRequest extends $tea.Model {
+  customerIds?: string[];
+  dataAuthUserIds?: string[];
+  formCode?: string;
+  operateUserId?: string;
+  relationType?: string;
+  roleType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customerIds: 'customerIds',
+      dataAuthUserIds: 'dataAuthUserIds',
+      formCode: 'formCode',
+      operateUserId: 'operateUserId',
+      relationType: 'relationType',
+      roleType: 'roleType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customerIds: { 'type': 'array', 'itemType': 'string' },
+      dataAuthUserIds: { 'type': 'array', 'itemType': 'string' },
+      formCode: 'string',
+      operateUserId: 'string',
+      relationType: 'string',
+      roleType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OverrideUpdateCustomerDataAuthResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OverrideUpdateCustomerDataAuthResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OverrideUpdateCustomerDataAuthResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OverrideUpdateCustomerDataAuthResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryAllCustomerHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6184,6 +6384,100 @@ export class ServiceWindowMessageBatchPushResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: ServiceWindowMessageBatchPushResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TwoPhaseCommitInventoryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TwoPhaseCommitInventoryRequest extends $tea.Model {
+  benefitCode?: string;
+  bizRequestId?: string;
+  executeResult?: boolean;
+  quota?: number;
+  static names(): { [key: string]: string } {
+    return {
+      benefitCode: 'benefitCode',
+      bizRequestId: 'bizRequestId',
+      executeResult: 'executeResult',
+      quota: 'quota',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCode: 'string',
+      bizRequestId: 'string',
+      executeResult: 'boolean',
+      quota: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TwoPhaseCommitInventoryResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TwoPhaseCommitInventoryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: TwoPhaseCommitInventoryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TwoPhaseCommitInventoryResponseBody,
     };
   }
 
@@ -12933,12 +13227,16 @@ export class JoinGroupSetRequestBizDataList extends $tea.Model {
 
 export class ListAvailableBenefitResponseBodyResult extends $tea.Model {
   benefitCode?: string;
+  endTime?: number;
   quota?: number;
+  startTime?: number;
   usedQuota?: number;
   static names(): { [key: string]: string } {
     return {
       benefitCode: 'benefitCode',
+      endTime: 'endTime',
       quota: 'quota',
+      startTime: 'startTime',
       usedQuota: 'usedQuota',
     };
   }
@@ -12946,7 +13244,9 @@ export class ListAvailableBenefitResponseBodyResult extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       benefitCode: 'string',
+      endTime: 'number',
       quota: 'number',
+      startTime: 'number',
       usedQuota: 'number',
     };
   }
@@ -15103,6 +15403,80 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddRelationMetaFieldHeaders({ });
     return await this.addRelationMetaFieldWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 追加客户数据权限
+   *
+   * @param request AppendCustomerDataAuthRequest
+   * @param headers AppendCustomerDataAuthHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AppendCustomerDataAuthResponse
+   */
+  async appendCustomerDataAuthWithOptions(request: AppendCustomerDataAuthRequest, headers: AppendCustomerDataAuthHeaders, runtime: $Util.RuntimeOptions): Promise<AppendCustomerDataAuthResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.customerIds)) {
+      body["customerIds"] = request.customerIds;
+    }
+
+    if (!Util.isUnset(request.dataAuthUserIds)) {
+      body["dataAuthUserIds"] = request.dataAuthUserIds;
+    }
+
+    if (!Util.isUnset(request.formCode)) {
+      body["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.operateUserId)) {
+      body["operateUserId"] = request.operateUserId;
+    }
+
+    if (!Util.isUnset(request.relationType)) {
+      body["relationType"] = request.relationType;
+    }
+
+    if (!Util.isUnset(request.roleType)) {
+      body["roleType"] = request.roleType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AppendCustomerDataAuth",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customers/dataAuth/append`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AppendCustomerDataAuthResponse>(await this.execute(params, req, runtime), new AppendCustomerDataAuthResponse({}));
+  }
+
+  /**
+   * @summary 追加客户数据权限
+   *
+   * @param request AppendCustomerDataAuthRequest
+   * @return AppendCustomerDataAuthResponse
+   */
+  async appendCustomerDataAuth(request: AppendCustomerDataAuthRequest): Promise<AppendCustomerDataAuthResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AppendCustomerDataAuthHeaders({ });
+    return await this.appendCustomerDataAuthWithOptions(request, headers, runtime);
   }
 
   /**
@@ -17760,6 +18134,80 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 覆盖更新客户数据权限
+   *
+   * @param request OverrideUpdateCustomerDataAuthRequest
+   * @param headers OverrideUpdateCustomerDataAuthHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OverrideUpdateCustomerDataAuthResponse
+   */
+  async overrideUpdateCustomerDataAuthWithOptions(request: OverrideUpdateCustomerDataAuthRequest, headers: OverrideUpdateCustomerDataAuthHeaders, runtime: $Util.RuntimeOptions): Promise<OverrideUpdateCustomerDataAuthResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.customerIds)) {
+      body["customerIds"] = request.customerIds;
+    }
+
+    if (!Util.isUnset(request.dataAuthUserIds)) {
+      body["dataAuthUserIds"] = request.dataAuthUserIds;
+    }
+
+    if (!Util.isUnset(request.formCode)) {
+      body["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.operateUserId)) {
+      body["operateUserId"] = request.operateUserId;
+    }
+
+    if (!Util.isUnset(request.relationType)) {
+      body["relationType"] = request.relationType;
+    }
+
+    if (!Util.isUnset(request.roleType)) {
+      body["roleType"] = request.roleType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "OverrideUpdateCustomerDataAuth",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customers/dataAuth/overrideUpdate`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OverrideUpdateCustomerDataAuthResponse>(await this.execute(params, req, runtime), new OverrideUpdateCustomerDataAuthResponse({}));
+  }
+
+  /**
+   * @summary 覆盖更新客户数据权限
+   *
+   * @param request OverrideUpdateCustomerDataAuthRequest
+   * @return OverrideUpdateCustomerDataAuthResponse
+   */
+  async overrideUpdateCustomerDataAuth(request: OverrideUpdateCustomerDataAuthRequest): Promise<OverrideUpdateCustomerDataAuthResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OverrideUpdateCustomerDataAuthHeaders({ });
+    return await this.overrideUpdateCustomerDataAuthWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 分页获取全量客户数据，根据不同的类型可以获取私海个人客户、企业客户，以及公海个人客户、企业客户，最多一次可获取100条数据
    *
    * @param request QueryAllCustomerRequest
@@ -18705,6 +19153,72 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ServiceWindowMessageBatchPushHeaders({ });
     return await this.serviceWindowMessageBatchPushWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 二阶段提交权益库存结果
+   *
+   * @param request TwoPhaseCommitInventoryRequest
+   * @param headers TwoPhaseCommitInventoryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return TwoPhaseCommitInventoryResponse
+   */
+  async twoPhaseCommitInventoryWithOptions(request: TwoPhaseCommitInventoryRequest, headers: TwoPhaseCommitInventoryHeaders, runtime: $Util.RuntimeOptions): Promise<TwoPhaseCommitInventoryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitCode)) {
+      body["benefitCode"] = request.benefitCode;
+    }
+
+    if (!Util.isUnset(request.bizRequestId)) {
+      body["bizRequestId"] = request.bizRequestId;
+    }
+
+    if (!Util.isUnset(request.executeResult)) {
+      body["executeResult"] = request.executeResult;
+    }
+
+    if (!Util.isUnset(request.quota)) {
+      body["quota"] = request.quota;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "TwoPhaseCommitInventory",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/benefitInventories/twoPhases/commit`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TwoPhaseCommitInventoryResponse>(await this.execute(params, req, runtime), new TwoPhaseCommitInventoryResponse({}));
+  }
+
+  /**
+   * @summary 二阶段提交权益库存结果
+   *
+   * @param request TwoPhaseCommitInventoryRequest
+   * @return TwoPhaseCommitInventoryResponse
+   */
+  async twoPhaseCommitInventory(request: TwoPhaseCommitInventoryRequest): Promise<TwoPhaseCommitInventoryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TwoPhaseCommitInventoryHeaders({ });
+    return await this.twoPhaseCommitInventoryWithOptions(request, headers, runtime);
   }
 
   /**
