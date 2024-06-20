@@ -9049,6 +9049,7 @@ class GroupUpdateRequest(TeaModel):
         forbid_hide_out_side_address: bool = None,
         free_check_setting: GroupUpdateRequestFreeCheckSetting = None,
         free_check_type_id: int = None,
+        freecheck_day_start_min_offset: int = None,
         group_id: int = None,
         group_name: str = None,
         manager_list: List[str] = None,
@@ -9081,6 +9082,7 @@ class GroupUpdateRequest(TeaModel):
         self.forbid_hide_out_side_address = forbid_hide_out_side_address
         self.free_check_setting = free_check_setting
         self.free_check_type_id = free_check_type_id
+        self.freecheck_day_start_min_offset = freecheck_day_start_min_offset
         self.group_id = group_id
         self.group_name = group_name
         self.manager_list = manager_list
@@ -9147,6 +9149,8 @@ class GroupUpdateRequest(TeaModel):
             result['freeCheckSetting'] = self.free_check_setting.to_map()
         if self.free_check_type_id is not None:
             result['freeCheckTypeId'] = self.free_check_type_id
+        if self.freecheck_day_start_min_offset is not None:
+            result['freecheckDayStartMinOffset'] = self.freecheck_day_start_min_offset
         if self.group_id is not None:
             result['groupId'] = self.group_id
         if self.group_name is not None:
@@ -9218,6 +9222,8 @@ class GroupUpdateRequest(TeaModel):
             self.free_check_setting = temp_model.from_map(m['freeCheckSetting'])
         if m.get('freeCheckTypeId') is not None:
             self.free_check_type_id = m.get('freeCheckTypeId')
+        if m.get('freecheckDayStartMinOffset') is not None:
+            self.freecheck_day_start_min_offset = m.get('freecheckDayStartMinOffset')
         if m.get('groupId') is not None:
             self.group_id = m.get('groupId')
         if m.get('groupName') is not None:

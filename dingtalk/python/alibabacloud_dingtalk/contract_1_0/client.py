@@ -663,6 +663,128 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.EsignSyncEventHeaders()
         return await self.esign_sync_event_with_options_async(request, headers, runtime)
 
+    def finish_review_order_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.FinishReviewOrderRequest,
+        headers: dingtalkcontract__1__0_models.FinishReviewOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.FinishReviewOrderResponse:
+        """
+        @summary 完成工单审查接口
+        
+        @param request: FinishReviewOrderRequest
+        @param headers: FinishReviewOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FinishReviewOrderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_files):
+            body['endFiles'] = request.end_files
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.order_id):
+            body['orderId'] = request.order_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='FinishReviewOrder',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/reviews/finish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.FinishReviewOrderResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def finish_review_order_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.FinishReviewOrderRequest,
+        headers: dingtalkcontract__1__0_models.FinishReviewOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.FinishReviewOrderResponse:
+        """
+        @summary 完成工单审查接口
+        
+        @param request: FinishReviewOrderRequest
+        @param headers: FinishReviewOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FinishReviewOrderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_files):
+            body['endFiles'] = request.end_files
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.order_id):
+            body['orderId'] = request.order_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='FinishReviewOrder',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/reviews/finish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.FinishReviewOrderResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def finish_review_order(
+        self,
+        request: dingtalkcontract__1__0_models.FinishReviewOrderRequest,
+    ) -> dingtalkcontract__1__0_models.FinishReviewOrderResponse:
+        """
+        @summary 完成工单审查接口
+        
+        @param request: FinishReviewOrderRequest
+        @return: FinishReviewOrderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.FinishReviewOrderHeaders()
+        return self.finish_review_order_with_options(request, headers, runtime)
+
+    async def finish_review_order_async(
+        self,
+        request: dingtalkcontract__1__0_models.FinishReviewOrderRequest,
+    ) -> dingtalkcontract__1__0_models.FinishReviewOrderResponse:
+        """
+        @summary 完成工单审查接口
+        
+        @param request: FinishReviewOrderRequest
+        @return: FinishReviewOrderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.FinishReviewOrderHeaders()
+        return await self.finish_review_order_with_options_async(request, headers, runtime)
+
     def query_advanced_contract_version_with_options(
         self,
         request: dingtalkcontract__1__0_models.QueryAdvancedContractVersionRequest,

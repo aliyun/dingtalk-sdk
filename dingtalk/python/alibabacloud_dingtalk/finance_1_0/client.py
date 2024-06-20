@@ -1355,6 +1355,172 @@ class Client(OpenApiClient):
         headers = dingtalkfinance__1__0_models.DecodePayCodeHeaders()
         return await self.decode_pay_code_with_options_async(request, headers, runtime)
 
+    def finance_loan_notify_register_with_options(
+        self,
+        request: dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterRequest,
+        headers: dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterResponse:
+        """
+        @summary 企业金融助贷业务进件通知接口
+        
+        @param request: FinanceLoanNotifyRegisterRequest
+        @param headers: FinanceLoanNotifyRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FinanceLoanNotifyRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.complete_time):
+            body['completeTime'] = request.complete_time
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.id_card_no):
+            body['idCardNo'] = request.id_card_no
+        if not UtilClient.is_unset(request.open_channel_name):
+            body['openChannelName'] = request.open_channel_name
+        if not UtilClient.is_unset(request.open_product_code):
+            body['openProductCode'] = request.open_product_code
+        if not UtilClient.is_unset(request.open_product_name):
+            body['openProductName'] = request.open_product_name
+        if not UtilClient.is_unset(request.open_product_type):
+            body['openProductType'] = request.open_product_type
+        if not UtilClient.is_unset(request.processing_status):
+            body['processingStatus'] = request.processing_status
+        if not UtilClient.is_unset(request.refuse_code):
+            body['refuseCode'] = request.refuse_code
+        if not UtilClient.is_unset(request.refuse_reason):
+            body['refuseReason'] = request.refuse_reason
+        if not UtilClient.is_unset(request.register_no):
+            body['registerNo'] = request.register_no
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.submit_time):
+            body['submitTime'] = request.submit_time
+        if not UtilClient.is_unset(request.user_mobile):
+            body['userMobile'] = request.user_mobile
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='FinanceLoanNotifyRegister',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/loans/notifications/register',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def finance_loan_notify_register_with_options_async(
+        self,
+        request: dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterRequest,
+        headers: dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterResponse:
+        """
+        @summary 企业金融助贷业务进件通知接口
+        
+        @param request: FinanceLoanNotifyRegisterRequest
+        @param headers: FinanceLoanNotifyRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FinanceLoanNotifyRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.complete_time):
+            body['completeTime'] = request.complete_time
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.id_card_no):
+            body['idCardNo'] = request.id_card_no
+        if not UtilClient.is_unset(request.open_channel_name):
+            body['openChannelName'] = request.open_channel_name
+        if not UtilClient.is_unset(request.open_product_code):
+            body['openProductCode'] = request.open_product_code
+        if not UtilClient.is_unset(request.open_product_name):
+            body['openProductName'] = request.open_product_name
+        if not UtilClient.is_unset(request.open_product_type):
+            body['openProductType'] = request.open_product_type
+        if not UtilClient.is_unset(request.processing_status):
+            body['processingStatus'] = request.processing_status
+        if not UtilClient.is_unset(request.refuse_code):
+            body['refuseCode'] = request.refuse_code
+        if not UtilClient.is_unset(request.refuse_reason):
+            body['refuseReason'] = request.refuse_reason
+        if not UtilClient.is_unset(request.register_no):
+            body['registerNo'] = request.register_no
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.submit_time):
+            body['submitTime'] = request.submit_time
+        if not UtilClient.is_unset(request.user_mobile):
+            body['userMobile'] = request.user_mobile
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='FinanceLoanNotifyRegister',
+            version='finance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/finance/loans/notifications/register',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def finance_loan_notify_register(
+        self,
+        request: dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterRequest,
+    ) -> dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterResponse:
+        """
+        @summary 企业金融助贷业务进件通知接口
+        
+        @param request: FinanceLoanNotifyRegisterRequest
+        @return: FinanceLoanNotifyRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterHeaders()
+        return self.finance_loan_notify_register_with_options(request, headers, runtime)
+
+    async def finance_loan_notify_register_async(
+        self,
+        request: dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterRequest,
+    ) -> dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterResponse:
+        """
+        @summary 企业金融助贷业务进件通知接口
+        
+        @param request: FinanceLoanNotifyRegisterRequest
+        @return: FinanceLoanNotifyRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkfinance__1__0_models.FinanceLoanNotifyRegisterHeaders()
+        return await self.finance_loan_notify_register_with_options_async(request, headers, runtime)
+
     def modify_sub_institution_with_options(
         self,
         request: dingtalkfinance__1__0_models.ModifySubInstitutionRequest,

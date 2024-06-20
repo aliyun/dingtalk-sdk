@@ -1528,6 +1528,168 @@ class AddRelationMetaFieldResponse(TeaModel):
         return self
 
 
+class AppendCustomerDataAuthHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AppendCustomerDataAuthRequest(TeaModel):
+    def __init__(
+        self,
+        customer_ids: List[str] = None,
+        data_auth_user_ids: List[str] = None,
+        form_code: str = None,
+        operate_user_id: str = None,
+        relation_type: str = None,
+        role_type: str = None,
+    ):
+        # This parameter is required.
+        self.customer_ids = customer_ids
+        # This parameter is required.
+        self.data_auth_user_ids = data_auth_user_ids
+        self.form_code = form_code
+        # This parameter is required.
+        self.operate_user_id = operate_user_id
+        self.relation_type = relation_type
+        # This parameter is required.
+        self.role_type = role_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customer_ids is not None:
+            result['customerIds'] = self.customer_ids
+        if self.data_auth_user_ids is not None:
+            result['dataAuthUserIds'] = self.data_auth_user_ids
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.role_type is not None:
+            result['roleType'] = self.role_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customerIds') is not None:
+            self.customer_ids = m.get('customerIds')
+        if m.get('dataAuthUserIds') is not None:
+            self.data_auth_user_ids = m.get('dataAuthUserIds')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('roleType') is not None:
+            self.role_type = m.get('roleType')
+        return self
+
+
+class AppendCustomerDataAuthResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class AppendCustomerDataAuthResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AppendCustomerDataAuthResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AppendCustomerDataAuthResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchAddContactsHeaders(TeaModel):
     def __init__(
         self,
@@ -18935,12 +19097,16 @@ class ListAvailableBenefitResponseBodyResult(TeaModel):
     def __init__(
         self,
         benefit_code: str = None,
+        end_time: int = None,
         quota: int = None,
+        start_time: int = None,
         used_quota: int = None,
     ):
         # This parameter is required.
         self.benefit_code = benefit_code
+        self.end_time = end_time
         self.quota = quota
+        self.start_time = start_time
         self.used_quota = used_quota
 
     def validate(self):
@@ -18954,8 +19120,12 @@ class ListAvailableBenefitResponseBodyResult(TeaModel):
         result = dict()
         if self.benefit_code is not None:
             result['benefitCode'] = self.benefit_code
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
         if self.quota is not None:
             result['quota'] = self.quota
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
         if self.used_quota is not None:
             result['usedQuota'] = self.used_quota
         return result
@@ -18964,8 +19134,12 @@ class ListAvailableBenefitResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('benefitCode') is not None:
             self.benefit_code = m.get('benefitCode')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
         if m.get('quota') is not None:
             self.quota = m.get('quota')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
         if m.get('usedQuota') is not None:
             self.used_quota = m.get('usedQuota')
         return self
@@ -20065,6 +20239,168 @@ class ListGroupSetResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListGroupSetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class OverrideUpdateCustomerDataAuthHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class OverrideUpdateCustomerDataAuthRequest(TeaModel):
+    def __init__(
+        self,
+        customer_ids: List[str] = None,
+        data_auth_user_ids: List[str] = None,
+        form_code: str = None,
+        operate_user_id: str = None,
+        relation_type: str = None,
+        role_type: str = None,
+    ):
+        # This parameter is required.
+        self.customer_ids = customer_ids
+        # This parameter is required.
+        self.data_auth_user_ids = data_auth_user_ids
+        self.form_code = form_code
+        # This parameter is required.
+        self.operate_user_id = operate_user_id
+        self.relation_type = relation_type
+        # This parameter is required.
+        self.role_type = role_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customer_ids is not None:
+            result['customerIds'] = self.customer_ids
+        if self.data_auth_user_ids is not None:
+            result['dataAuthUserIds'] = self.data_auth_user_ids
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        if self.relation_type is not None:
+            result['relationType'] = self.relation_type
+        if self.role_type is not None:
+            result['roleType'] = self.role_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customerIds') is not None:
+            self.customer_ids = m.get('customerIds')
+        if m.get('dataAuthUserIds') is not None:
+            self.data_auth_user_ids = m.get('dataAuthUserIds')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        if m.get('relationType') is not None:
+            self.relation_type = m.get('relationType')
+        if m.get('roleType') is not None:
+            self.role_type = m.get('roleType')
+        return self
+
+
+class OverrideUpdateCustomerDataAuthResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class OverrideUpdateCustomerDataAuthResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: OverrideUpdateCustomerDataAuthResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = OverrideUpdateCustomerDataAuthResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -24280,6 +24616,155 @@ class ServiceWindowMessageBatchPushResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ServiceWindowMessageBatchPushResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TwoPhaseCommitInventoryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TwoPhaseCommitInventoryRequest(TeaModel):
+    def __init__(
+        self,
+        benefit_code: str = None,
+        biz_request_id: str = None,
+        execute_result: bool = None,
+        quota: int = None,
+    ):
+        # This parameter is required.
+        self.benefit_code = benefit_code
+        # This parameter is required.
+        self.biz_request_id = biz_request_id
+        # This parameter is required.
+        self.execute_result = execute_result
+        self.quota = quota
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.benefit_code is not None:
+            result['benefitCode'] = self.benefit_code
+        if self.biz_request_id is not None:
+            result['bizRequestId'] = self.biz_request_id
+        if self.execute_result is not None:
+            result['executeResult'] = self.execute_result
+        if self.quota is not None:
+            result['quota'] = self.quota
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('benefitCode') is not None:
+            self.benefit_code = m.get('benefitCode')
+        if m.get('bizRequestId') is not None:
+            self.biz_request_id = m.get('bizRequestId')
+        if m.get('executeResult') is not None:
+            self.execute_result = m.get('executeResult')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        return self
+
+
+class TwoPhaseCommitInventoryResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class TwoPhaseCommitInventoryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TwoPhaseCommitInventoryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TwoPhaseCommitInventoryResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

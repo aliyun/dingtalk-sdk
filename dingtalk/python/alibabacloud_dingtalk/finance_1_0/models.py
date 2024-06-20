@@ -3416,6 +3416,218 @@ class DecodePayCodeResponse(TeaModel):
         return self
 
 
+class FinanceLoanNotifyRegisterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class FinanceLoanNotifyRegisterRequest(TeaModel):
+    def __init__(
+        self,
+        complete_time: str = None,
+        extension: str = None,
+        id_card_no: str = None,
+        open_channel_name: str = None,
+        open_product_code: str = None,
+        open_product_name: str = None,
+        open_product_type: str = None,
+        processing_status: str = None,
+        refuse_code: str = None,
+        refuse_reason: str = None,
+        register_no: str = None,
+        status: str = None,
+        submit_time: str = None,
+        user_mobile: str = None,
+    ):
+        self.complete_time = complete_time
+        self.extension = extension
+        self.id_card_no = id_card_no
+        self.open_channel_name = open_channel_name
+        self.open_product_code = open_product_code
+        self.open_product_name = open_product_name
+        self.open_product_type = open_product_type
+        self.processing_status = processing_status
+        self.refuse_code = refuse_code
+        self.refuse_reason = refuse_reason
+        self.register_no = register_no
+        self.status = status
+        self.submit_time = submit_time
+        self.user_mobile = user_mobile
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.complete_time is not None:
+            result['completeTime'] = self.complete_time
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.id_card_no is not None:
+            result['idCardNo'] = self.id_card_no
+        if self.open_channel_name is not None:
+            result['openChannelName'] = self.open_channel_name
+        if self.open_product_code is not None:
+            result['openProductCode'] = self.open_product_code
+        if self.open_product_name is not None:
+            result['openProductName'] = self.open_product_name
+        if self.open_product_type is not None:
+            result['openProductType'] = self.open_product_type
+        if self.processing_status is not None:
+            result['processingStatus'] = self.processing_status
+        if self.refuse_code is not None:
+            result['refuseCode'] = self.refuse_code
+        if self.refuse_reason is not None:
+            result['refuseReason'] = self.refuse_reason
+        if self.register_no is not None:
+            result['registerNo'] = self.register_no
+        if self.status is not None:
+            result['status'] = self.status
+        if self.submit_time is not None:
+            result['submitTime'] = self.submit_time
+        if self.user_mobile is not None:
+            result['userMobile'] = self.user_mobile
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('completeTime') is not None:
+            self.complete_time = m.get('completeTime')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('idCardNo') is not None:
+            self.id_card_no = m.get('idCardNo')
+        if m.get('openChannelName') is not None:
+            self.open_channel_name = m.get('openChannelName')
+        if m.get('openProductCode') is not None:
+            self.open_product_code = m.get('openProductCode')
+        if m.get('openProductName') is not None:
+            self.open_product_name = m.get('openProductName')
+        if m.get('openProductType') is not None:
+            self.open_product_type = m.get('openProductType')
+        if m.get('processingStatus') is not None:
+            self.processing_status = m.get('processingStatus')
+        if m.get('refuseCode') is not None:
+            self.refuse_code = m.get('refuseCode')
+        if m.get('refuseReason') is not None:
+            self.refuse_reason = m.get('refuseReason')
+        if m.get('registerNo') is not None:
+            self.register_no = m.get('registerNo')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('submitTime') is not None:
+            self.submit_time = m.get('submitTime')
+        if m.get('userMobile') is not None:
+            self.user_mobile = m.get('userMobile')
+        return self
+
+
+class FinanceLoanNotifyRegisterResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: str = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class FinanceLoanNotifyRegisterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: FinanceLoanNotifyRegisterResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = FinanceLoanNotifyRegisterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ModifySubInstitutionHeaders(TeaModel):
     def __init__(
         self,

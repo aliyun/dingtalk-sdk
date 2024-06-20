@@ -200,7 +200,7 @@ class GetKnowledgeListRequest(TeaModel):
         return self
 
 
-class GetKnowledgeListResponseBodyKnowledgeList(TeaModel):
+class GetKnowledgeListResponseBodyResultKnowledgeList(TeaModel):
     def __init__(
         self,
         doc_format: str = None,
@@ -251,10 +251,10 @@ class GetKnowledgeListResponseBodyKnowledgeList(TeaModel):
         return self
 
 
-class GetKnowledgeListResponseBody(TeaModel):
+class GetKnowledgeListResponseBodyResult(TeaModel):
     def __init__(
         self,
-        knowledge_list: List[GetKnowledgeListResponseBodyKnowledgeList] = None,
+        knowledge_list: List[GetKnowledgeListResponseBodyResultKnowledgeList] = None,
     ):
         self.knowledge_list = knowledge_list
 
@@ -281,8 +281,43 @@ class GetKnowledgeListResponseBody(TeaModel):
         self.knowledge_list = []
         if m.get('knowledgeList') is not None:
             for k in m.get('knowledgeList'):
-                temp_model = GetKnowledgeListResponseBodyKnowledgeList()
+                temp_model = GetKnowledgeListResponseBodyResultKnowledgeList()
                 self.knowledge_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetKnowledgeListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetKnowledgeListResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetKnowledgeListResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
         return self
 
 

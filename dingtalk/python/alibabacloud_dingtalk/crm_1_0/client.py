@@ -825,6 +825,140 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.AddRelationMetaFieldHeaders()
         return await self.add_relation_meta_field_with_options_async(request, headers, runtime)
 
+    def append_customer_data_auth_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.AppendCustomerDataAuthRequest,
+        headers: dingtalkcrm__1__0_models.AppendCustomerDataAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.AppendCustomerDataAuthResponse:
+        """
+        @summary 追加客户数据权限
+        
+        @param request: AppendCustomerDataAuthRequest
+        @param headers: AppendCustomerDataAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AppendCustomerDataAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.customer_ids):
+            body['customerIds'] = request.customer_ids
+        if not UtilClient.is_unset(request.data_auth_user_ids):
+            body['dataAuthUserIds'] = request.data_auth_user_ids
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            body['relationType'] = request.relation_type
+        if not UtilClient.is_unset(request.role_type):
+            body['roleType'] = request.role_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AppendCustomerDataAuth',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customers/dataAuth/append',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.AppendCustomerDataAuthResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def append_customer_data_auth_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.AppendCustomerDataAuthRequest,
+        headers: dingtalkcrm__1__0_models.AppendCustomerDataAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.AppendCustomerDataAuthResponse:
+        """
+        @summary 追加客户数据权限
+        
+        @param request: AppendCustomerDataAuthRequest
+        @param headers: AppendCustomerDataAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AppendCustomerDataAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.customer_ids):
+            body['customerIds'] = request.customer_ids
+        if not UtilClient.is_unset(request.data_auth_user_ids):
+            body['dataAuthUserIds'] = request.data_auth_user_ids
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            body['relationType'] = request.relation_type
+        if not UtilClient.is_unset(request.role_type):
+            body['roleType'] = request.role_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AppendCustomerDataAuth',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customers/dataAuth/append',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.AppendCustomerDataAuthResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def append_customer_data_auth(
+        self,
+        request: dingtalkcrm__1__0_models.AppendCustomerDataAuthRequest,
+    ) -> dingtalkcrm__1__0_models.AppendCustomerDataAuthResponse:
+        """
+        @summary 追加客户数据权限
+        
+        @param request: AppendCustomerDataAuthRequest
+        @return: AppendCustomerDataAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.AppendCustomerDataAuthHeaders()
+        return self.append_customer_data_auth_with_options(request, headers, runtime)
+
+    async def append_customer_data_auth_async(
+        self,
+        request: dingtalkcrm__1__0_models.AppendCustomerDataAuthRequest,
+    ) -> dingtalkcrm__1__0_models.AppendCustomerDataAuthResponse:
+        """
+        @summary 追加客户数据权限
+        
+        @param request: AppendCustomerDataAuthRequest
+        @return: AppendCustomerDataAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.AppendCustomerDataAuthHeaders()
+        return await self.append_customer_data_auth_with_options_async(request, headers, runtime)
+
     def batch_add_contacts_with_options(
         self,
         request: dingtalkcrm__1__0_models.BatchAddContactsRequest,
@@ -6109,6 +6243,140 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.ListGroupSetHeaders()
         return await self.list_group_set_with_options_async(request, headers, runtime)
 
+    def override_update_customer_data_auth_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthRequest,
+        headers: dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthResponse:
+        """
+        @summary 覆盖更新客户数据权限
+        
+        @param request: OverrideUpdateCustomerDataAuthRequest
+        @param headers: OverrideUpdateCustomerDataAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OverrideUpdateCustomerDataAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.customer_ids):
+            body['customerIds'] = request.customer_ids
+        if not UtilClient.is_unset(request.data_auth_user_ids):
+            body['dataAuthUserIds'] = request.data_auth_user_ids
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            body['relationType'] = request.relation_type
+        if not UtilClient.is_unset(request.role_type):
+            body['roleType'] = request.role_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OverrideUpdateCustomerDataAuth',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customers/dataAuth/overrideUpdate',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def override_update_customer_data_auth_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthRequest,
+        headers: dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthResponse:
+        """
+        @summary 覆盖更新客户数据权限
+        
+        @param request: OverrideUpdateCustomerDataAuthRequest
+        @param headers: OverrideUpdateCustomerDataAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OverrideUpdateCustomerDataAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.customer_ids):
+            body['customerIds'] = request.customer_ids
+        if not UtilClient.is_unset(request.data_auth_user_ids):
+            body['dataAuthUserIds'] = request.data_auth_user_ids
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.relation_type):
+            body['relationType'] = request.relation_type
+        if not UtilClient.is_unset(request.role_type):
+            body['roleType'] = request.role_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OverrideUpdateCustomerDataAuth',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/customers/dataAuth/overrideUpdate',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def override_update_customer_data_auth(
+        self,
+        request: dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthRequest,
+    ) -> dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthResponse:
+        """
+        @summary 覆盖更新客户数据权限
+        
+        @param request: OverrideUpdateCustomerDataAuthRequest
+        @return: OverrideUpdateCustomerDataAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthHeaders()
+        return self.override_update_customer_data_auth_with_options(request, headers, runtime)
+
+    async def override_update_customer_data_auth_async(
+        self,
+        request: dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthRequest,
+    ) -> dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthResponse:
+        """
+        @summary 覆盖更新客户数据权限
+        
+        @param request: OverrideUpdateCustomerDataAuthRequest
+        @return: OverrideUpdateCustomerDataAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.OverrideUpdateCustomerDataAuthHeaders()
+        return await self.override_update_customer_data_auth_with_options_async(request, headers, runtime)
+
     def query_all_customer_with_options(
         self,
         request: dingtalkcrm__1__0_models.QueryAllCustomerRequest,
@@ -8020,6 +8288,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcrm__1__0_models.ServiceWindowMessageBatchPushHeaders()
         return await self.service_window_message_batch_push_with_options_async(request, headers, runtime)
+
+    def two_phase_commit_inventory_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.TwoPhaseCommitInventoryRequest,
+        headers: dingtalkcrm__1__0_models.TwoPhaseCommitInventoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.TwoPhaseCommitInventoryResponse:
+        """
+        @summary 二阶段提交权益库存结果
+        
+        @param request: TwoPhaseCommitInventoryRequest
+        @param headers: TwoPhaseCommitInventoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TwoPhaseCommitInventoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            body['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            body['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.execute_result):
+            body['executeResult'] = request.execute_result
+        if not UtilClient.is_unset(request.quota):
+            body['quota'] = request.quota
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TwoPhaseCommitInventory',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefitInventories/twoPhases/commit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.TwoPhaseCommitInventoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def two_phase_commit_inventory_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.TwoPhaseCommitInventoryRequest,
+        headers: dingtalkcrm__1__0_models.TwoPhaseCommitInventoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.TwoPhaseCommitInventoryResponse:
+        """
+        @summary 二阶段提交权益库存结果
+        
+        @param request: TwoPhaseCommitInventoryRequest
+        @param headers: TwoPhaseCommitInventoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TwoPhaseCommitInventoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            body['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            body['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.execute_result):
+            body['executeResult'] = request.execute_result
+        if not UtilClient.is_unset(request.quota):
+            body['quota'] = request.quota
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TwoPhaseCommitInventory',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/benefitInventories/twoPhases/commit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.TwoPhaseCommitInventoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def two_phase_commit_inventory(
+        self,
+        request: dingtalkcrm__1__0_models.TwoPhaseCommitInventoryRequest,
+    ) -> dingtalkcrm__1__0_models.TwoPhaseCommitInventoryResponse:
+        """
+        @summary 二阶段提交权益库存结果
+        
+        @param request: TwoPhaseCommitInventoryRequest
+        @return: TwoPhaseCommitInventoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.TwoPhaseCommitInventoryHeaders()
+        return self.two_phase_commit_inventory_with_options(request, headers, runtime)
+
+    async def two_phase_commit_inventory_async(
+        self,
+        request: dingtalkcrm__1__0_models.TwoPhaseCommitInventoryRequest,
+    ) -> dingtalkcrm__1__0_models.TwoPhaseCommitInventoryResponse:
+        """
+        @summary 二阶段提交权益库存结果
+        
+        @param request: TwoPhaseCommitInventoryRequest
+        @return: TwoPhaseCommitInventoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.TwoPhaseCommitInventoryHeaders()
+        return await self.two_phase_commit_inventory_with_options_async(request, headers, runtime)
 
     def update_crm_personal_customer_with_options(
         self,

@@ -4933,6 +4933,262 @@ class Client(OpenApiClient):
         headers = dingtalkdatacenter__1__0_models.QueryGeneralDataServiceHeaders()
         return await self.query_general_data_service_with_options_async(request, headers, runtime)
 
+    def query_general_data_service_batch_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchResponse:
+        """
+        @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+        
+        @param request: QueryGeneralDataServiceBatchRequest
+        @param headers: QueryGeneralDataServiceBatchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGeneralDataServiceBatchResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.service_id):
+            body['serviceId'] = request.service_id
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryGeneralDataServiceBatch',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/generalDataServicesBatch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_general_data_service_batch_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchResponse:
+        """
+        @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+        
+        @param request: QueryGeneralDataServiceBatchRequest
+        @param headers: QueryGeneralDataServiceBatchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGeneralDataServiceBatchResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.service_id):
+            body['serviceId'] = request.service_id
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryGeneralDataServiceBatch',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/generalDataServicesBatch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_general_data_service_batch(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchResponse:
+        """
+        @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+        
+        @param request: QueryGeneralDataServiceBatchRequest
+        @return: QueryGeneralDataServiceBatchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchHeaders()
+        return self.query_general_data_service_batch_with_options(request, headers, runtime)
+
+    async def query_general_data_service_batch_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchResponse:
+        """
+        @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+        
+        @param request: QueryGeneralDataServiceBatchRequest
+        @return: QueryGeneralDataServiceBatchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryGeneralDataServiceBatchHeaders()
+        return await self.query_general_data_service_batch_with_options_async(request, headers, runtime)
+
+    def query_general_data_update_date_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateResponse:
+        """
+        @summary 数据资产平台数据服务接口(查询数据更新日期)
+        
+        @param request: QueryGeneralDataUpdateDateRequest
+        @param headers: QueryGeneralDataUpdateDateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGeneralDataUpdateDateResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.service_id):
+            query['serviceId'] = request.service_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryGeneralDataUpdateDate',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/queryDataUpdateDates',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_general_data_update_date_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateResponse:
+        """
+        @summary 数据资产平台数据服务接口(查询数据更新日期)
+        
+        @param request: QueryGeneralDataUpdateDateRequest
+        @param headers: QueryGeneralDataUpdateDateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryGeneralDataUpdateDateResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.service_id):
+            query['serviceId'] = request.service_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryGeneralDataUpdateDate',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/queryDataUpdateDates',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_general_data_update_date(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateResponse:
+        """
+        @summary 数据资产平台数据服务接口(查询数据更新日期)
+        
+        @param request: QueryGeneralDataUpdateDateRequest
+        @return: QueryGeneralDataUpdateDateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateHeaders()
+        return self.query_general_data_update_date_with_options(request, headers, runtime)
+
+    async def query_general_data_update_date_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateResponse:
+        """
+        @summary 数据资产平台数据服务接口(查询数据更新日期)
+        
+        @param request: QueryGeneralDataUpdateDateRequest
+        @return: QueryGeneralDataUpdateDateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryGeneralDataUpdateDateHeaders()
+        return await self.query_general_data_update_date_with_options_async(request, headers, runtime)
+
     def query_group_live_statistical_data_with_options(
         self,
         request: dingtalkdatacenter__1__0_models.QueryGroupLiveStatisticalDataRequest,

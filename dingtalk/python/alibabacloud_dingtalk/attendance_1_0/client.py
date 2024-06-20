@@ -3840,6 +3840,8 @@ class Client(OpenApiClient):
             body['freeCheckSetting'] = request.free_check_setting
         if not UtilClient.is_unset(request.free_check_type_id):
             body['freeCheckTypeId'] = request.free_check_type_id
+        if not UtilClient.is_unset(request.freecheck_day_start_min_offset):
+            body['freecheckDayStartMinOffset'] = request.freecheck_day_start_min_offset
         if not UtilClient.is_unset(request.group_id):
             body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.group_name):
@@ -3945,6 +3947,8 @@ class Client(OpenApiClient):
             body['freeCheckSetting'] = request.free_check_setting
         if not UtilClient.is_unset(request.free_check_type_id):
             body['freeCheckTypeId'] = request.free_check_type_id
+        if not UtilClient.is_unset(request.freecheck_day_start_min_offset):
+            body['freecheckDayStartMinOffset'] = request.freecheck_day_start_min_offset
         if not UtilClient.is_unset(request.group_id):
             body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.group_name):
