@@ -115,6 +115,11 @@ class GroupUpdateRequest extends Model
     public $freeCheckTypeId;
 
     /**
+     * @var int
+     */
+    public $freecheckDayStartMinOffset;
+
+    /**
      * @example 123
      *
      * @var int
@@ -231,6 +236,7 @@ class GroupUpdateRequest extends Model
         'forbidHideOutSideAddress'       => 'forbidHideOutSideAddress',
         'freeCheckSetting'               => 'freeCheckSetting',
         'freeCheckTypeId'                => 'freeCheckTypeId',
+        'freecheckDayStartMinOffset'     => 'freecheckDayStartMinOffset',
         'groupId'                        => 'groupId',
         'groupName'                      => 'groupName',
         'managerList'                    => 'managerList',
@@ -300,6 +306,9 @@ class GroupUpdateRequest extends Model
         }
         if (null !== $this->freeCheckTypeId) {
             $res['freeCheckTypeId'] = $this->freeCheckTypeId;
+        }
+        if (null !== $this->freecheckDayStartMinOffset) {
+            $res['freecheckDayStartMinOffset'] = $this->freecheckDayStartMinOffset;
         }
         if (null !== $this->groupId) {
             $res['groupId'] = $this->groupId;
@@ -417,6 +426,9 @@ class GroupUpdateRequest extends Model
         }
         if (isset($map['freeCheckTypeId'])) {
             $model->freeCheckTypeId = $map['freeCheckTypeId'];
+        }
+        if (isset($map['freecheckDayStartMinOffset'])) {
+            $model->freecheckDayStartMinOffset = $map['freecheckDayStartMinOffset'];
         }
         if (isset($map['groupId'])) {
             $model->groupId = $map['groupId'];

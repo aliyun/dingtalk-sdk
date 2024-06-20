@@ -124,9 +124,15 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDriveStatisticalDataRe
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryEmployeeTypeStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryEmployeeTypeStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryEmployeeTypeStatisticalDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataServiceBatchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataServiceBatchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataServiceBatchResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataServiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataServiceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataServiceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataUpdateDateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataUpdateDateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataUpdateDateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGroupLiveStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGroupLiveStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGroupLiveStatisticalDataResponse;
@@ -2831,6 +2837,141 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryGeneralDataServiceHeaders([]);
 
         return $this->queryGeneralDataServiceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+     *  *
+     * @param QueryGeneralDataServiceBatchRequest $request QueryGeneralDataServiceBatchRequest
+     * @param QueryGeneralDataServiceBatchHeaders $headers QueryGeneralDataServiceBatchHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryGeneralDataServiceBatchResponse QueryGeneralDataServiceBatchResponse
+     */
+    public function queryGeneralDataServiceBatchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptIds)) {
+            $body['deptIds'] = $request->deptIds;
+        }
+        if (!Utils::isUnset($request->endDate)) {
+            $body['endDate'] = $request->endDate;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->serviceId)) {
+            $body['serviceId'] = $request->serviceId;
+        }
+        if (!Utils::isUnset($request->startDate)) {
+            $body['startDate'] = $request->startDate;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryGeneralDataServiceBatch',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/generalDataServicesBatch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryGeneralDataServiceBatchResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+     *  *
+     * @param QueryGeneralDataServiceBatchRequest $request QueryGeneralDataServiceBatchRequest
+     *
+     * @return QueryGeneralDataServiceBatchResponse QueryGeneralDataServiceBatchResponse
+     */
+    public function queryGeneralDataServiceBatch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGeneralDataServiceBatchHeaders([]);
+
+        return $this->queryGeneralDataServiceBatchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 数据资产平台数据服务接口(查询数据更新日期)
+     *  *
+     * @param QueryGeneralDataUpdateDateRequest $request QueryGeneralDataUpdateDateRequest
+     * @param QueryGeneralDataUpdateDateHeaders $headers QueryGeneralDataUpdateDateHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryGeneralDataUpdateDateResponse QueryGeneralDataUpdateDateResponse
+     */
+    public function queryGeneralDataUpdateDateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->serviceId)) {
+            $query['serviceId'] = $request->serviceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryGeneralDataUpdateDate',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/queryDataUpdateDates',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryGeneralDataUpdateDateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 数据资产平台数据服务接口(查询数据更新日期)
+     *  *
+     * @param QueryGeneralDataUpdateDateRequest $request QueryGeneralDataUpdateDateRequest
+     *
+     * @return QueryGeneralDataUpdateDateResponse QueryGeneralDataUpdateDateResponse
+     */
+    public function queryGeneralDataUpdateDate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryGeneralDataUpdateDateHeaders([]);
+
+        return $this->queryGeneralDataUpdateDateWithOptions($request, $headers, $runtime);
     }
 
     /**

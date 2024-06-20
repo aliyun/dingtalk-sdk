@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\CreatWithholdingOrderAndPayRes
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\DecodePayCodeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\DecodePayCodeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\DecodePayCodeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\FinanceLoanNotifyRegisterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\FinanceLoanNotifyRegisterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\FinanceLoanNotifyRegisterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ModifySubInstitutionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ModifySubInstitutionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vfinance_1_0\Models\ModifySubInstitutionResponse;
@@ -854,6 +857,102 @@ class Dingtalk extends OpenApiClient
         $headers = new DecodePayCodeHeaders([]);
 
         return $this->decodePayCodeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 企业金融助贷业务进件通知接口
+     *  *
+     * @param FinanceLoanNotifyRegisterRequest $request FinanceLoanNotifyRegisterRequest
+     * @param FinanceLoanNotifyRegisterHeaders $headers FinanceLoanNotifyRegisterHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return FinanceLoanNotifyRegisterResponse FinanceLoanNotifyRegisterResponse
+     */
+    public function financeLoanNotifyRegisterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->completeTime)) {
+            $body['completeTime'] = $request->completeTime;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->idCardNo)) {
+            $body['idCardNo'] = $request->idCardNo;
+        }
+        if (!Utils::isUnset($request->openChannelName)) {
+            $body['openChannelName'] = $request->openChannelName;
+        }
+        if (!Utils::isUnset($request->openProductCode)) {
+            $body['openProductCode'] = $request->openProductCode;
+        }
+        if (!Utils::isUnset($request->openProductName)) {
+            $body['openProductName'] = $request->openProductName;
+        }
+        if (!Utils::isUnset($request->openProductType)) {
+            $body['openProductType'] = $request->openProductType;
+        }
+        if (!Utils::isUnset($request->processingStatus)) {
+            $body['processingStatus'] = $request->processingStatus;
+        }
+        if (!Utils::isUnset($request->refuseCode)) {
+            $body['refuseCode'] = $request->refuseCode;
+        }
+        if (!Utils::isUnset($request->refuseReason)) {
+            $body['refuseReason'] = $request->refuseReason;
+        }
+        if (!Utils::isUnset($request->registerNo)) {
+            $body['registerNo'] = $request->registerNo;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->submitTime)) {
+            $body['submitTime'] = $request->submitTime;
+        }
+        if (!Utils::isUnset($request->userMobile)) {
+            $body['userMobile'] = $request->userMobile;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'FinanceLoanNotifyRegister',
+            'version'     => 'finance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/finance/loans/notifications/register',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return FinanceLoanNotifyRegisterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 企业金融助贷业务进件通知接口
+     *  *
+     * @param FinanceLoanNotifyRegisterRequest $request FinanceLoanNotifyRegisterRequest
+     *
+     * @return FinanceLoanNotifyRegisterResponse FinanceLoanNotifyRegisterResponse
+     */
+    public function financeLoanNotifyRegister($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FinanceLoanNotifyRegisterHeaders([]);
+
+        return $this->financeLoanNotifyRegisterWithOptions($request, $headers, $runtime);
     }
 
     /**

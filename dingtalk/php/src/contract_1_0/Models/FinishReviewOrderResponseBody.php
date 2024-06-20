@@ -2,24 +2,17 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetKnowledgeListResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class GetKnowledgeListResponseBody extends Model
+class FinishReviewOrderResponseBody extends Model
 {
-    /**
-     * @var result
-     */
-    public $result;
-
     /**
      * @var bool
      */
     public $success;
     protected $_name = [
-        'result'  => 'result',
         'success' => 'success',
     ];
 
@@ -30,9 +23,6 @@ class GetKnowledgeListResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
-        }
         if (null !== $this->success) {
             $res['success'] = $this->success;
         }
@@ -43,14 +33,11 @@ class GetKnowledgeListResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return GetKnowledgeListResponseBody
+     * @return FinishReviewOrderResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            $model->result = result::fromMap($map['result']);
-        }
         if (isset($map['success'])) {
             $model->success = $map['success'];
         }

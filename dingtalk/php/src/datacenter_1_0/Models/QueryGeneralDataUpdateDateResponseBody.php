@@ -2,25 +2,24 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetKnowledgeListResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class GetKnowledgeListResponseBody extends Model
+class QueryGeneralDataUpdateDateResponseBody extends Model
 {
-    /**
-     * @var result
-     */
-    public $result;
-
     /**
      * @var bool
      */
     public $success;
+
+    /**
+     * @var string
+     */
+    public $updateDate;
     protected $_name = [
-        'result'  => 'result',
-        'success' => 'success',
+        'success'    => 'success',
+        'updateDate' => 'updateDate',
     ];
 
     public function validate()
@@ -30,11 +29,11 @@ class GetKnowledgeListResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
-        }
         if (null !== $this->success) {
             $res['success'] = $this->success;
+        }
+        if (null !== $this->updateDate) {
+            $res['updateDate'] = $this->updateDate;
         }
 
         return $res;
@@ -43,16 +42,16 @@ class GetKnowledgeListResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return GetKnowledgeListResponseBody
+     * @return QueryGeneralDataUpdateDateResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            $model->result = result::fromMap($map['result']);
-        }
         if (isset($map['success'])) {
             $model->success = $map['success'];
+        }
+        if (isset($map['updateDate'])) {
+            $model->updateDate = $map['updateDate'];
         }
 
         return $model;

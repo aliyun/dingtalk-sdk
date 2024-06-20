@@ -2211,6 +2211,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->freeCheckTypeId)) {
             $body['freeCheckTypeId'] = $request->freeCheckTypeId;
         }
+        if (!Utils::isUnset($request->freecheckDayStartMinOffset)) {
+            $body['freecheckDayStartMinOffset'] = $request->freecheckDayStartMinOffset;
+        }
         if (!Utils::isUnset($request->groupId)) {
             $body['groupId'] = $request->groupId;
         }

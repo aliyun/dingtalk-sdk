@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddMetaModelFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AddRelationMetaFieldResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AppendCustomerDataAuthHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AppendCustomerDataAuthRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\AppendCustomerDataAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddContactsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddContactsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\BatchAddContactsResponse;
@@ -152,6 +155,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListCrmPersonalCustomersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListGroupSetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListGroupSetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ListGroupSetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\OverrideUpdateCustomerDataAuthHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\OverrideUpdateCustomerDataAuthRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\OverrideUpdateCustomerDataAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerResponse;
@@ -200,6 +206,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\SendOfficialAccountSNSMessageRespo
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\ServiceWindowMessageBatchPushResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\TwoPhaseCommitInventoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\TwoPhaseCommitInventoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\TwoPhaseCommitInventoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateCrmPersonalCustomerResponse;
@@ -664,6 +673,78 @@ class Dingtalk extends OpenApiClient
         $headers = new AddRelationMetaFieldHeaders([]);
 
         return $this->addRelationMetaFieldWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 追加客户数据权限
+     *  *
+     * @param AppendCustomerDataAuthRequest $request AppendCustomerDataAuthRequest
+     * @param AppendCustomerDataAuthHeaders $headers AppendCustomerDataAuthHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AppendCustomerDataAuthResponse AppendCustomerDataAuthResponse
+     */
+    public function appendCustomerDataAuthWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->customerIds)) {
+            $body['customerIds'] = $request->customerIds;
+        }
+        if (!Utils::isUnset($request->dataAuthUserIds)) {
+            $body['dataAuthUserIds'] = $request->dataAuthUserIds;
+        }
+        if (!Utils::isUnset($request->formCode)) {
+            $body['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            $body['operateUserId'] = $request->operateUserId;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            $body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->roleType)) {
+            $body['roleType'] = $request->roleType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AppendCustomerDataAuth',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customers/dataAuth/append',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AppendCustomerDataAuthResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 追加客户数据权限
+     *  *
+     * @param AppendCustomerDataAuthRequest $request AppendCustomerDataAuthRequest
+     *
+     * @return AppendCustomerDataAuthResponse AppendCustomerDataAuthResponse
+     */
+    public function appendCustomerDataAuth($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AppendCustomerDataAuthHeaders([]);
+
+        return $this->appendCustomerDataAuthWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3389,6 +3470,78 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 覆盖更新客户数据权限
+     *  *
+     * @param OverrideUpdateCustomerDataAuthRequest $request OverrideUpdateCustomerDataAuthRequest
+     * @param OverrideUpdateCustomerDataAuthHeaders $headers OverrideUpdateCustomerDataAuthHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OverrideUpdateCustomerDataAuthResponse OverrideUpdateCustomerDataAuthResponse
+     */
+    public function overrideUpdateCustomerDataAuthWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->customerIds)) {
+            $body['customerIds'] = $request->customerIds;
+        }
+        if (!Utils::isUnset($request->dataAuthUserIds)) {
+            $body['dataAuthUserIds'] = $request->dataAuthUserIds;
+        }
+        if (!Utils::isUnset($request->formCode)) {
+            $body['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            $body['operateUserId'] = $request->operateUserId;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            $body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->roleType)) {
+            $body['roleType'] = $request->roleType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OverrideUpdateCustomerDataAuth',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customers/dataAuth/overrideUpdate',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OverrideUpdateCustomerDataAuthResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 覆盖更新客户数据权限
+     *  *
+     * @param OverrideUpdateCustomerDataAuthRequest $request OverrideUpdateCustomerDataAuthRequest
+     *
+     * @return OverrideUpdateCustomerDataAuthResponse OverrideUpdateCustomerDataAuthResponse
+     */
+    public function overrideUpdateCustomerDataAuth($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OverrideUpdateCustomerDataAuthHeaders([]);
+
+        return $this->overrideUpdateCustomerDataAuthWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 分页获取全量客户数据，根据不同的类型可以获取私海个人客户、企业客户，以及公海个人客户、企业客户，最多一次可获取100条数据
      *  *
      * @param QueryAllCustomerRequest $request QueryAllCustomerRequest
@@ -4363,6 +4516,72 @@ class Dingtalk extends OpenApiClient
         $headers = new ServiceWindowMessageBatchPushHeaders([]);
 
         return $this->serviceWindowMessageBatchPushWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 二阶段提交权益库存结果
+     *  *
+     * @param TwoPhaseCommitInventoryRequest $request TwoPhaseCommitInventoryRequest
+     * @param TwoPhaseCommitInventoryHeaders $headers TwoPhaseCommitInventoryHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TwoPhaseCommitInventoryResponse TwoPhaseCommitInventoryResponse
+     */
+    public function twoPhaseCommitInventoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->benefitCode)) {
+            $body['benefitCode'] = $request->benefitCode;
+        }
+        if (!Utils::isUnset($request->bizRequestId)) {
+            $body['bizRequestId'] = $request->bizRequestId;
+        }
+        if (!Utils::isUnset($request->executeResult)) {
+            $body['executeResult'] = $request->executeResult;
+        }
+        if (!Utils::isUnset($request->quota)) {
+            $body['quota'] = $request->quota;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TwoPhaseCommitInventory',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/benefitInventories/twoPhases/commit',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TwoPhaseCommitInventoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 二阶段提交权益库存结果
+     *  *
+     * @param TwoPhaseCommitInventoryRequest $request TwoPhaseCommitInventoryRequest
+     *
+     * @return TwoPhaseCommitInventoryResponse TwoPhaseCommitInventoryResponse
+     */
+    public function twoPhaseCommitInventory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TwoPhaseCommitInventoryHeaders([]);
+
+        return $this->twoPhaseCommitInventoryWithOptions($request, $headers, $runtime);
     }
 
     /**

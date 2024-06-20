@@ -18,11 +18,25 @@ class result extends Model
     public $benefitCode;
 
     /**
+     * @example 1718696461851
+     *
+     * @var int
+     */
+    public $endTime;
+
+    /**
      * @example 200
      *
      * @var int
      */
     public $quota;
+
+    /**
+     * @example 1718696461851
+     *
+     * @var int
+     */
+    public $startTime;
 
     /**
      * @example 10
@@ -32,7 +46,9 @@ class result extends Model
     public $usedQuota;
     protected $_name = [
         'benefitCode' => 'benefitCode',
+        'endTime'     => 'endTime',
         'quota'       => 'quota',
+        'startTime'   => 'startTime',
         'usedQuota'   => 'usedQuota',
     ];
 
@@ -46,8 +62,14 @@ class result extends Model
         if (null !== $this->benefitCode) {
             $res['benefitCode'] = $this->benefitCode;
         }
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
+        }
         if (null !== $this->quota) {
             $res['quota'] = $this->quota;
+        }
+        if (null !== $this->startTime) {
+            $res['startTime'] = $this->startTime;
         }
         if (null !== $this->usedQuota) {
             $res['usedQuota'] = $this->usedQuota;
@@ -67,8 +89,14 @@ class result extends Model
         if (isset($map['benefitCode'])) {
             $model->benefitCode = $map['benefitCode'];
         }
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
+        }
         if (isset($map['quota'])) {
             $model->quota = $map['quota'];
+        }
+        if (isset($map['startTime'])) {
+            $model->startTime = $map['startTime'];
         }
         if (isset($map['usedQuota'])) {
             $model->usedQuota = $map['usedQuota'];
