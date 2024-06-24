@@ -36,6 +36,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CheckUserIsGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CheckUserIsGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CheckUserIsGroupMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationResponse;
@@ -850,6 +853,63 @@ class Dingtalk extends OpenApiClient
         $headers = new CheckUserIsGroupMemberHeaders([]);
 
         return $this->checkUserIsGroupMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询消息开放群模板下群计数
+     *  *
+     * @param CountOpenMsgSceneGroupsRequest $request CountOpenMsgSceneGroupsRequest
+     * @param CountOpenMsgSceneGroupsHeaders $headers CountOpenMsgSceneGroupsHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CountOpenMsgSceneGroupsResponse CountOpenMsgSceneGroupsResponse
+     */
+    public function countOpenMsgSceneGroupsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CountOpenMsgSceneGroups',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/openMsgSceneGroups/templates/counts/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CountOpenMsgSceneGroupsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询消息开放群模板下群计数
+     *  *
+     * @param CountOpenMsgSceneGroupsRequest $request CountOpenMsgSceneGroupsRequest
+     *
+     * @return CountOpenMsgSceneGroupsResponse CountOpenMsgSceneGroupsResponse
+     */
+    public function countOpenMsgSceneGroups($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CountOpenMsgSceneGroupsHeaders([]);
+
+        return $this->countOpenMsgSceneGroupsWithOptions($request, $headers, $runtime);
     }
 
     /**

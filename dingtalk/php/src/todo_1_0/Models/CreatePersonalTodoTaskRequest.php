@@ -37,18 +37,24 @@ class CreatePersonalTodoTaskRequest extends Model
     public $participantIds;
 
     /**
+     * @var int
+     */
+    public $reminderTimeStamp;
+
+    /**
      * @description This parameter is required.
      *
      * @var string
      */
     public $subject;
     protected $_name = [
-        'description'    => 'description',
-        'dueTime'        => 'dueTime',
-        'executorIds'    => 'executorIds',
-        'notifyConfigs'  => 'notifyConfigs',
-        'participantIds' => 'participantIds',
-        'subject'        => 'subject',
+        'description'       => 'description',
+        'dueTime'           => 'dueTime',
+        'executorIds'       => 'executorIds',
+        'notifyConfigs'     => 'notifyConfigs',
+        'participantIds'    => 'participantIds',
+        'reminderTimeStamp' => 'reminderTimeStamp',
+        'subject'           => 'subject',
     ];
 
     public function validate()
@@ -72,6 +78,9 @@ class CreatePersonalTodoTaskRequest extends Model
         }
         if (null !== $this->participantIds) {
             $res['participantIds'] = $this->participantIds;
+        }
+        if (null !== $this->reminderTimeStamp) {
+            $res['reminderTimeStamp'] = $this->reminderTimeStamp;
         }
         if (null !== $this->subject) {
             $res['subject'] = $this->subject;
@@ -106,6 +115,9 @@ class CreatePersonalTodoTaskRequest extends Model
             if (!empty($map['participantIds'])) {
                 $model->participantIds = $map['participantIds'];
             }
+        }
+        if (isset($map['reminderTimeStamp'])) {
+            $model->reminderTimeStamp = $map['reminderTimeStamp'];
         }
         if (isset($map['subject'])) {
             $model->subject = $map['subject'];

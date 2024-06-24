@@ -2,15 +2,15 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetKnowledgeListResponseBody\result;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class GetKnowledgeListResponseBody extends Model
+class CountOpenMsgSceneGroupsResponseBody extends Model
 {
     /**
-     * @var result[]
+     * @var result
      */
     public $result;
 
@@ -31,13 +31,7 @@ class GetKnowledgeListResponseBody extends Model
     {
         $res = [];
         if (null !== $this->result) {
-            $res['result'] = [];
-            if (null !== $this->result && \is_array($this->result)) {
-                $n = 0;
-                foreach ($this->result as $item) {
-                    $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -49,19 +43,13 @@ class GetKnowledgeListResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return GetKnowledgeListResponseBody
+     * @return CountOpenMsgSceneGroupsResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
-            if (!empty($map['result'])) {
-                $model->result = [];
-                $n             = 0;
-                foreach ($map['result'] as $item) {
-                    $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
-                }
-            }
+            $model->result = result::fromMap($map['result']);
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

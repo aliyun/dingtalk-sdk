@@ -53,6 +53,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportTransferEvalRespo
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportWorkExpHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportWorkExpRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportWorkExpResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\StaffLabelRecordsQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\StaffLabelRecordsQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\StaffLabelRecordsQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\SyncDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\SyncDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\SyncDataResponse;
@@ -1004,6 +1007,70 @@ class Dingtalk extends OpenApiClient
         $headers = new HrbrainImportWorkExpHeaders([]);
 
         return $this->hrbrainImportWorkExpWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人员标签查询
+     *  *
+     * @param StaffLabelRecordsQueryRequest $request StaffLabelRecordsQueryRequest
+     * @param StaffLabelRecordsQueryHeaders $headers StaffLabelRecordsQueryHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return StaffLabelRecordsQueryResponse StaffLabelRecordsQueryResponse
+     */
+    public function staffLabelRecordsQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingCorpId)) {
+            $query['dingCorpId'] = $request->dingCorpId;
+        }
+        if (!Utils::isUnset($request->maxResult)) {
+            $query['maxResult'] = $request->maxResult;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action'      => 'StaffLabelRecordsQuery',
+            'version'     => 'hrbrain_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrbrain/datas/labelRecords/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return StaffLabelRecordsQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人员标签查询
+     *  *
+     * @param StaffLabelRecordsQueryRequest $request StaffLabelRecordsQueryRequest
+     *
+     * @return StaffLabelRecordsQueryResponse StaffLabelRecordsQueryResponse
+     */
+    public function staffLabelRecordsQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new StaffLabelRecordsQueryHeaders([]);
+
+        return $this->staffLabelRecordsQueryWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -167,6 +167,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->participantIds)) {
             $body['participantIds'] = $request->participantIds;
         }
+        if (!Utils::isUnset($request->reminderTimeStamp)) {
+            $body['reminderTimeStamp'] = $request->reminderTimeStamp;
+        }
         if (!Utils::isUnset($request->subject)) {
             $body['subject'] = $request->subject;
         }

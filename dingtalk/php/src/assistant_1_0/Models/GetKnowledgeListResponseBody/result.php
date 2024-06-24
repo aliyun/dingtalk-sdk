@@ -4,17 +4,40 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetKnowledgeListResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetKnowledgeListResponseBody\result\knowledgeList;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
 {
     /**
-     * @var knowledgeList[]
+     * @var string
      */
-    public $knowledgeList;
+    public $docFormat;
+
+    /**
+     * @var string
+     */
+    public $docName;
+
+    /**
+     * @var string
+     */
+    public $docUrl;
+
+    /**
+     * @var string
+     */
+    public $status;
+
+    /**
+     * @var string
+     */
+    public $studyId;
     protected $_name = [
-        'knowledgeList' => 'knowledgeList',
+        'docFormat' => 'docFormat',
+        'docName'   => 'docName',
+        'docUrl'    => 'docUrl',
+        'status'    => 'status',
+        'studyId'   => 'studyId',
     ];
 
     public function validate()
@@ -24,14 +47,20 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->knowledgeList) {
-            $res['knowledgeList'] = [];
-            if (null !== $this->knowledgeList && \is_array($this->knowledgeList)) {
-                $n = 0;
-                foreach ($this->knowledgeList as $item) {
-                    $res['knowledgeList'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+        if (null !== $this->docFormat) {
+            $res['docFormat'] = $this->docFormat;
+        }
+        if (null !== $this->docName) {
+            $res['docName'] = $this->docName;
+        }
+        if (null !== $this->docUrl) {
+            $res['docUrl'] = $this->docUrl;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
+        }
+        if (null !== $this->studyId) {
+            $res['studyId'] = $this->studyId;
         }
 
         return $res;
@@ -45,14 +74,20 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['knowledgeList'])) {
-            if (!empty($map['knowledgeList'])) {
-                $model->knowledgeList = [];
-                $n                    = 0;
-                foreach ($map['knowledgeList'] as $item) {
-                    $model->knowledgeList[$n++] = null !== $item ? knowledgeList::fromMap($item) : $item;
-                }
-            }
+        if (isset($map['docFormat'])) {
+            $model->docFormat = $map['docFormat'];
+        }
+        if (isset($map['docName'])) {
+            $model->docName = $map['docName'];
+        }
+        if (isset($map['docUrl'])) {
+            $model->docUrl = $map['docUrl'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
+        }
+        if (isset($map['studyId'])) {
+            $model->studyId = $map['studyId'];
         }
 
         return $model;
