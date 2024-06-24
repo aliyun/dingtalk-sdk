@@ -38,6 +38,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public List<string> ParticipantIds { get; set; }
 
+        [NameInMap("reminderTimeStamp")]
+        [Validation(Required=false)]
+        public long? ReminderTimeStamp { get; set; }
+
         /// <summary>
         /// This parameter is required.
         /// </summary>

@@ -1918,6 +1918,140 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
         }
 
         /**
+         * @summary 人员标签查询
+         *
+         * @param request StaffLabelRecordsQueryRequest
+         * @param headers StaffLabelRecordsQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StaffLabelRecordsQueryResponse
+         */
+        public StaffLabelRecordsQueryResponse StaffLabelRecordsQueryWithOptions(StaffLabelRecordsQueryRequest request, StaffLabelRecordsQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            {
+                query["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResult))
+            {
+                query["maxResult"] = request.MaxResult;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "StaffLabelRecordsQuery",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/labelRecords/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<StaffLabelRecordsQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 人员标签查询
+         *
+         * @param request StaffLabelRecordsQueryRequest
+         * @param headers StaffLabelRecordsQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return StaffLabelRecordsQueryResponse
+         */
+        public async Task<StaffLabelRecordsQueryResponse> StaffLabelRecordsQueryWithOptionsAsync(StaffLabelRecordsQueryRequest request, StaffLabelRecordsQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingCorpId))
+            {
+                query["dingCorpId"] = request.DingCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResult))
+            {
+                query["maxResult"] = request.MaxResult;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "StaffLabelRecordsQuery",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/datas/labelRecords/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<StaffLabelRecordsQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 人员标签查询
+         *
+         * @param request StaffLabelRecordsQueryRequest
+         * @return StaffLabelRecordsQueryResponse
+         */
+        public StaffLabelRecordsQueryResponse StaffLabelRecordsQuery(StaffLabelRecordsQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            StaffLabelRecordsQueryHeaders headers = new StaffLabelRecordsQueryHeaders();
+            return StaffLabelRecordsQueryWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 人员标签查询
+         *
+         * @param request StaffLabelRecordsQueryRequest
+         * @return StaffLabelRecordsQueryResponse
+         */
+        public async Task<StaffLabelRecordsQueryResponse> StaffLabelRecordsQueryAsync(StaffLabelRecordsQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            StaffLabelRecordsQueryHeaders headers = new StaffLabelRecordsQueryHeaders();
+            return await StaffLabelRecordsQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 同步统计基础数据
          *
          * @param request SyncDataRequest

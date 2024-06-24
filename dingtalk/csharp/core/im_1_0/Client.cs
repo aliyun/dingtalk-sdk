@@ -1290,6 +1290,122 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         }
 
         /**
+         * @summary 查询消息开放群模板下群计数
+         *
+         * @param request CountOpenMsgSceneGroupsRequest
+         * @param headers CountOpenMsgSceneGroupsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CountOpenMsgSceneGroupsResponse
+         */
+        public CountOpenMsgSceneGroupsResponse CountOpenMsgSceneGroupsWithOptions(CountOpenMsgSceneGroupsRequest request, CountOpenMsgSceneGroupsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CountOpenMsgSceneGroups",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/openMsgSceneGroups/templates/counts/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CountOpenMsgSceneGroupsResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询消息开放群模板下群计数
+         *
+         * @param request CountOpenMsgSceneGroupsRequest
+         * @param headers CountOpenMsgSceneGroupsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CountOpenMsgSceneGroupsResponse
+         */
+        public async Task<CountOpenMsgSceneGroupsResponse> CountOpenMsgSceneGroupsWithOptionsAsync(CountOpenMsgSceneGroupsRequest request, CountOpenMsgSceneGroupsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CountOpenMsgSceneGroups",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/openMsgSceneGroups/templates/counts/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CountOpenMsgSceneGroupsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询消息开放群模板下群计数
+         *
+         * @param request CountOpenMsgSceneGroupsRequest
+         * @return CountOpenMsgSceneGroupsResponse
+         */
+        public CountOpenMsgSceneGroupsResponse CountOpenMsgSceneGroups(CountOpenMsgSceneGroupsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CountOpenMsgSceneGroupsHeaders headers = new CountOpenMsgSceneGroupsHeaders();
+            return CountOpenMsgSceneGroupsWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询消息开放群模板下群计数
+         *
+         * @param request CountOpenMsgSceneGroupsRequest
+         * @return CountOpenMsgSceneGroupsResponse
+         */
+        public async Task<CountOpenMsgSceneGroupsResponse> CountOpenMsgSceneGroupsAsync(CountOpenMsgSceneGroupsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CountOpenMsgSceneGroupsHeaders headers = new CountOpenMsgSceneGroupsHeaders();
+            return await CountOpenMsgSceneGroupsWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 创建钉外两人群
          *
          * @param request CreateCoupleGroupConversationRequest

@@ -209,6 +209,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["participantIds"] = request.ParticipantIds;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReminderTimeStamp))
+            {
+                body["reminderTimeStamp"] = request.ReminderTimeStamp;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
             {
                 body["subject"] = request.Subject;
@@ -273,6 +277,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParticipantIds))
             {
                 body["participantIds"] = request.ParticipantIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReminderTimeStamp))
+            {
+                body["reminderTimeStamp"] = request.ReminderTimeStamp;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
             {
