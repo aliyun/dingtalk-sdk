@@ -134,6 +134,7 @@ export class CreatePersonalTodoTaskRequest extends $tea.Model {
   executorIds?: string[];
   notifyConfigs?: CreatePersonalTodoTaskRequestNotifyConfigs;
   participantIds?: string[];
+  reminderTimeStamp?: number;
   subject?: string;
   static names(): { [key: string]: string } {
     return {
@@ -142,6 +143,7 @@ export class CreatePersonalTodoTaskRequest extends $tea.Model {
       executorIds: 'executorIds',
       notifyConfigs: 'notifyConfigs',
       participantIds: 'participantIds',
+      reminderTimeStamp: 'reminderTimeStamp',
       subject: 'subject',
     };
   }
@@ -153,6 +155,7 @@ export class CreatePersonalTodoTaskRequest extends $tea.Model {
       executorIds: { 'type': 'array', 'itemType': 'string' },
       notifyConfigs: CreatePersonalTodoTaskRequestNotifyConfigs,
       participantIds: { 'type': 'array', 'itemType': 'string' },
+      reminderTimeStamp: 'number',
       subject: 'string',
     };
   }
@@ -2810,6 +2813,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.participantIds)) {
       body["participantIds"] = request.participantIds;
+    }
+
+    if (!Util.isUnset(request.reminderTimeStamp)) {
+      body["reminderTimeStamp"] = request.reminderTimeStamp;
     }
 
     if (!Util.isUnset(request.subject)) {

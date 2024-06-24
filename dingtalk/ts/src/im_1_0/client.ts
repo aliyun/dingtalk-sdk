@@ -909,6 +909,94 @@ export class CheckUserIsGroupMemberResponse extends $tea.Model {
   }
 }
 
+export class CountOpenMsgSceneGroupsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CountOpenMsgSceneGroupsRequest extends $tea.Model {
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CountOpenMsgSceneGroupsResponseBody extends $tea.Model {
+  result?: CountOpenMsgSceneGroupsResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CountOpenMsgSceneGroupsResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CountOpenMsgSceneGroupsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CountOpenMsgSceneGroupsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CountOpenMsgSceneGroupsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateCoupleGroupConversationHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7192,6 +7280,25 @@ export class BatchQueryFamilySchoolMessageResponseBodyMessages extends $tea.Mode
   }
 }
 
+export class CountOpenMsgSceneGroupsResponseBodyResult extends $tea.Model {
+  count?: number;
+  static names(): { [key: string]: string } {
+    return {
+      count: 'count',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      count: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateInterconnectionRequestInterconnections extends $tea.Model {
   appUserAvatar?: string;
   appUserAvatarMediaType?: number;
@@ -8885,6 +8992,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CheckUserIsGroupMemberHeaders({ });
     return await this.checkUserIsGroupMemberWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 查询消息开放群模板下群计数
+   *
+   * @param request CountOpenMsgSceneGroupsRequest
+   * @param headers CountOpenMsgSceneGroupsHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CountOpenMsgSceneGroupsResponse
+   */
+  async countOpenMsgSceneGroupsWithOptions(request: CountOpenMsgSceneGroupsRequest, headers: CountOpenMsgSceneGroupsHeaders, runtime: $Util.RuntimeOptions): Promise<CountOpenMsgSceneGroupsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CountOpenMsgSceneGroups",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/openMsgSceneGroups/templates/counts/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CountOpenMsgSceneGroupsResponse>(await this.execute(params, req, runtime), new CountOpenMsgSceneGroupsResponse({}));
+  }
+
+  /**
+   * @summary 查询消息开放群模板下群计数
+   *
+   * @param request CountOpenMsgSceneGroupsRequest
+   * @return CountOpenMsgSceneGroupsResponse
+   */
+  async countOpenMsgSceneGroups(request: CountOpenMsgSceneGroupsRequest): Promise<CountOpenMsgSceneGroupsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CountOpenMsgSceneGroupsHeaders({ });
+    return await this.countOpenMsgSceneGroupsWithOptions(request, headers, runtime);
   }
 
   /**

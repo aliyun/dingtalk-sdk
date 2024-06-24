@@ -1513,6 +1513,109 @@ export class HrbrainImportWorkExpResponse extends $tea.Model {
   }
 }
 
+export class StaffLabelRecordsQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StaffLabelRecordsQueryRequest extends $tea.Model {
+  body?: StaffLabelRecordsQueryRequestBody[];
+  dingCorpId?: string;
+  maxResult?: number;
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+      dingCorpId: 'dingCorpId',
+      maxResult: 'maxResult',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': StaffLabelRecordsQueryRequestBody },
+      dingCorpId: 'string',
+      maxResult: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StaffLabelRecordsQueryResponseBody extends $tea.Model {
+  content?: StaffLabelRecordsQueryResponseBodyContent;
+  requestId?: string;
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: StaffLabelRecordsQueryResponseBodyContent,
+      requestId: 'string',
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StaffLabelRecordsQueryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: StaffLabelRecordsQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: StaffLabelRecordsQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncDataHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2305,6 +2408,162 @@ export class HrbrainImportWorkExpRequestBody extends $tea.Model {
       postName: 'string',
       startDate: 'string',
       workNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StaffLabelRecordsQueryRequestBodyLabels extends $tea.Model {
+  code?: string;
+  typeCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      typeCode: 'typeCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      typeCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StaffLabelRecordsQueryRequestBody extends $tea.Model {
+  labels?: StaffLabelRecordsQueryRequestBodyLabels[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      labels: 'labels',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      labels: { 'type': 'array', 'itemType': StaffLabelRecordsQueryRequestBodyLabels },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StaffLabelRecordsQueryResponseBodyContentDataLabelsOptions extends $tea.Model {
+  label?: string;
+  tip?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      label: 'label',
+      tip: 'tip',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      label: 'string',
+      tip: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StaffLabelRecordsQueryResponseBodyContentDataLabels extends $tea.Model {
+  code?: string;
+  guid?: string;
+  name?: string;
+  options?: StaffLabelRecordsQueryResponseBodyContentDataLabelsOptions[];
+  typeCode?: string;
+  typeName?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      guid: 'guid',
+      name: 'name',
+      options: 'options',
+      typeCode: 'typeCode',
+      typeName: 'typeName',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      guid: 'string',
+      name: 'string',
+      options: { 'type': 'array', 'itemType': StaffLabelRecordsQueryResponseBodyContentDataLabelsOptions },
+      typeCode: 'string',
+      typeName: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StaffLabelRecordsQueryResponseBodyContentData extends $tea.Model {
+  labels?: StaffLabelRecordsQueryResponseBodyContentDataLabels[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      labels: 'labels',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      labels: { 'type': 'array', 'itemType': StaffLabelRecordsQueryResponseBodyContentDataLabels },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class StaffLabelRecordsQueryResponseBodyContent extends $tea.Model {
+  data?: StaffLabelRecordsQueryResponseBodyContentData[];
+  maxResults?: number;
+  nextToken?: string;
+  totalCountt?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      totalCountt: 'totalCountt',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': StaffLabelRecordsQueryResponseBodyContentData },
+      maxResults: 'number',
+      nextToken: 'string',
+      totalCountt: 'number',
     };
   }
 
@@ -3207,6 +3466,69 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrbrainImportWorkExpHeaders({ });
     return await this.hrbrainImportWorkExpWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 人员标签查询
+   *
+   * @param request StaffLabelRecordsQueryRequest
+   * @param headers StaffLabelRecordsQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return StaffLabelRecordsQueryResponse
+   */
+  async staffLabelRecordsQueryWithOptions(request: StaffLabelRecordsQueryRequest, headers: StaffLabelRecordsQueryHeaders, runtime: $Util.RuntimeOptions): Promise<StaffLabelRecordsQueryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingCorpId)) {
+      query["dingCorpId"] = request.dingCorpId;
+    }
+
+    if (!Util.isUnset(request.maxResult)) {
+      query["maxResult"] = request.maxResult;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: Util.toArray(request.body),
+    });
+    let params = new $OpenApi.Params({
+      action: "StaffLabelRecordsQuery",
+      version: "hrbrain_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrbrain/datas/labelRecords/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<StaffLabelRecordsQueryResponse>(await this.execute(params, req, runtime), new StaffLabelRecordsQueryResponse({}));
+  }
+
+  /**
+   * @summary 人员标签查询
+   *
+   * @param request StaffLabelRecordsQueryRequest
+   * @return StaffLabelRecordsQueryResponse
+   */
+  async staffLabelRecordsQuery(request: StaffLabelRecordsQueryRequest): Promise<StaffLabelRecordsQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new StaffLabelRecordsQueryHeaders({ });
+    return await this.staffLabelRecordsQueryWithOptions(request, headers, runtime);
   }
 
   /**
