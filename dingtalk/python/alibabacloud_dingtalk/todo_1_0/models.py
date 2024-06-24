@@ -224,6 +224,7 @@ class CreatePersonalTodoTaskRequest(TeaModel):
         executor_ids: List[str] = None,
         notify_configs: CreatePersonalTodoTaskRequestNotifyConfigs = None,
         participant_ids: List[str] = None,
+        reminder_time_stamp: int = None,
         subject: str = None,
     ):
         self.description = description
@@ -232,6 +233,7 @@ class CreatePersonalTodoTaskRequest(TeaModel):
         self.executor_ids = executor_ids
         self.notify_configs = notify_configs
         self.participant_ids = participant_ids
+        self.reminder_time_stamp = reminder_time_stamp
         # This parameter is required.
         self.subject = subject
 
@@ -255,6 +257,8 @@ class CreatePersonalTodoTaskRequest(TeaModel):
             result['notifyConfigs'] = self.notify_configs.to_map()
         if self.participant_ids is not None:
             result['participantIds'] = self.participant_ids
+        if self.reminder_time_stamp is not None:
+            result['reminderTimeStamp'] = self.reminder_time_stamp
         if self.subject is not None:
             result['subject'] = self.subject
         return result
@@ -272,6 +276,8 @@ class CreatePersonalTodoTaskRequest(TeaModel):
             self.notify_configs = temp_model.from_map(m['notifyConfigs'])
         if m.get('participantIds') is not None:
             self.participant_ids = m.get('participantIds')
+        if m.get('reminderTimeStamp') is not None:
+            self.reminder_time_stamp = m.get('reminderTimeStamp')
         if m.get('subject') is not None:
             self.subject = m.get('subject')
         return self

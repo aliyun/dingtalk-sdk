@@ -189,6 +189,8 @@ class Client(OpenApiClient):
             body['notifyConfigs'] = request.notify_configs
         if not UtilClient.is_unset(request.participant_ids):
             body['participantIds'] = request.participant_ids
+        if not UtilClient.is_unset(request.reminder_time_stamp):
+            body['reminderTimeStamp'] = request.reminder_time_stamp
         if not UtilClient.is_unset(request.subject):
             body['subject'] = request.subject
         real_headers = {}
@@ -242,6 +244,8 @@ class Client(OpenApiClient):
             body['notifyConfigs'] = request.notify_configs
         if not UtilClient.is_unset(request.participant_ids):
             body['participantIds'] = request.participant_ids
+        if not UtilClient.is_unset(request.reminder_time_stamp):
+            body['reminderTimeStamp'] = request.reminder_time_stamp
         if not UtilClient.is_unset(request.subject):
             body['subject'] = request.subject
         real_headers = {}

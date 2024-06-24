@@ -200,7 +200,7 @@ class GetKnowledgeListRequest(TeaModel):
         return self
 
 
-class GetKnowledgeListResponseBodyResultKnowledgeList(TeaModel):
+class GetKnowledgeListResponseBodyResult(TeaModel):
     def __init__(
         self,
         doc_format: str = None,
@@ -251,16 +251,18 @@ class GetKnowledgeListResponseBodyResultKnowledgeList(TeaModel):
         return self
 
 
-class GetKnowledgeListResponseBodyResult(TeaModel):
+class GetKnowledgeListResponseBody(TeaModel):
     def __init__(
         self,
-        knowledge_list: List[GetKnowledgeListResponseBodyResultKnowledgeList] = None,
+        result: List[GetKnowledgeListResponseBodyResult] = None,
+        success: bool = None,
     ):
-        self.knowledge_list = knowledge_list
+        self.result = result
+        self.success = success
 
     def validate(self):
-        if self.knowledge_list:
-            for k in self.knowledge_list:
+        if self.result:
+            for k in self.result:
                 if k:
                     k.validate()
 
@@ -270,52 +272,21 @@ class GetKnowledgeListResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
-        result['knowledgeList'] = []
-        if self.knowledge_list is not None:
-            for k in self.knowledge_list:
-                result['knowledgeList'].append(k.to_map() if k else None)
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        self.knowledge_list = []
-        if m.get('knowledgeList') is not None:
-            for k in m.get('knowledgeList'):
-                temp_model = GetKnowledgeListResponseBodyResultKnowledgeList()
-                self.knowledge_list.append(temp_model.from_map(k))
-        return self
-
-
-class GetKnowledgeListResponseBody(TeaModel):
-    def __init__(
-        self,
-        result: GetKnowledgeListResponseBodyResult = None,
-        success: bool = None,
-    ):
-        self.result = result
-        self.success = success
-
-    def validate(self):
-        if self.result:
-            self.result.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
+        result['result'] = []
         if self.result is not None:
-            result['result'] = self.result.to_map()
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.result = []
         if m.get('result') is not None:
-            temp_model = GetKnowledgeListResponseBodyResult()
-            self.result = temp_model.from_map(m['result'])
+            for k in m.get('result'):
+                temp_model = GetKnowledgeListResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
         if m.get('success') is not None:
             self.success = m.get('success')
         return self

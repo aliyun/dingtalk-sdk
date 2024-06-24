@@ -3821,6 +3821,458 @@ class HrbrainImportWorkExpResponse(TeaModel):
         return self
 
 
+class StaffLabelRecordsQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class StaffLabelRecordsQueryRequestBodyLabels(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        type_code: str = None,
+    ):
+        self.code = code
+        self.type_code = type_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.type_code is not None:
+            result['typeCode'] = self.type_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('typeCode') is not None:
+            self.type_code = m.get('typeCode')
+        return self
+
+
+class StaffLabelRecordsQueryRequestBody(TeaModel):
+    def __init__(
+        self,
+        labels: List[StaffLabelRecordsQueryRequestBodyLabels] = None,
+        user_id: str = None,
+    ):
+        self.labels = labels
+        self.user_id = user_id
+
+    def validate(self):
+        if self.labels:
+            for k in self.labels:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['labels'] = []
+        if self.labels is not None:
+            for k in self.labels:
+                result['labels'].append(k.to_map() if k else None)
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.labels = []
+        if m.get('labels') is not None:
+            for k in m.get('labels'):
+                temp_model = StaffLabelRecordsQueryRequestBodyLabels()
+                self.labels.append(temp_model.from_map(k))
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class StaffLabelRecordsQueryRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[StaffLabelRecordsQueryRequestBody] = None,
+        ding_corp_id: str = None,
+        max_result: int = None,
+        next_token: str = None,
+    ):
+        self.body = body
+        self.ding_corp_id = ding_corp_id
+        self.max_result = max_result
+        self.next_token = next_token
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.max_result is not None:
+            result['maxResult'] = self.max_result
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = StaffLabelRecordsQueryRequestBody()
+                self.body.append(temp_model.from_map(k))
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('maxResult') is not None:
+            self.max_result = m.get('maxResult')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class StaffLabelRecordsQueryResponseBodyContentDataLabelsOptions(TeaModel):
+    def __init__(
+        self,
+        label: str = None,
+        tip: str = None,
+        value: str = None,
+    ):
+        self.label = label
+        self.tip = tip
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label is not None:
+            result['label'] = self.label
+        if self.tip is not None:
+            result['tip'] = self.tip
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('tip') is not None:
+            self.tip = m.get('tip')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class StaffLabelRecordsQueryResponseBodyContentDataLabels(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        guid: str = None,
+        name: str = None,
+        options: List[StaffLabelRecordsQueryResponseBodyContentDataLabelsOptions] = None,
+        type_code: str = None,
+        type_name: str = None,
+        value: str = None,
+    ):
+        self.code = code
+        self.guid = guid
+        self.name = name
+        self.options = options
+        self.type_code = type_code
+        self.type_name = type_name
+        self.value = value
+
+    def validate(self):
+        if self.options:
+            for k in self.options:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.guid is not None:
+            result['guid'] = self.guid
+        if self.name is not None:
+            result['name'] = self.name
+        result['options'] = []
+        if self.options is not None:
+            for k in self.options:
+                result['options'].append(k.to_map() if k else None)
+        if self.type_code is not None:
+            result['typeCode'] = self.type_code
+        if self.type_name is not None:
+            result['typeName'] = self.type_name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('guid') is not None:
+            self.guid = m.get('guid')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.options = []
+        if m.get('options') is not None:
+            for k in m.get('options'):
+                temp_model = StaffLabelRecordsQueryResponseBodyContentDataLabelsOptions()
+                self.options.append(temp_model.from_map(k))
+        if m.get('typeCode') is not None:
+            self.type_code = m.get('typeCode')
+        if m.get('typeName') is not None:
+            self.type_name = m.get('typeName')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class StaffLabelRecordsQueryResponseBodyContentData(TeaModel):
+    def __init__(
+        self,
+        labels: List[StaffLabelRecordsQueryResponseBodyContentDataLabels] = None,
+        user_id: str = None,
+    ):
+        self.labels = labels
+        self.user_id = user_id
+
+    def validate(self):
+        if self.labels:
+            for k in self.labels:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['labels'] = []
+        if self.labels is not None:
+            for k in self.labels:
+                result['labels'].append(k.to_map() if k else None)
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.labels = []
+        if m.get('labels') is not None:
+            for k in m.get('labels'):
+                temp_model = StaffLabelRecordsQueryResponseBodyContentDataLabels()
+                self.labels.append(temp_model.from_map(k))
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class StaffLabelRecordsQueryResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        data: List[StaffLabelRecordsQueryResponseBodyContentData] = None,
+        max_results: int = None,
+        next_token: str = None,
+        total_countt: int = None,
+    ):
+        self.data = data
+        self.max_results = max_results
+        self.next_token = next_token
+        self.total_countt = total_countt
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_countt is not None:
+            result['totalCountt'] = self.total_countt
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = StaffLabelRecordsQueryResponseBodyContentData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCountt') is not None:
+            self.total_countt = m.get('totalCountt')
+        return self
+
+
+class StaffLabelRecordsQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: StaffLabelRecordsQueryResponseBodyContent = None,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = StaffLabelRecordsQueryResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class StaffLabelRecordsQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: StaffLabelRecordsQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = StaffLabelRecordsQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SyncDataHeaders(TeaModel):
     def __init__(
         self,

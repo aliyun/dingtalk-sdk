@@ -1885,6 +1885,130 @@ class Client(OpenApiClient):
         headers = dingtalkhrbrain__1__0_models.HrbrainImportWorkExpHeaders()
         return await self.hrbrain_import_work_exp_with_options_async(request, headers, runtime)
 
+    def staff_label_records_query_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryRequest,
+        headers: dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryResponse:
+        """
+        @summary 人员标签查询
+        
+        @param request: StaffLabelRecordsQueryRequest
+        @param headers: StaffLabelRecordsQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StaffLabelRecordsQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_corp_id):
+            query['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.max_result):
+            query['maxResult'] = request.max_result
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='StaffLabelRecordsQuery',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/labelRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def staff_label_records_query_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryRequest,
+        headers: dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryResponse:
+        """
+        @summary 人员标签查询
+        
+        @param request: StaffLabelRecordsQueryRequest
+        @param headers: StaffLabelRecordsQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: StaffLabelRecordsQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_corp_id):
+            query['dingCorpId'] = request.ding_corp_id
+        if not UtilClient.is_unset(request.max_result):
+            query['maxResult'] = request.max_result
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='StaffLabelRecordsQuery',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/labelRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def staff_label_records_query(
+        self,
+        request: dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryRequest,
+    ) -> dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryResponse:
+        """
+        @summary 人员标签查询
+        
+        @param request: StaffLabelRecordsQueryRequest
+        @return: StaffLabelRecordsQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryHeaders()
+        return self.staff_label_records_query_with_options(request, headers, runtime)
+
+    async def staff_label_records_query_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryRequest,
+    ) -> dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryResponse:
+        """
+        @summary 人员标签查询
+        
+        @param request: StaffLabelRecordsQueryRequest
+        @return: StaffLabelRecordsQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.StaffLabelRecordsQueryHeaders()
+        return await self.staff_label_records_query_with_options_async(request, headers, runtime)
+
     def sync_data_with_options(
         self,
         request: dingtalkhrbrain__1__0_models.SyncDataRequest,
