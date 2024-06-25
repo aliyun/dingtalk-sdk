@@ -4,6 +4,10 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class ModifyWorkbenchBadgeRequest extends TeaModel {
+    /**
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
     @NameInMap("bizIdList")
     public java.util.List<String> bizIdList;
 
@@ -12,24 +16,36 @@ public class ModifyWorkbenchBadgeRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>full</p>
      */
     @NameInMap("modifyMode")
     public String modifyMode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5000000004278081/test</p>
      */
     @NameInMap("redDotRelationId")
     public String redDotRelationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>workbench_component</p>
      */
     @NameInMap("redDotType")
     public String redDotType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0123465</p>
      */
     @NameInMap("userId")
     public String userId;

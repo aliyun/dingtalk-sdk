@@ -4,9 +4,17 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAppDispatchInfoRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1655709383307</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1655709383307</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 

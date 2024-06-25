@@ -4,9 +4,17 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupConversationRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>dingadc88253b4d581bd35c2f4657eb6378f</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fsfsfadfasfdasdfsaf</p>
+     */
     @NameInMap("dingGroupId")
     public String dingGroupId;
 
@@ -16,18 +24,34 @@ public class CreateGroupConversationRequest extends TeaModel {
     @NameInMap("dingTokenGrantType")
     public Long dingTokenGrantType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>57675657</p>
+     */
     @NameInMap("dingUserId")
     public String dingUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>张三</p>
+     */
     @NameInMap("dingUserName")
     public String dingUserName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;isServerInitiative&quot;:&quot;true&quot;}</p>
+     */
     @NameInMap("extValues")
     public String extValues;
 
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>3434</p>
+     */
     @NameInMap("serverGroupId")
     public String serverGroupId;
 

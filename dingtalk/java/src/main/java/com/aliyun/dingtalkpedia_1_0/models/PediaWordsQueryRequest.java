@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class PediaWordsQueryRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>212121</p>
      */
     @NameInMap("userId")
     public String userId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>211121</p>
      */
     @NameInMap("uuid")
     public Long uuid;

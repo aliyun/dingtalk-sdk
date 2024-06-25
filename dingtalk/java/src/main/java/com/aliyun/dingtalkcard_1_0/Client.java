@@ -6,11 +6,10 @@ import com.aliyun.dingtalkcard_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 新增或更新卡片的场域信息
-     *
+     * <b>summary</b> : 
+     * <p>新增或更新卡片的场域信息</p>
+     * 
      * @param request AppendSpaceRequest
      * @param headers AppendSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -78,8 +78,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新增或更新卡片的场域信息
-     *
+     * <b>summary</b> : 
+     * <p>新增或更新卡片的场域信息</p>
+     * 
      * @param request AppendSpaceRequest
      * @return AppendSpaceResponse
      */
@@ -90,8 +91,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新增或更新卡片的场域信息
-     *
+     * <b>summary</b> : 
+     * <p>新增或更新卡片的场域信息</p>
+     * 
      * @param request AppendSpaceWithDelegateRequest
      * @param headers AppendSpaceWithDelegateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -148,8 +150,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新增或更新卡片的场域信息
-     *
+     * <b>summary</b> : 
+     * <p>新增或更新卡片的场域信息</p>
+     * 
      * @param request AppendSpaceWithDelegateRequest
      * @return AppendSpaceWithDelegateResponse
      */
@@ -160,8 +163,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建并投放卡片
-     *
+     * <b>summary</b> : 
+     * <p>创建并投放卡片</p>
+     * 
      * @param request CreateAndDeliverRequest
      * @param headers CreateAndDeliverHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -282,8 +286,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建并投放卡片
-     *
+     * <b>summary</b> : 
+     * <p>创建并投放卡片</p>
+     * 
      * @param request CreateAndDeliverRequest
      * @return CreateAndDeliverResponse
      */
@@ -294,8 +299,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建并投放卡片
-     *
+     * <b>summary</b> : 
+     * <p>创建并投放卡片</p>
+     * 
      * @param request CreateAndDeliverWithDelegateRequest
      * @param headers CreateAndDeliverWithDelegateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -416,8 +422,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建并投放卡片
-     *
+     * <b>summary</b> : 
+     * <p>创建并投放卡片</p>
+     * 
      * @param request CreateAndDeliverWithDelegateRequest
      * @return CreateAndDeliverWithDelegateResponse
      */
@@ -428,8 +435,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建卡片
-     *
+     * <b>summary</b> : 
+     * <p>创建卡片</p>
+     * 
      * @param request CreateCardRequest
      * @param headers CreateCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -522,8 +530,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建卡片
-     *
+     * <b>summary</b> : 
+     * <p>创建卡片</p>
+     * 
      * @param request CreateCardRequest
      * @return CreateCardResponse
      */
@@ -534,8 +543,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建卡片
-     *
+     * <b>summary</b> : 
+     * <p>创建卡片</p>
+     * 
      * @param request CreateCardWithDelegateRequest
      * @param headers CreateCardWithDelegateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -628,8 +638,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建卡片
-     *
+     * <b>summary</b> : 
+     * <p>创建卡片</p>
+     * 
      * @param request CreateCardWithDelegateRequest
      * @return CreateCardWithDelegateResponse
      */
@@ -640,8 +651,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 投放卡片
-     *
+     * <b>summary</b> : 
+     * <p>投放卡片</p>
+     * 
      * @param request DeliverCardRequest
      * @param headers DeliverCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -714,8 +726,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 投放卡片
-     *
+     * <b>summary</b> : 
+     * <p>投放卡片</p>
+     * 
      * @param request DeliverCardRequest
      * @return DeliverCardResponse
      */
@@ -726,8 +739,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 投放卡片
-     *
+     * <b>summary</b> : 
+     * <p>投放卡片</p>
+     * 
      * @param request DeliverCardWithDelegateRequest
      * @param headers DeliverCardWithDelegateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -800,8 +814,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 投放卡片
-     *
+     * <b>summary</b> : 
+     * <p>投放卡片</p>
+     * 
      * @param request DeliverCardWithDelegateRequest
      * @return DeliverCardWithDelegateResponse
      */
@@ -812,8 +827,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册卡片回调地址
-     *
+     * <b>summary</b> : 
+     * <p>注册卡片回调地址</p>
+     * 
      * @param request RegisterCallbackRequest
      * @param headers RegisterCallbackHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -866,8 +882,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册卡片回调地址
-     *
+     * <b>summary</b> : 
+     * <p>注册卡片回调地址</p>
+     * 
      * @param request RegisterCallbackRequest
      * @return RegisterCallbackResponse
      */
@@ -878,8 +895,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册卡片回调地址
-     *
+     * <b>summary</b> : 
+     * <p>注册卡片回调地址</p>
+     * 
      * @param request RegisterCallbackWithDelegateRequest
      * @param headers RegisterCallbackWithDelegateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -932,8 +950,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册卡片回调地址
-     *
+     * <b>summary</b> : 
+     * <p>注册卡片回调地址</p>
+     * 
      * @param request RegisterCallbackWithDelegateRequest
      * @return RegisterCallbackWithDelegateResponse
      */
@@ -944,8 +963,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary AI互动卡片流式更新
-     *
+     * <b>summary</b> : 
+     * <p>AI互动卡片流式更新</p>
+     * 
      * @param request StreamingUpdateRequest
      * @param headers StreamingUpdateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1010,8 +1030,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary AI互动卡片流式更新
-     *
+     * <b>summary</b> : 
+     * <p>AI互动卡片流式更新</p>
+     * 
      * @param request StreamingUpdateRequest
      * @return StreamingUpdateResponse
      */
@@ -1022,8 +1043,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新卡片
-     *
+     * <b>summary</b> : 
+     * <p>更新卡片</p>
+     * 
      * @param request UpdateCardRequest
      * @param headers UpdateCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1080,8 +1102,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新卡片
-     *
+     * <b>summary</b> : 
+     * <p>更新卡片</p>
+     * 
      * @param request UpdateCardRequest
      * @return UpdateCardResponse
      */
@@ -1092,8 +1115,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新卡片
-     *
+     * <b>summary</b> : 
+     * <p>更新卡片</p>
+     * 
      * @param request UpdateCardWithDelegateRequest
      * @param headers UpdateCardWithDelegateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1150,8 +1174,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新卡片
-     *
+     * <b>summary</b> : 
+     * <p>更新卡片</p>
+     * 
      * @param request UpdateCardWithDelegateRequest
      * @return UpdateCardWithDelegateResponse
      */

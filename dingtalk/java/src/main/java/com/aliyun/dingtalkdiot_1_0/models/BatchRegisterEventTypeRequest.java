@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRegisterEventTypeRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding12345</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -37,12 +41,18 @@ public class BatchRegisterEventTypeRequest extends TeaModel {
     public static class BatchRegisterEventTypeRequestEventTypes extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>fireDetect</p>
          */
         @NameInMap("eventType")
         public String eventType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>火焰告警</p>
          */
         @NameInMap("eventTypeName")
         public String eventTypeName;

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListContactHideSettingsResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -43,9 +47,17 @@ public class ListContactHideSettingsResponseBody extends TeaModel {
     }
 
     public static class ListContactHideSettingsResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("active")
         public Boolean active;
 
+        /**
+         * <strong>example:</strong>
+         * <p>影藏对deptA但是user1可见。</p>
+         */
         @NameInMap("description")
         public String description;
 
@@ -61,6 +73,10 @@ public class ListContactHideSettingsResponseBody extends TeaModel {
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试规则</p>
+         */
         @NameInMap("name")
         public String name;
 

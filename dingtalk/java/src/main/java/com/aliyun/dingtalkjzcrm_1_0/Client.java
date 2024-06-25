@@ -6,11 +6,10 @@ import com.aliyun.dingtalkjzcrm_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 编辑联系人数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑联系人数据</p>
+     * 
      * @param request EditContactRequest
      * @param headers EditContactHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -74,8 +74,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑联系人数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑联系人数据</p>
+     * 
      * @param request EditContactRequest
      * @return EditContactResponse
      */
@@ -86,8 +87,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑客户数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑客户数据</p>
+     * 
      * @param request EditCustomerRequest
      * @param headers EditCustomerHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -140,8 +142,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑客户数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑客户数据</p>
+     * 
      * @param request EditCustomerRequest
      * @return EditCustomerResponse
      */
@@ -152,8 +155,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑客户公共池数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑客户公共池数据</p>
+     * 
      * @param request EditCustomerPoolRequest
      * @param headers EditCustomerPoolHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -206,8 +210,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑客户公共池数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑客户公共池数据</p>
+     * 
      * @param request EditCustomerPoolRequest
      * @return EditCustomerPoolResponse
      */
@@ -218,8 +223,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑销售换货单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑销售换货单数据</p>
+     * 
      * @param request EditExchangeRequest
      * @param headers EditExchangeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -272,8 +278,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑销售换货单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑销售换货单数据</p>
+     * 
      * @param request EditExchangeRequest
      * @return EditExchangeResponse
      */
@@ -284,8 +291,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑产品数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑产品数据</p>
+     * 
      * @param request EditGoodsRequest
      * @param headers EditGoodsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -338,8 +346,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑产品数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑产品数据</p>
+     * 
      * @param request EditGoodsRequest
      * @return EditGoodsResponse
      */
@@ -350,8 +359,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑入库单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑入库单数据</p>
+     * 
      * @param request EditIntostockRequest
      * @param headers EditIntostockHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -404,8 +414,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑入库单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑入库单数据</p>
+     * 
      * @param request EditIntostockRequest
      * @return EditIntostockResponse
      */
@@ -416,8 +427,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑发货单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑发货单数据</p>
+     * 
      * @param request EditInvoiceRequest
      * @param headers EditInvoiceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -470,8 +482,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑发货单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑发货单数据</p>
+     * 
      * @param request EditInvoiceRequest
      * @return EditInvoiceResponse
      */
@@ -482,8 +495,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑合同订单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑合同订单数据</p>
+     * 
      * @param request EditOrderRequest
      * @param headers EditOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -536,8 +550,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑合同订单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑合同订单数据</p>
+     * 
      * @param request EditOrderRequest
      * @return EditOrderResponse
      */
@@ -548,8 +563,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑出库单信息
-     *
+     * <b>summary</b> : 
+     * <p>编辑出库单信息</p>
+     * 
      * @param request EditOutstockRequest
      * @param headers EditOutstockHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -602,8 +618,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑出库单信息
-     *
+     * <b>summary</b> : 
+     * <p>编辑出库单信息</p>
+     * 
      * @param request EditOutstockRequest
      * @return EditOutstockResponse
      */
@@ -614,8 +631,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑生产单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑生产单数据</p>
+     * 
      * @param request EditProductionRequest
      * @param headers EditProductionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -668,8 +686,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑生产单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑生产单数据</p>
+     * 
      * @param request EditProductionRequest
      * @return EditProductionResponse
      */
@@ -680,8 +699,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑采购单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑采购单数据</p>
+     * 
      * @param request EditPurchaseRequest
      * @param headers EditPurchaseHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -734,8 +754,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑采购单数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑采购单数据</p>
+     * 
      * @param request EditPurchaseRequest
      * @return EditPurchaseResponse
      */
@@ -746,8 +767,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑报价记录数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑报价记录数据</p>
+     * 
      * @param request EditQuotationRecordRequest
      * @param headers EditQuotationRecordHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -800,8 +822,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑报价记录数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑报价记录数据</p>
+     * 
      * @param request EditQuotationRecordRequest
      * @return EditQuotationRecordResponse
      */
@@ -812,8 +835,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑销售机会数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑销售机会数据</p>
+     * 
      * @param request EditSalesRequest
      * @param headers EditSalesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -866,8 +890,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑销售机会数据
-     *
+     * <b>summary</b> : 
+     * <p>编辑销售机会数据</p>
+     * 
      * @param request EditSalesRequest
      * @return EditSalesResponse
      */
@@ -878,8 +903,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取数据列表
-     *
+     * <b>summary</b> : 
+     * <p>获取数据列表</p>
+     * 
      * @param request GetDataListRequest
      * @param headers GetDataListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -928,8 +954,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取数据列表
-     *
+     * <b>summary</b> : 
+     * <p>获取数据列表</p>
+     * 
      * @param request GetDataListRequest
      * @return GetDataListResponse
      */
@@ -940,8 +967,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取数据详情
-     *
+     * <b>summary</b> : 
+     * <p>获取数据详情</p>
+     * 
      * @param request GetDataViewRequest
      * @param headers GetDataViewHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -986,8 +1014,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取数据详情
-     *
+     * <b>summary</b> : 
+     * <p>获取数据详情</p>
+     * 
      * @param request GetDataViewRequest
      * @return GetDataViewResponse
      */

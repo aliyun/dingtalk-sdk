@@ -9,6 +9,9 @@ public class GetTotalNumberOfDentriesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abcd</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

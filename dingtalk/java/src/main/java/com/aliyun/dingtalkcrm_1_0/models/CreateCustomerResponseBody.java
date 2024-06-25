@@ -9,10 +9,17 @@ public class CreateCustomerResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>customer_id</p>
      */
     @NameInMap("customerInstanceId")
     public String customerInstanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>crm_customer</p>
+     */
     @NameInMap("objectType")
     public String objectType;
 
@@ -46,6 +53,10 @@ public class CreateCustomerResponseBody extends TeaModel {
     }
 
     public static class CreateCustomerResponseBodyContacts extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>contact_id</p>
+         */
         @NameInMap("contactInstanceId")
         public String contactInstanceId;
 

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class QueryItemByUrlRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YEp3JcM******UIbhwiE</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://alidocs.dingtalk.com/i/nodes/m0Xw6OYE4D7VLeaBP">https://alidocs.dingtalk.com/i/nodes/m0Xw6OYE4D7VLeaBP</a>***</p>
      */
     @NameInMap("url")
     public String url;

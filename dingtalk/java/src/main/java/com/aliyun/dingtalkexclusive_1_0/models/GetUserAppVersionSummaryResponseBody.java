@@ -7,9 +7,17 @@ public class GetUserAppVersionSummaryResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetUserAppVersionSummaryResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -43,18 +51,38 @@ public class GetUserAppVersionSummaryResponseBody extends TeaModel {
     }
 
     public static class GetUserAppVersionSummaryResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>6.0</p>
+         */
         @NameInMap("appVersion")
         public String appVersion;
 
+        /**
+         * <strong>example:</strong>
+         * <p>iOS</p>
+         */
         @NameInMap("client")
         public String client;
 
+        /**
+         * <strong>example:</strong>
+         * <p>组织1</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20210808</p>
+         */
         @NameInMap("statDate")
         public String statDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("userCnt")
         public Float userCnt;
 

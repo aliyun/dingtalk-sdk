@@ -4,6 +4,10 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyGetMemberRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>19912345678</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 

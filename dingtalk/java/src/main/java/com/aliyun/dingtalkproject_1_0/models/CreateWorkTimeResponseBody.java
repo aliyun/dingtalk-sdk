@@ -21,12 +21,24 @@ public class CreateWorkTimeResponseBody extends TeaModel {
     }
 
     public static class CreateWorkTimeResponseBodyResultBody extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-09-05T00:00:00.000Z</p>
+         */
         @NameInMap("date")
         public String date;
 
+        /**
+         * <strong>example:</strong>
+         * <p>63186e54e07f18003fea6b90</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3600000</p>
+         */
         @NameInMap("workTime")
         public Long workTime;
 
@@ -65,6 +77,10 @@ public class CreateWorkTimeResponseBody extends TeaModel {
         @NameInMap("body")
         public java.util.List<CreateWorkTimeResponseBodyResultBody> body;
 
+        /**
+         * <strong>example:</strong>
+         * <p>创建成功</p>
+         */
         @NameInMap("message")
         public String message;
 

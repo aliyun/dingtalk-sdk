@@ -4,15 +4,31 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class RestoreRecycleItemResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("async")
     public Boolean async;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dentry_id</p>
+     */
     @NameInMap("dentryId")
     public String dentryId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>space_id</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>task_id</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 

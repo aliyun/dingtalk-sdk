@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSendOfficialAccountOTOMessageResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>acs1234</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 

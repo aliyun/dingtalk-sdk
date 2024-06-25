@@ -9,6 +9,9 @@ public class SearchRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试搜索关键词</p>
      */
     @NameInMap("keyword")
     public String keyword;
@@ -111,6 +114,10 @@ public class SearchRequest extends TeaModel {
         @NameInMap("spaceIds")
         public java.util.List<String> spaceIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>40</p>
+         */
         @NameInMap("summaryLength")
         public Integer summaryLength;
 

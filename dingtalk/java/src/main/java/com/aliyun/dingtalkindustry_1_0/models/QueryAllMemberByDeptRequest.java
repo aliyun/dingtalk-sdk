@@ -7,9 +7,17 @@ public class QueryAllMemberByDeptRequest extends TeaModel {
     @NameInMap("monthMark")
     public String monthMark;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>200</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

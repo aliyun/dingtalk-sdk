@@ -98,15 +98,31 @@ public class GetRangeResponseBody extends TeaModel {
     }
 
     public static class GetRangeResponseBodyBackgroundColors extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>red_value</p>
+         */
         @NameInMap("red")
         public Integer red;
 
+        /**
+         * <strong>example:</strong>
+         * <p>green_value</p>
+         */
         @NameInMap("green")
         public Integer green;
 
+        /**
+         * <strong>example:</strong>
+         * <p>blue_value</p>
+         */
         @NameInMap("blue")
         public Integer blue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hex_string_value</p>
+         */
         @NameInMap("hexString")
         public String hexString;
 

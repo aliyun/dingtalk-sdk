@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class LockConferenceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>lock</p>
      */
     @NameInMap("action")
     public String action;

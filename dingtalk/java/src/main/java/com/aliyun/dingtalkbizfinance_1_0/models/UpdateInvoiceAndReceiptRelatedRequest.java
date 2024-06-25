@@ -7,15 +7,31 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
     @NameInMap("generalInvoiceVO")
     public UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO generalInvoiceVO;
 
+    /**
+     * <strong>example:</strong>
+     * <p>code</p>
+     */
     @NameInMap("invoiceCode")
     public String invoiceCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>155</p>
+     */
     @NameInMap("invoiceNo")
     public String invoiceNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("operator")
     public String operator;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("receiptCode")
     public String receiptCode;
 
@@ -65,24 +81,52 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
     }
 
     public static class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>北京国际机场</p>
+         */
         @NameInMap("carrier")
         public String carrier;
 
+        /**
+         * <strong>example:</strong>
+         * <p>AA1234</p>
+         */
         @NameInMap("flightNumber")
         public String flightNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-05-11</p>
+         */
         @NameInMap("flyDate")
         public String flyDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州</p>
+         */
         @NameInMap("flyFrom")
         public String flyFrom;
 
+        /**
+         * <strong>example:</strong>
+         * <p>16:00</p>
+         */
         @NameInMap("flyTime")
         public String flyTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>北京</p>
+         */
         @NameInMap("flyTo")
         public String flyTo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>头等舱</p>
+         */
         @NameInMap("seat")
         public String seat;
 
@@ -174,6 +218,10 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("taxPre")
         public String taxPre;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("taxPreType")
         public String taxPreType;
 
@@ -607,6 +655,10 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("importCertificateNo")
         public String importCertificateNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("inspectionListNo")
         public String inspectionListNo;
 
@@ -768,6 +820,10 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("accountPeriod")
         public String accountPeriod;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ABC</p>
+         */
         @NameInMap("agentCode")
         public String agentCode;
 
@@ -777,6 +833,10 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("amountWithTax")
         public String amountWithTax;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("caacDevelopmentFund")
         public String caacDevelopmentFund;
 
@@ -786,15 +846,31 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州</p>
+         */
         @NameInMap("city")
         public String city;
 
+        /**
+         * <strong>example:</strong>
+         * <p>北京</p>
+         */
         @NameInMap("destination")
         public String destination;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123KM</p>
+         */
         @NameInMap("distance")
         public String distance;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("drawerName")
         public String drawerName;
 
@@ -804,9 +880,17 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("electronicUrl")
         public String electronicUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州北</p>
+         */
         @NameInMap("entrance")
         public String entrance;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州北</p>
+         */
         @NameInMap("exit")
         public String exit;
 
@@ -816,6 +900,10 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("flightItineraryDetails")
         public java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails> flightItineraryDetails;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("fuelSurcharge")
         public String fuelSurcharge;
 
@@ -825,12 +913,24 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>18:00</p>
+         */
         @NameInMap("getOffTime")
         public String getOffTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>17:00</p>
+         */
         @NameInMap("getOnTime")
         public String getOnTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://XXX.jpg">http://XXX.jpg</a></p>
+         */
         @NameInMap("imageUrl")
         public String imageUrl;
 
@@ -846,6 +946,10 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("invoiceType")
         public String invoiceType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ABCD</p>
+         */
         @NameInMap("issueBy")
         public String issueBy;
 
@@ -855,18 +959,34 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("oilFlag")
         public String oilFlag;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州</p>
+         */
         @NameInMap("origin")
         public String origin;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("passenger")
         public String passenger;
 
+        /**
+         * <strong>example:</strong>
+         * <p>330781****1234</p>
+         */
         @NameInMap("passengerUserId")
         public String passengerUserId;
 
         @NameInMap("payee")
         public String payee;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("printSerialNumber")
         public String printSerialNumber;
 
@@ -879,9 +999,17 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("purchaserBankAccount")
         public String purchaserBankAccount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("purchaserBankNameAccount")
         public String purchaserBankNameAccount;
 
@@ -894,18 +1022,34 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("purchaserTel")
         public String purchaserTel;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="mailto:abc@test.com">abc@test.com</a></p>
+         */
         @NameInMap("receiverEmail")
         public String receiverEmail;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("receiverName")
         public String receiverName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234567809</p>
+         */
         @NameInMap("receiverTel")
         public String receiverTel;
 
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-09-01</p>
+         */
         @NameInMap("seatClass")
         public String seatClass;
 
@@ -915,9 +1059,17 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("sellerAddress")
         public String sellerAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("sellerBankAccount")
         public String sellerBankAccount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("sellerBankNameAccount")
         public String sellerBankNameAccount;
 
@@ -930,24 +1082,44 @@ public class UpdateInvoiceAndReceiptRelatedRequest extends TeaModel {
         @NameInMap("sellerTel")
         public String sellerTel;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州</p>
+         */
         @NameInMap("serialNo")
         public String serialNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州</p>
+         */
         @NameInMap("startTime")
         public String startTime;
 
         @NameInMap("supplySign")
         public String supplySign;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("surcharge")
         public String surcharge;
 
         @NameInMap("taxAmount")
         public String taxAmount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>G1234</p>
+         */
         @NameInMap("trainNo")
         public String trainNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-09-01</p>
+         */
         @NameInMap("travelDate")
         public String travelDate;
 

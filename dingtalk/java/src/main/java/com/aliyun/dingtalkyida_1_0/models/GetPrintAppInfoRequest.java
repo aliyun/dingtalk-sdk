@@ -4,11 +4,18 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPrintAppInfoRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("nameLike")
     public String nameLike;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("userId")
     public String userId;

@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class QueryOrderRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123400</p>
      */
     @NameInMap("alipayAppId")
     public String alipayAppId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10000</p>
      */
     @NameInMap("merchantId")
     public String merchantId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>CM00001</p>
      */
     @NameInMap("orderNo")
     public String orderNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>WWrhziOLF/XuRd3IyKwLkLeSFgKnUfeg2yLEVD9Bw+8</p>
      */
     @NameInMap("signature")
     public String signature;

@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class GetBindChildInfoRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding95eef8003c9ca8ca24f2f5cc6abecb85</p>
      */
     @NameInMap("schoolCorpId")
     public String schoolCorpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3000000000307711730</p>
      */
     @NameInMap("studentUserId")
     public String studentUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>X5y5kd8XiiqiScCl4Qlfy5GgiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

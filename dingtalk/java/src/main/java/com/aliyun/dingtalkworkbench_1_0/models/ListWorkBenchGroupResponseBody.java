@@ -21,9 +21,17 @@ public class ListWorkBenchGroupResponseBody extends TeaModel {
     }
 
     public static class ListWorkBenchGroupResponseBodyGroupList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>desc</p>
+         */
         @NameInMap("componentId")
         public String componentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>name</p>
+         */
         @NameInMap("name")
         public String name;
 

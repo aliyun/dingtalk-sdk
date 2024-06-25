@@ -4,6 +4,10 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDeviceIpByCodeRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1005F1K203604N000676</p>
+     */
     @NameInMap("deviceSn")
     public String deviceSn;
 

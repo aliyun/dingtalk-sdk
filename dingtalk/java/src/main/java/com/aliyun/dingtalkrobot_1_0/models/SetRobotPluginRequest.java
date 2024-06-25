@@ -7,6 +7,10 @@ public class SetRobotPluginRequest extends TeaModel {
     @NameInMap("pluginInfoList")
     public java.util.List<SetRobotPluginRequestPluginInfoList> pluginInfoList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dingncjdnfpkN7dsh</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
@@ -34,19 +38,33 @@ public class SetRobotPluginRequest extends TeaModel {
     public static class SetRobotPluginRequestPluginInfoList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>@lALPDtXaDkO3j7hgYA</p>
          */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>快捷入口名字</p>
          */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 

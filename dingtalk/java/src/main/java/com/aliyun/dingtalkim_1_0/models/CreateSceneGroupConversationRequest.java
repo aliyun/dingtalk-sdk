@@ -9,16 +9,26 @@ public class CreateSceneGroupConversationRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>客户群</p>
      */
     @NameInMap("groupName")
     public String groupName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1107****2120</p>
      */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>http://***.png</p>
+     */
     @NameInMap("icon")
     public String icon;
 
@@ -27,6 +37,9 @@ public class CreateSceneGroupConversationRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8d42****nkld</p>
      */
     @NameInMap("templateId")
     public String templateId;
@@ -34,6 +47,10 @@ public class CreateSceneGroupConversationRequest extends TeaModel {
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>asdazxc</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

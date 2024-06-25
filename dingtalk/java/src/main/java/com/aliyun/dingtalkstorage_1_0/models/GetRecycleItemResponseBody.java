@@ -21,30 +21,66 @@ public class GetRecycleItemResponseBody extends TeaModel {
     }
 
     public static class GetRecycleItemResponseBodyItem extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_id</p>
+         */
         @NameInMap("dentryId")
         public String dentryId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>recycle_item_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>operator_id</p>
+         */
         @NameInMap("operatorId")
         public String operatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("operatorTime")
         public String operatorTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_name</p>
+         */
         @NameInMap("originalName")
         public String originalName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_path</p>
+         */
         @NameInMap("originalPath")
         public String originalPath;
 
+        /**
+         * <strong>example:</strong>
+         * <p>512</p>
+         */
         @NameInMap("size")
         public Long size;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>file</p>
+         */
         @NameInMap("type")
         public String type;
 

@@ -23,14 +23,19 @@ public class GetProcessCodeByNameResponseBody extends TeaModel {
     public static class GetProcessCodeByNameResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
-         * <br>
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2024-03-22T11:50Z</p>
          */
         @NameInMap("gmtModified")
         public String gmtModified;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PROC-abcdef-example</p>
          */
         @NameInMap("processCode")
         public String processCode;

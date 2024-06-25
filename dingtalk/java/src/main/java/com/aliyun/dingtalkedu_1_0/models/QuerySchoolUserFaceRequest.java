@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class QuerySchoolUserFaceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>从0开始</p>
      */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>大于0小于200</p>
      */
     @NameInMap("pageSize")
     public Integer pageSize;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sn123</p>
      */
     @NameInMap("sn")
     public String sn;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1全量模式，2增量模式</p>
      */
     @NameInMap("type")
     public Integer type;

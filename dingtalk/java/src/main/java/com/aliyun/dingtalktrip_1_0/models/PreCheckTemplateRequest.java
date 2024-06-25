@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class PreCheckTemplateRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding60f2b247ac1cb24024f2f5cc6abecb85</p>
      */
     @NameInMap("customerCorpId")
     public String customerCorpId;

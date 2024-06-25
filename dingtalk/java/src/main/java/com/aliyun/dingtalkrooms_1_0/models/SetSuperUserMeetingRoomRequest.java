@@ -15,6 +15,9 @@ public class SetSuperUserMeetingRoomRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OcMXXXXXM2eRogiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

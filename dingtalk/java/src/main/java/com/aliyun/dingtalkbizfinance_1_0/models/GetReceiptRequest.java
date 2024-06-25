@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetReceiptRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>19b98a1c-5a31-4d78-9da7-0e347593820a</p>
      */
     @NameInMap("code")
     public String code;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>EM-1017F28E03350B1738B3000X</p>
      */
     @NameInMap("modelId")
     public String modelId;

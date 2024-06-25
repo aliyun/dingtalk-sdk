@@ -21,15 +21,31 @@ public class DigitalStoreConversationsResponseBody extends TeaModel {
     }
 
     public static class DigitalStoreConversationsResponseBodyContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx店</p>
+         */
         @NameInMap("conversationTitle")
         public String conversationTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>store</p>
+         */
         @NameInMap("conversationType")
         public String conversationType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cid1234984881</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 

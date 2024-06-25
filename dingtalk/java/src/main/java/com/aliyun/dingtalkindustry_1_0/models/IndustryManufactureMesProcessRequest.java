@@ -6,48 +6,93 @@ import com.aliyun.tea.*;
 public class IndustryManufactureMesProcessRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>add</p>
      */
     @NameInMap("action")
     public String action;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>opsoft</p>
      */
     @NameInMap("appKey")
     public String appKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>process</p>
+     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
     @NameInMap("extendData")
     public java.util.List<IndustryManufactureMesProcessRequestExtendData> extendData;
 
+    /**
+     * <strong>example:</strong>
+     * <p>打磨</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>y</p>
+     */
     @NameInMap("needDispatch")
     public String needDispatch;
 
+    /**
+     * <strong>example:</strong>
+     * <p>n</p>
+     */
     @NameInMap("needQualityTest")
     public String needQualityTest;
 
+    /**
+     * <strong>example:</strong>
+     * <p>011354</p>
+     */
     @NameInMap("no")
     public String no;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0.21</p>
+     */
     @NameInMap("price")
     public String price;
 
+    /**
+     * <strong>example:</strong>
+     * <p>自制</p>
+     */
     @NameInMap("prop")
     public String prop;
 
+    /**
+     * <strong>example:</strong>
+     * <p>这里是备注</p>
+     */
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <strong>example:</strong>
+     * <p>止口面攻牙的操作方法</p>
+     */
     @NameInMap("sop")
     public String sop;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>39C1E213-86B2-706B-9615-5B957DF8C15D</p>
      */
     @NameInMap("uuid")
     public String uuid;
@@ -162,15 +207,31 @@ public class IndustryManufactureMesProcessRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesProcessRequestExtendData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>username</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>生产人员</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <strong>example:</strong>
+         * <p>string</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 

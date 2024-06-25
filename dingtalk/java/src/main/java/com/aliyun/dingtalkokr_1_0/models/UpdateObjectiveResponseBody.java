@@ -7,6 +7,10 @@ public class UpdateObjectiveResponseBody extends TeaModel {
     @NameInMap("data")
     public UpdateObjectiveResponseBodyData data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,12 +38,18 @@ public class UpdateObjectiveResponseBody extends TeaModel {
     public static class UpdateObjectiveResponseBodyData extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>58YD</p>
          */
         @NameInMap("id")
         public String id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>33453</p>
          */
         @NameInMap("position")
         public Float position;

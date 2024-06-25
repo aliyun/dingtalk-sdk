@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListContactRestrictSettingResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -43,9 +47,17 @@ public class ListContactRestrictSettingResponseBody extends TeaModel {
     }
 
     public static class ListContactRestrictSettingResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("active")
         public Boolean active;
 
+        /**
+         * <strong>example:</strong>
+         * <p>description</p>
+         */
         @NameInMap("description")
         public String description;
 
@@ -58,9 +70,17 @@ public class ListContactRestrictSettingResponseBody extends TeaModel {
         @NameInMap("excludeUserIds")
         public java.util.List<String> excludeUserIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1001</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>contact restrict name</p>
+         */
         @NameInMap("name")
         public String name;
 

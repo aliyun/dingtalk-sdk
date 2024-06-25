@@ -4,20 +4,35 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyChainUpdateDeptInfoRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>名称</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("partnerNumber")
     public String partnerNumber;
 
     @NameInMap("partnerTypeList")
     public java.util.List<Long> partnerTypeList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1231</p>
+     */
     @NameInMap("superId")
     public Long superId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>576488112</p>
      */
     @NameInMap("supplyDeptId")
     public Long supplyDeptId;

@@ -10,6 +10,10 @@ public class ListObjectiveByUserResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -43,6 +47,10 @@ public class ListObjectiveByUserResponseBody extends TeaModel {
     }
 
     public static class ListObjectiveByUserResponseBodyContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("count")
         public Integer count;
 

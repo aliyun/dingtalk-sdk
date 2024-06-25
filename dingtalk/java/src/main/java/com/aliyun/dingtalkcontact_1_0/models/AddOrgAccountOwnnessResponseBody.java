@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOrgAccountOwnnessResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>123456</p>
+     */
     @NameInMap("result")
     public Long result;
 

@@ -4,12 +4,20 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListPunchScheduleByConditionWithPagingResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     @NameInMap("list")
     public java.util.List<ListPunchScheduleByConditionWithPagingResponseBodyList> list;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10000</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -43,18 +51,38 @@ public class ListPunchScheduleByConditionWithPagingResponseBody extends TeaModel
     }
 
     public static class ListPunchScheduleByConditionWithPagingResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>be0d84e04316488cxxxxxxxx129522b0</p>
+         */
         @NameInMap("bizOuterId")
         public String bizOuterId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试打卡机</p>
+         */
         @NameInMap("positionName")
         public String positionName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>checkIn</p>
+         */
         @NameInMap("punchSymbol")
         public String punchSymbol;
 
+        /**
+         * <strong>example:</strong>
+         * <p>200003</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1647333408000</p>
+         */
         @NameInMap("userPunchTime")
         public Long userPunchTime;
 

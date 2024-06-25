@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetAgentIdByRelatedAppIdRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10000</p>
      */
     @NameInMap("appId")
     public Long appId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding24f2f5ccxxxxxxxx</p>
      */
     @NameInMap("targetCorpId")
     public String targetCorpId;

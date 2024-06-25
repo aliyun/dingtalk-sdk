@@ -4,48 +4,104 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupCapacityInquiryResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>85000</p>
+     */
     @NameInMap("actualPrice")
     public Long actualPrice;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1652183395772</p>
+     */
     @NameInMap("createdAt")
     public Long createdAt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("currentCapacity")
     public Integer currentCapacity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1652183395772</p>
+     */
     @NameInMap("currentEffectUntil")
     public Long currentEffectUntil;
 
+    /**
+     * <strong>example:</strong>
+     * <p>85</p>
+     */
     @NameInMap("discount")
     public Integer discount;
 
     @NameInMap("extInfo")
     public java.util.Map<String, ?> extInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>678912390478123</p>
+     */
     @NameInMap("groupOwner")
     public String groupOwner;
 
+    /**
+     * <strong>example:</strong>
+     * <p>今天吃肘子群</p>
+     */
     @NameInMap("groupTitle")
     public String groupTitle;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10000</p>
+     */
     @NameInMap("markedPrice")
     public Long markedPrice;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("memberCount")
     public Integer memberCount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidoondswfakscdviouhao==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>32453245234523425</p>
+     */
     @NameInMap("operator")
     public String operator;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10000</p>
+     */
     @NameInMap("targetCapacity")
     public Integer targetCapacity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1652183395772</p>
+     */
     @NameInMap("targetEffectUntil")
     public Long targetEffectUntil;
 
+    /**
+     * <strong>example:</strong>
+     * <p>jklasdhjfasdjkfkh421jk5bb243b523</p>
+     */
     @NameInMap("token")
     public String token;
 

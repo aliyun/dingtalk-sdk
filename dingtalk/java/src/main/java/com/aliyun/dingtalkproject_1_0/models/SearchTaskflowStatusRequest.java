@@ -4,18 +4,38 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchTaskflowStatusRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>f279e812xxxxxx</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>未开始</p>
+     */
     @NameInMap("query")
     public String query;
 
+    /**
+     * <strong>example:</strong>
+     * <p>60a2187eb72xxxxxxx,60a2187eb72xxxxxxx</p>
+     */
     @NameInMap("tfIds")
     public String tfIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>60a2187eb72xxxxxxx,60a2187eb72xxxxxxx</p>
+     */
     @NameInMap("tfsIds")
     public String tfsIds;
 

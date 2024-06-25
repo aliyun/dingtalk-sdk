@@ -9,6 +9,9 @@ public class CopyProcessRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingabc</p>
      */
     @NameInMap("sourceCorpId")
     public String sourceCorpId;
@@ -49,6 +52,10 @@ public class CopyProcessRequest extends TeaModel {
     }
 
     public static class CopyProcessRequestCopyOptions extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("copyType")
         public Integer copyType;
 
@@ -68,14 +75,25 @@ public class CopyProcessRequest extends TeaModel {
     }
 
     public static class CopyProcessRequestSourceProcessVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>proc-abc</p>
          */
         @NameInMap("processCode")
         public String processCode;

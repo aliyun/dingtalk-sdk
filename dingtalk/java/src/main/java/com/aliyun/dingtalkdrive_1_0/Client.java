@@ -6,11 +6,10 @@ import com.aliyun.dingtalkdrive_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 新建自定义空间
-     *
+     * <b>summary</b> : 
+     * <p>新建自定义空间</p>
+     * 
      * @param request AddCustomSpaceRequest
      * @param headers AddCustomSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -74,8 +74,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新建自定义空间
-     *
+     * <b>summary</b> : 
+     * <p>新建自定义空间</p>
+     * 
      * @param request AddCustomSpaceRequest
      * @return AddCustomSpaceResponse
      */
@@ -86,8 +87,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加文件
-     *
+     * <b>summary</b> : 
+     * <p>添加文件</p>
+     * 
      * @param request AddFileRequest
      * @param headers AddFileHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -148,8 +150,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加文件
-     *
+     * <b>summary</b> : 
+     * <p>添加文件</p>
+     * 
      * @param request AddFileRequest
      * @return AddFileResponse
      */
@@ -160,8 +163,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加权限
-     *
+     * <b>summary</b> : 
+     * <p>添加权限</p>
+     * 
      * @param request AddPermissionRequest
      * @param headers AddPermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -210,8 +214,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加权限
-     *
+     * <b>summary</b> : 
+     * <p>添加权限</p>
+     * 
      * @param request AddPermissionRequest
      * @return AddPermissionResponse
      */
@@ -222,8 +227,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新建空间
-     *
+     * <b>summary</b> : 
+     * <p>新建空间</p>
+     * 
      * @param request AddSpaceRequest
      * @param headers AddSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -268,8 +274,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新建空间
-     *
+     * <b>summary</b> : 
+     * <p>新建空间</p>
+     * 
      * @param request AddSpaceRequest
      * @return AddSpaceResponse
      */
@@ -280,8 +287,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 清空回收站文件
-     *
+     * <b>summary</b> : 
+     * <p>清空回收站文件</p>
+     * 
      * @param request ClearRecycleFilesRequest
      * @param headers ClearRecycleFilesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -326,8 +334,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 清空回收站文件
-     *
+     * <b>summary</b> : 
+     * <p>清空回收站文件</p>
+     * 
      * @param request ClearRecycleFilesRequest
      * @return ClearRecycleFilesResponse
      */
@@ -338,8 +347,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 拷贝文件
-     *
+     * <b>summary</b> : 
+     * <p>拷贝文件</p>
+     * 
      * @param request CopyFileRequest
      * @param headers CopyFileHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -392,8 +402,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 拷贝文件
-     *
+     * <b>summary</b> : 
+     * <p>拷贝文件</p>
+     * 
      * @param request CopyFileRequest
      * @return CopyFileResponse
      */
@@ -404,8 +415,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除文件
-     *
+     * <b>summary</b> : 
+     * <p>删除文件</p>
+     * 
      * @param request DeleteFileRequest
      * @param headers DeleteFileHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -450,8 +462,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除文件
-     *
+     * <b>summary</b> : 
+     * <p>删除文件</p>
+     * 
      * @param request DeleteFileRequest
      * @return DeleteFileResponse
      */
@@ -462,8 +475,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量删除文件（夹）
-     *
+     * <b>summary</b> : 
+     * <p>批量删除文件（夹）</p>
+     * 
      * @param request DeleteFilesRequest
      * @param headers DeleteFilesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -512,8 +526,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量删除文件（夹）
-     *
+     * <b>summary</b> : 
+     * <p>批量删除文件（夹）</p>
+     * 
      * @param request DeleteFilesRequest
      * @return DeleteFilesResponse
      */
@@ -524,8 +539,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除权限
-     *
+     * <b>summary</b> : 
+     * <p>删除权限</p>
+     * 
      * @param request DeletePermissionRequest
      * @param headers DeletePermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -574,8 +590,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除权限
-     *
+     * <b>summary</b> : 
+     * <p>删除权限</p>
+     * 
      * @param request DeletePermissionRequest
      * @return DeletePermissionResponse
      */
@@ -586,8 +603,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 彻底删除回收站文件
-     *
+     * <b>summary</b> : 
+     * <p>彻底删除回收站文件</p>
+     * 
      * @param request DeleteRecycleFilesRequest
      * @param headers DeleteRecycleFilesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -636,8 +654,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 彻底删除回收站文件
-     *
+     * <b>summary</b> : 
+     * <p>彻底删除回收站文件</p>
+     * 
      * @param request DeleteRecycleFilesRequest
      * @return DeleteRecycleFilesResponse
      */
@@ -648,8 +667,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除空间
-     *
+     * <b>summary</b> : 
+     * <p>删除空间</p>
+     * 
      * @param request DeleteSpaceRequest
      * @param headers DeleteSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -690,8 +710,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除空间
-     *
+     * <b>summary</b> : 
+     * <p>删除空间</p>
+     * 
      * @param request DeleteSpaceRequest
      * @return DeleteSpaceResponse
      */
@@ -702,8 +723,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取异步任务信息
-     *
+     * <b>summary</b> : 
+     * <p>获取异步任务信息</p>
+     * 
      * @param request GetAsyncTaskInfoRequest
      * @param headers GetAsyncTaskInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -744,8 +766,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取异步任务信息
-     *
+     * <b>summary</b> : 
+     * <p>获取异步任务信息</p>
+     * 
      * @param request GetAsyncTaskInfoRequest
      * @return GetAsyncTaskInfoResponse
      */
@@ -756,8 +779,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取下载信息
-     *
+     * <b>summary</b> : 
+     * <p>获取下载信息</p>
+     * 
      * @param request GetDownloadInfoRequest
      * @param headers GetDownloadInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -806,8 +830,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取下载信息
-     *
+     * <b>summary</b> : 
+     * <p>获取下载信息</p>
+     * 
      * @param request GetDownloadInfoRequest
      * @return GetDownloadInfoResponse
      */
@@ -818,8 +843,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件信息
-     *
+     * <b>summary</b> : 
+     * <p>获取文件信息</p>
+     * 
      * @param request GetFileInfoRequest
      * @param headers GetFileInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -860,8 +886,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件信息
-     *
+     * <b>summary</b> : 
+     * <p>获取文件信息</p>
+     * 
      * @param request GetFileInfoRequest
      * @return GetFileInfoResponse
      */
@@ -872,8 +899,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取我的工作空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取我的工作空间信息</p>
+     * 
      * @param request GetMySpaceInfoRequest
      * @param headers GetMySpaceInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -914,8 +942,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取我的工作空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取我的工作空间信息</p>
+     * 
      * @param request GetMySpaceInfoRequest
      * @return GetMySpaceInfoResponse
      */
@@ -926,8 +955,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取预览信息
-     *
+     * <b>summary</b> : 
+     * <p>获取预览信息</p>
+     * 
      * @param request GetPreviewInfoRequest
      * @param headers GetPreviewInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -976,8 +1006,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取预览信息
-     *
+     * <b>summary</b> : 
+     * <p>获取预览信息</p>
+     * 
      * @param request GetPreviewInfoRequest
      * @return GetPreviewInfoResponse
      */
@@ -988,8 +1019,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取权限点信息
-     *
+     * <b>summary</b> : 
+     * <p>获取权限点信息</p>
+     * 
      * @param request GetPrivilegeInfoRequest
      * @param headers GetPrivilegeInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1030,8 +1062,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取权限点信息
-     *
+     * <b>summary</b> : 
+     * <p>获取权限点信息</p>
+     * 
      * @param request GetPrivilegeInfoRequest
      * @return GetPrivilegeInfoResponse
      */
@@ -1042,8 +1075,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取容量信息列表
-     *
+     * <b>summary</b> : 
+     * <p>获取容量信息列表</p>
+     * 
      * @param request GetQuotaInfosRequest
      * @param headers GetQuotaInfosHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1092,8 +1126,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取容量信息列表
-     *
+     * <b>summary</b> : 
+     * <p>获取容量信息列表</p>
+     * 
      * @param request GetQuotaInfosRequest
      * @return GetQuotaInfosResponse
      */
@@ -1104,8 +1139,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取上传信息
-     *
+     * <b>summary</b> : 
+     * <p>获取上传信息</p>
+     * 
      * @param request GetUploadInfoRequest
      * @param headers GetUploadInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1178,8 +1214,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取上传信息
-     *
+     * <b>summary</b> : 
+     * <p>获取上传信息</p>
+     * 
      * @param request GetUploadInfoRequest
      * @return GetUploadInfoResponse
      */
@@ -1190,8 +1227,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加自定义空间权限
-     *
+     * <b>summary</b> : 
+     * <p>添加自定义空间权限</p>
+     * 
      * @param request GrantPrivilegeOfCustomSpaceRequest
      * @param headers GrantPrivilegeOfCustomSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1248,8 +1286,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加自定义空间权限
-     *
+     * <b>summary</b> : 
+     * <p>添加自定义空间权限</p>
+     * 
      * @param request GrantPrivilegeOfCustomSpaceRequest
      * @return GrantPrivilegeOfCustomSpaceResponse
      */
@@ -1260,8 +1299,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取空间信息</p>
+     * 
      * @param request InfoSpaceRequest
      * @param headers InfoSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1302,8 +1342,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取空间信息</p>
+     * 
      * @param request InfoSpaceRequest
      * @return InfoSpaceResponse
      */
@@ -1314,8 +1355,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件列表
-     *
+     * <b>summary</b> : 
+     * <p>获取文件列表</p>
+     * 
      * @param request ListFilesRequest
      * @param headers ListFilesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1376,8 +1418,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件列表
-     *
+     * <b>summary</b> : 
+     * <p>获取文件列表</p>
+     * 
      * @param request ListFilesRequest
      * @return ListFilesResponse
      */
@@ -1388,8 +1431,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取权限列表
-     *
+     * <b>summary</b> : 
+     * <p>获取权限列表</p>
+     * 
      * @param request ListPermissionsRequest
      * @param headers ListPermissionsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1430,8 +1474,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取权限列表
-     *
+     * <b>summary</b> : 
+     * <p>获取权限列表</p>
+     * 
      * @param request ListPermissionsRequest
      * @return ListPermissionsResponse
      */
@@ -1442,8 +1487,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取回收站文件列表
-     *
+     * <b>summary</b> : 
+     * <p>获取回收站文件列表</p>
+     * 
      * @param request ListRecycleFilesRequest
      * @param headers ListRecycleFilesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1500,8 +1546,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取回收站文件列表
-     *
+     * <b>summary</b> : 
+     * <p>获取回收站文件列表</p>
+     * 
      * @param request ListRecycleFilesRequest
      * @return ListRecycleFilesResponse
      */
@@ -1512,8 +1559,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取空间列表
-     *
+     * <b>summary</b> : 
+     * <p>获取空间列表</p>
+     * 
      * @param request ListSpacesRequest
      * @param headers ListSpacesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1566,8 +1614,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取空间列表
-     *
+     * <b>summary</b> : 
+     * <p>获取空间列表</p>
+     * 
      * @param request ListSpacesRequest
      * @return ListSpacesResponse
      */
@@ -1578,8 +1627,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 管理侧购买容量
-     *
+     * <b>summary</b> : 
+     * <p>管理侧购买容量</p>
+     * 
      * @param request ManagementBuyQuotaRequest
      * @param headers ManagementBuyQuotaHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1628,8 +1678,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 管理侧购买容量
-     *
+     * <b>summary</b> : 
+     * <p>管理侧购买容量</p>
+     * 
      * @param request ManagementBuyQuotaRequest
      * @return ManagementBuyQuotaResponse
      */
@@ -1640,8 +1691,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 管理侧获取空间列表
-     *
+     * <b>summary</b> : 
+     * <p>管理侧获取空间列表</p>
+     * 
      * @param request ManagementListSpacesRequest
      * @param headers ManagementListSpacesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1686,8 +1738,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 管理侧获取空间列表
-     *
+     * <b>summary</b> : 
+     * <p>管理侧获取空间列表</p>
+     * 
      * @param request ManagementListSpacesRequest
      * @return ManagementListSpacesResponse
      */
@@ -1698,8 +1751,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 管理侧修改空间信息
-     *
+     * <b>summary</b> : 
+     * <p>管理侧修改空间信息</p>
+     * 
      * @param request ManagementModifySpaceRequest
      * @param headers ManagementModifySpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1748,8 +1802,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 管理侧修改空间信息
-     *
+     * <b>summary</b> : 
+     * <p>管理侧修改空间信息</p>
+     * 
      * @param request ManagementModifySpaceRequest
      * @return ManagementModifySpaceResponse
      */
@@ -1760,8 +1815,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改权限
-     *
+     * <b>summary</b> : 
+     * <p>修改权限</p>
+     * 
      * @param request ModifyPermissionRequest
      * @param headers ModifyPermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1810,8 +1866,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改权限
-     *
+     * <b>summary</b> : 
+     * <p>修改权限</p>
+     * 
      * @param request ModifyPermissionRequest
      * @return ModifyPermissionResponse
      */
@@ -1822,8 +1879,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移动文件
-     *
+     * <b>summary</b> : 
+     * <p>移动文件</p>
+     * 
      * @param request MoveFileRequest
      * @param headers MoveFileHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1876,8 +1934,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移动文件
-     *
+     * <b>summary</b> : 
+     * <p>移动文件</p>
+     * 
      * @param request MoveFileRequest
      * @return MoveFileResponse
      */
@@ -1888,8 +1947,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量移动文件（夹）
-     *
+     * <b>summary</b> : 
+     * <p>批量移动文件（夹）</p>
+     * 
      * @param request MoveFilesRequest
      * @param headers MoveFilesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1946,8 +2006,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量移动文件（夹）
-     *
+     * <b>summary</b> : 
+     * <p>批量移动文件（夹）</p>
+     * 
      * @param request MoveFilesRequest
      * @return MoveFilesResponse
      */
@@ -1958,8 +2019,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 还原回收站文件
-     *
+     * <b>summary</b> : 
+     * <p>还原回收站文件</p>
+     * 
      * @param request RecoverRecycleFilesRequest
      * @param headers RecoverRecycleFilesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2008,8 +2070,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 还原回收站文件
-     *
+     * <b>summary</b> : 
+     * <p>还原回收站文件</p>
+     * 
      * @param request RecoverRecycleFilesRequest
      * @return RecoverRecycleFilesResponse
      */
@@ -2020,8 +2083,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 重命名文件
-     *
+     * <b>summary</b> : 
+     * <p>重命名文件</p>
+     * 
      * @param request RenameFileRequest
      * @param headers RenameFileHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2066,8 +2130,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 重命名文件
-     *
+     * <b>summary</b> : 
+     * <p>重命名文件</p>
+     * 
      * @param request RenameFileRequest
      * @return RenameFileResponse
      */

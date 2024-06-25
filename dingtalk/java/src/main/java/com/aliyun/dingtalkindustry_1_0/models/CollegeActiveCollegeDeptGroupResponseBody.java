@@ -4,6 +4,10 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeActiveCollegeDeptGroupResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>0134124</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

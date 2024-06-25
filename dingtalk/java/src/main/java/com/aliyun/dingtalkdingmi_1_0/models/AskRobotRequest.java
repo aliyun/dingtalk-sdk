@@ -9,16 +9,26 @@ public class AskRobotRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>小蜜机器人能做什么</p>
      */
     @NameInMap("question")
     public String question;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abcd1234</p>
      */
     @NameInMap("robotAppKey")
     public String robotAppKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("sessionUuid")
     public String sessionUuid;
 

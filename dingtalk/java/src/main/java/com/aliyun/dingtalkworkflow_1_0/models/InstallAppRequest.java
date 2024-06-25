@@ -15,6 +15,9 @@ public class InstallAppRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>finance</p>
      */
     @NameInMap("sourceDirName")
     public String sourceDirName;

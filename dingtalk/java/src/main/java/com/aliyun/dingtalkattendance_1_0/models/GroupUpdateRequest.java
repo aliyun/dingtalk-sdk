@@ -4,75 +4,162 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupUpdateRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>123L</p>
+     */
     @NameInMap("adjustmentSettingId")
     public Long adjustmentSettingId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableCheckWhenRest")
     public Boolean disableCheckWhenRest;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableCheckWithoutSchedule")
     public Boolean disableCheckWithoutSchedule;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableCameraCheck")
     public Boolean enableCameraCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableEmpSelectClass")
     public Boolean enableEmpSelectClass;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableFaceCheck")
     public Boolean enableFaceCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableFaceStrictMode")
     public Boolean enableFaceStrictMode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableOutSideUpdateNormalCheck")
     public Boolean enableOutSideUpdateNormalCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableOutsideApply")
     public Boolean enableOutsideApply;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableOutsideCheck")
     public Boolean enableOutsideCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableOutsideRemark")
     public Boolean enableOutsideRemark;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableTrimDistance")
     public Boolean enableTrimDistance;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("forbidHideOutSideAddress")
     public Boolean forbidHideOutSideAddress;
 
     @NameInMap("freeCheckSetting")
     public GroupUpdateRequestFreeCheckSetting freeCheckSetting;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("freeCheckTypeId")
     public Integer freeCheckTypeId;
 
+    @NameInMap("freecheckDayStartMinOffset")
+    public Integer freecheckDayStartMinOffset;
+
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("groupId")
     public Long groupId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>白班考勤</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
     @NameInMap("managerList")
     public java.util.List<String> managerList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("offset")
     public Integer offset;
 
     @NameInMap("openCameraCheck")
     public Boolean openCameraCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("openFaceCheck")
     public Boolean openFaceCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>-1</p>
+     */
     @NameInMap("outsideCheckApproveModeId")
     public Integer outsideCheckApproveModeId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123L</p>
+     */
     @NameInMap("overtimeSettingId")
     public Long overtimeSettingId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123dfdf</p>
+     */
     @NameInMap("owner")
     public String owner;
 
@@ -85,9 +172,17 @@ public class GroupUpdateRequest extends TeaModel {
     @NameInMap("shiftVOList")
     public java.util.List<GroupUpdateRequestShiftVOList> shiftVOList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("skipHolidays")
     public Boolean skipHolidays;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("trimDistance")
     public Integer trimDistance;
 
@@ -96,6 +191,9 @@ public class GroupUpdateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123dfd</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
@@ -223,6 +321,14 @@ public class GroupUpdateRequest extends TeaModel {
     }
     public Integer getFreeCheckTypeId() {
         return this.freeCheckTypeId;
+    }
+
+    public GroupUpdateRequest setFreecheckDayStartMinOffset(Integer freecheckDayStartMinOffset) {
+        this.freecheckDayStartMinOffset = freecheckDayStartMinOffset;
+        return this;
+    }
+    public Integer getFreecheckDayStartMinOffset() {
+        return this.freecheckDayStartMinOffset;
     }
 
     public GroupUpdateRequest setGroupId(Long groupId) {
@@ -354,9 +460,17 @@ public class GroupUpdateRequest extends TeaModel {
     }
 
     public static class GroupUpdateRequestFreeCheckSettingFreeCheckGap extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("offOnCheckGapMinutes")
         public Integer offOnCheckGapMinutes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("onOffCheckGapMinutes")
         public Integer onOffCheckGapMinutes;
 
@@ -414,18 +528,38 @@ public class GroupUpdateRequest extends TeaModel {
     }
 
     public static class GroupUpdateRequestPositions extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>生物科技产业园区经二路21号</p>
+         */
         @NameInMap("address")
         public String address;
 
+        /**
+         * <strong>example:</strong>
+         * <p>36.687495</p>
+         */
         @NameInMap("latitude")
         public String latitude;
 
+        /**
+         * <strong>example:</strong>
+         * <p>101.750329</p>
+         */
         @NameInMap("longitude")
         public String longitude;
 
+        /**
+         * <strong>example:</strong>
+         * <p>500</p>
+         */
         @NameInMap("offset")
         public Integer offset;
 
+        /**
+         * <strong>example:</strong>
+         * <p>青藏高原自然博物馆</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -477,6 +611,10 @@ public class GroupUpdateRequest extends TeaModel {
     }
 
     public static class GroupUpdateRequestShiftVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("shiftId")
         public Long shiftId;
 

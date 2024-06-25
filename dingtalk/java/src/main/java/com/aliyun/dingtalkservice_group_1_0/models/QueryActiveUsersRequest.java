@@ -6,13 +6,27 @@ import com.aliyun.tea.*;
 public class QueryActiveUsersRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidxxxxxx==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>KxisoOk</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>5</p>
+     */
     @NameInMap("topN")
     public Long topN;
 

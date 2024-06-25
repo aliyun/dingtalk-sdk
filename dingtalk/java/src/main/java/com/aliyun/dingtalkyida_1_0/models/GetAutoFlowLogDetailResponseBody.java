@@ -7,12 +7,24 @@ public class GetAutoFlowLogDetailResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetAutoFlowLogDetailResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMoreData")
     public Boolean hasMoreData;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -60,6 +72,10 @@ public class GetAutoFlowLogDetailResponseBody extends TeaModel {
         @NameInMap("elapsedTimeGMT")
         public Long elapsedTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-01-01</p>
+         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
@@ -69,6 +85,10 @@ public class GetAutoFlowLogDetailResponseBody extends TeaModel {
         @NameInMap("inputParams")
         public java.util.Map<String, ?> inputParams;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试应用</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -78,6 +98,10 @@ public class GetAutoFlowLogDetailResponseBody extends TeaModel {
         @NameInMap("outputParams")
         public java.util.Map<String, ?> outputParams;
 
+        /**
+         * <strong>example:</strong>
+         * <p>running</p>
+         */
         @NameInMap("status")
         public String status;
 

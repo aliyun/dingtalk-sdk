@@ -6,7 +6,6 @@ import com.aliyun.tea.*;
 public class GetMeetingRoomsScheduleRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
-     * <br>
      * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
      */
     @NameInMap("endTime")
@@ -20,7 +19,6 @@ public class GetMeetingRoomsScheduleRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
-     * <br>
      * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
      */
     @NameInMap("startTime")

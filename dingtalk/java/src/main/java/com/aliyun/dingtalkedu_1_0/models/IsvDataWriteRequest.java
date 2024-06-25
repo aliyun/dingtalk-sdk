@@ -4,6 +4,10 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class IsvDataWriteRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>tb_test01</p>
+     */
     @NameInMap("objectCode")
     public String objectCode;
 
@@ -32,9 +36,17 @@ public class IsvDataWriteRequest extends TeaModel {
     }
 
     public static class IsvDataWriteRequestRowValueList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>id</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("value")
         public String value;
 

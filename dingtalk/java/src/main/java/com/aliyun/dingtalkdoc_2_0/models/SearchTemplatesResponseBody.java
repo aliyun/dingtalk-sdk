@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class SearchTemplatesResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>next_token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

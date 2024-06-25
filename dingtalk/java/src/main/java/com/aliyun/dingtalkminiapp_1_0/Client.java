@@ -6,11 +6,10 @@ import com.aliyun.dingtalkminiapp_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
@@ -21,8 +20,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建小程序
-     *
+     * <b>summary</b> : 
+     * <p>创建小程序</p>
+     * 
      * @param request CreateMiniAppRequest
      * @param headers CreateMiniAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -83,8 +83,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建小程序
-     *
+     * <b>summary</b> : 
+     * <p>创建小程序</p>
+     * 
      * @param request CreateMiniAppRequest
      * @return CreateMiniAppResponse
      */
@@ -95,8 +96,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建小程序组件
-     *
+     * <b>summary</b> : 
+     * <p>创建小程序组件</p>
+     * 
      * @param request CreateMiniAppPluginRequest
      * @param headers CreateMiniAppPluginHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -157,8 +159,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建小程序组件
-     *
+     * <b>summary</b> : 
+     * <p>创建小程序组件</p>
+     * 
      * @param request CreateMiniAppPluginRequest
      * @return CreateMiniAppPluginResponse
      */
@@ -169,8 +172,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 小程序多端发布版本
-     *
+     * <b>summary</b> : 
+     * <p>小程序多端发布版本</p>
+     * 
      * @param request CreateVersionAcrossBundleRequest
      * @param headers CreateVersionAcrossBundleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -227,8 +231,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 小程序多端发布版本
-     *
+     * <b>summary</b> : 
+     * <p>小程序多端发布版本</p>
+     * 
      * @param request CreateVersionAcrossBundleRequest
      * @return CreateVersionAcrossBundleResponse
      */
@@ -239,8 +244,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取小程序最大的构建版本
-     *
+     * <b>summary</b> : 
+     * <p>获取小程序最大的构建版本</p>
+     * 
      * @param request GetMaxVersionRequest
      * @param headers GetMaxVersionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -289,8 +295,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取小程序最大的构建版本
-     *
+     * <b>summary</b> : 
+     * <p>获取小程序最大的构建版本</p>
+     * 
      * @param request GetMaxVersionRequest
      * @return GetMaxVersionResponse
      */
@@ -301,8 +308,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步小程序元数据
-     *
+     * <b>summary</b> : 
+     * <p>同步小程序元数据</p>
+     * 
      * @param request GetMiniAppMetaDataRequest
      * @param headers GetMiniAppMetaDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -355,8 +363,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步小程序元数据
-     *
+     * <b>summary</b> : 
+     * <p>同步小程序元数据</p>
+     * 
      * @param request GetMiniAppMetaDataRequest
      * @return GetMiniAppMetaDataResponse
      */
@@ -367,8 +376,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小程序配置
-     *
+     * <b>summary</b> : 
+     * <p>查询小程序配置</p>
+     * 
      * @param headers GetSettingByMiniAppIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetSettingByMiniAppIdResponse
@@ -401,8 +411,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小程序配置
-     *
+     * <b>summary</b> : 
+     * <p>查询小程序配置</p>
      * @return GetSettingByMiniAppIdResponse
      */
     public GetSettingByMiniAppIdResponse getSettingByMiniAppId(String miniAppId) throws Exception {
@@ -412,8 +422,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 构建H5Bundle
-     *
+     * <b>summary</b> : 
+     * <p>构建H5Bundle</p>
+     * 
      * @param request InvokeHtmlBundleBuildRequest
      * @param headers InvokeHtmlBundleBuildHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -462,8 +473,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 构建H5Bundle
-     *
+     * <b>summary</b> : 
+     * <p>构建H5Bundle</p>
+     * 
      * @param request InvokeHtmlBundleBuildRequest
      * @return InvokeHtmlBundleBuildResponse
      */
@@ -474,8 +486,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取小程序版本列表
-     *
+     * <b>summary</b> : 
+     * <p>获取小程序版本列表</p>
+     * 
      * @param request ListAvaiableVersionRequest
      * @param headers ListAvaiableVersionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -532,8 +545,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取小程序版本列表
-     *
+     * <b>summary</b> : 
+     * <p>获取小程序版本列表</p>
+     * 
      * @param request ListAvaiableVersionRequest
      * @return ListAvaiableVersionResponse
      */
@@ -544,8 +558,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询H5构建结果
-     *
+     * <b>summary</b> : 
+     * <p>查询H5构建结果</p>
+     * 
      * @param request QueryHtmlBundleBuildRequest
      * @param headers QueryHtmlBundleBuildHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -594,8 +609,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询H5构建结果
-     *
+     * <b>summary</b> : 
+     * <p>查询H5构建结果</p>
+     * 
      * @param request QueryHtmlBundleBuildRequest
      * @return QueryHtmlBundleBuildResponse
      */
@@ -606,8 +622,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 回滚版本
-     *
+     * <b>summary</b> : 
+     * <p>回滚版本</p>
+     * 
      * @param request RollBackVersionRequest
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
@@ -651,8 +668,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 回滚版本
-     *
+     * <b>summary</b> : 
+     * <p>回滚版本</p>
+     * 
      * @param request RollBackVersionRequest
      * @return RollBackVersionResponse
      */
@@ -663,8 +681,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改小程序配置
-     *
+     * <b>summary</b> : 
+     * <p>修改小程序配置</p>
+     * 
      * @param request SetExtendSettingRequest
      * @param headers SetExtendSettingHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -709,8 +728,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改小程序配置
-     *
+     * <b>summary</b> : 
+     * <p>修改小程序配置</p>
+     * 
      * @param request SetExtendSettingRequest
      * @return SetExtendSettingResponse
      */
@@ -721,8 +741,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布版本
-     *
+     * <b>summary</b> : 
+     * <p>发布版本</p>
+     * 
      * @param request UpdateVersionStatusRequest
      * @param headers UpdateVersionStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -775,8 +796,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布版本
-     *
+     * <b>summary</b> : 
+     * <p>发布版本</p>
+     * 
      * @param request UpdateVersionStatusRequest
      * @return UpdateVersionStatusResponse
      */

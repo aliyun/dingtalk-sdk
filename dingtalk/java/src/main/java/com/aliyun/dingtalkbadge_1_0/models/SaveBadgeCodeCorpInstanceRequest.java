@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class SaveBadgeCodeCorpInstanceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>H_FISH_CANTEEN</p>
      */
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxx</p>
      */
     @NameInMap("corpId")
     public String corpId;
@@ -21,6 +27,9 @@ public class SaveBadgeCodeCorpInstanceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OPEN</p>
      */
     @NameInMap("status")
     public String status;

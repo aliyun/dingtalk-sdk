@@ -7,6 +7,10 @@ public class SearchPublishDentriesResponseBody extends TeaModel {
     @NameInMap("items")
     public java.util.List<SearchPublishDentriesResponseBodyItems> items;
 
+    /**
+     * <strong>example:</strong>
+     * <p>next_token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,15 +36,31 @@ public class SearchPublishDentriesResponseBody extends TeaModel {
     }
 
     public static class SearchPublishDentriesResponseBodyItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>folderA/folderB</p>
+         */
         @NameInMap("path")
         public String path;
 
+        /**
+         * <strong>example:</strong>
+         * <p>name</p>
+         */
         @NameInMap("summary")
         public String summary;
 
+        /**
+         * <strong>example:</strong>
+         * <p>url</p>
+         */
         @NameInMap("url")
         public String url;
 

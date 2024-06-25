@@ -4,11 +4,18 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class BindCoolAppToSheetRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cool_app_code</p>
+     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

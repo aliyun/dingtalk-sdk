@@ -21,6 +21,10 @@ public class CommitFileResponseBody extends TeaModel {
     }
 
     public static class CommitFileResponseBodyDentryProperties extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("readOnly")
         public Boolean readOnly;
 
@@ -40,12 +44,24 @@ public class CommitFileResponseBody extends TeaModel {
     }
 
     public static class CommitFileResponseBodyDentryThumbnail extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>64</p>
+         */
         @NameInMap("height")
         public Integer height;
 
+        /**
+         * <strong>example:</strong>
+         * <p>url</p>
+         */
         @NameInMap("url")
         public String url;
 
+        /**
+         * <strong>example:</strong>
+         * <p>64</p>
+         */
         @NameInMap("width")
         public Integer width;
 
@@ -84,63 +100,135 @@ public class CommitFileResponseBody extends TeaModel {
         @NameInMap("appProperties")
         public java.util.Map<String, java.util.List<DentryAppPropertiesValue>> appProperties;
 
+        /**
+         * <strong>example:</strong>
+         * <p>DOCUMENT</p>
+         */
         @NameInMap("category")
         public String category;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>creator_id</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>txt</p>
+         */
         @NameInMap("extension")
         public String extension;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>modifier_id</p>
+         */
         @NameInMap("modifierId")
         public String modifierId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>parent_id</p>
+         */
         @NameInMap("parentId")
         public String parentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PUBLIC_OSS_PARTITION</p>
+         */
         @NameInMap("partitionType")
         public String partitionType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_path</p>
+         */
         @NameInMap("path")
         public String path;
 
         @NameInMap("properties")
         public CommitFileResponseBodyDentryProperties properties;
 
+        /**
+         * <strong>example:</strong>
+         * <p>512</p>
+         */
         @NameInMap("size")
         public Long size;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>NORMAL</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>DINGTALK</p>
+         */
         @NameInMap("storageDriver")
         public String storageDriver;
 
         @NameInMap("thumbnail")
         public CommitFileResponseBodyDentryThumbnail thumbnail;
 
+        /**
+         * <strong>example:</strong>
+         * <p>FILE</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>uuid</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("version")
         public Long version;
 

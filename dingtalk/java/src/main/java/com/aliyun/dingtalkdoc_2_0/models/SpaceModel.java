@@ -4,9 +4,17 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class SpaceModel extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://img.abc.yyy">https://img.abc.yyy</a></p>
+     */
     @NameInMap("cover")
     public String cover;
 
+    /**
+     * <strong>example:</strong>
+     * <p>This is some description.</p>
+     */
     @NameInMap("description")
     public String description;
 
@@ -18,12 +26,18 @@ public class SpaceModel extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc</p>
      */
     @NameInMap("id")
     public String id;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>hello</p>
      */
     @NameInMap("name")
     public String name;
@@ -34,9 +48,17 @@ public class SpaceModel extends TeaModel {
     @NameInMap("recentList")
     public java.util.List<DentryModel> recentList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("type")
     public Integer type;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://xx.yy">https://xx.yy</a></p>
+     */
     @NameInMap("url")
     public String url;
 
@@ -139,12 +161,18 @@ public class SpaceModel extends TeaModel {
     public static class SpaceModelHdIconVO extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://img.xxx.yyy">https://img.xxx.yyy</a></p>
          */
         @NameInMap("icon")
         public String icon;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>url</p>
          */
         @NameInMap("type")
         public String type;
@@ -175,12 +203,18 @@ public class SpaceModel extends TeaModel {
     public static class SpaceModelIconVO extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://img.xxx.yyy">https://img.xxx.yyy</a></p>
          */
         @NameInMap("icon")
         public String icon;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>url</p>
          */
         @NameInMap("type")
         public String type;
@@ -211,12 +245,18 @@ public class SpaceModel extends TeaModel {
     public static class SpaceModelOwner extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>dingtalk</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abcd</p>
          */
         @NameInMap("unionId")
         public String unionId;
@@ -248,6 +288,10 @@ public class SpaceModel extends TeaModel {
         @NameInMap("dentryActions")
         public java.util.List<String> dentryActions;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 

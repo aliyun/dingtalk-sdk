@@ -26,18 +26,27 @@ public class GetPartnerTypeByParentIdResponseBody extends TeaModel {
     public static class GetPartnerTypeByParentIdResponseBodyData extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234</p>
          */
         @NameInMap("labelId")
         public String labelId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>目前无意义</p>
          */
         @NameInMap("typeId")
         public Float typeId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>经销商</p>
          */
         @NameInMap("typeName")
         public String typeName;

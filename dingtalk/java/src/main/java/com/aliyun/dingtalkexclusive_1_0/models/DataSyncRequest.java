@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DataSyncRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sql语句</p>
      */
     @NameInMap("sql")
     public String sql;

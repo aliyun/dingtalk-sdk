@@ -10,11 +10,18 @@ public class TopboxCloseRequest extends TeaModel {
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxx</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("outTrackId")
     public String outTrackId;

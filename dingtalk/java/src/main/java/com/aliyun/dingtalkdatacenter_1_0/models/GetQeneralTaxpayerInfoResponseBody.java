@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetQeneralTaxpayerInfoResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>[     {       &quot;DEPARTMENT&quot;:&quot;xx&quot;       &quot;END_DATE&quot;:&quot;2017-01-04&quot;       &quot;ENT_NAME&quot;:&quot;xx&quot;       &quot;QUALIFICATION&quot;       &quot;START_DATE&quot;:&quot;2017-01-04&quot;       &quot;TAXPAYER_NUM&quot;:&quot;11&quot;       &quot;JUDGE_DATE&quot;:&quot;2017-05-04&quot;      }   ]</p>
+     */
     @NameInMap("data")
     public String data;
 

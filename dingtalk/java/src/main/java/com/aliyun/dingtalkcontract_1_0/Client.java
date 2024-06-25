@@ -6,11 +6,10 @@ import com.aliyun.dingtalkcontract_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 合同权益核销
-     *
+     * <b>summary</b> : 
+     * <p>合同权益核销</p>
+     * 
      * @param request ContractBenefitConsumeRequest
      * @param headers ContractBenefitConsumeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -86,8 +86,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 合同权益核销
-     *
+     * <b>summary</b> : 
+     * <p>合同权益核销</p>
+     * 
      * @param request ContractBenefitConsumeRequest
      * @return ContractBenefitConsumeResponse
      */
@@ -98,8 +99,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 天谷侧查询审批单
-     *
+     * <b>summary</b> : 
+     * <p>天谷侧查询审批单</p>
+     * 
      * @param request EsignQueryApprovalInfoRequest
      * @param headers EsignQueryApprovalInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -148,8 +150,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 天谷侧查询审批单
-     *
+     * <b>summary</b> : 
+     * <p>天谷侧查询审批单</p>
+     * 
      * @param request EsignQueryApprovalInfoRequest
      * @return EsignQueryApprovalInfoResponse
      */
@@ -160,8 +163,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 天谷侧查询授权信息接口
-     *
+     * <b>summary</b> : 
+     * <p>天谷侧查询授权信息接口</p>
+     * 
      * @param request EsignQueryGrantInfoRequest
      * @param headers EsignQueryGrantInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -210,8 +214,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 天谷侧查询授权信息接口
-     *
+     * <b>summary</b> : 
+     * <p>天谷侧查询授权信息接口</p>
+     * 
      * @param request EsignQueryGrantInfoRequest
      * @return EsignQueryGrantInfoResponse
      */
@@ -222,8 +227,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 天谷侧查询获取免登信息
-     *
+     * <b>summary</b> : 
+     * <p>天谷侧查询获取免登信息</p>
+     * 
      * @param request EsignQueryIdentityByTicketRequest
      * @param headers EsignQueryIdentityByTicketHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -272,8 +278,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 天谷侧查询获取免登信息
-     *
+     * <b>summary</b> : 
+     * <p>天谷侧查询获取免登信息</p>
+     * 
      * @param request EsignQueryIdentityByTicketRequest
      * @return EsignQueryIdentityByTicketResponse
      */
@@ -284,8 +291,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary e签宝电子签事件同步回传接口
-     *
+     * <b>summary</b> : 
+     * <p>e签宝电子签事件同步回传接口</p>
+     * 
      * @param request EsignSyncEventRequest
      * @param headers EsignSyncEventHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -342,8 +350,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary e签宝电子签事件同步回传接口
-     *
+     * <b>summary</b> : 
+     * <p>e签宝电子签事件同步回传接口</p>
+     * 
      * @param request EsignSyncEventRequest
      * @return EsignSyncEventResponse
      */
@@ -354,8 +363,73 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary e签宝查询智能合同版本接口
-     *
+     * <b>summary</b> : 
+     * <p>完成工单审查接口</p>
+     * 
+     * @param request FinishReviewOrderRequest
+     * @param headers FinishReviewOrderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return FinishReviewOrderResponse
+     */
+    public FinishReviewOrderResponse finishReviewOrderWithOptions(FinishReviewOrderRequest request, FinishReviewOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endFiles)) {
+            body.put("endFiles", request.endFiles);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderId)) {
+            body.put("orderId", request.orderId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "FinishReviewOrder"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/reviews/finish"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new FinishReviewOrderResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>完成工单审查接口</p>
+     * 
+     * @param request FinishReviewOrderRequest
+     * @return FinishReviewOrderResponse
+     */
+    public FinishReviewOrderResponse finishReviewOrder(FinishReviewOrderRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        FinishReviewOrderHeaders headers = new FinishReviewOrderHeaders();
+        return this.finishReviewOrderWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>e签宝查询智能合同版本接口</p>
+     * 
      * @param request QueryAdvancedContractVersionRequest
      * @param headers QueryAdvancedContractVersionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -400,8 +474,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary e签宝查询智能合同版本接口
-     *
+     * <b>summary</b> : 
+     * <p>e签宝查询智能合同版本接口</p>
+     * 
      * @param request QueryAdvancedContractVersionRequest
      * @return QueryAdvancedContractVersionResponse
      */
@@ -412,8 +487,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送合同相关卡片
-     *
+     * <b>summary</b> : 
+     * <p>发送合同相关卡片</p>
+     * 
      * @param request SendContractCardRequest
      * @param headers SendContractCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -486,8 +562,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送合同相关卡片
-     *
+     * <b>summary</b> : 
+     * <p>发送合同相关卡片</p>
+     * 
      * @param request SendContractCardRequest
      * @return SendContractCardResponse
      */

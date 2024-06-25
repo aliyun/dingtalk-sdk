@@ -6,19 +6,33 @@ import com.aliyun.tea.*;
 public class ListRelatedTeamsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ajYkbc7</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YEp3JcM******UIbhwiE</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("type")
     public Integer type;
 

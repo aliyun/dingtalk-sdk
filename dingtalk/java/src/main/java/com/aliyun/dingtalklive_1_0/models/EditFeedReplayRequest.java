@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class EditFeedReplayRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1617356058000</p>
      */
     @NameInMap("editEndTime")
     public Long editEndTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1617336058000</p>
      */
     @NameInMap("editStartTime")
     public Long editStartTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1206186351746728</p>
      */
     @NameInMap("userId")
     public String userId;

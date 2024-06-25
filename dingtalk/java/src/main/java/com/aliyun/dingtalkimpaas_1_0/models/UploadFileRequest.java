@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class UploadFileRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>111.png</p>
      */
     @NameInMap("fileName")
     public String fileName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>image</p>
      */
     @NameInMap("fileType")
     public String fileType;
@@ -24,6 +30,9 @@ public class UploadFileRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>111@dingdingkelian</p>
      */
     @NameInMap("senderUid")
     public String senderUid;

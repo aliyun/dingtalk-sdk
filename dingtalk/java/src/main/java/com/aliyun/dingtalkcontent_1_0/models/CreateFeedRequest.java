@@ -9,6 +9,9 @@ public class CreateFeedRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>16621*******284773</p>
      */
     @NameInMap("createUserId")
     public String createUserId;
@@ -49,17 +52,27 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestCourseInfoLectorUserInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://static.dingtalk.com/media/lA****************p_169_169.png_60x60q90.jpg?bizType=avatar">https://static.dingtalk.com/media/lA****************p_169_169.png_60x60q90.jpg?bizType=avatar</a></p>
+         */
         @NameInMap("avatar")
         public String avatar;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>用户名</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>16621*******284773</p>
          */
         @NameInMap("userId")
         public String userId;
@@ -96,17 +109,27 @@ public class CreateFeedRequest extends TeaModel {
     }
 
     public static class CreateFeedRequestCourseInfoPayInfoCsUserInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://static.dingtalk.com/media/lA****************p_169_169.png_60x60q90.jpg?bizType=avatar">https://static.dingtalk.com/media/lA****************p_169_169.png_60x60q90.jpg?bizType=avatar</a></p>
+         */
         @NameInMap("avatar")
         public String avatar;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>用户名</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>16621*******284773</p>
          */
         @NameInMap("userId")
         public String userId;
@@ -145,18 +168,27 @@ public class CreateFeedRequest extends TeaModel {
     public static class CreateFeedRequestCourseInfoPayInfoDiscountInfo extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1624507431777</p>
          */
         @NameInMap("endTimeMillis")
         public Long endTimeMillis;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
          */
         @NameInMap("price")
         public Long price;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1624507431777</p>
          */
         @NameInMap("startTimeMillis")
         public Long startTimeMillis;
@@ -204,6 +236,9 @@ public class CreateFeedRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10000</p>
          */
         @NameInMap("price")
         public Long price;
@@ -249,6 +284,10 @@ public class CreateFeedRequest extends TeaModel {
         @NameInMap("payInfo")
         public CreateFeedRequestCourseInfoPayInfo payInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xx学习群</p>
+         */
         @NameInMap("studyGroupName")
         public String studyGroupName;
 
@@ -286,18 +325,27 @@ public class CreateFeedRequest extends TeaModel {
     public static class CreateFeedRequestFeedInfoMediaContents extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>378a1a0154b34**********86313948e</p>
          */
         @NameInMap("mediaId")
         public String mediaId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>媒体标题</p>
          */
         @NameInMap("title")
         public String title;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2</p>
          */
         @NameInMap("type")
         public Integer type;
@@ -336,12 +384,18 @@ public class CreateFeedRequest extends TeaModel {
     public static class CreateFeedRequestFeedInfoRecommends extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>c497****-8a89-****-bc9b-*****48610d3</p>
          */
         @NameInMap("objectId")
         public String objectId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("type")
         public Integer type;
@@ -372,48 +426,82 @@ public class CreateFeedRequest extends TeaModel {
     public static class CreateFeedRequestFeedInfo extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2</p>
          */
         @NameInMap("actionType")
         public Integer actionType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("belongsTo")
         public Integer belongsTo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>200000257</p>
          */
         @NameInMap("feedCategory")
         public Long feedCategory;
 
+        /**
+         * <strong>example:</strong>
+         * <p>c497****-8a89-****-bc9b-*****48610d3</p>
+         */
         @NameInMap("feedId")
         public String feedId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>标签</p>
+         */
         @NameInMap("feedTag")
         public String feedTag;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>4</p>
          */
         @NameInMap("feedType")
         public Integer feedType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10001</p>
+         */
         @NameInMap("industryId")
         public Long industryId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>描述</p>
          */
         @NameInMap("introduction")
         public String introduction;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://static.dingtalk.com/media/**************NAlg_600_337.jpg">https://static.dingtalk.com/media/**************NAlg_600_337.jpg</a></p>
+         */
         @NameInMap("introductionPicUrl")
         public String introductionPicUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>50730********40554</p>
          */
         @NameInMap("mcnId")
         public String mcnId;
@@ -429,12 +517,18 @@ public class CreateFeedRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://static.dingtalk.com/media/**************NAlg_600_337.jpg">https://static.dingtalk.com/media/**************NAlg_600_337.jpg</a></p>
          */
         @NameInMap("thumbUrl")
         public String thumbUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>课程标题</p>
          */
         @NameInMap("title")
         public String title;

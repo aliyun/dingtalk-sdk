@@ -21,9 +21,17 @@ public class ExternalQueryExternalAppOrgsResponseBody extends TeaModel {
     }
 
     public static class ExternalQueryExternalAppOrgsResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ding121212</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>组织名</p>
+         */
         @NameInMap("corpName")
         public String corpName;
 

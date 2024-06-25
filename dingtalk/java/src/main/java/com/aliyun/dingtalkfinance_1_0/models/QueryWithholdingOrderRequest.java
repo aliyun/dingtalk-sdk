@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryWithholdingOrderRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>202100001</p>
      */
     @NameInMap("outTradeNo")
     public String outTradeNo;

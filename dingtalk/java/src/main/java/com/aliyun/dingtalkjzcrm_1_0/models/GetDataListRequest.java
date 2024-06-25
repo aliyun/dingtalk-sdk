@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class GetDataListRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>150</p>
      */
     @NameInMap("datatype")
     public String datatype;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("page")
     public Long page;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("pagesize")
     public Long pagesize;

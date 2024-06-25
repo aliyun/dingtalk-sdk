@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetAccountMappingRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>BizName1</p>
      */
     @NameInMap("domain")
     public String domain;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>id_123</p>
      */
     @NameInMap("userId")
     public String userId;

@@ -4,65 +4,134 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMesOutPlanRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>APPROVING</p>
+     */
     @NameInMap("approvalStatus")
     public String approvalStatus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>[{&quot;userId&quot;:&quot;123&quot;,&quot;name&quot;:&quot;汉俊&quot;}]</p>
+     */
     @NameInMap("approver")
     public String approver;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>wwPlan</p>
      */
     @NameInMap("baseDataName")
     public String baseDataName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>WWJH-20220728</p>
      */
     @NameInMap("outSourceProjectCode")
     public String outSourceProjectCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cid34444</p>
+     */
     @NameInMap("outSourceTeamId")
     public String outSourceTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>321</p>
+     */
     @NameInMap("price")
     public String price;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20220728_OP20</p>
+     */
     @NameInMap("processIdentificationCode")
     public String processIdentificationCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>[{       &quot;uuid&quot;: &quot;1543878029936459777&quot;,       &quot;name&quot;: &quot;YF-盐雾&quot;,       &quot;preProcess&quot;: &quot;1470231820594245633&quot;     }]</p>
+     */
     @NameInMap("processUuids")
     public String processUuids;
 
+    /**
+     * <strong>example:</strong>
+     * <p>WL12345</p>
+     */
     @NameInMap("productCode")
     public String productCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>毛坯KM63三级盖</p>
+     */
     @NameInMap("productName")
     public String productName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>5/16*13.5</p>
+     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20220728_001</p>
+     */
     @NameInMap("projectCode")
     public String projectCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20220728_001</p>
+     */
     @NameInMap("projectId")
     public String projectId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>321</p>
+     */
     @NameInMap("sendPlanQuantity")
     public String sendPlanQuantity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>GX002</p>
+     */
     @NameInMap("supplierCode")
     public String supplierCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>北京供应</p>
+     */
     @NameInMap("supplierName")
     public String supplierName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("totalWage")
     public String totalWage;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>C1E213-86B2-706B-9615-5B957DF8C15D</p>
      */
     @NameInMap("uuid")
     public String uuid;

@@ -7,6 +7,10 @@ public class InsertSectionConfigRequest extends TeaModel {
     @NameInMap("end")
     public InsertSectionConfigRequestEnd end;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2020学年第一学期课表</p>
+     */
     @NameInMap("scheduleName")
     public String scheduleName;
 
@@ -16,6 +20,10 @@ public class InsertSectionConfigRequest extends TeaModel {
     @NameInMap("start")
     public InsertSectionConfigRequestStart start;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manager235</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -65,12 +73,24 @@ public class InsertSectionConfigRequest extends TeaModel {
     }
 
     public static class InsertSectionConfigRequestEnd extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -106,9 +126,17 @@ public class InsertSectionConfigRequest extends TeaModel {
     }
 
     public static class InsertSectionConfigRequestSectionModelsEnd extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
+        /**
+         * <strong>example:</strong>
+         * <p>45</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -136,9 +164,17 @@ public class InsertSectionConfigRequest extends TeaModel {
     }
 
     public static class InsertSectionConfigRequestSectionModelsStart extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -169,12 +205,24 @@ public class InsertSectionConfigRequest extends TeaModel {
         @NameInMap("end")
         public InsertSectionConfigRequestSectionModelsEnd end;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
+        /**
+         * <strong>example:</strong>
+         * <p>语文</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>REST/COURSE</p>
+         */
         @NameInMap("sectionType")
         public String sectionType;
 
@@ -229,12 +277,24 @@ public class InsertSectionConfigRequest extends TeaModel {
     }
 
     public static class InsertSectionConfigRequestStart extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021</p>
+         */
         @NameInMap("year")
         public Integer year;
 

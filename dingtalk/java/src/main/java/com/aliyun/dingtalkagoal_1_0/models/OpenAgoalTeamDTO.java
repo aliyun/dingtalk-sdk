@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class OpenAgoalTeamDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8535683xx</p>
      */
     @NameInMap("deptId")
     public String deptId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试部门</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6444f5e9a4261c6e699dxxxx</p>
      */
     @NameInMap("teamId")
     public String teamId;

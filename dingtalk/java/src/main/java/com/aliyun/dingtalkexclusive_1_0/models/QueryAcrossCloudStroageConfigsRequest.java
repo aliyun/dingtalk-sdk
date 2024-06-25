@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class QueryAcrossCloudStroageConfigsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("targetCloudType")
     public Integer targetCloudType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding77b8cac4e026cc123xxxxxxxxeb6378f</p>
      */
     @NameInMap("targetCorpId")
     public String targetCorpId;

@@ -4,30 +4,56 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListDentriesRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>30</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>next_token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>DESC</p>
+     */
     @NameInMap("order")
     public String order;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-01-01T10:00:00Z</p>
+     */
     @NameInMap("orderBy")
     public String orderBy;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>parent_id</p>
      */
     @NameInMap("parentId")
     public String parentId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("withThumbnail")
     public Boolean withThumbnail;
 

@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class HrmProcessUpdateTerminationInfoRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>因个人原因离职</p>
      */
     @NameInMap("dismissionMemo")
     public String dismissionMemo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1672502400000</p>
      */
     @NameInMap("lastWorkDate")
     public Long lastWorkDate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>admin123</p>
      */
     @NameInMap("userId")
     public String userId;

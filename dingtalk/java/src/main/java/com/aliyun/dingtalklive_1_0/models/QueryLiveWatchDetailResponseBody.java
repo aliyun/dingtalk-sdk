@@ -21,27 +21,59 @@ public class QueryLiveWatchDetailResponseBody extends TeaModel {
     }
 
     public static class QueryLiveWatchDetailResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>3560</p>
+         */
         @NameInMap("avgWatchTime")
         public Long avgWatchTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>55</p>
+         */
         @NameInMap("liveUv")
         public Integer liveUv;
 
+        /**
+         * <strong>example:</strong>
+         * <p>252</p>
+         */
         @NameInMap("msgCount")
         public Integer msgCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>72</p>
+         */
         @NameInMap("playbackUv")
         public Integer playbackUv;
 
+        /**
+         * <strong>example:</strong>
+         * <p>500</p>
+         */
         @NameInMap("praiseCount")
         public Integer praiseCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>120</p>
+         */
         @NameInMap("pv")
         public Integer pv;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1903640</p>
+         */
         @NameInMap("totalWatchTime")
         public Long totalWatchTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>90</p>
+         */
         @NameInMap("uv")
         public Integer uv;
 

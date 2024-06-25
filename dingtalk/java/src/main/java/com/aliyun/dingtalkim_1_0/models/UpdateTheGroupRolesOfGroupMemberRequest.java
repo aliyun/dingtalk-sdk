@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdateTheGroupRolesOfGroupMemberRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidXXXXXXX</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

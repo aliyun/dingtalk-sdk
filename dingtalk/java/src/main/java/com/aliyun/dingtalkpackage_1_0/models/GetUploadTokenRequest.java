@@ -4,6 +4,10 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUploadTokenRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>5000000002761167</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 

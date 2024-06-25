@@ -7,6 +7,10 @@ public class SearchWorkspacesResponseBody extends TeaModel {
     @NameInMap("items")
     public java.util.List<SearchWorkspacesResponseBodyItems> items;
 
+    /**
+     * <strong>example:</strong>
+     * <p>next_token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,12 +36,24 @@ public class SearchWorkspacesResponseBody extends TeaModel {
     }
 
     public static class SearchWorkspacesResponseBodyItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_url</p>
+         */
         @NameInMap("url")
         public String url;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_id</p>
+         */
         @NameInMap("workspaceId")
         public String workspaceId;
 

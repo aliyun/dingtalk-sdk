@@ -6,36 +6,59 @@ import com.aliyun.tea.*;
 public class UploadLearningDataCallbackRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("bizId")
     public String bizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>HOMEWORK</p>
      */
     @NameInMap("bizType")
     public String bizType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxxxxxxxxxxxxxxxxxx</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1672502400000</p>
+     */
     @NameInMap("generatedTime")
     public Long generatedTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0123456</p>
+     */
     @NameInMap("studentUserId")
     public String studentUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>shuxue</p>
      */
     @NameInMap("subjectCode")
     public String subjectCode;

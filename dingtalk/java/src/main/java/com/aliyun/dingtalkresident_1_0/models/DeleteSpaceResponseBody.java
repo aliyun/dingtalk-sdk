@@ -12,6 +12,9 @@ public class DeleteSpaceResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("delSuccessCount")
     public Boolean delSuccessCount;
@@ -40,6 +43,9 @@ public class DeleteSpaceResponseBody extends TeaModel {
     public static class DeleteSpaceResponseBodyDelFailedDept extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>122222</p>
          */
         @NameInMap("deptId")
         public Long deptId;

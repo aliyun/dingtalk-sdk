@@ -7,6 +7,10 @@ public class QueryCityCarApplyResponseBody extends TeaModel {
     @NameInMap("applyList")
     public java.util.List<QueryCityCarApplyResponseBodyApplyList> applyList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("total")
     public Long total;
 
@@ -32,24 +36,52 @@ public class QueryCityCarApplyResponseBody extends TeaModel {
     }
 
     public static class QueryCityCarApplyResponseBodyApplyListApproverList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>同意</p>
+         */
         @NameInMap("note")
         public String note;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-03-18 20:26:56</p>
+         */
         @NameInMap("operateTime")
         public String operateTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("order")
         public Long order;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("status")
         public Long status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>同意</p>
+         */
         @NameInMap("statusDesc")
         public String statusDesc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user1</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>员工1</p>
+         */
         @NameInMap("userName")
         public String userName;
 
@@ -117,45 +149,101 @@ public class QueryCityCarApplyResponseBody extends TeaModel {
     }
 
     public static class QueryCityCarApplyResponseBodyApplyListItineraryList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>杭州</p>
+         */
         @NameInMap("arrCity")
         public String arrCity;
 
+        /**
+         * <strong>example:</strong>
+         * <p>HGH</p>
+         */
         @NameInMap("arrCityCode")
         public String arrCityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-03-18 20:26:56</p>
+         */
         @NameInMap("arrDate")
         public String arrDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("costCenterId")
         public Long costCenterId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>成本中心1</p>
+         */
         @NameInMap("costCenterName")
         public String costCenterName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州</p>
+         */
         @NameInMap("depCity")
         public String depCity;
 
+        /**
+         * <strong>example:</strong>
+         * <p>HGH</p>
+         */
         @NameInMap("depCityCode")
         public String depCityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-03-18 20:26:56</p>
+         */
         @NameInMap("depDate")
         public String depDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("invoiceId")
         public Long invoiceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>发票抬头1</p>
+         */
         @NameInMap("invoiceName")
         public String invoiceName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("itineraryId")
         public String itineraryId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>projectx</p>
+         */
         @NameInMap("projectCode")
         public String projectCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>项目x</p>
+         */
         @NameInMap("projectTitle")
         public String projectTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>4</p>
+         */
         @NameInMap("trafficType")
         public Long trafficType;
 
@@ -282,39 +370,83 @@ public class QueryCityCarApplyResponseBody extends TeaModel {
         @NameInMap("approverList")
         public java.util.List<QueryCityCarApplyResponseBodyApplyListApproverList> approverList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("departId")
         public String departId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>部门1</p>
+         */
         @NameInMap("departName")
         public String departName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-03-18 20:26:56</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-03-18 20:26:56</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
         @NameInMap("itineraryList")
         public java.util.List<QueryCityCarApplyResponseBodyApplyListItineraryList> itineraryList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>申请</p>
+         */
         @NameInMap("status")
         public Long status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("statusDesc")
         public String statusDesc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>apply1</p>
+         */
         @NameInMap("thirdPartApplyId")
         public String thirdPartApplyId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州出差</p>
+         */
         @NameInMap("tripCause")
         public String tripCause;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州出差</p>
+         */
         @NameInMap("tripTitle")
         public String tripTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user1</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>员工1</p>
+         */
         @NameInMap("userName")
         public String userName;
 

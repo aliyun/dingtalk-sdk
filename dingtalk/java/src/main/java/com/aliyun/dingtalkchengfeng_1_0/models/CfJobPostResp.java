@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class CfJobPostResp extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234</p>
      */
     @NameInMap("jobPostCode")
     public String jobPostCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>技术岗</p>
      */
     @NameInMap("name")
     public String name;

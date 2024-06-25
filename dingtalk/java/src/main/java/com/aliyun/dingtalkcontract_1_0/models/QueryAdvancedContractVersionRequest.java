@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontract_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAdvancedContractVersionRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>dingff048f704a8b6d8e4ac5d6980864d335</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 

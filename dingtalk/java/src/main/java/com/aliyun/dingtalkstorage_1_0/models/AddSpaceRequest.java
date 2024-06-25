@@ -9,6 +9,9 @@ public class AddSpaceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -35,12 +38,24 @@ public class AddSpaceRequest extends TeaModel {
     }
 
     public static class AddSpaceRequestOptionCapabilities extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("canRecordRecentFile")
         public Boolean canRecordRecentFile;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("canRename")
         public Boolean canRename;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("canSearch")
         public Boolean canSearch;
 
@@ -79,18 +94,34 @@ public class AddSpaceRequest extends TeaModel {
         @NameInMap("capabilities")
         public AddSpaceRequestOptionCapabilities capabilities;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>USER</p>
+         */
         @NameInMap("ownerType")
         public String ownerType;
 
         @NameInMap("quota")
         public Long quota;
 
+        /**
+         * <strong>example:</strong>
+         * <p>scene</p>
+         */
         @NameInMap("scene")
         public String scene;
 
+        /**
+         * <strong>example:</strong>
+         * <p>scene_id</p>
+         */
         @NameInMap("sceneId")
         public String sceneId;
 

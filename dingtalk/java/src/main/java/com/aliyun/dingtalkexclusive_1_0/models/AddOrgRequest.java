@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class AddOrgRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>15800000000</p>
      */
     @NameInMap("mobileNum")
     public String mobileNum;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试组织</p>
      */
     @NameInMap("name")
     public String name;

@@ -6,11 +6,10 @@ import com.aliyun.dingtalkapp_market_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建应用商品服务群
-     *
+     * <b>summary</b> : 
+     * <p>创建应用商品服务群</p>
+     * 
      * @param request CreateAppGoodsServiceConversationRequest
      * @param headers CreateAppGoodsServiceConversationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -66,8 +66,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建应用商品服务群
-     *
+     * <b>summary</b> : 
+     * <p>创建应用商品服务群</p>
+     * 
      * @param request CreateAppGoodsServiceConversationRequest
      * @return CreateAppGoodsServiceConversationResponse
      */
@@ -78,8 +79,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取酷应用访问状态
-     *
+     * <b>summary</b> : 
+     * <p>获取酷应用访问状态</p>
+     * 
      * @param request GetCoolAppAccessStatusRequest
      * @param headers GetCoolAppAccessStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -128,8 +130,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取酷应用访问状态
-     *
+     * <b>summary</b> : 
+     * <p>获取酷应用访问状态</p>
+     * 
      * @param request GetCoolAppAccessStatusRequest
      * @return GetCoolAppAccessStatusResponse
      */
@@ -140,8 +143,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取内购商品SKU页面地址
-     *
+     * <b>summary</b> : 
+     * <p>获取内购商品SKU页面地址</p>
+     * 
      * @param request GetInAppSkuUrlRequest
      * @param headers GetInAppSkuUrlHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -194,8 +198,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取内购商品SKU页面地址
-     *
+     * <b>summary</b> : 
+     * <p>获取内购商品SKU页面地址</p>
+     * 
      * @param request GetInAppSkuUrlRequest
      * @return GetInAppSkuUrlResponse
      */
@@ -206,8 +211,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取个人体验相关信息
-     *
+     * <b>summary</b> : 
+     * <p>获取个人体验相关信息</p>
+     * 
      * @param request GetPersonalExperienceInfoRequest
      * @param headers GetPersonalExperienceInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -248,8 +254,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取个人体验相关信息
-     *
+     * <b>summary</b> : 
+     * <p>获取个人体验相关信息</p>
+     * 
      * @param request GetPersonalExperienceInfoRequest
      * @return GetPersonalExperienceInfoResponse
      */
@@ -260,8 +267,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 应用市场订单查询
-     *
+     * <b>summary</b> : 
+     * <p>应用市场订单查询</p>
+     * 
      * @param headers QueryMarketOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryMarketOrderResponse
@@ -294,8 +302,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 应用市场订单查询
-     *
+     * <b>summary</b> : 
+     * <p>应用市场订单查询</p>
      * @return QueryMarketOrderResponse
      */
     public QueryMarketOrderResponse queryMarketOrder(String orderId) throws Exception {
@@ -305,8 +313,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary app内用户操作任务同步
-     *
+     * <b>summary</b> : 
+     * <p>app内用户操作任务同步</p>
+     * 
      * @param request UserTaskReportRequest
      * @param headers UserTaskReportHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -359,8 +368,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary app内用户操作任务同步
-     *
+     * <b>summary</b> : 
+     * <p>app内用户操作任务同步</p>
+     * 
      * @param request UserTaskReportRequest
      * @return UserTaskReportResponse
      */

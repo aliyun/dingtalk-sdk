@@ -9,33 +9,52 @@ public class GetCategoryResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>INCOME_XXX</p>
      */
     @NameInMap("code")
     public String code;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false</p>
      */
     @NameInMap("isDir")
     public Boolean isDir;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>汽车</p>
      */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>DIR_XXX</p>
+     */
     @NameInMap("parentCode")
     public String parentCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>valid</p>
      */
     @NameInMap("status")
     public String status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>income</p>
      */
     @NameInMap("type")
     public String type;

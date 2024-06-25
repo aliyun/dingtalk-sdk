@@ -4,12 +4,20 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateScheduleConfSettingsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
+     */
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 
     @NameInMap("scheduleConfSettingModel")
     public UpdateScheduleConfSettingsRequestScheduleConfSettingModel scheduleConfSettingModel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>f6fb627e-a7e8-403e-b1f8-26e85450f4a9</p>
+     */
     @NameInMap("scheduleConferenceId")
     public String scheduleConferenceId;
 
@@ -43,12 +51,24 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
     }
 
     public static class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0：不自动打开 1：仅主持人/联席主持人自动打开 2：全员自动打开</p>
+         */
         @NameInMap("autoOpenMode")
         public Integer autoOpenMode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>COOLAPP-0-1026633886192127xxxB000W</p>
+         */
         @NameInMap("coolAppCode")
         public String coolAppCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>bizData</p>
+         */
         @NameInMap("extensionAppBizData")
         public String extensionAppBizData;
 
@@ -84,24 +104,52 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
     }
 
     public static class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
+         */
         @NameInMap("cloudRecordOwnerUnionId")
         public String cloudRecordOwnerUnionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0：未开启 1：开启</p>
+         */
         @NameInMap("enableChat")
         public Integer enableChat;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true：允许匿名登录入会 false：不允许匿名登录入会</p>
+         */
         @NameInMap("enableWebAnonymousJoin")
         public Boolean enableWebAnonymousJoin;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0：未开启 1：开启</p>
+         */
         @NameInMap("joinBeforeHost")
         public Integer joinBeforeHost;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0：未开启 1：开启</p>
+         */
         @NameInMap("lockMediaStatusMicMute")
         public Integer lockMediaStatusMicMute;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0：未开启 1：开启</p>
+         */
         @NameInMap("lockNick")
         public Integer lockNick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
+         */
         @NameInMap("minutesOwnerUnionId")
         public String minutesOwnerUnionId;
 
@@ -117,6 +165,10 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         @NameInMap("pushMinutesCard")
         public Boolean pushMinutesCard;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0：未开启 1：开启</p>
+         */
         @NameInMap("waitingRoom")
         public Integer waitingRoom;
 
@@ -227,21 +279,41 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         @NameInMap("cohostUnionIds")
         public java.util.List<String> cohostUnionIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingc02f685fa06381c44ac5d6980864d335</p>
+         */
         @NameInMap("confAllowedCorpId")
         public String confAllowedCorpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
+         */
         @NameInMap("hostUnionId")
         public String hostUnionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0：取消锁定 1：锁定</p>
+         */
         @NameInMap("lockRoom")
         public Integer lockRoom;
 
         @NameInMap("moziConfVirtualExtraSetting")
         public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting moziConfVirtualExtraSetting;
 
+        /**
+         * <strong>example:</strong>
+         * <p>-1：未开启 1：开启 6：超过6人自动开启静音</p>
+         */
         @NameInMap("muteOnJoin")
         public Integer muteOnJoin;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0：允许共享 1：禁止共享</p>
+         */
         @NameInMap("screenShareForbidden")
         public Integer screenShareForbidden;
 

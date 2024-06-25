@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DeviceHeartbeatRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sn123</p>
      */
     @NameInMap("sn")
     public String sn;

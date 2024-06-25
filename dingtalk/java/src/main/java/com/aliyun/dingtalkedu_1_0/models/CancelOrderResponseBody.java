@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class CancelOrderResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false</p>
      */
     @NameInMap("needRetry")
     public Boolean needRetry;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>refund</p>
      */
     @NameInMap("tradeAction")
     public String tradeAction;

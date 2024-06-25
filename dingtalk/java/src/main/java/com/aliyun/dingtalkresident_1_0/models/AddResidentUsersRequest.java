@@ -4,11 +4,18 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddResidentUsersRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>美好社区创景街道万通公寓</p>
+     */
     @NameInMap("address")
     public String address;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("departmentId")
     public Long departmentId;
@@ -16,17 +23,35 @@ public class AddResidentUsersRequest extends TeaModel {
     @NameInMap("extField")
     public java.util.List<AddResidentUsersRequestExtField> extField;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("isLeaseholder")
     public Boolean isLeaseholder;
 
+    /**
+     * <strong>example:</strong>
+     * <p>15612345678</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
+    /**
+     * <strong>example:</strong>
+     * <p>SELF</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("relateType")
     public String relateType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>王建国</p>
      */
     @NameInMap("userName")
     public String userName;
@@ -93,9 +118,17 @@ public class AddResidentUsersRequest extends TeaModel {
     }
 
     public static class AddResidentUsersRequestExtField extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>性别</p>
+         */
         @NameInMap("itemName")
         public String itemName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>女</p>
+         */
         @NameInMap("itemValue")
         public String itemValue;
 

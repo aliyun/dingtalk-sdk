@@ -7,9 +7,17 @@ public class SearchFormDataIdListResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<String> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 

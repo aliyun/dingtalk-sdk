@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryCardVisitorStatisticDataRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>RCsp7PJmmTUr7w0hbs9aKAiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

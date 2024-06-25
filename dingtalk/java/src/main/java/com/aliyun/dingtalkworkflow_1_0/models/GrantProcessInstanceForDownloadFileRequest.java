@@ -6,15 +6,28 @@ import com.aliyun.tea.*;
 public class GrantProcessInstanceForDownloadFileRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>111</p>
      */
     @NameInMap("fileId")
     public String fileId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>a17444d1-075b-4a4d-xxxx</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;
+
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("withCommentAttatchment")
+    public Boolean withCommentAttatchment;
 
     public static GrantProcessInstanceForDownloadFileRequest build(java.util.Map<String, ?> map) throws Exception {
         GrantProcessInstanceForDownloadFileRequest self = new GrantProcessInstanceForDownloadFileRequest();
@@ -35,6 +48,14 @@ public class GrantProcessInstanceForDownloadFileRequest extends TeaModel {
     }
     public String getProcessInstanceId() {
         return this.processInstanceId;
+    }
+
+    public GrantProcessInstanceForDownloadFileRequest setWithCommentAttatchment(Boolean withCommentAttatchment) {
+        this.withCommentAttatchment = withCommentAttatchment;
+        return this;
+    }
+    public Boolean getWithCommentAttatchment() {
+        return this.withCommentAttatchment;
     }
 
 }

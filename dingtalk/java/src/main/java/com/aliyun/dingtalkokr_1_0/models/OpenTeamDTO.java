@@ -4,12 +4,24 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenTeamDTO extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>0342464558835299</p>
+     */
     @NameInMap("deptUid")
     public String deptUid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>64cd2e9bb80efb17244c650d</p>
+     */
     @NameInMap("dingDeptId")
     public String dingDeptId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xx部门</p>
+     */
     @NameInMap("name")
     public String name;
 

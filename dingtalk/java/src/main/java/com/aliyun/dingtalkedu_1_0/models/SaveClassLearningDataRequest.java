@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SaveClassLearningDataRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("assignNum")
     public Integer assignNum;
@@ -18,57 +21,93 @@ public class SaveClassLearningDataRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("bizId")
     public String bizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>HOMEWORK</p>
      */
     @NameInMap("bizType")
     public String bizType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxxxxxxxxxxxxxxx</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>.jpeg</p>
+     */
     @NameInMap("fileSuffix")
     public String fileSuffix;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1672502400000</p>
      */
     @NameInMap("generatedTime")
     public Long generatedTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("questionNum")
     public Integer questionNum;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("questionPictureNum")
     public Integer questionPictureNum;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("standardAnswerPictureNum")
     public Integer standardAnswerPictureNum;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>shuxue</p>
      */
     @NameInMap("subjectCode")
     public String subjectCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0123456</p>
      */
     @NameInMap("teacherUserId")
     public String teacherUserId;

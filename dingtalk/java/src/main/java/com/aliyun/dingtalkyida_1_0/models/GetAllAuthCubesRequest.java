@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetAllAuthCubesRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_XCE0EVXS6DYG3YDYC5RD</p>
      */
     @NameInMap("appType")
     public String appType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding5d17e3add038d44535c2f4657eb6378e</p>
      */
     @NameInMap("corpId")
     public String corpId;
@@ -21,24 +27,36 @@ public class GetAllAuthCubesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("pageSize")
     public Integer pageSize;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding173982232112232</p>
      */
     @NameInMap("userId")
     public String userId;

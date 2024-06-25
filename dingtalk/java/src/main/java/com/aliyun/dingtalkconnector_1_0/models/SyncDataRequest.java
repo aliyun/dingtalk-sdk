@@ -56,6 +56,10 @@ public class SyncDataRequest extends TeaModel {
         @NameInMap("dataGmtModified")
         public Long dataGmtModified;
 
+        /**
+         * <strong>if can be null:</strong>
+         * <p>true</p>
+         */
         @NameInMap("integrationObject")
         public String integrationObject;
 

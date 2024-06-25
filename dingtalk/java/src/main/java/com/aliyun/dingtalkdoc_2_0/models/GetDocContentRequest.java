@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetDocContentRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>markdown</p>
+     */
     @NameInMap("targetFormat")
     public String targetFormat;
 

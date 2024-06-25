@@ -6,11 +6,10 @@ import com.aliyun.dingtalkchengfeng_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 获取组织下的全部职级
-     *
+     * <b>summary</b> : 
+     * <p>获取组织下的全部职级</p>
+     * 
      * @param headers GetAllJobLevelHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetAllJobLevelResponse
@@ -54,8 +54,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取组织下的全部职级
-     *
+     * <b>summary</b> : 
+     * <p>获取组织下的全部职级</p>
      * @return GetAllJobLevelResponse
      */
     public GetAllJobLevelResponse getAllJobLevel() throws Exception {
@@ -65,8 +65,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取公司全部职位
-     *
+     * <b>summary</b> : 
+     * <p>获取公司全部职位</p>
+     * 
      * @param headers GetAllJobPositionHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetAllJobPositionResponse
@@ -99,8 +100,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取公司全部职位
-     *
+     * <b>summary</b> : 
+     * <p>获取公司全部职位</p>
      * @return GetAllJobPositionResponse
      */
     public GetAllJobPositionResponse getAllJobPosition() throws Exception {
@@ -110,8 +111,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取组织下的所有职务
-     *
+     * <b>summary</b> : 
+     * <p>获取组织下的所有职务</p>
+     * 
      * @param headers GetAllJobPostHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetAllJobPostResponse
@@ -144,8 +146,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取组织下的所有职务
-     *
+     * <b>summary</b> : 
+     * <p>获取组织下的所有职务</p>
      * @return GetAllJobPostResponse
      */
     public GetAllJobPostResponse getAllJobPost() throws Exception {
@@ -155,8 +157,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取分析运营数据
-     *
+     * <b>summary</b> : 
+     * <p>获取分析运营数据</p>
+     * 
      * @param request GetAnalyzeDataRequest
      * @param headers GetAnalyzeDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -203,8 +206,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取分析运营数据
-     *
+     * <b>summary</b> : 
+     * <p>获取分析运营数据</p>
+     * 
      * @param request GetAnalyzeDataRequest
      * @return GetAnalyzeDataResponse
      */
@@ -215,8 +219,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据部门编码查询下组织列表
-     *
+     * <b>summary</b> : 
+     * <p>根据部门编码查询下组织列表</p>
+     * 
      * @param request GetChildOrgListRequest
      * @param headers GetChildOrgListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -257,8 +262,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据部门编码查询下组织列表
-     *
+     * <b>summary</b> : 
+     * <p>根据部门编码查询下组织列表</p>
+     * 
      * @param request GetChildOrgListRequest
      * @return GetChildOrgListResponse
      */
@@ -269,8 +275,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据工号查询员工基础信息
-     *
+     * <b>summary</b> : 
+     * <p>根据工号查询员工基础信息</p>
+     * 
      * @param request GetEmployeeInfoByWorkNoRequest
      * @param headers GetEmployeeInfoByWorkNoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -311,8 +318,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据工号查询员工基础信息
-     *
+     * <b>summary</b> : 
+     * <p>根据工号查询员工基础信息</p>
+     * 
      * @param request GetEmployeeInfoByWorkNoRequest
      * @return GetEmployeeInfoByWorkNoResponse
      */
@@ -323,8 +331,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据人员工号查询人员任职记录
-     *
+     * <b>summary</b> : 
+     * <p>根据人员工号查询人员任职记录</p>
+     * 
      * @param headers GetEmploymentRecordByWorkNoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetEmploymentRecordByWorkNoResponse
@@ -357,8 +366,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据人员工号查询人员任职记录
-     *
+     * <b>summary</b> : 
+     * <p>根据人员工号查询人员任职记录</p>
      * @return GetEmploymentRecordByWorkNoResponse
      */
     public GetEmploymentRecordByWorkNoResponse getEmploymentRecordByWorkNo(String workNumbers) throws Exception {
@@ -368,8 +377,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取职位详情
-     *
+     * <b>summary</b> : 
+     * <p>获取职位详情</p>
+     * 
      * @param request GetJobPositionRequest
      * @param headers GetJobPositionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -410,8 +420,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取职位详情
-     *
+     * <b>summary</b> : 
+     * <p>获取职位详情</p>
+     * 
      * @param request GetJobPositionRequest
      * @return GetJobPositionResponse
      */
@@ -422,8 +433,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据编码获取职位详情
-     *
+     * <b>summary</b> : 
+     * <p>根据编码获取职位详情</p>
+     * 
      * @param request GetJobPostRequest
      * @param headers GetJobPostHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -464,8 +476,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据编码获取职位详情
-     *
+     * <b>summary</b> : 
+     * <p>根据编码获取职位详情</p>
+     * 
      * @param request GetJobPostRequest
      * @return GetJobPostResponse
      */
@@ -476,8 +489,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取组织详情
-     *
+     * <b>summary</b> : 
+     * <p>获取组织详情</p>
+     * 
      * @param request GetOrgInfoRequest
      * @param headers GetOrgInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -518,8 +532,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取组织详情
-     *
+     * <b>summary</b> : 
+     * <p>获取组织详情</p>
+     * 
      * @param request GetOrgInfoRequest
      * @return GetOrgInfoResponse
      */
@@ -530,8 +545,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据员工工号获取员工的基本信息
-     *
+     * <b>summary</b> : 
+     * <p>根据员工工号获取员工的基本信息</p>
+     * 
      * @param request GetStaffInfoByWorkNoRequest
      * @param headers GetStaffInfoByWorkNoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -572,8 +588,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据员工工号获取员工的基本信息
-     *
+     * <b>summary</b> : 
+     * <p>根据员工工号获取员工的基本信息</p>
+     * 
      * @param request GetStaffInfoByWorkNoRequest
      * @return GetStaffInfoByWorkNoResponse
      */
@@ -584,8 +601,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询员工信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询员工信息</p>
+     * 
      * @param request GetStaffPageQueryRequest
      * @param headers GetStaffPageQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -642,8 +660,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询员工信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询员工信息</p>
+     * 
      * @param request GetStaffPageQueryRequest
      * @return GetStaffPageQueryResponse
      */
@@ -654,8 +673,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户信息
-     *
+     * <b>summary</b> : 
+     * <p>获取用户信息</p>
+     * 
      * @param request GetUserRequest
      * @param headers GetUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -700,8 +720,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户信息
-     *
+     * <b>summary</b> : 
+     * <p>获取用户信息</p>
+     * 
      * @param request GetUserRequest
      * @return GetUserResponse
      */
@@ -712,8 +733,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 运营数据分析下的周期列表
-     *
+     * <b>summary</b> : 
+     * <p>运营数据分析下的周期列表</p>
+     * 
      * @param headers ListAnalyzePeriodsHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListAnalyzePeriodsResponse
@@ -746,8 +768,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 运营数据分析下的周期列表
-     *
+     * <b>summary</b> : 
+     * <p>运营数据分析下的周期列表</p>
      * @return ListAnalyzePeriodsResponse
      */
     public ListAnalyzePeriodsResponse listAnalyzePeriods() throws Exception {
@@ -757,8 +779,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据目标id批量获取目标列表
-     *
+     * <b>summary</b> : 
+     * <p>根据目标id批量获取目标列表</p>
+     * 
      * @param request ListObjectiveByIdsRequest
      * @param headers ListObjectiveByIdsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -799,8 +822,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据目标id批量获取目标列表
-     *
+     * <b>summary</b> : 
+     * <p>根据目标id批量获取目标列表</p>
+     * 
      * @param request ListObjectiveByIdsRequest
      * @return ListObjectiveByIdsResponse
      */
@@ -811,8 +835,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户的 OKR 列表
-     *
+     * <b>summary</b> : 
+     * <p>获取用户的 OKR 列表</p>
+     * 
      * @param request ListObjectiveByUserRequest
      * @param headers ListObjectiveByUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -861,8 +886,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户的 OKR 列表
-     *
+     * <b>summary</b> : 
+     * <p>获取用户的 OKR 列表</p>
+     * 
      * @param request ListObjectiveByUserRequest
      * @return ListObjectiveByUserResponse
      */
@@ -873,8 +899,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据进展id获取进展列表
-     *
+     * <b>summary</b> : 
+     * <p>根据进展id获取进展列表</p>
+     * 
      * @param request ListProgressByIdsRequest
      * @param headers ListProgressByIdsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -915,8 +942,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据进展id获取进展列表
-     *
+     * <b>summary</b> : 
+     * <p>根据进展id获取进展列表</p>
+     * 
      * @param request ListProgressByIdsRequest
      * @return ListProgressByIdsResponse
      */
@@ -927,8 +955,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取组织下的日志数据
-     *
+     * <b>summary</b> : 
+     * <p>获取组织下的日志数据</p>
+     * 
      * @param request ListSlsLogRequest
      * @param headers ListSlsLogHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -985,8 +1014,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取组织下的日志数据
-     *
+     * <b>summary</b> : 
+     * <p>获取组织下的日志数据</p>
+     * 
      * @param request ListSlsLogRequest
      * @return ListSlsLogResponse
      */
@@ -997,8 +1027,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页获取目标进展记录
-     *
+     * <b>summary</b> : 
+     * <p>分页获取目标进展记录</p>
+     * 
      * @param request PageListObjectiveProgressRequest
      * @param headers PageListObjectiveProgressHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1047,8 +1078,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页获取目标进展记录
-     *
+     * <b>summary</b> : 
+     * <p>分页获取目标进展记录</p>
+     * 
      * @param request PageListObjectiveProgressRequest
      * @return PageListObjectiveProgressResponse
      */
@@ -1059,8 +1091,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 转交目标OKR
-     *
+     * <b>summary</b> : 
+     * <p>转交目标OKR</p>
+     * 
      * @param request TransferUserObjectiveRequest
      * @param headers TransferUserObjectiveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1105,8 +1138,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 转交目标OKR
-     *
+     * <b>summary</b> : 
+     * <p>转交目标OKR</p>
+     * 
      * @param request TransferUserObjectiveRequest
      * @return TransferUserObjectiveResponse
      */

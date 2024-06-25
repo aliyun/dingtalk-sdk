@@ -15,6 +15,9 @@ public class GetWorkspacesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -49,6 +52,10 @@ public class GetWorkspacesRequest extends TeaModel {
     }
 
     public static class GetWorkspacesRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("withPermissionRole")
         public Boolean withPermissionRole;
 

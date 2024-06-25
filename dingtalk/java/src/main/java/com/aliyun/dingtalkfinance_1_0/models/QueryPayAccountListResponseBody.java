@@ -26,36 +26,54 @@ public class QueryPayAccountListResponseBody extends TeaModel {
     public static class QueryPayAccountListResponseBodyPayAccountVOList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>B</p>
          */
         @NameInMap("accountClass")
         public String accountClass;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20210912001</p>
          */
         @NameInMap("accountId")
         public String accountId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>test</p>
          */
         @NameInMap("accountName")
         public String accountName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>139****1</p>
          */
         @NameInMap("accountNo")
         public String accountNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>备注</p>
          */
         @NameInMap("accountRemark")
         public String accountRemark;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ALIPAY</p>
          */
         @NameInMap("accountType")
         public String accountType;

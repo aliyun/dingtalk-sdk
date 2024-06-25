@@ -6,30 +6,55 @@ import com.aliyun.tea.*;
 public class EmotionStatisticsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20220101</p>
      */
     @NameInMap("maxDt")
     public String maxDt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0.8</p>
+     */
     @NameInMap("maxEmotion")
     public Double maxEmotion;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20220101</p>
      */
     @NameInMap("minDt")
     public String minDt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("minEmotion")
     public Double minEmotion;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidXX,cidYY</p>
+     */
     @NameInMap("openConversationIds")
     public String openConversationIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ksdfosd</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>KxisoOk</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;

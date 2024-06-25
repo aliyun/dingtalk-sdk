@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class DeleteKeyResultResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("data")
     public Boolean data;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;

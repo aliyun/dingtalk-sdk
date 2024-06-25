@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class CreateObjectiveRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>我是内容</p>
      */
     @NameInMap("content")
     public String content;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1006</p>
      */
     @NameInMap("periodId")
     public String periodId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1334543</p>
      */
     @NameInMap("prevPosition")
     public String prevPosition;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>06186238011033616</p>
      */
     @NameInMap("userId")
     public String userId;

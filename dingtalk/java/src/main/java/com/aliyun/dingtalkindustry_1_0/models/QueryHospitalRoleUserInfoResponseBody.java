@@ -9,18 +9,27 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("currentPage")
     public Integer currentPage;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("totalCount")
     public Long totalCount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("totalPages")
     public Integer totalPages;
@@ -65,30 +74,45 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
     public static class QueryHospitalRoleUserInfoResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-12-22 15:30:31</p>
          */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-12-22 15:30:31</p>
          */
         @NameInMap("gmtModified")
         public String gmtModified;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2783939</p>
          */
         @NameInMap("jobNumber")
         public String jobNumber;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>sys_admin</p>
          */
         @NameInMap("roleCode")
         public String roleCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>管理员</p>
          */
         @NameInMap("roleName")
         public String roleName;
@@ -98,12 +122,18 @@ public class QueryHospitalRoleUserInfoResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>7424792</p>
          */
         @NameInMap("userCode")
         public String userCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("userName")
         public String userName;

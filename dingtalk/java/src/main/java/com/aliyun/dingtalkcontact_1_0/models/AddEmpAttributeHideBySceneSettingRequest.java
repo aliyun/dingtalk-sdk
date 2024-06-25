@@ -7,6 +7,10 @@ public class AddEmpAttributeHideBySceneSettingRequest extends TeaModel {
     @NameInMap("chatSubtitleConfig")
     public AddEmpAttributeHideBySceneSettingRequestChatSubtitleConfig chatSubtitleConfig;
 
+    /**
+     * <strong>example:</strong>
+     * <p>description text</p>
+     */
     @NameInMap("description")
     public String description;
 
@@ -22,6 +26,10 @@ public class AddEmpAttributeHideBySceneSettingRequest extends TeaModel {
     @NameInMap("hideFields")
     public java.util.List<String> hideFields;
 
+    /**
+     * <strong>example:</strong>
+     * <p>test name</p>
+     */
     @NameInMap("name")
     public String name;
 

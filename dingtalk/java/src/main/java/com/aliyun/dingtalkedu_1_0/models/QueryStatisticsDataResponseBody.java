@@ -21,24 +21,52 @@ public class QueryStatisticsDataResponseBody extends TeaModel {
     }
 
     public static class QueryStatisticsDataResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2345</p>
+         */
         @NameInMap("classId")
         public Long classId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6</p>
+         */
         @NameInMap("courseCount")
         public Long courseCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>9</p>
+         */
         @NameInMap("courseHours")
         public Float courseHours;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cn_shuxue</p>
+         */
         @NameInMap("subjectCode")
         public String subjectCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>语文</p>
+         */
         @NameInMap("subjectName")
         public Long subjectName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2352345345</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李老师</p>
+         */
         @NameInMap("userName")
         public String userName;
 

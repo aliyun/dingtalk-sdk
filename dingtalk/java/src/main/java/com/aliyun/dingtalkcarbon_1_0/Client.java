@@ -6,11 +6,10 @@ import com.aliyun.dingtalkcarbon_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 获取用户的减碳明细
-     *
+     * <b>summary</b> : 
+     * <p>获取用户的减碳明细</p>
+     * 
      * @param request GetPersonalCarbonInfoRequest
      * @param headers GetPersonalCarbonInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -66,8 +66,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户的减碳明细
-     *
+     * <b>summary</b> : 
+     * <p>获取用户的减碳明细</p>
+     * 
      * @param request GetPersonalCarbonInfoRequest
      * @return GetPersonalCarbonInfoResponse
      */
@@ -78,8 +79,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 写入阿里巴巴每日组织明细碳能量数据
-     *
+     * <b>summary</b> : 
+     * <p>写入阿里巴巴每日组织明细碳能量数据</p>
+     * 
      * @param request WriteAlibabaOrgCarbonRequest
      * @param headers WriteAlibabaOrgCarbonHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -120,8 +122,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 写入阿里巴巴每日组织明细碳能量数据
-     *
+     * <b>summary</b> : 
+     * <p>写入阿里巴巴每日组织明细碳能量数据</p>
+     * 
      * @param request WriteAlibabaOrgCarbonRequest
      * @return WriteAlibabaOrgCarbonResponse
      */
@@ -132,8 +135,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 写入阿里巴巴每日用户碳能量数据
-     *
+     * <b>summary</b> : 
+     * <p>写入阿里巴巴每日用户碳能量数据</p>
+     * 
      * @param request WriteAlibabaUserCarbonRequest
      * @param headers WriteAlibabaUserCarbonHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -174,8 +178,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 写入阿里巴巴每日用户碳能量数据
-     *
+     * <b>summary</b> : 
+     * <p>写入阿里巴巴每日用户碳能量数据</p>
+     * 
      * @param request WriteAlibabaUserCarbonRequest
      * @return WriteAlibabaUserCarbonResponse
      */
@@ -186,8 +191,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV记录数据传输当前状态
-     *
+     * <b>summary</b> : 
+     * <p>ISV记录数据传输当前状态</p>
+     * 
      * @param request WriteIsvStateRequest
      * @param headers WriteIsvStateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -232,8 +238,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV记录数据传输当前状态
-     *
+     * <b>summary</b> : 
+     * <p>ISV记录数据传输当前状态</p>
+     * 
      * @param request WriteIsvStateRequest
      * @return WriteIsvStateResponse
      */
@@ -244,8 +251,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 写入isv每日组织明细碳能量数据
-     *
+     * <b>summary</b> : 
+     * <p>写入isv每日组织明细碳能量数据</p>
+     * 
      * @param request WriteOrgCarbonRequest
      * @param headers WriteOrgCarbonHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -286,8 +294,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 写入isv每日组织明细碳能量数据
-     *
+     * <b>summary</b> : 
+     * <p>写入isv每日组织明细碳能量数据</p>
+     * 
      * @param request WriteOrgCarbonRequest
      * @return WriteOrgCarbonResponse
      */
@@ -298,8 +307,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 写入isv每日用户明细碳能量数据
-     *
+     * <b>summary</b> : 
+     * <p>写入isv每日用户明细碳能量数据</p>
+     * 
      * @param request WriteUserCarbonRequest
      * @param headers WriteUserCarbonHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -340,8 +350,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 写入isv每日用户明细碳能量数据
-     *
+     * <b>summary</b> : 
+     * <p>写入isv每日用户明细碳能量数据</p>
+     * 
      * @param request WriteUserCarbonRequest
      * @return WriteUserCarbonResponse
      */
@@ -352,8 +363,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 写入isv能耗每日用户明细碳能量数据
-     *
+     * <b>summary</b> : 
+     * <p>写入isv能耗每日用户明细碳能量数据</p>
+     * 
      * @param request WriteUserCarbonEnergyRequest
      * @param headers WriteUserCarbonEnergyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -394,8 +406,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 写入isv能耗每日用户明细碳能量数据
-     *
+     * <b>summary</b> : 
+     * <p>写入isv能耗每日用户明细碳能量数据</p>
+     * 
      * @param request WriteUserCarbonEnergyRequest
      * @return WriteUserCarbonEnergyResponse
      */

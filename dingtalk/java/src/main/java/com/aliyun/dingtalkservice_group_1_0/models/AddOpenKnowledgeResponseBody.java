@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class AddOpenKnowledgeResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>22</p>
      */
     @NameInMap("result")
     public AddOpenKnowledgeResponseBodyResult result;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -38,14 +44,25 @@ public class AddOpenKnowledgeResponseBody extends TeaModel {
     }
 
     public static class AddOpenKnowledgeResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>知识标问不能为空</p>
+         */
         @NameInMap("message")
         public String message;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("success")
         public Boolean success;

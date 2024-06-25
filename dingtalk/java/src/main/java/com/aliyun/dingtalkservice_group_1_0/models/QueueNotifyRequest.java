@@ -4,24 +4,52 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueueNotifyRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>5</p>
+     */
     @NameInMap("estimateWaitMin")
     public Long estimateWaitMin;
 
+    /**
+     * <strong>example:</strong>
+     * <p>eWaJSqDcLsoiE</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>11</p>
+     */
     @NameInMap("queuePlace")
     public Long queuePlace;
 
+    /**
+     * <strong>example:</strong>
+     * <p>3333333333</p>
+     */
     @NameInMap("serviceToken")
     public String serviceToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>SourceTypeEnum</p>
+     */
     @NameInMap("targetChannel")
     public String targetChannel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>你好，欢迎来到这里</p>
+     */
     @NameInMap("tips")
     public String tips;
 
+    /**
+     * <strong>example:</strong>
+     * <p>eeeeeeeeerrrrr</p>
+     */
     @NameInMap("visitorToken")
     public String visitorToken;
 

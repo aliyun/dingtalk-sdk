@@ -4,30 +4,66 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetYongYouOpenApiTokenResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("accessToken")
     public String accessToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>accounting</p>
+     */
     @NameInMap("appName")
     public String appName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>518400</p>
+     */
     @NameInMap("expiresIn")
     public String expiresIn;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2512799</p>
+     */
     @NameInMap("refreshExpiresIn")
     public String refreshExpiresIn;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("refreshToken")
     public String refreshToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>auth_all</p>
+     */
     @NameInMap("scope")
     public String scope;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("sid")
     public String sid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123615862385832922</p>
+     */
     @NameInMap("yongyouOrgId")
     public String yongyouOrgId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>391733693750254232</p>
+     */
     @NameInMap("yongyouUserId")
     public String yongyouUserId;
 

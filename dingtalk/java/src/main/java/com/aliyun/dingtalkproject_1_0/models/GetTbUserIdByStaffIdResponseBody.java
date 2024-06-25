@@ -26,6 +26,9 @@ public class GetTbUserIdByStaffIdResponseBody extends TeaModel {
     public static class GetTbUserIdByStaffIdResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>601fdeb17f8681c9xxxx</p>
          */
         @NameInMap("tbUserId")
         public String tbUserId;

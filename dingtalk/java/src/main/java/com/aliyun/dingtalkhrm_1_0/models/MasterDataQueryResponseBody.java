@@ -4,9 +4,17 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataQueryResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -18,10 +26,17 @@ public class MasterDataQueryResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("total")
     public Long total;
 
@@ -71,9 +86,17 @@ public class MasterDataQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -101,15 +124,27 @@ public class MasterDataQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDataQueryResponseBodyResultViewEntityFieldVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>performanceValue</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
         @NameInMap("fieldDataVO")
         public MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO fieldDataVO;
 
+        /**
+         * <strong>example:</strong>
+         * <p>绩效等级</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("fieldType")
         public String fieldType;
 
@@ -153,23 +188,36 @@ public class MasterDataQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDataQueryResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>uk123123</p>
+         */
         @NameInMap("outerId")
         public String outerId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>admind123</p>
          */
         @NameInMap("relationId")
         public String relationId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PERFORMANCE</p>
          */
         @NameInMap("scopeCode")
         public String scopeCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>base</p>
          */
         @NameInMap("viewEntityCode")
         public String viewEntityCode;

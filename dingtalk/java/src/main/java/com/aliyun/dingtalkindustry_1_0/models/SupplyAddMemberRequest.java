@@ -6,30 +6,53 @@ import com.aliyun.tea.*;
 public class SupplyAddMemberRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
      */
     @NameInMap("isPartnerManager")
     public Boolean isPartnerManager;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>187xxxx0001</p>
      */
     @NameInMap("memberMobile")
     public String memberMobile;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>李白</p>
      */
     @NameInMap("memberName")
     public String memberName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>经理</p>
+     */
     @NameInMap("memberTitle")
     public String memberTitle;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1001</p>
+     */
     @NameInMap("memberWorkNumber")
     public String memberWorkNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1111</p>
      */
     @NameInMap("supplyDeptId")
     public Long supplyDeptId;

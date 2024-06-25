@@ -26,12 +26,18 @@ public class ListItemUserDataResponseBody extends TeaModel {
     public static class ListItemUserDataResponseBodyStudyInfos extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10000</p>
          */
         @NameInMap("durationMillis")
         public Long durationMillis;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>16621*******284773</p>
          */
         @NameInMap("uid")
         public String uid;

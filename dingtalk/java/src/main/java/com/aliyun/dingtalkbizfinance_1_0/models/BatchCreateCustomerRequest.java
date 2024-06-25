@@ -9,6 +9,9 @@ public class BatchCreateCustomerRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>55001121</p>
      */
     @NameInMap("operator")
     public String operator;
@@ -35,36 +38,75 @@ public class BatchCreateCustomerRequest extends TeaModel {
     }
 
     public static class BatchCreateCustomerRequestCreateCustomerRequestList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.abc.com">www.abc.com</a></p>
+         */
         @NameInMap("drawerEmail")
         public String drawerEmail;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234567890</p>
+         */
         @NameInMap("drawerTelephone")
         public String drawerTelephone;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("purchaserAccount")
         public String purchaserAccount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州市</p>
+         */
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>建行</p>
+         */
         @NameInMap("purchaserBankName")
         public String purchaserBankName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四</p>
+         */
         @NameInMap("purchaserName")
         public String purchaserName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1333</p>
+         */
         @NameInMap("purchaserTaxNo")
         public String purchaserTaxNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>13333333333</p>
+         */
         @NameInMap("purchaserTel")
         public String purchaserTel;
 

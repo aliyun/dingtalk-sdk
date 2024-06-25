@@ -6,11 +6,10 @@ import com.aliyun.dingtalkflashmeeting_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建钉闪会并绑定日程
-     *
+     * <b>summary</b> : 
+     * <p>创建钉闪会并绑定日程</p>
+     * 
      * @param request CreateFlashMeetingRequest
      * @param headers CreateFlashMeetingHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -70,8 +70,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建钉闪会并绑定日程
-     *
+     * <b>summary</b> : 
+     * <p>创建钉闪会并绑定日程</p>
+     * 
      * @param request CreateFlashMeetingRequest
      * @return CreateFlashMeetingResponse
      */
@@ -82,8 +83,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据日程获取闪会的信息
-     *
+     * <b>summary</b> : 
+     * <p>根据日程获取闪会的信息</p>
+     * 
      * @param request GetShanhuiByCalendarRequest
      * @param headers GetShanhuiByCalendarHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -128,8 +130,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据日程获取闪会的信息
-     *
+     * <b>summary</b> : 
+     * <p>根据日程获取闪会的信息</p>
+     * 
      * @param request GetShanhuiByCalendarRequest
      * @return GetShanhuiByCalendarResponse
      */
@@ -140,8 +143,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
-     *
+     * <b>summary</b> : 
+     * <p>根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等</p>
+     * 
      * @param headers GetShanhuiByShanhuiKeyHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetShanhuiByShanhuiKeyResponse
@@ -174,8 +178,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
-     *
+     * <b>summary</b> : 
+     * <p>根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等</p>
      * @return GetShanhuiByShanhuiKeyResponse
      */
     public GetShanhuiByShanhuiKeyResponse getShanhuiByShanhuiKey(String flashmeetingKey) throws Exception {
@@ -185,8 +189,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据闪会文档id获取待办任务
-     *
+     * <b>summary</b> : 
+     * <p>根据闪会文档id获取待办任务</p>
+     * 
      * @param request GetTaskFromShanhuiDocRequest
      * @param headers GetTaskFromShanhuiDocHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -239,8 +244,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据闪会文档id获取待办任务
-     *
+     * <b>summary</b> : 
+     * <p>根据闪会文档id获取待办任务</p>
+     * 
      * @param request GetTaskFromShanhuiDocRequest
      * @return GetTaskFromShanhuiDocResponse
      */

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class OpenAgoalLatestProgressDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1716952481672</p>
      */
     @NameInMap("created")
     public Long created;
@@ -18,12 +21,18 @@ public class OpenAgoalLatestProgressDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <article class=\"4ever-article\"><p style=\"text-align:left;text-indent:0;margin-left:0;margin-top:0;margin-bottom:0\"><span>xxx</span></p></article>
      */
     @NameInMap("htmldescription")
     public String htmldescription;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6444f5e9a4261c6e699dxxxx</p>
      */
     @NameInMap("progressId")
     public String progressId;

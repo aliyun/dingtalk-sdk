@@ -24,11 +24,18 @@ public class UpdateConnectorResponseBody extends TeaModel {
     }
 
     public static class UpdateConnectorResponseBodyItem extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>G-CONN-101921B15FE0212B4AF70</p>
+         */
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>xxxx</p>
          */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
@@ -41,6 +48,9 @@ public class UpdateConnectorResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("success")
         public Boolean success;

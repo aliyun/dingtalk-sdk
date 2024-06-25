@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class AddTeamRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>team_name</p>
      */
     @NameInMap("name")
     public String name;
@@ -15,6 +18,9 @@ public class AddTeamRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -49,9 +55,17 @@ public class AddTeamRequest extends TeaModel {
     }
 
     public static class AddTeamRequestOptionIcon extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>URL</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>icon_url</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -79,9 +93,17 @@ public class AddTeamRequest extends TeaModel {
     }
 
     public static class AddTeamRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>team_cover</p>
+         */
         @NameInMap("cover")
         public String cover;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_description</p>
+         */
         @NameInMap("description")
         public String description;
 

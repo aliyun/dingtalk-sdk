@@ -26,18 +26,27 @@ public class EmotionStatisticsResponseBody extends TeaModel {
     public static class EmotionStatisticsResponseBodyEmotionStatisticsRecords extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("count")
         public Long count;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20220101</p>
          */
         @NameInMap("dt")
         public String dt;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0.3</p>
          */
         @NameInMap("emotionScore")
         public Double emotionScore;

@@ -21,30 +21,66 @@ public class WriteUserCarbonEnergyRequest extends TeaModel {
     }
 
     public static class WriteUserCarbonEnergyRequestUserDetailsList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2021-11-26 10:09:37</p>
+         */
         @NameInMap("actionEndTime")
         public String actionEndTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12320211126</p>
+         */
         @NameInMap("actionId")
         public String actionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-11-26 10:09:37</p>
+         */
         @NameInMap("actionStartTime")
         public String actionStartTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>VIDEO</p>
+         */
         @NameInMap("actionType")
         public String actionType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3.21</p>
+         */
         @NameInMap("carbonAmount")
         public String carbonAmount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding12344</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("version")
         public Integer version;
 

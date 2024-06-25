@@ -6,40 +6,67 @@ import com.aliyun.tea.*;
 public class ApplyBatchPayRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021070712440326300185114</p>
      */
     @NameInMap("accountId")
     public String accountId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20210909153300000002734753314700</p>
      */
     @NameInMap("orderNo")
     public String orderNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>map</p>
+     */
     @NameInMap("passBackParams")
     public java.util.Map<String, ?> passBackParams;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PC</p>
      */
     @NameInMap("payTerminal")
     public String payTerminal;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="http://xx">http://xx</a></p>
+     */
     @NameInMap("returnUrl")
     public String returnUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8754214873</p>
      */
     @NameInMap("staffId")
     public String staffId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10.00</p>
      */
     @NameInMap("transAmount")
     public String transAmount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>yyyy-MM-dd HH:mm:ss</p>
+     */
     @NameInMap("transExpireTime")
     public String transExpireTime;
 

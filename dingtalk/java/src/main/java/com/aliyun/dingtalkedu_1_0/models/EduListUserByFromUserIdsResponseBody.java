@@ -21,24 +21,48 @@ public class EduListUserByFromUserIdsResponseBody extends TeaModel {
     }
 
     public static class EduListUserByFromUserIdsResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>666666</p>
+         */
         @NameInMap("campusId")
         public Long campusId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123456</p>
+         */
         @NameInMap("classId")
         public Long classId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>555555</p>
+         */
         @NameInMap("gradeId")
         public Long gradeId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>叔大</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>444444</p>
+         */
         @NameInMap("periodId")
         public Long periodId;
 
         @NameInMap("role")
         public String role;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111111</p>
+         */
         @NameInMap("userId")
         public String userId;
 

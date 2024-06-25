@@ -48,6 +48,9 @@ public class OpenObjectiveDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>提升系统性能</p>
      */
     @NameInMap("title")
     public String title;

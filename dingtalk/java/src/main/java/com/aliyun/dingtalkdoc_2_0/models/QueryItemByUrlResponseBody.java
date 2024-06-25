@@ -4,12 +4,20 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryItemByUrlResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>mainsite</p>
+     */
     @NameInMap("bizType")
     public String bizType;
 
     @NameInMap("dentry")
     public DentryModel dentry;
 
+    /**
+     * <strong>example:</strong>
+     * <p>file</p>
+     */
     @NameInMap("resourceType")
     public String resourceType;
 
@@ -54,9 +62,17 @@ public class QueryItemByUrlResponseBody extends TeaModel {
     }
 
     public static class QueryItemByUrlResponseBodySpaceOwner extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>小钉</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>SgExXM*******L0tAiEiE</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -84,18 +100,34 @@ public class QueryItemByUrlResponseBody extends TeaModel {
     }
 
     public static class QueryItemByUrlResponseBodySpace extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>这是知识库简介</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>YRBG******vJXDAr</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>这是知识库名称</p>
+         */
         @NameInMap("name")
         public String name;
 
         @NameInMap("owner")
         public QueryItemByUrlResponseBodySpaceOwner owner;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("type")
         public Integer type;
 

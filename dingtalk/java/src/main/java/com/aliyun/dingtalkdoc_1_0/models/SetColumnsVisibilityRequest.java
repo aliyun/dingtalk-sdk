@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class SetColumnsVisibilityRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>column</p>
      */
     @NameInMap("column")
     public Long column;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>column_count</p>
      */
     @NameInMap("columnCount")
     public Long columnCount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>visible</p>
      */
     @NameInMap("visibility")
     public String visibility;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

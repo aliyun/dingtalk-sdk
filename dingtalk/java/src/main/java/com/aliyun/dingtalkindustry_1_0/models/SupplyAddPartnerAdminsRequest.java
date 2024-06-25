@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class SupplyAddPartnerAdminsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>11</p>
      */
     @NameInMap("deptId")
     public Long deptId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>11</p>
      */
     @NameInMap("userId")
     public String userId;

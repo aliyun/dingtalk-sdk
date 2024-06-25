@@ -4,6 +4,10 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddShareCidListResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasShareSuccess")
     public Boolean hasShareSuccess;
 

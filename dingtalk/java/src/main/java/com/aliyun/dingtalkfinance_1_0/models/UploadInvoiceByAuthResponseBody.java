@@ -23,30 +23,45 @@ public class UploadInvoiceByAuthResponseBody extends TeaModel {
     public static class UploadInvoiceByAuthResponseBodyResultResults extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20006</p>
          */
         @NameInMap("errCode")
         public String errCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>033002000712</p>
          */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20532643</p>
          */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>duplicateInvoice</p>
          */
         @NameInMap("reason")
         public String reason;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("success")
         public Boolean success;

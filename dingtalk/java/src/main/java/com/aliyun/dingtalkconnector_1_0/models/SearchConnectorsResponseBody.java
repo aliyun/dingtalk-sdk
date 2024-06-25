@@ -13,6 +13,10 @@ public class SearchConnectorsResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("totalCount")
     public String totalCount;
 
@@ -54,18 +58,38 @@ public class SearchConnectorsResponseBody extends TeaModel {
     }
 
     public static class SearchConnectorsResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>【钉钉官方】通讯录</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://static.dingtalk.com/media/lALPDfJ6WadAG1dgYA_96_96.png">https://static.dingtalk.com/media/lALPDfJ6WadAG1dgYA_96_96.png</a></p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>G-CONN-1015BC8093540B01B8D0000Q</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>通讯录</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding32fff839a3e0105d</p>
+         */
         @NameInMap("providerCorpId")
         public String providerCorpId;
 

@@ -4,11 +4,18 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInterviewSignInInfoRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ddats</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1626796800000</p>
      */
     @NameInMap("signInTimeMillis")
     public Long signInTimeMillis;

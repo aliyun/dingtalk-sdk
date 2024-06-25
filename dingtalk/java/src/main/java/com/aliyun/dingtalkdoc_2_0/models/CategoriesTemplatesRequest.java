@@ -15,6 +15,9 @@ public class CategoriesTemplatesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -49,15 +52,31 @@ public class CategoriesTemplatesRequest extends TeaModel {
     }
 
     public static class CategoriesTemplatesRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("categoryStatus")
         public Integer categoryStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>pc</p>
+         */
         @NameInMap("queryPlatform")
         public String queryPlatform;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("size")
         public Integer size;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("templateStatus")
         public Integer templateStatus;
 
@@ -103,6 +122,9 @@ public class CategoriesTemplatesRequest extends TeaModel {
     public static class CategoriesTemplatesRequestParam extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>categoryIds</p>
          */
         @NameInMap("categoryIds")
         public java.util.List<String> categoryIds;

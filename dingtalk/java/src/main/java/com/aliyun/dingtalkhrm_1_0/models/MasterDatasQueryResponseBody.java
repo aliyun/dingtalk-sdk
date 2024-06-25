@@ -7,6 +7,10 @@ public class MasterDatasQueryResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -19,6 +23,10 @@ public class MasterDatasQueryResponseBody extends TeaModel {
     @NameInMap("success")
     public Boolean success;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("total")
     public Long total;
 
@@ -68,9 +76,17 @@ public class MasterDatasQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDatasQueryResponseBodyResultViewEntityFieldVOListFieldDataVO extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -98,15 +114,27 @@ public class MasterDatasQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDatasQueryResponseBodyResultViewEntityFieldVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>performanceValue</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
         @NameInMap("fieldDataVO")
         public MasterDatasQueryResponseBodyResultViewEntityFieldVOListFieldDataVO fieldDataVO;
 
+        /**
+         * <strong>example:</strong>
+         * <p>绩效等级</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("fieldType")
         public String fieldType;
 
@@ -150,18 +178,33 @@ public class MasterDatasQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDatasQueryResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>uk123123</p>
+         */
         @NameInMap("objId")
         public String objId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>admind123</p>
          */
         @NameInMap("relationId")
         public String relationId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PERFORMANCE</p>
+         */
         @NameInMap("scopeCode")
         public String scopeCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>base</p>
+         */
         @NameInMap("viewEntityCode")
         public String viewEntityCode;
 

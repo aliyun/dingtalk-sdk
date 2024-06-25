@@ -12,18 +12,27 @@ public class BatchInsertBizObjectRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("isDraft")
     public Boolean isDraft;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1eeb5ad3-b6da-4d4d-b6a5-8d342567d189</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>D0001839bbbbe346bbf496498bb76c44c7eb972</p>
      */
     @NameInMap("schemaCode")
     public String schemaCode;

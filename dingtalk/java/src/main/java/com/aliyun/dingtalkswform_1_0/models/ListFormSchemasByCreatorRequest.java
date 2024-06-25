@@ -4,20 +4,34 @@ package com.aliyun.dingtalkswform_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFormSchemasByCreatorRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("bizType")
     public Integer bizType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>user123</p>
+     */
     @NameInMap("creator")
     public String creator;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("nextToken")
     public Long nextToken;

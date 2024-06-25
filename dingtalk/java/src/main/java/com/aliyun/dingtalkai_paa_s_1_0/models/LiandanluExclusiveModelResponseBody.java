@@ -4,9 +4,17 @@ package com.aliyun.dingtalkai_paa_s_1_0.models;
 import com.aliyun.tea.*;
 
 public class LiandanluExclusiveModelResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>requestId_123</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{        &quot;content&quot;:&quot;OKR 全称为 Objective and Key Results，即目标与关键结果法，是一套明确和跟踪目标及其完成情况的管理工具和方法。&quot;   }</p>
+     */
     @NameInMap("result")
     public java.util.Map<String, ?> result;
 

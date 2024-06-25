@@ -26,28 +26,44 @@ public class DigitalStoreRolesResponseBody extends TeaModel {
     public static class DigitalStoreRolesResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("level")
         public Long level;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>DS_XXXXX</p>
          */
         @NameInMap("roleCode")
         public String roleCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("roleId")
         public Long roleId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>店长</p>
          */
         @NameInMap("roleName")
         public String roleName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>create</p>
+         */
         @NameInMap("source")
         public String source;
 

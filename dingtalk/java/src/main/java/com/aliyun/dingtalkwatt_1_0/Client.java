@@ -6,11 +6,10 @@ import com.aliyun.dingtalkwatt_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
@@ -21,8 +20,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 根据加密后的用户手机号检查该用户是否在某人群中
-     *
+     * <b>summary</b> : 
+     * <p>根据加密后的用户手机号检查该用户是否在某人群中</p>
+     * 
      * @param request CheckInCrowdsByMobileRequest
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
@@ -58,8 +58,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据加密后的用户手机号检查该用户是否在某人群中
-     *
+     * <b>summary</b> : 
+     * <p>根据加密后的用户手机号检查该用户是否在某人群中</p>
+     * 
      * @param request CheckInCrowdsByMobileRequest
      * @return CheckInCrowdsByMobileResponse
      */
@@ -70,8 +71,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 消耗用户积分
-     *
+     * <b>summary</b> : 
+     * <p>消耗用户积分</p>
+     * 
      * @param tmpReq ConsumePointRequest
      * @param headers ConsumePointHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -118,8 +120,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 消耗用户积分
-     *
+     * <b>summary</b> : 
+     * <p>消耗用户积分</p>
+     * 
      * @param request ConsumePointRequest
      * @return ConsumePointResponse
      */
@@ -130,8 +133,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
-     *
+     * <b>summary</b> : 
+     * <p>发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）</p>
+     * 
      * @param request CreateDeliveryPlanRequest
      * @param headers CreateDeliveryPlanHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -188,8 +192,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）
-     *
+     * <b>summary</b> : 
+     * <p>发布钉钉投放任务（搜索穹顶、搜索发现、搜索关键字）</p>
+     * 
      * @param request CreateDeliveryPlanRequest
      * @return CreateDeliveryPlanResponse
      */
@@ -200,8 +205,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户积分
-     *
+     * <b>summary</b> : 
+     * <p>查询用户积分</p>
+     * 
      * @param request GetPointInfoRequest
      * @param headers GetPointInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -242,8 +248,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户积分
-     *
+     * <b>summary</b> : 
+     * <p>查询用户积分</p>
+     * 
      * @param request GetPointInfoRequest
      * @return GetPointInfoResponse
      */
@@ -254,8 +261,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤销用户单笔积分消耗
-     *
+     * <b>summary</b> : 
+     * <p>撤销用户单笔积分消耗</p>
+     * 
      * @param tmpReq RevertPointRequest
      * @param headers RevertPointHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -302,8 +310,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤销用户单笔积分消耗
-     *
+     * <b>summary</b> : 
+     * <p>撤销用户单笔积分消耗</p>
+     * 
      * @param request RevertPointRequest
      * @return RevertPointResponse
      */
@@ -314,8 +323,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送钉钉统一引导Banner
-     *
+     * <b>summary</b> : 
+     * <p>发送钉钉统一引导Banner</p>
+     * 
      * @param request SendBannerRequest
      * @param headers SendBannerHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -368,8 +378,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送钉钉统一引导Banner
-     *
+     * <b>summary</b> : 
+     * <p>发送钉钉统一引导Banner</p>
+     * 
      * @param request SendBannerRequest
      * @return SendBannerResponse
      */
@@ -380,8 +391,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送钉钉首页弹窗
-     *
+     * <b>summary</b> : 
+     * <p>发送钉钉首页弹窗</p>
+     * 
      * @param request SendPopupRequest
      * @param headers SendPopupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -434,8 +446,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送钉钉首页弹窗
-     *
+     * <b>summary</b> : 
+     * <p>发送钉钉首页弹窗</p>
+     * 
      * @param request SendPopupRequest
      * @return SendPopupResponse
      */
@@ -446,8 +459,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送钉钉搜索底纹
-     *
+     * <b>summary</b> : 
+     * <p>发送钉钉搜索底纹</p>
+     * 
      * @param request SendSearchShadeRequest
      * @param headers SendSearchShadeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -500,8 +514,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送钉钉搜索底纹
-     *
+     * <b>summary</b> : 
+     * <p>发送钉钉搜索底纹</p>
+     * 
      * @param request SendSearchShadeRequest
      * @return SendSearchShadeResponse
      */

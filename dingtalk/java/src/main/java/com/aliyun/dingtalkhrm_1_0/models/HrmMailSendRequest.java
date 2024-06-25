@@ -40,18 +40,27 @@ public class HrmMailSendRequest extends TeaModel {
     public static class HrmMailSendRequestMailAttachments extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试.pdf</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>@asdc12312</p>
          */
         @NameInMap("path")
         public String path;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>media</p>
          */
         @NameInMap("type")
         public String type;
@@ -90,12 +99,18 @@ public class HrmMailSendRequest extends TeaModel {
     public static class HrmMailSendRequestMailMeetingAlarm extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>还有10分钟开始</p>
          */
         @NameInMap("alarmDesc")
         public String alarmDesc;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("alarmMinutes")
         public Integer alarmMinutes;
@@ -140,12 +155,18 @@ public class HrmMailSendRequest extends TeaModel {
     public static class HrmMailSendRequestMailMeetingAttendees extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="mailto:abc@aaa.com">abc@aaa.com</a></p>
          */
         @NameInMap("address")
         public String address;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>参会人1</p>
          */
         @NameInMap("name")
         public String name;
@@ -176,12 +197,18 @@ public class HrmMailSendRequest extends TeaModel {
     public static class HrmMailSendRequestMailMeetingOrganizer extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="mailto:abc@aaa.com">abc@aaa.com</a></p>
          */
         @NameInMap("address")
         public String address;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>系统</p>
          */
         @NameInMap("name")
         public String name;
@@ -216,20 +243,34 @@ public class HrmMailSendRequest extends TeaModel {
         @NameInMap("attendees")
         public java.util.List<HrmMailSendRequestMailMeetingAttendees> attendees;
 
+        /**
+         * <strong>example:</strong>
+         * <p>会议描述</p>
+         */
         @NameInMap("description")
         public String description;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1701692590881</p>
          */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>会议室</p>
+         */
         @NameInMap("location")
         public String location;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>REQUEST</p>
          */
         @NameInMap("method")
         public String method;
@@ -237,23 +278,36 @@ public class HrmMailSendRequest extends TeaModel {
         @NameInMap("organizer")
         public HrmMailSendRequestMailMeetingOrganizer organizer;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("sequence")
         public Integer sequence;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1701692590881</p>
          */
         @NameInMap("startTime")
         public Long startTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试会议</p>
          */
         @NameInMap("summary")
         public String summary;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>uuidssssss</p>
          */
         @NameInMap("uuid")
         public String uuid;
@@ -357,14 +411,25 @@ public class HrmMailSendRequest extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<HrmMailSendRequestMailAttachments> attachments;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="mailto:abd@aaa.com">abd@aaa.com</a>,<a href="mailto:bcd@aaa.com">bcd@aaa.com</a>,</p>
+         */
         @NameInMap("bccAddress")
         public String bccAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="mailto:abd@aaa.com">abd@aaa.com</a>,<a href="mailto:bcd@aaa.com">bcd@aaa.com</a>,</p>
+         */
         @NameInMap("ccAddress")
         public String ccAddress;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>请及时填写请填写入职登记表</p>
          */
         @NameInMap("content")
         public String content;
@@ -374,18 +439,27 @@ public class HrmMailSendRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="mailto:abd@aaa.com">abd@aaa.com</a>,<a href="mailto:bcd@aaa.com">bcd@aaa.com</a>,</p>
          */
         @NameInMap("receiverAddress")
         public String receiverAddress;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>智能人事入职</p>
          */
         @NameInMap("senderAlias")
         public String senderAlias;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>请填写入职登记表</p>
          */
         @NameInMap("subject")
         public String subject;
@@ -464,18 +538,27 @@ public class HrmMailSendRequest extends TeaModel {
     public static class HrmMailSendRequestOperator extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>biz222ddd</p>
          */
         @NameInMap("bizId")
         public String bizId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>hrm</p>
          */
         @NameInMap("mailAccountType")
         public String mailAccountType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>tokenabcd</p>
          */
         @NameInMap("token")
         public String token;

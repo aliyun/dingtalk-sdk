@@ -26,10 +26,17 @@ public class ShareUrlRequest extends TeaModel {
     public static class ShareUrlRequestParam extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>dentryUuid</p>
          */
         @NameInMap("dentryUuid")
         public String dentryUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("triggerShare")
         public Boolean triggerShare;
 

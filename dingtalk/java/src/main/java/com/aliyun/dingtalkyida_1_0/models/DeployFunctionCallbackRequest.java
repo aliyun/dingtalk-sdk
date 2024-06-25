@@ -4,21 +4,45 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeployFunctionCallbackRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>202201061234</p>
+     */
     @NameInMap("appId")
     public String appId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc.com</p>
+     */
     @NameInMap("customDomain")
     public String customDomain;
 
+    /**
+     * <strong>example:</strong>
+     * <p>RELEASE</p>
+     */
     @NameInMap("deployStage")
     public String deployStage;
 
+    /**
+     * <strong>example:</strong>
+     * <p>assdfasdfWwd12212</p>
+     */
     @NameInMap("gateWayAppKey")
     public String gateWayAppKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fasdfsfasdf1212Sff</p>
+     */
     @NameInMap("gateWayAppSecret")
     public String gateWayAppSecret;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1111shanghai-aliyunapi.com</p>
+     */
     @NameInMap("gateWayDomain")
     public String gateWayDomain;
 

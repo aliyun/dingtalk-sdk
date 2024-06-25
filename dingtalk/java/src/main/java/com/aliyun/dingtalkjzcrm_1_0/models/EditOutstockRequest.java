@@ -9,15 +9,25 @@ public class EditOutstockRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>191</p>
      */
     @NameInMap("datatype")
     public Long datatype;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("msgid")
     public Long msgid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1621822122</p>
      */
     @NameInMap("stamp")
     public Long stamp;
@@ -74,6 +84,9 @@ public class EditOutstockRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>&quot;child_mx&quot;:[{&quot;产品ID&quot;:&quot;1&quot;,&quot;数量&quot;:&quot;10&quot;,&quot;单价&quot;:&quot;58.5&quot;,&quot;总价&quot;:&quot;585&quot;,&quot;明细备注&quot;:&quot;包含的测试产品&quot;}]</p>
          */
         @NameInMap("child_mx")
         public String childMx;
@@ -83,6 +96,12 @@ public class EditOutstockRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
+         * 
+         * <strong>if can be null:</strong>
+         * <p>false</p>
          */
         @NameInMap("data_userid")
         public String dataUserid;

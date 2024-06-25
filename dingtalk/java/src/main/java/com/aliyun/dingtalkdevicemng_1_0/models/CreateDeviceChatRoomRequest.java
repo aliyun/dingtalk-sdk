@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateDeviceChatRoomRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>REPAIR_GROUP</p>
+     */
     @NameInMap("chatType")
     public String chatType;
 
@@ -15,10 +19,17 @@ public class CreateDeviceChatRoomRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxxxxx</p>
      */
     @NameInMap("ownerUserId")
     public String ownerUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>设备维修群</p>
+     */
     @NameInMap("title")
     public String title;
 

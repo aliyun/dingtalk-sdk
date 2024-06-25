@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class QueryRemindResultsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("nextToken")
     public Long nextToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user123</p>
      */
     @NameInMap("operationUserId")
     public String operationUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>18xxxx</p>
      */
     @NameInMap("templateId")
     public String templateId;

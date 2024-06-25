@@ -6,30 +6,55 @@ import com.aliyun.tea.*;
 public class UpdateResidenceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("departmentId")
     public Long departmentId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>101户</p>
      */
     @NameInMap("departmentName")
     public String departmentName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("destitute")
     public Boolean destitute;
 
+    /**
+     * <strong>example:</strong>
+     * <p>第1网格</p>
+     */
     @NameInMap("grid")
     public String grid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>16612345678</p>
+     */
     @NameInMap("homeTel")
     public String homeTel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("managerUserId")
     public String managerUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("parentDepartmentId")
     public Long parentDepartmentId;

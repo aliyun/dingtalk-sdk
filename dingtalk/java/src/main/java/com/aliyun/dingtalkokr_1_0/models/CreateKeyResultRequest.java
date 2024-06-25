@@ -6,30 +6,50 @@ import com.aliyun.tea.*;
 public class CreateKeyResultRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>我的内容</p>
      */
     @NameInMap("content")
     public String content;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>58Y4</p>
      */
     @NameInMap("objectiveId")
     public String objectiveId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1006</p>
      */
     @NameInMap("periodId")
     public String periodId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>234631</p>
+     */
     @NameInMap("prevPosition")
     public Long prevPosition;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("weight")
     public Long weight;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>06186238011033616</p>
      */
     @NameInMap("userId")
     public String userId;

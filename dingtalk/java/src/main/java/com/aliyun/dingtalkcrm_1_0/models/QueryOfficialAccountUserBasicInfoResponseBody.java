@@ -37,6 +37,9 @@ public class QueryOfficialAccountUserBasicInfoResponseBody extends TeaModel {
     public static class QueryOfficialAccountUserBasicInfoResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>FOLLOWED</p>
          */
         @NameInMap("status")
         public String status;

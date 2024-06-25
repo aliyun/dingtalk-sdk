@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class ChatMemoDeleteGeneralFileRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>111111</p>
      */
     @NameInMap("datasetId")
     public Long datasetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>aaaa.doc</p>
      */
     @NameInMap("mediaId")
     public String mediaId;

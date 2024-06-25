@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ConsultCreateSubInstitutionResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>202110110000001</p>
      */
     @NameInMap("orderId")
     public String orderId;

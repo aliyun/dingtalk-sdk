@@ -686,6 +686,10 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("invoiceStatus")
         public String invoiceStatus;
 

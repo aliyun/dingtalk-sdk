@@ -4,6 +4,10 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ValidateApplicationServiceOrderUpgradeRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>accessKey</p>
+     */
     @NameInMap("accessKey")
     public String accessKey;
 

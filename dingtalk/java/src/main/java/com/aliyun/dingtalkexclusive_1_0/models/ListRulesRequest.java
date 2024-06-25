@@ -24,6 +24,10 @@ public class ListRulesRequest extends TeaModel {
     }
 
     public static class ListRulesRequestBody extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("status")
         public Long status;
 

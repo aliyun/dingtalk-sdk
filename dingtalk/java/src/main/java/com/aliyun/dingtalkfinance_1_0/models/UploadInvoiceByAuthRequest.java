@@ -37,13 +37,24 @@ public class UploadInvoiceByAuthRequest extends TeaModel {
     public static class UploadInvoiceByAuthRequestExtension extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>TRIP</p>
          */
         @NameInMap("bizCode")
         public String bizCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111924191922</p>
+         */
         @NameInMap("orderNo")
         public String orderNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>HOTEL</p>
+         */
         @NameInMap("orderType")
         public String orderType;
 
@@ -81,24 +92,36 @@ public class UploadInvoiceByAuthRequest extends TeaModel {
     public static class UploadInvoiceByAuthRequestInvoices extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100.00</p>
          */
         @NameInMap("invoiceAmount")
         public String invoiceAmount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>033002000712</p>
          */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-02-21</p>
          */
         @NameInMap("invoiceDate")
         public String invoiceDate;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20532643</p>
          */
         @NameInMap("invoiceNo")
         public String invoiceNo;
@@ -114,22 +137,35 @@ public class UploadInvoiceByAuthRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>小钉科技有限公司</p>
          */
         @NameInMap("payeeName")
         public String payeeName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>91330100MA28XNB274</p>
          */
         @NameInMap("payeeTaxNo")
         public String payeeTaxNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>小钉科技有限公司</p>
          */
         @NameInMap("payerName")
         public String payerName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>91330100MA28XNB274</p>
+         */
         @NameInMap("payerTaxNo")
         public String payerTaxNo;
 
@@ -141,15 +177,25 @@ public class UploadInvoiceByAuthRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0.50</p>
          */
         @NameInMap("taxAmount")
         public String taxAmount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>增值税普通发票必填，示例：52501101414266612380</p>
+         */
         @NameInMap("verifyCode")
         public String verifyCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>99.50</p>
          */
         @NameInMap("withoutTaxAmount")
         public String withoutTaxAmount;

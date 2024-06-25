@@ -6,36 +6,54 @@ import com.aliyun.tea.*;
 public class CreateFulfilRecordRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1647503420000</p>
      */
     @NameInMap("bizTime")
     public Long bizTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;key&quot;:&quot;value&quot;}</p>
      */
     @NameInMap("extInfo")
     public String extInfo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>F123123</p>
      */
     @NameInMap("faceId")
     public String faceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("scene")
     public Long scene;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SN123456</p>
      */
     @NameInMap("sn")
     public String sn;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12312312444</p>
      */
     @NameInMap("userId")
     public String userId;

@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class GetStoragePolicyRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>TICKET_IMAGE</p>
      */
     @NameInMap("bizType")
     public String bizType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>wahah.txt</p>
      */
     @NameInMap("fileName")
     public String fileName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10000</p>
      */
     @NameInMap("fileSize")
     public Long fileSize;

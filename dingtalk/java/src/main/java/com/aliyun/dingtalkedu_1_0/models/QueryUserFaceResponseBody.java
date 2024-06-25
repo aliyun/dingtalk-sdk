@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class QueryUserFaceResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingding123</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>30001</p>
      */
     @NameInMap("faceId")
     public String faceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>小明</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>40001</p>
      */
     @NameInMap("userId")
     public String userId;

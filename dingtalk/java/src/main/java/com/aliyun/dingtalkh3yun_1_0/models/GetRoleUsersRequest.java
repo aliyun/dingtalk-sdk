@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetRoleUsersRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>34ddd46f-e6c4-4eb0-b63a-aac0dd9232b0</p>
      */
     @NameInMap("roleId")
     public String roleId;

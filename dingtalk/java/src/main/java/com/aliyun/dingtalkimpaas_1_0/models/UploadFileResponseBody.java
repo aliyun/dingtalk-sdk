@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UploadFileResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>$csvsvsdvsvdscs</p>
      */
     @NameInMap("mediaId")
     public String mediaId;

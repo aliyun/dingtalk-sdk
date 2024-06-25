@@ -4,24 +4,52 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CalculateDurationRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>3</p>
+     */
     @NameInMap("bizType")
     public Long bizType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("calculateModel")
     public Long calculateModel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>day</p>
+     */
     @NameInMap("durationUnit")
     public String durationUnit;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2019-08-15</p>
+     */
     @NameInMap("fromTime")
     public String fromTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>e2dsad-34dfa-2vas23da</p>
+     */
     @NameInMap("leaveCode")
     public String leaveCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2019-08-15</p>
+     */
     @NameInMap("toTime")
     public String toTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manager123</p>
+     */
     @NameInMap("userId")
     public String userId;
 

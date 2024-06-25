@@ -4,6 +4,10 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRecallOTOResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>b5fe11095f46315d8d30d3f8XXXXXX:system error</p>
+     */
     @NameInMap("failedResult")
     public java.util.Map<String, String> failedResult;
 

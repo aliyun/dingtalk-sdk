@@ -6,11 +6,10 @@ import com.aliyun.dingtalktrajectory_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 查询APP当前开启轨迹采集的用户
-     *
+     * <b>summary</b> : 
+     * <p>查询APP当前开启轨迹采集的用户</p>
+     * 
      * @param request QueryAppActiveUsersRequest
      * @param headers QueryAppActiveUsersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -70,8 +70,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询APP当前开启轨迹采集的用户
-     *
+     * <b>summary</b> : 
+     * <p>查询APP当前开启轨迹采集的用户</p>
+     * 
      * @param request QueryAppActiveUsersRequest
      * @return QueryAppActiveUsersResponse
      */
@@ -82,8 +83,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询应用采集中的轨迹任务
-     *
+     * <b>summary</b> : 
+     * <p>查询应用采集中的轨迹任务</p>
+     * 
      * @param request QueryCollectingTraceTaskRequest
      * @param headers QueryCollectingTraceTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -124,8 +126,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询应用采集中的轨迹任务
-     *
+     * <b>summary</b> : 
+     * <p>查询应用采集中的轨迹任务</p>
+     * 
      * @param request QueryCollectingTraceTaskRequest
      * @return QueryCollectingTraceTaskResponse
      */
@@ -136,8 +139,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询轨迹数据
-     *
+     * <b>summary</b> : 
+     * <p>查询轨迹数据</p>
+     * 
      * @param request QueryPageTraceDataRequest
      * @param headers QueryPageTraceDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -198,8 +202,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询轨迹数据
-     *
+     * <b>summary</b> : 
+     * <p>查询轨迹数据</p>
+     * 
      * @param request QueryPageTraceDataRequest
      * @return QueryPageTraceDataResponse
      */

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DeleteLeaveRequestRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>zxfgsdfsdfvsd</p>
      */
     @NameInMap("outerId")
     public String outerId;

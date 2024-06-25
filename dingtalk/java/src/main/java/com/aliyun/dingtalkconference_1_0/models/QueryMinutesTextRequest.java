@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryMinutesTextRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("direction")
     public String direction;

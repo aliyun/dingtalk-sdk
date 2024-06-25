@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdateKROfContentRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>更新内容</p>
      */
     @NameInMap("content")
     public String content;
@@ -15,12 +18,18 @@ public class UpdateKROfContentRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>46GM2</p>
      */
     @NameInMap("krId")
     public String krId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0115396701752283</p>
      */
     @NameInMap("userId")
     public String userId;

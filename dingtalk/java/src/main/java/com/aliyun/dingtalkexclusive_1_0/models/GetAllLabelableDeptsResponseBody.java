@@ -26,18 +26,27 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234</p>
          */
         @NameInMap("labelId")
         public Long labelId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>一级供应商</p>
          */
         @NameInMap("labelName")
         public String labelName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("levelNum")
         public Long levelNum;
@@ -76,18 +85,27 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel2 extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234</p>
          */
         @NameInMap("labelId")
         public Long labelId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>二级供应商</p>
          */
         @NameInMap("labelName")
         public String labelName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2</p>
          */
         @NameInMap("levelNum")
         public Long levelNum;
@@ -126,18 +144,27 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel3 extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234</p>
          */
         @NameInMap("labelId")
         public Long labelId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>三级供应商</p>
          */
         @NameInMap("labelName")
         public String labelName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3</p>
          */
         @NameInMap("levelNum")
         public Long levelNum;
@@ -176,18 +203,27 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel4 extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234</p>
          */
         @NameInMap("labelId")
         public Long labelId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>四级供应商</p>
          */
         @NameInMap("labelName")
         public String labelName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>4</p>
          */
         @NameInMap("levelNum")
         public Long levelNum;
@@ -226,18 +262,27 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5 extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234</p>
          */
         @NameInMap("labelId")
         public Long labelId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>五级供应商</p>
          */
         @NameInMap("labelName")
         public String labelName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>5</p>
          */
         @NameInMap("levelNum")
         public Long levelNum;
@@ -276,18 +321,27 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     public static class GetAllLabelableDeptsResponseBodyData extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234</p>
          */
         @NameInMap("deptId")
         public String deptId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>管理部</p>
          */
         @NameInMap("deptName")
         public String deptName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("memberCount")
         public Long memberCount;
@@ -324,12 +378,18 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234</p>
          */
         @NameInMap("partnerNum")
         public String partnerNum;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234</p>
          */
         @NameInMap("superDeptId")
         public String superDeptId;

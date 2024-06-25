@@ -6,18 +6,35 @@ import com.aliyun.tea.*;
 public class CreateVideoConferenceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>XXX的视频会议</p>
      */
     @NameInMap("confTitle")
     public String confTitle;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("inviteCaller")
     public Boolean inviteCaller;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("inviteUserIds")
     public java.util.List<String> inviteUserIds;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>27SaQ3iiHLN0uwqcPisedfreNwiEiE</p>
      */
     @NameInMap("userId")
     public String userId;

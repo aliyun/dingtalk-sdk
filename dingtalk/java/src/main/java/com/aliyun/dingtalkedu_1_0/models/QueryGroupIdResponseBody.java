@@ -6,36 +6,54 @@ import com.aliyun.tea.*;
 public class QueryGroupIdResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingding123</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>NTK300001</p>
      */
     @NameInMap("groupId")
     public String groupId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>200001</p>
      */
     @NameInMap("merchantId")
     public String merchantId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>某某商户</p>
      */
     @NameInMap("merchantName")
     public String merchantName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>阿里云教育</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100001</p>
      */
     @NameInMap("pid")
     public String pid;

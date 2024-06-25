@@ -23,6 +23,9 @@ public class GetAccountMappingResponseBody extends TeaModel {
     public static class GetAccountMappingResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>BizName1</p>
          */
         @NameInMap("domain")
         public String domain;
@@ -30,14 +33,25 @@ public class GetAccountMappingResponseBody extends TeaModel {
         @NameInMap("extension")
         public java.util.Map<String, String> extension;
 
+        /**
+         * <strong>example:</strong>
+         * <p>o_123</p>
+         */
         @NameInMap("outId")
         public String outId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>t_123,如果不区分，填写固定值</p>
+         */
         @NameInMap("outTenantId")
         public String outTenantId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>id_123</p>
          */
         @NameInMap("userId")
         public String userId;

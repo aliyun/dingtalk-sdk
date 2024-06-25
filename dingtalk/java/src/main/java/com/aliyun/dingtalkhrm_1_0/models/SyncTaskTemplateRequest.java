@@ -4,29 +4,50 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncTaskTemplateRequest extends TeaModel {
+    /**
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
     @NameInMap("delete")
     public Boolean delete;
 
+    /**
+     * <strong>example:</strong>
+     * <p>培训、薪酬任务模版</p>
+     */
     @NameInMap("des")
     public String des;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;key&quot;:value}</p>
+     */
     @NameInMap("ext")
     public String ext;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>培训模版</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>23234</p>
      */
     @NameInMap("optUserId")
     public String optUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>232332</p>
      */
     @NameInMap("outerId")
     public String outerId;
@@ -36,12 +57,18 @@ public class SyncTaskTemplateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PERFORMANCE_TASK、TRAIN_TASK</p>
      */
     @NameInMap("taskType")
     public String taskType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>onboarding</p>
      */
     @NameInMap("solutionType")
     public String solutionType;

@@ -6,19 +6,33 @@ import com.aliyun.tea.*;
 public class UpgradeCloudGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sdfdfser</p>
      */
     @NameInMap("ccsInstanceId")
     public String ccsInstanceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidrQnTVXH/X+ERaVqGaH+asw==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>oPnDlfVYYIUia</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>btkoYsadwyQiE</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

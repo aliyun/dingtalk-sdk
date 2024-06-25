@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class GetWebChannelUserTokenRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123abc</p>
      */
     @NameInMap("foreignId")
     public String foreignId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>客户abc</p>
      */
     @NameInMap("nick")
     public String nick;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("source")
     public Long source;

@@ -21,24 +21,52 @@ public class QueryCorpStatisticDataResponseBody extends TeaModel {
     }
 
     public static class QueryCorpStatisticDataResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("cardBeReceivedTotalCnt")
         public Long cardBeReceivedTotalCnt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>4</p>
+         */
         @NameInMap("cardReceiveTotalCnt")
         public Long cardReceiveTotalCnt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("cardTotalBeVisitedCnt")
         public Long cardTotalBeVisitedCnt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20230101</p>
+         */
         @NameInMap("dataDate")
         public String dataDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("dingTotalShareCnt")
         public Long dingTotalShareCnt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("totalSendCnt")
         public Long totalSendCnt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("wechatTotalShareCnt")
         public Long wechatTotalShareCnt;
 

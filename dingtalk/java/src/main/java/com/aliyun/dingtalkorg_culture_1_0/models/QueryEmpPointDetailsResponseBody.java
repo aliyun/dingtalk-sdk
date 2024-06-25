@@ -9,6 +9,9 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -35,12 +38,24 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>EMP</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("empName")
         public String empName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>01274411491620908910</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -76,12 +91,24 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>personal</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四</p>
+         */
         @NameInMap("empName")
         public String empName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>01274411491620908910</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -123,11 +150,18 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
         @NameInMap("accountTarget")
         public QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget accountTarget;
 
+        /**
+         * <strong>example:</strong>
+         * <p>收到奖励积分</p>
+         */
         @NameInMap("remark")
         public String remark;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>三方系统员工收到积分</p>
          */
         @NameInMap("usage")
         public String usage;
@@ -174,16 +208,26 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     public static class QueryEmpPointDetailsResponseBodyResultDetails extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("amount")
         public Long amount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1655450856000</p>
          */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>324324353535</p>
+         */
         @NameInMap("outId")
         public String outId;
 
@@ -192,6 +236,9 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>personal</p>
          */
         @NameInMap("sourceBizCode")
         public String sourceBizCode;
@@ -249,6 +296,9 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("hasMore")
         public Boolean hasMore;

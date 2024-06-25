@@ -9,12 +9,18 @@ public class UpdateMenuDataRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>89ez9DwVWQVgkhwndJNt1ZY</p>
      */
     @NameInMap("bizTraceId")
     public String bizTraceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sale</p>
      */
     @NameInMap("module")
     public String module;
@@ -27,12 +33,18 @@ public class UpdateMenuDataRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>add</p>
      */
     @NameInMap("operateType")
     public String operateType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>16044739461008808646</p>
      */
     @NameInMap("operatorUserId")
     public String operatorUserId;
@@ -91,9 +103,17 @@ public class UpdateMenuDataRequest extends TeaModel {
     }
 
     public static class UpdateMenuDataRequestNavDataNavExtInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>oem</p>
+         */
         @NameInMap("productMode")
         public String productMode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>tj</p>
+         */
         @NameInMap("provider")
         public String provider;
 
@@ -123,33 +143,62 @@ public class UpdateMenuDataRequest extends TeaModel {
     public static class UpdateMenuDataRequestNavData extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("displayStatus")
         public String displayStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>icon-biaodan_baogao</p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>#CCEEFF</p>
+         */
         @NameInMap("iconBgColor")
         public String iconBgColor;
 
+        /**
+         * <strong>example:</strong>
+         * <p>#007FFF</p>
+         */
         @NameInMap("iconColor")
         public String iconColor;
 
+        /**
+         * <strong>example:</strong>
+         * <p>same_page</p>
+         */
         @NameInMap("integrationProtocol")
         public String integrationProtocol;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>库存账单</p>
          */
         @NameInMap("mobileNavName")
         public String mobileNavName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://tj-ali-crm-test.tangees.com/tungee/crm/mobile/?corpid=dinge18b222ec5637b04ffe93478753d9884#/form/PROC-ECC13160-7AFF-4D5B-8E73-E5B98BB9A59B?%E5%BA%93%E5%AD%98%E6%B5%81%E6%B0%B4&psi_stock_flow&fromPage=home">https://tj-ali-crm-test.tangees.com/tungee/crm/mobile/?corpid=dinge18b222ec5637b04ffe93478753d9884#/form/PROC-ECC13160-7AFF-4D5B-8E73-E5B98BB9A59B?库存流水&amp;psi_stock_flow&amp;fromPage=home</a></p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>lowcode_customize_form</p>
          */
         @NameInMap("navCode")
         public String navCode;
@@ -159,34 +208,59 @@ public class UpdateMenuDataRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>lowcode_customize_form:PROC-0279E824-ED47-4E75-86F2-11B665F3704D</p>
          */
         @NameInMap("navId")
         public String navId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>库存流水</p>
          */
         @NameInMap("navName")
         public String navName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PUBLISHED</p>
          */
         @NameInMap("navStatus")
         public String navStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>item</p>
+         */
         @NameInMap("navType")
         public String navType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>crm_product</p>
+         */
         @NameInMap("parentNavId")
         public String parentNavId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>tj</p>
+         */
         @NameInMap("provider")
         public String provider;
 
         @NameInMap("sortNum")
         public Integer sortNum;
 
+        /**
+         * <strong>example:</strong>
+         * <p>/form/PROC-ECC13160-7AFF-4D5B-8E73-E5B98BB9A59B?bizType=psi_stock_flow&amp;formName=库存流水</p>
+         */
         @NameInMap("url")
         public String url;
 

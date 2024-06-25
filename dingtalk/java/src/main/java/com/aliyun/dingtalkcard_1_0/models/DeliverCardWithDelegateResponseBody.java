@@ -32,15 +32,31 @@ public class DeliverCardWithDelegateResponseBody extends TeaModel {
     }
 
     public static class DeliverCardWithDelegateResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>4v+AzUEDuC0dKuO*********J0w8=</p>
+         */
         @NameInMap("carrierId")
         public String carrierId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>system error</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cid1234abcd</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>IM_GROUP</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 

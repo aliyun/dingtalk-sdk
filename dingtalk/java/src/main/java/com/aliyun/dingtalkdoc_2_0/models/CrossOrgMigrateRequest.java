@@ -15,6 +15,9 @@ public class CrossOrgMigrateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -49,24 +52,52 @@ public class CrossOrgMigrateRequest extends TeaModel {
     }
 
     public static class CrossOrgMigrateRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("checkOperatorSourceRole")
         public Boolean checkOperatorSourceRole;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("deleteSource")
         public Boolean deleteSource;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("needRecycleFailedWorkspaceId")
         public Boolean needRecycleFailedWorkspaceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1L</p>
+         */
         @NameInMap("relateTeamId")
         public Long relateTeamId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_id</p>
+         */
         @NameInMap("relateTeamIdStr")
         public String relateTeamIdStr;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("retainOrgGroup")
         public Boolean retainOrgGroup;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("skipRole")
         public Boolean skipRole;
 
@@ -156,6 +187,10 @@ public class CrossOrgMigrateRequest extends TeaModel {
     }
 
     public static class CrossOrgMigrateRequestParam extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>corp_id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 

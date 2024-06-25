@@ -4,9 +4,17 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteDentryResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("async")
     public Boolean async;
 
+    /**
+     * <strong>example:</strong>
+     * <p>task_id</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 

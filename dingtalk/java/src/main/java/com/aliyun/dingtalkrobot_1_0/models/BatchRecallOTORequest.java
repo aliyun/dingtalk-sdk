@@ -12,6 +12,9 @@ public class BatchRecallOTORequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingXXXXXX</p>
      */
     @NameInMap("robotCode")
     public String robotCode;

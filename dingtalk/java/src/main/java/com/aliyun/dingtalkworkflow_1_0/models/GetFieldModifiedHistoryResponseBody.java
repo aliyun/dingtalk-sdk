@@ -7,6 +7,10 @@ public class GetFieldModifiedHistoryResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<GetFieldModifiedHistoryResponseBodyResult> result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,19 +38,38 @@ public class GetFieldModifiedHistoryResponseBody extends TeaModel {
     public static class GetFieldModifiedHistoryResponseBodyResult extends TeaModel {
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2024-04-02T11:52Z</p>
          */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>TextField-abcd</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>钉钉1</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>userId1</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>从 111 修改到 222</p>
+         */
         @NameInMap("value")
         public String value;
 

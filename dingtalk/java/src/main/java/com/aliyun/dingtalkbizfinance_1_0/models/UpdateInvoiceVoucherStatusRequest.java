@@ -4,21 +4,45 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceVoucherStatusRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("accountantBookId")
     public String accountantBookId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ADD/DELETE</p>
+     */
     @NameInMap("actionType")
     public String actionType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("invoiceCode")
     public String invoiceCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("invoiceNo")
     public String invoiceNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>11011023488</p>
+     */
     @NameInMap("operator")
     public String operator;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("voucherId")
     public String voucherId;
 

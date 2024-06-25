@@ -18,6 +18,9 @@ public class CreateEduAssetSpaceResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>acl：acl授权 ; custom：自定义授权</p>
      */
     @NameInMap("permissionMode")
     public String permissionMode;
@@ -42,6 +45,9 @@ public class CreateEduAssetSpaceResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>custom：自定义类型</p>
      */
     @NameInMap("spaceType")
     public String spaceType;

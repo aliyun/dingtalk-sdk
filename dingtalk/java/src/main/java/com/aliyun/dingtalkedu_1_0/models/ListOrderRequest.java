@@ -4,42 +4,79 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListOrderRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1647503420000</p>
+     */
     @NameInMap("createTimeEnd")
     public Long createTimeEnd;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1647503420000</p>
+     */
     @NameInMap("createTimeStart")
     public Long createTimeStart;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SM123124124</p>
      */
     @NameInMap("merchantId")
     public String merchantId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022312312333</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>200</p>
      */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("scene")
     public Long scene;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("status")
     public Long status;
 
+    /**
+     * <strong>example:</strong>
+     * <p>202221312333</p>
+     */
     @NameInMap("tradeNo")
     public String tradeNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123123123</p>
+     */
     @NameInMap("userId")
     public String userId;
 

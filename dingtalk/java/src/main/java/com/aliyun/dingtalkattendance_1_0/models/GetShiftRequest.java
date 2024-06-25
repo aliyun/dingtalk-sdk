@@ -9,6 +9,9 @@ public class GetShiftRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("shiftId")
     public Long shiftId;

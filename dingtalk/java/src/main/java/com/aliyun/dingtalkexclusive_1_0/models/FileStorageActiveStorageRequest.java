@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class FileStorageActiveStorageRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sampleKeyId1234</p>
      */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sampleSecretId1234</p>
      */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://oss.aliyuncs.com/bucket-name/">https://oss.aliyuncs.com/bucket-name/</a></p>
      */
     @NameInMap("oss")
     public String oss;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxxxxxxxxxx</p>
      */
     @NameInMap("targetCorpId")
     public String targetCorpId;

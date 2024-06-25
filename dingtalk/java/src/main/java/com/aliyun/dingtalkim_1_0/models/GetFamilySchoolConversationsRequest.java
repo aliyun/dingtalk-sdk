@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetFamilySchoolConversationsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
@@ -18,6 +21,9 @@ public class GetFamilySchoolConversationsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("unionId")
     public String unionId;

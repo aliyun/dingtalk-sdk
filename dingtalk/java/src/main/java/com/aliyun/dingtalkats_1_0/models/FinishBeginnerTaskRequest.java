@@ -4,11 +4,18 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class FinishBeginnerTaskRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>advancedBeginnerTask</p>
+     */
     @NameInMap("scope")
     public String scope;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager5875</p>
      */
     @NameInMap("userId")
     public String userId;

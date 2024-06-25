@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CreateProcessesInstanceResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class CreateProcessesInstanceResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OK</p>
      */
     @NameInMap("message")
     public String message;
@@ -49,6 +55,10 @@ public class CreateProcessesInstanceResponseBody extends TeaModel {
     }
 
     public static class CreateProcessesInstanceResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 

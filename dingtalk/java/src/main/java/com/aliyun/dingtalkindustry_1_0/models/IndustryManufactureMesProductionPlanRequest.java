@@ -6,28 +6,49 @@ import com.aliyun.tea.*;
 public class IndustryManufactureMesProductionPlanRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>add</p>
      */
     @NameInMap("action")
     public String action;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-03-12 00:00:00</p>
+     */
     @NameInMap("actualEndTime")
     public String actualEndTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-03-12 00:00:00</p>
+     */
     @NameInMap("actualStartTime")
     public String actualStartTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>opsoft</p>
      */
     @NameInMap("appKey")
     public String appKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>productionplan</p>
      */
     @NameInMap("baseDataName")
     public String baseDataName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>39C1E213-86B2-706B-9615-5B957DF8C15D</p>
+     */
     @NameInMap("bomUuid")
     public String bomUuid;
 
@@ -37,56 +58,123 @@ public class IndustryManufactureMesProductionPlanRequest extends TeaModel {
     @NameInMap("extendData")
     public java.util.List<IndustryManufactureMesProductionPlanRequestExtendData> extendData;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20220509034</p>
+     */
     @NameInMap("no")
     public String no;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("overdue")
     public String overdue;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-03-12 00:00:00</p>
+     */
     @NameInMap("planEndTime")
     public String planEndTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>321</p>
+     */
     @NameInMap("planQuantity")
     public String planQuantity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-03-12 00:00:00</p>
+     */
     @NameInMap("planStartTime")
     public String planStartTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{ TODO       &quot;uuid&quot;: &quot;1543878029722550273&quot;,       &quot;name&quot;: &quot;YF-钣金&quot;,       &quot;preProcess&quot;: &quot;&quot;     }</p>
+     */
     @NameInMap("processUuids")
     public String processUuids;
 
+    /**
+     * <strong>example:</strong>
+     * <p>011351</p>
+     */
     @NameInMap("productCode")
     public String productCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>毛坯KM50三级盖</p>
+     */
     @NameInMap("productName")
     public String productName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>KM50</p>
+     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
+    /**
+     * <strong>example:</strong>
+     * <p>300</p>
+     */
     @NameInMap("qualifiedQuantity")
     public String qualifiedQuantity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>sell20220509034</p>
+     */
     @NameInMap("sellOrderNo")
     public String sellOrderNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>WORKING</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{     &quot;processId1&quot;: [&quot;teamId11&quot;, &quot;teamId12&quot;, &quot;teamId13&quot;],     &quot;processId2&quot;: [&quot;teamId21&quot;, &quot;teamId22&quot;, &quot;teamId23&quot;] }</p>
+     */
     @NameInMap("teamList")
     public String teamList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>毛坯KM50三级盖</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <strong>example:</strong>
+     * <p>NORMAL</p>
+     */
     @NameInMap("type")
     public String type;
 
+    /**
+     * <strong>example:</strong>
+     * <p>个</p>
+     */
     @NameInMap("unit")
     public String unit;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>39C1E213-86B2-706B-9615-5B957DF8C15D</p>
      */
     @NameInMap("uuid")
     public String uuid;
@@ -297,15 +385,31 @@ public class IndustryManufactureMesProductionPlanRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesProductionPlanRequestExtendData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>staffName</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>生产人员</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <strong>example:</strong>
+         * <p>string</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 

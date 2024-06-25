@@ -6,22 +6,40 @@ import com.aliyun.tea.*;
 public class QueryInstancesByMultiConditionsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>DING_CUSTOMER</p>
      */
     @NameInMap("formCode")
     public String formCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>888**</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>[     {         &quot;fieldCode&quot;:&quot;contact_name&quot;,         &quot;fieldOperatorType&quot;:&quot;like&quot;,         &quot;value&quot;:&quot;测试api&quot;     } ]</p>
+     */
     @NameInMap("searchFields")
     public String searchFields;
 
@@ -82,9 +100,17 @@ public class QueryInstancesByMultiConditionsRequest extends TeaModel {
     }
 
     public static class QueryInstancesByMultiConditionsRequestSortFields extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>gmt_create</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>asc升序；desc降序</p>
+         */
         @NameInMap("sortBy")
         public String sortBy;
 

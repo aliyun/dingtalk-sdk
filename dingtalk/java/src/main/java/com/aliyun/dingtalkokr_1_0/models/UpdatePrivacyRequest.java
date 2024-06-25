@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class UpdatePrivacyRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>public</p>
      */
     @NameInMap("privacy")
     public String privacy;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3RF5</p>
      */
     @NameInMap("targetId")
     public String targetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2</p>
      */
     @NameInMap("targetType")
     public String targetType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0115396701752283</p>
      */
     @NameInMap("userId")
     public String userId;

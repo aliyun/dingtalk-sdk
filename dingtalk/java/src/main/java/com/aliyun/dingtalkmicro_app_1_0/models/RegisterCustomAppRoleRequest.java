@@ -4,6 +4,10 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterCustomAppRoleRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("canManageRole")
     public Boolean canManageRole;
 

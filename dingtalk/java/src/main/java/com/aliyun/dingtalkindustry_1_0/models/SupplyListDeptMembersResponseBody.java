@@ -4,6 +4,10 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyListDeptMembersResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -32,24 +36,52 @@ public class SupplyListDeptMembersResponseBody extends TeaModel {
     }
 
     public static class SupplyListDeptMembersResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>NORMAL</p>
+         */
         @NameInMap("dingMemberStatus")
         public String dingMemberStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isActive")
         public Boolean isActive;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李白</p>
+         */
         @NameInMap("memberName")
         public String memberName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>经理</p>
+         */
         @NameInMap("memberTitle")
         public String memberTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("memberWorkNumber")
         public String memberWorkNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123abc</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123344</p>
+         */
         @NameInMap("userId")
         public String userId;
 

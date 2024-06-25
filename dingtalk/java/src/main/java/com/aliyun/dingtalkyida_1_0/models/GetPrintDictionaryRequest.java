@@ -6,22 +6,35 @@ import com.aliyun.tea.*;
 public class GetPrintDictionaryRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_XABJJSJ</p>
      */
     @NameInMap("appType")
     public String appType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FORM-XABJJSJ</p>
      */
     @NameInMap("formUuid")
     public String formUuid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abfefw</p>
      */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("version")
     public Long version;
 

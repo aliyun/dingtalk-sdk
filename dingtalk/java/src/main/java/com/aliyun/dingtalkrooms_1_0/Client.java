@@ -6,11 +6,10 @@ import com.aliyun.dingtalkrooms_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建自定义屏幕模版
-     *
+     * <b>summary</b> : 
+     * <p>创建自定义屏幕模版</p>
+     * 
      * @param request CreateDeviceCustomTemplateRequest
      * @param headers CreateDeviceCustomTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -130,8 +130,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建自定义屏幕模版
-     *
+     * <b>summary</b> : 
+     * <p>创建自定义屏幕模版</p>
+     * 
      * @param request CreateDeviceCustomTemplateRequest
      * @return CreateDeviceCustomTemplateResponse
      */
@@ -142,8 +143,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建智能会议室
-     *
+     * <b>summary</b> : 
+     * <p>创建智能会议室</p>
+     * 
      * @param request CreateMeetingRoomRequest
      * @param headers CreateMeetingRoomHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -224,8 +226,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建智能会议室
-     *
+     * <b>summary</b> : 
+     * <p>创建智能会议室</p>
+     * 
      * @param request CreateMeetingRoomRequest
      * @return CreateMeetingRoomResponse
      */
@@ -236,8 +239,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建智能会议室IOT配置
-     *
+     * <b>summary</b> : 
+     * <p>创建智能会议室IOT配置</p>
+     * 
      * @param request CreateMeetingRoomControlPanelRequest
      * @param headers CreateMeetingRoomControlPanelHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -294,8 +298,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建智能会议室IOT配置
-     *
+     * <b>summary</b> : 
+     * <p>创建智能会议室IOT配置</p>
+     * 
      * @param request CreateMeetingRoomControlPanelRequest
      * @return CreateMeetingRoomControlPanelResponse
      */
@@ -306,8 +311,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建会议室分组
-     *
+     * <b>summary</b> : 
+     * <p>创建会议室分组</p>
+     * 
      * @param request CreateMeetingRoomGroupRequest
      * @param headers CreateMeetingRoomGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -356,8 +362,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建会议室分组
-     *
+     * <b>summary</b> : 
+     * <p>创建会议室分组</p>
+     * 
      * @param request CreateMeetingRoomGroupRequest
      * @return CreateMeetingRoomGroupResponse
      */
@@ -368,8 +375,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除自定义屏幕模板
-     *
+     * <b>summary</b> : 
+     * <p>删除自定义屏幕模板</p>
+     * 
      * @param request DeleteDeviceCustomTemplateRequest
      * @param headers DeleteDeviceCustomTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -410,8 +418,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除自定义屏幕模板
-     *
+     * <b>summary</b> : 
+     * <p>删除自定义屏幕模板</p>
+     * 
      * @param request DeleteDeviceCustomTemplateRequest
      * @return DeleteDeviceCustomTemplateResponse
      */
@@ -422,8 +431,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除会议室
-     *
+     * <b>summary</b> : 
+     * <p>删除会议室</p>
+     * 
      * @param request DeleteMeetingRoomRequest
      * @param headers DeleteMeetingRoomHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -464,8 +474,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除会议室
-     *
+     * <b>summary</b> : 
+     * <p>删除会议室</p>
+     * 
      * @param request DeleteMeetingRoomRequest
      * @return DeleteMeetingRoomResponse
      */
@@ -476,8 +487,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除会议室配置
-     *
+     * <b>summary</b> : 
+     * <p>删除会议室配置</p>
+     * 
      * @param request DeleteMeetingRoomControlPanelRequest
      * @param headers DeleteMeetingRoomControlPanelHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -522,8 +534,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除会议室配置
-     *
+     * <b>summary</b> : 
+     * <p>删除会议室配置</p>
+     * 
      * @param request DeleteMeetingRoomControlPanelRequest
      * @return DeleteMeetingRoomControlPanelResponse
      */
@@ -534,8 +547,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除会议室分组
-     *
+     * <b>summary</b> : 
+     * <p>删除会议室分组</p>
+     * 
      * @param request DeleteMeetingRoomGroupRequest
      * @param headers DeleteMeetingRoomGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -576,8 +590,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除会议室分组
-     *
+     * <b>summary</b> : 
+     * <p>删除会议室分组</p>
+     * 
      * @param request DeleteMeetingRoomGroupRequest
      * @return DeleteMeetingRoomGroupResponse
      */
@@ -588,8 +603,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询自定义屏幕模板
-     *
+     * <b>summary</b> : 
+     * <p>查询自定义屏幕模板</p>
+     * 
      * @param headers QueryDeviceCustomTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryDeviceCustomTemplateResponse
@@ -622,8 +638,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询自定义屏幕模板
-     *
+     * <b>summary</b> : 
+     * <p>查询自定义屏幕模板</p>
      * @return QueryDeviceCustomTemplateResponse
      */
     public QueryDeviceCustomTemplateResponse queryDeviceCustomTemplate(String templateId) throws Exception {
@@ -633,8 +649,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询自定义屏幕模板列表
-     *
+     * <b>summary</b> : 
+     * <p>查询自定义屏幕模板列表</p>
+     * 
      * @param headers QueryDeviceCustomTemplateListHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryDeviceCustomTemplateListResponse
@@ -667,8 +684,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询自定义屏幕模板列表
-     *
+     * <b>summary</b> : 
+     * <p>查询自定义屏幕模板列表</p>
      * @return QueryDeviceCustomTemplateListResponse
      */
     public QueryDeviceCustomTemplateListResponse queryDeviceCustomTemplateList() throws Exception {
@@ -678,8 +695,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据设备投屏码查询设备ip
-     *
+     * <b>summary</b> : 
+     * <p>根据设备投屏码查询设备ip</p>
+     * 
      * @param request QueryDeviceIpByCodeRequest
      * @param headers QueryDeviceIpByCodeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -720,8 +738,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据设备投屏码查询设备ip
-     *
+     * <b>summary</b> : 
+     * <p>根据设备投屏码查询设备ip</p>
+     * 
      * @param request QueryDeviceIpByCodeRequest
      * @return QueryDeviceIpByCodeResponse
      */
@@ -732,8 +751,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询设备属性
-     *
+     * <b>summary</b> : 
+     * <p>查询设备属性</p>
+     * 
      * @param request QueryDevicePropertiesRequest
      * @param headers QueryDevicePropertiesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -788,8 +808,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询设备属性
-     *
+     * <b>summary</b> : 
+     * <p>查询设备属性</p>
+     * 
      * @param request QueryDevicePropertiesRequest
      * @return QueryDevicePropertiesResponse
      */
@@ -800,8 +821,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议室详情
-     *
+     * <b>summary</b> : 
+     * <p>查询会议室详情</p>
+     * 
      * @param request QueryMeetingRoomRequest
      * @param headers QueryMeetingRoomHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -842,8 +864,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议室详情
-     *
+     * <b>summary</b> : 
+     * <p>查询会议室详情</p>
+     * 
      * @param request QueryMeetingRoomRequest
      * @return QueryMeetingRoomResponse
      */
@@ -854,8 +877,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取会议室IOT配置列表
-     *
+     * <b>summary</b> : 
+     * <p>获取会议室IOT配置列表</p>
+     * 
      * @param request QueryMeetingRoomControlPanelListRequest
      * @param headers QueryMeetingRoomControlPanelListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -908,8 +932,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取会议室IOT配置列表
-     *
+     * <b>summary</b> : 
+     * <p>获取会议室IOT配置列表</p>
+     * 
      * @param request QueryMeetingRoomControlPanelListRequest
      * @return QueryMeetingRoomControlPanelListResponse
      */
@@ -920,8 +945,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询设备信息
-     *
+     * <b>summary</b> : 
+     * <p>查询设备信息</p>
+     * 
      * @param request QueryMeetingRoomDeviceRequest
      * @param headers QueryMeetingRoomDeviceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -970,8 +996,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询设备信息
-     *
+     * <b>summary</b> : 
+     * <p>查询设备信息</p>
+     * 
      * @param request QueryMeetingRoomDeviceRequest
      * @return QueryMeetingRoomDeviceResponse
      */
@@ -982,8 +1009,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议室分组信息
-     *
+     * <b>summary</b> : 
+     * <p>查询会议室分组信息</p>
+     * 
      * @param request QueryMeetingRoomGroupRequest
      * @param headers QueryMeetingRoomGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1024,8 +1052,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议室分组信息
-     *
+     * <b>summary</b> : 
+     * <p>查询会议室分组信息</p>
+     * 
      * @param request QueryMeetingRoomGroupRequest
      * @return QueryMeetingRoomGroupResponse
      */
@@ -1036,8 +1065,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议室分组列表
-     *
+     * <b>summary</b> : 
+     * <p>查询会议室分组列表</p>
+     * 
      * @param request QueryMeetingRoomGroupListRequest
      * @param headers QueryMeetingRoomGroupListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1078,8 +1108,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议室分组列表
-     *
+     * <b>summary</b> : 
+     * <p>查询会议室分组列表</p>
+     * 
      * @param request QueryMeetingRoomGroupListRequest
      * @return QueryMeetingRoomGroupListResponse
      */
@@ -1090,8 +1121,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议室列表
-     *
+     * <b>summary</b> : 
+     * <p>查询会议室列表</p>
+     * 
      * @param request QueryMeetingRoomListRequest
      * @param headers QueryMeetingRoomListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1140,8 +1172,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议室列表
-     *
+     * <b>summary</b> : 
+     * <p>查询会议室列表</p>
+     * 
      * @param request QueryMeetingRoomListRequest
      * @return QueryMeetingRoomListResponse
      */
@@ -1152,8 +1185,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 取消会议室高级用户模式。
-     *
+     * <b>summary</b> : 
+     * <p>取消会议室高级用户模式。</p>
+     * 
      * @param request RemoveSuperUserMeetingRoomRequest
      * @param headers RemoveSuperUserMeetingRoomHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1198,8 +1232,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 取消会议室高级用户模式。
-     *
+     * <b>summary</b> : 
+     * <p>取消会议室高级用户模式。</p>
+     * 
      * @param request RemoveSuperUserMeetingRoomRequest
      * @return RemoveSuperUserMeetingRoomResponse
      */
@@ -1210,8 +1245,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
-     *
+     * <b>summary</b> : 
+     * <p>设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。</p>
+     * 
      * @param request SetSuperUserMeetingRoomRequest
      * @param headers SetSuperUserMeetingRoomHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1264,8 +1300,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
-     *
+     * <b>summary</b> : 
+     * <p>设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。</p>
+     * 
      * @param request SetSuperUserMeetingRoomRequest
      * @return SetSuperUserMeetingRoomResponse
      */
@@ -1276,8 +1313,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新自定义屏幕模板
-     *
+     * <b>summary</b> : 
+     * <p>更新自定义屏幕模板</p>
+     * 
      * @param request UpdateDeviceCustomTemplateRequest
      * @param headers UpdateDeviceCustomTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1390,8 +1428,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新自定义屏幕模板
-     *
+     * <b>summary</b> : 
+     * <p>更新自定义屏幕模板</p>
+     * 
      * @param request UpdateDeviceCustomTemplateRequest
      * @return UpdateDeviceCustomTemplateResponse
      */
@@ -1402,8 +1441,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新会议室信息
-     *
+     * <b>summary</b> : 
+     * <p>更新会议室信息</p>
+     * 
      * @param request UpdateMeetingRoomRequest
      * @param headers UpdateMeetingRoomHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1488,8 +1528,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新会议室信息
-     *
+     * <b>summary</b> : 
+     * <p>更新会议室信息</p>
+     * 
      * @param request UpdateMeetingRoomRequest
      * @return UpdateMeetingRoomResponse
      */
@@ -1500,8 +1541,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新会议室分组
-     *
+     * <b>summary</b> : 
+     * <p>更新会议室分组</p>
+     * 
      * @param request UpdateMeetingRoomGroupRequest
      * @param headers UpdateMeetingRoomGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1550,8 +1592,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新会议室分组
-     *
+     * <b>summary</b> : 
+     * <p>更新会议室分组</p>
+     * 
      * @param request UpdateMeetingRoomGroupRequest
      * @return UpdateMeetingRoomGroupResponse
      */

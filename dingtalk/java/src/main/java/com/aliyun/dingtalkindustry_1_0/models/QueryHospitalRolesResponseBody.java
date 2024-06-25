@@ -29,18 +29,27 @@ public class QueryHospitalRolesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("id")
         public Long id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("isDeleted")
         public Long isDeleted;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("readOnly")
         public Long readOnly;
@@ -53,18 +62,27 @@ public class QueryHospitalRolesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>sys_admin</p>
          */
         @NameInMap("roleCode")
         public String roleCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>系统管理员</p>
          */
         @NameInMap("roleName")
         public String roleName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("sort")
         public Long sort;

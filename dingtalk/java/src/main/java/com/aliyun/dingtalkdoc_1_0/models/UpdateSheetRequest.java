@@ -4,14 +4,25 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateSheetRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>sheet_name</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>visible</p>
+     */
     @NameInMap("visibility")
     public String visibility;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

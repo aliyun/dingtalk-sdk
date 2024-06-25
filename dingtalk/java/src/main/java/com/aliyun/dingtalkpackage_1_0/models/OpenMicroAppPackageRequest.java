@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class OpenMicroAppPackageRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("agentId")
     public Long agentId;

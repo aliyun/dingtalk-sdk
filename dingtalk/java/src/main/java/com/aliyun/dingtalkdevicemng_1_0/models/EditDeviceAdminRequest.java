@@ -4,9 +4,17 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditDeviceAdminRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxxx</p>
+     */
     @NameInMap("deviceCode")
     public String deviceCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxx</p>
+     */
     @NameInMap("roleUuid")
     public String roleUuid;
 
@@ -16,6 +24,10 @@ public class EditDeviceAdminRequest extends TeaModel {
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxxx</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

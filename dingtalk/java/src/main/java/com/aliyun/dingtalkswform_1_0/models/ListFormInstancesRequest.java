@@ -4,20 +4,34 @@ package com.aliyun.dingtalkswform_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFormInstancesRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2019-01-01</p>
+     */
     @NameInMap("actionDate")
     public String actionDate;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("bizType")
     public Integer bizType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>15</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("nextToken")
     public Integer nextToken;

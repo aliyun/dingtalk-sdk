@@ -4,6 +4,10 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomerSendMsgTaskResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>88888</p>
+     */
     @NameInMap("openBatchTaskId")
     public String openBatchTaskId;
 

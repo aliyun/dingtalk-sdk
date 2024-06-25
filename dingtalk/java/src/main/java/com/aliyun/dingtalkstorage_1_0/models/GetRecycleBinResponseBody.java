@@ -21,12 +21,24 @@ public class GetRecycleBinResponseBody extends TeaModel {
     }
 
     public static class GetRecycleBinResponseBodyRecycleBin extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>recyclebin_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>SPACE</p>
+         */
         @NameInMap("scope")
         public String scope;
 
+        /**
+         * <strong>example:</strong>
+         * <p>scope_id</p>
+         */
         @NameInMap("scopeId")
         public String scopeId;
 

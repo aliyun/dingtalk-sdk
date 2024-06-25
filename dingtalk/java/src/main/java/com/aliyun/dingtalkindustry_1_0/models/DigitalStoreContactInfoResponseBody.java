@@ -6,18 +6,32 @@ import com.aliyun.tea.*;
 public class DigitalStoreContactInfoResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>codexxxxx</p>
      */
     @NameInMap("code")
     public String code;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("dingDeptId")
     public Long dingDeptId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>门店通</p>
+     */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5647993312</p>
      */
     @NameInMap("rootDeptId")
     public Long rootDeptId;

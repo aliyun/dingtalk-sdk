@@ -9,6 +9,9 @@ public class QueryClassScheduleConfigRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2534522534</p>
      */
     @NameInMap("opUserId")
     public String opUserId;

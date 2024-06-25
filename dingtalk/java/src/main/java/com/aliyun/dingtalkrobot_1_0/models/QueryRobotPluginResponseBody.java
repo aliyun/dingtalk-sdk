@@ -21,15 +21,31 @@ public class QueryRobotPluginResponseBody extends TeaModel {
     }
 
     public static class QueryRobotPluginResponseBodyPluginInfoList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>@lALPDtXaDkO3j7hgYA</p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>快捷入口名称</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 

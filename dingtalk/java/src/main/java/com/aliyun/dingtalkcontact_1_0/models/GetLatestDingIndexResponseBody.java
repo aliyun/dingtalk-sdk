@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class GetLatestDingIndexResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>50</p>
      */
     @NameInMap("idxCarbon")
     public Float idxCarbon;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>50</p>
      */
     @NameInMap("idxEfficiency")
     public Float idxEfficiency;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>888</p>
      */
     @NameInMap("idxMonthlyAvg")
     public Float idxMonthlyAvg;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>888</p>
      */
     @NameInMap("idxTotal")
     public Float idxTotal;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20210412</p>
      */
     @NameInMap("statDate")
     public String statDate;

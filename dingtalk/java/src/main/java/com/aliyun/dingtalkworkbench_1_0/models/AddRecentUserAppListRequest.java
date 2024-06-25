@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class AddRecentUserAppListRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding48143d56cd15327624f2f5cc6abecb85</p>
      */
     @NameInMap("corpId")
     public String corpId;
@@ -18,6 +21,9 @@ public class AddRecentUserAppListRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>642325391030949</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -54,6 +60,9 @@ public class AddRecentUserAppListRequest extends TeaModel {
     public static class AddRecentUserAppListRequestUsedAppDetailList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2636835622</p>
          */
         @NameInMap("agentId")
         public String agentId;

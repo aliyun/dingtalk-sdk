@@ -46,6 +46,10 @@ public class OkrObjectivesByUserResponseBody extends TeaModel {
         @NameInMap("result")
         public java.util.List<OpenObjectiveDTO> result;
 
+        /**
+         * <strong>example:</strong>
+         * <p>15</p>
+         */
         @NameInMap("totalCount")
         public Long totalCount;
 

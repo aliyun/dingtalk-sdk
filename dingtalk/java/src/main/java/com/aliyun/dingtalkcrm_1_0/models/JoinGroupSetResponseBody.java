@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class JoinGroupSetResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc123</p>
      */
     @NameInMap("chatId")
     public String chatId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc123</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

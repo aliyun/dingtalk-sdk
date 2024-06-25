@@ -15,10 +15,17 @@ public class RelatedSpacesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abcd</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("teamId")
     public String teamId;
 

@@ -24,12 +24,24 @@ public class GetFormTemplateInfoResponseBody extends TeaModel {
     }
 
     public static class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;报销套件&quot;</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;PROC-EB81447A-B0E3-4A2F-A719-0A85EFD09184&quot;</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;invalid&quot;</p>
+         */
         @NameInMap("status")
         public String status;
 

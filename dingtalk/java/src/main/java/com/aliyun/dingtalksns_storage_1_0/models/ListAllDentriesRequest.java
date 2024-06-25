@@ -9,6 +9,9 @@ public class ListAllDentriesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -35,15 +38,31 @@ public class ListAllDentriesRequest extends TeaModel {
     }
 
     public static class ListAllDentriesRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>30</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
+        /**
+         * <strong>example:</strong>
+         * <p>next_token</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 
+        /**
+         * <strong>example:</strong>
+         * <p>DESC</p>
+         */
         @NameInMap("order")
         public String order;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withThumbnail")
         public Boolean withThumbnail;
 

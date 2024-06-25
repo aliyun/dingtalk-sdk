@@ -6,11 +6,10 @@ import com.aliyun.dingtalkh5package_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 上传H5离线包
-     *
+     * <b>summary</b> : 
+     * <p>上传H5离线包</p>
+     * 
      * @param request CreatePackageRequest
      * @param headers CreatePackageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -74,8 +74,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 上传H5离线包
-     *
+     * <b>summary</b> : 
+     * <p>上传H5离线包</p>
+     * 
      * @param request CreatePackageRequest
      * @return CreatePackageResponse
      */
@@ -86,8 +87,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取包上传一次性AccessToken
-     *
+     * <b>summary</b> : 
+     * <p>获取包上传一次性AccessToken</p>
+     * 
      * @param request GetAccessTokenRequest
      * @param headers GetAccessTokenHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -132,8 +134,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取包上传一次性AccessToken
-     *
+     * <b>summary</b> : 
+     * <p>获取包上传一次性AccessToken</p>
+     * 
      * @param request GetAccessTokenRequest
      * @return GetAccessTokenResponse
      */
@@ -144,8 +147,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取H5离线包版本创建状态
-     *
+     * <b>summary</b> : 
+     * <p>获取H5离线包版本创建状态</p>
+     * 
      * @param request GetCreateStatusRequest
      * @param headers GetCreateStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -186,8 +190,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取H5离线包版本创建状态
-     *
+     * <b>summary</b> : 
+     * <p>获取H5离线包版本创建状态</p>
+     * 
      * @param request GetCreateStatusRequest
      * @return GetCreateStatusResponse
      */
@@ -198,8 +203,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布离线包
-     *
+     * <b>summary</b> : 
+     * <p>发布离线包</p>
+     * 
      * @param request PublishPackageRequest
      * @param headers PublishPackageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -248,8 +254,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布离线包
-     *
+     * <b>summary</b> : 
+     * <p>发布离线包</p>
+     * 
      * @param request PublishPackageRequest
      * @return PublishPackageResponse
      */

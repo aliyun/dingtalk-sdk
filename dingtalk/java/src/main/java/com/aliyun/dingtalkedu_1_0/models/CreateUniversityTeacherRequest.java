@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class CreateUniversityTeacherRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100987</p>
      */
     @NameInMap("classId")
     public Long classId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manger1234</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>headmaster:班主任；instructor:辅导员</p>
      */
     @NameInMap("role")
     public String role;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10877892</p>
      */
     @NameInMap("teacherUserId")
     public String teacherUserId;

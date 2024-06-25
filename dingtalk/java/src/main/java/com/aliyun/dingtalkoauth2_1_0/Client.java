@@ -6,11 +6,10 @@ import com.aliyun.dingtalkoauth2_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
@@ -21,8 +20,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 生成jsapi ticket
-     *
+     * <b>summary</b> : 
+     * <p>生成jsapi ticket</p>
+     * 
      * @param headers CreateJsapiTicketHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return CreateJsapiTicketResponse
@@ -55,8 +55,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 生成jsapi ticket
-     *
+     * <b>summary</b> : 
+     * <p>生成jsapi ticket</p>
      * @return CreateJsapiTicketResponse
      */
     public CreateJsapiTicketResponse createJsapiTicket() throws Exception {
@@ -66,8 +66,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业accessToken(企业内部应用)
-     *
+     * <b>summary</b> : 
+     * <p>获取企业accessToken(企业内部应用)</p>
+     * 
      * @param request GetAccessTokenRequest
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
@@ -103,8 +104,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业accessToken(企业内部应用)
-     *
+     * <b>summary</b> : 
+     * <p>获取企业accessToken(企业内部应用)</p>
+     * 
      * @param request GetAccessTokenRequest
      * @return GetAccessTokenResponse
      */
@@ -115,8 +117,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业开通应用后的授权信息
-     *
+     * <b>summary</b> : 
+     * <p>获取企业开通应用后的授权信息</p>
+     * 
      * @param request GetAuthInfoRequest
      * @param headers GetAuthInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -157,8 +160,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业开通应用后的授权信息
-     *
+     * <b>summary</b> : 
+     * <p>获取企业开通应用后的授权信息</p>
+     * 
      * @param request GetAuthInfoRequest
      * @return GetAuthInfoResponse
      */
@@ -169,8 +173,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业accessToken(应用商店应用)
-     *
+     * <b>summary</b> : 
+     * <p>获取企业accessToken(应用商店应用)</p>
+     * 
      * @param request GetCorpAccessTokenRequest
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
@@ -214,8 +219,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业accessToken(应用商店应用)
-     *
+     * <b>summary</b> : 
+     * <p>获取企业accessToken(应用商店应用)</p>
+     * 
      * @param request GetCorpAccessTokenRequest
      * @return GetCorpAccessTokenResponse
      */
@@ -226,8 +232,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询个人授权记录
-     *
+     * <b>summary</b> : 
+     * <p>查询个人授权记录</p>
+     * 
      * @param headers GetPersonalAuthRuleHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetPersonalAuthRuleResponse
@@ -260,8 +267,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询个人授权记录
-     *
+     * <b>summary</b> : 
+     * <p>查询个人授权记录</p>
      * @return GetPersonalAuthRuleResponse
      */
     public GetPersonalAuthRuleResponse getPersonalAuthRule() throws Exception {
@@ -271,8 +278,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 生成微应用管理后台accessToken
-     *
+     * <b>summary</b> : 
+     * <p>生成微应用管理后台accessToken</p>
+     * 
      * @param request GetSsoAccessTokenRequest
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
@@ -308,8 +316,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 生成微应用管理后台accessToken
-     *
+     * <b>summary</b> : 
+     * <p>生成微应用管理后台accessToken</p>
+     * 
      * @param request GetSsoAccessTokenRequest
      * @return GetSsoAccessTokenResponse
      */
@@ -320,8 +329,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询微应用后台免登的用户信息
-     *
+     * <b>summary</b> : 
+     * <p>查询微应用后台免登的用户信息</p>
+     * 
      * @param request GetSsoUserInfoRequest
      * @param headers GetSsoUserInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -362,8 +372,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询微应用后台免登的用户信息
-     *
+     * <b>summary</b> : 
+     * <p>查询微应用后台免登的用户信息</p>
+     * 
      * @param request GetSsoUserInfoRequest
      * @return GetSsoUserInfoResponse
      */
@@ -374,8 +385,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取isvAccessToken（三方企业应用）
-     *
+     * <b>summary</b> : 
+     * <p>获取isvAccessToken（三方企业应用）</p>
+     * 
      * @param request GetSuiteAccessTokenRequest
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
@@ -415,8 +427,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取isvAccessToken（三方企业应用）
-     *
+     * <b>summary</b> : 
+     * <p>获取isvAccessToken（三方企业应用）</p>
+     * 
      * @param request GetSuiteAccessTokenRequest
      * @return GetSuiteAccessTokenResponse
      */
@@ -427,8 +440,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取Access Token
-     *
+     * <b>summary</b> : 
+     * <p>获取Access Token</p>
+     * 
      * @param request GetTokenRequest
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
@@ -468,8 +482,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取Access Token
-     *
+     * <b>summary</b> : 
+     * <p>获取Access Token</p>
+     * 
      * @param request GetTokenRequest
      * @return GetTokenResponse
      */
@@ -480,8 +495,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户token
-     *
+     * <b>summary</b> : 
+     * <p>获取用户token</p>
+     * 
      * @param request GetUserTokenRequest
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
@@ -529,8 +545,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户token
-     *
+     * <b>summary</b> : 
+     * <p>获取用户token</p>
+     * 
      * @param request GetUserTokenRequest
      * @return GetUserTokenResponse
      */

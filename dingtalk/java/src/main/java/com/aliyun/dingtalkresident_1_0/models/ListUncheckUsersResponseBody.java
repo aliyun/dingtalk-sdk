@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class ListUncheckUsersResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("nextToken")
     public Long nextToken;
@@ -49,27 +55,59 @@ public class ListUncheckUsersResponseBody extends TeaModel {
     }
 
     public static class ListUncheckUsersResponseBodyValues extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>5345345</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;{&quot;startTime&quot;:&quot;1654746593623&quot;,&quot;endTime&quot;:&quot;1656042593623&quot;}&quot;</p>
+         */
         @NameInMap("extension")
         public String extension;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1652683318162</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1652683318162</p>
+         */
         @NameInMap("gmtModified")
         public Long gmtModified;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isPropertyOwner")
         public Boolean isPropertyOwner;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张工</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>312423423</p>
+         */
         @NameInMap("unionId")
         public Long unionId;
 

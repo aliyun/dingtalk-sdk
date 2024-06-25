@@ -9,12 +9,18 @@ public class GetBranchAuthDataRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dinglkj123hj25jk54j2</p>
      */
     @NameInMap("branchCorpId")
     public String branchCorpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>eduStuCnt</p>
      */
     @NameInMap("code")
     public String code;

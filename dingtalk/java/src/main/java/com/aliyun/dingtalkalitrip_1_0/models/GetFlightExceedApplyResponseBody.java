@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetFlightExceedApplyResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234</p>
      */
     @NameInMap("applyId")
     public Long applyId;
@@ -18,54 +21,81 @@ public class GetFlightExceedApplyResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>出差</p>
      */
     @NameInMap("btripCause")
     public String btripCause;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding1234</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>出差</p>
      */
     @NameInMap("exceedReason")
     public String exceedReason;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("exceedType")
     public Integer exceedType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>经济舱（2折及以下）</p>
      */
     @NameInMap("originStandard")
     public String originStandard;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("status")
     public Integer status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-07-08 15:23:56</p>
      */
     @NameInMap("submitTime")
     public String submitTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0001A1100000007EX08O</p>
      */
     @NameInMap("thirdpartApplyId")
     public String thirdpartApplyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>weifeng</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -166,78 +196,117 @@ public class GetFlightExceedApplyResponseBody extends TeaModel {
     public static class GetFlightExceedApplyResponseBodyApplyIntentionInfoDO extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>HGH</p>
          */
         @NameInMap("arrCity")
         public String arrCity;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>杭州</p>
          */
         @NameInMap("arrCityName")
         public String arrCityName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-07-08 15:23:56</p>
          */
         @NameInMap("arrTime")
         public String arrTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>F</p>
          */
         @NameInMap("cabin")
         public String cabin;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("cabinClass")
         public Integer cabinClass;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>经济舱</p>
          */
         @NameInMap("cabinClassStr")
         public String cabinClassStr;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>SHA</p>
          */
         @NameInMap("depCity")
         public String depCity;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>上海</p>
          */
         @NameInMap("depCityName")
         public String depCityName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-07-08 15:23:56</p>
          */
         @NameInMap("depTime")
         public String depTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>4.1</p>
          */
         @NameInMap("discount")
         public Double discount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>MU2759</p>
          */
         @NameInMap("flightNo")
         public String flightNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1000</p>
          */
         @NameInMap("price")
         public Long price;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("type")
         public Integer type;

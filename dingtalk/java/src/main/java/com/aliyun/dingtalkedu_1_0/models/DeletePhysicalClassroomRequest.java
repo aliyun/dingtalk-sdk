@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class DeletePhysicalClassroomRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100016</p>
      */
     @NameInMap("classroomId")
     public Long classroomId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manger234</p>
      */
     @NameInMap("opUserId")
     public String opUserId;

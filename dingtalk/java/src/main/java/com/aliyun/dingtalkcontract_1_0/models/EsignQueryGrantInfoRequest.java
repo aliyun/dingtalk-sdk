@@ -4,12 +4,20 @@ package com.aliyun.dingtalkcontract_1_0.models;
 import com.aliyun.tea.*;
 
 public class EsignQueryGrantInfoRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>dingd0c871e2dfc941a34ac5d6980864d335</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
     @NameInMap("extension")
     public java.util.Map<String, String> extension;
 
+    /**
+     * <strong>example:</strong>
+     * <p>PbnhW6rVXRg8u6T4NiiOwwQiEiE</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

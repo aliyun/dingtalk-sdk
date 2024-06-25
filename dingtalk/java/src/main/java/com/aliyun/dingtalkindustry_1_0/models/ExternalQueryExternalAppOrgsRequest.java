@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ExternalQueryExternalAppOrgsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ecological</p>
      */
     @NameInMap("externalType")
     public String externalType;

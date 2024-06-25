@@ -15,12 +15,18 @@ public class AddPermissionRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>MANAGER</p>
      */
     @NameInMap("roleId")
     public String roleId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -63,17 +69,27 @@ public class AddPermissionRequest extends TeaModel {
     }
 
     public static class AddPermissionRequestMembers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>corp_id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>member_id</p>
          */
         @NameInMap("id")
         public String id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>USER</p>
          */
         @NameInMap("type")
         public String type;
@@ -110,6 +126,10 @@ public class AddPermissionRequest extends TeaModel {
     }
 
     public static class AddPermissionRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>3600</p>
+         */
         @NameInMap("duration")
         public Long duration;
 

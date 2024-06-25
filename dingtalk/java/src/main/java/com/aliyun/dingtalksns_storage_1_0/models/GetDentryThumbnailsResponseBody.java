@@ -21,12 +21,24 @@ public class GetDentryThumbnailsResponseBody extends TeaModel {
     }
 
     public static class GetDentryThumbnailsResponseBodyResultItemsThumbnail extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>64</p>
+         */
         @NameInMap("height")
         public Integer height;
 
+        /**
+         * <strong>example:</strong>
+         * <p>url</p>
+         */
         @NameInMap("url")
         public String url;
 
+        /**
+         * <strong>example:</strong>
+         * <p>64</p>
+         */
         @NameInMap("width")
         public Integer width;
 
@@ -62,15 +74,31 @@ public class GetDentryThumbnailsResponseBody extends TeaModel {
     }
 
     public static class GetDentryThumbnailsResponseBodyResultItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_id</p>
+         */
         @NameInMap("dentryId")
         public String dentryId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>permissionDenied</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

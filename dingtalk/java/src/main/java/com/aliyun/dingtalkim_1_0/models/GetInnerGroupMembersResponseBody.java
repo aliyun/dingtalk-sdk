@@ -7,6 +7,10 @@ public class GetInnerGroupMembersResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>UZr*****</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

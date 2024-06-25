@@ -6,87 +6,138 @@ import com.aliyun.tea.*;
 public class AddCityCarApplyRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>杭州出差</p>
      */
     @NameInMap("cause")
     public String cause;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>杭州</p>
      */
     @NameInMap("city")
     public String city;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>corpx</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-03-18 20:26:56</p>
      */
     @NameInMap("date")
     public String date;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-03-30 20:26:56</p>
+     */
     @NameInMap("finishedDate")
     public String finishedDate;
 
+    /**
+     * <strong>example:</strong>
+     * <p>projectx</p>
+     */
     @NameInMap("projectCode")
     public String projectCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>项目x</p>
+     */
     @NameInMap("projectName")
     public String projectName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("status")
     public Long status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>apply1</p>
      */
     @NameInMap("thirdPartApplyId")
     public String thirdPartApplyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>costcenter1</p>
      */
     @NameInMap("thirdPartCostCenterId")
     public String thirdPartCostCenterId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>invoice1</p>
      */
     @NameInMap("thirdPartInvoiceId")
     public String thirdPartInvoiceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("timesTotal")
     public Long timesTotal;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3</p>
      */
     @NameInMap("timesType")
     public Long timesType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("timesUsed")
     public Long timesUsed;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>杭州出差</p>
      */
     @NameInMap("title")
     public String title;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user1</p>
      */
     @NameInMap("userId")
     public String userId;

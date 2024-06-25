@@ -21,6 +21,9 @@ public class AddCommentRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -63,6 +66,10 @@ public class AddCommentRequest extends TeaModel {
     }
 
     public static class AddCommentRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>create_time</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 

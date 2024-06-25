@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class PushCustomerGroupMessageResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234abcd</p>
      */
     @NameInMap("result")
     public String result;

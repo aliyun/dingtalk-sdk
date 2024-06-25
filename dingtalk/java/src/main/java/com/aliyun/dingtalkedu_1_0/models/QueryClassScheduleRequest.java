@@ -16,18 +16,33 @@ public class QueryClassScheduleRequest extends TeaModel {
     @NameInMap("subscriberIds")
     public java.util.List<String> subscriberIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>168454674745</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>234623456</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>168454674745</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>USER</p>
+     */
     @NameInMap("subscriberType")
     public String subscriberType;
 

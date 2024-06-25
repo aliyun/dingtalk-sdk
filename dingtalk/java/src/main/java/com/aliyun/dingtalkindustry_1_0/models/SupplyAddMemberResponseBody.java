@@ -23,16 +23,26 @@ public class SupplyAddMemberResponseBody extends TeaModel {
     public static class SupplyAddMemberResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>NORMAL</p>
          */
         @NameInMap("dingMemberStatus")
         public String dingMemberStatus;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>12345abc</p>
          */
         @NameInMap("unionId")
         public String unionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345abc</p>
+         */
         @NameInMap("userId")
         public String userId;
 

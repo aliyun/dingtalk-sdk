@@ -21,9 +21,17 @@ public class UpdateTaskNoteResponseBody extends TeaModel {
     }
 
     public static class UpdateTaskNoteResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>更改后的备注</p>
+         */
         @NameInMap("note")
         public String note;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

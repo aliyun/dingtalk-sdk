@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class PushIntelligentRobotGroupMessageRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abcd1234</p>
      */
     @NameInMap("chatbotId")
     public String chatbotId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sampleText</p>
      */
     @NameInMap("msgKey")
     public String msgKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>eyJjb250ZW50IjogIua1i+ivleWGheWuuSJ9(即{&quot;content&quot;: &quot;测试内容&quot;}的base64编码值)</p>
      */
     @NameInMap("msgParam")
     public String msgParam;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidxxxx</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

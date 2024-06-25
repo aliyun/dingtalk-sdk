@@ -7,6 +7,10 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     @NameInMap("accountId")
     public String accountId;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
@@ -333,6 +337,10 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class BatchSendOfficialAccountOTOMessageRequestDetail extends TeaModel {
+        /**
+         * <strong>if can be null:</strong>
+         * <p>false</p>
+         */
         @NameInMap("bizRequestId")
         public String bizRequestId;
 
@@ -344,6 +352,9 @@ public class BatchSendOfficialAccountOTOMessageRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>text</p>
          */
         @NameInMap("msgType")
         public String msgType;

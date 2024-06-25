@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class RobotMessageRecallRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidXXX</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>msgU87r5gnMP43JTDAZg/ETyQ==</p>
      */
     @NameInMap("openMsgId")
     public String openMsgId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>iSoqrhLQDtK</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;

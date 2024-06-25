@@ -10,6 +10,10 @@ public class CreateDeliveryPlanRequest extends TeaModel {
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1028</p>
+     */
     @NameInMap("resId")
     public String resId;
 

@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class AddOrgTextEmotionRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>@123xxx</p>
      */
     @NameInMap("backgroundMediaId")
     public String backgroundMediaId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>@345xxx</p>
      */
     @NameInMap("backgroundMediaIdForPanel")
     public String backgroundMediaIdForPanel;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>-1</p>
      */
     @NameInMap("deptId")
     public Long deptId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>企业表情1</p>
      */
     @NameInMap("emotionName")
     public String emotionName;

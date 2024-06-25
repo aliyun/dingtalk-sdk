@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddCrmPersonalCustomerRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>publicDraw</p>
+     */
     @NameInMap("action")
     public String action;
 
@@ -28,9 +32,17 @@ public class AddCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("permission")
     public AddCrmPersonalCustomerRequestPermission permission;
 
+    /**
+     * <strong>example:</strong>
+     * <p>crm_customer_personal</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("skipDuplicateCheck")
     public Boolean skipDuplicateCheck;
 

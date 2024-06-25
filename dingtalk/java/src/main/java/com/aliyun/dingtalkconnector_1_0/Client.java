@@ -6,11 +6,10 @@ import com.aliyun.dingtalkconnector_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建执行动作
-     *
+     * <b>summary</b> : 
+     * <p>创建执行动作</p>
+     * 
      * @param request CreateActionRequest
      * @param headers CreateActionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -66,8 +66,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建执行动作
-     *
+     * <b>summary</b> : 
+     * <p>创建执行动作</p>
+     * 
      * @param request CreateActionRequest
      * @return CreateActionResponse
      */
@@ -78,8 +79,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建连接器
-     *
+     * <b>summary</b> : 
+     * <p>创建连接器</p>
+     * 
      * @param request CreateConnectorRequest
      * @param headers CreateConnectorHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -124,8 +126,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建连接器
-     *
+     * <b>summary</b> : 
+     * <p>创建连接器</p>
+     * 
      * @param request CreateConnectorRequest
      * @return CreateConnectorResponse
      */
@@ -136,8 +139,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建一个用于运行执行动作/集成流的可调用实例
-     *
+     * <b>summary</b> : 
+     * <p>创建一个用于运行执行动作/集成流的可调用实例</p>
+     * 
      * @param request CreateInvocableInstanceRequest
      * @param headers CreateInvocableInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -182,8 +186,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建一个用于运行执行动作/集成流的可调用实例
-     *
+     * <b>summary</b> : 
+     * <p>创建一个用于运行执行动作/集成流的可调用实例</p>
+     * 
      * @param request CreateInvocableInstanceRequest
      * @return CreateInvocableInstanceResponse
      */
@@ -194,8 +199,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建触发器
-     *
+     * <b>summary</b> : 
+     * <p>创建触发器</p>
+     * 
      * @param request CreateTriggerRequest
      * @param headers CreateTriggerHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -240,8 +246,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建触发器
-     *
+     * <b>summary</b> : 
+     * <p>创建触发器</p>
+     * 
      * @param request CreateTriggerRequest
      * @return CreateTriggerResponse
      */
@@ -252,8 +259,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取执行动作详情
-     *
+     * <b>summary</b> : 
+     * <p>获取执行动作详情</p>
+     * 
      * @param request GetActionDetailRequest
      * @param headers GetActionDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -294,8 +302,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取执行动作详情
-     *
+     * <b>summary</b> : 
+     * <p>获取执行动作详情</p>
+     * 
      * @param request GetActionDetailRequest
      * @return GetActionDetailResponse
      */
@@ -306,8 +315,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 调用执行实例
-     *
+     * <b>summary</b> : 
+     * <p>调用执行实例</p>
+     * 
      * @param request InvokeInstanceRequest
      * @param headers InvokeInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -356,8 +366,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 调用执行实例
-     *
+     * <b>summary</b> : 
+     * <p>调用执行实例</p>
+     * 
      * @param request InvokeInstanceRequest
      * @return InvokeInstanceResponse
      */
@@ -368,8 +379,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页拉取连接器主数据
-     *
+     * <b>summary</b> : 
+     * <p>分页拉取连接器主数据</p>
+     * 
      * @param request PullDataByPageRequest
      * @param headers PullDataByPageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -434,8 +446,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页拉取连接器主数据
-     *
+     * <b>summary</b> : 
+     * <p>分页拉取连接器主数据</p>
+     * 
      * @param request PullDataByPageRequest
      * @return PullDataByPageResponse
      */
@@ -446,8 +459,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过业务主键拉取单条连接器主数据
-     *
+     * <b>summary</b> : 
+     * <p>通过业务主键拉取单条连接器主数据</p>
+     * 
      * @param request PullDataByPkRequest
      * @param headers PullDataByPkHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -492,8 +506,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过业务主键拉取单条连接器主数据
-     *
+     * <b>summary</b> : 
+     * <p>通过业务主键拉取单条连接器主数据</p>
+     * 
      * @param request PullDataByPkRequest
      * @return PullDataByPkResponse
      */
@@ -504,8 +519,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索执行动作
-     *
+     * <b>summary</b> : 
+     * <p>搜索执行动作</p>
+     * 
      * @param request SearchActionsRequest
      * @param headers SearchActionsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -562,8 +578,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索执行动作
-     *
+     * <b>summary</b> : 
+     * <p>搜索执行动作</p>
+     * 
      * @param request SearchActionsRequest
      * @return SearchActionsResponse
      */
@@ -574,8 +591,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索连接器
-     *
+     * <b>summary</b> : 
+     * <p>搜索连接器</p>
+     * 
      * @param request SearchConnectorsRequest
      * @param headers SearchConnectorsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -624,8 +642,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索连接器
-     *
+     * <b>summary</b> : 
+     * <p>搜索连接器</p>
+     * 
      * @param request SearchConnectorsRequest
      * @return SearchConnectorsResponse
      */
@@ -636,8 +655,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步连接器数据
-     *
+     * <b>summary</b> : 
+     * <p>同步连接器数据</p>
+     * 
      * @param request SyncDataRequest
      * @param headers SyncDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -682,8 +702,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步连接器数据
-     *
+     * <b>summary</b> : 
+     * <p>同步连接器数据</p>
+     * 
      * @param request SyncDataRequest
      * @return SyncDataResponse
      */
@@ -694,8 +715,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新执行动作信息
-     *
+     * <b>summary</b> : 
+     * <p>更新执行动作信息</p>
+     * 
      * @param request UpdateActionRequest
      * @param headers UpdateActionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -740,8 +762,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新执行动作信息
-     *
+     * <b>summary</b> : 
+     * <p>更新执行动作信息</p>
+     * 
      * @param request UpdateActionRequest
      * @return UpdateActionResponse
      */
@@ -752,8 +775,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新连接器信息
-     *
+     * <b>summary</b> : 
+     * <p>更新连接器信息</p>
+     * 
      * @param request UpdateConnectorRequest
      * @param headers UpdateConnectorHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -798,8 +822,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新连接器信息
-     *
+     * <b>summary</b> : 
+     * <p>更新连接器信息</p>
+     * 
      * @param request UpdateConnectorRequest
      * @return UpdateConnectorResponse
      */
@@ -810,8 +835,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新触发事件信息
-     *
+     * <b>summary</b> : 
+     * <p>更新触发事件信息</p>
+     * 
      * @param request UpdateTriggerRequest
      * @param headers UpdateTriggerHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -856,8 +882,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新触发事件信息
-     *
+     * <b>summary</b> : 
+     * <p>更新触发事件信息</p>
+     * 
      * @param request UpdateTriggerRequest
      * @return UpdateTriggerResponse
      */

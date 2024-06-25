@@ -6,11 +6,10 @@ import com.aliyun.dingtalkdevicemng_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 批量注册设备
-     *
+     * <b>summary</b> : 
+     * <p>批量注册设备</p>
+     * 
      * @param request BatchRegisterDeviceRequest
      * @param headers BatchRegisterDeviceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -66,8 +66,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量注册设备
-     *
+     * <b>summary</b> : 
+     * <p>批量注册设备</p>
+     * 
      * @param request BatchRegisterDeviceRequest
      * @return BatchRegisterDeviceResponse
      */
@@ -78,8 +79,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 想设备上钉连接器推送设备事件
-     *
+     * <b>summary</b> : 
+     * <p>想设备上钉连接器推送设备事件</p>
+     * 
      * @param request ConnectorEventPushRequest
      * @param headers ConnectorEventPushHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -128,8 +130,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 想设备上钉连接器推送设备事件
-     *
+     * <b>summary</b> : 
+     * <p>想设备上钉连接器推送设备事件</p>
+     * 
      * @param request ConnectorEventPushRequest
      * @return ConnectorEventPushResponse
      */
@@ -140,8 +143,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建设备群
-     *
+     * <b>summary</b> : 
+     * <p>创建设备群</p>
+     * 
      * @param request CreateChatRoomRequest
      * @param headers CreateChatRoomHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -198,8 +202,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建设备群
-     *
+     * <b>summary</b> : 
+     * <p>创建设备群</p>
+     * 
      * @param request CreateChatRoomRequest
      * @return CreateChatRoomResponse
      */
@@ -210,8 +215,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建部门
-     *
+     * <b>summary</b> : 
+     * <p>创建部门</p>
+     * 
      * @param request CreateDepartmentRequest
      * @param headers CreateDepartmentHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -280,8 +286,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建部门
-     *
+     * <b>summary</b> : 
+     * <p>创建部门</p>
+     * 
      * @param request CreateDepartmentRequest
      * @return CreateDepartmentResponse
      */
@@ -292,8 +299,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建设备场景群
-     *
+     * <b>summary</b> : 
+     * <p>创建设备场景群</p>
+     * 
      * @param request CreateDeviceChatRoomRequest
      * @param headers CreateDeviceChatRoomHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -354,8 +362,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建设备场景群
-     *
+     * <b>summary</b> : 
+     * <p>创建设备场景群</p>
+     * 
      * @param request CreateDeviceChatRoomRequest
      * @return CreateDeviceChatRoomResponse
      */
@@ -366,8 +375,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设备账号向目标用户发送ding消息
-     *
+     * <b>summary</b> : 
+     * <p>设备账号向目标用户发送ding消息</p>
+     * 
      * @param request DeviceDingRequest
      * @param headers DeviceDingHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -416,8 +426,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设备账号向目标用户发送ding消息
-     *
+     * <b>summary</b> : 
+     * <p>设备账号向目标用户发送ding消息</p>
+     * 
      * @param request DeviceDingRequest
      * @return DeviceDingResponse
      */
@@ -428,8 +439,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 解散设备群
-     *
+     * <b>summary</b> : 
+     * <p>解散设备群</p>
+     * 
      * @param request DissolveGroupRequest
      * @param headers DissolveGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -470,8 +482,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 解散设备群
-     *
+     * <b>summary</b> : 
+     * <p>解散设备群</p>
+     * 
      * @param request DissolveGroupRequest
      * @return DissolveGroupResponse
      */
@@ -482,8 +495,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑设备管理员
-     *
+     * <b>summary</b> : 
+     * <p>编辑设备管理员</p>
+     * 
      * @param request EditDeviceAdminRequest
      * @param headers EditDeviceAdminHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -536,8 +550,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 编辑设备管理员
-     *
+     * <b>summary</b> : 
+     * <p>编辑设备管理员</p>
+     * 
      * @param request EditDeviceAdminRequest
      * @return EditDeviceAdminResponse
      */
@@ -548,8 +563,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取设备群信息
-     *
+     * <b>summary</b> : 
+     * <p>获取设备群信息</p>
+     * 
      * @param request GetDeviceGroupInfoRequest
      * @param headers GetDeviceGroupInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -590,8 +606,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取设备群信息
-     *
+     * <b>summary</b> : 
+     * <p>获取设备群信息</p>
+     * 
      * @param request GetDeviceGroupInfoRequest
      * @return GetDeviceGroupInfoResponse
      */
@@ -602,8 +619,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取设备全员群标识
-     *
+     * <b>summary</b> : 
+     * <p>获取设备全员群标识</p>
+     * 
      * @param headers GetWholeDeviceGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetWholeDeviceGroupResponse
@@ -636,8 +654,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取设备全员群标识
-     *
+     * <b>summary</b> : 
+     * <p>获取设备全员群标识</p>
      * @return GetWholeDeviceGroupResponse
      */
     public GetWholeDeviceGroupResponse getWholeDeviceGroup() throws Exception {
@@ -647,8 +665,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询激活的设备信息
-     *
+     * <b>summary</b> : 
+     * <p>查询激活的设备信息</p>
+     * 
      * @param request ListActivateDevicesRequest
      * @param headers ListActivateDevicesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -709,8 +728,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询激活的设备信息
-     *
+     * <b>summary</b> : 
+     * <p>查询激活的设备信息</p>
+     * 
      * @param request ListActivateDevicesRequest
      * @return ListActivateDevicesResponse
      */
@@ -721,8 +741,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取巡检、保养记录
-     *
+     * <b>summary</b> : 
+     * <p>获取巡检、保养记录</p>
+     * 
      * @param request ListInspectInfoRequest
      * @param headers ListInspectInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -775,8 +796,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取巡检、保养记录
-     *
+     * <b>summary</b> : 
+     * <p>获取巡检、保养记录</p>
+     * 
      * @param request ListInspectInfoRequest
      * @return ListInspectInfoResponse
      */
@@ -787,8 +809,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取报修信息
-     *
+     * <b>summary</b> : 
+     * <p>获取报修信息</p>
+     * 
      * @param request ListMaintainInfoRequest
      * @param headers ListMaintainInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -837,8 +860,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取报修信息
-     *
+     * <b>summary</b> : 
+     * <p>获取报修信息</p>
+     * 
      * @param request ListMaintainInfoRequest
      * @return ListMaintainInfoResponse
      */
@@ -849,8 +873,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 拉设备进群
-     *
+     * <b>summary</b> : 
+     * <p>拉设备进群</p>
+     * 
      * @param request PullDeviceToGroupRequest
      * @param headers PullDeviceToGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -903,8 +928,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 拉设备进群
-     *
+     * <b>summary</b> : 
+     * <p>拉设备进群</p>
+     * 
      * @param request PullDeviceToGroupRequest
      * @return PullDeviceToGroupResponse
      */
@@ -915,8 +941,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 拉设用户进群
-     *
+     * <b>summary</b> : 
+     * <p>拉设用户进群</p>
+     * 
      * @param request PullUserToGroupRequest
      * @param headers PullUserToGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -961,8 +988,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 拉设用户进群
-     *
+     * <b>summary</b> : 
+     * <p>拉设用户进群</p>
+     * 
      * @param request PullUserToGroupRequest
      * @return PullUserToGroupResponse
      */
@@ -973,8 +1001,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册与激活设备
-     *
+     * <b>summary</b> : 
+     * <p>注册与激活设备</p>
+     * 
      * @param request RegisterAndActivateDeviceRequest
      * @param headers RegisterAndActivateDeviceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1047,8 +1076,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册与激活设备
-     *
+     * <b>summary</b> : 
+     * <p>注册与激活设备</p>
+     * 
      * @param request RegisterAndActivateDeviceRequest
      * @return RegisterAndActivateDeviceResponse
      */
@@ -1059,8 +1089,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量注册与激活设备
-     *
+     * <b>summary</b> : 
+     * <p>批量注册与激活设备</p>
+     * 
      * @param request RegisterAndActivateDeviceBatchRequest
      * @param headers RegisterAndActivateDeviceBatchHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1101,8 +1132,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量注册与激活设备
-     *
+     * <b>summary</b> : 
+     * <p>批量注册与激活设备</p>
+     * 
      * @param request RegisterAndActivateDeviceBatchRequest
      * @return RegisterAndActivateDeviceBatchResponse
      */
@@ -1113,8 +1145,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册设备并为其创建机器人
-     *
+     * <b>summary</b> : 
+     * <p>注册设备并为其创建机器人</p>
+     * 
      * @param request RegisterDeviceRequest
      * @param headers RegisterDeviceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1179,8 +1212,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册设备并为其创建机器人
-     *
+     * <b>summary</b> : 
+     * <p>注册设备并为其创建机器人</p>
+     * 
      * @param request RegisterDeviceRequest
      * @return RegisterDeviceResponse
      */
@@ -1191,8 +1225,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移设备出群
-     *
+     * <b>summary</b> : 
+     * <p>移设备出群</p>
+     * 
      * @param request RemoveDeviceFromGroupRequest
      * @param headers RemoveDeviceFromGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1245,8 +1280,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移设备出群
-     *
+     * <b>summary</b> : 
+     * <p>移设备出群</p>
+     * 
      * @param request RemoveDeviceFromGroupRequest
      * @return RemoveDeviceFromGroupResponse
      */
@@ -1257,8 +1293,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移用户出设备群
-     *
+     * <b>summary</b> : 
+     * <p>移用户出设备群</p>
+     * 
      * @param request RemoveUserFromGroupRequest
      * @param headers RemoveUserFromGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1303,8 +1340,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移用户出设备群
-     *
+     * <b>summary</b> : 
+     * <p>移用户出设备群</p>
+     * 
      * @param request RemoveUserFromGroupRequest
      * @return RemoveUserFromGroupResponse
      */
@@ -1315,8 +1353,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送卡片
-     *
+     * <b>summary</b> : 
+     * <p>发送卡片</p>
+     * 
      * @param request SendCardRequest
      * @param headers SendCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1393,8 +1432,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送卡片
-     *
+     * <b>summary</b> : 
+     * <p>发送卡片</p>
+     * 
      * @param request SendCardRequest
      * @return SendCardResponse
      */
@@ -1405,8 +1445,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送普通消息
-     *
+     * <b>summary</b> : 
+     * <p>发送普通消息</p>
+     * 
      * @param request SendMsgRequest
      * @param headers SendMsgHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1463,8 +1504,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送普通消息
-     *
+     * <b>summary</b> : 
+     * <p>发送普通消息</p>
+     * 
      * @param request SendMsgRequest
      * @return SendMsgResponse
      */
@@ -1475,8 +1517,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 卸载设备
-     *
+     * <b>summary</b> : 
+     * <p>卸载设备</p>
+     * 
      * @param request UninstallDeviceRobotRequest
      * @param headers UninstallDeviceRobotHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1521,8 +1564,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 卸载设备
-     *
+     * <b>summary</b> : 
+     * <p>卸载设备</p>
+     * 
      * @param request UninstallDeviceRobotRequest
      * @return UninstallDeviceRobotResponse
      */
@@ -1533,8 +1577,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新卡片
-     *
+     * <b>summary</b> : 
+     * <p>更新卡片</p>
+     * 
      * @param request UpdateCardRequest
      * @param headers UpdateCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1583,8 +1628,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新卡片
-     *
+     * <b>summary</b> : 
+     * <p>更新卡片</p>
+     * 
      * @param request UpdateCardRequest
      * @return UpdateCardResponse
      */
@@ -1595,8 +1641,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设备事件上报
-     *
+     * <b>summary</b> : 
+     * <p>设备事件上报</p>
+     * 
      * @param request UploadEventRequest
      * @param headers UploadEventHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1661,8 +1708,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设备事件上报
-     *
+     * <b>summary</b> : 
+     * <p>设备事件上报</p>
+     * 
      * @param request UploadEventRequest
      * @return UploadEventResponse
      */

@@ -9,16 +9,26 @@ public class CancelTicketRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>eKWh3GBwsKEiE</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>a8iS4X94TgtgiE</p>
      */
     @NameInMap("openTicketId")
     public String openTicketId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Dq9hP8Sk2v6vQ6l05nCe5wiEiE</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
@@ -74,6 +84,10 @@ public class CancelTicketRequest extends TeaModel {
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 
@@ -112,9 +126,17 @@ public class CancelTicketRequest extends TeaModel {
     }
 
     public static class CancelTicketRequestTicketMemoAttachments extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>wahaha.txt</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt</p>
+         */
         @NameInMap("key")
         public String key;
 
@@ -145,6 +167,10 @@ public class CancelTicketRequest extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<CancelTicketRequestTicketMemoAttachments> attachments;
 
+        /**
+         * <strong>example:</strong>
+         * <p>备注</p>
+         */
         @NameInMap("memo")
         public String memo;
 

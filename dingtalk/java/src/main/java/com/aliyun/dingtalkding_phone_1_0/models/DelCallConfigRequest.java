@@ -4,12 +4,24 @@ package com.aliyun.dingtalkding_phone_1_0.models;
 import com.aliyun.tea.*;
 
 public class DelCallConfigRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding3f583b067250d34dd</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>token1233143</p>
+     */
     @NameInMap("isvToken")
     public String isvToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>057112345678</p>
+     */
     @NameInMap("phoneNumber")
     public String phoneNumber;
 

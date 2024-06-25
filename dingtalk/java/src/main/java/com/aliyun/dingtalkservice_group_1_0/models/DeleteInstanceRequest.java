@@ -6,22 +6,35 @@ import com.aliyun.tea.*;
 public class DeleteInstanceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>DING_CUSTOMER</p>
      */
     @NameInMap("formCode")
     public String formCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>888***</p>
      */
     @NameInMap("openDataInstanceId")
     public String openDataInstanceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>888**</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>8889999</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 

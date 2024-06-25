@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class CreateTrustGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>channel_abcd</p>
      */
     @NameInMap("channel")
     public String channel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>@lALOKACADDA</p>
+     */
     @NameInMap("iconMediaId")
     public String iconMediaId;
 
@@ -18,6 +25,9 @@ public class CreateTrustGroupRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试群名称XXX</p>
      */
     @NameInMap("name")
     public String name;
@@ -25,11 +35,18 @@ public class CreateTrustGroupRequest extends TeaModel {
     @NameInMap("properties")
     public java.util.Map<String, String> properties;
 
+    /**
+     * <strong>example:</strong>
+     * <p>你有新的会话</p>
+     */
     @NameInMap("systemMsg")
     public String systemMsg;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1657099913071</p>
      */
     @NameInMap("uuid")
     public String uuid;

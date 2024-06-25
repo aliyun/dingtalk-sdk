@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetEduUserIdentityRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>VYn5fYjORJMi</p>
      */
     @NameInMap("unionId")
     public String unionId;

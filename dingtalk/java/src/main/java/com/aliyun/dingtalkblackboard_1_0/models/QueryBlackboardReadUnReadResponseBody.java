@@ -32,12 +32,20 @@ public class QueryBlackboardReadUnReadResponseBody extends TeaModel {
     }
 
     public static class QueryBlackboardReadUnReadResponseBodyUsers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("read")
         public String read;
 
         @NameInMap("readTimestamp")
         public Long readTimestamp;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12039</p>
+         */
         @NameInMap("userId")
         public String userId;
 

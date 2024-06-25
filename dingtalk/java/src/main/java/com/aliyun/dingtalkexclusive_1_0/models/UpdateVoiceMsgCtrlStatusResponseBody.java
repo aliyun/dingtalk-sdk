@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdateVoiceMsgCtrlStatusResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;

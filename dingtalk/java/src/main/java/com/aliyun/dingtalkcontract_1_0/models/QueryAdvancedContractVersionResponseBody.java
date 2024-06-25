@@ -38,6 +38,10 @@ public class QueryAdvancedContractVersionResponseBody extends TeaModel {
         @NameInMap("extension")
         public java.util.Map<String, String> extension;
 
+        /**
+         * <strong>example:</strong>
+         * <p>advanced</p>
+         */
         @NameInMap("version")
         public String version;
 

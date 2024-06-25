@@ -26,58 +26,109 @@ public class CreateReceiptRequest extends TeaModel {
     public static class CreateReceiptRequestReceipts extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>4.44</p>
          */
         @NameInMap("amount")
         public String amount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>INC_XXX</p>
          */
         @NameInMap("categoryCode")
         public String categoryCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abcd_efgh</p>
          */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1636445218000</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>emp_xxx</p>
          */
         @NameInMap("createUserId")
         public String createUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>CUS_XXX</p>
+         */
         @NameInMap("customerCode")
         public String customerCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ACC_XXX</p>
+         */
         @NameInMap("enterpriseAcountCode")
         public String enterpriseAcountCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1636445218000</p>
+         */
         @NameInMap("occurDate")
         public Long occurDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>emp_xxx</p>
+         */
         @NameInMap("principalId")
         public String principalId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PROJ_XXX</p>
+         */
         @NameInMap("projectCode")
         public String projectCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("receiptType")
         public Long receiptType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试</p>
+         */
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <strong>example:</strong>
+         * <p>SUP_XXX</p>
+         */
         @NameInMap("supplierCode")
         public String supplierCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>收款单</p>
+         */
         @NameInMap("title")
         public String title;
 

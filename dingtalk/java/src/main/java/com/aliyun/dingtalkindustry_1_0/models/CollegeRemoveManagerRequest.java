@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class CollegeRemoveManagerRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>11111</p>
      */
     @NameInMap("deptId")
     public Long deptId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("isForce")
     public Boolean isForce;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("userId")
     public String userId;

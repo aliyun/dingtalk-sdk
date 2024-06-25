@@ -32,9 +32,17 @@ public class CalculateDurationResponseBody extends TeaModel {
     }
 
     public static class CalculateDurationResponseBodyResultDurationDetail extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2019-08-15</p>
+         */
         @NameInMap("date")
         public String date;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1.0</p>
+         */
         @NameInMap("duration")
         public Double duration;
 
@@ -62,6 +70,10 @@ public class CalculateDurationResponseBody extends TeaModel {
     }
 
     public static class CalculateDurationResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2.0</p>
+         */
         @NameInMap("duration")
         public Double duration;
 

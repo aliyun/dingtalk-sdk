@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ListIndustryRoleUsersRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SecurityManager</p>
      */
     @NameInMap("tagCode")
     public String tagCode;

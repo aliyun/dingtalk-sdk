@@ -6,52 +6,105 @@ import com.aliyun.tea.*;
 public class GetInstancesRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_PBKT0MFBEBTDO8T7SLVP</p>
      */
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>agree</p>
+     */
     @NameInMap("approvedResult")
     public String approvedResult;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2018-01-01</p>
+     */
     @NameInMap("createFromTimeGMT")
     public String createFromTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2018-02-01</p>
+     */
     @NameInMap("createToTimeGMT")
     public String createToTimeGMT;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3</p>
      */
     @NameInMap("formUuid")
     public String formUuid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>RUNNING</p>
+     */
     @NameInMap("instanceStatus")
     public String instanceStatus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2018-01-01</p>
+     */
     @NameInMap("modifiedFromTimeGMT")
     public String modifiedFromTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2018-02-01</p>
+     */
     @NameInMap("modifiedToTimeGMT")
     public String modifiedToTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>例如按照创建时间升序再按照文本组件值升序排序则填{&quot;gmt_create&quot;:&quot;+&quot;,&quot;textField_1234&quot;:&quot;+&quot;} ，详情参考 <a href="https://www.yuque.com/yida/support/agb8im#CQro8">https://www.yuque.com/yida/support/agb8im#CQro8</a></p>
+     */
     @NameInMap("orderConfigJson")
     public String orderConfigJson;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manager123</p>
+     */
     @NameInMap("originatorId")
     public String originatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>模式1：根据组件值模糊匹配，示例：{&quot;textField_jcr0069m&quot;:&quot;danhang&quot;,&quot;selectField_jcr0069q&quot;:&quot;K&quot;}     模式2: 采用数据管理的查询过滤条件，匹配功能更强大，示例：[{&quot;key&quot;:&quot;currentNodeName&quot;,&quot;value&quot;:&quot;步凡&quot;,&quot;type&quot;:&quot;TEXT&quot;,&quot;operator&quot;:&quot;like&quot;,&quot;componentName&quot;:&quot;TextField”}]，详情参考  <a href="https://www.yuque.com/yida/support/agb8im#F4S8e">https://www.yuque.com/yida/support/agb8im#F4S8e</a></p>
+     */
     @NameInMap("searchFieldJson")
     public String searchFieldJson;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>hexxx</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2199132092</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 
@@ -61,9 +114,17 @@ public class GetInstancesRequest extends TeaModel {
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

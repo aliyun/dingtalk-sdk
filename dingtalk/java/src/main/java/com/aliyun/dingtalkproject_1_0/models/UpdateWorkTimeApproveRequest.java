@@ -4,21 +4,45 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateWorkTimeApproveRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2023-04-04T00:00:00.000Z</p>
+     */
     @NameInMap("finishTime")
     public String finishTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1233</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>NEW</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2023-04-04T00:00:00.000Z</p>
+     */
     @NameInMap("submitTime")
     public String submitTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxx 用工申请</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://xxxbpms.xxx/xxxx">https://xxxbpms.xxx/xxxx</a></p>
+     */
     @NameInMap("url")
     public String url;
 

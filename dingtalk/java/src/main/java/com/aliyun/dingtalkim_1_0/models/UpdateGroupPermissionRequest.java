@@ -4,6 +4,10 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupPermissionRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cidXXXXXXX</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

@@ -32,30 +32,56 @@ public class GetJobPositionResponseBody extends TeaModel {
     }
 
     public static class GetJobPositionResponseBodyContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1678886770065</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1678886770065</p>
+         */
         @NameInMap("establishDate")
         public String establishDate;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("jobCode")
         public String jobCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>有良好的技术素养</p>
+         */
         @NameInMap("jobRequirements")
         public String jobRequirements;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>技术开发</p>
          */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1678886770065</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1678886770065</p>
+         */
         @NameInMap("stopDate")
         public String stopDate;
 

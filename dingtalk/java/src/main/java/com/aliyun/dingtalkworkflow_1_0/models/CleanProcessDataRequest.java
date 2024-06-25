@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class CleanProcessDataRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding1234</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROC-EF6YJL35</p>
      */
     @NameInMap("processCode")
     public String processCode;

@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class AddSchoolConfigRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>操作人id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>操作人名称</p>
      */
     @NameInMap("operatorName")
     public String operatorName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测温上限</p>
      */
     @NameInMap("temperatureUpLimit")
     public Long temperatureUpLimit;

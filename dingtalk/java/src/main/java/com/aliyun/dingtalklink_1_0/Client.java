@@ -6,11 +6,10 @@ import com.aliyun.dingtalklink_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 发送用户授权信息申请
-     *
+     * <b>summary</b> : 
+     * <p>发送用户授权信息申请</p>
+     * 
      * @param request ApplyFollowerAuthInfoRequest
      * @param headers ApplyFollowerAuthInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -74,8 +74,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送用户授权信息申请
-     *
+     * <b>summary</b> : 
+     * <p>发送用户授权信息申请</p>
+     * 
      * @param request ApplyFollowerAuthInfoRequest
      * @return ApplyFollowerAuthInfoResponse
      */
@@ -86,8 +87,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册服务窗消息回调服务
-     *
+     * <b>summary</b> : 
+     * <p>注册服务窗消息回调服务</p>
+     * 
      * @param request CallbackRegiesterRequest
      * @param headers CallbackRegiesterHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -140,8 +142,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册服务窗消息回调服务
-     *
+     * <b>summary</b> : 
+     * <p>注册服务窗消息回调服务</p>
+     * 
      * @param request CallbackRegiesterRequest
      * @return CallbackRegiesterResponse
      */
@@ -152,8 +155,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗吊顶卡片关闭接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗吊顶卡片关闭接口</p>
+     * 
      * @param request CloseTopBoxInteractiveOTOMessageRequest
      * @param headers CloseTopBoxInteractiveOTOMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -194,8 +198,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗吊顶卡片关闭接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗吊顶卡片关闭接口</p>
+     * 
      * @param request CloseTopBoxInteractiveOTOMessageRequest
      * @return CloseTopBoxInteractiveOTOMessageResponse
      */
@@ -206,8 +211,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户授权信息
-     *
+     * <b>summary</b> : 
+     * <p>获取用户授权信息</p>
+     * 
      * @param request GetFollowerAuthInfoRequest
      * @param headers GetFollowerAuthInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -252,8 +258,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户授权信息
-     *
+     * <b>summary</b> : 
+     * <p>获取用户授权信息</p>
+     * 
      * @param request GetFollowerAuthInfoRequest
      * @return GetFollowerAuthInfoResponse
      */
@@ -264,8 +271,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取服务窗关注人信息
-     *
+     * <b>summary</b> : 
+     * <p>获取服务窗关注人信息</p>
+     * 
      * @param request GetFollowerInfoRequest
      * @param headers GetFollowerInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -314,8 +322,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取服务窗关注人信息
-     *
+     * <b>summary</b> : 
+     * <p>获取服务窗关注人信息</p>
+     * 
      * @param request GetFollowerInfoRequest
      * @return GetFollowerInfoResponse
      */
@@ -326,8 +335,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗图片消息下载地址获取接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗图片消息下载地址获取接口</p>
+     * 
      * @param request GetPictureDownloadUrlRequest
      * @param headers GetPictureDownloadUrlHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -372,8 +382,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗图片消息下载地址获取接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗图片消息下载地址获取接口</p>
+     * 
      * @param request GetPictureDownloadUrlRequest
      * @return GetPictureDownloadUrlResponse
      */
@@ -384,8 +395,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户关注状态
-     *
+     * <b>summary</b> : 
+     * <p>获取用户关注状态</p>
+     * 
      * @param request GetUserFollowStatusRequest
      * @param headers GetUserFollowStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -434,8 +446,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户关注状态
-     *
+     * <b>summary</b> : 
+     * <p>获取用户关注状态</p>
+     * 
      * @param request GetUserFollowStatusRequest
      * @return GetUserFollowStatusResponse
      */
@@ -446,8 +459,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业下服务窗帐号列表
-     *
+     * <b>summary</b> : 
+     * <p>获取企业下服务窗帐号列表</p>
+     * 
      * @param headers ListAccountHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListAccountResponse
@@ -480,8 +494,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业下服务窗帐号列表
-     *
+     * <b>summary</b> : 
+     * <p>获取企业下服务窗帐号列表</p>
      * @return ListAccountResponse
      */
     public ListAccountResponse listAccount() throws Exception {
@@ -491,8 +505,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 第三方企业应用查询服务窗帐号列表
-     *
+     * <b>summary</b> : 
+     * <p>第三方企业应用查询服务窗帐号列表</p>
+     * 
      * @param headers ListAccountInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListAccountInfoResponse
@@ -525,8 +540,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 第三方企业应用查询服务窗帐号列表
-     *
+     * <b>summary</b> : 
+     * <p>第三方企业应用查询服务窗帐号列表</p>
      * @return ListAccountInfoResponse
      */
     public ListAccountInfoResponse listAccountInfo() throws Exception {
@@ -536,8 +551,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取服务窗关注人列表
-     *
+     * <b>summary</b> : 
+     * <p>批量获取服务窗关注人列表</p>
+     * 
      * @param request ListFollowerRequest
      * @param headers ListFollowerHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -586,8 +602,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取服务窗关注人列表
-     *
+     * <b>summary</b> : 
+     * <p>批量获取服务窗关注人列表</p>
+     * 
      * @param request ListFollowerRequest
      * @return ListFollowerResponse
      */
@@ -598,8 +615,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 第三方企业应用查询用户是否关注服务窗
-     *
+     * <b>summary</b> : 
+     * <p>第三方企业应用查询用户是否关注服务窗</p>
+     * 
      * @param request QueryUserFollowStatusRequest
      * @param headers QueryUserFollowStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -644,8 +662,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 第三方企业应用查询用户是否关注服务窗
-     *
+     * <b>summary</b> : 
+     * <p>第三方企业应用查询用户是否关注服务窗</p>
+     * 
      * @param request QueryUserFollowStatusRequest
      * @return QueryUserFollowStatusResponse
      */
@@ -656,8 +675,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送服务窗客服消息
-     *
+     * <b>summary</b> : 
+     * <p>发送服务窗客服消息</p>
+     * 
      * @param request SendAgentOTOMessageRequest
      * @param headers SendAgentOTOMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -698,8 +718,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送服务窗客服消息
-     *
+     * <b>summary</b> : 
+     * <p>发送服务窗客服消息</p>
+     * 
      * @param request SendAgentOTOMessageRequest
      * @return SendAgentOTOMessageResponse
      */
@@ -710,8 +731,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗互动卡片单发接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗互动卡片单发接口</p>
+     * 
      * @param request SendInteractiveOTOMessageRequest
      * @param headers SendInteractiveOTOMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -752,8 +774,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗互动卡片单发接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗互动卡片单发接口</p>
+     * 
      * @param request SendInteractiveOTOMessageRequest
      * @return SendInteractiveOTOMessageResponse
      */
@@ -764,8 +787,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗吊顶卡片发送接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗吊顶卡片发送接口</p>
+     * 
      * @param request SendTopBoxInteractiveOTOMessageRequest
      * @param headers SendTopBoxInteractiveOTOMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -806,8 +830,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗吊顶卡片发送接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗吊顶卡片发送接口</p>
+     * 
      * @param request SendTopBoxInteractiveOTOMessageRequest
      * @return SendTopBoxInteractiveOTOMessageResponse
      */
@@ -818,8 +843,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗互动卡片修改接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗互动卡片修改接口</p>
+     * 
      * @param request UpdateInteractiveOTOMessageRequest
      * @param headers UpdateInteractiveOTOMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -860,8 +886,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗互动卡片修改接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗互动卡片修改接口</p>
+     * 
      * @param request UpdateInteractiveOTOMessageRequest
      * @return UpdateInteractiveOTOMessageResponse
      */
@@ -872,8 +899,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗会话窗口快捷栏配置接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗会话窗口快捷栏配置接口</p>
+     * 
      * @param request UpdateShortcutsRequest
      * @param headers UpdateShortcutsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -922,8 +950,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 服务窗会话窗口快捷栏配置接口
-     *
+     * <b>summary</b> : 
+     * <p>服务窗会话窗口快捷栏配置接口</p>
+     * 
      * @param request UpdateShortcutsRequest
      * @return UpdateShortcutsResponse
      */

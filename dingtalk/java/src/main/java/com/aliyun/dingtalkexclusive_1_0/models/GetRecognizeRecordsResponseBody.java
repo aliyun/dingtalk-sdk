@@ -7,9 +7,17 @@ public class GetRecognizeRecordsResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetRecognizeRecordsResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("total")
     public Integer total;
 
@@ -43,18 +51,38 @@ public class GetRecognizeRecordsResponseBody extends TeaModel {
     }
 
     public static class GetRecognizeRecordsResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>agentId</p>
+         */
         @NameInMap("agentId")
         public Long agentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("faceCompareResult")
         public Integer faceCompareResult;
 
+        /**
+         * <strong>example:</strong>
+         * <p>166700000</p>
+         */
         @NameInMap("invokeTime")
         public Long invokeTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("platform")
         public Integer platform;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234</p>
+         */
         @NameInMap("userId")
         public String userId;
 

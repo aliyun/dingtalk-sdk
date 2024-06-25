@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CampusGetCampusRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>11</p>
      */
     @NameInMap("campusDeptId")
     public Long campusDeptId;

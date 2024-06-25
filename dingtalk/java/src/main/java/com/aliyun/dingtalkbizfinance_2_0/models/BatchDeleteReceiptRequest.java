@@ -7,6 +7,10 @@ public class BatchDeleteReceiptRequest extends TeaModel {
     @NameInMap("instanceIdList")
     public java.util.List<String> instanceIdList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>504XX</p>
+     */
     @NameInMap("operator")
     public String operator;
 

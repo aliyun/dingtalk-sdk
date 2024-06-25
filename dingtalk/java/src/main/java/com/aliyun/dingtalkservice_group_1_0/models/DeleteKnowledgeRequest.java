@@ -4,15 +4,31 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteKnowledgeRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>xuvw1245</p>
+     */
     @NameInMap("libraryKey")
     public String libraryKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Js1i0w3k</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CCM</p>
+     */
     @NameInMap("source")
     public String source;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CCM-123</p>
+     */
     @NameInMap("sourcePrimaryKey")
     public String sourcePrimaryKey;
 

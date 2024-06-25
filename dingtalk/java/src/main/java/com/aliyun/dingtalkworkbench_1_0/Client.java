@@ -6,11 +6,10 @@ import com.aliyun.dingtalkworkbench_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 批量添加最近使用记录
-     *
+     * <b>summary</b> : 
+     * <p>批量添加最近使用记录</p>
+     * 
      * @param request AddRecentUserAppListRequest
      * @param headers AddRecentUserAppListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -70,8 +70,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量添加最近使用记录
-     *
+     * <b>summary</b> : 
+     * <p>批量添加最近使用记录</p>
+     * 
      * @param request AddRecentUserAppListRequest
      * @return AddRecentUserAppListResponse
      */
@@ -82,8 +83,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询自定义工作台
-     *
+     * <b>summary</b> : 
+     * <p>查询自定义工作台</p>
+     * 
      * @param headers GetDingPortalDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetDingPortalDetailResponse
@@ -116,8 +118,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询自定义工作台
-     *
+     * <b>summary</b> : 
+     * <p>查询自定义工作台</p>
      * @return GetDingPortalDetailResponse
      */
     public GetDingPortalDetailResponse getDingPortalDetail(String appUuid) throws Exception {
@@ -127,8 +129,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工作台插件的权限点
-     *
+     * <b>summary</b> : 
+     * <p>获取工作台插件的权限点</p>
+     * 
      * @param request GetPluginPermissionPointRequest
      * @param headers GetPluginPermissionPointHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -169,8 +172,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工作台插件的权限点
-     *
+     * <b>summary</b> : 
+     * <p>获取工作台插件的权限点</p>
+     * 
      * @param request GetPluginPermissionPointRequest
      * @return GetPluginPermissionPointResponse
      */
@@ -181,8 +185,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取插件的校验规则
-     *
+     * <b>summary</b> : 
+     * <p>获取插件的校验规则</p>
+     * 
      * @param request GetPluginRuleCheckInfoRequest
      * @param headers GetPluginRuleCheckInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -223,8 +228,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取插件的校验规则
-     *
+     * <b>summary</b> : 
+     * <p>获取插件的校验规则</p>
+     * 
      * @param request GetPluginRuleCheckInfoRequest
      * @return GetPluginRuleCheckInfoResponse
      */
@@ -235,8 +241,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工作台分组列表
-     *
+     * <b>summary</b> : 
+     * <p>获取工作台分组列表</p>
+     * 
      * @param request ListWorkBenchGroupRequest
      * @param headers ListWorkBenchGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -285,8 +292,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工作台分组列表
-     *
+     * <b>summary</b> : 
+     * <p>获取工作台分组列表</p>
+     * 
      * @param request ListWorkBenchGroupRequest
      * @return ListWorkBenchGroupResponse
      */
@@ -297,8 +305,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工作台支持数字红点
-     *
+     * <b>summary</b> : 
+     * <p>工作台支持数字红点</p>
+     * 
      * @param request ModifyWorkbenchBadgeRequest
      * @param headers ModifyWorkbenchBadgeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -359,8 +368,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工作台支持数字红点
-     *
+     * <b>summary</b> : 
+     * <p>工作台支持数字红点</p>
+     * 
      * @param request ModifyWorkbenchBadgeRequest
      * @return ModifyWorkbenchBadgeResponse
      */
@@ -371,8 +381,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工作台组件授权范围查询
-     *
+     * <b>summary</b> : 
+     * <p>工作台组件授权范围查询</p>
+     * 
      * @param headers QueryComponentScopesHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryComponentScopesResponse
@@ -405,8 +416,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工作台组件授权范围查询
-     *
+     * <b>summary</b> : 
+     * <p>工作台组件授权范围查询</p>
      * @return QueryComponentScopesResponse
      */
     public QueryComponentScopesResponse queryComponentScopes(String componentId) throws Exception {
@@ -416,8 +427,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询快捷方式可见范围
-     *
+     * <b>summary</b> : 
+     * <p>查询快捷方式可见范围</p>
+     * 
      * @param headers QueryShortcutScopesHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryShortcutScopesResponse
@@ -450,8 +462,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询快捷方式可见范围
-     *
+     * <b>summary</b> : 
+     * <p>查询快捷方式可见范围</p>
      * @return QueryShortcutScopesResponse
      */
     public QueryShortcutScopesResponse queryShortcutScopes(String shortcutKey) throws Exception {
@@ -461,8 +473,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工作台数字红点支持撤销已被删除的资源
-     *
+     * <b>summary</b> : 
+     * <p>工作台数字红点支持撤销已被删除的资源</p>
+     * 
      * @param request UndoDeletionRequest
      * @param headers UndoDeletionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -515,8 +528,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工作台数字红点支持撤销已被删除的资源
-     *
+     * <b>summary</b> : 
+     * <p>工作台数字红点支持撤销已被删除的资源</p>
+     * 
      * @param request UndoDeletionRequest
      * @return UndoDeletionResponse
      */
@@ -527,8 +541,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新自定义工作台页面可见性
-     *
+     * <b>summary</b> : 
+     * <p>更新自定义工作台页面可见性</p>
+     * 
      * @param request UpdateDingPortalPageScopeRequest
      * @param headers UpdateDingPortalPageScopeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -581,8 +596,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新自定义工作台页面可见性
-     *
+     * <b>summary</b> : 
+     * <p>更新自定义工作台页面可见性</p>
+     * 
      * @param request UpdateDingPortalPageScopeRequest
      * @return UpdateDingPortalPageScopeResponse
      */

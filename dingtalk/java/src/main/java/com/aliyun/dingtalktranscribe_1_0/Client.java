@@ -6,11 +6,10 @@ import com.aliyun.dingtalktranscribe_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 获取闪记任务的概要信息
-     *
+     * <b>summary</b> : 
+     * <p>获取闪记任务的概要信息</p>
+     * 
      * @param headers GetTranscribeBriefHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetTranscribeBriefResponse
@@ -54,8 +54,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取闪记任务的概要信息
-     *
+     * <b>summary</b> : 
+     * <p>获取闪记任务的概要信息</p>
      * @return GetTranscribeBriefResponse
      */
     public GetTranscribeBriefResponse getTranscribeBrief(String taskUuid) throws Exception {
@@ -65,8 +65,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移除指定用户对闪记任务的权限
-     *
+     * <b>summary</b> : 
+     * <p>移除指定用户对闪记任务的权限</p>
+     * 
      * @param request RemovePermissionRequest
      * @param headers RemovePermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -119,8 +120,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移除指定用户对闪记任务的权限
-     *
+     * <b>summary</b> : 
+     * <p>移除指定用户对闪记任务的权限</p>
+     * 
      * @param request RemovePermissionRequest
      * @return RemovePermissionResponse
      */
@@ -131,8 +133,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 针对指定的闪记，修改或者授予指定用户权限
-     *
+     * <b>summary</b> : 
+     * <p>针对指定的闪记，修改或者授予指定用户权限</p>
+     * 
      * @param request UpdatePermissionForUsersRequest
      * @param headers UpdatePermissionForUsersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -187,8 +190,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 针对指定的闪记，修改或者授予指定用户权限
-     *
+     * <b>summary</b> : 
+     * <p>针对指定的闪记，修改或者授予指定用户权限</p>
+     * 
      * @param request UpdatePermissionForUsersRequest
      * @return UpdatePermissionForUsersResponse
      */

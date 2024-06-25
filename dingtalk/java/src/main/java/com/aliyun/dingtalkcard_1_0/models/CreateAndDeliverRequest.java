@@ -7,6 +7,10 @@ public class CreateAndDeliverRequest extends TeaModel {
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>STREAM</p>
+     */
     @NameInMap("callbackType")
     public String callbackType;
 
@@ -54,6 +58,9 @@ public class CreateAndDeliverRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dtv1.card//im_group.cidp4Gh<em><strong><strong><strong>VCQ==;im_robot.manager</strong></strong>67;im_robot.staff</strong></em><em>89;co_feed.manager</em><em><strong>67;one_box.cidp4Gh</strong></em>****VCQ==;</p>
      */
     @NameInMap("openSpaceId")
     public String openSpaceId;
@@ -272,9 +279,17 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestCoFeedOpenDeliverModel extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxx_biz_tag</p>
+         */
         @NameInMap("bizTag")
         public String bizTag;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1665473229000</p>
+         */
         @NameInMap("gmtTimeLine")
         public Long gmtTimeLine;
 
@@ -302,9 +317,17 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestCoFeedOpenSpaceModel extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>coolAppCode123</p>
+         */
         @NameInMap("coolAppCode")
         public String coolAppCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx卡片</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -332,6 +355,10 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestDocOpenDeliverModel extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxx_biz_tag</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -360,6 +387,10 @@ public class CreateAndDeliverRequest extends TeaModel {
         @NameInMap("recipients")
         public java.util.List<String> recipients;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingg3xmqdkpaojuakm8</p>
+         */
         @NameInMap("robotCode")
         public String robotCode;
 
@@ -403,6 +434,10 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestImGroupOpenSpaceModelNotification extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>你收到了一个卡片消息</p>
+         */
         @NameInMap("alertContent")
         public String alertContent;
 
@@ -433,12 +468,24 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestImGroupOpenSpaceModelSearchSupport extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>卡片的具体描述</p>
+         */
         @NameInMap("searchDesc")
         public String searchDesc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@lALPDgQ9q8hFhlHNAXzNAqI</p>
+         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</p>
+         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -529,6 +576,10 @@ public class CreateAndDeliverRequest extends TeaModel {
         @NameInMap("extension")
         public java.util.Map<String, String> extension;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingg3xmqdkpaojuakm8</p>
+         */
         @NameInMap("robotCode")
         public String robotCode;
 
@@ -567,6 +618,10 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestImRobotOpenSpaceModelNotification extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>你收到了一个卡片消息</p>
+         */
         @NameInMap("alertContent")
         public String alertContent;
 
@@ -597,12 +652,24 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>卡片的具体描述</p>
+         */
         @NameInMap("searchDesc")
         public String searchDesc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@lALPDgQ9q8hFhlHNAXzNAqI</p>
+         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</p>
+         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -720,6 +787,10 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestImSingleOpenSpaceModelNotification extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>你收到了一个卡片消息</p>
+         */
         @NameInMap("alertContent")
         public String alertContent;
 
@@ -750,12 +821,24 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>卡片的具体描述</p>
+         */
         @NameInMap("searchDesc")
         public String searchDesc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@lALPDgQ9q8hFhlHNAXzNAqI</p>
+         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</p>
+         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -944,6 +1027,10 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestTopOpenDeliverModel extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1665473229000</p>
+         */
         @NameInMap("expiredTimeMillis")
         public Long expiredTimeMillis;
 
@@ -985,6 +1072,10 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestTopOpenSpaceModel extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ONE_BOX</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 

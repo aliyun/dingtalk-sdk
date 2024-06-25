@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class MasterDataSaveResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("allSuccess")
     public Boolean allSuccess;
@@ -35,15 +38,31 @@ public class MasterDataSaveResponseBody extends TeaModel {
     }
 
     public static class MasterDataSaveResponseBodyFailResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>uk123</p>
+         */
         @NameInMap("bizUk")
         public String bizUk;
 
+        /**
+         * <strong>example:</strong>
+         * <p>S0005</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>主键冲突</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

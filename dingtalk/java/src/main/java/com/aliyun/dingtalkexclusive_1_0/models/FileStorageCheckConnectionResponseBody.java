@@ -4,15 +4,26 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class FileStorageCheckConnectionResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>sampleKeyId1234</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("checkState")
     public Integer checkState;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://oss-cn-test.aliyuncs.com%5C">https://oss-cn-test.aliyuncs.com\</a></p>
+     */
     @NameInMap("oss")
     public String oss;
 

@@ -62,12 +62,18 @@ public class RemovePermissionRequest extends TeaModel {
     public static class RemovePermissionRequestMembers extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>533xxxxxx</p>
          */
         @NameInMap("memberId")
         public Long memberId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>EDITOR</p>
          */
         @NameInMap("memberType")
         public String memberType;

@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class ChangeMainAdminRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>corpIdCCC</p>
      */
     @NameInMap("effectCorpId")
     public String effectCorpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>userIdAA</p>
      */
     @NameInMap("sourceUserId")
     public String sourceUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>userIdBB</p>
      */
     @NameInMap("targetUserId")
     public String targetUserId;

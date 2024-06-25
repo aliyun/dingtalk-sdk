@@ -4,17 +4,27 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetActivityButtonListRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>hello1234</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>未知</p>
      */
     @NameInMap("userId")
     public String userId;

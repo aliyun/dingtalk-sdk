@@ -4,9 +4,17 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreConversationsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>xxx店</p>
+     */
     @NameInMap("conversationTitle")
     public String conversationTitle;
 
+    /**
+     * <strong>example:</strong>
+     * <p>store</p>
+     */
     @NameInMap("conversationType")
     public String conversationType;
 

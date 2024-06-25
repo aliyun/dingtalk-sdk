@@ -9,6 +9,9 @@ public class CreateCustomerRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager123</p>
      */
     @NameInMap("creatorUserId")
     public String creatorUserId;
@@ -22,9 +25,23 @@ public class CreateCustomerRequest extends TeaModel {
     @NameInMap("extendData")
     public java.util.Map<String, ?> extendData;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxx-xxxx-xxxx-xxxx</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>crm_customer</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("objectType")
     public String objectType;
 
@@ -170,15 +187,31 @@ public class CreateCustomerRequest extends TeaModel {
     }
 
     public static class CreateCustomerRequestSaveOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>APPEND_CONTACT_FORCE</p>
+         */
         @NameInMap("customerExistedPolicy")
         public String customerExistedPolicy;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("skipDuplicateCheck")
         public Boolean skipDuplicateCheck;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("subscribePolicy")
         public Long subscribePolicy;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("throwExceptionWhileSavingContactFailed")
         public Boolean throwExceptionWhileSavingContactFailed;
 

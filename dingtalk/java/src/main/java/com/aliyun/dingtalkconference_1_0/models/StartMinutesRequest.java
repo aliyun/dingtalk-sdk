@@ -4,12 +4,24 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartMinutesRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>左上</p>
+     */
     @NameInMap("ownerUnionId")
     public String ownerUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("recordAudio")
     public Boolean recordAudio;
 
+    /**
+     * <strong>example:</strong>
+     * <p>27SaQ3iiHLN0uwqcPisedfreNwiEiE</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

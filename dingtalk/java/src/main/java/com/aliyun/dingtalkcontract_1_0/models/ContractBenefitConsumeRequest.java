@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class ContractBenefitConsumeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>esign</p>
      */
     @NameInMap("benefitPoint")
     public String benefitPoint;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sjdaujii129w9qej2nqas</p>
      */
     @NameInMap("bizRequestId")
     public String bizRequestId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20</p>
      */
     @NameInMap("consumeQuota")
     public Long consumeQuota;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding1231ndu29923312</p>
      */
     @NameInMap("corpId")
     public String corpId;
@@ -33,10 +45,17 @@ public class ContractBenefitConsumeRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding12939912nduaejjwe</p>
      */
     @NameInMap("isvCorpId")
     public String isvCorpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>djauihjauiwnkndjknkjanaae</p>
+     */
     @NameInMap("optUnionId")
     public String optUnionId;
 

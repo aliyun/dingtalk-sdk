@@ -23,13 +23,24 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
     public static class QueryFormByBizTypeResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>应用类型</p>
          */
         @NameInMap("appType")
         public Integer appType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>SWAPP-abcdef-example</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>表单业务标识</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
@@ -39,41 +50,73 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1635151039000</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>02501234567890</p>
+         */
         @NameInMap("creator")
         public String creator;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PROC-abcdef-example</p>
          */
         @NameInMap("formCode")
         public String formCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>FORM-example</p>
          */
         @NameInMap("formUuid")
         public String formUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>用于收集休假信息</p>
+         */
         @NameInMap("memo")
         public String memo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1635151039000</p>
+         */
         @NameInMap("modifedTime")
         public Long modifedTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>休假申请</p>
          */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>02501234567890</p>
+         */
         @NameInMap("ownerId")
         public String ownerId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PUBLISHED(启用), INVALID(停用), SAVED(草稿)</p>
          */
         @NameInMap("status")
         public String status;

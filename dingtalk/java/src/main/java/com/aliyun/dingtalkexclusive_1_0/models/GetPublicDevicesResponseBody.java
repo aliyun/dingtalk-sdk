@@ -7,9 +7,17 @@ public class GetPublicDevicesResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetPublicDevicesResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("dataCnt")
     public Integer dataCnt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCnt")
     public Long totalCnt;
 
@@ -43,9 +51,17 @@ public class GetPublicDevicesResponseBody extends TeaModel {
     }
 
     public static class GetPublicDevicesResponseBodyDataDeviceDepts extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试部门</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -73,9 +89,17 @@ public class GetPublicDevicesResponseBody extends TeaModel {
     }
 
     public static class GetPublicDevicesResponseBodyDataDeviceRoles extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>测试角色</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("tagCode")
         public String tagCode;
 
@@ -103,9 +127,17 @@ public class GetPublicDevicesResponseBody extends TeaModel {
     }
 
     public static class GetPublicDevicesResponseBodyDataDeviceStaffs extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -139,24 +171,48 @@ public class GetPublicDevicesResponseBody extends TeaModel {
         @NameInMap("deviceRoles")
         public java.util.List<GetPublicDevicesResponseBodyDataDeviceRoles> deviceRoles;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("deviceScopeType")
         public Integer deviceScopeType;
 
         @NameInMap("deviceStaffs")
         public java.util.List<GetPublicDevicesResponseBodyDataDeviceStaffs> deviceStaffs;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1671767361000</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1671767361000</p>
+         */
         @NameInMap("gmtModified")
         public Long gmtModified;
 
+        /**
+         * <strong>example:</strong>
+         * <p>88:66:5a:07:2b:04</p>
+         */
         @NameInMap("macAddress")
         public String macAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Mac</p>
+         */
         @NameInMap("platform")
         public String platform;
 
+        /**
+         * <strong>example:</strong>
+         * <p>这是标题</p>
+         */
         @NameInMap("title")
         public String title;
 

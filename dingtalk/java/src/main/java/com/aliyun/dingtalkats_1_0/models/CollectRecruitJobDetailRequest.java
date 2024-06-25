@@ -4,27 +4,51 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollectRecruitJobDetailRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ddats</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>zhilian</p>
+     */
     @NameInMap("channel")
     public String channel;
 
     @NameInMap("jobInfo")
     public CollectRecruitJobDetailRequestJobInfo jobInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>corpxxxxxxxxx</p>
+     */
     @NameInMap("outCorpId")
     public String outCorpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>小莫科技有限公司</p>
+     */
     @NameInMap("outCorpName")
     public String outCorpName;
 
     @NameInMap("recruitUserInfo")
     public CollectRecruitJobDetailRequestRecruitUserInfo recruitUserInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>BOSS</p>
+     */
     @NameInMap("source")
     public String source;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1677465956008</p>
+     */
     @NameInMap("updateTime")
     public Long updateTime;
 
@@ -98,24 +122,52 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
     }
 
     public static class CollectRecruitJobDetailRequestJobInfoAddress extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>310000</p>
+         */
         @NameInMap("cityCode")
         public String cityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>文一西路999号</p>
+         */
         @NameInMap("detail")
         public String detail;
 
+        /**
+         * <strong>example:</strong>
+         * <p>311000</p>
+         */
         @NameInMap("districtCode")
         public String districtCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>89.54613</p>
+         */
         @NameInMap("latitude")
         public String latitude;
 
+        /**
+         * <strong>example:</strong>
+         * <p>128.45613</p>
+         */
         @NameInMap("longitude")
         public String longitude;
 
+        /**
+         * <strong>example:</strong>
+         * <p>总部大楼</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>300000</p>
+         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
@@ -183,12 +235,24 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
     }
 
     public static class CollectRecruitJobDetailRequestJobInfoFullTimeInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("maxJobExperience")
         public String maxJobExperience;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("minJobExperience")
         public String minJobExperience;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12</p>
+         */
         @NameInMap("salaryMonth")
         public String salaryMonth;
 
@@ -224,33 +288,73 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
     }
 
     public static class CollectRecruitJobDetailRequestJobInfoPartTimeInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>158****8718</p>
+         */
         @NameInMap("contactNumber")
         public String contactNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>MONTH</p>
+         */
         @NameInMap("salaryPeriod")
         public String salaryPeriod;
 
+        /**
+         * <strong>example:</strong>
+         * <p>MONTH</p>
+         */
         @NameInMap("settleType")
         public String settleType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>N</p>
+         */
         @NameInMap("specifyWorkDate")
         public String specifyWorkDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>N</p>
+         */
         @NameInMap("specifyWorkTime")
         public String specifyWorkTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>480</p>
+         */
         @NameInMap("workBeginTimeMin")
         public String workBeginTimeMin;
 
+        /**
+         * <strong>example:</strong>
+         * <p>WORKDAY</p>
+         */
         @NameInMap("workDateType")
         public String workDateType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2024-02-18</p>
+         */
         @NameInMap("workEndDate")
         public String workEndDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1080</p>
+         */
         @NameInMap("workEndTimeMin")
         public String workEndTimeMin;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-02-18</p>
+         */
         @NameInMap("workStartDate")
         public String workStartDate;
 
@@ -345,9 +449,17 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
         @NameInMap("address")
         public CollectRecruitJobDetailRequestJobInfoAddress address;
 
+        /**
+         * <strong>example:</strong>
+         * <p>C10001</p>
+         */
         @NameInMap("category")
         public String category;
 
+        /**
+         * <strong>example:</strong>
+         * <p>园艺师职位描述</p>
+         */
         @NameInMap("description")
         public String description;
 
@@ -357,30 +469,58 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
         @NameInMap("fullTimeInfo")
         public CollectRecruitJobDetailRequestJobInfoFullTimeInfo fullTimeInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("headCount")
         public String headCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>FULL-TIME</p>
+         */
         @NameInMap("jobNature")
         public String jobNature;
 
         @NameInMap("jobTags")
         public java.util.List<String> jobTags;
 
+        /**
+         * <strong>example:</strong>
+         * <p>8000</p>
+         */
         @NameInMap("maxSalary")
         public String maxSalary;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3000</p>
+         */
         @NameInMap("minSalary")
         public String minSalary;
 
+        /**
+         * <strong>example:</strong>
+         * <p>园艺师</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>jobIdxxxxxxx</p>
+         */
         @NameInMap("outJobId")
         public String outJobId;
 
         @NameInMap("partTimeInfo")
         public CollectRecruitJobDetailRequestJobInfoPartTimeInfo partTimeInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>高中</p>
+         */
         @NameInMap("requiredEdu")
         public String requiredEdu;
 
@@ -504,15 +644,31 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
     }
 
     public static class CollectRecruitJobDetailRequestRecruitUserInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;sex&quot;:&quot;male&quot;}</p>
+         */
         @NameInMap("extInfo")
         public String extInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>userxxxxx</p>
+         */
         @NameInMap("outUserId")
         public String outUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>158****8717</p>
+         */
         @NameInMap("userMobile")
         public String userMobile;
 
+        /**
+         * <strong>example:</strong>
+         * <p>陈*</p>
+         */
         @NameInMap("userName")
         public String userName;
 

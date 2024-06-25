@@ -32,6 +32,10 @@ public class VoiceCloneResponseBody extends TeaModel {
     }
 
     public static class VoiceCloneResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxxx">https://xxxx</a></p>
+         */
         @NameInMap("mediaUrl")
         public String mediaUrl;
 

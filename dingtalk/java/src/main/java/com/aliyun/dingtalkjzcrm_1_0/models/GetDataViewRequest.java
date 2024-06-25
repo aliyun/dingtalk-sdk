@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetDataViewRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>150</p>
      */
     @NameInMap("datatype")
     public String datatype;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("msgid")
     public Long msgid;

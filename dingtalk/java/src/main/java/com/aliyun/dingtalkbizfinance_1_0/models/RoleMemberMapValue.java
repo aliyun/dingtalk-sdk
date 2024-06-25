@@ -10,6 +10,10 @@ public class RoleMemberMapValue extends TeaModel {
     @NameInMap("memberList")
     public java.util.List<RoleMemberMapValueMemberList> memberList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>COM_DEFAULT</p>
+     */
     @NameInMap("companyCode")
     public String companyCode;
 
@@ -43,12 +47,24 @@ public class RoleMemberMapValue extends TeaModel {
     }
 
     public static class RoleMemberMapValueMemberList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>小明</p>
+         */
         @NameInMap("nick")
         public String nick;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxxxxxx">https://xxxxxxx</a></p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 

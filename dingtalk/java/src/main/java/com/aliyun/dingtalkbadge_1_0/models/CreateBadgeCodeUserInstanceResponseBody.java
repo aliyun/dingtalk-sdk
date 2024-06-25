@@ -9,6 +9,9 @@ public class CreateBadgeCodeUserInstanceResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>codexxxxxx</p>
      */
     @NameInMap("codeId")
     public String codeId;

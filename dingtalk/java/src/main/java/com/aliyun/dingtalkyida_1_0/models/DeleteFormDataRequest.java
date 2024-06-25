@@ -6,27 +6,43 @@ import com.aliyun.tea.*;
 public class DeleteFormDataRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_PBKT0MFBEBTDO8T7SLVP</p>
      */
     @NameInMap("appType")
     public String appType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>33f6d221-17f8-42b7-836a-682b95a046c2</p>
      */
     @NameInMap("formInstanceId")
     public String formInstanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>helxxx</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>未知</p>
      */
     @NameInMap("userId")
     public String userId;

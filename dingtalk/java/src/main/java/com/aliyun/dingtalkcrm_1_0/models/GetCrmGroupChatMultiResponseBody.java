@@ -21,27 +21,59 @@ public class GetCrmGroupChatMultiResponseBody extends TeaModel {
     }
 
     public static class GetCrmGroupChatMultiResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1642078998377</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://static/xx.com/xx.jpg">https://static/xx.com/xx.jpg</a></p>
+         */
         @NameInMap("iconUrl")
         public String iconUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12</p>
+         */
         @NameInMap("memberCount")
         public Integer memberCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>营销1群</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xx==</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxa==</p>
+         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>axaf12</p>
+         */
         @NameInMap("ownerUserId")
         public String ownerUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>XX</p>
+         */
         @NameInMap("ownerUserName")
         public String ownerUserName;
 

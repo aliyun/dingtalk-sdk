@@ -4,15 +4,27 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendMsgRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>text</p>
+     */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxx</p>
+     */
     @NameInMap("deviceCode")
     public String deviceCode;
 
     @NameInMap("deviceUuid")
     public String deviceUuid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidxxxxxxx==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

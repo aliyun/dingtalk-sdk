@@ -4,36 +4,76 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupCapacityOrderPlaceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("actualPrice")
     public Long actualPrice;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("currentCapacity")
     public Integer currentCapacity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1651751906</p>
+     */
     @NameInMap("currentEffectUntil")
     public Long currentEffectUntil;
 
+    /**
+     * <strong>example:</strong>
+     * <p>85</p>
+     */
     @NameInMap("discount")
     public Integer discount;
 
     @NameInMap("extInfo")
     public java.util.Map<String, ?> extInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("markedPrice")
     public Long markedPrice;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ciddmslidnxsd==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>531781123123</p>
+     */
     @NameInMap("operator")
     public String operator;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1000</p>
+     */
     @NameInMap("targetCapacity")
     public Integer targetCapacity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1651751906</p>
+     */
     @NameInMap("targetEffectUntil")
     public Long targetEffectUntil;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dfsafsd</p>
+     */
     @NameInMap("token")
     public String token;
 

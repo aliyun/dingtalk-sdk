@@ -4,27 +4,55 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetActionDetailResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>dca://ding32fff839a3e0105d.connect.dingtalk.com/ding32fff839a3e0105d/action/G-ACT-101FDEBD3C6E213DB474000P</p>
+     */
     @NameInMap("connectAssetUri")
     public String connectAssetUri;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;title&quot;:&quot;A registration form&quot;,&quot;description&quot;:&quot;A simple form example.&quot;,&quot;type&quot;:&quot;object&quot;,&quot;required&quot;:[],&quot;properties&quot;:{&quot;password&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Password&quot;,&quot;minLength&quot;:3},&quot;telephone&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Telephone&quot;,&quot;minLength&quot;:10}}}</p>
+     */
     @NameInMap("inputSchema")
     public String inputSchema;
 
     @NameInMap("integrationConfig")
     public GetActionDetailResponseBodyIntegrationConfig integrationConfig;
 
+    /**
+     * <strong>example:</strong>
+     * <p>XX执行动作</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;title&quot;:&quot;A registration form&quot;,&quot;description&quot;:&quot;A simple form example.&quot;,&quot;type&quot;:&quot;object&quot;,&quot;required&quot;:[],&quot;properties&quot;:{&quot;password&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Password&quot;,&quot;minLength&quot;:3},&quot;telephone&quot;:{&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Telephone&quot;,&quot;minLength&quot;:10}}}</p>
+     */
     @NameInMap("outputSchema")
     public String outputSchema;
 
+    /**
+     * <strong>example:</strong>
+     * <p>G-ACT-101FDEBD3C6E213DB474000P</p>
+     */
     @NameInMap("refId")
     public String refId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding32fff839a3e0105d</p>
+     */
     @NameInMap("refProviderCorpId")
     public String refProviderCorpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>action</p>
+     */
     @NameInMap("refType")
     public String refType;
 
@@ -98,6 +126,10 @@ public class GetActionDetailResponseBody extends TeaModel {
     }
 
     public static class GetActionDetailResponseBodyIntegrationConfigCategoryNames extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>应用</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -117,9 +149,17 @@ public class GetActionDetailResponseBody extends TeaModel {
     }
 
     public static class GetActionDetailResponseBodyIntegrationConfigProps extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>SAMPLE_KEY</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <strong>example:</strong>
+         * <p>VALUE</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -150,6 +190,10 @@ public class GetActionDetailResponseBody extends TeaModel {
         @NameInMap("categoryNames")
         public java.util.List<GetActionDetailResponseBodyIntegrationConfigCategoryNames> categoryNames;
 
+        /**
+         * <strong>example:</strong>
+         * <p>表单</p>
+         */
         @NameInMap("entityName")
         public String entityName;
 

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DeleteCrmCustomObjectDataRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROC_xx</p>
      */
     @NameInMap("formCode")
     public String formCode;

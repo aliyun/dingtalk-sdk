@@ -4,6 +4,10 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartInstanceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>f30233fb-72e1-4af4-8cb8-c7e0ea9ee530</p>
+     */
     @NameInMap("result")
     public String result;
 

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class QueryDepartmentExtendInfoRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1000</p>
      */
     @NameInMap("deptCode")
     public Long deptCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("propCode")
     public String propCode;

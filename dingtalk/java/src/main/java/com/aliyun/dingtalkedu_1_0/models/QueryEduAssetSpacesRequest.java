@@ -6,15 +6,25 @@ import com.aliyun.tea.*;
 public class QueryEduAssetSpacesRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>soke</p>
      */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20110</p>
      */
     @NameInMap("nextToken")
     public Long nextToken;

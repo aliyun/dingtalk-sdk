@@ -4,9 +4,17 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveFormInstanceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>99999</p>
+     */
     @NameInMap("openContactId")
     public String openContactId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>88888</p>
+     */
     @NameInMap("openCustomerId")
     public String openCustomerId;
 

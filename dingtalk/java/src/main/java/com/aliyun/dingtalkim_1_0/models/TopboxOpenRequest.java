@@ -10,21 +10,40 @@ public class TopboxOpenRequest extends TeaModel {
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1850042969000</p>
+     */
     @NameInMap("expiredTime")
     public Long expiredTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxx</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("outTrackId")
     public String outTrackId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ios|win</p>
+     */
     @NameInMap("platforms")
     public String platforms;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("receiverUserIdList")
     public java.util.List<String> receiverUserIdList;
 

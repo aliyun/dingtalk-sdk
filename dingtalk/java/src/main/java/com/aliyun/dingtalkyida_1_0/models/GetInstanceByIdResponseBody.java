@@ -142,9 +142,17 @@ public class GetInstanceByIdResponseBody extends TeaModel {
     }
 
     public static class GetInstanceByIdResponseBodyActionExecutorName extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZhangSan</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -235,9 +243,17 @@ public class GetInstanceByIdResponseBody extends TeaModel {
     }
 
     public static class GetInstanceByIdResponseBodyOriginatorName extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZhangSan</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 

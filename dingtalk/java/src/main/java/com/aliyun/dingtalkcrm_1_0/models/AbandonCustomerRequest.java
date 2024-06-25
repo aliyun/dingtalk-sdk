@@ -15,6 +15,9 @@ public class AbandonCustomerRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123123123</p>
      */
     @NameInMap("operatorUserId")
     public String operatorUserId;

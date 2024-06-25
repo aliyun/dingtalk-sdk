@@ -4,6 +4,10 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateIntegratedTaskRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>act_xxxx</p>
+     */
     @NameInMap("activityId")
     public String activityId;
 
@@ -12,6 +16,9 @@ public class CreateIntegratedTaskRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>tPr_FB_mT_xxxxxxxxx2hQ05201655306463</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;
@@ -60,12 +67,24 @@ public class CreateIntegratedTaskRequest extends TeaModel {
     }
 
     public static class CreateIntegratedTaskRequestFeatureConfigFeaturesCallback extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("apiKey")
         public String apiKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("version")
         public String version;
 
@@ -104,18 +123,38 @@ public class CreateIntegratedTaskRequest extends TeaModel {
         @NameInMap("callback")
         public CreateIntegratedTaskRequestFeatureConfigFeaturesCallback callback;
 
+        /**
+         * <strong>if can be null:</strong>
+         * <p>true</p>
+         */
         @NameInMap("config")
         public String config;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ORIGIN</p>
+         */
         @NameInMap("runType")
         public String runType;
 
@@ -194,12 +233,24 @@ public class CreateIntegratedTaskRequest extends TeaModel {
     }
 
     public static class CreateIntegratedTaskRequestTasks extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;id&quot;:&quot;12345&quot;}</p>
+         */
         @NameInMap("customData")
         public String customData;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+         */
         @NameInMap("url")
         public String url;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager001</p>
+         */
         @NameInMap("userId")
         public String userId;
 

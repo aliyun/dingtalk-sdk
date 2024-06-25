@@ -6,11 +6,10 @@ import com.aliyun.dingtalkblackboard_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 查询公告已读未读人员列表
-     *
+     * <b>summary</b> : 
+     * <p>查询公告已读未读人员列表</p>
+     * 
      * @param request QueryBlackboardReadUnReadRequest
      * @param headers QueryBlackboardReadUnReadHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -74,8 +74,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询公告已读未读人员列表
-     *
+     * <b>summary</b> : 
+     * <p>查询公告已读未读人员列表</p>
+     * 
      * @param request QueryBlackboardReadUnReadRequest
      * @return QueryBlackboardReadUnReadResponse
      */
@@ -86,8 +87,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取公告钉盘空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取公告钉盘空间信息</p>
+     * 
      * @param request QueryBlackboardSpaceRequest
      * @param headers QueryBlackboardSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -128,8 +130,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取公告钉盘空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取公告钉盘空间信息</p>
+     * 
      * @param request QueryBlackboardSpaceRequest
      * @return QueryBlackboardSpaceResponse
      */

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetOrganizationsResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class GetOrganizationsResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OK</p>
      */
     @NameInMap("message")
     public String message;
@@ -49,24 +55,52 @@ public class GetOrganizationsResponseBody extends TeaModel {
     }
 
     public static class GetOrganizationsResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>G06935</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2b1a79e9-7545-437f-94ad-b6ab5561733f</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>行政部</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>18f923a7-5a5e-426d-94ae-a55ad1a4b240</p>
+         */
         @NameInMap("parentId")
         public String parentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("sortKey")
         public Long sortKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>OrganizationUnit</p>
+         */
         @NameInMap("unitType")
         public String unitType;
 

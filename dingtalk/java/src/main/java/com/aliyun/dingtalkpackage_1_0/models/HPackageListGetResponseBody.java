@@ -32,6 +32,10 @@ public class HPackageListGetResponseBody extends TeaModel {
     }
 
     public static class HPackageListGetResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("avaliable")
         public Long avaliable;
 
@@ -41,18 +45,38 @@ public class HPackageListGetResponseBody extends TeaModel {
         @NameInMap("finished")
         public Boolean finished;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1669261911344</p>
+         */
         @NameInMap("operationTime")
         public Long operationTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("packageSize")
         public Long packageSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>00000000Azksf</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0.0.1</p>
+         */
         @NameInMap("version")
         public String version;
 

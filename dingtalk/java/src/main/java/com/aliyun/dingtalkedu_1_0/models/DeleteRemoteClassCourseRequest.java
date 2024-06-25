@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DeleteRemoteClassCourseRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>bab02f63c1e030fbbxxxx</p>
      */
     @NameInMap("authCode")
     public String authCode;

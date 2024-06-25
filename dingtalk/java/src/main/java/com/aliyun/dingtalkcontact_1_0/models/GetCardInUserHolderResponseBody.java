@@ -22,6 +22,10 @@ public class GetCardInUserHolderResponseBody extends TeaModel {
     @NameInMap("cardId")
     public String cardId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("cardSource")
     public Integer cardSource;
 

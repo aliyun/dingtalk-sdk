@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class GetFormListInAppRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_PBKT0MFBEBTDO8T7SLVP</p>
      */
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>receipt,process</p>
+     */
     @NameInMap("formTypes")
     public String formTypes;
 
@@ -21,12 +28,18 @@ public class GetFormListInAppRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FO866D71GM94CE3KBMAFL4Q6WDG93MG6MLJ8L64</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5014533041684350</p>
      */
     @NameInMap("userId")
     public String userId;

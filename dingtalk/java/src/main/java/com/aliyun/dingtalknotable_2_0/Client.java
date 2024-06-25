@@ -6,11 +6,10 @@ import com.aliyun.dingtalknotable_2_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 新增数据表字段
-     *
+     * <b>summary</b> : 
+     * <p>新增数据表字段</p>
+     * 
      * @param request CreateFieldRequest
      * @param headers CreateFieldHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -70,8 +70,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新增数据表字段
-     *
+     * <b>summary</b> : 
+     * <p>新增数据表字段</p>
+     * 
      * @param request CreateFieldRequest
      * @return CreateFieldResponse
      */
@@ -82,8 +83,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建数据表
-     *
+     * <b>summary</b> : 
+     * <p>创建数据表</p>
+     * 
      * @param request CreateSheetRequest
      * @param headers CreateSheetHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -128,8 +130,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建数据表
-     *
+     * <b>summary</b> : 
+     * <p>创建数据表</p>
+     * 
      * @param request CreateSheetRequest
      * @return CreateSheetResponse
      */
@@ -140,8 +143,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除数据表字段
-     *
+     * <b>summary</b> : 
+     * <p>删除数据表字段</p>
+     * 
      * @param headers DeleteFieldHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return DeleteFieldResponse
@@ -174,8 +178,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除数据表字段
-     *
+     * <b>summary</b> : 
+     * <p>删除数据表字段</p>
      * @return DeleteFieldResponse
      */
     public DeleteFieldResponse deleteField(String baseId, String sheetIdOrName, String fieldIdOrName) throws Exception {
@@ -185,8 +189,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除数据表多行记录
-     *
+     * <b>summary</b> : 
+     * <p>删除数据表多行记录</p>
+     * 
      * @param request DeleteRecordsRequest
      * @param headers DeleteRecordsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -227,8 +232,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除数据表多行记录
-     *
+     * <b>summary</b> : 
+     * <p>删除数据表多行记录</p>
+     * 
      * @param request DeleteRecordsRequest
      * @return DeleteRecordsResponse
      */
@@ -239,8 +245,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除数据表
-     *
+     * <b>summary</b> : 
+     * <p>删除数据表</p>
+     * 
      * @param headers DeleteSheetHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return DeleteSheetResponse
@@ -273,8 +280,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除数据表
-     *
+     * <b>summary</b> : 
+     * <p>删除数据表</p>
      * @return DeleteSheetResponse
      */
     public DeleteSheetResponse deleteSheet(String baseId, String sheetIdOrName) throws Exception {
@@ -284,8 +291,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取所有字段
-     *
+     * <b>summary</b> : 
+     * <p>获取所有字段</p>
+     * 
      * @param headers GetAllFieldsHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetAllFieldsResponse
@@ -318,8 +326,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取所有字段
-     *
+     * <b>summary</b> : 
+     * <p>获取所有字段</p>
      * @return GetAllFieldsResponse
      */
     public GetAllFieldsResponse getAllFields(String baseId, String sheetIdOrName) throws Exception {
@@ -329,8 +337,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取所有数据表
-     *
+     * <b>summary</b> : 
+     * <p>获取所有数据表</p>
+     * 
      * @param headers GetAllSheetsHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetAllSheetsResponse
@@ -363,8 +372,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取所有数据表
-     *
+     * <b>summary</b> : 
+     * <p>获取所有数据表</p>
      * @return GetAllSheetsResponse
      */
     public GetAllSheetsResponse getAllSheets(String baseId) throws Exception {
@@ -374,8 +383,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取记录
-     *
+     * <b>summary</b> : 
+     * <p>获取记录</p>
+     * 
      * @param headers GetRecordHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetRecordResponse
@@ -408,8 +418,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取记录
-     *
+     * <b>summary</b> : 
+     * <p>获取记录</p>
      * @return GetRecordResponse
      */
     public GetRecordResponse getRecord(String baseId, String sheetIdOrName, String recordId) throws Exception {
@@ -419,8 +429,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取多行记录
-     *
+     * <b>summary</b> : 
+     * <p>获取多行记录</p>
+     * 
      * @param request GetRecordsRequest
      * @param headers GetRecordsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -465,8 +476,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取多行记录
-     *
+     * <b>summary</b> : 
+     * <p>获取多行记录</p>
+     * 
      * @param request GetRecordsRequest
      * @return GetRecordsResponse
      */
@@ -477,8 +489,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取数据表
-     *
+     * <b>summary</b> : 
+     * <p>获取数据表</p>
+     * 
      * @param headers GetSheetHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetSheetResponse
@@ -511,8 +524,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取数据表
-     *
+     * <b>summary</b> : 
+     * <p>获取数据表</p>
      * @return GetSheetResponse
      */
     public GetSheetResponse getSheet(String baseId, String sheetIdOrName) throws Exception {
@@ -522,8 +535,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新增记录
-     *
+     * <b>summary</b> : 
+     * <p>新增记录</p>
+     * 
      * @param request InsertRecordsRequest
      * @param headers InsertRecordsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -564,8 +578,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新增记录
-     *
+     * <b>summary</b> : 
+     * <p>新增记录</p>
+     * 
      * @param request InsertRecordsRequest
      * @return InsertRecordsResponse
      */
@@ -576,8 +591,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新数据表字段
-     *
+     * <b>summary</b> : 
+     * <p>更新数据表字段</p>
+     * 
      * @param request UpdateFieldRequest
      * @param headers UpdateFieldHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -622,8 +638,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新数据表字段
-     *
+     * <b>summary</b> : 
+     * <p>更新数据表字段</p>
+     * 
      * @param request UpdateFieldRequest
      * @return UpdateFieldResponse
      */
@@ -634,8 +651,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新数据表多行记录
-     *
+     * <b>summary</b> : 
+     * <p>更新数据表多行记录</p>
+     * 
      * @param request UpdateRecordsRequest
      * @param headers UpdateRecordsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -676,8 +694,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新数据表多行记录
-     *
+     * <b>summary</b> : 
+     * <p>更新数据表多行记录</p>
+     * 
      * @param request UpdateRecordsRequest
      * @return UpdateRecordsResponse
      */
@@ -688,8 +707,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新数据表
-     *
+     * <b>summary</b> : 
+     * <p>更新数据表</p>
+     * 
      * @param request UpdateSheetRequest
      * @param headers UpdateSheetHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -730,8 +750,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新数据表
-     *
+     * <b>summary</b> : 
+     * <p>更新数据表</p>
+     * 
      * @param request UpdateSheetRequest
      * @return UpdateSheetResponse
      */

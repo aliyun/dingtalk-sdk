@@ -32,6 +32,10 @@ public class QueryDeviceIpByCodeResponseBody extends TeaModel {
     }
 
     public static class QueryDeviceIpByCodeResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>30.12.1.100</p>
+         */
         @NameInMap("deviceIp")
         public String deviceIp;
 

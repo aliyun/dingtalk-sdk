@@ -4,27 +4,55 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryScheduleConferenceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1687928400000</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
     @NameInMap("phones")
     public java.util.List<String> phones;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxx</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>838 722 xxxxx</p>
+     */
     @NameInMap("roomCode")
     public String roomCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2a489c68-xxxx-xxxx-xxxx-xxxxxxxxxxxx</p>
+     */
     @NameInMap("scheduleConferenceId")
     public String scheduleConferenceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1687924800000</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>预约会议标题</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://meeting.dingtalk.com/j/Bsbp3ixxxxxUyJJ9">https://meeting.dingtalk.com/j/Bsbp3ixxxxxUyJJ9</a></p>
+     */
     @NameInMap("url")
     public String url;
 

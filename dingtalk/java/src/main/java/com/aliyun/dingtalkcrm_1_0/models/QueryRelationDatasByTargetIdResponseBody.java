@@ -26,18 +26,27 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
     public static class QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>{}</p>
          */
         @NameInMap("extendValue")
         public String extendValue;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>customer_name</p>
          */
         @NameInMap("key")
         public String key;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abc123</p>
          */
         @NameInMap("value")
         public String value;
@@ -88,12 +97,18 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abc123</p>
          */
         @NameInMap("relationId")
         public String relationId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abc123</p>
          */
         @NameInMap("relationType")
         public String relationType;

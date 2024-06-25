@@ -29,6 +29,9 @@ public class GetPersonalAuthRuleResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>Contact.User</p>
          */
         @NameInMap("resource")
         public String resource;

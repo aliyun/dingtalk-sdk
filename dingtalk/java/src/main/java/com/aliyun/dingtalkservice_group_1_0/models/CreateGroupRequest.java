@@ -4,11 +4,18 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>PID123cjj2</p>
+     */
     @NameInMap("groupBizId")
     public String groupBizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试服务群</p>
      */
     @NameInMap("groupName")
     public String groupName;
@@ -21,18 +28,27 @@ public class CreateGroupRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Jciwnfw</p>
      */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Jciwnfw</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager123</p>
      */
     @NameInMap("ownerStaffId")
     public String ownerStaffId;

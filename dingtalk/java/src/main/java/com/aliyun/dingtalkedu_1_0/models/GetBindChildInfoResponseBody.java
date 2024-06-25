@@ -4,12 +4,24 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetBindChildInfoResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>3000000000307711730</p>
+     */
     @NameInMap("childUserId")
     public String childUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>3000000000433459511</p>
+     */
     @NameInMap("currentUserId")
     public String currentUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding95eef8003c9ca8ca24f2f5cc6abecb85</p>
+     */
     @NameInMap("familyCorpId")
     public String familyCorpId;
 

@@ -4,21 +4,40 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class PrivateChatQueryRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>50</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>50</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cid6KeBBLoveMJOGXoYKF5x7EeiodoA==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Kna29Ra5pdJznx1ghavbumkQKwDzgfxZLapw55G7x0Q=</p>
      */
     @NameInMap("processQueryKey")
     public String processQueryKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dingue4kfzdxbyn0pjqd</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

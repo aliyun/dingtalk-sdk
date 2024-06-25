@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class ExchangeMainAdminRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>509999</p>
      */
     @NameInMap("newAdminUserId")
     public String newAdminUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>4045678</p>
      */
     @NameInMap("oldAdminUserId")
     public String oldAdminUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxxxxxxxxxxx</p>
      */
     @NameInMap("targetCorpId")
     public String targetCorpId;

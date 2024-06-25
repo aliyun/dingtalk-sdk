@@ -6,33 +6,52 @@ import com.aliyun.tea.*;
 public class CreateCoupleGroupConversationRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1107****2121</p>
      */
     @NameInMap("appUserId")
     public String appUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>http://***.png</p>
+     */
     @NameInMap("groupAvatar")
     public String groupAvatar;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>客户群</p>
      */
     @NameInMap("groupName")
     public String groupName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1107****2120</p>
      */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8d42****nkld</p>
      */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1107****2120</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

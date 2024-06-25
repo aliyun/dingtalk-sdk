@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetUploadUrlResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class GetUploadUrlResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OK</p>
      */
     @NameInMap("message")
     public String message;
@@ -49,6 +55,10 @@ public class GetUploadUrlResponseBody extends TeaModel {
     }
 
     public static class GetUploadUrlResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>https://<em><strong>?uploadSecret=</strong></em></p>
+         */
         @NameInMap("uploadUrl")
         public String uploadUrl;
 

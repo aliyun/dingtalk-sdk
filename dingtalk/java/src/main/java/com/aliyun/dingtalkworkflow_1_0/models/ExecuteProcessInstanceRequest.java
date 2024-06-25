@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ExecuteProcessInstanceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>133743186427339452</p>
      */
     @NameInMap("actionerUserId")
     public String actionerUserId;
@@ -15,21 +18,34 @@ public class ExecuteProcessInstanceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>a171de6c-8bxxxx</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>同意。</p>
+     */
     @NameInMap("remark")
     public String remark;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>agree</p>
      */
     @NameInMap("result")
     public String result;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>67583405630</p>
      */
     @NameInMap("taskId")
     public Long taskId;
@@ -88,18 +104,38 @@ public class ExecuteProcessInstanceRequest extends TeaModel {
     }
 
     public static class ExecuteProcessInstanceRequestFileAttachments extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>B1oQixxxx</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>文件名称。</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1024</p>
+         */
         @NameInMap("fileSize")
         public String fileSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p>file</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 

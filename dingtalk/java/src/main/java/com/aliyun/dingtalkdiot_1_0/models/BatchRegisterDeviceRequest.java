@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRegisterDeviceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding123</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -35,12 +39,24 @@ public class BatchRegisterDeviceRequest extends TeaModel {
     }
 
     public static class BatchRegisterDeviceRequestDevicesLiveUrls extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://abc.stream.flv">https://abc.stream.flv</a></p>
+         */
         @NameInMap("flv")
         public String flv;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://abc.stream.m3u8">https://abc.stream.m3u8</a></p>
+         */
         @NameInMap("hls")
         public String hls;
 
+        /**
+         * <strong>example:</strong>
+         * <p>rtmp://abc.stream</p>
+         */
         @NameInMap("rtmp")
         public String rtmp;
 
@@ -78,30 +94,45 @@ public class BatchRegisterDeviceRequest extends TeaModel {
     public static class BatchRegisterDeviceRequestDevices extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>002</p>
          */
         @NameInMap("deviceId")
         public String deviceId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>摄像头002</p>
          */
         @NameInMap("deviceName")
         public String deviceName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("deviceStatus")
         public Integer deviceStatus;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>Camera</p>
          */
         @NameInMap("deviceType")
         public String deviceType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>摄像头</p>
          */
         @NameInMap("deviceTypeName")
         public String deviceTypeName;
@@ -112,14 +143,25 @@ public class BatchRegisterDeviceRequest extends TeaModel {
         @NameInMap("liveUrls")
         public BatchRegisterDeviceRequestDevicesLiveUrls liveUrls;
 
+        /**
+         * <strong>example:</strong>
+         * <p>社区南门</p>
+         */
         @NameInMap("location")
         public String location;
 
+        /**
+         * <strong>example:</strong>
+         * <p>001</p>
+         */
         @NameInMap("parentId")
         public String parentId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>CAMERA</p>
          */
         @NameInMap("productType")
         public String productType;

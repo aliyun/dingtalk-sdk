@@ -4,9 +4,17 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchUserTaskResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>DXF1ZXJ5QW5kRmV0Y2gBAAAAAAbMXT4WVjNKbUstaldRX3lOOHNBbElzcjA5Zw==</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>F86698E9-E4F5-1231-AC99-2ECFC0D37BDE</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -43,12 +51,24 @@ public class SearchUserTaskResponseBody extends TeaModel {
     }
 
     public static class SearchUserTaskResponseBodyResultCustomFieldsValue extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>642fb16c4a622b2e3184229c</p>
+         */
         @NameInMap("customFieldValueId")
         public String customFieldValueId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>元数据内容</p>
+         */
         @NameInMap("metaString")
         public String metaString;
 
+        /**
+         * <strong>example:</strong>
+         * <p>标题</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -87,6 +107,10 @@ public class SearchUserTaskResponseBody extends TeaModel {
         @NameInMap("customFieldId")
         public String customFieldId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>number</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -125,27 +149,51 @@ public class SearchUserTaskResponseBody extends TeaModel {
     }
 
     public static class SearchUserTaskResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2023-04-12T03:39:54.918Z</p>
+         */
         @NameInMap("accomplishTime")
         public String accomplishTime;
 
         @NameInMap("ancestorIds")
         public java.util.List<String> ancestorIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>任务内容</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>63a9207a042f7c254f60519c</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
         @NameInMap("customFields")
         public java.util.List<SearchUserTaskResponseBodyResultCustomFields> customFields;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-05T03:29:34.770Z</p>
+         */
         @NameInMap("dueDate")
         public String dueDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>63a9207a042f7c254f60519c</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
@@ -158,54 +206,110 @@ public class SearchUserTaskResponseBody extends TeaModel {
         @NameInMap("isDone")
         public Boolean isDone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>备注内容</p>
+         */
         @NameInMap("note")
         public String note;
 
+        /**
+         * <strong>example:</strong>
+         * <p>644b6f4cca369863fbc8abbb</p>
+         */
         @NameInMap("parentTaskId")
         public String parentTaskId;
 
         @NameInMap("priority")
         public Integer priority;
 
+        /**
+         * <strong>example:</strong>
+         * <p>643394f81502a928dbd5ba37</p>
+         */
         @NameInMap("projectId")
         public String projectId;
 
         @NameInMap("recurrence")
         public java.util.List<String> recurrence;
 
+        /**
+         * <strong>example:</strong>
+         * <p>64099d5b2f404400174d7fc1</p>
+         */
         @NameInMap("scenarioFieldConfigId")
         public String scenarioFieldConfigId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>64099d5b2f404400174d7fc1</p>
+         */
         @NameInMap("sprintId")
         public String sprintId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("storyPoint")
         public String storyPoint;
 
         @NameInMap("tagIds")
         public java.util.List<String> tagIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>642befe827feb683f91bd529</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6436278ea14fe435351668a2</p>
+         */
         @NameInMap("taskListId")
         public String taskListId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6436278ea14fe435351668a4</p>
+         */
         @NameInMap("taskStageId")
         public String taskStageId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>64099d5b2f404400174d7fbb</p>
+         */
         @NameInMap("taskflowStatusId")
         public String taskflowStatusId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("uniqueId")
         public String uniqueId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 
+        /**
+         * <strong>example:</strong>
+         * <p>projectMembers</p>
+         */
         @NameInMap("visible")
         public String visible;
 

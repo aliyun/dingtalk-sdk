@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListPinSpacesResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>next_token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,9 +36,17 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItemsSpaceInfoCreator extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>user_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>union_id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -62,9 +74,17 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItemsSpaceInfoIconVO extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>icon_url</p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>URL</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -92,9 +112,17 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItemsSpaceInfoModifier extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>user_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>union_id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -122,36 +150,68 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItemsSpaceInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>space_cover</p>
+         */
         @NameInMap("cover")
         public String cover;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
         @NameInMap("creator")
         public ListPinSpacesResponseBodyResultItemsSpaceInfoCreator creator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>description</p>
+         */
         @NameInMap("description")
         public String description;
 
         @NameInMap("iconVO")
         public ListPinSpacesResponseBodyResultItemsSpaceInfoIconVO iconVO;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>mobile_url</p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
         @NameInMap("modifier")
         public ListPinSpacesResponseBodyResultItemsSpaceInfoModifier modifier;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>pc_url</p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
@@ -251,9 +311,17 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItemsTeamInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>team_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_name</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -281,15 +349,27 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
         @NameInMap("spaceInfo")
         public ListPinSpacesResponseBodyResultItemsSpaceInfo spaceInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>NO_PERMISSION</p>
+         */
         @NameInMap("spacePermissionRole")
         public String spacePermissionRole;
 

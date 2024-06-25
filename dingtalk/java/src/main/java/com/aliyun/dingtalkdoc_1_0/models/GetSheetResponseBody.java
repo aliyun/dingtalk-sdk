@@ -4,24 +4,52 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSheetResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>column_count</p>
+     */
     @NameInMap("columnCount")
     public Long columnCount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>sheet_id</p>
+     */
     @NameInMap("id")
     public String id;
 
+    /**
+     * <strong>example:</strong>
+     * <p>last_non_empty_column</p>
+     */
     @NameInMap("lastNonEmptyColumn")
     public Long lastNonEmptyColumn;
 
+    /**
+     * <strong>example:</strong>
+     * <p>last_non_empty_row</p>
+     */
     @NameInMap("lastNonEmptyRow")
     public Long lastNonEmptyRow;
 
+    /**
+     * <strong>example:</strong>
+     * <p>sheet_name</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>row_count</p>
+     */
     @NameInMap("rowCount")
     public Long rowCount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>visible</p>
+     */
     @NameInMap("visibility")
     public String visibility;
 

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class StopStreamOutRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("stopAllStream")
     public Boolean stopAllStream;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>27SaQ3iiHLN0uwqcPisedfreNwiEiE</p>
      */
     @NameInMap("streamId")
     public String streamId;

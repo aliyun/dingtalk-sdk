@@ -21,15 +21,31 @@ public class UpdateInvoiceAccountingPeriodDateResponseBody extends TeaModel {
     }
 
     public static class UpdateInvoiceAccountingPeriodDateResponseBodyResultFailInvoices extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>50001</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>invoice not exist</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1231231231</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1231231231</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
@@ -73,6 +89,10 @@ public class UpdateInvoiceAccountingPeriodDateResponseBody extends TeaModel {
     }
 
     public static class UpdateInvoiceAccountingPeriodDateResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("failCount")
         public Long failCount;
 

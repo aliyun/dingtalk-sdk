@@ -23,18 +23,27 @@ public class QueryUserCredentialsResponseBody extends TeaModel {
     public static class QueryUserCredentialsResponseBodyContentCredentialList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>医生资格证书</p>
          */
         @NameInMap("credentialName")
         public String credentialName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("credentialType")
         public Integer credentialType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-08-01</p>
          */
         @NameInMap("termOfValidity")
         public String termOfValidity;
@@ -79,6 +88,9 @@ public class QueryUserCredentialsResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234</p>
          */
         @NameInMap("userId")
         public String userId;

@@ -92,69 +92,141 @@ public class QueryClassScheduleByTimeSchoolResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleByTimeSchoolResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>cn_yuwen_12341</p>
+         */
         @NameInMap("bizKey")
         public String bizKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2345</p>
+         */
         @NameInMap("classId")
         public Long classId;
 
         @NameInMap("classrooms")
         public java.util.List<QueryClassScheduleByTimeSchoolResponseBodyResultClassrooms> classrooms;
 
+        /**
+         * <strong>example:</strong>
+         * <p>EKK243</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Ek1234</p>
+         */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>url</p>
+         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Ekk512345</p>
+         */
         @NameInMap("creatorCorpId")
         public String creatorCorpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>5234523452</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>行政老师A</p>
+         */
         @NameInMap("creatorUserName")
         public String creatorUserName;
 
         @NameInMap("eduUserModels")
         public java.util.List<QueryClassScheduleByTimeSchoolResponseBodyResultEduUserModels> eduUserModels;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1682399879</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
         @NameInMap("extInfo")
         public String extInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>这是语文</p>
+         */
         @NameInMap("introduce")
         public String introduce;
 
+        /**
+         * <strong>example:</strong>
+         * <p>语文</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("sectionIndex")
         public Long sectionIndex;
 
+        /**
+         * <strong>example:</strong>
+         * <p>第一节</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1682397879</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
         @NameInMap("status")
         public Long status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cn_yuwen</p>
+         */
         @NameInMap("subjectCode")
         public String subjectCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding253453</p>
+         */
         @NameInMap("teacherCorpId")
         public String teacherCorpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>25234534552345</p>
+         */
         @NameInMap("teacherUserId")
         public String teacherUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李老师</p>
+         */
         @NameInMap("teacherUserName")
         public String teacherUserName;
 

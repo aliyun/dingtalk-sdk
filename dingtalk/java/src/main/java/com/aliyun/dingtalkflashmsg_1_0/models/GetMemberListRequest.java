@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetMemberListRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidjyErBTyw0FnIQQXXX2223==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
@@ -18,10 +21,17 @@ public class GetMemberListRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>08474931138022787</p>
+     */
     @NameInMap("userId")
     public String userId;
 

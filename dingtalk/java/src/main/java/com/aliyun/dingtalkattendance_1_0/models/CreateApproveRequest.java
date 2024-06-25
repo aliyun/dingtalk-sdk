@@ -4,23 +4,42 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateApproveRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>341lkfjdkf</p>
+     */
     @NameInMap("approveId")
     public String approveId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>4243235dfd</p>
+     */
     @NameInMap("opUserid")
     public String opUserid;
 
     @NameInMap("punchParam")
     public CreateApproveRequestPunchParam punchParam;
 
+    /**
+     * <strong>example:</strong>
+     * <p>年假</p>
+     */
     @NameInMap("subType")
     public String subType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>请假</p>
+     */
     @NameInMap("tagName")
     public String tagName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fdfi3435</p>
      */
     @NameInMap("userid")
     public String userid;
@@ -79,15 +98,31 @@ public class CreateApproveRequest extends TeaModel {
     }
 
     public static class CreateApproveRequestPunchParam extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>120.023425_30.291465</p>
+         */
         @NameInMap("positionId")
         public String positionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>余杭区五常街道</p>
+         */
         @NameInMap("positionName")
         public String positionName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>gps</p>
+         */
         @NameInMap("positionType")
         public String positionType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1614222064000</p>
+         */
         @NameInMap("punchTime")
         public Long punchTime;
 

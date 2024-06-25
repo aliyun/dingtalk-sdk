@@ -21,15 +21,31 @@ public class GetOrganizationPriorityListResponseBody extends TeaModel {
     }
 
     public static class GetOrganizationPriorityListResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>blue</p>
+         */
         @NameInMap("color")
         public String color;
 
+        /**
+         * <strong>example:</strong>
+         * <p>普通</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("priority")
         public String priority;
 
+        /**
+         * <strong>example:</strong>
+         * <p>5e870bc35b79b70xxxxx</p>
+         */
         @NameInMap("priorityId")
         public String priorityId;
 

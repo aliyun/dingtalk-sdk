@@ -4,27 +4,49 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class OrgGroupSendRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>COOLAPP-1-10182EEDD1AC0BA600D9000J</p>
+     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sampleText</p>
      */
     @NameInMap("msgKey")
     public String msgKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;content&quot;:&quot;今天吃肘子&quot;}</p>
      */
     @NameInMap("msgParam")
     public String msgParam;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cid6KeBBLoveMJOGXoYKF5x7EeiodoA==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dingue4kfzdxbyn0pjqd</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>02feb1cd4ncmed92998723813a6bfa89eea1df91a750721979992870dd90bdfa</p>
+     */
     @NameInMap("token")
     public String token;
 

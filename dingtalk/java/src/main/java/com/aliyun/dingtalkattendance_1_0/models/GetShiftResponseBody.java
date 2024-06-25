@@ -73,6 +73,10 @@ public class GetShiftResponseBody extends TeaModel {
         @NameInMap("absenteeismLateMinutes")
         public Long absenteeismLateMinutes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("across")
         public Long across;
 
@@ -81,13 +85,24 @@ public class GetShiftResponseBody extends TeaModel {
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1970-01-01 19:00:00</p>
          */
         @NameInMap("checkTime")
         public String checkTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>OnDuty</p>
+         */
         @NameInMap("checkType")
         public String checkType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>-1</p>
+         */
         @NameInMap("endMin")
         public Long endMin;
 
@@ -100,9 +115,17 @@ public class GetShiftResponseBody extends TeaModel {
         @NameInMap("lateBackSetting")
         public GetShiftResponseBodyResultSectionsPunchesLateBackSetting lateBackSetting;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("permitMinutes")
         public Long permitMinutes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>33928201</p>
+         */
         @NameInMap("puncheId")
         public Long puncheId;
 
@@ -309,30 +332,56 @@ public class GetShiftResponseBody extends TeaModel {
     }
 
     public static class GetShiftResponseBodyResultShiftSetting extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>12</p>
+         */
         @NameInMap("attendDays")
         public String attendDays;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dinge87f1xxxx</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2020-09-06 15:49:27</p>
          */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2020-09-06 15:49:27</p>
          */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <strong>example:</strong>
+         * <p>678215070</p>
+         */
         @NameInMap("shiftId")
         public Long shiftId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>233840112</p>
+         */
         @NameInMap("shiftSettingId")
         public Long shiftSettingId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>600</p>
+         */
         @NameInMap("workTimeMinutes")
         public Long workTimeMinutes;
 
@@ -400,15 +449,31 @@ public class GetShiftResponseBody extends TeaModel {
     }
 
     public static class GetShiftResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>dinge87f1xxxx</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>678215070</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>B</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user123</p>
+         */
         @NameInMap("owner")
         public String owner;
 
@@ -418,6 +483,10 @@ public class GetShiftResponseBody extends TeaModel {
         @NameInMap("shiftGroupId")
         public Long shiftGroupId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>考勤班</p>
+         */
         @NameInMap("shiftGroupName")
         public String shiftGroupName;
 

@@ -4,9 +4,17 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMeetingRoomListResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -43,12 +51,24 @@ public class QueryMeetingRoomListResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomListResponseBodyResultRoomGroup extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("groupId")
         public Long groupId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试分组</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("parentId")
         public Long parentId;
 
@@ -114,9 +134,17 @@ public class QueryMeetingRoomListResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomListResponseBodyResultRoomLocation extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xx市xx区xx街道xx号</p>
+         */
         @NameInMap("desc")
         public String desc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx公司</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -144,18 +172,34 @@ public class QueryMeetingRoomListResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomListResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ding994a046bca84545935c2f4657eb6378f</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxIsvRoomId</p>
+         */
         @NameInMap("isvRoomId")
         public String isvRoomId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("roomCapacity")
         public Integer roomCapacity;
 
         @NameInMap("roomGroup")
         public QueryMeetingRoomListResponseBodyResultRoomGroup roomGroup;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed</p>
+         */
         @NameInMap("roomId")
         public String roomId;
 
@@ -165,15 +209,31 @@ public class QueryMeetingRoomListResponseBody extends TeaModel {
         @NameInMap("roomLocation")
         public QueryMeetingRoomListResponseBodyResultRoomLocation roomLocation;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试会议室</p>
+         */
         @NameInMap("roomName")
         public String roomName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg">https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg</a></p>
+         */
         @NameInMap("roomPicture")
         public String roomPicture;
 
+        /**
+         * <strong>example:</strong>
+         * <p>01224148194623278976</p>
+         */
         @NameInMap("roomStaffId")
         public String roomStaffId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0.全员可用 1.仅管理员可用</p>
+         */
         @NameInMap("roomStatus")
         public Integer roomStatus;
 

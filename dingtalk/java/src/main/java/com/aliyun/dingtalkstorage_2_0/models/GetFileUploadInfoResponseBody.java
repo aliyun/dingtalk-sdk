@@ -7,12 +7,24 @@ public class GetFileUploadInfoResponseBody extends TeaModel {
     @NameInMap("headerSignatureInfo")
     public GetFileUploadInfoResponseBodyHeaderSignatureInfo headerSignatureInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>HEADER_SIGNATURE</p>
+     */
     @NameInMap("protocol")
     public String protocol;
 
+    /**
+     * <strong>example:</strong>
+     * <p>DINGTALK</p>
+     */
     @NameInMap("storageDriver")
     public String storageDriver;
 
+    /**
+     * <strong>example:</strong>
+     * <p>upload_key</p>
+     */
     @NameInMap("uploadKey")
     public String uploadKey;
 
@@ -54,6 +66,10 @@ public class GetFileUploadInfoResponseBody extends TeaModel {
     }
 
     public static class GetFileUploadInfoResponseBodyHeaderSignatureInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>900</p>
+         */
         @NameInMap("expirationSeconds")
         public Integer expirationSeconds;
 
@@ -63,6 +79,10 @@ public class GetFileUploadInfoResponseBody extends TeaModel {
         @NameInMap("internalResourceUrls")
         public java.util.List<String> internalResourceUrls;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZHANGJIAKOU</p>
+         */
         @NameInMap("region")
         public String region;
 

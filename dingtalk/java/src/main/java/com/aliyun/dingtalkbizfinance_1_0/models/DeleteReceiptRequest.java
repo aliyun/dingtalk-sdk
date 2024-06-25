@@ -26,18 +26,27 @@ public class DeleteReceiptRequest extends TeaModel {
     public static class DeleteReceiptRequestReceipts extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abcd_efgh</p>
          */
         @NameInMap("code")
         public String code;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>emp_xxx</p>
          */
         @NameInMap("deleteUserId")
         public String deleteUserId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("receiptType")
         public Long receiptType;

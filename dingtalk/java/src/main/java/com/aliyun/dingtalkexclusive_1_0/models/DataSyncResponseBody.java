@@ -7,6 +7,10 @@ public class DataSyncResponseBody extends TeaModel {
     @NameInMap("dataList")
     public java.util.List<java.util.Map<String, ?>> dataList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("rowsAffected")
     public Integer rowsAffected;
 

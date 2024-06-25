@@ -21,12 +21,20 @@ public class GetAdjustmentsResponseBody extends TeaModel {
     }
 
     public static class GetAdjustmentsResponseBodyResultItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("id")
         public Long id;
 
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("settingId")
         public Long settingId;
 
@@ -65,9 +73,17 @@ public class GetAdjustmentsResponseBody extends TeaModel {
         @NameInMap("items")
         public java.util.List<GetAdjustmentsResponseBodyResultItems> items;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("pageNumber")
         public Long pageNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("totalPage")
         public Long totalPage;
 

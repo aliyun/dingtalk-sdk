@@ -21,9 +21,17 @@ public class UpdateTaskPriorityResponseBody extends TeaModel {
     }
 
     public static class UpdateTaskPriorityResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("priority")
         public Integer priority;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

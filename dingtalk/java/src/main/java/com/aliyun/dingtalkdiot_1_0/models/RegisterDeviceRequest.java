@@ -4,35 +4,54 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterDeviceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding123</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>摄像头1</p>
      */
     @NameInMap("deviceName")
     public String deviceName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("deviceStatus")
     public Integer deviceStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Camera</p>
      */
     @NameInMap("deviceType")
     public String deviceType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>摄像头</p>
      */
     @NameInMap("deviceTypeName")
     public String deviceTypeName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>002</p>
      */
     @NameInMap("id")
     public String id;
@@ -40,17 +59,32 @@ public class RegisterDeviceRequest extends TeaModel {
     @NameInMap("liveUrls")
     public RegisterDeviceRequestLiveUrls liveUrls;
 
+    /**
+     * <strong>example:</strong>
+     * <p>东南门</p>
+     */
     @NameInMap("location")
     public String location;
 
+    /**
+     * <strong>example:</strong>
+     * <p>摄像头1</p>
+     */
     @NameInMap("nickName")
     public String nickName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>001</p>
+     */
     @NameInMap("parentId")
     public String parentId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>CAMERA</p>
      */
     @NameInMap("productType")
     public String productType;
@@ -149,12 +183,24 @@ public class RegisterDeviceRequest extends TeaModel {
     }
 
     public static class RegisterDeviceRequestLiveUrls extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://abc.stream.flv">https://abc.stream.flv</a></p>
+         */
         @NameInMap("flv")
         public String flv;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://abc.stream.m3u8">https://abc.stream.m3u8</a></p>
+         */
         @NameInMap("hls")
         public String hls;
 
+        /**
+         * <strong>example:</strong>
+         * <p>rtmp://abc.stream</p>
+         */
         @NameInMap("rtmp")
         public String rtmp;
 

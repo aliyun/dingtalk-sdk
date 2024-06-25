@@ -6,16 +6,26 @@ import com.aliyun.tea.*;
 public class AttachmentsMapValue extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>upload_key</p>
      */
     @NameInMap("uploadKey")
     public String uploadKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>name</p>
      */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>media_type</p>
+     */
     @NameInMap("mediaType")
     public String mediaType;
 

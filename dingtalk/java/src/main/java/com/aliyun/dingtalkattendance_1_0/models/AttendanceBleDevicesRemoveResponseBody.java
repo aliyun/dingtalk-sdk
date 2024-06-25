@@ -32,12 +32,20 @@ public class AttendanceBleDevicesRemoveResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesRemoveResponseBodyErrorList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>400001</p>
+         */
         @NameInMap("code")
         public String code;
 
         @NameInMap("failureList")
         public java.util.List<Long> failureList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>error</p>
+         */
         @NameInMap("msg")
         public String msg;
 

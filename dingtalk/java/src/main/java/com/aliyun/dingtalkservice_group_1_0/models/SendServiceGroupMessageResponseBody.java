@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SendServiceGroupMessageResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>msgxxxxxx==</p>
      */
     @NameInMap("openMsgTaskId")
     public String openMsgTaskId;

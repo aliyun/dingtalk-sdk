@@ -21,18 +21,38 @@ public class BatchQueryOpportunityTagResponseBody extends TeaModel {
     }
 
     public static class BatchQueryOpportunityTagResponseBodyResultOpportunityList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>50</p>
+         */
         @NameInMap("activeUserCnt7d")
         public Long activeUserCnt7d;
 
+        /**
+         * <strong>example:</strong>
+         * <p>c:近7日活跃</p>
+         */
         @NameInMap("appActiveState")
         public String appActiveState;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding939a85cb101e83b0</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2-广场</p>
+         */
         @NameInMap("fstFunnelsourceNameLv1")
         public String fstFunnelsourceNameLv1;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2-广场</p>
+         */
         @NameInMap("funnelsourceNameLv1")
         public String funnelsourceNameLv1;
 

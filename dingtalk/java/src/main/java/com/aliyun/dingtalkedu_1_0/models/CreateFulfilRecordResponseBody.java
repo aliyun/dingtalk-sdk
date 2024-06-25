@@ -4,6 +4,10 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateFulfilRecordResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>success</p>
+     */
     @NameInMap("successInfo")
     public String successInfo;
 

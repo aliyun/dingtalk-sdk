@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetPictureDownloadUrlRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>UgIzXXo+Rp3Rqcts7BE08y49Jr6iu6xW4iQ</p>
      */
     @NameInMap("downloadCode")
     public String downloadCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sid001234</p>
      */
     @NameInMap("sessionId")
     public String sessionId;

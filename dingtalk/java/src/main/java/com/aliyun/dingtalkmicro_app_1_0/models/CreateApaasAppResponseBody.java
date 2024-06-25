@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CreateApaasAppResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("agentId")
     public Long agentId;

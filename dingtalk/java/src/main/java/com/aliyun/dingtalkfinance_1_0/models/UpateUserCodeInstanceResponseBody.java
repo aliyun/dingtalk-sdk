@@ -4,6 +4,10 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpateUserCodeInstanceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>codexxxxxx</p>
+     */
     @NameInMap("codeId")
     public String codeId;
 

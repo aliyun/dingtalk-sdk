@@ -4,24 +4,52 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateReceiptVoucherStatusRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("accountPeriod")
     public String accountPeriod;
 
+    /**
+     * <strong>example:</strong>
+     * <p>add</p>
+     */
     @NameInMap("actionType")
     public String actionType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0021241</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("receiptId")
     public String receiptId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("voucherCode")
     public String voucherCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("voucherId")
     public String voucherId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>记-001</p>
+     */
     @NameInMap("voucherNo")
     public String voucherNo;
 

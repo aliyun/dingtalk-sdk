@@ -7,12 +7,20 @@ public class MachineManagerUpdateRequest extends TeaModel {
     @NameInMap("atmManagerRightMap")
     public MachineManagerUpdateRequestAtmManagerRightMap atmManagerRightMap;
 
+    /**
+     * <strong>example:</strong>
+     * <p>165441111</p>
+     */
     @NameInMap("deviceId")
     public Long deviceId;
 
     @NameInMap("scopeDeptIds")
     public java.util.List<Long> scopeDeptIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>user01</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -54,21 +62,45 @@ public class MachineManagerUpdateRequest extends TeaModel {
     }
 
     public static class MachineManagerUpdateRequestAtmManagerRightMap extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("attendancePersonManage")
         public Boolean attendancePersonManage;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("bluetoothPunchManage")
         public Boolean bluetoothPunchManage;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("deviceReset")
         public Boolean deviceReset;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("deviceSettings")
         public Boolean deviceSettings;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("facePunchManage")
         public Boolean facePunchManage;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("fingerPunchManage")
         public Boolean fingerPunchManage;
 

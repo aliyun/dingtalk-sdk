@@ -6,11 +6,10 @@ import com.aliyun.dingtalkproject_integration_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 在项目事件会话中加人
-     *
+     * <b>summary</b> : 
+     * <p>在项目事件会话中加人</p>
+     * 
      * @param headers AddAttendeeToEventGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return AddAttendeeToEventGroupResponse
@@ -54,8 +54,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 在项目事件会话中加人
-     *
+     * <b>summary</b> : 
+     * <p>在项目事件会话中加人</p>
      * @return AddAttendeeToEventGroupResponse
      */
     public AddAttendeeToEventGroupResponse addAttendeeToEventGroup(String userId, String groupId) throws Exception {
@@ -65,8 +65,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建项目事件会话
-     *
+     * <b>summary</b> : 
+     * <p>创建项目事件会话</p>
+     * 
      * @param headers CreateEventGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return CreateEventGroupResponse
@@ -99,8 +100,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建项目事件会话
-     *
+     * <b>summary</b> : 
+     * <p>创建项目事件会话</p>
      * @return CreateEventGroupResponse
      */
     public CreateEventGroupResponse createEventGroup(String userId) throws Exception {
@@ -110,8 +111,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 在群会话发送项目卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>在群会话发送项目卡片消息</p>
+     * 
      * @param headers SendInteractiveCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return SendInteractiveCardResponse
@@ -144,8 +146,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 在群会话发送项目卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>在群会话发送项目卡片消息</p>
      * @return SendInteractiveCardResponse
      */
     public SendInteractiveCardResponse sendInteractiveCard(String userId) throws Exception {
@@ -155,8 +157,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 单聊会话发送项目卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>单聊会话发送项目卡片消息</p>
+     * 
      * @param headers SendSingleInteractiveCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return SendSingleInteractiveCardResponse
@@ -189,8 +192,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 单聊会话发送项目卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>单聊会话发送项目卡片消息</p>
      * @return SendSingleInteractiveCardResponse
      */
     public SendSingleInteractiveCardResponse sendSingleInteractiveCard(String userId) throws Exception {
@@ -200,8 +203,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新项目卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>更新项目卡片消息</p>
+     * 
      * @param headers UpdateInteractiveCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return UpdateInteractiveCardResponse
@@ -234,8 +238,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新项目卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>更新项目卡片消息</p>
      * @return UpdateInteractiveCardResponse
      */
     public UpdateInteractiveCardResponse updateInteractiveCard(String userId) throws Exception {

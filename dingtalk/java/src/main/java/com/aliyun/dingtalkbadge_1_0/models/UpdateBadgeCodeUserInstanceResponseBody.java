@@ -4,6 +4,10 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateBadgeCodeUserInstanceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>codexxxxxx</p>
+     */
     @NameInMap("codeId")
     public String codeId;
 

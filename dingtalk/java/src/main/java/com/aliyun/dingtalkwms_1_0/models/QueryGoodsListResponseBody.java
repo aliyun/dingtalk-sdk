@@ -34,30 +34,45 @@ public class QueryGoodsListResponseBody extends TeaModel {
     public static class QueryGoodsListResponseBodyResultList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>衣服</p>
          */
         @NameInMap("goodsName")
         public String goodsName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0001</p>
          */
         @NameInMap("goodsNo")
         public String goodsNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abcdse-dse-example</p>
          */
         @NameInMap("instanceId")
         public String instanceId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>XXL</p>
          */
         @NameInMap("productSpecs")
         public String productSpecs;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>件</p>
          */
         @NameInMap("unit")
         public String unit;
@@ -112,6 +127,9 @@ public class QueryGoodsListResponseBody extends TeaModel {
     public static class QueryGoodsListResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("hasMore")
         public Boolean hasMore;
@@ -121,12 +139,18 @@ public class QueryGoodsListResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20</p>
          */
         @NameInMap("maxResults")
         public Long maxResults;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("nextToken")
         public String nextToken;

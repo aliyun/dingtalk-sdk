@@ -4,20 +4,34 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class InitDocumentRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>attachments_map</p>
+     */
     @NameInMap("attachmentsMap")
     public java.util.Map<String, AttachmentsMapValue> attachmentsMap;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>import_type</p>
      */
     @NameInMap("importType")
     public Integer importType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>links_key</p>
+     */
     @NameInMap("linksKey")
     public String linksKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

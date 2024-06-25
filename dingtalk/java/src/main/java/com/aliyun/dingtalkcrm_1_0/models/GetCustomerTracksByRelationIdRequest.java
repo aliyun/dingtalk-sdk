@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCustomerTracksByRelationIdRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
@@ -12,10 +16,17 @@ public class GetCustomerTracksByRelationIdRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fasd-afsd1-21312-faaa</p>
      */
     @NameInMap("relationId")
     public String relationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("typeGroup")
     public Integer typeGroup;
 

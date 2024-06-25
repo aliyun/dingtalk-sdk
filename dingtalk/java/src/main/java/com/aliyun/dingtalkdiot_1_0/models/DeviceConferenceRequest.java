@@ -6,13 +6,24 @@ import com.aliyun.tea.*;
 public class DeviceConferenceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>设备的应急会议</p>
      */
     @NameInMap("confTitle")
     public String confTitle;
 
+    /**
+     * <strong>example:</strong>
+     * <p>12345678</p>
+     */
     @NameInMap("conferenceId")
     public String conferenceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123456</p>
+     */
     @NameInMap("conferencePassword")
     public String conferencePassword;
 

@@ -4,23 +4,36 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExclusiveCreateDingPortalRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>XX工作台</p>
+     */
     @NameInMap("dingPortalName")
     public String dingPortalName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxxxxxxxxxx</p>
      */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>TPL_APP-C97B75277B144ED7AEFE7XXXXXXXX6BA</p>
      */
     @NameInMap("templateAppUuid")
     public String templateAppUuid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxxxxxxxxxx</p>
      */
     @NameInMap("templateCorpId")
     public String templateCorpId;

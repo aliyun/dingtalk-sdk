@@ -21,9 +21,17 @@ public class GetClassWithDeletedResponseBody extends TeaModel {
     }
 
     public static class GetClassWithDeletedResponseBodyResultClassSettingRestTimeListBegin extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("across")
         public Integer across;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1970-01-01T12:00Z</p>
+         */
         @NameInMap("checkTime")
         public String checkTime;
 
@@ -51,9 +59,17 @@ public class GetClassWithDeletedResponseBody extends TeaModel {
     }
 
     public static class GetClassWithDeletedResponseBodyResultClassSettingRestTimeListEnd extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("across")
         public Integer across;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1970-01-01T13:00Z</p>
+         */
         @NameInMap("checkTime")
         public String checkTime;
 
@@ -111,6 +127,10 @@ public class GetClassWithDeletedResponseBody extends TeaModel {
     }
 
     public static class GetClassWithDeletedResponseBodyResultClassSetting extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("classSettingId")
         public Long classSettingId;
 
@@ -141,18 +161,38 @@ public class GetClassWithDeletedResponseBody extends TeaModel {
     }
 
     public static class GetClassWithDeletedResponseBodyResultSectionsTimes extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("across")
         public Integer across;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("beginMin")
         public Long beginMin;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1970-01-01T09:00Z</p>
+         */
         @NameInMap("checkTime")
         public String checkTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>OnDuty</p>
+         */
         @NameInMap("checkType")
         public String checkType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("endMin")
         public Long endMin;
 
@@ -223,15 +263,27 @@ public class GetClassWithDeletedResponseBody extends TeaModel {
     }
 
     public static class GetClassWithDeletedResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("classId")
         public Long classId;
 
         @NameInMap("classSetting")
         public GetClassWithDeletedResponseBodyResultClassSetting classSetting;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding1234</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>夜班</p>
+         */
         @NameInMap("name")
         public String name;
 

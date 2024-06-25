@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CustomizeContactEmpListRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>65722123</p>
      */
     @NameInMap("deptId")
     public Long deptId;

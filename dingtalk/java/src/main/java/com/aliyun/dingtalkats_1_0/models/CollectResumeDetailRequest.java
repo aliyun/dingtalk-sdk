@@ -4,30 +4,56 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollectResumeDetailRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ddats</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>liepin</p>
+     */
     @NameInMap("channelCode")
     public String channelCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>resumexxxxxxxxxx</p>
+     */
     @NameInMap("channelOuterId")
     public String channelOuterId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxxx</p>
+     */
     @NameInMap("channelTalentId")
     public String channelTalentId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>jobId8fc0d56a605d495ea0214af7axxxxxxx</p>
      */
     @NameInMap("deliverJobId")
     public String deliverJobId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2701606624233xxxxx</p>
      */
     @NameInMap("optUserId")
     public String optUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>http:<a href="http://www.xxx.com">www.xxx.com</a></p>
+     */
     @NameInMap("resumeChannelUrl")
     public String resumeChannelUrl;
 
@@ -118,69 +144,152 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataBaseInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>18</p>
+         */
         @NameInMap("age")
         public Integer age;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.xxxx.com">http://www.xxxx.com</a></p>
+         */
         @NameInMap("avatar")
         public String avatar;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("beginWorkTime")
         public String beginWorkTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("birthday")
         public String birthday;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="mailto:xxxxxxx@alibaba-inc.com">xxxxxxx@alibaba-inc.com</a></p>
+         */
         @NameInMap("email")
         public String email;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Jason</p>
+         */
         @NameInMap("englishName")
         public String englishName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("graduateTime")
         public String graduateTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("highestEducation")
         public Integer highestEducation;
 
+        /**
+         * <strong>example:</strong>
+         * <p>java开发工程师</p>
+         */
         @NameInMap("jobTitle")
         public String jobTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>清华大学</p>
+         */
         @NameInMap("lastSchoolName")
         public String lastSchoolName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("married")
         public Integer married;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>孙先生</p>
          */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>浙江省杭州市余杭区仓前街道</p>
+         */
         @NameInMap("nativePlace")
         public String nativePlace;
 
+        /**
+         * <strong>example:</strong>
+         * <p>浙江省杭州市余杭区仓前街道欧美金融城</p>
+         */
         @NameInMap("nowLocation")
         public String nowLocation;
 
+        /**
+         * <strong>example:</strong>
+         * <p>曾获得xxx比赛xxx奖项</p>
+         */
         @NameInMap("personalHonor")
         public String personalHonor;
 
+        /**
+         * <strong>example:</strong>
+         * <p>187xxxxxxxx</p>
+         */
         @NameInMap("phoneNum")
         public String phoneNum;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("politicalStatus")
         public Integer politicalStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>沟通能力强......</p>
+         */
         @NameInMap("selfEvaluation")
         public String selfEvaluation;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("sex")
         public Integer sex;
 
+        /**
+         * <strong>example:</strong>
+         * <p>187xxxxxxxx</p>
+         */
         @NameInMap("virtualPhoneNum")
         public String virtualPhoneNum;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("workingYears")
         public Integer workingYears;
 
@@ -360,9 +469,17 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataCertificates extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>高级技工证书</p>
+         */
         @NameInMap("certificateName")
         public String certificateName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("grantTime")
         public String grantTime;
 
@@ -390,24 +507,52 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataEducationExperiences extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("degree")
         public Integer degree;
 
+        /**
+         * <strong>example:</strong>
+         * <p>计算机学院</p>
+         */
         @NameInMap("department")
         public String department;
 
+        /**
+         * <strong>example:</strong>
+         * <p>在校期间.......</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("endDate")
         public String endDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>计算机科学与技术</p>
+         */
         @NameInMap("major")
         public String major;
 
+        /**
+         * <strong>example:</strong>
+         * <p>清华大学</p>
+         */
         @NameInMap("schoolName")
         public String schoolName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
@@ -475,18 +620,34 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataJobExpect extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>Java开发工程师</p>
+         */
         @NameInMap("jobName")
         public String jobName;
 
         @NameInMap("locations")
         public java.util.List<String> locations;
 
+        /**
+         * <strong>example:</strong>
+         * <p>8000</p>
+         */
         @NameInMap("maxSalary")
         public String maxSalary;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3000</p>
+         */
         @NameInMap("minSalary")
         public String minSalary;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("onboardTime")
         public String onboardTime;
 
@@ -538,9 +699,17 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataLanguageSkill extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>大学英语六级</p>
+         */
         @NameInMap("certificateName")
         public String certificateName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>英语</p>
+         */
         @NameInMap("languageName")
         public String languageName;
 
@@ -568,21 +737,45 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataTrainingExperiences extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>培训期间，学习了xxxx技能，获取xxxx证书。</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("endDate")
         public String endDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>新东方挖掘机学校</p>
+         */
         @NameInMap("institutionName")
         public String institutionName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>浙江省杭州市余杭区</p>
+         */
         @NameInMap("location")
         public String location;
 
+        /**
+         * <strong>example:</strong>
+         * <p>挖掘机专业技能培训</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
@@ -642,27 +835,59 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataWorkExperiences extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>钉钉（中国）信息技术有限公司</p>
+         */
         @NameInMap("companyName")
         public String companyName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>智能人事</p>
+         */
         @NameInMap("department")
         public String department;
 
+        /**
+         * <strong>example:</strong>
+         * <p>工作期间负责......取得了......成果</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("endDate")
         public String endDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Java开发工程师</p>
+         */
         @NameInMap("jobTitle")
         public String jobTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州</p>
+         */
         @NameInMap("location")
         public String location;
 
+        /**
+         * <strong>example:</strong>
+         * <p>负责......</p>
+         */
         @NameInMap("responsibility")
         public String responsibility;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
@@ -826,12 +1051,24 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeFile extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>http:<a href="http://www.xxx.com">www.xxx.com</a></p>
+         */
         @NameInMap("downloadUrl")
         public String downloadUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx.pdf</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>pdf</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 

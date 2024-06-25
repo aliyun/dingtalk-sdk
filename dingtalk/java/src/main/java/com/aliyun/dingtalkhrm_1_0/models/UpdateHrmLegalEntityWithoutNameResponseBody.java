@@ -32,27 +32,59 @@ public class UpdateHrmLegalEntityWithoutNameResponseBody extends TeaModel {
     }
 
     public static class UpdateHrmLegalEntityWithoutNameResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ding123</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-01-01</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-01-01</p>
+         */
         @NameInMap("gmtModified")
         public Long gmtModified;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123456</p>
+         */
         @NameInMap("legalEntityId")
         public String legalEntityId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>公司1</p>
+         */
         @NameInMap("legalEntityName")
         public String legalEntityName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>公1</p>
+         */
         @NameInMap("legalEntityShortName")
         public String legalEntityShortName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("legalEntityStatus")
         public Integer legalEntityStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>法人</p>
+         */
         @NameInMap("legalPersonName")
         public String legalPersonName;
 

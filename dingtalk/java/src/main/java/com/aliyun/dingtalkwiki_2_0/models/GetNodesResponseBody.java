@@ -21,6 +21,10 @@ public class GetNodesResponseBody extends TeaModel {
     }
 
     public static class GetNodesResponseBodyNodesStatisticalInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("wordCount")
         public Long wordCount;
 
@@ -40,48 +44,104 @@ public class GetNodesResponseBody extends TeaModel {
     }
 
     public static class GetNodesResponseBodyNodes extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ALIDOC</p>
+         */
         @NameInMap("category")
         public String category;
 
+        /**
+         * <strong>example:</strong>
+         * <p>node_create_time</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>node_creator_id</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>adoc</p>
+         */
         @NameInMap("extension")
         public String extension;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("hasChildren")
         public Boolean hasChildren;
 
+        /**
+         * <strong>example:</strong>
+         * <p>node_modified_time</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>node_modifier_id</p>
+         */
         @NameInMap("modifierId")
         public String modifierId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>node_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>node_id</p>
+         */
         @NameInMap("nodeId")
         public String nodeId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>READER</p>
+         */
         @NameInMap("permissionRole")
         public String permissionRole;
 
+        /**
+         * <strong>example:</strong>
+         * <p>512</p>
+         */
         @NameInMap("size")
         public Long size;
 
         @NameInMap("statisticalInfo")
         public GetNodesResponseBodyNodesStatisticalInfo statisticalInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>FILE</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>node_url</p>
+         */
         @NameInMap("url")
         public String url;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_id</p>
+         */
         @NameInMap("workspaceId")
         public String workspaceId;
 

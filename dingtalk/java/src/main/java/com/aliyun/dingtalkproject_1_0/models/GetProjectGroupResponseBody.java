@@ -21,18 +21,38 @@ public class GetProjectGroupResponseBody extends TeaModel {
     }
 
     public static class GetProjectGroupResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-06-13T07:36:50.318Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6215dce28972510xxxxx</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>分组1</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-06-13T07:36:50.318Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 
+        /**
+         * <strong>example:</strong>
+         * <p>organization</p>
+         */
         @NameInMap("visible")
         public String visible;
 

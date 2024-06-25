@@ -21,6 +21,10 @@ public class CreateUniversityCourseGroupResponseBody extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupResponseBodyCourseGroupInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>GS10001</p>
+         */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 

@@ -10,6 +10,10 @@ public class QueryUserPointsResponseBody extends TeaModel {
     @NameInMap("result")
     public QueryUserPointsResponseBodyResult result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -37,6 +41,9 @@ public class QueryUserPointsResponseBody extends TeaModel {
     public static class QueryUserPointsResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>4990</p>
          */
         @NameInMap("amount")
         public Long amount;

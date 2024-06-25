@@ -6,13 +6,24 @@ import com.aliyun.tea.*;
 public class GetNodeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("withPermissionRole")
     public Boolean withPermissionRole;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("withStatisticalInfo")
     public Boolean withStatisticalInfo;
 

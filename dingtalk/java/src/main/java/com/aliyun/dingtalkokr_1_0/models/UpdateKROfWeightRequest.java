@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class UpdateKROfWeightRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("weight")
     public Long weight;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>46GM2</p>
      */
     @NameInMap("krId")
     public String krId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0115396701752283</p>
      */
     @NameInMap("userId")
     public String userId;

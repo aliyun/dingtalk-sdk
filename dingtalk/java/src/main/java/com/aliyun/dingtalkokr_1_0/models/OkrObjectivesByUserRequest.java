@@ -4,12 +4,20 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class OkrObjectivesByUserRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>dingOKR</p>
+     */
     @NameInMap("goodsCode")
     public String goodsCode;
 
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

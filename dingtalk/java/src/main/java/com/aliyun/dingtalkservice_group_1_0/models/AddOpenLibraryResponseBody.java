@@ -12,6 +12,9 @@ public class AddOpenLibraryResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -40,6 +43,9 @@ public class AddOpenLibraryResponseBody extends TeaModel {
     public static class AddOpenLibraryResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>22</p>
          */
         @NameInMap("id")
         public Long id;
@@ -49,6 +55,9 @@ public class AddOpenLibraryResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("success")
         public Boolean success;

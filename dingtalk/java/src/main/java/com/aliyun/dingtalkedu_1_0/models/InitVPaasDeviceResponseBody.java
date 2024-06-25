@@ -4,6 +4,10 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class InitVPaasDeviceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>fewupiehwioghj</p>
+     */
     @NameInMap("pspk")
     public String pspk;
 

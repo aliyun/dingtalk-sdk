@@ -46,15 +46,27 @@ public class OkrPeriodsResponseBody extends TeaModel {
     }
 
     public static class OkrPeriodsResponseBodyContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("pageNumber")
         public Integer pageNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("pageSize")
         public Integer pageSize;
 
         @NameInMap("result")
         public java.util.List<OpenPeriodDTO> result;
 
+        /**
+         * <strong>example:</strong>
+         * <p>15</p>
+         */
         @NameInMap("totalCount")
         public Long totalCount;
 

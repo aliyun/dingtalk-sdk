@@ -15,45 +15,75 @@ public class PreCreateGroupBillOrderRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2</p>
      */
     @NameInMap("headCount")
     public Long headCount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("isAverageAmount")
     public Integer isAverageAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dhqhadsnkj2qweqsw2</p>
      */
     @NameInMap("merchantId")
     public String merchantId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>opemcesdjuwqw2uwnedj==</p>
+     */
     @NameInMap("openCid")
     public String openCid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20230918291921929193911</p>
      */
     @NameInMap("outBizNo")
     public String outBizNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding32fff839a3e0105d</p>
+     */
     @NameInMap("payeeCorpId")
     public String payeeCorpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ECEjwiiwenwnw2q2sdd</p>
      */
     @NameInMap("payeeUnionId")
     public String payeeUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>饿了么拼单-测试</p>
+     */
     @NameInMap("remark")
     public String remark;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10.24</p>
      */
     @NameInMap("totalAmount")
     public String totalAmount;
@@ -154,12 +184,18 @@ public class PreCreateGroupBillOrderRequest extends TeaModel {
     public static class PreCreateGroupBillOrderRequestBillItemList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>5.12</p>
          */
         @NameInMap("amount")
         public String amount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>cshadbikahdksnajhada</p>
          */
         @NameInMap("payerUnionId")
         public String payerUnionId;

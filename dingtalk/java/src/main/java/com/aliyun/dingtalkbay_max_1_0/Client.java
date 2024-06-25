@@ -6,11 +6,10 @@ import com.aliyun.dingtalkbay_max_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary Baymax技能执行日志
-     *
+     * <b>summary</b> : 
+     * <p>Baymax技能执行日志</p>
+     * 
      * @param request QueryBaymaxSkillLogRequest
      * @param headers QueryBaymaxSkillLogHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -70,8 +70,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary Baymax技能执行日志
-     *
+     * <b>summary</b> : 
+     * <p>Baymax技能执行日志</p>
+     * 
      * @param request QueryBaymaxSkillLogRequest
      * @return QueryBaymaxSkillLogResponse
      */

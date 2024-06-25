@@ -4,6 +4,10 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPayResultResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>状态，取值：10：待支付，11：关单，20：支付成功</p>
+     */
     @NameInMap("status")
     public Integer status;
 

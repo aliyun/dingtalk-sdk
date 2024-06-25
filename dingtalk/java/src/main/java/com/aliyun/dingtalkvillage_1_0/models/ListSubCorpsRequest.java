@@ -16,6 +16,10 @@ public class ListSubCorpsRequest extends TeaModel {
     @NameInMap("subCorpId")
     public String subCorpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>county|community</p>
+     */
     @NameInMap("types")
     public String types;
 

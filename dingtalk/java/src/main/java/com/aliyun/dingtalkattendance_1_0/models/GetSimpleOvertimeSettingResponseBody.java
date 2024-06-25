@@ -21,12 +21,20 @@ public class GetSimpleOvertimeSettingResponseBody extends TeaModel {
     }
 
     public static class GetSimpleOvertimeSettingResponseBodyResultItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("id")
         public Long id;
 
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("settingId")
         public Long settingId;
 
@@ -65,9 +73,17 @@ public class GetSimpleOvertimeSettingResponseBody extends TeaModel {
         @NameInMap("items")
         public java.util.List<GetSimpleOvertimeSettingResponseBodyResultItems> items;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("pageNumber")
         public Long pageNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("totalPage")
         public Long totalPage;
 

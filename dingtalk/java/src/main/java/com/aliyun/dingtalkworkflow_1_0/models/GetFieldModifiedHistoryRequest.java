@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetFieldModifiedHistoryRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>TextField-abcd</p>
      */
     @NameInMap("fieldId")
     public String fieldId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>proc-FF6Y2xxxx</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;

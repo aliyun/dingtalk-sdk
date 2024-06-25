@@ -7,20 +7,35 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     @NameInMap("enableCycleReservation")
     public Boolean enableCycleReservation;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("groupId")
     public Long groupId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxIsvRoomId</p>
+     */
     @NameInMap("isvRoomId")
     public String isvRoomId;
 
     @NameInMap("reservationAuthority")
     public UpdateMeetingRoomRequestReservationAuthority reservationAuthority;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("roomCapacity")
     public Integer roomCapacity;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed</p>
      */
     @NameInMap("roomId")
     public String roomId;
@@ -31,17 +46,32 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     @NameInMap("roomLocation")
     public UpdateMeetingRoomRequestRoomLocation roomLocation;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试会议室</p>
+     */
     @NameInMap("roomName")
     public String roomName;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg">https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg</a></p>
+     */
     @NameInMap("roomPicture")
     public String roomPicture;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0.全员可用 1.仅管理员可用</p>
+     */
     @NameInMap("roomStatus")
     public Integer roomStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -148,12 +178,24 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     }
 
     public static class UpdateMeetingRoomRequestReservationAuthorityAuthorizedMembers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>lPHhSZDLXXXXXXpBlC9lxLwiEiE</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("memberName")
         public String memberName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -208,9 +250,17 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     }
 
     public static class UpdateMeetingRoomRequestRoomLocation extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xx市xx区xx路xx号</p>
+         */
         @NameInMap("desc")
         public String desc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx公司</p>
+         */
         @NameInMap("title")
         public String title;
 

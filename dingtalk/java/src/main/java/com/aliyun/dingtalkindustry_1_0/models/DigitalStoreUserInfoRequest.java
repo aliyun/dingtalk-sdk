@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class DigitalStoreUserInfoRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>alt;ss1331</p>
      */
     @NameInMap("code")
     public String code;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2311sds1</p>
      */
     @NameInMap("userId")
     public String userId;

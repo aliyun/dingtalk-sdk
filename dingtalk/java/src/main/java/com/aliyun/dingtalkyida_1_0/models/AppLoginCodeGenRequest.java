@@ -24,12 +24,18 @@ public class AppLoginCodeGenRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://www.aliwork.com/APP_xx/workbench">https://www.aliwork.com/APP_xx/workbench</a></p>
      */
     @NameInMap("fullUrl")
     public String fullUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("userId")
     public String userId;

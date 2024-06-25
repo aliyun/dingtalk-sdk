@@ -7,6 +7,10 @@ public class AddResidentMemberResponseBody extends TeaModel {
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10005</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

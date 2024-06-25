@@ -6,11 +6,10 @@ import com.aliyun.dingtalkcool_ops_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary ISV批量查询商机标签
-     *
+     * <b>summary</b> : 
+     * <p>ISV批量查询商机标签</p>
+     * 
      * @param request BatchQueryOpportunityTagRequest
      * @param headers BatchQueryOpportunityTagHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -62,8 +62,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV批量查询商机标签
-     *
+     * <b>summary</b> : 
+     * <p>ISV批量查询商机标签</p>
+     * 
      * @param request BatchQueryOpportunityTagRequest
      * @return BatchQueryOpportunityTagResponse
      */
@@ -74,8 +75,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV商机状态同步
-     *
+     * <b>summary</b> : 
+     * <p>ISV商机状态同步</p>
+     * 
      * @param request UpdateIsvOppStatusRequest
      * @param headers UpdateIsvOppStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -116,8 +118,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV商机状态同步
-     *
+     * <b>summary</b> : 
+     * <p>ISV商机状态同步</p>
+     * 
      * @param request UpdateIsvOppStatusRequest
      * @return UpdateIsvOppStatusResponse
      */

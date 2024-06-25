@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SetRightPanelRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ciddjxhgdDXSAAXXXXX</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
@@ -18,12 +21,18 @@ public class SetRightPanelRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("rightPanelOpenStatus")
     public Integer rightPanelOpenStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>侧边栏标题</p>
      */
     @NameInMap("title")
     public String title;
@@ -36,6 +45,9 @@ public class SetRightPanelRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>500</p>
      */
     @NameInMap("width")
     public Integer width;
@@ -96,6 +108,9 @@ public class SetRightPanelRequest extends TeaModel {
     public static class SetRightPanelRequestWebWndParams extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com/">https://www.dingtalk.com/</a></p>
          */
         @NameInMap("targetURL")
         public String targetURL;

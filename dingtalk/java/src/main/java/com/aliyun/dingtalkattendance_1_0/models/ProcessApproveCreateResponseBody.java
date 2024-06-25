@@ -23,6 +23,9 @@ public class ProcessApproveCreateResponseBody extends TeaModel {
     public static class ProcessApproveCreateResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3534654765756234</p>
          */
         @NameInMap("dingtalkApproveId")
         public String dingtalkApproveId;

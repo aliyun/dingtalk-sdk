@@ -4,20 +4,39 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateLiveFeedRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>http:xxx.png</p>
+     */
     @NameInMap("coverUrl")
     public String coverUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>简介</p>
+     */
     @NameInMap("introduction")
     public String introduction;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1617436058000</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>标题</p>
+     */
     @NameInMap("title")
     public String title;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1206186351746728</p>
      */
     @NameInMap("userId")
     public String userId;

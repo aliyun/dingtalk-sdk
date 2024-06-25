@@ -4,17 +4,27 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExportPointOpenRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>20220601</p>
+     */
     @NameInMap("exportDate")
     public String exportDate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("exportType")
     public Long exportType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>11185568-1380470824</p>
      */
     @NameInMap("userId")
     public String userId;

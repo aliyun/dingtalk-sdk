@@ -7,12 +7,24 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryAllDepartmentResponseBodyContent> content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("currentPage")
     public Integer currentPage;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("totalPages")
     public Integer totalPages;
 
@@ -56,66 +68,99 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     public static class QueryAllDepartmentResponseBodyContentDeptAndExtDepartment extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>asd123</p>
          */
         @NameInMap("deptCode")
         public String deptCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>骨科</p>
          */
         @NameInMap("deptName")
         public String deptName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("deptOrder")
         public Long deptOrder;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("deptStatus")
         public Integer deptStatus;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("deptType")
         public Integer deptType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-08-24 20:30:31</p>
          */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-08-24 20:30:31</p>
          */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>130000</p>
          */
         @NameInMap("id")
         public Long id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>骨科</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>asd123</p>
          */
         @NameInMap("parentDeptCode")
         public String parentDeptCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>备注</p>
          */
         @NameInMap("remark")
         public String remark;
@@ -232,48 +277,72 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     public static class QueryAllDepartmentResponseBodyContentDeptAndExtExtendInfos extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>asd123</p>
          */
         @NameInMap("deptCode")
         public String deptCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>科室、医务科、医生都不一样</p>
          */
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>科室、医务科、医生都不一样</p>
          */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>科室、医务科、医生都不一样</p>
          */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-08-24 20:30:31</p>
          */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-08-24 20:30:31</p>
          */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20000</p>
          */
         @NameInMap("id")
         public Long id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("status")
         public Integer status;
@@ -388,48 +457,72 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtListExtendInfos extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>asd123</p>
          */
         @NameInMap("deptCode")
         public String deptCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>科室、医务科、医生都不一样</p>
          */
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>科室、医务科、医生都不一样</p>
          */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>科室、医务科、医生都不一样</p>
          */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-08-24 20:30:31</p>
          */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-08-24 20:30:31</p>
          */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20000</p>
          */
         @NameInMap("id")
         public Long id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("status")
         public Integer status;
@@ -508,18 +601,27 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtListGroupLeader extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>888asd</p>
          */
         @NameInMap("jobNumber")
         public String jobNumber;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>666abc</p>
          */
         @NameInMap("userId")
         public String userId;
@@ -558,30 +660,45 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
     public static class QueryAllDepartmentResponseBodyContentGroupAndExtListGroup extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>13000</p>
          */
         @NameInMap("deptId")
         public Long deptId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("deptStatus")
         public Integer deptStatus;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-08-24 20:30:31</p>
          */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-08-24 20:30:31</p>
          */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>13001</p>
          */
         @NameInMap("id")
         public Long id;
@@ -594,18 +711,27 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三组</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>13000</p>
          */
         @NameInMap("parentDeptCode")
         public String parentDeptCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>备注</p>
          */
         @NameInMap("remark")
         public String remark;
@@ -740,12 +866,18 @@ public class QueryAllDepartmentResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>130000</p>
          */
         @NameInMap("id")
         public Long id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>骨科</p>
          */
         @NameInMap("name")
         public String name;

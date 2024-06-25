@@ -12,6 +12,9 @@ public class QueryBatchSendResultResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("status")
     public Integer status;
@@ -38,18 +41,38 @@ public class QueryBatchSendResultResponseBody extends TeaModel {
     }
 
     public static class QueryBatchSendResultResponseBodyResults extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123@channel</p>
+         */
         @NameInMap("appUid")
         public String appUid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cid1234567890==</p>
+         */
         @NameInMap("conversationId")
         public String conversationId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>success</p>
+         */
         @NameInMap("errorMessage")
         public String errorMessage;
 
+        /**
+         * <strong>example:</strong>
+         * <p>msg1234567890==</p>
+         */
         @NameInMap("msgId")
         public String msgId;
 

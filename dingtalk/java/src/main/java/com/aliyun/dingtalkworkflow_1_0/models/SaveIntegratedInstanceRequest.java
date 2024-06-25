@@ -4,6 +4,10 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveIntegratedInstanceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>&quot;{&quot;mykey&quot;: &quot;myData&quot;}&quot;</p>
+     */
     @NameInMap("bizData")
     public String bizData;
 
@@ -33,6 +37,9 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://www.dingtalk.com/">https://www.dingtalk.com/</a></p>
      */
     @NameInMap("url")
     public String url;
@@ -107,12 +114,24 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
     }
 
     public static class SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("apiKey")
         public String apiKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("version")
         public String version;
 
@@ -151,18 +170,38 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
         @NameInMap("callback")
         public SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback callback;
 
+        /**
+         * <strong>if can be null:</strong>
+         * <p>true</p>
+         */
         @NameInMap("config")
         public String config;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ORIGIN</p>
+         */
         @NameInMap("runType")
         public String runType;
 
@@ -315,9 +354,17 @@ public class SaveIntegratedInstanceRequest extends TeaModel {
     }
 
     public static class SaveIntegratedInstanceRequestNotifiers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>start</p>
+         */
         @NameInMap("position")
         public String position;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager001</p>
+         */
         @NameInMap("userid")
         public String userid;
 

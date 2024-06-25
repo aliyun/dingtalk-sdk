@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryBlackboardSpaceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager01</p>
      */
     @NameInMap("operationUserId")
     public String operationUserId;

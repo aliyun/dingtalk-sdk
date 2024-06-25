@@ -21,9 +21,17 @@ public class GetUserFaceStateResponseBody extends TeaModel {
     }
 
     public static class GetUserFaceStateResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("state")
         public Integer state;
 
+        /**
+         * <strong>example:</strong>
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -7,6 +7,10 @@ public class GetAccountTransferListResponseBody extends TeaModel {
     @NameInMap("itemList")
     public java.util.List<GetAccountTransferListResponseBodyItemList> itemList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1000</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -32,12 +36,24 @@ public class GetAccountTransferListResponseBody extends TeaModel {
     }
 
     public static class GetAccountTransferListResponseBodyItemList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>财务部</p>
+         */
         @NameInMap("deptName")
         public Long deptName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>小张</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123***</p>
+         */
         @NameInMap("userId")
         public String userId;
 

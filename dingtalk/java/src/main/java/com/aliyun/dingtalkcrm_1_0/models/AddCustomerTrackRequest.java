@@ -6,45 +6,81 @@ import com.aliyun.tea.*;
 public class AddCustomerTrackRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="http://******">华佗</a>创建了合同：<strong>今日合同</strong></p>
      */
     @NameInMap("content")
     public String content;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fb037d68-c1bd-4be2-8c3b-6739261d1332</p>
      */
     @NameInMap("customerId")
     public String customerId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;bizId&quot;:&quot;1&quot;}</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("extraBizInfo")
     public String extraBizInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fb037d68-c1bd-4be2-8c3b-6739261d1332-1</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("idempotentKey")
     public String idempotentKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="http://******">华佗</a>创建了合同：<strong>今日合同</strong></p>
+     */
     @NameInMap("maskedContent")
     public String maskedContent;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager1120</p>
      */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>crm_customer</p>
      */
     @NameInMap("relationType")
     public String relationType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>创建合同</p>
      */
     @NameInMap("title")
     public String title;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>212</p>
      */
     @NameInMap("type")
     public Integer type;

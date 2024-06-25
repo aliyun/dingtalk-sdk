@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class LoadBizFieldsResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class LoadBizFieldsResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OK</p>
      */
     @NameInMap("message")
     public String message;
@@ -49,12 +55,24 @@ public class LoadBizFieldsResponseBody extends TeaModel {
     }
 
     public static class LoadBizFieldsResponseBodyDataChildFormsFields extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ShortString</p>
+         */
         @NameInMap("bizDataType")
         public String bizDataType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Phone</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>电话</p>
+         */
         @NameInMap("label")
         public String label;
 
@@ -93,9 +111,17 @@ public class LoadBizFieldsResponseBody extends TeaModel {
         @NameInMap("fields")
         public java.util.List<LoadBizFieldsResponseBodyDataChildFormsFields> fields;
 
+        /**
+         * <strong>example:</strong>
+         * <p>子表</p>
+         */
         @NameInMap("formName")
         public String formName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>D000183Fcd15f3a51e624bbc9945392d190b6aa8</p>
+         */
         @NameInMap("schemaCode")
         public String schemaCode;
 
@@ -131,12 +157,24 @@ public class LoadBizFieldsResponseBody extends TeaModel {
     }
 
     public static class LoadBizFieldsResponseBodyDataFields extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ShortString</p>
+         */
         @NameInMap("bizDataType")
         public String bizDataType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Name</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>姓名</p>
+         */
         @NameInMap("label")
         public String label;
 
@@ -178,9 +216,17 @@ public class LoadBizFieldsResponseBody extends TeaModel {
         @NameInMap("fields")
         public java.util.List<LoadBizFieldsResponseBodyDataFields> fields;
 
+        /**
+         * <strong>example:</strong>
+         * <p>客户管理</p>
+         */
         @NameInMap("formName")
         public String formName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>D0001839bbbbe346bbf496498bb76c44c7eb972</p>
+         */
         @NameInMap("schemaCode")
         public String schemaCode;
 

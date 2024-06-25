@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class OpenOrgObjectiveRuleDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6444f5e9a4261c6e699dxxxx</p>
      */
     @NameInMap("objectiveRuleId")
     public String objectiveRuleId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试规则</p>
      */
     @NameInMap("objectiveRuleName")
     public String objectiveRuleName;

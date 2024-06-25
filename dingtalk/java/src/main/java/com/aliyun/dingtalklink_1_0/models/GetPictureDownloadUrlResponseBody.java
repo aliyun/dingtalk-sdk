@@ -37,6 +37,9 @@ public class GetPictureDownloadUrlResponseBody extends TeaModel {
     public static class GetPictureDownloadUrlResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>FOLLOWED</p>
          */
         @NameInMap("url")
         public String url;

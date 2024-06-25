@@ -6,45 +6,75 @@ import com.aliyun.tea.*;
 public class SolutionTaskInitRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>training</p>
      */
     @NameInMap("category")
     public String category;
 
+    /**
+     * <strong>example:</strong>
+     * <p>时间戳</p>
+     */
     @NameInMap("claimTime")
     public Long claimTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>这是一个新人培训任务</p>
+     */
     @NameInMap("description")
     public String description;
 
+    /**
+     * <strong>example:</strong>
+     * <p>时间戳</p>
+     */
     @NameInMap("finishTime")
     public Long finishTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fdagshfjhajl</p>
      */
     @NameInMap("outerId")
     public String outerId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>running</p>
      */
     @NameInMap("status")
     public String status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>新人学习任务</p>
      */
     @NameInMap("title")
     public String title;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("userId")
     public String userId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>onboarding</p>
      */
     @NameInMap("solutionType")
     public String solutionType;

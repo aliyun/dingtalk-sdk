@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryCrmGroupChatsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;

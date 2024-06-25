@@ -26,12 +26,18 @@ public class DigitalStoreGroupsResponseBody extends TeaModel {
     public static class DigitalStoreGroupsResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("groupId")
         public Long groupId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>待装修门店</p>
          */
         @NameInMap("groupName")
         public String groupName;

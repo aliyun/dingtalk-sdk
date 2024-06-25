@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class CreateProcessesInstanceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>006f870b-4d1c-4cd0-85b3-2e866798e947</p>
      */
     @NameInMap("bizObjectId")
     public String bizObjectId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>aea4d7a7-d162-4c77-9c44-7bd9cb8316a5</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>D0001833abb0fb61524487eb01848207bc89b47</p>
      */
     @NameInMap("schemaCode")
     public String schemaCode;

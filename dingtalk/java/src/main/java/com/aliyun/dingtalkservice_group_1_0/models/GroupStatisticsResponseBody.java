@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GroupStatisticsResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("groupCount")
     public Long groupCount;
@@ -18,12 +21,18 @@ public class GroupStatisticsResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("increaseGroupCount")
     public Long increaseGroupCount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0.1</p>
      */
     @NameInMap("increaseRate")
     public String increaseRate;
@@ -68,12 +77,18 @@ public class GroupStatisticsResponseBody extends TeaModel {
     public static class GroupStatisticsResponseBodyGroupTrend extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("count")
         public Long count;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20220101</p>
          */
         @NameInMap("dt")
         public String dt;

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchCompanyResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>[     {       &quot;ENT_NAME&quot;: &quot;xx&quot;,       &quot;SOCIAL_CREDIT_CODE&quot;: &quot;xx&quot;,       &quot;LICENSE_NUMBER&quot;: &quot;xx&quot;,       &quot;REG_CAP&quot;: &quot;10000000.0&quot;,       &quot;ES_DATE&quot;: &quot;2006-12-07&quot;,       &quot;LEGAL_NAME&quot;: &quot;xx&quot;,       &quot;ORG_NO&quot;: &quot;xx&quot;,       &quot;TAX_NUM&quot;: &quot;xx&quot;,       &quot;ENT_STATUS&quot;: &quot;在营&quot;     }   ]</p>
+     */
     @NameInMap("data")
     public String data;
 

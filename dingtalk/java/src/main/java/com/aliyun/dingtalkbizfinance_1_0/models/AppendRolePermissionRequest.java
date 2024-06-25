@@ -7,6 +7,10 @@ public class AppendRolePermissionRequest extends TeaModel {
     @NameInMap("rolePermissionItemList")
     public java.util.List<AppendRolePermissionRequestRolePermissionItemList> rolePermissionItemList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>5041234</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -35,6 +39,10 @@ public class AppendRolePermissionRequest extends TeaModel {
         @NameInMap("actionIdList")
         public java.util.List<String> actionIdList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>/invoice</p>
+         */
         @NameInMap("resourceIdentity")
         public String resourceIdentity;
 
@@ -65,6 +73,10 @@ public class AppendRolePermissionRequest extends TeaModel {
         @NameInMap("permissionList")
         public java.util.List<AppendRolePermissionRequestRolePermissionItemListPermissionList> permissionList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>financeManager</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 

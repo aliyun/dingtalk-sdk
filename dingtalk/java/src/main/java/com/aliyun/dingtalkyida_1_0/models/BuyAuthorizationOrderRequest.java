@@ -4,36 +4,80 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class BuyAuthorizationOrderRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>hexaaaa</p>
+     */
     @NameInMap("accessKey")
     public String accessKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("accountNumber")
     public String accountNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234123423459</p>
+     */
     @NameInMap("beginTimeGMT")
     public Long beginTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>44234122</p>
+     */
     @NameInMap("callerUnionId")
     public String callerUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>subscribe</p>
+     */
     @NameInMap("chargeType")
     public String chargeType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>subscribe</p>
+     */
     @NameInMap("commerceType")
     public String commerceType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Business</p>
+     */
     @NameInMap("commodityType")
     public String commodityType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1023451234123</p>
+     */
     @NameInMap("endTimeGMT")
     public Long endTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>12</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>A发起的实例</p>
+     */
     @NameInMap("instanceName")
     public String instanceName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>yun-1234</p>
+     */
     @NameInMap("produceCode")
     public String produceCode;
 

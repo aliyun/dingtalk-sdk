@@ -4,9 +4,17 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySceneGroupTemplateRobotRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cidCtneF+XyQjcyF2ROdgSeIg==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding5nbbeXXXXXXX</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

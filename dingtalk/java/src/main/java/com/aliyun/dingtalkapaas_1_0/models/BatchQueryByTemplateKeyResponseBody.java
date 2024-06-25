@@ -32,12 +32,18 @@ public class BatchQueryByTemplateKeyResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试用</p>
          */
         @NameInMap("appDesc")
         public String appDesc;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>@lALPDe7s2JOuoyjNBaDNCgA</p>
          */
         @NameInMap("appIcon")
         public String appIcon;
@@ -50,6 +56,9 @@ public class BatchQueryByTemplateKeyResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>template_category</p>
          */
         @NameInMap("category")
         public String category;
@@ -62,6 +71,9 @@ public class BatchQueryByTemplateKeyResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="http://www.baidu.com">http://www.baidu.com</a></p>
          */
         @NameInMap("expUrl")
         public String expUrl;
@@ -74,6 +86,9 @@ public class BatchQueryByTemplateKeyResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
          */
         @NameInMap("installTimes")
         public Float installTimes;
@@ -86,6 +101,9 @@ public class BatchQueryByTemplateKeyResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试用</p>
          */
         @NameInMap("name")
         public String name;
@@ -98,6 +116,9 @@ public class BatchQueryByTemplateKeyResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>小明</p>
          */
         @NameInMap("providerName")
         public String providerName;
@@ -110,12 +131,18 @@ public class BatchQueryByTemplateKeyResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试用</p>
          */
         @NameInMap("simpleDesc")
         public String simpleDesc;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>template_key</p>
          */
         @NameInMap("templateKey")
         public String templateKey;

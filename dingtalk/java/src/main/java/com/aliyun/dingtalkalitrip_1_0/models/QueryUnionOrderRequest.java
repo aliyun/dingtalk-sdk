@@ -6,13 +6,24 @@ import com.aliyun.tea.*;
 public class QueryUnionOrderRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>tenant1231</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>第三方审批单号，关联单号和申请单号必选其一</p>
+     */
     @NameInMap("thirdPartApplyId")
     public String thirdPartApplyId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>关联单号，关联单号和申请单号必选其一</p>
+     */
     @NameInMap("unionNo")
     public String unionNo;
 

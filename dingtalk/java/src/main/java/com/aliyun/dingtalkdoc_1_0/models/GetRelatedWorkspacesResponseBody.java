@@ -106,6 +106,10 @@ public class GetRelatedWorkspacesResponseBody extends TeaModel {
         @NameInMap("recentList")
         public java.util.List<GetRelatedWorkspacesResponseBodyWorkspacesRecentList> recentList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>OWNER：所有者；MANAGER：管理者；EDITOR：可编辑；VIEWER：可查询\下载；ONLY_VIEWER：尽可查看</p>
+         */
         @NameInMap("role")
         public String role;
 

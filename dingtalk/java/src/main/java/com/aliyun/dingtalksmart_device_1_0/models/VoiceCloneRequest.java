@@ -6,15 +6,25 @@ import com.aliyun.tea.*;
 public class VoiceCloneRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>你好，我叫小智，是来自阿里云的超大规模语言模型。我是一个能够回答问题、创作文字，还能表达观点、撰写代码的全能型AI助手。如果您有任何问题或需要帮助，请随时告诉我，我会尽我所能为您提供帮助！</p>
      */
     @NameInMap("text")
     public String text;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manager4224</p>
+     */
     @NameInMap("userId")
     public String userId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>qhtestvoice-01</p>
      */
     @NameInMap("voiceId")
     public String voiceId;

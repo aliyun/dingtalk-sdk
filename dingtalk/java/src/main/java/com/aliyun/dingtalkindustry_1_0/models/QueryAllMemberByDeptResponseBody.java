@@ -21,6 +21,9 @@ public class QueryAllMemberByDeptResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>32</p>
      */
     @NameInMap("totalPages")
     public Integer totalPages;
@@ -65,18 +68,27 @@ public class QueryAllMemberByDeptResponseBody extends TeaModel {
     public static class QueryAllMemberByDeptResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0001</p>
          */
         @NameInMap("jobNum")
         public String jobNum;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>u0398812938821</p>
          */
         @NameInMap("uid")
         public String uid;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>用户名称</p>
          */
         @NameInMap("userName")
         public String userName;

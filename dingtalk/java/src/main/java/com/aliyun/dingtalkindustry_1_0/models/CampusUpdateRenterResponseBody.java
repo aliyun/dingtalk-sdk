@@ -4,6 +4,10 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusUpdateRenterResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1001</p>
+     */
     @NameInMap("renterId")
     public String renterId;
 

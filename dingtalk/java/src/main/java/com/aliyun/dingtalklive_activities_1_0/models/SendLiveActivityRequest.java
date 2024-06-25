@@ -10,6 +10,10 @@ public class SendLiveActivityRequest extends TeaModel {
     @NameInMap("activityEventOption")
     public SendLiveActivityRequestActivityEventOption activityEventOption;
 
+    /**
+     * <strong>example:</strong>
+     * <p>bizUniqueId</p>
+     */
     @NameInMap("activityId")
     public String activityId;
 
@@ -46,6 +50,10 @@ public class SendLiveActivityRequest extends TeaModel {
         @NameInMap("i18nContentState")
         public Object i18nContentState;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ride_with_alibtrip</p>
+         */
         @NameInMap("templateId")
         public String templateId;
 
@@ -73,15 +81,31 @@ public class SendLiveActivityRequest extends TeaModel {
     }
 
     public static class SendLiveActivityRequestActivityEventOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1686903998</p>
+         */
         @NameInMap("dismissalDate")
         public Long dismissalDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>update</p>
+         */
         @NameInMap("pushType")
         public String pushType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1686903998</p>
+         */
         @NameInMap("sendDate")
         public Long sendDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1686903998</p>
+         */
         @NameInMap("staleDate")
         public Long staleDate;
 

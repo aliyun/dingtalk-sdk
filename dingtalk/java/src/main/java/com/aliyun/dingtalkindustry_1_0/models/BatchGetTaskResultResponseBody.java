@@ -21,12 +21,24 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
     }
 
     public static class BatchGetTaskResultResponseBodyTasksResultItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>主持人有问好，并得到积极回应</p>
+         */
         @NameInMap("info")
         public String info;
 
+        /**
+         * <strong>example:</strong>
+         * <p>是否有问好</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("point")
         public Long point;
 
@@ -62,24 +74,48 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
     }
 
     public static class BatchGetTaskResultResponseBodyTasksResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://industry-ai-prod.oss-cn-zhangjiakou.aliyuncs.com/4beae5155406457291fcbdd76c4e8da8.txt">https://industry-ai-prod.oss-cn-zhangjiakou.aliyuncs.com/4beae5155406457291fcbdd76c4e8da8.txt</a></p>
+         */
         @NameInMap("audioText")
         public String audioText;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2024-05-14</p>
+         */
         @NameInMap("date")
         public String date;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx项目</p>
+         */
         @NameInMap("desc")
         public String desc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1001</p>
+         */
         @NameInMap("id")
         public Long id;
 
         @NameInMap("items")
         public java.util.List<BatchGetTaskResultResponseBodyTasksResultItems> items;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx项目会议</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("total")
         public Long total;
 
@@ -150,9 +186,17 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
         @NameInMap("result")
         public BatchGetTaskResultResponseBodyTasksResult result;
 
+        /**
+         * <strong>example:</strong>
+         * <p>COMPLETED</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>4beae5155406457291fcbdd76c4e8da8</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 

@@ -4,20 +4,34 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEmpLeaveRecordsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2020-08-10T00:00:00</p>
+     */
     @NameInMap("endTime")
     public String endTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>DCCD7A656FFA6F07</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2020-07-10T00:00:00</p>
      */
     @NameInMap("startTime")
     public String startTime;

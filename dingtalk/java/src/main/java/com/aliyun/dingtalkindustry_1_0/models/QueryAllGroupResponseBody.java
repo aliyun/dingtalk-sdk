@@ -54,12 +54,24 @@ public class QueryAllGroupResponseBody extends TeaModel {
     }
 
     public static class QueryAllGroupResponseBodyContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>12</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>医疗组1</p>
+         */
         @NameInMap("name")
         public String name;
 

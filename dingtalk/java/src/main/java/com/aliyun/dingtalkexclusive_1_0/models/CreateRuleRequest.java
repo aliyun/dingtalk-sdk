@@ -27,6 +27,10 @@ public class CreateRuleRequest extends TeaModel {
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>test</p>
+         */
         @NameInMap("planName")
         public String planName;
 

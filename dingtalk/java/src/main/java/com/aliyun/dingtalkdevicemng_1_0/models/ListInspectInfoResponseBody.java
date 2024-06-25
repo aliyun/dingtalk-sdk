@@ -10,6 +10,10 @@ public class ListInspectInfoResponseBody extends TeaModel {
     @NameInMap("success")
     public Boolean success;
 
+    /**
+     * <strong>example:</strong>
+     * <p>111</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,33 +47,65 @@ public class ListInspectInfoResponseBody extends TeaModel {
     }
 
     public static class ListInspectInfoResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>testDeviceCode</p>
+         */
         @NameInMap("deviceCode")
         public String deviceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试设备名称</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-09-10 12:00</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-09-10 12:00</p>
+         */
         @NameInMap("handleTime")
         public String handleTime;
 
         @NameInMap("maintenanceStaff")
         public java.util.List<String> maintenanceStaff;
 
+        /**
+         * <strong>example:</strong>
+         * <p>巡检表F</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>巡检项1：高度（正常)</p>
+         */
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("repairStatus")
         public Integer repairStatus;
 
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>inspect</p>
+         */
         @NameInMap("type")
         public String type;
 

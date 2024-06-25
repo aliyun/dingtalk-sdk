@@ -7,9 +7,17 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
     @NameInMap("data")
     public java.util.List<SearchFormDataSecondGenerationNoTableFieldResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,9 +51,17 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
     }
 
     public static class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZhangSan</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -76,6 +92,10 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
         @NameInMap("name")
         public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding173982232112232</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -103,9 +123,17 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
     }
 
     public static class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZhangSan</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -136,6 +164,10 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
         @NameInMap("name")
         public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding173982232112232</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -163,30 +195,66 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
     }
 
     public static class SearchFormDataSecondGenerationNoTableFieldResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2021-05-01</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding12345</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;addressField_l0c1cwiy_id&quot;:&quot;&quot;海南省/469027/国营红岗农场/111&quot;&quot;,&quot;associationFormField_l0c1hdz4_id&quot;:&quot;&quot;[{\&quot;formType\&quot;:\&quot;receipt\&quot;,\&quot;formUuid\&quot;:\&quot;FORM-QQ866JB1QW8YM5XZZZ64VQB61OGM1MLWE1C0LG\&quot;,\&quot;instanceId\&quot;:\&quot;FINST-CC666Y6198RY0LAN39XGND212MSX3TFT95S0LN31\&quot;,\&quot;subTitle\&quot;:\&quot;{\\\&quot;type\\\&quot;:\\\&quot;div\\\&quot;,\\\&quot;props\\\&quot;:{\\\&quot;children\\\&quot;:{\\\&quot;type\\\&quot;:\\\&quot;a\\\&quot;,\\\&quot;props\\\&quot;:{\\\&quot;children\\\&quot;:\\\&quot;查看签名\\\&quot;,\\\&quot;className\\\&quot;:\\\&quot;inst-cell-item-link\\\&quot;,\\\&quot;style\\\&quot;:{\\\&quot;cursor\\\&quot;:\\\&quot;pointer\\\&quot;,\\\&quot;color\\\&quot;:\\\&quot;#0068ff\\\&quot;}}},\\\&quot;className\\\&quot;:\\\&quot;inst-cell-item\\\&quot;}}\&quot;,\&quot;appType\&quot;:\&quot;APP_K6IGJJ6PFAARLPDSWKXQ\&quot;,\&quot;title\&quot;:\&quot;1\&quot;}]&quot;&quot;,&quot;countrySelectField_l0c1cwiu_id&quot;:[&quot;PG&quot;],&quot;imageField_l0c1cwit&quot;:&quot;[{&quot;previewUrl&quot;:&quot;/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&amp;fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&amp;instId=&amp;type=open&amp;process=image/resize,m_fill,w_200,h_200,limit_0/quality,q_80&quot;,&quot;size&quot;:2610734,&quot;name&quot;:&quot;Bts2Z0e6oxA.jpg&quot;,&quot;downloadUrl&quot;:&quot;/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&amp;fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&amp;instId=&amp;type=download&quot;,&quot;url&quot;:&quot;/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&amp;fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&amp;instId=&amp;type=download&quot;}]&quot;,&quot;rateField_l0c1cwis_value&quot;:&quot;3&quot;,&quot;editorField_l0c1cwiz&quot;:&quot;<div><strong>你好，这是测试</strong></div>\r\n<div>&lt;span style=&quot;font-family: kaiti;background-color: #ff0000;color: #ffff00;&quot;&gt;<em><strong>测试</strong></em></span></div>\r\n<div>&nbsp;</div>&quot;,&quot;rateField_l0c1cwis&quot;:3,&quot;countrySelectField_l0c1cwiu&quot;:[],&quot;attachmentField_l0ghkwv3&quot;:&quot;[{&quot;downloadUrl&quot;:&quot;/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&amp;fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&amp;instId=&amp;type=download&quot;,&quot;name&quot;:&quot;Bts2Z0e6oxA.jpg&quot;,&quot;previewUrl&quot;:&quot;/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&amp;fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&amp;instId=&amp;type=open&amp;process=image/resize,m_fill,w_200,h_200,limit_0/quality,q_80&quot;,&quot;size&quot;:2610734,&quot;url&quot;:&quot;/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&amp;fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&amp;instId=&amp;type=download&quot;}]&quot;,&quot;addressField_l0c1cwiy&quot;:&quot;{&quot;address&quot;:&quot;111&quot;,&quot;regionIds&quot;:[460000,469027,469023401],&quot;regionText&quot;:[{&quot;en_US&quot;:&quot;hai+nan+sheng&quot;,&quot;zh_CN&quot;:&quot;海南省&quot;},{&quot;en_US&quot;:&quot;cheng+mai+xian&quot;,&quot;zh_CN&quot;:&quot;澄迈县&quot;},{&quot;en_US&quot;:&quot;guo+ying+hong+gang+nong+chang&quot;,&quot;zh_CN&quot;:&quot;国营红岗农场&quot;}]}&quot;}</p>
+         */
         @NameInMap("formData")
         public java.util.Map<String, ?> formData;
 
+        /**
+         * <strong>example:</strong>
+         * <p>FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA</p>
+         */
         @NameInMap("formUuid")
         public String formUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>[{&quot;componentName&quot;:&quot;AddressField&quot;,&quot;dateType&quot;:null,&quot;fieldData&quot;:{&quot;value&quot;:{&quot;address&quot;:&quot;白帝城&quot;,&quot;regionIds&quot;:[340000,340800,340803,340803401],&quot;regionText&quot;:[{&quot;en_US&quot;:&quot;an hui sheng&quot;,&quot;zh_CN&quot;:&quot;安徽省&quot;},{&quot;en_US&quot;:&quot;an qing shi&quot;,&quot;zh_CN&quot;:&quot;安庆市&quot;},{&quot;en_US&quot;:&quot;da guan qu&quot;,&quot;zh_CN&quot;:&quot;大观区&quot;},{&quot;en_US&quot;:&quot;an hui an qing hai kou jing ji kai fa qu&quot;,&quot;zh_CN&quot;:&quot;安徽安庆海口经济开发区&quot;}]}},&quot;fieldDataUpdated&quot;:false,&quot;fieldId&quot;:&quot;addressField_kwod1oza&quot;,&quot;format&quot;:null,&quot;formatControls&quot;:null,&quot;listNum&quot;:null,&quot;options&quot;:[{&quot;label&quot;:{&quot;pureEn_US&quot;:&quot;an hui sheng&quot;,&quot;en_US&quot;:&quot;an hui sheng&quot;,&quot;zh_CN&quot;:&quot;安徽省&quot;,&quot;type&quot;:&quot;i18n&quot;,&quot;key&quot;:null},&quot;value&quot;:340000},{&quot;label&quot;:{&quot;pureEn_US&quot;:&quot;an qing shi&quot;,&quot;en_US&quot;:&quot;an qing shi&quot;,&quot;zh_CN&quot;:&quot;安庆市&quot;,&quot;type&quot;:&quot;i18n&quot;,&quot;key&quot;:null},&quot;value&quot;:340800},{&quot;label&quot;:{&quot;pureEn_US&quot;:&quot;da guan qu&quot;,&quot;en_US&quot;:&quot;da guan qu&quot;,&quot;zh_CN&quot;:&quot;大观区&quot;,&quot;type&quot;:&quot;i18n&quot;,&quot;key&quot;:null},&quot;value&quot;:340803},{&quot;label&quot;:{&quot;pureEn_US&quot;:&quot;an hui an qing hai kou jing ji kai fa qu&quot;,&quot;en_US&quot;:&quot;an hui an qing hai kou jing ji kai fa qu&quot;,&quot;zh_CN&quot;:&quot;安徽安庆海口经济开发区&quot;,&quot;type&quot;:&quot;i18n&quot;,&quot;key&quot;:null},&quot;value&quot;:340803401}],&quot;rowId&quot;:null}]</p>
+         */
         @NameInMap("instanceValue")
         public String instanceValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-05-01</p>
+         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager123</p>
+         */
         @NameInMap("modifier")
         public String modifier;
 
@@ -196,15 +264,31 @@ public class SearchFormDataSecondGenerationNoTableFieldResponseBody extends TeaM
         @NameInMap("originator")
         public SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator originator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>IMPORT-388664B1BAUVB3AYZE1RIUE88TDM1QI9WIOWK2</p>
+         */
         @NameInMap("sequence")
         public String sequence;
 
+        /**
+         * <strong>example:</strong>
+         * <p>YIDA909202202250027</p>
+         */
         @NameInMap("serialNumber")
         public String serialNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四发起的请购单</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1.0</p>
+         */
         @NameInMap("version")
         public Long version;
 

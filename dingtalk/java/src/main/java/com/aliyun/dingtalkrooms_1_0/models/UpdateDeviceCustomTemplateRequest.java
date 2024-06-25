@@ -7,15 +7,31 @@ public class UpdateDeviceCustomTemplateRequest extends TeaModel {
     @NameInMap("bgImgList")
     public java.util.List<String> bgImgList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("bgType")
     public Integer bgType;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://img.alicdn.com/imgextra/i2/O1CN01GWWCCR1y2D9D9EHej_!!6000000006520-2-tps-1920-470.png">https://img.alicdn.com/imgextra/i2/O1CN01GWWCCR1y2D9D9EHej_!!6000000006520-2-tps-1920-470.png</a></p>
+     */
     @NameInMap("bgUrl")
     public String bgUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试文本</p>
+     */
     @NameInMap("customDoc")
     public String customDoc;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true：脱敏 false：不脱敏</p>
+     */
     @NameInMap("desensitizeUserName")
     public Boolean desensitizeUserName;
 
@@ -25,44 +41,86 @@ public class UpdateDeviceCustomTemplateRequest extends TeaModel {
     @NameInMap("groupIds")
     public java.util.List<Long> groupIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true：隐藏 false：不隐藏</p>
+     */
     @NameInMap("hideServerCodeWhenProjecting")
     public Boolean hideServerCodeWhenProjecting;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true：显示 false：不显示</p>
+     */
     @NameInMap("instruction")
     public Boolean instruction;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("isPicTop")
     public Integer isPicTop;
 
+    /**
+     * <strong>example:</strong>
+     * <p>logo</p>
+     */
     @NameInMap("logo")
     public String logo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试企业</p>
+     */
     @NameInMap("orgName")
     public String orgName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("picturePlayInterval")
     public Integer picturePlayInterval;
 
     @NameInMap("roomIds")
     public java.util.List<String> roomIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true：展示 false：不展示</p>
+     */
     @NameInMap("showCalendarCard")
     public Boolean showCalendarCard;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true：展示 false：不展示</p>
+     */
     @NameInMap("showCalendarTitle")
     public Boolean showCalendarTitle;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true：展示 false：不展示</p>
+     */
     @NameInMap("showFunctionCard")
     public Boolean showFunctionCard;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>89</p>
      */
     @NameInMap("templateId")
     public Long templateId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试模板</p>
      */
     @NameInMap("templateName")
     public String templateName;

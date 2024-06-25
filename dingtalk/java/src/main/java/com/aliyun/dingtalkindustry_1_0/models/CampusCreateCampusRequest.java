@@ -4,30 +4,61 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusCreateCampusRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>锦城街道和谐社区101号</p>
+     */
     @NameInMap("address")
     public String address;
 
+    /**
+     * <strong>example:</strong>
+     * <p>5200.13（平方千米）</p>
+     */
     @NameInMap("area")
     public Double area;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("belongProjectGroupId")
     public Long belongProjectGroupId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>绿城未来park</p>
      */
     @NameInMap("campusName")
     public String campusName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1000</p>
+     */
     @NameInMap("capacity")
     public Integer capacity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>371500</p>
+     */
     @NameInMap("cityId")
     public Integer cityId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>中国</p>
+     */
     @NameInMap("country")
     public String country;
 
+    /**
+     * <strong>example:</strong>
+     * <p>371502</p>
+     */
     @NameInMap("countyId")
     public Integer countyId;
 
@@ -37,12 +68,24 @@ public class CampusCreateCampusRequest extends TeaModel {
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>绿城未来park项目</p>
+     */
     @NameInMap("description")
     public String description;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;creator&quot;:&quot;dsy&quot;}</p>
+     */
     @NameInMap("extend")
     public String extend;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123,456</p>
+     */
     @NameInMap("location")
     public String location;
 
@@ -52,12 +95,24 @@ public class CampusCreateCampusRequest extends TeaModel {
     @NameInMap("orderInfo")
     public String orderInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1655704317794</p>
+     */
     @NameInMap("orderStartTime")
     public Long orderStartTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>370000（山东）</p>
+     */
     @NameInMap("provId")
     public Integer provId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>156xxxx4338</p>
+     */
     @NameInMap("telephone")
     public String telephone;
 

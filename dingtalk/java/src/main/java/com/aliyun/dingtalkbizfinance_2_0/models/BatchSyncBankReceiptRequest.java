@@ -21,15 +21,31 @@ public class BatchSyncBankReceiptRequest extends TeaModel {
     }
 
     public static class BatchSyncBankReceiptRequestBody extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxxxx">https://xxxxx</a></p>
+         */
         @NameInMap("fileDownloadUrl")
         public String fileDownloadUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx回单.pdf</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2024000001902335</p>
+         */
         @NameInMap("messageId")
         public String messageId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>detailId</p>
+         */
         @NameInMap("messageIdType")
         public String messageIdType;
 

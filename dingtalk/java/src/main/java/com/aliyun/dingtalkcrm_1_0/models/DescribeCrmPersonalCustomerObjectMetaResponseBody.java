@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DescribeCrmPersonalCustomerObjectMetaResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>PROC-XXXX</p>
+     */
     @NameInMap("code")
     public String code;
 
@@ -16,6 +20,10 @@ public class DescribeCrmPersonalCustomerObjectMetaResponseBody extends TeaModel 
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>PUBLISHED</p>
+     */
     @NameInMap("status")
     public String status;
 

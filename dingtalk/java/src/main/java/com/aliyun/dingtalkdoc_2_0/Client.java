@@ -6,11 +6,10 @@ import com.aliyun.dingtalkdoc_2_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 批量创建小组
-     *
+     * <b>summary</b> : 
+     * <p>批量创建小组</p>
+     * 
      * @param request BatchCreateTeamRequest
      * @param headers BatchCreateTeamHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -68,8 +68,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量创建小组
-     *
+     * <b>summary</b> : 
+     * <p>批量创建小组</p>
+     * 
      * @param request BatchCreateTeamRequest
      * @return BatchCreateTeamResponse
      */
@@ -80,8 +81,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量删除文档最近记录
-     *
+     * <b>summary</b> : 
+     * <p>批量删除文档最近记录</p>
+     * 
      * @param request BatchDeleteRecentsRequest
      * @param headers BatchDeleteRecentsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -128,8 +130,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量删除文档最近记录
-     *
+     * <b>summary</b> : 
+     * <p>批量删除文档最近记录</p>
+     * 
      * @param request BatchDeleteRecentsRequest
      * @return BatchDeleteRecentsResponse
      */
@@ -140,8 +143,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 按分类列表查询模板列表
-     *
+     * <b>summary</b> : 
+     * <p>按分类列表查询模板列表</p>
+     * 
      * @param request CategoriesTemplatesRequest
      * @param headers CategoriesTemplatesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -192,8 +196,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 按分类列表查询模板列表
-     *
+     * <b>summary</b> : 
+     * <p>按分类列表查询模板列表</p>
+     * 
      * @param request CategoriesTemplatesRequest
      * @return CategoriesTemplatesResponse
      */
@@ -204,8 +209,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 按分类查询模板列表
-     *
+     * <b>summary</b> : 
+     * <p>按分类查询模板列表</p>
+     * 
      * @param request CategoryTemplatesRequest
      * @param headers CategoryTemplatesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -256,8 +262,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 按分类查询模板列表
-     *
+     * <b>summary</b> : 
+     * <p>按分类查询模板列表</p>
+     * 
      * @param request CategoryTemplatesRequest
      * @return CategoryTemplatesResponse
      */
@@ -268,8 +275,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 拷贝知识库节点
-     *
+     * <b>summary</b> : 
+     * <p>拷贝知识库节点</p>
+     * 
      * @param request CopyDentryRequest
      * @param headers CopyDentryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -330,8 +338,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 拷贝知识库节点
-     *
+     * <b>summary</b> : 
+     * <p>拷贝知识库节点</p>
+     * 
      * @param request CopyDentryRequest
      * @return CopyDentryResponse
      */
@@ -342,8 +351,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建知识库节点（包括文档和文件夹）
-     *
+     * <b>summary</b> : 
+     * <p>创建知识库节点（包括文档和文件夹）</p>
+     * 
      * @param request CreateDentryRequest
      * @param headers CreateDentryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -400,8 +410,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建知识库节点（包括文档和文件夹）
-     *
+     * <b>summary</b> : 
+     * <p>创建知识库节点（包括文档和文件夹）</p>
+     * 
      * @param request CreateDentryRequest
      * @return CreateDentryResponse
      */
@@ -412,8 +423,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建知识库
-     *
+     * <b>summary</b> : 
+     * <p>创建知识库</p>
+     * 
      * @param request CreateSpaceRequest
      * @param headers CreateSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -478,8 +490,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建知识库
-     *
+     * <b>summary</b> : 
+     * <p>创建知识库</p>
+     * 
      * @param request CreateSpaceRequest
      * @return CreateSpaceResponse
      */
@@ -490,8 +503,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建小组
-     *
+     * <b>summary</b> : 
+     * <p>创建小组</p>
+     * 
      * @param request CreateTeamRequest
      * @param headers CreateTeamHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -556,8 +570,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建小组
-     *
+     * <b>summary</b> : 
+     * <p>创建小组</p>
+     * 
      * @param request CreateTeamRequest
      * @return CreateTeamResponse
      */
@@ -568,8 +583,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 跨组织迁移知识库
-     *
+     * <b>summary</b> : 
+     * <p>跨组织迁移知识库</p>
+     * 
      * @param request CrossOrgMigrateRequest
      * @param headers CrossOrgMigrateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -620,8 +636,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 跨组织迁移知识库
-     *
+     * <b>summary</b> : 
+     * <p>跨组织迁移知识库</p>
+     * 
      * @param request CrossOrgMigrateRequest
      * @return CrossOrgMigrateResponse
      */
@@ -632,8 +649,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除小组
-     *
+     * <b>summary</b> : 
+     * <p>删除小组</p>
+     * 
      * @param request DeleteTeamRequest
      * @param headers DeleteTeamHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -674,8 +692,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除小组
-     *
+     * <b>summary</b> : 
+     * <p>删除小组</p>
+     * 
      * @param request DeleteTeamRequest
      * @return DeleteTeamResponse
      */
@@ -686,8 +705,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文档内容
-     *
+     * <b>summary</b> : 
+     * <p>获取文档内容</p>
+     * 
      * @param request DocContentRequest
      * @param headers DocContentHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -734,8 +754,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文档内容
-     *
+     * <b>summary</b> : 
+     * <p>获取文档内容</p>
+     * 
      * @param request DocContentRequest
      * @return DocContentResponse
      */
@@ -746,8 +767,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据文件DentryUuid获取文件DentryId
-     *
+     * <b>summary</b> : 
+     * <p>根据文件DentryUuid获取文件DentryId</p>
+     * 
      * @param request GetDentryIdByUuidRequest
      * @param headers GetDentryIdByUuidHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -788,8 +810,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据文件DentryUuid获取文件DentryId
-     *
+     * <b>summary</b> : 
+     * <p>根据文件DentryUuid获取文件DentryId</p>
+     * 
      * @param request GetDentryIdByUuidRequest
      * @return GetDentryIdByUuidResponse
      */
@@ -800,8 +823,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 委托权限获取文档内容
-     *
+     * <b>summary</b> : 
+     * <p>委托权限获取文档内容</p>
+     * 
      * @param request GetDocContentRequest
      * @param headers GetDocContentHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -842,8 +866,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 委托权限获取文档内容
-     *
+     * <b>summary</b> : 
+     * <p>委托权限获取文档内容</p>
+     * 
      * @param request GetDocContentRequest
      * @return GetDocContentResponse
      */
@@ -854,8 +879,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 委托权限获取文档内容
-     *
+     * <b>summary</b> : 
+     * <p>委托权限获取文档内容</p>
+     * 
      * @param request GetDocContentForELMRequest
      * @param headers GetDocContentForELMHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -896,8 +922,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 委托权限获取文档内容
-     *
+     * <b>summary</b> : 
+     * <p>委托权限获取文档内容</p>
+     * 
      * @param request GetDocContentForELMRequest
      * @return GetDocContentForELMResponse
      */
@@ -908,8 +935,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取当前企业下钉盘目录我的文件对应的空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取当前企业下钉盘目录我的文件对应的空间信息</p>
+     * 
      * @param request GetMySpaceRequest
      * @param headers GetMySpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -950,8 +978,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取当前企业下钉盘目录我的文件对应的空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取当前企业下钉盘目录我的文件对应的空间信息</p>
+     * 
      * @param request GetMySpaceRequest
      * @return GetMySpaceResponse
      */
@@ -962,8 +991,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组主页schema （包括轮播图、公告、便捷入口）
-     *
+     * <b>summary</b> : 
+     * <p>查询小组主页schema （包括轮播图、公告、便捷入口）</p>
+     * 
      * @param request GetSchemaRequest
      * @param headers GetSchemaHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1004,8 +1034,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组主页schema （包括轮播图、公告、便捷入口）
-     *
+     * <b>summary</b> : 
+     * <p>查询小组主页schema （包括轮播图、公告、便捷入口）</p>
+     * 
      * @param request GetSchemaRequest
      * @return GetSchemaResponse
      */
@@ -1016,8 +1047,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询目录树
-     *
+     * <b>summary</b> : 
+     * <p>查询目录树</p>
+     * 
      * @param request GetSpaceDirectoriesRequest
      * @param headers GetSpaceDirectoriesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1070,8 +1102,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询目录树
-     *
+     * <b>summary</b> : 
+     * <p>查询目录树</p>
+     * 
      * @param request GetSpaceDirectoriesRequest
      * @return GetSpaceDirectoriesResponse
      */
@@ -1082,8 +1115,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取星标信息
-     *
+     * <b>summary</b> : 
+     * <p>获取星标信息</p>
+     * 
      * @param request GetStarInfoRequest
      * @param headers GetStarInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1124,8 +1158,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取星标信息
-     *
+     * <b>summary</b> : 
+     * <p>获取星标信息</p>
+     * 
      * @param request GetStarInfoRequest
      * @return GetStarInfoResponse
      */
@@ -1136,8 +1171,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组详情
-     *
+     * <b>summary</b> : 
+     * <p>查询小组详情</p>
+     * 
      * @param request GetTeamRequest
      * @param headers GetTeamHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1178,8 +1214,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组详情
-     *
+     * <b>summary</b> : 
+     * <p>查询小组详情</p>
+     * 
      * @param request GetTeamRequest
      * @return GetTeamResponse
      */
@@ -1190,8 +1227,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识库下的总节点数
-     *
+     * <b>summary</b> : 
+     * <p>获取知识库下的总节点数</p>
+     * 
      * @param request GetTotalNumberOfDentriesRequest
      * @param headers GetTotalNumberOfDentriesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1240,8 +1278,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识库下的总节点数
-     *
+     * <b>summary</b> : 
+     * <p>获取知识库下的总节点数</p>
+     * 
      * @param request GetTotalNumberOfDentriesRequest
      * @return GetTotalNumberOfDentriesResponse
      */
@@ -1252,8 +1291,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识库总数
-     *
+     * <b>summary</b> : 
+     * <p>获取知识库总数</p>
+     * 
      * @param request GetTotalNumberOfSpacesRequest
      * @param headers GetTotalNumberOfSpacesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1294,8 +1334,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识库总数
-     *
+     * <b>summary</b> : 
+     * <p>获取知识库总数</p>
+     * 
      * @param request GetTotalNumberOfSpacesRequest
      * @return GetTotalNumberOfSpacesResponse
      */
@@ -1306,8 +1347,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询文档免登的用户信息
-     *
+     * <b>summary</b> : 
+     * <p>查询文档免登的用户信息</p>
+     * 
      * @param request GetUserInfoByOpenTokenRequest
      * @param headers GetUserInfoByOpenTokenHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1352,8 +1394,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询文档免登的用户信息
-     *
+     * <b>summary</b> : 
+     * <p>查询文档免登的用户信息</p>
+     * 
      * @param request GetUserInfoByOpenTokenRequest
      * @return GetUserInfoByOpenTokenResponse
      */
@@ -1364,8 +1407,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据文件DentryId获取文件DentryUuid
-     *
+     * <b>summary</b> : 
+     * <p>根据文件DentryId获取文件DentryUuid</p>
+     * 
      * @param request GetUuidByDentryIdRequest
      * @param headers GetUuidByDentryIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1410,8 +1454,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据文件DentryId获取文件DentryUuid
-     *
+     * <b>summary</b> : 
+     * <p>根据文件DentryId获取文件DentryUuid</p>
+     * 
      * @param request GetUuidByDentryIdRequest
      * @return GetUuidByDentryIdResponse
      */
@@ -1422,8 +1467,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组动态
-     *
+     * <b>summary</b> : 
+     * <p>查询小组动态</p>
+     * 
      * @param request ListFeedsRequest
      * @param headers ListFeedsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1476,8 +1522,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组动态
-     *
+     * <b>summary</b> : 
+     * <p>查询小组动态</p>
+     * 
      * @param request ListFeedsRequest
      * @return ListFeedsResponse
      */
@@ -1488,8 +1535,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组热门文档
-     *
+     * <b>summary</b> : 
+     * <p>查询小组热门文档</p>
+     * 
      * @param request ListHotDocsRequest
      * @param headers ListHotDocsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1530,8 +1578,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组热门文档
-     *
+     * <b>summary</b> : 
+     * <p>查询小组热门文档</p>
+     * 
      * @param request ListHotDocsRequest
      * @return ListHotDocsResponse
      */
@@ -1542,8 +1591,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取置顶知识库列表
-     *
+     * <b>summary</b> : 
+     * <p>获取置顶知识库列表</p>
+     * 
      * @param request ListPinSpacesRequest
      * @param headers ListPinSpacesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1590,8 +1640,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取置顶知识库列表
-     *
+     * <b>summary</b> : 
+     * <p>获取置顶知识库列表</p>
+     * 
      * @param request ListPinSpacesRequest
      * @return ListPinSpacesResponse
      */
@@ -1602,8 +1653,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询文档最近记录列表
-     *
+     * <b>summary</b> : 
+     * <p>查询文档最近记录列表</p>
+     * 
      * @param request ListRecentsRequest
      * @param headers ListRecentsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1644,8 +1696,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询文档最近记录列表
-     *
+     * <b>summary</b> : 
+     * <p>查询文档最近记录列表</p>
+     * 
      * @param request ListRecentsRequest
      * @return ListRecentsResponse
      */
@@ -1656,8 +1709,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询关联了知识库的团队列表
-     *
+     * <b>summary</b> : 
+     * <p>查询关联了知识库的团队列表</p>
+     * 
      * @param request ListRelatedSpaceTeamsRequest
      * @param headers ListRelatedSpaceTeamsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1702,8 +1756,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询关联了知识库的团队列表
-     *
+     * <b>summary</b> : 
+     * <p>查询关联了知识库的团队列表</p>
+     * 
      * @param request ListRelatedSpaceTeamsRequest
      * @return ListRelatedSpaceTeamsResponse
      */
@@ -1714,8 +1769,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组列表
-     *
+     * <b>summary</b> : 
+     * <p>查询小组列表</p>
+     * 
      * @param request ListRelatedTeamsRequest
      * @param headers ListRelatedTeamsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1768,8 +1824,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组列表
-     *
+     * <b>summary</b> : 
+     * <p>查询小组列表</p>
+     * 
      * @param request ListRelatedTeamsRequest
      * @return ListRelatedTeamsResponse
      */
@@ -1780,8 +1837,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询知识库分组
-     *
+     * <b>summary</b> : 
+     * <p>查询知识库分组</p>
+     * 
      * @param request ListSpaceSectionsRequest
      * @param headers ListSpaceSectionsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1822,8 +1880,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询知识库分组
-     *
+     * <b>summary</b> : 
+     * <p>查询知识库分组</p>
+     * 
      * @param request ListSpaceSectionsRequest
      * @return ListSpaceSectionsResponse
      */
@@ -1834,8 +1893,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取星标列表
-     *
+     * <b>summary</b> : 
+     * <p>获取星标列表</p>
+     * 
      * @param request ListStarsRequest
      * @param headers ListStarsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1882,8 +1942,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取星标列表
-     *
+     * <b>summary</b> : 
+     * <p>获取星标列表</p>
+     * 
      * @param request ListStarsRequest
      * @return ListStarsResponse
      */
@@ -1894,8 +1955,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组成员列表
-     *
+     * <b>summary</b> : 
+     * <p>查询小组成员列表</p>
+     * 
      * @param request ListTeamMembersRequest
      * @param headers ListTeamMembersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1936,8 +1998,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询小组成员列表
-     *
+     * <b>summary</b> : 
+     * <p>查询小组成员列表</p>
+     * 
      * @param request ListTeamMembersRequest
      * @return ListTeamMembersResponse
      */
@@ -1948,8 +2011,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 标记星标
-     *
+     * <b>summary</b> : 
+     * <p>标记星标</p>
+     * 
      * @param request MarkStarRequest
      * @param headers MarkStarHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1990,8 +2054,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 标记星标
-     *
+     * <b>summary</b> : 
+     * <p>标记星标</p>
+     * 
      * @param request MarkStarRequest
      * @return MarkStarResponse
      */
@@ -2002,8 +2067,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移动知识库节点
-     *
+     * <b>summary</b> : 
+     * <p>移动知识库节点</p>
+     * 
      * @param request MoveDentryRequest
      * @param headers MoveDentryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2060,8 +2126,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移动知识库节点
-     *
+     * <b>summary</b> : 
+     * <p>移动知识库节点</p>
+     * 
      * @param request MoveDentryRequest
      * @return MoveDentryResponse
      */
@@ -2072,8 +2139,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 置顶知识库
-     *
+     * <b>summary</b> : 
+     * <p>置顶知识库</p>
+     * 
      * @param request PinSpaceRequest
      * @param headers PinSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2114,8 +2182,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 置顶知识库
-     *
+     * <b>summary</b> : 
+     * <p>置顶知识库</p>
+     * 
      * @param request PinSpaceRequest
      * @return PinSpaceResponse
      */
@@ -2126,8 +2195,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询知识库节点（包括文档和文件夹）
-     *
+     * <b>summary</b> : 
+     * <p>查询知识库节点（包括文档和文件夹）</p>
+     * 
      * @param request QueryDentryRequest
      * @param headers QueryDentryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2172,8 +2242,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询知识库节点（包括文档和文件夹）
-     *
+     * <b>summary</b> : 
+     * <p>查询知识库节点（包括文档和文件夹）</p>
+     * 
      * @param request QueryDentryRequest
      * @return QueryDentryResponse
      */
@@ -2184,8 +2255,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文档内容
-     *
+     * <b>summary</b> : 
+     * <p>获取文档内容</p>
+     * 
      * @param request QueryDocContentRequest
      * @param headers QueryDocContentHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2230,8 +2302,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文档内容
-     *
+     * <b>summary</b> : 
+     * <p>获取文档内容</p>
+     * 
      * @param request QueryDocContentRequest
      * @return QueryDocContentResponse
      */
@@ -2242,8 +2315,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据链接查询节点或知识库信息
-     *
+     * <b>summary</b> : 
+     * <p>根据链接查询节点或知识库信息</p>
+     * 
      * @param request QueryItemByUrlRequest
      * @param headers QueryItemByUrlHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2292,8 +2366,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据链接查询节点或知识库信息
-     *
+     * <b>summary</b> : 
+     * <p>根据链接查询节点或知识库信息</p>
+     * 
      * @param request QueryItemByUrlRequest
      * @return QueryItemByUrlResponse
      */
@@ -2304,8 +2379,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户的「我的文档」
-     *
+     * <b>summary</b> : 
+     * <p>查询用户的「我的文档」</p>
+     * 
      * @param headers QueryMineSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryMineSpaceResponse
@@ -2338,8 +2414,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户的「我的文档」
-     *
+     * <b>summary</b> : 
+     * <p>查询用户的「我的文档」</p>
      * @return QueryMineSpaceResponse
      */
     public QueryMineSpaceResponse queryMineSpace(String unionId) throws Exception {
@@ -2349,8 +2425,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询最近列表
-     *
+     * <b>summary</b> : 
+     * <p>查询最近列表</p>
+     * 
      * @param request QueryRecentListRequest
      * @param headers QueryRecentListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2411,8 +2488,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询最近列表
-     *
+     * <b>summary</b> : 
+     * <p>查询最近列表</p>
+     * 
      * @param request QueryRecentListRequest
      * @return QueryRecentListResponse
      */
@@ -2423,8 +2501,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询指定知识库信息
-     *
+     * <b>summary</b> : 
+     * <p>查询指定知识库信息</p>
+     * 
      * @param request QuerySpaceRequest
      * @param headers QuerySpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2465,8 +2544,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询指定知识库信息
-     *
+     * <b>summary</b> : 
+     * <p>查询指定知识库信息</p>
+     * 
      * @param request QuerySpaceRequest
      * @return QuerySpaceResponse
      */
@@ -2477,8 +2557,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询与我关联的知识库列表（支持筛选小组）
-     *
+     * <b>summary</b> : 
+     * <p>查询与我关联的知识库列表（支持筛选小组）</p>
+     * 
      * @param request RelatedSpacesRequest
      * @param headers RelatedSpacesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2531,8 +2612,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询与我关联的知识库列表（支持筛选小组）
-     *
+     * <b>summary</b> : 
+     * <p>查询与我关联的知识库列表（支持筛选小组）</p>
+     * 
      * @param request RelatedSpacesRequest
      * @return RelatedSpacesResponse
      */
@@ -2543,8 +2625,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移除小组成员
-     *
+     * <b>summary</b> : 
+     * <p>移除小组成员</p>
+     * 
      * @param request RemoveTeamMembersRequest
      * @param headers RemoveTeamMembersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2593,8 +2676,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移除小组成员
-     *
+     * <b>summary</b> : 
+     * <p>移除小组成员</p>
+     * 
      * @param request RemoveTeamMembersRequest
      * @return RemoveTeamMembersResponse
      */
@@ -2605,8 +2689,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 知识库节点（包括文档和文件夹）重命名
-     *
+     * <b>summary</b> : 
+     * <p>知识库节点（包括文档和文件夹）重命名</p>
+     * 
      * @param request RenameDentryRequest
      * @param headers RenameDentryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2651,8 +2736,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 知识库节点（包括文档和文件夹）重命名
-     *
+     * <b>summary</b> : 
+     * <p>知识库节点（包括文档和文件夹）重命名</p>
+     * 
      * @param request RenameDentryRequest
      * @return RenameDentryResponse
      */
@@ -2663,8 +2749,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加或修改小组成员
-     *
+     * <b>summary</b> : 
+     * <p>添加或修改小组成员</p>
+     * 
      * @param request SaveTeamMembersRequest
      * @param headers SaveTeamMembersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2713,8 +2800,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加或修改小组成员
-     *
+     * <b>summary</b> : 
+     * <p>添加或修改小组成员</p>
+     * 
      * @param request SaveTeamMembersRequest
      * @return SaveTeamMembersResponse
      */
@@ -2725,8 +2813,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索知识库和节点
-     *
+     * <b>summary</b> : 
+     * <p>搜索知识库和节点</p>
+     * 
      * @param request SearchRequest
      * @param headers SearchHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2779,8 +2868,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索知识库和节点
-     *
+     * <b>summary</b> : 
+     * <p>搜索知识库和节点</p>
+     * 
      * @param request SearchRequest
      * @return SearchResponse
      */
@@ -2791,8 +2881,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索模板中心模板
-     *
+     * <b>summary</b> : 
+     * <p>搜索模板中心模板</p>
+     * 
      * @param request SearchTemplatesRequest
      * @param headers SearchTemplatesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2843,8 +2934,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索模板中心模板
-     *
+     * <b>summary</b> : 
+     * <p>搜索模板中心模板</p>
+     * 
      * @param request SearchTemplatesRequest
      * @return SearchTemplatesResponse
      */
@@ -2855,8 +2947,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件打开链接
-     *
+     * <b>summary</b> : 
+     * <p>获取文件打开链接</p>
+     * 
      * @param request ShareUrlRequest
      * @param headers ShareUrlHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2897,8 +2990,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件打开链接
-     *
+     * <b>summary</b> : 
+     * <p>获取文件打开链接</p>
+     * 
      * @param request ShareUrlRequest
      * @return ShareUrlResponse
      */
@@ -2909,8 +3003,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识库模板列表
-     *
+     * <b>summary</b> : 
+     * <p>获取知识库模板列表</p>
+     * 
      * @param request TeamTemplatesRequest
      * @param headers TeamTemplatesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2957,8 +3052,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识库模板列表
-     *
+     * <b>summary</b> : 
+     * <p>获取知识库模板列表</p>
+     * 
      * @param request TeamTemplatesRequest
      * @return TeamTemplatesResponse
      */
@@ -2969,8 +3065,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取模板分类列表
-     *
+     * <b>summary</b> : 
+     * <p>获取模板分类列表</p>
+     * 
      * @param request TemplateCategoriesRequest
      * @param headers TemplateCategoriesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3021,8 +3118,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取模板分类列表
-     *
+     * <b>summary</b> : 
+     * <p>获取模板分类列表</p>
+     * 
      * @param request TemplateCategoriesRequest
      * @return TemplateCategoriesResponse
      */
@@ -3033,8 +3131,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 取消标记星标
-     *
+     * <b>summary</b> : 
+     * <p>取消标记星标</p>
+     * 
      * @param request UnmarkStarRequest
      * @param headers UnmarkStarHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3075,8 +3174,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 取消标记星标
-     *
+     * <b>summary</b> : 
+     * <p>取消标记星标</p>
+     * 
      * @param request UnmarkStarRequest
      * @return UnmarkStarResponse
      */
@@ -3087,8 +3187,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 取消置顶知识库
-     *
+     * <b>summary</b> : 
+     * <p>取消置顶知识库</p>
+     * 
      * @param request UnpinSpaceRequest
      * @param headers UnpinSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3129,8 +3230,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 取消置顶知识库
-     *
+     * <b>summary</b> : 
+     * <p>取消置顶知识库</p>
+     * 
      * @param request UnpinSpaceRequest
      * @return UnpinSpaceResponse
      */
@@ -3141,8 +3243,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新小组
-     *
+     * <b>summary</b> : 
+     * <p>更新小组</p>
+     * 
      * @param request UpdateTeamRequest
      * @param headers UpdateTeamHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3191,8 +3294,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新小组
-     *
+     * <b>summary</b> : 
+     * <p>更新小组</p>
+     * 
      * @param request UpdateTeamRequest
      * @return UpdateTeamResponse
      */
@@ -3203,8 +3307,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用户模板列表
-     *
+     * <b>summary</b> : 
+     * <p>用户模板列表</p>
+     * 
      * @param request UserTemplatesRequest
      * @param headers UserTemplatesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3251,8 +3356,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用户模板列表
-     *
+     * <b>summary</b> : 
+     * <p>用户模板列表</p>
+     * 
      * @param request UserTemplatesRequest
      * @return UserTemplatesResponse
      */

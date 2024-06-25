@@ -21,6 +21,10 @@ public class GetMultipartFileUploadInfosResponseBody extends TeaModel {
     }
 
     public static class GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeaderSignatureInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>900</p>
+         */
         @NameInMap("expirationSeconds")
         public Integer expirationSeconds;
 
@@ -30,6 +34,10 @@ public class GetMultipartFileUploadInfosResponseBody extends TeaModel {
         @NameInMap("internalResourceUrls")
         public java.util.List<String> internalResourceUrls;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZHANGJIAKOU</p>
+         */
         @NameInMap("region")
         public String region;
 

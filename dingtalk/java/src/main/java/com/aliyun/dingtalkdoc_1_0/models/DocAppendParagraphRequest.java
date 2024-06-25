@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class DocAppendParagraphRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>element_type</p>
      */
     @NameInMap("elementType")
     public String elementType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>properties</p>
      */
     @NameInMap("properties")
     public java.util.Map<String, ?> properties;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

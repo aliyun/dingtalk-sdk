@@ -4,35 +4,59 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterDeviceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>manager1,1000,10001</p>
+     */
     @NameInMap("collaborators")
     public String collaborators;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("departmentId")
     public Long departmentId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>生产组1号设备负责生产第一批产品</p>
+     */
     @NameInMap("description")
     public String description;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>key_xxxxxxx</p>
      */
     @NameInMap("deviceKey")
     public String deviceKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>生产1组1号机</p>
      */
     @NameInMap("deviceName")
     public String deviceName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manager1,manager2</p>
+     */
     @NameInMap("managers")
     public String managers;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager10</p>
      */
     @NameInMap("userId")
     public String userId;

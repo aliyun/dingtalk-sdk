@@ -6,16 +6,31 @@ import com.aliyun.tea.*;
 public class SupplyDeleteMemberRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>13914772100</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
+    /**
+     * <strong>example:</strong>
+     * <p>01010</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0101</p>
+     */
     @NameInMap("userId")
     public String userId;
 

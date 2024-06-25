@@ -12,6 +12,9 @@ public class DeleteMeetingRoomControlPanelRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>A1FAxxxxx</p>
      */
     @NameInMap("unionId")
     public String unionId;

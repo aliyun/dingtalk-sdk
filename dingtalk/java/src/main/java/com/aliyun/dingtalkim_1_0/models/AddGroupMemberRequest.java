@@ -9,12 +9,18 @@ public class AddGroupMemberRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>14da****2760</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1745****8777</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

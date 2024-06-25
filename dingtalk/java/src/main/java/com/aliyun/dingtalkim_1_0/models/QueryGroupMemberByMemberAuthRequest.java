@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class QueryGroupMemberByMemberAuthRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>COOLAPP-XXX</p>
      */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidXXX</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

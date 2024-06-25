@@ -6,6 +6,12 @@ import com.aliyun.tea.*;
 public class GetChildOrgListRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
      */
     @NameInMap("deptCode")
     public String deptCode;

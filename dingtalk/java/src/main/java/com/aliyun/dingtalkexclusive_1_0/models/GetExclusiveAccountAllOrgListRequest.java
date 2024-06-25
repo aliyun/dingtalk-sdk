@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetExclusiveAccountAllOrgListRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>TBXK65QHiiorHvxxxxxxxxP6giEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

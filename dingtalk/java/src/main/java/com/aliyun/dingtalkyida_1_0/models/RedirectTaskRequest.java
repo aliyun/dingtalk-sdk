@@ -6,13 +6,24 @@ import com.aliyun.tea.*;
 public class RedirectTaskRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_PBKT0MFBEBTDO8T7SLVP</p>
      */
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>y</p>
+     */
     @NameInMap("byManager")
     public String byManager;
 
+    /**
+     * <strong>example:</strong>
+     * <p>zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
@@ -42,6 +53,9 @@ public class RedirectTaskRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>task-123</p>
      */
     @NameInMap("taskId")
     public Long taskId;

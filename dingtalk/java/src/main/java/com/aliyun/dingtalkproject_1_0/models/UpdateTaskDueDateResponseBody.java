@@ -21,9 +21,17 @@ public class UpdateTaskDueDateResponseBody extends TeaModel {
     }
 
     public static class UpdateTaskDueDateResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("dueDate")
         public String dueDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

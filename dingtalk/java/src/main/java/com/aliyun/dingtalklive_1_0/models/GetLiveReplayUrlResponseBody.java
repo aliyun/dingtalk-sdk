@@ -21,6 +21,10 @@ public class GetLiveReplayUrlResponseBody extends TeaModel {
     }
 
     public static class GetLiveReplayUrlResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://xxx.dingtalk.com/live_hp/7c7ba32a-c92d-4524-b71e-33a72575c5a9_normal.m3u8?auth_key=xxx">http://xxx.dingtalk.com/live_hp/7c7ba32a-c92d-4524-b71e-33a72575c5a9_normal.m3u8?auth_key=xxx</a></p>
+         */
         @NameInMap("replayUrl")
         public String replayUrl;
 

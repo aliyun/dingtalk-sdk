@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdateManagementGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>财务管理组</p>
      */
     @NameInMap("groupName")
     public String groupName;
@@ -68,12 +71,18 @@ public class UpdateManagementGroupRequest extends TeaModel {
     public static class UpdateManagementGroupRequestMembers extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>WB001</p>
          */
         @NameInMap("memberId")
         public String memberId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>user</p>
          */
         @NameInMap("memberType")
         public String memberType;
@@ -107,6 +116,9 @@ public class UpdateManagementGroupRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1:全公司 2:所在部门 3:指定部门</p>
          */
         @NameInMap("scopeType")
         public Integer scopeType;

@@ -34,6 +34,10 @@ public class QueryUserBehaviorRequest extends TeaModel {
     @NameInMap("type")
     public Integer type;
 
+    /**
+     * <strong>example:</strong>
+     * <p>12034-1233</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,9 +4,17 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCategoryNameRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>demo</p>
+     */
     @NameInMap("currentCategoryName")
     public String currentCategoryName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>demo01</p>
+     */
     @NameInMap("targetCategoryName")
     public String targetCategoryName;
 

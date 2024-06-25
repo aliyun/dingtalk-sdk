@@ -6,36 +6,54 @@ import com.aliyun.tea.*;
 public class CreateOrgHonorRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>$xxxxxxx</p>
      */
     @NameInMap("avatarFrameMediaId")
     public String avatarFrameMediaId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>#FFFBB4</p>
      */
     @NameInMap("defaultBgColor")
     public String defaultBgColor;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>客户服务用心，奖励荣誉</p>
      */
     @NameInMap("medalDesc")
     public String medalDesc;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>@xxxxxxx</p>
      */
     @NameInMap("medalMediaId")
     public String medalMediaId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>客户第一</p>
      */
     @NameInMap("medalName")
     public String medalName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12312312</p>
      */
     @NameInMap("userId")
     public String userId;

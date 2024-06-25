@@ -10,6 +10,10 @@ public class ListMaintainInfoResponseBody extends TeaModel {
     @NameInMap("success")
     public Boolean success;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,24 +47,48 @@ public class ListMaintainInfoResponseBody extends TeaModel {
     }
 
     public static class ListMaintainInfoResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>testDeviceCode</p>
+         */
         @NameInMap("deviceCode")
         public String deviceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试设备名称</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-7-14 13:00</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022=12-25 15:00</p>
+         */
         @NameInMap("handleTime")
         public String handleTime;
 
         @NameInMap("maintenanceStaff")
         public java.util.List<String> maintenanceStaff;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("processState")
         public Integer processState;
 
+        /**
+         * <strong>example:</strong>
+         * <p>温度过高导致异常</p>
+         */
         @NameInMap("remark")
         public String remark;
 

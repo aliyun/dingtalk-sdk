@@ -12,6 +12,9 @@ public class UpdateKROfWeightResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -40,6 +43,9 @@ public class UpdateKROfWeightResponseBody extends TeaModel {
     public static class UpdateKROfWeightResponseBodyDataObjectiveProgress extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("percent")
         public Long percent;
@@ -68,6 +74,9 @@ public class UpdateKROfWeightResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("objectiveScore")
         public Long objectiveScore;

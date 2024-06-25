@@ -6,48 +6,72 @@ import com.aliyun.tea.*;
 public class QueryGroupResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>234</p>
      */
     @NameInMap("bizId")
     public String bizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>钉钉专属服务群</p>
      */
     @NameInMap("groupName")
     public String groupName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://qr.dingtalk.com/xxxxxxx">https://qr.dingtalk.com/xxxxxxx</a></p>
      */
     @NameInMap("groupUrl")
     public String groupUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidxxxxx==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xjfjdsiw</p>
      */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xkjhfker</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>jikwrjcowa</p>
      */
     @NameInMap("robotCode")
     public String robotCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>服务小钉</p>
      */
     @NameInMap("robotName")
     public String robotName;

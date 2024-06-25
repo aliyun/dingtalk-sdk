@@ -4,6 +4,10 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryInstancePaymentOrderDetailRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 

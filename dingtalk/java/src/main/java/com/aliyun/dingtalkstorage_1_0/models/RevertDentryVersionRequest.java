@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class RevertDentryVersionRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;

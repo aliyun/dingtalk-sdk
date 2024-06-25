@@ -10,23 +10,41 @@ public class SupplyUpdateMemberRequest extends TeaModel {
     @NameInMap("isCopyDept")
     public Boolean isCopyDept;
 
+    /**
+     * <strong>example:</strong>
+     * <p>财务</p>
+     */
     @NameInMap("memberTitle")
     public String memberTitle;
 
+    /**
+     * <strong>example:</strong>
+     * <p>121212</p>
+     */
     @NameInMap("memberWorkNumber")
     public String memberWorkNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>13914772100</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>11</p>
      */
     @NameInMap("newDeptId")
     public Long newDeptId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>111</p>
      */
     @NameInMap("oldDeptId")
     public Long oldDeptId;
@@ -34,9 +52,17 @@ public class SupplyUpdateMemberRequest extends TeaModel {
     @NameInMap("roleIdList")
     public java.util.List<String> roleIdList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>111</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1212</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,15 +4,27 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryInterviewsResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     @NameInMap("list")
     public java.util.List<QueryInterviewsResponseBodyList> list;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxx</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>总数量</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -54,6 +66,10 @@ public class QueryInterviewsResponseBody extends TeaModel {
     }
 
     public static class QueryInterviewsResponseBodyListInterviewers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxx</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -73,24 +89,48 @@ public class QueryInterviewsResponseBody extends TeaModel {
     }
 
     public static class QueryInterviewsResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("cancelled")
         public Boolean cancelled;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1626861600000</p>
+         */
         @NameInMap("endTimeMillis")
         public Long endTimeMillis;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx</p>
+         */
         @NameInMap("interviewId")
         public String interviewId;
 
         @NameInMap("interviewers")
         public java.util.List<QueryInterviewsResponseBodyListInterviewers> interviewers;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx</p>
+         */
         @NameInMap("jobId")
         public String jobId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1626858000000</p>
+         */
         @NameInMap("startTimeMillis")
         public Long startTimeMillis;
 

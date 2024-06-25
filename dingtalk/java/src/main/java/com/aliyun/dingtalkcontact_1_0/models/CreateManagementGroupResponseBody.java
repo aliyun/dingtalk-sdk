@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CreateManagementGroupResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>rolexxx</p>
      */
     @NameInMap("groupId")
     public String groupId;

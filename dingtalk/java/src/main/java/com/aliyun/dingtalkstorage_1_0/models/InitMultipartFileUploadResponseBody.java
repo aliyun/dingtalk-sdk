@@ -4,9 +4,17 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class InitMultipartFileUploadResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>DINGTALK</p>
+     */
     @NameInMap("storageDriver")
     public String storageDriver;
 
+    /**
+     * <strong>example:</strong>
+     * <p>upload_key</p>
+     */
     @NameInMap("uploadKey")
     public String uploadKey;
 

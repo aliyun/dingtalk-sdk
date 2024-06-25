@@ -4,6 +4,10 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInActiveUserListRequest extends TeaModel {
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("deptIds")
     public java.util.List<String> deptIds;
 

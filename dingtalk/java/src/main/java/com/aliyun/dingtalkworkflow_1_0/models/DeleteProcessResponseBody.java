@@ -21,6 +21,10 @@ public class DeleteProcessResponseBody extends TeaModel {
     }
 
     public static class DeleteProcessResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>proc-abc</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 

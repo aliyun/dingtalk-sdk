@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class OpenBenefitPackageRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("benefitPackage")
     public Integer benefitPackage;
@@ -24,6 +27,9 @@ public class OpenBenefitPackageRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxxx</p>
      */
     @NameInMap("targetCorpId")
     public String targetCorpId;

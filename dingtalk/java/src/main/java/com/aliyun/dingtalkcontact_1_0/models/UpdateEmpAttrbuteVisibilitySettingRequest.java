@@ -22,6 +22,10 @@ public class UpdateEmpAttrbuteVisibilitySettingRequest extends TeaModel {
     @NameInMap("hideFields")
     public java.util.List<String> hideFields;
 
+    /**
+     * <strong>example:</strong>
+     * <p>11111</p>
+     */
     @NameInMap("id")
     public Long id;
 

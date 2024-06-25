@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class NotifyBadgeCodeVerifyResultRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>corpxxxx</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>261234567890</p>
      */
     @NameInMap("payCode")
     public String payCode;
@@ -21,33 +27,57 @@ public class NotifyBadgeCodeVerifyResultRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>INTERNAL_STAFF</p>
      */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxxxx</p>
      */
     @NameInMap("userIdentity")
     public String userIdentity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>门禁验证</p>
+     */
     @NameInMap("verifyEvent")
     public String verifyEvent;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1号食堂</p>
+     */
     @NameInMap("verifyLocation")
     public String verifyLocation;
 
+    /**
+     * <strong>example:</strong>
+     * <p>202112120003232</p>
+     */
     @NameInMap("verifyNo")
     public String verifyNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("verifyResult")
     public Boolean verifyResult;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-01-01 12:12:12</p>
      */
     @NameInMap("verifyTime")
     public String verifyTime;

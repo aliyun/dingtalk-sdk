@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetFamilySchoolConversationMsgRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
@@ -18,18 +21,27 @@ public class GetFamilySchoolConversationMsgRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1666671122000</p>
      */
     @NameInMap("nextToken")
     public Long nextToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidxxxx</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("unionId")
     public String unionId;

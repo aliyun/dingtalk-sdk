@@ -6,22 +6,43 @@ import com.aliyun.tea.*;
 public class SearchActionsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>G-CONN-1015BC8093540B01B8D0000Q</p>
      */
     @NameInMap("connectorId")
     public String connectorId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding32fff839a3e0105d</p>
      */
     @NameInMap("connectorProviderCorpId")
     public String connectorProviderCorpId;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("integrationTypes")
     public java.util.List<String> integrationTypes;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

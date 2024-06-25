@@ -32,26 +32,43 @@ public class AssignOrgHoldingToEmpHoldingBatchResponseBody extends TeaModel {
     }
 
     public static class AssignOrgHoldingToEmpHoldingBatchResponseBodyResultOpenPointInvokeResultDTOS extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("code")
         public String code;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>SUCCESS</p>
          */
         @NameInMap("invokeStatus")
         public String invokeStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("msg")
         public String msg;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>23423568784</p>
          */
         @NameInMap("outId")
         public String outId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>01274411491620908910</p>
          */
         @NameInMap("userId")
         public String userId;

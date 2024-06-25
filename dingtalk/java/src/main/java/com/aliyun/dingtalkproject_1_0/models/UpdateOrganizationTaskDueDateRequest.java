@@ -4,14 +4,25 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOrganizationTaskDueDateRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableActivity")
     public Boolean disableActivity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableNotification")
     public Boolean disableNotification;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2022-06-13T03:30:42.830Z</p>
      */
     @NameInMap("dueDate")
     public String dueDate;

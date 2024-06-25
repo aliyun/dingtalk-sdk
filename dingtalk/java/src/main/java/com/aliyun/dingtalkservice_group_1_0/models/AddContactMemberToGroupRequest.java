@@ -4,23 +4,41 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddContactMemberToGroupRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>不裂变：STANDARD；裂变：FISSION</p>
+     */
     @NameInMap("fissionType")
     public String fissionType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>888</p>
+     */
     @NameInMap("memberUnionId")
     public String memberUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("memberUserId")
     public String memberUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cid***</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>888</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;

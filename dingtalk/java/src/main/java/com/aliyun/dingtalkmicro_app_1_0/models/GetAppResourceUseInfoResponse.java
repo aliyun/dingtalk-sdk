@@ -43,12 +43,24 @@ public class GetAppResourceUseInfoResponse extends TeaModel {
     }
 
     public static class GetAppResourceUseInfoResponseBody extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>202301</p>
+         */
         @NameInMap("period")
         public String period;
 
+        /**
+         * <strong>example:</strong>
+         * <p>8511</p>
+         */
         @NameInMap("usedNum")
         public Long usedNum;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10000</p>
+         */
         @NameInMap("quotaNum")
         public Long quotaNum;
 

@@ -4,12 +4,24 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryTaskOfProjectRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>f279e812-e431-428d-846d-cxxxxxx</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>involveMembers NOT IN [&quot;0612xx&quot;] AND executorId=&quot;057xxx&quot; AND content~标题2</p>
+     */
     @NameInMap("query")
     public String query;
 

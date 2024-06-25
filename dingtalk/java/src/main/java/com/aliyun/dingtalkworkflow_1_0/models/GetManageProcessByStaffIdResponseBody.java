@@ -7,6 +7,10 @@ public class GetManageProcessByStaffIdResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<GetManageProcessByStaffIdResponseBodyResult> result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,27 +36,54 @@ public class GetManageProcessByStaffIdResponseBody extends TeaModel {
     }
 
     public static class GetManageProcessByStaffIdResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("attendanceType")
         public Integer attendanceType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>通用审批</p>
+         */
         @NameInMap("flowTitle")
         public String flowTitle;
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2020-07-14 14:24:59</p>
          */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <strong>example:</strong>
+         * <p>common</p>
+         */
         @NameInMap("iconName")
         public String iconName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://gw.alicdn.com/tfs/xxxx-112-112.png">https://gw.alicdn.com/tfs/xxxx-112-112.png</a></p>
+         */
         @NameInMap("iconUrl")
         public String iconUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("newProcess")
         public Boolean newProcess;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PROC-44E84FC1-16E2-4A69-BB3C-xxxx</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 

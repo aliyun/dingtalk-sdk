@@ -9,6 +9,9 @@ public class DeleteProcessRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>proc-abc</p>
      */
     @NameInMap("processCode")
     public String processCode;

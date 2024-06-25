@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DissolveGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxxxxxx</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

@@ -10,6 +10,10 @@ public class ConsumeUserPointsResponseBody extends TeaModel {
     @NameInMap("result")
     public ConsumeUserPointsResponseBodyResult result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -37,6 +41,9 @@ public class ConsumeUserPointsResponseBody extends TeaModel {
     public static class ConsumeUserPointsResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>4990</p>
          */
         @NameInMap("amount")
         public Long amount;

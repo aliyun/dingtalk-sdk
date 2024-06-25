@@ -32,15 +32,31 @@ public class PediaWordsSearchResponseBody extends TeaModel {
     }
 
     public static class PediaWordsSearchResponseBodyDataAppLink extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>应用名</p>
+         */
         @NameInMap("appName")
         public String appName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://123434.com">https://123434.com</a></p>
+         */
         @NameInMap("iconLink")
         public String iconLink;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://123.com">http://123.com</a></p>
+         */
         @NameInMap("pcLink")
         public String pcLink;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://1244.com">http://1244.com</a></p>
+         */
         @NameInMap("phoneLink")
         public String phoneLink;
 
@@ -84,12 +100,24 @@ public class PediaWordsSearchResponseBody extends TeaModel {
     }
 
     public static class PediaWordsSearchResponseBodyDataContactList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>@12321312ds</p>
+         */
         @NameInMap("avatarMediaId")
         public String avatarMediaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>员工名称</p>
+         */
         @NameInMap("nickName")
         public String nickName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1232343</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -125,6 +153,10 @@ public class PediaWordsSearchResponseBody extends TeaModel {
     }
 
     public static class PediaWordsSearchResponseBodyDataPicList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://1234.com">https://1234.com</a></p>
+         */
         @NameInMap("mediaIdUrl")
         public String mediaIdUrl;
 
@@ -144,12 +176,24 @@ public class PediaWordsSearchResponseBody extends TeaModel {
     }
 
     public static class PediaWordsSearchResponseBodyDataRelatedDoc extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://12324.com">https://12324.com</a></p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <strong>example:</strong>
+         * <p>文档名</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>adoc</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -185,12 +229,24 @@ public class PediaWordsSearchResponseBody extends TeaModel {
     }
 
     public static class PediaWordsSearchResponseBodyDataRelatedLink extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://123112.com">https://123112.com</a></p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <strong>example:</strong>
+         * <p>文档名字</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>空值</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -229,6 +285,10 @@ public class PediaWordsSearchResponseBody extends TeaModel {
         @NameInMap("appLink")
         public java.util.List<PediaWordsSearchResponseBodyDataAppLink> appLink;
 
+        /**
+         * <strong>example:</strong>
+         * <p>审核人钉钉名称</p>
+         */
         @NameInMap("approveName")
         public String approveName;
 
@@ -238,6 +298,10 @@ public class PediaWordsSearchResponseBody extends TeaModel {
         @NameInMap("contacts")
         public java.util.List<String> contacts;
 
+        /**
+         * <strong>example:</strong>
+         * <p>创建者</p>
+         */
         @NameInMap("creatorName")
         public String creatorName;
 
@@ -268,15 +332,27 @@ public class PediaWordsSearchResponseBody extends TeaModel {
         @NameInMap("simHighLight")
         public Boolean simHighLight;
 
+        /**
+         * <strong>example:</strong>
+         * <p>剔除了富文本格式后的释义信息</p>
+         */
         @NameInMap("simpleWordParaphrase")
         public String simpleWordParaphrase;
 
         @NameInMap("tagsList")
         public java.util.List<String> tagsList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>修改人钉钉名称</p>
+         */
         @NameInMap("updaterName")
         public String updaterName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>312312312</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -286,9 +362,17 @@ public class PediaWordsSearchResponseBody extends TeaModel {
         @NameInMap("wordAlias")
         public java.util.List<String> wordAlias;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试词条</p>
+         */
         @NameInMap("wordName")
         public String wordName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>释义信息</p>
+         */
         @NameInMap("wordParaphrase")
         public String wordParaphrase;
 

@@ -6,39 +6,78 @@ import com.aliyun.tea.*;
 public class CreateOrganizationTaskRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>明天12点前完成周报撰写</p>
      */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-08-13T07:36:50.318Z</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableActivity")
     public Boolean disableActivity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableNotification")
     public Boolean disableNotification;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-08-13T07:36:50.318Z</p>
+     */
     @NameInMap("dueDate")
     public String dueDate;
 
+    /**
+     * <strong>example:</strong>
+     * <p>173xxxx</p>
+     */
     @NameInMap("executorId")
     public String executorId;
 
     @NameInMap("involveMembers")
     public java.util.List<String> involveMembers;
 
+    /**
+     * <strong>example:</strong>
+     * <p>我是一条任务备注</p>
+     */
     @NameInMap("note")
     public String note;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>-10</p>
      */
     @NameInMap("priority")
     public Integer priority;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>members</p>
      */
     @NameInMap("visible")
     public String visible;

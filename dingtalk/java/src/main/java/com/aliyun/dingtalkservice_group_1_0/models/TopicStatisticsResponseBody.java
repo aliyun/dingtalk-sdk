@@ -26,24 +26,36 @@ public class TopicStatisticsResponseBody extends TeaModel {
     public static class TopicStatisticsResponseBodyTopicStatisticsRecords extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20220101</p>
          */
         @NameInMap("dt")
         public String dt;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20</p>
          */
         @NameInMap("msgCount")
         public Long msgCount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3</p>
          */
         @NameInMap("participantsNum")
         public Long participantsNum;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("topicNum")
         public Long topicNum;

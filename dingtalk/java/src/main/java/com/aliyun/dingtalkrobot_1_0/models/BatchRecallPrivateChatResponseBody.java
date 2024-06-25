@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class BatchRecallPrivateChatResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5fe11095f46315d8d30d3f8XXXXXX:SYSTEM_ERROR</p>
      */
     @NameInMap("failedResult")
     public java.util.Map<String, String> failedResult;

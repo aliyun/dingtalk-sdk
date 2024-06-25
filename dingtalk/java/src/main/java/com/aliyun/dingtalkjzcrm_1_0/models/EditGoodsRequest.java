@@ -9,15 +9,25 @@ public class EditGoodsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>154</p>
      */
     @NameInMap("datatype")
     public Long datatype;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("msgid")
     public Long msgid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1621822122</p>
      */
     @NameInMap("stamp")
     public Long stamp;
@@ -113,6 +123,12 @@ public class EditGoodsRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
+         * 
+         * <strong>if can be null:</strong>
+         * <p>false</p>
          */
         @NameInMap("data_userid")
         public String dataUserid;

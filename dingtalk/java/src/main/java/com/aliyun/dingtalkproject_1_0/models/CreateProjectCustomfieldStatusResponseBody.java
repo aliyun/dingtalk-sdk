@@ -21,12 +21,20 @@ public class CreateProjectCustomfieldStatusResponseBody extends TeaModel {
     }
 
     public static class CreateProjectCustomfieldStatusResponseBodyResultValue extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>63a5301e420637003f5dxxxx</p>
+         */
         @NameInMap("customFieldValueId")
         public String customFieldValueId;
 
         @NameInMap("metaString")
         public String metaString;
 
+        /**
+         * <strong>example:</strong>
+         * <p>13</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -62,18 +70,38 @@ public class CreateProjectCustomfieldStatusResponseBody extends TeaModel {
     }
 
     public static class CreateProjectCustomfieldStatusResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>lookup2</p>
+         */
         @NameInMap("advancedCustomFieldObjectType")
         public String advancedCustomFieldObjectType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>63a5301e420637003f5dxxxx</p>
+         */
         @NameInMap("customFieldId")
         public String customFieldId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>项目进度</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62a5301e420637003f5dxxxx</p>
+         */
         @NameInMap("originalId")
         public String originalId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>number</p>
+         */
         @NameInMap("type")
         public String type;
 

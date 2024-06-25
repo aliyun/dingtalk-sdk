@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class QueryUnReadMessageRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1107****2120</p>
      */
     @NameInMap("appUserId")
     public String appUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1745****8777</p>
+     */
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 

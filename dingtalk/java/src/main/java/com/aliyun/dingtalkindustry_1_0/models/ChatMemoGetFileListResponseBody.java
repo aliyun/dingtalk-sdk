@@ -7,15 +7,31 @@ public class ChatMemoGetFileListResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<ChatMemoGetFileListResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>200</p>
+     */
     @NameInMap("total")
     public Integer total;
 
+    /**
+     * <strong>example:</strong>
+     * <p>50</p>
+     */
     @NameInMap("totalPage")
     public Integer totalPage;
 
@@ -65,15 +81,31 @@ public class ChatMemoGetFileListResponseBody extends TeaModel {
     }
 
     public static class ChatMemoGetFileListResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("bizId")
         public String bizId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>财务制度文件</p>
+         */
         @NameInMap("fileDesc")
         public String fileDesc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>aaaaa.doc</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyyyy-aaaaaa-bbbbb-cccccccccc.docx</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 

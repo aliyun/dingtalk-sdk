@@ -4,6 +4,10 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserRoleListResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>COM_DEFAULT</p>
+     */
     @NameInMap("companyCode")
     public String companyCode;
 
@@ -95,9 +99,17 @@ public class QueryUserRoleListResponseBody extends TeaModel {
     }
 
     public static class QueryUserRoleListResponseBodyRoleVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>applicationManager</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>应用管理员</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 

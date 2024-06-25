@@ -7,15 +7,26 @@ public class TerminateProcessInstanceRequest extends TeaModel {
     @NameInMap("isSystem")
     public Boolean isSystem;
 
+    /**
+     * <strong>example:</strong>
+     * <p>133743186427339452</p>
+     */
     @NameInMap("operatingUserId")
     public String operatingUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>a171de6c-8bxxxx</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>终止说明。</p>
+     */
     @NameInMap("remark")
     public String remark;
 

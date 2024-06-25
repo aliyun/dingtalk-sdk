@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class ConsumeBenefitInventoryRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>B_ACCOUNT_NUMBER</p>
      */
     @NameInMap("benefitCode")
     public String benefitCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>bizId</p>
      */
     @NameInMap("bizRequestId")
     public String bizRequestId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("consumeQuota")
     public Long consumeQuota;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>optStaffId</p>
      */
     @NameInMap("optUserId")
     public String optUserId;

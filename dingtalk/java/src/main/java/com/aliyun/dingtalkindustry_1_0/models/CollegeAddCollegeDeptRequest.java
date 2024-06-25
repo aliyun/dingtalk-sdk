@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class CollegeAddCollegeDeptRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>三年二班</p>
      */
     @NameInMap("deptName")
     public String deptName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>class</p>
      */
     @NameInMap("deptType")
     public String deptType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("sortFactor")
     public Long sortFactor;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>22222</p>
      */
     @NameInMap("superId")
     public Long superId;

@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class GetCandidateByPhoneNumberResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("candidateId")
     public String candidateId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>张三</p>
+     */
     @NameInMap("name")
     public String name;
 

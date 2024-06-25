@@ -6,48 +6,72 @@ import com.aliyun.tea.*;
 public class InstallRobotToOrgRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>这是小丁</p>
      */
     @NameInMap("brief")
     public String brief;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>我是小丁</p>
      */
     @NameInMap("description")
     public String description;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>@lALPDe7s26Bre</p>
      */
     @NameInMap("icon")
     public String icon;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>小丁</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("outgoingToken")
     public String outgoingToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>https://*.com</p>
      */
     @NameInMap("outgoingUrl")
     public String outgoingUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>@lALPDe7s26Bre</p>
      */
     @NameInMap("previewMediaId")
     public String previewMediaId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("robotCode")
     public String robotCode;

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CreateUserRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="mailto:user@yourcompany.org">user@yourcompany.org</a></p>
      */
     @NameInMap("email")
     public String email;
@@ -24,6 +27,9 @@ public class CreateUserRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>password</p>
      */
     @NameInMap("password")
     public String password;

@@ -4,15 +4,31 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupConversationResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("dingOpenErrcode")
     public Integer dingOpenErrcode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>SYSTEM_ERROR</p>
+     */
     @NameInMap("errorMsg")
     public String errorMsg;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("result")
     public String result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

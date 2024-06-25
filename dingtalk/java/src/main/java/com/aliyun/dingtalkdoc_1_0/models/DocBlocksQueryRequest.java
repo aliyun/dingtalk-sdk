@@ -4,18 +4,33 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class DocBlocksQueryRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>block_type</p>
+     */
     @NameInMap("blockType")
     public String blockType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>end_index</p>
+     */
     @NameInMap("endIndex")
     public Integer endIndex;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>start_index</p>
+     */
     @NameInMap("startIndex")
     public Integer startIndex;
 

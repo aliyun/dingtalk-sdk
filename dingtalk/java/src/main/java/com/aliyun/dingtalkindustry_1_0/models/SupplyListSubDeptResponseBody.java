@@ -21,15 +21,31 @@ public class SupplyListSubDeptResponseBody extends TeaModel {
     }
 
     public static class SupplyListSubDeptResponseBodyResultPartnerTypeInfoList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>11111</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1111</p>
+         */
         @NameInMap("superId")
         public Long superId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1111</p>
+         */
         @NameInMap("superName")
         public String superName;
 
@@ -73,24 +89,44 @@ public class SupplyListSubDeptResponseBody extends TeaModel {
     }
 
     public static class SupplyListSubDeptResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1111</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ROOT</p>
+         */
         @NameInMap("deptType")
         public String deptType;
 
         @NameInMap("hasSubDept")
         public Boolean hasSubDept;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx 有限公司</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111111</p>
+         */
         @NameInMap("partnerNumber")
         public String partnerNumber;
 
         @NameInMap("partnerTypeInfoList")
         public java.util.List<SupplyListSubDeptResponseBodyResultPartnerTypeInfoList> partnerTypeInfoList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1111</p>
+         */
         @NameInMap("superId")
         public Long superId;
 

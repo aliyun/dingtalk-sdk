@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class SendByAppRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>file_id</p>
      */
     @NameInMap("dentryId")
     public String dentryId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>space_id</p>
      */
     @NameInMap("spaceId")
     public String spaceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;

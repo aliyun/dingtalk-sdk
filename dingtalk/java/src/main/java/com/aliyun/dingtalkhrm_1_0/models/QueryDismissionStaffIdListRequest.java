@@ -4,9 +4,17 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDismissionStaffIdListRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>30</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 

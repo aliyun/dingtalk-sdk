@@ -4,6 +4,10 @@ package com.aliyun.dingtalkwiki_2_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteTeamResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

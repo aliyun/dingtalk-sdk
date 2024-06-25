@@ -26,18 +26,32 @@ public class CreateReceiptResponseBody extends TeaModel {
     public static class CreateReceiptResponseBodyResults extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abcef-efgh-123</p>
          */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>success</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>成功</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("success")
         public Boolean success;

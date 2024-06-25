@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CollegeUpdateCollegeDeptRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1111</p>
      */
     @NameInMap("deptId")
     public Long deptId;
@@ -13,9 +16,17 @@ public class CollegeUpdateCollegeDeptRequest extends TeaModel {
     @NameInMap("deptName")
     public String deptName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("sortFactor")
     public Long sortFactor;
 
+    /**
+     * <strong>example:</strong>
+     * <p>22222</p>
+     */
     @NameInMap("superId")
     public Long superId;
 

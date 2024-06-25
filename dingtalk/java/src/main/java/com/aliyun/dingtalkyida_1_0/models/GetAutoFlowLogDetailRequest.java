@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class GetAutoFlowLogDetailRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding5d17e3add038d44535c2f4657eb6378e</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("pageSize")
     public Integer pageSize;
@@ -30,12 +39,18 @@ public class GetAutoFlowLogDetailRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>B073AF673BEB044D59F8F612D65E1EA2</p>
      */
     @NameInMap("token")
     public String token;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding173982232112232</p>
      */
     @NameInMap("userId")
     public String userId;

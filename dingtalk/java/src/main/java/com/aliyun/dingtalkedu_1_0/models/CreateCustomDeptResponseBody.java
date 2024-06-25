@@ -32,6 +32,10 @@ public class CreateCustomDeptResponseBody extends TeaModel {
     }
 
     public static class CreateCustomDeptResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1234</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 

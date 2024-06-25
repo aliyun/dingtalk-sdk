@@ -6,11 +6,10 @@ import com.aliyun.dingtalklive_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 添加云导播联播群列表
-     *
+     * <b>summary</b> : 
+     * <p>添加云导播联播群列表</p>
+     * 
      * @param request AddShareCidListRequest
      * @param headers AddShareCidListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -70,8 +70,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加云导播联播群列表
-     *
+     * <b>summary</b> : 
+     * <p>添加云导播联播群列表</p>
+     * 
      * @param request AddShareCidListRequest
      * @return AddShareCidListResponse
      */
@@ -82,8 +83,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建云导播课程
-     *
+     * <b>summary</b> : 
+     * <p>创建云导播课程</p>
+     * 
      * @param request CreateCloudFeedRequest
      * @param headers CreateCloudFeedHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -144,8 +146,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建云导播课程
-     *
+     * <b>summary</b> : 
+     * <p>创建云导播课程</p>
+     * 
      * @param request CreateCloudFeedRequest
      * @return CreateCloudFeedResponse
      */
@@ -156,8 +159,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建直播
-     *
+     * <b>summary</b> : 
+     * <p>创建直播</p>
+     * 
      * @param request CreateLiveRequest
      * @param headers CreateLiveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -222,8 +226,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建直播
-     *
+     * <b>summary</b> : 
+     * <p>创建直播</p>
+     * 
      * @param request CreateLiveRequest
      * @return CreateLiveResponse
      */
@@ -234,8 +239,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除直播
-     *
+     * <b>summary</b> : 
+     * <p>删除直播</p>
+     * 
      * @param request DeleteLiveRequest
      * @param headers DeleteLiveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -280,8 +286,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除直播
-     *
+     * <b>summary</b> : 
+     * <p>删除直播</p>
+     * 
      * @param request DeleteLiveRequest
      * @return DeleteLiveResponse
      */
@@ -292,8 +299,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除直播培训课程
-     *
+     * <b>summary</b> : 
+     * <p>删除直播培训课程</p>
+     * 
      * @param request DeleteLiveFeedRequest
      * @param headers DeleteLiveFeedHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -334,8 +342,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除直播培训课程
-     *
+     * <b>summary</b> : 
+     * <p>删除直播培训课程</p>
+     * 
      * @param request DeleteLiveFeedRequest
      * @return DeleteLiveFeedResponse
      */
@@ -346,8 +355,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 剪辑直播课程的回放
-     *
+     * <b>summary</b> : 
+     * <p>剪辑直播课程的回放</p>
+     * 
      * @param request EditFeedReplayRequest
      * @param headers EditFeedReplayHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -396,8 +406,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 剪辑直播课程的回放
-     *
+     * <b>summary</b> : 
+     * <p>剪辑直播课程的回放</p>
+     * 
      * @param request EditFeedReplayRequest
      * @return EditFeedReplayResponse
      */
@@ -408,8 +419,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取直播的可下载回放地址
-     *
+     * <b>summary</b> : 
+     * <p>获取直播的可下载回放地址</p>
+     * 
      * @param request GetLiveReplayUrlRequest
      * @param headers GetLiveReplayUrlHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -454,8 +466,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取直播的可下载回放地址
-     *
+     * <b>summary</b> : 
+     * <p>获取直播的可下载回放地址</p>
+     * 
      * @param request GetLiveReplayUrlRequest
      * @return GetLiveReplayUrlResponse
      */
@@ -466,8 +479,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据状态拉我相关的直播
-     *
+     * <b>summary</b> : 
+     * <p>根据状态拉我相关的直播</p>
+     * 
      * @param request GetUserAllLiveListRequest
      * @param headers GetUserAllLiveListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -534,8 +548,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据状态拉我相关的直播
-     *
+     * <b>summary</b> : 
+     * <p>根据状态拉我相关的直播</p>
+     * 
      * @param request GetUserAllLiveListRequest
      * @return GetUserAllLiveListResponse
      */
@@ -546,8 +561,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据状态获取用户创建的直播
-     *
+     * <b>summary</b> : 
+     * <p>根据状态获取用户创建的直播</p>
+     * 
      * @param request GetUserCreateLiveListRequest
      * @param headers GetUserCreateLiveListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -614,8 +630,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据状态获取用户创建的直播
-     *
+     * <b>summary</b> : 
+     * <p>根据状态获取用户创建的直播</p>
+     * 
      * @param request GetUserCreateLiveListRequest
      * @return GetUserCreateLiveListResponse
      */
@@ -626,8 +643,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户观看直播记录
-     *
+     * <b>summary</b> : 
+     * <p>获取用户观看直播记录</p>
+     * 
      * @param request GetUserWatchLiveListRequest
      * @param headers GetUserWatchLiveListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -680,8 +698,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户观看直播记录
-     *
+     * <b>summary</b> : 
+     * <p>获取用户观看直播记录</p>
+     * 
      * @param request GetUserWatchLiveListRequest
      * @return GetUserWatchLiveListResponse
      */
@@ -692,8 +711,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改直播课程可见白名单
-     *
+     * <b>summary</b> : 
+     * <p>修改直播课程可见白名单</p>
+     * 
      * @param tmpReq ModifyFeedWhiteListRequest
      * @param headers ModifyFeedWhiteListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -748,8 +768,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改直播课程可见白名单
-     *
+     * <b>summary</b> : 
+     * <p>修改直播课程可见白名单</p>
+     * 
      * @param request ModifyFeedWhiteListRequest
      * @return ModifyFeedWhiteListResponse
      */
@@ -760,8 +781,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询直播课程的观看白名单
-     *
+     * <b>summary</b> : 
+     * <p>查询直播课程的观看白名单</p>
+     * 
      * @param request QueryFeedWhiteListRequest
      * @param headers QueryFeedWhiteListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -802,8 +824,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询直播课程的观看白名单
-     *
+     * <b>summary</b> : 
+     * <p>查询直播课程的观看白名单</p>
+     * 
      * @param request QueryFeedWhiteListRequest
      * @return QueryFeedWhiteListResponse
      */
@@ -814,8 +837,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询直播详情
-     *
+     * <b>summary</b> : 
+     * <p>查询直播详情</p>
+     * 
      * @param request QueryLiveInfoRequest
      * @param headers QueryLiveInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -860,8 +884,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询直播详情
-     *
+     * <b>summary</b> : 
+     * <p>查询直播详情</p>
+     * 
      * @param request QueryLiveInfoRequest
      * @return QueryLiveInfoResponse
      */
@@ -872,8 +897,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取直播的观看数据
-     *
+     * <b>summary</b> : 
+     * <p>获取直播的观看数据</p>
+     * 
      * @param request QueryLiveWatchDetailRequest
      * @param headers QueryLiveWatchDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -918,8 +944,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取直播的观看数据
-     *
+     * <b>summary</b> : 
+     * <p>获取直播的观看数据</p>
+     * 
      * @param request QueryLiveWatchDetailRequest
      * @return QueryLiveWatchDetailResponse
      */
@@ -930,8 +957,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取直播观看用户列表
-     *
+     * <b>summary</b> : 
+     * <p>获取直播观看用户列表</p>
+     * 
      * @param request QueryLiveWatchUserListRequest
      * @param headers QueryLiveWatchUserListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -984,8 +1012,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取直播观看用户列表
-     *
+     * <b>summary</b> : 
+     * <p>获取直播观看用户列表</p>
+     * 
      * @param request QueryLiveWatchUserListRequest
      * @return QueryLiveWatchUserListResponse
      */
@@ -996,8 +1025,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询直播是否订阅
-     *
+     * <b>summary</b> : 
+     * <p>批量查询直播是否订阅</p>
+     * 
      * @param tmpReq QuerySubscribeStatusRequest
      * @param headers QuerySubscribeStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1048,8 +1078,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询直播是否订阅
-     *
+     * <b>summary</b> : 
+     * <p>批量查询直播是否订阅</p>
+     * 
      * @param request QuerySubscribeStatusRequest
      * @return QuerySubscribeStatusResponse
      */
@@ -1060,8 +1091,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 开始一场云导播
-     *
+     * <b>summary</b> : 
+     * <p>开始一场云导播</p>
+     * 
      * @param request StartCloudFeedRequest
      * @param headers StartCloudFeedHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1102,8 +1134,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 开始一场云导播
-     *
+     * <b>summary</b> : 
+     * <p>开始一场云导播</p>
+     * 
      * @param request StartCloudFeedRequest
      * @return StartCloudFeedResponse
      */
@@ -1114,8 +1147,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 结束一场云导播
-     *
+     * <b>summary</b> : 
+     * <p>结束一场云导播</p>
+     * 
      * @param request StopCloudFeedRequest
      * @param headers StopCloudFeedHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1156,8 +1190,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 结束一场云导播
-     *
+     * <b>summary</b> : 
+     * <p>结束一场云导播</p>
+     * 
      * @param request StopCloudFeedRequest
      * @return StopCloudFeedResponse
      */
@@ -1168,8 +1203,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 预约直播
-     *
+     * <b>summary</b> : 
+     * <p>预约直播</p>
+     * 
      * @param request SubscribeLiveRequest
      * @param headers SubscribeLiveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1218,8 +1254,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 预约直播
-     *
+     * <b>summary</b> : 
+     * <p>预约直播</p>
+     * 
      * @param request SubscribeLiveRequest
      * @return SubscribeLiveResponse
      */
@@ -1230,8 +1267,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改直播
-     *
+     * <b>summary</b> : 
+     * <p>修改直播</p>
+     * 
      * @param request UpdateLiveRequest
      * @param headers UpdateLiveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1296,8 +1334,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改直播
-     *
+     * <b>summary</b> : 
+     * <p>修改直播</p>
+     * 
      * @param request UpdateLiveRequest
      * @return UpdateLiveResponse
      */
@@ -1308,8 +1347,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改培训课程信息
-     *
+     * <b>summary</b> : 
+     * <p>修改培训课程信息</p>
+     * 
      * @param request UpdateLiveFeedRequest
      * @param headers UpdateLiveFeedHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1366,8 +1406,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改培训课程信息
-     *
+     * <b>summary</b> : 
+     * <p>修改培训课程信息</p>
+     * 
      * @param request UpdateLiveFeedRequest
      * @return UpdateLiveFeedResponse
      */

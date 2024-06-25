@@ -21,18 +21,38 @@ public class SupplyListPartnerManagersResponseBody extends TeaModel {
     }
 
     public static class SupplyListPartnerManagersResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>56789123</p>
+         */
         @NameInMap("deptId")
         public String deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>对接部门名称</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user</p>
+         */
         @NameInMap("interfaceType")
         public String interfaceType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>121234567</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>名称</p>
+         */
         @NameInMap("userName")
         public String userName;
 

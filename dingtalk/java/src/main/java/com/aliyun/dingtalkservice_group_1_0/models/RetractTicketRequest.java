@@ -9,12 +9,18 @@ public class RetractTicketRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>eKWh3GBwsKEiE</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>a8iS4X94TgtgiE</p>
      */
     @NameInMap("openTicketId")
     public String openTicketId;
@@ -74,6 +80,10 @@ public class RetractTicketRequest extends TeaModel {
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 
@@ -145,6 +155,10 @@ public class RetractTicketRequest extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<RetractTicketRequestTicketMemoAttachments> attachments;
 
+        /**
+         * <strong>example:</strong>
+         * <p>备注</p>
+         */
         @NameInMap("memo")
         public String memo;
 

@@ -9,6 +9,9 @@ public class ListStarsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -41,36 +44,80 @@ public class ListStarsRequest extends TeaModel {
         @NameInMap("filterDocTypes")
         public java.util.List<String> filterDocTypes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("listV2")
         public Boolean listV2;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
+        /**
+         * <strong>example:</strong>
+         * <p>next_token</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ASC</p>
+         */
         @NameInMap("order")
         public String order;
 
+        /**
+         * <strong>example:</strong>
+         * <p>createTime</p>
+         */
         @NameInMap("orderBy")
         public String orderBy;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withDentryCreatorInfo")
         public Boolean withDentryCreatorInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withDentryModifierInfo")
         public Boolean withDentryModifierInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withDentryPermissionRole")
         public Boolean withDentryPermissionRole;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withSpaceDetail")
         public Boolean withSpaceDetail;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withSpacePermissionRole")
         public Boolean withSpacePermissionRole;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withTeamDetail")
         public Boolean withTeamDetail;
 

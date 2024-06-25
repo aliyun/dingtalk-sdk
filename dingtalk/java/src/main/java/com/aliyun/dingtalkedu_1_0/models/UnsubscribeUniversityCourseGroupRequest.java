@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UnsubscribeUniversityCourseGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>GSS10023</p>
      */
     @NameInMap("courseGroupCode")
     public String courseGroupCode;

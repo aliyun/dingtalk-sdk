@@ -18,6 +18,9 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>234536346</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
@@ -54,18 +57,27 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     public static class UpdateCoursesOfClassRequestCoursesDateModel extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>9</p>
          */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>11</p>
          */
         @NameInMap("month")
         public Integer month;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2020</p>
          */
         @NameInMap("year")
         public Integer year;
@@ -104,12 +116,18 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     public static class UpdateCoursesOfClassRequestCoursesSectionModel extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>第一节/午休</p>
          */
         @NameInMap("sectionName")
         public String sectionName;
@@ -160,10 +178,17 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>语文</p>
          */
         @NameInMap("courseName")
         public String courseName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李老师</p>
+         */
         @NameInMap("creatorName")
         public String creatorName;
 
@@ -176,6 +201,10 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
         @NameInMap("deleteTag")
         public Boolean deleteTag;
 
+        /**
+         * <strong>example:</strong>
+         * <p>正心楼1-1</p>
+         */
         @NameInMap("location")
         public String location;
 
@@ -270,12 +299,18 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     public static class UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("hour")
         public Integer hour;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>45</p>
          */
         @NameInMap("min")
         public Integer min;
@@ -306,12 +341,18 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     public static class UpdateCoursesOfClassRequestSectionConfigSectionModelsStart extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("hour")
         public Integer hour;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("min")
         public Integer min;
@@ -348,10 +389,17 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
+        /**
+         * <strong>example:</strong>
+         * <p>COURSE：上课节次 REST：休息节次</p>
+         */
         @NameInMap("sectionType")
         public String sectionType;
 

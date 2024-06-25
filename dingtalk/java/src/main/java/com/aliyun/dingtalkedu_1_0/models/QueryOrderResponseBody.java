@@ -7,54 +7,114 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("actualAmount")
     public Long actualAmount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123400</p>
+     */
     @NameInMap("alipayAppId")
     public String alipayAppId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-11-04T17:15Z</p>
+     */
     @NameInMap("closeTime")
     public String closeTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1672973971107</p>
+     */
     @NameInMap("closeTimestamp")
     public Long closeTimestamp;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-11-04T17:15Z</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1672973971107</p>
+     */
     @NameInMap("createTimestamp")
     public Long createTimestamp;
 
     @NameInMap("labelAmount")
     public Long labelAmount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10000</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>M20000100</p>
+     */
     @NameInMap("merchantMergeOrderNo")
     public String merchantMergeOrderNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>M20000100</p>
+     */
     @NameInMap("merchantOrderNo")
     public String merchantOrderNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CM0001</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("orderType")
     public String orderType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fagweefdsdgfa</p>
+     */
     @NameInMap("outerUserId")
     public String outerUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>138***</p>
+     */
     @NameInMap("payLogonId")
     public String payLogonId;
 
     @NameInMap("payStatus")
     public Integer payStatus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-11-04T17:15Z</p>
+     */
     @NameInMap("payTime")
     public String payTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1672973971107</p>
+     */
     @NameInMap("payTimestamp")
     public Long payTimestamp;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("payType")
     public String payType;
 
@@ -64,15 +124,31 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("refundStatus")
     public Integer refundStatus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-11-04T17:15Z</p>
+     */
     @NameInMap("refundTime")
     public String refundTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1672973971107</p>
+     */
     @NameInMap("refundTimestamp")
     public Long refundTimestamp;
 
+    /**
+     * <strong>example:</strong>
+     * <p>教育产品</p>
+     */
     @NameInMap("subject")
     public String subject;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022080311111</p>
+     */
     @NameInMap("tradeNo")
     public String tradeNo;
 

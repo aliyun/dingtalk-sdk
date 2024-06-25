@@ -6,21 +6,34 @@ import com.aliyun.tea.*;
 public class PublishFileChangeNoticeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("fileId")
     public String fileId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("operateType")
     public String operateType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("spaceId")
     public String spaceId;

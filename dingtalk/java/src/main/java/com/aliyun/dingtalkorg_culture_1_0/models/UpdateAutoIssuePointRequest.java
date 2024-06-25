@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class UpdateAutoIssuePointRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("pointAutoNum")
     public Long pointAutoNum;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("pointAutoState")
     public Boolean pointAutoState;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>15</p>
      */
     @NameInMap("pointAutoTime")
     public Long pointAutoTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>11185568-1380470824</p>
      */
     @NameInMap("userId")
     public String userId;

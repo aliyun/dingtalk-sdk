@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class PediaWordsDeleteRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2123132</p>
      */
     @NameInMap("userId")
     public String userId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>212112</p>
      */
     @NameInMap("uuid")
     public Long uuid;

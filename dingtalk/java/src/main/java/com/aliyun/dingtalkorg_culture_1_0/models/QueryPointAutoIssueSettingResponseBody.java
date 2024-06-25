@@ -9,6 +9,9 @@ public class QueryPointAutoIssueSettingResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -37,18 +40,27 @@ public class QueryPointAutoIssueSettingResponseBody extends TeaModel {
     public static class QueryPointAutoIssueSettingResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
          */
         @NameInMap("pointAutoNum")
         public Long pointAutoNum;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("pointAutoState")
         public Boolean pointAutoState;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>15</p>
          */
         @NameInMap("pointAutoTime")
         public Long pointAutoTime;

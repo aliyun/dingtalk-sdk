@@ -21,9 +21,17 @@ public class DigitalStoreUpdateAuthInfoRequest extends TeaModel {
     }
 
     public static class DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>区域督导</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>255</p>
+         */
         @NameInMap("sourceRoleId")
         public String sourceRoleId;
 
@@ -51,9 +59,17 @@ public class DigitalStoreUpdateAuthInfoRequest extends TeaModel {
     }
 
     public static class DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>8733901123</p>
+         */
         @NameInMap("dingDeptId")
         public String dingDeptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>998383831</p>
+         */
         @NameInMap("sourceDeptId")
         public String sourceDeptId;
 
@@ -87,6 +103,10 @@ public class DigitalStoreUpdateAuthInfoRequest extends TeaModel {
         @NameInMap("userAuthList")
         public java.util.List<DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList> userAuthList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0998182231</p>
+         */
         @NameInMap("userId")
         public String userId;
 

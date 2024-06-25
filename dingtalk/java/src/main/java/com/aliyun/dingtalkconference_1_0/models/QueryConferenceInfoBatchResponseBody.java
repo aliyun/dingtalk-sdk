@@ -21,18 +21,34 @@ public class QueryConferenceInfoBatchResponseBody extends TeaModel {
     }
 
     public static class QueryConferenceInfoBatchResponseBodyInfosUserList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0-未定义,1-初始化,2-加入中,3-在会,4-加入失败,5,被踢出,6-离开</p>
+         */
         @NameInMap("attendStatus")
         public Long attendStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0-初始化，1-关闭，2-打开</p>
+         */
         @NameInMap("cameraStatus")
         public Long cameraStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0-初始化，1-关闭，2-打开</p>
+         */
         @NameInMap("micStatus")
         public Long micStatus;
 
         @NameInMap("nick")
         public String nick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>抱歉，正在开会</p>
+         */
         @NameInMap("rejectDescription")
         public String rejectDescription;
 
@@ -98,12 +114,20 @@ public class QueryConferenceInfoBatchResponseBody extends TeaModel {
         @NameInMap("conferenceId")
         public String conferenceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0-正常，1-麦克风静音，2-摄像头关闭，4-强制全员静音</p>
+         */
         @NameInMap("mediaStatus")
         public Long mediaStatus;
 
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0-初始化，1-会议结束，2-会议开始</p>
+         */
         @NameInMap("status")
         public Long status;
 

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryFormByBizTypeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SWAPP-abcdef-example</p>
      */
     @NameInMap("appUuid")
     public String appUuid;

@@ -10,9 +10,17 @@ public class CampusUpdateCampusGroupRequest extends TeaModel {
     @NameInMap("campusProjectGroupId")
     public Long campusProjectGroupId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>扩展信息</p>
+     */
     @NameInMap("extend")
     public String extend;
 
+    /**
+     * <strong>example:</strong>
+     * <p>绿城未来park</p>
+     */
     @NameInMap("name")
     public String name;
 

@@ -4,15 +4,31 @@ package com.aliyun.dingtalkcool_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class InstallCoolAppToGroupRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cidxxxx</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CoolApp-xxx</p>
+     */
     @NameInMap("operateCoolAppCode")
     public String operateCoolAppCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>staffid12</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>template-id-xxx</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

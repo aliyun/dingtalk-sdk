@@ -32,18 +32,38 @@ public class CardGetCardFinishProgressResponseBody extends TeaModel {
     }
 
     public static class CardGetCardFinishProgressResponseBodyResultClassStatisticsProcess extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-01</p>
+         */
         @NameInMap("date")
         public String date;
 
+        /**
+         * <strong>example:</strong>
+         * <p>11</p>
+         */
         @NameInMap("finishedStudentsNum")
         public Long finishedStudentsNum;
 
+        /**
+         * <strong>example:</strong>
+         * <p>11</p>
+         */
         @NameInMap("needFinishStudentsNum")
         public Long needFinishStudentsNum;
 
+        /**
+         * <strong>example:</strong>
+         * <p>CARD_TASK_CODE_0</p>
+         */
         @NameInMap("taskCode")
         public String taskCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-01</p>
+         */
         @NameInMap("today")
         public String today;
 
@@ -95,15 +115,31 @@ public class CardGetCardFinishProgressResponseBody extends TeaModel {
     }
 
     public static class CardGetCardFinishProgressResponseBodyResultClassStatistics extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>234234234</p>
+         */
         @NameInMap("cardBizId")
         public String cardBizId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>二年级1班</p>
+         */
         @NameInMap("cardBizName")
         public String cardBizName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3424234</p>
+         */
         @NameInMap("classId")
         public String classId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>二年级1班</p>
+         */
         @NameInMap("className")
         public String className;
 
@@ -158,9 +194,17 @@ public class CardGetCardFinishProgressResponseBody extends TeaModel {
     }
 
     public static class CardGetCardFinishProgressResponseBodyResultPatriarchStatistics extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>CARD_TASK_CODE_0</p>
+         */
         @NameInMap("cardTaskCode")
         public String cardTaskCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-01</p>
+         */
         @NameInMap("date")
         public String date;
 
@@ -176,15 +220,31 @@ public class CardGetCardFinishProgressResponseBody extends TeaModel {
         @NameInMap("reissueCard")
         public Boolean reissueCard;
 
+        /**
+         * <strong>example:</strong>
+         * <p>23424234</p>
+         */
         @NameInMap("studentId")
         public String studentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四</p>
+         */
         @NameInMap("studentName")
         public String studentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-01</p>
+         */
         @NameInMap("today")
         public String today;
 
+        /**
+         * <strong>example:</strong>
+         * <p>234234234</p>
+         */
         @NameInMap("userSubTaskId")
         public Long userSubTaskId;
 

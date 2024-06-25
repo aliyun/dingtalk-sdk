@@ -12,6 +12,9 @@ public class CreateBadgeCodeUserInstanceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>TEST</p>
      */
     @NameInMap("codeIdentity")
     public String codeIdentity;
@@ -19,11 +22,18 @@ public class CreateBadgeCodeUserInstanceRequest extends TeaModel {
     @NameInMap("codeValue")
     public String codeValue;
 
+    /**
+     * <strong>example:</strong>
+     * <p>DING_STATIC</p>
+     */
     @NameInMap("codeValueType")
     public String codeValueType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>corpid1234</p>
      */
     @NameInMap("corpId")
     public String corpId;
@@ -36,30 +46,45 @@ public class CreateBadgeCodeUserInstanceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>yyyy-MM-dd HH:mm:ss</p>
      */
     @NameInMap("gmtExpired")
     public String gmtExpired;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>202102021212</p>
      */
     @NameInMap("requestId")
     public String requestId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OPEN</p>
      */
     @NameInMap("status")
     public String status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>INTERNAL_STAFF</p>
      */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>86-xxxxxx</p>
      */
     @NameInMap("userIdentity")
     public String userIdentity;
@@ -160,12 +185,18 @@ public class CreateBadgeCodeUserInstanceRequest extends TeaModel {
     public static class CreateBadgeCodeUserInstanceRequestAvailableTimes extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd HH:mm:ss</p>
          */
         @NameInMap("gmtEnd")
         public String gmtEnd;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd HH:mm:ss</p>
          */
         @NameInMap("gmtStart")
         public String gmtStart;

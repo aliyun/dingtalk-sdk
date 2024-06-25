@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class ServiceWindowMessageBatchPushRequest extends TeaModel {
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
@@ -307,6 +311,10 @@ public class ServiceWindowMessageBatchPushRequest extends TeaModel {
     }
 
     public static class ServiceWindowMessageBatchPushRequestDetail extends TeaModel {
+        /**
+         * <strong>if can be null:</strong>
+         * <p>false</p>
+         */
         @NameInMap("bizRequestId")
         public String bizRequestId;
 
@@ -318,6 +326,9 @@ public class ServiceWindowMessageBatchPushRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>if can be null:</strong>
+         * <p>true</p>
          */
         @NameInMap("msgType")
         public String msgType;
@@ -333,6 +344,9 @@ public class ServiceWindowMessageBatchPushRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>if can be null:</strong>
+         * <p>true</p>
          */
         @NameInMap("uuid")
         public String uuid;

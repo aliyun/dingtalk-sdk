@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class ProvidePointRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>action01</p>
      */
     @NameInMap("actionCode")
     public String actionCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>biz01</p>
      */
     @NameInMap("bizId")
     public String bizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>personal</p>
      */
     @NameInMap("pointType")
     public String pointType;

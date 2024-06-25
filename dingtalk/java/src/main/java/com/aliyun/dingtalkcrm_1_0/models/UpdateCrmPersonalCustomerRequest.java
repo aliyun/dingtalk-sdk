@@ -37,6 +37,10 @@ public class UpdateCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("relationType")
     public String relationType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("skipDuplicateCheck")
     public Boolean skipDuplicateCheck;
 

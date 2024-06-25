@@ -4,24 +4,52 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPublicDevicesRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1671767361000</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>88:66:5a:07:2b:04</p>
+     */
     @NameInMap("macAddress")
     public String macAddress;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Mac</p>
+     */
     @NameInMap("platform")
     public String platform;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1671767361000</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>这是标题</p>
+     */
     @NameInMap("title")
     public String title;
 

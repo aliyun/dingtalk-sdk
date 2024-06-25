@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class AddShareCidListRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2</p>
      */
     @NameInMap("groupIdType")
     public Long groupIdType;
@@ -18,6 +21,9 @@ public class AddShareCidListRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>214675</p>
      */
     @NameInMap("userId")
     public String userId;

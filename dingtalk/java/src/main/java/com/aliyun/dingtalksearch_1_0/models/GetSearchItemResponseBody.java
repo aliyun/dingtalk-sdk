@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class GetSearchItemResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>四大名著</p>
      */
     @NameInMap("footer")
     public String footer;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-09-17T19:43Z</p>
      */
     @NameInMap("gmtCreate")
     public String gmtCreate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-09-17T19:43Z</p>
      */
     @NameInMap("gmtModified")
     public String gmtModified;
@@ -30,42 +39,63 @@ public class GetSearchItemResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1111</p>
      */
     @NameInMap("itemId")
     public String itemId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="http://www.baidu.com">www.baidu.com</a></p>
      */
     @NameInMap("mobileUrl")
     public String mobileUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="http://www.baidu.com">www.baidu.com</a></p>
      */
     @NameInMap("pcUrl")
     public String pcUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>中国古代章回体长篇小说</p>
      */
     @NameInMap("summary")
     public String summary;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3333</p>
      */
     @NameInMap("tabId")
     public Integer tabId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>红楼梦</p>
      */
     @NameInMap("title")
     public String title;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="http://www.baidu.com">www.baidu.com</a></p>
      */
     @NameInMap("url")
     public String url;

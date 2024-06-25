@@ -7,6 +7,10 @@ public class CollegeListDeptManagerResponseBody extends TeaModel {
     @NameInMap("managerInfoSimpleList")
     public java.util.List<CollegeListDeptManagerResponseBodyManagerInfoSimpleList> managerInfoSimpleList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1000</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -35,9 +39,17 @@ public class CollegeListDeptManagerResponseBody extends TeaModel {
         @NameInMap("isActive")
         public Boolean isActive;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0324124</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddEmpAttributeHideBySceneSettingResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1234001</p>
+     */
     @NameInMap("settingId")
     public Long settingId;
 

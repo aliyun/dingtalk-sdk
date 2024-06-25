@@ -4,17 +4,27 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class InitAndGetLeaveALlocationQuotasRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>f84a2829-xxxx0653</p>
+     */
     @NameInMap("leaveCode")
     public String leaveCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager1</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager211</p>
      */
     @NameInMap("userId")
     public String userId;

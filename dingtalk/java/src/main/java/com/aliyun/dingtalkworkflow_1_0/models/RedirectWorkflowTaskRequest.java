@@ -4,6 +4,10 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class RedirectWorkflowTaskRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>test</p>
+     */
     @NameInMap("actionName")
     public String actionName;
 
@@ -12,21 +16,34 @@ public class RedirectWorkflowTaskRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager001</p>
      */
     @NameInMap("operateUserId")
     public String operateUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>请XX帮忙审批一下</p>
+     */
     @NameInMap("remark")
     public String remark;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234567</p>
      */
     @NameInMap("taskId")
     public Long taskId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager001</p>
      */
     @NameInMap("toUserId")
     public String toUserId;
@@ -85,18 +102,38 @@ public class RedirectWorkflowTaskRequest extends TeaModel {
     }
 
     public static class RedirectWorkflowTaskRequestFileAttachments extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>B1oQixxxx</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>文件名称。</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1024</p>
+         */
         @NameInMap("fileSize")
         public String fileSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p>file</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class DeleteCrmFormInstanceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager123</p>
      */
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROC-123</p>
      */
     @NameInMap("name")
     public String name;

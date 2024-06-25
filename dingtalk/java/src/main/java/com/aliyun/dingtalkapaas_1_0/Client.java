@@ -6,11 +6,10 @@ import com.aliyun.dingtalkapaas_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 批量创建模板
-     *
+     * <b>summary</b> : 
+     * <p>批量创建模板</p>
+     * 
      * @param request BatchCreateTemplateRequest
      * @param headers BatchCreateTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -62,8 +62,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量创建模板
-     *
+     * <b>summary</b> : 
+     * <p>批量创建模板</p>
+     * 
      * @param request BatchCreateTemplateRequest
      * @return BatchCreateTemplateResponse
      */
@@ -74,8 +75,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询模板
-     *
+     * <b>summary</b> : 
+     * <p>批量查询模板</p>
+     * 
      * @param request BatchQueryByTemplateKeyRequest
      * @param headers BatchQueryByTemplateKeyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -116,8 +118,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询模板
-     *
+     * <b>summary</b> : 
+     * <p>批量查询模板</p>
+     * 
      * @param request BatchQueryByTemplateKeyRequest
      * @return BatchQueryByTemplateKeyResponse
      */
@@ -128,8 +131,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量修改模板
-     *
+     * <b>summary</b> : 
+     * <p>批量修改模板</p>
+     * 
      * @param request BatchUpdateTemplateRequest
      * @param headers BatchUpdateTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -170,8 +174,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量修改模板
-     *
+     * <b>summary</b> : 
+     * <p>批量修改模板</p>
+     * 
      * @param request BatchUpdateTemplateRequest
      * @return BatchUpdateTemplateResponse
      */
@@ -182,8 +187,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询行业标签
-     *
+     * <b>summary</b> : 
+     * <p>查询行业标签</p>
+     * 
      * @param headers QueryIndustryTagListHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryIndustryTagListResponse
@@ -216,8 +222,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询行业标签
-     *
+     * <b>summary</b> : 
+     * <p>查询行业标签</p>
      * @return QueryIndustryTagListResponse
      */
     public QueryIndustryTagListResponse queryIndustryTagList() throws Exception {
@@ -227,8 +233,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询角色
-     *
+     * <b>summary</b> : 
+     * <p>查询角色</p>
+     * 
      * @param headers QueryRoleTagListHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryRoleTagListResponse
@@ -261,8 +268,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询角色
-     *
+     * <b>summary</b> : 
+     * <p>查询角色</p>
      * @return QueryRoleTagListResponse
      */
     public QueryRoleTagListResponse queryRoleTagList() throws Exception {
@@ -272,8 +279,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询模板分类
-     *
+     * <b>summary</b> : 
+     * <p>查询模板分类</p>
+     * 
      * @param headers QueryTemplateCategorysHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryTemplateCategorysResponse
@@ -306,8 +314,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询模板分类
-     *
+     * <b>summary</b> : 
+     * <p>查询模板分类</p>
      * @return QueryTemplateCategorysResponse
      */
     public QueryTemplateCategorysResponse queryTemplateCategorys() throws Exception {
@@ -317,8 +325,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤回模板审核
-     *
+     * <b>summary</b> : 
+     * <p>撤回模板审核</p>
+     * 
      * @param request RecallAuditTemplateRequest
      * @param headers RecallAuditTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -359,8 +368,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤回模板审核
-     *
+     * <b>summary</b> : 
+     * <p>撤回模板审核</p>
+     * 
      * @param request RecallAuditTemplateRequest
      * @return RecallAuditTemplateResponse
      */

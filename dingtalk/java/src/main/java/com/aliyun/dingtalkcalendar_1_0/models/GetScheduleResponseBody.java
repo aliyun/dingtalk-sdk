@@ -109,6 +109,10 @@ public class GetScheduleResponseBody extends TeaModel {
         @NameInMap("start")
         public GetScheduleResponseBodyScheduleInformationScheduleItemsStart start;
 
+        /**
+         * <strong>example:</strong>
+         * <p>BUSY</p>
+         */
         @NameInMap("status")
         public String status;
 

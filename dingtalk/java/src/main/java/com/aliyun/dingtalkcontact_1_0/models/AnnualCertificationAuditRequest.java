@@ -42,6 +42,9 @@ public class AnnualCertificationAuditRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
      */
     @NameInMap("orderId")
     public String orderId;

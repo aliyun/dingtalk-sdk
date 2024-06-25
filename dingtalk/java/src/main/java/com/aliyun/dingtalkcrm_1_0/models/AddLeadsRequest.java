@@ -4,17 +4,27 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddLeadsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1669360918000</p>
+     */
     @NameInMap("assignTimestamp")
     public Long assignTimestamp;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager1234</p>
      */
     @NameInMap("assignUserId")
     public String assignUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager1234</p>
      */
     @NameInMap("assignedUserId")
     public String assignedUserId;
@@ -27,6 +37,9 @@ public class AddLeadsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>t123123123</p>
      */
     @NameInMap("outTaskId")
     public String outTaskId;
@@ -79,12 +92,18 @@ public class AddLeadsRequest extends TeaModel {
     public static class AddLeadsRequestLeads extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>XX公司</p>
          */
         @NameInMap("leadsName")
         public String leadsName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>fasd123125</p>
          */
         @NameInMap("outLeadsId")
         public String outLeadsId;

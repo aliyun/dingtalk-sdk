@@ -24,9 +24,17 @@ public class DingTalkSecurityCheckResponseBody extends TeaModel {
     }
 
     public static class DingTalkSecurityCheckResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("hasRisk")
         public Boolean hasRisk;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;riskTypeMinor&quot;:&quot;bbbb&quot;&quot;riskTypeMajor&quot;:&quot;aaaa&quot;&quot;riskTypeMsg&quot;:&quot;ccc&quot;}</p>
+         */
         @NameInMap("riskInfo")
         public java.util.Map<String, String> riskInfo;
 

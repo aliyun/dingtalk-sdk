@@ -10,6 +10,10 @@ public class ListRelatedTeamsResponseBody extends TeaModel {
     @NameInMap("items")
     public java.util.List<TeamModel> items;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cjk72iEakdim</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

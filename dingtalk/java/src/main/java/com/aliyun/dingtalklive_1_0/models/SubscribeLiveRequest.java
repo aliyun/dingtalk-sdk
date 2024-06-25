@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SubscribeLiveRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3dd295eb-17a1-4dfg-ae1b-aa165c5007eb</p>
      */
     @NameInMap("liveId")
     public String liveId;
@@ -18,6 +21,9 @@ public class SubscribeLiveRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6crtQT2XOgPHviiPvXhhiP6gdhiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

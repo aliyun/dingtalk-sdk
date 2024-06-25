@@ -32,6 +32,9 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>&quot;DDSelectField-KI5S975E&quot;</p>
          */
         @NameInMap("fieldId")
         public String fieldId;
@@ -104,12 +107,18 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>false 如果是主管，要做逻辑的单独处理。比如如果设置了管理下属或当前部门，只管理他是主管的部门</p>
          */
         @NameInMap("manager")
         public Boolean manager;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10_own 自己负责的 15_all_org 全公司 20_selfDept 同层级 30_selfSubDept 下属的 40_customized 自定义的</p>
          */
         @NameInMap("type")
         public String type;
@@ -148,12 +157,20 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     public static class GetCrmRolePermissionResponseBodyPermissionsOperateScopes extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("hasAuth")
         public Boolean hasAuth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <ul>
+         * <li>操作类型      * 发起：OPERATE_CREATE      * 查看：OPERATE_VIEW      * 编辑：OPERATE_EDIT      * 删除：OPERATE_DELETE      * 打印：OPERATE_PRINT      * 分配：ASSIGN      * 转交：TRANS      * 导入：IMPORT      * 导出：EXPORT</li>
+         * </ul>
          */
         @NameInMap("type")
         public String type;
@@ -184,22 +201,35 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     public static class GetCrmRolePermissionResponseBodyPermissionsRoleMemberList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>可以是员工 uid，可以是部门 ID 等，根据 type 确定</p>
          */
         @NameInMap("memberId")
         public String memberId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>user：组织成员   dept：部门   tag：标签  org：组织     org_res_admin：组织管理员</p>
          */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager1234</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -245,6 +275,9 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
     public static class GetCrmRolePermissionResponseBodyPermissions extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("defaultRole")
         public Boolean defaultRole;
@@ -269,12 +302,18 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PROC-478E50CA-856C-4C08-B806-E664D4CEC8C4</p>
          */
         @NameInMap("resourceId")
         public String resourceId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>12821738</p>
          */
         @NameInMap("roleId")
         public Double roleId;
@@ -287,6 +326,9 @@ public class GetCrmRolePermissionResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>销售权限组</p>
          */
         @NameInMap("roleName")
         public String roleName;

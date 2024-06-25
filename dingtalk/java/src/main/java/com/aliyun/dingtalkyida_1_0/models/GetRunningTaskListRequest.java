@@ -12,6 +12,9 @@ public class GetRunningTaskListRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xaff,afdfaf,fdsfasdf</p>
      */
     @NameInMap("processInstanceIdList")
     public String processInstanceIdList;

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetBranchInfoResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>[     {       &quot;OperName&quot;: &quot;李柯&quot;,       &quot;EntStatus&quot;: &quot;&quot;,       &quot;EntName&quot;: &quot;华为技术有限公司驻广州办事处&quot;,       &quot;EsDate&quot;: &quot;&quot;     },     {       &quot;OperName&quot;: &quot;李实&quot;,       &quot;EntStatus&quot;: &quot;&quot;,       &quot;EntName&quot;: &quot;华为技术有限公司重庆分公司&quot;,       &quot;EsDate&quot;: &quot;&quot;     } ]</p>
+     */
     @NameInMap("data")
     public String data;
 

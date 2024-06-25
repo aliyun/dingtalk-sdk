@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class LogoutRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("deviceType")
     public String deviceType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>a523641</p>
      */
     @NameInMap("userId")
     public String userId;

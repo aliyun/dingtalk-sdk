@@ -26,12 +26,18 @@ public class DigitalStoreUsersResponseBody extends TeaModel {
     public static class DigitalStoreUsersResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>112121341231</p>
          */
         @NameInMap("userId")
         public String userId;

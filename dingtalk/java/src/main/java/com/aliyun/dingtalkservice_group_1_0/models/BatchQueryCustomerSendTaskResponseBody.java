@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class BatchQueryCustomerSendTaskResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("maxResults")
     public Long maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8888</p>
      */
     @NameInMap("nextToken")
     public String nextToken;
@@ -21,6 +27,9 @@ public class BatchQueryCustomerSendTaskResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("totalCount")
     public Long totalCount;
@@ -63,36 +72,80 @@ public class BatchQueryCustomerSendTaskResponseBody extends TeaModel {
     }
 
     public static class BatchQueryCustomerSendTaskResponseBodyRecords extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("createName")
         public String createName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-07-14 10:00:00</p>
+         */
         @NameInMap("createTimeStr")
         public String createTimeStr;
 
+        /**
+         * <strong>example:</strong>
+         * <p>88888</p>
+         */
         @NameInMap("createUnionId")
         public String createUnionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>88888</p>
+         */
         @NameInMap("openBatchTaskId")
         public String openBatchTaskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>90</p>
+         */
         @NameInMap("readCustomerInc")
         public Long readCustomerInc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("readUserInc")
         public Long readUserInc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("sendCustomerInc")
         public Long sendCustomerInc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>UNFINISH 未完成 FINISHED 已发送 CANCELED 已取消 CREATE_TASK_FAILED 创建任务失败  SENDING 发送中</p>
+         */
         @NameInMap("sendMessageStatus")
         public String sendMessageStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-07-14 11:00:00</p>
+         */
         @NameInMap("sendTaskTimeStr")
         public String sendTaskTimeStr;
 
+        /**
+         * <strong>example:</strong>
+         * <p>200</p>
+         */
         @NameInMap("sendUserInc")
         public Long sendUserInc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>任务名称</p>
+         */
         @NameInMap("taskName")
         public String taskName;
 

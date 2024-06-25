@@ -24,15 +24,31 @@ public class CreateActivityRequest extends TeaModel {
     }
 
     public static class CreateActivityRequestDetailAddress extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>重庆市重庆市</p>
+         */
         @NameInMap("district")
         public String district;
 
+        /**
+         * <strong>example:</strong>
+         * <p>29.533939</p>
+         */
         @NameInMap("lat")
         public String lat;
 
+        /**
+         * <strong>example:</strong>
+         * <p>106.561853</p>
+         */
         @NameInMap("lng")
         public String lng;
 
+        /**
+         * <strong>example:</strong>
+         * <p>国际会议展览中心</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -81,6 +97,9 @@ public class CreateActivityRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>@mediaId</p>
          */
         @NameInMap("bannerMediaId")
         public String bannerMediaId;
@@ -93,24 +112,36 @@ public class CreateActivityRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2OGnTRTcoH6OQ0209168</p>
          */
         @NameInMap("foreignId")
         public String foreignId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>IT</p>
          */
         @NameInMap("industry")
         public String industry;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>CTO</p>
          */
         @NameInMap("roleName")
         public String roleName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>hdx</p>
          */
         @NameInMap("source")
         public String source;
@@ -123,6 +154,9 @@ public class CreateActivityRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>钉峰会</p>
          */
         @NameInMap("title")
         public String title;
@@ -135,6 +169,9 @@ public class CreateActivityRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com/">https://www.dingtalk.com/</a></p>
          */
         @NameInMap("url")
         public String url;

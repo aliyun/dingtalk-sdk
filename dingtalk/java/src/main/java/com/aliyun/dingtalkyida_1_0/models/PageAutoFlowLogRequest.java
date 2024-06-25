@@ -4,29 +4,50 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageAutoFlowLogRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>APP_XCE0EVXS6DYG3YDYC5RD</p>
+     */
     @NameInMap("appType")
     public String appType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding5d17e3add038d44535c2f4657eb6378e</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-01-01</p>
+     */
     @NameInMap("endTimeGMT")
     public Long endTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA</p>
+     */
     @NameInMap("formUuid")
     public String formUuid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("pageSize")
     public Integer pageSize;
@@ -37,17 +58,27 @@ public class PageAutoFlowLogRequest extends TeaModel {
     @NameInMap("startTimeGMT")
     public Long startTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>running</p>
+     */
     @NameInMap("status")
     public Integer status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>B073AF673BEB044D59F8F612D65E1EA2</p>
      */
     @NameInMap("token")
     public String token;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding173982232112232</p>
      */
     @NameInMap("userId")
     public String userId;

@@ -4,9 +4,17 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupManageReduceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>200</p>
+     */
     @NameInMap("capacityLimit")
     public Integer capacityLimit;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidnvcxzklxv</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SaveBenefitLicenseRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>B_ACCOUNT_NUMBER</p>
      */
     @NameInMap("domain")
     public String domain;
@@ -18,6 +21,9 @@ public class SaveBenefitLicenseRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>staffId</p>
      */
     @NameInMap("saveUserId")
     public String saveUserId;
@@ -54,6 +60,9 @@ public class SaveBenefitLicenseRequest extends TeaModel {
     public static class SaveBenefitLicenseRequestLicenses extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>licenseStaffId</p>
          */
         @NameInMap("licenseUserId")
         public String licenseUserId;

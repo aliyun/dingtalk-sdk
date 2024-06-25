@@ -6,21 +6,34 @@ import com.aliyun.tea.*;
 public class ConsumePointRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("amount")
     public Long amount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>point_exchange</p>
+     */
     @NameInMap("description")
     public String description;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FAMILY_GIFT_MALL</p>
      */
     @NameInMap("productCode")
     public String productCode;

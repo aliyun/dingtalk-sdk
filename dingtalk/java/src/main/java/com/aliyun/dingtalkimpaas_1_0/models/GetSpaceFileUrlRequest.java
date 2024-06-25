@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class GetSpaceFileUrlRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("fileId")
     public String fileId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123#123@dingding</p>
      */
     @NameInMap("senderUid")
     public String senderUid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("spaceId")
     public String spaceId;

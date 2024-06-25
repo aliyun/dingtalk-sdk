@@ -7,6 +7,10 @@ public class IndustrializeManufactureQueryJobsResponseBody extends TeaModel {
     @NameInMap("content")
     public IndustrializeManufactureQueryJobsResponseBodyContent content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>200</p>
+     */
     @NameInMap("httpCode")
     public String httpCode;
 
@@ -34,6 +38,9 @@ public class IndustrializeManufactureQueryJobsResponseBody extends TeaModel {
     public static class IndustrializeManufactureQueryJobsResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>dingdb6elngd253073ad370d8dc3ec89bb366ab</p>
          */
         @NameInMap("corpId")
         public String corpId;

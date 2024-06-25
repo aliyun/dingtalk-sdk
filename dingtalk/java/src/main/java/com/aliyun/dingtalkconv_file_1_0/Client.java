@@ -6,11 +6,10 @@ import com.aliyun.dingtalkconv_file_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 获取IM会话存储空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取IM会话存储空间信息</p>
+     * 
      * @param request GetSpaceRequest
      * @param headers GetSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -68,8 +68,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取IM会话存储空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取IM会话存储空间信息</p>
+     * 
      * @param request GetSpaceRequest
      * @return GetSpaceResponse
      */
@@ -80,8 +81,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送文件到指定会话
-     *
+     * <b>summary</b> : 
+     * <p>发送文件到指定会话</p>
+     * 
      * @param request SendRequest
      * @param headers SendHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -136,8 +138,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送文件到指定会话
-     *
+     * <b>summary</b> : 
+     * <p>发送文件到指定会话</p>
+     * 
      * @param request SendRequest
      * @return SendResponse
      */
@@ -148,8 +151,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 以应用身份发送文件给自己
-     *
+     * <b>summary</b> : 
+     * <p>以应用身份发送文件给自己</p>
+     * 
      * @param request SendByAppRequest
      * @param headers SendByAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -200,8 +204,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 以应用身份发送文件给自己
-     *
+     * <b>summary</b> : 
+     * <p>以应用身份发送文件给自己</p>
+     * 
      * @param request SendByAppRequest
      * @return SendByAppResponse
      */
@@ -212,8 +217,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送文件链接到指定会话
-     *
+     * <b>summary</b> : 
+     * <p>发送文件链接到指定会话</p>
+     * 
      * @param request SendLinkRequest
      * @param headers SendLinkHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -268,8 +274,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送文件链接到指定会话
-     *
+     * <b>summary</b> : 
+     * <p>发送文件链接到指定会话</p>
+     * 
      * @param request SendLinkRequest
      * @return SendLinkResponse
      */

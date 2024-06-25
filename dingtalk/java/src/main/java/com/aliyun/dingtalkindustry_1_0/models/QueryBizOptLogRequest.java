@@ -7,6 +7,10 @@ public class QueryBizOptLogRequest extends TeaModel {
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10000</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 

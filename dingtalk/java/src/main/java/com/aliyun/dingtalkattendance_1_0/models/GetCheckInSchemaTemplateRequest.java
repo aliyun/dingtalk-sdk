@@ -6,21 +6,34 @@ import com.aliyun.tea.*;
 public class GetCheckInSchemaTemplateRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>water_mark_checkin</p>
      */
     @NameInMap("bizCode")
     public String bizCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234567</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>water_mark_checkin</p>
+     */
     @NameInMap("sceneCode")
     public String sceneCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manage123</p>
      */
     @NameInMap("userId")
     public String userId;

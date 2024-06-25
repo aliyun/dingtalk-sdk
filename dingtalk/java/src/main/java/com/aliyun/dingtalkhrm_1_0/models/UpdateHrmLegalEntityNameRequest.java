@@ -4,17 +4,27 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateHrmLegalEntityNameRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>57</p>
+     */
     @NameInMap("dingTenantId")
     public Long dingTenantId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>公司2</p>
      */
     @NameInMap("legalEntityName")
     public String legalEntityName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>公司1</p>
      */
     @NameInMap("originLegalEntityName")
     public String originLegalEntityName;

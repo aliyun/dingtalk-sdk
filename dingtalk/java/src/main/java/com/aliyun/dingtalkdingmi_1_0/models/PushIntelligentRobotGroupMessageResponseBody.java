@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushIntelligentRobotGroupMessageResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("result")
     public String result;
 

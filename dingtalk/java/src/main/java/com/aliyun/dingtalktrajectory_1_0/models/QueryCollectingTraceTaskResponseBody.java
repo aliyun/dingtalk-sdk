@@ -26,6 +26,9 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
     public static class QueryCollectingTraceTaskResponseBodyList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ffsfsdf</p>
          */
         @NameInMap("appTraceId")
         public String appTraceId;
@@ -62,6 +65,9 @@ public class QueryCollectingTraceTaskResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>I01231231ads1</p>
          */
         @NameInMap("userId")
         public String userId;

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class BatchInsertBizObjectResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class BatchInsertBizObjectResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OK</p>
      */
     @NameInMap("message")
     public String message;

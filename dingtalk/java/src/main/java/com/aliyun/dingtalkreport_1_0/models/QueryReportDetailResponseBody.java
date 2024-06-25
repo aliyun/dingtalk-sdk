@@ -7,27 +7,59 @@ public class QueryReportDetailResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<QueryReportDetailResponseBodyContent> content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1507564800000</p>
+     */
     @NameInMap("createTime")
     public Long createTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>user123</p>
+     */
     @NameInMap("creatorId")
     public String creatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>张三</p>
+     */
     @NameInMap("creatorName")
     public String creatorName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>部门1</p>
+     */
     @NameInMap("deptName")
     public String deptName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1507564800000</p>
+     */
     @NameInMap("modifiedTime")
     public Long modifiedTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>这是备注</p>
+     */
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <strong>example:</strong>
+     * <p>18XXXX</p>
+     */
     @NameInMap("reportId")
     public String reportId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>日报</p>
+     */
     @NameInMap("templateName")
     public String templateName;
 
@@ -112,15 +144,31 @@ public class QueryReportDetailResponseBody extends TeaModel {
         @NameInMap("images")
         public java.util.List<String> images;
 
+        /**
+         * <strong>example:</strong>
+         * <p>今日工作</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("sort")
         public String sort;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>开发工作</p>
+         */
         @NameInMap("value")
         public String value;
 

@@ -21,6 +21,10 @@ public class ArchiveTaskResponseBody extends TeaModel {
     }
 
     public static class ArchiveTaskResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

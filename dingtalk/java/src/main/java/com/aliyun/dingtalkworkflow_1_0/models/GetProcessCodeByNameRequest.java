@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetProcessCodeByNameRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc</p>
      */
     @NameInMap("name")
     public String name;

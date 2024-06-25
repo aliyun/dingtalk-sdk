@@ -26,54 +26,81 @@ public class WriteAlibabaUserCarbonRequest extends TeaModel {
     public static class WriteAlibabaUserCarbonRequestUserDetailsList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-11-26 10:09:37</p>
          */
         @NameInMap("actionEndTime")
         public String actionEndTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>12320211126</p>
          */
         @NameInMap("actionId")
         public String actionId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-11-26 10:09:37</p>
          */
         @NameInMap("actionStartTime")
         public String actionStartTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>VIDEO</p>
          */
         @NameInMap("actionType")
         public String actionType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3.21</p>
          */
         @NameInMap("carbonAmount")
         public String carbonAmount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ding12344</p>
          */
         @NameInMap("corpId")
         public String corpId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>111</p>
          */
         @NameInMap("deptId")
         public Long deptId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123</p>
          */
         @NameInMap("userId")
         public String userId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("version")
         public Integer version;

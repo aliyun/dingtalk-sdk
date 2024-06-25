@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class DeleteGuardianRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager123</p>
      */
     @NameInMap("operator")
     public String operator;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1345</p>
      */
     @NameInMap("stuId")
     public String stuId;

@@ -7,9 +7,17 @@ public class GetDocCreatedDeptSummaryResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetDocCreatedDeptSummaryResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -43,15 +51,31 @@ public class GetDocCreatedDeptSummaryResponseBody extends TeaModel {
     }
 
     public static class GetDocCreatedDeptSummaryResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("createDocUserCnt1d")
         public String createDocUserCnt1d;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("deptId")
         public String deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>部门A</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("docCreatedCnt")
         public String docCreatedCnt;
 

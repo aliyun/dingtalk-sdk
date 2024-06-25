@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class EsignQueryIdentityByTicketRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingd0c871e2dfc941a34ac5d6980864d335</p>
      */
     @NameInMap("corpId")
     public String corpId;
@@ -15,6 +18,9 @@ public class EsignQueryIdentityByTicketRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>feb4b8e5-d6d9-4d22-a6b8-c8e26823a73a</p>
      */
     @NameInMap("ticket")
     public String ticket;

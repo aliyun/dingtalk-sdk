@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class BindSystemResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>d12345</p>
      */
     @NameInMap("clientId")
     public String clientId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding12345</p>
      */
     @NameInMap("corpId")
     public String corpId;

@@ -21,12 +21,24 @@ public class SupplyListPartnerAdminsResponseBody extends TeaModel {
     }
 
     public static class SupplyListPartnerAdminsResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>负责人名称</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>99292111</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>8782166278711</p>
+         */
         @NameInMap("userId")
         public String userId;
 

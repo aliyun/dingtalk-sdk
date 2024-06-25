@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class CustomizeContactDeptGroupCreateRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>alt-contact:Mzc0ODAwMQ==</p>
      */
     @NameInMap("code")
     public String code;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>65725421</p>
      */
     @NameInMap("deptId")
     public Long deptId;

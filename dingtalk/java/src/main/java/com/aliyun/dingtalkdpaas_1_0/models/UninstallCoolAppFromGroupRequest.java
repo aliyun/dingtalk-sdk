@@ -4,15 +4,31 @@ package com.aliyun.dingtalkdpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class UninstallCoolAppFromGroupRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cidxxx</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CoolApp-xxx</p>
+     */
     @NameInMap("operateCoolAppCode")
     public String operateCoolAppCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>staffid111</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>template-id-xxx</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

@@ -7,12 +7,24 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<SearchFormDataRemovalTableDataResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMoreData")
     public Boolean hasMoreData;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -54,9 +66,17 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataRemovalTableDataResponseBodyDataModifyUserName extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZhangSan</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -84,15 +104,27 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataRemovalTableDataResponseBodyDataModifyUser extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>开发部</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="mailto:abc@alimail.com">abc@alimail.com</a></p>
+         */
         @NameInMap("email")
         public String email;
 
         @NameInMap("name")
         public SearchFormDataRemovalTableDataResponseBodyDataModifyUserName name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding173982232112232</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -136,9 +168,17 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataRemovalTableDataResponseBodyDataOriginatorName extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZhangSan</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -166,15 +206,27 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataRemovalTableDataResponseBodyDataOriginator extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>开发部</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="mailto:abc@alimail.com">abc@alimail.com</a></p>
+         */
         @NameInMap("email")
         public String email;
 
         @NameInMap("name")
         public SearchFormDataRemovalTableDataResponseBodyDataOriginatorName name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding173982232112232</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -218,30 +270,66 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
     }
 
     public static class SearchFormDataRemovalTableDataResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2021-05-01</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding12345</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;countrySelectField_l0c1cwiu&quot;:[{&quot;value&quot;:&quot;US&quot;}]}</p>
+         */
         @NameInMap("formData")
         public java.util.Map<String, ?> formData;
 
+        /**
+         * <strong>example:</strong>
+         * <p>FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA</p>
+         */
         @NameInMap("formUuid")
         public String formUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>符合宜搭表单实例格式的json数据</p>
+         */
         @NameInMap("instanceValue")
         public String instanceValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-05-01</p>
+         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager123</p>
+         */
         @NameInMap("modifier")
         public String modifier;
 
@@ -251,15 +339,31 @@ public class SearchFormDataRemovalTableDataResponseBody extends TeaModel {
         @NameInMap("originator")
         public SearchFormDataRemovalTableDataResponseBodyDataOriginator originator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>IMPORT-388664B1BAUVB3AYZE1RIUE88TDM1QI9WIOWK2</p>
+         */
         @NameInMap("sequence")
         public String sequence;
 
+        /**
+         * <strong>example:</strong>
+         * <p>YIDA909202202250027</p>
+         */
         @NameInMap("serialNumber")
         public String serialNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四发起的请购单</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1.0</p>
+         */
         @NameInMap("version")
         public Long version;
 

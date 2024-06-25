@@ -4,18 +4,38 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeQueryCollegeDeptInfoResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>01123</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>三年二班</p>
+     */
     @NameInMap("deptName")
     public String deptName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>class</p>
+     */
     @NameInMap("deptType")
     public String deptType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("sortFactor")
     public Long sortFactor;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0123123</p>
+     */
     @NameInMap("superId")
     public Long superId;
 

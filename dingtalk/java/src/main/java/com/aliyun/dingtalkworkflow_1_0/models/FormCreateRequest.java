@@ -4,6 +4,10 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class FormCreateRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>用于员工差旅费用报销使用</p>
+     */
     @NameInMap("description")
     public String description;
 
@@ -15,6 +19,9 @@ public class FormCreateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>出差报销审批</p>
      */
     @NameInMap("name")
     public String name;
@@ -71,27 +78,59 @@ public class FormCreateRequest extends TeaModel {
     }
 
     public static class FormCreateRequestTemplateConfig extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abcd</p>
+         */
         @NameInMap("dirId")
         public String dirId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("disableDeleteProcess")
         public Boolean disableDeleteProcess;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("disableFormEdit")
         public Boolean disableFormEdit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("disableHomepage")
         public Boolean disableHomepage;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("disableResubmit")
         public Boolean disableResubmit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("disableStopProcessButton")
         public Boolean disableStopProcessButton;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("hidden")
         public Boolean hidden;
 
+        /**
+         * <strong>example:</strong>
+         * <p>efgh</p>
+         */
         @NameInMap("originDirId")
         public String originDirId;
 

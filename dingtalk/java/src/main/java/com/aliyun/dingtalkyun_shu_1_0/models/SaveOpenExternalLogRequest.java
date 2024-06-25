@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class SaveOpenExternalLogRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingf8d907412a586</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>yunshu</p>
      */
     @NameInMap("logSource")
     public String logSource;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>terminalInfo</p>
      */
     @NameInMap("logType")
     public String logType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>[{&quot;date&quot;:&quot;2023-05-10&quot;,&quot;macAddress&quot;:&quot;34-2E-B7-AF-EA-JF&quot;,&quot;devSn&quot;:&quot;68D1F0-B76A-5CC9-BCFC-BD7548BA&quot;,&quot;staffId&quot;:&quot;05166141678164&quot;}]</p>
      */
     @NameInMap("openExt")
     public String openExt;

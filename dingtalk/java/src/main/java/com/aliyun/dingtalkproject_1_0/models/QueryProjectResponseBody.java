@@ -4,9 +4,17 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryProjectResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>&quot;10&quot;</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>c825b82b-a87a-49f3-a8b2-7a948b979975</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -43,12 +51,24 @@ public class QueryProjectResponseBody extends TeaModel {
     }
 
     public static class QueryProjectResponseBodyResultCustomFieldsValue extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>64ba333e4206372f3f5cxxxx</p>
+         */
         @NameInMap("customFieldValueId")
         public String customFieldValueId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("metaString")
         public String metaString;
 
+        /**
+         * <strong>example:</strong>
+         * <p>自定义字段1</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -84,9 +104,17 @@ public class QueryProjectResponseBody extends TeaModel {
     }
 
     public static class QueryProjectResponseBodyResultCustomFields extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>64ba333e4206372f3f5cxxxx</p>
+         */
         @NameInMap("customFieldId")
         public String customFieldId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>number</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -125,51 +153,111 @@ public class QueryProjectResponseBody extends TeaModel {
     }
 
     public static class QueryProjectResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0715153011125xxxx</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
         @NameInMap("customFields")
         public java.util.List<QueryProjectResponseBodyResultCustomFields> customFields;
 
+        /**
+         * <strong>example:</strong>
+         * <p>描述内容</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("endDate")
         public String endDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isArchived")
         public Boolean isArchived;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isSuspended")
         public Boolean isSuspended;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isTemplate")
         public Boolean isTemplate;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://xxxxx">http://xxxxx</a></p>
+         */
         @NameInMap("logo")
         public String logo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试项目</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingc23b7b9682b4xxxx</p>
+         */
         @NameInMap("organizationId")
         public String organizationId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>64ba333e4206372f3f5cxxxx</p>
+         */
         @NameInMap("projectId")
         public String projectId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>UNI</p>
+         */
         @NameInMap("uniqueIdPrefix")
         public String uniqueIdPrefix;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 
+        /**
+         * <strong>example:</strong>
+         * <p>organization</p>
+         */
         @NameInMap("visibility")
         public String visibility;
 

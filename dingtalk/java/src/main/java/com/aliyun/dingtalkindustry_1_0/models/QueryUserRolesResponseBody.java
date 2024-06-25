@@ -23,12 +23,18 @@ public class QueryUserRolesResponseBody extends TeaModel {
     public static class QueryUserRolesResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>roleCode</p>
          */
         @NameInMap("roleCode")
         public String roleCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>roleNem</p>
          */
         @NameInMap("roleName")
         public String roleName;

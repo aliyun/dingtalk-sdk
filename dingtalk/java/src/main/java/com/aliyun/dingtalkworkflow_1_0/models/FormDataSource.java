@@ -10,6 +10,10 @@ public class FormDataSource extends TeaModel {
     @NameInMap("target")
     public FormDataSourceTarget target;
 
+    /**
+     * <strong>example:</strong>
+     * <p>form</p>
+     */
     @NameInMap("type")
     public String type;
 
@@ -37,10 +41,17 @@ public class FormDataSource extends TeaModel {
     public static class FormDataSourceTarget extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("appType")
         public Integer appType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>SWAPP-abcd</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 

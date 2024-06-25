@@ -21,12 +21,18 @@ public class DeliverCardRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dtv1.card//im_group.cidp4Gh<em><strong><strong><strong>VCQ==;im_robot.manager</strong></strong>67;co_feed.manager</strong></em><em>67;one_box.cidp4Gh</em>******VCQ==</p>
      */
     @NameInMap("openSpaceId")
     public String openSpaceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>out_track_id_123456</p>
      */
     @NameInMap("outTrackId")
     public String outTrackId;
@@ -34,6 +40,10 @@ public class DeliverCardRequest extends TeaModel {
     @NameInMap("topOpenDeliverModel")
     public DeliverCardRequestTopOpenDeliverModel topOpenDeliverModel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("userIdType")
     public Integer userIdType;
 
@@ -115,9 +125,17 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestCoFeedOpenDeliverModel extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxx_biz_tag</p>
+         */
         @NameInMap("bizTag")
         public String bizTag;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1665473229000</p>
+         */
         @NameInMap("gmtTimeLine")
         public Long gmtTimeLine;
 
@@ -145,6 +163,10 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestDocOpenDeliverModel extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxx_biz_tag</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -173,6 +195,10 @@ public class DeliverCardRequest extends TeaModel {
         @NameInMap("recipients")
         public java.util.List<String> recipients;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingg3xmqdkpaojuakm8</p>
+         */
         @NameInMap("robotCode")
         public String robotCode;
 
@@ -219,9 +245,17 @@ public class DeliverCardRequest extends TeaModel {
         @NameInMap("extension")
         public java.util.Map<String, String> extension;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingg3xmqdkpaojuakm8</p>
+         */
         @NameInMap("robotCode")
         public String robotCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>IM_ROBOT</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 
@@ -287,6 +321,10 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestTopOpenDeliverModel extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1665473229000</p>
+         */
         @NameInMap("expiredTimeMillis")
         public Long expiredTimeMillis;
 

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class AvaliableTemplate extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>出差申请</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROC-abcd</p>
      */
     @NameInMap("processCode")
     public String processCode;

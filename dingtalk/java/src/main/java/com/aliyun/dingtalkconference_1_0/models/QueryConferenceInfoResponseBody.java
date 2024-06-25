@@ -21,42 +21,90 @@ public class QueryConferenceInfoResponseBody extends TeaModel {
     }
 
     public static class QueryConferenceInfoResponseBodyConfInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("activeNum")
         public Integer activeNum;
 
+        /**
+         * <strong>example:</strong>
+         * <p>15</p>
+         */
         @NameInMap("attendNum")
         public Integer attendNum;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1000000</p>
+         */
         @NameInMap("confDuration")
         public Long confDuration;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6323d7568777190142ab9d10</p>
+         */
         @NameInMap("conferenceId")
         public String conferenceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>昵称</p>
+         */
         @NameInMap("creatorNick")
         public String creatorNick;
 
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://meeting.dingtalk.com/app?roomCode=42726033559&token=1_7ac974ac-6e4f-47c3-b82b-bfb32fd94d2c">https://meeting.dingtalk.com/app?roomCode=42726033559&amp;token=1_7ac974ac-6e4f-47c3-b82b-bfb32fd94d2c</a></p>
+         */
         @NameInMap("externalLinkUrl")
         public String externalLinkUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("invitedNum")
         public Integer invitedNum;
 
+        /**
+         * <strong>example:</strong>
+         * <p>42726033559</p>
+         */
         @NameInMap("roomCode")
         public String roomCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1663293270000</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>标题</p>
+         */
         @NameInMap("title")
         public String title;
 

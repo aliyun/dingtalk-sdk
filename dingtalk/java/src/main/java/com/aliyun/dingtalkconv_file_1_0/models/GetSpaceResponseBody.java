@@ -21,12 +21,24 @@ public class GetSpaceResponseBody extends TeaModel {
     }
 
     public static class GetSpaceResponseBodySpace extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>corp_id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 

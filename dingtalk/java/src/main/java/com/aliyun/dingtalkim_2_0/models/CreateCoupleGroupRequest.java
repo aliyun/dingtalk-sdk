@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class CreateCoupleGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8d42****nkld</p>
      */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1745****8777</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -46,6 +53,10 @@ public class CreateCoupleGroupRequest extends TeaModel {
     }
 
     public static class CreateCoupleGroupRequestUsers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1107****2120</p>
+         */
         @NameInMap("appUserId")
         public String appUserId;
 
@@ -55,6 +66,10 @@ public class CreateCoupleGroupRequest extends TeaModel {
         @NameInMap("groupOwner")
         public Boolean groupOwner;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1745****8778</p>
+         */
         @NameInMap("userId")
         public String userId;
 

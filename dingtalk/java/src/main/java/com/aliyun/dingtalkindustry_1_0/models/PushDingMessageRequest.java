@@ -4,33 +4,63 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushDingMessageRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>10001</p>
+     */
     @NameInMap("appId")
     public Long appId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>消息内容</p>
      */
     @NameInMap("content")
     public String content;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>CARD</p>
      */
     @NameInMap("messageType")
     public String messageType;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+     */
     @NameInMap("messageUrl")
     public String messageUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="http://pic.616pic.com/ys_b_img/00/27/71/Uu8E6C2Edn.jpg">http://pic.616pic.com/ys_b_img/00/27/71/Uu8E6C2Edn.jpg</a></p>
+     */
     @NameInMap("pictureUrl")
     public String pictureUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>转跳链接</p>
+     */
     @NameInMap("singleTitle")
     public String singleTitle;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+     */
     @NameInMap("singleUrl")
     public String singleUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>消息title</p>
+     */
     @NameInMap("title")
     public String title;
 

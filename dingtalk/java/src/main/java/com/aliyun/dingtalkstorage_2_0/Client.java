@@ -6,11 +6,10 @@ import com.aliyun.dingtalkstorage_2_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 添加权限
-     *
+     * <b>summary</b> : 
+     * <p>添加权限</p>
+     * 
      * @param request AddPermissionRequest
      * @param headers AddPermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -76,8 +76,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加权限
-     *
+     * <b>summary</b> : 
+     * <p>添加权限</p>
+     * 
      * @param request AddPermissionRequest
      * @return AddPermissionResponse
      */
@@ -88,8 +89,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 提交文件
-     *
+     * <b>summary</b> : 
+     * <p>提交文件</p>
+     * 
      * @param request CommitFileRequest
      * @param headers CommitFileHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -144,8 +146,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 提交文件
-     *
+     * <b>summary</b> : 
+     * <p>提交文件</p>
+     * 
      * @param request CommitFileRequest
      * @return CommitFileResponse
      */
@@ -156,8 +159,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除权限
-     *
+     * <b>summary</b> : 
+     * <p>删除权限</p>
+     * 
      * @param request DeletePermissionRequest
      * @param headers DeletePermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -208,8 +212,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除权限
-     *
+     * <b>summary</b> : 
+     * <p>删除权限</p>
+     * 
      * @param request DeletePermissionRequest
      * @return DeletePermissionResponse
      */
@@ -220,8 +225,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件上传信息
-     *
+     * <b>summary</b> : 
+     * <p>获取文件上传信息</p>
+     * 
      * @param request GetFileUploadInfoRequest
      * @param headers GetFileUploadInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -272,8 +278,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件上传信息
-     *
+     * <b>summary</b> : 
+     * <p>获取文件上传信息</p>
+     * 
      * @param request GetFileUploadInfoRequest
      * @return GetFileUploadInfoResponse
      */
@@ -284,8 +291,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取权限继承模式
-     *
+     * <b>summary</b> : 
+     * <p>获取权限继承模式</p>
+     * 
      * @param request GetPermissionInheritanceRequest
      * @param headers GetPermissionInheritanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -326,8 +334,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取权限继承模式
-     *
+     * <b>summary</b> : 
+     * <p>获取权限继承模式</p>
+     * 
      * @param request GetPermissionInheritanceRequest
      * @return GetPermissionInheritanceResponse
      */
@@ -338,8 +347,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取权限列表
-     *
+     * <b>summary</b> : 
+     * <p>获取权限列表</p>
+     * 
      * @param request ListPermissionsRequest
      * @param headers ListPermissionsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -386,8 +396,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取权限列表
-     *
+     * <b>summary</b> : 
+     * <p>获取权限列表</p>
+     * 
      * @param request ListPermissionsRequest
      * @return ListPermissionsResponse
      */
@@ -398,8 +409,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询员工离职时空间默认转交人(管理员)
-     *
+     * <b>summary</b> : 
+     * <p>查询员工离职时空间默认转交人(管理员)</p>
+     * 
      * @param request ManagerGetDefaultHandOverUserRequest
      * @param headers ManagerGetDefaultHandOverUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -440,8 +452,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询员工离职时空间默认转交人(管理员)
-     *
+     * <b>summary</b> : 
+     * <p>查询员工离职时空间默认转交人(管理员)</p>
+     * 
      * @param request ManagerGetDefaultHandOverUserRequest
      * @return ManagerGetDefaultHandOverUserResponse
      */
@@ -452,8 +465,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置员工离职时空间默认转交人(管理员)
-     *
+     * <b>summary</b> : 
+     * <p>设置员工离职时空间默认转交人(管理员)</p>
+     * 
      * @param request ManagerSetDefaultHandOverUserRequest
      * @param headers ManagerSetDefaultHandOverUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -500,8 +514,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置员工离职时空间默认转交人(管理员)
-     *
+     * <b>summary</b> : 
+     * <p>设置员工离职时空间默认转交人(管理员)</p>
+     * 
      * @param request ManagerSetDefaultHandOverUserRequest
      * @return ManagerSetDefaultHandOverUserResponse
      */
@@ -512,8 +527,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索文件
-     *
+     * <b>summary</b> : 
+     * <p>搜索文件</p>
+     * 
      * @param request SearchDentriesRequest
      * @param headers SearchDentriesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -564,8 +580,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索文件
-     *
+     * <b>summary</b> : 
+     * <p>搜索文件</p>
+     * 
      * @param request SearchDentriesRequest
      * @return SearchDentriesResponse
      */
@@ -576,8 +593,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索公开发布文件
-     *
+     * <b>summary</b> : 
+     * <p>搜索公开发布文件</p>
+     * 
      * @param request SearchPublishDentriesRequest
      * @param headers SearchPublishDentriesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -632,8 +650,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索公开发布文件
-     *
+     * <b>summary</b> : 
+     * <p>搜索公开发布文件</p>
+     * 
      * @param request SearchPublishDentriesRequest
      * @return SearchPublishDentriesResponse
      */
@@ -644,8 +663,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索知识库
-     *
+     * <b>summary</b> : 
+     * <p>搜索知识库</p>
+     * 
      * @param request SearchWorkspacesRequest
      * @param headers SearchWorkspacesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -696,8 +716,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索知识库
-     *
+     * <b>summary</b> : 
+     * <p>搜索知识库</p>
+     * 
      * @param request SearchWorkspacesRequest
      * @return SearchWorkspacesResponse
      */
@@ -708,8 +729,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置权限继承模式
-     *
+     * <b>summary</b> : 
+     * <p>设置权限继承模式</p>
+     * 
      * @param request SetPermissionInheritanceRequest
      * @param headers SetPermissionInheritanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -756,8 +778,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置权限继承模式
-     *
+     * <b>summary</b> : 
+     * <p>设置权限继承模式</p>
+     * 
      * @param request SetPermissionInheritanceRequest
      * @return SetPermissionInheritanceResponse
      */
@@ -768,8 +791,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改权限
-     *
+     * <b>summary</b> : 
+     * <p>修改权限</p>
+     * 
      * @param request UpdatePermissionRequest
      * @param headers UpdatePermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -824,8 +848,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改权限
-     *
+     * <b>summary</b> : 
+     * <p>修改权限</p>
+     * 
      * @param request UpdatePermissionRequest
      * @return UpdatePermissionResponse
      */

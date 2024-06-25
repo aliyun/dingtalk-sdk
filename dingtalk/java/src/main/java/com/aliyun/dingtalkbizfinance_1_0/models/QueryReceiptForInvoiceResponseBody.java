@@ -4,12 +4,20 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptForInvoiceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public String hasMore;
 
     @NameInMap("list")
     public java.util.List<QueryReceiptForInvoiceResponseBodyList> list;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,12 +51,24 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptForInvoiceResponseBodyListCreator extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxxx">https://xxxx</a></p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试名字</p>
+         */
         @NameInMap("nick")
         public String nick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1231</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -84,9 +104,17 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptForInvoiceResponseBodyListCustomer extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>CUS_xxxxx</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -114,36 +142,80 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptForInvoiceResponseBodyListProductInfoList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>12.3</p>
+         */
         @NameInMap("amountWithTax")
         public String amountWithTax;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("amountWithoutTax")
         public String amountWithoutTax;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("discountAmount")
         public String discountAmount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>鱼</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("quantity")
         public String quantity;
 
+        /**
+         * <strong>example:</strong>
+         * <p>大型</p>
+         */
         @NameInMap("specification")
         public String specification;
 
+        /**
+         * <strong>example:</strong>
+         * <p>XXX</p>
+         */
         @NameInMap("taxClassificationCode")
         public String taxClassificationCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0.3</p>
+         */
         @NameInMap("taxRate")
         public String taxRate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>千克</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12.3</p>
+         */
         @NameInMap("unitPriceWithTax")
         public String unitPriceWithTax;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("unitPriceWithoutTax")
         public String unitPriceWithoutTax;
 
@@ -254,21 +326,45 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptForInvoiceResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("accountantBookId")
         public String accountantBookId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>5000</p>
+         */
         @NameInMap("amount")
         public String amount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>applied</p>
+         */
         @NameInMap("applyStatus")
         public String applyStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>invoicing</p>
+         */
         @NameInMap("bizStatus")
         public String bizStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("businessId")
         public String businessId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>COM_DEFAULT</p>
+         */
         @NameInMap("companyCode")
         public String companyCode;
 
@@ -281,54 +377,118 @@ public class QueryReceiptForInvoiceResponseBody extends TeaModel {
         @NameInMap("customer")
         public QueryReceiptForInvoiceResponseBodyListCustomer customer;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.abc.com">www.abc.com</a></p>
+         */
         @NameInMap("drawerEmail")
         public String drawerEmail;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345678901</p>
+         */
         @NameInMap("drawerTelephone")
         public String drawerTelephone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>增值税发票</p>
+         */
         @NameInMap("invoiceType")
         public String invoiceType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>EM-xxxxx</p>
+         */
         @NameInMap("modelId")
         public String modelId;
 
         @NameInMap("productInfoList")
         public java.util.List<QueryReceiptForInvoiceResponseBodyListProductInfoList> productInfoList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("purchaserAccount")
         public String purchaserAccount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州市</p>
+         */
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>建设银行</p>
+         */
         @NameInMap("purchaserBankName")
         public String purchaserBankName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>钉有限公司</p>
+         */
         @NameInMap("purchaserName")
         public String purchaserName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123456</p>
+         */
         @NameInMap("purchaserTaxNo")
         public String purchaserTaxNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>13333333333</p>
+         */
         @NameInMap("purchaserTel")
         public String purchaserTel;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("receiptId")
         public String receiptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>16000000</p>
+         */
         @NameInMap("recordTime")
         public String recordTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>备注信息</p>
+         */
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <strong>example:</strong>
+         * <p>approval</p>
+         */
         @NameInMap("source")
         public String source;
 
+        /**
+         * <strong>example:</strong>
+         * <p>agree</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三提交的开票申请单</p>
+         */
         @NameInMap("title")
         public String title;
 

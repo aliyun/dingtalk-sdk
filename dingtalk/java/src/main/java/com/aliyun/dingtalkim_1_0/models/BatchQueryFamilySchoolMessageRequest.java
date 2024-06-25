@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class BatchQueryFamilySchoolMessageRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidxxxx</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
@@ -18,6 +21,9 @@ public class BatchQueryFamilySchoolMessageRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("unionId")
     public String unionId;

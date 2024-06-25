@@ -4,12 +4,24 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCalenderSummaryResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("calendarCreateUserCnt")
     public String calendarCreateUserCnt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("recvCalendarUserCnt1d")
     public String recvCalendarUserCnt1d;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("useCalendarUserCnt1d")
     public String useCalendarUserCnt1d;
 

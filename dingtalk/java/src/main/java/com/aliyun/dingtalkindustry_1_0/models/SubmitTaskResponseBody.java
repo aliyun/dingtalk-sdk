@@ -21,9 +21,17 @@ public class SubmitTaskResponseBody extends TeaModel {
     }
 
     public static class SubmitTaskResponseBodyTasks extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1001</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>8ef16170b6e24d8fb77b832d7603b835</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 

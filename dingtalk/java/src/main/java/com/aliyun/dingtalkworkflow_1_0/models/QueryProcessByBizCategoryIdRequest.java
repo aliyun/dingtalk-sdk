@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class QueryProcessByBizCategoryIdRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc</p>
      */
     @NameInMap("bizType")
     public String bizType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manager123</p>
+     */
     @NameInMap("userId")
     public String userId;
 

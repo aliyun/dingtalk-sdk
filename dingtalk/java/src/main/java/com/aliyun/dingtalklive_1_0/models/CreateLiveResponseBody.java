@@ -21,6 +21,10 @@ public class CreateLiveResponseBody extends TeaModel {
     }
 
     public static class CreateLiveResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1a353547-040d-4095-bb93-404bc5d47920</p>
+         */
         @NameInMap("liveId")
         public String liveId;
 

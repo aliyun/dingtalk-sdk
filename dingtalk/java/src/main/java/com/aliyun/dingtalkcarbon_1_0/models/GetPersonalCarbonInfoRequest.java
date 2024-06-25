@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetPersonalCarbonInfoRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>salary</p>
      */
     @NameInMap("actionType")
     public String actionType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>23121</p>
      */
     @NameInMap("unionId")
     public String unionId;

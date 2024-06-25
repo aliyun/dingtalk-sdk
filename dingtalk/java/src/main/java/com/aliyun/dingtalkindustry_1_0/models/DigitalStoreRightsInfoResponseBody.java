@@ -4,24 +4,42 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreRightsInfoResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1659668620000</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("quantity")
     public Long quantity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>RIGHT_MDT_LEVEL</p>
+     */
     @NameInMap("rightsCode")
     public String rightsCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>高级版</p>
      */
     @NameInMap("rightsName")
     public String rightsName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1656990220000</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 

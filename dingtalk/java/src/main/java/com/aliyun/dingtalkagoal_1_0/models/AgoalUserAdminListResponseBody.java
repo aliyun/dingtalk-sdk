@@ -10,6 +10,10 @@ public class AgoalUserAdminListResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<OpenUserAdminDTO> content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>7478B23C-80E8-1AD6-BE8C-09D480E0xxxx</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 

@@ -4,15 +4,40 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllCustomerRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100010</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>crm_customer</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("objectType")
     public String objectType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding_userid</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 

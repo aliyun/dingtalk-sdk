@@ -107,33 +107,73 @@ public class AddHrmLegalEntityRequest extends TeaModel {
     }
 
     public static class AddHrmLegalEntityRequestExtManageAddress extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>110101</p>
+         */
         @NameInMap("areaCode")
         public String areaCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>东城区</p>
+         */
         @NameInMap("areaName")
         public String areaName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("cityCode")
         public String cityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>广州市</p>
+         */
         @NameInMap("cityName")
         public String cityName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("countryCode")
         public String countryCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>China</p>
+         */
         @NameInMap("countryName")
         public String countryName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>北京市东城区xx街道xx小区xx楼</p>
+         */
         @NameInMap("detailAddress")
         public String detailAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("globalAreaType")
         public String globalAreaType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>广东省</p>
+         */
         @NameInMap("provinceName")
         public String provinceName;
 
@@ -225,33 +265,73 @@ public class AddHrmLegalEntityRequest extends TeaModel {
     }
 
     public static class AddHrmLegalEntityRequestExtRegistrationAddress extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>110101</p>
+         */
         @NameInMap("areaCode")
         public String areaCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>东城区</p>
+         */
         @NameInMap("areaName")
         public String areaName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("cityCode")
         public String cityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>广州市</p>
+         */
         @NameInMap("cityName")
         public String cityName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("countryCode")
         public String countryCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>China</p>
+         */
         @NameInMap("countryName")
         public String countryName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>北京市东城区xx街道xx小区xx楼</p>
+         */
         @NameInMap("detailAddress")
         public String detailAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("globalAreaType")
         public String globalAreaType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>广东省</p>
+         */
         @NameInMap("provinceName")
         public String provinceName;
 
@@ -364,6 +444,10 @@ public class AddHrmLegalEntityRequest extends TeaModel {
         @NameInMap("unifiedSocialCreditCode")
         public String unifiedSocialCreditCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>515200</p>
+         */
         @NameInMap("zipCode")
         public String zipCode;
 

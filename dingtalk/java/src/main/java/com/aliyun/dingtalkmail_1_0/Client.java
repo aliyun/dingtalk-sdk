@@ -6,11 +6,10 @@ import com.aliyun.dingtalkmail_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建企业邮箱用户
-     *
+     * <b>summary</b> : 
+     * <p>创建企业邮箱用户</p>
+     * 
      * @param request CreateUserRequest
      * @param headers CreateUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -74,8 +74,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建企业邮箱用户
-     *
+     * <b>summary</b> : 
+     * <p>创建企业邮箱用户</p>
+     * 
      * @param request CreateUserRequest
      * @return CreateUserResponse
      */

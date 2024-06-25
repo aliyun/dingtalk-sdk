@@ -6,42 +6,73 @@ import com.aliyun.tea.*;
 public class BatchUpdateFormDataByInstanceMapRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_XCE0EVXS6DYG3YDYC5RD</p>
      */
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("asynchronousExecution")
     public Boolean asynchronousExecution;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA</p>
      */
     @NameInMap("formUuid")
     public String formUuid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("ignoreEmpty")
     public Boolean ignoreEmpty;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("noExecuteExpression")
     public Boolean noExecuteExpression;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;FINST-ANSFSNNDS2212NSKLKKSFD&quot;:&quot;{&quot;rateField_l0c1cwis&quot;:3,&quot;countrySelectField_l0c1cwiu&quot;:[{&quot;value&quot;:&quot;US&quot;}]}&quot;}</p>
      */
     @NameInMap("updateFormDataJsonMap")
     public java.util.Map<String, ?> updateFormDataJsonMap;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("useLatestFormSchemaVersion")
     public Boolean useLatestFormSchemaVersion;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding173982232112232</p>
      */
     @NameInMap("userId")
     public String userId;

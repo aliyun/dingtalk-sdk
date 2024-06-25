@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class ReleaseGrayUserIdGetRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5000000000000000</p>
      */
     @NameInMap("miniAppId")
     public String miniAppId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0.0.1</p>
      */
     @NameInMap("version")
     public String version;

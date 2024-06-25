@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DeleteCrmCustomObjectDataResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>INST_xx</p>
      */
     @NameInMap("instanceId")
     public String instanceId;

@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class ResubmitTicketRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Dq9hP8Sk2v6vQ6l05nCe5wiEiE</p>
      */
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>[{&quot;identifier&quot;:&quot;input1&quot;,&quot;value&quot;:&quot;123&quot;}]</p>
+     */
     @NameInMap("customFields")
     public String customFields;
 
@@ -18,18 +25,27 @@ public class ResubmitTicketRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>eKWh3GBwsKEiE</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>bLkvfXKiSngQiE</p>
      */
     @NameInMap("openTemplateBizId")
     public String openTemplateBizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>iPbrfXjdNjRoiE</p>
      */
     @NameInMap("openTicketId")
     public String openTicketId;
@@ -42,6 +58,9 @@ public class ResubmitTicketRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SG</p>
      */
     @NameInMap("scene")
     public String scene;
@@ -54,6 +73,9 @@ public class ResubmitTicketRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>工单标题</p>
      */
     @NameInMap("title")
     public String title;
@@ -155,6 +177,10 @@ public class ResubmitTicketRequest extends TeaModel {
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 
@@ -196,6 +222,10 @@ public class ResubmitTicketRequest extends TeaModel {
         @NameInMap("anchor")
         public Boolean anchor;
 
+        /**
+         * <strong>example:</strong>
+         * <p>msgsbY4BzTCNX0/ClUwoTTs7w==</p>
+         */
         @NameInMap("openMsgId")
         public String openMsgId;
 
@@ -237,6 +267,10 @@ public class ResubmitTicketRequest extends TeaModel {
         @NameInMap("groupMsgs")
         public java.util.List<ResubmitTicketRequestSceneContextGroupMsgs> groupMsgs;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cidZBSNlUi/Jq9x76PAXUCrAA==</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
@@ -275,9 +309,17 @@ public class ResubmitTicketRequest extends TeaModel {
     }
 
     public static class ResubmitTicketRequestTicketMemoAttachments extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>wahaha.txt</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt</p>
+         */
         @NameInMap("key")
         public String key;
 
@@ -308,6 +350,10 @@ public class ResubmitTicketRequest extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<ResubmitTicketRequestTicketMemoAttachments> attachments;
 
+        /**
+         * <strong>example:</strong>
+         * <p>备注</p>
+         */
         @NameInMap("memo")
         public String memo;
 

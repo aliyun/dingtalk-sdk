@@ -32,15 +32,31 @@ public class IsvMetadataQueryResponseBody extends TeaModel {
     }
 
     public static class IsvMetadataQueryResponseBodyResultFields extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>该字段为id主键</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>id</p>
+         */
         @NameInMap("fieldKey")
         public String fieldKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>id主键</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>varchar</p>
+         */
         @NameInMap("fieldType")
         public String fieldType;
 
@@ -109,6 +125,10 @@ public class IsvMetadataQueryResponseBody extends TeaModel {
         @NameInMap("fields")
         public java.util.List<IsvMetadataQueryResponseBodyResultFields> fields;
 
+        /**
+         * <strong>example:</strong>
+         * <p>tb_test01</p>
+         */
         @NameInMap("tableCode")
         public String tableCode;
 

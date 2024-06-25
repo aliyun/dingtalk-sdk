@@ -12,6 +12,9 @@ public class LiandanluTextToImageModelResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -38,12 +41,24 @@ public class LiandanluTextToImageModelResponseBody extends TeaModel {
     }
 
     public static class LiandanluTextToImageModelResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0112_1222</p>
+         */
         @NameInMap("requestId")
         public String requestId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>SUCCEEDED</p>
+         */
         @NameInMap("taskStatus")
         public String taskStatus;
 

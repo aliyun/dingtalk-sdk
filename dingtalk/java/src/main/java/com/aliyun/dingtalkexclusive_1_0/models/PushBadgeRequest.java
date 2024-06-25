@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class PushBadgeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>110000000</p>
      */
     @NameInMap("agentId")
     public String agentId;
@@ -15,6 +18,9 @@ public class PushBadgeRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("pushType")
     public String pushType;
@@ -49,9 +55,17 @@ public class PushBadgeRequest extends TeaModel {
     }
 
     public static class PushBadgeRequestBadgeItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("pushValue")
         public String pushValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345</p>
+         */
         @NameInMap("userId")
         public String userId;
 

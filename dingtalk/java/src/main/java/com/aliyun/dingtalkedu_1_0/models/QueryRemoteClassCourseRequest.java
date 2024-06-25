@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class QueryRemoteClassCourseRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1635436800000</p>
      */
     @NameInMap("endTime")
     public Long endTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager1234</p>
      */
     @NameInMap("operator")
     public String operator;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1634832000000</p>
      */
     @NameInMap("startTime")
     public Long startTime;

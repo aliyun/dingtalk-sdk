@@ -24,32 +24,52 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllFormInstancesResponseBodyResultValuesFormInstDataList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>staff_name</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>具体参见审批控件列表</p>
          */
         @NameInMap("componentType")
         public String componentType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;key&quot;:&quot;value}</p>
+         */
         @NameInMap("extendValue")
         public String extendValue;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>TextField-abcdefg</p>
          */
         @NameInMap("key")
         public String key;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>员工姓名</p>
          */
         @NameInMap("label")
         public String label;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("value")
         public String value;
@@ -110,6 +130,10 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
     }
 
     public static class QueryAllFormInstancesResponseBodyResultValues extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>SWAPP-abcd-example</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
@@ -118,18 +142,27 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1635151039000</p>
          */
         @NameInMap("createTimestamp")
         public Long createTimestamp;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>30314512</p>
          */
         @NameInMap("creator")
         public String creator;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PROC-abcd-example</p>
          */
         @NameInMap("formCode")
         public String formCode;
@@ -142,27 +175,48 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abcd-eaf-acde12f</p>
          */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>032142312</p>
          */
         @NameInMap("modifier")
         public String modifier;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1635151039000</p>
+         */
         @NameInMap("modifyTimestamp")
         public Long modifyTimestamp;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abcd</p>
+         */
         @NameInMap("outBizCode")
         public String outBizCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>323</p>
+         */
         @NameInMap("outInstanceId")
         public String outInstanceId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>xxx提交的数据</p>
          */
         @NameInMap("title")
         public String title;
@@ -273,18 +327,27 @@ public class QueryAllFormInstancesResponseBody extends TeaModel {
     public static class QueryAllFormInstancesResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20</p>
          */
         @NameInMap("maxResults")
         public Long maxResults;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("nextToken")
         public String nextToken;

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchUpdateDeviceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding123</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -35,12 +39,24 @@ public class BatchUpdateDeviceRequest extends TeaModel {
     }
 
     public static class BatchUpdateDeviceRequestDevicesLiveUrls extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://abc.stream.flv">https://abc.stream.flv</a></p>
+         */
         @NameInMap("flv")
         public String flv;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://abc.stream.m3u8">https://abc.stream.m3u8</a></p>
+         */
         @NameInMap("hls")
         public String hls;
 
+        /**
+         * <strong>example:</strong>
+         * <p>rtmp://abc.stream</p>
+         */
         @NameInMap("rtmp")
         public String rtmp;
 
@@ -78,13 +94,24 @@ public class BatchUpdateDeviceRequest extends TeaModel {
     public static class BatchUpdateDeviceRequestDevices extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>002</p>
          */
         @NameInMap("deviceId")
         public String deviceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>摄像头002</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("deviceStatus")
         public Integer deviceStatus;
 
@@ -94,6 +121,10 @@ public class BatchUpdateDeviceRequest extends TeaModel {
         @NameInMap("liveUrls")
         public BatchUpdateDeviceRequestDevicesLiveUrls liveUrls;
 
+        /**
+         * <strong>example:</strong>
+         * <p>社区南门</p>
+         */
         @NameInMap("location")
         public String location;
 

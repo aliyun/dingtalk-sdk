@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetInstancesByIdsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>DING_CUSTOMER</p>
      */
     @NameInMap("formCode")
     public String formCode;
@@ -18,6 +21,9 @@ public class GetInstancesByIdsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>888***</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;

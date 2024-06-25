@@ -21,30 +21,66 @@ public class SearchProjectTemplateResponseBody extends TeaModel {
     }
 
     public static class SearchProjectTemplateResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-06-13T07:36:50.318Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>我是描述内容</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62e0a88c0axxxx</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isDemo")
         public Boolean isDemo;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.xxx.com/xxxx">https://www.xxx.com/xxxx</a></p>
+         */
         @NameInMap("logo")
         public String logo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>模板1</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-06-13T07:36:50.318Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 
+        /**
+         * <strong>example:</strong>
+         * <p>organization</p>
+         */
         @NameInMap("visible")
         public String visible;
 

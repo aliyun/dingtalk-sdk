@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetFlightExceedApplyRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234</p>
      */
     @NameInMap("applyId")
     public String applyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding1234</p>
      */
     @NameInMap("corpId")
     public String corpId;

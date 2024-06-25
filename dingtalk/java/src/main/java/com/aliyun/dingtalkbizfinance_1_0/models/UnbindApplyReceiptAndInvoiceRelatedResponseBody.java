@@ -43,9 +43,17 @@ public class UnbindApplyReceiptAndInvoiceRelatedResponseBody extends TeaModel {
     }
 
     public static class UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 

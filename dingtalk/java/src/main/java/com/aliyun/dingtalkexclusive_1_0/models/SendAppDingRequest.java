@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SendAppDingRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>开会</p>
      */
     @NameInMap("content")
     public String content;

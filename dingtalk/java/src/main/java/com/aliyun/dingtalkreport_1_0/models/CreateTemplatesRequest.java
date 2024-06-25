@@ -21,6 +21,9 @@ public class CreateTemplatesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>182942</p>
      */
     @NameInMap("creator")
     public String creator;
@@ -40,17 +43,38 @@ public class CreateTemplatesRequest extends TeaModel {
     @NameInMap("fields")
     public java.util.List<CreateTemplatesRequestFields> fields;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://xxx.jpg">https://xxx.jpg</a></p>
+     */
     @NameInMap("logo")
     public String logo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1000</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("maxWordCount")
     public Integer maxWordCount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("minWordCount")
     public Integer minWordCount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>工作日报</p>
      */
     @NameInMap("name")
     public String name;
@@ -187,6 +211,10 @@ public class CreateTemplatesRequest extends TeaModel {
         @NameInMap("attribute")
         public java.util.Map<String, String> attribute;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("openId")
         public String openId;
 
@@ -257,6 +285,9 @@ public class CreateTemplatesRequest extends TeaModel {
     public static class CreateTemplatesRequestFields extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("dataType")
         public Integer dataType;
@@ -278,12 +309,18 @@ public class CreateTemplatesRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("order")
         public Integer order;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("sort")
         public Integer sort;

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOrgResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>dinge4a454fa5f32aba6f5bf40edxxxxxxxx</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 

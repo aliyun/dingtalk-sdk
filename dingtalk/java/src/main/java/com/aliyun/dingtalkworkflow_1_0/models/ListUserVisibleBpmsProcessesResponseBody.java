@@ -21,21 +21,45 @@ public class ListUserVisibleBpmsProcessesResponseBody extends TeaModel {
     }
 
     public static class ListUserVisibleBpmsProcessesResponseBodyResultProcessList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>12347899</p>
+         */
         @NameInMap("dirId")
         public String dirId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>财务管理</p>
+         */
         @NameInMap("dirName")
         public String dirName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://gw.xxxx/T-102-102.png">https://gw.xxxx/T-102-102.png</a></p>
+         */
         @NameInMap("iconUrl")
         public String iconUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>物品领用</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PROC-YMLA1-xxxx-11WFJ-1</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://aflow.dingtalk.com/dingtalk/mobile/homepage.htm?xxxx">https://aflow.dingtalk.com/dingtalk/mobile/homepage.htm?xxxx</a></p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -95,6 +119,10 @@ public class ListUserVisibleBpmsProcessesResponseBody extends TeaModel {
     }
 
     public static class ListUserVisibleBpmsProcessesResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("nextToken")
         public Long nextToken;
 

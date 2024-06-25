@@ -4,32 +4,52 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCloudFeedRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://img.alicdn.com/tfs/TB1A7cBtYr1gK0jSZR0XXbP8XXa-750-422.png">https://img.alicdn.com/tfs/TB1A7cBtYr1gK0jSZR0XXbP8XXa-750-422.png</a></p>
+     */
     @NameInMap("coverUrl")
     public String coverUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>这是一场云导播课程</p>
+     */
     @NameInMap("intro")
     public String intro;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1615260061000</p>
      */
     @NameInMap("startTime")
     public Long startTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>课程一</p>
      */
     @NameInMap("title")
     public String title;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>214675</p>
      */
     @NameInMap("userId")
     public String userId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>http/https:/xxx.mp4</p>
      */
     @NameInMap("videoUrl")
     public String videoUrl;

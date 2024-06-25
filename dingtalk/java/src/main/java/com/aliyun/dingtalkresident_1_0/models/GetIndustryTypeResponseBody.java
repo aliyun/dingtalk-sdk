@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetIndustryTypeResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>RESIDENCE</p>
      */
     @NameInMap("industryType")
     public String industryType;

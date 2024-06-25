@@ -4,12 +4,24 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListRecentsResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>nextToken</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>recentDentryList</p>
+     */
     @NameInMap("recentDentryList")
     public java.util.List<ListRecentsResponseBodyRecentDentryList> recentDentryList;
 
@@ -43,6 +55,10 @@ public class ListRecentsResponseBody extends TeaModel {
     }
 
     public static class ListRecentsResponseBodyRecentDentryListResourceSpaceInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>im</p>
+         */
         @NameInMap("sceneType")
         public String sceneType;
 
@@ -62,24 +78,52 @@ public class ListRecentsResponseBody extends TeaModel {
     }
 
     public static class ListRecentsResponseBodyRecentDentryListResource extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>dentryUuid</p>
+         */
         @NameInMap("dentryUuid")
         public String dentryUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>driveDentryId</p>
+         */
         @NameInMap("driveDentryId")
         public String driveDentryId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>driveSpaceId</p>
+         */
         @NameInMap("driveSpaceId")
         public String driveSpaceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>docx</p>
+         */
         @NameInMap("extension")
         public String extension;
 
+        /**
+         * <strong>example:</strong>
+         * <p>name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>spaceInfo</p>
+         */
         @NameInMap("spaceInfo")
         public ListRecentsResponseBodyRecentDentryListResourceSpaceInfo spaceInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://example.com">https://example.com</a></p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -147,18 +191,38 @@ public class ListRecentsResponseBody extends TeaModel {
     }
 
     public static class ListRecentsResponseBodyRecentDentryList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("accessTime")
         public Long accessTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("deleted")
         public Boolean deleted;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://example.com">https://example.com</a></p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("operateType")
         public Integer operateType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>resource</p>
+         */
         @NameInMap("resource")
         public ListRecentsResponseBodyRecentDentryListResource resource;
 

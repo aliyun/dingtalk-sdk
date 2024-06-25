@@ -21,15 +21,31 @@ public class RosterMetaAvailableFieldListResponseBody extends TeaModel {
     }
 
     public static class RosterMetaAvailableFieldListResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>sys01-employeeType</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>员工类型</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>DDSelectField</p>
+         */
         @NameInMap("fieldType")
         public String fieldType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>[{&quot;value&quot;:&quot;1&quot;,&quot;label&quot;:&quot;男&quot;},{&quot;value&quot;:&quot;2&quot;,&quot;label&quot;:&quot;女&quot;}]</p>
+         */
         @NameInMap("optionText")
         public String optionText;
 

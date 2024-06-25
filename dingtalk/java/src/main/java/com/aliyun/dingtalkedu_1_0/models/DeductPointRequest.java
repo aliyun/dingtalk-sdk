@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class DeductPointRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>biz01</p>
      */
     @NameInMap("bizId")
     public String bizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>兑换商品</p>
      */
     @NameInMap("deductDesc")
     public String deductDesc;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://www.dingtalk.com/">https://www.dingtalk.com/</a></p>
      */
     @NameInMap("deductDetailUrl")
     public String deductDetailUrl;
@@ -30,6 +39,9 @@ public class DeductPointRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>personal</p>
      */
     @NameInMap("pointType")
     public String pointType;

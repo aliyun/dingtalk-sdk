@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetProcessInstanceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>a171de6c-8bxxxx</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;

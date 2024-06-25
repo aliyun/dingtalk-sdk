@@ -10,6 +10,10 @@ public class InviteUsersRequest extends TeaModel {
     @NameInMap("phoneInviteeList")
     public java.util.List<InviteUsersRequestPhoneInviteeList> phoneInviteeList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>qzR1iSMDvzR9iPXXXXXXXXXXXXXX</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -45,10 +49,17 @@ public class InviteUsersRequest extends TeaModel {
     public static class InviteUsersRequestInviteeList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试用户</p>
          */
         @NameInMap("nick")
         public String nick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>qzR1iSMDvzR9kXXXXXXXx</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -76,9 +87,17 @@ public class InviteUsersRequest extends TeaModel {
     }
 
     public static class InviteUsersRequestPhoneInviteeList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>测试电话用户</p>
+         */
         @NameInMap("nick")
         public String nick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1xxxxxxxxxx9</p>
+         */
         @NameInMap("phoneNumber")
         public String phoneNumber;
 

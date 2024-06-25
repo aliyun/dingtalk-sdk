@@ -4,9 +4,17 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCrmRolePermissionRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>crm_customer</p>
+     */
     @NameInMap("bizType")
     public String bizType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>PROC-9EC85C45-E404-4E26-9300-E67455F0FF8F</p>
+     */
     @NameInMap("resourceId")
     public String resourceId;
 

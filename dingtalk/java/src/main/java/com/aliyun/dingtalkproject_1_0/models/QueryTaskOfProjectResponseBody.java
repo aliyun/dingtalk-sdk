@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryTaskOfProjectResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>f279e812-e431-428d-846d-cxxxxxx</p>
      */
     @NameInMap("nextToken")
     public String nextToken;
@@ -15,6 +18,9 @@ public class QueryTaskOfProjectResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>35</p>
      */
     @NameInMap("totalCount")
     public Integer totalCount;
@@ -49,6 +55,10 @@ public class QueryTaskOfProjectResponseBody extends TeaModel {
     }
 
     public static class QueryTaskOfProjectResponseBodyResultCustomfields extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3bbxx0xxx</p>
+         */
         @NameInMap("customfieldId")
         public String customfieldId;
 
@@ -68,84 +78,176 @@ public class QueryTaskOfProjectResponseBody extends TeaModel {
     }
 
     public static class QueryTaskOfProjectResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("accomplished")
         public String accomplished;
 
         @NameInMap("ancestorIds")
         public java.util.List<String> ancestorIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>标题2</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3bba7ce40xxx</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
         @NameInMap("customfields")
         public java.util.List<QueryTaskOfProjectResponseBodyResultCustomfields> customfields;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("dueDate")
         public String dueDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62cxxxxxxx</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isArchived")
         public Boolean isArchived;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isDone")
         public Boolean isDone;
 
         @NameInMap("labels")
         public java.util.List<String> labels;
 
+        /**
+         * <strong>example:</strong>
+         * <p>备注</p>
+         */
         @NameInMap("note")
         public String note;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("priority")
         public Long priority;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("progress")
         public Integer progress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3bbaxxxxx</p>
+         */
         @NameInMap("projectId")
         public String projectId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3bbxx0xxx</p>
+         */
         @NameInMap("scenariofieldconfigId")
         public String scenariofieldconfigId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3bbxx0xxx</p>
+         */
         @NameInMap("sprintId")
         public String sprintId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3bbxx0xxx</p>
+         */
         @NameInMap("stageId")
         public String stageId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("storyPoint")
         public Integer storyPoint;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3bbxx0xxx</p>
+         */
         @NameInMap("tagIds")
         public java.util.List<String> tagIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3bbaxxx</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3bbxx0xxx</p>
+         */
         @NameInMap("taskflowstatusId")
         public String taskflowstatusId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 
+        /**
+         * <strong>example:</strong>
+         * <p>member</p>
+         */
         @NameInMap("visible")
         public String visible;
 

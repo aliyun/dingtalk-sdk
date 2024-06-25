@@ -7,6 +7,10 @@ public class GrantProcessInstanceForDownloadFileResponseBody extends TeaModel {
     @NameInMap("result")
     public GrantProcessInstanceForDownloadFileResponseBodyResult result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,12 +36,24 @@ public class GrantProcessInstanceForDownloadFileResponseBody extends TeaModel {
     }
 
     public static class GrantProcessInstanceForDownloadFileResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://lippi-space-zjk.oss-cn-zhangjiakou.aliyuncs.com/xxxxx">http://lippi-space-zjk.oss-cn-zhangjiakou.aliyuncs.com/xxxxx</a></p>
+         */
         @NameInMap("downloadUri")
         public String downloadUri;
 
+        /**
+         * <strong>example:</strong>
+         * <p>26748422566</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3996960664</p>
+         */
         @NameInMap("spaceId")
         public Long spaceId;
 

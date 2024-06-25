@@ -7,15 +7,31 @@ public class GetOfficialAccountContactInfoResponseBody extends TeaModel {
     @NameInMap("authItems")
     public java.util.List<String> authItems;
 
+    /**
+     * <strong>example:</strong>
+     * <p>阿里巴巴钉钉</p>
+     */
     @NameInMap("corpName")
     public String corpName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>18812341234</p>
+     */
     @NameInMap("mobile")
     public String mobile;
 
+    /**
+     * <strong>example:</strong>
+     * <p>+86</p>
+     */
     @NameInMap("stateCode")
     public String stateCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>unionId</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

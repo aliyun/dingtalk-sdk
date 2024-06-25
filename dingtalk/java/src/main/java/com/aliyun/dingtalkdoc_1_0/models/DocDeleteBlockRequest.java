@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DocDeleteBlockRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

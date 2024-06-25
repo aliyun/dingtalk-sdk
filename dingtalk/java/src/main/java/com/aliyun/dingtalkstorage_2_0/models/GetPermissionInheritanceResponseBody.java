@@ -4,6 +4,10 @@ package com.aliyun.dingtalkstorage_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetPermissionInheritanceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>PASS_ON</p>
+     */
     @NameInMap("inheritance")
     public String inheritance;
 

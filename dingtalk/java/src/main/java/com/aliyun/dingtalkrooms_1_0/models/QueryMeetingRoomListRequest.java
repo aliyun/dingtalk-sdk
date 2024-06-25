@@ -4,14 +4,25 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMeetingRoomListRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>124</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

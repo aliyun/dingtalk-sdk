@@ -6,84 +6,181 @@ import com.aliyun.tea.*;
 public class IndustryManufactureMesDispatchTaskRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>add</p>
      */
     @NameInMap("action")
     public String action;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>opsoft</p>
      */
     @NameInMap("appKey")
     public String appKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>task</p>
+     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>3</p>
+     */
     @NameInMap("defectsAmount")
     public String defectsAmount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>张三</p>
+     */
     @NameInMap("dispatchStaffName")
     public String dispatchStaffName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>170000000332</p>
+     */
     @NameInMap("dispatchStaffNo")
     public String dispatchStaffNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("fineAmount")
     public String fineAmount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("overdue")
     public Integer overdue;
 
+    /**
+     * <strong>example:</strong>
+     * <p>321</p>
+     */
     @NameInMap("planQuantity")
     public Long planQuantity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("priority")
     public Integer priority;
 
+    /**
+     * <strong>example:</strong>
+     * <p>打磨</p>
+     */
     @NameInMap("processName")
     public String processName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fsdfs3fsd2234wds</p>
+     */
     @NameInMap("processUuid")
     public String processUuid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dingfsdfs3fsd2234wds</p>
+     */
     @NameInMap("productCode")
     public String productCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>毛坯KM50二级盖</p>
+     */
     @NameInMap("productName")
     public String productName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20<em>20</em>3</p>
+     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dingfsdfs3fsd2234wds</p>
+     */
     @NameInMap("projectCode")
     public String projectCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0220423001</p>
+     */
     @NameInMap("projectId")
     public String projectId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>WORKING</p>
+     */
     @NameInMap("projectStatus")
     public String projectStatus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>[{&quot;userId&quot;:&quot;123&quot;,&quot;name&quot;:&quot;汉俊&quot;,&quot;planQuantity&quot;:30}]</p>
+     */
     @NameInMap("taskOperators")
     public String taskOperators;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-03-12 23:59:59</p>
+     */
     @NameInMap("taskPlanEndTime")
     public String taskPlanEndTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-03-12 23:59:59</p>
+     */
     @NameInMap("taskPlanStartTime")
     public String taskPlanStartTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>WORKING</p>
+     */
     @NameInMap("taskStatus")
     public String taskStatus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>NORMAL</p>
+     */
     @NameInMap("taskType")
     public String taskType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dfsdfs3fsd2234wds</p>
+     */
     @NameInMap("teamId")
     public String teamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fsdfs3fsd2234wds</p>
      */
     @NameInMap("uuid")
     public String uuid;

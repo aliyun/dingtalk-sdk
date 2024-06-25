@@ -10,9 +10,17 @@ public class ConversationCreatedNotifyResponseBody extends TeaModel {
     @NameInMap("errorMsg")
     public String errorMsg;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("result")
     public Boolean result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

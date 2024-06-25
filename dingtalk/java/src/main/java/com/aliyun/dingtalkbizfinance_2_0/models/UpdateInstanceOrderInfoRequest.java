@@ -4,24 +4,48 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInstanceOrderInfoRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>xxx错误</p>
+     */
     @NameInMap("failReason")
     public String failReason;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("outOrderNo")
     public String outOrderNo;
 
     @NameInMap("payerBank")
     public UpdateInstanceOrderInfoRequestPayerBank payerBank;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1709691000682</p>
+     */
     @NameInMap("paymentTime")
     public Long paymentTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>PAYING</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -87,9 +111,17 @@ public class UpdateInstanceOrderInfoRequest extends TeaModel {
     }
 
     public static class UpdateInstanceOrderInfoRequestPayerBank extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>64112222</p>
+         */
         @NameInMap("cardNo")
         public String cardNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>招商银行</p>
+         */
         @NameInMap("name")
         public String name;
 

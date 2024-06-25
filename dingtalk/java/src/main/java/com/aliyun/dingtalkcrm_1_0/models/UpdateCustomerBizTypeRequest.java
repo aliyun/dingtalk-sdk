@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class UpdateCustomerBizTypeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>crm_customer</p>
      */
     @NameInMap("customerBizType")
     public String customerBizType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>34234234ddddad</p>
      */
     @NameInMap("operatorUserId")
     public String operatorUserId;

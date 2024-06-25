@@ -4,9 +4,17 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetSchemaResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("revision")
     public Integer revision;
 
+    /**
+     * <strong>example:</strong>
+     * <p>&quot;{&quot;pageVersion&quot;:&quot;1.0.0&quot;,&quot;pageSchema&quot;:{&quot;version&quot;:&quot;1.0.0&quot;,&quot;componentsMap&quot;:[],&quot;componentsTree&quot;:[]}}&quot;</p>
+     */
     @NameInMap("value")
     public String value;
 

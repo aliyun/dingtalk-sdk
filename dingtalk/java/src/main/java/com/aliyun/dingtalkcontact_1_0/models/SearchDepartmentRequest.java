@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class SearchDepartmentRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("offset")
     public Integer offset;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>财务部</p>
      */
     @NameInMap("queryWord")
     public String queryWord;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("size")
     public Integer size;

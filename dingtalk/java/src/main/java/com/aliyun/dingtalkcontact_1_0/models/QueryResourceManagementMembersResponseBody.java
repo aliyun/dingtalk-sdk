@@ -21,9 +21,17 @@ public class QueryResourceManagementMembersResponseBody extends TeaModel {
     }
 
     public static class QueryResourceManagementMembersResponseBodyMembers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>WB001</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 

@@ -4,12 +4,24 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class RollbackMiniAppVersionRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>5000000003</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0.0.5</p>
+     */
     @NameInMap("rollbackVersion")
     public String rollbackVersion;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0.0.4</p>
+     */
     @NameInMap("targetVersion")
     public String targetVersion;
 

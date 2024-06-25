@@ -6,54 +6,91 @@ import com.aliyun.tea.*;
 public class ExecuteTaskRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_PBKT0MFBEBTDO8T7SLVP</p>
      */
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://tianshu-vpc.oss-cn-sahnghai.aliyuncs.com">https://tianshu-vpc.oss-cn-sahnghai.aliyuncs.com</a></p>
+     */
     @NameInMap("digitalSignUrl")
     public String digitalSignUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>未知</p>
+     */
     @NameInMap("formDataJson")
     public String formDataJson;
 
+    /**
+     * <strong>example:</strong>
+     * <p>zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
+    /**
+     * <strong>example:</strong>
+     * <p>y</p>
+     */
     @NameInMap("noExecuteExpressions")
     public String noExecuteExpressions;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>AGREE</p>
      */
     @NameInMap("outResult")
     public String outResult;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>f30233fb-72e1-4af4-8cb8-c7e0ea9ee530</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>确认同意</p>
      */
     @NameInMap("remark")
     public String remark;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>hexxyy</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12002575</p>
      */
     @NameInMap("taskId")
     public Long taskId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>未知</p>
      */
     @NameInMap("userId")
     public String userId;

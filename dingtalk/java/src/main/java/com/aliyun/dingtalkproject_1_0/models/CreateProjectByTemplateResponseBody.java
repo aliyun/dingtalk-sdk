@@ -21,15 +21,31 @@ public class CreateProjectByTemplateResponseBody extends TeaModel {
     }
 
     public static class CreateProjectByTemplateResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-08-01T09:50:31.275Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62e7a1e721d20b5aexxx</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.xxx.com/xxxxx">https://www.xxx.com/xxxxx</a></p>
+         */
         @NameInMap("logo")
         public String logo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>项目1</p>
+         */
         @NameInMap("name")
         public String name;
 

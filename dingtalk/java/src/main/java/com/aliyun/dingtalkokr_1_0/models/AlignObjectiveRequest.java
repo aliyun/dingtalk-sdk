@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class AlignObjectiveRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1006</p>
      */
     @NameInMap("periodId")
     public String periodId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>59YD</p>
      */
     @NameInMap("targetId")
     public String targetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0115396701752283</p>
      */
     @NameInMap("userId")
     public String userId;

@@ -6,21 +6,34 @@ import com.aliyun.tea.*;
 public class SupplyAddDeptRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>闪电供应商</p>
      */
     @NameInMap("deptName")
     public String deptName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>G12345</p>
+     */
     @NameInMap("partnerNumber")
     public String partnerNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1111</p>
      */
     @NameInMap("superDeptId")
     public Long superDeptId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SUPPLY_CHAIN_DEPT_TYPE</p>
      */
     @NameInMap("supplyDeptType")
     public String supplyDeptType;

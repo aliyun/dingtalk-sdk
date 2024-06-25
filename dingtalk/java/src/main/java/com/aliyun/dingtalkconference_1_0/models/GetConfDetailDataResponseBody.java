@@ -7,6 +7,10 @@ public class GetConfDetailDataResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<GetConfDetailDataResponseBodyList> list;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxZ0bVGoqxxBGQbxdxxxx</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,42 +36,94 @@ public class GetConfDetailDataResponseBody extends TeaModel {
     }
 
     public static class GetConfDetailDataResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("belongOrg")
         public String belongOrg;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6449d8a6414xxxxxxxx01464af9f0</p>
+         */
         @NameInMap("conferenceId")
         public String conferenceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Mac</p>
+         */
         @NameInMap("deviceType")
         public String deviceType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>974000</p>
+         */
         @NameInMap("duration")
         public Long duration;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1682561199000</p>
+         */
         @NameInMap("joinTime")
         public Long joinTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1682562173000</p>
+         */
         @NameInMap("leaveTime")
         public Long leaveTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>-1</p>
+         */
         @NameInMap("networkQuality")
         public String networkQuality;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("nick")
         public String nick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>参会人</p>
+         */
         @NameInMap("role")
         public String role;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("sessionId")
         public String sessionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>已离开</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>njMTqKo9xxxxEiE</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6.1.1</p>
+         */
         @NameInMap("version")
         public String version;
 

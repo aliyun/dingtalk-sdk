@@ -4,6 +4,10 @@ package com.aliyun.dingtalkstorage_2_0.models;
 import com.aliyun.tea.*;
 
 public class ManagerGetDefaultHandOverUserResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>staff_id</p>
+     */
     @NameInMap("defaultHandoverUserId")
     public String defaultHandoverUserId;
 

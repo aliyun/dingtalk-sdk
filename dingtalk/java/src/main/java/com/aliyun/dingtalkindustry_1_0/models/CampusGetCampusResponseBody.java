@@ -4,57 +4,129 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusGetCampusResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>##街道</p>
+     */
     @NameInMap("address")
     public String address;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1000</p>
+     */
     @NameInMap("area")
     public Double area;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1011</p>
+     */
     @NameInMap("belongProjectGroupId")
     public String belongProjectGroupId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding121212</p>
+     */
     @NameInMap("campusCorpId")
     public String campusCorpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1001</p>
+     */
     @NameInMap("campusDeptId")
     public Long campusDeptId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试园区</p>
+     */
     @NameInMap("campusName")
     public String campusName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("capacity")
     public String capacity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2030</p>
+     */
     @NameInMap("cityId")
     public Integer cityId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>中国</p>
+     */
     @NameInMap("country")
     public String country;
 
+    /**
+     * <strong>example:</strong>
+     * <p>203040</p>
+     */
     @NameInMap("countyId")
     public Integer countyId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>描述</p>
+     */
     @NameInMap("description")
     public String description;
 
+    /**
+     * <strong>example:</strong>
+     * <p>扩展</p>
+     */
     @NameInMap("extend")
     public String extend;
 
+    /**
+     * <strong>example:</strong>
+     * <p>120.1,28.1</p>
+     */
     @NameInMap("location")
     public String location;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1655704317794</p>
+     */
     @NameInMap("orderEndTime")
     public Long orderEndTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>购买信息</p>
+     */
     @NameInMap("orderInfo")
     public String orderInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1655704317794</p>
+     */
     @NameInMap("orderStartTime")
     public Long orderStartTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("provId")
     public Integer provId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>13914772123</p>
+     */
     @NameInMap("telephone")
     public String telephone;
 

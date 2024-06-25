@@ -4,18 +4,34 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartCourseRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>testCourseCode</p>
+     */
     @NameInMap("courseCode")
     public String courseCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>extData</p>
+     */
     @NameInMap("ext")
     public String ext;
 
+    /**
+     * <strong>example:</strong>
+     * <p>DDIsv</p>
+     */
     @NameInMap("isvCode")
     public String isvCode;
 
     @NameInMap("livePlayInfoList")
     public java.util.List<StartCourseRequestLivePlayInfoList> livePlayInfoList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -65,18 +81,38 @@ public class StartCourseRequest extends TeaModel {
     }
 
     public static class StartCourseRequestLivePlayInfoList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>testUrl</p>
+         */
         @NameInMap("liveInputUrl")
         public String liveInputUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>testUrl</p>
+         */
         @NameInMap("liveOutputFlvUrl")
         public String liveOutputFlvUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>testUrl</p>
+         */
         @NameInMap("liveOutputHlsUrl")
         public String liveOutputHlsUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("liveType")
         public Integer liveType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>testUrl</p>
+         */
         @NameInMap("replayUrl")
         public String replayUrl;
 

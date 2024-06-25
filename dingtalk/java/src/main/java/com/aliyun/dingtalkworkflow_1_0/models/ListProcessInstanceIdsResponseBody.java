@@ -7,6 +7,10 @@ public class ListProcessInstanceIdsResponseBody extends TeaModel {
     @NameInMap("result")
     public ListProcessInstanceIdsResponseBodyResult result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,6 +39,10 @@ public class ListProcessInstanceIdsResponseBody extends TeaModel {
         @NameInMap("list")
         public java.util.List<String> list;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

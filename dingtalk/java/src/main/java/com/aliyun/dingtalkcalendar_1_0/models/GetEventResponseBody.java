@@ -66,6 +66,9 @@ public class GetEventResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>已取消、删除的日程是cancelled</p>
      */
     @NameInMap("status")
     public String status;

@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class IntentionCategoryStatisticsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20220101</p>
      */
     @NameInMap("maxDt")
     public String maxDt;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20220101</p>
      */
     @NameInMap("minDt")
     public String minDt;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>KxisoOk</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;

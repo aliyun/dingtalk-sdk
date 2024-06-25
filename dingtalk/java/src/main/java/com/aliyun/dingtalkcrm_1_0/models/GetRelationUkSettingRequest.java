@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetRelationUkSettingRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>crm_customer</p>
      */
     @NameInMap("relationType")
     public String relationType;

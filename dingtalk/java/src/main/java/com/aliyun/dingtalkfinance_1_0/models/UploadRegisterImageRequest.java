@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class UploadRegisterImageRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>byte[]转Base64</p>
      */
     @NameInMap("imageContent")
     public String imageContent;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>test</p>
      */
     @NameInMap("imageName")
     public String imageName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>JPG</p>
      */
     @NameInMap("imageType")
     public String imageType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12020001</p>
      */
     @NameInMap("instId")
     public String instId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ALIPAY</p>
      */
     @NameInMap("payChannel")
     public String payChannel;

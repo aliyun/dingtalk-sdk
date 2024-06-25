@@ -6,40 +6,72 @@ import com.aliyun.tea.*;
 public class CollegeAddStudentRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6235234</p>
      */
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>”city“:&quot;Beijing&quot;</p>
+     */
     @NameInMap("empExtension")
     public java.util.Map<String, String> empExtension;
 
+    /**
+     * <strong>example:</strong>
+     * <p>male</p>
+     */
     @NameInMap("gender")
     public String gender;
 
+    /**
+     * <strong>example:</strong>
+     * <p>11019xxxxxx0001</p>
+     */
     @NameInMap("identifyId")
     public String identifyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>186xxxxxxxx</p>
      */
     @NameInMap("mobile")
     public String mobile;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2015</p>
+     */
     @NameInMap("startYear")
     public String startYear;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>张三</p>
      */
     @NameInMap("studentName")
     public String studentName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>mf1922051</p>
      */
     @NameInMap("studentNumber")
     public String studentNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0324124</p>
+     */
     @NameInMap("userId")
     public String userId;
 

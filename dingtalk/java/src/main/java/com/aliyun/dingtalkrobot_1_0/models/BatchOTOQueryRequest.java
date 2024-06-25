@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class BatchOTOQueryRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>asdfasdfasdf</p>
      */
     @NameInMap("processQueryKey")
     public String processQueryKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingcxx5317</p>
      */
     @NameInMap("robotCode")
     public String robotCode;

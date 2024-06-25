@@ -4,6 +4,10 @@ package com.aliyun.dingtalkstorage_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListPermissionsResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>next_token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,12 +36,24 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyPermissionsMember extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>corp_id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>member_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>USER</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -73,9 +89,17 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyPermissionsRole extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>MANAGER</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>MANAGER</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -103,9 +127,17 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyPermissions extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>space_id</p>
+         */
         @NameInMap("dentryUuid")
         public String dentryUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3600</p>
+         */
         @NameInMap("duration")
         public Long duration;
 

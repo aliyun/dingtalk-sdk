@@ -6,42 +6,83 @@ import com.aliyun.tea.*;
 public class IndustryManufactureMesMaterialRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>add</p>
      */
     @NameInMap("action")
     public String action;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>opsoft</p>
      */
     @NameInMap("appKey")
     public String appKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>material</p>
+     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>紧压白茶,白茶,红茶</p>
+     */
     @NameInMap("category")
     public String category;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("extendData")
     public java.util.List<IndustryManufactureMesMaterialRequestExtendData> extendData;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20220509028</p>
+     */
     @NameInMap("productCode")
     public String productCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>毛坯SNR47端盖</p>
+     */
     @NameInMap("productName")
     public String productName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>KM63</p>
+     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
+    /**
+     * <strong>example:</strong>
+     * <p>原材料</p>
+     */
     @NameInMap("prop")
     public String prop;
 
+    /**
+     * <strong>example:</strong>
+     * <p>件</p>
+     */
     @NameInMap("unit")
     public String unit;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>39C1E213-86B2-706B-9615-5B957DF8C15D</p>
      */
     @NameInMap("uuid")
     public String uuid;
@@ -140,15 +181,31 @@ public class IndustryManufactureMesMaterialRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesMaterialRequestExtendData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>staffName</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>生产人员</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("value")
         public String value;
 
+        /**
+         * <strong>example:</strong>
+         * <p>string</p>
+         */
         @NameInMap("valueType")
         public String valueType;
 

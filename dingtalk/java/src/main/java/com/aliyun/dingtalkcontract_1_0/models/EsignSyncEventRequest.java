@@ -6,19 +6,34 @@ import com.aliyun.tea.*;
 public class EsignSyncEventRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>openEsign</p>
      */
     @NameInMap("action")
     public String action;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dingd0c871e2dfc941a34ac5d6980864d335</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;name&quot;: &quot;名字&quot;}</p>
+     */
     @NameInMap("esignData")
     public String esignData;
 
     @NameInMap("extension")
     public java.util.Map<String, String> extension;
 
+    /**
+     * <strong>example:</strong>
+     * <p>PbnhW6rVXRg8u6T4NiiOwwQiEiE</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

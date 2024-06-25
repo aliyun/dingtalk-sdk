@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class MergeRangeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ppgAQuHfOoNVpJiStDwWCEgiEiE</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

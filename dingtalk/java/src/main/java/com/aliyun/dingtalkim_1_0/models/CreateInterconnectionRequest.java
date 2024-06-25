@@ -24,39 +24,67 @@ public class CreateInterconnectionRequest extends TeaModel {
     }
 
     public static class CreateInterconnectionRequestInterconnections extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>http://***.png</p>
+         */
         @NameInMap("appUserAvatar")
         public String appUserAvatar;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("appUserAvatarMediaType")
         public Integer appUserAvatarMediaType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>认真工作,快乐生活</p>
+         */
         @NameInMap("appUserDynamics")
         public String appUserDynamics;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1107****2120</p>
          */
         @NameInMap("appUserId")
         public String appUserId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>188****8655</p>
          */
         @NameInMap("appUserMobile")
         public String appUserMobile;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>Foo</p>
          */
         @NameInMap("appUserName")
         public String appUserName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("channelCode")
         public String channelCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1745****8777</p>
+         */
         @NameInMap("userId")
         public String userId;
 

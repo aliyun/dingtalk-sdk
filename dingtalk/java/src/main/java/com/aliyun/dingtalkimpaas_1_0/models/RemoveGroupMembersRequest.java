@@ -12,6 +12,9 @@ public class RemoveGroupMembersRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
      */
     @NameInMap("memberUids")
     public java.util.List<String> memberUids;

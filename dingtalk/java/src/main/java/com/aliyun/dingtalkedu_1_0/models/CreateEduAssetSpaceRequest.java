@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class CreateEduAssetSpaceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>目前仅支持soke</p>
      */
     @NameInMap("bizCode")
     public String bizCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>存放语文教研文件</p>
      */
     @NameInMap("spaceDesc")
     public String spaceDesc;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://gw.alicdn.com/imgextra/i4/O1CN01QGjRTl27z8YPPEQdr_!!6000000007867-2-tps-99-78.png">https://gw.alicdn.com/imgextra/i4/O1CN01QGjRTl27z8YPPEQdr_!!6000000007867-2-tps-99-78.png</a></p>
      */
     @NameInMap("spaceIcon")
     public String spaceIcon;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>语文教研组空间</p>
      */
     @NameInMap("spaceName")
     public String spaceName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>aa12324</p>
      */
     @NameInMap("userId")
     public String userId;

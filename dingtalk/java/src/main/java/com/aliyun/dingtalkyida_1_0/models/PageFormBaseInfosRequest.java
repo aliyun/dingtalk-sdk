@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class PageFormBaseInfosRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_PBKT0MFBEBTDO8T7SLVP</p>
      */
     @NameInMap("appKey")
     public String appKey;
@@ -30,12 +33,18 @@ public class PageFormBaseInfosRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>hexxx</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>david123</p>
      */
     @NameInMap("userId")
     public String userId;

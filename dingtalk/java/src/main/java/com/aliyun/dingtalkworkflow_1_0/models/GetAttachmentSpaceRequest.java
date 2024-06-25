@@ -4,11 +4,18 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAttachmentSpaceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>8345000</p>
+     */
     @NameInMap("agentId")
     public Long agentId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user123</p>
      */
     @NameInMap("userId")
     public String userId;

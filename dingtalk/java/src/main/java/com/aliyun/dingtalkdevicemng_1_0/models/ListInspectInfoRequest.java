@@ -7,12 +7,24 @@ public class ListInspectInfoRequest extends TeaModel {
     @NameInMap("deviceUuid")
     public java.util.List<String> deviceUuid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>inspect</p>
+     */
     @NameInMap("type")
     public String type;
 

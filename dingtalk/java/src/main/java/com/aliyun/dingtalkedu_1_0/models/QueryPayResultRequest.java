@@ -6,34 +6,58 @@ import com.aliyun.tea.*;
 public class QueryPayResultRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12312333</p>
      */
     @NameInMap("faceId")
     public String faceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>202201240001</p>
      */
     @NameInMap("orderNo")
     public String orderNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>KSwZiSL1O7DiUNwjV168j3cP9ktp4bJTi5OQxAXre26KyBXza7+gCl/g1d0K3n3+9JhMqc2fUjBiENcAELw3Jb5xO/zslOeV4qFoMQfzW51+sdL/SSZCYvXEMhu9P6FAPhGZQ3vu6gr3oxUAXPIpWNb+sIfzR9epumoOXYeofH8=</p>
+     */
     @NameInMap("signature")
     public String signature;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sn1234</p>
      */
     @NameInMap("sn")
     public String sn;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1644413947909</p>
+     */
     @NameInMap("timestamp")
     public Long timestamp;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20200231</p>
      */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1.0</p>
+     */
     @NameInMap("version")
     public String version;
 

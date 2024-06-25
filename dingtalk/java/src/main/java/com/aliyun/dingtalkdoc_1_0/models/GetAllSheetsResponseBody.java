@@ -21,9 +21,17 @@ public class GetAllSheetsResponseBody extends TeaModel {
     }
 
     public static class GetAllSheetsResponseBodyValue extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>sheet_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>sheet_name</p>
+         */
         @NameInMap("name")
         public String name;
 

@@ -12,6 +12,9 @@ public class BatchRemoveFollowRecordsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager021a</p>
      */
     @NameInMap("operatorUserId")
     public String operatorUserId;

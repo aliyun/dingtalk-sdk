@@ -7,6 +7,10 @@ public class AddKnowledgeRequest extends TeaModel {
     @NameInMap("attachmentList")
     public java.util.List<AddKnowledgeRequestAttachmentList> attachmentList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试内容</p>
+     */
     @NameInMap("content")
     public String content;
 
@@ -22,30 +26,62 @@ public class AddKnowledgeRequest extends TeaModel {
     @NameInMap("keyword")
     public String keyword;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xuvw1245</p>
+     */
     @NameInMap("libraryKey")
     public String libraryKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="http://www.test.com/xxxxx">http://www.test.com/xxxxx</a></p>
+     */
     @NameInMap("linkUrl")
     public String linkUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Jxi12wo3qxoa</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     @NameInMap("questionIds")
     public java.util.List<Long> questionIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CCM</p>
+     */
     @NameInMap("source")
     public String source;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CCM-123</p>
+     */
     @NameInMap("sourcePrimaryKey")
     public String sourcePrimaryKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CONDITION</p>
+     */
     @NameInMap("type")
     public String type;
 
+    /**
+     * <strong>example:</strong>
+     * <p>V0193859102</p>
+     */
     @NameInMap("version")
     public String version;
 
@@ -175,18 +211,34 @@ public class AddKnowledgeRequest extends TeaModel {
     }
 
     public static class AddKnowledgeRequestAttachmentList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>doc</p>
+         */
         @NameInMap("mime_type")
         public String mimeType;
 
         @NameInMap("path")
         public String path;
 
+        /**
+         * <strong>example:</strong>
+         * <p>655</p>
+         */
         @NameInMap("size")
         public Long size;
 
+        /**
+         * <strong>example:</strong>
+         * <p>pdf</p>
+         */
         @NameInMap("suffix")
         public String suffix;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试附件</p>
+         */
         @NameInMap("title")
         public String title;
 

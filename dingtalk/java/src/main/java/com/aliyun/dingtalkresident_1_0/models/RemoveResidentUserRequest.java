@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class RemoveResidentUserRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("departmentId")
     public Long departmentId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("userId")
     public String userId;

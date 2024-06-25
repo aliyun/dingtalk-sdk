@@ -6,24 +6,41 @@ import com.aliyun.tea.*;
 public class DeleteGroupMembersFromGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>GROUP：从群中删除；GROUP_SET：从群组中删除</p>
      */
     @NameInMap("deleteGroupType")
     public String deleteGroupType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8888</p>
      */
     @NameInMap("memberUnionId")
     public String memberUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cid**</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>8888</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8888</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;

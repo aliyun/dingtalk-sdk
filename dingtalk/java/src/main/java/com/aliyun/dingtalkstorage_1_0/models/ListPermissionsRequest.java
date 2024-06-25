@@ -9,6 +9,9 @@ public class ListPermissionsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -38,9 +41,17 @@ public class ListPermissionsRequest extends TeaModel {
         @NameInMap("filterRoleIds")
         public java.util.List<String> filterRoleIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>30</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
+        /**
+         * <strong>example:</strong>
+         * <p>next_token</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

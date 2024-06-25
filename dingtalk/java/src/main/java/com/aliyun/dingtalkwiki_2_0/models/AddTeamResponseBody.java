@@ -21,9 +21,17 @@ public class AddTeamResponseBody extends TeaModel {
     }
 
     public static class AddTeamResponseBodyTeamIcon extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>URL</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>icon_url</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -51,33 +59,69 @@ public class AddTeamResponseBody extends TeaModel {
     }
 
     public static class AddTeamResponseBodyTeam extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>corp_id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_cover</p>
+         */
         @NameInMap("cover")
         public String cover;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_create_time</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_creator_id</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_description</p>
+         */
         @NameInMap("description")
         public String description;
 
         @NameInMap("icon")
         public AddTeamResponseBodyTeamIcon icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_modified_time</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_modifier_id</p>
+         */
         @NameInMap("modifierId")
         public String modifierId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_id</p>
+         */
         @NameInMap("teamId")
         public String teamId;
 

@@ -4,24 +4,52 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchGroupRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>钉钉专属服务群</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CXiw</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidxxxx==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>sjfuwid</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>jfuwida</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>目前支持PAGE 和 SCROLL，默认PAGE类型</p>
+     */
     @NameInMap("searchType")
     public String searchType;
 

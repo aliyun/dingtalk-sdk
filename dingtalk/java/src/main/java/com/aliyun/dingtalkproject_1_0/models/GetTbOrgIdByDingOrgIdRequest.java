@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetTbOrgIdByDingOrgIdRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0175xxxx</p>
      */
     @NameInMap("optUserId")
     public String optUserId;

@@ -6,11 +6,10 @@ import com.aliyun.dingtalkmicro_app_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
@@ -21,8 +20,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 给指定成员添加角色
-     *
+     * <b>summary</b> : 
+     * <p>给指定成员添加角色</p>
+     * 
      * @param request AddAppRolesToMemberRequest
      * @param headers AddAppRolesToMemberHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -75,8 +75,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 给指定成员添加角色
-     *
+     * <b>summary</b> : 
+     * <p>给指定成员添加角色</p>
+     * 
      * @param request AddAppRolesToMemberRequest
      * @return AddAppRolesToMemberResponse
      */
@@ -87,8 +88,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加应用到工作台分组
-     *
+     * <b>summary</b> : 
+     * <p>添加应用到工作台分组</p>
+     * 
      * @param request AddAppToWorkBenchGroupRequest
      * @param headers AddAppToWorkBenchGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -137,8 +139,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加应用到工作台分组
-     *
+     * <b>summary</b> : 
+     * <p>添加应用到工作台分组</p>
+     * 
      * @param request AddAppToWorkBenchGroupRequest
      * @return AddAppToWorkBenchGroupResponse
      */
@@ -149,8 +152,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 给指定角色添加人员
-     *
+     * <b>summary</b> : 
+     * <p>给指定角色添加人员</p>
+     * 
      * @param request AddMemberToAppRoleRequest
      * @param headers AddMemberToAppRoleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -203,8 +207,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 给指定角色添加人员
-     *
+     * <b>summary</b> : 
+     * <p>给指定角色添加人员</p>
+     * 
      * @param request AddMemberToAppRoleRequest
      * @return AddMemberToAppRoleResponse
      */
@@ -215,8 +220,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary AnheiP
-     *
+     * <b>summary</b> : 
+     * <p>AnheiP</p>
+     * 
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
      * @return AnheiPResponse
@@ -240,8 +246,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary AnheiP
-     *
+     * <b>summary</b> : 
+     * <p>AnheiP</p>
      * @return AnheiPResponse
      */
     public AnheiPResponse anheiP() throws Exception {
@@ -251,8 +257,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary AnheiTest888
-     *
+     * <b>summary</b> : 
+     * <p>AnheiTest888</p>
+     * 
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
      * @return AnheiTest888Response
@@ -276,8 +283,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary AnheiTest888
-     *
+     * <b>summary</b> : 
+     * <p>AnheiTest888</p>
      * @return AnheiTest888Response
      */
     public AnheiTest888Response anheiTest888() throws Exception {
@@ -287,8 +294,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary AnheiTestB
-     *
+     * <b>summary</b> : 
+     * <p>AnheiTestB</p>
+     * 
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
      * @return AnheiTestBResponse
@@ -312,8 +320,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary AnheiTestB
-     *
+     * <b>summary</b> : 
+     * <p>AnheiTestB</p>
      * @return AnheiTestBResponse
      */
     public AnheiTestBResponse anheiTestB() throws Exception {
@@ -323,8 +331,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 暗黑测试
-     *
+     * <b>summary</b> : 
+     * <p>暗黑测试</p>
+     * 
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
      * @return AnheiTestNineResponse
@@ -348,8 +357,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 暗黑测试
-     *
+     * <b>summary</b> : 
+     * <p>暗黑测试</p>
      * @return AnheiTestNineResponse
      */
     public AnheiTestNineResponse anheiTestNine() throws Exception {
@@ -359,8 +368,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 应用状态管理测试
-     *
+     * <b>summary</b> : 
+     * <p>应用状态管理测试</p>
+     * 
      * @param request AppStatusManagerTestRequest
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
@@ -392,8 +402,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 应用状态管理测试
-     *
+     * <b>summary</b> : 
+     * <p>应用状态管理测试</p>
+     * 
      * @param request AppStatusManagerTestRequest
      * @return AppStatusManagerTestResponse
      */
@@ -404,8 +415,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 能力开放中心录入测试数据
-     *
+     * <b>summary</b> : 
+     * <p>能力开放中心录入测试数据</p>
+     * 
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
      * @return AyunTestResponse
@@ -429,8 +441,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 能力开放中心录入测试数据
-     *
+     * <b>summary</b> : 
+     * <p>能力开放中心录入测试数据</p>
      * @return AyunTestResponse
      */
     public AyunTestResponse ayunTest() throws Exception {
@@ -440,8 +452,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary openAPI录入上线后的测试
-     *
+     * <b>summary</b> : 
+     * <p>openAPI录入上线后的测试</p>
+     * 
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
      * @return AyunTestOnlineResponse
@@ -465,8 +478,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary openAPI录入上线后的测试
-     *
+     * <b>summary</b> : 
+     * <p>openAPI录入上线后的测试</p>
      * @return AyunTestOnlineResponse
      */
     public AyunTestOnlineResponse ayunTestOnline() throws Exception {
@@ -476,8 +489,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建Apaas应用
-     *
+     * <b>summary</b> : 
+     * <p>创建Apaas应用</p>
+     * 
      * @param request CreateApaasAppRequest
      * @param headers CreateApaasAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -562,8 +576,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建Apaas应用
-     *
+     * <b>summary</b> : 
+     * <p>创建Apaas应用</p>
+     * 
      * @param request CreateApaasAppRequest
      * @return CreateApaasAppResponse
      */
@@ -574,8 +589,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建企业内部应用
-     *
+     * <b>summary</b> : 
+     * <p>创建企业内部应用</p>
+     * 
      * @param request CreateInnerAppRequest
      * @param headers CreateInnerAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -652,8 +668,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建企业内部应用
-     *
+     * <b>summary</b> : 
+     * <p>创建企业内部应用</p>
+     * 
      * @param request CreateInnerAppRequest
      * @return CreateInnerAppResponse
      */
@@ -664,8 +681,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除应用角色
-     *
+     * <b>summary</b> : 
+     * <p>删除应用角色</p>
+     * 
      * @param request DeleteAppRoleRequest
      * @param headers DeleteAppRoleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -706,8 +724,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除应用角色
-     *
+     * <b>summary</b> : 
+     * <p>删除应用角色</p>
+     * 
      * @param request DeleteAppRoleRequest
      * @return DeleteAppRoleResponse
      */
@@ -718,8 +737,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除企业内部应用
-     *
+     * <b>summary</b> : 
+     * <p>删除企业内部应用</p>
+     * 
      * @param request DeleteInnerAppRequest
      * @param headers DeleteInnerAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -760,8 +780,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除企业内部应用
-     *
+     * <b>summary</b> : 
+     * <p>删除企业内部应用</p>
+     * 
      * @param request DeleteInnerAppRequest
      * @return DeleteInnerAppResponse
      */
@@ -772,8 +793,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询Apaas应用
-     *
+     * <b>summary</b> : 
+     * <p>查询Apaas应用</p>
+     * 
      * @param headers GetApaasAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetApaasAppResponse
@@ -806,8 +828,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询Apaas应用
-     *
+     * <b>summary</b> : 
+     * <p>查询Apaas应用</p>
      * @return GetApaasAppResponse
      */
     public GetApaasAppResponse getApaasApp(String bizAppId) throws Exception {
@@ -817,8 +839,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取应用资源用量信息
-     *
+     * <b>summary</b> : 
+     * <p>获取应用资源用量信息</p>
+     * 
      * @param request GetAppResourceUseInfoRequest
      * @param headers GetAppResourceUseInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -871,8 +894,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取应用资源用量信息
-     *
+     * <b>summary</b> : 
+     * <p>获取应用资源用量信息</p>
+     * 
      * @param request GetAppResourceUseInfoRequest
      * @return GetAppResourceUseInfoResponse
      */
@@ -883,8 +907,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询指定角色的角色范围
-     *
+     * <b>summary</b> : 
+     * <p>查询指定角色的角色范围</p>
+     * 
      * @param headers GetAppRoleScopeByRoleIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetAppRoleScopeByRoleIdResponse
@@ -917,8 +942,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询指定角色的角色范围
-     *
+     * <b>summary</b> : 
+     * <p>查询指定角色的角色范围</p>
      * @return GetAppRoleScopeByRoleIdResponse
      */
     public GetAppRoleScopeByRoleIdResponse getAppRoleScopeByRoleId(String agentId, String roleId) throws Exception {
@@ -928,8 +953,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业内部H5应用
-     *
+     * <b>summary</b> : 
+     * <p>获取企业内部H5应用</p>
+     * 
      * @param request GetInnerAppRequest
      * @param headers GetInnerAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -974,8 +1000,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业内部H5应用
-     *
+     * <b>summary</b> : 
+     * <p>获取企业内部H5应用</p>
+     * 
      * @param request GetInnerAppRequest
      * @return GetInnerAppResponse
      */
@@ -986,8 +1013,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取应用可见范围
-     *
+     * <b>summary</b> : 
+     * <p>获取应用可见范围</p>
+     * 
      * @param headers GetMicroAppScopeHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetMicroAppScopeResponse
@@ -1020,8 +1048,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取应用可见范围
-     *
+     * <b>summary</b> : 
+     * <p>获取应用可见范围</p>
      * @return GetMicroAppScopeResponse
      */
     public GetMicroAppScopeResponse getMicroAppScope(String agentId) throws Exception {
@@ -1031,8 +1059,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户对应用的管理权限
-     *
+     * <b>summary</b> : 
+     * <p>获取用户对应用的管理权限</p>
+     * 
      * @param headers GetMicroAppUserAccessHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetMicroAppUserAccessResponse
@@ -1065,8 +1094,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户对应用的管理权限
-     *
+     * <b>summary</b> : 
+     * <p>获取用户对应用的管理权限</p>
      * @return GetMicroAppUserAccessResponse
      */
     public GetMicroAppUserAccessResponse getMicroAppUserAccess(String agentId, String userId) throws Exception {
@@ -1076,8 +1105,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用户是否拥有开发者权限
-     *
+     * <b>summary</b> : 
+     * <p>用户是否拥有开发者权限</p>
+     * 
      * @param headers GetUserAppDevAccessHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetUserAppDevAccessResponse
@@ -1110,8 +1140,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用户是否拥有开发者权限
-     *
+     * <b>summary</b> : 
+     * <p>用户是否拥有开发者权限</p>
      * @return GetUserAppDevAccessResponse
      */
     public GetUserAppDevAccessResponse getUserAppDevAccess(String userId) throws Exception {
@@ -1121,8 +1151,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业所有应用列表
-     *
+     * <b>summary</b> : 
+     * <p>获取企业所有应用列表</p>
+     * 
      * @param headers ListAllAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListAllAppResponse
@@ -1155,8 +1186,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业所有应用列表
-     *
+     * <b>summary</b> : 
+     * <p>获取企业所有应用列表</p>
      * @return ListAllAppResponse
      */
     public ListAllAppResponse listAllApp() throws Exception {
@@ -1166,8 +1197,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业所有内部应用列表
-     *
+     * <b>summary</b> : 
+     * <p>获取企业所有内部应用列表</p>
+     * 
      * @param headers ListAllInnerAppsHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListAllInnerAppsResponse
@@ -1200,8 +1232,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业所有内部应用列表
-     *
+     * <b>summary</b> : 
+     * <p>获取企业所有内部应用列表</p>
      * @return ListAllInnerAppsResponse
      */
     public ListAllInnerAppsResponse listAllInnerApps() throws Exception {
@@ -1211,8 +1243,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业应用的角色完整信息
-     *
+     * <b>summary</b> : 
+     * <p>获取企业应用的角色完整信息</p>
+     * 
      * @param request ListAppRoleScopesRequest
      * @param headers ListAppRoleScopesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1257,8 +1290,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业应用的角色完整信息
-     *
+     * <b>summary</b> : 
+     * <p>获取企业应用的角色完整信息</p>
+     * 
      * @param request ListAppRoleScopesRequest
      * @return ListAppRoleScopesResponse
      */
@@ -1269,8 +1303,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 列出企业内部H5应用
-     *
+     * <b>summary</b> : 
+     * <p>列出企业内部H5应用</p>
+     * 
      * @param request ListInnerAppRequest
      * @param headers ListInnerAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1311,8 +1346,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 列出企业内部H5应用
-     *
+     * <b>summary</b> : 
+     * <p>列出企业内部H5应用</p>
+     * 
      * @param request ListInnerAppRequest
      * @return ListInnerAppResponse
      */
@@ -1323,8 +1359,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业内部小程序的版本列表
-     *
+     * <b>summary</b> : 
+     * <p>获取企业内部小程序的版本列表</p>
+     * 
      * @param headers ListInnerAppVersionHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListInnerAppVersionResponse
@@ -1357,8 +1394,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业内部小程序的版本列表
-     *
+     * <b>summary</b> : 
+     * <p>获取企业内部小程序的版本列表</p>
      * @return ListInnerAppVersionResponse
      */
     public ListInnerAppVersionResponse listInnerAppVersion(String agentId) throws Exception {
@@ -1368,8 +1405,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户在应用中的角色信息列表
-     *
+     * <b>summary</b> : 
+     * <p>获取用户在应用中的角色信息列表</p>
+     * 
      * @param headers ListRoleInfoByUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListRoleInfoByUserResponse
@@ -1402,8 +1440,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户在应用中的角色信息列表
-     *
+     * <b>summary</b> : 
+     * <p>获取用户在应用中的角色信息列表</p>
      * @return ListRoleInfoByUserResponse
      */
     public ListRoleInfoByUserResponse listRoleInfoByUser(String agentId, String userId) throws Exception {
@@ -1413,8 +1451,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 列出用户可见的企业应用
-     *
+     * <b>summary</b> : 
+     * <p>列出用户可见的企业应用</p>
+     * 
      * @param headers ListUserVilebleAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListUserVilebleAppResponse
@@ -1447,8 +1486,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 列出用户可见的企业应用
-     *
+     * <b>summary</b> : 
+     * <p>列出用户可见的企业应用</p>
      * @return ListUserVilebleAppResponse
      */
     public ListUserVilebleAppResponse listUserVilebleApp(String userId) throws Exception {
@@ -1458,8 +1497,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业内部小程序历史版本列表
-     *
+     * <b>summary</b> : 
+     * <p>获取企业内部小程序历史版本列表</p>
+     * 
      * @param request PageInnerAppHistoryVersionRequest
      * @param headers PageInnerAppHistoryVersionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1504,8 +1544,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业内部小程序历史版本列表
-     *
+     * <b>summary</b> : 
+     * <p>获取企业内部小程序历史版本列表</p>
+     * 
      * @param request PageInnerAppHistoryVersionRequest
      * @return PageInnerAppHistoryVersionResponse
      */
@@ -1516,8 +1557,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布企业内部小程序版本
-     *
+     * <b>summary</b> : 
+     * <p>发布企业内部小程序版本</p>
+     * 
      * @param request PublishInnerAppVersionRequest
      * @param headers PublishInnerAppVersionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1570,8 +1612,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布企业内部小程序版本
-     *
+     * <b>summary</b> : 
+     * <p>发布企业内部小程序版本</p>
+     * 
      * @param request PublishInnerAppVersionRequest
      * @return PublishInnerAppVersionResponse
      */
@@ -1582,8 +1625,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 重设角色范围
-     *
+     * <b>summary</b> : 
+     * <p>重设角色范围</p>
+     * 
      * @param request RebuildRoleScopeForAppRoleRequest
      * @param headers RebuildRoleScopeForAppRoleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1640,8 +1684,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 重设角色范围
-     *
+     * <b>summary</b> : 
+     * <p>重设角色范围</p>
+     * 
      * @param request RebuildRoleScopeForAppRoleRequest
      * @return RebuildRoleScopeForAppRoleResponse
      */
@@ -1652,8 +1697,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册自定义应用角色
-     *
+     * <b>summary</b> : 
+     * <p>注册自定义应用角色</p>
+     * 
      * @param request RegisterCustomAppRoleRequest
      * @param headers RegisterCustomAppRoleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1702,8 +1748,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 注册自定义应用角色
-     *
+     * <b>summary</b> : 
+     * <p>注册自定义应用角色</p>
+     * 
      * @param request RegisterCustomAppRoleRequest
      * @return RegisterCustomAppRoleResponse
      */
@@ -1714,8 +1761,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除apaas应用
-     *
+     * <b>summary</b> : 
+     * <p>删除apaas应用</p>
+     * 
      * @param request RemoveApaasAppRequest
      * @param headers RemoveApaasAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1760,8 +1808,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除apaas应用
-     *
+     * <b>summary</b> : 
+     * <p>删除apaas应用</p>
+     * 
      * @param request RemoveApaasAppRequest
      * @return RemoveApaasAppResponse
      */
@@ -1772,8 +1821,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除指定角色下的成员
-     *
+     * <b>summary</b> : 
+     * <p>删除指定角色下的成员</p>
+     * 
      * @param request RemoveMemberForAppRoleRequest
      * @param headers RemoveMemberForAppRoleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1826,8 +1876,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除指定角色下的成员
-     *
+     * <b>summary</b> : 
+     * <p>删除指定角色下的成员</p>
+     * 
      * @param request RemoveMemberForAppRoleRequest
      * @return RemoveMemberForAppRoleResponse
      */
@@ -1838,8 +1889,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 回滚企业内部小程序版本
-     *
+     * <b>summary</b> : 
+     * <p>回滚企业内部小程序版本</p>
+     * 
      * @param request RollbackInnerAppVersionRequest
      * @param headers RollbackInnerAppVersionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1884,8 +1936,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 回滚企业内部小程序版本
-     *
+     * <b>summary</b> : 
+     * <p>回滚企业内部小程序版本</p>
+     * 
      * @param request RollbackInnerAppVersionRequest
      * @return RollbackInnerAppVersionResponse
      */
@@ -1896,8 +1949,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置应用可见范围
-     *
+     * <b>summary</b> : 
+     * <p>设置应用可见范围</p>
+     * 
      * @param request SetMicroAppScopeRequest
      * @param headers SetMicroAppScopeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1962,8 +2016,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置应用可见范围
-     *
+     * <b>summary</b> : 
+     * <p>设置应用可见范围</p>
+     * 
      * @param request SetMicroAppScopeRequest
      * @return SetMicroAppScopeResponse
      */
@@ -1974,8 +2029,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新apaas应用
-     *
+     * <b>summary</b> : 
+     * <p>更新apaas应用</p>
+     * 
      * @param request UpdateApaasAppRequest
      * @param headers UpdateApaasAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2032,8 +2088,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新apaas应用
-     *
+     * <b>summary</b> : 
+     * <p>更新apaas应用</p>
+     * 
      * @param request UpdateApaasAppRequest
      * @return UpdateApaasAppResponse
      */
@@ -2044,8 +2101,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新应用角色信息
-     *
+     * <b>summary</b> : 
+     * <p>更新应用角色信息</p>
+     * 
      * @param request UpdateAppRoleInfoRequest
      * @param headers UpdateAppRoleInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2094,8 +2152,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新应用角色信息
-     *
+     * <b>summary</b> : 
+     * <p>更新应用角色信息</p>
+     * 
      * @param request UpdateAppRoleInfoRequest
      * @return UpdateAppRoleInfoResponse
      */
@@ -2106,8 +2165,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新企业内部应用
-     *
+     * <b>summary</b> : 
+     * <p>更新企业内部应用</p>
+     * 
      * @param request UpdateInnerAppRequest
      * @param headers UpdateInnerAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2176,8 +2236,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新企业内部应用
-     *
+     * <b>summary</b> : 
+     * <p>更新企业内部应用</p>
+     * 
      * @param request UpdateInnerAppRequest
      * @return UpdateInnerAppResponse
      */

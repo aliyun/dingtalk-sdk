@@ -4,105 +4,229 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class FormComponentProps extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>增加明细</p>
+     */
     @NameInMap("actionName")
     public String actionName;
 
     @NameInMap("addressModel")
     public String addressModel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>top</p>
+     */
     @NameInMap("align")
     public String align;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("asyncCondition")
     public Boolean asyncCondition;
 
     @NameInMap("availableTemplates")
     public java.util.List<AvaliableTemplate> availableTemplates;
 
+    /**
+     * <strong>example:</strong>
+     * <p>finance_name</p>
+     */
     @NameInMap("bizAlias")
     public String bizAlias;
 
+    /**
+     * <strong>example:</strong>
+     * <p>attendance.leave</p>
+     */
     @NameInMap("bizType")
     public String bizType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("choice")
     public String choice;
 
+    /**
+     * <strong>example:</strong>
+     * <p>custom_view</p>
+     */
     @NameInMap("commonBizType")
     public String commonBizType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>TextField-abcd</p>
+     */
     @NameInMap("componentId")
     public String componentId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>我是说明文字控件</p>
+     */
     @NameInMap("content")
     public String content;
 
     @NameInMap("dataSource")
     public FormDataSource dataSource;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disabled")
     public Boolean disabled;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("duration")
     public Boolean duration;
 
+    /**
+     * <strong>example:</strong>
+     * <p>时长</p>
+     */
     @NameInMap("durationLabel")
     public String durationLabel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>yyyy-MM-dd</p>
+     */
     @NameInMap("format")
     public String format;
 
     @NameInMap("formula")
     public String formula;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("invisible")
     public Boolean invisible;
 
+    /**
+     * <strong>example:</strong>
+     * <p>姓名</p>
+     */
     @NameInMap("label")
     public String label;
 
+    /**
+     * <strong>example:</strong>
+     * <p>5</p>
+     */
     @NameInMap("limit")
     public Integer limit;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="http://www">http://www</a>.</p>
+     */
     @NameInMap("link")
     public String link;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("maxLength")
     public Integer maxLength;
 
+    /**
+     * <strong>example:</strong>
+     * <p>phone_tel</p>
+     */
     @NameInMap("mode")
     public String mode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("multiple")
     public Boolean multiple;
 
     @NameInMap("options")
     public java.util.List<SelectOption> options;
 
+    /**
+     * <strong>example:</strong>
+     * <p>请输入</p>
+     */
     @NameInMap("placeholder")
     public String placeholder;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("precision")
     public Integer precision;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("print")
     public String print;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("required")
     public Boolean required;
 
     @NameInMap("statField")
     public java.util.List<FormComponentPropsStatField> statField;
 
+    /**
+     * <strong>example:</strong>
+     * <p>table</p>
+     */
     @NameInMap("tableViewMode")
     public String tableViewMode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>天</p>
+     */
     @NameInMap("unit")
     public String unit;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("upper")
     public String upper;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("verticalPrint")
     public Boolean verticalPrint;
 
@@ -386,16 +510,29 @@ public class FormComponentProps extends TeaModel {
     public static class FormComponentPropsStatField extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>NumberField-abcd</p>
          */
         @NameInMap("componentId")
         public String componentId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>金额</p>
          */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         * 
+         * <strong>if can be null:</strong>
+         * <p>true</p>
+         */
         @NameInMap("upper")
         public String upper;
 

@@ -4,24 +4,42 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSpaceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>这里是知识库的简介</p>
+     */
     @NameInMap("description")
     public String description;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://img.alicdn.com/imgextra/i1/O1***.png">https://img.alicdn.com/imgextra/i1/O1***.png</a></p>
+     */
     @NameInMap("icon")
     public String icon;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试知识库</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YEp3JcM******UIbhwiE</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>l6gYG9****mo9Z</p>
+     */
     @NameInMap("sectionId")
     public String sectionId;
 
@@ -31,6 +49,10 @@ public class CreateSpaceRequest extends TeaModel {
     @NameInMap("shareScope")
     public CreateSpaceRequestShareScope shareScope;
 
+    /**
+     * <strong>example:</strong>
+     * <p>5YRB***GDAr</p>
+     */
     @NameInMap("teamId")
     public String teamId;
 
@@ -98,6 +120,9 @@ public class CreateSpaceRequest extends TeaModel {
     public static class CreateSpaceRequestShareScope extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("scope")
         public Integer scope;

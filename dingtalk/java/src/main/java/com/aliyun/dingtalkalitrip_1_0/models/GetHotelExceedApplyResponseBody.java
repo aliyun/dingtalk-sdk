@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetHotelExceedApplyResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("applyId")
     public Long applyId;
@@ -18,54 +21,81 @@ public class GetHotelExceedApplyResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>出差</p>
      */
     @NameInMap("btripCause")
     public String btripCause;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding12345</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>出差</p>
      */
     @NameInMap("exceedReason")
     public String exceedReason;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>16</p>
      */
     @NameInMap("exceedType")
     public Integer exceedType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>210000</p>
      */
     @NameInMap("originStandard")
     public String originStandard;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("status")
     public Integer status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-07-08 15:23:56</p>
      */
     @NameInMap("submitTime")
     public String submitTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0001A1100000007EX08O</p>
      */
     @NameInMap("thirdpartApplyId")
     public String thirdpartApplyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>weifeng</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -166,42 +196,63 @@ public class GetHotelExceedApplyResponseBody extends TeaModel {
     public static class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-07-08</p>
          */
         @NameInMap("checkIn")
         public String checkIn;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-07-08</p>
          */
         @NameInMap("checkOut")
         public String checkOut;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>SHA</p>
          */
         @NameInMap("cityCode")
         public String cityCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>上海</p>
          */
         @NameInMap("cityName")
         public String cityName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10000</p>
          */
         @NameInMap("price")
         public Long price;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("together")
         public Boolean together;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>16</p>
          */
         @NameInMap("type")
         public Integer type;

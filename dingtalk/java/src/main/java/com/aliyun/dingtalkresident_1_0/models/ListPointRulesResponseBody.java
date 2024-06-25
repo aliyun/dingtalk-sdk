@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ListPointRulesResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("pointRuleList")
     public java.util.List<ListPointRulesResponseBodyPointRuleList> pointRuleList;
@@ -26,45 +29,70 @@ public class ListPointRulesResponseBody extends TeaModel {
     public static class ListPointRulesResponseBodyPointRuleList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>50</p>
          */
         @NameInMap("dayLimitTimes")
         public Integer dayLimitTimes;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>text</p>
          */
         @NameInMap("extension")
         public String extension;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
          */
         @NameInMap("groupId")
         public Integer groupId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>排序Id</p>
          */
         @NameInMap("orderId")
         public Integer orderId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>rule_1</p>
+         */
         @NameInMap("ruleCode")
         public String ruleCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>发动态</p>
          */
         @NameInMap("ruleName")
         public String ruleName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3</p>
          */
         @NameInMap("score")
         public Integer score;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("status")
         public Integer status;

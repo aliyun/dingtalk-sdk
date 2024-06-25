@@ -21,12 +21,24 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleConfigResponseBodyResultEnd extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>30</p>
+         */
         @NameInMap("dayOfMonth")
         public Long dayOfMonth;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("month")
         public Long month;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2020</p>
+         */
         @NameInMap("year")
         public Long year;
 
@@ -62,9 +74,17 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleConfigResponseBodyResultSectionModelsEnd extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
+        /**
+         * <strong>example:</strong>
+         * <p>45</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -92,9 +112,17 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleConfigResponseBodyResultSectionModelsStart extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("hour")
         public Integer hour;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("min")
         public Integer min;
 
@@ -125,9 +153,17 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
         @NameInMap("end")
         public QueryClassScheduleConfigResponseBodyResultSectionModelsEnd end;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
+        /**
+         * <strong>example:</strong>
+         * <p>第一节</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
@@ -185,12 +221,24 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleConfigResponseBodyResultStart extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("month")
         public Integer month;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2020</p>
+         */
         @NameInMap("year")
         public Integer year;
 
@@ -226,6 +274,10 @@ public class QueryClassScheduleConfigResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleConfigResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2345</p>
+         */
         @NameInMap("classId")
         public Long classId;
 

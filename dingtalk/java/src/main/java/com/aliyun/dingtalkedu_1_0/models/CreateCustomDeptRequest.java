@@ -12,12 +12,18 @@ public class CreateCustomDeptRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("operator")
     public String operator;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1233</p>
      */
     @NameInMap("superId")
     public Long superId;
@@ -54,12 +60,18 @@ public class CreateCustomDeptRequest extends TeaModel {
     public static class CreateCustomDeptRequestCustomDept extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>紫金港校区</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>custom_dept</p>
          */
         @NameInMap("type")
         public String type;

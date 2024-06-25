@@ -111,30 +111,62 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ALL:并行，ONE_BY_ONE:串行</p>
+         */
         @NameInMap("actorActivateType")
         public String actorActivateType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manual_e203_14a3_895a_45ad</p>
+         */
         @NameInMap("actorKey")
         public String actorKey;
 
         @NameInMap("actorSelectionRange")
         public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange actorSelectionRange;
 
+        /**
+         * <strong>example:</strong>
+         * <p>allStaff：全公司，approvals：指定成员，labels：角色</p>
+         */
         @NameInMap("actorSelectionType")
         public String actorSelectionType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>approver:审批人，notifier:抄送人，audit：办理人</p>
+         */
         @NameInMap("actorType")
         public String actorType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("allowedMulti")
         public Boolean allowedMulti;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ONE_BY_ONE：依次审批，AND：会签审批，OR：或签审批</p>
+         */
         @NameInMap("approvalMethod")
         public String approvalMethod;
 
+        /**
+         * <strong>example:</strong>
+         * <p>MANUAL:人工审批，AUTO_AGREE:自动通过，AUTO_REFUSE:自动拒绝</p>
+         */
         @NameInMap("approvalType")
         public String approvalType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("required")
         public Boolean required;
 
@@ -218,18 +250,38 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowActivityRules extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1918_5cd3</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>审批人</p>
+         */
         @NameInMap("activityName")
         public String activityName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>包括 target_select、target_approval 等</p>
+         */
         @NameInMap("activityType")
         public String activityType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isTargetSelect")
         public Boolean isTargetSelect;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1918_5cd3</p>
+         */
         @NameInMap("prevActivityId")
         public String prevActivityId;
 
@@ -294,12 +346,18 @@ public class ProcessForecastResponseBody extends TeaModel {
     public static class ProcessForecastResponseBodyResultWorkflowForecastNodes extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1cc3_959a</p>
          */
         @NameInMap("activityId")
         public String activityId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>line-random-1cc3_959a-831a_607b</p>
          */
         @NameInMap("outId")
         public String outId;
@@ -330,30 +388,45 @@ public class ProcessForecastResponseBody extends TeaModel {
     public static class ProcessForecastResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("isForecastSuccess")
         public Boolean isForecastSuccess;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("isStaticWorkflow")
         public Boolean isStaticWorkflow;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PROC-2B60E506-D6CB-43F3-B661-359B27F90947</p>
          */
         @NameInMap("processCode")
         public String processCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>63657309999</p>
          */
         @NameInMap("processId")
         public Long processId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2665246100805992</p>
          */
         @NameInMap("userId")
         public String userId;

@@ -6,33 +6,52 @@ import com.aliyun.tea.*;
 public class ExecuteBatchTaskRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_XCE0EVXS6DYG3YDYC5RD</p>
      */
     @NameInMap("appType")
     public String appType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>备选值：agree/disagree</p>
      */
     @NameInMap("outResult")
     public String outResult;
 
+    /**
+     * <strong>example:</strong>
+     * <p>OK</p>
+     */
     @NameInMap("remark")
     public String remark;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>[{&quot;taskId&quot;:&quot;2267855699&quot;,&quot;formInstId&quot;:&quot;4d226eb1-1f4e-4348-a9cc-616477c3daa6&quot;},{&quot;taskId&quot;:&quot;2267855700&quot;,&quot;formInstId&quot;:&quot;905a922e-da05-4ef9-ba1c-db9ad60bbe60&quot;}]</p>
      */
     @NameInMap("taskInformationList")
     public String taskInformationList;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding173982232112232</p>
      */
     @NameInMap("userId")
     public String userId;

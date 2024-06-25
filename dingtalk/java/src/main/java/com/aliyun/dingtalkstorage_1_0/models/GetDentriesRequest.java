@@ -15,6 +15,9 @@ public class GetDentriesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -52,6 +55,10 @@ public class GetDentriesRequest extends TeaModel {
         @NameInMap("appIdsForAppProperties")
         public java.util.List<String> appIdsForAppProperties;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withThumbnail")
         public Boolean withThumbnail;
 

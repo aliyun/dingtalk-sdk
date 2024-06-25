@@ -4,21 +4,45 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchFormDataIdListRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2018-01-01</p>
+     */
     @NameInMap("createFromTimeGMT")
     public String createFromTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2018-02-01</p>
+     */
     @NameInMap("createToTimeGMT")
     public String createToTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2018-01-01</p>
+     */
     @NameInMap("modifiedFromTimeGMT")
     public String modifiedFromTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2018-02-01</p>
+     */
     @NameInMap("modifiedToTimeGMT")
     public String modifiedToTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dign1234</p>
+     */
     @NameInMap("originatorId")
     public String originatorId;
 
@@ -27,12 +51,18 @@ public class SearchFormDataIdListRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>hexxx</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding1234</p>
      */
     @NameInMap("userId")
     public String userId;

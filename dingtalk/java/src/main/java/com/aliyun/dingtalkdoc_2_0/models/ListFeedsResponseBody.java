@@ -10,6 +10,10 @@ public class ListFeedsResponseBody extends TeaModel {
     @NameInMap("items")
     public java.util.List<ListFeedsResponseBodyItems> items;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abcdef</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -43,12 +47,24 @@ public class ListFeedsResponseBody extends TeaModel {
     }
 
     public static class ListFeedsResponseBodyItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;{}&quot;</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12340000</p>
+         */
         @NameInMap("time")
         public Long time;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("type")
         public Integer type;
 

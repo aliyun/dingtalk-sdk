@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class CheckUserIsGroupMemberRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidD2y*****==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>015*****</p>
      */
     @NameInMap("userId")
     public String userId;

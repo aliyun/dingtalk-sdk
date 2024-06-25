@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class ReportDeviceUseLogRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("action")
     public String action;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123123</p>
      */
     @NameInMap("orderNo")
     public String orderNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sn123</p>
      */
     @NameInMap("sn")
     public String sn;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>312323321111</p>
      */
     @NameInMap("userId")
     public String userId;

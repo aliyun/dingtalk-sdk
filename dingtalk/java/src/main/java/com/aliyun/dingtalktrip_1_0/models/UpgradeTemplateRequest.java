@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpgradeTemplateRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingcd2016f425331dc1acaaa37764f94726</p>
      */
     @NameInMap("channelCorpId")
     public String channelCorpId;
@@ -15,6 +18,9 @@ public class UpgradeTemplateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingcd2016f425331dc1acaaa37764f94726</p>
      */
     @NameInMap("tmcCorpId")
     public String tmcCorpId;

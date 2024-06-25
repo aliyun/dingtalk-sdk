@@ -32,12 +32,24 @@ public class ListFormInstancesResponseBody extends TeaModel {
     }
 
     public static class ListFormInstancesResponseBodyResultListForms extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>TextareaField_KGAW58AQ</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <strong>example:</strong>
+         * <p>你希望的主题</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <strong>example:</strong>
+         * <p>操作演示</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -75,13 +87,24 @@ public class ListFormInstancesResponseBody extends TeaModel {
     public static class ListFormInstancesResponseBodyResultList extends TeaModel {
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-07-27T18:53Z</p>
          */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PROC-E5BD2166-B6F4-xxxx</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>11125769-fxxxx</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
@@ -90,28 +113,59 @@ public class ListFormInstancesResponseBody extends TeaModel {
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-07-27T18:53Z</p>
          */
         @NameInMap("modifyTime")
         public String modifyTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("studentClassId")
         public String studentClassId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>三年二班</p>
+         */
         @NameInMap("studentClassName")
         public String studentClassName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>钉三多</p>
+         */
         @NameInMap("studentName")
         public String studentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("studentUserId")
         public String studentUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user123</p>
+         */
         @NameInMap("submitterUserId")
         public String submitterUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>钉三多</p>
+         */
         @NameInMap("submitterUserName")
         public String submitterUserName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>智能填表测试</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -219,12 +273,20 @@ public class ListFormInstancesResponseBody extends TeaModel {
     }
 
     public static class ListFormInstancesResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
         @NameInMap("list")
         public java.util.List<ListFormInstancesResponseBodyResultList> list;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("nextToken")
         public Long nextToken;
 

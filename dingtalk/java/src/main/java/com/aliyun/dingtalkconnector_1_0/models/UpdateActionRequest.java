@@ -68,12 +68,24 @@ public class UpdateActionRequest extends TeaModel {
     }
 
     public static class UpdateActionRequestActionInfoOutputDataRules extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("expectValue")
         public String expectValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>EQ</p>
+         */
         @NameInMap("operate")
         public String operate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>a/b/c</p>
+         */
         @NameInMap("propertyPath")
         public String propertyPath;
 

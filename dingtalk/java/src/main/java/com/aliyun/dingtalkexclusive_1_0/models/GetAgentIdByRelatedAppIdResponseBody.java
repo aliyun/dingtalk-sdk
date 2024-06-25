@@ -4,6 +4,10 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAgentIdByRelatedAppIdResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>3300000</p>
+     */
     @NameInMap("agentId")
     public Long agentId;
 

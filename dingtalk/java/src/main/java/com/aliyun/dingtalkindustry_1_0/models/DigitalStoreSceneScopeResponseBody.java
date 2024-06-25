@@ -4,9 +4,17 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreSceneScopeResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>store</p>
+     */
     @NameInMap("groupConversationType")
     public String groupConversationType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>536239912</p>
+     */
     @NameInMap("scopeId")
     public Long scopeId;
 

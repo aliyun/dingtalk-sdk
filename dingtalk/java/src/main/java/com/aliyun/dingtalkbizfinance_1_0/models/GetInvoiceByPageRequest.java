@@ -21,30 +21,66 @@ public class GetInvoiceByPageRequest extends TeaModel {
     }
 
     public static class GetInvoiceByPageRequestRequest extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("accountantBookId")
         public String accountantBookId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>COM_DEFAULT</p>
+         */
         @NameInMap("companyCode")
         public String companyCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("financeType")
         public String financeType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("pageNumber")
         public Long pageNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("pageSize")
         public Long pageSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-11</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1111111111</p>
+         */
         @NameInMap("taxNo")
         public String taxNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ABC</p>
+         */
         @NameInMap("verifyStatus")
         public String verifyStatus;
 

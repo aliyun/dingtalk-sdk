@@ -21,12 +21,24 @@ public class GetTaskByIdsResponseBody extends TeaModel {
     }
 
     public static class GetTaskByIdsResponseBodyResultCustomFieldsValue extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>6722223xxxxxxxx</p>
+         */
         @NameInMap("customFieldValueId")
         public String customFieldValueId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>拓展数据</p>
+         */
         @NameInMap("metaString")
         public String metaString;
 
+        /**
+         * <strong>example:</strong>
+         * <p>自定义字段1</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -62,6 +74,10 @@ public class GetTaskByIdsResponseBody extends TeaModel {
     }
 
     public static class GetTaskByIdsResponseBodyResultCustomFields extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>61122xxxxxxxx</p>
+         */
         @NameInMap("customFieldId")
         public String customFieldId;
 
@@ -103,87 +119,179 @@ public class GetTaskByIdsResponseBody extends TeaModel {
     }
 
     public static class GetTaskByIdsResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("accomplishTime")
         public String accomplishTime;
 
         @NameInMap("ancestorIds")
         public java.util.List<String> ancestorIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>任务标题</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0517xxxxxxx</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
         @NameInMap("customFields")
         public java.util.List<GetTaskByIdsResponseBodyResultCustomFields> customFields;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("dueDate")
         public String dueDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0517xxxxxxx</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isArchived")
         public Boolean isArchived;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isDone")
         public Boolean isDone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>任务备注</p>
+         */
         @NameInMap("note")
         public String note;
 
+        /**
+         * <strong>example:</strong>
+         * <p>60a2187eb72xxxxxxx</p>
+         */
         @NameInMap("parentTaskId")
         public String parentTaskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("priority")
         public Integer priority;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3b376ecxxxxxxx</p>
+         */
         @NameInMap("projectId")
         public String projectId;
 
         @NameInMap("recurrence")
         public java.util.List<String> recurrence;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6922xxxxxxxx</p>
+         */
         @NameInMap("scenarioFieldConfigId")
         public String scenarioFieldConfigId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>61922xxxxxxxx</p>
+         */
         @NameInMap("sprintId")
         public String sprintId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("storyPoint")
         public String storyPoint;
 
         @NameInMap("tagIds")
         public java.util.List<String> tagIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>60a2187eb72xxxxxxx</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6922xxxxxxxx</p>
+         */
         @NameInMap("taskListId")
         public String taskListId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6622134xxxxxx</p>
+         */
         @NameInMap("taskStageId")
         public String taskStageId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6722xxxxxxxx</p>
+         */
         @NameInMap("taskflowStatusId")
         public String taskflowStatusId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("uniqueId")
         public String uniqueId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 
+        /**
+         * <strong>example:</strong>
+         * <p>member</p>
+         */
         @NameInMap("visible")
         public String visible;
 

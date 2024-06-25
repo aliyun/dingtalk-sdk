@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class ProcessApproveCreateRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>25c4c49f-cf3a-4ba1-b321-7defd93b7f89</p>
      */
     @NameInMap("approveId")
     public String approveId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user02</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
@@ -24,18 +30,27 @@ public class ProcessApproveCreateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>shiftGroup</p>
      */
     @NameInMap("subType")
     public String subType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>请假</p>
      */
     @NameInMap("tagName")
     public String tagName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user01</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -94,17 +109,32 @@ public class ProcessApproveCreateRequest extends TeaModel {
     }
 
     public static class ProcessApproveCreateRequestPunchParam extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>longitude_latitude</p>
+         */
         @NameInMap("positionId")
         public String positionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>未来park</p>
+         */
         @NameInMap("positionName")
         public String positionName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>gps</p>
+         */
         @NameInMap("positionType")
         public String positionType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1650511474978</p>
          */
         @NameInMap("punchTime")
         public Long punchTime;

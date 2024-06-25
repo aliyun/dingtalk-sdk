@@ -4,44 +4,75 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportCustomerStatisticsRequest extends TeaModel {
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("groupOwnerUserIds")
     public java.util.List<String> groupOwnerUserIds;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("groupTags")
     public java.util.List<String> groupTags;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20220102</p>
      */
     @NameInMap("maxDt")
     public String maxDt;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20220101</p>
      */
     @NameInMap("minDt")
     public String minDt;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>iFoqrhLQDtK</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>iSoqrhLQDtK</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20</p>
      */
     @NameInMap("pageSize")
     public Long pageSize;

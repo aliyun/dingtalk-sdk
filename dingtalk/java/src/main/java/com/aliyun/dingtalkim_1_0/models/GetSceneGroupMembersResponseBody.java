@@ -4,12 +4,24 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSceneGroupMembersResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidXXXXXXXXX==</p>
+     */
     @NameInMap("memberUserIds")
     public java.util.List<String> memberUserIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>92233720368</p>
+     */
     @NameInMap("nextCursor")
     public String nextCursor;
 

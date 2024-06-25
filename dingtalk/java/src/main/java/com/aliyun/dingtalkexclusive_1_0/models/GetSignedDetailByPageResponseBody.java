@@ -7,12 +7,24 @@ public class GetSignedDetailByPageResponseBody extends TeaModel {
     @NameInMap("auditSignedDetailDTOList")
     public java.util.List<GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList> auditSignedDetailDTOList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("currentPage")
     public Long currentPage;
 
+    /**
+     * <strong>example:</strong>
+     * <p>50</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1000</p>
+     */
     @NameInMap("total")
     public Long total;
 
@@ -54,24 +66,52 @@ public class GetSignedDetailByPageResponseBody extends TeaModel {
     }
 
     public static class GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>部门1</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><strong>@</strong>.com</p>
+         */
         @NameInMap("email")
         public String email;
 
+        /**
+         * <strong>example:</strong>
+         * <p>小张</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <hr>
+         */
         @NameInMap("phone")
         public String phone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>主管理员</p>
+         */
         @NameInMap("roles")
         public String roles;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123***</p>
+         */
         @NameInMap("staffId")
         public String staffId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>经理</p>
+         */
         @NameInMap("title")
         public String title;
 

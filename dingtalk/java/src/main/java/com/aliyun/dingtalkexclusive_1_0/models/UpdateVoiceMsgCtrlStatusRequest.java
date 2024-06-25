@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdateVoiceMsgCtrlStatusRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1-检测通过，2-检测失败</p>
      */
     @NameInMap("status")
     public Integer status;

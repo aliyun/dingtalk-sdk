@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class UpdateObjectiveRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>更新的内容</p>
      */
     @NameInMap("content")
     public String content;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>06186238011033616</p>
      */
     @NameInMap("userId")
     public String userId;

@@ -10,9 +10,17 @@ public class UpdateOrganizationTaskInvolveMembersRequest extends TeaModel {
     @NameInMap("delInvolvers")
     public java.util.List<String> delInvolvers;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableActivity")
     public Boolean disableActivity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableNotification")
     public Boolean disableNotification;
 

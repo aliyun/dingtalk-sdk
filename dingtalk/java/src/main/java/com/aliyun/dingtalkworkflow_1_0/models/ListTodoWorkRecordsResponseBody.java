@@ -21,9 +21,17 @@ public class ListTodoWorkRecordsResponseBody extends TeaModel {
     }
 
     public static class ListTodoWorkRecordsResponseBodyResultListForms extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>钉三多</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>入职员工姓名</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -54,15 +62,31 @@ public class ListTodoWorkRecordsResponseBody extends TeaModel {
         @NameInMap("forms")
         public java.util.List<ListTodoWorkRecordsResponseBodyResultListForms> forms;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Siw2WNVZS4KiUt3tTmaNKg04*****809950</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234567</p>
+         */
         @NameInMap("taskId")
         public Long taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx提交的入职审批</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+         */
         @NameInMap("url")
         public String url;
 

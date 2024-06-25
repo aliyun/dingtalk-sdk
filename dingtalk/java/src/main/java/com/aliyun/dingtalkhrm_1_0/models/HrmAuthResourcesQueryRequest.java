@@ -12,6 +12,9 @@ public class HrmAuthResourcesQueryRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1231</p>
      */
     @NameInMap("userId")
     public String userId;

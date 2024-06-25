@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryGroupMuteStatusResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("groupMuteMode")
     public Boolean groupMuteMode;
@@ -40,18 +43,27 @@ public class QueryGroupMuteStatusResponseBody extends TeaModel {
     public static class QueryGroupMuteStatusResponseBodyUserMuteResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1645315682000</p>
          */
         @NameInMap("muteEndTime")
         public Long muteEndTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1645315682000</p>
          */
         @NameInMap("muteStartTime")
         public Long muteStartTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("userMuteMode")
         public Boolean userMuteMode;

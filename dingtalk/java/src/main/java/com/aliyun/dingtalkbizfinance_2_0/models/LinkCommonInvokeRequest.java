@@ -4,15 +4,31 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class LinkCommonInvokeRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>TEST</p>
+     */
     @NameInMap("bizType")
     public String bizType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>&quot;{&quot;key&quot;:&quot;value&quot;}&quot;</p>
+     */
     @NameInMap("data")
     public String data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>INOVKE_XXX</p>
+     */
     @NameInMap("invokeId")
     public String invokeId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("userId")
     public String userId;
 

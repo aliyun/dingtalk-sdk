@@ -4,17 +4,27 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class LoadBizObjectsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>{     &quot;Type&quot;: &quot;Item&quot;,     &quot;Name&quot;: &quot;F0000010&quot;,     &quot;Operator&quot;: 2,     &quot;Value&quot;: &quot;0000007&quot; }</p>
+     */
     @NameInMap("matcherJson")
     public String matcherJson;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("pageSize")
     public Integer pageSize;
@@ -24,6 +34,9 @@ public class LoadBizObjectsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>D0001839bbbbe346bbf496498bb76c44c7eb972</p>
      */
     @NameInMap("schemaCode")
     public String schemaCode;
@@ -85,9 +98,17 @@ public class LoadBizObjectsRequest extends TeaModel {
     }
 
     public static class LoadBizObjectsRequestSortByFields extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>Ascending</p>
+         */
         @NameInMap("direction")
         public String direction;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Age</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 

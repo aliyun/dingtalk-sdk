@@ -6,11 +6,10 @@ import com.aliyun.dingtalkfinance_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 批量付款
-     *
+     * <b>summary</b> : 
+     * <p>批量付款</p>
+     * 
      * @param request ApplyBatchPayRequest
      * @param headers ApplyBatchPayHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -90,8 +90,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量付款
-     *
+     * <b>summary</b> : 
+     * <p>批量付款</p>
+     * 
      * @param request ApplyBatchPayRequest
      * @return ApplyBatchPayResponse
      */
@@ -102,8 +103,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 助贷业务关闭借款入口
-     *
+     * <b>summary</b> : 
+     * <p>助贷业务关闭借款入口</p>
+     * 
      * @param request CloseLoanEntranceRequest
      * @param headers CloseLoanEntranceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -144,8 +146,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 助贷业务关闭借款入口
-     *
+     * <b>summary</b> : 
+     * <p>助贷业务关闭借款入口</p>
+     * 
      * @param request CloseLoanEntranceRequest
      * @return CloseLoanEntranceResponse
      */
@@ -156,8 +159,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 子机构创建进件预校验
-     *
+     * <b>summary</b> : 
+     * <p>子机构创建进件预校验</p>
+     * 
      * @param request ConsultCreateSubInstitutionRequest
      * @param headers ConsultCreateSubInstitutionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -262,8 +266,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 子机构创建进件预校验
-     *
+     * <b>summary</b> : 
+     * <p>子机构创建进件预校验</p>
+     * 
      * @param request ConsultCreateSubInstitutionRequest
      * @return ConsultCreateSubInstitutionResponse
      */
@@ -274,8 +279,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发起代扣交易
-     *
+     * <b>summary</b> : 
+     * <p>发起代扣交易</p>
+     * 
      * @param request CreatWithholdingOrderAndPayRequest
      * @param headers CreatWithholdingOrderAndPayHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -352,8 +358,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发起代扣交易
-     *
+     * <b>summary</b> : 
+     * <p>发起代扣交易</p>
+     * 
      * @param request CreatWithholdingOrderAndPayRequest
      * @return CreatWithholdingOrderAndPayResponse
      */
@@ -364,8 +371,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 收单退款交易
-     *
+     * <b>summary</b> : 
+     * <p>收单退款交易</p>
+     * 
      * @param request CreateAcquireRefundOrderRequest
      * @param headers CreateAcquireRefundOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -438,8 +446,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 收单退款交易
-     *
+     * <b>summary</b> : 
+     * <p>收单退款交易</p>
+     * 
      * @param request CreateAcquireRefundOrderRequest
      * @return CreateAcquireRefundOrderResponse
      */
@@ -450,8 +459,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建批量支付单
-     *
+     * <b>summary</b> : 
+     * <p>创建批量支付单</p>
+     * 
      * @param request CreateBatchTradeOrderRequest
      * @param headers CreateBatchTradeOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -524,8 +534,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建批量支付单
-     *
+     * <b>summary</b> : 
+     * <p>创建批量支付单</p>
+     * 
      * @param request CreateBatchTradeOrderRequest
      * @return CreateBatchTradeOrderResponse
      */
@@ -536,8 +547,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建子机构
-     *
+     * <b>summary</b> : 
+     * <p>创建子机构</p>
+     * 
      * @param request CreateSubInstitutionRequest
      * @param headers CreateSubInstitutionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -642,8 +654,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建子机构
-     *
+     * <b>summary</b> : 
+     * <p>创建子机构</p>
+     * 
      * @param request CreateSubInstitutionRequest
      * @return CreateSubInstitutionResponse
      */
@@ -654,8 +667,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建用户码实例
-     *
+     * <b>summary</b> : 
+     * <p>创建用户码实例</p>
+     * 
      * @param request CreateUserCodeInstanceRequest
      * @param headers CreateUserCodeInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -736,8 +750,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建用户码实例
-     *
+     * <b>summary</b> : 
+     * <p>创建用户码实例</p>
+     * 
      * @param request CreateUserCodeInstanceRequest
      * @return CreateUserCodeInstanceResponse
      */
@@ -748,8 +763,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 解码付款码
-     *
+     * <b>summary</b> : 
+     * <p>解码付款码</p>
+     * 
      * @param request DecodePayCodeRequest
      * @param headers DecodePayCodeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -794,8 +810,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 解码付款码
-     *
+     * <b>summary</b> : 
+     * <p>解码付款码</p>
+     * 
      * @param request DecodePayCodeRequest
      * @return DecodePayCodeResponse
      */
@@ -806,8 +823,117 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改子机构信息
-     *
+     * <b>summary</b> : 
+     * <p>企业金融助贷业务进件通知接口</p>
+     * 
+     * @param request FinanceLoanNotifyRegisterRequest
+     * @param headers FinanceLoanNotifyRegisterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return FinanceLoanNotifyRegisterResponse
+     */
+    public FinanceLoanNotifyRegisterResponse financeLoanNotifyRegisterWithOptions(FinanceLoanNotifyRegisterRequest request, FinanceLoanNotifyRegisterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.completeTime)) {
+            body.put("completeTime", request.completeTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.idCardNo)) {
+            body.put("idCardNo", request.idCardNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openChannelName)) {
+            body.put("openChannelName", request.openChannelName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openProductCode)) {
+            body.put("openProductCode", request.openProductCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openProductName)) {
+            body.put("openProductName", request.openProductName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openProductType)) {
+            body.put("openProductType", request.openProductType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processingStatus)) {
+            body.put("processingStatus", request.processingStatus);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.refuseCode)) {
+            body.put("refuseCode", request.refuseCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.refuseReason)) {
+            body.put("refuseReason", request.refuseReason);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.registerNo)) {
+            body.put("registerNo", request.registerNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.submitTime)) {
+            body.put("submitTime", request.submitTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userMobile)) {
+            body.put("userMobile", request.userMobile);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "FinanceLoanNotifyRegister"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/loans/notifications/register"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new FinanceLoanNotifyRegisterResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>企业金融助贷业务进件通知接口</p>
+     * 
+     * @param request FinanceLoanNotifyRegisterRequest
+     * @return FinanceLoanNotifyRegisterResponse
+     */
+    public FinanceLoanNotifyRegisterResponse financeLoanNotifyRegister(FinanceLoanNotifyRegisterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        FinanceLoanNotifyRegisterHeaders headers = new FinanceLoanNotifyRegisterHeaders();
+        return this.financeLoanNotifyRegisterWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改子机构信息</p>
+     * 
      * @param request ModifySubInstitutionRequest
      * @param headers ModifySubInstitutionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -908,8 +1034,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改子机构信息
-     *
+     * <b>summary</b> : 
+     * <p>修改子机构信息</p>
+     * 
      * @param request ModifySubInstitutionRequest
      * @return ModifySubInstitutionResponse
      */
@@ -920,8 +1047,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知付款码支付结果
-     *
+     * <b>summary</b> : 
+     * <p>通知付款码支付结果</p>
+     * 
      * @param request NotifyPayCodePayResultRequest
      * @param headers NotifyPayCodePayResultHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1026,8 +1154,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知付款码支付结果
-     *
+     * <b>summary</b> : 
+     * <p>通知付款码支付结果</p>
+     * 
      * @param request NotifyPayCodePayResultRequest
      * @return NotifyPayCodePayResultResponse
      */
@@ -1038,8 +1167,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知付款码退款结果
-     *
+     * <b>summary</b> : 
+     * <p>通知付款码退款结果</p>
+     * 
      * @param request NotifyPayCodeRefundResultRequest
      * @param headers NotifyPayCodeRefundResultHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1116,8 +1246,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知付款码退款结果
-     *
+     * <b>summary</b> : 
+     * <p>通知付款码退款结果</p>
+     * 
      * @param request NotifyPayCodeRefundResultRequest
      * @return NotifyPayCodeRefundResultResponse
      */
@@ -1128,8 +1259,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 上报码验证结果
-     *
+     * <b>summary</b> : 
+     * <p>上报码验证结果</p>
+     * 
      * @param request NotifyVerifyResultRequest
      * @param headers NotifyVerifyResultHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1206,8 +1338,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 上报码验证结果
-     *
+     * <b>summary</b> : 
+     * <p>上报码验证结果</p>
+     * 
      * @param request NotifyVerifyResultRequest
      * @return NotifyVerifyResultResponse
      */
@@ -1218,8 +1351,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 预创建群收款订单返回订单号
-     *
+     * <b>summary</b> : 
+     * <p>预创建群收款订单返回订单号</p>
+     * 
      * @param request PreCreateGroupBillOrderRequest
      * @param headers PreCreateGroupBillOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1300,8 +1434,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 预创建群收款订单返回订单号
-     *
+     * <b>summary</b> : 
+     * <p>预创建群收款订单返回订单号</p>
+     * 
      * @param request PreCreateGroupBillOrderRequest
      * @return PreCreateGroupBillOrderResponse
      */
@@ -1312,8 +1447,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询收单退款交易
-     *
+     * <b>summary</b> : 
+     * <p>查询收单退款交易</p>
+     * 
      * @param request QueryAcquireRefundOrderRequest
      * @param headers QueryAcquireRefundOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1354,8 +1490,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询收单退款交易
-     *
+     * <b>summary</b> : 
+     * <p>查询收单退款交易</p>
+     * 
      * @param request QueryAcquireRefundOrderRequest
      * @return QueryAcquireRefundOrderResponse
      */
@@ -1366,8 +1503,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询批量付款明细列表
-     *
+     * <b>summary</b> : 
+     * <p>查询批量付款明细列表</p>
+     * 
      * @param request QueryBatchTradeDetailListRequest
      * @param headers QueryBatchTradeDetailListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1416,8 +1554,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询批量付款明细列表
-     *
+     * <b>summary</b> : 
+     * <p>查询批量付款明细列表</p>
+     * 
      * @param request QueryBatchTradeDetailListRequest
      * @return QueryBatchTradeDetailListResponse
      */
@@ -1428,8 +1567,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据请求对象查询批量交易订单信息
-     *
+     * <b>summary</b> : 
+     * <p>根据请求对象查询批量交易订单信息</p>
+     * 
      * @param request QueryBatchTradeOrderRequest
      * @param headers QueryBatchTradeOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1470,8 +1610,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据请求对象查询批量交易订单信息
-     *
+     * <b>summary</b> : 
+     * <p>根据请求对象查询批量交易订单信息</p>
+     * 
      * @param request QueryBatchTradeOrderRequest
      * @return QueryBatchTradeOrderResponse
      */
@@ -1482,8 +1623,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询付款账号列表
-     *
+     * <b>summary</b> : 
+     * <p>查询付款账号列表</p>
+     * 
      * @param headers QueryPayAccountListHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryPayAccountListResponse
@@ -1516,8 +1658,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询付款账号列表
-     *
+     * <b>summary</b> : 
+     * <p>查询付款账号列表</p>
      * @return QueryPayAccountListResponse
      */
     public QueryPayAccountListResponse queryPayAccountList() throws Exception {
@@ -1527,8 +1669,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询子机构申请单状态
-     *
+     * <b>summary</b> : 
+     * <p>查询子机构申请单状态</p>
+     * 
      * @param request QueryRegisterOrderRequest
      * @param headers QueryRegisterOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1581,8 +1724,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询子机构申请单状态
-     *
+     * <b>summary</b> : 
+     * <p>查询子机构申请单状态</p>
+     * 
      * @param request QueryRegisterOrderRequest
      * @return QueryRegisterOrderResponse
      */
@@ -1593,8 +1737,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户协议
-     *
+     * <b>summary</b> : 
+     * <p>查询用户协议</p>
+     * 
      * @param request QueryUserAgreementRequest
      * @param headers QueryUserAgreementHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1651,8 +1796,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户协议
-     *
+     * <b>summary</b> : 
+     * <p>查询用户协议</p>
+     * 
      * @param request QueryUserAgreementRequest
      * @return QueryUserAgreementResponse
      */
@@ -1663,8 +1809,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户绑定支付宝信息
-     *
+     * <b>summary</b> : 
+     * <p>获取用户绑定支付宝信息</p>
+     * 
      * @param headers QueryUserAlipayAccountHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryUserAlipayAccountResponse
@@ -1697,8 +1844,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户绑定支付宝信息
-     *
+     * <b>summary</b> : 
+     * <p>获取用户绑定支付宝信息</p>
      * @return QueryUserAlipayAccountResponse
      */
     public QueryUserAlipayAccountResponse queryUserAlipayAccount() throws Exception {
@@ -1708,8 +1855,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询代扣交易订单信息
-     *
+     * <b>summary</b> : 
+     * <p>查询代扣交易订单信息</p>
+     * 
      * @param request QueryWithholdingOrderRequest
      * @param headers QueryWithholdingOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1750,8 +1898,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询代扣交易订单信息
-     *
+     * <b>summary</b> : 
+     * <p>查询代扣交易订单信息</p>
+     * 
      * @param request QueryWithholdingOrderRequest
      * @return QueryWithholdingOrderResponse
      */
@@ -1762,8 +1911,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 保存付款码企业配置信息
-     *
+     * <b>summary</b> : 
+     * <p>保存付款码企业配置信息</p>
+     * 
      * @param request SaveCorpPayCodeRequest
      * @param headers SaveCorpPayCodeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1816,8 +1966,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 保存付款码企业配置信息
-     *
+     * <b>summary</b> : 
+     * <p>保存付款码企业配置信息</p>
+     * 
      * @param request SaveCorpPayCodeRequest
      * @return SaveCorpPayCodeResponse
      */
@@ -1828,8 +1979,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 解约用户协议
-     *
+     * <b>summary</b> : 
+     * <p>解约用户协议</p>
+     * 
      * @param request UnsignUserAgreementRequest
      * @param headers UnsignUserAgreementHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1890,8 +2042,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 解约用户协议
-     *
+     * <b>summary</b> : 
+     * <p>解约用户协议</p>
+     * 
      * @param request UnsignUserAgreementRequest
      * @return UnsignUserAgreementResponse
      */
@@ -1902,8 +2055,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新用户码实例
-     *
+     * <b>summary</b> : 
+     * <p>更新用户码实例</p>
+     * 
      * @param request UpateUserCodeInstanceRequest
      * @param headers UpateUserCodeInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1980,8 +2134,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新用户码实例
-     *
+     * <b>summary</b> : 
+     * <p>更新用户码实例</p>
+     * 
      * @param request UpateUserCodeInstanceRequest
      * @return UpateUserCodeInstanceResponse
      */
@@ -1992,8 +2147,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用来给第三方企业提供发票验真结果更新的oapi
-     *
+     * <b>summary</b> : 
+     * <p>用来给第三方企业提供发票验真结果更新的oapi</p>
+     * 
      * @param request UpdateInvoiceVerifyStatusRequest
      * @param headers UpdateInvoiceVerifyStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2078,8 +2234,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用来给第三方企业提供发票验真结果更新的oapi
-     *
+     * <b>summary</b> : 
+     * <p>用来给第三方企业提供发票验真结果更新的oapi</p>
+     * 
      * @param request UpdateInvoiceVerifyStatusRequest
      * @return UpdateInvoiceVerifyStatusResponse
      */
@@ -2090,8 +2247,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 上传发票
-     *
+     * <b>summary</b> : 
+     * <p>上传发票</p>
+     * 
      * @param request UploadInvoiceRequest
      * @param headers UploadInvoiceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2140,8 +2298,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 上传发票
-     *
+     * <b>summary</b> : 
+     * <p>上传发票</p>
+     * 
      * @param request UploadInvoiceRequest
      * @return UploadInvoiceResponse
      */
@@ -2152,8 +2311,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用户授权上传发票oapi
-     *
+     * <b>summary</b> : 
+     * <p>用户授权上传发票oapi</p>
+     * 
      * @param request UploadInvoiceByAuthRequest
      * @param headers UploadInvoiceByAuthHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2198,8 +2358,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用户授权上传发票oapi
-     *
+     * <b>summary</b> : 
+     * <p>用户授权上传发票oapi</p>
+     * 
      * @param request UploadInvoiceByAuthRequest
      * @return UploadInvoiceByAuthResponse
      */
@@ -2210,8 +2371,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过手机号上传发票
-     *
+     * <b>summary</b> : 
+     * <p>通过手机号上传发票</p>
+     * 
      * @param request UploadInvoiceByMobileRequest
      * @param headers UploadInvoiceByMobileHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2260,8 +2422,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过手机号上传发票
-     *
+     * <b>summary</b> : 
+     * <p>通过手机号上传发票</p>
+     * 
      * @param request UploadInvoiceByMobileRequest
      * @return UploadInvoiceByMobileResponse
      */
@@ -2272,8 +2435,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 上传进件中的图片获得图片链接
-     *
+     * <b>summary</b> : 
+     * <p>上传进件中的图片获得图片链接</p>
+     * 
      * @param request UploadRegisterImageRequest
      * @param headers UploadRegisterImageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2330,8 +2494,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 上传进件中的图片获得图片链接
-     *
+     * <b>summary</b> : 
+     * <p>上传进件中的图片获得图片链接</p>
+     * 
      * @param request UploadRegisterImageRequest
      * @return UploadRegisterImageResponse
      */
@@ -2342,8 +2507,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用户协议签约
-     *
+     * <b>summary</b> : 
+     * <p>用户协议签约</p>
+     * 
      * @param request UserAgreementPageSignRequest
      * @param headers UserAgreementPageSignHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2428,8 +2594,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用户协议签约
-     *
+     * <b>summary</b> : 
+     * <p>用户协议签约</p>
+     * 
      * @param request UserAgreementPageSignRequest
      * @return UserAgreementPageSignResponse
      */

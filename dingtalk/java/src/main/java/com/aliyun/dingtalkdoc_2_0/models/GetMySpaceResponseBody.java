@@ -4,24 +4,52 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetMySpaceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2022-01-01T10:00:00Z</p>
+     */
     @NameInMap("createTime")
     public String createTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-01-01T10:00:00Z</p>
+     */
     @NameInMap("modifyTime")
     public String modifyTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1L</p>
+     */
     @NameInMap("quota")
     public Long quota;
 
+    /**
+     * <strong>example:</strong>
+     * <p>space_id</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>space_name</p>
+     */
     @NameInMap("spaceName")
     public String spaceName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>personal|org|custom|unknown</p>
+     */
     @NameInMap("spaceType")
     public String spaceType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1L</p>
+     */
     @NameInMap("usedQuota")
     public Long usedQuota;
 

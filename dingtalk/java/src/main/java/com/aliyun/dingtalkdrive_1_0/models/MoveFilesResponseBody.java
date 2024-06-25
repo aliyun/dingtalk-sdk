@@ -40,7 +40,6 @@ public class MoveFilesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
-         * <br>
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
          */
         @NameInMap("createTime")
@@ -84,7 +83,6 @@ public class MoveFilesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
-         * <br>
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
          */
         @NameInMap("modifyTime")

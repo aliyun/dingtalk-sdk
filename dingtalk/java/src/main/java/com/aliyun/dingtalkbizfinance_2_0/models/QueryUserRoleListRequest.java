@@ -4,9 +4,17 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserRoleListRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>COM_DEFAULT</p>
+     */
     @NameInMap("companyCode")
     public String companyCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>12312231231</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -7,9 +7,17 @@ public class GetDingReportDeptSummaryResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetDingReportDeptSummaryResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -43,15 +51,31 @@ public class GetDingReportDeptSummaryResponseBody extends TeaModel {
     }
 
     public static class GetDingReportDeptSummaryResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("deptId")
         public String deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>部门A</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("dingReportSendCnt")
         public String dingReportSendCnt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("dingReportSendUsrCnt")
         public String dingReportSendUsrCnt;
 

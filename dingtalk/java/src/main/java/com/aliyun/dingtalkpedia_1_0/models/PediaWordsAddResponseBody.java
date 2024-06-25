@@ -7,6 +7,10 @@ public class PediaWordsAddResponseBody extends TeaModel {
     @NameInMap("success")
     public Boolean success;
 
+    /**
+     * <strong>example:</strong>
+     * <p>232432</p>
+     */
     @NameInMap("uuid")
     public Long uuid;
 

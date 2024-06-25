@@ -6,11 +6,10 @@ import com.aliyun.dingtalkorg_culture_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 批量发放积分或额度
-     *
+     * <b>summary</b> : 
+     * <p>批量发放积分或额度</p>
+     * 
      * @param request AssignOrgHoldingToEmpHoldingBatchRequest
      * @param headers AssignOrgHoldingToEmpHoldingBatchHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -82,8 +82,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量发放积分或额度
-     *
+     * <b>summary</b> : 
+     * <p>批量发放积分或额度</p>
+     * 
      * @param request AssignOrgHoldingToEmpHoldingBatchRequest
      * @return AssignOrgHoldingToEmpHoldingBatchResponse
      */
@@ -94,8 +95,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 扣减员工积分
-     *
+     * <b>summary</b> : 
+     * <p>扣减员工积分</p>
+     * 
      * @param request ConsumeUserPointsRequest
      * @param headers ConsumeUserPointsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -148,8 +150,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 扣减员工积分
-     *
+     * <b>summary</b> : 
+     * <p>扣减员工积分</p>
+     * 
      * @param request ConsumeUserPointsRequest
      * @return ConsumeUserPointsResponse
      */
@@ -160,8 +163,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建荣誉勋章模板
-     *
+     * <b>summary</b> : 
+     * <p>创建荣誉勋章模板</p>
+     * 
      * @param request CreateOrgHonorRequest
      * @param headers CreateOrgHonorHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -222,8 +226,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建荣誉勋章模板
-     *
+     * <b>summary</b> : 
+     * <p>创建荣誉勋章模板</p>
+     * 
      * @param request CreateOrgHonorRequest
      * @return CreateOrgHonorResponse
      */
@@ -234,8 +239,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量扣减积分
-     *
+     * <b>summary</b> : 
+     * <p>批量扣减积分</p>
+     * 
      * @param request DeductionPointBatchRequest
      * @param headers DeductionPointBatchHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -292,8 +298,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量扣减积分
-     *
+     * <b>summary</b> : 
+     * <p>批量扣减积分</p>
+     * 
      * @param request DeductionPointBatchRequest
      * @return DeductionPointBatchResponse
      */
@@ -304,8 +311,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 积分榜单导出
-     *
+     * <b>summary</b> : 
+     * <p>积分榜单导出</p>
+     * 
      * @param request ExportPointOpenRequest
      * @param headers ExportPointOpenHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -354,8 +362,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 积分榜单导出
-     *
+     * <b>summary</b> : 
+     * <p>积分榜单导出</p>
+     * 
      * @param request ExportPointOpenRequest
      * @return ExportPointOpenResponse
      */
@@ -366,8 +375,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 授予荣誉 异步执行
-     *
+     * <b>summary</b> : 
+     * <p>授予荣誉 异步执行</p>
+     * 
      * @param request GrantHonorRequest
      * @param headers GrantHonorHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -436,8 +446,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 授予荣誉 异步执行
-     *
+     * <b>summary</b> : 
+     * <p>授予荣誉 异步执行</p>
+     * 
      * @param request GrantHonorRequest
      * @return GrantHonorResponse
      */
@@ -448,8 +459,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询当前企业下可兑换的积分
-     *
+     * <b>summary</b> : 
+     * <p>查询当前企业下可兑换的积分</p>
+     * 
      * @param request QueryCorpPointsRequest
      * @param headers QueryCorpPointsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -490,8 +502,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询当前企业下可兑换的积分
-     *
+     * <b>summary</b> : 
+     * <p>查询当前企业下可兑换的积分</p>
+     * 
      * @param request QueryCorpPointsRequest
      * @return QueryCorpPointsResponse
      */
@@ -502,8 +515,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询个人积分使用明细
-     *
+     * <b>summary</b> : 
+     * <p>查询个人积分使用明细</p>
+     * 
      * @param request QueryEmpPointDetailsRequest
      * @param headers QueryEmpPointDetailsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -552,8 +566,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询个人积分使用明细
-     *
+     * <b>summary</b> : 
+     * <p>查询个人积分使用明细</p>
+     * 
      * @param request QueryEmpPointDetailsRequest
      * @return QueryEmpPointDetailsResponse
      */
@@ -564,8 +579,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取组织荣誉
-     *
+     * <b>summary</b> : 
+     * <p>获取组织荣誉</p>
+     * 
      * @param request QueryOrgHonorsRequest
      * @param headers QueryOrgHonorsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -610,8 +626,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取组织荣誉
-     *
+     * <b>summary</b> : 
+     * <p>获取组织荣誉</p>
+     * 
      * @param request QueryOrgHonorsRequest
      * @return QueryOrgHonorsResponse
      */
@@ -622,8 +639,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询组织发放扣除积分明细
-     *
+     * <b>summary</b> : 
+     * <p>查询组织发放扣除积分明细</p>
+     * 
      * @param request QueryOrgPointDetailsRequest
      * @param headers QueryOrgPointDetailsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -676,8 +694,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询组织发放扣除积分明细
-     *
+     * <b>summary</b> : 
+     * <p>查询组织发放扣除积分明细</p>
+     * 
      * @param request QueryOrgPointDetailsRequest
      * @return QueryOrgPointDetailsResponse
      */
@@ -688,8 +707,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询积分自动发放行为规则
-     *
+     * <b>summary</b> : 
+     * <p>查询积分自动发放行为规则</p>
+     * 
      * @param headers QueryPointActionAutoAssignRuleHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryPointActionAutoAssignRuleResponse
@@ -722,8 +742,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询积分自动发放行为规则
-     *
+     * <b>summary</b> : 
+     * <p>查询积分自动发放行为规则</p>
      * @return QueryPointActionAutoAssignRuleResponse
      */
     public QueryPointActionAutoAssignRuleResponse queryPointActionAutoAssignRule() throws Exception {
@@ -733,8 +753,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 每月自动发放额度查询
-     *
+     * <b>summary</b> : 
+     * <p>每月自动发放额度查询</p>
+     * 
      * @param headers QueryPointAutoIssueSettingHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryPointAutoIssueSettingResponse
@@ -767,8 +788,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 每月自动发放额度查询
-     *
+     * <b>summary</b> : 
+     * <p>每月自动发放额度查询</p>
      * @return QueryPointAutoIssueSettingResponse
      */
     public QueryPointAutoIssueSettingResponse queryPointAutoIssueSetting() throws Exception {
@@ -778,8 +799,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询员工已获得的组织荣誉列表
-     *
+     * <b>summary</b> : 
+     * <p>查询员工已获得的组织荣誉列表</p>
+     * 
      * @param request QueryUserHonorsRequest
      * @param headers QueryUserHonorsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -824,8 +846,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询员工已获得的组织荣誉列表
-     *
+     * <b>summary</b> : 
+     * <p>查询员工已获得的组织荣誉列表</p>
+     * 
      * @param request QueryUserHonorsRequest
      * @return QueryUserHonorsResponse
      */
@@ -836,8 +859,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询员工已获得的积分
-     *
+     * <b>summary</b> : 
+     * <p>查询员工已获得的积分</p>
+     * 
      * @param headers QueryUserPointsHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryUserPointsResponse
@@ -870,8 +894,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询员工已获得的积分
-     *
+     * <b>summary</b> : 
+     * <p>查询员工已获得的积分</p>
      * @return QueryUserPointsResponse
      */
     public QueryUserPointsResponse queryUserPoints(String userId) throws Exception {
@@ -881,8 +905,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤销员工获得的荣誉勋章
-     *
+     * <b>summary</b> : 
+     * <p>撤销员工获得的荣誉勋章</p>
+     * 
      * @param request RecallHonorRequest
      * @param headers RecallHonorHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -923,8 +948,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤销员工获得的荣誉勋章
-     *
+     * <b>summary</b> : 
+     * <p>撤销员工获得的荣誉勋章</p>
+     * 
      * @param request RecallHonorRequest
      * @return RecallHonorResponse
      */
@@ -935,8 +961,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 每月自动发放额度修改
-     *
+     * <b>summary</b> : 
+     * <p>每月自动发放额度修改</p>
+     * 
      * @param request UpdateAutoIssuePointRequest
      * @param headers UpdateAutoIssuePointHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -989,8 +1016,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 每月自动发放额度修改
-     *
+     * <b>summary</b> : 
+     * <p>每月自动发放额度修改</p>
+     * 
      * @param request UpdateAutoIssuePointRequest
      * @return UpdateAutoIssuePointResponse
      */
@@ -1001,8 +1029,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改积分系统行为规则
-     *
+     * <b>summary</b> : 
+     * <p>修改积分系统行为规则</p>
+     * 
      * @param request UpdatePointActionAutoAssignRuleRequest
      * @param headers UpdatePointActionAutoAssignRuleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1047,8 +1076,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改积分系统行为规则
-     *
+     * <b>summary</b> : 
+     * <p>修改积分系统行为规则</p>
+     * 
      * @param request UpdatePointActionAutoAssignRuleRequest
      * @return UpdatePointActionAutoAssignRuleResponse
      */
@@ -1059,8 +1089,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 佩戴/卸下荣誉勋章
-     *
+     * <b>summary</b> : 
+     * <p>佩戴/卸下荣誉勋章</p>
+     * 
      * @param request WearOrgHonorRequest
      * @param headers WearOrgHonorHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1105,8 +1136,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 佩戴/卸下荣誉勋章
-     *
+     * <b>summary</b> : 
+     * <p>佩戴/卸下荣誉勋章</p>
+     * 
      * @param request WearOrgHonorRequest
      * @return WearOrgHonorResponse
      */

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetYongYouOpenApiTokenRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>50411123322</p>
      */
     @NameInMap("userId")
     public String userId;

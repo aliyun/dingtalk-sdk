@@ -4,48 +4,104 @@ package com.aliyun.dingtalkmanufacturing_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustrializeManufactureQueryJobsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("currentPage")
     public Integer currentPage;
 
+    /**
+     * <strong>example:</strong>
+     * <p>d41d8cd98f00b204e9800998ecf8427e</p>
+     */
     @NameInMap("instNo")
     public String instNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-07-05</p>
+     */
     @NameInMap("manufactureDay")
     public String manufactureDay;
 
+    /**
+     * <strong>example:</strong>
+     * <p>mes41d8cd98f00b204e9800998ecf8427e</p>
+     */
     @NameInMap("mesAppKey")
     public String mesAppKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
     @NameInMap("processName")
     public String processName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>A001</p>
+     */
     @NameInMap("productCode")
     public String productCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>双头螺柱001</p>
+     */
     @NameInMap("productName")
     public String productName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>M56<em>3</em>10501</p>
+     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("qualifiedQuantity")
     public String qualifiedQuantity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1.2</p>
+     */
     @NameInMap("unitPrice")
     public String unitPrice;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1919442747879773</p>
+     */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>111,222</p>
+     */
     @NameInMap("userIdList")
     public String userIdList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>张三</p>
+     */
     @NameInMap("userName")
     public String userName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>d41d8cd98f00b204e9800998ecf8427e</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

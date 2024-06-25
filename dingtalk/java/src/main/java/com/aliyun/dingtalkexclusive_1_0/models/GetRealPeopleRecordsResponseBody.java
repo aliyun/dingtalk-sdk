@@ -7,9 +7,17 @@ public class GetRealPeopleRecordsResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetRealPeopleRecordsResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("total")
     public Integer total;
 
@@ -43,21 +51,45 @@ public class GetRealPeopleRecordsResponseBody extends TeaModel {
     }
 
     public static class GetRealPeopleRecordsResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>agentId</p>
+         */
         @NameInMap("agentId")
         public Long agentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>166700000</p>
+         */
         @NameInMap("invokeTime")
         public Long invokeTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("personIdentification")
         public Integer personIdentification;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("platform")
         public Integer platform;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("scene")
         public Integer scene;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234</p>
+         */
         @NameInMap("userId")
         public String userId;
 

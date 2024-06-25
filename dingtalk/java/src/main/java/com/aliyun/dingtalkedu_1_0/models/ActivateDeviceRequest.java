@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class ActivateDeviceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fafdfa-rewerwr-rewew-rwe</p>
      */
     @NameInMap("licenseKey")
     public String licenseKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>model1</p>
      */
     @NameInMap("model")
     public String model;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>三年级一班班牌</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ujoo-233</p>
      */
     @NameInMap("sn")
     public String sn;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>VIDEO_CALL</p>
      */
     @NameInMap("type")
     public String type;

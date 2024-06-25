@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CustomizeContactUpdateRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>alt-contact:MjkwMDAa</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class CustomizeContactUpdateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>A项目通讯录</p>
      */
     @NameInMap("name")
     public String name;

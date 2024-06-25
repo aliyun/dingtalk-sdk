@@ -6,15 +6,25 @@ import com.aliyun.tea.*;
 public class UpdateMiniAppVersionStatusRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>500000003</p>
      */
     @NameInMap("miniAppId")
     public String miniAppId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0.0.5</p>
+     */
     @NameInMap("version")
     public String version;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0-开发版，1-灰度版，2-发布版，3-体验版</p>
      */
     @NameInMap("versionType")
     public Integer versionType;

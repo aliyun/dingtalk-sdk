@@ -9,6 +9,9 @@ public class GetEventDataRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>819e50d7c32e9096</p>
      */
     @NameInMap("eventUid")
     public String eventUid;

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryCorpPointsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>042216842933</p>
      */
     @NameInMap("optUserId")
     public String optUserId;

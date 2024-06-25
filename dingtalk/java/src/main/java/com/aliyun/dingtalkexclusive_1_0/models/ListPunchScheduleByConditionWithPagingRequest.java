@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class ListPunchScheduleByConditionWithPagingRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2aa6736c715944329xxxxxxxxd38be41</p>
      */
     @NameInMap("bizInstanceId")
     public String bizInstanceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
@@ -22,9 +28,17 @@ public class ListPunchScheduleByConditionWithPagingRequest extends TeaModel {
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-03-13</p>
+     */
     @NameInMap("scheduleDateEnd")
     public String scheduleDateEnd;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-03-13</p>
+     */
     @NameInMap("scheduleDateStart")
     public String scheduleDateStart;
 

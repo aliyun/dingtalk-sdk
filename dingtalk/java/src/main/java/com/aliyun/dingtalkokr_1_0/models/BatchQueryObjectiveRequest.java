@@ -12,24 +12,41 @@ public class BatchQueryObjectiveRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10056</p>
      */
     @NameInMap("periodId")
     public String periodId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("withAlign")
     public Boolean withAlign;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("withKr")
     public Boolean withKr;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("withProgress")
     public Boolean withProgress;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0115396701752283</p>
      */
     @NameInMap("userId")
     public String userId;

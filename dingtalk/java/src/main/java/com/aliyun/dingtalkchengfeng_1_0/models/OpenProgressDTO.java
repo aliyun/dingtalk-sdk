@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class OpenProgressDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>48383883</p>
      */
     @NameInMap("created")
     public Long created;
@@ -18,12 +21,18 @@ public class OpenProgressDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>我的目标</p>
      */
     @NameInMap("htmlContent")
     public String htmlContent;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>11</p>
      */
     @NameInMap("id")
     public String id;
@@ -36,6 +45,9 @@ public class OpenProgressDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>48383883</p>
      */
     @NameInMap("updated")
     public Long updated;

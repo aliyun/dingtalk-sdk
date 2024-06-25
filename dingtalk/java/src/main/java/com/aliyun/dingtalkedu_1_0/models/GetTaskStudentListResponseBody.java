@@ -4,12 +4,20 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTaskStudentListResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2000</p>
+     */
     @NameInMap("count")
     public Long count;
 
     @NameInMap("studentList")
     public java.util.List<GetTaskStudentListResponseBodyStudentList> studentList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>4240028</p>
+     */
     @NameInMap("taskId")
     public Long taskId;
 
@@ -43,12 +51,24 @@ public class GetTaskStudentListResponseBody extends TeaModel {
     }
 
     public static class GetTaskStudentListResponseBodyStudentList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>F</p>
+         */
         @NameInMap("sexuality")
         public String sexuality;
 
+        /**
+         * <strong>example:</strong>
+         * <p>675656</p>
+         */
         @NameInMap("studentId")
         public Long studentId;
 

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetEnvironmentalPenaltiesResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>[     {       &quot;DEPARTMENT&quot;: &quot;xx&quot;,       &quot;ENT_NAME&quot;: &quot;xx&quot;,       &quot;EXEC_STATUS&quot;: &quot;xx&quot;,       &quot;PUNISH_BASIS&quot;: &quot;xx&quot;,       &quot;PUNISH_CONTENT&quot;: &quot;xx&quot;,       &quot;PUNISH_LAW&quot;: &quot;xx&quot;,       &quot;PUNISH_NUM&quot;: &quot;xx&quot;,       &quot;PUNISH_RES&quot;: &quot;xx&quot;,       &quot;PUNISH_DATE&quot;: &quot;xx&quot;      }   ]</p>
+     */
     @NameInMap("data")
     public String data;
 

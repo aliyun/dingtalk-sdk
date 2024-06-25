@@ -12,6 +12,9 @@ public class QueryPhysicalClassroomResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -38,27 +41,54 @@ public class QueryPhysicalClassroomResponseBody extends TeaModel {
     }
 
     public static class QueryPhysicalClassroomResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>主楼</p>
+         */
         @NameInMap("classroomBuilding")
         public String classroomBuilding;
 
+        /**
+         * <strong>example:</strong>
+         * <p>主校区</p>
+         */
         @NameInMap("classroomCampus")
         public String classroomCampus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3层</p>
+         */
         @NameInMap("classroomFloor")
         public String classroomFloor;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10001</p>
          */
         @NameInMap("classroomId")
         public Long classroomId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>实验教室</p>
+         */
         @NameInMap("classroomName")
         public String classroomName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>301</p>
+         */
         @NameInMap("classroomNumber")
         public String classroomNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Y</p>
+         */
         @NameInMap("directBroadcast")
         public String directBroadcast;
 

@@ -32,21 +32,45 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
     }
 
     public static class GetTravelProcessDetailResponseBodyResultExtFormComponent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;&quot;</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <strong>example:</strong>
+         * <p>MoneyField</p>
+         */
         @NameInMap("componentType")
         public String componentType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;{&quot;upper&quot;:&quot;玖元玖角玖分&quot;,&quot;componentName&quot;:&quot;MoneyField&quot;}&quot;</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>MoneyField_18PDM5K773FK0</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>预估金额</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>9.99</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -106,18 +130,38 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
     }
 
     public static class GetTravelProcessDetailResponseBodyResultJourneysArrival extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>TSN</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>CN</p>
+         */
         @NameInMap("countryCode")
         public String countryCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>中国</p>
+         */
         @NameInMap("countryName")
         public String countryName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>天津市</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>120000</p>
+         */
         @NameInMap("nationalCityCode")
         public String nationalCityCode;
 
@@ -169,18 +213,38 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
     }
 
     public static class GetTravelProcessDetailResponseBodyResultJourneysDeparture extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>BJK</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>CN</p>
+         */
         @NameInMap("countryCode")
         public String countryCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>中国</p>
+         */
         @NameInMap("countryName")
         public String countryName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>北京市</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>110000</p>
+         */
         @NameInMap("nationalCityCode")
         public String nationalCityCode;
 
@@ -235,57 +299,125 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         @NameInMap("arrival")
         public GetTravelProcessDetailResponseBodyResultJourneysArrival arrival;
 
+        /**
+         * <strong>example:</strong>
+         * <p>成本中心一</p>
+         */
         @NameInMap("costCenter")
         public String costCenter;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("costCenterId")
         public String costCenterId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>c00001</p>
+         */
         @NameInMap("costCenterThirdPartyId")
         public String costCenterThirdPartyId;
 
         @NameInMap("departure")
         public GetTravelProcessDetailResponseBodyResultJourneysDeparture departure;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-10-25</p>
+         */
         @NameInMap("endTime")
         public String endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2024-03-12 10:54:00</p>
+         */
         @NameInMap("endTimeAcc")
         public String endTimeAcc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>发票抬头一</p>
+         */
         @NameInMap("invoiceTitle")
         public String invoiceTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("invoiceTitleId")
         public String invoiceTitleId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>i0001</p>
+         */
         @NameInMap("invoiceTitleThirdPartyId")
         public String invoiceTitleThirdPartyId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>费用归属项目一</p>
+         */
         @NameInMap("itineraryProject")
         public String itineraryProject;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("itineraryProjectId")
         public String itineraryProjectId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>y00001</p>
+         */
         @NameInMap("itineraryProjectThirdPartyId")
         public String itineraryProjectThirdPartyId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123455xxxxxxxx</p>
+         */
         @NameInMap("journeyBizNo")
         public String journeyBizNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-10-20</p>
+         */
         @NameInMap("startTime")
         public String startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2024-03-12 10:54:00</p>
+         */
         @NameInMap("startTimeAcc")
         public String startTimeAcc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>天</p>
+         */
         @NameInMap("timeUnit")
         public String timeUnit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>飞机</p>
+         */
         @NameInMap("travelType")
         public String travelType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>单程</p>
+         */
         @NameInMap("tripWay")
         public String tripWay;
 
@@ -449,81 +581,173 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
     }
 
     public static class GetTravelProcessDetailResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>alitrip.business</p>
+         */
         @NameInMap("bizCategoryId")
         public String bizCategoryId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>202310231720000276784</p>
+         */
         @NameInMap("businessId")
         public String businessId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding123456xxxx</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>it成本中心</p>
+         */
         @NameInMap("costCenter")
         public String costCenter;
 
+        /**
+         * <strong>example:</strong>
+         * <p>成本中心id</p>
+         */
         @NameInMap("costCenterId")
         public String costCenterId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>c00001</p>
+         */
         @NameInMap("costCenterThirdPartyId")
         public String costCenterThirdPartyId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2024-03-18 17:07:00</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
         @NameInMap("extFormComponent")
         public java.util.List<GetTravelProcessDetailResponseBodyResultExtFormComponent> extFormComponent;
 
+        /**
+         * <strong>example:</strong>
+         * <p>部门费用</p>
+         */
         @NameInMap("feeType")
         public String feeType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>发票抬头</p>
+         */
         @NameInMap("invoiceTitle")
         public String invoiceTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>发票抬头id</p>
+         */
         @NameInMap("invoiceTitleId")
         public String invoiceTitleId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>i0001</p>
+         */
         @NameInMap("invoiceTitleThirdPartyId")
         public String invoiceTitleThirdPartyId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>电商对接项目</p>
+         */
         @NameInMap("itineraryProject")
         public String itineraryProject;
 
+        /**
+         * <strong>example:</strong>
+         * <p>y00001</p>
+         */
         @NameInMap("itineraryProjectThirdPartyId")
         public String itineraryProjectThirdPartyId;
 
         @NameInMap("journeys")
         public java.util.List<GetTravelProcessDetailResponseBodyResultJourneys> journeys;
 
+        /**
+         * <strong>example:</strong>
+         * <p>AG3WERxWRFex63xxxxx</p>
+         */
         @NameInMap("mainProcessInstanceId")
         public String mainProcessInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>坐飞机出差</p>
+         */
         @NameInMap("memo")
         public String memo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>staffidxxxxx</p>
+         */
         @NameInMap("originatorId")
         public String originatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>staffIdxyy</p>
+         */
         @NameInMap("originatorIdOnBehalf")
         public String originatorIdOnBehalf;
 
+        /**
+         * <strong>example:</strong>
+         * <p>AG3U12xWRFex63hxxxxx</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>agree</p>
+         */
         @NameInMap("processResult")
         public String processResult;
 
+        /**
+         * <strong>example:</strong>
+         * <p>COMPLETED</p>
+         */
         @NameInMap("processStatus")
         public String processStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>因公出差</p>
+         */
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <strong>example:</strong>
+         * <p>费用归属部门</p>
+         */
         @NameInMap("travelCategory")
         public String travelCategory;
 
         @NameInMap("travelers")
         public java.util.List<String> travelers;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("tripDays")
         public String tripDays;
 

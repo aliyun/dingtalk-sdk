@@ -4,12 +4,24 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterAccountsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>hexaaaa</p>
+     */
     @NameInMap("accessKey")
     public String accessKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>acc-1732245789</p>
+     */
     @NameInMap("activeCode")
     public String activeCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding123</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 

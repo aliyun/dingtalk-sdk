@@ -6,16 +6,29 @@ import com.aliyun.tea.*;
 public class DeductionPointBatchRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10000</p>
      */
     @NameInMap("deductionAmount")
     public Long deductionAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>表现不佳，以此惩罚。</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
      */
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <strong>example:</strong>
+     * <p>组织文化通知扣减原因</p>
+     */
     @NameInMap("sendOrgCultureInform")
     public Boolean sendOrgCultureInform;
 
@@ -27,6 +40,9 @@ public class DeductionPointBatchRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>01274411491620908910</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -79,12 +95,18 @@ public class DeductionPointBatchRequest extends TeaModel {
     public static class DeductionPointBatchRequestTargetUserList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>232344342</p>
          */
         @NameInMap("outId")
         public String outId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>01274411491620908910</p>
          */
         @NameInMap("targetUserId")
         public String targetUserId;

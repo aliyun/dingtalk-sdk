@@ -41,6 +41,9 @@ public class ListSubCorpsResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>149 区县，148 乡镇街道，145 村， 150 社区， 151 小区</p>
          */
         @NameInMap("industryCode")
         public Integer industryCode;
@@ -48,6 +51,10 @@ public class ListSubCorpsResponseBody extends TeaModel {
         @NameInMap("regionId")
         public String regionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>浙江省_杭州市_余杭区_仓前街道</p>
+         */
         @NameInMap("regionLocation")
         public String regionLocation;
 

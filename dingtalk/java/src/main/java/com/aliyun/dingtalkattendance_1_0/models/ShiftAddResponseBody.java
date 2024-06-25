@@ -32,9 +32,17 @@ public class ShiftAddResponseBody extends TeaModel {
     }
 
     public static class ShiftAddResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>白班</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1111</p>
+         */
         @NameInMap("shiftId")
         public Long shiftId;
 

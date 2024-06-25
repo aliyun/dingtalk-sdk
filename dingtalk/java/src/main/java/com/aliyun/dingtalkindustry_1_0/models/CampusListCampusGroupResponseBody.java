@@ -21,12 +21,24 @@ public class CampusListCampusGroupResponseBody extends TeaModel {
     }
 
     public static class CampusListCampusGroupResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>扩展</p>
+         */
         @NameInMap("extend")
         public String extend;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10101</p>
+         */
         @NameInMap("groupDeptId")
         public Long groupDeptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试项目组</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 

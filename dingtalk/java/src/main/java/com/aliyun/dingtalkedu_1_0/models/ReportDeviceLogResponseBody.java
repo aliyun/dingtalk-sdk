@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ReportDeviceLogResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>失败false，成功true。</p>
      */
     @NameInMap("success")
     public Boolean success;

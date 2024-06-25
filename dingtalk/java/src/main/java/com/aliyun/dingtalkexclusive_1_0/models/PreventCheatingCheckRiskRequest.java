@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class PreventCheatingCheckRiskRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6.3.30</p>
      */
     @NameInMap("clientVer")
     public String clientVer;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>iOS</p>
      */
     @NameInMap("platform")
     public String platform;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>15</p>
      */
     @NameInMap("platformVer")
     public String platformVer;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;lbsWuaToken&quot;: &quot;lbsWua&quot;,&quot;ddSec&quot;:&quot;ddSec&quot;}</p>
      */
     @NameInMap("sec")
     public String sec;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user1</p>
      */
     @NameInMap("userId")
     public String userId;

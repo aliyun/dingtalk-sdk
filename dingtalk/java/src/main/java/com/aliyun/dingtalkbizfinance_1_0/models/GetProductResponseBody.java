@@ -7,24 +7,52 @@ public class GetProductResponseBody extends TeaModel {
     @NameInMap("accountantBookIdList")
     public java.util.List<String> accountantBookIdList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>PROD-xxx</p>
+     */
     @NameInMap("code")
     public String code;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1634786828686</p>
+     */
     @NameInMap("createTime")
     public Long createTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>和外部合作</p>
+     */
     @NameInMap("description")
     public String description;
 
+    /**
+     * <strong>example:</strong>
+     * <p>外包商品</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>规格型号</p>
+     */
     @NameInMap("specification")
     public String specification;
 
+    /**
+     * <strong>example:</strong>
+     * <p>valid</p>
+     */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <strong>example:</strong>
+     * <p>个</p>
+     */
     @NameInMap("unit")
     public String unit;
 

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListMiniAppAvailableVersionRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>5000003</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
@@ -15,6 +19,9 @@ public class ListMiniAppAvailableVersionRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("pageSize")
     public Integer pageSize;

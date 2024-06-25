@@ -6,11 +6,10 @@ import com.aliyun.dingtalkattendance_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 添加假期规则
-     *
+     * <b>summary</b> : 
+     * <p>添加假期规则</p>
+     * 
      * @param request AddLeaveTypeRequest
      * @param headers AddLeaveTypeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -132,8 +132,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加假期规则
-     *
+     * <b>summary</b> : 
+     * <p>添加假期规则</p>
+     * 
      * @param request AddLeaveTypeRequest
      * @return AddLeaveTypeResponse
      */
@@ -144,8 +145,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量给考勤组添加蓝牙设备
-     *
+     * <b>summary</b> : 
+     * <p>批量给考勤组添加蓝牙设备</p>
+     * 
      * @param request AttendanceBleDevicesAddRequest
      * @param headers AttendanceBleDevicesAddHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -194,8 +196,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量给考勤组添加蓝牙设备
-     *
+     * <b>summary</b> : 
+     * <p>批量给考勤组添加蓝牙设备</p>
+     * 
      * @param request AttendanceBleDevicesAddRequest
      * @return AttendanceBleDevicesAddResponse
      */
@@ -206,8 +209,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询蓝牙设备
-     *
+     * <b>summary</b> : 
+     * <p>批量查询蓝牙设备</p>
+     * 
      * @param request AttendanceBleDevicesQueryRequest
      * @param headers AttendanceBleDevicesQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -252,8 +256,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询蓝牙设备
-     *
+     * <b>summary</b> : 
+     * <p>批量查询蓝牙设备</p>
+     * 
      * @param request AttendanceBleDevicesQueryRequest
      * @return AttendanceBleDevicesQueryResponse
      */
@@ -264,8 +269,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量删除考勤组的蓝牙设备
-     *
+     * <b>summary</b> : 
+     * <p>批量删除考勤组的蓝牙设备</p>
+     * 
      * @param request AttendanceBleDevicesRemoveRequest
      * @param headers AttendanceBleDevicesRemoveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -314,8 +320,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量删除考勤组的蓝牙设备
-     *
+     * <b>summary</b> : 
+     * <p>批量删除考勤组的蓝牙设备</p>
+     * 
      * @param request AttendanceBleDevicesRemoveRequest
      * @return AttendanceBleDevicesRemoveResponse
      */
@@ -326,8 +333,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量修改考勤结果
-     *
+     * <b>summary</b> : 
+     * <p>批量修改考勤结果</p>
+     * 
      * @param request BatchBossCheckRequest
      * @param headers BatchBossCheckHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -374,8 +382,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量修改考勤结果
-     *
+     * <b>summary</b> : 
+     * <p>批量修改考勤结果</p>
+     * 
      * @param request BatchBossCheckRequest
      * @return BatchBossCheckResponse
      */
@@ -386,8 +395,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 预计算时长
-     *
+     * <b>summary</b> : 
+     * <p>预计算时长</p>
+     * 
      * @param request CalculateDurationRequest
      * @param headers CalculateDurationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -454,8 +464,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 预计算时长
-     *
+     * <b>summary</b> : 
+     * <p>预计算时长</p>
+     * 
      * @param request CalculateDurationRequest
      * @return CalculateDurationResponse
      */
@@ -466,8 +477,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 针对某些员工某段时间内封账状态的查询
-     *
+     * <b>summary</b> : 
+     * <p>针对某些员工某段时间内封账状态的查询</p>
+     * 
      * @param request CheckClosingAccountRequest
      * @param headers CheckClosingAccountHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -516,8 +528,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 针对某些员工某段时间内封账状态的查询
-     *
+     * <b>summary</b> : 
+     * <p>针对某些员工某段时间内封账状态的查询</p>
+     * 
      * @param request CheckClosingAccountRequest
      * @return CheckClosingAccountResponse
      */
@@ -528,8 +541,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 考勤资源的写权限查询
-     *
+     * <b>summary</b> : 
+     * <p>考勤资源的写权限查询</p>
+     * 
      * @param request CheckWritePermissionRequest
      * @param headers CheckWritePermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -582,8 +596,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 考勤资源的写权限查询
-     *
+     * <b>summary</b> : 
+     * <p>考勤资源的写权限查询</p>
+     * 
      * @param request CheckWritePermissionRequest
      * @return CheckWritePermissionResponse
      */
@@ -594,8 +609,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建考勤打卡审批单
-     *
+     * <b>summary</b> : 
+     * <p>创建考勤打卡审批单</p>
+     * 
      * @param request CreateApproveRequest
      * @param headers CreateApproveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -656,8 +672,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建考勤打卡审批单
-     *
+     * <b>summary</b> : 
+     * <p>创建考勤打卡审批单</p>
+     * 
      * @param request CreateApproveRequest
      * @return CreateApproveResponse
      */
@@ -668,8 +685,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤销请假
-     *
+     * <b>summary</b> : 
+     * <p>撤销请假</p>
+     * 
      * @param request DeleteLeaveRequestRequest
      * @param headers DeleteLeaveRequestHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -710,8 +728,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤销请假
-     *
+     * <b>summary</b> : 
+     * <p>撤销请假</p>
+     * 
      * @param request DeleteLeaveRequestRequest
      * @return DeleteLeaveRequestResponse
      */
@@ -722,8 +741,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除水印模板
-     *
+     * <b>summary</b> : 
+     * <p>删除水印模板</p>
+     * 
      * @param request DeleteWaterMarkTemplateRequest
      * @param headers DeleteWaterMarkTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -780,8 +800,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除水印模板
-     *
+     * <b>summary</b> : 
+     * <p>删除水印模板</p>
+     * 
      * @param request DeleteWaterMarkTemplateRequest
      * @return DeleteWaterMarkTemplateResponse
      */
@@ -792,8 +813,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉钉安全检查
-     *
+     * <b>summary</b> : 
+     * <p>钉钉安全检查</p>
+     * 
      * @param request DingTalkSecurityCheckRequest
      * @param headers DingTalkSecurityCheckHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -850,8 +872,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉钉安全检查
-     *
+     * <b>summary</b> : 
+     * <p>钉钉安全检查</p>
+     * 
      * @param request DingTalkSecurityCheckRequest
      * @return DingTalkSecurityCheckResponse
      */
@@ -862,8 +885,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询管理员管理范围下的userid
-     *
+     * <b>summary</b> : 
+     * <p>查询管理员管理范围下的userid</p>
+     * 
      * @param request GetATManageScopeRequest
      * @param headers GetATManageScopeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -912,8 +936,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询管理员管理范围下的userid
-     *
+     * <b>summary</b> : 
+     * <p>查询管理员管理范围下的userid</p>
+     * 
      * @param request GetATManageScopeRequest
      * @return GetATManageScopeResponse
      */
@@ -924,8 +949,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取补卡规则列表
-     *
+     * <b>summary</b> : 
+     * <p>获取补卡规则列表</p>
+     * 
      * @param request GetAdjustmentsRequest
      * @param headers GetAdjustmentsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -970,8 +996,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取补卡规则列表
-     *
+     * <b>summary</b> : 
+     * <p>获取补卡规则列表</p>
+     * 
      * @param request GetAdjustmentsRequest
      * @return GetAdjustmentsResponse
      */
@@ -982,8 +1009,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取水印打卡模板
-     *
+     * <b>summary</b> : 
+     * <p>获取水印打卡模板</p>
+     * 
      * @param request GetCheckInSchemaTemplateRequest
      * @param headers GetCheckInSchemaTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1036,8 +1064,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取水印打卡模板
-     *
+     * <b>summary</b> : 
+     * <p>获取水印打卡模板</p>
+     * 
      * @param request GetCheckInSchemaTemplateRequest
      * @return GetCheckInSchemaTemplateResponse
      */
@@ -1048,8 +1077,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 调用本接口，获取用户签到记录。
-     *
+     * <b>summary</b> : 
+     * <p>调用本接口，获取用户签到记录。</p>
+     * 
      * @param request GetCheckinRecordByUserRequest
      * @param headers GetCheckinRecordByUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1110,8 +1140,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 调用本接口，获取用户签到记录。
-     *
+     * <b>summary</b> : 
+     * <p>调用本接口，获取用户签到记录。</p>
+     * 
      * @param request GetCheckinRecordByUserRequest
      * @return GetCheckinRecordByUserResponse
      */
@@ -1122,8 +1153,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 班次查询（包含已删除班次）
-     *
+     * <b>summary</b> : 
+     * <p>班次查询（包含已删除班次）</p>
+     * 
      * @param headers GetClassWithDeletedHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetClassWithDeletedResponse
@@ -1156,8 +1188,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 班次查询（包含已删除班次）
-     *
+     * <b>summary</b> : 
+     * <p>班次查询（包含已删除班次）</p>
      * @return GetClassWithDeletedResponse
      */
     public GetClassWithDeletedResponse getClassWithDeleted(String classId) throws Exception {
@@ -1167,8 +1199,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询指定用户的封账规则
-     *
+     * <b>summary</b> : 
+     * <p>查询指定用户的封账规则</p>
+     * 
      * @param request GetClosingAccountsRequest
      * @param headers GetClosingAccountsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1209,8 +1242,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询指定用户的封账规则
-     *
+     * <b>summary</b> : 
+     * <p>查询指定用户的封账规则</p>
+     * 
      * @param request GetClosingAccountsRequest
      * @return GetClosingAccountsResponse
      */
@@ -1221,8 +1255,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取多个用户的智能考勤报表的列值
-     *
+     * <b>summary</b> : 
+     * <p>获取多个用户的智能考勤报表的列值</p>
+     * 
      * @param request GetColumnvalsRequest
      * @param headers GetColumnvalsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1275,8 +1310,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取多个用户的智能考勤报表的列值
-     *
+     * <b>summary</b> : 
+     * <p>获取多个用户的智能考勤报表的列值</p>
+     * 
      * @param request GetColumnvalsRequest
      * @return GetColumnvalsResponse
      */
@@ -1287,8 +1323,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询员工假期余额变更记录
-     *
+     * <b>summary</b> : 
+     * <p>批量查询员工假期余额变更记录</p>
+     * 
      * @param request GetLeaveRecordsRequest
      * @param headers GetLeaveRecordsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1345,8 +1382,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询员工假期余额变更记录
-     *
+     * <b>summary</b> : 
+     * <p>批量查询员工假期余额变更记录</p>
+     * 
      * @param request GetLeaveRecordsRequest
      * @return GetLeaveRecordsResponse
      */
@@ -1357,8 +1395,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询假期规则列表
-     *
+     * <b>summary</b> : 
+     * <p>查询假期规则列表</p>
+     * 
      * @param request GetLeaveTypeRequest
      * @param headers GetLeaveTypeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1403,8 +1442,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询假期规则列表
-     *
+     * <b>summary</b> : 
+     * <p>查询假期规则列表</p>
+     * 
      * @param request GetLeaveTypeRequest
      * @return GetLeaveTypeResponse
      */
@@ -1415,8 +1455,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据设备id获取考勤机信息
-     *
+     * <b>summary</b> : 
+     * <p>根据设备id获取考勤机信息</p>
+     * 
      * @param headers GetMachineHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetMachineResponse
@@ -1449,8 +1490,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据设备id获取考勤机信息
-     *
+     * <b>summary</b> : 
+     * <p>根据设备id获取考勤机信息</p>
      * @return GetMachineResponse
      */
     public GetMachineResponse getMachine(String devId) throws Exception {
@@ -1460,8 +1501,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据设备id获取员工信息
-     *
+     * <b>summary</b> : 
+     * <p>根据设备id获取员工信息</p>
+     * 
      * @param request GetMachineUserRequest
      * @param headers GetMachineUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1506,8 +1548,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据设备id获取员工信息
-     *
+     * <b>summary</b> : 
+     * <p>根据设备id获取员工信息</p>
+     * 
      * @param request GetMachineUserRequest
      * @return GetMachineUserResponse
      */
@@ -1518,8 +1561,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取加班规则设置
-     *
+     * <b>summary</b> : 
+     * <p>批量获取加班规则设置</p>
+     * 
      * @param request GetOvertimeSettingRequest
      * @param headers GetOvertimeSettingHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1560,8 +1604,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取加班规则设置
-     *
+     * <b>summary</b> : 
+     * <p>批量获取加班规则设置</p>
+     * 
      * @param request GetOvertimeSettingRequest
      * @return GetOvertimeSettingResponse
      */
@@ -1572,8 +1617,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 班次详情
-     *
+     * <b>summary</b> : 
+     * <p>班次详情</p>
+     * 
      * @param request GetShiftRequest
      * @param headers GetShiftHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1618,8 +1664,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 班次详情
-     *
+     * <b>summary</b> : 
+     * <p>班次详情</p>
+     * 
      * @param request GetShiftRequest
      * @return GetShiftResponse
      */
@@ -1630,8 +1677,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取考勤组列表详情
-     *
+     * <b>summary</b> : 
+     * <p>获取考勤组列表详情</p>
+     * 
      * @param request GetSimpleGroupsRequest
      * @param headers GetSimpleGroupsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1676,8 +1724,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取考勤组列表详情
-     *
+     * <b>summary</b> : 
+     * <p>获取考勤组列表详情</p>
+     * 
      * @param request GetSimpleGroupsRequest
      * @return GetSimpleGroupsResponse
      */
@@ -1688,8 +1737,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 加班规则列表
-     *
+     * <b>summary</b> : 
+     * <p>加班规则列表</p>
+     * 
      * @param request GetSimpleOvertimeSettingRequest
      * @param headers GetSimpleOvertimeSettingHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1734,8 +1784,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 加班规则列表
-     *
+     * <b>summary</b> : 
+     * <p>加班规则列表</p>
+     * 
      * @param request GetSimpleOvertimeSettingRequest
      * @return GetSimpleOvertimeSettingResponse
      */
@@ -1746,8 +1797,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询员工某段时间的假期
-     *
+     * <b>summary</b> : 
+     * <p>查询员工某段时间的假期</p>
+     * 
      * @param request GetUserHolidaysRequest
      * @param headers GetUserHolidaysHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1796,8 +1848,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询员工某段时间的假期
-     *
+     * <b>summary</b> : 
+     * <p>查询员工某段时间的假期</p>
+     * 
      * @param request GetUserHolidaysRequest
      * @return GetUserHolidaysResponse
      */
@@ -1808,8 +1861,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建考勤组
-     *
+     * <b>summary</b> : 
+     * <p>创建考勤组</p>
+     * 
      * @param request GroupAddRequest
      * @param headers GroupAddHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2024,8 +2078,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建考勤组
-     *
+     * <b>summary</b> : 
+     * <p>创建考勤组</p>
+     * 
      * @param request GroupAddRequest
      * @return GroupAddResponse
      */
@@ -2036,8 +2091,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改考勤组
-     *
+     * <b>summary</b> : 
+     * <p>修改考勤组</p>
+     * 
      * @param request GroupUpdateRequest
      * @param headers GroupUpdateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2109,6 +2165,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.freeCheckTypeId)) {
             body.put("freeCheckTypeId", request.freeCheckTypeId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.freecheckDayStartMinOffset)) {
+            body.put("freecheckDayStartMinOffset", request.freecheckDayStartMinOffset);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.groupId)) {
@@ -2200,8 +2260,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改考勤组
-     *
+     * <b>summary</b> : 
+     * <p>修改考勤组</p>
+     * 
      * @param request GroupUpdateRequest
      * @return GroupUpdateResponse
      */
@@ -2212,8 +2273,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 生态系统假期初始化查询余额接口
-     *
+     * <b>summary</b> : 
+     * <p>生态系统假期初始化查询余额接口</p>
+     * 
      * @param request InitAndGetLeaveALlocationQuotasRequest
      * @param headers InitAndGetLeaveALlocationQuotasHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2262,8 +2324,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 生态系统假期初始化查询余额接口
-     *
+     * <b>summary</b> : 
+     * <p>生态系统假期初始化查询余额接口</p>
+     * 
      * @param request InitAndGetLeaveALlocationQuotasRequest
      * @return InitAndGetLeaveALlocationQuotasResponse
      */
@@ -2274,8 +2337,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户某段时间内同步到考勤的审批单信息
-     *
+     * <b>summary</b> : 
+     * <p>获取用户某段时间内同步到考勤的审批单信息</p>
+     * 
      * @param request ListApproveByUsersRequest
      * @param headers ListApproveByUsersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2328,8 +2392,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户某段时间内同步到考勤的审批单信息
-     *
+     * <b>summary</b> : 
+     * <p>获取用户某段时间内同步到考勤的审批单信息</p>
+     * 
      * @param request ListApproveByUsersRequest
      * @return ListApproveByUsersResponse
      */
@@ -2340,8 +2405,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改水印模板
-     *
+     * <b>summary</b> : 
+     * <p>修改水印模板</p>
+     * 
      * @param request ModifyWaterMarkTemplateRequest
      * @param headers ModifyWaterMarkTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2412,8 +2478,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改水印模板
-     *
+     * <b>summary</b> : 
+     * <p>修改水印模板</p>
+     * 
      * @param request ModifyWaterMarkTemplateRequest
      * @return ModifyWaterMarkTemplateResponse
      */
@@ -2424,8 +2491,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建考勤打卡审批单
-     *
+     * <b>summary</b> : 
+     * <p>创建考勤打卡审批单</p>
+     * 
      * @param request ProcessApproveCreateRequest
      * @param headers ProcessApproveCreateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2486,8 +2554,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建考勤打卡审批单
-     *
+     * <b>summary</b> : 
+     * <p>创建考勤打卡审批单</p>
+     * 
      * @param request ProcessApproveCreateRequest
      * @return ProcessApproveCreateResponse
      */
@@ -2498,8 +2567,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知审批通过
-     *
+     * <b>summary</b> : 
+     * <p>通知审批通过</p>
+     * 
      * @param request ProcessApproveFinishRequest
      * @param headers ProcessApproveFinishHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2570,8 +2640,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知审批通过
-     *
+     * <b>summary</b> : 
+     * <p>通知审批通过</p>
+     * 
      * @param request ProcessApproveFinishRequest
      * @return ProcessApproveFinishResponse
      */
@@ -2582,8 +2653,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 扣减员工假期余额
-     *
+     * <b>summary</b> : 
+     * <p>扣减员工假期余额</p>
+     * 
      * @param request ReduceQuotaWithLeaveRecordRequest
      * @param headers ReduceQuotaWithLeaveRecordHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2644,8 +2716,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 扣减员工假期余额
-     *
+     * <b>summary</b> : 
+     * <p>扣减员工假期余额</p>
+     * 
      * @param request ReduceQuotaWithLeaveRecordRequest
      * @return ReduceQuotaWithLeaveRecordResponse
      */
@@ -2656,8 +2729,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改假期规则来源
-     *
+     * <b>summary</b> : 
+     * <p>修改假期规则来源</p>
+     * 
      * @param request RetainLeaveTypesRequest
      * @param headers RetainLeaveTypesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2706,8 +2780,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改假期规则来源
-     *
+     * <b>summary</b> : 
+     * <p>修改假期规则来源</p>
+     * 
      * @param request RetainLeaveTypesRequest
      * @return RetainLeaveTypesResponse
      */
@@ -2718,8 +2793,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 提供给高级假期的试用订单回退
-     *
+     * <b>summary</b> : 
+     * <p>提供给高级假期的试用订单回退</p>
+     * 
      * @param request ReverseTrialAdvancedLeaveRequest
      * @param headers ReverseTrialAdvancedLeaveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2764,8 +2840,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 提供给高级假期的试用订单回退
-     *
+     * <b>summary</b> : 
+     * <p>提供给高级假期的试用订单回退</p>
+     * 
      * @param request ReverseTrialAdvancedLeaveRequest
      * @return ReverseTrialAdvancedLeaveResponse
      */
@@ -2776,8 +2853,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新增水印签到模板
-     *
+     * <b>summary</b> : 
+     * <p>新增水印签到模板</p>
+     * 
      * @param request SaveCustomWaterMarkTemplateRequest
      * @param headers SaveCustomWaterMarkTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2848,8 +2926,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新增水印签到模板
-     *
+     * <b>summary</b> : 
+     * <p>新增水印签到模板</p>
+     * 
      * @param request SaveCustomWaterMarkTemplateRequest
      * @return SaveCustomWaterMarkTemplateResponse
      */
@@ -2860,8 +2939,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建班次
-     *
+     * <b>summary</b> : 
+     * <p>创建班次</p>
+     * 
      * @param request ShiftAddRequest
      * @param headers ShiftAddHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2928,8 +3008,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建班次
-     *
+     * <b>summary</b> : 
+     * <p>创建班次</p>
+     * 
      * @param request ShiftAddRequest
      * @return ShiftAddResponse
      */
@@ -2940,8 +3021,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用于考勤排班附加信息，例如打卡位置，打卡wifi等
-     *
+     * <b>summary</b> : 
+     * <p>用于考勤排班附加信息，例如打卡位置，打卡wifi等</p>
+     * 
      * @param request SyncScheduleInfoRequest
      * @param headers SyncScheduleInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2986,8 +3068,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用于考勤排班附加信息，例如打卡位置，打卡wifi等
-     *
+     * <b>summary</b> : 
+     * <p>用于考勤排班附加信息，例如打卡位置，打卡wifi等</p>
+     * 
      * @param request SyncScheduleInfoRequest
      * @return SyncScheduleInfoResponse
      */
@@ -2998,8 +3081,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新假期规则
-     *
+     * <b>summary</b> : 
+     * <p>更新假期规则</p>
+     * 
      * @param request UpdateLeaveTypeRequest
      * @param headers UpdateLeaveTypeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3082,8 +3166,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新假期规则
-     *
+     * <b>summary</b> : 
+     * <p>更新假期规则</p>
+     * 
      * @param request UpdateLeaveTypeRequest
      * @return UpdateLeaveTypeResponse
      */

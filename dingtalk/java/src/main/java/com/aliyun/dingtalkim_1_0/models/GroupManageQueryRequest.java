@@ -4,33 +4,65 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupManageQueryRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1652183395772</p>
+     */
     @NameInMap("createdAfter")
     public Long createdAfter;
 
+    /**
+     * <strong>example:</strong>
+     * <p>53364321</p>
+     */
     @NameInMap("groupId")
     public String groupId;
 
     @NameInMap("groupMemberSamples")
     public java.util.List<String> groupMemberSamples;
 
+    /**
+     * <strong>example:</strong>
+     * <p>4122134</p>
+     */
     @NameInMap("groupOwner")
     public String groupOwner;
 
     @NameInMap("groupTitleKeywords")
     public java.util.List<String> groupTitleKeywords;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://h5.dingtalk.com/circle/healthCheckin.html?dtaction=os&corpId=ding91766asjkldhfkjklasdjkfjkhajksdjkfhjkla811&5fd5e=db2ed&cbdbhh=qwertyuiop">https://h5.dingtalk.com/circle/healthCheckin.html?dtaction=os&amp;corpId=ding91766asjkldhfkjklasdjkfjkhajksdjkfhjkla811&amp;5fd5e=db2ed&amp;cbdbhh=qwertyuiop</a></p>
+     */
     @NameInMap("groupUrl")
     public String groupUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("membersOver")
     public Integer membersOver;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidnvcxzklxv23jhkg412hj==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

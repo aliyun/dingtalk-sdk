@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class TranslateFileResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>fXrgPrvsNiZNa8RWis9Nk1SY</p>
+     */
     @NameInMap("jobId")
     public String jobId;
 

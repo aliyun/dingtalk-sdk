@@ -4,23 +4,41 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class DocInsertBlocksRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>block_id</p>
+     */
     @NameInMap("blockId")
     public String blockId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>element</p>
      */
     @NameInMap("element")
     public java.util.Map<String, ?> element;
 
+    /**
+     * <strong>example:</strong>
+     * <p>index</p>
+     */
     @NameInMap("index")
     public Integer index;
 
+    /**
+     * <strong>example:</strong>
+     * <p>where</p>
+     */
     @NameInMap("where")
     public String where;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

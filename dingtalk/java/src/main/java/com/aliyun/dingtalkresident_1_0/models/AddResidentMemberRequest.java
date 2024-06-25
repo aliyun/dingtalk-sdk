@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class AddResidentMemberRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>A栋</p>
      */
     @NameInMap("residentAddInfo")
     public AddResidentMemberRequestResidentAddInfo residentAddInfo;
@@ -26,28 +29,49 @@ public class AddResidentMemberRequest extends TeaModel {
     public static class AddResidentMemberRequestResidentAddInfo extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>11112</p>
          */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isPropertyOwner")
         public Boolean isPropertyOwner;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;startTime&quot;:1652358627106,&quot;endTime&quot;:1652445027106}</p>
+         */
         @NameInMap("memberDeptExtension")
         public java.util.Map<String, ?> memberDeptExtension;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>148********</p>
          */
         @NameInMap("mobile")
         public String mobile;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("relateType")
         public String relateType;
 

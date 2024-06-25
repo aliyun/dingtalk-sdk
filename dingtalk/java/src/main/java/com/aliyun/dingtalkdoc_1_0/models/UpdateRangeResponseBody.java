@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateRangeResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>a1_notation</p>
+     */
     @NameInMap("a1Notation")
     public String a1Notation;
 

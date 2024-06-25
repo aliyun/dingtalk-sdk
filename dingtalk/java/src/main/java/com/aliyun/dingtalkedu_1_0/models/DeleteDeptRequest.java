@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DeleteDeptRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager1234</p>
      */
     @NameInMap("operator")
     public String operator;

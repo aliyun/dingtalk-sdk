@@ -4,6 +4,10 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskContentRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>更改后的标题</p>
+     */
     @NameInMap("content")
     public String content;
 

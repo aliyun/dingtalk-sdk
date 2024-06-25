@@ -7,26 +7,43 @@ public class SyncBusinessSignInfoRequest extends TeaModel {
     @NameInMap("bizTypeList")
     public java.util.List<String> bizTypeList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1661927020219</p>
+     */
     @NameInMap("gmtOrgPay")
     public String gmtOrgPay;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1661927020219</p>
+     */
     @NameInMap("gmtSign")
     public String gmtSign;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ORG_PAY</p>
      */
     @NameInMap("orgPayStatus")
     public String orgPayStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SIGN</p>
      */
     @NameInMap("signStatus")
     public String signStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding89233847892ndkas</p>
      */
     @NameInMap("targetCorpId")
     public String targetCorpId;
@@ -107,6 +124,10 @@ public class SyncBusinessSignInfoRequest extends TeaModel {
     }
 
     public static class SyncBusinessSignInfoRequestTmcProductDetailList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1661927020219</p>
+         */
         @NameInMap("gmtOrgPay")
         public String gmtOrgPay;
 
@@ -154,6 +175,10 @@ public class SyncBusinessSignInfoRequest extends TeaModel {
         @NameInMap("categoryType")
         public String categoryType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1661927020219</p>
+         */
         @NameInMap("gmtOrgPay")
         public String gmtOrgPay;
 

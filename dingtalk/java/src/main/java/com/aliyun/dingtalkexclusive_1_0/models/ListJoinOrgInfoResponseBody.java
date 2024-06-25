@@ -23,24 +23,36 @@ public class ListJoinOrgInfoResponseBody extends TeaModel {
     public static class ListJoinOrgInfoResponseBodyOrgInfoList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ding32xxxxxxxxe0105d</p>
          */
         @NameInMap("corpId")
         public String corpId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>testCode</p>
          */
         @NameInMap("domain")
         public String domain;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>钉钉(中国)信息技术有限公司</p>
          */
         @NameInMap("orgFullName")
         public String orgFullName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>钉钉</p>
          */
         @NameInMap("orgName")
         public Long orgName;

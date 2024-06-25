@@ -21,6 +21,10 @@ public class UnSuspendProjectResponseBody extends TeaModel {
     }
 
     public static class UnSuspendProjectResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-06-08T07:32:48.958Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

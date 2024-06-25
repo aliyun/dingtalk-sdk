@@ -9,6 +9,9 @@ public class CustomizeContactCreateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>A项目通讯录</p>
      */
     @NameInMap("name")
     public String name;

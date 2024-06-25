@@ -6,25 +6,42 @@ import com.aliyun.tea.*;
 public class TopicStatisticsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20220101</p>
      */
     @NameInMap("maxDt")
     public String maxDt;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20220101</p>
      */
     @NameInMap("minDt")
     public String minDt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidXX,cidYY</p>
+     */
     @NameInMap("openConversationIds")
     public String openConversationIds;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>KxisoOk</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>工单</p>
+     */
     @NameInMap("searchContent")
     public String searchContent;
 

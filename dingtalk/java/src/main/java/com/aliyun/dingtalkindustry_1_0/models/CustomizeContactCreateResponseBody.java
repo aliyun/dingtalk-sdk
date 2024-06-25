@@ -26,24 +26,36 @@ public class CustomizeContactCreateResponseBody extends TeaModel {
     public static class CustomizeContactCreateResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>alt:vndk1nd0</p>
          */
         @NameInMap("code")
         public String code;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>A项目通讯录</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("order")
         public Long order;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>78933133</p>
          */
         @NameInMap("rootDeptId")
         public Long rootDeptId;

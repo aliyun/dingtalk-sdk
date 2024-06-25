@@ -6,11 +6,10 @@ import com.aliyun.dingtalkbadge_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建钉工牌码用户实例
-     *
+     * <b>summary</b> : 
+     * <p>创建钉工牌码用户实例</p>
+     * 
      * @param request CreateBadgeCodeUserInstanceRequest
      * @param headers CreateBadgeCodeUserInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -102,8 +102,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建钉工牌码用户实例
-     *
+     * <b>summary</b> : 
+     * <p>创建钉工牌码用户实例</p>
+     * 
      * @param request CreateBadgeCodeUserInstanceRequest
      * @return CreateBadgeCodeUserInstanceResponse
      */
@@ -114,8 +115,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建钉工牌通知消息
-     *
+     * <b>summary</b> : 
+     * <p>创建钉工牌通知消息</p>
+     * 
      * @param request CreateBadgeNotifyRequest
      * @param headers CreateBadgeNotifyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -168,8 +170,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建钉工牌通知消息
-     *
+     * <b>summary</b> : 
+     * <p>创建钉工牌通知消息</p>
+     * 
      * @param request CreateBadgeNotifyRequest
      * @return CreateBadgeNotifyResponse
      */
@@ -180,8 +183,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉工牌解码
-     *
+     * <b>summary</b> : 
+     * <p>钉工牌解码</p>
+     * 
      * @param request DecodeBadgeCodeRequest
      * @param headers DecodeBadgeCodeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -226,8 +230,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉工牌解码
-     *
+     * <b>summary</b> : 
+     * <p>钉工牌解码</p>
+     * 
      * @param request DecodeBadgeCodeRequest
      * @return DecodeBadgeCodeResponse
      */
@@ -238,8 +243,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知钉工牌码付款结果
-     *
+     * <b>summary</b> : 
+     * <p>通知钉工牌码付款结果</p>
+     * 
      * @param request NotifyBadgeCodePayResultRequest
      * @param headers NotifyBadgeCodePayResultHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -344,8 +350,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知钉工牌码付款结果
-     *
+     * <b>summary</b> : 
+     * <p>通知钉工牌码付款结果</p>
+     * 
      * @param request NotifyBadgeCodePayResultRequest
      * @return NotifyBadgeCodePayResultResponse
      */
@@ -356,8 +363,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知钉工牌码退款结果
-     *
+     * <b>summary</b> : 
+     * <p>通知钉工牌码退款结果</p>
+     * 
      * @param request NotifyBadgeCodeRefundResultRequest
      * @param headers NotifyBadgeCodeRefundResultHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -434,8 +442,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知钉工牌码退款结果
-     *
+     * <b>summary</b> : 
+     * <p>通知钉工牌码退款结果</p>
+     * 
      * @param request NotifyBadgeCodeRefundResultRequest
      * @return NotifyBadgeCodeRefundResultResponse
      */
@@ -446,8 +455,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知钉工牌码验证结果
-     *
+     * <b>summary</b> : 
+     * <p>通知钉工牌码验证结果</p>
+     * 
      * @param request NotifyBadgeCodeVerifyResultRequest
      * @param headers NotifyBadgeCodeVerifyResultHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -524,8 +534,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通知钉工牌码验证结果
-     *
+     * <b>summary</b> : 
+     * <p>通知钉工牌码验证结果</p>
+     * 
      * @param request NotifyBadgeCodeVerifyResultRequest
      * @return NotifyBadgeCodeVerifyResultResponse
      */
@@ -536,8 +547,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 保存钉工牌企业实例
-     *
+     * <b>summary</b> : 
+     * <p>保存钉工牌企业实例</p>
+     * 
      * @param request SaveBadgeCodeCorpInstanceRequest
      * @param headers SaveBadgeCodeCorpInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -590,8 +602,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 保存钉工牌企业实例
-     *
+     * <b>summary</b> : 
+     * <p>保存钉工牌企业实例</p>
+     * 
      * @param request SaveBadgeCodeCorpInstanceRequest
      * @return SaveBadgeCodeCorpInstanceResponse
      */
@@ -602,8 +615,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新钉工牌码用户实例
-     *
+     * <b>summary</b> : 
+     * <p>更新钉工牌码用户实例</p>
+     * 
      * @param request UpdateBadgeCodeUserInstanceRequest
      * @param headers UpdateBadgeCodeUserInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -680,8 +694,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新钉工牌码用户实例
-     *
+     * <b>summary</b> : 
+     * <p>更新钉工牌码用户实例</p>
+     * 
      * @param request UpdateBadgeCodeUserInstanceRequest
      * @return UpdateBadgeCodeUserInstanceResponse
      */

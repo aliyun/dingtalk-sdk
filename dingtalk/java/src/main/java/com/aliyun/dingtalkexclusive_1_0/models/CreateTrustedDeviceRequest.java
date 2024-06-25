@@ -4,23 +4,41 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTrustedDeviceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>CV11z5d2bdbb2260d1576000b4a9955fa</p>
+     */
     @NameInMap("did")
     public String did;
 
+    /**
+     * <strong>example:</strong>
+     * <p>88:92:5a:1f:e8:24</p>
+     */
     @NameInMap("macAddress")
     public String macAddress;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Mac</p>
      */
     @NameInMap("platform")
     public String platform;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2</p>
+     */
     @NameInMap("status")
     public Integer status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>65224157501039784</p>
      */
     @NameInMap("userId")
     public String userId;

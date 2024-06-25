@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class ReportCustomerDetailResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("currentPage")
     public Long currentPage;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20</p>
      */
     @NameInMap("pageSize")
     public Long pageSize;
@@ -24,6 +30,9 @@ public class ReportCustomerDetailResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("totalCount")
     public Long totalCount;
@@ -68,48 +77,72 @@ public class ReportCustomerDetailResponseBody extends TeaModel {
     public static class ReportCustomerDetailResponseBodyRecords extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("atRobotCnt")
         public Long atRobotCnt;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("customerName")
         public String customerName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试群</p>
          */
         @NameInMap("groupName")
         public String groupName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("hasLogin")
         public Boolean hasLogin;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("hasOpenConv")
         public Boolean hasOpenConv;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2</p>
          */
         @NameInMap("sendMsgCnt")
         public Long sendMsgCnt;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>xcjlsdf</p>
          */
         @NameInMap("unionId")
         public String unionId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>56789</p>
          */
         @NameInMap("userId")
         public String userId;

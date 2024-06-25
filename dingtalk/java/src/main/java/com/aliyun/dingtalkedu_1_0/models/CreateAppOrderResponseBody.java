@@ -4,21 +4,45 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAppOrderResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("actualAmount")
     public Long actualAmount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("alipayAppId")
     public String alipayAppId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>alipay_sdk=alipay-sdk-java-dynamicVersionNo&amp;version=1.0</p>
+     */
     @NameInMap("body")
     public String body;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10000</p>
+     */
     @NameInMap("merchantId")
     public String merchantId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>M00001</p>
+     */
     @NameInMap("merchantOrderNo")
     public String merchantOrderNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CM0001</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 

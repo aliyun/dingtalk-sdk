@@ -6,11 +6,10 @@ import com.aliyun.dingtalkalitrip_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 同步第三方市内用车申请单
-     *
+     * <b>summary</b> : 
+     * <p>同步第三方市内用车申请单</p>
+     * 
      * @param request AddCityCarApplyRequest
      * @param headers AddCityCarApplyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -122,8 +122,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步第三方市内用车申请单
-     *
+     * <b>summary</b> : 
+     * <p>同步第三方市内用车申请单</p>
+     * 
      * @param request AddCityCarApplyRequest
      * @return AddCityCarApplyResponse
      */
@@ -134,8 +135,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方市内用车申请单审批
-     *
+     * <b>summary</b> : 
+     * <p>三方市内用车申请单审批</p>
+     * 
      * @param request ApproveCityCarApplyRequest
      * @param headers ApproveCityCarApplyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -196,8 +198,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方市内用车申请单审批
-     *
+     * <b>summary</b> : 
+     * <p>三方市内用车申请单审批</p>
+     * 
      * @param request ApproveCityCarApplyRequest
      * @return ApproveCityCarApplyResponse
      */
@@ -208,8 +211,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 商旅火车票结算记账查询接口
-     *
+     * <b>summary</b> : 
+     * <p>商旅火车票结算记账查询接口</p>
+     * 
      * @param request BillSettementBtripTrainRequest
      * @param headers BillSettementBtripTrainHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -270,8 +274,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 商旅火车票结算记账查询接口
-     *
+     * <b>summary</b> : 
+     * <p>商旅火车票结算记账查询接口</p>
+     * 
      * @param request BillSettementBtripTrainRequest
      * @return BillSettementBtripTrainResponse
      */
@@ -282,8 +287,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用车结算记账查询接口
-     *
+     * <b>summary</b> : 
+     * <p>用车结算记账查询接口</p>
+     * 
      * @param request BillSettementCarRequest
      * @param headers BillSettementCarHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -344,8 +350,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用车结算记账查询接口
-     *
+     * <b>summary</b> : 
+     * <p>用车结算记账查询接口</p>
+     * 
      * @param request BillSettementCarRequest
      * @return BillSettementCarResponse
      */
@@ -356,8 +363,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机票结算记账查询接口
-     *
+     * <b>summary</b> : 
+     * <p>机票结算记账查询接口</p>
+     * 
      * @param request BillSettementFlightRequest
      * @param headers BillSettementFlightHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -418,8 +426,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机票结算记账查询接口
-     *
+     * <b>summary</b> : 
+     * <p>机票结算记账查询接口</p>
+     * 
      * @param request BillSettementFlightRequest
      * @return BillSettementFlightResponse
      */
@@ -430,8 +439,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 酒店结算记账查询接口
-     *
+     * <b>summary</b> : 
+     * <p>酒店结算记账查询接口</p>
+     * 
      * @param request BillSettementHotelRequest
      * @param headers BillSettementHotelHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -492,8 +502,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 酒店结算记账查询接口
-     *
+     * <b>summary</b> : 
+     * <p>酒店结算记账查询接口</p>
+     * 
      * @param request BillSettementHotelRequest
      * @return BillSettementHotelResponse
      */
@@ -504,8 +515,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 商旅机票第三方超标审批单搜索接口
-     *
+     * <b>summary</b> : 
+     * <p>商旅机票第三方超标审批单搜索接口</p>
+     * 
      * @param request GetFlightExceedApplyRequest
      * @param headers GetFlightExceedApplyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -550,8 +562,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 商旅机票第三方超标审批单搜索接口
-     *
+     * <b>summary</b> : 
+     * <p>商旅机票第三方超标审批单搜索接口</p>
+     * 
      * @param request GetFlightExceedApplyRequest
      * @return GetFlightExceedApplyResponse
      */
@@ -562,8 +575,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索酒店超标审批单
-     *
+     * <b>summary</b> : 
+     * <p>搜索酒店超标审批单</p>
+     * 
      * @param request GetHotelExceedApplyRequest
      * @param headers GetHotelExceedApplyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -608,8 +622,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 搜索酒店超标审批单
-     *
+     * <b>summary</b> : 
+     * <p>搜索酒店超标审批单</p>
+     * 
      * @param request GetHotelExceedApplyRequest
      * @return GetHotelExceedApplyResponse
      */
@@ -620,8 +635,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 商旅火车票第三方超标审批单搜索接口
-     *
+     * <b>summary</b> : 
+     * <p>商旅火车票第三方超标审批单搜索接口</p>
+     * 
      * @param request GetTrainExceedApplyRequest
      * @param headers GetTrainExceedApplyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -666,8 +682,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 商旅火车票第三方超标审批单搜索接口
-     *
+     * <b>summary</b> : 
+     * <p>商旅火车票第三方超标审批单搜索接口</p>
+     * 
      * @param request GetTrainExceedApplyRequest
      * @return GetTrainExceedApplyResponse
      */
@@ -678,8 +695,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方市内用车申请单查询
-     *
+     * <b>summary</b> : 
+     * <p>三方市内用车申请单查询</p>
+     * 
      * @param request QueryCityCarApplyRequest
      * @param headers QueryCityCarApplyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -744,8 +762,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方市内用车申请单查询
-     *
+     * <b>summary</b> : 
+     * <p>三方市内用车申请单查询</p>
+     * 
      * @param request QueryCityCarApplyRequest
      * @return QueryCityCarApplyResponse
      */
@@ -756,8 +775,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 申请单关联单号查询相关订单信息
-     *
+     * <b>summary</b> : 
+     * <p>申请单关联单号查询相关订单信息</p>
+     * 
      * @param request QueryUnionOrderRequest
      * @param headers QueryUnionOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -806,8 +826,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 申请单关联单号查询相关订单信息
-     *
+     * <b>summary</b> : 
+     * <p>申请单关联单号查询相关订单信息</p>
+     * 
      * @param request QueryUnionOrderRequest
      * @return QueryUnionOrderResponse
      */
@@ -818,8 +839,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步超标审批结果
-     *
+     * <b>summary</b> : 
+     * <p>同步超标审批结果</p>
+     * 
      * @param request SyncExceedApplyRequest
      * @param headers SyncExceedApplyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -880,8 +902,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步超标审批结果
-     *
+     * <b>summary</b> : 
+     * <p>同步超标审批结果</p>
+     * 
      * @param request SyncExceedApplyRequest
      * @return SyncExceedApplyResponse
      */

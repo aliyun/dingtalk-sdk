@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class GetSubmitStatisticsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1507564800000</p>
      */
     @NameInMap("endTime")
     public Long endTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user123</p>
      */
     @NameInMap("operationUserId")
     public String operationUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("remindId")
     public Long remindId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1507564800000</p>
      */
     @NameInMap("startTime")
     public Long startTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>18xxxxx</p>
      */
     @NameInMap("templateId")
     public String templateId;

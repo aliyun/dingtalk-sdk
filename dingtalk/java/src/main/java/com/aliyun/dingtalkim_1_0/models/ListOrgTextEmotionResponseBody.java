@@ -32,21 +32,45 @@ public class ListOrgTextEmotionResponseBody extends TeaModel {
     }
 
     public static class ListOrgTextEmotionResponseBodyResultEmotions extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>@234xxx</p>
+         */
         @NameInMap("backgroundMediaId")
         public String backgroundMediaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@123xxx</p>
+         */
         @NameInMap("backgroundMediaIdForPanel")
         public String backgroundMediaIdForPanel;
 
+        /**
+         * <strong>example:</strong>
+         * <p>-1</p>
+         */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>corp_131xxx</p>
+         */
         @NameInMap("emotionId")
         public String emotionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>企业表情1</p>
+         */
         @NameInMap("emotionName")
         public String emotionName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("status")
         public Integer status;
 

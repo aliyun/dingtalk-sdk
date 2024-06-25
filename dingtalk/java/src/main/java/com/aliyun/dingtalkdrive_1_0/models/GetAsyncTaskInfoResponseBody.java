@@ -6,7 +6,6 @@ import com.aliyun.tea.*;
 public class GetAsyncTaskInfoResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
-     * <br>
      * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
      */
     @NameInMap("beginTime")
@@ -14,7 +13,6 @@ public class GetAsyncTaskInfoResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
-     * <br>
      * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
      */
     @NameInMap("endTime")

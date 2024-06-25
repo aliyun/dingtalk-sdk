@@ -4,9 +4,17 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupCapacityOrderConfirmRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>066224</p>
+     */
     @NameInMap("operator")
     public String operator;
 
+    /**
+     * <strong>example:</strong>
+     * <p>FAKE:0-28937rufhjdkslnawdkjsfk</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 

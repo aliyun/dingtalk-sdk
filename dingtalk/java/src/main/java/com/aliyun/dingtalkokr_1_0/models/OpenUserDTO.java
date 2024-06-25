@@ -4,15 +4,31 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenUserDTO extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>0342464558835299</p>
+     */
     @NameInMap("dingUserId")
     public String dingUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>小明</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>64cd2e9bb80efb17244c650d</p>
+     */
     @NameInMap("userUid")
     public String userUid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2639402752-1812711657</p>
+     */
     @NameInMap("workNo")
     public String workNo;
 

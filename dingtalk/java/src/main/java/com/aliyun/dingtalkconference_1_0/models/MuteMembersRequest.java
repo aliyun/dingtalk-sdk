@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class MuteMembersRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>mute</p>
      */
     @NameInMap("action")
     public String action;
@@ -38,11 +41,18 @@ public class MuteMembersRequest extends TeaModel {
     }
 
     public static class MuteMembersRequestUserList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>644272f14ba3311xxxxxxxxx</p>
+         */
         @NameInMap("participantId")
         public String participantId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>qzR1iSMDvzR9iP7Pxxxxxxxxxxxxxxx</p>
          */
         @NameInMap("unionId")
         public String unionId;

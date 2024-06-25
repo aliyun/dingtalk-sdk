@@ -6,11 +6,10 @@ import com.aliyun.dingtalkdatacenter_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建数据投递
-     *
+     * <b>summary</b> : 
+     * <p>创建数据投递</p>
+     * 
      * @param request CreateDataDeliverRequest
      * @param headers CreateDataDeliverHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -84,8 +84,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建数据投递
-     *
+     * <b>summary</b> : 
+     * <p>创建数据投递</p>
+     * 
      * @param request CreateDataDeliverRequest
      * @return CreateDataDeliverResponse
      */
@@ -96,8 +97,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工商-经营异常
-     *
+     * <b>summary</b> : 
+     * <p>工商-经营异常</p>
+     * 
      * @param request GetAbnormalOperationRequest
      * @param headers GetAbnormalOperationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -146,8 +148,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工商-经营异常
-     *
+     * <b>summary</b> : 
+     * <p>工商-经营异常</p>
+     * 
      * @param request GetAbnormalOperationRequest
      * @return GetAbnormalOperationResponse
      */
@@ -158,8 +161,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-行政许可
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-行政许可</p>
+     * 
      * @param request GetAdministrativeLicensingRequest
      * @param headers GetAdministrativeLicensingHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -208,8 +212,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-行政许可
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-行政许可</p>
+     * 
      * @param request GetAdministrativeLicensingRequest
      * @return GetAdministrativeLicensingResponse
      */
@@ -220,8 +225,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 负面-行政处罚
-     *
+     * <b>summary</b> : 
+     * <p>负面-行政处罚</p>
+     * 
      * @param request GetAdministrativePenaltiesRequest
      * @param headers GetAdministrativePenaltiesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -270,8 +276,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 负面-行政处罚
-     *
+     * <b>summary</b> : 
+     * <p>负面-行政处罚</p>
+     * 
      * @param request GetAdministrativePenaltiesRequest
      * @return GetAdministrativePenaltiesResponse
      */
@@ -282,8 +289,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工商-基础信息
-     *
+     * <b>summary</b> : 
+     * <p>工商-基础信息</p>
+     * 
      * @param request GetBasicInfoRequest
      * @param headers GetBasicInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -332,8 +340,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工商-基础信息
-     *
+     * <b>summary</b> : 
+     * <p>工商-基础信息</p>
+     * 
      * @param request GetBasicInfoRequest
      * @return GetBasicInfoResponse
      */
@@ -344,8 +353,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取经营-招投标信息
-     *
+     * <b>summary</b> : 
+     * <p>获取经营-招投标信息</p>
+     * 
      * @param request GetBiddingInfoRequest
      * @param headers GetBiddingInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -394,8 +404,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取经营-招投标信息
-     *
+     * <b>summary</b> : 
+     * <p>获取经营-招投标信息</p>
+     * 
      * @param request GetBiddingInfoRequest
      * @return GetBiddingInfoResponse
      */
@@ -406,8 +417,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-分支机构
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-分支机构</p>
+     * 
      * @param request GetBranchInfoRequest
      * @param headers GetBranchInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -456,8 +468,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-分支机构
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-分支机构</p>
+     * 
      * @param request GetBranchInfoRequest
      * @return GetBranchInfoResponse
      */
@@ -468,8 +481,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-变更记录
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-变更记录</p>
+     * 
      * @param request GetChangeRecordRequest
      * @param headers GetChangeRecordHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -518,8 +532,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-变更记录
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-变更记录</p>
+     * 
      * @param request GetChangeRecordRequest
      * @return GetChangeRecordResponse
      */
@@ -530,8 +545,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-域名信息
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-域名信息</p>
+     * 
      * @param request GetDomainInfoRequest
      * @param headers GetDomainInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -580,8 +596,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-域名信息
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-域名信息</p>
+     * 
      * @param request GetDomainInfoRequest
      * @return GetDomainInfoResponse
      */
@@ -592,8 +609,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-双随机抽查结果
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-双随机抽查结果</p>
+     * 
      * @param request GetDoubleRandomRequest
      * @param headers GetDoubleRandomHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -642,8 +660,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-双随机抽查结果
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-双随机抽查结果</p>
+     * 
      * @param request GetDoubleRandomRequest
      * @return GetDoubleRandomResponse
      */
@@ -654,8 +673,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 负面-环保处罚
-     *
+     * <b>summary</b> : 
+     * <p>负面-环保处罚</p>
+     * 
      * @param request GetEnvironmentalPenaltiesRequest
      * @param headers GetEnvironmentalPenaltiesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -704,8 +724,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 负面-环保处罚
-     *
+     * <b>summary</b> : 
+     * <p>负面-环保处罚</p>
+     * 
      * @param request GetEnvironmentalPenaltiesRequest
      * @return GetEnvironmentalPenaltiesResponse
      */
@@ -716,8 +737,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取事件订阅的数据
-     *
+     * <b>summary</b> : 
+     * <p>获取事件订阅的数据</p>
+     * 
      * @param request GetEventDataRequest
      * @param headers GetEventDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -766,8 +788,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取事件订阅的数据
-     *
+     * <b>summary</b> : 
+     * <p>获取事件订阅的数据</p>
+     * 
      * @param request GetEventDataRequest
      * @return GetEventDataResponse
      */
@@ -778,8 +801,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工商-股东信息
-     *
+     * <b>summary</b> : 
+     * <p>工商-股东信息</p>
+     * 
      * @param request GetHolderInfoRequest
      * @param headers GetHolderInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -828,8 +852,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 工商-股东信息
-     *
+     * <b>summary</b> : 
+     * <p>工商-股东信息</p>
+     * 
      * @param request GetHolderInfoRequest
      * @return GetHolderInfoResponse
      */
@@ -840,8 +865,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-知识产权出质
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-知识产权出质</p>
+     * 
      * @param request GetIntellectualPropertyRequest
      * @param headers GetIntellectualPropertyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -890,8 +916,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-知识产权出质
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-知识产权出质</p>
+     * 
      * @param request GetIntellectualPropertyRequest
      * @return GetIntellectualPropertyResponse
      */
@@ -902,8 +929,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-对外投资
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-对外投资</p>
+     * 
      * @param request GetInvestmentAbroadRequest
      * @param headers GetInvestmentAbroadHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -952,8 +980,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-对外投资
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-对外投资</p>
+     * 
      * @param request GetInvestmentAbroadRequest
      * @return GetInvestmentAbroadResponse
      */
@@ -964,8 +993,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取经营-招聘信息
-     *
+     * <b>summary</b> : 
+     * <p>获取经营-招聘信息</p>
+     * 
      * @param request GetJobInfoRequest
      * @param headers GetJobInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1014,8 +1044,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取经营-招聘信息
-     *
+     * <b>summary</b> : 
+     * <p>获取经营-招聘信息</p>
+     * 
      * @param request GetJobInfoRequest
      * @return GetJobInfoResponse
      */
@@ -1026,8 +1057,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-专利信息
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-专利信息</p>
+     * 
      * @param request GetPatentInfoRequest
      * @param headers GetPatentInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1076,8 +1108,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-专利信息
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-专利信息</p>
+     * 
      * @param request GetPatentInfoRequest
      * @return GetPatentInfoResponse
      */
@@ -1088,8 +1121,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-主要人员
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-主要人员</p>
+     * 
      * @param request GetPrincipalEmployeeRequest
      * @param headers GetPrincipalEmployeeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1138,8 +1172,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取工商-主要人员
-     *
+     * <b>summary</b> : 
+     * <p>获取工商-主要人员</p>
+     * 
      * @param request GetPrincipalEmployeeRequest
      * @return GetPrincipalEmployeeResponse
      */
@@ -1150,8 +1185,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 经营-一般纳税人
-     *
+     * <b>summary</b> : 
+     * <p>经营-一般纳税人</p>
+     * 
      * @param request GetQeneralTaxpayerInfoRequest
      * @param headers GetQeneralTaxpayerInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1200,8 +1236,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 经营-一般纳税人
-     *
+     * <b>summary</b> : 
+     * <p>经营-一般纳税人</p>
+     * 
      * @param request GetQeneralTaxpayerInfoRequest
      * @return GetQeneralTaxpayerInfoResponse
      */
@@ -1212,8 +1249,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-资质证书
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-资质证书</p>
+     * 
      * @param request GetQualificationCertRequest
      * @param headers GetQualificationCertHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1262,8 +1300,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-资质证书
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-资质证书</p>
+     * 
      * @param request GetQualificationCertRequest
      * @return GetQualificationCertResponse
      */
@@ -1274,8 +1313,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 负面-严重违法
-     *
+     * <b>summary</b> : 
+     * <p>负面-严重违法</p>
+     * 
      * @param request GetSeriousViolationRequest
      * @param headers GetSeriousViolationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1324,8 +1364,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 负面-严重违法
-     *
+     * <b>summary</b> : 
+     * <p>负面-严重违法</p>
+     * 
      * @param request GetSeriousViolationRequest
      * @return GetSeriousViolationResponse
      */
@@ -1336,8 +1377,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-软件著作权
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-软件著作权</p>
+     * 
      * @param request GetSoftwareCopyrightRequest
      * @param headers GetSoftwareCopyrightHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1386,8 +1428,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-软件著作权
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-软件著作权</p>
+     * 
      * @param request GetSoftwareCopyrightRequest
      * @return GetSoftwareCopyrightResponse
      */
@@ -1398,8 +1441,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-商标信息
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-商标信息</p>
+     * 
      * @param request GetTrademarkInfoRequest
      * @param headers GetTrademarkInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1448,8 +1492,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-商标信息
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-商标信息</p>
+     * 
      * @param request GetTrademarkInfoRequest
      * @return GetTrademarkInfoResponse
      */
@@ -1460,8 +1505,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-作品著作权
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-作品著作权</p>
+     * 
      * @param request GetWorkCopyrightRequest
      * @param headers GetWorkCopyrightHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1510,8 +1556,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取知识产权-作品著作权
-     *
+     * <b>summary</b> : 
+     * <p>获取知识产权-作品著作权</p>
+     * 
      * @param request GetWorkCopyrightRequest
      * @return GetWorkCopyrightResponse
      */
@@ -1522,8 +1569,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 企业授权信息
-     *
+     * <b>summary</b> : 
+     * <p>企业授权信息</p>
+     * 
      * @param headers PostCorpAuthInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return PostCorpAuthInfoResponse
@@ -1556,8 +1604,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 企业授权信息
-     *
+     * <b>summary</b> : 
+     * <p>企业授权信息</p>
      * @return PostCorpAuthInfoResponse
      */
     public PostCorpAuthInfoResponse postCorpAuthInfo() throws Exception {
@@ -1567,8 +1615,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业用户激活状态统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业用户激活状态统计数据</p>
+     * 
      * @param request QueryActiveUserStatisticalDataRequest
      * @param headers QueryActiveUserStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1609,8 +1658,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业用户激活状态统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业用户激活状态统计数据</p>
+     * 
      * @param request QueryActiveUserStatisticalDataRequest
      * @return QueryActiveUserStatisticalDataResponse
      */
@@ -1621,8 +1671,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取安恒密盾统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取安恒密盾统计数据</p>
+     * 
      * @param request QueryAnhmdStatisticalDataRequest
      * @param headers QueryAnhmdStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1671,8 +1722,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取安恒密盾统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取安恒密盾统计数据</p>
+     * 
      * @param request QueryAnhmdStatisticalDataRequest
      * @return QueryAnhmdStatisticalDataResponse
      */
@@ -1683,8 +1735,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业审批统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业审批统计数据</p>
+     * 
      * @param request QueryApprovalStatisticalDataRequest
      * @param headers QueryApprovalStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1725,8 +1778,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业审批统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业审批统计数据</p>
+     * 
      * @param request QueryApprovalStatisticalDataRequest
      * @return QueryApprovalStatisticalDataResponse
      */
@@ -1737,8 +1791,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业考勤统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业考勤统计数据</p>
+     * 
      * @param request QueryAttendanceStatisticalDataRequest
      * @param headers QueryAttendanceStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1779,8 +1834,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业考勤统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业考勤统计数据</p>
+     * 
      * @param request QueryAttendanceStatisticalDataRequest
      * @return QueryAttendanceStatisticalDataResponse
      */
@@ -1791,8 +1847,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业公告统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业公告统计数据</p>
+     * 
      * @param request QueryBlackboardStatisticalDataRequest
      * @param headers QueryBlackboardStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1833,8 +1890,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业公告统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业公告统计数据</p>
+     * 
      * @param request QueryBlackboardStatisticalDataRequest
      * @return QueryBlackboardStatisticalDataResponse
      */
@@ -1845,8 +1903,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业日程统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业日程统计数据</p>
+     * 
      * @param request QueryCalendarStatisticalDataRequest
      * @param headers QueryCalendarStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1887,8 +1946,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业日程统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业日程统计数据</p>
+     * 
      * @param request QueryCalendarStatisticalDataRequest
      * @return QueryCalendarStatisticalDataResponse
      */
@@ -1899,8 +1959,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业签到统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业签到统计数据</p>
+     * 
      * @param request QueryCheckinStatisticalDataRequest
      * @param headers QueryCheckinStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1941,8 +2002,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业签到统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业签到统计数据</p>
+     * 
      * @param request QueryCheckinStatisticalDataRequest
      * @return QueryCheckinStatisticalDataResponse
      */
@@ -1953,8 +2015,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业全员圈统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业全员圈统计数据</p>
+     * 
      * @param request QueryCircleStatisticalDataRequest
      * @param headers QueryCircleStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1995,8 +2058,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业全员圈统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业全员圈统计数据</p>
+     * 
      * @param request QueryCircleStatisticalDataRequest
      * @return QueryCircleStatisticalDataResponse
      */
@@ -2007,8 +2071,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。
-     *
+     * <b>summary</b> : 
+     * <p>通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。</p>
+     * 
      * @param request QueryCompanyBasicInfoRequest
      * @param headers QueryCompanyBasicInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2057,8 +2122,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。
-     *
+     * <b>summary</b> : 
+     * <p>通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。</p>
+     * 
      * @param request QueryCompanyBasicInfoRequest
      * @return QueryCompanyBasicInfoResponse
      */
@@ -2069,8 +2135,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取数字区县组织信息
-     *
+     * <b>summary</b> : 
+     * <p>获取数字区县组织信息</p>
+     * 
      * @param request QueryDigitalDistrictOrgInfoRequest
      * @param headers QueryDigitalDistrictOrgInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2115,8 +2182,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取数字区县组织信息
-     *
+     * <b>summary</b> : 
+     * <p>获取数字区县组织信息</p>
+     * 
      * @param request QueryDigitalDistrictOrgInfoRequest
      * @return QueryDigitalDistrictOrgInfoResponse
      */
@@ -2127,8 +2195,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业DING接收及评论统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业DING接收及评论统计数据</p>
+     * 
      * @param request QueryDingReciveStatisticalDataRequest
      * @param headers QueryDingReciveStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2169,8 +2238,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业DING接收及评论统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业DING接收及评论统计数据</p>
+     * 
      * @param request QueryDingReciveStatisticalDataRequest
      * @return QueryDingReciveStatisticalDataResponse
      */
@@ -2181,8 +2251,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业DING发送统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业DING发送统计数据</p>
+     * 
      * @param request QueryDingSendStatisticalDataRequest
      * @param headers QueryDingSendStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2223,8 +2294,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业DING发送统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业DING发送统计数据</p>
+     * 
      * @param request QueryDingSendStatisticalDataRequest
      * @return QueryDingSendStatisticalDataResponse
      */
@@ -2235,8 +2307,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业文档统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业文档统计数据</p>
+     * 
      * @param request QueryDocumentStatisticalDataRequest
      * @param headers QueryDocumentStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2277,8 +2350,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业文档统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业文档统计数据</p>
+     * 
      * @param request QueryDocumentStatisticalDataRequest
      * @return QueryDocumentStatisticalDataResponse
      */
@@ -2289,8 +2363,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业钉盘统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业钉盘统计数据</p>
+     * 
      * @param request QueryDriveStatisticalDataRequest
      * @param headers QueryDriveStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2331,8 +2406,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业钉盘统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业钉盘统计数据</p>
+     * 
      * @param request QueryDriveStatisticalDataRequest
      * @return QueryDriveStatisticalDataResponse
      */
@@ -2343,8 +2419,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业员工类型统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业员工类型统计数据</p>
+     * 
      * @param request QueryEmployeeTypeStatisticalDataRequest
      * @param headers QueryEmployeeTypeStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2385,8 +2462,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业员工类型统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业员工类型统计数据</p>
+     * 
      * @param request QueryEmployeeTypeStatisticalDataRequest
      * @return QueryEmployeeTypeStatisticalDataResponse
      */
@@ -2397,8 +2475,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 数据资产平台数据服务接口
-     *
+     * <b>summary</b> : 
+     * <p>数据资产平台数据服务接口</p>
+     * 
      * @param request QueryGeneralDataServiceRequest
      * @param headers QueryGeneralDataServiceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2463,8 +2542,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 数据资产平台数据服务接口
-     *
+     * <b>summary</b> : 
+     * <p>数据资产平台数据服务接口</p>
+     * 
      * @param request QueryGeneralDataServiceRequest
      * @return QueryGeneralDataServiceResponse
      */
@@ -2475,8 +2555,149 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业群直播统计数据
-     *
+     * <b>summary</b> : 
+     * <p>数据资产平台数据服务接口(支持部门、员工维度批量拉取)</p>
+     * 
+     * @param request QueryGeneralDataServiceBatchRequest
+     * @param headers QueryGeneralDataServiceBatchHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryGeneralDataServiceBatchResponse
+     */
+    public QueryGeneralDataServiceBatchResponse queryGeneralDataServiceBatchWithOptions(QueryGeneralDataServiceBatchRequest request, QueryGeneralDataServiceBatchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptIds)) {
+            body.put("deptIds", request.deptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endDate)) {
+            body.put("endDate", request.endDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.serviceId)) {
+            body.put("serviceId", request.serviceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startDate)) {
+            body.put("startDate", request.startDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryGeneralDataServiceBatch"),
+            new TeaPair("version", "datacenter_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/datacenter/generalDataServicesBatch"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryGeneralDataServiceBatchResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>数据资产平台数据服务接口(支持部门、员工维度批量拉取)</p>
+     * 
+     * @param request QueryGeneralDataServiceBatchRequest
+     * @return QueryGeneralDataServiceBatchResponse
+     */
+    public QueryGeneralDataServiceBatchResponse queryGeneralDataServiceBatch(QueryGeneralDataServiceBatchRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryGeneralDataServiceBatchHeaders headers = new QueryGeneralDataServiceBatchHeaders();
+        return this.queryGeneralDataServiceBatchWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>数据资产平台数据服务接口(查询数据更新日期)</p>
+     * 
+     * @param request QueryGeneralDataUpdateDateRequest
+     * @param headers QueryGeneralDataUpdateDateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryGeneralDataUpdateDateResponse
+     */
+    public QueryGeneralDataUpdateDateResponse queryGeneralDataUpdateDateWithOptions(QueryGeneralDataUpdateDateRequest request, QueryGeneralDataUpdateDateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.serviceId)) {
+            query.put("serviceId", request.serviceId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryGeneralDataUpdateDate"),
+            new TeaPair("version", "datacenter_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/datacenter/queryDataUpdateDates"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryGeneralDataUpdateDateResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>数据资产平台数据服务接口(查询数据更新日期)</p>
+     * 
+     * @param request QueryGeneralDataUpdateDateRequest
+     * @return QueryGeneralDataUpdateDateResponse
+     */
+    public QueryGeneralDataUpdateDateResponse queryGeneralDataUpdateDate(QueryGeneralDataUpdateDateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryGeneralDataUpdateDateHeaders headers = new QueryGeneralDataUpdateDateHeaders();
+        return this.queryGeneralDataUpdateDateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取企业群直播统计数据</p>
+     * 
      * @param request QueryGroupLiveStatisticalDataRequest
      * @param headers QueryGroupLiveStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2517,8 +2738,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业群直播统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业群直播统计数据</p>
+     * 
      * @param request QueryGroupLiveStatisticalDataRequest
      * @return QueryGroupLiveStatisticalDataResponse
      */
@@ -2529,8 +2751,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业群聊统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业群聊统计数据</p>
+     * 
      * @param request QueryGroupMessageStatisticalDataRequest
      * @param headers QueryGroupMessageStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2571,8 +2794,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业群聊统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业群聊统计数据</p>
+     * 
      * @param request QueryGroupMessageStatisticalDataRequest
      * @return QueryGroupMessageStatisticalDataResponse
      */
@@ -2583,8 +2807,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业钉钉运动统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业钉钉运动统计数据</p>
+     * 
      * @param request QueryHealthStatisticalDataRequest
      * @param headers QueryHealthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2625,8 +2850,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业钉钉运动统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业钉钉运动统计数据</p>
+     * 
      * @param request QueryHealthStatisticalDataRequest
      * @return QueryHealthStatisticalDataResponse
      */
@@ -2637,8 +2863,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业邮箱统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业邮箱统计数据</p>
+     * 
      * @param request QueryMailStatisticalDataRequest
      * @param headers QueryMailStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2679,8 +2906,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业邮箱统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业邮箱统计数据</p>
+     * 
      * @param request QueryMailStatisticalDataRequest
      * @return QueryMailStatisticalDataResponse
      */
@@ -2691,8 +2919,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取官方数据集数据
-     *
+     * <b>summary</b> : 
+     * <p>获取官方数据集数据</p>
+     * 
      * @param request QueryOfficialDataRequest
      * @param headers QueryOfficialDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2737,8 +2966,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取官方数据集数据
-     *
+     * <b>summary</b> : 
+     * <p>获取官方数据集数据</p>
+     * 
      * @param request QueryOfficialDataRequest
      * @return QueryOfficialDataResponse
      */
@@ -2749,8 +2979,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV获取官方数据集字段信息
-     *
+     * <b>summary</b> : 
+     * <p>ISV获取官方数据集字段信息</p>
+     * 
      * @param request QueryOfficialDatasetFieldsRequest
      * @param headers QueryOfficialDatasetFieldsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2795,8 +3026,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV获取官方数据集字段信息
-     *
+     * <b>summary</b> : 
+     * <p>ISV获取官方数据集字段信息</p>
+     * 
      * @param request QueryOfficialDatasetFieldsRequest
      * @return QueryOfficialDatasetFieldsResponse
      */
@@ -2807,8 +3039,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV获取官方数据集列表
-     *
+     * <b>summary</b> : 
+     * <p>ISV获取官方数据集列表</p>
+     * 
      * @param request QueryOfficialDatasetListRequest
      * @param headers QueryOfficialDatasetListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2857,8 +3090,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV获取官方数据集列表
-     *
+     * <b>summary</b> : 
+     * <p>ISV获取官方数据集列表</p>
+     * 
      * @param request QueryOfficialDatasetListRequest
      * @return QueryOfficialDatasetListResponse
      */
@@ -2869,8 +3103,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取官方数据集数据
-     *
+     * <b>summary</b> : 
+     * <p>获取官方数据集数据</p>
+     * 
      * @param request QueryOfficialFormDataRequest
      * @param headers QueryOfficialFormDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2915,8 +3150,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取官方数据集数据
-     *
+     * <b>summary</b> : 
+     * <p>获取官方数据集数据</p>
+     * 
      * @param request QueryOfficialFormDataRequest
      * @return QueryOfficialFormDataResponse
      */
@@ -2927,8 +3163,69 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业用户在线统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取HOLO中官方OA表单数据集数据</p>
+     * 
+     * @param request QueryOfficialFormDataDirectHoloRequest
+     * @param headers QueryOfficialFormDataDirectHoloHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryOfficialFormDataDirectHoloResponse
+     */
+    public QueryOfficialFormDataDirectHoloResponse queryOfficialFormDataDirectHoloWithOptions(QueryOfficialFormDataDirectHoloRequest request, QueryOfficialFormDataDirectHoloHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.param)) {
+            body.put("param", request.param);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryOfficialFormDataDirectHolo"),
+            new TeaPair("version", "datacenter_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/datacenter/oaDatas/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryOfficialFormDataDirectHoloResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取HOLO中官方OA表单数据集数据</p>
+     * 
+     * @param request QueryOfficialFormDataDirectHoloRequest
+     * @return QueryOfficialFormDataDirectHoloResponse
+     */
+    public QueryOfficialFormDataDirectHoloResponse queryOfficialFormDataDirectHolo(QueryOfficialFormDataDirectHoloRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryOfficialFormDataDirectHoloHeaders headers = new QueryOfficialFormDataDirectHoloHeaders();
+        return this.queryOfficialFormDataDirectHoloWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取企业用户在线统计数据</p>
+     * 
      * @param request QueryOnlineUserStatisticalDataRequest
      * @param headers QueryOnlineUserStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2969,8 +3266,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业用户在线统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业用户在线统计数据</p>
+     * 
      * @param request QueryOnlineUserStatisticalDataRequest
      * @return QueryOnlineUserStatisticalDataResponse
      */
@@ -2981,8 +3279,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业接收红包统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业接收红包统计数据</p>
+     * 
      * @param request QueryRedEnvelopeReciveStatisticalDataRequest
      * @param headers QueryRedEnvelopeReciveStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3023,8 +3322,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业接收红包统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业接收红包统计数据</p>
+     * 
      * @param request QueryRedEnvelopeReciveStatisticalDataRequest
      * @return QueryRedEnvelopeReciveStatisticalDataResponse
      */
@@ -3035,8 +3335,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业发送红包统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业发送红包统计数据</p>
+     * 
      * @param request QueryRedEnvelopeSendStatisticalDataRequest
      * @param headers QueryRedEnvelopeSendStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3077,8 +3378,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业发送红包统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业发送红包统计数据</p>
+     * 
      * @param request QueryRedEnvelopeSendStatisticalDataRequest
      * @return QueryRedEnvelopeSendStatisticalDataResponse
      */
@@ -3089,8 +3391,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业日志统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业日志统计数据</p>
+     * 
      * @param request QueryReportStatisticalDataRequest
      * @param headers QueryReportStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3131,8 +3434,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业日志统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业日志统计数据</p>
+     * 
      * @param request QueryReportStatisticalDataRequest
      * @return QueryReportStatisticalDataResponse
      */
@@ -3143,8 +3447,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业单聊统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业单聊统计数据</p>
+     * 
      * @param request QuerySingleMessageStatisticalDataRequest
      * @param headers QuerySingleMessageStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3185,8 +3490,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业单聊统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业单聊统计数据</p>
+     * 
      * @param request QuerySingleMessageStatisticalDataRequest
      * @return QuerySingleMessageStatisticalDataResponse
      */
@@ -3197,8 +3503,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业电话会议统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业电话会议统计数据</p>
+     * 
      * @param request QueryTelMeetingStatisticalDataRequest
      * @param headers QueryTelMeetingStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3239,8 +3546,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业电话会议统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业电话会议统计数据</p>
+     * 
      * @param request QueryTelMeetingStatisticalDataRequest
      * @return QueryTelMeetingStatisticalDataResponse
      */
@@ -3251,8 +3559,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业待办统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业待办统计数据</p>
+     * 
      * @param request QueryTodoStatisticalDataRequest
      * @param headers QueryTodoStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3293,8 +3602,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业待办统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业待办统计数据</p>
+     * 
      * @param request QueryTodoStatisticalDataRequest
      * @return QueryTodoStatisticalDataResponse
      */
@@ -3305,8 +3615,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业视频会议统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业视频会议统计数据</p>
+     * 
      * @param request QueryVedioMeetingStatisticalDataRequest
      * @param headers QueryVedioMeetingStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3347,8 +3658,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业视频会议统计数据
-     *
+     * <b>summary</b> : 
+     * <p>获取企业视频会议统计数据</p>
+     * 
      * @param request QueryVedioMeetingStatisticalDataRequest
      * @return QueryVedioMeetingStatisticalDataResponse
      */
@@ -3359,8 +3671,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋活跃分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋活跃分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydActiveDayStatisticalDataRequest
      * @param headers QueryYydActiveDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3401,8 +3714,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋活跃分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋活跃分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydActiveDayStatisticalDataRequest
      * @return QueryYydActiveDayStatisticalDataResponse
      */
@@ -3413,8 +3727,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋活跃分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋活跃分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydActiveMonthStatisticalDataRequest
      * @param headers QueryYydActiveMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3455,8 +3770,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋活跃分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋活跃分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydActiveMonthStatisticalDataRequest
      * @return QueryYydActiveMonthStatisticalDataResponse
      */
@@ -3467,8 +3783,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋活跃分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋活跃分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydActiveWeekStatisticalDataRequest
      * @param headers QueryYydActiveWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3509,8 +3826,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋活跃分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋活跃分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydActiveWeekStatisticalDataRequest
      * @return QueryYydActiveWeekStatisticalDataResponse
      */
@@ -3521,8 +3839,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋应用概况（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋应用概况（按日统计）指标接口</p>
+     * 
      * @param request QueryYydAppDayStatisticalDataRequest
      * @param headers QueryYydAppDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3563,8 +3882,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋应用概况（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋应用概况（按日统计）指标接口</p>
+     * 
      * @param request QueryYydAppDayStatisticalDataRequest
      * @return QueryYydAppDayStatisticalDataResponse
      */
@@ -3575,8 +3895,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋应用概况（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋应用概况（按月统计）指标接口</p>
+     * 
      * @param request QueryYydAppMonthStatisticalDataRequest
      * @param headers QueryYydAppMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3617,8 +3938,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋应用概况（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋应用概况（按月统计）指标接口</p>
+     * 
      * @param request QueryYydAppMonthStatisticalDataRequest
      * @return QueryYydAppMonthStatisticalDataResponse
      */
@@ -3629,8 +3951,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋应用概况（累计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋应用概况（累计）指标接口</p>
+     * 
      * @param request QueryYydAppStdStatisticalDataRequest
      * @param headers QueryYydAppStdStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3671,8 +3994,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋应用概况（累计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋应用概况（累计）指标接口</p>
+     * 
      * @param request QueryYydAppStdStatisticalDataRequest
      * @return QueryYydAppStdStatisticalDataResponse
      */
@@ -3683,8 +4007,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋应用概况（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋应用概况（按周统计）指标接口</p>
+     * 
      * @param request QueryYydAppWeekStatisticalDataRequest
      * @param headers QueryYydAppWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3725,8 +4050,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋应用概况（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋应用概况（按周统计）指标接口</p>
+     * 
      * @param request QueryYydAppWeekStatisticalDataRequest
      * @return QueryYydAppWeekStatisticalDataResponse
      */
@@ -3737,8 +4063,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋会议日程分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋会议日程分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydCalendarDayStatisticalDataRequest
      * @param headers QueryYydCalendarDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3779,8 +4106,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋会议日程分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋会议日程分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydCalendarDayStatisticalDataRequest
      * @return QueryYydCalendarDayStatisticalDataResponse
      */
@@ -3791,8 +4119,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋会议日程分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋会议日程分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydCalendarMonthStatisticalDataRequest
      * @param headers QueryYydCalendarMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3833,8 +4162,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋会议日程分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋会议日程分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydCalendarMonthStatisticalDataRequest
      * @return QueryYydCalendarMonthStatisticalDataResponse
      */
@@ -3845,8 +4175,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋会议日程分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋会议日程分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydCalendarWeekStatisticalDataRequest
      * @param headers QueryYydCalendarWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3887,8 +4218,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋会议日程分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋会议日程分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydCalendarWeekStatisticalDataRequest
      * @return QueryYydCalendarWeekStatisticalDataResponse
      */
@@ -3899,8 +4231,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉消息分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉消息分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydDingMsgDayStatisticalDataRequest
      * @param headers QueryYydDingMsgDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3941,8 +4274,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉消息分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉消息分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydDingMsgDayStatisticalDataRequest
      * @return QueryYydDingMsgDayStatisticalDataResponse
      */
@@ -3953,8 +4287,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉消息分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉消息分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydDingMsgMonthStatisticalDataRequest
      * @param headers QueryYydDingMsgMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3995,8 +4330,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉消息分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉消息分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydDingMsgMonthStatisticalDataRequest
      * @return QueryYydDingMsgMonthStatisticalDataResponse
      */
@@ -4007,8 +4343,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉消息分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉消息分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydDingMsgWeekStatisticalDataRequest
      * @param headers QueryYydDingMsgWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4049,8 +4386,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉消息分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉消息分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydDingMsgWeekStatisticalDataRequest
      * @return QueryYydDingMsgWeekStatisticalDataResponse
      */
@@ -4061,8 +4399,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋群聊分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋群聊分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydGroupMsgDayStatisticalDataRequest
      * @param headers QueryYydGroupMsgDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4103,8 +4442,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋群聊分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋群聊分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydGroupMsgDayStatisticalDataRequest
      * @return QueryYydGroupMsgDayStatisticalDataResponse
      */
@@ -4115,8 +4455,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋群聊分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋群聊分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydGroupMsgMonthStatisticalDataRequest
      * @param headers QueryYydGroupMsgMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4157,8 +4498,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋群聊分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋群聊分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydGroupMsgMonthStatisticalDataRequest
      * @return QueryYydGroupMsgMonthStatisticalDataResponse
      */
@@ -4169,8 +4511,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋群聊分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋群聊分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydGroupMsgWeekStatisticalDataRequest
      * @param headers QueryYydGroupMsgWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4211,8 +4554,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋群聊分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋群聊分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydGroupMsgWeekStatisticalDataRequest
      * @return QueryYydGroupMsgWeekStatisticalDataResponse
      */
@@ -4223,8 +4567,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋日志分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋日志分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydLogDayStatisticalDataRequest
      * @param headers QueryYydLogDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4265,8 +4610,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋日志分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋日志分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydLogDayStatisticalDataRequest
      * @return QueryYydLogDayStatisticalDataResponse
      */
@@ -4277,8 +4623,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋日志分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋日志分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydLogMonthStatisticalDataRequest
      * @param headers QueryYydLogMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4319,8 +4666,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋日志分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋日志分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydLogMonthStatisticalDataRequest
      * @return QueryYydLogMonthStatisticalDataResponse
      */
@@ -4331,8 +4679,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋日志分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋日志分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydLogWeekStatisticalDataRequest
      * @param headers QueryYydLogWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4373,8 +4722,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋日志分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋日志分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydLogWeekStatisticalDataRequest
      * @return QueryYydLogWeekStatisticalDataResponse
      */
@@ -4385,8 +4735,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉会议分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉会议分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydMeetingDayStatisticalDataRequest
      * @param headers QueryYydMeetingDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4427,8 +4778,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉会议分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉会议分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydMeetingDayStatisticalDataRequest
      * @return QueryYydMeetingDayStatisticalDataResponse
      */
@@ -4439,8 +4791,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉会议分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉会议分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydMeetingMonthStatisticalDataRequest
      * @param headers QueryYydMeetingMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4481,8 +4834,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉会议分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉会议分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydMeetingMonthStatisticalDataRequest
      * @return QueryYydMeetingMonthStatisticalDataResponse
      */
@@ -4493,8 +4847,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉会议分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉会议分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydMeetingWeekStatisticalDataRequest
      * @param headers QueryYydMeetingWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4535,8 +4890,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋钉会议分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋钉会议分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydMeetingWeekStatisticalDataRequest
      * @return QueryYydMeetingWeekStatisticalDataResponse
      */
@@ -4547,8 +4903,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋通知分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋通知分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydNoticeDayStatisticalDataRequest
      * @param headers QueryYydNoticeDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4589,8 +4946,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋通知分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋通知分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydNoticeDayStatisticalDataRequest
      * @return QueryYydNoticeDayStatisticalDataResponse
      */
@@ -4601,8 +4959,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋通知分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋通知分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydNoticeMonthStatisticalDataRequest
      * @param headers QueryYydNoticeMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4643,8 +5002,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋通知分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋通知分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydNoticeMonthStatisticalDataRequest
      * @return QueryYydNoticeMonthStatisticalDataResponse
      */
@@ -4655,8 +5015,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋通知分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋通知分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydNoticeWeekStatisticalDataRequest
      * @param headers QueryYydNoticeWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4697,8 +5058,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋通知分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋通知分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydNoticeWeekStatisticalDataRequest
      * @return QueryYydNoticeWeekStatisticalDataResponse
      */
@@ -4709,8 +5071,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋单聊分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋单聊分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydSingleMsgDayStatisticalDataRequest
      * @param headers QueryYydSingleMsgDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4751,8 +5114,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋单聊分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋单聊分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydSingleMsgDayStatisticalDataRequest
      * @return QueryYydSingleMsgDayStatisticalDataResponse
      */
@@ -4763,8 +5127,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋单聊分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋单聊分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydSingleMsgMonthStatisticalDataRequest
      * @param headers QueryYydSingleMsgMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4805,8 +5170,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋单聊分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋单聊分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydSingleMsgMonthStatisticalDataRequest
      * @return QueryYydSingleMsgMonthStatisticalDataResponse
      */
@@ -4817,8 +5183,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋单聊分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋单聊分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydSingleMsgWeekStatisticalDataRequest
      * @param headers QueryYydSingleMsgWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4859,8 +5226,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋单聊分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋单聊分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydSingleMsgWeekStatisticalDataRequest
      * @return QueryYydSingleMsgWeekStatisticalDataResponse
      */
@@ -4871,8 +5239,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋消息概览（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋消息概览（按日统计）指标接口</p>
+     * 
      * @param request QueryYydToatlMsgDayStatisticalDataRequest
      * @param headers QueryYydToatlMsgDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4913,8 +5282,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋消息概览（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋消息概览（按日统计）指标接口</p>
+     * 
      * @param request QueryYydToatlMsgDayStatisticalDataRequest
      * @return QueryYydToatlMsgDayStatisticalDataResponse
      */
@@ -4925,8 +5295,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋消息概览（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋消息概览（按月统计）指标接口</p>
+     * 
      * @param request QueryYydToatlMsgMonthStatisticalDataRequest
      * @param headers QueryYydToatlMsgMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4967,8 +5338,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋消息概览（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋消息概览（按月统计）指标接口</p>
+     * 
      * @param request QueryYydToatlMsgMonthStatisticalDataRequest
      * @return QueryYydToatlMsgMonthStatisticalDataResponse
      */
@@ -4979,8 +5351,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋消息概览（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋消息概览（按周统计）指标接口</p>
+     * 
      * @param request QueryYydToatlMsgWeekStatisticalDataRequest
      * @param headers QueryYydToatlMsgWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -5021,8 +5394,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋消息概览（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋消息概览（按周统计）指标接口</p>
+     * 
      * @param request QueryYydToatlMsgWeekStatisticalDataRequest
      * @return QueryYydToatlMsgWeekStatisticalDataResponse
      */
@@ -5033,8 +5407,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋待办分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋待办分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydTodoDayStatisticalDataRequest
      * @param headers QueryYydTodoDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -5075,8 +5450,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋待办分析（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋待办分析（按日统计）指标接口</p>
+     * 
      * @param request QueryYydTodoDayStatisticalDataRequest
      * @return QueryYydTodoDayStatisticalDataResponse
      */
@@ -5087,8 +5463,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋待办分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋待办分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydTodoMonthStatisticalDataRequest
      * @param headers QueryYydTodoMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -5129,8 +5506,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋待办分析（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋待办分析（按月统计）指标接口</p>
+     * 
      * @param request QueryYydTodoMonthStatisticalDataRequest
      * @return QueryYydTodoMonthStatisticalDataResponse
      */
@@ -5141,8 +5519,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋待办分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋待办分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydTodoWeekStatisticalDataRequest
      * @param headers QueryYydTodoWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -5183,8 +5562,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉数字参谋待办分析（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉数字参谋待办分析（按周统计）指标接口</p>
+     * 
      * @param request QueryYydTodoWeekStatisticalDataRequest
      * @return QueryYydTodoWeekStatisticalDataResponse
      */
@@ -5195,8 +5575,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋全局概览（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋全局概览（按日统计）指标接口</p>
+     * 
      * @param request QueryYydTotalDayStatisticalDataRequest
      * @param headers QueryYydTotalDayStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -5237,8 +5618,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋全局概览（按日统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋全局概览（按日统计）指标接口</p>
+     * 
      * @param request QueryYydTotalDayStatisticalDataRequest
      * @return QueryYydTotalDayStatisticalDataResponse
      */
@@ -5249,8 +5631,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋全局概览（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋全局概览（按月统计）指标接口</p>
+     * 
      * @param request QueryYydTotalMonthStatisticalDataRequest
      * @param headers QueryYydTotalMonthStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -5291,8 +5674,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋全局概览（按月统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋全局概览（按月统计）指标接口</p>
+     * 
      * @param request QueryYydTotalMonthStatisticalDataRequest
      * @return QueryYydTotalMonthStatisticalDataResponse
      */
@@ -5303,8 +5687,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋全局概览（累计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋全局概览（累计）指标接口</p>
+     * 
      * @param request QueryYydTotalStdStatisticalDataRequest
      * @param headers QueryYydTotalStdStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -5345,8 +5730,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋全局概览（累计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋全局概览（累计）指标接口</p>
+     * 
      * @param request QueryYydTotalStdStatisticalDataRequest
      * @return QueryYydTotalStdStatisticalDataResponse
      */
@@ -5357,8 +5743,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋全局概览（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋全局概览（按周统计）指标接口</p>
+     * 
      * @param request QueryYydTotalWeekStatisticalDataRequest
      * @param headers QueryYydTotalWeekStatisticalDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -5399,8 +5786,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 亚运钉参谋全局概览（按周统计）指标接口
-     *
+     * <b>summary</b> : 
+     * <p>亚运钉参谋全局概览（按周统计）指标接口</p>
+     * 
      * @param request QueryYydTotalWeekStatisticalDataRequest
      * @return QueryYydTotalWeekStatisticalDataResponse
      */
@@ -5411,8 +5799,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过关键词搜索企业
-     *
+     * <b>summary</b> : 
+     * <p>通过关键词搜索企业</p>
+     * 
      * @param request SearchCompanyRequest
      * @param headers SearchCompanyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -5461,8 +5850,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过关键词搜索企业
-     *
+     * <b>summary</b> : 
+     * <p>通过关键词搜索企业</p>
+     * 
      * @param request SearchCompanyRequest
      * @return SearchCompanyResponse
      */

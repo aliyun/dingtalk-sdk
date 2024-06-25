@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class CreateSnsAppOrderRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("actualAmount")
     public Long actualAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234</p>
      */
     @NameInMap("alipayAppId")
     public String alipayAppId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("bizCode")
     public Integer bizCode;
@@ -28,35 +37,54 @@ public class CreateSnsAppOrderRequest extends TeaModel {
     @NameInMap("detailList")
     public java.util.List<CreateSnsAppOrderRequestDetailList> detailList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("labelAmount")
     public Long labelAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10000</p>
      */
     @NameInMap("merchantId")
     public String merchantId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>M00001</p>
      */
     @NameInMap("merchantOrderNo")
     public String merchantOrderNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>WWrhziOLF/XuRd3IyKwLkLeSFgKnUfeg2yLEVD9Bw+8</p>
      */
     @NameInMap("signature")
     public String signature;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>数字图书</p>
      */
     @NameInMap("subject")
     public String subject;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100000</p>
      */
     @NameInMap("timestamp")
     public Long timestamp;
@@ -149,24 +177,36 @@ public class CreateSnsAppOrderRequest extends TeaModel {
     public static class CreateSnsAppOrderRequestDetailList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234000</p>
          */
         @NameInMap("goodsId")
         public String goodsId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>绘画图书</p>
          */
         @NameInMap("goodsName")
         public String goodsName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("goodsPrice")
         public Long goodsPrice;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("goodsQuantity")
         public Integer goodsQuantity;

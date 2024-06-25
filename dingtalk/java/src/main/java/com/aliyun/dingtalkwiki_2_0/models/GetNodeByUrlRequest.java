@@ -9,12 +9,18 @@ public class GetNodeByUrlRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>node_url</p>
      */
     @NameInMap("url")
     public String url;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -49,9 +55,17 @@ public class GetNodeByUrlRequest extends TeaModel {
     }
 
     public static class GetNodeByUrlRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("withPermissionRole")
         public Boolean withPermissionRole;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("withStatisticalInfo")
         public Boolean withStatisticalInfo;
 

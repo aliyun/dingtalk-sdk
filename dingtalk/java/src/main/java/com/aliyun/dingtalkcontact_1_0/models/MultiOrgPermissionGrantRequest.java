@@ -4,11 +4,21 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class MultiOrgPermissionGrantRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
     @NameInMap("grantDeptIdList")
     public java.util.List<Long> grantDeptIdList;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxxx</p>
      */
     @NameInMap("joinCorpId")
     public String joinCorpId;

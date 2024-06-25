@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class DeleteProcessesInstanceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("isAutoUpdateBizObject")
     public Boolean isAutoUpdateBizObject;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;

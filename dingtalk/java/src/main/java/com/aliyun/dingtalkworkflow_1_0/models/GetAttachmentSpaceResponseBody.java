@@ -7,6 +7,10 @@ public class GetAttachmentSpaceResponseBody extends TeaModel {
     @NameInMap("result")
     public GetAttachmentSpaceResponseBodyResult result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,6 +36,10 @@ public class GetAttachmentSpaceResponseBody extends TeaModel {
     }
 
     public static class GetAttachmentSpaceResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>3996960664</p>
+         */
         @NameInMap("spaceId")
         public Long spaceId;
 

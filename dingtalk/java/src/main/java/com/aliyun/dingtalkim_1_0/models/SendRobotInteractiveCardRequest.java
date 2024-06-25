@@ -4,27 +4,44 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRobotInteractiveCardRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://xxx">https://xxx</a></p>
+     */
     @NameInMap("callbackUrl")
     public String callbackUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cardXXXX01</p>
      */
     @NameInMap("cardBizId")
     public String cardBizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>根据具体的cardTemplateId参考文档格式</p>
      */
     @NameInMap("cardData")
     public String cardData;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxxxxxx</p>
      */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidXXXX</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -33,6 +50,9 @@ public class SendRobotInteractiveCardRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxxxx</p>
      */
     @NameInMap("robotCode")
     public String robotCode;
@@ -40,6 +60,10 @@ public class SendRobotInteractiveCardRequest extends TeaModel {
     @NameInMap("sendOptions")
     public SendRobotInteractiveCardRequestSendOptions sendOptions;
 
+    /**
+     * <strong>example:</strong>
+     * <p>以userId为例：{&quot;userId&quot;:&quot;userId0001&quot;}；以unionId为例{&quot;unionId&quot;:&quot;unionId001&quot;}</p>
+     */
     @NameInMap("singleChatReceiver")
     public String singleChatReceiver;
 
@@ -143,15 +167,31 @@ public class SendRobotInteractiveCardRequest extends TeaModel {
     }
 
     public static class SendRobotInteractiveCardRequestSendOptions extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("atAll")
         public Boolean atAll;
 
+        /**
+         * <strong>example:</strong>
+         * <p>[{&quot;nickName&quot;:&quot;张三&quot;,&quot;userId&quot;:&quot;userId0001&quot;},{&quot;nickName&quot;:&quot;李四&quot;,&quot;unionId&quot;:&quot;unionId001&quot;}]</p>
+         */
         @NameInMap("atUserListJson")
         public String atUserListJson;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{}</p>
+         */
         @NameInMap("cardPropertyJson")
         public String cardPropertyJson;
 
+        /**
+         * <strong>example:</strong>
+         * <p>[{&quot;userId&quot;:&quot;userId0001&quot;},{&quot;unionId&quot;:&quot;unionId001&quot;}]</p>
+         */
         @NameInMap("receiverListJson")
         public String receiverListJson;
 

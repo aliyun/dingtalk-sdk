@@ -21,12 +21,24 @@ public class BatchApproveUnionApplyRequest extends TeaModel {
     }
 
     public static class BatchApproveUnionApplyRequestBody extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ding1234</p>
+         */
         @NameInMap("branchCorpId")
         public String branchCorpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123456</p>
+         */
         @NameInMap("linkDeptId")
         public Long linkDeptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试</p>
+         */
         @NameInMap("unionRootName")
         public String unionRootName;
 

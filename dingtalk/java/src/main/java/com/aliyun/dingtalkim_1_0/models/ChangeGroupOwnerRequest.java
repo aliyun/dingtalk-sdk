@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class ChangeGroupOwnerRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>14da****2760</p>
      */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3</p>
      */
     @NameInMap("groupOwnerType")
     public Integer groupOwnerType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>14da****2760</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

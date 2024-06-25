@@ -12,6 +12,9 @@ public class UpdateKROfScoreResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -40,6 +43,9 @@ public class UpdateKROfScoreResponseBody extends TeaModel {
     public static class UpdateKROfScoreResponseBodyData extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>50</p>
          */
         @NameInMap("objectiveScore")
         public Long objectiveScore;

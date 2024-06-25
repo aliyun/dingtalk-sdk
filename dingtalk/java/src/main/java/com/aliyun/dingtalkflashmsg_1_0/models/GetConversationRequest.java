@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class GetConversationRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidjyErBTyw0FnIQQigHAbcGCg==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>080854121612617211</p>
+     */
     @NameInMap("userId")
     public String userId;
 

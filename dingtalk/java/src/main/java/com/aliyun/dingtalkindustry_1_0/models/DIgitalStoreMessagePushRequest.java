@@ -21,24 +21,52 @@ public class DIgitalStoreMessagePushRequest extends TeaModel {
     }
 
     public static class DIgitalStoreMessagePushRequestMessageDataList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxxxcallback</p>
+         */
         @NameInMap("callbackKey")
         public String callbackKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;key&quot;:&quot;value&quot;}</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("newCard")
         public Boolean newCard;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ysn138dh1712dsa</p>
+         */
         @NameInMap("outTraceId")
         public String outTraceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>StoreOrder</p>
+         */
         @NameInMap("sceneCardCode")
         public String sceneCardCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>54774321</p>
+         */
         @NameInMap("sceneScope")
         public Long sceneScope;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("sendNow")
         public Boolean sendNow;
 

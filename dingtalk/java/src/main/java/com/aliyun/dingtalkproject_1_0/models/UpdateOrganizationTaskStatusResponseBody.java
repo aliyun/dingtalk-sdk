@@ -21,9 +21,17 @@ public class UpdateOrganizationTaskStatusResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskStatusResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isDone")
         public Boolean isDone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-06-08T07:32:48.958Z</p>
+         */
         @NameInMap("updateTime")
         public String updateTime;
 

@@ -24,6 +24,9 @@ public class UpdateResidentInfoRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试小区1</p>
      */
     @NameInMap("name")
     public String name;
@@ -33,6 +36,9 @@ public class UpdateResidentInfoRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("state")
     public Long state;

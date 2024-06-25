@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class UpdateUserExtendInfoRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>备注, 当jobStatusCode为其他(0)时, 需要通过该字段补充状态</p>
      */
     @NameInMap("comments")
     public String comments;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("jobCode")
     public String jobCode;
@@ -21,6 +27,9 @@ public class UpdateUserExtendInfoRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("userProbCode")
     public String userProbCode;

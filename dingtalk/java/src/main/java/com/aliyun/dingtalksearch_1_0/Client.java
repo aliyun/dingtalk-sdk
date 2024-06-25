@@ -6,11 +6,10 @@ import com.aliyun.dingtalksearch_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 为指定的数据源批量添加数据项
-     *
+     * <b>summary</b> : 
+     * <p>为指定的数据源批量添加数据项</p>
+     * 
      * @param request BatchInsertSearchItemRequest
      * @param headers BatchInsertSearchItemHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -62,8 +62,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 为指定的数据源批量添加数据项
-     *
+     * <b>summary</b> : 
+     * <p>为指定的数据源批量添加数据项</p>
+     * 
      * @param request BatchInsertSearchItemRequest
      * @return BatchInsertSearchItemResponse
      */
@@ -74,8 +75,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建搜索数据源
-     *
+     * <b>summary</b> : 
+     * <p>创建搜索数据源</p>
+     * 
      * @param request CreateSearchTabRequest
      * @param headers CreateSearchTabHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -136,8 +138,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建搜索数据源
-     *
+     * <b>summary</b> : 
+     * <p>创建搜索数据源</p>
+     * 
      * @param request CreateSearchTabRequest
      * @return CreateSearchTabResponse
      */
@@ -148,8 +151,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 从指定的数据源中删除一条数据项
-     *
+     * <b>summary</b> : 
+     * <p>从指定的数据源中删除一条数据项</p>
+     * 
      * @param headers DeleteSearchItemHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return DeleteSearchItemResponse
@@ -182,8 +186,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 从指定的数据源中删除一条数据项
-     *
+     * <b>summary</b> : 
+     * <p>从指定的数据源中删除一条数据项</p>
      * @return DeleteSearchItemResponse
      */
     public DeleteSearchItemResponse deleteSearchItem(String tabId, String itemId) throws Exception {
@@ -193,8 +197,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除搜索数据源
-     *
+     * <b>summary</b> : 
+     * <p>删除搜索数据源</p>
+     * 
      * @param headers DeleteSearchTabHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return DeleteSearchTabResponse
@@ -227,8 +232,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除搜索数据源
-     *
+     * <b>summary</b> : 
+     * <p>删除搜索数据源</p>
      * @return DeleteSearchTabResponse
      */
     public DeleteSearchTabResponse deleteSearchTab(String tabId) throws Exception {
@@ -238,8 +243,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取指定数据源中的一条数据项
-     *
+     * <b>summary</b> : 
+     * <p>获取指定数据源中的一条数据项</p>
+     * 
      * @param headers GetSearchItemHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetSearchItemResponse
@@ -272,8 +278,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取指定数据源中的一条数据项
-     *
+     * <b>summary</b> : 
+     * <p>获取指定数据源中的一条数据项</p>
      * @return GetSearchItemResponse
      */
     public GetSearchItemResponse getSearchItem(String tabId, String itemId) throws Exception {
@@ -283,8 +289,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据搜索关键词获取相关数据项
-     *
+     * <b>summary</b> : 
+     * <p>根据搜索关键词获取相关数据项</p>
+     * 
      * @param request GetSearchItemsByKeyWordRequest
      * @param headers GetSearchItemsByKeyWordHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -333,8 +340,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据搜索关键词获取相关数据项
-     *
+     * <b>summary</b> : 
+     * <p>根据搜索关键词获取相关数据项</p>
+     * 
      * @param request GetSearchItemsByKeyWordRequest
      * @return GetSearchItemsByKeyWordResponse
      */
@@ -345,8 +353,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取搜索数据源
-     *
+     * <b>summary</b> : 
+     * <p>获取搜索数据源</p>
+     * 
      * @param headers GetSearchTabHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetSearchTabResponse
@@ -379,8 +388,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取搜索数据源
-     *
+     * <b>summary</b> : 
+     * <p>获取搜索数据源</p>
      * @return GetSearchTabResponse
      */
     public GetSearchTabResponse getSearchTab(String tabId) throws Exception {
@@ -390,8 +399,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 为指定的数据源添加一条数据项
-     *
+     * <b>summary</b> : 
+     * <p>为指定的数据源添加一条数据项</p>
+     * 
      * @param request InsertSearchItemRequest
      * @param headers InsertSearchItemHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -460,8 +470,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 为指定的数据源添加一条数据项
-     *
+     * <b>summary</b> : 
+     * <p>为指定的数据源添加一条数据项</p>
+     * 
      * @param request InsertSearchItemRequest
      * @return InsertSearchItemResponse
      */
@@ -472,8 +483,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 列出企业所有的搜索数据源
-     *
+     * <b>summary</b> : 
+     * <p>列出企业所有的搜索数据源</p>
+     * 
      * @param headers ListSearchTabsByOrgIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListSearchTabsByOrgIdResponse
@@ -506,8 +518,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 列出企业所有的搜索数据源
-     *
+     * <b>summary</b> : 
+     * <p>列出企业所有的搜索数据源</p>
      * @return ListSearchTabsByOrgIdResponse
      */
     public ListSearchTabsByOrgIdResponse listSearchTabsByOrgId() throws Exception {
@@ -517,8 +529,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新搜索数据源
-     *
+     * <b>summary</b> : 
+     * <p>更新搜索数据源</p>
+     * 
      * @param request UpdateSearchTabRequest
      * @param headers UpdateSearchTabHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -579,8 +592,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新搜索数据源
-     *
+     * <b>summary</b> : 
+     * <p>更新搜索数据源</p>
+     * 
      * @param request UpdateSearchTabRequest
      * @return UpdateSearchTabResponse
      */

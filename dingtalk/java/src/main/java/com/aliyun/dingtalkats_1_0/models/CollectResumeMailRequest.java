@@ -6,21 +6,34 @@ import com.aliyun.tea.*;
 public class CollectResumeMailRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ddats</p>
      */
     @NameInMap("bizCode")
     public String bizCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>liepin</p>
      */
     @NameInMap("channelCode")
     public String channelCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>jobId8fc0d56a605d495ea0214af7axxxxxxx</p>
+     */
     @NameInMap("deliverJobId")
     public String deliverJobId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="mailto:xxxx@163.com">xxxx@163.com</a></p>
      */
     @NameInMap("fromMailAddress")
     public String fromMailAddress;
@@ -30,21 +43,34 @@ public class CollectResumeMailRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxxxxxx</p>
      */
     @NameInMap("mailId")
     public String mailId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxxx应聘贵公司xxx职位</p>
      */
     @NameInMap("mailTitle")
     public String mailTitle;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2701606624233xxxxx</p>
+     */
     @NameInMap("optUserId")
     public String optUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="mailto:xxxx@163.com">xxxx@163.com</a></p>
      */
     @NameInMap("receiveMailAddress")
     public String receiveMailAddress;
@@ -61,6 +87,10 @@ public class CollectResumeMailRequest extends TeaModel {
     @NameInMap("receivedTime")
     public Long receivedTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>http:<a href="http://www.xxx.com">www.xxx.com</a></p>
+     */
     @NameInMap("resumeChannelUrl")
     public String resumeChannelUrl;
 
@@ -182,18 +212,27 @@ public class CollectResumeMailRequest extends TeaModel {
     public static class CollectResumeMailRequestResumeFile extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>http:<a href="http://www.xxx.com">www.xxx.com</a></p>
          */
         @NameInMap("downloadUrl")
         public String downloadUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>xxxx的简历.pdf</p>
          */
         @NameInMap("fileName")
         public String fileName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>pdf</p>
          */
         @NameInMap("fileType")
         public String fileType;

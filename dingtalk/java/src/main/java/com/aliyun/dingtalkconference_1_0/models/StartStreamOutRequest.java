@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class StartStreamOutRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>grip</p>
      */
     @NameInMap("mode")
     public String mode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("needHostJoin")
     public Boolean needHostJoin;
@@ -24,6 +30,9 @@ public class StartStreamOutRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>推流名称</p>
      */
     @NameInMap("streamName")
     public String streamName;
@@ -36,6 +45,9 @@ public class StartStreamOutRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>27SaQ3iiHLN0uwqcPisedfreNwiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

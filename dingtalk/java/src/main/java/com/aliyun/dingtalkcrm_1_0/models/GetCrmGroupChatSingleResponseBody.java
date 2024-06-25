@@ -7,6 +7,10 @@ public class GetCrmGroupChatSingleResponseBody extends TeaModel {
     @NameInMap("gmtCreate")
     public Long gmtCreate;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://static/xx.com/xx.jpg">https://static/xx.com/xx.jpg</a></p>
+     */
     @NameInMap("iconUrl")
     public String iconUrl;
 

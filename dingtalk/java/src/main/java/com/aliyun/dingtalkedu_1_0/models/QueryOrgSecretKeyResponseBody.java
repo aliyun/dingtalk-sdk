@@ -26,6 +26,9 @@ public class QueryOrgSecretKeyResponseBody extends TeaModel {
     public static class QueryOrgSecretKeyResponseBodyUniversitySecretKeyInfo extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ghiufhk123</p>
          */
         @NameInMap("secretKey")
         public String secretKey;

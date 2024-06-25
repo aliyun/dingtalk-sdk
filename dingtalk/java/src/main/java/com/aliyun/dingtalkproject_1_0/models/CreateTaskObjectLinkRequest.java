@@ -21,20 +21,34 @@ public class CreateTaskObjectLinkRequest extends TeaModel {
     }
 
     public static class CreateTaskObjectLinkRequestLinkedData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>我是内容</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://abc.com/url">https://abc.com/url</a></p>
+         */
         @NameInMap("thumbnailUrl")
         public String thumbnailUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>我是标题</p>
          */
         @NameInMap("title")
         public String title;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://abcd.com/url">https://abcd.com/url</a></p>
          */
         @NameInMap("url")
         public String url;

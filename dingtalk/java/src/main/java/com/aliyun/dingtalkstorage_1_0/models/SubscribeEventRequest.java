@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class SubscribeEventRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SPACE</p>
      */
     @NameInMap("scope")
     public String scope;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>scope_id</p>
      */
     @NameInMap("scopeId")
     public String scopeId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;

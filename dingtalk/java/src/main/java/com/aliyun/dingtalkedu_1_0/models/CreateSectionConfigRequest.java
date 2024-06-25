@@ -4,6 +4,10 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSectionConfigRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>扩展参数</p>
+     */
     @NameInMap("ext")
     public String ext;
 
@@ -15,6 +19,9 @@ public class CreateSectionConfigRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager235</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
@@ -51,18 +58,27 @@ public class CreateSectionConfigRequest extends TeaModel {
     public static class CreateSectionConfigRequestSectionConfigsSectionEndDate extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>31</p>
          */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>12</p>
          */
         @NameInMap("month")
         public Integer month;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021</p>
          */
         @NameInMap("year")
         public Integer year;
@@ -101,12 +117,18 @@ public class CreateSectionConfigRequest extends TeaModel {
     public static class CreateSectionConfigRequestSectionConfigsSectionModelsSectionEndTime extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>12</p>
          */
         @NameInMap("hour")
         public Integer hour;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("min")
         public Integer min;
@@ -137,12 +159,18 @@ public class CreateSectionConfigRequest extends TeaModel {
     public static class CreateSectionConfigRequestSectionConfigsSectionModelsSectionStartTime extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>11</p>
          */
         @NameInMap("hour")
         public Integer hour;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("min")
         public Integer min;
@@ -179,12 +207,18 @@ public class CreateSectionConfigRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>第一节</p>
          */
         @NameInMap("sectionName")
         public String sectionName;
@@ -197,6 +231,9 @@ public class CreateSectionConfigRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>COURSE：上课节次 REST：休息节次</p>
          */
         @NameInMap("sectionType")
         public String sectionType;
@@ -251,18 +288,27 @@ public class CreateSectionConfigRequest extends TeaModel {
     public static class CreateSectionConfigRequestSectionConfigsSectionStartDate extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>9</p>
          */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>11</p>
          */
         @NameInMap("month")
         public Integer month;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021</p>
          */
         @NameInMap("year")
         public Integer year;
@@ -301,18 +347,27 @@ public class CreateSectionConfigRequest extends TeaModel {
     public static class CreateSectionConfigRequestSectionConfigsSemesterEndDate extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>31</p>
          */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>12</p>
          */
         @NameInMap("month")
         public Integer month;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021</p>
          */
         @NameInMap("year")
         public Integer year;
@@ -351,18 +406,27 @@ public class CreateSectionConfigRequest extends TeaModel {
     public static class CreateSectionConfigRequestSectionConfigsSemesterStartDate extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>31</p>
          */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>8</p>
          */
         @NameInMap("month")
         public Integer month;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021</p>
          */
         @NameInMap("year")
         public Integer year;
@@ -401,12 +465,18 @@ public class CreateSectionConfigRequest extends TeaModel {
     public static class CreateSectionConfigRequestSectionConfigs extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>第一学期课表</p>
          */
         @NameInMap("scheduleName")
         public String scheduleName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-2022</p>
          */
         @NameInMap("schoolYear")
         public String schoolYear;
@@ -431,6 +501,9 @@ public class CreateSectionConfigRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("semester")
         public Integer semester;

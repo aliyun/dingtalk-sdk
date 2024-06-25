@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class BatchSendResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>23233434</p>
      */
     @NameInMap("taskId")
     public String taskId;

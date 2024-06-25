@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class CreateOrderRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("actualAmount")
     public Long actualAmount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1644413947909</p>
+     */
     @NameInMap("createTime")
     public Long createTime;
 
@@ -21,46 +28,76 @@ public class CreateOrderRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123123</p>
      */
     @NameInMap("faceId")
     public String faceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FACE_010100b0555Xczd4ePVLaB5V3cCzrONYpHWOENzRxDDqcnVjYXLso0U_1642665071746</p>
      */
     @NameInMap("ftoken")
     public String ftoken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>KSwZiSL1O7DiUNwjV168j3cP9ktp4bJTi5OQxAXre26KyBXza7+gCl/g1d0K3n3+9JhMqc2fUjBiENcAELw3Jb5xO/zslOeV4qFoMQfzW51+sdL/SSZCYvXEMhu9P6FAPhGZQ3vu6gr3oxUAXPIpWNb+sIfzR9epumoOXYeofH8=</p>
+     */
     @NameInMap("signature")
     public String signature;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>QA62021121908E</p>
      */
     @NameInMap("sn")
     public String sn;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;terminalType&quot;:&quot;IOT&quot;}</p>
      */
     @NameInMap("terminalParams")
     public String terminalParams;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1644413947909</p>
+     */
     @NameInMap("timestamp")
     public Long timestamp;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("totalAmount")
     public Long totalAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1643334234626</p>
      */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1.0</p>
+     */
     @NameInMap("version")
     public String version;
 
@@ -168,24 +205,36 @@ public class CreateOrderRequest extends TeaModel {
     public static class CreateOrderRequestDetailList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
          */
         @NameInMap("actualAmount")
         public Long actualAmount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
          */
         @NameInMap("itemAmount")
         public Long itemAmount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试商品</p>
          */
         @NameInMap("itemName")
         public String itemName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("scene")
         public Long scene;

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkh5package_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreatePackageResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1663748308644pjpF</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 

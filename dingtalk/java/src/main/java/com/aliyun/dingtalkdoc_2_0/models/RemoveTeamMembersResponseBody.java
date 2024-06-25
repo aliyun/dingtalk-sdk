@@ -32,15 +32,31 @@ public class RemoveTeamMembersResponseBody extends TeaModel {
     }
 
     public static class RemoveTeamMembersResponseBodyNotInOrgMembers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>YEp3JcM******UIbhwiE</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("memberType")
         public Integer memberType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>小钉</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 

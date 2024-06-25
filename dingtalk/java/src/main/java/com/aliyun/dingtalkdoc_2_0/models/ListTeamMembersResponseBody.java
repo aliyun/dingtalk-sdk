@@ -7,6 +7,10 @@ public class ListTeamMembersResponseBody extends TeaModel {
     @NameInMap("members")
     public java.util.List<ListTeamMembersResponseBodyMembers> members;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试小组名称</p>
+     */
     @NameInMap("teamName")
     public String teamName;
 
@@ -32,15 +36,31 @@ public class ListTeamMembersResponseBody extends TeaModel {
     }
 
     public static class ListTeamMembersResponseBodyMembers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>YEp3JcM******UIbhwiE</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("memberType")
         public Integer memberType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>小钉</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 

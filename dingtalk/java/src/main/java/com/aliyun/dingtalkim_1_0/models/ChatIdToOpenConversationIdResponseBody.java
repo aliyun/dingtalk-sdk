@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ChatIdToOpenConversationIdResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidl1B8RVUFmkO50OC9uEbySQ==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

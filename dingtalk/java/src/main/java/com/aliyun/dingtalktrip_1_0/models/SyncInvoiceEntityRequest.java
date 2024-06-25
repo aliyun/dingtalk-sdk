@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class SyncInvoiceEntityRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding89233847892ndkas</p>
      */
     @NameInMap("channelCorpId")
     public String channelCorpId;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("delAll")
     public Boolean delAll;
 
@@ -24,6 +31,9 @@ public class SyncInvoiceEntityRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20881001829000</p>
      */
     @NameInMap("userId")
     public String userId;

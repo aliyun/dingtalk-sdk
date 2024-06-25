@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class CfJobLevelResp extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("level")
     public Long level;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>P1</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1639065600000</p>
      */
     @NameInMap("startDate")
     public String startDate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1652198400000</p>
      */
     @NameInMap("stopDate")
     public String stopDate;

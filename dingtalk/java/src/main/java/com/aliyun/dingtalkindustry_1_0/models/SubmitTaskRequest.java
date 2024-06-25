@@ -4,9 +4,17 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SubmitTaskRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1001</p>
+     */
     @NameInMap("appId")
     public Long appId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>MEETING</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
@@ -43,21 +51,41 @@ public class SubmitTaskRequest extends TeaModel {
     }
 
     public static class SubmitTaskRequestData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2024-05-14</p>
+         */
         @NameInMap("date")
         public String date;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xx项目</p>
+         */
         @NameInMap("desc")
         public String desc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>audio</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
         @NameInMap("fileUrl")
         public java.util.List<String> fileUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1001</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xx项目会议</p>
+         */
         @NameInMap("name")
         public String name;
 

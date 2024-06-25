@@ -4,17 +4,27 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryFormInstanceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>SWAPP-dfeacds-example</p>
+     */
     @NameInMap("appUuid")
     public String appUuid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROC-abcdef-example</p>
      */
     @NameInMap("formCode")
     public String formCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>951a8-8828-430c-b3e-example</p>
      */
     @NameInMap("formInstanceId")
     public String formInstanceId;

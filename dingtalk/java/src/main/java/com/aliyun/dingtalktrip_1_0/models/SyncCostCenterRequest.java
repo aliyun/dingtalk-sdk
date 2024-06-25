@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SyncCostCenterRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding89233847892ndkas</p>
      */
     @NameInMap("channelCorpId")
     public String channelCorpId;
@@ -16,24 +19,47 @@ public class SyncCostCenterRequest extends TeaModel {
     @NameInMap("costCenterId")
     public String costCenterId;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
     @NameInMap("deleteFlag")
     public Boolean deleteFlag;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("extension")
     public String extension;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2022-02-21 11:11:11</p>
      */
     @NameInMap("gmtAction")
     public String gmtAction;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123456</p>
+     */
     @NameInMap("number")
     public String number;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("scope")
     public Integer scope;
 
+    /**
+     * <strong>example:</strong>
+     * <p>阿里商旅</p>
+     */
     @NameInMap("source")
     public String source;
 
@@ -42,12 +68,18 @@ public class SyncCostCenterRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>默认成本中心</p>
      */
     @NameInMap("title")
     public String title;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20881001829000</p>
      */
     @NameInMap("userId")
     public String userId;

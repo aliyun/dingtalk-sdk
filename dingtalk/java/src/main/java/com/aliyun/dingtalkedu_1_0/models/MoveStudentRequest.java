@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class MoveStudentRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234</p>
      */
     @NameInMap("operator")
     public String operator;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2000</p>
      */
     @NameInMap("originClassId")
     public Long originClassId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2001</p>
      */
     @NameInMap("targetClassId")
     public Long targetClassId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1000</p>
      */
     @NameInMap("userId")
     public String userId;

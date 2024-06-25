@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class LiandanluExclusiveModelRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>maas1234</p>
      */
     @NameInMap("modelId")
     public String modelId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>GENERAL</p>
      */
     @NameInMap("module")
     public String module;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OKR是什么</p>
      */
     @NameInMap("prompt")
     public String prompt;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>使用该功能的用户id</p>
      */
     @NameInMap("userId")
     public String userId;

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryUnReadMessageResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("unReadCount")
     public Long unReadCount;
@@ -35,9 +38,17 @@ public class QueryUnReadMessageResponseBody extends TeaModel {
     }
 
     public static class QueryUnReadMessageResponseBodyUnReadItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>14da****2760</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("unReadCount")
         public Long unReadCount;
 

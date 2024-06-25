@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class DocAppendTextRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>text</p>
      */
     @NameInMap("text")
     public String text;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

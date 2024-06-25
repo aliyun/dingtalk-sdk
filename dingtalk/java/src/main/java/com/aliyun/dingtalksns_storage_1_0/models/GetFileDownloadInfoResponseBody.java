@@ -7,6 +7,10 @@ public class GetFileDownloadInfoResponseBody extends TeaModel {
     @NameInMap("headerSignatureInfo")
     public GetFileDownloadInfoResponseBodyHeaderSignatureInfo headerSignatureInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>HEADER_SIGNATURE</p>
+     */
     @NameInMap("protocol")
     public String protocol;
 
@@ -32,6 +36,10 @@ public class GetFileDownloadInfoResponseBody extends TeaModel {
     }
 
     public static class GetFileDownloadInfoResponseBodyHeaderSignatureInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>900</p>
+         */
         @NameInMap("expirationSeconds")
         public Integer expirationSeconds;
 
@@ -41,6 +49,10 @@ public class GetFileDownloadInfoResponseBody extends TeaModel {
         @NameInMap("internalResourceUrls")
         public java.util.List<String> internalResourceUrls;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZHANGJIAKOU</p>
+         */
         @NameInMap("region")
         public String region;
 

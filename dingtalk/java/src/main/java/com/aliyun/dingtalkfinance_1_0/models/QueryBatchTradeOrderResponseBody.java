@@ -26,84 +26,126 @@ public class QueryBatchTradeOrderResponseBody extends TeaModel {
     public static class QueryBatchTradeOrderResponseBodyBatchTradeOrderVOs extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021090102102122200002121</p>
          */
         @NameInMap("alipayTransId")
         public String alipayTransId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("failAmount")
         public String failAmount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("failCount")
         public Long failCount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>收款人不存在</p>
          */
         @NameInMap("failReason")
         public String failReason;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-09-01 12:00:00</p>
          */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-09-01 11:00:00</p>
          */
         @NameInMap("gmtSubmit")
         public String gmtSubmit;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20210901001</p>
          */
         @NameInMap("outBatchNo")
         public String outBatchNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>213654465</p>
          */
         @NameInMap("payerStaffId")
         public String payerStaffId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1.00</p>
          */
         @NameInMap("paymentAmount")
         public String paymentAmount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>CNY</p>
          */
         @NameInMap("paymentCurrency")
         public String paymentCurrency;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>SUCCESS</p>
          */
         @NameInMap("status")
         public String status;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1.00</p>
          */
         @NameInMap("successAmount")
         public String successAmount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("successCount")
         public Long successCount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1.00</p>
          */
         @NameInMap("totalAmount")
         public String totalAmount;

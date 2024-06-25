@@ -36,6 +36,10 @@ public class GetSimpleCubeModelListResponseBody extends TeaModel {
         @NameInMap("fieldCode")
         public String fieldCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345</p>
+         */
         @NameInMap("id")
         public String id;
 
@@ -164,6 +168,10 @@ public class GetSimpleCubeModelListResponseBody extends TeaModel {
         @NameInMap("children")
         public java.util.List<GetSimpleCubeModelListResponseBodyResultChildren> children;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345</p>
+         */
         @NameInMap("id")
         public String id;
 

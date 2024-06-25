@@ -40,18 +40,27 @@ public class IntentionStatisticsResponseBody extends TeaModel {
     public static class IntentionStatisticsResponseBodyIntentionStatisticsRecords extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("count")
         public Long count;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>产品异常类</p>
          */
         @NameInMap("intention")
         public String intention;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>9</p>
          */
         @NameInMap("lastCount")
         public Long lastCount;
@@ -90,18 +99,27 @@ public class IntentionStatisticsResponseBody extends TeaModel {
     public static class IntentionStatisticsResponseBodyIntentionTrend extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("count")
         public Long count;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20220101</p>
          */
         @NameInMap("dt")
         public String dt;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>产品异常类</p>
          */
         @NameInMap("intention")
         public String intention;

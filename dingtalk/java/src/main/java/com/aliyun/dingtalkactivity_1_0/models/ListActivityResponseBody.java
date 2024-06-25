@@ -7,9 +7,17 @@ public class ListActivityResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<ListActivityResponseBodyList> list;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public String maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1686633306552</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -43,30 +51,66 @@ public class ListActivityResponseBody extends TeaModel {
     }
 
     public static class ListActivityResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>5tL2HIQiQiOARCZ6xWAPHA02091683513</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@mediaId</p>
+         */
         @NameInMap("bannerMediaId")
         public String bannerMediaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1683515695000</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20230613_001</p>
+         */
         @NameInMap("foreignId")
         public String foreignId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1683514695000</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>AIGC研讨会</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+         */
         @NameInMap("url")
         public String url;
 

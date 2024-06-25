@@ -12,24 +12,36 @@ public class OpenAgoalKeyResultDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6444f5e9a4261c6e699dxxxx</p>
      */
     @NameInMap("keyResultId")
     public String keyResultId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("progress")
     public Integer progress;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("status")
     public Integer status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试KR</p>
      */
     @NameInMap("title")
     public String title;
@@ -42,12 +54,18 @@ public class OpenAgoalKeyResultDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("type")
     public Integer type;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>30</p>
      */
     @NameInMap("weight")
     public Double weight;

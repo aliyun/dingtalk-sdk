@@ -26,24 +26,36 @@ public class PollingConfirmStatusResponseBody extends TeaModel {
     public static class PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponseLivePlayInfoList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>testUrl</p>
          */
         @NameInMap("liveInputUrl")
         public String liveInputUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>testUrl</p>
          */
         @NameInMap("liveOutputUrl")
         public String liveOutputUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("liveType")
         public Long liveType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>testUrl</p>
          */
         @NameInMap("replayUrl")
         public String replayUrl;
@@ -90,12 +102,18 @@ public class PollingConfirmStatusResponseBody extends TeaModel {
     public static class PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponse extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("confirmStatus")
         public Boolean confirmStatus;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>testCourseCode</p>
          */
         @NameInMap("courseCode")
         public String courseCode;

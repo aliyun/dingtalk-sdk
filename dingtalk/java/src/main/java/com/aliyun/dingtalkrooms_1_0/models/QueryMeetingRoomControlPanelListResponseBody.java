@@ -7,12 +7,20 @@ public class QueryMeetingRoomControlPanelListResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
     @NameInMap("result")
     public java.util.List<QueryMeetingRoomControlPanelListResponseBodyResult> result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -54,21 +62,45 @@ public class QueryMeetingRoomControlPanelListResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomControlPanelListResponseBodyResultRoomIotConfig extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>name</p>
+         */
         @NameInMap("enName")
         public String enName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.taoxxxxx.com">https://www.taoxxxxx.com</a></p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>栗子xx</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>30</p>
+         */
         @NameInMap("showTime")
         public Integer showTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("sort")
         public Integer sort;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.taoxxxxx.com">https://www.taoxxxxx.com</a></p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -128,6 +160,10 @@ public class QueryMeetingRoomControlPanelListResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomControlPanelListResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1WADFxxxxxx</p>
+         */
         @NameInMap("roomId")
         public String roomId;
 

@@ -21,9 +21,17 @@ public class UpdateTaskExecutorResponseBody extends TeaModel {
     }
 
     public static class UpdateTaskExecutorResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0517xxxxxxx</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryCorpUserStatisticRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20230101</p>
      */
     @NameInMap("endTime")
     public String endTime;
@@ -18,12 +21,18 @@ public class QueryCorpUserStatisticRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("nextToken")
     public Long nextToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20220101</p>
      */
     @NameInMap("startTime")
     public String startTime;
@@ -33,6 +42,9 @@ public class QueryCorpUserStatisticRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>RCsp7PJmmTUr7w0hbs9aKAiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

@@ -10,6 +10,10 @@ public class QueryTemplateCategorysResponseBody extends TeaModel {
     @NameInMap("categoryList")
     public java.util.List<QueryTemplateCategorysResponseBodyCategoryList> categoryList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>3</p>
+     */
     @NameInMap("total")
     public String total;
 
@@ -37,12 +41,18 @@ public class QueryTemplateCategorysResponseBody extends TeaModel {
     public static class QueryTemplateCategorysResponseBodyCategoryList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>template_category</p>
          */
         @NameInMap("code")
         public String code;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>模板分类</p>
          */
         @NameInMap("name")
         public String name;

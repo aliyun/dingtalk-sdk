@@ -21,6 +21,10 @@ public class SaveIntegratedInstanceResponseBody extends TeaModel {
     }
 
     public static class SaveIntegratedInstanceResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>proc-abc</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 

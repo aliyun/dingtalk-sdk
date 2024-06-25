@@ -4,6 +4,10 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class CountTodoTasksResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>99</p>
+     */
     @NameInMap("result")
     public Integer result;
 

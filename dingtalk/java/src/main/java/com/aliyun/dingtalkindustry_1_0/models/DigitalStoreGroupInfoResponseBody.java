@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class DigitalStoreGroupInfoResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("groupId")
     public Long groupId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>分组1</p>
      */
     @NameInMap("groupName")
     public String groupName;

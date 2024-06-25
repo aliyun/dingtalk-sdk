@@ -6,42 +6,63 @@ import com.aliyun.tea.*;
 public class CfStaffResp extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("deptCode")
     public String deptCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>开发部</p>
      */
     @NameInMap("deptName")
     public String deptName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>17*******@qq.com</p>
      */
     @NameInMap("email")
     public String email;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>151********</p>
      */
     @NameInMap("mobile")
     public String mobile;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>张三</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>松柏</p>
      */
     @NameInMap("nickName")
     public String nickName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("workNumbers")
     public String workNumbers;

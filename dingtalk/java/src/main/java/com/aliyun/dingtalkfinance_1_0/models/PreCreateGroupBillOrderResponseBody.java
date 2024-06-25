@@ -32,6 +32,10 @@ public class PreCreateGroupBillOrderResponseBody extends TeaModel {
     }
 
     public static class PreCreateGroupBillOrderResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2023100914312930910100002107362525</p>
+         */
         @NameInMap("orderNo")
         public String orderNo;
 

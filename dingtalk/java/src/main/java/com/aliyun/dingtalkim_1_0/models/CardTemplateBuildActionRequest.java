@@ -12,6 +12,9 @@ public class CardTemplateBuildActionRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>merge</p>
      */
     @NameInMap("cardTemplateJson")
     public String cardTemplateJson;

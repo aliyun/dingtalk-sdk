@@ -21,12 +21,24 @@ public class SupplyQueryPartnerTypeResponseBody extends TeaModel {
     }
 
     public static class SupplyQueryPartnerTypeResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>21</p>
+         */
         @NameInMap("labelId")
         public Long labelId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>标签1</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("superId")
         public Long superId;
 

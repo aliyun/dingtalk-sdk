@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class UpdateRobotInteractiveCardRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cardXXXX01</p>
      */
     @NameInMap("cardBizId")
     public String cardBizId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>根据具体的cardTemplateId参考文档格式</p>
+     */
     @NameInMap("cardData")
     public String cardData;
 

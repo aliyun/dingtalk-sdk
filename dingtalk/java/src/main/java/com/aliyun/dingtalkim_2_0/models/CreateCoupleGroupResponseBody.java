@@ -7,9 +7,17 @@ public class CreateCoupleGroupResponseBody extends TeaModel {
     @NameInMap("appUserIds")
     public java.util.List<String> appUserIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidX********xaw==</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>14da****2760</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

@@ -6,54 +6,106 @@ import com.aliyun.tea.*;
 public class GetInstanceIdListRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_PBKT0MFBEBTDO8T7SLVP</p>
      */
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>agree</p>
+     */
     @NameInMap("approvedResult")
     public String approvedResult;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2018-01-01</p>
+     */
     @NameInMap("createFromTimeGMT")
     public String createFromTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2018-02-01</p>
+     */
     @NameInMap("createToTimeGMT")
     public String createToTimeGMT;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3</p>
      */
     @NameInMap("formUuid")
     public String formUuid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>RUNNING</p>
+     */
     @NameInMap("instanceStatus")
     public String instanceStatus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2018-01-01</p>
+     */
     @NameInMap("modifiedFromTimeGMT")
     public String modifiedFromTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2018-02-01</p>
+     */
     @NameInMap("modifiedToTimeGMT")
     public String modifiedToTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding123</p>
+     */
     @NameInMap("originatorId")
     public String originatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;text_field&quot;:&quot;123&quot;}</p>
+     */
     @NameInMap("searchFieldJson")
     public String searchFieldJson;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>hexxxx</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2199132092</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding123</p>
      */
     @NameInMap("userId")
     public String userId;

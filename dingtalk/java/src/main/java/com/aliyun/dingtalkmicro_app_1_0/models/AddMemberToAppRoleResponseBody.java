@@ -4,6 +4,10 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddMemberToAppRoleResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("latestScopeVersion")
     public Long latestScopeVersion;
 

@@ -6,54 +6,81 @@ import com.aliyun.tea.*;
 public class SlsLogResp extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>新增</p>
      */
     @NameInMap("action")
     public String action;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>HolidayChangeRecord</p>
      */
     @NameInMap("entity")
     public String entity;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0ba35cd517156543461401313d12b4|null</p>
      */
     @NameInMap("header")
     public String header;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("id")
     public String id;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>提交申请</p>
      */
     @NameInMap("info")
     public String info;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>维同</p>
      */
     @NameInMap("operator")
     public String operator;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>橙奕科技</p>
      */
     @NameInMap("tenant")
     public String tenant;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2</p>
      */
     @NameInMap("tenantId")
     public String tenantId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1638892800000</p>
      */
     @NameInMap("time")
     public Long time;

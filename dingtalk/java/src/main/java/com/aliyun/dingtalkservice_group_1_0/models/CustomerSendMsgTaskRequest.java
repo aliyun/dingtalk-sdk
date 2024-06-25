@@ -12,6 +12,9 @@ public class CustomerSendMsgTaskRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8888</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
@@ -24,6 +27,9 @@ public class CustomerSendMsgTaskRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>任务名称</p>
      */
     @NameInMap("taskName")
     public String taskName;
@@ -74,9 +80,17 @@ public class CustomerSendMsgTaskRequest extends TeaModel {
     }
 
     public static class CustomerSendMsgTaskRequestMessageContentBtns extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.baidu.com">http://www.baidu.com</a></p>
+         */
         @NameInMap("actionURL")
         public String actionURL;
 
+        /**
+         * <strong>example:</strong>
+         * <p>百度</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -109,18 +123,27 @@ public class CustomerSendMsgTaskRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>内容</p>
          */
         @NameInMap("content")
         public String content;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ACTIONCAR：卡片消息</p>
          */
         @NameInMap("messageType")
         public String messageType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>标题</p>
          */
         @NameInMap("title")
         public String title;
@@ -168,12 +191,24 @@ public class CustomerSendMsgTaskRequest extends TeaModel {
         @NameInMap("openContactIds")
         public java.util.List<String> openContactIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>AIMED</p>
+         */
         @NameInMap("queryType")
         public String queryType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{}</p>
+         */
         @NameInMap("searchContactConditions")
         public String searchContactConditions;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{}</p>
+         */
         @NameInMap("searchCustomerConditions")
         public String searchCustomerConditions;
 
@@ -217,12 +252,24 @@ public class CustomerSendMsgTaskRequest extends TeaModel {
     }
 
     public static class CustomerSendMsgTaskRequestSendConfigUrlTrackConfig extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>百度</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p>88888</p>
+         */
         @NameInMap("trackId")
         public String trackId;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.baidu.com">http://www.baidu.com</a></p>
+         */
         @NameInMap("trackUrl")
         public String trackUrl;
 
@@ -260,15 +307,25 @@ public class CustomerSendMsgTaskRequest extends TeaModel {
     public static class CustomerSendMsgTaskRequestSendConfig extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("needUrlTrack")
         public Boolean needUrlTrack;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-06-01 00:00:00</p>
+         */
         @NameInMap("sendTime")
         public String sendTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>INSTANT</p>
          */
         @NameInMap("sendType")
         public String sendType;

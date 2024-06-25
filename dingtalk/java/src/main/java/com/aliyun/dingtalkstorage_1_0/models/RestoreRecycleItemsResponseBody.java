@@ -21,27 +21,59 @@ public class RestoreRecycleItemsResponseBody extends TeaModel {
     }
 
     public static class RestoreRecycleItemsResponseBodyResultItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("async")
         public Boolean async;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_id</p>
+         */
         @NameInMap("dentryId")
         public String dentryId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>permissionDenied</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>recyclebin_id</p>
+         */
         @NameInMap("recycleBinId")
         public String recycleBinId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>recycle_item_id</p>
+         */
         @NameInMap("recycleItemId")
         public String recycleItemId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("success")
         public Boolean success;
 
+        /**
+         * <strong>example:</strong>
+         * <p>task_id</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 

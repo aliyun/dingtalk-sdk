@@ -4,6 +4,10 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProjectRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>项目1</p>
+     */
     @NameInMap("name")
     public String name;
 

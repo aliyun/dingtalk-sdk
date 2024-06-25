@@ -7,9 +7,17 @@ public class ListMaintainInfoRequest extends TeaModel {
     @NameInMap("deviceUuid")
     public java.util.List<String> deviceUuid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

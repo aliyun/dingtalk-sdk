@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CampusDeleteCampusGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("campusProjectGroupId")
     public Long campusProjectGroupId;

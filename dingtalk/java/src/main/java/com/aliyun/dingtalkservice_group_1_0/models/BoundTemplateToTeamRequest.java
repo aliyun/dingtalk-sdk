@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class BoundTemplateToTeamRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>btkoYsadwyQiE</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>[{&quot;robotCode&quot;:&quot;123ITJovyMHtmi216233798228941001&quot;,&quot;robotName&quot;:&quot;服务小钉&quot;}]</p>
      */
     @NameInMap("robotConfig")
     public String robotConfig;
@@ -33,6 +39,9 @@ public class BoundTemplateToTeamRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0普通群模板，1内部群模板</p>
      */
     @NameInMap("templateType")
     public String templateType;

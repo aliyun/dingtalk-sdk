@@ -54,6 +54,10 @@ public class SearchActionsResponseBody extends TeaModel {
     }
 
     public static class SearchActionsResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>dingtalk://dingtalkclient/page/link?pc_slide=true&amp;url=https%3A%2F%2Fn.dingtalk.com%2Fdingding%2Fh5-common-authority%2Fconnector%2Findex.html%3FcorpId%3Dding32fff839a3e0105d%26accessorUuid%3DAPP-505001%26oPaths%3D%252Fding5b2a0b7e9677128935c2f4657eb6378f%252Fconnector%252FG-CONN-1017AF27C1B20B0FFD490005</p>
+         */
         @NameInMap("authorityUrl")
         public String authorityUrl;
 
@@ -63,27 +67,59 @@ public class SearchActionsResponseBody extends TeaModel {
         @NameInMap("authorized")
         public Boolean authorized;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dca://ding32fff839a3e0105d.connect.dingtalk.com/ding32fff839a3e0105d/action/G-ACT-101FDEBD3C6E213DB474000P</p>
+         */
         @NameInMap("connectAssetUri")
         public String connectAssetUri;
 
+        /**
+         * <strong>example:</strong>
+         * <p>G-CONN-XXCONNECTOR</p>
+         */
         @NameInMap("connectorId")
         public String connectorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>示例描述</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://example.com/icon.jpg">http://example.com/icon.jpg</a></p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>G-ACT-XXXACTION</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>basic</p>
+         */
         @NameInMap("integrationType")
         public String integrationType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>示例连接器</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding32fff839a3e0105d</p>
+         */
         @NameInMap("providerCorpId")
         public String providerCorpId;
 

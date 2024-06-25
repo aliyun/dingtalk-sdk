@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class CreateUniversityCourseGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>高数</p>
      */
     @NameInMap("courseGroupIntroduce")
     public String courseGroupIntroduce;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>张老师_高数</p>
      */
     @NameInMap("courseGroupName")
     public String courseGroupName;
@@ -22,35 +28,54 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     @NameInMap("courserGroupItemModels")
     public java.util.List<CreateUniversityCourseGroupRequestCourserGroupItemModels> courserGroupItemModels;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{}</p>
+     */
     @NameInMap("ext")
     public String ext;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>GZ1001</p>
      */
     @NameInMap("isvCourseGroupCode")
     public String isvCourseGroupCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>大学：university</p>
      */
     @NameInMap("periodCode")
     public String periodCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-2022</p>
      */
     @NameInMap("schoolYear")
     public String schoolYear;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("semester")
     public Integer semester;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>高等数学</p>
      */
     @NameInMap("subjectName")
     public String subjectName;
@@ -163,18 +188,27 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>31</p>
          */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("month")
         public Integer month;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021</p>
          */
         @NameInMap("year")
         public Integer year;
@@ -213,18 +247,27 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("month")
         public Integer month;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021</p>
          */
         @NameInMap("year")
         public Integer year;
@@ -263,18 +306,27 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModels extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1、单周；2、双周；3、全周</p>
          */
         @NameInMap("classPeriodType")
         public Integer classPeriodType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10001</p>
          */
         @NameInMap("classroomId")
         public Long classroomId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1;音视频直播\2:线下课程\4:音视频及线下</p>
          */
         @NameInMap("courseType")
         public Integer courseType;
@@ -293,6 +345,9 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("dayOfWeek")
         public Integer dayOfWeek;
@@ -367,9 +422,17 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestTeacherInfos extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>TEACHER授课教师/TEACHING_ASSISTANT助教</p>
+         */
         @NameInMap("participantRole")
         public String participantRole;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manger1234</p>
+         */
         @NameInMap("userId")
         public String userId;
 

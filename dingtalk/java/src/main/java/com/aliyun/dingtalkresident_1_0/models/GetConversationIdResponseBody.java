@@ -4,6 +4,10 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetConversationIdResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cidAX+2NwjqR3Y81Sxic5jtag==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

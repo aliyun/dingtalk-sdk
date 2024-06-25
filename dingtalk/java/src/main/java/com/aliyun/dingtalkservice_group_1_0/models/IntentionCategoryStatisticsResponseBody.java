@@ -26,36 +26,54 @@ public class IntentionCategoryStatisticsResponseBody extends TeaModel {
     public static class IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("askCount")
         public Long askCount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>工单类</p>
          */
         @NameInMap("categoryName")
         public String categoryName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("dissatisfiedCount")
         public Long dissatisfiedCount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("errorCount")
         public Long errorCount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("praiseCount")
         public Long praiseCount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("suggestCount")
         public Long suggestCount;

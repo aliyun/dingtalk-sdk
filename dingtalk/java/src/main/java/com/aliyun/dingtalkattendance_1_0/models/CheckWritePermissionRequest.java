@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CheckWritePermissionRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>GROUP</p>
      */
     @NameInMap("category")
     public String category;
@@ -18,12 +21,18 @@ public class CheckWritePermissionRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>050728xxx921</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SCHEDULE</p>
      */
     @NameInMap("resourceKey")
     public String resourceKey;

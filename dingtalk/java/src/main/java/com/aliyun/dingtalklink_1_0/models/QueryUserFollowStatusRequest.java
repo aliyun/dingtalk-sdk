@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class QueryUserFollowStatusRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding1234</p>
      */
     @NameInMap("accountId")
     public String accountId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>UgIzXXo+Rp3Rqcts7BE08y49Jr6iu6xW4iQ</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 

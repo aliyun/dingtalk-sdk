@@ -4,90 +4,151 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveAndSubmitAuthInfoRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>XXX组织申请高级认证</p>
+     */
     @NameInMap("applyRemark")
     public String applyRemark;
 
+    /**
+     * <strong>example:</strong>
+     * <p>@lQLxxxxxxxxVvjg8zImwm6t1BYIUNv0Cas0x7UA-AA</p>
+     */
     @NameInMap("authorizeMediaId")
     public String authorizeMediaId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>计算机</p>
      */
     @NameInMap("industry")
     public String industry;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>钉三多</p>
      */
     @NameInMap("legalPerson")
     public String legalPerson;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3301XX1997XXXXXXXXX</p>
      */
     @NameInMap("legalPersonIdCard")
     public String legalPersonIdCard;
 
+    /**
+     * <strong>example:</strong>
+     * <p>@lQLxxxxxxxxVvjg8zImwm6t1BYIUNv0Cas0x7UA-AA</p>
+     */
     @NameInMap("licenseMediaId")
     public String licenseMediaId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>330100</p>
      */
     @NameInMap("locCity")
     public Long locCity;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>杭州</p>
      */
     @NameInMap("locCityName")
     public String locCityName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>330000</p>
      */
     @NameInMap("locProvince")
     public Long locProvince;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>浙江</p>
      */
     @NameInMap("locProvinceName")
     public String locProvinceName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>15869110714</p>
      */
     @NameInMap("mobileNum")
     public String mobileNum;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试组织</p>
      */
     @NameInMap("orgName")
     public String orgName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>11111111-1</p>
+     */
     @NameInMap("organizationCode")
     public String organizationCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>@lQLxxxxxxxxVvjg8zImwm6t1BYIUNv0Cas0x7UA-AA</p>
+     */
     @NameInMap("organizationCodeMediaId")
     public String organizationCodeMediaId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>余杭区文一西路XX号</p>
      */
     @NameInMap("registLocation")
     public String registLocation;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1111111111111111</p>
+     */
     @NameInMap("registNum")
     public String registNum;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxxxxxxxxxx</p>
      */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>9111111XX2957XX4X</p>
+     */
     @NameInMap("unifiedSocialCredit")
     public String unifiedSocialCredit;
 

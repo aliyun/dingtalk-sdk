@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class HandOverWorkspaceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>source_owner_id</p>
      */
     @NameInMap("sourceOwnerId")
     public String sourceOwnerId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>source_owner_id</p>
      */
     @NameInMap("targetOwnerId")
     public String targetOwnerId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>workspace_id</p>
      */
     @NameInMap("workspaceId")
     public String workspaceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

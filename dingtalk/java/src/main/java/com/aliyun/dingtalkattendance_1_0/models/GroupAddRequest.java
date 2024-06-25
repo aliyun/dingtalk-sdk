@@ -4,80 +4,163 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupAddRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>123L</p>
+     */
     @NameInMap("adjustmentSettingId")
     public Long adjustmentSettingId;
 
     @NameInMap("bleDeviceList")
     public java.util.List<GroupAddRequestBleDeviceList> bleDeviceList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("checkNeedHealthyCode")
     public Boolean checkNeedHealthyCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("defaultClassId")
     public Long defaultClassId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableCheckWhenRest")
     public Boolean disableCheckWhenRest;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableCheckWithoutSchedule")
     public Boolean disableCheckWithoutSchedule;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableCameraCheck")
     public Boolean enableCameraCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableEmpSelectClass")
     public Boolean enableEmpSelectClass;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableFaceCheck")
     public Boolean enableFaceCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableFaceStrictMode")
     public Boolean enableFaceStrictMode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableNextDay")
     public Boolean enableNextDay;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableOutSideUpdateNormalCheck")
     public Boolean enableOutSideUpdateNormalCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableOutsideApply")
     public Boolean enableOutsideApply;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableOutsideCameraCheck")
     public Boolean enableOutsideCameraCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableOutsideCheck")
     public Boolean enableOutsideCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enableOutsideRemark")
     public Boolean enableOutsideRemark;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("enablePositionBle")
     public Boolean enablePositionBle;
 
     @NameInMap("enableTrimDistance")
     public Boolean enableTrimDistance;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("forbidHideOutSideAddress")
     public Boolean forbidHideOutSideAddress;
 
     @NameInMap("freeCheckSetting")
     public GroupAddRequestFreeCheckSetting freeCheckSetting;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("freeCheckTypeId")
     public Integer freeCheckTypeId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>240</p>
+     */
     @NameInMap("freecheckDayStartMinOffset")
     public Integer freecheckDayStartMinOffset;
 
     @NameInMap("freecheckWorkDays")
     public java.util.List<Integer> freecheckWorkDays;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("groupId")
     public Long groupId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>白班考勤</p>
      */
     @NameInMap("groupName")
     public String groupName;
@@ -91,24 +174,48 @@ public class GroupAddRequest extends TeaModel {
     @NameInMap("members")
     public java.util.List<GroupAddRequestMembers> members;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("modifyMember")
     public Boolean modifyMember;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("offset")
     public Integer offset;
 
     @NameInMap("openCameraCheck")
     public Boolean openCameraCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("openFaceCheck")
     public Boolean openFaceCheck;
 
+    /**
+     * <strong>example:</strong>
+     * <p>-1</p>
+     */
     @NameInMap("outsideCheckApproveModeId")
     public Integer outsideCheckApproveModeId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123L</p>
+     */
     @NameInMap("overtimeSettingId")
     public Long overtimeSettingId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123dfdf</p>
+     */
     @NameInMap("owner")
     public String owner;
 
@@ -121,17 +228,32 @@ public class GroupAddRequest extends TeaModel {
     @NameInMap("shiftVOList")
     public java.util.List<GroupAddRequestShiftVOList> shiftVOList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("skipHolidays")
     public Boolean skipHolidays;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;onDuty&quot;:{1400000:123,1400001:123},&quot;offDuty&quot;:[1400000,1400001]}</p>
+     */
     @NameInMap("specialDays")
     public String specialDays;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("trimDistance")
     public Integer trimDistance;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>TURN</p>
      */
     @NameInMap("type")
     public String type;
@@ -144,6 +266,9 @@ public class GroupAddRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123dfd</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
@@ -506,6 +631,10 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestBleDeviceList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1311089987</p>
+         */
         @NameInMap("deviceId")
         public Long deviceId;
 
@@ -525,9 +654,17 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestFreeCheckSettingFreeCheckGap extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("offOnCheckGapMinutes")
         public Integer offOnCheckGapMinutes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("onOffCheckGapMinutes")
         public Integer onOffCheckGapMinutes;
 
@@ -587,18 +724,27 @@ public class GroupAddRequest extends TeaModel {
     public static class GroupAddRequestMembers extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>Attendance</p>
          */
         @NameInMap("role")
         public String role;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>StaffMember</p>
          */
         @NameInMap("type")
         public String type;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1212jfkd</p>
          */
         @NameInMap("userId")
         public String userId;
@@ -635,18 +781,38 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestPositions extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>生物科技产业园区经二路21号</p>
+         */
         @NameInMap("address")
         public String address;
 
+        /**
+         * <strong>example:</strong>
+         * <p>36.687495</p>
+         */
         @NameInMap("latitude")
         public String latitude;
 
+        /**
+         * <strong>example:</strong>
+         * <p>101.750329</p>
+         */
         @NameInMap("longitude")
         public String longitude;
 
+        /**
+         * <strong>example:</strong>
+         * <p>500</p>
+         */
         @NameInMap("offset")
         public Integer offset;
 
+        /**
+         * <strong>example:</strong>
+         * <p>青藏高原自然博物馆</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -698,6 +864,10 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestShiftVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("shiftId")
         public Long shiftId;
 
@@ -717,9 +887,17 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestWifis extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>C0:E0:D0:E0:C0:0F</p>
+         */
         @NameInMap("macAddr")
         public String macAddr;
 
+        /**
+         * <strong>example:</strong>
+         * <p>OFFICE-WiFi</p>
+         */
         @NameInMap("ssid")
         public String ssid;
 

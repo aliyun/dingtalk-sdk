@@ -9,6 +9,9 @@ public class GetFileDownloadInfoRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -35,9 +38,17 @@ public class GetFileDownloadInfoRequest extends TeaModel {
     }
 
     public static class GetFileDownloadInfoRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("preferIntranet")
         public Boolean preferIntranet;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("version")
         public Long version;
 

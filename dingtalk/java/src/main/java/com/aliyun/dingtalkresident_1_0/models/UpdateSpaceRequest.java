@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdateSpaceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>A栋</p>
      */
     @NameInMap("spaceInfoVOList")
     public java.util.List<UpdateSpaceRequestSpaceInfoVOList> spaceInfoVOList;
@@ -24,30 +27,61 @@ public class UpdateSpaceRequest extends TeaModel {
     }
 
     public static class UpdateSpaceRequestSpaceInfoVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123.4</p>
+         */
         @NameInMap("billingArea")
         public Float billingArea;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123.4</p>
+         */
         @NameInMap("buildingArea")
         public Float buildingArea;
 
+        /**
+         * <strong>example:</strong>
+         * <p>当tagcode为Building的时候必填</p>
+         */
         @NameInMap("buildingType")
         public Long buildingType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10005</p>
          */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12</p>
+         */
         @NameInMap("floor")
         public String floor;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("houseState")
         public Long houseState;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("houseType")
         public Long houseType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>二单元</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -56,6 +90,9 @@ public class UpdateSpaceRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>空间类型标签code，House/Unit/Building/Partition</p>
          */
         @NameInMap("tagCode")
         public String tagCode;

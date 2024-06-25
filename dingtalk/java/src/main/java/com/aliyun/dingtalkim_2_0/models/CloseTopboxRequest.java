@@ -6,31 +6,61 @@ import com.aliyun.tea.*;
 public class CloseTopboxRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("conversationType")
     public Integer conversationType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>COOLAPP-x-xxx</p>
+     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>6dx-xxx-xxx</p>
+     */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidxxxxx==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123xxx</p>
      */
     @NameInMap("outTrackId")
     public String outTrackId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dingxxx</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>jHsR7xxx</p>
+     */
     @NameInMap("unoinId")
     public String unoinId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>011xxx</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -32,6 +32,10 @@ public class CreateOrgHonorResponseBody extends TeaModel {
     }
 
     public static class CreateOrgHonorResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10000283</p>
+         */
         @NameInMap("honorId")
         public String honorId;
 

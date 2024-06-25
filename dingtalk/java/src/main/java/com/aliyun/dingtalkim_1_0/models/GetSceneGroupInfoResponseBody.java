@@ -10,6 +10,10 @@ public class GetSceneGroupInfoResponseBody extends TeaModel {
     @NameInMap("icon")
     public String icon;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidXXXXXXXXX==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

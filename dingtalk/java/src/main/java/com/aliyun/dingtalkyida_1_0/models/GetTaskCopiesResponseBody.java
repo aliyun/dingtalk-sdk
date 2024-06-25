@@ -7,9 +7,17 @@ public class GetTaskCopiesResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetTaskCopiesResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,18 +51,38 @@ public class GetTaskCopiesResponseBody extends TeaModel {
     }
 
     public static class GetTaskCopiesResponseBodyDataCurrentActivityInstances extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>act-xxaanfaf</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>running</p>
+         */
         @NameInMap("activityInstanceStatus")
         public String activityInstanceStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>activity-124</p>
+         */
         @NameInMap("activityName")
         public String activityName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>redirect task</p>
+         */
         @NameInMap("activityNameInEnglish")
         public String activityNameInEnglish;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345</p>
+         */
         @NameInMap("id")
         public Long id;
 
@@ -118,6 +146,10 @@ public class GetTaskCopiesResponseBody extends TeaModel {
         @NameInMap("carbonActivityId")
         public String carbonActivityId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-01-01</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
@@ -130,6 +162,10 @@ public class GetTaskCopiesResponseBody extends TeaModel {
         @NameInMap("dataType")
         public String dataType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-01-01</p>
+         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
@@ -139,6 +175,10 @@ public class GetTaskCopiesResponseBody extends TeaModel {
         @NameInMap("formUuid")
         public String formUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>符合宜搭表单实例格式的json数据</p>
+         */
         @NameInMap("instanceValue")
         public String instanceValue;
 
@@ -163,6 +203,10 @@ public class GetTaskCopiesResponseBody extends TeaModel {
         @NameInMap("processCode")
         public String processCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>proc-123</p>
+         */
         @NameInMap("processId")
         public Long processId;
 
@@ -178,12 +222,24 @@ public class GetTaskCopiesResponseBody extends TeaModel {
         @NameInMap("processName")
         public String processName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ser-BNANFAHHYDFNK</p>
+         */
         @NameInMap("serialNumber")
         public String serialNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四发起的请购单</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1.0</p>
+         */
         @NameInMap("version")
         public Long version;
 

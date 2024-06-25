@@ -7,20 +7,34 @@ public class SendRobotMessageRequest extends TeaModel {
     @NameInMap("atAll")
     public Boolean atAll;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1107****2120</p>
+     */
     @NameInMap("atAppUserId")
     public String atAppUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1107****2120</p>
+     */
     @NameInMap("atDingUserId")
     public String atDingUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{ &quot;content&quot;: &quot;我就是我, 是不一样的烟火&quot;}</p>
      */
     @NameInMap("msgContent")
     public String msgContent;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>text</p>
      */
     @NameInMap("msgType")
     public String msgType;
@@ -31,6 +45,10 @@ public class SendRobotMessageRequest extends TeaModel {
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>kelian-custom-service-robot-101</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 

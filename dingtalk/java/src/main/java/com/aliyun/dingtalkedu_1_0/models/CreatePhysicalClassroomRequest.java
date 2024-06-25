@@ -6,45 +6,70 @@ import com.aliyun.tea.*;
 public class CreatePhysicalClassroomRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>主楼</p>
      */
     @NameInMap("classroomBuilding")
     public String classroomBuilding;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>主校区</p>
      */
     @NameInMap("classroomCampus")
     public String classroomCampus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2层</p>
      */
     @NameInMap("classroomFloor")
     public String classroomFloor;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>实验室</p>
      */
     @NameInMap("classroomName")
     public String classroomName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>201</p>
      */
     @NameInMap("classroomNumber")
     public String classroomNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Y</p>
      */
     @NameInMap("directBroadcast")
     public String directBroadcast;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{}</p>
+     */
     @NameInMap("ext")
     public String ext;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manger1234</p>
      */
     @NameInMap("opUserId")
     public String opUserId;

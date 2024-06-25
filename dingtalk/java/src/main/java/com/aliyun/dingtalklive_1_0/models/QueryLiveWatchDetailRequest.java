@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class QueryLiveWatchDetailRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1a353547-040d-4095-bb93-404bc5d47920</p>
      */
     @NameInMap("liveId")
     public String liveId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>DC7wZGOSueEEIGOf3WKwWgiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

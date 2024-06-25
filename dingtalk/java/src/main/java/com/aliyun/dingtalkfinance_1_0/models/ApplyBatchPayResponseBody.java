@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class ApplyBatchPayResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20210909153300000002734753314700</p>
      */
     @NameInMap("orderNo")
     public String orderNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>payData</p>
      */
     @NameInMap("payData")
     public String payData;

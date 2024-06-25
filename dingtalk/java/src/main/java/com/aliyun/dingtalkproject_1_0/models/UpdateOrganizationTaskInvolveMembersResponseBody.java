@@ -21,12 +21,24 @@ public class UpdateOrganizationTaskInvolveMembersResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskInvolveMembersResponseBodyResultInvolvers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://xxxx">http://xxxx</a></p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>鬼斩</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>173xxxxx</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -65,6 +77,10 @@ public class UpdateOrganizationTaskInvolveMembersResponseBody extends TeaModel {
         @NameInMap("involvers")
         public java.util.List<UpdateOrganizationTaskInvolveMembersResponseBodyResultInvolvers> involvers;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-06-13T05:33:42.826Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

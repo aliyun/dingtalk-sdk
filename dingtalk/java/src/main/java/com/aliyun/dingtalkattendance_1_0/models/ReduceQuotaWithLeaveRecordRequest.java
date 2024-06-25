@@ -12,22 +12,35 @@ public class ReduceQuotaWithLeaveRecordRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>asdfaad-asdfadfa-asdfa</p>
      */
     @NameInMap("leaveCode")
     public String leaveCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123342345</p>
      */
     @NameInMap("outerId")
     public String outerId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("quotaNum")
     public Integer quotaNum;
 
+    /**
+     * <strong>example:</strong>
+     * <p>家中有事请假1天</p>
+     */
     @NameInMap("reason")
     public String reason;
 

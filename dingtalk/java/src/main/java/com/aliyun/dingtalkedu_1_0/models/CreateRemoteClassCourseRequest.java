@@ -12,24 +12,36 @@ public class CreateRemoteClassCourseRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>bab02f63c1e030fbbxxxx</p>
      */
     @NameInMap("authCode")
     public String authCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>春天来了</p>
      */
     @NameInMap("courseName")
     public String courseName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1634184000000</p>
      */
     @NameInMap("endTime")
     public Long endTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1634176800000</p>
      */
     @NameInMap("startTime")
     public Long startTime;
@@ -96,12 +108,18 @@ public class CreateRemoteClassCourseRequest extends TeaModel {
     public static class CreateRemoteClassCourseRequestAttendParticipants extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ding23456</p>
          */
         @NameInMap("corpId")
         public String corpId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>234567</p>
          */
         @NameInMap("participantId")
         public String participantId;
@@ -132,12 +150,18 @@ public class CreateRemoteClassCourseRequest extends TeaModel {
     public static class CreateRemoteClassCourseRequestTeachingParticipant extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ding1234</p>
          */
         @NameInMap("corpId")
         public String corpId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123456</p>
          */
         @NameInMap("participantId")
         public String participantId;

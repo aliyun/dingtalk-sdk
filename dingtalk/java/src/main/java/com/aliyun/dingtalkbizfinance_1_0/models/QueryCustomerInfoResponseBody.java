@@ -4,12 +4,20 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCustomerInfoResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     @NameInMap("list")
     public java.util.List<QueryCustomerInfoResponseBodyList> list;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,6 +51,10 @@ public class QueryCustomerInfoResponseBody extends TeaModel {
     }
 
     public static class QueryCustomerInfoResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>CUS_xxxxxxxx</p>
+         */
         @NameInMap("code")
         public String code;
 
@@ -61,39 +73,87 @@ public class QueryCustomerInfoResponseBody extends TeaModel {
         @NameInMap("contactTelephone")
         public String contactTelephone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.abc.com">www.abc.com</a></p>
+         */
         @NameInMap("drawerEmail")
         public String drawerEmail;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345678901</p>
+         */
         @NameInMap("drawerTelephone")
         public String drawerTelephone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("purchaserAccount")
         public String purchaserAccount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州市</p>
+         */
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("purchaserName")
         public String purchaserName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("purchaserTaxNo")
         public String purchaserTaxNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>13333333333</p>
+         */
         @NameInMap("purchaserTel")
         public String purchaserTel;
 
+        /**
+         * <strong>example:</strong>
+         * <p>建行</p>
+         */
         @NameInMap("purchaserrBankName")
         public String purchaserrBankName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>valid</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>199200</p>
+         */
         @NameInMap("userDefineCode")
         public String userDefineCode;
 

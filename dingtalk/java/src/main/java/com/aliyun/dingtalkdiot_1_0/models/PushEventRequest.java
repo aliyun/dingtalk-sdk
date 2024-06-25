@@ -4,26 +4,43 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushEventRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding123456</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>002</p>
+     */
     @NameInMap("deviceId")
     public String deviceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sj123456</p>
      */
     @NameInMap("eventId")
     public String eventId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>火焰告警</p>
      */
     @NameInMap("eventName")
     public String eventName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fireDetect</p>
      */
     @NameInMap("eventType")
     public String eventType;
@@ -31,14 +48,25 @@ public class PushEventRequest extends TeaModel {
     @NameInMap("extraData")
     public java.util.Map<String, ?> extraData;
 
+    /**
+     * <strong>example:</strong>
+     * <p>社区南门</p>
+     */
     @NameInMap("location")
     public String location;
 
+    /**
+     * <strong>example:</strong>
+     * <p>社区南门发生火焰告警</p>
+     */
     @NameInMap("msg")
     public String msg;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1638250958570</p>
      */
     @NameInMap("occurrenceTime")
     public Long occurrenceTime;

@@ -12,21 +12,34 @@ public class QueryBatchTradeDetailListResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("total")
     public Integer total;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("totalPageNumber")
     public Integer totalPageNumber;
@@ -79,60 +92,90 @@ public class QueryBatchTradeDetailListResponseBody extends TeaModel {
     public static class QueryBatchTradeDetailListResponseBodyBatchTradeDetailList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1.00</p>
          */
         @NameInMap("amount")
         public String amount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20210909153300000002734746770740</p>
          */
         @NameInMap("detailNo")
         public String detailNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-09-29 14:46:48</p>
          */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-09-29 16:05:00</p>
          */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试</p>
          */
         @NameInMap("memo")
         public String memo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>收款人</p>
          */
         @NameInMap("payeeAccountName")
         public String payeeAccountName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>13900000000</p>
          */
         @NameInMap("payeeAccountNo")
         public String payeeAccountNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ALIPAY</p>
          */
         @NameInMap("payeeAccountType")
         public String payeeAccountType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("serialNo")
         public Long serialNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>SUCCESS</p>
          */
         @NameInMap("status")
         public String status;

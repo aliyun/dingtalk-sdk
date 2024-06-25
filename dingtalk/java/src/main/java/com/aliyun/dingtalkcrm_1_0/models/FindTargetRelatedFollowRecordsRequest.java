@@ -6,22 +6,35 @@ import com.aliyun.tea.*;
 public class FindTargetRelatedFollowRecordsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>customerId</p>
      */
     @NameInMap("followTargetDataId")
     public String followTargetDataId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>customer</p>
      */
     @NameInMap("followTargetType")
     public String followTargetType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("maxResults")
     public Long maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

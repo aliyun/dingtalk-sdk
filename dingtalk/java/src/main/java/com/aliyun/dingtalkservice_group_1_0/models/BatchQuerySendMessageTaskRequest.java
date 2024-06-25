@@ -4,30 +4,61 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQuerySendMessageTaskRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("getReadCount")
     public Boolean getReadCount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-04-02 00:00:00</p>
+     */
     @NameInMap("gmtCreateEnd")
     public String gmtCreateEnd;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-04-01 00:00:00</p>
+     */
     @NameInMap("gmtCreateStart")
     public String gmtCreateStart;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>首页传递空</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fwPuycdHiiI</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Jciwnfw</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>群发任务双11</p>
+     */
     @NameInMap("taskName")
     public String taskName;
 

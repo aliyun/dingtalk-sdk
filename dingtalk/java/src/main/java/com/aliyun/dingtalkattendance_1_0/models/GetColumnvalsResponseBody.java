@@ -21,6 +21,10 @@ public class GetColumnvalsResponseBody extends TeaModel {
     }
 
     public static class GetColumnvalsResponseBodyResultColumnDataColumnValues extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1709222400000</p>
+         */
         @NameInMap("date")
         public Long date;
 
@@ -54,9 +58,17 @@ public class GetColumnvalsResponseBody extends TeaModel {
         @NameInMap("columnValues")
         public java.util.List<GetColumnvalsResponseBodyResultColumnDataColumnValues> columnValues;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("fixedValue")
         public String fixedValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>129339038</p>
+         */
         @NameInMap("id")
         public Long id;
 
@@ -95,6 +107,10 @@ public class GetColumnvalsResponseBody extends TeaModel {
         @NameInMap("columnData")
         public java.util.List<GetColumnvalsResponseBodyResultColumnData> columnData;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager123</p>
+         */
         @NameInMap("userId")
         public String userId;
 

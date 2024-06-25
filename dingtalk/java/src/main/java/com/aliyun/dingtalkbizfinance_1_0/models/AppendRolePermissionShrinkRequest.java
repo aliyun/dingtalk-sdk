@@ -7,6 +7,10 @@ public class AppendRolePermissionShrinkRequest extends TeaModel {
     @NameInMap("rolePermissionItemList")
     public String rolePermissionItemListShrink;
 
+    /**
+     * <strong>example:</strong>
+     * <p>5041234</p>
+     */
     @NameInMap("userId")
     public String userId;
 

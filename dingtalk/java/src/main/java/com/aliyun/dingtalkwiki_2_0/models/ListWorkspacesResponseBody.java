@@ -4,6 +4,10 @@ package com.aliyun.dingtalkwiki_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListWorkspacesResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>next_token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,9 +36,17 @@ public class ListWorkspacesResponseBody extends TeaModel {
     }
 
     public static class ListWorkspacesResponseBodyWorkspacesIcon extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>URL</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>icon_url</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -62,48 +74,104 @@ public class ListWorkspacesResponseBody extends TeaModel {
     }
 
     public static class ListWorkspacesResponseBodyWorkspaces extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>corp_id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_cover</p>
+         */
         @NameInMap("cover")
         public String cover;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_create_time</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_creator_id</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_description</p>
+         */
         @NameInMap("description")
         public String description;
 
         @NameInMap("icon")
         public ListWorkspacesResponseBodyWorkspacesIcon icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_modified_time</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_modifier_id</p>
+         */
         @NameInMap("modifierId")
         public String modifierId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>READER</p>
+         */
         @NameInMap("permissionRole")
         public String permissionRole;
 
+        /**
+         * <strong>example:</strong>
+         * <p>root_node_uuid</p>
+         */
         @NameInMap("rootNodeId")
         public String rootNodeId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_id</p>
+         */
         @NameInMap("teamId")
         public String teamId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>TEAM</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_url</p>
+         */
         @NameInMap("url")
         public String url;
 
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_id</p>
+         */
         @NameInMap("workspaceId")
         public String workspaceId;
 

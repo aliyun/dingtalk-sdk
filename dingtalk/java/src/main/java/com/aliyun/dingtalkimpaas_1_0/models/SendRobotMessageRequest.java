@@ -4,6 +4,10 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRobotMessageRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("atAll")
     public Boolean atAll;
 
@@ -19,15 +23,31 @@ public class SendRobotMessageRequest extends TeaModel {
     @NameInMap("atUsers")
     public java.util.List<String> atUsers;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("channel")
     public String channel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;pic1&quot;:&quot;@123&quot;,&quot;pic2&quot;:&quot;@456&quot;}</p>
+     */
     @NameInMap("msgMediaIdParamMap")
     public java.util.Map<String, ?> msgMediaIdParamMap;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;text1&quot;:&quot;hello&quot;,&quot;text2&quot;:&quot;world&quot;}</p>
+     */
     @NameInMap("msgParamMap")
     public java.util.Map<String, ?> msgParamMap;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("msgTemplateId")
     public String msgTemplateId;
 
@@ -43,9 +63,17 @@ public class SendRobotMessageRequest extends TeaModel {
     @NameInMap("receiverUserIds")
     public java.util.List<String> receiverUserIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("robotCode")
     public String robotCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("targetOpenConversationId")
     public String targetOpenConversationId;
 

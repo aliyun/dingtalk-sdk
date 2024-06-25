@@ -21,18 +21,38 @@ public class ListAuditLogResponseBody extends TeaModel {
     }
 
     public static class ListAuditLogResponseBodyListDocMemberList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("memberName")
         public String memberName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("memberType")
         public Integer memberType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>部门</p>
+         */
         @NameInMap("memberTypeView")
         public String memberTypeView;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("permissionRole")
         public Long permissionRole;
 
+        /**
+         * <strong>example:</strong>
+         * <p>阅读者（可查看\下载）</p>
+         */
         @NameInMap("permissionRoleView")
         public String permissionRoleView;
 
@@ -84,12 +104,24 @@ public class ListAuditLogResponseBody extends TeaModel {
     }
 
     public static class ListAuditLogResponseBodyListDocReceiverList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("receiverName")
         public String receiverName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("receiverType")
         public Integer receiverType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>单聊</p>
+         */
         @NameInMap("receiverTypeView")
         public String receiverTypeView;
 
@@ -125,12 +157,24 @@ public class ListAuditLogResponseBody extends TeaModel {
     }
 
     public static class ListAuditLogResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("action")
         public Integer action;
 
+        /**
+         * <strong>example:</strong>
+         * <p>企业群</p>
+         */
         @NameInMap("actionView")
         public String actionView;
 
+        /**
+         * <strong>example:</strong>
+         * <p>11258620701</p>
+         */
         @NameInMap("bizId")
         public String bizId;
 
@@ -146,30 +190,66 @@ public class ListAuditLogResponseBody extends TeaModel {
         @NameInMap("docReceiverList")
         public java.util.List<ListAuditLogResponseBodyListDocReceiverList> docReceiverList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1577601221260</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1577601221260</p>
+         */
         @NameInMap("gmtModified")
         public Long gmtModified;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1.1.1.1</p>
+         */
         @NameInMap("ipAddress")
         public String ipAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("operateModule")
         public Long operateModule;
 
+        /**
+         * <strong>example:</strong>
+         * <p>企业群</p>
+         */
         @NameInMap("operateModuleView")
         public String operateModuleView;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试</p>
+         */
         @NameInMap("operatorName")
         public String operatorName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>水果公司</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>11</p>
+         */
         @NameInMap("platform")
         public Integer platform;
 
+        /**
+         * <strong>example:</strong>
+         * <p>WIN</p>
+         */
         @NameInMap("platformView")
         public String platformView;
 
@@ -185,33 +265,73 @@ public class ListAuditLogResponseBody extends TeaModel {
         @NameInMap("prevWorkSpacePcUrl")
         public String prevWorkSpacePcUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("realName")
         public String realName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>总经理办公室</p>
+         */
         @NameInMap("receiverName")
         public String receiverName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("receiverType")
         public Integer receiverType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>单聊</p>
+         */
         @NameInMap("receiverTypeView")
         public String receiverTypeView;
 
+        /**
+         * <strong>example:</strong>
+         * <p>文件名</p>
+         */
         @NameInMap("resource")
         public String resource;
 
+        /**
+         * <strong>example:</strong>
+         * <p>doc</p>
+         */
         @NameInMap("resourceExtension")
         public String resourceExtension;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1024</p>
+         */
         @NameInMap("resourceSize")
         public Long resourceSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>11258620</p>
+         */
         @NameInMap("targetSpaceId")
         public Long targetSpaceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("userId")
         public String userId;
 

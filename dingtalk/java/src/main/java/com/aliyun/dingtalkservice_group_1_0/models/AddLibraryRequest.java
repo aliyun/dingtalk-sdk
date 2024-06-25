@@ -4,24 +4,48 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddLibraryRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>测试库描述</p>
+     */
     @NameInMap("description")
     public String description;
 
     @NameInMap("openTeamIds")
     public java.util.List<String> openTeamIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CCM</p>
+     */
     @NameInMap("source")
     public String source;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CCM-123</p>
+     */
     @NameInMap("sourcePrimaryKey")
     public String sourcePrimaryKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试库</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <strong>example:</strong>
+     * <p>EXTERNAL</p>
+     */
     @NameInMap("type")
     public String type;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manager123</p>
+     */
     @NameInMap("userId")
     public String userId;
 

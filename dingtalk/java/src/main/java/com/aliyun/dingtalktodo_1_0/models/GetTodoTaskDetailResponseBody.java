@@ -419,9 +419,17 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
         @NameInMap("actionType")
         public String actionType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>standard , nonStandard, 标准卡片和非标准卡片，非标准卡片由第三方接入方自定义</p>
+         */
         @NameInMap("cardType")
         public String cardType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>是 icon, 或者checkbox 类型的</p>
+         */
         @NameInMap("circleELType")
         public String circleELType;
 

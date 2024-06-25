@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetOfficialAccountContactsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("maxResults")
     public Long maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123567</p>
      */
     @NameInMap("nextToken")
     public String nextToken;

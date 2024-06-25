@@ -6,84 +6,126 @@ import com.aliyun.tea.*;
 public class CfEmploymentRecordResp extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>666</p>
      */
     @NameInMap("deptCode")
     public String deptCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>开发部</p>
      */
     @NameInMap("deptName")
     public String deptName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3</p>
      */
     @NameInMap("employeeStatus")
     public String employeeStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1652198400000</p>
      */
     @NameInMap("endDate")
     public String endDate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("isLatestRecord")
     public Boolean isLatestRecord;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>P1</p>
      */
     @NameInMap("jobLevelName")
     public String jobLevelName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>23</p>
      */
     @NameInMap("jobPositionCode")
     public String jobPositionCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Java开发工程师</p>
      */
     @NameInMap("jobPositionName")
     public String jobPositionName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>343</p>
      */
     @NameInMap("jobPostCode")
     public String jobPostCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>技术岗位</p>
      */
     @NameInMap("jobPostName")
     public String jobPostName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("serviceStatus")
     public String serviceStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5</p>
      */
     @NameInMap("serviceType")
     public String serviceType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1638892800000</p>
      */
     @NameInMap("startDate")
     public String startDate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("workNumbers")
     public String workNumbers;

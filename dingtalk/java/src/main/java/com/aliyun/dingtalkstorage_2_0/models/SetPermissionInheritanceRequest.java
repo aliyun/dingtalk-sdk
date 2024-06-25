@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class SetPermissionInheritanceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PASS_ON</p>
      */
     @NameInMap("inheritance")
     public String inheritance;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;

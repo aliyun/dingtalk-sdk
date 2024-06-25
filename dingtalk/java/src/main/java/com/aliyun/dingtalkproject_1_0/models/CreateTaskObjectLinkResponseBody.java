@@ -21,9 +21,17 @@ public class CreateTaskObjectLinkResponseBody extends TeaModel {
     }
 
     public static class CreateTaskObjectLinkResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2021-08-13T07:36:50.318Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("objectLinkId")
         public String objectLinkId;
 

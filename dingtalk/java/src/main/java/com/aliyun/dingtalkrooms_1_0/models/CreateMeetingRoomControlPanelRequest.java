@@ -15,15 +15,25 @@ public class CreateMeetingRoomControlPanelRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>25SDWxxxxxx</p>
      */
     @NameInMap("roomId")
     public String roomId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("status")
     public Integer status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -95,36 +105,54 @@ public class CreateMeetingRoomControlPanelRequest extends TeaModel {
     public static class CreateMeetingRoomControlPanelRequestRoomConfig extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>name</p>
          */
         @NameInMap("enName")
         public String enName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="http://www.xxx.com">www.xxx.com</a></p>
          */
         @NameInMap("icon")
         public String icon;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>栗子xx</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>30</p>
          */
         @NameInMap("showTime")
         public Integer showTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("sort")
         public Integer sort;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://www.taoxxx.com">https://www.taoxxx.com</a></p>
          */
         @NameInMap("url")
         public String url;

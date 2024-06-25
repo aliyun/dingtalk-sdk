@@ -4,17 +4,27 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterCallbackWithDelegateRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>mySecret</p>
+     */
     @NameInMap("apiSecret")
     public String apiSecret;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>routeKey-12</p>
      */
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://www.myurl/callback">https://www.myurl/callback</a></p>
      */
     @NameInMap("callbackUrl")
     public String callbackUrl;

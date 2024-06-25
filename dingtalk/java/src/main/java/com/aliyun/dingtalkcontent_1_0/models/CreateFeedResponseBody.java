@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CreateFeedResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>c497****-8a89-****-bc9b-*****48610d3</p>
      */
     @NameInMap("feedId")
     public String feedId;

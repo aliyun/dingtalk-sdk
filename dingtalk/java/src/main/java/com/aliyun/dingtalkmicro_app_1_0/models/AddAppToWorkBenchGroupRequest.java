@@ -6,13 +6,24 @@ import com.aliyun.tea.*;
 public class AddAppToWorkBenchGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>namexx</p>
      */
     @NameInMap("componentId")
     public String componentId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>corpxxxx</p>
+     */
     @NameInMap("ecologicalCorpId")
     public String ecologicalCorpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxx</p>
+     */
     @NameInMap("opUnionId")
     public String opUnionId;
 

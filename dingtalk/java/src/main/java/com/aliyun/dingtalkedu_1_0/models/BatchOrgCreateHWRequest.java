@@ -31,6 +31,13 @@ public class BatchOrgCreateHWRequest extends TeaModel {
     @NameInMap("hwDeadline")
     public Long hwDeadline;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Y</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
     @NameInMap("hwDeadlineOpen")
     public String hwDeadlineOpen;
 

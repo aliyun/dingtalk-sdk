@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdateDingPortalPageScopeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false</p>
      */
     @NameInMap("allVisible")
     public Boolean allVisible;

@@ -24,29 +24,50 @@ public class MasterDataTenantQueyResponseBody extends TeaModel {
     }
 
     public static class MasterDataTenantQueyResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("hasData")
         public Boolean hasData;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("integrateDataAuth")
         public Boolean integrateDataAuth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>&quot;智能绩效&quot;</p>
          */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("readAuth")
         public Boolean readAuth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>4</p>
          */
         @NameInMap("tenantId")
         public Long tenantId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("type")
         public Integer type;

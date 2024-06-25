@@ -100,6 +100,10 @@ public class QueryOrgTodoByUserResponseBody extends TeaModel {
         @NameInMap("priority")
         public Integer priority;
 
+        /**
+         * <strong>example:</strong>
+         * <p>一个业务自解释的json格式的字符串</p>
+         */
         @NameInMap("sourceExt")
         public String sourceExt;
 

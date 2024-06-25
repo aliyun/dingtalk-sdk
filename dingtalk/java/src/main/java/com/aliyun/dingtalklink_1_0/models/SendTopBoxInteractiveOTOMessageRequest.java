@@ -54,11 +54,18 @@ public class SendTopBoxInteractiveOTOMessageRequest extends TeaModel {
     }
 
     public static class SendTopBoxInteractiveOTOMessageRequestDetail extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.youurl.com/callback/card">https://www.youurl.com/callback/card</a></p>
+         */
         @NameInMap("callbackUrl")
         public String callbackUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>service-card-20220824-001</p>
          */
         @NameInMap("cardBizId")
         public String cardBizId;
@@ -71,6 +78,9 @@ public class SendTopBoxInteractiveOTOMessageRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3erkfi-42b0-4c83-bc56-ffhssde43</p>
          */
         @NameInMap("cardTemplateId")
         public String cardTemplateId;
@@ -83,6 +93,9 @@ public class SendTopBoxInteractiveOTOMessageRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>user001</p>
          */
         @NameInMap("userId")
         public String userId;

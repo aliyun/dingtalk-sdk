@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>add</p>
      */
     @NameInMap("action")
     public String action;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>libai</p>
      */
     @NameInMap("appKey")
     public String appKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>outTeam</p>
      */
     @NameInMap("baseDataName")
     public String baseDataName;
@@ -31,6 +40,10 @@ public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
     @NameInMap("groupPlugins")
     public java.util.List<IndustryManufactureMesSubCooperationTeamRequestGroupPlugins> groupPlugins;
 
+    /**
+     * <strong>example:</strong>
+     * <p>SUB_COOPERATION_GROUP</p>
+     */
     @NameInMap("groupType")
     public String groupType;
 
@@ -40,11 +53,18 @@ public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
     @NameInMap("members")
     public java.util.List<IndustryManufactureMesSubCooperationTeamRequestMembers> members;
 
+    /**
+     * <strong>example:</strong>
+     * <p>打磨班组</p>
+     */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingfsdfs3fsd2234wds</p>
      */
     @NameInMap("outCorpId")
     public String outCorpId;
@@ -54,6 +74,9 @@ public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>d41d8cd98f00b204e9800998ecf8427e</p>
      */
     @NameInMap("uuid")
     public String uuid;
@@ -170,21 +193,34 @@ public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
     public static class IndustryManufactureMesSubCooperationTeamRequestExtendData extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>school</p>
          */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>学校</p>
+         */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>北大</p>
          */
         @NameInMap("value")
         public String value;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>string</p>
          */
         @NameInMap("valueType")
         public String valueType;
@@ -267,12 +303,18 @@ public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
     public static class IndustryManufactureMesSubCooperationTeamRequestLeaders extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1919442747879777</p>
          */
         @NameInMap("userId")
         public String userId;
@@ -303,12 +345,18 @@ public class IndustryManufactureMesSubCooperationTeamRequest extends TeaModel {
     public static class IndustryManufactureMesSubCooperationTeamRequestMembers extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>李四</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1919442747879777</p>
          */
         @NameInMap("userId")
         public String userId;

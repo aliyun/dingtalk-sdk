@@ -10,6 +10,10 @@ public class GetAllJobPostResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<CfJobPostResp> content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 

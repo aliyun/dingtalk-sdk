@@ -32,12 +32,24 @@ public class AttendanceBleDevicesAddResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesAddResponseBodyErrorListFailureList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>3244523553</p>
+         */
         @NameInMap("deviceId")
         public Long deviceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>蓝牙设备1</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dfsgdsdgd</p>
+         */
         @NameInMap("sn")
         public String sn;
 
@@ -73,12 +85,20 @@ public class AttendanceBleDevicesAddResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesAddResponseBodyErrorList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>400001</p>
+         */
         @NameInMap("code")
         public String code;
 
         @NameInMap("failureList")
         public java.util.List<AttendanceBleDevicesAddResponseBodyErrorListFailureList> failureList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>error</p>
+         */
         @NameInMap("msg")
         public String msg;
 
@@ -114,12 +134,24 @@ public class AttendanceBleDevicesAddResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesAddResponseBodySuccessList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>6567575</p>
+         */
         @NameInMap("deviceId")
         public Long deviceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>蓝牙设备2</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xfdfsdfgsdgfs</p>
+         */
         @NameInMap("sn")
         public String sn;
 

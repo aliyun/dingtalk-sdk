@@ -7,14 +7,25 @@ public class QueryDevicePropertiesRequest extends TeaModel {
     @NameInMap("propertyNames")
     public java.util.List<String> propertyNames;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("deviceId")
     public String deviceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>&quot;lmvUrRkpboRrSMtgsiS9V3AiEiE&quot;</p>
+     */
     @NameInMap("deviceUnionId")
     public String deviceUnionId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>&quot;lmvUrEjpboFrSMtgsiS9V3AiEiE&quot;</p>
      */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;

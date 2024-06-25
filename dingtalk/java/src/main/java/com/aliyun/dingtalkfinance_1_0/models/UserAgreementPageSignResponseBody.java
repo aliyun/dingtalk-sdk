@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UserAgreementPageSignResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>略</p>
      */
     @NameInMap("pageData")
     public String pageData;

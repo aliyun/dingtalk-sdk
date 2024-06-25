@@ -7,6 +7,10 @@ public class SearchDentriesResponseBody extends TeaModel {
     @NameInMap("items")
     public java.util.List<SearchDentriesResponseBodyItems> items;
 
+    /**
+     * <strong>example:</strong>
+     * <p>next_token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,9 +36,17 @@ public class SearchDentriesResponseBody extends TeaModel {
     }
 
     public static class SearchDentriesResponseBodyItemsCreator extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>user_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>staff_id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -62,9 +74,17 @@ public class SearchDentriesResponseBody extends TeaModel {
     }
 
     public static class SearchDentriesResponseBodyItemsModifier extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>user_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>staff_id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -95,12 +115,20 @@ public class SearchDentriesResponseBody extends TeaModel {
         @NameInMap("creator")
         public SearchDentriesResponseBodyItemsCreator creator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>uuid</p>
+         */
         @NameInMap("dentryUuid")
         public String dentryUuid;
 
         @NameInMap("modifier")
         public SearchDentriesResponseBodyItemsModifier modifier;
 
+        /**
+         * <strong>example:</strong>
+         * <p>name</p>
+         */
         @NameInMap("name")
         public String name;
 

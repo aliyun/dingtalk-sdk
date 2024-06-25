@@ -30,6 +30,9 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6444f5e9a4261c6e699dxxxx</p>
      */
     @NameInMap("objectiveId")
     public String objectiveId;
@@ -48,12 +51,18 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("progress")
     public Integer progress;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("status")
     public Integer status;
@@ -66,12 +75,18 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试目标</p>
      */
     @NameInMap("title")
     public String title;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>30</p>
      */
     @NameInMap("weight")
     public Double weight;

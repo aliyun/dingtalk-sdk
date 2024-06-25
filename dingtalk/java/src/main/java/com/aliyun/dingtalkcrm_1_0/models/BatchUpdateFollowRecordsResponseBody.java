@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchUpdateFollowRecordsResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("results")
     public java.util.List<BatchUpdateFollowRecordsResponseBodyResults> results;
 
@@ -21,15 +25,31 @@ public class BatchUpdateFollowRecordsResponseBody extends TeaModel {
     }
 
     public static class BatchUpdateFollowRecordsResponseBodyResults extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1002</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>查重失败</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yU9TbER1TDazjPq1rRCzwg04841675924041</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

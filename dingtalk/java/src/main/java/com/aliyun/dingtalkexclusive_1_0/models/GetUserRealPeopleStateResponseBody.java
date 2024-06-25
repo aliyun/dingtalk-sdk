@@ -21,9 +21,17 @@ public class GetUserRealPeopleStateResponseBody extends TeaModel {
     }
 
     public static class GetUserRealPeopleStateResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("state")
         public Integer state;
 
+        /**
+         * <strong>example:</strong>
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 

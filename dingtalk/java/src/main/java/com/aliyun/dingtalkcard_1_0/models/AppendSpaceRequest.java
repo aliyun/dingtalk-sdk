@@ -15,6 +15,9 @@ public class AppendSpaceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx_yyyy_123456</p>
      */
     @NameInMap("outTrackId")
     public String outTrackId;
@@ -68,6 +71,10 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestCoFeedOpenSpaceModel extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx卡片</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -87,6 +94,10 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImGroupOpenSpaceModelNotification extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>你收到了一个卡片消息</p>
+         */
         @NameInMap("alertContent")
         public String alertContent;
 
@@ -117,12 +128,24 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImGroupOpenSpaceModelSearchSupport extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>卡片的具体描述</p>
+         */
         @NameInMap("searchDesc")
         public String searchDesc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@lALPDgQ9q8hFhlHNAXzNAqI</p>
+         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</p>
+         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -210,6 +233,10 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImRobotOpenSpaceModelNotification extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>你收到了一个卡片消息</p>
+         */
         @NameInMap("alertContent")
         public String alertContent;
 
@@ -240,12 +267,24 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImRobotOpenSpaceModelSearchSupport extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>卡片的具体描述</p>
+         */
         @NameInMap("searchDesc")
         public String searchDesc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@lALPDgQ9q8hFhlHNAXzNAqI</p>
+         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</p>
+         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -333,6 +372,10 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestTopOpenSpaceModel extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ONE_BOX</p>
+         */
         @NameInMap("spaceType")
         public String spaceType;
 

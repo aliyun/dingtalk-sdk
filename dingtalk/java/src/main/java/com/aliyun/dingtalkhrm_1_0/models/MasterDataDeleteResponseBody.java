@@ -35,12 +35,24 @@ public class MasterDataDeleteResponseBody extends TeaModel {
     }
 
     public static class MasterDataDeleteResponseBodyFailResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>uk123</p>
+         */
         @NameInMap("bizUK")
         public String bizUK;
 
+        /**
+         * <strong>example:</strong>
+         * <p>S0005</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>主键冲突</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 

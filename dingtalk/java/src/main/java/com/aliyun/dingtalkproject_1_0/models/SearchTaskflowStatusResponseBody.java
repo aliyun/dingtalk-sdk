@@ -21,36 +21,76 @@ public class SearchTaskflowStatusResponseBody extends TeaModel {
     }
 
     public static class SearchTaskflowStatusResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>601fdeb17f86xxxxxxxx</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isTaskflowstatusruleexector")
         public Boolean isTaskflowstatusruleexector;
 
+        /**
+         * <strong>example:</strong>
+         * <p>start</p>
+         */
         @NameInMap("kind")
         public String kind;
 
+        /**
+         * <strong>example:</strong>
+         * <p>未开始</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("pos")
         public Integer pos;
 
         @NameInMap("rejectStatusIds")
         public java.util.List<String> rejectStatusIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>60a2187eb72xxxxxxx</p>
+         */
         @NameInMap("taskflowId")
         public String taskflowId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>60a2187eb72xxxxxxx</p>
+         */
         @NameInMap("taskflowStatusId")
         public String taskflowStatusId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

@@ -9,6 +9,9 @@ public class DeductionPointBatchResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -35,26 +38,43 @@ public class DeductionPointBatchResponseBody extends TeaModel {
     }
 
     public static class DeductionPointBatchResponseBodyResultOpenPointInvokeResultDTOS extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>banliang#-20005</p>
+         */
         @NameInMap("code")
         public String code;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>Fail</p>
          */
         @NameInMap("invokeStatus")
         public String invokeStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>freeze already settle</p>
+         */
         @NameInMap("msg")
         public String msg;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>34345435345</p>
          */
         @NameInMap("outId")
         public String outId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>01274411491620908910</p>
          */
         @NameInMap("userId")
         public String userId;

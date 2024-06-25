@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class SendInvitationRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234</p>
      */
     @NameInMap("deptId")
     public String deptId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>钉开放组织别名</p>
      */
     @NameInMap("orgAlias")
     public String orgAlias;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234</p>
      */
     @NameInMap("partnerLabelId")
     public Long partnerLabelId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234</p>
      */
     @NameInMap("partnerNum")
     public String partnerNum;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>133XXXXXX57</p>
      */
     @NameInMap("phone")
     public String phone;

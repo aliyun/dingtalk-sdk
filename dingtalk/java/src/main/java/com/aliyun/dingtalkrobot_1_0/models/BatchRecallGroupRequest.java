@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class BatchRecallGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingXXXXXXXXXX</p>
      */
     @NameInMap("chatbotId")
     public String chatbotId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidfCSpXXXXXXXXXXXchatbotId</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

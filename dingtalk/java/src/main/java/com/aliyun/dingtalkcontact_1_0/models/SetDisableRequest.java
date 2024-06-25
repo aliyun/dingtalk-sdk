@@ -4,11 +4,18 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetDisableRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>reasonYYY</p>
+     */
     @NameInMap("reason")
     public String reason;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>userIdXXX</p>
      */
     @NameInMap("userId")
     public String userId;

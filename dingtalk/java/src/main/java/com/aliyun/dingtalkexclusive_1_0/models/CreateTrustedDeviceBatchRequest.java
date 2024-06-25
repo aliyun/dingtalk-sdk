@@ -12,12 +12,18 @@ public class CreateTrustedDeviceBatchRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Win</p>
      */
     @NameInMap("platform")
     public String platform;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("userId")
     public String userId;

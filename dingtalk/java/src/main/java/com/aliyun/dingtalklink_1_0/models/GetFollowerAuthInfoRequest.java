@@ -4,11 +4,18 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFollowerAuthInfoRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding1234</p>
+     */
     @NameInMap("accountId")
     public String accountId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Rp3Rqcts7BE08y49Jr6iu6xW4iQ</p>
      */
     @NameInMap("userId")
     public String userId;

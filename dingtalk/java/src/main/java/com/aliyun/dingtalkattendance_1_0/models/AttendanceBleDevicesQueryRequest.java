@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class AttendanceBleDevicesQueryRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>62001E1C5B9XXXX369D316DED25FXXXX</p>
      */
     @NameInMap("groupKey")
     public String groupKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>userId001</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

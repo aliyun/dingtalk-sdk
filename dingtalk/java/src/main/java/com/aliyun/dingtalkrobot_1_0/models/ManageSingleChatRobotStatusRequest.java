@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class ManageSingleChatRobotStatusRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingykcdkjnwpcll27gm</p>
      */
     @NameInMap("robotCode")
     public String robotCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>enable</p>
      */
     @NameInMap("status")
     public String status;

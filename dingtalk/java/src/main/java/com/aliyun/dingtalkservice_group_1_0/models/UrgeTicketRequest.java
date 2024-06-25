@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class UrgeTicketRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>bLkvfXKiSngQiE</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>iPbrfXjdNjRoiE</p>
      */
     @NameInMap("openTicketId")
     public String openTicketId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Dq9hP8Sk2v6vQ6l05nCe5wiEiE</p>
      */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
@@ -66,9 +75,17 @@ public class UrgeTicketRequest extends TeaModel {
     }
 
     public static class UrgeTicketRequestTicketMemoAttachments extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>wahaha.txt</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt</p>
+         */
         @NameInMap("key")
         public String key;
 
@@ -101,6 +118,9 @@ public class UrgeTicketRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>备注</p>
          */
         @NameInMap("memo")
         public String memo;

@@ -4,12 +4,24 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProjectCustomfieldStatusRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>63a5301e420637003f5dxxxx</p>
+     */
     @NameInMap("customFieldId")
     public String customFieldId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>64a5301e420637003f5dxxxx</p>
+     */
     @NameInMap("customFieldInstanceId")
     public String customFieldInstanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>项目进度</p>
+     */
     @NameInMap("customFieldName")
     public String customFieldName;
 
@@ -57,12 +69,24 @@ public class CreateProjectCustomfieldStatusRequest extends TeaModel {
     }
 
     public static class CreateProjectCustomfieldStatusRequestValue extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>63a5301e420637003f5dxxxx</p>
+         */
         @NameInMap("customFieldValueId")
         public String customFieldValueId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{}</p>
+         */
         @NameInMap("metaString")
         public String metaString;
 
+        /**
+         * <strong>example:</strong>
+         * <p>进行中</p>
+         */
         @NameInMap("title")
         public String title;
 

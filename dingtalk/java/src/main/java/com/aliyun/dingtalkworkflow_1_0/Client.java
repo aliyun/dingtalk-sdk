@@ -6,11 +6,10 @@ import com.aliyun.dingtalkworkflow_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 授权下载审批钉盘文件
-     *
+     * <b>summary</b> : 
+     * <p>授权下载审批钉盘文件</p>
+     * 
      * @param request AddApproveDentryAuthRequest
      * @param headers AddApproveDentryAuthHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -66,8 +66,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 授权下载审批钉盘文件
-     *
+     * <b>summary</b> : 
+     * <p>授权下载审批钉盘文件</p>
+     * 
      * @param request AddApproveDentryAuthRequest
      * @return AddApproveDentryAuthResponse
      */
@@ -78,8 +79,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加审批评论
-     *
+     * <b>summary</b> : 
+     * <p>添加审批评论</p>
+     * 
      * @param request AddProcessInstanceCommentRequest
      * @param headers AddProcessInstanceCommentHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -132,8 +134,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加审批评论
-     *
+     * <b>summary</b> : 
+     * <p>添加审批评论</p>
+     * 
      * @param request AddProcessInstanceCommentRequest
      * @return AddProcessInstanceCommentResponse
      */
@@ -144,8 +147,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量同意或拒绝审批任务
-     *
+     * <b>summary</b> : 
+     * <p>批量同意或拒绝审批任务</p>
+     * 
      * @param request BatchExecuteProcessInstancesRequest
      * @param headers BatchExecuteProcessInstancesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -198,8 +202,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量同意或拒绝审批任务
-     *
+     * <b>summary</b> : 
+     * <p>批量同意或拒绝审批任务</p>
+     * 
      * @param request BatchExecuteProcessInstancesRequest
      * @return BatchExecuteProcessInstancesResponse
      */
@@ -210,8 +215,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量流程审批任务转交
-     *
+     * <b>summary</b> : 
+     * <p>批量流程审批任务转交</p>
+     * 
      * @param request BatchTasksRedirectRequest
      * @param headers BatchTasksRedirectHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -264,8 +270,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量流程审批任务转交
-     *
+     * <b>summary</b> : 
+     * <p>批量流程审批任务转交</p>
+     * 
      * @param request BatchTasksRedirectRequest
      * @return BatchTasksRedirectResponse
      */
@@ -276,8 +283,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量更新实例状态
-     *
+     * <b>summary</b> : 
+     * <p>批量更新实例状态</p>
+     * 
      * @param request BatchUpdateProcessInstanceRequest
      * @param headers BatchUpdateProcessInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -318,8 +326,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量更新实例状态
-     *
+     * <b>summary</b> : 
+     * <p>批量更新实例状态</p>
+     * 
      * @param request BatchUpdateProcessInstanceRequest
      * @return BatchUpdateProcessInstanceResponse
      */
@@ -330,8 +339,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量取消流程中心待处理任务
-     *
+     * <b>summary</b> : 
+     * <p>批量取消流程中心待处理任务</p>
+     * 
      * @param request CancelIntegratedTaskRequest
      * @param headers CancelIntegratedTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -380,8 +390,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量取消流程中心待处理任务
-     *
+     * <b>summary</b> : 
+     * <p>批量取消流程中心待处理任务</p>
+     * 
      * @param request CancelIntegratedTaskRequest
      * @return CancelIntegratedTaskResponse
      */
@@ -392,8 +403,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 清理审批数据
-     *
+     * <b>summary</b> : 
+     * <p>清理审批数据</p>
+     * 
      * @param request CleanProcessDataRequest
      * @param headers CleanProcessDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -438,8 +450,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 清理审批数据
-     *
+     * <b>summary</b> : 
+     * <p>清理审批数据</p>
+     * 
      * @param request CleanProcessDataRequest
      * @return CleanProcessDataResponse
      */
@@ -450,8 +463,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 复制审批流
-     *
+     * <b>summary</b> : 
+     * <p>复制审批流</p>
+     * 
      * @param request CopyProcessRequest
      * @param headers CopyProcessHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -500,8 +514,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 复制审批流
-     *
+     * <b>summary</b> : 
+     * <p>复制审批流</p>
+     * 
      * @param request CopyProcessRequest
      * @return CopyProcessResponse
      */
@@ -512,8 +527,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建流程中心待处理任务
-     *
+     * <b>summary</b> : 
+     * <p>创建流程中心待处理任务</p>
+     * 
      * @param request CreateIntegratedTaskRequest
      * @param headers CreateIntegratedTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -566,8 +582,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建流程中心待处理任务
-     *
+     * <b>summary</b> : 
+     * <p>创建流程中心待处理任务</p>
+     * 
      * @param request CreateIntegratedTaskRequest
      * @return CreateIntegratedTaskResponse
      */
@@ -578,8 +595,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除分组
-     *
+     * <b>summary</b> : 
+     * <p>删除分组</p>
+     * 
      * @param request DeleteDirRequest
      * @param headers DeleteDirHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -624,8 +642,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除分组
-     *
+     * <b>summary</b> : 
+     * <p>删除分组</p>
+     * 
      * @param request DeleteDirRequest
      * @return DeleteDirResponse
      */
@@ -636,8 +655,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除模板
-     *
+     * <b>summary</b> : 
+     * <p>删除模板</p>
+     * 
      * @param request DeleteProcessRequest
      * @param headers DeleteProcessHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -682,8 +702,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除模板
-     *
+     * <b>summary</b> : 
+     * <p>删除模板</p>
+     * 
      * @param request DeleteProcessRequest
      * @return DeleteProcessResponse
      */
@@ -694,8 +715,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同意或拒绝审批任务
-     *
+     * <b>summary</b> : 
+     * <p>同意或拒绝审批任务</p>
+     * 
      * @param request ExecuteProcessInstanceRequest
      * @param headers ExecuteProcessInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -756,8 +778,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同意或拒绝审批任务
-     *
+     * <b>summary</b> : 
+     * <p>同意或拒绝审批任务</p>
+     * 
      * @param request ExecuteProcessInstanceRequest
      * @return ExecuteProcessInstanceResponse
      */
@@ -768,8 +791,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建或更新审批表单模板
-     *
+     * <b>summary</b> : 
+     * <p>创建或更新审批表单模板</p>
+     * 
      * @param request FormCreateRequest
      * @param headers FormCreateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -826,8 +850,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建或更新审批表单模板
-     *
+     * <b>summary</b> : 
+     * <p>创建或更新审批表单模板</p>
+     * 
      * @param request FormCreateRequest
      * @return FormCreateResponse
      */
@@ -838,8 +863,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取审批钉盘空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取审批钉盘空间信息</p>
+     * 
      * @param request GetAttachmentSpaceRequest
      * @param headers GetAttachmentSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -884,8 +910,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取审批钉盘空间信息
-     *
+     * <b>summary</b> : 
+     * <p>获取审批钉盘空间信息</p>
+     * 
      * @param request GetAttachmentSpaceRequest
      * @return GetAttachmentSpaceResponse
      */
@@ -896,8 +923,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询已设置为条件的表单组件
-     *
+     * <b>summary</b> : 
+     * <p>查询已设置为条件的表单组件</p>
+     * 
      * @param request GetConditionFormComponentRequest
      * @param headers GetConditionFormComponentHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -942,8 +970,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询已设置为条件的表单组件
-     *
+     * <b>summary</b> : 
+     * <p>查询已设置为条件的表单组件</p>
+     * 
      * @param request GetConditionFormComponentRequest
      * @return GetConditionFormComponentResponse
      */
@@ -954,8 +983,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取CRM所有流程code
-     *
+     * <b>summary</b> : 
+     * <p>获取CRM所有流程code</p>
+     * 
      * @param headers GetCrmProcCodesHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetCrmProcCodesResponse
@@ -988,8 +1018,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取CRM所有流程code
-     *
+     * <b>summary</b> : 
+     * <p>获取CRM所有流程code</p>
      * @return GetCrmProcCodesResponse
      */
     public GetCrmProcCodesResponse getCrmProcCodes() throws Exception {
@@ -999,8 +1029,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取表单字段修改历史
-     *
+     * <b>summary</b> : 
+     * <p>获取表单字段修改历史</p>
+     * 
      * @param request GetFieldModifiedHistoryRequest
      * @param headers GetFieldModifiedHistoryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1045,8 +1076,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取表单字段修改历史
-     *
+     * <b>summary</b> : 
+     * <p>获取表单字段修改历史</p>
+     * 
      * @param request GetFieldModifiedHistoryRequest
      * @return GetFieldModifiedHistoryResponse
      */
@@ -1057,8 +1089,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取当前企业所有可管理的表单
-     *
+     * <b>summary</b> : 
+     * <p>获取当前企业所有可管理的表单</p>
+     * 
      * @param request GetManageProcessByStaffIdRequest
      * @param headers GetManageProcessByStaffIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1099,8 +1132,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取当前企业所有可管理的表单
-     *
+     * <b>summary</b> : 
+     * <p>获取当前企业所有可管理的表单</p>
+     * 
      * @param request GetManageProcessByStaffIdRequest
      * @return GetManageProcessByStaffIdResponse
      */
@@ -1111,8 +1145,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取模板code
-     *
+     * <b>summary</b> : 
+     * <p>获取模板code</p>
+     * 
      * @param request GetProcessCodeByNameRequest
      * @param headers GetProcessCodeByNameHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1153,8 +1188,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取模板code
-     *
+     * <b>summary</b> : 
+     * <p>获取模板code</p>
+     * 
      * @param request GetProcessCodeByNameRequest
      * @return GetProcessCodeByNameResponse
      */
@@ -1165,8 +1201,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取流程配置
-     *
+     * <b>summary</b> : 
+     * <p>获取流程配置</p>
+     * 
      * @param request GetProcessConfigRequest
      * @param headers GetProcessConfigHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1207,8 +1244,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取流程配置
-     *
+     * <b>summary</b> : 
+     * <p>获取流程配置</p>
+     * 
      * @param request GetProcessConfigRequest
      * @return GetProcessConfigResponse
      */
@@ -1219,8 +1257,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取单个审批实例详情
-     *
+     * <b>summary</b> : 
+     * <p>获取单个审批实例详情</p>
+     * 
      * @param request GetProcessInstanceRequest
      * @param headers GetProcessInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1261,8 +1300,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取单个审批实例详情
-     *
+     * <b>summary</b> : 
+     * <p>获取单个审批实例详情</p>
+     * 
      * @param request GetProcessInstanceRequest
      * @return GetProcessInstanceResponse
      */
@@ -1273,8 +1313,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据模版code列表批量查询模板最新表单和流程配置
-     *
+     * <b>summary</b> : 
+     * <p>根据模版code列表批量查询模板最新表单和流程配置</p>
+     * 
      * @param tmpReq GetSchemaAndProcessconfigBatchllyRequest
      * @param headers GetSchemaAndProcessconfigBatchllyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1321,8 +1362,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据模版code列表批量查询模板最新表单和流程配置
-     *
+     * <b>summary</b> : 
+     * <p>根据模版code列表批量查询模板最新表单和流程配置</p>
+     * 
      * @param request GetSchemaAndProcessconfigBatchllyRequest
      * @return GetSchemaAndProcessconfigBatchllyResponse
      */
@@ -1333,8 +1375,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 授权预览审批附件
-     *
+     * <b>summary</b> : 
+     * <p>授权预览审批附件</p>
+     * 
      * @param request GetSpaceWithDownloadAuthRequest
      * @param headers GetSpaceWithDownloadAuthHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1361,6 +1404,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.withCommentAttatchment)) {
+            body.put("withCommentAttatchment", request.withCommentAttatchment);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1391,8 +1438,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 授权预览审批附件
-     *
+     * <b>summary</b> : 
+     * <p>授权预览审批附件</p>
+     * 
      * @param request GetSpaceWithDownloadAuthRequest
      * @return GetSpaceWithDownloadAuthResponse
      */
@@ -1403,8 +1451,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户待审批数量
-     *
+     * <b>summary</b> : 
+     * <p>获取用户待审批数量</p>
+     * 
      * @param request GetUserTodoTaskSumRequest
      * @param headers GetUserTodoTaskSumHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1445,8 +1494,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户待审批数量
-     *
+     * <b>summary</b> : 
+     * <p>获取用户待审批数量</p>
+     * 
      * @param request GetUserTodoTaskSumRequest
      * @return GetUserTodoTaskSumResponse
      */
@@ -1457,8 +1507,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  授权用户钉盘空间权限
-     *
+     * <b>summary</b> : 
+     * <p>授权用户钉盘空间权限</p>
+     * 
      * @param request GrantCspaceAuthorizationRequest
      * @param headers GrantCspaceAuthorizationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1511,8 +1562,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  授权用户钉盘空间权限
-     *
+     * <b>summary</b> : 
+     * <p>授权用户钉盘空间权限</p>
+     * 
      * @param request GrantCspaceAuthorizationRequest
      * @return GrantCspaceAuthorizationResponse
      */
@@ -1523,8 +1575,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 下载审批附件
-     *
+     * <b>summary</b> : 
+     * <p>下载审批附件</p>
+     * 
      * @param request GrantProcessInstanceForDownloadFileRequest
      * @param headers GrantProcessInstanceForDownloadFileHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1539,6 +1592,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.processInstanceId)) {
             body.put("processInstanceId", request.processInstanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.withCommentAttatchment)) {
+            body.put("withCommentAttatchment", request.withCommentAttatchment);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1569,8 +1626,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 下载审批附件
-     *
+     * <b>summary</b> : 
+     * <p>下载审批附件</p>
+     * 
      * @param request GrantProcessInstanceForDownloadFileRequest
      * @return GrantProcessInstanceForDownloadFileResponse
      */
@@ -1581,8 +1639,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建或更新分组
-     *
+     * <b>summary</b> : 
+     * <p>创建或更新分组</p>
+     * 
      * @param request InsertOrUpdateDirRequest
      * @param headers InsertOrUpdateDirHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1639,8 +1698,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建或更新分组
-     *
+     * <b>summary</b> : 
+     * <p>创建或更新分组</p>
+     * 
      * @param request InsertOrUpdateDirRequest
      * @return InsertOrUpdateDirResponse
      */
@@ -1651,8 +1711,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 应用安装
-     *
+     * <b>summary</b> : 
+     * <p>应用安装</p>
+     * 
      * @param request InstallAppRequest
      * @param headers InstallAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1701,8 +1762,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 应用安装
-     *
+     * <b>summary</b> : 
+     * <p>应用安装</p>
+     * 
      * @param request InstallAppRequest
      * @return InstallAppResponse
      */
@@ -1713,8 +1775,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取审批实例ID列表
-     *
+     * <b>summary</b> : 
+     * <p>获取审批实例ID列表</p>
+     * 
      * @param request ListProcessInstanceIdsRequest
      * @param headers ListProcessInstanceIdsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1779,8 +1842,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取审批实例ID列表
-     *
+     * <b>summary</b> : 
+     * <p>获取审批实例ID列表</p>
+     * 
      * @param request ListProcessInstanceIdsRequest
      * @return ListProcessInstanceIdsResponse
      */
@@ -1791,8 +1855,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户待办事项
-     *
+     * <b>summary</b> : 
+     * <p>查询用户待办事项</p>
+     * 
      * @param request ListTodoWorkRecordsRequest
      * @param headers ListTodoWorkRecordsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1845,8 +1910,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户待办事项
-     *
+     * <b>summary</b> : 
+     * <p>查询用户待办事项</p>
+     * 
      * @param request ListTodoWorkRecordsRequest
      * @return ListTodoWorkRecordsResponse
      */
@@ -1857,8 +1923,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取指定用户可见的审批表单列表
-     *
+     * <b>summary</b> : 
+     * <p>获取指定用户可见的审批表单列表</p>
+     * 
      * @param request ListUserVisibleBpmsProcessesRequest
      * @param headers ListUserVisibleBpmsProcessesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1907,8 +1974,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取指定用户可见的审批表单列表
-     *
+     * <b>summary</b> : 
+     * <p>获取指定用户可见的审批表单列表</p>
+     * 
      * @param request ListUserVisibleBpmsProcessesRequest
      * @return ListUserVisibleBpmsProcessesResponse
      */
@@ -1919,8 +1987,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询实例数据
-     *
+     * <b>summary</b> : 
+     * <p>分页查询实例数据</p>
+     * 
      * @param request PagesExportInstancesRequest
      * @param headers PagesExportInstancesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1985,8 +2054,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询实例数据
-     *
+     * <b>summary</b> : 
+     * <p>分页查询实例数据</p>
+     * 
      * @param request PagesExportInstancesRequest
      * @return PagesExportInstancesResponse
      */
@@ -1997,8 +2067,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 审批流程预测
-     *
+     * <b>summary</b> : 
+     * <p>审批流程预测</p>
+     * 
      * @param request ProcessForecastRequest
      * @param headers ProcessForecastHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2051,8 +2122,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 审批流程预测
-     *
+     * <b>summary</b> : 
+     * <p>审批流程预测</p>
+     * 
      * @param request ProcessForecastRequest
      * @return ProcessForecastResponse
      */
@@ -2063,8 +2135,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据processCode分页获取表单数据
-     *
+     * <b>summary</b> : 
+     * <p>根据processCode分页获取表单数据</p>
+     * 
      * @param request QueryAllFormInstancesRequest
      * @param headers QueryAllFormInstancesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2117,8 +2190,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据processCode分页获取表单数据
-     *
+     * <b>summary</b> : 
+     * <p>根据processCode分页获取表单数据</p>
+     * 
      * @param request QueryAllFormInstancesRequest
      * @return QueryAllFormInstancesResponse
      */
@@ -2129,8 +2203,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询审批流程实例
-     *
+     * <b>summary</b> : 
+     * <p>批量查询审批流程实例</p>
+     * 
      * @param request QueryAllProcessInstancesRequest
      * @param headers QueryAllProcessInstancesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2191,8 +2266,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询审批流程实例
-     *
+     * <b>summary</b> : 
+     * <p>批量查询审批流程实例</p>
+     * 
      * @param request QueryAllProcessInstancesRequest
      * @return QueryAllProcessInstancesResponse
      */
@@ -2203,8 +2279,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据业务标识查询表单描述信息
-     *
+     * <b>summary</b> : 
+     * <p>根据业务标识查询表单描述信息</p>
+     * 
      * @param request QueryFormByBizTypeRequest
      * @param headers QueryFormByBizTypeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2249,8 +2326,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据业务标识查询表单描述信息
-     *
+     * <b>summary</b> : 
+     * <p>根据业务标识查询表单描述信息</p>
+     * 
      * @param request QueryFormByBizTypeRequest
      * @return QueryFormByBizTypeResponse
      */
@@ -2261,8 +2339,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询数据表单
-     *
+     * <b>summary</b> : 
+     * <p>查询数据表单</p>
+     * 
      * @param request QueryFormInstanceRequest
      * @param headers QueryFormInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2311,8 +2390,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询数据表单
-     *
+     * <b>summary</b> : 
+     * <p>查询数据表单</p>
+     * 
      * @param request QueryFormInstanceRequest
      * @return QueryFormInstanceResponse
      */
@@ -2323,8 +2403,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询通过流程中心集成的OA审批任务
-     *
+     * <b>summary</b> : 
+     * <p>查询通过流程中心集成的OA审批任务</p>
+     * 
      * @param request QueryIntegratedTodoTaskRequest
      * @param headers QueryIntegratedTodoTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2377,8 +2458,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询通过流程中心集成的OA审批任务
-     *
+     * <b>summary</b> : 
+     * <p>查询通过流程中心集成的OA审批任务</p>
+     * 
      * @param request QueryIntegratedTodoTaskRequest
      * @return QueryIntegratedTodoTaskResponse
      */
@@ -2389,8 +2471,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据业务标识查询模板
-     *
+     * <b>summary</b> : 
+     * <p>根据业务标识查询模板</p>
+     * 
      * @param request QueryProcessByBizCategoryIdRequest
      * @param headers QueryProcessByBizCategoryIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2435,8 +2518,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据业务标识查询模板
-     *
+     * <b>summary</b> : 
+     * <p>根据业务标识查询模板</p>
+     * 
      * @param request QueryProcessByBizCategoryIdRequest
      * @return QueryProcessByBizCategoryIdResponse
      */
@@ -2447,8 +2531,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 蓝凌获取schema和流程信息
-     *
+     * <b>summary</b> : 
+     * <p>蓝凌获取schema和流程信息</p>
+     * 
      * @param request QuerySchemaAndProcessRequest
      * @param headers QuerySchemaAndProcessHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2493,8 +2578,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 蓝凌获取schema和流程信息
-     *
+     * <b>summary</b> : 
+     * <p>蓝凌获取schema和流程信息</p>
+     * 
      * @param request QuerySchemaAndProcessRequest
      * @return QuerySchemaAndProcessResponse
      */
@@ -2505,8 +2591,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  通过 processCode 获取表单 schema 信息
-     *
+     * <b>summary</b> : 
+     * <p>通过 processCode 获取表单 schema 信息</p>
+     * 
      * @param request QuerySchemaByProcessCodeRequest
      * @param headers QuerySchemaByProcessCodeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2551,8 +2638,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  通过 processCode 获取表单 schema 信息
-     *
+     * <b>summary</b> : 
+     * <p>通过 processCode 获取表单 schema 信息</p>
+     * 
      * @param request QuerySchemaByProcessCodeRequest
      * @return QuerySchemaByProcessCodeResponse
      */
@@ -2563,8 +2651,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 转交OA审批任务
-     *
+     * <b>summary</b> : 
+     * <p>转交OA审批任务</p>
+     * 
      * @param request RedirectWorkflowTaskRequest
      * @param headers RedirectWorkflowTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2625,8 +2714,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 转交OA审批任务
-     *
+     * <b>summary</b> : 
+     * <p>转交OA审批任务</p>
+     * 
      * @param request RedirectWorkflowTaskRequest
      * @return RedirectWorkflowTaskResponse
      */
@@ -2637,8 +2727,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建实例
-     *
+     * <b>summary</b> : 
+     * <p>创建实例</p>
+     * 
      * @param request SaveIntegratedInstanceRequest
      * @param headers SaveIntegratedInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2707,8 +2798,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建实例
-     *
+     * <b>summary</b> : 
+     * <p>创建实例</p>
+     * 
      * @param request SaveIntegratedInstanceRequest
      * @return SaveIntegratedInstanceResponse
      */
@@ -2719,8 +2811,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建或更新审批模板
-     *
+     * <b>summary</b> : 
+     * <p>创建或更新审批模板</p>
+     * 
      * @param request SaveProcessRequest
      * @param headers SaveProcessHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2781,8 +2874,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建或更新审批模板
-     *
+     * <b>summary</b> : 
+     * <p>创建或更新审批模板</p>
+     * 
      * @param request SaveProcessRequest
      * @return SaveProcessResponse
      */
@@ -2793,8 +2887,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建审批实例
-     *
+     * <b>summary</b> : 
+     * <p>创建审批实例</p>
+     * 
      * @param request StartProcessInstanceRequest
      * @param headers StartProcessInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2867,8 +2962,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建审批实例
-     *
+     * <b>summary</b> : 
+     * <p>创建审批实例</p>
+     * 
      * @param request StartProcessInstanceRequest
      * @return StartProcessInstanceResponse
      */
@@ -2879,8 +2975,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤销审批实例
-     *
+     * <b>summary</b> : 
+     * <p>撤销审批实例</p>
+     * 
      * @param request TerminateProcessInstanceRequest
      * @param headers TerminateProcessInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2933,8 +3030,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤销审批实例
-     *
+     * <b>summary</b> : 
+     * <p>撤销审批实例</p>
+     * 
      * @param request TerminateProcessInstanceRequest
      * @return TerminateProcessInstanceResponse
      */
@@ -2945,8 +3043,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 流程转交待处理任务查询
-     *
+     * <b>summary</b> : 
+     * <p>流程转交待处理任务查询</p>
+     * 
      * @param request TodoTasksRequest
      * @param headers TodoTasksHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2999,8 +3098,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 流程转交待处理任务查询
-     *
+     * <b>summary</b> : 
+     * <p>流程转交待处理任务查询</p>
+     * 
      * @param request TodoTasksRequest
      * @return TodoTasksResponse
      */
@@ -3011,8 +3111,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新流程中心任务状态
-     *
+     * <b>summary</b> : 
+     * <p>更新流程中心任务状态</p>
+     * 
      * @param request UpdateIntegratedTaskRequest
      * @param headers UpdateIntegratedTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3057,8 +3158,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新流程中心任务状态
-     *
+     * <b>summary</b> : 
+     * <p>更新流程中心任务状态</p>
+     * 
      * @param request UpdateIntegratedTaskRequest
      * @return UpdateIntegratedTaskResponse
      */
@@ -3069,8 +3171,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新实例状态
-     *
+     * <b>summary</b> : 
+     * <p>更新实例状态</p>
+     * 
      * @param request UpdateProcessInstanceRequest
      * @param headers UpdateProcessInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3123,8 +3226,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新实例状态
-     *
+     * <b>summary</b> : 
+     * <p>更新实例状态</p>
+     * 
      * @param request UpdateProcessInstanceRequest
      * @return UpdateProcessInstanceResponse
      */

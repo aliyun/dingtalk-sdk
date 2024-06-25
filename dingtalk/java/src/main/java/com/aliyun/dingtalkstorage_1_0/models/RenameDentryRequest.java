@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class RenameDentryRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dentry_name</p>
      */
     @NameInMap("newName")
     public String newName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;

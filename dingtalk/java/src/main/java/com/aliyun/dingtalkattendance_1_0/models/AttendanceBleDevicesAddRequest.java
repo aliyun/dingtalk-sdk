@@ -12,10 +12,17 @@ public class AttendanceBleDevicesAddRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>62001E1C5B9362D369D316DED25F3656</p>
      */
     @NameInMap("groupKey")
     public String groupKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>userId001</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

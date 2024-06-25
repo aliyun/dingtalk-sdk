@@ -4,27 +4,55 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptsBaseInfoRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("accountantBookId")
     public String accountantBookId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>COM_DEFAULT</p>
+     */
     @NameInMap("companyCode")
     public String companyCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>16000000</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>16000000</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
     @NameInMap("timeFilterField")
     public String timeFilterField;
 
+    /**
+     * <strong>example:</strong>
+     * <p>收款单</p>
+     */
     @NameInMap("title")
     public String title;
 

@@ -7,33 +7,65 @@ public class RenderBatchCallbackRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding123</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123789</p>
+     */
     @NameInMap("fileSize")
     public Long fileSize;
 
     @NameInMap("language")
     public String language;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dingtalk</p>
+     */
     @NameInMap("namespace")
     public String namespace;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://oss/com/a/b.pdf">https://oss/com/a/b.pdf</a></p>
+     */
     @NameInMap("ossUrl")
     public String ossUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>seq-xxx</p>
+     */
     @NameInMap("sequenceId")
     public String sequenceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>宜搭</p>
+     */
     @NameInMap("source")
     public String source;
 
+    /**
+     * <strong>example:</strong>
+     * <p>running</p>
+     */
     @NameInMap("status")
     public String status;
 
     @NameInMap("systemToken")
     public String systemToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>GMT</p>
+     */
     @NameInMap("timeZone")
     public String timeZone;
 

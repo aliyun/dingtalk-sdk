@@ -4,6 +4,13 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateIntegratedTaskRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>tPr_FB_mT_xxxxxxxxx2hQ05201655306463</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
@@ -35,17 +42,27 @@ public class UpdateIntegratedTaskRequest extends TeaModel {
     }
 
     public static class UpdateIntegratedTaskRequestTasks extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>AGREE</p>
+         */
         @NameInMap("result")
         public String result;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>COMPLETED</p>
          */
         @NameInMap("status")
         public String status;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>if can be null:</strong>
+         * <p>true</p>
          */
         @NameInMap("taskId")
         public Long taskId;

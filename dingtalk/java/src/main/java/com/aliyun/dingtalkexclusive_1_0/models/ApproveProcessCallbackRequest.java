@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class ApproveProcessCallbackRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sampleKeyId1234</p>
      */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sampleSecretId1234</p>
      */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
@@ -22,6 +28,10 @@ public class ApproveProcessCallbackRequest extends TeaModel {
     @NameInMap("request")
     public ApproveProcessCallbackRequestRequest request;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dingxxxxxxxxxxxx</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
@@ -65,6 +75,9 @@ public class ApproveProcessCallbackRequest extends TeaModel {
     public static class ApproveProcessCallbackRequestRequest extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>agree</p>
          */
         @NameInMap("approveResult")
         public String approveResult;
@@ -80,18 +93,27 @@ public class ApproveProcessCallbackRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1495592259000</p>
          */
         @NameInMap("createTime")
         public Long createTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>approve_open_group_expansion</p>
          */
         @NameInMap("eventType")
         public String eventType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1495592259000</p>
          */
         @NameInMap("finishTime")
         public Long finishTime;

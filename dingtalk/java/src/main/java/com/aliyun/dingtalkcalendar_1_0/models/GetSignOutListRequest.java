@@ -15,6 +15,9 @@ public class GetSignOutListRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sign_out</p>
      */
     @NameInMap("type")
     public String type;

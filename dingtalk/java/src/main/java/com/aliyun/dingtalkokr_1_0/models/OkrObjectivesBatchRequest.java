@@ -4,6 +4,10 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class OkrObjectivesBatchRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>dingOKR</p>
+     */
     @NameInMap("goodsCode")
     public String goodsCode;
 

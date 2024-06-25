@@ -21,18 +21,38 @@ public class AddAppRolesToMemberResponseBody extends TeaModel {
     }
 
     public static class AddAppRolesToMemberResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("latestScopeVersion")
         public Long latestScopeVersion;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("roleId")
         public Long roleId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>userNoPrivilegeToManageApp</p>
+         */
         @NameInMap("subErrorCode")
         public String subErrorCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>传入的角色范围数据版本号不合法</p>
+         */
         @NameInMap("subErrorMsg")
         public String subErrorMsg;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

@@ -6,11 +6,10 @@ import com.aliyun.dingtalkvillage_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 获取部门详情
-     *
+     * <b>summary</b> : 
+     * <p>获取部门详情</p>
+     * 
      * @param request GetDeptRequest
      * @param headers GetDeptHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -66,8 +66,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取部门详情
-     *
+     * <b>summary</b> : 
+     * <p>获取部门详情</p>
+     * 
      * @param request GetDeptRequest
      * @return GetDeptResponse
      */
@@ -78,8 +79,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 居民通讯录获取部门信息
-     *
+     * <b>summary</b> : 
+     * <p>居民通讯录获取部门信息</p>
+     * 
      * @param request GetResidentDeptRequest
      * @param headers GetResidentDeptHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -120,8 +122,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 居民通讯录获取部门信息
-     *
+     * <b>summary</b> : 
+     * <p>居民通讯录获取部门信息</p>
+     * 
      * @param request GetResidentDeptRequest
      * @return GetResidentDeptResponse
      */
@@ -132,8 +135,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 居民通讯录获取部门下某个人的详细信息
-     *
+     * <b>summary</b> : 
+     * <p>居民通讯录获取部门下某个人的详细信息</p>
+     * 
      * @param request GetResidentUserInfoRequest
      * @param headers GetResidentUserInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -174,8 +178,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 居民通讯录获取部门下某个人的详细信息
-     *
+     * <b>summary</b> : 
+     * <p>居民通讯录获取部门下某个人的详细信息</p>
+     * 
      * @param request GetResidentUserInfoRequest
      * @return GetResidentUserInfoResponse
      */
@@ -186,8 +191,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户详情
-     *
+     * <b>summary</b> : 
+     * <p>查询用户详情</p>
+     * 
      * @param request GetUserRequest
      * @param headers GetUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -232,8 +238,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户详情
-     *
+     * <b>summary</b> : 
+     * <p>查询用户详情</p>
+     * 
      * @param request GetUserRequest
      * @return GetUserResponse
      */
@@ -244,8 +251,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据unionId查询用户详情
-     *
+     * <b>summary</b> : 
+     * <p>根据unionId查询用户详情</p>
+     * 
      * @param request GetUserByUnionIdRequest
      * @param headers GetUserByUnionIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -294,8 +302,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据unionId查询用户详情
-     *
+     * <b>summary</b> : 
+     * <p>根据unionId查询用户详情</p>
+     * 
      * @param request GetUserByUnionIdRequest
      * @return GetUserByUnionIdResponse
      */
@@ -306,8 +315,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取对外开放的企业信息
-     *
+     * <b>summary</b> : 
+     * <p>获取对外开放的企业信息</p>
+     * 
      * @param headers GetVillageOrgInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetVillageOrgInfoResponse
@@ -340,8 +350,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取对外开放的企业信息
-     *
+     * <b>summary</b> : 
+     * <p>获取对外开放的企业信息</p>
      * @return GetVillageOrgInfoResponse
      */
     public GetVillageOrgInfoResponse getVillageOrgInfo(String subCorpId) throws Exception {
@@ -351,8 +361,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询部门下简略用户列表
-     *
+     * <b>summary</b> : 
+     * <p>查询部门下简略用户列表</p>
+     * 
      * @param request ListDeptSimpleUsersRequest
      * @param headers ListDeptSimpleUsersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -413,8 +424,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询部门下简略用户列表
-     *
+     * <b>summary</b> : 
+     * <p>查询部门下简略用户列表</p>
+     * 
      * @param request ListDeptSimpleUsersRequest
      * @return ListDeptSimpleUsersResponse
      */
@@ -425,8 +437,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询部门下userid列表
-     *
+     * <b>summary</b> : 
+     * <p>查询部门下userid列表</p>
+     * 
      * @param request ListDeptUserIdsRequest
      * @param headers ListDeptUserIdsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -467,8 +480,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询部门下userid列表
-     *
+     * <b>summary</b> : 
+     * <p>查询部门下userid列表</p>
+     * 
      * @param request ListDeptUserIdsRequest
      * @return ListDeptUserIdsResponse
      */
@@ -479,8 +493,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询部门下user完整信息
-     *
+     * <b>summary</b> : 
+     * <p>查询部门下user完整信息</p>
+     * 
      * @param request ListDeptUsersRequest
      * @param headers ListDeptUsersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -541,8 +556,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询部门下user完整信息
-     *
+     * <b>summary</b> : 
+     * <p>查询部门下user完整信息</p>
+     * 
      * @param request ListDeptUsersRequest
      * @return ListDeptUsersResponse
      */
@@ -553,8 +569,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询部门所有父部门列表
-     *
+     * <b>summary</b> : 
+     * <p>查询部门所有父部门列表</p>
+     * 
      * @param request ListParentByDeptRequest
      * @param headers ListParentByDeptHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -599,8 +616,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询部门所有父部门列表
-     *
+     * <b>summary</b> : 
+     * <p>查询部门所有父部门列表</p>
+     * 
      * @param request ListParentByDeptRequest
      * @return ListParentByDeptResponse
      */
@@ -611,8 +629,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户所有父部门列表
-     *
+     * <b>summary</b> : 
+     * <p>查询用户所有父部门列表</p>
+     * 
      * @param request ListParentByUserRequest
      * @param headers ListParentByUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -657,8 +676,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户所有父部门列表
-     *
+     * <b>summary</b> : 
+     * <p>查询用户所有父部门列表</p>
+     * 
      * @param request ListParentByUserRequest
      * @return ListParentByUserResponse
      */
@@ -669,8 +689,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 居民通讯录获取部门下人员信息
-     *
+     * <b>summary</b> : 
+     * <p>居民通讯录获取部门下人员信息</p>
+     * 
      * @param request ListResidentDeptUsersRequest
      * @param headers ListResidentDeptUsersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -723,8 +744,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 居民通讯录获取部门下人员信息
-     *
+     * <b>summary</b> : 
+     * <p>居民通讯录获取部门下人员信息</p>
+     * 
      * @param request ListResidentDeptUsersRequest
      * @return ListResidentDeptUsersResponse
      */
@@ -735,8 +757,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 居民通讯录获取子部门列表
-     *
+     * <b>summary</b> : 
+     * <p>居民通讯录获取子部门列表</p>
+     * 
      * @param request ListResidentSubDeptsRequest
      * @param headers ListResidentSubDeptsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -785,8 +808,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 居民通讯录获取子部门列表
-     *
+     * <b>summary</b> : 
+     * <p>居民通讯录获取子部门列表</p>
+     * 
      * @param request ListResidentSubDeptsRequest
      * @return ListResidentSubDeptsResponse
      */
@@ -797,8 +821,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 居民通讯录批量获取用户详细信息
-     *
+     * <b>summary</b> : 
+     * <p>居民通讯录批量获取用户详细信息</p>
+     * 
      * @param tmpReq ListResidentUserInfosRequest
      * @param headers ListResidentUserInfosHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -849,8 +874,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 居民通讯录批量获取用户详细信息
-     *
+     * <b>summary</b> : 
+     * <p>居民通讯录批量获取用户详细信息</p>
+     * 
      * @param request ListResidentUserInfosRequest
      * @return ListResidentUserInfosResponse
      */
@@ -861,8 +887,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据角色获取用户列表
-     *
+     * <b>summary</b> : 
+     * <p>根据角色获取用户列表</p>
+     * 
      * @param request ListSimpleUsersByRoleRequest
      * @param headers ListSimpleUsersByRoleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -915,8 +942,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据角色获取用户列表
-     *
+     * <b>summary</b> : 
+     * <p>根据角色获取用户列表</p>
+     * 
      * @param request ListSimpleUsersByRoleRequest
      * @return ListSimpleUsersByRoleResponse
      */
@@ -927,8 +955,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取下级指定区域层级组织
-     *
+     * <b>summary</b> : 
+     * <p>获取下级指定区域层级组织</p>
+     * 
      * @param request ListSubCorpsRequest
      * @param headers ListSubCorpsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -977,8 +1006,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取下级指定区域层级组织
-     *
+     * <b>summary</b> : 
+     * <p>获取下级指定区域层级组织</p>
+     * 
      * @param request ListSubCorpsRequest
      * @return ListSubCorpsResponse
      */
@@ -989,8 +1019,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询子部门列表
-     *
+     * <b>summary</b> : 
+     * <p>查询子部门列表</p>
+     * 
      * @param request ListSubDeptRequest
      * @param headers ListSubDeptHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1035,8 +1066,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询子部门列表
-     *
+     * <b>summary</b> : 
+     * <p>查询子部门列表</p>
+     * 
      * @param request ListSubDeptRequest
      * @return ListSubDeptResponse
      */
@@ -1047,8 +1079,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询部门下的子部门ID列表，不会递归查询，只包含ID
-     *
+     * <b>summary</b> : 
+     * <p>查询部门下的子部门ID列表，不会递归查询，只包含ID</p>
+     * 
      * @param request ListSubDeptIdsRequest
      * @param headers ListSubDeptIdsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1089,8 +1122,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询部门下的子部门ID列表，不会递归查询，只包含ID
-     *
+     * <b>summary</b> : 
+     * <p>查询部门下的子部门ID列表，不会递归查询，只包含ID</p>
+     * 
      * @param request ListSubDeptIdsRequest
      * @return ListSubDeptIdsResponse
      */

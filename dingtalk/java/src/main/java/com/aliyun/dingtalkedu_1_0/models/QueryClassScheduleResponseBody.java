@@ -32,12 +32,24 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigEnd extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("dayOfMonth")
         public Long dayOfMonth;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("month")
         public Long month;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2020</p>
+         */
         @NameInMap("year")
         public Long year;
 
@@ -73,9 +85,17 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigSectionModelsEnd extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("hour")
         public Long hour;
 
+        /**
+         * <strong>example:</strong>
+         * <p>45</p>
+         */
         @NameInMap("min")
         public Long min;
 
@@ -103,9 +123,17 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigSectionModelsStart extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("hour")
         public Long hour;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("min")
         public Long min;
 
@@ -136,12 +164,24 @@ public class QueryClassScheduleResponseBody extends TeaModel {
         @NameInMap("end")
         public QueryClassScheduleResponseBodyConfigSectionModelsEnd end;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("sectionIndex")
         public Long sectionIndex;
 
+        /**
+         * <strong>example:</strong>
+         * <p>第一节</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>COURSE</p>
+         */
         @NameInMap("sectionType")
         public String sectionType;
 
@@ -196,12 +236,24 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigStart extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("dayOfMonth")
         public Long dayOfMonth;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("month")
         public Long month;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2020</p>
+         */
         @NameInMap("year")
         public Long year;
 
@@ -349,27 +401,55 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyCourseDTOS extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2345</p>
+         */
         @NameInMap("classId")
         public Long classId;
 
         @NameInMap("classrooms")
         public java.util.List<QueryClassScheduleResponseBodyCourseDTOSClassrooms> classrooms;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cn_yuwen</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Ekk24352534</p>
+         */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ruu</p>
+         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding32534536235</p>
+         */
         @NameInMap("creatorCorpId")
         public String creatorCorpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>234525235</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>行政老师A</p>
+         */
         @NameInMap("creatorUserName")
         public String creatorUserName;
 
@@ -379,36 +459,76 @@ public class QueryClassScheduleResponseBody extends TeaModel {
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ext</p>
+         */
         @NameInMap("extInfo")
         public String extInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>这是语文</p>
+         */
         @NameInMap("introduce")
         public String introduce;
 
+        /**
+         * <strong>example:</strong>
+         * <p>语文</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("sectionIndex")
         public Long sectionIndex;
 
+        /**
+         * <strong>example:</strong>
+         * <p>语文</p>
+         */
         @NameInMap("sectionName")
         public String sectionName;
 
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("status")
         public Long status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cn_yuwen</p>
+         */
         @NameInMap("subjectCode")
         public String subjectCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding32534536235</p>
+         */
         @NameInMap("teacherCorpId")
         public String teacherCorpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>25354252543</p>
+         */
         @NameInMap("teacherUserId")
         public String teacherUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李老师</p>
+         */
         @NameInMap("teacherUserName")
         public String teacherUserName;
 

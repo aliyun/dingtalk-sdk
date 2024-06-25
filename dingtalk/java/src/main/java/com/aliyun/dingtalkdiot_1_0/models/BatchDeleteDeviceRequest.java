@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchDeleteDeviceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding12345</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 

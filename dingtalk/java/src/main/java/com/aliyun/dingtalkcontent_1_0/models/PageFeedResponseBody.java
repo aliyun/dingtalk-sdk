@@ -12,12 +12,18 @@ public class PageFeedResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasNext")
     public Boolean hasNext;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20</p>
      */
     @NameInMap("nextCursor")
     public Integer nextCursor;
@@ -54,36 +60,54 @@ public class PageFeedResponseBody extends TeaModel {
     public static class PageFeedResponseBodyFeedList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>200000257</p>
          */
         @NameInMap("feedCategory")
         public String feedCategory;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3d******-1cd2-<strong><strong>-ba1d-8</strong></strong>**3c6dc</p>
          */
         @NameInMap("feedId")
         public String feedId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>4</p>
          */
         @NameInMap("feedType")
         public Integer feedType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>名称</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://static.dingtalk.com/media/**************NAlg_600_337.jpg">https://static.dingtalk.com/media/**************NAlg_600_337.jpg</a></p>
          */
         @NameInMap("thumbUrl")
         public String thumbUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://h5.dingtalk.com/live/video_lesson.htm?spm=a1zdd.*******.0.0.3e9617129vSDL8&feedId=5e*****-17ec-45f1-8cc0-e******4a3&mcnId=183206*******06173&feedProperty=1&itemId=5ef7*****-17ec-45f1-8cc0-e64*****954a3&dd_nav_bgcolor=FF2****F#/video">https://h5.dingtalk.com/live/video_lesson.htm?spm=a1zdd.*******.0.0.3e9617129vSDL8&amp;feedId=5e*****-17ec-45f1-8cc0-e******4a3&amp;mcnId=183206*******06173&amp;feedProperty=1&amp;itemId=5ef7*****-17ec-45f1-8cc0-e64*****954a3&amp;dd_nav_bgcolor=FF2****F#/video</a></p>
          */
         @NameInMap("url")
         public String url;

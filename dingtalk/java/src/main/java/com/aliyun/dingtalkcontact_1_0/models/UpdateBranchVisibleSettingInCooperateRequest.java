@@ -26,18 +26,27 @@ public class UpdateBranchVisibleSettingInCooperateRequest extends TeaModel {
     public static class UpdateBranchVisibleSettingInCooperateRequestBody extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ding1234</p>
          */
         @NameInMap("branchCorpId")
         public String branchCorpId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("open")
         public Boolean open;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("type")
         public Long type;

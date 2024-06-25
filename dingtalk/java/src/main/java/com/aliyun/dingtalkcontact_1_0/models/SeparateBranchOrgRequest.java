@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SeparateBranchOrgRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("attachDeptId")
     public Long attachDeptId;

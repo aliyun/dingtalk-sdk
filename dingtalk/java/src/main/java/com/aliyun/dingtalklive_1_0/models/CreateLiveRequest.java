@@ -4,35 +4,59 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateLiveRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://gw.alicdn.com/tfs/TB1thlYyAT2gK0jSZPcXXcKkpXa-1125-633.png">https://gw.alicdn.com/tfs/TB1thlYyAT2gK0jSZPcXXcKkpXa-1125-633.png</a></p>
+     */
     @NameInMap("coverUrl")
     public String coverUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试直播简介</p>
+     */
     @NameInMap("introduction")
     public String introduction;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1659653648000</p>
      */
     @NameInMap("preEndTime")
     public Long preEndTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1659613648000</p>
      */
     @NameInMap("preStartTime")
     public Long preStartTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2</p>
+     */
     @NameInMap("publicType")
     public Long publicType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试直播</p>
      */
     @NameInMap("title")
     public String title;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>DC7wZGOSueEEIGOf3WKwWgiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

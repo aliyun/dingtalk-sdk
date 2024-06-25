@@ -9,12 +9,18 @@ public class GetSearchTabResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-09-17T19:43Z</p>
      */
     @NameInMap("gmtCreate")
     public String gmtCreate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-09-17T19:43Z</p>
      */
     @NameInMap("gmtModified")
     public String gmtModified;
@@ -24,12 +30,18 @@ public class GetSearchTabResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>专辑</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("priority")
     public Integer priority;
@@ -39,12 +51,18 @@ public class GetSearchTabResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("status")
     public Integer status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3333</p>
      */
     @NameInMap("tabId")
     public Integer tabId;

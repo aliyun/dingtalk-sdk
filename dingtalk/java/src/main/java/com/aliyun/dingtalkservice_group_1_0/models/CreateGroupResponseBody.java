@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class CreateGroupResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="http://qr.dingtalk.com/xxxxx">http://qr.dingtalk.com/xxxxx</a></p>
      */
     @NameInMap("groupUrl")
     public String groupUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidxxxxxx==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class HUploadPackageStatusRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5000000002761167</p>
      */
     @NameInMap("miniAppId")
     public String miniAppId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("taskId")
     public String taskId;

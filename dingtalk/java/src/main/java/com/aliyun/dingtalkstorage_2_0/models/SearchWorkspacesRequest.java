@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SearchWorkspacesRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>keyword</p>
      */
     @NameInMap("keyword")
     public String keyword;
@@ -15,6 +18,9 @@ public class SearchWorkspacesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -49,9 +55,17 @@ public class SearchWorkspacesRequest extends TeaModel {
     }
 
     public static class SearchWorkspacesRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
+        /**
+         * <strong>example:</strong>
+         * <p>next_token</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

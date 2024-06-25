@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CreateBizObjectResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class CreateBizObjectResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Code</p>
      */
     @NameInMap("message")
     public String message;
@@ -49,15 +55,31 @@ public class CreateBizObjectResponseBody extends TeaModel {
     }
 
     public static class CreateBizObjectResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>50599800-af82-487e-9386-0a7278cab69f</p>
+         */
         @NameInMap("bizObjectId")
         public String bizObjectId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>DataList</p>
+         */
         @NameInMap("formUsageType")
         public String formUsageType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3b5451bc-9fd3-4d0c-ba47-191f8bff95ab</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>D0001839bbbbe346bbf496498bb76c44c7eb972</p>
+         */
         @NameInMap("schemaCode")
         public String schemaCode;
 

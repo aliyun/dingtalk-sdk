@@ -24,6 +24,10 @@ public class ListCategorysRequest extends TeaModel {
     }
 
     public static class ListCategorysRequestBody extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("status")
         public Long status;
 

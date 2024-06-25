@@ -4,15 +4,31 @@ package com.aliyun.dingtalkh5package_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreatePackageRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("agentId")
     public Long agentId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("appId")
     public Long appId;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://example.com/myapp/index.html">https://example.com/myapp/index.html</a></p>
+     */
     @NameInMap("homeUrl")
     public String homeUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>aaaaaa/bbbbbb</p>
+     */
     @NameInMap("ossObjectKey")
     public String ossObjectKey;
 

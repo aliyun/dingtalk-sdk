@@ -19,6 +19,10 @@ public class CreateTicketRequest extends TeaModel {
     @NameInMap("openInstanceId")
     public String openInstanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("productionType")
     public Integer productionType;
 
@@ -113,9 +117,17 @@ public class CreateTicketRequest extends TeaModel {
     }
 
     public static class CreateTicketRequestProperties extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>字段名称</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>字段取值</p>
+         */
         @NameInMap("value")
         public String value;
 

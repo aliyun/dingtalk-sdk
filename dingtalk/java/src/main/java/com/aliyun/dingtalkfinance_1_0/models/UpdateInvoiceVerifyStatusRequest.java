@@ -6,48 +6,82 @@ import com.aliyun.tea.*;
 public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>lpKgSTzGSy</p>
      */
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("checkingResult")
     public Integer checkingResult;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("checkingStatus")
     public Integer checkingStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>200</p>
      */
     @NameInMap("code")
     public String code;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding673cxxxxxxxxxxxx85</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;restCheckTimes&quot;:10,&quot;noticeFlag&quot;:1}</p>
+     */
     @NameInMap("extension")
     public String extension;
 
+    /**
+     * <strong>example:</strong>
+     * <p>034012100111</p>
+     */
     @NameInMap("invoiceCode")
     public String invoiceCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>61235725</p>
      */
     @NameInMap("invoiceNo")
     public String invoiceNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("invoiceStatus")
     public Integer invoiceStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1299999</p>
      */
     @NameInMap("invoiceVerifyId")
     public String invoiceVerifyId;
@@ -60,6 +94,9 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>BPq7qiSIH8PJHlB9kPuii1NQiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

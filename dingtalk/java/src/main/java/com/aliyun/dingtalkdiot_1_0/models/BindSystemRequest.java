@@ -4,23 +4,36 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BindSystemRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>abcde12345</p>
+     */
     @NameInMap("authCode")
     public String authCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>d12345</p>
      */
     @NameInMap("clientId")
     public String clientId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xx社区。</p>
      */
     @NameInMap("clientName")
     public String clientName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding12345</p>
      */
     @NameInMap("corpId")
     public String corpId;

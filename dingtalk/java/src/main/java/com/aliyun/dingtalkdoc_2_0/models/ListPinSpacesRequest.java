@@ -9,6 +9,9 @@ public class ListPinSpacesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -35,21 +38,45 @@ public class ListPinSpacesRequest extends TeaModel {
     }
 
     public static class ListPinSpacesRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
+        /**
+         * <strong>example:</strong>
+         * <p>next_token</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withSpaceCreatorInfo")
         public Boolean withSpaceCreatorInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withSpaceModifierInfo")
         public Boolean withSpaceModifierInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withSpacePermissionRole")
         public Boolean withSpacePermissionRole;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("withTeamDetail")
         public Boolean withTeamDetail;
 

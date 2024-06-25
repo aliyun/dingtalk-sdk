@@ -4,17 +4,27 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateMeetingRoomGroupRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>测试分组</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>172</p>
      */
     @NameInMap("parentGroupId")
     public Long parentGroupId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

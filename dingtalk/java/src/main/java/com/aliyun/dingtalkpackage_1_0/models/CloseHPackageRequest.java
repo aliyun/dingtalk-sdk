@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CloseHPackageRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5000000000000000</p>
      */
     @NameInMap("miniAppId")
     public String miniAppId;

@@ -4,9 +4,17 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class SelectOption extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>finance</p>
+     */
     @NameInMap("key")
     public String key;
 
+    /**
+     * <strong>example:</strong>
+     * <p>财务</p>
+     */
     @NameInMap("value")
     public String value;
 

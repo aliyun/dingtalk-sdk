@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class BatchTasksRedirectRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>staffId-B</p>
      */
     @NameInMap("handoverUserId")
     public String handoverUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager-12</p>
      */
     @NameInMap("managerUserId")
     public String managerUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
      */
     @NameInMap("taskIds")
     public java.util.List<Long> taskIds;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>staffId-A</p>
      */
     @NameInMap("transfereeUserId")
     public String transfereeUserId;

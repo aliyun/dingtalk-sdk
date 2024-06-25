@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListStarsResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>next_token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,9 +36,17 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarListDentryInfoCreator extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>user_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>union_id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -62,9 +74,17 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarListDentryInfoModifier extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>user_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>union_id</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -92,42 +112,86 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarListDentryInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
         @NameInMap("creator")
         public ListStarsResponseBodyStarListDentryInfoCreator creator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>txt</p>
+         */
         @NameInMap("extension")
         public String extension;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>mobile_url</p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
         @NameInMap("modifier")
         public ListStarsResponseBodyStarListDentryInfoModifier modifier;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>pc_url</p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>NORMAL</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>FILE</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>uuid</p>
+         */
         @NameInMap("uuid")
         public String uuid;
 
@@ -243,9 +307,17 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarListSpaceInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>space_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_name</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -273,9 +345,17 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarListTeamInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>team_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_name</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -303,27 +383,51 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
         @NameInMap("dentryInfo")
         public ListStarsResponseBodyStarListDentryInfo dentryInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>NO_PERMISSION</p>
+         */
         @NameInMap("dentryPermissionRole")
         public String dentryPermissionRole;
 
+        /**
+         * <strong>example:</strong>
+         * <p>star_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
         @NameInMap("spaceInfo")
         public ListStarsResponseBodyStarListSpaceInfo spaceInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>NO_PERMISSION</p>
+         */
         @NameInMap("spacePermissionRole")
         public String spacePermissionRole;
 

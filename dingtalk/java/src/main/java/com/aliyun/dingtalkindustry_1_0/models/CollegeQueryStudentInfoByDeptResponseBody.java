@@ -4,39 +4,87 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeQueryStudentInfoByDeptResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>01123</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>NORMAL</p>
+     */
     @NameInMap("dingMemberStatus")
     public String dingMemberStatus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>”city“:&quot;Beijing&quot;</p>
+     */
     @NameInMap("empExtension")
     public java.util.Map<String, ?> empExtension;
 
+    /**
+     * <strong>example:</strong>
+     * <p>male</p>
+     */
     @NameInMap("gender")
     public String gender;
 
+    /**
+     * <strong>example:</strong>
+     * <p>11019xxxxxx0001</p>
+     */
     @NameInMap("identifyId")
     public String identifyId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("isActive")
     public Boolean isActive;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2015</p>
+     */
     @NameInMap("startYear")
     public String startYear;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1111111</p>
+     */
     @NameInMap("studentId")
     public Long studentId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>张三</p>
+     */
     @NameInMap("studentName")
     public String studentName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>mf1922051</p>
+     */
     @NameInMap("studentNumber")
     public String studentNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>11111111</p>
+     */
     @NameInMap("unionId")
     public String unionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0324124</p>
+     */
     @NameInMap("userId")
     public String userId;
 

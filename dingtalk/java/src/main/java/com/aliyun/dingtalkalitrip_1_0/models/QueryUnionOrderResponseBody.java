@@ -4,6 +4,10 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUnionOrderResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>tanant1231</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
@@ -65,9 +69,17 @@ public class QueryUnionOrderResponseBody extends TeaModel {
     }
 
     public static class QueryUnionOrderResponseBodyFlightList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1231</p>
+         */
         @NameInMap("flightOrderId")
         public Long flightOrderId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("flightOrderStatus")
         public Long flightOrderStatus;
 
@@ -95,9 +107,17 @@ public class QueryUnionOrderResponseBody extends TeaModel {
     }
 
     public static class QueryUnionOrderResponseBodyHotelList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>12312</p>
+         */
         @NameInMap("hotelOrderId")
         public Long hotelOrderId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("hotelOrderStatus")
         public Long hotelOrderStatus;
 
@@ -125,9 +145,17 @@ public class QueryUnionOrderResponseBody extends TeaModel {
     }
 
     public static class QueryUnionOrderResponseBodyTrainList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>231231</p>
+         */
         @NameInMap("trainOrderId")
         public Long trainOrderId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("trainOrderstatus")
         public Long trainOrderstatus;
 
@@ -155,9 +183,17 @@ public class QueryUnionOrderResponseBody extends TeaModel {
     }
 
     public static class QueryUnionOrderResponseBodyVehicleList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1231</p>
+         */
         @NameInMap("vehicleOrderId")
         public Long vehicleOrderId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("vehicleOrderStatus")
         public Long vehicleOrderStatus;
 

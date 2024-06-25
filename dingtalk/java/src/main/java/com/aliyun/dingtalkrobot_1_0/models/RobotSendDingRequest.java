@@ -18,6 +18,9 @@ public class RobotSendDingRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1:APP，2:短信，3:电话</p>
      */
     @NameInMap("remindType")
     public Integer remindType;

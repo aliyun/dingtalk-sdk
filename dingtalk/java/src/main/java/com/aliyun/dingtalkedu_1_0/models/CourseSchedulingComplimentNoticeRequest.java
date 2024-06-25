@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CourseSchedulingComplimentNoticeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>行政老师A</p>
      */
     @NameInMap("opUserId")
     public String opUserId;

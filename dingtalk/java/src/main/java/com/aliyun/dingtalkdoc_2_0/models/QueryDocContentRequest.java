@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class QueryDocContentRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>markdown</p>
+     */
     @NameInMap("targetFormat")
     public String targetFormat;
 

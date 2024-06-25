@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetDingReportSummaryResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("reportCommentUserCnt1d")
     public String reportCommentUserCnt1d;

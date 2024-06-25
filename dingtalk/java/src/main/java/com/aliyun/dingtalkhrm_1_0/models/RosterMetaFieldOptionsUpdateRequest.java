@@ -9,12 +9,18 @@ public class RosterMetaFieldOptionsUpdateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sys05-contractType</p>
      */
     @NameInMap("fieldCode")
     public String fieldCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sys05</p>
      */
     @NameInMap("groupId")
     public String groupId;
@@ -27,6 +33,9 @@ public class RosterMetaFieldOptionsUpdateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OPTIONS_ADD</p>
      */
     @NameInMap("modifyType")
     public String modifyType;

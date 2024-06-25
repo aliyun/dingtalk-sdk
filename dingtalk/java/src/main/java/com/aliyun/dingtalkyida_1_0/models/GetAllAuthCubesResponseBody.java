@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetAllAuthCubesResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("count")
     public Long count;
@@ -50,6 +53,10 @@ public class GetAllAuthCubesResponseBody extends TeaModel {
         @NameInMap("elementType")
         public String elementType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager123</p>
+         */
         @NameInMap("operator")
         public String operator;
 
@@ -112,12 +119,24 @@ public class GetAllAuthCubesResponseBody extends TeaModel {
         @NameInMap("authProvider")
         public String authProvider;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding5d17e3add038d44535c2f4657eb6378e</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>开发部</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试应用</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -130,6 +149,10 @@ public class GetAllAuthCubesResponseBody extends TeaModel {
         @NameInMap("refererNamespaceCode")
         public String refererNamespaceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>请购类型</p>
+         */
         @NameInMap("showName")
         public String showName;
 
@@ -231,6 +254,10 @@ public class GetAllAuthCubesResponseBody extends TeaModel {
         @NameInMap("authMode")
         public String authMode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>all</p>
+         */
         @NameInMap("authorizationType")
         public Integer authorizationType;
 
@@ -243,9 +270,17 @@ public class GetAllAuthCubesResponseBody extends TeaModel {
         @NameInMap("categoriesSecond")
         public String categoriesSecond;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-05-01</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding12345</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
@@ -270,6 +305,10 @@ public class GetAllAuthCubesResponseBody extends TeaModel {
         @NameInMap("dataflowCode")
         public String dataflowCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>步凡创建的宜搭应用</p>
+         */
         @NameInMap("description")
         public String description;
 
@@ -279,6 +318,10 @@ public class GetAllAuthCubesResponseBody extends TeaModel {
         @NameInMap("enableCache")
         public Boolean enableCache;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345</p>
+         */
         @NameInMap("id")
         public Long id;
 
@@ -288,12 +331,24 @@ public class GetAllAuthCubesResponseBody extends TeaModel {
         @NameInMap("isTrend")
         public String isTrend;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-05-01</p>
+         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager123</p>
+         */
         @NameInMap("modifier")
         public String modifier;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试应用</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -309,6 +364,10 @@ public class GetAllAuthCubesResponseBody extends TeaModel {
         @NameInMap("tenantCorpId")
         public String tenantCorpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>i18n</p>
+         */
         @NameInMap("type")
         public String type;
 

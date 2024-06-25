@@ -4,9 +4,17 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCardWithDelegateRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>routekey-7931</p>
+     */
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>STREAM</p>
+     */
     @NameInMap("callbackType")
     public String callbackType;
 
@@ -18,6 +26,9 @@ public class CreateCardWithDelegateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>b0aa776f-79ac-4e13-f838-749aae913bc7</p>
      */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
@@ -39,6 +50,9 @@ public class CreateCardWithDelegateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>mycard-07921</p>
      */
     @NameInMap("outTrackId")
     public String outTrackId;
@@ -49,6 +63,10 @@ public class CreateCardWithDelegateRequest extends TeaModel {
     @NameInMap("topOpenSpaceModel")
     public CreateCardWithDelegateRequestTopOpenSpaceModel topOpenSpaceModel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manager1234</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -211,6 +229,10 @@ public class CreateCardWithDelegateRequest extends TeaModel {
     }
 
     public static class CreateCardWithDelegateRequestImGroupOpenSpaceModelNotification extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>你收到1条新消息</p>
+         */
         @NameInMap("alertContent")
         public String alertContent;
 
@@ -244,9 +266,17 @@ public class CreateCardWithDelegateRequest extends TeaModel {
         @NameInMap("searchDesc")
         public String searchDesc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@lALPDgQ9q8hFhlHNAXzNAqI</p>
+         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</p>
+         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -367,9 +397,17 @@ public class CreateCardWithDelegateRequest extends TeaModel {
         @NameInMap("searchDesc")
         public String searchDesc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@lALPDgQ9q8hFhlHNAXzNAqI</p>
+         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</p>
+         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -490,9 +528,17 @@ public class CreateCardWithDelegateRequest extends TeaModel {
         @NameInMap("searchDesc")
         public String searchDesc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@lALPDgQ9q8hFhlHNAXzNAqI</p>
+         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</p>
+         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -583,9 +629,17 @@ public class CreateCardWithDelegateRequest extends TeaModel {
         @NameInMap("interval")
         public Integer interval;
 
+        /**
+         * <strong>example:</strong>
+         * <p>INTERVAL</p>
+         */
         @NameInMap("pullStrategy")
         public String pullStrategy;
 
+        /**
+         * <strong>example:</strong>
+         * <p>SECONDS</p>
+         */
         @NameInMap("timeUnit")
         public String timeUnit;
 
@@ -624,6 +678,10 @@ public class CreateCardWithDelegateRequest extends TeaModel {
         @NameInMap("constParams")
         public java.util.Map<String, String> constParams;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ds-01</p>
+         */
         @NameInMap("dynamicDataSourceId")
         public String dynamicDataSourceId;
 

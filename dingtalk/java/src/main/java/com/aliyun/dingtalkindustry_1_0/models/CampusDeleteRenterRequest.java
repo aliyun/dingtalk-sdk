@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CampusDeleteRenterRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1001</p>
      */
     @NameInMap("renterId")
     public Long renterId;

@@ -9,12 +9,18 @@ public class UpdateShortcutsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sid001234</p>
      */
     @NameInMap("sessionId")
     public String sessionId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>idzb26bxl64vqx2keyi</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -49,32 +55,57 @@ public class UpdateShortcutsRequest extends TeaModel {
     }
 
     public static class UpdateShortcutsRequestDetails extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://dingtalk.com">https://dingtalk.com</a></p>
+         */
         @NameInMap("actionUrl")
         public String actionUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>033bd94b1168d7e4f0d644c3c95e35bf</p>
+         */
         @NameInMap("callbackKey")
         public String callbackKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>e73e</p>
+         */
         @NameInMap("iconFont")
         public String iconFont;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>@lADPDg7mWPzw0i_NArzNArw</p>
          */
         @NameInMap("iconMediaId")
         public String iconMediaId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>test123456</p>
          */
         @NameInMap("shortcutId")
         public String shortcutId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@lADPDg7mWPzw0i_NArzNArw</p>
+         */
         @NameInMap("slideIconMediaId")
         public String slideIconMediaId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试</p>
          */
         @NameInMap("title")
         public String title;

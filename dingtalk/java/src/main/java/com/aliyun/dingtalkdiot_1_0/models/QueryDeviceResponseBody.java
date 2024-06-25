@@ -10,12 +10,24 @@ public class QueryDeviceResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<QueryDeviceResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>40</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -57,12 +69,24 @@ public class QueryDeviceResponseBody extends TeaModel {
     }
 
     public static class QueryDeviceResponseBodyDataLiveUrls extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://abc.stream.flv">https://abc.stream.flv</a></p>
+         */
         @NameInMap("flv")
         public String flv;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://abc.stream.m3u8">https://abc.stream.m3u8</a></p>
+         */
         @NameInMap("hls")
         public String hls;
 
+        /**
+         * <strong>example:</strong>
+         * <p>rtmp://abc.stream</p>
+         */
         @NameInMap("rtmp")
         public String rtmp;
 
@@ -100,31 +124,62 @@ public class QueryDeviceResponseBody extends TeaModel {
     public static class QueryDeviceResponseBodyData extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123</p>
          */
         @NameInMap("deviceId")
         public String deviceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>XX摄像头</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("deviceStatus")
         public Long deviceStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>CAMERA</p>
+         */
         @NameInMap("deviceType")
         public String deviceType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>摄像头</p>
+         */
         @NameInMap("deviceTypeName")
         public String deviceTypeName;
 
         @NameInMap("liveUrls")
         public QueryDeviceResponseBodyDataLiveUrls liveUrls;
 
+        /**
+         * <strong>example:</strong>
+         * <p>XX地址</p>
+         */
         @NameInMap("location")
         public String location;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("parentId")
         public String parentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>CAMERA</p>
+         */
         @NameInMap("productType")
         public String productType;
 

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetBotListInGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidjknasndcbaXXXXX</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

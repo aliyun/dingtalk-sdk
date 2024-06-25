@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryAppFunctionNodesResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class QueryAppFunctionNodesResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OK</p>
      */
     @NameInMap("message")
     public String message;
@@ -49,30 +55,66 @@ public class QueryAppFunctionNodesResponseBody extends TeaModel {
     }
 
     public static class QueryAppFunctionNodesResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>D000001</p>
+         */
         @NameInMap("appCode")
         public String appCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>客户管理</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isSystem")
         public Boolean isSystem;
 
+        /**
+         * <strong>example:</strong>
+         * <p>FormModule</p>
+         */
         @NameInMap("nodeType")
         public String nodeType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>AllVisible</p>
+         */
         @NameInMap("nodeVisibleType")
         public String nodeVisibleType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6b42e223-c849-4fe9-9916-52f52d1a41b5</p>
+         */
         @NameInMap("parentCode")
         public String parentCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>8d56c3b7-e996-4223-96a0-85ad16c11825</p>
+         */
         @NameInMap("schemaCode")
         public String schemaCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1000000011</p>
+         */
         @NameInMap("sortKey")
         public Long sortKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Active</p>
+         */
         @NameInMap("state")
         public String state;
 

@@ -5,13 +5,17 @@ import com.aliyun.tea.*;
 
 public class DeleteDirRequest extends TeaModel {
     /**
-     * <p>This parameter is required.</p>
+     * <strong>example:</strong>
+     * <p>oaDirIdxxx</p>
      */
     @NameInMap("dirId")
     public String dirId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user001</p>
      */
     @NameInMap("operateUserId")
     public String operateUserId;

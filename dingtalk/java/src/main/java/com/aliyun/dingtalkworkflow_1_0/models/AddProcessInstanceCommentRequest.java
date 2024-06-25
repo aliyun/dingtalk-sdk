@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class AddProcessInstanceCommentRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user123</p>
      */
     @NameInMap("commentUserId")
     public String commentUserId;
@@ -15,12 +18,18 @@ public class AddProcessInstanceCommentRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>a171de6c-8bxxxx</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>同意。</p>
      */
     @NameInMap("text")
     public String text;
@@ -63,18 +72,38 @@ public class AddProcessInstanceCommentRequest extends TeaModel {
     }
 
     public static class AddProcessInstanceCommentRequestFileAttachments extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>B1oQixxxx</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>文件名称。</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1024</p>
+         */
         @NameInMap("fileSize")
         public String fileSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p>file</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 

@@ -9,6 +9,9 @@ public class DocContentRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -35,6 +38,10 @@ public class DocContentRequest extends TeaModel {
     }
 
     public static class DocContentRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>markdown</p>
+         */
         @NameInMap("targetFormat")
         public String targetFormat;
 

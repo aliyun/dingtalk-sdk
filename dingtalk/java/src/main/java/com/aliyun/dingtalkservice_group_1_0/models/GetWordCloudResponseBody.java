@@ -26,12 +26,18 @@ public class GetWordCloudResponseBody extends TeaModel {
     public static class GetWordCloudResponseBodyWords extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("count")
         public Long count;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>销售</p>
          */
         @NameInMap("word")
         public String word;

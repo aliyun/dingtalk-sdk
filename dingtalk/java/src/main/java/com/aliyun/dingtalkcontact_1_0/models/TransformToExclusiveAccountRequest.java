@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class TransformToExclusiveAccountRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>false/true</p>
+     */
     @NameInMap("idpDingTalk")
     public Boolean idpDingTalk;
 
@@ -15,6 +19,9 @@ public class TransformToExclusiveAccountRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>migrate</p>
      */
     @NameInMap("transformType")
     public String transformType;

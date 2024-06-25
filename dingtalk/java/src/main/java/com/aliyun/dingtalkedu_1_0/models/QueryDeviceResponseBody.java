@@ -4,18 +4,38 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDeviceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1680227019000</p>
+     */
     @NameInMap("gmtExpiry")
     public Long gmtExpiry;
 
+    /**
+     * <strong>example:</strong>
+     * <p>model1</p>
+     */
     @NameInMap("model")
     public String model;
 
+    /**
+     * <strong>example:</strong>
+     * <p>三年级1班班牌</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fada-8008</p>
+     */
     @NameInMap("sn")
     public String sn;
 
+    /**
+     * <strong>example:</strong>
+     * <p>VIDEO_CALL</p>
+     */
     @NameInMap("type")
     public String type;
 

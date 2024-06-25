@@ -6,15 +6,25 @@ import com.aliyun.tea.*;
 public class GetFinanceAccountResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("accountCode")
     public String accountCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="mailto:test@alipay.com">test@alipay.com</a></p>
+     */
     @NameInMap("accountId")
     public String accountId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试</p>
      */
     @NameInMap("accountName")
     public String accountName;
@@ -24,6 +34,9 @@ public class GetFinanceAccountResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ALIPAY</p>
      */
     @NameInMap("accountType")
     public String accountType;
@@ -31,6 +44,10 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     @NameInMap("accountantBookIdList")
     public java.util.List<String> accountantBookIdList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>50000.55</p>
+     */
     @NameInMap("amount")
     public String amount;
 
@@ -42,12 +59,18 @@ public class GetFinanceAccountResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1631526550994</p>
      */
     @NameInMap("createTime")
     public Long createTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abcdef</p>
      */
     @NameInMap("creator")
     public String creator;

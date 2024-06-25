@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryOrgTypeResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1, &quot;省级教育厅&quot;;2, &quot;市级教育局&quot;;3, &quot;区县教育局&quot;;4, &quot;中心校&quot;;5, &quot;普通学校&quot;</p>
      */
     @NameInMap("orgType")
     public Long orgType;

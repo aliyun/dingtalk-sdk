@@ -6,21 +6,34 @@ import com.aliyun.tea.*;
 public class QueryCrmGroupContactRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("minResult")
     public Long minResult;
 
+    /**
+     * <strong>example:</strong>
+     * <p>8888</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cid888</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>888</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;

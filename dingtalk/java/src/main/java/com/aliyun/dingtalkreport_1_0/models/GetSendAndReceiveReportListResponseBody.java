@@ -10,9 +10,17 @@ public class GetSendAndReceiveReportListResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -54,21 +62,45 @@ public class GetSendAndReceiveReportListResponseBody extends TeaModel {
     }
 
     public static class GetSendAndReceiveReportListResponseBodyDataList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1507564800000</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user123</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("creatorName")
         public String creatorName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1507564800000</p>
+         */
         @NameInMap("modifiedTime")
         public Long modifiedTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxxxx</p>
+         */
         @NameInMap("reportId")
         public String reportId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>日报</p>
+         */
         @NameInMap("templateName")
         public String templateName;
 

@@ -6,25 +6,43 @@ import com.aliyun.tea.*;
 public class UpdateFinanceMultiCompanyInfoRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>COM_DEFAULT</p>
      */
     @NameInMap("companyCode")
     public String companyCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>钉钉</p>
      */
     @NameInMap("companyName")
     public String companyName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>generalTaxpayer</p>
+     */
     @NameInMap("taxNature")
     public String taxNature;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123456789012345</p>
+     */
     @NameInMap("taxNo")
     public String taxNo;
 
     @NameInMap("taxOrInvoiceHasInit")
     public Boolean taxOrInvoiceHasInit;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("userId")
     public String userId;
 

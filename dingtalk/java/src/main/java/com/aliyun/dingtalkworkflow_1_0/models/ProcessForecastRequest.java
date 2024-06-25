@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ProcessForecastRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("deptId")
     public Integer deptId;
@@ -18,12 +21,18 @@ public class ProcessForecastRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROC-EF6YJL35P2-SCKICSB7P750S0YISYKV3-xxxx-1</p>
      */
     @NameInMap("processCode")
     public String processCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager432</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -66,21 +75,41 @@ public class ProcessForecastRequest extends TeaModel {
     }
 
     public static class ProcessForecastRequestFormComponentValuesDetailsDetails extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>Phone</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
         @NameInMap("componentType")
         public String componentType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>总个数:1</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PhoneField_IZI2LP8QF6O0</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PhoneField</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123xxxxxxxx</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -140,21 +169,41 @@ public class ProcessForecastRequest extends TeaModel {
     }
 
     public static class ProcessForecastRequestFormComponentValuesDetails extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>Phone</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
         @NameInMap("details")
         public java.util.List<ProcessForecastRequestFormComponentValuesDetailsDetails> details;
 
+        /**
+         * <strong>example:</strong>
+         * <p>总个数:1</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PhoneField_IZI2LP8QF6O0</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PhoneField</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123xxxxxxxx</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -214,6 +263,10 @@ public class ProcessForecastRequest extends TeaModel {
     }
 
     public static class ProcessForecastRequestFormComponentValues extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>Phone</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
@@ -223,20 +276,34 @@ public class ProcessForecastRequest extends TeaModel {
         @NameInMap("details")
         public java.util.List<ProcessForecastRequestFormComponentValuesDetails> details;
 
+        /**
+         * <strong>example:</strong>
+         * <p>总个数:1</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PhoneField_IZI2LP8QF6O0</p>
+         */
         @NameInMap("id")
         public String id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PhoneField</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123xxxxxxxx</p>
          */
         @NameInMap("value")
         public String value;

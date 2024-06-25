@@ -10,6 +10,10 @@ public class GetMediaUrlsRequest extends TeaModel {
     @NameInMap("mediaIds")
     public java.util.List<String> mediaIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>86399</p>
+     */
     @NameInMap("urlExpireTime")
     public Integer urlExpireTime;
 

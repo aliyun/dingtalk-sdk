@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryBaymaxSkillLogResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>14da****2760</p>
      */
     @NameInMap("result")
     public String result;

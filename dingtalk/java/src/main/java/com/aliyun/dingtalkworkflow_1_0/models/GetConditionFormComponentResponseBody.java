@@ -23,12 +23,18 @@ public class GetConditionFormComponentResponseBody extends TeaModel {
     public static class GetConditionFormComponentResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>TextField</p>
          */
         @NameInMap("id")
         public String id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>输入框</p>
          */
         @NameInMap("label")
         public String label;

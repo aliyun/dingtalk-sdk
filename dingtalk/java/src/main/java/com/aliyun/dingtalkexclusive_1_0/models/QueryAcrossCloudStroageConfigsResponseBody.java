@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class QueryAcrossCloudStroageConfigsResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sampleKeyId1234</p>
      */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sampleSecretId1234</p>
      */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxxbucket</p>
      */
     @NameInMap("bucketName")
     public String bucketName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("cloudType")
     public Integer cloudType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://oss-cn-test.aliyuncs.com">https://oss-cn-test.aliyuncs.com</a></p>
      */
     @NameInMap("endpoint")
     public String endpoint;

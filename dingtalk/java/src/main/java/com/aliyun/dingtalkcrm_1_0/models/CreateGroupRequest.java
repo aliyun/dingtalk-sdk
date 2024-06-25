@@ -6,21 +6,34 @@ import com.aliyun.tea.*;
 public class CreateGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc</p>
      */
     @NameInMap("groupName")
     public String groupName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>a,b,c</p>
+     */
     @NameInMap("memberUserIds")
     public String memberUserIds;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc123</p>
      */
     @NameInMap("ownerUserId")
     public String ownerUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc</p>
      */
     @NameInMap("relationType")
     public String relationType;

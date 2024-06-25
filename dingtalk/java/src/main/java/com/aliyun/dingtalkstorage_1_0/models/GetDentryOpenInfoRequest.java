@@ -9,6 +9,9 @@ public class GetDentryOpenInfoRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -35,15 +38,31 @@ public class GetDentryOpenInfoRequest extends TeaModel {
     }
 
     public static class GetDentryOpenInfoRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("checkLogin")
         public Boolean checkLogin;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PREVIEW</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("version")
         public Long version;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("waterMark")
         public Boolean waterMark;
 

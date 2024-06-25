@@ -9,6 +9,9 @@ public class GetAnalyzeDataRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>32222</p>
      */
     @NameInMap("deptId")
     public String deptId;

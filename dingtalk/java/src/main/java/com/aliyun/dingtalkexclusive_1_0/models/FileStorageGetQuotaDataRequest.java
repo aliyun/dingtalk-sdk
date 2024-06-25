@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class FileStorageGetQuotaDataRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2022-04</p>
      */
     @NameInMap("endTime")
     public String endTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-04</p>
      */
     @NameInMap("startTime")
     public String startTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding77b8cac4e026cc123xxxxxxxxeb6378f</p>
      */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("type")
     public String type;

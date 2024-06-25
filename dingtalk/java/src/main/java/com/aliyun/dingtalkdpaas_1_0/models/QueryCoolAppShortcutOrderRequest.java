@@ -4,12 +4,24 @@ package com.aliyun.dingtalkdpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCoolAppShortcutOrderRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cidxxx</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>staff1</p>
+     */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>templateId1</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

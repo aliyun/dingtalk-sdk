@@ -32,12 +32,18 @@ public class BatchCreateTemplateRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>描述</p>
          */
         @NameInMap("appDesc")
         public String appDesc;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>@lALPDe7s2JOuoyjNBaDNCgA</p>
          */
         @NameInMap("appIcon")
         public String appIcon;
@@ -47,6 +53,9 @@ public class BatchCreateTemplateRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>template_category</p>
          */
         @NameInMap("categoryCode")
         public String categoryCode;
@@ -54,6 +63,10 @@ public class BatchCreateTemplateRequest extends TeaModel {
         @NameInMap("coverImgList")
         public java.util.List<String> coverImgList;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.baidu.com/">https://www.baidu.com/</a></p>
+         */
         @NameInMap("expUrl")
         public String expUrl;
 
@@ -65,6 +78,9 @@ public class BatchCreateTemplateRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
          */
         @NameInMap("installTimes")
         public Long installTimes;
@@ -74,6 +90,9 @@ public class BatchCreateTemplateRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试模板</p>
          */
         @NameInMap("name")
         public String name;
@@ -84,6 +103,10 @@ public class BatchCreateTemplateRequest extends TeaModel {
         @NameInMap("previewMediaList")
         public java.util.List<String> previewMediaList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>小张</p>
+         */
         @NameInMap("providerName")
         public String providerName;
 
@@ -95,12 +118,18 @@ public class BatchCreateTemplateRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>描述</p>
          */
         @NameInMap("simpleDesc")
         public String simpleDesc;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>template_key_1</p>
          */
         @NameInMap("templateKey")
         public String templateKey;

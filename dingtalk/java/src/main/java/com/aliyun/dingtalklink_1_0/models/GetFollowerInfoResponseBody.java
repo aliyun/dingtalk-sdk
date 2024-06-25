@@ -35,12 +35,24 @@ public class GetFollowerInfoResponseBody extends TeaModel {
     }
 
     public static class GetFollowerInfoResponseBodyResultUser extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>小钉</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1661918406748</p>
+         */
         @NameInMap("timestamp")
         public String timestamp;
 
+        /**
+         * <strong>example:</strong>
+         * <p>userId</p>
+         */
         @NameInMap("userId")
         public String userId;
 

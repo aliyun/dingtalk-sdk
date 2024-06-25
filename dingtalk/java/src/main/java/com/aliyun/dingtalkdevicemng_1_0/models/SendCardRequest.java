@@ -4,21 +4,40 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendCardRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>biz-xxxxx</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;var1&quot;:&quot;xxx&quot;,&quot;var2&quot;:&quot;xxx&quot;}</p>
      */
     @NameInMap("cardData")
     public String cardData;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxceshi_1</p>
+     */
     @NameInMap("deviceCode")
     public String deviceCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Device-3bb10262-31f9-494f-9fde-0a910b8exxxx</p>
+     */
     @NameInMap("deviceUuid")
     public String deviceUuid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cide+m5TmAcxA3OU6Un59xxxx==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -30,6 +49,9 @@ public class SendCardRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abcxxxxxxxx</p>
      */
     @NameInMap("templateId")
     public String templateId;
@@ -37,6 +59,10 @@ public class SendCardRequest extends TeaModel {
     @NameInMap("topbox")
     public Boolean topbox;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0123459456</p>
+     */
     @NameInMap("userId")
     public String userId;
 

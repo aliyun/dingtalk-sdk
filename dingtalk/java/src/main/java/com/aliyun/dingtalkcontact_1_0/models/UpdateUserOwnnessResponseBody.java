@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdateUserOwnnessResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("result")
     public String result;

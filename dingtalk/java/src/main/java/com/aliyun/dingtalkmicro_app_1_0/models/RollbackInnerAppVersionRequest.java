@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class RollbackInnerAppVersionRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("appVersionId")
     public Long appVersionId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("opUnionId")
     public String opUnionId;

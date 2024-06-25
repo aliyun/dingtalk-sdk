@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRelationUkSettingResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("result")
     public java.util.List<GetRelationUkSettingResponseBodyResult> result;
 
@@ -21,11 +25,18 @@ public class GetRelationUkSettingResponseBody extends TeaModel {
     }
 
     public static class GetRelationUkSettingResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>customer_name</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>TextField_U2K5A122</p>
          */
         @NameInMap("fieldId")
         public String fieldId;

@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class DeleteRowsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>row</p>
      */
     @NameInMap("row")
     public Long row;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>row_count</p>
      */
     @NameInMap("rowCount")
     public Long rowCount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

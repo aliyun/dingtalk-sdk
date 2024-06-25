@@ -6,16 +6,26 @@ import com.aliyun.tea.*;
 public class SyncCostCenterEntityRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding89233847892ndkas</p>
      */
     @NameInMap("channelCorpId")
     public String channelCorpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("costCenterId")
     public String costCenterId;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("delAll")
     public Boolean delAll;
 
@@ -24,6 +34,9 @@ public class SyncCostCenterEntityRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20881001829000</p>
      */
     @NameInMap("userId")
     public String userId;

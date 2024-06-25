@@ -6,11 +6,10 @@ import com.aliyun.dingtalksmart_device_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 添加硬件视频会议参会人
-     *
+     * <b>summary</b> : 
+     * <p>添加硬件视频会议参会人</p>
+     * 
      * @param request AddDeviceVideoConferenceMembersRequest
      * @param headers AddDeviceVideoConferenceMembersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -62,8 +62,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加硬件视频会议参会人
-     *
+     * <b>summary</b> : 
+     * <p>添加硬件视频会议参会人</p>
+     * 
      * @param request AddDeviceVideoConferenceMembersRequest
      * @return AddDeviceVideoConferenceMembersResponse
      */
@@ -74,8 +75,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建硬件视频会议
-     *
+     * <b>summary</b> : 
+     * <p>创建硬件视频会议</p>
+     * 
      * @param request CreateDeviceVideoConferenceRequest
      * @param headers CreateDeviceVideoConferenceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -116,8 +118,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建硬件视频会议
-     *
+     * <b>summary</b> : 
+     * <p>创建硬件视频会议</p>
+     * 
      * @param request CreateDeviceVideoConferenceRequest
      * @return CreateDeviceVideoConferenceResponse
      */
@@ -128,8 +131,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 基于企业员工照片为终端提取人脸识别特征
-     *
+     * <b>summary</b> : 
+     * <p>基于企业员工照片为终端提取人脸识别特征</p>
+     * 
      * @param request ExtractFacialFeatureRequest
      * @param headers ExtractFacialFeatureHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -174,8 +178,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 基于企业员工照片为终端提取人脸识别特征
-     *
+     * <b>summary</b> : 
+     * <p>基于企业员工照片为终端提取人脸识别特征</p>
+     * 
      * @param request ExtractFacialFeatureRequest
      * @return ExtractFacialFeatureResponse
      */
@@ -186,8 +191,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 踢出硬件视频会议参会人
-     *
+     * <b>summary</b> : 
+     * <p>踢出硬件视频会议参会人</p>
+     * 
      * @param request KickDeviceVideoConferenceMembersRequest
      * @param headers KickDeviceVideoConferenceMembersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -228,8 +234,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 踢出硬件视频会议参会人
-     *
+     * <b>summary</b> : 
+     * <p>踢出硬件视频会议参会人</p>
+     * 
      * @param request KickDeviceVideoConferenceMembersRequest
      * @return KickDeviceVideoConferenceMembersResponse
      */
@@ -240,8 +247,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 变更智能考勤机设备管理员
-     *
+     * <b>summary</b> : 
+     * <p>变更智能考勤机设备管理员</p>
+     * 
      * @param request MachineManagerUpdateRequest
      * @param headers MachineManagerUpdateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -294,8 +302,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 变更智能考勤机设备管理员
-     *
+     * <b>summary</b> : 
+     * <p>变更智能考勤机设备管理员</p>
+     * 
      * @param request MachineManagerUpdateRequest
      * @return MachineManagerUpdateResponse
      */
@@ -306,8 +315,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 变更智能考勤机员工
-     *
+     * <b>summary</b> : 
+     * <p>变更智能考勤机员工</p>
+     * 
      * @param request MachineUsersUpdateRequest
      * @param headers MachineUsersUpdateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -368,8 +378,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 变更智能考勤机员工
-     *
+     * <b>summary</b> : 
+     * <p>变更智能考勤机员工</p>
+     * 
      * @param request MachineUsersUpdateRequest
      * @return MachineUsersUpdateResponse
      */
@@ -380,8 +391,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询硬件视频会议预约信息
-     *
+     * <b>summary</b> : 
+     * <p>查询硬件视频会议预约信息</p>
+     * 
      * @param headers QueryDeviceVideoConferenceBookHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryDeviceVideoConferenceBookResponse
@@ -414,8 +426,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询硬件视频会议预约信息
-     *
+     * <b>summary</b> : 
+     * <p>查询硬件视频会议预约信息</p>
      * @return QueryDeviceVideoConferenceBookResponse
      */
     public QueryDeviceVideoConferenceBookResponse queryDeviceVideoConferenceBook(String deviceId, String bookId) throws Exception {
@@ -425,8 +437,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 文生图开放接口
-     *
+     * <b>summary</b> : 
+     * <p>文生图开放接口</p>
+     * 
      * @param request TextToImageRequest
      * @param headers TextToImageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -479,8 +492,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 文生图开放接口
-     *
+     * <b>summary</b> : 
+     * <p>文生图开放接口</p>
+     * 
      * @param request TextToImageRequest
      * @return TextToImageResponse
      */
@@ -491,8 +505,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 音频复刻
-     *
+     * <b>summary</b> : 
+     * <p>音频复刻</p>
+     * 
      * @param request VoiceCloneRequest
      * @param headers VoiceCloneHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -541,8 +556,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 音频复刻
-     *
+     * <b>summary</b> : 
+     * <p>音频复刻</p>
+     * 
      * @param request VoiceCloneRequest
      * @return VoiceCloneResponse
      */

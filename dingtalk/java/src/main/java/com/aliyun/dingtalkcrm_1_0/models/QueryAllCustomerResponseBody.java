@@ -51,12 +51,24 @@ public class QueryAllCustomerResponseBody extends TeaModel {
     }
 
     public static class QueryAllCustomerResponseBodyResultValues extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2019-12-25 15:33:12</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("creatorNick")
         public String creatorNick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding_userid</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
@@ -66,21 +78,41 @@ public class QueryAllCustomerResponseBody extends TeaModel {
         @NameInMap("extendData")
         public java.util.Map<String, ?> extendData;
 
+        /**
+         * <strong>example:</strong>
+         * <p>instance_id</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2019-12-25 15:33:12</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>crm_customer</p>
+         */
         @NameInMap("objectType")
         public String objectType;
 
         @NameInMap("permission")
         public QueryAllCustomerResponseBodyResultValuesPermission permission;
 
+        /**
+         * <strong>example:</strong>
+         * <p>COMPLATE</p>
+         */
         @NameInMap("processInstanceStatus")
         public String processInstanceStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>agree</p>
+         */
         @NameInMap("processOutResult")
         public String processOutResult;
 
@@ -180,9 +212,17 @@ public class QueryAllCustomerResponseBody extends TeaModel {
     }
 
     public static class QueryAllCustomerResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("maxResults")
         public Long maxResults;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

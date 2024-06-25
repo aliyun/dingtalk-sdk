@@ -22,9 +22,17 @@ public class ExecuteActivityRequest extends TeaModel {
     @NameInMap("foreignName")
     public String foreignName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>default</p>
+     */
     @NameInMap("openInstanceId")
     public String openInstanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("productionType")
     public Integer productionType;
 
@@ -33,6 +41,9 @@ public class ExecuteActivityRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dcd6cb6b-b537-493c-8953-3507700e9c4b</p>
      */
     @NameInMap("sourceId")
     public String sourceId;

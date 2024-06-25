@@ -21,12 +21,24 @@ public class InstallAppResponseBody extends TeaModel {
     }
 
     public static class InstallAppResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PROC-ABC</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 

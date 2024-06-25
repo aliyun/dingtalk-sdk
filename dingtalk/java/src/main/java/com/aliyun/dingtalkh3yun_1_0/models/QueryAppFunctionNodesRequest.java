@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryAppFunctionNodesRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>D000001</p>
      */
     @NameInMap("appCode")
     public String appCode;

@@ -32,9 +32,17 @@ public class UpdateInvoiceAccountPeriodResponseBody extends TeaModel {
     }
 
     public static class UpdateInvoiceAccountPeriodResponseBodyErrorResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("errorKey")
         public String errorKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 

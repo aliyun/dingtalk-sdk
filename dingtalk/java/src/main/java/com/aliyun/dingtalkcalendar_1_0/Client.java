@@ -6,11 +6,10 @@ import com.aliyun.dingtalkcalendar_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 新增日程参与人
-     *
+     * <b>summary</b> : 
+     * <p>新增日程参与人</p>
+     * 
      * @param request AddAttendeeRequest
      * @param headers AddAttendeeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -74,8 +74,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新增日程参与人
-     *
+     * <b>summary</b> : 
+     * <p>新增日程参与人</p>
+     * 
      * @param request AddAttendeeRequest
      * @return AddAttendeeResponse
      */
@@ -86,8 +87,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加会议室
-     *
+     * <b>summary</b> : 
+     * <p>添加会议室</p>
+     * 
      * @param request AddMeetingRoomsRequest
      * @param headers AddMeetingRoomsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -132,8 +134,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加会议室
-     *
+     * <b>summary</b> : 
+     * <p>添加会议室</p>
+     * 
      * @param request AddMeetingRoomsRequest
      * @return AddMeetingRoomsResponse
      */
@@ -144,8 +147,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 签到
-     *
+     * <b>summary</b> : 
+     * <p>签到</p>
+     * 
      * @param headers CheckInHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return CheckInResponse
@@ -178,8 +182,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 签到
-     *
+     * <b>summary</b> : 
+     * <p>签到</p>
      * @return CheckInResponse
      */
     public CheckInResponse checkIn(String userId, String calendarId, String eventId) throws Exception {
@@ -189,8 +193,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 转换老版本的eventId
-     *
+     * <b>summary</b> : 
+     * <p>转换老版本的eventId</p>
+     * 
      * @param request ConvertLegacyEventIdRequest
      * @param headers ConvertLegacyEventIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -231,8 +236,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 转换老版本的eventId
-     *
+     * <b>summary</b> : 
+     * <p>转换老版本的eventId</p>
+     * 
      * @param request ConvertLegacyEventIdRequest
      * @return ConvertLegacyEventIdResponse
      */
@@ -243,8 +249,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建访问控制
-     *
+     * <b>summary</b> : 
+     * <p>创建访问控制</p>
+     * 
      * @param request CreateAclsRequest
      * @param headers CreateAclsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -293,8 +300,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建访问控制
-     *
+     * <b>summary</b> : 
+     * <p>创建访问控制</p>
+     * 
      * @param request CreateAclsRequest
      * @return CreateAclsResponse
      */
@@ -305,8 +313,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建日程
-     *
+     * <b>summary</b> : 
+     * <p>创建日程</p>
+     * 
      * @param request CreateEventRequest
      * @param headers CreateEventHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -403,8 +412,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建日程
-     *
+     * <b>summary</b> : 
+     * <p>创建日程</p>
+     * 
      * @param request CreateEventRequest
      * @return CreateEventResponse
      */
@@ -415,8 +425,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建日程(me接口)
-     *
+     * <b>summary</b> : 
+     * <p>创建日程(me接口)</p>
+     * 
      * @param request CreateEventByMeRequest
      * @param headers CreateEventByMeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -509,8 +520,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建日程(me接口)
-     *
+     * <b>summary</b> : 
+     * <p>创建日程(me接口)</p>
+     * 
      * @param request CreateEventByMeRequest
      * @return CreateEventByMeResponse
      */
@@ -521,8 +533,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 快速创建订阅日历
-     *
+     * <b>summary</b> : 
+     * <p>快速创建订阅日历</p>
+     * 
      * @param request CreateSubscribedCalendarRequest
      * @param headers CreateSubscribedCalendarHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -575,8 +588,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 快速创建订阅日历
-     *
+     * <b>summary</b> : 
+     * <p>快速创建订阅日历</p>
+     * 
      * @param request CreateSubscribedCalendarRequest
      * @return CreateSubscribedCalendarResponse
      */
@@ -587,8 +601,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除访问控制
-     *
+     * <b>summary</b> : 
+     * <p>删除访问控制</p>
+     * 
      * @param headers DeleteAclHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return DeleteAclResponse
@@ -621,8 +636,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除访问控制
-     *
+     * <b>summary</b> : 
+     * <p>删除访问控制</p>
      * @return DeleteAclResponse
      */
     public DeleteAclResponse deleteAcl(String userId, String calendarId, String aclId) throws Exception {
@@ -632,8 +647,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除指定日程
-     *
+     * <b>summary</b> : 
+     * <p>删除指定日程</p>
+     * 
      * @param request DeleteEventRequest
      * @param headers DeleteEventHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -678,8 +694,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除指定日程
-     *
+     * <b>summary</b> : 
+     * <p>删除指定日程</p>
+     * 
      * @param request DeleteEventRequest
      * @return DeleteEventResponse
      */
@@ -690,8 +707,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除指定订阅日历
-     *
+     * <b>summary</b> : 
+     * <p>删除指定订阅日历</p>
+     * 
      * @param headers DeleteSubscribedCalendarHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return DeleteSubscribedCalendarResponse
@@ -724,8 +742,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除指定订阅日历
-     *
+     * <b>summary</b> : 
+     * <p>删除指定订阅日历</p>
      * @return DeleteSubscribedCalendarResponse
      */
     public DeleteSubscribedCalendarResponse deleteSubscribedCalendar(String userId, String calendarId) throws Exception {
@@ -735,8 +753,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 生成caldav账户
-     *
+     * <b>summary</b> : 
+     * <p>生成caldav账户</p>
+     * 
      * @param request GenerateCaldavAccountRequest
      * @param headers GenerateCaldavAccountHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -781,8 +800,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 生成caldav账户
-     *
+     * <b>summary</b> : 
+     * <p>生成caldav账户</p>
+     * 
      * @param request GenerateCaldavAccountRequest
      * @return GenerateCaldavAccountResponse
      */
@@ -793,8 +813,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询日程列表
-     *
+     * <b>summary</b> : 
+     * <p>查询日程列表</p>
+     * 
      * @param request GetEventRequest
      * @param headers GetEventHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -835,8 +856,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询日程列表
-     *
+     * <b>summary</b> : 
+     * <p>查询日程列表</p>
+     * 
      * @param request GetEventRequest
      * @return GetEventResponse
      */
@@ -847,8 +869,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议室忙闲
-     *
+     * <b>summary</b> : 
+     * <p>查询会议室忙闲</p>
+     * 
      * @param request GetMeetingRoomsScheduleRequest
      * @param headers GetMeetingRoomsScheduleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -897,8 +920,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议室忙闲
-     *
+     * <b>summary</b> : 
+     * <p>查询会议室忙闲</p>
+     * 
      * @param request GetMeetingRoomsScheduleRequest
      * @return GetMeetingRoomsScheduleResponse
      */
@@ -909,8 +933,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询闲忙
-     *
+     * <b>summary</b> : 
+     * <p>查询闲忙</p>
+     * 
      * @param request GetScheduleRequest
      * @param headers GetScheduleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -959,8 +984,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询闲忙
-     *
+     * <b>summary</b> : 
+     * <p>查询闲忙</p>
+     * 
      * @param request GetScheduleRequest
      * @return GetScheduleResponse
      */
@@ -971,8 +997,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取签到链接
-     *
+     * <b>summary</b> : 
+     * <p>获取签到链接</p>
+     * 
      * @param headers GetSignInLinkHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetSignInLinkResponse
@@ -1005,8 +1032,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取签到链接
-     *
+     * <b>summary</b> : 
+     * <p>获取签到链接</p>
      * @return GetSignInLinkResponse
      */
     public GetSignInLinkResponse getSignInLink(String calendarId, String userId, String eventId) throws Exception {
@@ -1016,8 +1043,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取签到信息详情
-     *
+     * <b>summary</b> : 
+     * <p>获取签到信息详情</p>
+     * 
      * @param request GetSignInListRequest
      * @param headers GetSignInListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1066,8 +1094,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取签到信息详情
-     *
+     * <b>summary</b> : 
+     * <p>获取签到信息详情</p>
+     * 
      * @param request GetSignInListRequest
      * @return GetSignInListResponse
      */
@@ -1078,8 +1107,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取签退链接
-     *
+     * <b>summary</b> : 
+     * <p>获取签退链接</p>
+     * 
      * @param headers GetSignOutLinkHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetSignOutLinkResponse
@@ -1112,8 +1142,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取签退链接
-     *
+     * <b>summary</b> : 
+     * <p>获取签退链接</p>
      * @return GetSignOutLinkResponse
      */
     public GetSignOutLinkResponse getSignOutLink(String calendarId, String userId, String eventId) throws Exception {
@@ -1123,8 +1153,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取签退信息详情
-     *
+     * <b>summary</b> : 
+     * <p>获取签退信息详情</p>
+     * 
      * @param request GetSignOutListRequest
      * @param headers GetSignOutListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1173,8 +1204,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取签退信息详情
-     *
+     * <b>summary</b> : 
+     * <p>获取签退信息详情</p>
+     * 
      * @param request GetSignOutListRequest
      * @return GetSignOutListResponse
      */
@@ -1185,8 +1217,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取指定订阅日历详情
-     *
+     * <b>summary</b> : 
+     * <p>获取指定订阅日历详情</p>
+     * 
      * @param headers GetSubscribedCalendarHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetSubscribedCalendarResponse
@@ -1219,8 +1252,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取指定订阅日历详情
-     *
+     * <b>summary</b> : 
+     * <p>获取指定订阅日历详情</p>
      * @return GetSubscribedCalendarResponse
      */
     public GetSubscribedCalendarResponse getSubscribedCalendar(String userId, String calendarId) throws Exception {
@@ -1230,8 +1263,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取访问控制列表
-     *
+     * <b>summary</b> : 
+     * <p>获取访问控制列表</p>
+     * 
      * @param headers ListAclsHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListAclsResponse
@@ -1264,8 +1298,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取访问控制列表
-     *
+     * <b>summary</b> : 
+     * <p>获取访问控制列表</p>
      * @return ListAclsResponse
      */
     public ListAclsResponse listAcls(String userId, String calendarId) throws Exception {
@@ -1275,8 +1309,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页获取参与人列表
-     *
+     * <b>summary</b> : 
+     * <p>分页获取参与人列表</p>
+     * 
      * @param request ListAttendeesRequest
      * @param headers ListAttendeesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1321,8 +1356,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页获取参与人列表
-     *
+     * <b>summary</b> : 
+     * <p>分页获取参与人列表</p>
+     * 
      * @param request ListAttendeesRequest
      * @return ListAttendeesResponse
      */
@@ -1333,8 +1369,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 日历本查询
-     *
+     * <b>summary</b> : 
+     * <p>日历本查询</p>
+     * 
      * @param headers ListCalendarsHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListCalendarsResponse
@@ -1367,8 +1404,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 日历本查询
-     *
+     * <b>summary</b> : 
+     * <p>日历本查询</p>
      * @return ListCalendarsResponse
      */
     public ListCalendarsResponse listCalendars(String userId) throws Exception {
@@ -1378,8 +1415,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询日程列表
-     *
+     * <b>summary</b> : 
+     * <p>查询日程列表</p>
+     * 
      * @param request ListEventsRequest
      * @param headers ListEventsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1448,8 +1486,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询日程列表
-     *
+     * <b>summary</b> : 
+     * <p>查询日程列表</p>
+     * 
      * @param request ListEventsRequest
      * @return ListEventsResponse
      */
@@ -1460,8 +1499,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询同一个循环日程序列下已生成的实例
-     *
+     * <b>summary</b> : 
+     * <p>查询同一个循环日程序列下已生成的实例</p>
+     * 
      * @param request ListEventsInstancesRequest
      * @param headers ListEventsInstancesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1514,8 +1554,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询同一个循环日程序列下已生成的实例
-     *
+     * <b>summary</b> : 
+     * <p>查询同一个循环日程序列下已生成的实例</p>
+     * 
      * @param request ListEventsInstancesRequest
      * @return ListEventsInstancesResponse
      */
@@ -1526,8 +1567,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询日程视图列表以查看闲忙，展开循环日程
-     *
+     * <b>summary</b> : 
+     * <p>查询日程视图列表以查看闲忙，展开循环日程</p>
+     * 
      * @param request ListEventsViewRequest
      * @param headers ListEventsViewHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1584,8 +1626,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询日程视图列表以查看闲忙，展开循环日程
-     *
+     * <b>summary</b> : 
+     * <p>查询日程视图列表以查看闲忙，展开循环日程</p>
+     * 
      * @param request ListEventsViewRequest
      * @return ListEventsViewResponse
      */
@@ -1596,8 +1639,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询循环日程实例列表
-     *
+     * <b>summary</b> : 
+     * <p>查询循环日程实例列表</p>
+     * 
      * @param request ListInstancesRequest
      * @param headers ListInstancesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1654,8 +1698,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询循环日程实例列表
-     *
+     * <b>summary</b> : 
+     * <p>查询循环日程实例列表</p>
+     * 
      * @param request ListInstancesRequest
      * @return ListInstancesResponse
      */
@@ -1666,8 +1711,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置会议室在日程中的响应状态
-     *
+     * <b>summary</b> : 
+     * <p>设置会议室在日程中的响应状态</p>
+     * 
      * @param request MeetingRoomRespondRequest
      * @param headers MeetingRoomRespondHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1716,8 +1762,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置会议室在日程中的响应状态
-     *
+     * <b>summary</b> : 
+     * <p>设置会议室在日程中的响应状态</p>
+     * 
      * @param request MeetingRoomRespondRequest
      * @return MeetingRoomRespondResponse
      */
@@ -1728,8 +1775,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改日程
-     *
+     * <b>summary</b> : 
+     * <p>修改日程</p>
+     * 
      * @param request PatchEventRequest
      * @param headers PatchEventHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1830,8 +1878,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改日程
-     *
+     * <b>summary</b> : 
+     * <p>修改日程</p>
+     * 
      * @param request PatchEventRequest
      * @return PatchEventResponse
      */
@@ -1842,8 +1891,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除日程参与人
-     *
+     * <b>summary</b> : 
+     * <p>删除日程参与人</p>
+     * 
      * @param request RemoveAttendeeRequest
      * @param headers RemoveAttendeeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1888,8 +1938,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除日程参与人
-     *
+     * <b>summary</b> : 
+     * <p>删除日程参与人</p>
+     * 
      * @param request RemoveAttendeeRequest
      * @return RemoveAttendeeResponse
      */
@@ -1900,8 +1951,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除会议室
-     *
+     * <b>summary</b> : 
+     * <p>删除会议室</p>
+     * 
      * @param request RemoveMeetingRoomsRequest
      * @param headers RemoveMeetingRoomsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1946,8 +1998,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除会议室
-     *
+     * <b>summary</b> : 
+     * <p>删除会议室</p>
+     * 
      * @param request RemoveMeetingRoomsRequest
      * @return RemoveMeetingRoomsResponse
      */
@@ -1958,8 +2011,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 回复日程邀请
-     *
+     * <b>summary</b> : 
+     * <p>回复日程邀请</p>
+     * 
      * @param request RespondEventRequest
      * @param headers RespondEventHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2004,8 +2058,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 回复日程邀请
-     *
+     * <b>summary</b> : 
+     * <p>回复日程邀请</p>
+     * 
      * @param request RespondEventRequest
      * @return RespondEventResponse
      */
@@ -2016,8 +2071,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 签到
-     *
+     * <b>summary</b> : 
+     * <p>签到</p>
+     * 
      * @param headers SignInHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return SignInResponse
@@ -2050,8 +2106,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 签到
-     *
+     * <b>summary</b> : 
+     * <p>签到</p>
      * @return SignInResponse
      */
     public SignInResponse signIn(String userId, String calendarId, String eventId) throws Exception {
@@ -2061,8 +2117,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 签退
-     *
+     * <b>summary</b> : 
+     * <p>签退</p>
+     * 
      * @param headers SignOutHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return SignOutResponse
@@ -2095,8 +2152,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 签退
-     *
+     * <b>summary</b> : 
+     * <p>签退</p>
      * @return SignOutResponse
      */
     public SignOutResponse signOut(String userId, String calendarId, String eventId) throws Exception {
@@ -2106,8 +2163,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 订阅公共日历
-     *
+     * <b>summary</b> : 
+     * <p>订阅公共日历</p>
+     * 
      * @param headers SubscribeCalendarHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return SubscribeCalendarResponse
@@ -2140,8 +2198,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 订阅公共日历
-     *
+     * <b>summary</b> : 
+     * <p>订阅公共日历</p>
      * @return SubscribeCalendarResponse
      */
     public SubscribeCalendarResponse subscribeCalendar(String userId, String calendarId) throws Exception {
@@ -2151,8 +2209,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 日程转让
-     *
+     * <b>summary</b> : 
+     * <p>日程转让</p>
+     * 
      * @param request TransferEventRequest
      * @param headers TransferEventHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2205,8 +2264,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 日程转让
-     *
+     * <b>summary</b> : 
+     * <p>日程转让</p>
+     * 
      * @param request TransferEventRequest
      * @return TransferEventResponse
      */
@@ -2217,8 +2277,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 取消订阅公共日历
-     *
+     * <b>summary</b> : 
+     * <p>取消订阅公共日历</p>
+     * 
      * @param headers UnsubscribeCalendarHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return UnsubscribeCalendarResponse
@@ -2251,8 +2312,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 取消订阅公共日历
-     *
+     * <b>summary</b> : 
+     * <p>取消订阅公共日历</p>
      * @return UnsubscribeCalendarResponse
      */
     public UnsubscribeCalendarResponse unsubscribeCalendar(String userId, String calendarId) throws Exception {
@@ -2262,8 +2323,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新指定订阅日历
-     *
+     * <b>summary</b> : 
+     * <p>更新指定订阅日历</p>
+     * 
      * @param request UpdateSubscribedCalendarsRequest
      * @param headers UpdateSubscribedCalendarsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2316,8 +2378,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新指定订阅日历
-     *
+     * <b>summary</b> : 
+     * <p>更新指定订阅日历</p>
+     * 
      * @param request UpdateSubscribedCalendarsRequest
      * @return UpdateSubscribedCalendarsResponse
      */

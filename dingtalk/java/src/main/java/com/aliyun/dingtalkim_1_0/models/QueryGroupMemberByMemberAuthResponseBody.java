@@ -21,15 +21,31 @@ public class QueryGroupMemberByMemberAuthResponseBody extends TeaModel {
     }
 
     public static class QueryGroupMemberByMemberAuthResponseBodyGroupMemberList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("groupNickName")
         public String groupNickName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张某某</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxx">https://xxx</a></p>
+         */
         @NameInMap("profilePhotoUrl")
         public String profilePhotoUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx</p>
+         */
         @NameInMap("userId")
         public String userId;
 

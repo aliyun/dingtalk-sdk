@@ -7,9 +7,17 @@ public class QueryConferenceMembersResponseBody extends TeaModel {
     @NameInMap("memberModels")
     public java.util.List<QueryConferenceMembersResponseBodyMemberModels> memberModels;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123000000</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -43,12 +51,20 @@ public class QueryConferenceMembersResponseBody extends TeaModel {
     }
 
     public static class QueryConferenceMembersResponseBodyMemberModels extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>6</p>
+         */
         @NameInMap("attendStatus")
         public Integer attendStatus;
 
         @NameInMap("coHost")
         public Boolean coHost;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6323d7562b18000142ab9d10</p>
+         */
         @NameInMap("conferenceId")
         public String conferenceId;
 
@@ -70,9 +86,17 @@ public class QueryConferenceMembersResponseBody extends TeaModel {
         @NameInMap("pstnJoin")
         public Boolean pstnJoin;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>昵称</p>
+         */
         @NameInMap("userNick")
         public String userNick;
 

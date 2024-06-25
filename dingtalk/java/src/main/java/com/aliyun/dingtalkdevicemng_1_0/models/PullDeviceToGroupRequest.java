@@ -12,10 +12,17 @@ public class PullDeviceToGroupRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cide+m5TmAcxA3OU6Un59xxxx==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manager1111</p>
+     */
     @NameInMap("operator")
     public String operator;
 

@@ -24,9 +24,17 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBodyActionCardButtonList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com/">https://www.dingtalk.com/</a></p>
+         */
         @NameInMap("actionUrl")
         public String actionUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>查看详情</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -57,18 +65,38 @@ public class SendAgentOTOMessageRequest extends TeaModel {
         @NameInMap("buttonList")
         public java.util.List<SendAgentOTOMessageRequestDetailMessageBodyActionCardButtonList> buttonList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("buttonOrientation")
         public String buttonOrientation;
 
+        /**
+         * <strong>example:</strong>
+         * <p><strong>提示信息</strong></p>
+         */
         @NameInMap("markdown")
         public String markdown;
 
+        /**
+         * <strong>example:</strong>
+         * <p>查看详情</p>
+         */
         @NameInMap("singleTitle")
         public String singleTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.yourdomain.com">https://www.yourdomain.com</a></p>
+         */
         @NameInMap("singleUrl")
         public String singleUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>欢迎使用</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -199,15 +227,31 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBodyLink extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.yourdomain.com">https://www.yourdomain.com</a></p>
+         */
         @NameInMap("messageUrl")
         public String messageUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@1234-456</p>
+         */
         @NameInMap("picUrl")
         public String picUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>欢迎使用</p>
+         */
         @NameInMap("text")
         public String text;
 
+        /**
+         * <strong>example:</strong>
+         * <p>点击查看</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -251,9 +295,17 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBodyMarkdown extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>欢迎使用。</p>
+         */
         @NameInMap("text")
         public String text;
 
+        /**
+         * <strong>example:</strong>
+         * <p>欢迎使用。</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -281,6 +333,10 @@ public class SendAgentOTOMessageRequest extends TeaModel {
     }
 
     public static class SendAgentOTOMessageRequestDetailMessageBodyText extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>你好，欢迎使用服务窗。</p>
+         */
         @NameInMap("content")
         public String content;
 
@@ -382,24 +438,36 @@ public class SendAgentOTOMessageRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>text</p>
          */
         @NameInMap("msgType")
         public String msgType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>sid002b6dbb4f963e93e0</p>
          */
         @NameInMap("sessionId")
         public String sessionId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>user0001</p>
          */
         @NameInMap("userId")
         public String userId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234-5678-000</p>
          */
         @NameInMap("uuid")
         public String uuid;

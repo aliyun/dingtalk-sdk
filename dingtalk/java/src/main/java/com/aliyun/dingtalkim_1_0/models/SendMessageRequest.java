@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class SendMessageRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;msg_type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;hello world&quot;}</p>
      */
     @NameInMap("message")
     public String message;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>text</p>
      */
     @NameInMap("messageType")
     public String messageType;
@@ -19,15 +25,26 @@ public class SendMessageRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1745****8777</p>
+     */
     @NameInMap("receiverId")
     public String receiverId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1107****2120</p>
      */
     @NameInMap("senderId")
     public String senderId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{     &quot;9d801647a64<strong><strong><strong>59c9da0207&quot;:&quot;[{&quot;action_url&quot;:&quot;<a href="http://www.baidu.com%5C%22,%5C%22title%5C%22:%5C%22%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%5C%22%7D,%7B%5C%22action_url%5C%22:%5C%22http://www.baidu.com%5C%22,%5C%22title%5C%22:%5C%22%E4%B8%A4%E4%B8%AA%E6%8C%89%E9%92%AE%5C%22%7D%5D">http://www.baidu.com\&quot;,\&quot;title\&quot;:\&quot;一个按钮\&quot;},{\&quot;action_url\&quot;:\&quot;http://www.baidu.com\&quot;,\&quot;title\&quot;:\&quot;两个按钮\&quot;}]</a>&quot;,     &quot;9d801647a6</strong></strong></strong>59c9da020342&quot;:&quot;[{&quot;action_url&quot;:&quot;<a href="http://www.baidu.com%5C%22,%5C%22title%5C%22:%5C%22%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%5C%22%7D,%7B%5C%22action_url%5C%22:%5C%22http://www.baidu.com%5C%22,%5C%22title%5C%22:%5C%22%E4%B8%A4%E4%B8%AA%E6%8C%89%E9%92%AE%5C%22%7D%5D">http://www.baidu.com\&quot;,\&quot;title\&quot;:\&quot;一个按钮\&quot;},{\&quot;action_url\&quot;:\&quot;http://www.baidu.com\&quot;,\&quot;title\&quot;:\&quot;两个按钮\&quot;}]</a>&quot; }</p>
+     */
     @NameInMap("sourceInfos")
     public java.util.Map<String, ?> sourceInfos;
 

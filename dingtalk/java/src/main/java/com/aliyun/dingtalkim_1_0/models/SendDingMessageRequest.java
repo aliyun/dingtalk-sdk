@@ -12,12 +12,18 @@ public class SendDingMessageRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;msg_type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;hello world&quot;}</p>
      */
     @NameInMap("message")
     public String message;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>text</p>
      */
     @NameInMap("messageType")
     public String messageType;
@@ -25,11 +31,18 @@ public class SendDingMessageRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1107****2120</p>
+     */
     @NameInMap("receiverId")
     public String receiverId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1745****8777</p>
      */
     @NameInMap("senderId")
     public String senderId;

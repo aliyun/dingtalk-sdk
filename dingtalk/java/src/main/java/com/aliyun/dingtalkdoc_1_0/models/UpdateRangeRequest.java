@@ -19,6 +19,10 @@ public class UpdateRangeRequest extends TeaModel {
     @NameInMap("hyperlinks")
     public java.util.List<java.util.List<UpdateRangeRequestHyperlinks>> hyperlinks;
 
+    /**
+     * <strong>example:</strong>
+     * <p>number_format</p>
+     */
     @NameInMap("numberFormat")
     public String numberFormat;
 
@@ -30,6 +34,9 @@ public class UpdateRangeRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -112,12 +119,24 @@ public class UpdateRangeRequest extends TeaModel {
     }
 
     public static class UpdateRangeRequestHyperlinks extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>hyperlink_type</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hyperlink_link</p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hyperlink_text</p>
+         */
         @NameInMap("text")
         public String text;
 

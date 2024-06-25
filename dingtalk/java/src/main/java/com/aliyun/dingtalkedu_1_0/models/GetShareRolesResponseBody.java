@@ -21,9 +21,17 @@ public class GetShareRolesResponseBody extends TeaModel {
     }
 
     public static class GetShareRolesResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123214123</p>
+         */
         @NameInMap("shareRoleCode")
         public String shareRoleCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>校长</p>
+         */
         @NameInMap("shareRoleName")
         public String shareRoleName;
 

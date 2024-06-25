@@ -4,9 +4,17 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetLastOrgAuthDataResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>营业执照照片不清晰</p>
+     */
     @NameInMap("authRemark")
     public String authRemark;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2</p>
+     */
     @NameInMap("authStatus")
     public Integer authStatus;
 

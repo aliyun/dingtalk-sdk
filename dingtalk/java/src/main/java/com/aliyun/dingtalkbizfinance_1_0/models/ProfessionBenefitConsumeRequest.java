@@ -4,9 +4,17 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ProfessionBenefitConsumeRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>SF_INVOICE</p>
+     */
     @NameInMap("benefitCode")
     public String benefitCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234567890</p>
+     */
     @NameInMap("bizRequestId")
     public String bizRequestId;
 

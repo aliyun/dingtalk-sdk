@@ -7,6 +7,10 @@ public class LiandanTextImageGetResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<java.util.Map<String, ?>> result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class CreateStsTokenRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fjke/12-131jk</p>
      */
     @NameInMap("deviceSn")
     public String deviceSn;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sls</p>
      */
     @NameInMap("stsType")
     public String stsType;

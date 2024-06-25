@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CollegeQueryStudentInfoByMobileRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>187xxxxxxxx</p>
      */
     @NameInMap("mobile")
     public String mobile;

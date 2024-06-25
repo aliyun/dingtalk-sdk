@@ -21,12 +21,24 @@ public class UpdateOrganizationTaskExecutorResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskExecutorResponseBodyResultExecutor extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://xxxxx">http://xxxxx</a></p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>鬼斩</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>173xxxx</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -62,12 +74,24 @@ public class UpdateOrganizationTaskExecutorResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskExecutorResponseBodyResultInvolvers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://xxxxx">http://xxxxx</a></p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>鬼斩</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>173xxxx</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -106,12 +130,20 @@ public class UpdateOrganizationTaskExecutorResponseBody extends TeaModel {
         @NameInMap("executor")
         public UpdateOrganizationTaskExecutorResponseBodyResultExecutor executor;
 
+        /**
+         * <strong>example:</strong>
+         * <p>173xxxx</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
         @NameInMap("involvers")
         public java.util.List<UpdateOrganizationTaskExecutorResponseBodyResultInvolvers> involvers;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-06-08T03:00:17.031Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

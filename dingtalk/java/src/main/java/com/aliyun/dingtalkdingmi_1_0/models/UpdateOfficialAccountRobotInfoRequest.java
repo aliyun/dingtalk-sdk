@@ -6,36 +6,54 @@ import com.aliyun.tea.*;
 public class UpdateOfficialAccountRobotInfoRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("avatar")
     public String avatar;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>小蜜客服机器人</p>
      */
     @NameInMap("brief")
     public String brief;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>小蜜客服机器人是7*24小时智能问答机器人</p>
      */
     @NameInMap("description")
     public String description;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>小蜜机器人</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("previewMediaUrl")
     public String previewMediaUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>机器人类型参数，服务窗机器人：1，客户群内机器人：2</p>
      */
     @NameInMap("type")
     public String type;

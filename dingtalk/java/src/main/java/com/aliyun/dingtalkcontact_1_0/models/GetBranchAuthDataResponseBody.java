@@ -21,12 +21,24 @@ public class GetBranchAuthDataResponseBody extends TeaModel {
     }
 
     public static class GetBranchAuthDataResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>teacherCnt</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>老师数量</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>120</p>
+         */
         @NameInMap("fieldValue")
         public String fieldValue;
 

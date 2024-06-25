@@ -21,9 +21,17 @@ public class ListUserTeamsResponseBody extends TeaModel {
     }
 
     public static class ListUserTeamsResponseBodyTeams extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>Jxi12wo3qxoa</p>
+         */
         @NameInMap("openTeamId")
         public String openTeamId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试团队</p>
+         */
         @NameInMap("teamName")
         public String teamName;
 

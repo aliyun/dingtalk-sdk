@@ -22,11 +22,18 @@ public class PediaWordsUpdateRequest extends TeaModel {
     @NameInMap("relatedLink")
     public java.util.List<PediaWordsUpdateRequestRelatedLink> relatedLink;
 
+    /**
+     * <strong>example:</strong>
+     * <p>312123213</p>
+     */
     @NameInMap("userId")
     public String userId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2131321</p>
      */
     @NameInMap("uuid")
     public Long uuid;
@@ -36,12 +43,18 @@ public class PediaWordsUpdateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>词条名称</p>
      */
     @NameInMap("wordName")
     public String wordName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>释义</p>
      */
     @NameInMap("wordParaphrase")
     public String wordParaphrase;
@@ -140,15 +153,31 @@ public class PediaWordsUpdateRequest extends TeaModel {
     }
 
     public static class PediaWordsUpdateRequestAppLink extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>应用名称</p>
+         */
         @NameInMap("appName")
         public String appName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://123243435.com">https://123243435.com</a></p>
+         */
         @NameInMap("iconLink")
         public String iconLink;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://213435.com">http://213435.com</a></p>
+         */
         @NameInMap("pcLink")
         public String pcLink;
 
+        /**
+         * <strong>example:</strong>
+         * <p>htttps://12345.com</p>
+         */
         @NameInMap("phoneLink")
         public String phoneLink;
 
@@ -192,12 +221,24 @@ public class PediaWordsUpdateRequest extends TeaModel {
     }
 
     public static class PediaWordsUpdateRequestContactList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>@12312312</p>
+         */
         @NameInMap("avatarMediaId")
         public String avatarMediaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>名称</p>
+         */
         @NameInMap("nickName")
         public String nickName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12131312</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -233,6 +274,10 @@ public class PediaWordsUpdateRequest extends TeaModel {
     }
 
     public static class PediaWordsUpdateRequestPicList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://1234554.com">https://1234554.com</a></p>
+         */
         @NameInMap("mediaIdUrl")
         public String mediaIdUrl;
 
@@ -252,12 +297,24 @@ public class PediaWordsUpdateRequest extends TeaModel {
     }
 
     public static class PediaWordsUpdateRequestRelatedDoc extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://213567.com">https://213567.com</a></p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <strong>example:</strong>
+         * <p>相关文档</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>adoc</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -293,9 +350,17 @@ public class PediaWordsUpdateRequest extends TeaModel {
     }
 
     public static class PediaWordsUpdateRequestRelatedLink extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://123466.com">https://123466.com</a></p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <strong>example:</strong>
+         * <p>相关链接</p>
+         */
         @NameInMap("name")
         public String name;
 

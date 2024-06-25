@@ -32,12 +32,24 @@ public class EsignQueryApprovalInfoResponseBody extends TeaModel {
     }
 
     public static class EsignQueryApprovalInfoResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>202311081619000455501</p>
+         */
         @NameInMap("bpmsProcessBusinessId")
         public String bpmsProcessBusinessId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>O6wNhB4wTMajvNW8Dc_Rjg09301699431585</p>
+         */
         @NameInMap("bpmsProcessInstanceId")
         public String bpmsProcessInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://aflow.dingtalk.com/dingtalk/pc/query/pchomepage.htm?corpid=ding6c3948a9e37c439c35c2f4657eb6378f&swfrom=https://n.dingtalk.com/dingding/h5-contract/contractPC/index.html#/approval?procInstId=O6wNhB4wTMajvNW8Dc_Rjg09301699431585">https://aflow.dingtalk.com/dingtalk/pc/query/pchomepage.htm?corpid=ding6c3948a9e37c439c35c2f4657eb6378f&amp;swfrom=https://n.dingtalk.com/dingding/h5-contract/contractPC/index.html#/approval?procInstId=O6wNhB4wTMajvNW8Dc_Rjg09301699431585</a></p>
+         */
         @NameInMap("bpmsProcessInstanceUrl")
         public String bpmsProcessInstanceUrl;
 

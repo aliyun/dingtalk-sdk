@@ -9,12 +9,18 @@ public class CollegeUpdateStudentMoblieRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>187xxxxxxxx</p>
      */
     @NameInMap("newMobile")
     public String newMobile;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>222222</p>
      */
     @NameInMap("studentId")
     public Long studentId;

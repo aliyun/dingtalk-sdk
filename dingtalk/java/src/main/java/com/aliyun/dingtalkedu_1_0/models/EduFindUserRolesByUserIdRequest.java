@@ -4,15 +4,27 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class EduFindUserRolesByUserIdRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>666666</p>
+     */
     @NameInMap("classId")
     public Long classId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding123456</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
     @NameInMap("hasOrgRole")
     public Boolean hasOrgRole;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123456</p>
+     */
     @NameInMap("userId")
     public String userId;
 

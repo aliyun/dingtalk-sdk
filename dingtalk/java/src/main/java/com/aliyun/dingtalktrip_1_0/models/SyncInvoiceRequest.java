@@ -7,6 +7,10 @@ public class SyncInvoiceRequest extends TeaModel {
     @NameInMap("address")
     public String address;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxx银行</p>
+     */
     @NameInMap("bankName")
     public String bankName;
 
@@ -15,6 +19,9 @@ public class SyncInvoiceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding89233847892ndkas</p>
      */
     @NameInMap("channelCorpId")
     public String channelCorpId;
@@ -24,12 +31,18 @@ public class SyncInvoiceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2022-02-21 11:11:11</p>
      */
     @NameInMap("gmtAction")
     public String gmtAction;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("invoiceId")
     public String invoiceId;
@@ -37,6 +50,10 @@ public class SyncInvoiceRequest extends TeaModel {
     @NameInMap("projectIds")
     public java.util.List<String> projectIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("scope")
     public Integer scope;
 
@@ -49,11 +66,18 @@ public class SyncInvoiceRequest extends TeaModel {
     @NameInMap("tel")
     public String tel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123456</p>
+     */
     @NameInMap("thirdPartId")
     public String thirdPartId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>默认发票抬头</p>
      */
     @NameInMap("title")
     public String title;
@@ -66,6 +90,9 @@ public class SyncInvoiceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20881001829000</p>
      */
     @NameInMap("userId")
     public String userId;

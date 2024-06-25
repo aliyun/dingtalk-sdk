@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CreateSearchTabResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3333</p>
      */
     @NameInMap("tabId")
     public Integer tabId;

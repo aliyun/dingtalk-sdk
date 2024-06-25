@@ -4,9 +4,17 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class UninstallDeviceRobotRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxx</p>
+     */
     @NameInMap("deviceCode")
     public String deviceCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxx</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

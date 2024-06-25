@@ -10,9 +10,17 @@ public class UpdateDigitalInvoiceOrgInfoRequest extends TeaModel {
     @NameInMap("isDigitalOrg")
     public Boolean isDigitalOrg;
 
+    /**
+     * <strong>example:</strong>
+     * <p>zhejiang</p>
+     */
     @NameInMap("location")
     public String location;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234567</p>
+     */
     @NameInMap("operator")
     public String operator;
 

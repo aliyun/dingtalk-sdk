@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetRolesResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class GetRolesResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OK</p>
      */
     @NameInMap("message")
     public String message;
@@ -49,24 +55,52 @@ public class GetRolesResponseBody extends TeaModel {
     }
 
     public static class GetRolesResponseBodyDataRoleGroups extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>18f923a7-5a5e-426d-94ae-a55ad1a4b240</p>
+         */
         @NameInMap("companyId")
         public String companyId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>这是一个游客体验组</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>261befb8-728d-4b79-a0b4-7b6ddfb3f94e</p>
+         */
         @NameInMap("groupCode")
         public String groupCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>261befb8-728d-4b79-a0b4-7b6ddfb3f94e</p>
+         */
         @NameInMap("groupId")
         public String groupId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>游客体验组</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Active</p>
+         */
         @NameInMap("state")
         public String state;
 
+        /**
+         * <strong>example:</strong>
+         * <p>All</p>
+         */
         @NameInMap("visibility")
         public String visibility;
 
@@ -134,27 +168,59 @@ public class GetRolesResponseBody extends TeaModel {
     }
 
     public static class GetRolesResponseBodyDataRoles extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>18f923a7-5a5e-426d-94ae-a55ad1a4b240</p>
+         */
         @NameInMap("companyId")
         public String companyId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>这是一个游客体验角色</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>261befb8-728d-4b79-a0b4-7b6ddfb3f94e</p>
+         */
         @NameInMap("groupId")
         public String groupId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>88cfc4a2-22ba-48e2-bc5e-8d475ce49d38</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>085b47cf-ab7b-417f-bb7a-b5ee3b32de16</p>
+         */
         @NameInMap("roleId")
         public String roleId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>游客体验角色</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Active</p>
+         */
         @NameInMap("state")
         public String state;
 
+        /**
+         * <strong>example:</strong>
+         * <p>All</p>
+         */
         @NameInMap("visibility")
         public String visibility;
 

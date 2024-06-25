@@ -24,57 +24,129 @@ public class QueryDeviceCustomTemplateListResponseBody extends TeaModel {
         @NameInMap("bgImageList")
         public java.util.List<String> bgImageList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("bgType")
         public Integer bgType;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://img.alicdn.com/imgextra/i2/O1CN01GWWCCR1y2D9D9EHej_!!6000000006520-2-tps-1920-470.png">https://img.alicdn.com/imgextra/i2/O1CN01GWWCCR1y2D9D9EHej_!!6000000006520-2-tps-1920-470.png</a></p>
+         */
         @NameInMap("bgUrl")
         public String bgUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("confSubType")
         public Integer confSubType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("confType")
         public Integer confType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingc02f685fxxxx81c44ac5d6980864d335</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试文本</p>
+         */
         @NameInMap("customDoc")
         public String customDoc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true：脱敏 false：不脱敏</p>
+         */
         @NameInMap("desensitizeUserName")
         public Boolean desensitizeUserName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true：隐藏 false：不隐藏</p>
+         */
         @NameInMap("hideServerCodeWhenProjecting")
         public Boolean hideServerCodeWhenProjecting;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true：显示 false：不显示</p>
+         */
         @NameInMap("instruction")
         public Boolean instruction;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("isPicTop")
         public Integer isPicTop;
 
+        /**
+         * <strong>example:</strong>
+         * <p>logo</p>
+         */
         @NameInMap("logo")
         public String logo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试企业</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("picturePlayInterval")
         public Integer picturePlayInterval;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true：展示 false：不展示</p>
+         */
         @NameInMap("showCalendarCard")
         public Boolean showCalendarCard;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true：展示 false：不展示</p>
+         */
         @NameInMap("showCalendarTitle")
         public Boolean showCalendarTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true：展示 false：不展示</p>
+         */
         @NameInMap("showFunctionCard")
         public Boolean showFunctionCard;
 
+        /**
+         * <strong>example:</strong>
+         * <p>89</p>
+         */
         @NameInMap("templateId")
         public Long templateId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试模板</p>
+         */
         @NameInMap("templateName")
         public String templateName;
 

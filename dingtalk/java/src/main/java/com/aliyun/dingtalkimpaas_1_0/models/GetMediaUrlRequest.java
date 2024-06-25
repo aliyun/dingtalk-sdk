@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class GetMediaUrlRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>@wesfsdfsfwe</p>
      */
     @NameInMap("mediaId")
     public String mediaId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>86399</p>
+     */
     @NameInMap("urlExpireTime")
     public Integer urlExpireTime;
 

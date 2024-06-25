@@ -9,15 +9,25 @@ public class UpdateProcessInstanceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>agree</p>
+     */
     @NameInMap("result")
     public String result;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>COMPLETED</p>
      */
     @NameInMap("status")
     public String status;
@@ -62,6 +72,9 @@ public class UpdateProcessInstanceRequest extends TeaModel {
     public static class UpdateProcessInstanceRequestNotifiers extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>manager001</p>
          */
         @NameInMap("userId")
         public String userId;

@@ -4,12 +4,20 @@ package com.aliyun.dingtalkdpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class InstallCoolAppOrderToGroupRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cidxxx</p>
+     */
     @NameInMap("conversationId")
     public String conversationId;
 
     @NameInMap("sortedPluginIdList")
     public java.util.List<Long> sortedPluginIdList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>template-id-xxx</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 

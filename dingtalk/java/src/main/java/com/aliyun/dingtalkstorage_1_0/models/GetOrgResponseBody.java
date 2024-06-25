@@ -21,15 +21,31 @@ public class GetOrgResponseBody extends TeaModel {
     }
 
     public static class GetOrgResponseBodyOrgPartitionsQuota extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10000</p>
+         */
         @NameInMap("max")
         public Long max;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1000</p>
+         */
         @NameInMap("reserved")
         public Long reserved;
 
+        /**
+         * <strong>example:</strong>
+         * <p>SHARE</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1024</p>
+         */
         @NameInMap("used")
         public Long used;
 
@@ -73,6 +89,10 @@ public class GetOrgResponseBody extends TeaModel {
     }
 
     public static class GetOrgResponseBodyOrgPartitions extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>PUBLIC_OSS_PARTITION</p>
+         */
         @NameInMap("partitionType")
         public String partitionType;
 
@@ -103,6 +123,10 @@ public class GetOrgResponseBody extends TeaModel {
     }
 
     public static class GetOrgResponseBodyOrg extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>corp_id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 

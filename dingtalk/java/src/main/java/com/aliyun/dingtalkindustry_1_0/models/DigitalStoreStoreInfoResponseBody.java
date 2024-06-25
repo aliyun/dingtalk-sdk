@@ -6,81 +6,124 @@ import com.aliyun.tea.*;
 public class DigitalStoreStoreInfoResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>余杭塘路xxxx号</p>
      */
     @NameInMap("address")
     public String address;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>9:00-22:00</p>
      */
     @NameInMap("businessHours")
     public String businessHours;
 
+    /**
+     * <strong>example:</strong>
+     * <p>64266411</p>
+     */
     @NameInMap("dingDeptId")
     public Long dingDeptId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("latitude")
     public String latitude;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>余杭塘路xxxx号</p>
      */
     @NameInMap("locationAddress")
     public String locationAddress;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("longitude")
     public String longitude;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>华夏之心店</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>873366531</p>
      */
     @NameInMap("parentId")
     public Long parentId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>CLOSED</p>
      */
     @NameInMap("status")
     public String status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10平方米</p>
      */
     @NameInMap("storeAcreage")
     public String storeAcreage;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1千兆</p>
      */
     @NameInMap("storeBandwidth")
     public String storeBandwidth;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxxxxxxxxx</p>
      */
     @NameInMap("storeCode")
     public String storeCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6756433</p>
      */
     @NameInMap("storeId")
     public Long storeId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0571-123456</p>
      */
     @NameInMap("telephone")
     public String telephone;

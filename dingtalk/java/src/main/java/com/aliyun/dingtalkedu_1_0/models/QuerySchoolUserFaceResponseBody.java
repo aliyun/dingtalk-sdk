@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class QuerySchoolUserFaceResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingding123</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true/false</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -54,24 +60,36 @@ public class QuerySchoolUserFaceResponseBody extends TeaModel {
     public static class QuerySchoolUserFaceResponseBodyUserFaceList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>200001</p>
          */
         @NameInMap("faceId")
         public String faceId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>小明</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1有效；0无效</p>
          */
         @NameInMap("status")
         public Integer status;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>30001</p>
          */
         @NameInMap("userId")
         public String userId;

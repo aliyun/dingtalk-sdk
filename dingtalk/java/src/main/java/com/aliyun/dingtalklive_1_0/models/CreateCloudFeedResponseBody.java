@@ -4,6 +4,10 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCloudFeedResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>创建好的云导播课程id</p>
+     */
     @NameInMap("result")
     public String result;
 

@@ -60,18 +60,27 @@ public class GetAuthInfoResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>835880322</p>
          */
         @NameInMap("agentId")
         public Long agentId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>小程序DEMO</p>
          */
         @NameInMap("agentName")
         public String agentName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>111</p>
          */
         @NameInMap("appId")
         public Long appId;
@@ -140,54 +149,81 @@ public class GetAuthInfoResponseBody extends TeaModel {
     public static class GetAuthInfoResponseBodyAuthCorpInfo extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123</p>
          */
         @NameInMap("authChannel")
         public String authChannel;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("authChannelType")
         public String authChannelType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("authLevel")
         public Long authLevel;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://static-legacy.dingtalk.com/xxx">https://static-legacy.dingtalk.com/xxx</a></p>
          */
         @NameInMap("corpLogoUrl")
         public String corpLogoUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>小程序体验HTTP</p>
          */
         @NameInMap("corpName")
         public String corpName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>201</p>
          */
         @NameInMap("industry")
         public String industry;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>111</p>
          */
         @NameInMap("inviteCode")
         public String inviteCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://wx.dingtalk.com/invite-page/xxx">https://wx.dingtalk.com/invite-page/xxx</a></p>
          */
         @NameInMap("inviteUrl")
         public String inviteUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>111</p>
          */
         @NameInMap("licenseCode")
         public String licenseCode;
@@ -274,6 +310,9 @@ public class GetAuthInfoResponseBody extends TeaModel {
     public static class GetAuthInfoResponseBodyAuthUserInfo extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>manager975</p>
          */
         @NameInMap("userId")
         public String userId;

@@ -7,6 +7,10 @@ public class PageInnerAppHistoryVersionResponseBody extends TeaModel {
     @NameInMap("miniAppVersionList")
     public java.util.List<PageInnerAppHistoryVersionResponseBodyMiniAppVersionList> miniAppVersionList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -34,28 +38,44 @@ public class PageInnerAppHistoryVersionResponseBody extends TeaModel {
     public static class PageInnerAppHistoryVersionResponseBodyMiniAppVersionList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0.0.1</p>
          */
         @NameInMap("appVersion")
         public String appVersion;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("appVersionId")
         public Long appVersionId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("appVersionType")
         public Integer appVersionType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2023-01-01 00:00:00</p>
          */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("miniAppId")
         public String miniAppId;
 
@@ -67,6 +87,9 @@ public class PageInnerAppHistoryVersionResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2023-01-01 00:00:00</p>
          */
         @NameInMap("modifyTime")
         public String modifyTime;

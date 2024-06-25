@@ -7,6 +7,10 @@ public class QueryCorpPointsResponseBody extends TeaModel {
     @NameInMap("result")
     public QueryCorpPointsResponseBodyResult result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,6 +36,10 @@ public class QueryCorpPointsResponseBody extends TeaModel {
     }
 
     public static class QueryCorpPointsResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1000</p>
+         */
         @NameInMap("amount")
         public Long amount;
 

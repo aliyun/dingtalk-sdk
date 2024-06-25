@@ -15,6 +15,9 @@ public class GetSignInListRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>check_in</p>
      */
     @NameInMap("type")
     public String type;

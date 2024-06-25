@@ -26,6 +26,9 @@ public class ListBenefitLicenseResponseBody extends TeaModel {
     public static class ListBenefitLicenseResponseBodyResultLicenses extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>staffId</p>
          */
         @NameInMap("licenseUserId")
         public String licenseUserId;
@@ -48,6 +51,9 @@ public class ListBenefitLicenseResponseBody extends TeaModel {
     public static class ListBenefitLicenseResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>B_ACCOUNT_NUMBER</p>
          */
         @NameInMap("domain")
         public String domain;

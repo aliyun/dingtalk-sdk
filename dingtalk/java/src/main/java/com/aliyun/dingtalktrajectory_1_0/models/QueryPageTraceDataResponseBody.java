@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryPageTraceDataResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -18,6 +21,9 @@ public class QueryPageTraceDataResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("nextToken")
     public Long nextToken;

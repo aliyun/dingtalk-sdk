@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetFileUploadInfoRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("multipart")
     public Boolean multipart;
@@ -15,12 +18,18 @@ public class GetFileUploadInfoRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>HEADER_SIGNATURE</p>
      */
     @NameInMap("protocol")
     public String protocol;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -63,15 +72,31 @@ public class GetFileUploadInfoRequest extends TeaModel {
     }
 
     public static class GetFileUploadInfoRequestOptionPreCheckParam extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>md5</p>
+         */
         @NameInMap("md5")
         public String md5;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>parent_id</p>
+         */
         @NameInMap("parentId")
         public String parentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>512</p>
+         */
         @NameInMap("size")
         public Long size;
 
@@ -118,12 +143,24 @@ public class GetFileUploadInfoRequest extends TeaModel {
         @NameInMap("preCheckParam")
         public GetFileUploadInfoRequestOptionPreCheckParam preCheckParam;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("preferIntranet")
         public Boolean preferIntranet;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZHANGJIAKOU</p>
+         */
         @NameInMap("preferRegion")
         public String preferRegion;
 
+        /**
+         * <strong>example:</strong>
+         * <p>DINGTALK</p>
+         */
         @NameInMap("storageDriver")
         public String storageDriver;
 

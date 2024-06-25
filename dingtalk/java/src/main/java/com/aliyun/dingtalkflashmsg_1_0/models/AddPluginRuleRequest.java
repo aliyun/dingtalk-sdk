@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class AddPluginRuleRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>group_chat</p>
      */
     @NameInMap("chatType")
     public String chatType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>-10050</p>
      */
     @NameInMap("code")
     public String code;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>group</p>
      */
     @NameInMap("itemType")
     public String itemType;
@@ -30,6 +39,9 @@ public class AddPluginRuleRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0847493113802787</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -82,12 +94,18 @@ public class AddPluginRuleRequest extends TeaModel {
     public static class AddPluginRuleRequestRules extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
          */
         @NameInMap("itemId")
         public String itemId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>管理员角色</p>
          */
         @NameInMap("itemName")
         public String itemName;

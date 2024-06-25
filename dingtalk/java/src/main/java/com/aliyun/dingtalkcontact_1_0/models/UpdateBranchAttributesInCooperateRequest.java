@@ -26,18 +26,27 @@ public class UpdateBranchAttributesInCooperateRequest extends TeaModel {
     public static class UpdateBranchAttributesInCooperateRequestBody extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ding1234</p>
          */
         @NameInMap("branchCorpId")
         public String branchCorpId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>23456</p>
          */
         @NameInMap("linkDeptId")
         public Long linkDeptId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ding1234</p>
          */
         @NameInMap("unionRootName")
         public String unionRootName;

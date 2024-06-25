@@ -12,6 +12,9 @@ public class BatchAddFollowRecordsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager021a</p>
      */
     @NameInMap("operatorUserId")
     public String operatorUserId;
@@ -38,17 +41,27 @@ public class BatchAddFollowRecordsRequest extends TeaModel {
     }
 
     public static class BatchAddFollowRecordsRequestInstanceListDataArray extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>{}</p>
+         */
         @NameInMap("extendValue")
         public String extendValue;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>TextField_71U51A</p>
          */
         @NameInMap("key")
         public String key;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>XX有限公司</p>
          */
         @NameInMap("value")
         public String value;

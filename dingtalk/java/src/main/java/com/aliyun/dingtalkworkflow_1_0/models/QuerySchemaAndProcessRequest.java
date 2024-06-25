@@ -9,6 +9,9 @@ public class QuerySchemaAndProcessRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROC-17428B8C-6C60-xxxx-924C-64F1037AE067</p>
      */
     @NameInMap("processCode")
     public String processCode;

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class BatchExecuteProcessInstancesRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>67583405630</p>
      */
     @NameInMap("actionerUserId")
     public String actionerUserId;
@@ -15,6 +18,9 @@ public class BatchExecuteProcessInstancesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>agree</p>
      */
     @NameInMap("result")
     public String result;
@@ -65,6 +71,9 @@ public class BatchExecuteProcessInstancesRequest extends TeaModel {
     public static class BatchExecuteProcessInstancesRequestTaskInfoList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>a171de6c-8bxxxx</p>
          */
         @NameInMap("processInstanceId")
         public String processInstanceId;

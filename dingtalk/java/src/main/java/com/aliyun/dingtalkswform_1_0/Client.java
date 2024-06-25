@@ -6,11 +6,10 @@ import com.aliyun.dingtalkswform_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 获取单个填表实例详情接口
-     *
+     * <b>summary</b> : 
+     * <p>获取单个填表实例详情接口</p>
+     * 
      * @param request GetFormInstanceRequest
      * @param headers GetFormInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -62,8 +62,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取单个填表实例详情接口
-     *
+     * <b>summary</b> : 
+     * <p>获取单个填表实例详情接口</p>
+     * 
      * @param request GetFormInstanceRequest
      * @return GetFormInstanceResponse
      */
@@ -74,8 +75,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取填表模版下的填表实例列表接口
-     *
+     * <b>summary</b> : 
+     * <p>获取填表模版下的填表实例列表接口</p>
+     * 
      * @param request ListFormInstancesRequest
      * @param headers ListFormInstancesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -128,8 +130,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取填表模版下的填表实例列表接口
-     *
+     * <b>summary</b> : 
+     * <p>获取填表模版下的填表实例列表接口</p>
+     * 
      * @param request ListFormInstancesRequest
      * @return ListFormInstancesResponse
      */
@@ -140,8 +143,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户创建的填表模板列表接口
-     *
+     * <b>summary</b> : 
+     * <p>获取用户创建的填表模板列表接口</p>
+     * 
      * @param request ListFormSchemasByCreatorRequest
      * @param headers ListFormSchemasByCreatorHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -194,8 +198,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户创建的填表模板列表接口
-     *
+     * <b>summary</b> : 
+     * <p>获取用户创建的填表模板列表接口</p>
+     * 
      * @param request ListFormSchemasByCreatorRequest
      * @return ListFormSchemasByCreatorResponse
      */

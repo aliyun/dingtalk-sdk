@@ -4,12 +4,24 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllTracksResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10001</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -54,27 +66,54 @@ public class QueryAllTracksResponseBody extends TeaModel {
     }
 
     public static class QueryAllTracksResponseBodyValues extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1234</p>
+         */
         @NameInMap("bizId")
         public String bizId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager1234</p>
+         */
         @NameInMap("creator")
         public String creator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>customer_id</p>
+         */
         @NameInMap("customerId")
         public String customerId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1237126786127</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>asjkdh189127836</p>
          */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>4</p>
+         */
         @NameInMap("subType")
         public Integer subType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>80</p>
+         */
         @NameInMap("type")
         public Integer type;
 

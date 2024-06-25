@@ -7,32 +7,52 @@ public class CreateGroupConversationRequest extends TeaModel {
     @NameInMap("appUserIds")
     public java.util.List<String> appUserIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>http://***.png</p>
+     */
     @NameInMap("groupAvatar")
     public String groupAvatar;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>客户群</p>
      */
     @NameInMap("groupName")
     public String groupName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1745****8777</p>
      */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>3</p>
+     */
     @NameInMap("groupOwnerType")
     public Integer groupOwnerType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8d42****nkld</p>
      */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1745****8777</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

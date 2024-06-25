@@ -26,42 +26,63 @@ public class WriteAlibabaOrgCarbonRequest extends TeaModel {
     public static class WriteAlibabaOrgCarbonRequestOrgDetailsList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>12320211126</p>
          */
         @NameInMap("actionId")
         public String actionId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-11-26 10:09:37</p>
          */
         @NameInMap("actionTime")
         public String actionTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>VIDEO</p>
          */
         @NameInMap("actionType")
         public String actionType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3.21</p>
          */
         @NameInMap("carbonAmount")
         public String carbonAmount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ding12344</p>
          */
         @NameInMap("corpId")
         public String corpId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>111</p>
          */
         @NameInMap("deptId")
         public Long deptId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("version")
         public Integer version;

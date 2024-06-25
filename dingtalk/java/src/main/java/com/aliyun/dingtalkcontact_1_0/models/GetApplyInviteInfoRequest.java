@@ -7,6 +7,10 @@ public class GetApplyInviteInfoRequest extends TeaModel {
     @NameInMap("deptId")
     public Long deptId;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("inviterUserId")
     public String inviterUserId;
 

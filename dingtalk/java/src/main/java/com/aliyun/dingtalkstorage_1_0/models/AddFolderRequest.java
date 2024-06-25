@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class AddFolderRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dentry_name</p>
      */
     @NameInMap("name")
     public String name;
@@ -15,6 +18,9 @@ public class AddFolderRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -51,18 +57,27 @@ public class AddFolderRequest extends TeaModel {
     public static class AddFolderRequestOptionAppProperties extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>property_name</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>property_value</p>
          */
         @NameInMap("value")
         public String value;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PRIVATE</p>
          */
         @NameInMap("visibility")
         public String visibility;
@@ -102,6 +117,10 @@ public class AddFolderRequest extends TeaModel {
         @NameInMap("appProperties")
         public java.util.List<AddFolderRequestOptionAppProperties> appProperties;
 
+        /**
+         * <strong>example:</strong>
+         * <p>AUTO_RENAME</p>
+         */
         @NameInMap("conflictStrategy")
         public String conflictStrategy;
 

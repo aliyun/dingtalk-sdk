@@ -6,13 +6,24 @@ import com.aliyun.tea.*;
 public class HPackageListGetRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5000000000000000</p>
      */
     @NameInMap("miniAppId")
     public String miniAppId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 

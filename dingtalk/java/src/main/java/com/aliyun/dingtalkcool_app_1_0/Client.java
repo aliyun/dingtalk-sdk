@@ -6,11 +6,10 @@ import com.aliyun.dingtalkcool_app_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 群酷应用排序
-     *
+     * <b>summary</b> : 
+     * <p>群酷应用排序</p>
+     * 
      * @param request InstallCoolAppOrderToGroupRequest
      * @param headers InstallCoolAppOrderToGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -74,8 +74,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群酷应用排序
-     *
+     * <b>summary</b> : 
+     * <p>群酷应用排序</p>
+     * 
      * @param request InstallCoolAppOrderToGroupRequest
      * @return InstallCoolAppOrderToGroupResponse
      */
@@ -86,8 +87,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 安装酷应用到群
-     *
+     * <b>summary</b> : 
+     * <p>安装酷应用到群</p>
+     * 
      * @param request InstallCoolAppToGroupRequest
      * @param headers InstallCoolAppToGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -140,8 +142,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 安装酷应用到群
-     *
+     * <b>summary</b> : 
+     * <p>安装酷应用到群</p>
+     * 
      * @param request InstallCoolAppToGroupRequest
      * @return InstallCoolAppToGroupResponse
      */
@@ -152,8 +155,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群插件栏
-     *
+     * <b>summary</b> : 
+     * <p>查询群插件栏</p>
+     * 
      * @param request QueryCoolAppShortcutOrderRequest
      * @param headers QueryCoolAppShortcutOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -202,8 +206,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群插件栏
-     *
+     * <b>summary</b> : 
+     * <p>查询群插件栏</p>
+     * 
      * @param request QueryCoolAppShortcutOrderRequest
      * @return QueryCoolAppShortcutOrderResponse
      */
@@ -214,8 +219,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 从群内卸载酷应用
-     *
+     * <b>summary</b> : 
+     * <p>从群内卸载酷应用</p>
+     * 
      * @param request UninstallCoolAppFromGroupRequest
      * @param headers UninstallCoolAppFromGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -268,8 +274,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 从群内卸载酷应用
-     *
+     * <b>summary</b> : 
+     * <p>从群内卸载酷应用</p>
+     * 
      * @param request UninstallCoolAppFromGroupRequest
      * @return UninstallCoolAppFromGroupResponse
      */

@@ -4,38 +4,61 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddPointRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1634630147</p>
+     */
     @NameInMap("actionTime")
     public Long actionTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false</p>
      */
     @NameInMap("isCircle")
     public Boolean isCircle;
 
+    /**
+     * <strong>example:</strong>
+     * <p>rule_1</p>
+     */
     @NameInMap("ruleCode")
     public String ruleCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>发动态</p>
      */
     @NameInMap("ruleName")
     public String ruleName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3</p>
      */
     @NameInMap("score")
     public Integer score;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("userId")
     public String userId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>7645</p>
      */
     @NameInMap("uuid")
     public String uuid;

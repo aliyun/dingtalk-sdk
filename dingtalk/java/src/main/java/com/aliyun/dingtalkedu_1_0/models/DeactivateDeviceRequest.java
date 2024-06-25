@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class DeactivateDeviceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>model1</p>
      */
     @NameInMap("model")
     public String model;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fdafds-432432</p>
      */
     @NameInMap("sn")
     public String sn;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>VIDEO_CALL</p>
      */
     @NameInMap("type")
     public String type;

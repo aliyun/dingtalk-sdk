@@ -4,9 +4,17 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskTaskflowstatusRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>60a2187eb72xxxxxxx</p>
+     */
     @NameInMap("taskflowStatusId")
     public String taskflowStatusId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>说明。</p>
+     */
     @NameInMap("taskflowStatusUpdateNote")
     public String taskflowStatusUpdateNote;
 

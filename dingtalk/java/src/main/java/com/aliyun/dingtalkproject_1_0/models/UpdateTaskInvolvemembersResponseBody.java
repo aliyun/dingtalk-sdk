@@ -24,6 +24,10 @@ public class UpdateTaskInvolvemembersResponseBody extends TeaModel {
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

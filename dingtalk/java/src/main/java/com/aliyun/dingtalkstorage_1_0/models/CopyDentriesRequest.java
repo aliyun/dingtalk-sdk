@@ -15,18 +15,27 @@ public class CopyDentriesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>target_folder_id</p>
      */
     @NameInMap("targetFolderId")
     public String targetFolderId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>target_space_id</p>
      */
     @NameInMap("targetSpaceId")
     public String targetSpaceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -77,6 +86,10 @@ public class CopyDentriesRequest extends TeaModel {
     }
 
     public static class CopyDentriesRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>AUTO_RENAME</p>
+         */
         @NameInMap("conflictStrategy")
         public String conflictStrategy;
 

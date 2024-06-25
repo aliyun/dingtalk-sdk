@@ -24,23 +24,36 @@ public class PagesExportInstancesResponseBody extends TeaModel {
         @NameInMap("componentName")
         public String componentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;staffId&quot;:&quot;abcd&quot;}</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>TextField-a32bcdef</p>
          */
         @NameInMap("id")
         public String id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>姓名</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("value")
         public String value;
@@ -93,15 +106,31 @@ public class PagesExportInstancesResponseBody extends TeaModel {
     }
 
     public static class PagesExportInstancesResponseBodyResultListOperationRecordsAttachments extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1234567</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>附件</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("fileSize")
         public String fileSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p>pdf</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
@@ -145,30 +174,62 @@ public class PagesExportInstancesResponseBody extends TeaModel {
     }
 
     public static class PagesExportInstancesResponseBodyResultListOperationRecords extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1234_abcd</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
         @NameInMap("attachments")
         public java.util.List<PagesExportInstancesResponseBodyResultListOperationRecordsAttachments> attachments;
 
+        /**
+         * <strong>example:</strong>
+         * <p>[]</p>
+         */
         @NameInMap("images")
         public java.util.List<String> images;
 
+        /**
+         * <strong>example:</strong>
+         * <p>EXECUTE_TASK_NORMAL（正常执行任务），EXECUTE_TASK_AGENT（代理人执行任务），APPEND_TASK_BEFORE（前加签任务），APPEND_TASK_AFTER（后加签任务），REDIRECT_TASK（转交任务），START_PROCESS_INSTANCE（发起流程实例），TERMINATE_PROCESS_INSTANCE（终止(撤销)流程实例），FINISH_PROCESS_INSTANCE（结束流程实例），ADD_REMARK（添加评论）</p>
+         */
         @NameInMap("operationType")
         public String operationType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>同意</p>
+         */
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <strong>example:</strong>
+         * <p>AGREE（同意），REFUSE（拒绝），NONE（未知）</p>
+         */
         @NameInMap("result")
         public String result;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345</p>
+         */
         @NameInMap("taskId")
         public Long taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1657522271000</p>
+         */
         @NameInMap("timestamp")
         public Long timestamp;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager1</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -252,30 +313,56 @@ public class PagesExportInstancesResponseBody extends TeaModel {
     }
 
     public static class PagesExportInstancesResponseBodyResultListTasks extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1234_abcd</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1657522271000</p>
+         */
         @NameInMap("createTimestamp")
         public Long createTimestamp;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1657522271000</p>
+         */
         @NameInMap("finishTimestamp")
         public Long finishTimestamp;
 
+        /**
+         * <strong>example:</strong>
+         * <p>分为AGREE（同意），REFUSE（拒绝），REDIRECTED（转交）</p>
+         */
         @NameInMap("result")
         public String result;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>NEW（未启动），RUNNING（处理中），PAUSED（暂停），CANCELED（取消），COMPLETED（完成），TERMINATED（终止）</p>
          */
         @NameInMap("status")
         public String status;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123456</p>
          */
         @NameInMap("taskId")
         public Long taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>staff1234</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -345,24 +432,36 @@ public class PagesExportInstancesResponseBody extends TeaModel {
     public static class PagesExportInstancesResponseBodyResultList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>cdef-dae2fd2-example</p>
          */
         @NameInMap("attachedProcessInstanceIds")
         public String attachedProcessInstanceIds;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>202110111558000355024</p>
          */
         @NameInMap("businessId")
         public String businessId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1635165470201</p>
          */
         @NameInMap("createTime")
         public Long createTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1633795200000</p>
          */
         @NameInMap("finishTime")
         public Long finishTime;
@@ -375,6 +474,9 @@ public class PagesExportInstancesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>dcdse-dae2fd2-example</p>
          */
         @NameInMap("mainProcessInstanceId")
         public String mainProcessInstanceId;
@@ -384,30 +486,45 @@ public class PagesExportInstancesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>默认-1，企业根部门</p>
          */
         @NameInMap("originatorDeptId")
         public String originatorDeptId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>staff1234</p>
          */
         @NameInMap("originatorUserid")
         public String originatorUserid;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abcdse-dse-example</p>
          */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>AGREE同意，REFUSE拒绝</p>
          */
         @NameInMap("result")
         public String result;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>RUNNING审批中、TERMINATED撤销、COMPLETED审批完成、CANCELED取消</p>
          */
         @NameInMap("status")
         public String status;
@@ -417,6 +534,9 @@ public class PagesExportInstancesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>员工A提交的小肖审批单</p>
          */
         @NameInMap("title")
         public String title;
@@ -543,6 +663,9 @@ public class PagesExportInstancesResponseBody extends TeaModel {
     public static class PagesExportInstancesResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("hasMore")
         public Boolean hasMore;
@@ -552,6 +675,9 @@ public class PagesExportInstancesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("nextToken")
         public String nextToken;

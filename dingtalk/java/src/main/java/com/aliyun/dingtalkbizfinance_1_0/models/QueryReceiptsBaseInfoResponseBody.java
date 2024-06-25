@@ -4,12 +4,20 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public String hasMore;
 
     @NameInMap("list")
     public java.util.List<QueryReceiptsBaseInfoResponseBodyList> list;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,12 +51,24 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptsBaseInfoResponseBodyListCreator extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxxx">https://xxxx</a></p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试名字</p>
+         */
         @NameInMap("nick")
         public String nick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1231</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -84,9 +104,17 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptsBaseInfoResponseBodyListCustomer extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>CUS_xxxxx</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -215,21 +243,45 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptsBaseInfoResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("accountantBookId")
         public String accountantBookId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>5000</p>
+         */
         @NameInMap("amount")
         public String amount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1714973165000</p>
+         */
         @NameInMap("approvedAt")
         public String approvedAt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("businessId")
         public String businessId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>COM_DEFAULT</p>
+         */
         @NameInMap("companyCode")
         public String companyCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1714973165000</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
@@ -239,6 +291,10 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
         @NameInMap("customer")
         public QueryReceiptsBaseInfoResponseBodyListCustomer customer;
 
+        /**
+         * <strong>example:</strong>
+         * <p>EM-xxxxx</p>
+         */
         @NameInMap("modelId")
         public String modelId;
 
@@ -248,24 +304,48 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
         @NameInMap("project")
         public QueryReceiptsBaseInfoResponseBodyListProject project;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("receiptId")
         public String receiptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>16000000</p>
+         */
         @NameInMap("recordTime")
         public String recordTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>备注信息</p>
+         */
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <strong>example:</strong>
+         * <p>approval</p>
+         */
         @NameInMap("source")
         public String source;
 
+        /**
+         * <strong>example:</strong>
+         * <p>agree</p>
+         */
         @NameInMap("status")
         public String status;
 
         @NameInMap("supplier")
         public QueryReceiptsBaseInfoResponseBodyListSupplier supplier;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三提交的开票申请单</p>
+         */
         @NameInMap("title")
         public String title;
 

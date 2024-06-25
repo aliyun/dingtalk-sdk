@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetRoleUsersResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class GetRoleUsersResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OK</p>
      */
     @NameInMap("message")
     public String message;
@@ -49,39 +55,83 @@ public class GetRoleUsersResponseBody extends TeaModel {
     }
 
     public static class GetRoleUsersResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>zhangsan</p>
+         */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>18f923a7-5a5e-426d-94ae-a55ad1a4b240</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>研发中心</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Null</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Internal</p>
+         */
         @NameInMap("domainType")
         public String domainType;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="mailto:zhangsan@example.com">zhangsan@example.com</a></p>
+         */
         @NameInMap("email")
         public String email;
 
+        /**
+         * <strong>example:</strong>
+         * <p>156*******</p>
+         */
         @NameInMap("mobile")
         public String mobile;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("name")
         public String name;
 
         @NameInMap("partDepartmentIds")
         public java.util.List<String> partDepartmentIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Man</p>
+         */
         @NameInMap("sex")
         public String sex;
 
+        /**
+         * <strong>example:</strong>
+         * <p>176294501822126512</p>
+         */
         @NameInMap("sortKey")
         public Long sortKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>018bbb56-a9dd-49a1-8495-129c6b0d95c5</p>
+         */
         @NameInMap("userId")
         public String userId;
 

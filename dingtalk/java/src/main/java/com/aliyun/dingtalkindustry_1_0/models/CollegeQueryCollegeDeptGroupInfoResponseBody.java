@@ -4,9 +4,17 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeQueryCollegeDeptGroupInfoResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>xxx全员群</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0124215</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

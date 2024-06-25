@@ -4,15 +4,31 @@ package com.aliyun.dingtalkding_phone_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCallConfigRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding3f583b0672efc12d</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>token23dafds</p>
+     */
     @NameInMap("isvToken")
     public String isvToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>057112345678</p>
+     */
     @NameInMap("phoneNumber")
     public String phoneNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>call</p>
+     */
     @NameInMap("scopeType")
     public String scopeType;
 

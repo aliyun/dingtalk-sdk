@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryDeviceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fadf-8008</p>
      */
     @NameInMap("sn")
     public String sn;

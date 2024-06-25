@@ -9,12 +9,18 @@ public class AssignTicketRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>eKWh3GBwsKEiE</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>hNiPO2OVktNMiE</p>
      */
     @NameInMap("openTicketId")
     public String openTicketId;
@@ -91,6 +97,10 @@ public class AssignTicketRequest extends TeaModel {
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 
@@ -129,9 +139,17 @@ public class AssignTicketRequest extends TeaModel {
     }
 
     public static class AssignTicketRequestTicketMemoAttachments extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>wahaha.txt</p>
+         */
         @NameInMap("key")
         public String key;
 
@@ -164,6 +182,9 @@ public class AssignTicketRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>备注</p>
          */
         @NameInMap("memo")
         public String memo;

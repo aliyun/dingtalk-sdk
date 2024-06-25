@@ -6,16 +6,26 @@ import com.aliyun.tea.*;
 public class UpdateResideceGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("departmentId")
     public Long departmentId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>第一网格组</p>
      */
     @NameInMap("departmentName")
     public String departmentName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("managerUserId")
     public String managerUserId;
 

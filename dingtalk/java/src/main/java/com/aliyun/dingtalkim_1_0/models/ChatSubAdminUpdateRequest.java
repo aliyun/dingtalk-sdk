@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class ChatSubAdminUpdateRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidVwhmrlxsR3sL3+JdH1LjUA==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2</p>
      */
     @NameInMap("role")
     public Integer role;

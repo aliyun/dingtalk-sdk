@@ -6,11 +6,10 @@ import com.aliyun.dingtalkagoal_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 获取Agoal指定目标或者关键结果关联的关键行动
-     *
+     * <b>summary</b> : 
+     * <p>获取Agoal指定目标或者关键结果关联的关键行动</p>
+     * 
      * @param request AgoalObjectiveKeyActionListRequest
      * @param headers AgoalObjectiveKeyActionListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -70,8 +70,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取Agoal指定目标或者关键结果关联的关键行动
-     *
+     * <b>summary</b> : 
+     * <p>获取Agoal指定目标或者关键结果关联的关键行动</p>
+     * 
      * @param request AgoalObjectiveKeyActionListRequest
      * @return AgoalObjectiveKeyActionListResponse
      */
@@ -82,8 +83,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取Agoal目标规则下的周期列表
-     *
+     * <b>summary</b> : 
+     * <p>获取Agoal目标规则下的周期列表</p>
+     * 
      * @param request AgoalObjectiveRulePeriodListRequest
      * @param headers AgoalObjectiveRulePeriodListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -124,8 +126,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取Agoal目标规则下的周期列表
-     *
+     * <b>summary</b> : 
+     * <p>获取Agoal目标规则下的周期列表</p>
+     * 
      * @param request AgoalObjectiveRulePeriodListRequest
      * @return AgoalObjectiveRulePeriodListResponse
      */
@@ -136,8 +139,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取Agoal目标规则列表
-     *
+     * <b>summary</b> : 
+     * <p>获取Agoal目标规则列表</p>
+     * 
      * @param headers AgoalOrgObjectiveRuleListHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return AgoalOrgObjectiveRuleListResponse
@@ -170,8 +174,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取Agoal目标规则列表
-     *
+     * <b>summary</b> : 
+     * <p>获取Agoal目标规则列表</p>
      * @return AgoalOrgObjectiveRuleListResponse
      */
     public AgoalOrgObjectiveRuleListResponse agoalOrgObjectiveRuleList() throws Exception {
@@ -181,8 +185,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary Agoal消息发送
-     *
+     * <b>summary</b> : 
+     * <p>Agoal消息发送</p>
+     * 
      * @param request AgoalSendMessageRequest
      * @param headers AgoalSendMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -243,8 +248,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary Agoal消息发送
-     *
+     * <b>summary</b> : 
+     * <p>Agoal消息发送</p>
+     * 
      * @param request AgoalSendMessageRequest
      * @return AgoalSendMessageResponse
      */
@@ -255,8 +261,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取Agoal管理员列表
-     *
+     * <b>summary</b> : 
+     * <p>获取Agoal管理员列表</p>
+     * 
      * @param headers AgoalUserAdminListHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return AgoalUserAdminListResponse
@@ -289,8 +296,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取Agoal管理员列表
-     *
+     * <b>summary</b> : 
+     * <p>获取Agoal管理员列表</p>
      * @return AgoalUserAdminListResponse
      */
     public AgoalUserAdminListResponse agoalUserAdminList() throws Exception {
@@ -300,8 +307,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary Agoal用户目标列表
-     *
+     * <b>summary</b> : 
+     * <p>Agoal用户目标列表</p>
+     * 
      * @param request AgoalUserObjectiveListRequest
      * @param headers AgoalUserObjectiveListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -350,8 +358,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary Agoal用户目标列表
-     *
+     * <b>summary</b> : 
+     * <p>Agoal用户目标列表</p>
+     * 
      * @param request AgoalUserObjectiveListRequest
      * @return AgoalUserObjectiveListResponse
      */

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class OpenInnerGroupTransferToDeptGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("deptId")
     public Long deptId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidD2y*****==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

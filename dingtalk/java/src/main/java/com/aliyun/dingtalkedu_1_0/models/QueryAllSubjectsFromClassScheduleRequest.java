@@ -9,10 +9,17 @@ public class QueryAllSubjectsFromClassScheduleRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>34524523543</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>KINDERGARTEN</p>
+     */
     @NameInMap("periodCode")
     public String periodCode;
 

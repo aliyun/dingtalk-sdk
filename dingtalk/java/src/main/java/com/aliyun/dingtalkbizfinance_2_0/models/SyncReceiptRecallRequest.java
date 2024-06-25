@@ -4,12 +4,24 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class SyncReceiptRecallRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>https:xxxx.pdf</p>
+     */
     @NameInMap("fileDownloadUrl")
     public String fileDownloadUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234.pdf</p>
+     */
     @NameInMap("fileName")
     public String fileName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 

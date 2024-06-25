@@ -4,6 +4,10 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyListPartnerManagersRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>56781233</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 

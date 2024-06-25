@@ -13,6 +13,10 @@ public class ConversationCreatedNotifyRequest extends TeaModel {
     @NameInMap("nickName")
     public String nickName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>eWaJSqDcLsoiE</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
@@ -22,6 +26,10 @@ public class ConversationCreatedNotifyRequest extends TeaModel {
     @NameInMap("serverTips")
     public String serverTips;
 
+    /**
+     * <strong>example:</strong>
+     * <p>对应外部渠道的会话ID</p>
+     */
     @NameInMap("serviceToken")
     public String serviceToken;
 

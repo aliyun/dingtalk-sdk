@@ -21,6 +21,9 @@ public class AddProfileRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>usertest</p>
      */
     @NameInMap("nick")
     public String nick;

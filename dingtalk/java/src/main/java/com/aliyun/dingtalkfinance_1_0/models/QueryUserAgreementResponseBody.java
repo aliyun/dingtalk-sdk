@@ -6,72 +6,108 @@ import com.aliyun.tea.*;
 public class QueryUserAgreementResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>201220123212312</p>
      */
     @NameInMap("agreementNo")
     public String agreementNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding123123234234</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-11-11 10:10:10</p>
      */
     @NameInMap("gmtExpire")
     public String gmtExpire;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-11-11 10:10:10</p>
      */
     @NameInMap("gmtSign")
     public String gmtSign;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-11-11 10:10:10</p>
      */
     @NameInMap("gmtValid")
     public String gmtValid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021000001</p>
      */
     @NameInMap("instId")
     public String instId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ALIPAY</p>
      */
     @NameInMap("payChannel")
     public String payChannel;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>*川</p>
      */
     @NameInMap("payChannelAccountName")
     public String payChannelAccountName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>139*****0</p>
      */
     @NameInMap("payChannelAccountNo")
     public String payChannelAccountNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SUCCESS</p>
      */
     @NameInMap("status")
     public String status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>101</p>
      */
     @NameInMap("subInstId")
     public String subInstId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>54646545</p>
      */
     @NameInMap("userId")
     public String userId;

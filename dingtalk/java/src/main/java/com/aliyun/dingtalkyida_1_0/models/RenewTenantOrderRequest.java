@@ -4,12 +4,24 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class RenewTenantOrderRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>hexaaaa</p>
+     */
     @NameInMap("accessKey")
     public String accessKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>44234122</p>
+     */
     @NameInMap("callerUnionId")
     public String callerUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234567891234</p>
+     */
     @NameInMap("endTimeGMT")
     public Long endTimeGMT;
 

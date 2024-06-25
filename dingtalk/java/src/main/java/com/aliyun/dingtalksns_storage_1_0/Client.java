@@ -6,11 +6,10 @@ import com.aliyun.dingtalksns_storage_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 三方个人应用批量获取文件或文件夹信息
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用批量获取文件或文件夹信息</p>
+     * 
      * @param request GetDentriesRequest
      * @param headers GetDentriesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -72,8 +72,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用批量获取文件或文件夹信息
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用批量获取文件或文件夹信息</p>
+     * 
      * @param request GetDentriesRequest
      * @return GetDentriesResponse
      */
@@ -84,8 +85,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用获取文件(夹)信息
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用获取文件(夹)信息</p>
+     * 
      * @param request GetDentryRequest
      * @param headers GetDentryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -132,8 +134,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用获取文件(夹)信息
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用获取文件(夹)信息</p>
+     * 
      * @param request GetDentryRequest
      * @return GetDentryResponse
      */
@@ -144,8 +147,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用批量获取文件缩略图
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用批量获取文件缩略图</p>
+     * 
      * @param request GetDentryThumbnailsRequest
      * @param headers GetDentryThumbnailsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -192,8 +196,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用批量获取文件缩略图
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用批量获取文件缩略图</p>
+     * 
      * @param request GetDentryThumbnailsRequest
      * @return GetDentryThumbnailsResponse
      */
@@ -204,8 +209,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用获取文件下载信息
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用获取文件下载信息</p>
+     * 
      * @param request GetFileDownloadInfoRequest
      * @param headers GetFileDownloadInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -252,8 +258,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用获取文件下载信息
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用获取文件下载信息</p>
+     * 
      * @param request GetFileDownloadInfoRequest
      * @return GetFileDownloadInfoResponse
      */
@@ -264,8 +271,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用获取IM会话存储空间信息
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用获取IM会话存储空间信息</p>
+     * 
      * @param request GetSpaceRequest
      * @param headers GetSpaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -312,8 +320,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用获取IM会话存储空间信息
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用获取IM会话存储空间信息</p>
+     * 
      * @param request GetSpaceRequest
      * @return GetSpaceResponse
      */
@@ -324,8 +333,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用获取全部文件或文件夹列表
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用获取全部文件或文件夹列表</p>
+     * 
      * @param request ListAllDentriesRequest
      * @param headers ListAllDentriesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -372,8 +382,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用获取全部文件或文件夹列表
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用获取全部文件或文件夹列表</p>
+     * 
      * @param request ListAllDentriesRequest
      * @return ListAllDentriesResponse
      */
@@ -384,8 +395,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用获取文件列表
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用获取文件列表</p>
+     * 
      * @param request ListDentriesRequest
      * @param headers ListDentriesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -450,8 +462,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用获取文件列表
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用获取文件列表</p>
+     * 
      * @param request ListDentriesRequest
      * @return ListDentriesResponse
      */
@@ -462,8 +475,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取会话过期文件列表
-     *
+     * <b>summary</b> : 
+     * <p>获取会话过期文件列表</p>
+     * 
      * @param request ListExpiredRequest
      * @param headers ListExpiredHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -514,8 +528,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取会话过期文件列表
-     *
+     * <b>summary</b> : 
+     * <p>获取会话过期文件列表</p>
+     * 
      * @param request ListExpiredRequest
      * @return ListExpiredResponse
      */
@@ -526,8 +541,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用订阅文件变更事件
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用订阅文件变更事件</p>
+     * 
      * @param request SubscribeEventRequest
      * @param headers SubscribeEventHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -578,8 +594,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用订阅文件变更事件
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用订阅文件变更事件</p>
+     * 
      * @param request SubscribeEventRequest
      * @return SubscribeEventResponse
      */
@@ -590,8 +607,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用取消订阅文件变更事件
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用取消订阅文件变更事件</p>
+     * 
      * @param request UnsubscribeEventRequest
      * @param headers UnsubscribeEventHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -642,8 +660,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 三方个人应用取消订阅文件变更事件
-     *
+     * <b>summary</b> : 
+     * <p>三方个人应用取消订阅文件变更事件</p>
+     * 
      * @param request UnsubscribeEventRequest
      * @return UnsubscribeEventResponse
      */

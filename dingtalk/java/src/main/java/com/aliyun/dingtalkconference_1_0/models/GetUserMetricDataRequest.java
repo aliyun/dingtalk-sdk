@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class GetUserMetricDataRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1682524800000</p>
      */
     @NameInMap("beginTime")
     public Long beginTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1682611199000</p>
      */
     @NameInMap("endTime")
     public Long endTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>njMTqKo9iiyxxxxxxxxiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

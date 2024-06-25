@@ -32,51 +32,115 @@ public class GetLeaveRecordsResponseBody extends TeaModel {
     }
 
     public static class GetLeaveRecordsResponseBodyResultLeaveRecords extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>add</p>
+         */
         @NameInMap("calType")
         public String calType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1753851001000</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1653851001000</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1753851001000</p>
+         */
         @NameInMap("gmtModified")
         public Long gmtModified;
 
+        /**
+         * <strong>example:</strong>
+         * <p>f84a2dxxxx</p>
+         */
         @NameInMap("leaveCode")
         public String leaveCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>管理员导入</p>
+         */
         @NameInMap("leaveReason")
         public String leaveReason;
 
+        /**
+         * <strong>example:</strong>
+         * <p>update</p>
+         */
         @NameInMap("leaveRecordType")
         public String leaveRecordType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>init</p>
+         */
         @NameInMap("leaveStatus")
         public String leaveStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>day</p>
+         */
         @NameInMap("leaveViewUnit")
         public String leaveViewUnit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manage223</p>
+         */
         @NameInMap("opUserId")
         public String opUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>db1d74xxxxbaa</p>
+         */
         @NameInMap("quotaId")
         public String quotaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>db1d74xxxxbaa</p>
+         */
         @NameInMap("recordId")
         public String recordId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("recordNumPerDay")
         public Long recordNumPerDay;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("recordNumPerHour")
         public Long recordNumPerHour;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1653851001000</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user1</p>
+         */
         @NameInMap("userId")
         public String userId;
 

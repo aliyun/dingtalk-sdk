@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetSupplierRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SUP_XXX</p>
      */
     @NameInMap("code")
     public String code;

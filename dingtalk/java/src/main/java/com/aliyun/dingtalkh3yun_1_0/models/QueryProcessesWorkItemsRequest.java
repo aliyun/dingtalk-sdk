@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryProcessesWorkItemsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>006f870b-4d1c-4cd0-85b3-2e866798e947</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;

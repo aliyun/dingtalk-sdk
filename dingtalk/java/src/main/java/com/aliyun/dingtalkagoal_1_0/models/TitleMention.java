@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class TitleMention extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("length")
     public Integer length;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("offset")
     public Integer offset;

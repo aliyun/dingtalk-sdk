@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdateGroupAvatarRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>http://***.png</p>
      */
     @NameInMap("groupAvatar")
     public String groupAvatar;

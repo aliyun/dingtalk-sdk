@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class InitVPaasDeviceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fsdfdsa-41231</p>
      */
     @NameInMap("sn")
     public String sn;
@@ -15,6 +18,9 @@ public class InitVPaasDeviceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>VIDEO_CALL</p>
      */
     @NameInMap("type")
     public String type;

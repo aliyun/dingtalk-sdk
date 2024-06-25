@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CampusGetCampusGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>11</p>
      */
     @NameInMap("groupId")
     public Long groupId;

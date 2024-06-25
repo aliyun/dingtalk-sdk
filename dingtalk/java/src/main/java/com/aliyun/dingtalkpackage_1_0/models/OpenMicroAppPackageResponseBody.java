@@ -4,6 +4,10 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenMicroAppPackageResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>5000000000000000</p>
+     */
     @NameInMap("miniAppId")
     public String miniAppId;
 

@@ -32,6 +32,10 @@ public class EsignSyncEventResponseBody extends TeaModel {
     }
 
     public static class EsignSyncEventResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>外部服务异常</p>
+         */
         @NameInMap("message")
         public String message;
 

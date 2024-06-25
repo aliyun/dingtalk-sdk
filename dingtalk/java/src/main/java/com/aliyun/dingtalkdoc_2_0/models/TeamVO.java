@@ -4,29 +4,51 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class TeamVO extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://abc.com">https://abc.com</a></p>
+     */
     @NameInMap("cover")
     public String cover;
 
+    /**
+     * <strong>example:</strong>
+     * <p>12340000</p>
+     */
     @NameInMap("createdTime")
     public Long createdTime;
 
     @NameInMap("creator")
     public TeamVOCreator creator;
 
+    /**
+     * <strong>example:</strong>
+     * <p>这里是团队描述</p>
+     */
     @NameInMap("description")
     public String description;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://def.com">https://def.com</a></p>
+     */
     @NameInMap("icon")
     public String icon;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>AbcDef</p>
      */
     @NameInMap("id")
     public String id;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试团队名称</p>
      */
     @NameInMap("name")
     public String name;
@@ -37,15 +59,26 @@ public class TeamVO extends TeaModel {
     @NameInMap("shareScopeInfo")
     public TeamVOShareScopeInfo shareScopeInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("status")
     public Integer status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("type")
     public Integer type;
 
+    /**
+     * <strong>example:</strong>
+     * <p>34560000</p>
+     */
     @NameInMap("updatedTime")
     public Long updatedTime;
 
@@ -54,6 +87,9 @@ public class TeamVO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://abc.com">https://abc.com</a></p>
      */
     @NameInMap("url")
     public String url;
@@ -187,9 +223,17 @@ public class TeamVO extends TeaModel {
     }
 
     public static class TeamVOCreator extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>测试</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -217,9 +261,17 @@ public class TeamVO extends TeaModel {
     }
 
     public static class TeamVORelatedDeptInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("deptId")
         public String deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试部门</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
@@ -277,9 +329,17 @@ public class TeamVO extends TeaModel {
     }
 
     public static class TeamVOUpdater extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>测试</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -307,6 +367,10 @@ public class TeamVO extends TeaModel {
     }
 
     public static class TeamVOVisitInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>5</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 

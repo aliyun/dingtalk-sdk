@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class BatchAddRelationDatasRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager021a</p>
      */
     @NameInMap("operatorUserId")
     public String operatorUserId;
@@ -18,10 +21,17 @@ public class BatchAddRelationDatasRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>crm_customer</p>
      */
     @NameInMap("relationType")
     public String relationType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("skipDuplicateCheck")
     public Boolean skipDuplicateCheck;
 
@@ -63,17 +73,27 @@ public class BatchAddRelationDatasRequest extends TeaModel {
     }
 
     public static class BatchAddRelationDatasRequestRelationListBizDataList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>{}</p>
+         */
         @NameInMap("extendValue")
         public String extendValue;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>TextField_71U51A</p>
          */
         @NameInMap("key")
         public String key;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>XX有限公司</p>
          */
         @NameInMap("value")
         public String value;
@@ -146,12 +166,20 @@ public class BatchAddRelationDatasRequest extends TeaModel {
         @NameInMap("bizDataList")
         public java.util.List<BatchAddRelationDatasRequestRelationListBizDataList> bizDataList;
 
+        /**
+         * <strong>if can be null:</strong>
+         * <p>true</p>
+         */
         @NameInMap("bizExtMap")
         public java.util.Map<String, String> bizExtMap;
 
         @NameInMap("relationPermissionDTO")
         public BatchAddRelationDatasRequestRelationListRelationPermissionDTO relationPermissionDTO;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ddsf3234234</p>
+         */
         @NameInMap("sourceDataId")
         public String sourceDataId;
 

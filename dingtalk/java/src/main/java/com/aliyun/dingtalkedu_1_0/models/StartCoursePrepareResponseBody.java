@@ -26,12 +26,18 @@ public class StartCoursePrepareResponseBody extends TeaModel {
     public static class StartCoursePrepareResponseBodyUniversityCourseCommonResponse extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>testCourseCode</p>
          */
         @NameInMap("courseCode")
         public String courseCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("success")
         public Boolean success;

@@ -6,40 +6,72 @@ import com.aliyun.tea.*;
 public class DecodeBadgeCodeResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2512345678</p>
      */
     @NameInMap("alipayCode")
     public String alipayCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>codeIdxxxxx</p>
+     */
     @NameInMap("codeId")
     public String codeId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>DT_VISITOR</p>
+     */
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PURE_IDENTIFY_CODE</p>
      */
     @NameInMap("codeType")
     public String codeType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding1234</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;authRules&quot;:{}}</p>
+     */
     @NameInMap("extInfo")
     public String extInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxx</p>
+     */
     @NameInMap("outBizId")
     public String outBizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>INTERNAL_STAFF</p>
      */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>staffId</p>
+     */
     @NameInMap("userId")
     public String userId;
 

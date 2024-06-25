@@ -6,28 +6,44 @@ import com.aliyun.tea.*;
 public class InitDeviceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sdf34DFf2344</p>
      */
     @NameInMap("encryptPubKey")
     public String encryptPubKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sdf34DFfffdf2344</p>
      */
     @NameInMap("signature")
     public String signature;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SN123456</p>
      */
     @NameInMap("sn")
     public String sn;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1231245511</p>
      */
     @NameInMap("timestamp")
     public Long timestamp;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1.0</p>
+     */
     @NameInMap("version")
     public String version;
 

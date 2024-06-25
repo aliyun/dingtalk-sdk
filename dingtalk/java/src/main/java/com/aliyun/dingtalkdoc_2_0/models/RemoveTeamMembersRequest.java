@@ -15,6 +15,9 @@ public class RemoveTeamMembersRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YEp3JcM******UIbhwiE</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -51,16 +54,26 @@ public class RemoveTeamMembersRequest extends TeaModel {
     public static class RemoveTeamMembersRequestMembers extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>YEp3JcM******UIbhwiE</p>
          */
         @NameInMap("memberId")
         public String memberId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2</p>
          */
         @NameInMap("memberType")
         public Integer memberType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 

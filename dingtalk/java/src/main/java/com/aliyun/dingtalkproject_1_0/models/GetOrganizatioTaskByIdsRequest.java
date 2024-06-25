@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetOrganizatioTaskByIdsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>62a010c153c2ef5244xxxx, 62a010c153c2ef524xxxxxx</p>
      */
     @NameInMap("taskIds")
     public String taskIds;

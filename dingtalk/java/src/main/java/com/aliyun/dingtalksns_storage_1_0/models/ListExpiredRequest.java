@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ListExpiredRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>open_conversation_id</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
@@ -15,6 +18,9 @@ public class ListExpiredRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -49,9 +55,17 @@ public class ListExpiredRequest extends TeaModel {
     }
 
     public static class ListExpiredRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>30</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
+        /**
+         * <strong>example:</strong>
+         * <p>next_token</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

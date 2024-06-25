@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CreateTaskRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>任务标题</p>
      */
     @NameInMap("content")
     public String content;
@@ -13,36 +16,75 @@ public class CreateTaskRequest extends TeaModel {
     @NameInMap("customfields")
     public java.util.List<CreateTaskRequestCustomfields> customfields;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-06-13T07:36:50.318Z</p>
+     */
     @NameInMap("dueDate")
     public String dueDate;
 
+    /**
+     * <strong>example:</strong>
+     * <p>173xxxx</p>
+     */
     @NameInMap("executorId")
     public String executorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>我是一条任务备注</p>
+     */
     @NameInMap("note")
     public String note;
 
+    /**
+     * <strong>example:</strong>
+     * <p>62c25e3b376exxxxxx</p>
+     */
     @NameInMap("parentTaskId")
     public String parentTaskId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>-10</p>
+     */
     @NameInMap("priority")
     public Integer priority;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>62c25e3b376exxxxxx</p>
      */
     @NameInMap("projectId")
     public String projectId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>62c25e3b376exxxxxx</p>
+     */
     @NameInMap("scenariofieldconfigId")
     public String scenariofieldconfigId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>62c25e3b376exxxxxx</p>
+     */
     @NameInMap("stageId")
     public String stageId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-06-13T07:36:50.318Z</p>
+     */
     @NameInMap("startDate")
     public String startDate;
 
+    /**
+     * <strong>example:</strong>
+     * <p>members</p>
+     */
     @NameInMap("visible")
     public String visible;
 
@@ -148,6 +190,10 @@ public class CreateTaskRequest extends TeaModel {
     }
 
     public static class CreateTaskRequestCustomfieldsValue extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>我是自定义字段显示值</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -167,9 +213,17 @@ public class CreateTaskRequest extends TeaModel {
     }
 
     public static class CreateTaskRequestCustomfields extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>62fb0bxxxxxxx</p>
+         */
         @NameInMap("customfieldId")
         public String customfieldId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>自定义字段-文本</p>
+         */
         @NameInMap("customfieldName")
         public String customfieldName;
 

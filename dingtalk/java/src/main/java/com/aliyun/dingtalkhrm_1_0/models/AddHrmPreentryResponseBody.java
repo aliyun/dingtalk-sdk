@@ -4,6 +4,10 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddHrmPreentryResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>manager123</p>
+     */
     @NameInMap("tmpUserId")
     public String tmpUserId;
 

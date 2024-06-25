@@ -4,9 +4,17 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOpenCategoryResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2</p>
+     */
     @NameInMap("result")
     public AddOpenCategoryResponseBodyResult result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,12 +40,24 @@ public class AddOpenCategoryResponseBody extends TeaModel {
     }
 
     public static class AddOpenCategoryResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("id")
         public Long id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>title不能为空</p>
+         */
         @NameInMap("message")
         public String message;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("success")
         public Boolean success;
 

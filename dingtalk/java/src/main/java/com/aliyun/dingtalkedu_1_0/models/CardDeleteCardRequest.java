@@ -6,27 +6,43 @@ import com.aliyun.tea.*;
 public class CardDeleteCardRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>industry_center</p>
      */
     @NameInMap("cardBizCode")
     public String cardBizCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>23424234</p>
+     */
     @NameInMap("cardBizId")
     public String cardBizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>234234234</p>
      */
     @NameInMap("cardId")
     public Long cardId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YUFANAI</p>
      */
     @NameInMap("sourceType")
     public String sourceType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>234234234</p>
      */
     @NameInMap("userId")
     public String userId;

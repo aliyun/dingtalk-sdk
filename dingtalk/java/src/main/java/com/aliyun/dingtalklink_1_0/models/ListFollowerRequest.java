@@ -4,12 +4,24 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFollowerRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding1234</p>
+     */
     @NameInMap("accountId")
     public String accountId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Rp3Rqcts7BE08y49Jr6iu6xW4iQ</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class GetUsersRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>18f923a7-5a5e-426d-94ae-a55ad1a4b240</p>
      */
     @NameInMap("departmentId")
     public String departmentId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("isRecursive")
     public Boolean isRecursive;
 

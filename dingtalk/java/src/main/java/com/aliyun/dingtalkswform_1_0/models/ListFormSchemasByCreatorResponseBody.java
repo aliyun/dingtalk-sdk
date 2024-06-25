@@ -7,6 +7,10 @@ public class ListFormSchemasByCreatorResponseBody extends TeaModel {
     @NameInMap("result")
     public ListFormSchemasByCreatorResponseBodyResult result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,30 +36,52 @@ public class ListFormSchemasByCreatorResponseBody extends TeaModel {
     }
 
     public static class ListFormSchemasByCreatorResponseBodyResultListSetting extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("bizType")
         public Integer bizType;
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-07-27T18:53Z</p>
          */
         @NameInMap("createTime")
         public String createTime;
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-07-27T18:53Z</p>
          */
         @NameInMap("endTime")
         public String endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("formType")
         public Integer formType;
 
         @NameInMap("loopDays")
         public java.util.List<Integer> loopDays;
 
+        /**
+         * <strong>example:</strong>
+         * <p>18:00</p>
+         */
         @NameInMap("loopTime")
         public String loopTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("stop")
         public Boolean stop;
 
@@ -123,15 +149,31 @@ public class ListFormSchemasByCreatorResponseBody extends TeaModel {
     }
 
     public static class ListFormSchemasByCreatorResponseBodyResultList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>user123</p>
+         */
         @NameInMap("creator")
         public String creator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PROC-E5BD2166-B6F4-xxxx</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>请大家仔细填写，谢谢合作</p>
+         */
         @NameInMap("memo")
         public String memo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>智能填表测试</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -186,12 +228,20 @@ public class ListFormSchemasByCreatorResponseBody extends TeaModel {
     }
 
     public static class ListFormSchemasByCreatorResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
         @NameInMap("list")
         public java.util.List<ListFormSchemasByCreatorResponseBodyResultList> list;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("nextToken")
         public Long nextToken;
 

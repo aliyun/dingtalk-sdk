@@ -7,12 +7,24 @@ public class PageAutoFlowLogResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<PageAutoFlowLogResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMoreData")
     public Boolean hasMoreData;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -54,12 +66,20 @@ public class PageAutoFlowLogResponseBody extends TeaModel {
     }
 
     public static class PageAutoFlowLogResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>APP_XCE0EVXS6DYG3YDYC5RD</p>
+         */
         @NameInMap("appType")
         public String appType;
 
         @NameInMap("elapsedTimeGMT")
         public Long elapsedTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-01-01</p>
+         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
@@ -78,6 +98,10 @@ public class PageAutoFlowLogResponseBody extends TeaModel {
         @NameInMap("srcProcInstanceId")
         public String srcProcInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>running</p>
+         */
         @NameInMap("status")
         public Integer status;
 

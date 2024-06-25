@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class CreateAcquireRefundOrderResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>r2021113000001</p>
      */
     @NameInMap("outRefundNo")
     public String outRefundNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>202111110000111</p>
      */
     @NameInMap("refundOrderNo")
     public String refundOrderNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SUCCESS</p>
      */
     @NameInMap("status")
     public String status;

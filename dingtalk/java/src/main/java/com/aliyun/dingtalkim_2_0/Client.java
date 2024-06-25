@@ -6,11 +6,10 @@ import com.aliyun.dingtalkim_2_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
@@ -21,8 +20,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 关闭互动卡片吊顶
-     *
+     * <b>summary</b> : 
+     * <p>关闭互动卡片吊顶</p>
+     * 
      * @param request CloseTopboxRequest
      * @param headers CloseTopboxHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -91,8 +91,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 关闭互动卡片吊顶
-     *
+     * <b>summary</b> : 
+     * <p>关闭互动卡片吊顶</p>
+     * 
      * @param request CloseTopboxRequest
      * @return CloseTopboxResponse
      */
@@ -103,8 +104,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建两人群
-     *
+     * <b>summary</b> : 
+     * <p>创建两人群</p>
+     * 
      * @param request CreateCoupleGroupRequest
      * @param headers CreateCoupleGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -153,8 +155,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建两人群
-     *
+     * <b>summary</b> : 
+     * <p>创建两人群</p>
+     * 
      * @param request CreateCoupleGroupRequest
      * @return CreateCoupleGroupResponse
      */
@@ -165,8 +168,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建普通群
-     *
+     * <b>summary</b> : 
+     * <p>创建普通群</p>
+     * 
      * @param request CreateGroupRequest
      * @param headers CreateGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -223,8 +227,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建普通群
-     *
+     * <b>summary</b> : 
+     * <p>创建普通群</p>
+     * 
      * @param request CreateGroupRequest
      * @return CreateGroupResponse
      */
@@ -235,8 +240,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建并开启互动卡片吊顶
-     *
+     * <b>summary</b> : 
+     * <p>创建并开启互动卡片吊顶</p>
+     * 
      * @param request CreateTopboxRequest
      * @param headers CreateTopboxHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -345,8 +351,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建并开启互动卡片吊顶
-     *
+     * <b>summary</b> : 
+     * <p>创建并开启互动卡片吊顶</p>
+     * 
      * @param request CreateTopboxRequest
      * @return CreateTopboxResponse
      */
@@ -357,8 +364,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群设备市场管理
-     *
+     * <b>summary</b> : 
+     * <p>群设备市场管理</p>
+     * 
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
      * @return GroupManagerDeviceMarketResponse
@@ -382,8 +390,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群设备市场管理
-     *
+     * <b>summary</b> : 
+     * <p>群设备市场管理</p>
      * @return GroupManagerDeviceMarketResponse
      */
     public GroupManagerDeviceMarketResponse groupManagerDeviceMarket() throws Exception {

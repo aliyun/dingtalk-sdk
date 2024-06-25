@@ -15,6 +15,9 @@ public class RemoveGroupMemberRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1745****8777</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

@@ -4,21 +4,35 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataQueryRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>uk_12123</p>
+     */
     @NameInMap("bizUK")
     public String bizUK;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("nextToken")
     public Integer nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>admin1234</p>
+     */
     @NameInMap("optUserId")
     public String optUserId;
 
@@ -33,18 +47,27 @@ public class MasterDataQueryRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PERFORMANCE</p>
      */
     @NameInMap("scopeCode")
     public String scopeCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3</p>
      */
     @NameInMap("tenantId")
     public Long tenantId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>base</p>
      */
     @NameInMap("viewEntityCode")
     public String viewEntityCode;
@@ -127,6 +150,10 @@ public class MasterDataQueryRequest extends TeaModel {
     }
 
     public static class MasterDataQueryRequestQueryParamsConditionList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>EQUAL</p>
+         */
         @NameInMap("operate")
         public String operate;
 
@@ -160,9 +187,17 @@ public class MasterDataQueryRequest extends TeaModel {
         @NameInMap("conditionList")
         public java.util.List<MasterDataQueryRequestQueryParamsConditionList> conditionList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>performance_code</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>AND</p>
+         */
         @NameInMap("joinType")
         public String joinType;
 

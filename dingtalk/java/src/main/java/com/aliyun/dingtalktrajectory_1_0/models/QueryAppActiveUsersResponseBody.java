@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryAppActiveUsersResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -24,6 +27,9 @@ public class QueryAppActiveUsersResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>23153</p>
      */
     @NameInMap("totalCount")
     public Long totalCount;
@@ -68,36 +74,54 @@ public class QueryAppActiveUsersResponseBody extends TeaModel {
     public static class QueryAppActiveUsersResponseBodyList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>kxm9dhfs01jd98cuv</p>
          */
         @NameInMap("appTraceId")
         public String appTraceId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123.123</p>
          */
         @NameInMap("latitude")
         public Float latitude;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123.123</p>
          */
         @NameInMap("longitude")
         public Float longitude;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1619341954123</p>
          */
         @NameInMap("reportTime")
         public Long reportTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1619341754123</p>
          */
         @NameInMap("startTime")
         public Long startTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>I0912384771</p>
          */
         @NameInMap("userId")
         public String userId;

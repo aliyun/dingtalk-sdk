@@ -6,11 +6,10 @@ import com.aliyun.dingtalkpedia_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 企业百科增加当前企业词条信息
-     *
+     * <b>summary</b> : 
+     * <p>企业百科增加当前企业词条信息</p>
+     * 
      * @param request PediaWordsAddRequest
      * @param headers PediaWordsAddHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -94,8 +94,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 企业百科增加当前企业词条信息
-     *
+     * <b>summary</b> : 
+     * <p>企业百科增加当前企业词条信息</p>
+     * 
      * @param request PediaWordsAddRequest
      * @return PediaWordsAddResponse
      */
@@ -106,8 +107,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 企业百科针对待审核词条进行审核
-     *
+     * <b>summary</b> : 
+     * <p>企业百科针对待审核词条进行审核</p>
+     * 
      * @param request PediaWordsApproveRequest
      * @param headers PediaWordsApproveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -168,8 +170,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 企业百科针对待审核词条进行审核
-     *
+     * <b>summary</b> : 
+     * <p>企业百科针对待审核词条进行审核</p>
+     * 
      * @param request PediaWordsApproveRequest
      * @return PediaWordsApproveResponse
      */
@@ -180,8 +183,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 企业百科针对uuid删除当前词条
-     *
+     * <b>summary</b> : 
+     * <p>企业百科针对uuid删除当前词条</p>
+     * 
      * @param request PediaWordsDeleteRequest
      * @param headers PediaWordsDeleteHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -226,8 +230,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 企业百科针对uuid删除当前词条
-     *
+     * <b>summary</b> : 
+     * <p>企业百科针对uuid删除当前词条</p>
+     * 
      * @param request PediaWordsDeleteRequest
      * @return PediaWordsDeleteResponse
      */
@@ -238,8 +243,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据词条主键ID查询当前词条详情
-     *
+     * <b>summary</b> : 
+     * <p>根据词条主键ID查询当前词条详情</p>
+     * 
      * @param request PediaWordsQueryRequest
      * @param headers PediaWordsQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -284,8 +290,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据词条主键ID查询当前词条详情
-     *
+     * <b>summary</b> : 
+     * <p>根据词条主键ID查询当前词条详情</p>
+     * 
      * @param request PediaWordsQueryRequest
      * @return PediaWordsQueryResponse
      */
@@ -296,8 +303,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页获取企业词条信息
-     *
+     * <b>summary</b> : 
+     * <p>分页获取企业词条信息</p>
+     * 
      * @param request PediaWordsSearchRequest
      * @param headers PediaWordsSearchHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -354,8 +362,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页获取企业词条信息
-     *
+     * <b>summary</b> : 
+     * <p>分页获取企业词条信息</p>
+     * 
      * @param request PediaWordsSearchRequest
      * @return PediaWordsSearchResponse
      */
@@ -366,8 +375,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 企业百科对当前已经生效词条进行编辑
-     *
+     * <b>summary</b> : 
+     * <p>企业百科对当前已经生效词条进行编辑</p>
+     * 
      * @param request PediaWordsUpdateRequest
      * @param headers PediaWordsUpdateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -448,8 +458,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 企业百科对当前已经生效词条进行编辑
-     *
+     * <b>summary</b> : 
+     * <p>企业百科对当前已经生效词条进行编辑</p>
+     * 
      * @param request PediaWordsUpdateRequest
      * @return PediaWordsUpdateResponse
      */

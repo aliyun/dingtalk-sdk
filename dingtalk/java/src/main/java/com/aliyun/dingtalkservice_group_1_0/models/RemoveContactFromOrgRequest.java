@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class RemoveContactFromOrgRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>88888</p>
      */
     @NameInMap("contactUnionId")
     public String contactUnionId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8888</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;

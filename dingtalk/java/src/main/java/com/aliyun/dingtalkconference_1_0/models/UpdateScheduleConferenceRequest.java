@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class UpdateScheduleConferenceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>qzR1iSMDvzR9iP7Pxxxxxxxxxxxx</p>
      */
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1687928400000</p>
      */
     @NameInMap("endTime")
     public Long endTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2a489xxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</p>
      */
     @NameInMap("scheduleConferenceId")
     public String scheduleConferenceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1687924800000</p>
      */
     @NameInMap("startTime")
     public Long startTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>预约会议标题</p>
      */
     @NameInMap("title")
     public String title;

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class DeleteTeacherRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("adviser")
     public Integer adviser;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1235</p>
      */
     @NameInMap("operator")
     public String operator;

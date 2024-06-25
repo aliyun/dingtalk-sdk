@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SearchTeachersRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>李</p>
      */
     @NameInMap("nameKeyword")
     public String nameKeyword;

@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class GetLeaveTypeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user01</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>all</p>
+     */
     @NameInMap("vacationSource")
     public String vacationSource;
 

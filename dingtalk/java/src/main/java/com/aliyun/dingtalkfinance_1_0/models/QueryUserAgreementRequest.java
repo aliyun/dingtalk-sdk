@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class QueryUserAgreementRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>TRADE</p>
      */
     @NameInMap("bizCode")
     public String bizCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>WITHHOLDING</p>
      */
     @NameInMap("bizScene")
     public String bizScene;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>202111090001</p>
      */
     @NameInMap("instId")
     public String instId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1001</p>
      */
     @NameInMap("subInstId")
     public String subInstId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2120493284</p>
      */
     @NameInMap("userId")
     public String userId;

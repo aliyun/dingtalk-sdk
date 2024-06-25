@@ -4,6 +4,10 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateMeetingRoomResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed</p>
+     */
     @NameInMap("result")
     public String result;
 

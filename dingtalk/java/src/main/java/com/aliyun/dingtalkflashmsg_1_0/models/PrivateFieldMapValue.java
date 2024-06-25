@@ -4,6 +4,10 @@ package com.aliyun.dingtalkflashmsg_1_0.models;
 import com.aliyun.tea.*;
 
 public class PrivateFieldMapValue extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>XXX发了一条闪读消息，请于今天 12:00前查看</p>
+     */
     @NameInMap("tipTitle")
     public String tipTitle;
 

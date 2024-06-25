@@ -159,6 +159,10 @@ public class SendOfficialAccountOTOMessageRequest extends TeaModel {
     }
 
     public static class SendOfficialAccountOTOMessageRequestDetailMessageBodyImage extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>@lALPBbCc1XuaP_rNAljNAl</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 
@@ -371,6 +375,9 @@ public class SendOfficialAccountOTOMessageRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>text</p>
          */
         @NameInMap("msgType")
         public String msgType;

@@ -45,12 +45,18 @@ public class RelatedSpacesResponseBody extends TeaModel {
     public static class RelatedSpacesResponseBodyItemsHdIconVO extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://img.xxx.yyy">https://img.xxx.yyy</a></p>
          */
         @NameInMap("icon")
         public String icon;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>url</p>
          */
         @NameInMap("type")
         public String type;
@@ -81,12 +87,18 @@ public class RelatedSpacesResponseBody extends TeaModel {
     public static class RelatedSpacesResponseBodyItemsIconVO extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://img.xxx.yyy">https://img.xxx.yyy</a></p>
          */
         @NameInMap("icon")
         public String icon;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>url</p>
          */
         @NameInMap("type")
         public String type;
@@ -117,12 +129,18 @@ public class RelatedSpacesResponseBody extends TeaModel {
     public static class RelatedSpacesResponseBodyItemsOwner extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>dingtalk</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abcd</p>
          */
         @NameInMap("unionId")
         public String unionId;
@@ -157,6 +175,10 @@ public class RelatedSpacesResponseBody extends TeaModel {
         @NameInMap("pinned")
         public Boolean pinned;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 
@@ -203,9 +225,17 @@ public class RelatedSpacesResponseBody extends TeaModel {
     }
 
     public static class RelatedSpacesResponseBodyItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://img.abc.yyy">https://img.abc.yyy</a></p>
+         */
         @NameInMap("cover")
         public String cover;
 
+        /**
+         * <strong>example:</strong>
+         * <p>This is some description.</p>
+         */
         @NameInMap("description")
         public String description;
 
@@ -217,12 +247,18 @@ public class RelatedSpacesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abc</p>
          */
         @NameInMap("id")
         public String id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>hello</p>
          */
         @NameInMap("name")
         public String name;
@@ -233,9 +269,17 @@ public class RelatedSpacesResponseBody extends TeaModel {
         @NameInMap("recentList")
         public java.util.List<DentryModel> recentList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("type")
         public Integer type;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xx.yy">https://xx.yy</a></p>
+         */
         @NameInMap("url")
         public String url;
 

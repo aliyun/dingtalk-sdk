@@ -26,24 +26,36 @@ public class SearchTeachersResponseBody extends TeaModel {
     public static class SearchTeachersResponseBodyUsers extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123</p>
          */
         @NameInMap("classId")
         public Long classId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>紫金港校区-小学-二年级2019级-二年级8班</p>
          */
         @NameInMap("deptName")
         public String deptName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>李老师</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>12345678</p>
          */
         @NameInMap("userId")
         public String userId;

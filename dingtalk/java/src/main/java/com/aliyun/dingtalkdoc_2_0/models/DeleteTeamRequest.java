@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DeleteTeamRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YEp3JcM******UIbhwiE</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

@@ -15,12 +15,18 @@ public class JoinGroupSetRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc123</p>
      */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc123</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -63,12 +69,24 @@ public class JoinGroupSetRequest extends TeaModel {
     }
 
     public static class JoinGroupSetRequestBizDataList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>{}</p>
+         */
         @NameInMap("extendValue")
         public String extendValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>customer_name</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc123</p>
+         */
         @NameInMap("value")
         public String value;
 

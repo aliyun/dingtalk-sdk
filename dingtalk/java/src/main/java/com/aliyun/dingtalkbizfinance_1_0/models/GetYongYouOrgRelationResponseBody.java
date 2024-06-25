@@ -4,15 +4,31 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetYongYouOrgRelationResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>20230731</p>
+     */
     @NameInMap("chanjetCorpId")
     public String chanjetCorpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>01162352501424064728</p>
+     */
     @NameInMap("chanjetUserId")
     public String chanjetUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding9f50b15bccd16741</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>01162352501424064728</p>
+     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,9 +4,17 @@ package com.aliyun.dingtalkactivity_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListActivityRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Rp3Rqcts7BE08y49Jr6iu6xW4iQ</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

@@ -4,11 +4,18 @@ package com.aliyun.dingtalkstorage_2_0.models;
 import com.aliyun.tea.*;
 
 public class ManagerSetDefaultHandOverUserRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>staff_id</p>
+     */
     @NameInMap("defaultHandoverUserId")
     public String defaultHandoverUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

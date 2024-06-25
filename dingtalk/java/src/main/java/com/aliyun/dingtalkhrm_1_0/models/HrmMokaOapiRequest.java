@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class HrmMokaOapiRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>/user/role/get</p>
      */
     @NameInMap("apiCode")
     public String apiCode;

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class CollegeAddManagerRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>11111</p>
      */
     @NameInMap("deptId")
     public Long deptId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12525</p>
      */
     @NameInMap("userId")
     public String userId;

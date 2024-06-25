@@ -32,15 +32,31 @@ public class GetCallBackFaileResultResponseBody extends TeaModel {
     }
 
     public static class GetCallBackFaileResultResponseBodyFailedList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;CalendarEventUpdateTime&quot;:1668735924619,&quot;CorpId&quot;:&quot;ding9<strong>cd16741&quot;,&quot;ChangeType&quot;:&quot;updated&quot;,&quot;EventType&quot;:&quot;calendar_event_change&quot;,&quot;CalendarId&quot;:&quot;NzE3MjU0NEB1c2V</strong><em>5jb218MTQwMDE2&quot;,&quot;EventTime&quot;:1668735924640,&quot;LegacyCalendarEventId&quot;:&quot;1C1BB56076</em><strong>8A338&quot;,&quot;BizId&quot;:&quot;1668</strong>4640&quot;,&quot;CalendarEventId&quot;:&quot;RVNUZllHK<strong>elEydz09&quot;,&quot;operator&quot;:{&quot;type&quot;:&quot;user&quot;},&quot;UnionIdList&quot;:[&quot;QQa</strong>mYiE&quot;]}</p>
+         */
         @NameInMap("callBackData")
         public String callBackData;
 
+        /**
+         * <strong>example:</strong>
+         * <p>calendar_event_change</p>
+         */
         @NameInMap("callBackTag")
         public String callBackTag;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding9f50b15b*****41</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>166***39184</p>
+         */
         @NameInMap("eventTime")
         public Long eventTime;
 

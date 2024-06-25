@@ -4,9 +4,17 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>COM_DEFAULT</p>
+     */
     @NameInMap("companyCode")
     public String companyCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>DEDUCTED</p>
+     */
     @NameInMap("deductStatus")
     public String deductStatus;
 
@@ -16,9 +24,17 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
     @NameInMap("invoiceKeyVOList")
     public java.util.List<UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList> invoiceKeyVOList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("operator")
     public String operator;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("verifyStatus")
     public String verifyStatus;
 
@@ -691,114 +707,246 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
     }
 
     public static class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("accountPeriod")
         public String accountPeriod;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("amount")
         public String amount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>120</p>
+         */
         @NameInMap("amountWithTax")
         public String amountWithTax;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1111</p>
+         */
         @NameInMap("checkCode")
         public String checkCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2010-12-12</p>
+         */
         @NameInMap("checkTime")
         public String checkTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("drawerName")
         public String drawerName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-12-10</p>
+         */
         @NameInMap("drewDate")
         public String drewDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("electronicUrl")
         public String electronicUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>INPUT_VAT</p>
+         */
         @NameInMap("financeType")
         public String financeType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>RED</p>
+         */
         @NameInMap("fundType")
         public String fundType;
 
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://XXX.jpg">http://XXX.jpg</a></p>
+         */
         @NameInMap("imageUrl")
         public String imageUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("invoiceStatus")
         public String invoiceStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>INTPUT_VAT</p>
+         */
         @NameInMap("invoiceType")
         public String invoiceType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1111</p>
+         */
         @NameInMap("machineCode")
         public String machineCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("oilFlag")
         public String oilFlag;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("payee")
         public String payee;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("processInstCode")
         public String processInstCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("processInstType")
         public String processInstType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州市</p>
+         */
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
         @NameInMap("purchaserBankAccount")
         public String purchaserBankAccount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>建行</p>
+         */
         @NameInMap("purchaserBankNameAccount")
         public String purchaserBankNameAccount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("purchaserName")
         public String purchaserName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>155655</p>
+         */
         @NameInMap("purchaserTaxNo")
         public String purchaserTaxNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1333333333</p>
+         */
         @NameInMap("purchaserTel")
         public String purchaserTel;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("remark")
         public String remark;
 
         @NameInMap("secondHandCarInvoiceDetailList")
         public java.util.List<UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList> secondHandCarInvoiceDetailList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>8852</p>
+         */
         @NameInMap("sellerAddress")
         public String sellerAddress;
 
         @NameInMap("sellerBankAccount")
         public String sellerBankAccount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>招商银行</p>
+         */
         @NameInMap("sellerBankNameAccount")
         public String sellerBankNameAccount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四</p>
+         */
         @NameInMap("sellerName")
         public String sellerName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2202</p>
+         */
         @NameInMap("sellerTaxNo")
         public String sellerTaxNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>13355222222</p>
+         */
         @NameInMap("sellerTel")
         public String sellerTel;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("supplySign")
         public String supplySign;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("taxAmount")
         public String taxAmount;
 
@@ -808,12 +956,24 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
         @NameInMap("vehicleSaleDetailVOList")
         public java.util.List<UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListVehicleSaleDetailVOList> vehicleSaleDetailVOList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("verifyStatus")
         public String verifyStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("voucherCode")
         public String voucherCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("voucherStatus")
         public String voucherStatus;
 
@@ -1161,9 +1321,17 @@ public class UpdateInvoiceVerifyStatusRequest extends TeaModel {
     }
 
     public static class UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1001</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2202</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 

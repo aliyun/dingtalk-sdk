@@ -7,21 +7,45 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetPublisherSummaryResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("publisherArticleCntStd")
     public String publisherArticleCntStd;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("publisherArticlePvCntStd")
     public String publisherArticlePvCntStd;
 
+    /**
+     * <strong>example:</strong>
+     * <p>阅读量最高文章，阅读量第二高文章</p>
+     */
     @NameInMap("publisherArticlePvTop5")
     public java.util.List<GetPublisherSummaryResponseBodyPublisherArticlePvTop5> publisherArticlePvTop5;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("publisherCntStd")
     public String publisherCntStd;
 
@@ -87,15 +111,31 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
     }
 
     public static class GetPublisherSummaryResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("publisherArticleCntStd")
         public String publisherArticleCntStd;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("publisherArticlePvCntStd")
         public String publisherArticlePvCntStd;
 
+        /**
+         * <strong>example:</strong>
+         * <p>服务窗1</p>
+         */
         @NameInMap("publisherName")
         public String publisherName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -139,6 +179,10 @@ public class GetPublisherSummaryResponseBody extends TeaModel {
     }
 
     public static class GetPublisherSummaryResponseBodyPublisherArticlePvTop5 extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>文章1</p>
+         */
         @NameInMap("name")
         public String name;
 

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTbProjectSourceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>”0“</p>
+     */
     @NameInMap("installSource")
     public String installSource;
 

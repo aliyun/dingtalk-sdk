@@ -4,6 +4,10 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class LoginCodeGenResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cdxxxx</p>
+     */
     @NameInMap("result")
     public String result;
 

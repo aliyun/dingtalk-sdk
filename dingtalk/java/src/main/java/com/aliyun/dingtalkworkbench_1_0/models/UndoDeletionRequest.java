@@ -18,6 +18,9 @@ public class UndoDeletionRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>workbench_component</p>
      */
     @NameInMap("redDotType")
     public String redDotType;

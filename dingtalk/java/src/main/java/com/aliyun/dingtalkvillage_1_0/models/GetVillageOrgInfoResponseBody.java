@@ -18,6 +18,9 @@ public class GetVillageOrgInfoResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>省份：PROVINCE;城市：CITY;县区：COUNTRY;乡镇：TOWN;村：VILLAGE</p>
      */
     @NameInMap("regionType")
     public String regionType;

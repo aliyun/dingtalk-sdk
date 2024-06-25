@@ -21,6 +21,10 @@ public class QueryCustomerBizTypeResponseBody extends TeaModel {
     }
 
     public static class QueryCustomerBizTypeResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>crm_customer</p>
+         */
         @NameInMap("customerBizType")
         public String customerBizType;
 

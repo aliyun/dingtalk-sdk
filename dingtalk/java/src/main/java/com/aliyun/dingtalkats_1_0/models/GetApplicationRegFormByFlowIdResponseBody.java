@@ -6,60 +6,90 @@ import com.aliyun.tea.*;
 public class GetApplicationRegFormByFlowIdResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("candidateId")
     public String candidateId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager5875</p>
      */
     @NameInMap("creatorUserId")
     public String creatorUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>flowXXX</p>
      */
     @NameInMap("flowId")
     public String flowId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>formXXX</p>
      */
     @NameInMap("formId")
     public String formId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1626775016427</p>
      */
     @NameInMap("gmtCreateMillis")
     public Long gmtCreateMillis;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1626775016427</p>
      */
     @NameInMap("gmtModifiedMillis")
     public Long gmtModifiedMillis;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>jobXXX</p>
      */
     @NameInMap("jobId")
     public String jobId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("status")
     public Integer status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>templateXXX</p>
      */
     @NameInMap("templateId")
     public String templateId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("templateVersion")
     public Integer templateVersion;

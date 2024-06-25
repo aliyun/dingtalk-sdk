@@ -4,24 +4,52 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncChannelMessageRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ddats</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Corp-ABC-prd</p>
+     */
     @NameInMap("channel")
     public String channel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;msgtype&quot;:&quot;text&quot;,&quot;text&quot;:{&quot;content&quot;:&quot;月会通知&quot;}}</p>
+     */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1667964772048</p>
+     */
     @NameInMap("createTime")
     public Long createTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>AppUid@Channel</p>
+     */
     @NameInMap("receiverUserId")
     public String receiverUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>AppUid@Channel</p>
+     */
     @NameInMap("senderUserId")
     public String senderUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>594c5b30-57bd-4001-8903-4dc64cdc6739</p>
+     */
     @NameInMap("uuid")
     public String uuid;
 

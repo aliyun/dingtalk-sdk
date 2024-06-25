@@ -26,24 +26,36 @@ public class QueryJobCodeDictionaryResponseBody extends TeaModel {
     public static class QueryJobCodeDictionaryResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("category")
         public String category;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("code")
         public String code;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>主任医师</p>
          */
         @NameInMap("displayName")
         public String displayName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>医师</p>
          */
         @NameInMap("doctorType")
         public String doctorType;

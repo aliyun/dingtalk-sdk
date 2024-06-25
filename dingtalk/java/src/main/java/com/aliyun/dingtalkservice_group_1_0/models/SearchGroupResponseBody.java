@@ -59,30 +59,45 @@ public class SearchGroupResponseBody extends TeaModel {
     public static class SearchGroupResponseBodyRecords extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>钉钉专属服务群</p>
          */
         @NameInMap("groupName")
         public String groupName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>dingtalk:xxx</p>
          */
         @NameInMap("groupUrl")
         public String groupUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>cidxxxxx==</p>
          */
         @NameInMap("openConversationId")
         public String openConversationId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>xjfjdsiw</p>
          */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>xkjhfker</p>
          */
         @NameInMap("openTeamId")
         public String openTeamId;

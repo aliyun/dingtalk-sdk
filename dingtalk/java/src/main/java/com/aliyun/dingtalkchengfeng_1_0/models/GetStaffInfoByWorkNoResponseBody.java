@@ -34,72 +34,118 @@ public class GetStaffInfoByWorkNoResponseBody extends TeaModel {
     public static class GetStaffInfoByWorkNoResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123</p>
          */
         @NameInMap("deptCode")
         public String deptCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>开发部</p>
          */
         @NameInMap("deptName")
         public String deptName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>17********@qq.com</p>
          */
         @NameInMap("email")
         public String email;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("employType")
         public String employType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("employeeStatus")
         public String employeeStatus;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("jobLevelName")
         public String jobLevelName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("jobPositionCode")
         public String jobPositionCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Java开发</p>
+         */
         @NameInMap("jobPositionName")
         public String jobPositionName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("jobPostCode")
         public String jobPostCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>技术开发</p>
          */
         @NameInMap("jobPostName")
         public String jobPostName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>151********</p>
          */
         @NameInMap("mobile")
         public String mobile;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>花名</p>
          */
         @NameInMap("nickName")
         public String nickName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123456</p>
          */
         @NameInMap("workNumbers")
         public String workNumbers;

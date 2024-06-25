@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CardBatchQueryCardsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>industry_center</p>
      */
     @NameInMap("cardBizCode")
     public String cardBizCode;
@@ -18,12 +21,18 @@ public class CardBatchQueryCardsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YUFANAI</p>
      */
     @NameInMap("sourceType")
     public String sourceType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1678445875001</p>
      */
     @NameInMap("userId")
     public String userId;

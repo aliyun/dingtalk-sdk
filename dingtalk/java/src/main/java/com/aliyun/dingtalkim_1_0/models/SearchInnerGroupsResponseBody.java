@@ -21,15 +21,31 @@ public class SearchInnerGroupsResponseBody extends TeaModel {
     }
 
     public static class SearchInnerGroupsResponseBodyGroupInfos extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>@lAD*****</p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("memberAmount")
         public String memberAmount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cid13*****==</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试群名称</p>
+         */
         @NameInMap("title")
         public String title;
 

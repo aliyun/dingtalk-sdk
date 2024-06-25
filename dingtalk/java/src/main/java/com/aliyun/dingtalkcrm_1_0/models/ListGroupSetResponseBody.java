@@ -4,9 +4,17 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListGroupSetResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fasfasd</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -16,6 +24,10 @@ public class ListGroupSetResponseBody extends TeaModel {
     @NameInMap("resultList")
     public java.util.List<ListGroupSetResponseBodyResultList> resultList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -57,9 +69,17 @@ public class ListGroupSetResponseBody extends TeaModel {
     }
 
     public static class ListGroupSetResponseBodyResultListManager extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>XX</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>afs1</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -87,9 +107,17 @@ public class ListGroupSetResponseBody extends TeaModel {
     }
 
     public static class ListGroupSetResponseBodyResultListOwner extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>XX</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>afsd12</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -117,17 +145,32 @@ public class ListGroupSetResponseBody extends TeaModel {
     }
 
     public static class ListGroupSetResponseBodyResultList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2021-12-23T13:00Z</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-12-23T13:00Z</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("groupChatCount")
         public Integer groupChatCount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123agsg</p>
          */
         @NameInMap("lastOpenConversationId")
         public String lastOpenConversationId;
@@ -138,24 +181,52 @@ public class ListGroupSetResponseBody extends TeaModel {
         @NameInMap("manager")
         public java.util.List<ListGroupSetResponseBodyResultListManager> manager;
 
+        /**
+         * <strong>example:</strong>
+         * <p>afsd12,afsd13</p>
+         */
         @NameInMap("managerUserIds")
         public String managerUserIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("memberCount")
         public Integer memberCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("memberQuota")
         public Integer memberQuota;
 
+        /**
+         * <strong>example:</strong>
+         * <p>营销群</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>群公告</p>
+         */
         @NameInMap("notice")
         public String notice;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("noticeToped")
         public Integer noticeToped;
 
+        /**
+         * <strong>example:</strong>
+         * <p>adfads</p>
+         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
@@ -165,12 +236,24 @@ public class ListGroupSetResponseBody extends TeaModel {
         @NameInMap("owner")
         public ListGroupSetResponseBodyResultListOwner owner;
 
+        /**
+         * <strong>example:</strong>
+         * <p>afsd12</p>
+         */
         @NameInMap("ownerUserId")
         public String ownerUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>crm_customer_personal</p>
+         */
         @NameInMap("relationType")
         public String relationType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>sfasgsab</p>
+         */
         @NameInMap("templateId")
         public String templateId;
 

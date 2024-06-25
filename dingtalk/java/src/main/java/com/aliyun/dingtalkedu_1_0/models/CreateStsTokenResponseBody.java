@@ -4,21 +4,45 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateStsTokenResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>fdasfad</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fdsfwdsfdsafdaf</p>
+     */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
+    /**
+     * <strong>example:</strong>
+     * <p>3600000</p>
+     */
     @NameInMap("expiration")
     public String expiration;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{}</p>
+     */
     @NameInMap("extInfo")
     public String extInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fdasgtwtgfds</p>
+     */
     @NameInMap("securityToken")
     public String securityToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>200</p>
+     */
     @NameInMap("status")
     public String status;
 

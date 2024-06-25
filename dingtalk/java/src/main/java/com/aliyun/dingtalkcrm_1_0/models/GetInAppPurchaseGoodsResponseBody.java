@@ -21,12 +21,24 @@ public class GetInAppPurchaseGoodsResponseBody extends TeaModel {
     }
 
     public static class GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListMainOperationInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>GOODS-002</p>
+         */
         @NameInMap("goodsCode")
         public String goodsCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://yyy">https://yyy</a></p>
+         */
         @NameInMap("originalUrl")
         public String originalUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxx">https://xxx</a></p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -62,9 +74,17 @@ public class GetInAppPurchaseGoodsResponseBody extends TeaModel {
     }
 
     public static class GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListMedia extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>image</p>
+         */
         @NameInMap("mediaType")
         public String mediaType;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://tungee-ali-crm.oss-cn-hangzhou.aliyuncs.com/app-center/banner/%E8%BF%9B%E9%94%80%E5%AD%98%E5%B0%81%E9%9D%A2.png">https://tungee-ali-crm.oss-cn-hangzhou.aliyuncs.com/app-center/banner/进销存封面.png</a></p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -92,12 +112,24 @@ public class GetInAppPurchaseGoodsResponseBody extends TeaModel {
     }
 
     public static class GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListSubOperationInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>GOODS-2120</p>
+         */
         @NameInMap("goodsCode")
         public String goodsCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://yyy">https://yyy</a></p>
+         */
         @NameInMap("originalUrl")
         public String originalUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxx">https://xxx</a></p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -142,12 +174,24 @@ public class GetInAppPurchaseGoodsResponseBody extends TeaModel {
         @NameInMap("belongIndustry")
         public java.util.List<String> belongIndustry;
 
+        /**
+         * <strong>example:</strong>
+         * <p>psi</p>
+         */
         @NameInMap("goodsId")
         public String goodsId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>app_function</p>
+         */
         @NameInMap("goodsType")
         public String goodsType;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://tungee-ali-crm.oss-cn-hangzhou.aliyuncs.com/app-center/icon/%E8%BF%9B%E9%94%80%E5%AD%98.png">https://tungee-ali-crm.oss-cn-hangzhou.aliyuncs.com/app-center/icon/进销存.png</a></p>
+         */
         @NameInMap("icon")
         public String icon;
 
@@ -157,18 +201,30 @@ public class GetInAppPurchaseGoodsResponseBody extends TeaModel {
         @NameInMap("media")
         public java.util.List<GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListMedia> media;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10000</p>
+         */
         @NameInMap("price")
         public String price;
 
         @NameInMap("subOperationInfo")
         public GetInAppPurchaseGoodsResponseBodyResultPurchaseGoodsListSubOperationInfo subOperationInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>通过进销存管理，连接企业人、财、物，一站式解决进销存仓库管理难题。让货品成本有据可依，避免盲目采购；合理控制库存，防止滞销/脱销；通过往来对账确保资金安全。</p>
+         */
         @NameInMap("subTitle")
         public String subTitle;
 
         @NameInMap("tag")
         public java.util.List<String> tag;
 
+        /**
+         * <strong>example:</strong>
+         * <p>进销存</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -284,6 +340,10 @@ public class GetInAppPurchaseGoodsResponseBody extends TeaModel {
     }
 
     public static class GetInAppPurchaseGoodsResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>free</p>
+         */
         @NameInMap("orderVersion")
         public String orderVersion;
 

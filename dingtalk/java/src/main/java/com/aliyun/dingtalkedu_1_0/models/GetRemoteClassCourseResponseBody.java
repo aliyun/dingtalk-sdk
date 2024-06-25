@@ -9,6 +9,9 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -35,15 +38,31 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
     }
 
     public static class GetRemoteClassCourseResponseBodyResultAttendParticipants extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ding23456</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>组织234</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>865306</p>
+         */
         @NameInMap("participantId")
         public String participantId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>二年级1班</p>
+         */
         @NameInMap("participantName")
         public String participantName;
 
@@ -87,12 +106,24 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
     }
 
     public static class GetRemoteClassCourseResponseBodyResultRecordInfos extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2021-11-17T02:08:45Z</p>
+         */
         @NameInMap("startTime")
         public String startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-11-17T04:08:45Z</p>
+         */
         @NameInMap("stopTime")
         public String stopTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://oss.xxx.com/xxxx">http://oss.xxx.com/xxxx</a></p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -128,15 +159,31 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
     }
 
     public static class GetRemoteClassCourseResponseBodyResultTeachingParticipant extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ding1234</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>组织123</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>881436</p>
+         */
         @NameInMap("participantId")
         public String participantId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>一年级1班</p>
+         */
         @NameInMap("participantName")
         public String participantName;
 
@@ -183,30 +230,62 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
         @NameInMap("attendParticipants")
         public java.util.List<GetRemoteClassCourseResponseBodyResultAttendParticipants> attendParticipants;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("canEdit")
         public Boolean canEdit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>UvCIp16813006</p>
+         */
         @NameInMap("courseCode")
         public String courseCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>春天来了</p>
+         */
         @NameInMap("courseName")
         public String courseName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1635157800000</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://pre-live.edu.dingtalk.com/live/showLive?courseCode=UvCIp16813006#/aiclass">https://pre-live.edu.dingtalk.com/live/showLive?courseCode=UvCIp16813006#/aiclass</a></p>
+         */
         @NameInMap("liveUrl")
         public String liveUrl;
 
         @NameInMap("recordInfos")
         public java.util.List<GetRemoteClassCourseResponseBodyResultRecordInfos> recordInfos;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("roomStatus")
         public Integer roomStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1635150600000</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("status")
         public Integer status;
 

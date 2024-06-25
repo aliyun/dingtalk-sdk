@@ -56,16 +56,27 @@ public class UpdateInteractiveOTOMessageRequest extends TeaModel {
     public static class UpdateInteractiveOTOMessageRequestDetail extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>service-card-202208240001</p>
          */
         @NameInMap("cardBizId")
         public String cardBizId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;like&quot;:1}</p>
+         */
         @NameInMap("cardData")
         public String cardData;
 
         @NameInMap("updateOptions")
         public UpdateInteractiveOTOMessageRequestDetailUpdateOptions updateOptions;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;userI&quot;:&quot;&quot;}</p>
+         */
         @NameInMap("userIdPrivateDataMap")
         public String userIdPrivateDataMap;
 

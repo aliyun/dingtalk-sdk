@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class UpdateMemberBanWordsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>300000</p>
      */
     @NameInMap("muteDuration")
     public Long muteDuration;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("muteStatus")
     public Integer muteStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cid5d5uM3XEw3gxbNc/n7EQ4g==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

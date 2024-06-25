@@ -7,6 +7,10 @@ public class GetUserStayLengthResponseBody extends TeaModel {
     @NameInMap("itemList")
     public java.util.List<GetUserStayLengthResponseBodyItemList> itemList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1000</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -32,18 +36,38 @@ public class GetUserStayLengthResponseBody extends TeaModel {
     }
 
     public static class GetUserStayLengthResponseBodyItemList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>小张</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20220501</p>
+         */
         @NameInMap("statDate")
         public String statDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1000</p>
+         */
         @NameInMap("stayTimeLenApp1d")
         public Long stayTimeLenApp1d;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2000</p>
+         */
         @NameInMap("stayTimeLenPc1d")
         public Long stayTimeLenPc1d;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123***</p>
+         */
         @NameInMap("userId")
         public String userId;
 

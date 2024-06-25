@@ -23,6 +23,9 @@ public class SaveProcessResponseBody extends TeaModel {
     public static class SaveProcessResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PROC-abcdef-example</p>
          */
         @NameInMap("processCode")
         public String processCode;

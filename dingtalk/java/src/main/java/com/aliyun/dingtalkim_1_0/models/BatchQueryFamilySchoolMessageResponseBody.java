@@ -21,21 +21,45 @@ public class BatchQueryFamilySchoolMessageResponseBody extends TeaModel {
     }
 
     public static class BatchQueryFamilySchoolMessageResponseBodyMessagesMediaModels extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>aa.png</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>png</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@12xxx34</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234</p>
+         */
         @NameInMap("size")
         public String size;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://wukong-xxxx">https://wukong-xxxx</a></p>
+         */
         @NameInMap("url")
         public String url;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@12xx34</p>
+         */
         @NameInMap("videoPicMediaId")
         public String videoPicMediaId;
 
@@ -104,6 +128,10 @@ public class BatchQueryFamilySchoolMessageResponseBody extends TeaModel {
         @NameInMap("mediaModels")
         public java.util.List<BatchQueryFamilySchoolMessageResponseBodyMessagesMediaModels> mediaModels;
 
+        /**
+         * <strong>example:</strong>
+         * <p>msgxxx</p>
+         */
         @NameInMap("openMsgId")
         public String openMsgId;
 

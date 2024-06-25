@@ -6,11 +6,10 @@ import com.aliyun.dingtalkevent_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
@@ -21,8 +20,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 调用本获取推送失败的变更事件。
-     *
+     * <b>summary</b> : 
+     * <p>调用本获取推送失败的变更事件。</p>
+     * 
      * @param request GetCallBackFaileResultRequest
      * @param headers GetCallBackFaileResultHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -67,8 +67,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 调用本获取推送失败的变更事件。
-     *
+     * <b>summary</b> : 
+     * <p>调用本获取推送失败的变更事件。</p>
+     * 
      * @param request GetCallBackFaileResultRequest
      * @return GetCallBackFaileResultResponse
      */
@@ -79,8 +80,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 安装一方应用
-     *
+     * <b>summary</b> : 
+     * <p>安装一方应用</p>
+     * 
      * @param request InstallAppRequest
      * @param headers InstallAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -133,8 +135,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 安装一方应用
-     *
+     * <b>summary</b> : 
+     * <p>安装一方应用</p>
+     * 
      * @param request InstallAppRequest
      * @return InstallAppResponse
      */
@@ -145,8 +148,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 安装酷应用
-     *
+     * <b>summary</b> : 
+     * <p>安装酷应用</p>
+     * 
      * @param tmpReq InstallCoolAppRequest
      * @param headers InstallCoolAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -225,8 +229,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 安装酷应用
-     *
+     * <b>summary</b> : 
+     * <p>安装酷应用</p>
+     * 
      * @param request InstallCoolAppRequest
      * @return InstallCoolAppResponse
      */
@@ -237,8 +242,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 重新获取suiteTicket
-     *
+     * <b>summary</b> : 
+     * <p>重新获取suiteTicket</p>
+     * 
      * @param request RePushSuiteTicketRequest
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
@@ -274,8 +280,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 重新获取suiteTicket
-     *
+     * <b>summary</b> : 
+     * <p>重新获取suiteTicket</p>
+     * 
      * @param request RePushSuiteTicketRequest
      * @return RePushSuiteTicketResponse
      */

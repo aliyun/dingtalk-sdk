@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DeviceHeartbeatResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0心跳正常，1增量更新，2上传日志，3全量更新</p>
      */
     @NameInMap("command")
     public Integer command;

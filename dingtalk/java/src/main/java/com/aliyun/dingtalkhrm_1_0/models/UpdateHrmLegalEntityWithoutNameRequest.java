@@ -10,6 +10,10 @@ public class UpdateHrmLegalEntityWithoutNameRequest extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("createUserId")
     public String createUserId;
 
@@ -18,22 +22,40 @@ public class UpdateHrmLegalEntityWithoutNameRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>公司1</p>
      */
     @NameInMap("legalEntityName")
     public String legalEntityName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>公1</p>
+     */
     @NameInMap("legalEntityShortName")
     public String legalEntityShortName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("legalEntityStatus")
     public Integer legalEntityStatus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>法人</p>
+     */
     @NameInMap("legalPersonName")
     public String legalPersonName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>57</p>
+     */
     @NameInMap("dingTenantId")
     public Long dingTenantId;
 
@@ -107,33 +129,73 @@ public class UpdateHrmLegalEntityWithoutNameRequest extends TeaModel {
     }
 
     public static class UpdateHrmLegalEntityWithoutNameRequestExtManageAddress extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>110101</p>
+         */
         @NameInMap("areaCode")
         public String areaCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>东城区</p>
+         */
         @NameInMap("areaName")
         public String areaName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234</p>
+         */
         @NameInMap("cityCode")
         public String cityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>广州</p>
+         */
         @NameInMap("cityName")
         public String cityName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("countryCode")
         public String countryCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>China</p>
+         */
         @NameInMap("countryName")
         public String countryName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>北京市东城区xx街道xx小区xx楼</p>
+         */
         @NameInMap("detailAddress")
         public String detailAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("globalAreaType")
         public String globalAreaType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>广东</p>
+         */
         @NameInMap("provinceName")
         public String provinceName;
 
@@ -225,33 +287,73 @@ public class UpdateHrmLegalEntityWithoutNameRequest extends TeaModel {
     }
 
     public static class UpdateHrmLegalEntityWithoutNameRequestExtRegistrationAddress extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>110101</p>
+         */
         @NameInMap("areaCode")
         public String areaCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>东城区</p>
+         */
         @NameInMap("areaName")
         public String areaName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234</p>
+         */
         @NameInMap("cityCode")
         public String cityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>广州</p>
+         */
         @NameInMap("cityName")
         public String cityName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("countryCode")
         public String countryCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>China</p>
+         */
         @NameInMap("countryName")
         public String countryName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>北京市东城区xx街道xx小区xx楼</p>
+         */
         @NameInMap("detailAddress")
         public String detailAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("globalAreaType")
         public String globalAreaType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>广东</p>
+         */
         @NameInMap("provinceName")
         public String provinceName;
 
@@ -343,12 +445,24 @@ public class UpdateHrmLegalEntityWithoutNameRequest extends TeaModel {
     }
 
     public static class UpdateHrmLegalEntityWithoutNameRequestExt extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>company</p>
+         */
         @NameInMap("legalEntityEnName")
         public String legalEntityEnName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>com</p>
+         */
         @NameInMap("legalEntityEnShortName")
         public String legalEntityEnShortName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>whollyOwned</p>
+         */
         @NameInMap("legalEntityType")
         public String legalEntityType;
 
@@ -358,12 +472,24 @@ public class UpdateHrmLegalEntityWithoutNameRequest extends TeaModel {
         @NameInMap("registrationAddress")
         public UpdateHrmLegalEntityWithoutNameRequestExtRegistrationAddress registrationAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-01-01</p>
+         */
         @NameInMap("registrationDate")
         public Long registrationDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123456</p>
+         */
         @NameInMap("unifiedSocialCreditCode")
         public String unifiedSocialCreditCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>515200</p>
+         */
         @NameInMap("zipCode")
         public String zipCode;
 

@@ -4,9 +4,17 @@ package com.aliyun.dingtalkevent_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCallBackFaileResultRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1606126433000</p>
+     */
     @NameInMap("beginTime")
     public Long beginTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1606126493000</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 

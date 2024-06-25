@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class AgoalUserObjectiveListRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>211042291978xxxx</p>
      */
     @NameInMap("dingUserId")
     public String dingUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6444f5e9a4261c6e699dxxxx</p>
      */
     @NameInMap("objectiveRuleId")
     public String objectiveRuleId;

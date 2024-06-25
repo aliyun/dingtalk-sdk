@@ -6,16 +6,26 @@ import com.aliyun.tea.*;
 public class QueryMembersOfGroupRoleRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidXXXXXXX</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>roleXXXXX</p>
      */
     @NameInMap("openRoleId")
     public String openRoleId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1621502140000</p>
+     */
     @NameInMap("timestamp")
     public Long timestamp;
 

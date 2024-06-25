@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class AddFileResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>111111</p>
      */
     @NameInMap("fileId")
     public String fileId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>张三的简历</p>
      */
     @NameInMap("fileName")
     public String fileName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("spaceId")
     public Long spaceId;

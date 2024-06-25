@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetManageProcessByStaffIdRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager7078</p>
      */
     @NameInMap("userId")
     public String userId;

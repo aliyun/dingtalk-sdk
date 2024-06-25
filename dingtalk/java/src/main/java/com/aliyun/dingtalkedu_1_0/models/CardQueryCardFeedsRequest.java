@@ -6,27 +6,43 @@ import com.aliyun.tea.*;
 public class CardQueryCardFeedsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3</p>
      */
     @NameInMap("bizType")
     public Integer bizType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>industry_center</p>
      */
     @NameInMap("cardBizCode")
     public String cardBizCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>856237470</p>
+     */
     @NameInMap("cardBizId")
     public String cardBizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>80264668258</p>
      */
     @NameInMap("cardId")
     public Long cardId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5</p>
      */
     @NameInMap("count")
     public Integer count;
@@ -36,6 +52,9 @@ public class CardQueryCardFeedsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("feedType")
     public Integer feedType;
@@ -45,21 +64,34 @@ public class CardQueryCardFeedsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YUFANAI</p>
      */
     @NameInMap("sourceType")
     public String sourceType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>3000000000847390208</p>
+     */
     @NameInMap("studentId")
     public String studentId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>CARD_TASK_CODE_0</p>
      */
     @NameInMap("subBizId")
     public String subBizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager7741</p>
      */
     @NameInMap("userId")
     public String userId;

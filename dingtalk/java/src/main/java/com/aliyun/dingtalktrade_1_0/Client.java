@@ -6,11 +6,10 @@ import com.aliyun.dingtalktrade_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary isv检查商机创建是否符合预期
-     *
+     * <b>summary</b> : 
+     * <p>isv检查商机创建是否符合预期</p>
+     * 
      * @param request CheckOpportunityResultRequest
      * @param headers CheckOpportunityResultHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -78,8 +78,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary isv检查商机创建是否符合预期
-     *
+     * <b>summary</b> : 
+     * <p>isv检查商机创建是否符合预期</p>
+     * 
      * @param request CheckOpportunityResultRequest
      * @return CheckOpportunityResultResponse
      */
@@ -90,8 +91,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary isv创建商机
-     *
+     * <b>summary</b> : 
+     * <p>isv创建商机</p>
+     * 
      * @param request CreateOpportunityRequest
      * @param headers CreateOpportunityHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -148,8 +150,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary isv创建商机
-     *
+     * <b>summary</b> : 
+     * <p>isv创建商机</p>
+     * 
      * @param request CreateOpportunityRequest
      * @return CreateOpportunityResponse
      */
@@ -160,8 +163,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询订单信息
-     *
+     * <b>summary</b> : 
+     * <p>查询订单信息</p>
+     * 
      * @param request QueryTradeOrderRequest
      * @param headers QueryTradeOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -206,8 +210,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询订单信息
-     *
+     * <b>summary</b> : 
+     * <p>查询订单信息</p>
+     * 
      * @param request QueryTradeOrderRequest
      * @return QueryTradeOrderResponse
      */

@@ -6,11 +6,10 @@ import com.aliyun.dingtalktodo_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 查询用户待办计数
-     *
+     * <b>summary</b> : 
+     * <p>查询用户待办计数</p>
+     * 
      * @param request CountTodoTasksRequest
      * @param headers CountTodoTasksHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -78,8 +78,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户待办计数
-     *
+     * <b>summary</b> : 
+     * <p>查询用户待办计数</p>
+     * 
      * @param request CountTodoTasksRequest
      * @return CountTodoTasksResponse
      */
@@ -90,8 +91,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 以用户个人身份创建个人待办
-     *
+     * <b>summary</b> : 
+     * <p>以用户个人身份创建个人待办</p>
+     * 
      * @param request CreatePersonalTodoTaskRequest
      * @param headers CreatePersonalTodoTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -118,6 +120,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.participantIds)) {
             body.put("participantIds", request.participantIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reminderTimeStamp)) {
+            body.put("reminderTimeStamp", request.reminderTimeStamp);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.subject)) {
@@ -152,8 +158,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 以用户个人身份创建个人待办
-     *
+     * <b>summary</b> : 
+     * <p>以用户个人身份创建个人待办</p>
+     * 
      * @param request CreatePersonalTodoTaskRequest
      * @return CreatePersonalTodoTaskResponse
      */
@@ -164,8 +171,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建待办
-     *
+     * <b>summary</b> : 
+     * <p>创建待办</p>
+     * 
      * @param request CreateTodoTaskRequest
      * @param headers CreateTodoTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -264,8 +272,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建待办
-     *
+     * <b>summary</b> : 
+     * <p>创建待办</p>
+     * 
      * @param request CreateTodoTaskRequest
      * @return CreateTodoTaskResponse
      */
@@ -276,8 +285,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建待办卡片类型配置
-     *
+     * <b>summary</b> : 
+     * <p>创建待办卡片类型配置</p>
+     * 
      * @param request CreateTodoTypeConfigRequest
      * @param headers CreateTodoTypeConfigHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -344,8 +354,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建待办卡片类型配置
-     *
+     * <b>summary</b> : 
+     * <p>创建待办卡片类型配置</p>
+     * 
      * @param request CreateTodoTypeConfigRequest
      * @return CreateTodoTypeConfigResponse
      */
@@ -356,8 +367,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除待办
-     *
+     * <b>summary</b> : 
+     * <p>删除待办</p>
+     * 
      * @param request DeleteTodoTaskRequest
      * @param headers DeleteTodoTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -398,8 +410,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除待办
-     *
+     * <b>summary</b> : 
+     * <p>删除待办</p>
+     * 
      * @param request DeleteTodoTaskRequest
      * @return DeleteTodoTaskResponse
      */
@@ -410,8 +423,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询待办
-     *
+     * <b>summary</b> : 
+     * <p>查询待办</p>
+     * 
      * @param headers GetTodoTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetTodoTaskResponse
@@ -444,8 +458,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询待办
-     *
+     * <b>summary</b> : 
+     * <p>查询待办</p>
      * @return GetTodoTaskResponse
      */
     public GetTodoTaskResponse getTodoTask(String unionId, String taskId) throws Exception {
@@ -455,8 +469,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据sourceId查询待办详情
-     *
+     * <b>summary</b> : 
+     * <p>根据sourceId查询待办详情</p>
+     * 
      * @param headers GetTodoTaskBySourceIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetTodoTaskBySourceIdResponse
@@ -489,8 +504,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据sourceId查询待办详情
-     *
+     * <b>summary</b> : 
+     * <p>根据sourceId查询待办详情</p>
      * @return GetTodoTaskBySourceIdResponse
      */
     public GetTodoTaskBySourceIdResponse getTodoTaskBySourceId(String unionId, String sourceId) throws Exception {
@@ -500,8 +515,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 专属钉根据待办ID查询待办详情
-     *
+     * <b>summary</b> : 
+     * <p>专属钉根据待办ID查询待办详情</p>
+     * 
      * @param headers GetTodoTaskDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetTodoTaskDetailResponse
@@ -534,8 +550,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 专属钉根据待办ID查询待办详情
-     *
+     * <b>summary</b> : 
+     * <p>专属钉根据待办ID查询待办详情</p>
      * @return GetTodoTaskDetailResponse
      */
     public GetTodoTaskDetailResponse getTodoTaskDetail(String taskId, String unionId) throws Exception {
@@ -545,8 +561,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据id获取待办卡片类型配置
-     *
+     * <b>summary</b> : 
+     * <p>根据id获取待办卡片类型配置</p>
+     * 
      * @param headers GetTodoTypeConfigHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetTodoTypeConfigResponse
@@ -579,8 +596,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据id获取待办卡片类型配置
-     *
+     * <b>summary</b> : 
+     * <p>根据id获取待办卡片类型配置</p>
      * @return GetTodoTypeConfigResponse
      */
     public GetTodoTypeConfigResponse getTodoTypeConfig(String unionId, String cardTypeId) throws Exception {
@@ -590,8 +607,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
-     *
+     * <b>summary</b> : 
+     * <p>查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据</p>
+     * 
      * @param request QueryOrgTodoByUserRequest
      * @param headers QueryOrgTodoByUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -664,8 +682,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
-     *
+     * <b>summary</b> : 
+     * <p>查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据</p>
+     * 
      * @param request QueryOrgTodoByUserRequest
      * @return QueryOrgTodoByUserResponse
      */
@@ -676,8 +695,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询企业下用户待办列表
-     *
+     * <b>summary</b> : 
+     * <p>查询企业下用户待办列表</p>
+     * 
      * @param request QueryOrgTodoTasksRequest
      * @param headers QueryOrgTodoTasksHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -722,8 +742,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询企业下用户待办列表
-     *
+     * <b>summary</b> : 
+     * <p>查询企业下用户待办列表</p>
+     * 
      * @param request QueryOrgTodoTasksRequest
      * @return QueryOrgTodoTasksResponse
      */
@@ -734,8 +755,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户待办列表
-     *
+     * <b>summary</b> : 
+     * <p>查询用户待办列表</p>
+     * 
      * @param request QueryTodoTasksRequest
      * @param headers QueryTodoTasksHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -808,8 +830,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户待办列表
-     *
+     * <b>summary</b> : 
+     * <p>查询用户待办列表</p>
+     * 
      * @param request QueryTodoTasksRequest
      * @return QueryTodoTasksResponse
      */
@@ -820,8 +843,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新待办
-     *
+     * <b>summary</b> : 
+     * <p>更新待办</p>
+     * 
      * @param request UpdateTodoTaskRequest
      * @param headers UpdateTodoTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -888,8 +912,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新待办
-     *
+     * <b>summary</b> : 
+     * <p>更新待办</p>
+     * 
      * @param request UpdateTodoTaskRequest
      * @return UpdateTodoTaskResponse
      */
@@ -900,8 +925,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新待办执行者状态
-     *
+     * <b>summary</b> : 
+     * <p>更新待办执行者状态</p>
+     * 
      * @param request UpdateTodoTaskExecutorStatusRequest
      * @param headers UpdateTodoTaskExecutorStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -948,8 +974,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新待办执行者状态
-     *
+     * <b>summary</b> : 
+     * <p>更新待办执行者状态</p>
+     * 
      * @param request UpdateTodoTaskExecutorStatusRequest
      * @return UpdateTodoTaskExecutorStatusResponse
      */
@@ -960,8 +987,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新待办卡片类型配置
-     *
+     * <b>summary</b> : 
+     * <p>更新待办卡片类型配置</p>
+     * 
      * @param request UpdateTodoTypeConfigRequest
      * @param headers UpdateTodoTypeConfigHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1028,8 +1056,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新待办卡片类型配置
-     *
+     * <b>summary</b> : 
+     * <p>更新待办卡片类型配置</p>
+     * 
      * @param request UpdateTodoTypeConfigRequest
      * @return UpdateTodoTypeConfigResponse
      */

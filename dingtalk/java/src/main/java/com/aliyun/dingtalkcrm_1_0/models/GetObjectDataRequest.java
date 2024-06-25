@@ -4,24 +4,42 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetObjectDataRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding_userid</p>
+     */
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("maxResults")
     public Long maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROC-EF199CCA-8AB6-482A-AE10-85EDE5E391D9</p>
      */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;queryGroupList&quot;:[{&quot;logicType&quot;:&quot;AND&quot;,&quot;queryObjectList&quot;:[{&quot;fieldId&quot;:&quot;contact_phone&quot;,&quot;value&quot;:&quot;18000000000&quot;},{&quot;fieldId&quot;:&quot;contact_related_customer&quot;,&quot;value&quot;:&quot;INST-XXX&quot;}]}]}</p>
+     */
     @NameInMap("queryDsl")
     public String queryDsl;
 

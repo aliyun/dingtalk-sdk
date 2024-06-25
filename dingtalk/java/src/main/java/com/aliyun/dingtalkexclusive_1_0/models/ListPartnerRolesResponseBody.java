@@ -168,17 +168,27 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("id")
         public Long id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("isNecessary")
         public Integer isNecessary;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>供应商</p>
          */
         @NameInMap("name")
         public String name;

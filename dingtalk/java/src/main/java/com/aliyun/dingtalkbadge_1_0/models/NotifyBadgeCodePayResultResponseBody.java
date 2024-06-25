@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class NotifyBadgeCodePayResultResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SUCCESS</p>
      */
     @NameInMap("result")
     public String result;

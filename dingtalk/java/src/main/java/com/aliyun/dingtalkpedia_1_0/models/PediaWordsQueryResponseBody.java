@@ -32,15 +32,31 @@ public class PediaWordsQueryResponseBody extends TeaModel {
     }
 
     public static class PediaWordsQueryResponseBodyDataAppLink extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>相关应用</p>
+         */
         @NameInMap("appName")
         public String appName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>htttps://1234567</p>
+         */
         @NameInMap("iconLink")
         public String iconLink;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://123344.com">http://123344.com</a></p>
+         */
         @NameInMap("pcLink")
         public String pcLink;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://12334.com">https://12334.com</a></p>
+         */
         @NameInMap("phoneLink")
         public String phoneLink;
 
@@ -84,12 +100,24 @@ public class PediaWordsQueryResponseBody extends TeaModel {
     }
 
     public static class PediaWordsQueryResponseBodyDataContactList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>@dasdasd</p>
+         */
         @NameInMap("avatarMediaId")
         public String avatarMediaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>相关联系人</p>
+         */
         @NameInMap("nickName")
         public String nickName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12321231</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -125,6 +153,10 @@ public class PediaWordsQueryResponseBody extends TeaModel {
     }
 
     public static class PediaWordsQueryResponseBodyDataPicList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://123455.com">http://123455.com</a></p>
+         */
         @NameInMap("mediaIdUrl")
         public String mediaIdUrl;
 
@@ -144,12 +176,24 @@ public class PediaWordsQueryResponseBody extends TeaModel {
     }
 
     public static class PediaWordsQueryResponseBodyDataRelatedDoc extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://123456.com">http://123456.com</a></p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <strong>example:</strong>
+         * <p>相关文档</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>adoc</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -185,9 +229,17 @@ public class PediaWordsQueryResponseBody extends TeaModel {
     }
 
     public static class PediaWordsQueryResponseBodyDataRelatedLink extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://123343.com">http://123343.com</a></p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <strong>example:</strong>
+         * <p>相关链接</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -218,6 +270,10 @@ public class PediaWordsQueryResponseBody extends TeaModel {
         @NameInMap("appLink")
         public java.util.List<PediaWordsQueryResponseBodyDataAppLink> appLink;
 
+        /**
+         * <strong>example:</strong>
+         * <p>审核者</p>
+         */
         @NameInMap("approveName")
         public String approveName;
 
@@ -227,12 +283,24 @@ public class PediaWordsQueryResponseBody extends TeaModel {
         @NameInMap("contacts")
         public java.util.List<String> contacts;
 
+        /**
+         * <strong>example:</strong>
+         * <p>创建者</p>
+         */
         @NameInMap("creatorName")
         public String creatorName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>31312312</p>
+         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>321312312</p>
+         */
         @NameInMap("gmtModify")
         public Long gmtModify;
 
@@ -242,6 +310,10 @@ public class PediaWordsQueryResponseBody extends TeaModel {
         @NameInMap("imHighLight")
         public Boolean imHighLight;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345678</p>
+         */
         @NameInMap("parentUuid")
         public Long parentUuid;
 
@@ -257,27 +329,51 @@ public class PediaWordsQueryResponseBody extends TeaModel {
         @NameInMap("simHighLight")
         public Boolean simHighLight;
 
+        /**
+         * <strong>example:</strong>
+         * <p>剔除富文本释义</p>
+         */
         @NameInMap("simpleWordParaphrase")
         public String simpleWordParaphrase;
 
         @NameInMap("tagsList")
         public java.util.List<String> tagsList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>更新者</p>
+         */
         @NameInMap("updaterName")
         public String updaterName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>213123123</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123123121</p>
+         */
         @NameInMap("uuid")
         public Long uuid;
 
         @NameInMap("wordAlias")
         public java.util.List<String> wordAlias;
 
+        /**
+         * <strong>example:</strong>
+         * <p>词条名称</p>
+         */
         @NameInMap("wordName")
         public String wordName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>释义</p>
+         */
         @NameInMap("wordParaphrase")
         public String wordParaphrase;
 

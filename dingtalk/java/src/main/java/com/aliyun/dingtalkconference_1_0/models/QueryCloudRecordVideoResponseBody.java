@@ -21,30 +21,66 @@ public class QueryCloudRecordVideoResponseBody extends TeaModel {
     }
 
     public static class QueryCloudRecordVideoResponseBodyVideoList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>59886</p>
+         */
         @NameInMap("duration")
         public Long duration;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1631172094000</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1127942</p>
+         */
         @NameInMap("fileSize")
         public Long fileSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p>faa1566c5bc24f21821ae2394f82db2e</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>290882268xxx1172033231</p>
+         */
         @NameInMap("recordId")
         public String recordId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("recordType")
         public Long recordType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cn-shenzhen</p>
+         */
         @NameInMap("regionId")
         public String regionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1631172094000</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>WFBkgJvtxxxxtSaA1jK4sgiEiE</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

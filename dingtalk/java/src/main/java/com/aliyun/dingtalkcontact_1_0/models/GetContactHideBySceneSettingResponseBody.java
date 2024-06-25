@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetContactHideBySceneSettingResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>description info</p>
+     */
     @NameInMap("description")
     public String description;
 
@@ -16,9 +20,17 @@ public class GetContactHideBySceneSettingResponseBody extends TeaModel {
     @NameInMap("excludeUserIds")
     public java.util.List<String> excludeUserIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123456</p>
+     */
     @NameInMap("id")
     public Long id;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("name")
     public String name;
 

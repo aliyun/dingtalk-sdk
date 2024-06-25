@@ -21,12 +21,24 @@ public class AttendanceBleDevicesQueryResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesQueryResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>34666777</p>
+         */
         @NameInMap("deviceId")
         public Long deviceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>蓝牙设备</p>
+         */
         @NameInMap("deviceName")
         public String deviceName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12321kllksdf</p>
+         */
         @NameInMap("sn")
         public String sn;
 

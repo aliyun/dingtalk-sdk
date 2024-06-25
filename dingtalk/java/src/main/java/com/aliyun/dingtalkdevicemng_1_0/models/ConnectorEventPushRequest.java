@@ -4,12 +4,24 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConnectorEventPushRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>DeviceType-xxxxxx</p>
+     */
     @NameInMap("deviceTypeUuid")
     public String deviceTypeUuid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>设备关机</p>
+     */
     @NameInMap("eventName")
     public String eventName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;var1&quot;:&quot;value&quot;}</p>
+     */
     @NameInMap("input")
     public String input;
 

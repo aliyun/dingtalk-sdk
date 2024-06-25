@@ -4,11 +4,18 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTravelProcessDetailRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>dingLamaXHExxxxxx</p>
+     */
     @NameInMap("processCorpId")
     public String processCorpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1fbmtOweRdqLamaXHExxxxxx</p>
      */
     @NameInMap("processInstanceId")
     public String processInstanceId;

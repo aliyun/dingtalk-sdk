@@ -7,11 +7,18 @@ public class RetainLeaveTypesRequest extends TeaModel {
     @NameInMap("leaveCodes")
     public java.util.List<String> leaveCodes;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manager233</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("source")
     public Long source;

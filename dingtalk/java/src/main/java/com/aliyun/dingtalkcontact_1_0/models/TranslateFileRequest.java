@@ -6,15 +6,28 @@ import com.aliyun.tea.*;
 public class TranslateFileRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;#iAEHAqRmaWxlA6h5dW5kaXNrMAT&quot;:&quot;导出.xlsx&quot;}</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
      */
     @NameInMap("medias")
     public java.util.Map<String, String> medias;
 
+    /**
+     * <strong>example:</strong>
+     * <p>学习手册</p>
+     */
     @NameInMap("outputFileName")
     public String outputFileName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fXRUNiSlgfK3e1hzFUSciiJwiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

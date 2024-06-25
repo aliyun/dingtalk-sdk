@@ -7,6 +7,10 @@ public class GetFormInstanceResponseBody extends TeaModel {
     @NameInMap("result")
     public GetFormInstanceResponseBodyResult result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -32,12 +36,24 @@ public class GetFormInstanceResponseBody extends TeaModel {
     }
 
     public static class GetFormInstanceResponseBodyResultForms extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>TextareaField_KGAW58AQ</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <strong>example:</strong>
+         * <p>你希望的主题</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <strong>example:</strong>
+         * <p>操作演示</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -75,13 +91,24 @@ public class GetFormInstanceResponseBody extends TeaModel {
     public static class GetFormInstanceResponseBodyResult extends TeaModel {
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-07-27T18:53Z</p>
          */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager4220</p>
+         */
         @NameInMap("creator")
         public String creator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PROC-E5BD2166-B6F4-xxxx</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
@@ -90,10 +117,17 @@ public class GetFormInstanceResponseBody extends TeaModel {
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-07-27T18:53Z</p>
          */
         @NameInMap("modifyTime")
         public String modifyTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>智能填表测试</p>
+         */
         @NameInMap("title")
         public String title;
 

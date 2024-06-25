@@ -4,27 +4,49 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRecognizeRecordsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>123333</p>
+     */
     @NameInMap("agentId")
     public Long agentId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("faceCompareResult")
     public Integer faceCompareResult;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1667000000</p>
+     */
     @NameInMap("fromTime")
     public Long fromTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1669000000</p>
+     */
     @NameInMap("toTime")
     public Long toTime;
 

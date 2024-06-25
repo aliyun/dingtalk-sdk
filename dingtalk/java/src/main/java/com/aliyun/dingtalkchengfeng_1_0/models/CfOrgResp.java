@@ -6,36 +6,54 @@ import com.aliyun.tea.*;
 public class CfOrgResp extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>01</p>
      */
     @NameInMap("deptCode")
     public String deptCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>一级部门</p>
      */
     @NameInMap("deptName")
     public String deptName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("level")
     public Long level;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1/01</p>
      */
     @NameInMap("organizationCodePath")
     public String organizationCodePath;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>公司/一级部门</p>
      */
     @NameInMap("organizationPath")
     public String organizationPath;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("parentDeptCode")
     public String parentDeptCode;

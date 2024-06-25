@@ -51,9 +51,17 @@ public class GetObjectDataResponseBody extends TeaModel {
     }
 
     public static class GetObjectDataResponseBodyResultValues extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张xx</p>
+         */
         @NameInMap("creatorNick")
         public String creatorNick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user01</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
@@ -63,24 +71,48 @@ public class GetObjectDataResponseBody extends TeaModel {
         @NameInMap("extendData")
         public java.util.Map<String, ?> extendData;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-25 15:33:12</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-12-25 15:33:12</p>
+         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <strong>example:</strong>
+         * <p>INST_XX</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>crm_contact</p>
+         */
         @NameInMap("objectType")
         public String objectType;
 
         @NameInMap("permission")
         public GetObjectDataResponseBodyResultValuesPermission permission;
 
+        /**
+         * <strong>example:</strong>
+         * <p>COMPLETE</p>
+         */
         @NameInMap("procInstStatus")
         public String procInstStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>agree</p>
+         */
         @NameInMap("procOutResult")
         public String procOutResult;
 
@@ -183,9 +215,17 @@ public class GetObjectDataResponseBody extends TeaModel {
         @NameInMap("hasMore")
         public Boolean hasMore;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("maxResults")
         public Long maxResults;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

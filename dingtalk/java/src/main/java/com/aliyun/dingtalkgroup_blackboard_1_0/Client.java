@@ -6,11 +6,10 @@ import com.aliyun.dingtalkgroup_blackboard_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建群公告
-     *
+     * <b>summary</b> : 
+     * <p>创建群公告</p>
+     * 
      * @param request CreateGroupBlackboardRequest
      * @param headers CreateGroupBlackboardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -82,8 +82,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建群公告
-     *
+     * <b>summary</b> : 
+     * <p>创建群公告</p>
+     * 
      * @param request CreateGroupBlackboardRequest
      * @return CreateGroupBlackboardResponse
      */
@@ -94,8 +95,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除群公告
-     *
+     * <b>summary</b> : 
+     * <p>删除群公告</p>
+     * 
      * @param request DeleteGroupBlackboardRequest
      * @param headers DeleteGroupBlackboardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -144,8 +146,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除群公告
-     *
+     * <b>summary</b> : 
+     * <p>删除群公告</p>
+     * 
      * @param request DeleteGroupBlackboardRequest
      * @return DeleteGroupBlackboardResponse
      */

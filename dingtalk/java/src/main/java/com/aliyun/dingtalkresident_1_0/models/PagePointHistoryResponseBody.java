@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class PagePointHistoryResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3276</p>
      */
     @NameInMap("nextToken")
     public Long nextToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("pointRecordList")
     public java.util.List<PagePointHistoryResponseBodyPointRecordList> pointRecordList;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>-1</p>
      */
     @NameInMap("totalCount")
     public Long totalCount;
@@ -68,33 +80,52 @@ public class PagePointHistoryResponseBody extends TeaModel {
     public static class PagePointHistoryResponseBodyPointRecordList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1634630147</p>
          */
         @NameInMap("createAt")
         public Long createAt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>rule_1</p>
+         */
         @NameInMap("ruleCode")
         public String ruleCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>发动态</p>
          */
         @NameInMap("ruleName")
         public String ruleName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3</p>
          */
         @NameInMap("score")
         public Integer score;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123</p>
          */
         @NameInMap("userId")
         public String userId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>7653</p>
          */
         @NameInMap("uuid")
         public String uuid;

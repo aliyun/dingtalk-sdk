@@ -7,6 +7,10 @@ public class PediaWordsDeleteResponseBody extends TeaModel {
     @NameInMap("success")
     public Boolean success;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123456789</p>
+     */
     @NameInMap("uuid")
     public Long uuid;
 

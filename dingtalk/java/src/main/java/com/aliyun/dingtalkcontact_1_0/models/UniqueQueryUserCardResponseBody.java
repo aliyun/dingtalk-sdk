@@ -4,33 +4,65 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UniqueQueryUserCardResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>@lADPD2sQxoYs677NAavNAao</p>
+     */
     @NameInMap("avatarUrl")
     public String avatarUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>CARD-6F0DA174-A0F4-4EBF-B24B-5FDFA648D25E</p>
+     */
     @NameInMap("cardId")
     public String cardId;
 
     @NameInMap("extension")
     public java.util.Map<String, ?> extension;
 
+    /**
+     * <strong>example:</strong>
+     * <p>工业</p>
+     */
     @NameInMap("industryName")
     public String industryName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>我是谁</p>
+     */
     @NameInMap("introduce")
     public String introduce;
 
+    /**
+     * <strong>example:</strong>
+     * <p>张三</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试企业</p>
+     */
     @NameInMap("orgName")
     public String orgName;
 
     @NameInMap("settings")
     public java.util.Map<String, ?> settings;
 
+    /**
+     * <strong>example:</strong>
+     * <p>163520027_5FE66C522EA142C8r7Abf7VY</p>
+     */
     @NameInMap("templateId")
     public String templateId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>标题</p>
+     */
     @NameInMap("title")
     public String title;
 

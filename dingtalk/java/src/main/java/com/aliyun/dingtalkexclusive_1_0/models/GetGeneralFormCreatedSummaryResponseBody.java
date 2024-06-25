@@ -4,9 +4,17 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetGeneralFormCreatedSummaryResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("generalFormCreatedCnt")
     public String generalFormCreatedCnt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("useGeneralFormUserCnt1d")
     public String useGeneralFormUserCnt1d;
 

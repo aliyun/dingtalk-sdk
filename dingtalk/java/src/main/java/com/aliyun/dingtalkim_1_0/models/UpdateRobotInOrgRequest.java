@@ -4,29 +4,60 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateRobotInOrgRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>小加</p>
+     */
     @NameInMap("brief")
     public String brief;
 
+    /**
+     * <strong>example:</strong>
+     * <p>小加</p>
+     */
     @NameInMap("description")
     public String description;
 
+    /**
+     * <strong>example:</strong>
+     * <p>@lALPDe7s26Bre</p>
+     */
     @NameInMap("icon")
     public String icon;
 
+    /**
+     * <strong>example:</strong>
+     * <p>小加</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("outgoingToken")
     public String outgoingToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>https://*.com</p>
+     */
     @NameInMap("outgoingUrl")
     public String outgoingUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>@lALPDe7s26Bre</p>
+     */
     @NameInMap("previewMediaId")
     public String previewMediaId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("robotCode")
     public String robotCode;

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SyncProjectRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding89233847892ndkas</p>
      */
     @NameInMap("channelCorpId")
     public String channelCorpId;
@@ -19,11 +22,18 @@ public class SyncProjectRequest extends TeaModel {
     @NameInMap("deleteFlag")
     public Boolean deleteFlag;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("extension")
     public String extension;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2022-02-21 11:11:11</p>
      */
     @NameInMap("gmtAction")
     public String gmtAction;
@@ -36,16 +46,26 @@ public class SyncProjectRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("projectId")
     public String projectId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>默认项目</p>
      */
     @NameInMap("projectName")
     public String projectName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("scope")
     public Integer scope;
 
@@ -57,6 +77,9 @@ public class SyncProjectRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20881001829000</p>
      */
     @NameInMap("userId")
     public String userId;

@@ -21,9 +21,17 @@ public class UpdateRealmLicenseRequest extends TeaModel {
     }
 
     public static class UpdateRealmLicenseRequestDetailList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1001</p>
+         */
         @NameInMap("licenseType")
         public Integer licenseType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("userId")
         public String userId;
 

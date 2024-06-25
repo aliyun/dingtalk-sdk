@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryProcessesWorkItemsResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class QueryProcessesWorkItemsResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OK</p>
      */
     @NameInMap("message")
     public String message;
@@ -49,15 +55,31 @@ public class QueryProcessesWorkItemsResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesWorkItemsResponseBodyDataFinisher extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>18f923a7-5a5e-426d-94ae-a55ad1a4b240</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>研发中心</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>aea4d7a7-d162-4c77-9c44-7bd9cb8316a5</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -101,15 +123,31 @@ public class QueryProcessesWorkItemsResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesWorkItemsResponseBodyDataParticipant extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>18f923a7-5a5e-426d-94ae-a55ad1a4b240</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>研发中心</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>aea4d7a7-d162-4c77-9c44-7bd9cb8316a5</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -153,15 +191,31 @@ public class QueryProcessesWorkItemsResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesWorkItemsResponseBodyDataReceiptor extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -205,63 +259,131 @@ public class QueryProcessesWorkItemsResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesWorkItemsResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>Activity1</p>
+         */
         @NameInMap("activityCode")
         public String activityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>发起流程</p>
+         */
         @NameInMap("activityName")
         public String activityName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>D000001</p>
+         */
         @NameInMap("appCode")
         public String appCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>106f870b-4d1c-4cd0-85b3-2e866798e947</p>
+         */
         @NameInMap("bizObjectId")
         public String bizObjectId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>同意</p>
+         */
         @NameInMap("comment")
         public String comment;
 
+        /**
+         * <strong>example:</strong>
+         * <p>发起流程</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
         @NameInMap("finisher")
         public QueryProcessesWorkItemsResponseBodyDataFinisher finisher;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isApproval")
         public Boolean isApproval;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isFinish")
         public Boolean isFinish;
 
         @NameInMap("participant")
         public QueryProcessesWorkItemsResponseBodyDataParticipant participant;
 
+        /**
+         * <strong>example:</strong>
+         * <p>006f870b-4d1c-4cd0-85b3-2e866798e947</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("processVersion")
         public String processVersion;
 
         @NameInMap("receiptor")
         public QueryProcessesWorkItemsResponseBodyDataReceiptor receiptor;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-11-19 19:36:54</p>
+         */
         @NameInMap("receiveTimeGMT")
         public String receiveTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>D0001833abb0fb61524487eb01848207bc89b47</p>
+         */
         @NameInMap("schemaCode")
         public String schemaCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-11-19 19:36:54</p>
+         */
         @NameInMap("startTimeGMT")
         public String startTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Waiting</p>
+         */
         @NameInMap("state")
         public String state;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713</p>
+         */
         @NameInMap("workItemId")
         public String workItemId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Fill</p>
+         */
         @NameInMap("workItemType")
         public String workItemType;
 

@@ -57,24 +57,52 @@ public class QueryServiceGroupMessageReadStatusResponseBody extends TeaModel {
     }
 
     public static class QueryServiceGroupMessageReadStatusResponseBodyRecords extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("readStatus")
         public Integer readStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-09-01 00:00:00</p>
+         */
         @NameInMap("readTimeStr")
         public String readTimeStr;
 
+        /**
+         * <strong>example:</strong>
+         * <p>$:LWCP_v1:xxxx==</p>
+         */
         @NameInMap("receiverDingTalkId")
         public String receiverDingTalkId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("receiverName")
         public String receiverName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Kxiwk2</p>
+         */
         @NameInMap("receiverUnionId")
         public String receiverUnionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager123</p>
+         */
         @NameInMap("receiverUserId")
         public String receiverUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-09-01 00:00:00</p>
+         */
         @NameInMap("sendTimeStr")
         public String sendTimeStr;
 

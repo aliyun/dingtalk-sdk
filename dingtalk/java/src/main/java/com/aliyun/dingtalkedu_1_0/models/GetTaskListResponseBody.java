@@ -4,6 +4,10 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTaskListResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2</p>
+     */
     @NameInMap("count")
     public Long count;
 
@@ -32,12 +36,24 @@ public class GetTaskListResponseBody extends TeaModel {
     }
 
     public static class GetTaskListResponseBodyTaskList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2023希望校区初中</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>4240028</p>
+         */
         @NameInMap("taskId")
         public Long taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023</p>
+         */
         @NameInMap("taskYear")
         public Long taskYear;
 

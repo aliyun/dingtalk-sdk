@@ -19,6 +19,10 @@ public class QueryCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("queryDsl")
     public String queryDsl;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
     @NameInMap("relationType")
     public String relationType;
 

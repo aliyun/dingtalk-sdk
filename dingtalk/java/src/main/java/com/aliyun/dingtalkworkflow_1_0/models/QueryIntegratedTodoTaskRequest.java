@@ -4,23 +4,36 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryIntegratedTodoTaskRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1660036833411</p>
+     */
     @NameInMap("createBefore")
     public Long createBefore;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20</p>
      */
     @NameInMap("pageSize")
     public Integer pageSize;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager001</p>
      */
     @NameInMap("userId")
     public String userId;

@@ -7,6 +7,10 @@ public class GetHistoryConfDataListResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<GetHistoryConfDataListResponseBodyList> list;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxx9uZ0bVGoqjxxxxxxxx</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,36 +36,80 @@ public class GetHistoryConfDataListResponseBody extends TeaModel {
     }
 
     public static class GetHistoryConfDataListResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>6449d8a6414xxxxxxxx01464af9f0</p>
+         */
         @NameInMap("conferenceId")
         public String conferenceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>njMTqKo9xxxxEiE</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("creatorNick")
         public String creatorNick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxxx</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1682561790000</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("freeType")
         public String freeType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding_talk</p>
+         */
         @NameInMap("scene")
         public String scene;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1682561190000</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>600000</p>
+         */
         @NameInMap("timeLength")
         public Long timeLength;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxxx视频会议</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("userCount")
         public Integer userCount;
 

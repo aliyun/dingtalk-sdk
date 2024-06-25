@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ClearRobotPluginRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingkxnemxbqkifzl</p>
      */
     @NameInMap("robotCode")
     public String robotCode;

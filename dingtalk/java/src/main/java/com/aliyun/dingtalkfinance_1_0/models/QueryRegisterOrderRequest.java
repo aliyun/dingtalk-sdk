@@ -6,18 +6,32 @@ import com.aliyun.tea.*;
 public class QueryRegisterOrderRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>202111090001</p>
      */
     @NameInMap("instId")
     public String instId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20211222000000001</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>202112220001</p>
+     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3</p>
      */
     @NameInMap("subInstId")
     public String subInstId;

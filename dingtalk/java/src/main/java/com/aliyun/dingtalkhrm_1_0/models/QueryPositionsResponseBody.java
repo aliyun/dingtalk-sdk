@@ -52,6 +52,10 @@ public class QueryPositionsResponseBody extends TeaModel {
         @NameInMap("positionDes")
         public String positionDes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ac67286db74c48e28d787173ccc1a111</p>
+         */
         @NameInMap("positionId")
         public String positionId;
 

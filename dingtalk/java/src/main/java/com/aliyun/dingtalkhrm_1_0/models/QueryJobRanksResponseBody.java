@@ -43,9 +43,17 @@ public class QueryJobRanksResponseBody extends TeaModel {
     }
 
     public static class QueryJobRanksResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>30</p>
+         */
         @NameInMap("maxJobGrade")
         public Integer maxJobGrade;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("minJobGrade")
         public Integer minJobGrade;
 

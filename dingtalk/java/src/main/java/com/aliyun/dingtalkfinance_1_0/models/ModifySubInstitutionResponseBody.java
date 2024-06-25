@@ -4,6 +4,10 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ModifySubInstitutionResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>202110110000001</p>
+     */
     @NameInMap("orderId")
     public String orderId;
 

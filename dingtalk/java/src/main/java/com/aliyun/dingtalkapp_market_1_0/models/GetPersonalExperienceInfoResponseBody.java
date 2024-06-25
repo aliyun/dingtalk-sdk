@@ -21,6 +21,10 @@ public class GetPersonalExperienceInfoResponseBody extends TeaModel {
     }
 
     public static class GetPersonalExperienceInfoResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ding1234</p>
+         */
         @NameInMap("mainCorpId")
         public String mainCorpId;
 

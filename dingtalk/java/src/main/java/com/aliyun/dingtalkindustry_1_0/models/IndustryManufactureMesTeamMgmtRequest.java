@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>add</p>
      */
     @NameInMap("action")
     public String action;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>libai</p>
      */
     @NameInMap("appKey")
     public String appKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>team</p>
      */
     @NameInMap("baseDataName")
     public String baseDataName;
@@ -34,11 +43,18 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     @NameInMap("groupPlugins")
     public java.util.List<IndustryManufactureMesTeamMgmtRequestGroupPlugins> groupPlugins;
 
+    /**
+     * <strong>example:</strong>
+     * <p>PROCESS</p>
+     */
     @NameInMap("groupType")
     public String groupType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>d41d8cd98f00b204e9800998ecf8427e</p>
      */
     @NameInMap("id")
     public String id;
@@ -49,6 +65,10 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     @NameInMap("members")
     public java.util.List<IndustryManufactureMesTeamMgmtRequestMembers> members;
 
+    /**
+     * <strong>example:</strong>
+     * <p>打磨班组</p>
+     */
     @NameInMap("name")
     public String name;
 
@@ -189,21 +209,34 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     public static class IndustryManufactureMesTeamMgmtRequestExtendData extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>school</p>
          */
         @NameInMap("code")
         public String code;
 
+        /**
+         * <strong>example:</strong>
+         * <p>学校</p>
+         */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>北大</p>
          */
         @NameInMap("value")
         public String value;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>string</p>
          */
         @NameInMap("valueType")
         public String valueType;
@@ -286,12 +319,18 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     public static class IndustryManufactureMesTeamMgmtRequestLeaders extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1919442747879777</p>
          */
         @NameInMap("userId")
         public String userId;
@@ -322,12 +361,18 @@ public class IndustryManufactureMesTeamMgmtRequest extends TeaModel {
     public static class IndustryManufactureMesTeamMgmtRequestMembers extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>李四</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1919442747879777</p>
          */
         @NameInMap("userId")
         public String userId;

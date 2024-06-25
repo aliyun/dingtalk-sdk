@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class NotifyPayCodeRefundResultRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding1234</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-11-11 11:11:11</p>
      */
     @NameInMap("gmtRefund")
     public String gmtRefund;
@@ -24,42 +30,63 @@ public class NotifyPayCodeRefundResultRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>payCode</p>
      */
     @NameInMap("payCode")
     public String payCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1.00</p>
      */
     @NameInMap("refundAmount")
     public String refundAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>refundOrderNo</p>
      */
     @NameInMap("refundOrderNo")
     public String refundOrderNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0.00</p>
      */
     @NameInMap("refundPromotionAmount")
     public String refundPromotionAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>晚餐退款</p>
      */
     @NameInMap("remark")
     public String remark;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>tradeNo</p>
      */
     @NameInMap("tradeNo")
     public String tradeNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>userId</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -152,6 +179,9 @@ public class NotifyPayCodeRefundResultRequest extends TeaModel {
     public static class NotifyPayCodeRefundResultRequestPayChannelDetailListFundToolDetailList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1.00</p>
          */
         @NameInMap("amount")
         public String amount;
@@ -161,24 +191,36 @@ public class NotifyPayCodeRefundResultRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>余额</p>
          */
         @NameInMap("fundToolName")
         public String fundToolName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-05-31 11:11:11</p>
          */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-05-31 11:11:11</p>
          */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("promotionFundTool")
         public Boolean promotionFundTool;
@@ -241,6 +283,9 @@ public class NotifyPayCodeRefundResultRequest extends TeaModel {
     public static class NotifyPayCodeRefundResultRequestPayChannelDetailList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1.00</p>
          */
         @NameInMap("amount")
         public String amount;
@@ -253,30 +298,45 @@ public class NotifyPayCodeRefundResultRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ALIPAY</p>
          */
         @NameInMap("payChannelName")
         public String payChannelName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20210531123456</p>
          */
         @NameInMap("payChannelOrderNo")
         public String payChannelOrderNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021053112345678</p>
          */
         @NameInMap("payChannelRefundOrderNo")
         public String payChannelRefundOrderNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ALIPAY</p>
          */
         @NameInMap("payChannelType")
         public String payChannelType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0.00</p>
          */
         @NameInMap("promotionAmount")
         public String promotionAmount;

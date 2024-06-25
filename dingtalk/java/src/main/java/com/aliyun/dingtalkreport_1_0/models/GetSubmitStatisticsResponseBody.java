@@ -4,9 +4,17 @@ package com.aliyun.dingtalkreport_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSubmitStatisticsResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>3</p>
+     */
     @NameInMap("shouldRemindTimes")
     public Integer shouldRemindTimes;
 
+    /**
+     * <strong>example:</strong>
+     * <p>日报</p>
+     */
     @NameInMap("templateName")
     public String templateName;
 

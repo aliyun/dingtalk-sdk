@@ -9,12 +9,18 @@ public class SendMessageTipRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>msg_f9aae78558b34e20a5badead4c29244c_123</p>
      */
     @NameInMap("messageId")
     public String messageId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidVcYPzxnAySJOMhYX2QDbLwUA==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
@@ -31,6 +37,10 @@ public class SendMessageTipRequest extends TeaModel {
     @NameInMap("receiverUserId")
     public java.util.List<String> receiverUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0808541222161261721</p>
+     */
     @NameInMap("senderUserId")
     public String senderUserId;
 
@@ -108,12 +118,20 @@ public class SendMessageTipRequest extends TeaModel {
         @NameInMap("authMediaId")
         public String authMediaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>闪读消息卡片1</p>
+         */
         @NameInMap("cardTitle")
         public String cardTitle;
 
         @NameInMap("cardTitleColor")
         public String cardTitleColor;
 
+        /**
+         * <strong>example:</strong>
+         * <p>查看详情</p>
+         */
         @NameInMap("desc")
         public String desc;
 
@@ -126,6 +144,10 @@ public class SendMessageTipRequest extends TeaModel {
         @NameInMap("summary")
         public String summary;
 
+        /**
+         * <strong>example:</strong>
+         * <p>闪读消息卡片2</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -225,9 +247,17 @@ public class SendMessageTipRequest extends TeaModel {
     }
 
     public static class SendMessageTipRequestPublicField extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>dingtalk://dingtalkclient/page/link33</p>
+         */
         @NameInMap("detailUrl")
         public String detailUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>限时阅读5分钟</p>
+         */
         @NameInMap("durationDesc")
         public String durationDesc;
 
@@ -237,9 +267,17 @@ public class SendMessageTipRequest extends TeaModel {
         @NameInMap("isExpired")
         public Boolean isExpired;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingtalk://dingtalkclient/page/linkxx</p>
+         */
         @NameInMap("readActionUrl")
         public String readActionUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>已查收 0/1</p>
+         */
         @NameInMap("readProgressDesc")
         public String readProgressDesc;
 

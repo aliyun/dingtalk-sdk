@@ -10,6 +10,10 @@ public class QueryPermissionByUserIdResponseBody extends TeaModel {
     @NameInMap("permissionDTOList")
     public java.util.List<QueryPermissionByUserIdResponseBodyPermissionDTOList> permissionDTOList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123456789</p>
+     */
     @NameInMap("userId")
     public String userId;
 

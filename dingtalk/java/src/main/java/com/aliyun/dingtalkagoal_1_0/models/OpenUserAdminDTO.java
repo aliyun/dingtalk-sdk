@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class OpenUserAdminDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxxe3d8c283bb4aa39a90f97fcb1e09</p>
      */
     @NameInMap("dingCorpId")
     public String dingCorpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>211042291978xxxx</p>
      */
     @NameInMap("dingUserId")
     public String dingUserId;

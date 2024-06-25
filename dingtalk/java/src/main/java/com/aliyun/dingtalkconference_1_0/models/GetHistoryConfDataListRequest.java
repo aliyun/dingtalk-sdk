@@ -4,21 +4,40 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetHistoryConfDataListRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>张三</p>
+     */
     @NameInMap("creatorNike")
     public String creatorNike;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1682611199000</p>
      */
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("freeType")
     public String freeType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxx9uZ0bVGoqjxxxxxxxx</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -28,15 +47,26 @@ public class GetHistoryConfDataListRequest extends TeaModel {
     @NameInMap("realData")
     public Boolean realData;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding_talk</p>
+     */
     @NameInMap("scene")
     public String scene;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1682524800000</p>
      */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxx视频会议</p>
+     */
     @NameInMap("title")
     public String title;
 

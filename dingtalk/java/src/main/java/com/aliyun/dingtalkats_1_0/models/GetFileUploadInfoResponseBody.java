@@ -6,42 +6,63 @@ import com.aliyun.tea.*;
 public class GetFileUploadInfoResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("accessToken")
     public String accessToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1626923829000</p>
      */
     @NameInMap("accessTokenExpirationMillis")
     public Long accessTokenExpirationMillis;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>lippi-space-zjk</p>
      */
     @NameInMap("bucket")
     public String bucket;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>oss-cn-zhangjiakou.aliyuncs.com</p>
      */
     @NameInMap("endPoint")
     public String endPoint;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("mediaId")
     public String mediaId;

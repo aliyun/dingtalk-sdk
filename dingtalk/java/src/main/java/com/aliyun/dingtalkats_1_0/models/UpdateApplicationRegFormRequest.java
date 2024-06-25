@@ -4,11 +4,18 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateApplicationRegFormRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ddats</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;key&quot;:&quot;value&quot;}</p>
      */
     @NameInMap("content")
     public String content;
@@ -51,27 +58,43 @@ public class UpdateApplicationRegFormRequest extends TeaModel {
     public static class UpdateApplicationRegFormRequestDingPanFile extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>&quot;123456&quot;</p>
          */
         @NameInMap("fileId")
         public String fileId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>&quot;张三的应聘登记表（开发工程师）&quot;</p>
          */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1024</p>
+         */
         @NameInMap("fileSize")
         public Long fileSize;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>pdf</p>
          */
         @NameInMap("fileType")
         public String fileType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>223344</p>
          */
         @NameInMap("spaceId")
         public Long spaceId;

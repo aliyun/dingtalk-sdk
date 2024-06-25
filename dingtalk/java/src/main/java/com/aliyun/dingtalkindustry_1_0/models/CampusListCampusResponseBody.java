@@ -21,54 +21,122 @@ public class CampusListCampusResponseBody extends TeaModel {
     }
 
     public static class CampusListCampusResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>杭州市余杭区</p>
+         */
         @NameInMap("address")
         public String address;
 
+        /**
+         * <strong>example:</strong>
+         * <p>121212.1</p>
+         */
         @NameInMap("area")
         public Double area;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("belongProjectGroupId")
         public Long belongProjectGroupId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding121212</p>
+         */
         @NameInMap("campusCorpId")
         public String campusCorpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("campusDeptId")
         public Long campusDeptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试园区</p>
+         */
         @NameInMap("campusName")
         public String campusName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>30450</p>
+         */
         @NameInMap("cityId")
         public Integer cityId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>中国</p>
+         */
         @NameInMap("country")
         public String country;
 
+        /**
+         * <strong>example:</strong>
+         * <p>304501</p>
+         */
         @NameInMap("countyId")
         public Integer countyId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>扩展</p>
+         */
         @NameInMap("extend")
         public String extend;
 
+        /**
+         * <strong>example:</strong>
+         * <p>120.1321,28.1213</p>
+         */
         @NameInMap("location")
         public String location;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1655704317794</p>
+         */
         @NameInMap("orderEndTime")
         public Long orderEndTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>规格1</p>
+         */
         @NameInMap("orderInfo")
         public String orderInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1655704317794</p>
+         */
         @NameInMap("orderStartTime")
         public Long orderStartTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>304</p>
+         */
         @NameInMap("provId")
         public Integer provId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>13914773133</p>
+         */
         @NameInMap("telephone")
         public String telephone;
 

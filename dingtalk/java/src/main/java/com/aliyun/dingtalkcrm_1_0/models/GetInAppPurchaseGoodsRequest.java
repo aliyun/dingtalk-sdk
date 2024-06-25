@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInAppPurchaseGoodsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>uhdhjsabdfhjb</p>
+     */
     @NameInMap("userId")
     public String userId;
 

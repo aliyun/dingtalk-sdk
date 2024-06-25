@@ -26,60 +26,90 @@ public class GetMachineResponseBody extends TeaModel {
     public static class GetMachineResponseBodyResultMachineBluetoothVO extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>绿城-未来park</p>
          */
         @NameInMap("address")
         public String address;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("bluetoothCheckWithFace")
         public Boolean bluetoothCheckWithFace;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>default</p>
          */
         @NameInMap("bluetoothDistanceMode")
         public String bluetoothDistanceMode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>默认 (最远5-10米)</p>
          */
         @NameInMap("bluetoothDistanceModeDesc")
         public String bluetoothDistanceModeDesc;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("bluetoothValue")
         public Boolean bluetoothValue;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>30.285871310763888</p>
          */
         @NameInMap("latitude")
         public Double latitude;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("limitUserDeviceCount")
         public Boolean limitUserDeviceCount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>120.01757758246528</p>
          */
         @NameInMap("longitude")
         public Double longitude;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("monitorLocationAbnormal")
         public Boolean monitorLocationAbnormal;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("userDeviceCount")
         public Integer userDeviceCount;
@@ -180,24 +210,36 @@ public class GetMachineResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1406333705</p>
          */
         @NameInMap("devId")
         public Long devId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2078053438</p>
          */
         @NameInMap("deviceId")
         public String deviceId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>泱云❄️的体00056</p>
          */
         @NameInMap("deviceName")
         public String deviceName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0601IFW201001N000056</p>
          */
         @NameInMap("deviceSn")
         public String deviceSn;
@@ -210,30 +252,45 @@ public class GetMachineResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10000</p>
          */
         @NameInMap("maxFace")
         public Integer maxFace;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>4</p>
          */
         @NameInMap("netStatus")
         public String netStatus;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>M1F</p>
          */
         @NameInMap("productName")
         public String productName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1.0.1-R-20200326.1543</p>
          */
         @NameInMap("productVersion")
         public String productVersion;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2</p>
          */
         @NameInMap("voiceMode")
         public Integer voiceMode;

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetPointInfoRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>personal</p>
      */
     @NameInMap("pointType")
     public String pointType;

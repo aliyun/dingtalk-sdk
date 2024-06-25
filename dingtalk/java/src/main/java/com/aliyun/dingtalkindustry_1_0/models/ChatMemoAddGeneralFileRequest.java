@@ -4,26 +4,43 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class ChatMemoAddGeneralFileRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>aaaaa</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>111111</p>
      */
     @NameInMap("datasetId")
     public Long datasetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://xxxxxxx.com/xxxxxx">https://xxxxxxx.com/xxxxxx</a></p>
      */
     @NameInMap("downloadUrl")
     public String downloadUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>这是一个财务制度相关的文件</p>
+     */
     @NameInMap("fileDesc")
     public String fileDesc;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>aaa.doc</p>
      */
     @NameInMap("fileName")
     public String fileName;
@@ -85,6 +102,10 @@ public class ChatMemoAddGeneralFileRequest extends TeaModel {
     }
 
     public static class ChatMemoAddGeneralFileRequestTagList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>产品名</p>
+         */
         @NameInMap("tagName")
         public String tagName;
 

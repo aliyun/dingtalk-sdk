@@ -4,29 +4,48 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class AssignOrgHoldingToEmpHoldingBatchRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>表现优秀，特此奖励</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("remark")
     public String remark;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("sendOrgCultureInform")
     public Boolean sendOrgCultureInform;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10000</p>
      */
     @NameInMap("singleAmount")
     public Long singleAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OPEN_ORG_POINT_PERSONAL_ASSIGN</p>
      */
     @NameInMap("sourceUsage")
     public String sourceUsage;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OPEN_EMP_POINT_PERSONAL_RECEIVE</p>
      */
     @NameInMap("targetUsage")
     public String targetUsage;
@@ -93,12 +112,18 @@ public class AssignOrgHoldingToEmpHoldingBatchRequest extends TeaModel {
     public static class AssignOrgHoldingToEmpHoldingBatchRequestTargetUserList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>4353453454241</p>
          */
         @NameInMap("outId")
         public String outId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>551341216920908910</p>
          */
         @NameInMap("targetUserId")
         public String targetUserId;

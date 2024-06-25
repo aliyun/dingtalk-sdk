@@ -21,12 +21,24 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
     }
 
     public static class CreateOrganizationTaskResponseBodyResultCreator extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxxxxxxxxx">https://xxxxxxxxxx</a></p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>鬼斩</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>173xxxx</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -62,12 +74,24 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
     }
 
     public static class CreateOrganizationTaskResponseBodyResultExecutor extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxxxxxxxxx">https://xxxxxxxxxx</a></p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>鬼斩</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>173xxxx</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -103,12 +127,24 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
     }
 
     public static class CreateOrganizationTaskResponseBodyResultInvolvers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>httpx://xxx</p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>173xxxx</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>鬼斩</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -147,33 +183,65 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
         @NameInMap("ancestorIds")
         public java.util.List<String> ancestorIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("attachmentsCount")
         public Integer attachmentsCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>明天12点前写好周报</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-08-13T07:36:50.318Z</p>
+         */
         @NameInMap("created")
         public String created;
 
         @NameInMap("creator")
         public CreateOrganizationTaskResponseBodyResultCreator creator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>173xxxx</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-08-13T07:36:50.318Z</p>
+         */
         @NameInMap("dueDate")
         public String dueDate;
 
         @NameInMap("executor")
         public CreateOrganizationTaskResponseBodyResultExecutor executor;
 
+        /**
+         * <strong>example:</strong>
+         * <p>173xxxx</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("hasReminder")
         public Boolean hasReminder;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62a697c053c2ef5xxxxxx</p>
+         */
         @NameInMap("id")
         public String id;
 
@@ -183,21 +251,45 @@ public class CreateOrganizationTaskResponseBody extends TeaModel {
         @NameInMap("involvers")
         public java.util.List<CreateOrganizationTaskResponseBodyResultInvolvers> involvers;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isDone")
         public String isDone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>我是一条备注哦</p>
+         */
         @NameInMap("note")
         public String note;
 
+        /**
+         * <strong>example:</strong>
+         * <p>-10</p>
+         */
         @NameInMap("priority")
         public Integer priority;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-08-13T07:36:50.318Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 
+        /**
+         * <strong>example:</strong>
+         * <p>members</p>
+         */
         @NameInMap("visible")
         public String visible;
 

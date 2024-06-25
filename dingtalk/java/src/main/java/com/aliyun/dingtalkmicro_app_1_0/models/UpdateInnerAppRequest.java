@@ -4,30 +4,57 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInnerAppRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>descxxx</p>
+     */
     @NameInMap("desc")
     public String desc;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+     */
     @NameInMap("homepageLink")
     public String homepageLink;
 
+    /**
+     * <strong>example:</strong>
+     * <p>mediaxxx</p>
+     */
     @NameInMap("icon")
     public String icon;
 
     @NameInMap("ipWhiteList")
     public java.util.List<String> ipWhiteList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>namexx</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+     */
     @NameInMap("ompLink")
     public String ompLink;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("opUnionId")
     public String opUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+     */
     @NameInMap("pcHomepageLink")
     public String pcHomepageLink;
 

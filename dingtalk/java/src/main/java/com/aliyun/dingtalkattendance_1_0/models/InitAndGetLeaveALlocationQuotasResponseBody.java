@@ -21,33 +21,73 @@ public class InitAndGetLeaveALlocationQuotasResponseBody extends TeaModel {
     }
 
     public static class InitAndGetLeaveALlocationQuotasResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1753851001000</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>c00ced14-xxxxxd438748</p>
+         */
         @NameInMap("leaveCode")
         public String leaveCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022</p>
+         */
         @NameInMap("quotaCycle")
         public String quotaCycle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>b13cc5b0--xxxx5b0</p>
+         */
         @NameInMap("quotaId")
         public String quotaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>700</p>
+         */
         @NameInMap("quotaNumPerDay")
         public Long quotaNumPerDay;
 
+        /**
+         * <strong>example:</strong>
+         * <p>800</p>
+         */
         @NameInMap("quotaNumPerHour")
         public Long quotaNumPerHour;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1653851001000</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>200</p>
+         */
         @NameInMap("usedNumPerDay")
         public Long usedNumPerDay;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("usedNumPerHour")
         public Long usedNumPerHour;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user1</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -21,9 +21,17 @@ public class QueryBenefitInventoryResponseBody extends TeaModel {
     }
 
     public static class QueryBenefitInventoryResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2000</p>
+         */
         @NameInMap("totalQuota")
         public Long totalQuota;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("usedQuota")
         public Long usedQuota;
 

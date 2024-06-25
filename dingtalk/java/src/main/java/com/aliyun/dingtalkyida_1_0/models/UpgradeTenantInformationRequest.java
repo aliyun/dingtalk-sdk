@@ -4,15 +4,31 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpgradeTenantInformationRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>hexaaaa</p>
+     */
     @NameInMap("accessKey")
     public String accessKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("accountNumber")
     public String accountNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>44234122</p>
+     */
     @NameInMap("callerUnionId")
     public String callerUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Business</p>
+     */
     @NameInMap("commodityType")
     public String commodityType;
 

@@ -24,6 +24,10 @@ public class HrmAuthResourcesQueryResponseBody extends TeaModel {
         @NameInMap("authorized")
         public Boolean authorized;
 
+        /**
+         * <strong>example:</strong>
+         * <p>/signSetting/manage/*</p>
+         */
         @NameInMap("resourceId")
         public String resourceId;
 

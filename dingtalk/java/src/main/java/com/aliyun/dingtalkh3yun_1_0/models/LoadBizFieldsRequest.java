@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class LoadBizFieldsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>D0001839bbbbe346bbf496498bb76c44c7eb972</p>
      */
     @NameInMap("schemaCode")
     public String schemaCode;

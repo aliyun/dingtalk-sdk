@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DeleteResidentDepartmentRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("departmentId")
     public Long departmentId;

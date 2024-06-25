@@ -7,17 +7,27 @@ public class ApplyFollowerAuthInfoRequest extends TeaModel {
     @NameInMap("appAuthKey")
     public String appAuthKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Contact.User.mobile</p>
+     */
     @NameInMap("fieldScope")
     public String fieldScope;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sid22b31b4bf59ef2c783f7</p>
      */
     @NameInMap("sessionId")
     public String sessionId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>idzb26bxl64vqx2keyi</p>
      */
     @NameInMap("userId")
     public String userId;

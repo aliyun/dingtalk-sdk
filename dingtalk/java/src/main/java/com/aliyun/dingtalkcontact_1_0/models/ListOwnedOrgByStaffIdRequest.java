@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ListOwnedOrgByStaffIdRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>userIdxxx</p>
      */
     @NameInMap("userId")
     public String userId;

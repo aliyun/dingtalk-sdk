@@ -6,11 +6,10 @@ import com.aliyun.dingtalktrip_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 获取差旅审批实例详情
-     *
+     * <b>summary</b> : 
+     * <p>获取差旅审批实例详情</p>
+     * 
      * @param request GetTravelProcessDetailRequest
      * @param headers GetTravelProcessDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -66,8 +66,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取差旅审批实例详情
-     *
+     * <b>summary</b> : 
+     * <p>获取差旅审批实例详情</p>
+     * 
      * @param request GetTravelProcessDetailRequest
      * @return GetTravelProcessDetailResponse
      */
@@ -78,8 +79,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 表单升级预校验
-     *
+     * <b>summary</b> : 
+     * <p>表单升级预校验</p>
+     * 
      * @param request PreCheckTemplateRequest
      * @param headers PreCheckTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -120,8 +122,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 表单升级预校验
-     *
+     * <b>summary</b> : 
+     * <p>表单升级预校验</p>
+     * 
      * @param request PreCheckTemplateRequest
      * @return PreCheckTemplateResponse
      */
@@ -132,8 +135,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询审批套件详情
-     *
+     * <b>summary</b> : 
+     * <p>查询审批套件详情</p>
+     * 
      * @param request QueryTripProcessTemplatesRequest
      * @param headers QueryTripProcessTemplatesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -174,8 +178,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询审批套件详情
-     *
+     * <b>summary</b> : 
+     * <p>查询审批套件详情</p>
+     * 
      * @param request QueryTripProcessTemplatesRequest
      * @return QueryTripProcessTemplatesResponse
      */
@@ -186,8 +191,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步服务商企业签约变更事件
-     *
+     * <b>summary</b> : 
+     * <p>同步服务商企业签约变更事件</p>
+     * 
      * @param request SyncBusinessSignInfoRequest
      * @param headers SyncBusinessSignInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -256,8 +262,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步服务商企业签约变更事件
-     *
+     * <b>summary</b> : 
+     * <p>同步服务商企业签约变更事件</p>
+     * 
      * @param request SyncBusinessSignInfoRequest
      * @return SyncBusinessSignInfoResponse
      */
@@ -268,8 +275,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单成本中心同步
-     *
+     * <b>summary</b> : 
+     * <p>出差表单成本中心同步</p>
+     * 
      * @param request SyncCostCenterRequest
      * @param headers SyncCostCenterHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -350,8 +358,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单成本中心同步
-     *
+     * <b>summary</b> : 
+     * <p>出差表单成本中心同步</p>
+     * 
      * @param request SyncCostCenterRequest
      * @return SyncCostCenterResponse
      */
@@ -362,8 +371,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单成本中心可用范围
-     *
+     * <b>summary</b> : 
+     * <p>出差表单成本中心可用范围</p>
+     * 
      * @param request SyncCostCenterEntityRequest
      * @param headers SyncCostCenterEntityHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -420,8 +430,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单成本中心可用范围
-     *
+     * <b>summary</b> : 
+     * <p>出差表单成本中心可用范围</p>
+     * 
      * @param request SyncCostCenterEntityRequest
      * @return SyncCostCenterEntityResponse
      */
@@ -432,8 +443,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单发票抬头
-     *
+     * <b>summary</b> : 
+     * <p>出差表单发票抬头</p>
+     * 
      * @param request SyncInvoiceRequest
      * @param headers SyncInvoiceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -538,8 +550,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单发票抬头
-     *
+     * <b>summary</b> : 
+     * <p>出差表单发票抬头</p>
+     * 
      * @param request SyncInvoiceRequest
      * @return SyncInvoiceResponse
      */
@@ -550,8 +563,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单发票抬头可用范围
-     *
+     * <b>summary</b> : 
+     * <p>出差表单发票抬头可用范围</p>
+     * 
      * @param request SyncInvoiceEntityRequest
      * @param headers SyncInvoiceEntityHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -608,8 +622,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单发票抬头可用范围
-     *
+     * <b>summary</b> : 
+     * <p>出差表单发票抬头可用范围</p>
+     * 
      * @param request SyncInvoiceEntityRequest
      * @return SyncInvoiceEntityResponse
      */
@@ -620,8 +635,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单项目
-     *
+     * <b>summary</b> : 
+     * <p>出差表单项目</p>
+     * 
      * @param request SyncProjectRequest
      * @param headers SyncProjectHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -714,8 +730,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单项目
-     *
+     * <b>summary</b> : 
+     * <p>出差表单项目</p>
+     * 
      * @param request SyncProjectRequest
      * @return SyncProjectResponse
      */
@@ -726,8 +743,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单项目可用范围
-     *
+     * <b>summary</b> : 
+     * <p>出差表单项目可用范围</p>
+     * 
      * @param request SyncProjectEntityRequest
      * @param headers SyncProjectEntityHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -784,8 +802,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 出差表单项目可用范围
-     *
+     * <b>summary</b> : 
+     * <p>出差表单项目可用范围</p>
+     * 
      * @param request SyncProjectEntityRequest
      * @return SyncProjectEntityResponse
      */
@@ -796,8 +815,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 调用本接口同步公司密钥信息。
-     *
+     * <b>summary</b> : 
+     * <p>调用本接口同步公司密钥信息。</p>
+     * 
      * @param request SyncSecretKeyRequest
      * @param headers SyncSecretKeyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -858,8 +878,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 调用本接口同步公司密钥信息。
-     *
+     * <b>summary</b> : 
+     * <p>调用本接口同步公司密钥信息。</p>
+     * 
      * @param request SyncSecretKeyRequest
      * @return SyncSecretKeyResponse
      */
@@ -870,8 +891,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步出行订单变更事件
-     *
+     * <b>summary</b> : 
+     * <p>同步出行订单变更事件</p>
+     * 
      * @param request SyncTripOrderRequest
      * @param headers SyncTripOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1012,8 +1034,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步出行订单变更事件
-     *
+     * <b>summary</b> : 
+     * <p>同步出行订单变更事件</p>
+     * 
      * @param request SyncTripOrderRequest
      * @return SyncTripOrderResponse
      */
@@ -1024,8 +1047,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 预订管理产品线配置同步
-     *
+     * <b>summary</b> : 
+     * <p>预订管理产品线配置同步</p>
+     * 
      * @param request SyncTripProductConfigRequest
      * @param headers SyncTripProductConfigHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1070,8 +1094,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 预订管理产品线配置同步
-     *
+     * <b>summary</b> : 
+     * <p>预订管理产品线配置同步</p>
+     * 
      * @param request SyncTripProductConfigRequest
      * @return SyncTripProductConfigResponse
      */
@@ -1082,8 +1107,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能差旅平台数据互通统一入口
-     *
+     * <b>summary</b> : 
+     * <p>智能差旅平台数据互通统一入口</p>
+     * 
      * @param request TripPlatformUnifiedEntryRequest
      * @param headers TripPlatformUnifiedEntryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1128,8 +1154,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能差旅平台数据互通统一入口
-     *
+     * <b>summary</b> : 
+     * <p>智能差旅平台数据互通统一入口</p>
+     * 
      * @param request TripPlatformUnifiedEntryRequest
      * @return TripPlatformUnifiedEntryResponse
      */
@@ -1140,8 +1167,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 升级套件
-     *
+     * <b>summary</b> : 
+     * <p>升级套件</p>
+     * 
      * @param request UpgradeTemplateRequest
      * @param headers UpgradeTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1190,8 +1218,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 升级套件
-     *
+     * <b>summary</b> : 
+     * <p>升级套件</p>
+     * 
      * @param request UpgradeTemplateRequest
      * @return UpgradeTemplateResponse
      */

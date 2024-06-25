@@ -112,6 +112,10 @@ public class GetMeetingRoomsScheduleResponseBody extends TeaModel {
         @NameInMap("start")
         public GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart start;
 
+        /**
+         * <strong>example:</strong>
+         * <p>BUSY</p>
+         */
         @NameInMap("status")
         public String status;
 

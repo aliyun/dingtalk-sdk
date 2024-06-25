@@ -4,6 +4,10 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UnbindApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 
@@ -43,9 +47,17 @@ public class UnbindApplyReceiptAndInvoiceRelatedRequest extends TeaModel {
     }
 
     public static class UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 

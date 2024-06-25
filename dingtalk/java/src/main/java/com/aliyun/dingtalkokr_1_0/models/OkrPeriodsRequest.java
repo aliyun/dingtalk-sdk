@@ -4,15 +4,31 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class OkrPeriodsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>dingOKR</p>
+     */
     @NameInMap("goodsCode")
     public String goodsCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("status")
     public Long status;
 

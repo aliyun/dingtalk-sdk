@@ -6,11 +6,10 @@ import com.aliyun.dingtalkai_interaction_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 在主动模式下完结会话框
-     *
+     * <b>summary</b> : 
+     * <p>在主动模式下完结会话框</p>
+     * 
      * @param request FinishRequest
      * @param headers FinishHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -62,8 +62,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 在主动模式下完结会话框
-     *
+     * <b>summary</b> : 
+     * <p>在主动模式下完结会话框</p>
+     * 
      * @param request FinishRequest
      * @return FinishResponse
      */
@@ -74,8 +75,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 在主动模式下准备会话框
-     *
+     * <b>summary</b> : 
+     * <p>在主动模式下准备会话框</p>
+     * 
      * @param request PrepareRequest
      * @param headers PrepareHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -128,8 +130,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 在主动模式下准备会话框
-     *
+     * <b>summary</b> : 
+     * <p>在主动模式下准备会话框</p>
+     * 
      * @param request PrepareRequest
      * @return PrepareResponse
      */
@@ -140,8 +143,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 在回复模式下更新会话框
-     *
+     * <b>summary</b> : 
+     * <p>在回复模式下更新会话框</p>
+     * 
      * @param request ReplyRequest
      * @param headers ReplyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -190,8 +194,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 在回复模式下更新会话框
-     *
+     * <b>summary</b> : 
+     * <p>在回复模式下更新会话框</p>
+     * 
      * @param request ReplyRequest
      * @return ReplyResponse
      */
@@ -202,8 +207,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 直接发送消息
-     *
+     * <b>summary</b> : 
+     * <p>直接发送消息</p>
+     * 
      * @param request SendRequest
      * @param headers SendHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -256,8 +262,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 直接发送消息
-     *
+     * <b>summary</b> : 
+     * <p>直接发送消息</p>
+     * 
      * @param request SendRequest
      * @return SendResponse
      */
@@ -268,8 +275,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 在主动模式下更新会话框
-     *
+     * <b>summary</b> : 
+     * <p>在主动模式下更新会话框</p>
+     * 
      * @param request UpdateRequest
      * @param headers UpdateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -318,8 +326,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 在主动模式下更新会话框
-     *
+     * <b>summary</b> : 
+     * <p>在主动模式下更新会话框</p>
+     * 
      * @param request UpdateRequest
      * @return UpdateResponse
      */

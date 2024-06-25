@@ -4,6 +4,13 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class ECertQueryRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>manager231</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
     @NameInMap("userId")
     public String userId;
 

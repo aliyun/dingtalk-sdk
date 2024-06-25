@@ -4,23 +4,36 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTicketRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>[{&quot;identifier&quot;:&quot;input1&quot;,&quot;value&quot;:&quot;openAPI更新了值&quot;}]</p>
+     */
     @NameInMap("customFields")
     public String customFields;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>eKWh3GBwsKEiE</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>iPFWCyMGWPiiIiE</p>
      */
     @NameInMap("openTicketId")
     public String openTicketId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>p8VdSjm884SvQ6l05nCe5wiEiE</p>
      */
     @NameInMap("processorUnionId")
     public String processorUnionId;
@@ -77,9 +90,17 @@ public class UpdateTicketRequest extends TeaModel {
     }
 
     public static class UpdateTicketRequestTicketMemoAttachments extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>wahaha.txt</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt</p>
+         */
         @NameInMap("key")
         public String key;
 
@@ -112,6 +133,9 @@ public class UpdateTicketRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>备注</p>
          */
         @NameInMap("memo")
         public String memo;

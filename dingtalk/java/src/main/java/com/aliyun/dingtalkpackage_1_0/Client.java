@@ -6,11 +6,10 @@ import com.aliyun.dingtalkpackage_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 关闭企业自建应用H5离线包
-     *
+     * <b>summary</b> : 
+     * <p>关闭企业自建应用H5离线包</p>
+     * 
      * @param request CloseHPackageRequest
      * @param headers CloseHPackageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -62,8 +62,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 关闭企业自建应用H5离线包
-     *
+     * <b>summary</b> : 
+     * <p>关闭企业自建应用H5离线包</p>
+     * 
      * @param request CloseHPackageRequest
      * @return CloseHPackageResponse
      */
@@ -74,8 +75,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取离线包上传凭证
-     *
+     * <b>summary</b> : 
+     * <p>获取离线包上传凭证</p>
+     * 
      * @param request GetUploadTokenRequest
      * @param headers GetUploadTokenHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -116,8 +118,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取离线包上传凭证
-     *
+     * <b>summary</b> : 
+     * <p>获取离线包上传凭证</p>
+     * 
      * @param request GetUploadTokenRequest
      * @return GetUploadTokenResponse
      */
@@ -128,8 +131,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取H5离线包版本列表
-     *
+     * <b>summary</b> : 
+     * <p>获取H5离线包版本列表</p>
+     * 
      * @param request HPackageListGetRequest
      * @param headers HPackageListGetHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -178,8 +182,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取H5离线包版本列表
-     *
+     * <b>summary</b> : 
+     * <p>获取H5离线包版本列表</p>
+     * 
      * @param request HPackageListGetRequest
      * @return HPackageListGetResponse
      */
@@ -190,8 +195,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布离线包
-     *
+     * <b>summary</b> : 
+     * <p>发布离线包</p>
+     * 
      * @param request HPublishPackageRequest
      * @param headers HPublishPackageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -236,8 +242,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布离线包
-     *
+     * <b>summary</b> : 
+     * <p>发布离线包</p>
+     * 
      * @param request HPublishPackageRequest
      * @return HPublishPackageResponse
      */
@@ -248,8 +255,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 上传H5离线包
-     *
+     * <b>summary</b> : 
+     * <p>上传H5离线包</p>
+     * 
      * @param request HUploadPackageRequest
      * @param headers HUploadPackageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -294,8 +302,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 上传H5离线包
-     *
+     * <b>summary</b> : 
+     * <p>上传H5离线包</p>
+     * 
      * @param request HUploadPackageRequest
      * @return HUploadPackageResponse
      */
@@ -306,8 +315,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 上传H5离线包进度
-     *
+     * <b>summary</b> : 
+     * <p>上传H5离线包进度</p>
+     * 
      * @param request HUploadPackageStatusRequest
      * @param headers HUploadPackageStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -352,8 +362,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 上传H5离线包进度
-     *
+     * <b>summary</b> : 
+     * <p>上传H5离线包进度</p>
+     * 
      * @param request HUploadPackageStatusRequest
      * @return HUploadPackageStatusResponse
      */
@@ -364,8 +375,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 开启企业自建应用H5离线包
-     *
+     * <b>summary</b> : 
+     * <p>开启企业自建应用H5离线包</p>
+     * 
      * @param request OpenMicroAppPackageRequest
      * @param headers OpenMicroAppPackageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -406,8 +418,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 开启企业自建应用H5离线包
-     *
+     * <b>summary</b> : 
+     * <p>开启企业自建应用H5离线包</p>
+     * 
      * @param request OpenMicroAppPackageRequest
      * @return OpenMicroAppPackageResponse
      */
@@ -418,8 +431,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布离线包到灰度
-     *
+     * <b>summary</b> : 
+     * <p>发布离线包到灰度</p>
+     * 
      * @param request ReleaseGrayDeployRequest
      * @param headers ReleaseGrayDeployHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -464,8 +478,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发布离线包到灰度
-     *
+     * <b>summary</b> : 
+     * <p>发布离线包到灰度</p>
+     * 
      * @param request ReleaseGrayDeployRequest
      * @return ReleaseGrayDeployResponse
      */
@@ -476,8 +491,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 退出灰度
-     *
+     * <b>summary</b> : 
+     * <p>退出灰度</p>
+     * 
      * @param request ReleaseGrayExitRequest
      * @param headers ReleaseGrayExitHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -522,8 +538,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 退出灰度
-     *
+     * <b>summary</b> : 
+     * <p>退出灰度</p>
+     * 
      * @param request ReleaseGrayExitRequest
      * @return ReleaseGrayExitResponse
      */
@@ -534,8 +551,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业灰度白名单
-     *
+     * <b>summary</b> : 
+     * <p>获取企业灰度白名单</p>
+     * 
      * @param request ReleaseGrayOrgGetRequest
      * @param headers ReleaseGrayOrgGetHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -580,8 +598,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业灰度白名单
-     *
+     * <b>summary</b> : 
+     * <p>获取企业灰度白名单</p>
+     * 
      * @param request ReleaseGrayOrgGetRequest
      * @return ReleaseGrayOrgGetResponse
      */
@@ -592,8 +611,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置企业灰度白名单
-     *
+     * <b>summary</b> : 
+     * <p>设置企业灰度白名单</p>
+     * 
      * @param request ReleaseGrayOrgSetRequest
      * @param headers ReleaseGrayOrgSetHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -642,8 +662,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置企业灰度白名单
-     *
+     * <b>summary</b> : 
+     * <p>设置企业灰度白名单</p>
+     * 
      * @param request ReleaseGrayOrgSetRequest
      * @return ReleaseGrayOrgSetResponse
      */
@@ -654,8 +675,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取灰度离线包百分比值
-     *
+     * <b>summary</b> : 
+     * <p>获取灰度离线包百分比值</p>
+     * 
      * @param request ReleaseGrayPercentGetRequest
      * @param headers ReleaseGrayPercentGetHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -700,8 +722,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取灰度离线包百分比值
-     *
+     * <b>summary</b> : 
+     * <p>获取灰度离线包百分比值</p>
+     * 
      * @param request ReleaseGrayPercentGetRequest
      * @return ReleaseGrayPercentGetResponse
      */
@@ -712,8 +735,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置灰度离线包百分比值
-     *
+     * <b>summary</b> : 
+     * <p>设置灰度离线包百分比值</p>
+     * 
      * @param request ReleaseGrayPercentSetRequest
      * @param headers ReleaseGrayPercentSetHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -762,8 +786,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置灰度离线包百分比值
-     *
+     * <b>summary</b> : 
+     * <p>设置灰度离线包百分比值</p>
+     * 
      * @param request ReleaseGrayPercentSetRequest
      * @return ReleaseGrayPercentSetResponse
      */
@@ -774,8 +799,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户灰度名单
-     *
+     * <b>summary</b> : 
+     * <p>获取用户灰度名单</p>
+     * 
      * @param request ReleaseGrayUserIdGetRequest
      * @param headers ReleaseGrayUserIdGetHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -820,8 +846,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用户灰度名单
-     *
+     * <b>summary</b> : 
+     * <p>获取用户灰度名单</p>
+     * 
      * @param request ReleaseGrayUserIdGetRequest
      * @return ReleaseGrayUserIdGetResponse
      */

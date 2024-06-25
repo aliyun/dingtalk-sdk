@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class OpenConnectionRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>suiteudabcd123</p>
      */
     @NameInMap("clientId")
     public String clientId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>9W1berqrwfs</p>
      */
     @NameInMap("clientSecret")
     public String clientSecret;
@@ -19,6 +25,10 @@ public class OpenConnectionRequest extends TeaModel {
     @NameInMap("extras")
     public java.util.Map<String, ?> extras;
 
+    /**
+     * <strong>example:</strong>
+     * <p>32.78.48.10</p>
+     */
     @NameInMap("localIp")
     public String localIp;
 
@@ -76,12 +86,18 @@ public class OpenConnectionRequest extends TeaModel {
     public static class OpenConnectionRequestSubscriptions extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>/v1.0/im/bot/messages/get</p>
          */
         @NameInMap("topic")
         public String topic;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>EVENT</p>
          */
         @NameInMap("type")
         public String type;

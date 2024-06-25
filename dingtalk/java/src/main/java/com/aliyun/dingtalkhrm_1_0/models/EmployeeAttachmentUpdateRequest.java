@@ -16,17 +16,27 @@ public class EmployeeAttachmentUpdateRequest extends TeaModel {
     @NameInMap("fieldCode")
     public String fieldCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>.png</p>
+     */
     @NameInMap("fileSuffix")
     public String fileSuffix;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>&quot;$iAEKAqNwbmcDBgTNAk&quot;</p>
      */
     @NameInMap("mediaId")
     public String mediaId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>admin123</p>
      */
     @NameInMap("userId")
     public String userId;

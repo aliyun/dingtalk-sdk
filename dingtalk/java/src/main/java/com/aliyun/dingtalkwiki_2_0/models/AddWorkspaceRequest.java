@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class AddWorkspaceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>workspace_name</p>
      */
     @NameInMap("name")
     public String name;
@@ -15,6 +18,9 @@ public class AddWorkspaceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -49,9 +55,17 @@ public class AddWorkspaceRequest extends TeaModel {
     }
 
     public static class AddWorkspaceRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>workspace_description</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>team_id</p>
+         */
         @NameInMap("teamId")
         public String teamId;
 

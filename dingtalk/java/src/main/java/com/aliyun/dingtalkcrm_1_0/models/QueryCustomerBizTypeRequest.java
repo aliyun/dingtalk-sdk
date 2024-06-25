@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryCustomerBizTypeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1343dfd1233</p>
      */
     @NameInMap("operatorUserId")
     public String operatorUserId;

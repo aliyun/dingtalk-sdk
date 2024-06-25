@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class QueryBatchSendResultRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>234#dingxxx@dingding</p>
      */
     @NameInMap("senderUserId")
     public String senderUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234567890</p>
      */
     @NameInMap("taskId")
     public String taskId;

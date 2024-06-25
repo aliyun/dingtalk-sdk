@@ -21,6 +21,10 @@ public class GetProcessConfigResponseBody extends TeaModel {
     }
 
     public static class GetProcessConfigResponseBodyResultCommentConf extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>评论描述</p>
+         */
         @NameInMap("commentDescription")
         public String commentDescription;
 
@@ -92,12 +96,24 @@ public class GetProcessConfigResponseBody extends TeaModel {
     }
 
     public static class GetProcessConfigResponseBodyResultSubstituteSubmitConfSubmitterList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>钉三多</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>approval</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager1234</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -163,9 +179,17 @@ public class GetProcessConfigResponseBody extends TeaModel {
     }
 
     public static class GetProcessConfigResponseBodyResultTitleGenRule extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>#{originator}#{formName}#{createTime}</p>
+         */
         @NameInMap("express")
         public String express;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("type")
         public Integer type;
 
@@ -193,9 +217,17 @@ public class GetProcessConfigResponseBody extends TeaModel {
     }
 
     public static class GetProcessConfigResponseBodyResultVisibility extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("type")
         public Integer type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager345</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -226,6 +258,10 @@ public class GetProcessConfigResponseBody extends TeaModel {
         @NameInMap("abstractGenRule")
         public java.util.List<String> abstractGenRule;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;sid_instStart&quot;:[{&quot;fieldId&quot;:&quot;TextField-K2AD4O5B&quot;,&quot;fieldBehavior&quot;:&quot;HIDDEN&quot;,&quot;componentName&quot;:&quot;TextField&quot;,&quot;disableBehaviors&quot;:[]}],&quot;1918_5cd3&quot;:[{&quot;fieldId&quot;:&quot;TextField-K2AD4O5B&quot;,&quot;fieldBehavior&quot;:&quot;HIDDEN&quot;,&quot;componentName&quot;:&quot;TextField&quot;,&quot;disableBehaviors&quot;:[]}],&quot;d01c_a677&quot;:[{&quot;fieldId&quot;:&quot;TextField-K2AD4O5B&quot;,&quot;fieldBehavior&quot;:&quot;NORMAL&quot;,&quot;componentName&quot;:&quot;TextField&quot;,&quot;disableBehaviors&quot;:[]}]}</p>
+         */
         @NameInMap("activityAuth")
         public String activityAuth;
 
@@ -238,18 +274,34 @@ public class GetProcessConfigResponseBody extends TeaModel {
         @NameInMap("autoExecuteOriginatorTasks")
         public Boolean autoExecuteOriginatorTasks;
 
+        /**
+         * <strong>example:</strong>
+         * <p>alitrip.business</p>
+         */
         @NameInMap("bizCategoryId")
         public String bizCategoryId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>crm_customer</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
         @NameInMap("commentConf")
         public GetProcessConfigResponseBodyResultCommentConf commentConf;
 
+        /**
+         * <strong>example:</strong>
+         * <p>continuousFirst</p>
+         */
         @NameInMap("duplicateRemoval")
         public String duplicateRemoval;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;items&quot;:[]}</p>
+         */
         @NameInMap("formSchema")
         public String formSchema;
 
@@ -259,12 +311,20 @@ public class GetProcessConfigResponseBody extends TeaModel {
         @NameInMap("managers")
         public java.util.List<String> managers;
 
+        /**
+         * <strong>example:</strong>
+         * <p>模板名称</p>
+         */
         @NameInMap("name")
         public String name;
 
         @NameInMap("processAppType")
         public Boolean processAppType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;type&quot;:&quot;&quot;,&quot;properties&quot;:{},&quot;childNode&quot;:{}}</p>
+         */
         @NameInMap("processConfig")
         public String processConfig;
 

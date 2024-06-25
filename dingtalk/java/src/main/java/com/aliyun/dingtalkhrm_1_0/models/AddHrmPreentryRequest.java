@@ -82,9 +82,17 @@ public class AddHrmPreentryRequest extends TeaModel {
     }
 
     public static class AddHrmPreentryRequestGroupsSectionsEmpFieldVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>sys01-birthTime</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2020-10-10</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -115,6 +123,10 @@ public class AddHrmPreentryRequest extends TeaModel {
         @NameInMap("empFieldVOList")
         public java.util.List<AddHrmPreentryRequestGroupsSectionsEmpFieldVOList> empFieldVOList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("oldIndex")
         public Integer oldIndex;
 
@@ -142,6 +154,10 @@ public class AddHrmPreentryRequest extends TeaModel {
     }
 
     public static class AddHrmPreentryRequestGroups extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>sys01</p>
+         */
         @NameInMap("groupId")
         public String groupId;
 

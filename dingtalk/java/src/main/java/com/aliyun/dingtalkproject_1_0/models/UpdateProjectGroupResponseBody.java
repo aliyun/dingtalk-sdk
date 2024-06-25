@@ -21,6 +21,10 @@ public class UpdateProjectGroupResponseBody extends TeaModel {
     }
 
     public static class UpdateProjectGroupResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("ok")
         public Boolean ok;
 

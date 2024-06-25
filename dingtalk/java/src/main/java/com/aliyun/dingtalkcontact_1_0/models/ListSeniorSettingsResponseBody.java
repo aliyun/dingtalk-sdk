@@ -43,12 +43,24 @@ public class ListSeniorSettingsResponseBody extends TeaModel {
     }
 
     public static class ListSeniorSettingsResponseBodySeniorWhiteList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1234</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试角色</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("type")
         public Integer type;
 

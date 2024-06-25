@@ -7,11 +7,18 @@ public class CreateMeetingRoomRequest extends TeaModel {
     @NameInMap("enableCycleReservation")
     public Boolean enableCycleReservation;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("groupId")
     public Long groupId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxIsvRoomId</p>
      */
     @NameInMap("isvRoomId")
     public String isvRoomId;
@@ -19,6 +26,10 @@ public class CreateMeetingRoomRequest extends TeaModel {
     @NameInMap("reservationAuthority")
     public CreateMeetingRoomRequestReservationAuthority reservationAuthority;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("roomCapacity")
     public Integer roomCapacity;
 
@@ -30,21 +41,34 @@ public class CreateMeetingRoomRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试会议室</p>
      */
     @NameInMap("roomName")
     public String roomName;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg">https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg</a></p>
+     */
     @NameInMap("roomPicture")
     public String roomPicture;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0.全员可用 1.仅管理员可用</p>
      */
     @NameInMap("roomStatus")
     public Integer roomStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -143,12 +167,24 @@ public class CreateMeetingRoomRequest extends TeaModel {
     }
 
     public static class CreateMeetingRoomRequestReservationAuthorityAuthorizedMembers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>lPHhSZDLXXXXXXpBlC9lxLwiEiE</p>
+         */
         @NameInMap("memberId")
         public String memberId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("memberName")
         public String memberName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user</p>
+         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -203,9 +239,17 @@ public class CreateMeetingRoomRequest extends TeaModel {
     }
 
     public static class CreateMeetingRoomRequestRoomLocation extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xx市xx区xx路xx号</p>
+         */
         @NameInMap("desc")
         public String desc;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx公司</p>
+         */
         @NameInMap("title")
         public String title;
 

@@ -7,9 +7,17 @@ public class GetInstancesResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetInstancesResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,9 +51,17 @@ public class GetInstancesResponseBody extends TeaModel {
     }
 
     public static class GetInstancesResponseBodyDataActionExecutorName extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZhangSan</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -136,9 +152,17 @@ public class GetInstancesResponseBody extends TeaModel {
     }
 
     public static class GetInstancesResponseBodyDataOriginatorName extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZhangSan</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 

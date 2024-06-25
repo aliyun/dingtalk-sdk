@@ -6,28 +6,55 @@ import com.aliyun.tea.*;
 public class GetTaskCopiesRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_PBKT0MFBEBTDO8T7SLVP</p>
      */
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234567891234</p>
+     */
     @NameInMap("createFromTimeGMT")
     public Long createFromTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234567891234</p>
+     */
     @NameInMap("createToTimeGMT")
     public Long createToTimeGMT;
 
     @NameInMap("keyword")
     public String keyword;
 
+    /**
+     * <strong>example:</strong>
+     * <p>zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>[&quot;xx&quot;,&quot;xxx&quot;]</p>
+     */
     @NameInMap("processCodes")
     public String processCodes;
 

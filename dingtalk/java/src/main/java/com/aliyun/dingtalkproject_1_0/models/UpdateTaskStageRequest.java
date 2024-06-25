@@ -4,6 +4,10 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskStageRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>64ba333e4206372f3f5cxxxx</p>
+     */
     @NameInMap("taskStageId")
     public String taskStageId;
 

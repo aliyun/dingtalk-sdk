@@ -4,9 +4,17 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOfficialAccountContactsResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10010</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -73,12 +81,24 @@ public class GetOfficialAccountContactsResponseBody extends TeaModel {
     }
 
     public static class GetOfficialAccountContactsResponseBodyValuesContacts extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2019-12-25 15:33:12</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("creatorNick")
         public String creatorNick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding_userid</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
@@ -88,9 +108,17 @@ public class GetOfficialAccountContactsResponseBody extends TeaModel {
         @NameInMap("extendData")
         public java.util.Map<String, ?> extendData;
 
+        /**
+         * <strong>example:</strong>
+         * <p>instance_id</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2019-12-25 15:33:12</p>
+         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
@@ -172,6 +200,10 @@ public class GetOfficialAccountContactsResponseBody extends TeaModel {
         @NameInMap("contacts")
         public java.util.List<GetOfficialAccountContactsResponseBodyValuesContacts> contacts;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user_id</p>
+         */
         @NameInMap("userId")
         public String userId;
 

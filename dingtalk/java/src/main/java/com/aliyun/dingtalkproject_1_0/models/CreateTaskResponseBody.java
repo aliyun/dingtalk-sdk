@@ -21,6 +21,10 @@ public class CreateTaskResponseBody extends TeaModel {
     }
 
     public static class CreateTaskResponseBodyResultCustomfieldsValue extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>我是自定义字段显示值</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -40,6 +44,10 @@ public class CreateTaskResponseBody extends TeaModel {
     }
 
     public static class CreateTaskResponseBodyResultCustomfields extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>625bcxdxxxxxx</p>
+         */
         @NameInMap("customfieldId")
         public String customfieldId;
 
@@ -70,39 +78,79 @@ public class CreateTaskResponseBody extends TeaModel {
     }
 
     public static class CreateTaskResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>任务标题</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-08-13T07:36:50.318Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>173xxxxx</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
         @NameInMap("customfields")
         public java.util.List<CreateTaskResponseBodyResultCustomfields> customfields;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-08-13T07:36:50.318Z</p>
+         */
         @NameInMap("dueDate")
         public String dueDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>173xxxx</p>
+         */
         @NameInMap("executorId")
         public String executorId;
 
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
+        /**
+         * <strong>example:</strong>
+         * <p>我是一条备注</p>
+         */
         @NameInMap("note")
         public String note;
 
+        /**
+         * <strong>example:</strong>
+         * <p>-10</p>
+         */
         @NameInMap("priority")
         public Integer priority;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3b376ecxxxxxx</p>
+         */
         @NameInMap("projectId")
         public String projectId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62a697c053c2ef5xxxxxx</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-08-13T07:36:50.318Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

@@ -4,15 +4,31 @@ package com.aliyun.dingtalkwms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGoodsListRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1631289600000</p>
+     */
     @NameInMap("endTimeInMills")
     public Long endTimeInMills;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1631289600000</p>
+     */
     @NameInMap("startTimeInMills")
     public Long startTimeInMills;
 

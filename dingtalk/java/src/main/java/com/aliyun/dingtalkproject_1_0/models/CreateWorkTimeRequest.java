@@ -9,12 +9,18 @@ public class CreateWorkTimeRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2022-09-05</p>
      */
     @NameInMap("endDate")
     public String endDate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("executorId")
     public String executorId;
@@ -33,24 +39,36 @@ public class CreateWorkTimeRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>63186e54e07f18003fea6b90</p>
      */
     @NameInMap("objectId")
     public String objectId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>task</p>
      */
     @NameInMap("objectType")
     public String objectType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2022-09-05</p>
      */
     @NameInMap("startDate")
     public String startDate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("submitterId")
     public String submitterId;
@@ -63,6 +81,9 @@ public class CreateWorkTimeRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>organization</p>
      */
     @NameInMap("tenantType")
     public String tenantType;

@@ -21,9 +21,17 @@ public class SaveCustomWaterMarkTemplateResponseBody extends TeaModel {
     }
 
     public static class SaveCustomWaterMarkTemplateResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>PROC-292988B1-5064-4A42-9389-A76B97xxxxx</p>
+         */
         @NameInMap("formCode")
         public String formCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PROC-292988B1-5064-4A42-9389-A76B97xxxxx</p>
+         */
         @NameInMap("waterMarkId")
         public String waterMarkId;
 

@@ -26,6 +26,9 @@ public class GetShareRoleMembersResponseBody extends TeaModel {
     public static class GetShareRoleMembersResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ding4lj234j3hj43hl312lh</p>
          */
         @NameInMap("corpId")
         public String corpId;

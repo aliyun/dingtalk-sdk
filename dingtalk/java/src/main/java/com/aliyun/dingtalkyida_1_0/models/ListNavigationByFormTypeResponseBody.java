@@ -21,9 +21,17 @@ public class ListNavigationByFormTypeResponseBody extends TeaModel {
     }
 
     public static class ListNavigationByFormTypeResponseBodyResultTitle extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZhangSan</p>
+         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 

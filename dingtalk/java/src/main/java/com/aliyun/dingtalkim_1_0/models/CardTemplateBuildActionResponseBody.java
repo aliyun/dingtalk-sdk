@@ -4,6 +4,10 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CardTemplateBuildActionResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;xxx&quot;:&quot;xxx&quot;}</p>
+     */
     @NameInMap("cardTemplateJson")
     public String cardTemplateJson;
 

@@ -12,6 +12,9 @@ public class AddApproveDentryAuthRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user123</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -40,12 +43,18 @@ public class AddApproveDentryAuthRequest extends TeaModel {
     public static class AddApproveDentryAuthRequestFileInfos extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>B1oQixxxx</p>
          */
         @NameInMap("fileId")
         public String fileId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>111</p>
          */
         @NameInMap("spaceId")
         public Long spaceId;

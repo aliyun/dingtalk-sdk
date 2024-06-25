@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdateUserOwnnessRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1-删除，0-正常</p>
      */
     @NameInMap("deletedFlag")
     public Integer deletedFlag;
@@ -18,12 +21,18 @@ public class UpdateUserOwnnessRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123456</p>
      */
     @NameInMap("id")
     public Long id;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1-请假，3-出差</p>
      */
     @NameInMap("ownenssType")
     public Integer ownenssType;

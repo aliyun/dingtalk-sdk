@@ -32,57 +32,125 @@ public class CardBatchQueryCardsResponseBody extends TeaModel {
     }
 
     public static class CardBatchQueryCardsResponseBodyResultCards extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>industry_center</p>
+         */
         @NameInMap("cardBizCode")
         public String cardBizCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>234234234</p>
+         */
         @NameInMap("cardId")
         public Long cardId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("cardStatus")
         public Integer cardStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>打卡任务</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingdf19b4ee0d73233735c2f4657eb6378f</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-16</p>
+         */
         @NameInMap("effectTime")
         public String effectTime;
 
         @NameInMap("finished")
         public Boolean finished;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-19</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-16</p>
+         */
         @NameInMap("optEndTime")
         public String optEndTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>234234234</p>
+         */
         @NameInMap("optEndUserId")
         public String optEndUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("optEndUserName")
         public String optEndUserName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-16</p>
+         */
         @NameInMap("sendTime")
         public String sendTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-16</p>
+         */
         @NameInMap("startTime")
         public String startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>23234234</p>
+         */
         @NameInMap("teacherId")
         public String teacherId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("teacherName")
         public String teacherName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>每日锻炼</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("type")
         public Integer type;
 

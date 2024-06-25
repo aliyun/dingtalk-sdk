@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -40,28 +43,49 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
     public static class QueryEnterpriseAccountByPageResponseBodyList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>12345</p>
          */
         @NameInMap("accountCode")
         public String accountCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="mailto:test@alipay.com">test@alipay.com</a></p>
+         */
         @NameInMap("accountId")
         public String accountId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>网商银行</p>
          */
         @NameInMap("accountName")
         public String accountName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>test</p>
+         */
         @NameInMap("accountRemark")
         public String accountRemark;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ALIPAY</p>
          */
         @NameInMap("accountType")
         public String accountType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10000.33</p>
+         */
         @NameInMap("amount")
         public String amount;
 
@@ -73,12 +97,18 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1631526550994</p>
          */
         @NameInMap("createTime")
         public Long createTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>aaa</p>
          */
         @NameInMap("creator")
         public String creator;

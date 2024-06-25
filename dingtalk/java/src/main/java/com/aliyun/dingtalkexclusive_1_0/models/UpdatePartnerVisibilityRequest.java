@@ -4,15 +4,26 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdatePartnerVisibilityRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>0.0.5</p>
+     */
     @NameInMap("deptIds")
     public java.util.List<Long> deptIds;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1312312</p>
      */
     @NameInMap("labelId")
     public Long labelId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500000003</p>
+     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

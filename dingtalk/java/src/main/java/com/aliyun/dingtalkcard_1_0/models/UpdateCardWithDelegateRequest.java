@@ -12,6 +12,9 @@ public class UpdateCardWithDelegateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("outTrackId")
     public String outTrackId;

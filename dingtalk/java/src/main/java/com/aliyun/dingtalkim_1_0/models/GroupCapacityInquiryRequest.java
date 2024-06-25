@@ -4,18 +4,34 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupCapacityInquiryRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1Y</p>
+     */
     @NameInMap("effectiveDuration")
     public String effectiveDuration;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ciddmslasdfxcvbxcvgidnxsd==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>5782431748978293</p>
+     */
     @NameInMap("operator")
     public String operator;
 
     @NameInMap("options")
     public java.util.Map<String, ?> options;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2000</p>
+     */
     @NameInMap("targetCapacity")
     public Integer targetCapacity;
 

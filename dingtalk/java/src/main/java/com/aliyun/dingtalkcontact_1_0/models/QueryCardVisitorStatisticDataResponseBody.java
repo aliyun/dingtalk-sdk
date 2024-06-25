@@ -4,30 +4,66 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCardVisitorStatisticDataResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("cardSendCnt")
     public Long cardSendCnt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("todayVisitAddCnt")
     public Long todayVisitAddCnt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("todayVisitCnt")
     public Long todayVisitCnt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("totalVisitAddCnt")
     public Long totalVisitAddCnt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("totalVisitCnt")
     public Long totalVisitCnt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("wechatTodayVisitAddCnt")
     public Long wechatTodayVisitAddCnt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("wechatTodayVisitCnt")
     public Long wechatTodayVisitCnt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("wechatTotalVisitAddCnt")
     public Long wechatTotalVisitAddCnt;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("wechatTotalVisitCnt")
     public Long wechatTotalVisitCnt;
 

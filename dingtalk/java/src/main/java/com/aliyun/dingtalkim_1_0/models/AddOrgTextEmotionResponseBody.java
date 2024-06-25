@@ -32,6 +32,10 @@ public class AddOrgTextEmotionResponseBody extends TeaModel {
     }
 
     public static class AddOrgTextEmotionResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>corp_123456</p>
+         */
         @NameInMap("emotionId")
         public String emotionId;
 

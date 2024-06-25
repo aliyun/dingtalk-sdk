@@ -7,6 +7,10 @@ public class CollegeListUncheckedStudentResponseBody extends TeaModel {
     @NameInMap("studentInfoSimpleList")
     public java.util.List<CollegeListUncheckedStudentResponseBodyStudentInfoSimpleList> studentInfoSimpleList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -32,21 +36,41 @@ public class CollegeListUncheckedStudentResponseBody extends TeaModel {
     }
 
     public static class CollegeListUncheckedStudentResponseBodyStudentInfoSimpleList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>NORMAL</p>
+         */
         @NameInMap("dingMemberStatus")
         public String dingMemberStatus;
 
         @NameInMap("isActive")
         public Boolean isActive;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1111111</p>
+         */
         @NameInMap("studentId")
         public Long studentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("studentName")
         public String studentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>11111111</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0324124</p>
+         */
         @NameInMap("userId")
         public String userId;
 

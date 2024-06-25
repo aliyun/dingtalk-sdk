@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class OpenPeriodDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>311212121</p>
      */
     @NameInMap("endDate")
     public Long endDate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>111</p>
      */
     @NameInMap("id")
     public String id;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2023</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FY_S1</p>
      */
     @NameInMap("periodBizType")
     public String periodBizType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8383838383</p>
      */
     @NameInMap("startDate")
     public Long startDate;

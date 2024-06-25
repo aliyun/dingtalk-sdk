@@ -12,18 +12,27 @@ public class GetProjectResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1631526550994</p>
      */
     @NameInMap("createTime")
     public Long createTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>aaa</p>
      */
     @NameInMap("creator")
     public String creator;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>和外部合作</p>
      */
     @NameInMap("description")
     public String description;
@@ -33,18 +42,27 @@ public class GetProjectResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROJ-XXX</p>
      */
     @NameInMap("projectCode")
     public String projectCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>外包项目</p>
      */
     @NameInMap("projectName")
     public String projectName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>valid</p>
      */
     @NameInMap("status")
     public String status;

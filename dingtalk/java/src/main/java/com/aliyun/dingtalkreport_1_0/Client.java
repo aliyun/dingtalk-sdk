@@ -6,11 +6,10 @@ import com.aliyun.dingtalkreport_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建模板
-     *
+     * <b>summary</b> : 
+     * <p>创建模板</p>
+     * 
      * @param request CreateTemplatesRequest
      * @param headers CreateTemplatesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -118,8 +118,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建模板
-     *
+     * <b>summary</b> : 
+     * <p>创建模板</p>
+     * 
      * @param request CreateTemplatesRequest
      * @return CreateTemplatesResponse
      */
@@ -130,8 +131,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询员工提交和收到的日志列表
-     *
+     * <b>summary</b> : 
+     * <p>查询员工提交和收到的日志列表</p>
+     * 
      * @param request GetSendAndReceiveReportListRequest
      * @param headers GetSendAndReceiveReportListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -188,8 +190,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询员工提交和收到的日志列表
-     *
+     * <b>summary</b> : 
+     * <p>查询员工提交和收到的日志列表</p>
+     * 
      * @param request GetSendAndReceiveReportListRequest
      * @return GetSendAndReceiveReportListResponse
      */
@@ -200,8 +203,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取指定周期的提交统计结果
-     *
+     * <b>summary</b> : 
+     * <p>获取指定周期的提交统计结果</p>
+     * 
      * @param request GetSubmitStatisticsRequest
      * @param headers GetSubmitStatisticsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -258,8 +262,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取指定周期的提交统计结果
-     *
+     * <b>summary</b> : 
+     * <p>获取指定周期的提交统计结果</p>
+     * 
      * @param request GetSubmitStatisticsRequest
      * @return GetSubmitStatisticsResponse
      */
@@ -270,8 +275,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取创建的统计规则信息
-     *
+     * <b>summary</b> : 
+     * <p>获取创建的统计规则信息</p>
+     * 
      * @param request QueryRemindResultsRequest
      * @param headers QueryRemindResultsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -324,8 +330,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取创建的统计规则信息
-     *
+     * <b>summary</b> : 
+     * <p>获取创建的统计规则信息</p>
+     * 
      * @param request QueryRemindResultsRequest
      * @return QueryRemindResultsResponse
      */
@@ -336,8 +343,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取日志详情
-     *
+     * <b>summary</b> : 
+     * <p>获取日志详情</p>
+     * 
      * @param request QueryReportDetailRequest
      * @param headers QueryReportDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -378,8 +386,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取日志详情
-     *
+     * <b>summary</b> : 
+     * <p>获取日志详情</p>
+     * 
      * @param request QueryReportDetailRequest
      * @return QueryReportDetailResponse
      */

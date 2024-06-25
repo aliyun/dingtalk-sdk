@@ -6,36 +6,54 @@ import com.aliyun.tea.*;
 public class GetSimpleCubeModelListRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>APP_Q7D2TFJZWNMDS145Z7DP</p>
      */
     @NameInMap("appType")
     public String appType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding5d17e3add038d44535c2f4657eb6378f</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FORM_MT866EA17HGCUHIV7GROU72YO499257KRS0KLB</p>
      */
     @NameInMap("cubeCode")
     public String cubeCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding5d17e3add038d44535c2f4657eb6378f</p>
      */
     @NameInMap("cubeTenantId")
     public String cubeTenantId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>U66663B1LLGCVCVPAF76H6955VYG2408RS0KL0</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1160440651754805</p>
      */
     @NameInMap("userId")
     public String userId;

@@ -4,9 +4,17 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class OpenActionModel extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>sky</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>273829092</p>
+     */
     @NameInMap("timestamp")
     public Long timestamp;
 

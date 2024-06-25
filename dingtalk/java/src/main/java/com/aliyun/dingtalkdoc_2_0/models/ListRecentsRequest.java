@@ -26,18 +26,32 @@ public class ListRecentsRequest extends TeaModel {
     public static class ListRecentsRequestParam extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("fileTypes")
         public java.util.List<Integer> fileTypes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
+        /**
+         * <strong>example:</strong>
+         * <p>nextToken</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("operateTypes")
         public java.util.List<Integer> operateTypes;

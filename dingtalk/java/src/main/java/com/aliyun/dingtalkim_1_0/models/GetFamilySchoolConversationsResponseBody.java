@@ -7,9 +7,17 @@ public class GetFamilySchoolConversationsResponseBody extends TeaModel {
     @NameInMap("groupInfoList")
     public java.util.List<GetFamilySchoolConversationsResponseBodyGroupInfoList> groupInfoList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("hasMore")
     public String hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1666671122000</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -43,21 +51,37 @@ public class GetFamilySchoolConversationsResponseBody extends TeaModel {
     }
 
     public static class GetFamilySchoolConversationsResponseBodyGroupInfoList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>corp123</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
         @NameInMap("deptNameChain")
         public java.util.List<String> deptNameChain;
 
+        /**
+         * <strong>example:</strong>
+         * <p>小王的家校群</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("groupType")
         public String groupType;
 
         @NameInMap("joinGroupTime")
         public Long joinGroupTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cidxxx</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 

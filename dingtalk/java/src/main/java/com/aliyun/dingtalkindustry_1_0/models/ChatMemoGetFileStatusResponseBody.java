@@ -4,9 +4,17 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class ChatMemoGetFileStatusResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>-1</p>
+     */
     @NameInMap("status")
     public Integer status;
 
+    /**
+     * <strong>example:</strong>
+     * <p>待处理</p>
+     */
     @NameInMap("statusDesc")
     public String statusDesc;
 

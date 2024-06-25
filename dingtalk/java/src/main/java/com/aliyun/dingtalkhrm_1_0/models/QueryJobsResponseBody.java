@@ -43,12 +43,24 @@ public class QueryJobsResponseBody extends TeaModel {
     }
 
     public static class QueryJobsResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>职务描述</p>
+         */
         @NameInMap("jobDescription")
         public String jobDescription;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ac67286db74c48e28d787173ccc1a111</p>
+         */
         @NameInMap("jobId")
         public String jobId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>总裁</p>
+         */
         @NameInMap("jobName")
         public String jobName;
 

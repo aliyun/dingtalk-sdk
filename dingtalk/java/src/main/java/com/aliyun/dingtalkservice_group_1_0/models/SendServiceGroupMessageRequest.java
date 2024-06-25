@@ -13,6 +13,10 @@ public class SendServiceGroupMessageRequest extends TeaModel {
     @NameInMap("atUnionIds")
     public java.util.List<String> atUnionIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("btnOrientation")
     public String btnOrientation;
 
@@ -21,18 +25,32 @@ public class SendServiceGroupMessageRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>你有新的任务待审批</p>
      */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("hasContentLinks")
     public Boolean hasContentLinks;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("isAtAll")
     public Boolean isAtAll;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>MARKDOWN</p>
      */
     @NameInMap("messageType")
     public String messageType;
@@ -48,12 +66,18 @@ public class SendServiceGroupMessageRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidxxxxx==</p>
      */
     @NameInMap("targetOpenConversationId")
     public String targetOpenConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>服务提醒</p>
      */
     @NameInMap("title")
     public String title;
@@ -176,9 +200,17 @@ public class SendServiceGroupMessageRequest extends TeaModel {
     }
 
     public static class SendServiceGroupMessageRequestBtns extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">http://www.dingtalk.com</a></p>
+         */
         @NameInMap("actionURL")
         public String actionURL;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试按钮</p>
+         */
         @NameInMap("title")
         public String title;
 

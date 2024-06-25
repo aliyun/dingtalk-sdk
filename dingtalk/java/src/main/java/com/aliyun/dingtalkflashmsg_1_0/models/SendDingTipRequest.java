@@ -12,6 +12,9 @@ public class SendDingTipRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>msg_f9aae78558b34e20a5badead4c29244c_223</p>
      */
     @NameInMap("messageId")
     public String messageId;
@@ -22,11 +25,18 @@ public class SendDingTipRequest extends TeaModel {
     @NameInMap("receiverUserId")
     public java.util.List<String> receiverUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>080854121612261721</p>
+     */
     @NameInMap("senderUserId")
     public String senderUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>您有一条闪读消息，请注意查收XX</p>
      */
     @NameInMap("textContent")
     public String textContent;
@@ -90,15 +100,25 @@ public class SendDingTipRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>dingtalk://dingtalkclient/page/link?pc_slide=true</p>
          */
         @NameInMap("linkUrl")
         public String linkUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@lQLPDhrngMo4hi3NAZDNAZCwqp0RL2MfbesBqImWncBnAA2BCD</p>
+         */
         @NameInMap("picMediaId")
         public String picMediaId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>今天 10:00后超期</p>
          */
         @NameInMap("text")
         public String text;

@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class UserTaskReportRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>biz1231231231abcd</p>
      */
     @NameInMap("bizNo")
     public String bizNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2020-12-12 12:00:00</p>
      */
     @NameInMap("operateDate")
     public String operateDate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>task-create</p>
      */
     @NameInMap("taskTag")
     public String taskTag;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2312</p>
      */
     @NameInMap("userid")
     public String userid;

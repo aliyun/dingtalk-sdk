@@ -6,13 +6,24 @@ import com.aliyun.tea.*;
 public class UpdateOrganizationTaskContentRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>后天交周报</p>
      */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableActivity")
     public Boolean disableActivity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("disableNotification")
     public Boolean disableNotification;
 

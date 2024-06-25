@@ -4,11 +4,18 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ValidateUserRoleRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1677600000000</p>
+     */
     @NameInMap("timeThreshold")
     public Long timeThreshold;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>VYn5fYjORJMi</p>
      */
     @NameInMap("unionId")
     public String unionId;

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CreateSecondaryManagementGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>财务常用权限</p>
      */
     @NameInMap("groupName")
     public String groupName;
@@ -30,6 +33,9 @@ public class CreateSecondaryManagementGroupRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>WB001</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -82,12 +88,18 @@ public class CreateSecondaryManagementGroupRequest extends TeaModel {
     public static class CreateSecondaryManagementGroupRequestMembers extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>WB001</p>
          */
         @NameInMap("memberId")
         public String memberId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>user</p>
          */
         @NameInMap("memberType")
         public String memberType;
@@ -121,6 +133,9 @@ public class CreateSecondaryManagementGroupRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1:全公司 2:所在部门 3:指定部门</p>
          */
         @NameInMap("scopeType")
         public Integer scopeType;

@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class GetOpenCourseDetailResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>fdjakl-fdaf-ds</p>
      */
     @NameInMap("courseId")
     public String courseId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("courseType")
     public Long courseType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://static.dingtalk.com/media/lALPDgCwRt4FagzMi8yZ_153_139.png">https://static.dingtalk.com/media/lALPDgCwRt4FagzMi8yZ_153_139.png</a></p>
      */
     @NameInMap("coverUrl")
     public String coverUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>开学的第一堂课</p>
      */
     @NameInMap("introduction")
     public String introduction;
@@ -36,24 +48,36 @@ public class GetOpenCourseDetailResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1618369786000</p>
      */
     @NameInMap("startTime")
     public Long startTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123124312314</p>
      */
     @NameInMap("teacherId")
     public String teacherId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>张老师</p>
      */
     @NameInMap("teacherName")
     public String teacherName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>开学第一课</p>
      */
     @NameInMap("title")
     public String title;

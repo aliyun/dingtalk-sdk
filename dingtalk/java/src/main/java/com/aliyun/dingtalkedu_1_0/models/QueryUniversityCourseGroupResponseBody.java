@@ -23,18 +23,27 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemEndDate extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>31</p>
          */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("month")
         public Integer month;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021</p>
          */
         @NameInMap("year")
         public Integer year;
@@ -73,18 +82,27 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModelsCourserGroupItemStartDate extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("month")
         public Integer month;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021</p>
          */
         @NameInMap("year")
         public Integer year;
@@ -123,18 +141,27 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfoCourserGroupItemModels extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1、单周；2、双周；3、全周</p>
          */
         @NameInMap("classPeriodType")
         public Integer classPeriodType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10001</p>
          */
         @NameInMap("classroomId")
         public Long classroomId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1:音视频直播；2:线下课程；4:音视频及线下</p>
          */
         @NameInMap("courseType")
         public Integer courseType;
@@ -153,6 +180,9 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>7</p>
          */
         @NameInMap("dayOfWeek")
         public Integer dayOfWeek;
@@ -229,18 +259,27 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
     public static class QueryUniversityCourseGroupResponseBodyUniversityCourseGroupInfo extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>GS1001</p>
          */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>高数</p>
          */
         @NameInMap("courseGroupIntroduce")
         public String courseGroupIntroduce;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>高数_李老师</p>
          */
         @NameInMap("courseGroupName")
         public String courseGroupName;
@@ -253,30 +292,45 @@ public class QueryUniversityCourseGroupResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>GZ1001</p>
          */
         @NameInMap("isvCourseGroupCode")
         public String isvCourseGroupCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>university</p>
          */
         @NameInMap("periodCode")
         public String periodCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-2022</p>
          */
         @NameInMap("schoolYear")
         public String schoolYear;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("semester")
         public Integer semester;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>高等数学</p>
          */
         @NameInMap("subjectName")
         public String subjectName;

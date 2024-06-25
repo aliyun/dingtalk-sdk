@@ -21,30 +21,66 @@ public class CampusListRenterResponseBody extends TeaModel {
     }
 
     public static class CampusListRenterResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ding3242423</p>
+         */
         @NameInMap("bindRenterCorpId")
         public String bindRenterCorpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1655704317794</p>
+         */
         @NameInMap("bindTime")
         public Long bindTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1313131414</p>
+         */
         @NameInMap("creditCode")
         public String creditCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1655704317794</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>扩展信息</p>
+         */
         @NameInMap("extend")
         public String extend;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试租客</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("renterDeptId")
         public Long renterDeptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1655704317794</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("state")
         public Integer state;
 

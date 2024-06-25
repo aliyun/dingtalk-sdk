@@ -21,12 +21,24 @@ public class GetEmployeeRosterByFieldResponseBody extends TeaModel {
     }
 
     public static class GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("itemIndex")
         public Integer itemIndex;
 
+        /**
+         * <strong>example:</strong>
+         * <p>正式</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -62,15 +74,27 @@ public class GetEmployeeRosterByFieldResponseBody extends TeaModel {
     }
 
     public static class GetEmployeeRosterByFieldResponseBodyResultFieldDataList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>sys01-employeeStatus</p>
+         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>员工状态</p>
+         */
         @NameInMap("fieldName")
         public String fieldName;
 
         @NameInMap("fieldValueList")
         public java.util.List<GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueList> fieldValueList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>sys01</p>
+         */
         @NameInMap("groupId")
         public String groupId;
 
@@ -114,6 +138,10 @@ public class GetEmployeeRosterByFieldResponseBody extends TeaModel {
     }
 
     public static class GetEmployeeRosterByFieldResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ding20a11xxx</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
@@ -123,6 +151,10 @@ public class GetEmployeeRosterByFieldResponseBody extends TeaModel {
         @NameInMap("unionId")
         public String unionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>042519</p>
+         */
         @NameInMap("userId")
         public String userId;
 

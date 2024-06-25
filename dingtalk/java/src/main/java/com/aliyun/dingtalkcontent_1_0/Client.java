@@ -6,11 +6,10 @@ import com.aliyun.dingtalkcontent_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建内容
-     *
+     * <b>summary</b> : 
+     * <p>创建内容</p>
+     * 
      * @param request CreateFeedRequest
      * @param headers CreateFeedHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -70,8 +70,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建内容
-     *
+     * <b>summary</b> : 
+     * <p>创建内容</p>
+     * 
      * @param request CreateFeedRequest
      * @return CreateFeedResponse
      */
@@ -82,8 +83,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取feed的详细信息，包括子课程的信息
-     *
+     * <b>summary</b> : 
+     * <p>获取feed的详细信息，包括子课程的信息</p>
+     * 
      * @param request GetFeedRequest
      * @param headers GetFeedHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -124,8 +126,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取feed的详细信息，包括子课程的信息
-     *
+     * <b>summary</b> : 
+     * <p>获取feed的详细信息，包括子课程的信息</p>
+     * 
      * @param request GetFeedRequest
      * @return GetFeedResponse
      */
@@ -136,8 +139,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取oss上传凭证
-     *
+     * <b>summary</b> : 
+     * <p>获取oss上传凭证</p>
+     * 
      * @param request GetMediaCerficateRequest
      * @param headers GetMediaCerficateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -202,8 +206,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取oss上传凭证
-     *
+     * <b>summary</b> : 
+     * <p>获取oss上传凭证</p>
+     * 
      * @param request GetMediaCerficateRequest
      * @return GetMediaCerficateResponse
      */
@@ -214,8 +219,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 展示机构内观看内容的统计信息
-     *
+     * <b>summary</b> : 
+     * <p>展示机构内观看内容的统计信息</p>
+     * 
      * @param request ListItemUserDataRequest
      * @param headers ListItemUserDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -251,8 +257,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 展示机构内观看内容的统计信息
-     *
+     * <b>summary</b> : 
+     * <p>展示机构内观看内容的统计信息</p>
+     * 
      * @param request ListItemUserDataRequest
      * @return ListItemUserDataResponse
      */
@@ -263,8 +270,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取机构下课程列表
-     *
+     * <b>summary</b> : 
+     * <p>获取机构下课程列表</p>
+     * 
      * @param request PageFeedRequest
      * @param headers PageFeedHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -314,8 +322,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取机构下课程列表
-     *
+     * <b>summary</b> : 
+     * <p>获取机构下课程列表</p>
+     * 
      * @param request PageFeedRequest
      * @return PageFeedResponse
      */

@@ -7,17 +7,27 @@ public class UpdateSearchTabRequest extends TeaModel {
     @NameInMap("darkIcon")
     public String darkIcon;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
     @NameInMap("icon")
     public String icon;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>专辑</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("priority")
     public Integer priority;
@@ -27,6 +37,9 @@ public class UpdateSearchTabRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("status")
     public Integer status;

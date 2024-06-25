@@ -21,27 +21,59 @@ public class GetTaskResponseBody extends TeaModel {
     }
 
     public static class GetTaskResponseBodyTask extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("beginTime")
         public String beginTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("endTime")
         public String endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("failCount")
         public Long failCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>permissionDenied</p>
+         */
         @NameInMap("failMessage")
         public String failMessage;
 
+        /**
+         * <strong>example:</strong>
+         * <p>task_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>IN_PROGRESS</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("successCount")
         public Long successCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6</p>
+         */
         @NameInMap("totalCount")
         public Long totalCount;
 

@@ -24,9 +24,17 @@ public class SupplyListRoleResponseBody extends TeaModel {
         @NameInMap("isRoleGroup")
         public Boolean isRoleGroup;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("roleId")
         public String roleId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>老板</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 

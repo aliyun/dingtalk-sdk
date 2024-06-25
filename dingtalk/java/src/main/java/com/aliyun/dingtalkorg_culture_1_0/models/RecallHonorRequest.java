@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class RecallHonorRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>suyfsdjfu</p>
      */
     @NameInMap("userId")
     public String userId;

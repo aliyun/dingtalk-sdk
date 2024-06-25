@@ -21,15 +21,31 @@ public class ListSpaceSectionsResponseBody extends TeaModel {
     }
 
     public static class ListSpaceSectionsResponseBodyItems extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>base</p>
+         */
         @NameInMap("displayType")
         public String displayType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试分组</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("spaceNum")
         public Integer spaceNum;
 

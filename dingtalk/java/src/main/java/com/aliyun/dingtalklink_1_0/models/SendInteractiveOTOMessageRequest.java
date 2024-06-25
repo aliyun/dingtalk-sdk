@@ -24,11 +24,18 @@ public class SendInteractiveOTOMessageRequest extends TeaModel {
     }
 
     public static class SendInteractiveOTOMessageRequestDetail extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.youurl.com/callback/card">https://www.youurl.com/callback/card</a></p>
+         */
         @NameInMap("callbackUrl")
         public String callbackUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>service-card-20220824-001</p>
          */
         @NameInMap("cardBizId")
         public String cardBizId;
@@ -41,16 +48,26 @@ public class SendInteractiveOTOMessageRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3erkfi-42b0-4c83-bc56-ffhssde43</p>
          */
         @NameInMap("cardTemplateId")
         public String cardTemplateId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>user0001</p>
          */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;user001&quot;:&quot;&quot;}</p>
+         */
         @NameInMap("userIdPrivateDataMap")
         public String userIdPrivateDataMap;
 

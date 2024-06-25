@@ -21,15 +21,27 @@ public class RetainLeaveTypesResponseBody extends TeaModel {
     }
 
     public static class RetainLeaveTypesResponseBodyResultLeaveCertificate extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("duration")
         public Double duration;
 
         @NameInMap("enable")
         public Boolean enable;
 
+        /**
+         * <strong>example:</strong>
+         * <p>leaveCertificate</p>
+         */
         @NameInMap("promptInformation")
         public String promptInformation;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hour</p>
+         */
         @NameInMap("unit")
         public String unit;
 
@@ -76,12 +88,24 @@ public class RetainLeaveTypesResponseBody extends TeaModel {
         @NameInMap("enableTimeLimit")
         public Boolean enableTimeLimit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>after</p>
+         */
         @NameInMap("timeType")
         public String timeType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hour</p>
+         */
         @NameInMap("timeUnit")
         public String timeUnit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("timeValue")
         public Long timeValue;
 
@@ -125,6 +149,10 @@ public class RetainLeaveTypesResponseBody extends TeaModel {
     }
 
     public static class RetainLeaveTypesResponseBodyResultVisibilityRules extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>dept</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -155,42 +183,86 @@ public class RetainLeaveTypesResponseBody extends TeaModel {
     }
 
     public static class RetainLeaveTypesResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>lieu_leave</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>8</p>
+         */
         @NameInMap("hoursInPerDay")
         public Long hoursInPerDay;
 
         @NameInMap("leaveCertificate")
         public RetainLeaveTypesResponseBodyResultLeaveCertificate leaveCertificate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2e8b764e-7989-4b5d-ac64-xxxxx</p>
+         */
         @NameInMap("leaveCode")
         public String leaveCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;&quot;</p>
+         */
         @NameInMap("leaveHourCeil")
         public String leaveHourCeil;
 
+        /**
+         * <strong>example:</strong>
+         * <p>高级测试假期</p>
+         */
         @NameInMap("leaveName")
         public String leaveName;
 
         @NameInMap("leaveTimeCeil")
         public Boolean leaveTimeCeil;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hour</p>
+         */
         @NameInMap("leaveTimeCeilMinUnit")
         public String leaveTimeCeilMinUnit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hour</p>
+         */
         @NameInMap("leaveViewUnit")
         public String leaveViewUnit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>30</p>
+         */
         @NameInMap("lieuDelayNum")
         public Long lieuDelayNum;
 
+        /**
+         * <strong>example:</strong>
+         * <p>day</p>
+         */
         @NameInMap("lieuDelayUnit")
         public String lieuDelayUnit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>24</p>
+         */
         @NameInMap("maxLeaveTime")
         public Long maxLeaveTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0.5</p>
+         */
         @NameInMap("minLeaveHour")
         public Double minLeaveHour;
 
@@ -206,6 +278,10 @@ public class RetainLeaveTypesResponseBody extends TeaModel {
         @NameInMap("visibilityRules")
         public java.util.List<RetainLeaveTypesResponseBodyResultVisibilityRules> visibilityRules;
 
+        /**
+         * <strong>example:</strong>
+         * <p>formal</p>
+         */
         @NameInMap("whenCanLeave")
         public String whenCanLeave;
 

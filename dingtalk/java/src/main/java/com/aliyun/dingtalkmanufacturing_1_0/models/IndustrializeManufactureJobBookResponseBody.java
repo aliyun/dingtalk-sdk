@@ -90,6 +90,10 @@ public class IndustrializeManufactureJobBookResponseBody extends TeaModel {
     }
 
     public static class IndustrializeManufactureJobBookResponseBodyContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("count")
         public Integer count;
 

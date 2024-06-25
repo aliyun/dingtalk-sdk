@@ -7,14 +7,25 @@ public class TextToImageRequest extends TeaModel {
     @NameInMap("modelId")
     public String modelId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pictureNum")
     public Long pictureNum;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1024*1024</p>
+     */
     @NameInMap("pictureSize")
     public String pictureSize;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>帮我生成一个小猫在草坪上奔跑的图片</p>
      */
     @NameInMap("query")
     public String query;

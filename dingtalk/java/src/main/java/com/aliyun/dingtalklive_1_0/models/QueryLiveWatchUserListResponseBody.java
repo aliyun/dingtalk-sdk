@@ -21,24 +21,52 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
     }
 
     public static class QueryLiveWatchUserListResponseBodyResultOrgUsesList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxx.设计部</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>DC7wZGOSueEEIGOf3WKwWgiEiE</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>214675</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>189930</p>
+         */
         @NameInMap("watchLiveTime")
         public Long watchLiveTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>23667</p>
+         */
         @NameInMap("watchPlaybackTime")
         public Long watchPlaybackTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2330</p>
+         */
         @NameInMap("watchProgressMs")
         public Long watchProgressMs;
 
@@ -106,15 +134,31 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
     }
 
     public static class QueryLiveWatchUserListResponseBodyResultOutOrgUserList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>23440</p>
+         */
         @NameInMap("watchLiveTime")
         public Long watchLiveTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2330</p>
+         */
         @NameInMap("watchPlaybackTime")
         public Long watchPlaybackTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>150</p>
+         */
         @NameInMap("watchProgressMs")
         public Long watchProgressMs;
 

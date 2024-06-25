@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class ShiftAddRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>白班</p>
      */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>user01</p>
+     */
     @NameInMap("owner")
     public String owner;
 
@@ -19,17 +26,28 @@ public class ShiftAddRequest extends TeaModel {
     @NameInMap("sections")
     public java.util.List<ShiftAddRequestSections> sections;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("serviceId")
     public Long serviceId;
 
     @NameInMap("setting")
     public ShiftAddRequestSetting setting;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("shiftId")
     public Long shiftId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user01</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
@@ -98,25 +116,42 @@ public class ShiftAddRequest extends TeaModel {
     public static class ShiftAddRequestSectionsTimes extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("across")
         public Integer across;
 
+        /**
+         * <strong>example:</strong>
+         * <p>30</p>
+         */
         @NameInMap("beginMin")
         public Integer beginMin;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1714298274613</p>
          */
         @NameInMap("checkTime")
         public Long checkTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>OnDuty</p>
          */
         @NameInMap("checkType")
         public String checkType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>-1</p>
+         */
         @NameInMap("endMin")
         public Integer endMin;
 
@@ -212,9 +247,17 @@ public class ShiftAddRequest extends TeaModel {
     }
 
     public static class ShiftAddRequestSettingTopRestTimeList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("across")
         public Integer across;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1714298002940</p>
+         */
         @NameInMap("checkTime")
         public Long checkTime;
 
@@ -242,9 +285,17 @@ public class ShiftAddRequest extends TeaModel {
     }
 
     public static class ShiftAddRequestSetting extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>60</p>
+         */
         @NameInMap("absenteeismLateMinutes")
         public Integer absenteeismLateMinutes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0.8</p>
+         */
         @NameInMap("attendDays")
         public Double attendDays;
 
@@ -254,9 +305,17 @@ public class ShiftAddRequest extends TeaModel {
         @NameInMap("isFlexible")
         public Boolean isFlexible;
 
+        /**
+         * <strong>example:</strong>
+         * <p>31</p>
+         */
         @NameInMap("seriousLateMinutes")
         public Integer seriousLateMinutes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>temp:schedule:isv</p>
+         */
         @NameInMap("tags")
         public String tags;
 

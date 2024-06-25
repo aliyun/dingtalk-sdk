@@ -4,17 +4,27 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveAcrossCloudStroageConfigsResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>sampleKeyId1234</p>
+     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://oss-cn-test.aliyuncs.com">https://oss-cn-test.aliyuncs.com</a></p>
      */
     @NameInMap("endpoint")
     public String endpoint;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("state")
     public Integer state;

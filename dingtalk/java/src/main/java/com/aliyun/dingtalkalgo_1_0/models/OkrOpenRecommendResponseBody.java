@@ -43,6 +43,9 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3</p>
          */
         @NameInMap("semanticLevel")
         public Long semanticLevel;
@@ -93,6 +96,9 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3</p>
          */
         @NameInMap("semanticLevel")
         public Long semanticLevel;
@@ -149,12 +155,18 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3</p>
          */
         @NameInMap("semanticLevel")
         public Long semanticLevel;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>111</p>
          */
         @NameInMap("userId")
         public String userId;

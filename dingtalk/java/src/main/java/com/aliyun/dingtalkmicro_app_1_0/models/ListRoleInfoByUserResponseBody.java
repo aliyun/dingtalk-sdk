@@ -21,12 +21,24 @@ public class ListRoleInfoByUserResponseBody extends TeaModel {
     }
 
     public static class ListRoleInfoByUserResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("canManageRole")
         public Boolean canManageRole;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("roleId")
         public Long roleId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>财务</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 

@@ -21,9 +21,17 @@ public class SupplyGetMemberResponseBody extends TeaModel {
     }
 
     public static class SupplyGetMemberResponseBodyResultRoleInfoList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("roleId")
         public String roleId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>老板</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 
@@ -54,18 +62,38 @@ public class SupplyGetMemberResponseBody extends TeaModel {
         @NameInMap("deptIdList")
         public java.util.List<Long> deptIdList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>NORMAL</p>
+         */
         @NameInMap("dingMemberStatus")
         public String dingMemberStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isActive")
         public Boolean isActive;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李白</p>
+         */
         @NameInMap("memberName")
         public String memberName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>经理</p>
+         */
         @NameInMap("memberTitle")
         public String memberTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("memberWorkNumber")
         public String memberWorkNumber;
 

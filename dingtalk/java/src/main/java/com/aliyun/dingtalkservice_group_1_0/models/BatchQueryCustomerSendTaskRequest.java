@@ -4,21 +4,40 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryCustomerSendTaskRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2023-06-02 00:00:00</p>
+     */
     @NameInMap("gmtCreateEnd")
     public String gmtCreateEnd;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2023-06-01 00:00:00</p>
+     */
     @NameInMap("gmtCreateStart")
     public String gmtCreateStart;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("maxResults")
     public Long maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("needRichStatistics")
     public Boolean needRichStatistics;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -31,6 +50,10 @@ public class BatchQueryCustomerSendTaskRequest extends TeaModel {
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>哈哈哈</p>
+     */
     @NameInMap("taskName")
     public String taskName;
 

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptDetailForInvoiceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>abcdefghijklmnopq</p>
+     */
     @NameInMap("instanceId")
     public String instanceId;
 

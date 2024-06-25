@@ -6,11 +6,10 @@ import com.aliyun.dingtalkwiki_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 根据词条名称获取该词条释义
-     *
+     * <b>summary</b> : 
+     * <p>根据词条名称获取该词条释义</p>
+     * 
      * @param request WikiWordsDetailRequest
      * @param headers WikiWordsDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -62,8 +62,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据词条名称获取该词条释义
-     *
+     * <b>summary</b> : 
+     * <p>根据词条名称获取该词条释义</p>
+     * 
      * @param request WikiWordsDetailRequest
      * @return WikiWordsDetailResponse
      */
@@ -74,8 +75,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 外部传递过来的消息根据百科词库分词
-     *
+     * <b>summary</b> : 
+     * <p>外部传递过来的消息根据百科词库分词</p>
+     * 
      * @param request WikiWordsParseRequest
      * @param headers WikiWordsParseHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -116,8 +118,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 外部传递过来的消息根据百科词库分词
-     *
+     * <b>summary</b> : 
+     * <p>外部传递过来的消息根据百科词库分词</p>
+     * 
      * @param request WikiWordsParseRequest
      * @return WikiWordsParseResponse
      */

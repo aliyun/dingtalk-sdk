@@ -24,6 +24,10 @@ public class GetOutGroupsByPageResponseBody extends TeaModel {
     }
 
     public static class GetOutGroupsByPageResponseBodyResponseBodyGroupList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>{   &quot;text&quot;: {     &quot;content&quot;: &quot;这是一段文本&quot;   } }</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
@@ -46,6 +50,10 @@ public class GetOutGroupsByPageResponseBody extends TeaModel {
         @NameInMap("groupList")
         public java.util.List<GetOutGroupsByPageResponseBodyResponseBodyGroupList> groupList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("total")
         public Integer total;
 

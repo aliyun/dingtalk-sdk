@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class DeleteKeyResultRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>4d2d</p>
      */
     @NameInMap("krId")
     public String krId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>06186238011033616</p>
      */
     @NameInMap("userId")
     public String userId;

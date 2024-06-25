@@ -4,24 +4,42 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncTripOrderRequest extends TeaModel {
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("bizExtension")
     public String bizExtension;
 
+    /**
+     * <strong>example:</strong>
+     * <p>BUSSINESS</p>
+     */
     @NameInMap("channelType")
     public String channelType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>CNY</p>
      */
     @NameInMap("currency")
     public String currency;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20881001829000</p>
      */
     @NameInMap("dingUserId")
     public String dingUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("discountAmount")
     public String discountAmount;
 
@@ -36,19 +54,34 @@ public class SyncTripOrderRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2022-05-15 10:10:10</p>
      */
     @NameInMap("gmtOrder")
     public String gmtOrder;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-05-15 10:10:10</p>
+     */
     @NameInMap("gmtPay")
     public String gmtPay;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2022-05-15 10:10:10</p>
+     */
     @NameInMap("gmtRefund")
     public String gmtRefund;
 
     @NameInMap("invoiceApplyUrl")
     public String invoiceApplyUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20220510170058192311</p>
+     */
     @NameInMap("journeyBizNo")
     public String journeyBizNo;
 
@@ -57,12 +90,18 @@ public class SyncTripOrderRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20881001829000</p>
      */
     @NameInMap("orderNo")
     public String orderNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>https:dingtalk.com/tripOrder/20220510170058192311</p>
      */
     @NameInMap("orderUrl")
     public String orderUrl;
@@ -70,12 +109,24 @@ public class SyncTripOrderRequest extends TeaModel {
     @NameInMap("processId")
     public String processId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100.00</p>
+     */
     @NameInMap("realAmount")
     public String realAmount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("refundAmount")
     public String refundAmount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20881001829000</p>
+     */
     @NameInMap("relativeOrderNo")
     public String relativeOrderNo;
 
@@ -88,17 +139,28 @@ public class SyncTripOrderRequest extends TeaModel {
     @NameInMap("supplyName")
     public String supplyName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding32fff839a3e0105d</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
     @NameInMap("tmcCorpId")
     public String tmcCorpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100.00</p>
+     */
     @NameInMap("totalAmount")
     public String totalAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FLIGHT</p>
      */
     @NameInMap("type")
     public String type;
@@ -319,12 +381,18 @@ public class SyncTripOrderRequest extends TeaModel {
     public static class SyncTripOrderRequestEvent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>INIT</p>
          */
         @NameInMap("action")
         public String action;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-05-15 10:10:10</p>
          */
         @NameInMap("gmtAction")
         public String gmtAction;
@@ -353,15 +421,31 @@ public class SyncTripOrderRequest extends TeaModel {
     }
 
     public static class SyncTripOrderRequestOrderDetailsHotelLocation extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>30.278569</p>
+         */
         @NameInMap("lat")
         public String lat;
 
+        /**
+         * <strong>example:</strong>
+         * <p>120.023458</p>
+         */
         @NameInMap("lon")
         public String lon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>GCJ02</p>
+         */
         @NameInMap("source")
         public String source;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://ditu.amap.com/place/B0FFIYYAIA">https://ditu.amap.com/place/B0FFIYYAIA</a></p>
+         */
         @NameInMap("url")
         public String url;
 
@@ -490,96 +574,204 @@ public class SyncTripOrderRequest extends TeaModel {
     }
 
     public static class SyncTripOrderRequestOrderDetails extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-05-20 12:20:00</p>
+         */
         @NameInMap("arrivalTime")
         public String arrivalTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>红色</p>
+         */
         @NameInMap("carColor")
         public String carColor;
 
+        /**
+         * <strong>example:</strong>
+         * <p>帕萨特</p>
+         */
         @NameInMap("carModel")
         public String carModel;
 
+        /**
+         * <strong>example:</strong>
+         * <p>浙A0Z***7</p>
+         */
         @NameInMap("carNumber")
         public String carNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>单早</p>
+         */
         @NameInMap("cateringType")
         public String cateringType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-05-20 14:00:00</p>
+         */
         @NameInMap("checkInTime")
         public String checkInTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-05-21 12:00:00</p>
+         */
         @NameInMap("checkOutTime")
         public String checkOutTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-05-20 10:00:00</p>
+         */
         @NameInMap("departTime")
         public String departTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州</p>
+         */
         @NameInMap("destinationCity")
         public String destinationCity;
 
+        /**
+         * <strong>example:</strong>
+         * <p>151</p>
+         */
         @NameInMap("destinationCityCode")
         public String destinationCityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州</p>
+         */
         @NameInMap("destinationStation")
         public String destinationStation;
 
+        /**
+         * <strong>example:</strong>
+         * <p>T3</p>
+         */
         @NameInMap("destinationTerminalBuilding")
         public String destinationTerminalBuilding;
 
         @NameInMap("detailAmount")
         public String detailAmount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>浙江省杭州市余杭区聚橙路文昌路</p>
+         */
         @NameInMap("hotelAddress")
         public String hotelAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州</p>
+         */
         @NameInMap("hotelCity")
         public String hotelCity;
 
         @NameInMap("hotelLocation")
         public SyncTripOrderRequestOrderDetailsHotelLocation hotelLocation;
 
+        /**
+         * <strong>example:</strong>
+         * <p>亲橙客栈</p>
+         */
         @NameInMap("hotelName")
         public String hotelName;
 
         @NameInMap("openConsumerInfo")
         public java.util.List<SyncTripOrderRequestOrderDetailsOpenConsumerInfo> openConsumerInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>北京</p>
+         */
         @NameInMap("originCity")
         public String originCity;
 
+        /**
+         * <strong>example:</strong>
+         * <p>150</p>
+         */
         @NameInMap("originCityCode")
         public String originCityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>北京</p>
+         */
         @NameInMap("originStation")
         public String originStation;
 
+        /**
+         * <strong>example:</strong>
+         * <p>T3</p>
+         */
         @NameInMap("originTerminalBuilding")
         public String originTerminalBuilding;
 
         @NameInMap("roomCount")
         public Integer roomCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>经济舱/7车12A</p>
+         */
         @NameInMap("seatInfo")
         public String seatInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>REALTIME</p>
+         */
         @NameInMap("serviceType")
         public String serviceType;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://dingtalk.com/static/logo.png">http://dingtalk.com/static/logo.png</a></p>
+         */
         @NameInMap("subSupplyLogo")
         public String subSupplyLogo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>国航</p>
+         */
         @NameInMap("subSupplyName")
         public String subSupplyName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>专车</p>
+         */
         @NameInMap("taxiType")
         public String taxiType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-05-20 14:00:00</p>
+         */
         @NameInMap("telephone")
         public String telephone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>CA1762</p>
+         */
         @NameInMap("transportNumber")
         public String transportNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>商务标准间</p>
+         */
         @NameInMap("typeDescription")
         public String typeDescription;
 

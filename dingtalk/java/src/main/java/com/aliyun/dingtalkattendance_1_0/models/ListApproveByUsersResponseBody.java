@@ -21,30 +21,66 @@ public class ListApproveByUsersResponseBody extends TeaModel {
     }
 
     public static class ListApproveByUsersResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>4850378c0ee83</p>
+         */
         @NameInMap("approveId")
         public String approveId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-03-15 AM</p>
+         */
         @NameInMap("beginTime")
         public String beginTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("bizType")
         public Integer bizType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("calculateModel")
         public Integer calculateModel;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hour</p>
+         */
         @NameInMap("durationUnit")
         public String durationUnit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-03-15 AM</p>
+         */
         @NameInMap("endTime")
         public String endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>年假</p>
+         */
         @NameInMap("subType")
         public String subType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>请假</p>
+         */
         @NameInMap("tagName")
         public String tagName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user1</p>
+         */
         @NameInMap("userId")
         public String userId;
 

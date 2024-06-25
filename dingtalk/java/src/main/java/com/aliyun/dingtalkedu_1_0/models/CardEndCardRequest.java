@@ -6,27 +6,43 @@ import com.aliyun.tea.*;
 public class CardEndCardRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>industry_center</p>
      */
     @NameInMap("cardBizCode")
     public String cardBizCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>856237470</p>
+     */
     @NameInMap("cardBizId")
     public String cardBizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>80264668258</p>
      */
     @NameInMap("cardId")
     public Long cardId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YUFANAI</p>
      */
     @NameInMap("sourceType")
     public String sourceType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager7741</p>
      */
     @NameInMap("userId")
     public String userId;

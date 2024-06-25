@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class RunCallUserRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>corpidxxxxx</p>
      */
     @NameInMap("authorizeCorpId")
     public String authorizeCorpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxxx</p>
      */
     @NameInMap("authorizeUserId")
     public String authorizeUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("orderId")
     public String orderId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("userId")
     public String userId;

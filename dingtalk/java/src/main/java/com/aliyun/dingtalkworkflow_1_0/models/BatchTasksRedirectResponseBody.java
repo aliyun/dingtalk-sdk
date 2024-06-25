@@ -32,17 +32,27 @@ public class BatchTasksRedirectResponseBody extends TeaModel {
     }
 
     public static class BatchTasksRedirectResponseBodyResultRedirectResults extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>外部流程不允许转交</p>
+         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>success</p>
          */
         @NameInMap("success")
         public Boolean success;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1234567</p>
          */
         @NameInMap("taskId")
         public Long taskId;
@@ -81,6 +91,9 @@ public class BatchTasksRedirectResponseBody extends TeaModel {
     public static class BatchTasksRedirectResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("failCount")
         public Long failCount;
@@ -93,6 +106,9 @@ public class BatchTasksRedirectResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20</p>
          */
         @NameInMap("totalCount")
         public Long totalCount;

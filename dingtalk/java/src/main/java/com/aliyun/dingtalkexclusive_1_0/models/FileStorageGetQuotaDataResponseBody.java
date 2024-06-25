@@ -23,12 +23,18 @@ public class FileStorageGetQuotaDataResponseBody extends TeaModel {
     public static class FileStorageGetQuotaDataResponseBodyQuotaModelList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-04</p>
          */
         @NameInMap("statisticTime")
         public String statisticTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>14000</p>
          */
         @NameInMap("usedStorage")
         public Long usedStorage;

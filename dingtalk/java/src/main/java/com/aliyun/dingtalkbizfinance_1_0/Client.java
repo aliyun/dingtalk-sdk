@@ -6,11 +6,10 @@ import com.aliyun.dingtalkbizfinance_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 追加角色权限点
-     *
+     * <b>summary</b> : 
+     * <p>追加角色权限点</p>
+     * 
      * @param tmpReq AppendRolePermissionRequest
      * @param headers AppendRolePermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -72,8 +72,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 追加角色权限点
-     *
+     * <b>summary</b> : 
+     * <p>追加角色权限点</p>
+     * 
      * @param request AppendRolePermissionRequest
      * @return AppendRolePermissionResponse
      */
@@ -84,8 +85,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发票数据批量写入
-     *
+     * <b>summary</b> : 
+     * <p>发票数据批量写入</p>
+     * 
      * @param request BatchAddInvoiceRequest
      * @param headers BatchAddInvoiceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -138,8 +140,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发票数据批量写入
-     *
+     * <b>summary</b> : 
+     * <p>发票数据批量写入</p>
+     * 
      * @param request BatchAddInvoiceRequest
      * @return BatchAddInvoiceResponse
      */
@@ -150,8 +153,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量增加用户信息
-     *
+     * <b>summary</b> : 
+     * <p>批量增加用户信息</p>
+     * 
      * @param request BatchCreateCustomerRequest
      * @param headers BatchCreateCustomerHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -196,8 +200,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量增加用户信息
-     *
+     * <b>summary</b> : 
+     * <p>批量增加用户信息</p>
+     * 
      * @param request BatchCreateCustomerRequest
      * @return BatchCreateCustomerResponse
      */
@@ -208,8 +213,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 绑定钉钉智能财务企业主体的账套信息
-     *
+     * <b>summary</b> : 
+     * <p>绑定钉钉智能财务企业主体的账套信息</p>
+     * 
      * @param request BindCompanyAccountantBookRequest
      * @param headers BindCompanyAccountantBookHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -254,8 +260,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 绑定钉钉智能财务企业主体的账套信息
-     *
+     * <b>summary</b> : 
+     * <p>绑定钉钉智能财务企业主体的账套信息</p>
+     * 
      * @param request BindCompanyAccountantBookRequest
      * @return BindCompanyAccountantBookResponse
      */
@@ -266,8 +273,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查验发票是否生成凭证
-     *
+     * <b>summary</b> : 
+     * <p>查验发票是否生成凭证</p>
+     * 
      * @param request CheckVoucherStatusRequest
      * @param headers CheckVoucherStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -344,8 +352,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查验发票是否生成凭证
-     *
+     * <b>summary</b> : 
+     * <p>查验发票是否生成凭证</p>
+     * 
      * @param request CheckVoucherStatusRequest
      * @return CheckVoucherStatusResponse
      */
@@ -356,8 +365,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建智能财务的客户信息
-     *
+     * <b>summary</b> : 
+     * <p>创建智能财务的客户信息</p>
+     * 
      * @param request CreateCustomerRequest
      * @param headers CreateCustomerHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -438,8 +448,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建智能财务的客户信息
-     *
+     * <b>summary</b> : 
+     * <p>创建智能财务的客户信息</p>
+     * 
      * @param request CreateCustomerRequest
      * @return CreateCustomerResponse
      */
@@ -450,8 +461,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建智能财务单据
-     *
+     * <b>summary</b> : 
+     * <p>创建智能财务单据</p>
+     * 
      * @param request CreateReceiptRequest
      * @param headers CreateReceiptHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -492,8 +504,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建智能财务单据
-     *
+     * <b>summary</b> : 
+     * <p>创建智能财务单据</p>
+     * 
      * @param request CreateReceiptRequest
      * @return CreateReceiptResponse
      */
@@ -504,8 +517,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除智能财务单据
-     *
+     * <b>summary</b> : 
+     * <p>删除智能财务单据</p>
+     * 
      * @param request DeleteReceiptRequest
      * @param headers DeleteReceiptHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -546,8 +560,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除智能财务单据
-     *
+     * <b>summary</b> : 
+     * <p>删除智能财务单据</p>
+     * 
      * @param request DeleteReceiptRequest
      * @return DeleteReceiptResponse
      */
@@ -558,8 +573,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取可以查看账本的用户列表
-     *
+     * <b>summary</b> : 
+     * <p>获取可以查看账本的用户列表</p>
+     * 
      * @param headers GetBookkeepingUserListHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetBookkeepingUserListResponse
@@ -592,8 +608,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取可以查看账本的用户列表
-     *
+     * <b>summary</b> : 
+     * <p>获取可以查看账本的用户列表</p>
      * @return GetBookkeepingUserListResponse
      */
     public GetBookkeepingUserListResponse getBookkeepingUserList() throws Exception {
@@ -603,8 +619,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取费用类别
-     *
+     * <b>summary</b> : 
+     * <p>获取费用类别</p>
+     * 
      * @param request GetCategoryRequest
      * @param headers GetCategoryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -645,8 +662,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取费用类别
-     *
+     * <b>summary</b> : 
+     * <p>获取费用类别</p>
+     * 
      * @param request GetCategoryRequest
      * @return GetCategoryResponse
      */
@@ -657,8 +675,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取智能财务应用内维护的客户信息
-     *
+     * <b>summary</b> : 
+     * <p>获取智能财务应用内维护的客户信息</p>
+     * 
      * @param request GetCustomerRequest
      * @param headers GetCustomerHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -699,8 +718,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取智能财务应用内维护的客户信息
-     *
+     * <b>summary</b> : 
+     * <p>获取智能财务应用内维护的客户信息</p>
+     * 
      * @param request GetCustomerRequest
      * @return GetCustomerResponse
      */
@@ -711,8 +731,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业账户
-     *
+     * <b>summary</b> : 
+     * <p>获取企业账户</p>
+     * 
      * @param request GetFinanceAccountRequest
      * @param headers GetFinanceAccountHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -753,8 +774,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业账户
-     *
+     * <b>summary</b> : 
+     * <p>获取企业账户</p>
+     * 
      * @param request GetFinanceAccountRequest
      * @return GetFinanceAccountResponse
      */
@@ -765,8 +787,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取智能财务套件模版信息
-     *
+     * <b>summary</b> : 
+     * <p>获取智能财务套件模版信息</p>
+     * 
      * @param headers GetFormTemplateInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetFormTemplateInfoResponse
@@ -799,8 +822,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取智能财务套件模版信息
-     *
+     * <b>summary</b> : 
+     * <p>获取智能财务套件模版信息</p>
      * @return GetFormTemplateInfoResponse
      */
     public GetFormTemplateInfoResponse getFormTemplateInfo() throws Exception {
@@ -810,8 +833,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发票分页查询接口
-     *
+     * <b>summary</b> : 
+     * <p>发票分页查询接口</p>
+     * 
      * @param tmpReq GetInvoiceByPageRequest
      * @param headers GetInvoiceByPageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -858,8 +882,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发票分页查询接口
-     *
+     * <b>summary</b> : 
+     * <p>发票分页查询接口</p>
+     * 
      * @param request GetInvoiceByPageRequest
      * @return GetInvoiceByPageResponse
      */
@@ -870,8 +895,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用来给isv提供是否使用智能账本的判断接口
-     *
+     * <b>summary</b> : 
+     * <p>用来给isv提供是否使用智能账本的判断接口</p>
+     * 
      * @param headers GetIsNewVersionHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetIsNewVersionResponse
@@ -904,8 +930,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 用来给isv提供是否使用智能账本的判断接口
-     *
+     * <b>summary</b> : 
+     * <p>用来给isv提供是否使用智能账本的判断接口</p>
      * @return GetIsNewVersionResponse
      */
     public GetIsNewVersionResponse getIsNewVersion() throws Exception {
@@ -915,8 +941,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据comanyCode查询钉钉智能财务多主体信息
-     *
+     * <b>summary</b> : 
+     * <p>根据comanyCode查询钉钉智能财务多主体信息</p>
+     * 
      * @param headers GetMultiCompanyInfoByCodeHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetMultiCompanyInfoByCodeResponse
@@ -949,8 +976,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据comanyCode查询钉钉智能财务多主体信息
-     *
+     * <b>summary</b> : 
+     * <p>根据comanyCode查询钉钉智能财务多主体信息</p>
      * @return GetMultiCompanyInfoByCodeResponse
      */
     public GetMultiCompanyInfoByCodeResponse getMultiCompanyInfoByCode(String companyCode) throws Exception {
@@ -960,8 +987,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取商品信息
-     *
+     * <b>summary</b> : 
+     * <p>获取商品信息</p>
+     * 
      * @param request GetProductRequest
      * @param headers GetProductHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1002,8 +1030,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取商品信息
-     *
+     * <b>summary</b> : 
+     * <p>获取商品信息</p>
+     * 
      * @param request GetProductRequest
      * @return GetProductResponse
      */
@@ -1014,8 +1043,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取单条项目
-     *
+     * <b>summary</b> : 
+     * <p>获取单条项目</p>
+     * 
      * @param request GetProjectRequest
      * @param headers GetProjectHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1056,8 +1086,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取单条项目
-     *
+     * <b>summary</b> : 
+     * <p>获取单条项目</p>
+     * 
      * @param request GetProjectRequest
      * @return GetProjectResponse
      */
@@ -1068,8 +1099,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取智能财务单据详情
-     *
+     * <b>summary</b> : 
+     * <p>获取智能财务单据详情</p>
+     * 
      * @param request GetReceiptRequest
      * @param headers GetReceiptHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1114,8 +1146,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取智能财务单据详情
-     *
+     * <b>summary</b> : 
+     * <p>获取智能财务单据详情</p>
+     * 
      * @param request GetReceiptRequest
      * @return GetReceiptResponse
      */
@@ -1126,8 +1159,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取智能财务应用内维护的供应商信息
-     *
+     * <b>summary</b> : 
+     * <p>获取智能财务应用内维护的供应商信息</p>
+     * 
      * @param request GetSupplierRequest
      * @param headers GetSupplierHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1168,8 +1202,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取智能财务应用内维护的供应商信息
-     *
+     * <b>summary</b> : 
+     * <p>获取智能财务应用内维护的供应商信息</p>
+     * 
      * @param request GetSupplierRequest
      * @return GetSupplierResponse
      */
@@ -1180,8 +1215,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用友开放平台接口鉴权信息
-     *
+     * <b>summary</b> : 
+     * <p>获取用友开放平台接口鉴权信息</p>
+     * 
      * @param request GetYongYouOpenApiTokenRequest
      * @param headers GetYongYouOpenApiTokenHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1222,8 +1258,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取用友开放平台接口鉴权信息
-     *
+     * <b>summary</b> : 
+     * <p>获取用友开放平台接口鉴权信息</p>
+     * 
      * @param request GetYongYouOpenApiTokenRequest
      * @return GetYongYouOpenApiTokenResponse
      */
@@ -1234,8 +1271,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询钉钉组织绑定的畅捷通组织
-     *
+     * <b>summary</b> : 
+     * <p>查询钉钉组织绑定的畅捷通组织</p>
+     * 
      * @param headers GetYongYouOrgRelationHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetYongYouOrgRelationResponse
@@ -1268,8 +1306,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询钉钉组织绑定的畅捷通组织
-     *
+     * <b>summary</b> : 
+     * <p>查询钉钉组织绑定的畅捷通组织</p>
      * @return GetYongYouOrgRelationResponse
      */
     public GetYongYouOrgRelationResponse getYongYouOrgRelation() throws Exception {
@@ -1279,8 +1317,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 权益核销
-     *
+     * <b>summary</b> : 
+     * <p>权益核销</p>
+     * 
      * @param request ProfessionBenefitConsumeRequest
      * @param headers ProfessionBenefitConsumeHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1329,8 +1368,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 权益核销
-     *
+     * <b>summary</b> : 
+     * <p>权益核销</p>
+     * 
      * @param request ProfessionBenefitConsumeRequest
      * @return ProfessionBenefitConsumeResponse
      */
@@ -1341,8 +1381,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 触发单据同步给有成
-     *
+     * <b>summary</b> : 
+     * <p>触发单据同步给有成</p>
+     * 
      * @param request PushHistoricalReceiptsRequest
      * @param headers PushHistoricalReceiptsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1399,8 +1440,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 触发单据同步给有成
-     *
+     * <b>summary</b> : 
+     * <p>触发单据同步给有成</p>
+     * 
      * @param request PushHistoricalReceiptsRequest
      * @return PushHistoricalReceiptsResponse
      */
@@ -1411,8 +1453,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取费用类别
-     *
+     * <b>summary</b> : 
+     * <p>批量获取费用类别</p>
+     * 
      * @param request QueryCategoryByPageRequest
      * @param headers QueryCategoryByPageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1461,8 +1504,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取费用类别
-     *
+     * <b>summary</b> : 
+     * <p>批量获取费用类别</p>
+     * 
      * @param request QueryCategoryByPageRequest
      * @return QueryCategoryByPageResponse
      */
@@ -1473,8 +1517,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询某个主体的开票申请单的提单数量
-     *
+     * <b>summary</b> : 
+     * <p>查询某个主体的开票申请单的提单数量</p>
+     * 
      * @param request QueryCompanyInvoiceRelationCountRequest
      * @param headers QueryCompanyInvoiceRelationCountHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1515,8 +1560,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询某个主体的开票申请单的提单数量
-     *
+     * <b>summary</b> : 
+     * <p>查询某个主体的开票申请单的提单数量</p>
+     * 
      * @param request QueryCompanyInvoiceRelationCountRequest
      * @return QueryCompanyInvoiceRelationCountResponse
      */
@@ -1527,8 +1573,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页批量获取智能财务应用内维护的客户信息
-     *
+     * <b>summary</b> : 
+     * <p>分页批量获取智能财务应用内维护的客户信息</p>
+     * 
      * @param request QueryCustomerByPageRequest
      * @param headers QueryCustomerByPageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1573,8 +1620,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页批量获取智能财务应用内维护的客户信息
-     *
+     * <b>summary</b> : 
+     * <p>分页批量获取智能财务应用内维护的客户信息</p>
+     * 
      * @param request QueryCustomerByPageRequest
      * @return QueryCustomerByPageResponse
      */
@@ -1585,8 +1633,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 提供给合作伙伴，查询智能财务的客户配置信息
-     *
+     * <b>summary</b> : 
+     * <p>提供给合作伙伴，查询智能财务的客户配置信息</p>
+     * 
      * @param request QueryCustomerInfoRequest
      * @param headers QueryCustomerInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1635,8 +1684,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 提供给合作伙伴，查询智能财务的客户配置信息
-     *
+     * <b>summary</b> : 
+     * <p>提供给合作伙伴，查询智能财务的客户配置信息</p>
+     * 
      * @param request QueryCustomerInfoRequest
      * @return QueryCustomerInfoResponse
      */
@@ -1647,8 +1697,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取企业账户
-     *
+     * <b>summary</b> : 
+     * <p>批量获取企业账户</p>
+     * 
      * @param request QueryEnterpriseAccountByPageRequest
      * @param headers QueryEnterpriseAccountByPageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1693,8 +1744,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取企业账户
-     *
+     * <b>summary</b> : 
+     * <p>批量获取企业账户</p>
+     * 
      * @param request QueryEnterpriseAccountByPageRequest
      * @return QueryEnterpriseAccountByPageResponse
      */
@@ -1705,8 +1757,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询智能财务配置的企业信息
-     *
+     * <b>summary</b> : 
+     * <p>查询智能财务配置的企业信息</p>
+     * 
      * @param headers QueryFinanceCompanyInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryFinanceCompanyInfoResponse
@@ -1739,8 +1792,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询智能财务配置的企业信息
-     *
+     * <b>summary</b> : 
+     * <p>查询智能财务配置的企业信息</p>
      * @return QueryFinanceCompanyInfoResponse
      */
     public QueryFinanceCompanyInfoResponse queryFinanceCompanyInfo() throws Exception {
@@ -1750,8 +1803,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询开票申请单的提单数量
-     *
+     * <b>summary</b> : 
+     * <p>查询开票申请单的提单数量</p>
+     * 
      * @param headers QueryInvoiceRelationCountHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryInvoiceRelationCountResponse
@@ -1784,8 +1838,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询开票申请单的提单数量
-     *
+     * <b>summary</b> : 
+     * <p>查询开票申请单的提单数量</p>
      * @return QueryInvoiceRelationCountResponse
      */
     public QueryInvoiceRelationCountResponse queryInvoiceRelationCount() throws Exception {
@@ -1795,8 +1849,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询钉钉智能财务多主体信息
-     *
+     * <b>summary</b> : 
+     * <p>查询钉钉智能财务多主体信息</p>
+     * 
      * @param headers QueryMultiCompanyInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryMultiCompanyInfoResponse
@@ -1829,8 +1884,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询钉钉智能财务多主体信息
-     *
+     * <b>summary</b> : 
+     * <p>查询钉钉智能财务多主体信息</p>
      * @return QueryMultiCompanyInfoResponse
      */
     public QueryMultiCompanyInfoResponse queryMultiCompanyInfo() throws Exception {
@@ -1840,8 +1895,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
-     *
+     * <b>summary</b> : 
+     * <p>提供给小望，查询当前用户所具有的的小望权限点信息</p>
+     * 
      * @param request QueryPermissionByUserIdRequest
      * @param headers QueryPermissionByUserIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1886,8 +1942,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
-     *
+     * <b>summary</b> : 
+     * <p>提供给小望，查询当前用户所具有的的小望权限点信息</p>
+     * 
      * @param request QueryPermissionByUserIdRequest
      * @return QueryPermissionByUserIdResponse
      */
@@ -1898,8 +1955,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询智能财务角色下的成员信息
-     *
+     * <b>summary</b> : 
+     * <p>查询智能财务角色下的成员信息</p>
+     * 
      * @param request QueryPermissionRoleMemberRequest
      * @param headers QueryPermissionRoleMemberHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1944,8 +2002,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询智能财务角色下的成员信息
-     *
+     * <b>summary</b> : 
+     * <p>查询智能财务角色下的成员信息</p>
+     * 
      * @param request QueryPermissionRoleMemberRequest
      * @return QueryPermissionRoleMemberResponse
      */
@@ -1956,8 +2015,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取商品信息
-     *
+     * <b>summary</b> : 
+     * <p>批量获取商品信息</p>
+     * 
      * @param request QueryProductByPageRequest
      * @param headers QueryProductByPageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2002,8 +2062,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取商品信息
-     *
+     * <b>summary</b> : 
+     * <p>批量获取商品信息</p>
+     * 
      * @param request QueryProductByPageRequest
      * @return QueryProductByPageResponse
      */
@@ -2014,8 +2075,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取项目信息
-     *
+     * <b>summary</b> : 
+     * <p>批量获取项目信息</p>
+     * 
      * @param request QueryProjectByPageRequest
      * @param headers QueryProjectByPageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2060,8 +2122,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量获取项目信息
-     *
+     * <b>summary</b> : 
+     * <p>批量获取项目信息</p>
+     * 
      * @param request QueryProjectByPageRequest
      * @return QueryProjectByPageResponse
      */
@@ -2072,8 +2135,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询开票申请单详情
-     *
+     * <b>summary</b> : 
+     * <p>查询开票申请单详情</p>
+     * 
      * @param request QueryReceiptDetailForInvoiceRequest
      * @param headers QueryReceiptDetailForInvoiceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2114,8 +2178,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询开票申请单详情
-     *
+     * <b>summary</b> : 
+     * <p>查询开票申请单详情</p>
+     * 
      * @param request QueryReceiptDetailForInvoiceRequest
      * @return QueryReceiptDetailForInvoiceResponse
      */
@@ -2126,8 +2191,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询智能财务单据主数据信息
-     *
+     * <b>summary</b> : 
+     * <p>批量查询智能财务单据主数据信息</p>
+     * 
      * @param request QueryReceiptForInvoiceRequest
      * @param headers QueryReceiptForInvoiceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2208,8 +2274,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询智能财务单据主数据信息
-     *
+     * <b>summary</b> : 
+     * <p>批量查询智能财务单据主数据信息</p>
+     * 
      * @param request QueryReceiptForInvoiceRequest
      * @return QueryReceiptForInvoiceResponse
      */
@@ -2220,8 +2287,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询智能财务的单据主数据基本信息
-     *
+     * <b>summary</b> : 
+     * <p>批量查询智能财务的单据主数据基本信息</p>
+     * 
      * @param request QueryReceiptsBaseInfoRequest
      * @param headers QueryReceiptsBaseInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2294,8 +2362,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询智能财务的单据主数据基本信息
-     *
+     * <b>summary</b> : 
+     * <p>批量查询智能财务的单据主数据基本信息</p>
+     * 
      * @param request QueryReceiptsBaseInfoRequest
      * @return QueryReceiptsBaseInfoResponse
      */
@@ -2306,8 +2375,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页获取智能财务单据详情列表
-     *
+     * <b>summary</b> : 
+     * <p>分页获取智能财务单据详情列表</p>
+     * 
      * @param request QueryReceiptsByPageRequest
      * @param headers QueryReceiptsByPageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2368,8 +2438,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页获取智能财务单据详情列表
-     *
+     * <b>summary</b> : 
+     * <p>分页获取智能财务单据详情列表</p>
+     * 
      * @param request QueryReceiptsByPageRequest
      * @return QueryReceiptsByPageResponse
      */
@@ -2380,8 +2451,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询智能财务角色下的成员信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询智能财务角色下的成员信息</p>
+     * 
      * @param request QueryRoleMemberByPageRequest
      * @param headers QueryRoleMemberByPageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2434,8 +2506,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询智能财务角色下的成员信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询智能财务角色下的成员信息</p>
+     * 
      * @param request QueryRoleMemberByPageRequest
      * @return QueryRoleMemberByPageResponse
      */
@@ -2446,8 +2519,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页批量获取智能财务应用内维护的供应商信息
-     *
+     * <b>summary</b> : 
+     * <p>分页批量获取智能财务应用内维护的供应商信息</p>
+     * 
      * @param request QuerySupplierByPageRequest
      * @param headers QuerySupplierByPageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2492,8 +2566,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页批量获取智能财务应用内维护的供应商信息
-     *
+     * <b>summary</b> : 
+     * <p>分页批量获取智能财务应用内维护的供应商信息</p>
+     * 
      * @param request QuerySupplierByPageRequest
      * @return QuerySupplierByPageResponse
      */
@@ -2504,8 +2579,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户角色
-     *
+     * <b>summary</b> : 
+     * <p>查询用户角色</p>
+     * 
      * @param request QueryUserRoleListRequest
      * @param headers QueryUserRoleListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2546,8 +2622,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户角色
-     *
+     * <b>summary</b> : 
+     * <p>查询用户角色</p>
+     * 
      * @param request QueryUserRoleListRequest
      * @return QueryUserRoleListResponse
      */
@@ -2558,8 +2635,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 解绑开票申请单关联的发票
-     *
+     * <b>summary</b> : 
+     * <p>解绑开票申请单关联的发票</p>
+     * 
      * @param request UnbindApplyReceiptAndInvoiceRelatedRequest
      * @param headers UnbindApplyReceiptAndInvoiceRelatedHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2608,8 +2686,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 解绑开票申请单关联的发票
-     *
+     * <b>summary</b> : 
+     * <p>解绑开票申请单关联的发票</p>
+     * 
      * @param request UnbindApplyReceiptAndInvoiceRelatedRequest
      * @return UnbindApplyReceiptAndInvoiceRelatedResponse
      */
@@ -2620,8 +2699,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 开票申请单关联发票
-     *
+     * <b>summary</b> : 
+     * <p>开票申请单关联发票</p>
+     * 
      * @param request UpdateApplyReceiptAndInvoiceRelatedRequest
      * @param headers UpdateApplyReceiptAndInvoiceRelatedHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2670,8 +2750,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 开票申请单关联发票
-     *
+     * <b>summary</b> : 
+     * <p>开票申请单关联发票</p>
+     * 
      * @param request UpdateApplyReceiptAndInvoiceRelatedRequest
      * @return UpdateApplyReceiptAndInvoiceRelatedResponse
      */
@@ -2682,8 +2763,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新全电发票企业信息
-     *
+     * <b>summary</b> : 
+     * <p>更新全电发票企业信息</p>
+     * 
      * @param request UpdateDigitalInvoiceOrgInfoRequest
      * @param headers UpdateDigitalInvoiceOrgInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2736,8 +2818,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新全电发票企业信息
-     *
+     * <b>summary</b> : 
+     * <p>更新全电发票企业信息</p>
+     * 
      * @param request UpdateDigitalInvoiceOrgInfoRequest
      * @return UpdateDigitalInvoiceOrgInfoResponse
      */
@@ -2748,8 +2831,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新智能财务配置的企业信息
-     *
+     * <b>summary</b> : 
+     * <p>更新智能财务配置的企业信息</p>
+     * 
      * @param request UpdateFinanceCompanyInfoRequest
      * @param headers UpdateFinanceCompanyInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2806,8 +2890,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新智能财务配置的企业信息
-     *
+     * <b>summary</b> : 
+     * <p>更新智能财务配置的企业信息</p>
+     * 
      * @param request UpdateFinanceCompanyInfoRequest
      * @return UpdateFinanceCompanyInfoResponse
      */
@@ -2818,8 +2903,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新钉钉智能财务多主体信息
-     *
+     * <b>summary</b> : 
+     * <p>更新钉钉智能财务多主体信息</p>
+     * 
      * @param request UpdateFinanceMultiCompanyInfoRequest
      * @param headers UpdateFinanceMultiCompanyInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2880,8 +2966,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新钉钉智能财务多主体信息
-     *
+     * <b>summary</b> : 
+     * <p>更新钉钉智能财务多主体信息</p>
+     * 
      * @param request UpdateFinanceMultiCompanyInfoRequest
      * @return UpdateFinanceMultiCompanyInfoResponse
      */
@@ -2892,8 +2979,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发票红冲/废弃状态变更接口
-     *
+     * <b>summary</b> : 
+     * <p>发票红冲/废弃状态变更接口</p>
+     * 
      * @param request UpdateInvoiceAbandonStatusRequest
      * @param headers UpdateInvoiceAbandonStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2974,8 +3062,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发票红冲/废弃状态变更接口
-     *
+     * <b>summary</b> : 
+     * <p>发票红冲/废弃状态变更接口</p>
+     * 
      * @param request UpdateInvoiceAbandonStatusRequest
      * @return UpdateInvoiceAbandonStatusResponse
      */
@@ -2986,8 +3075,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新发票账期状态
-     *
+     * <b>summary</b> : 
+     * <p>更新发票账期状态</p>
+     * 
      * @param request UpdateInvoiceAccountPeriodRequest
      * @param headers UpdateInvoiceAccountPeriodHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3044,8 +3134,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新发票账期状态
-     *
+     * <b>summary</b> : 
+     * <p>更新发票账期状态</p>
+     * 
      * @param request UpdateInvoiceAccountPeriodRequest
      * @return UpdateInvoiceAccountPeriodResponse
      */
@@ -3056,8 +3147,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新全电企业入账时间
-     *
+     * <b>summary</b> : 
+     * <p>更新全电企业入账时间</p>
+     * 
      * @param request UpdateInvoiceAccountingPeriodDateRequest
      * @param headers UpdateInvoiceAccountingPeriodDateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3106,8 +3198,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新全电企业入账时间
-     *
+     * <b>summary</b> : 
+     * <p>更新全电企业入账时间</p>
+     * 
      * @param request UpdateInvoiceAccountingPeriodDateRequest
      * @return UpdateInvoiceAccountingPeriodDateResponse
      */
@@ -3118,8 +3211,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新全电企业入账状态
-     *
+     * <b>summary</b> : 
+     * <p>更新全电企业入账状态</p>
+     * 
      * @param request UpdateInvoiceAccountingStatusRequest
      * @param headers UpdateInvoiceAccountingStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3168,8 +3262,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新全电企业入账状态
-     *
+     * <b>summary</b> : 
+     * <p>更新全电企业入账状态</p>
+     * 
      * @param request UpdateInvoiceAccountingStatusRequest
      * @return UpdateInvoiceAccountingStatusResponse
      */
@@ -3180,8 +3275,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新发票关联审批单
-     *
+     * <b>summary</b> : 
+     * <p>更新发票关联审批单</p>
+     * 
      * @param request UpdateInvoiceAndReceiptRelatedRequest
      * @param headers UpdateInvoiceAndReceiptRelatedHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3238,8 +3334,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新发票关联审批单
-     *
+     * <b>summary</b> : 
+     * <p>更新发票关联审批单</p>
+     * 
      * @param request UpdateInvoiceAndReceiptRelatedRequest
      * @return UpdateInvoiceAndReceiptRelatedResponse
      */
@@ -3250,8 +3347,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新发票忽略状态
-     *
+     * <b>summary</b> : 
+     * <p>更新发票忽略状态</p>
+     * 
      * @param request UpdateInvoiceIgnoreStatusRequest
      * @param headers UpdateInvoiceIgnoreStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3300,8 +3398,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新发票忽略状态
-     *
+     * <b>summary</b> : 
+     * <p>更新发票忽略状态</p>
+     * 
      * @param request UpdateInvoiceIgnoreStatusRequest
      * @return UpdateInvoiceIgnoreStatusResponse
      */
@@ -3312,8 +3411,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发票认证状态变更接口
-     *
+     * <b>summary</b> : 
+     * <p>发票认证状态变更接口</p>
+     * 
      * @param request UpdateInvoiceVerifyStatusRequest
      * @param headers UpdateInvoiceVerifyStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3374,8 +3474,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发票认证状态变更接口
-     *
+     * <b>summary</b> : 
+     * <p>发票认证状态变更接口</p>
+     * 
      * @param request UpdateInvoiceVerifyStatusRequest
      * @return UpdateInvoiceVerifyStatusResponse
      */
@@ -3386,8 +3487,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新发票生成凭证状态
-     *
+     * <b>summary</b> : 
+     * <p>更新发票生成凭证状态</p>
+     * 
      * @param request UpdateInvoiceVoucherStatusRequest
      * @param headers UpdateInvoiceVoucherStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3448,8 +3550,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新发票生成凭证状态
-     *
+     * <b>summary</b> : 
+     * <p>更新发票生成凭证状态</p>
+     * 
      * @param request UpdateInvoiceVoucherStatusRequest
      * @return UpdateInvoiceVoucherStatusResponse
      */
@@ -3460,8 +3563,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新智能财务单据
-     *
+     * <b>summary</b> : 
+     * <p>更新智能财务单据</p>
+     * 
      * @param request UpdateReceiptRequest
      * @param headers UpdateReceiptHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3502,8 +3606,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新智能财务单据
-     *
+     * <b>summary</b> : 
+     * <p>更新智能财务单据</p>
+     * 
      * @param request UpdateReceiptRequest
      * @return UpdateReceiptResponse
      */
@@ -3514,8 +3619,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新智能财务审批单的凭证状态
-     *
+     * <b>summary</b> : 
+     * <p>更新智能财务审批单的凭证状态</p>
+     * 
      * @param request UpdateReceiptVoucherStatusRequest
      * @param headers UpdateReceiptVoucherStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3580,8 +3686,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新智能财务审批单的凭证状态
-     *
+     * <b>summary</b> : 
+     * <p>更新智能财务审批单的凭证状态</p>
+     * 
      * @param request UpdateReceiptVoucherStatusRequest
      * @return UpdateReceiptVoucherStatusResponse
      */

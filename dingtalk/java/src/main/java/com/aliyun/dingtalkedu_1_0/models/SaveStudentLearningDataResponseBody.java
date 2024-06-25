@@ -32,6 +32,10 @@ public class SaveStudentLearningDataResponseBody extends TeaModel {
     }
 
     public static class SaveStudentLearningDataResponseBodyResultWrongQuestions extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("questionNo")
         public String questionNo;
 

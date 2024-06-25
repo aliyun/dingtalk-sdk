@@ -4,11 +4,18 @@ package com.aliyun.dingtalkpedia_1_0.models;
 import com.aliyun.tea.*;
 
 public class PediaWordsApproveRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>拒绝</p>
+     */
     @NameInMap("approveReason")
     public String approveReason;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("approveStatus")
     public String approveStatus;
@@ -27,12 +34,18 @@ public class PediaWordsApproveRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>232432</p>
      */
     @NameInMap("userId")
     public String userId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1213132</p>
      */
     @NameInMap("uuid")
     public Long uuid;

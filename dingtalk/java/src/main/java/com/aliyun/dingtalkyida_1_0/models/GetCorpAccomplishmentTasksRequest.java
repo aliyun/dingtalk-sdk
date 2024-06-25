@@ -4,32 +4,67 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCorpAccomplishmentTasksRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>[&quot;APP_xxx&quot;,&quot;APP_xxx&quot;]</p>
+     */
     @NameInMap("appTypes")
     public String appTypes;
 
+    /**
+     * <strong>example:</strong>
+     * <p>未知</p>
+     */
     @NameInMap("createFromTimeGMT")
     public Long createFromTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>未知</p>
+     */
     @NameInMap("createToTimeGMT")
     public Long createToTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>未知</p>
+     */
     @NameInMap("keyword")
     public String keyword;
 
+    /**
+     * <strong>example:</strong>
+     * <p>zh_CN</p>
+     */
     @NameInMap("language")
     public String language;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>[&quot;xx&quot;,&quot;xxx&quot;]</p>
+     */
     @NameInMap("processCodes")
     public String processCodes;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>未知</p>
      */
     @NameInMap("token")
     public String token;

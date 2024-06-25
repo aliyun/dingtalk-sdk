@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPrincipalEmployeeResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>[     {       &quot;JobTitle&quot;: &quot;董事长&quot;,       &quot;Name&quot;: &quot;梁华&quot;     },     {       &quot;JobTitle&quot;: &quot;副董事长&quot;,       &quot;Name&quot;: &quot;孟晚舟&quot;     },     {       &quot;JobTitle&quot;: &quot;副董事长&quot;,       &quot;Name&quot;: &quot;徐直军&quot;     }   ]</p>
+     */
     @NameInMap("data")
     public String data;
 

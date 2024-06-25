@@ -21,12 +21,24 @@ public class GetSimpleGroupsResponseBody extends TeaModel {
     }
 
     public static class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSectionsTimes extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("across")
         public Integer across;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1970-01-01T09:00Z</p>
+         */
         @NameInMap("checkTime")
         public String checkTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>OnDuty</p>
+         */
         @NameInMap("checkType")
         public String checkType;
 
@@ -81,9 +93,17 @@ public class GetSimpleGroupsResponseBody extends TeaModel {
     }
 
     public static class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListBegin extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("across")
         public Integer across;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1970-01-01T12:00Z</p>
+         */
         @NameInMap("checkTime")
         public String checkTime;
 
@@ -111,9 +131,17 @@ public class GetSimpleGroupsResponseBody extends TeaModel {
     }
 
     public static class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListEnd extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("across")
         public Integer across;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1970-01-01T13:00Z</p>
+         */
         @NameInMap("checkTime")
         public String checkTime;
 
@@ -171,24 +199,48 @@ public class GetSimpleGroupsResponseBody extends TeaModel {
     }
 
     public static class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSetting extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>30</p>
+         */
         @NameInMap("absenteeismLateMinutes")
         public Integer absenteeismLateMinutes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("classSettingId")
         public Long classSettingId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Y</p>
+         */
         @NameInMap("isOffDutyFreeCheck")
         public String isOffDutyFreeCheck;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("permitLateMinutes")
         public Integer permitLateMinutes;
 
         @NameInMap("restTimeList")
         public java.util.List<GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeList> restTimeList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("seriousLateMinutes")
         public Integer seriousLateMinutes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>-1</p>
+         */
         @NameInMap("workTimeMinutes")
         public Integer workTimeMinutes;
 
@@ -256,9 +308,17 @@ public class GetSimpleGroupsResponseBody extends TeaModel {
     }
 
     public static class GetSimpleGroupsResponseBodyResultGroupsSelectedClass extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>20008010</p>
+         */
         @NameInMap("classId")
         public Long classId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>早班</p>
+         */
         @NameInMap("className")
         public String className;
 
@@ -311,6 +371,10 @@ public class GetSimpleGroupsResponseBody extends TeaModel {
         @NameInMap("classesList")
         public java.util.List<String> classesList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("defaultClassId")
         public Long defaultClassId;
 
@@ -320,42 +384,86 @@ public class GetSimpleGroupsResponseBody extends TeaModel {
         @NameInMap("deptNameList")
         public java.util.List<String> deptNameList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("disableCheckWhenRest")
         public Boolean disableCheckWhenRest;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("disableCheckWithoutSchedule")
         public Boolean disableCheckWithoutSchedule;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("enableEmpSelectClass")
         public Boolean enableEmpSelectClass;
 
+        /**
+         * <strong>example:</strong>
+         * <p>240</p>
+         */
         @NameInMap("freeCheckDayStartMinOffset")
         public Integer freeCheckDayStartMinOffset;
 
         @NameInMap("freecheckWorkDays")
         public java.util.List<Integer> freecheckWorkDays;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20015047</p>
+         */
         @NameInMap("groupId")
         public Long groupId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>固定排班</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isDefault")
         public Boolean isDefault;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1,2</p>
+         */
         @NameInMap("managerList")
         public java.util.List<String> managerList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("memberCount")
         public Integer memberCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("ownerUserId")
         public String ownerUserId;
 
         @NameInMap("selectedClass")
         public java.util.List<GetSimpleGroupsResponseBodyResultGroupsSelectedClass> selectedClass;
 
+        /**
+         * <strong>example:</strong>
+         * <p>FIXED</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -525,9 +633,17 @@ public class GetSimpleGroupsResponseBody extends TeaModel {
     }
 
     public static class GetSimpleGroupsResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>[]</p>
+         */
         @NameInMap("groups")
         public java.util.List<GetSimpleGroupsResponseBodyResultGroups> groups;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 

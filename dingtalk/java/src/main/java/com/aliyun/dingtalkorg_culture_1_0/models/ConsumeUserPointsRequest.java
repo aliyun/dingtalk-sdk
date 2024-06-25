@@ -6,19 +6,33 @@ import com.aliyun.tea.*;
 public class ConsumeUserPointsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("amount")
     public Long amount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>qwe123</p>
      */
     @NameInMap("outId")
     public String outId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试积分扣减</p>
+     */
     @NameInMap("remark")
     public String remark;
 
+    /**
+     * <strong>example:</strong>
+     * <p>OPEN_EMP_POINT_CONSUME_DEFAULT</p>
+     */
     @NameInMap("usage")
     public String usage;
 

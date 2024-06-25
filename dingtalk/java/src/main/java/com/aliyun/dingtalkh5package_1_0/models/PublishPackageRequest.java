@@ -4,14 +4,25 @@ package com.aliyun.dingtalkh5package_1_0.models;
 import com.aliyun.tea.*;
 
 public class PublishPackageRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("agentId")
     public Long agentId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("appId")
     public Long appId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0.0.1</p>
      */
     @NameInMap("version")
     public String version;

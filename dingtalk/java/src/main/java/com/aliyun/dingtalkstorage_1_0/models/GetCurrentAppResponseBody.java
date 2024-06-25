@@ -21,15 +21,31 @@ public class GetCurrentAppResponseBody extends TeaModel {
     }
 
     public static class GetCurrentAppResponseBodyAppPartitionsQuota extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10000</p>
+         */
         @NameInMap("max")
         public Long max;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1000</p>
+         */
         @NameInMap("reserved")
         public Long reserved;
 
+        /**
+         * <strong>example:</strong>
+         * <p>SHARE</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1024</p>
+         */
         @NameInMap("used")
         public Long used;
 
@@ -73,6 +89,10 @@ public class GetCurrentAppResponseBody extends TeaModel {
     }
 
     public static class GetCurrentAppResponseBodyAppPartitions extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>PUBLIC_OSS_PARTITION</p>
+         */
         @NameInMap("partitionType")
         public String partitionType;
 
@@ -103,18 +123,38 @@ public class GetCurrentAppResponseBody extends TeaModel {
     }
 
     public static class GetCurrentAppResponseBodyApp extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>app_id</p>
+         */
         @NameInMap("appId")
         public String appId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>corp_id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>app_name</p>
+         */
         @NameInMap("name")
         public String name;
 

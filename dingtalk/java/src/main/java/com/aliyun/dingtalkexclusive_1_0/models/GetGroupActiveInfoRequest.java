@@ -4,26 +4,43 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetGroupActiveInfoRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cidV3xxxrSuxxxxxxnB8o8gJw==</p>
+     */
     @NameInMap("dingGroupId")
     public String dingGroupId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("groupType")
     public Long groupType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("pageSize")
     public Long pageSize;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20200305</p>
      */
     @NameInMap("statDate")
     public String statDate;

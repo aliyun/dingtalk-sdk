@@ -7,6 +7,10 @@ public class GetEmpAttributeHideBySceneSettingResponseBody extends TeaModel {
     @NameInMap("chatSubtitleConfig")
     public GetEmpAttributeHideBySceneSettingResponseBodyChatSubtitleConfig chatSubtitleConfig;
 
+    /**
+     * <strong>example:</strong>
+     * <p>描述信息</p>
+     */
     @NameInMap("description")
     public String description;
 
@@ -22,9 +26,17 @@ public class GetEmpAttributeHideBySceneSettingResponseBody extends TeaModel {
     @NameInMap("hideFields")
     public java.util.List<String> hideFields;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123456</p>
+     */
     @NameInMap("id")
     public Long id;
 
+    /**
+     * <strong>example:</strong>
+     * <p>设置1</p>
+     */
     @NameInMap("name")
     public String name;
 

@@ -21,21 +21,45 @@ public class GetProjectStatusListResponseBody extends TeaModel {
     }
 
     public static class GetProjectStatusListResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>进度正常，详细说明</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0715153011xxxxxx</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>normal</p>
+         */
         @NameInMap("degree")
         public String degree;
 
+        /**
+         * <strong>example:</strong>
+         * <p>进度正常</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3b376ecxxxxxxx</p>
+         */
         @NameInMap("projectId")
         public String projectId;
 

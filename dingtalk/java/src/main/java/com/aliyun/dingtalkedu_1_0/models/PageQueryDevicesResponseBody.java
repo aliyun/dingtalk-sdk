@@ -7,9 +7,17 @@ public class PageQueryDevicesResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<PageQueryDevicesResponseBodyList> list;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1300</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -43,18 +51,38 @@ public class PageQueryDevicesResponseBody extends TeaModel {
     }
 
     public static class PageQueryDevicesResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1696753792000</p>
+         */
         @NameInMap("gmtExpiry")
         public Long gmtExpiry;
 
+        /**
+         * <strong>example:</strong>
+         * <p>model1</p>
+         */
         @NameInMap("model")
         public String model;
 
+        /**
+         * <strong>example:</strong>
+         * <p>三年级1班班牌</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>fadf-8008</p>
+         */
         @NameInMap("sn")
         public String sn;
 
+        /**
+         * <strong>example:</strong>
+         * <p>VIDEO_CALL</p>
+         */
         @NameInMap("type")
         public String type;
 

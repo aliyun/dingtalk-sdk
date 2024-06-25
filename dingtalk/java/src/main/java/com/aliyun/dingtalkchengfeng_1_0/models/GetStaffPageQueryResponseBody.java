@@ -35,12 +35,24 @@ public class GetStaffPageQueryResponseBody extends TeaModel {
         @NameInMap("data")
         public java.util.List<CfStaffResp> data;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("pageNumber")
         public Integer pageNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("pageSize")
         public Integer pageSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("totalCount")
         public Long totalCount;
 

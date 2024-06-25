@@ -4,6 +4,10 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOrderResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>20220124001</p>
+     */
     @NameInMap("orderNo")
     public String orderNo;
 

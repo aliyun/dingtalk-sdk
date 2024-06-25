@@ -21,24 +21,52 @@ public class QueryMinutesAudioResponseBody extends TeaModel {
     }
 
     public static class QueryMinutesAudioResponseBodyAudioList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>59886</p>
+         */
         @NameInMap("duration")
         public Long duration;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1631172094000</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1127942</p>
+         */
         @NameInMap("fileSize")
         public Long fileSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxx-hangzhou.oss-cn-hangzhou.aliyuncs.com/record_xxxx.mp3?Expires=1718045081&OSSAccessKeyId=TMP.3KdwHtvZxopmwacMZEdyb4WHLVmbArrNRB9CTKnR1MaJgmRjdmZczs6Rip66cgKgk2HhQon1yygvBnbY3uqEaZNeHBLcBa&Signature=OFWyAIY%2FdlzfwM9wIfEaKoAudkxxxxx">https://xxx-hangzhou.oss-cn-hangzhou.aliyuncs.com/record_xxxx.mp3?Expires=1718045081&amp;OSSAccessKeyId=TMP.3KdwHtvZxopmwacMZEdyb4WHLVmbArrNRB9CTKnR1MaJgmRjdmZczs6Rip66cgKgk2HhQon1yygvBnbY3uqEaZNeHBLcBa&amp;Signature=OFWyAIY%2FdlzfwM9wIfEaKoAudkxxxxx</a></p>
+         */
         @NameInMap("playUrl")
         public String playUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>290882268xxx1172033231</p>
+         */
         @NameInMap("recordId")
         public String recordId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1631172094000</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>WFBkgJvtxxxxtSaA1jK4sgiEiE</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

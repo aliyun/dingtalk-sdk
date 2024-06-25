@@ -7,6 +7,10 @@ public class GetProcessInstanceResponseBody extends TeaModel {
     @NameInMap("result")
     public GetProcessInstanceResponseBodyResult result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public String success;
 
@@ -32,21 +36,45 @@ public class GetProcessInstanceResponseBody extends TeaModel {
     }
 
     public static class GetProcessInstanceResponseBodyResultFormComponentValues extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>TextField-bizAlias</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <strong>example:</strong>
+         * <p>DDSelectField</p>
+         */
         @NameInMap("componentType")
         public String componentType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>示例值</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>DDHolidayField-J2Bxxxx</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>组件1</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>示例值</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -106,17 +134,36 @@ public class GetProcessInstanceResponseBody extends TeaModel {
     }
 
     public static class GetProcessInstanceResponseBodyResultOperationRecordsAttachments extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("fileId")
         public String fileId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>学历证明</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1024</p>
+         */
         @NameInMap("fileSize")
         public String fileSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p>pdf</p>
+         */
         @NameInMap("fileType")
         public String fileType;
+
+        @NameInMap("spaceId")
+        public String spaceId;
 
         public static GetProcessInstanceResponseBodyResultOperationRecordsAttachments build(java.util.Map<String, ?> map) throws Exception {
             GetProcessInstanceResponseBodyResultOperationRecordsAttachments self = new GetProcessInstanceResponseBodyResultOperationRecordsAttachments();
@@ -155,9 +202,20 @@ public class GetProcessInstanceResponseBody extends TeaModel {
             return this.fileType;
         }
 
+        public GetProcessInstanceResponseBodyResultOperationRecordsAttachments setSpaceId(String spaceId) {
+            this.spaceId = spaceId;
+            return this;
+        }
+        public String getSpaceId() {
+            return this.spaceId;
+        }
+
     }
 
     public static class GetProcessInstanceResponseBodyResultOperationRecords extends TeaModel {
+        @NameInMap("activityId")
+        public String activityId;
+
         @NameInMap("attachments")
         public java.util.List<GetProcessInstanceResponseBodyResultOperationRecordsAttachments> attachments;
 
@@ -166,25 +224,58 @@ public class GetProcessInstanceResponseBody extends TeaModel {
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-08-31T11:52Z</p>
          */
         @NameInMap("date")
         public String date;
 
+        @NameInMap("images")
+        public java.util.List<String> images;
+
+        /**
+         * <strong>example:</strong>
+         * <p>评论</p>
+         */
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <strong>example:</strong>
+         * <p>AGREE</p>
+         */
         @NameInMap("result")
         public String result;
 
+        @NameInMap("showName")
+        public String showName;
+
+        /**
+         * <strong>example:</strong>
+         * <p>EXECUTE_TASK_NORMAL</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager1</p>
+         */
         @NameInMap("userId")
         public String userId;
 
         public static GetProcessInstanceResponseBodyResultOperationRecords build(java.util.Map<String, ?> map) throws Exception {
             GetProcessInstanceResponseBodyResultOperationRecords self = new GetProcessInstanceResponseBodyResultOperationRecords();
             return TeaModel.build(map, self);
+        }
+
+        public GetProcessInstanceResponseBodyResultOperationRecords setActivityId(String activityId) {
+            this.activityId = activityId;
+            return this;
+        }
+        public String getActivityId() {
+            return this.activityId;
         }
 
         public GetProcessInstanceResponseBodyResultOperationRecords setAttachments(java.util.List<GetProcessInstanceResponseBodyResultOperationRecordsAttachments> attachments) {
@@ -211,6 +302,14 @@ public class GetProcessInstanceResponseBody extends TeaModel {
             return this.date;
         }
 
+        public GetProcessInstanceResponseBodyResultOperationRecords setImages(java.util.List<String> images) {
+            this.images = images;
+            return this;
+        }
+        public java.util.List<String> getImages() {
+            return this.images;
+        }
+
         public GetProcessInstanceResponseBodyResultOperationRecords setRemark(String remark) {
             this.remark = remark;
             return this;
@@ -225,6 +324,14 @@ public class GetProcessInstanceResponseBody extends TeaModel {
         }
         public String getResult() {
             return this.result;
+        }
+
+        public GetProcessInstanceResponseBodyResultOperationRecords setShowName(String showName) {
+            this.showName = showName;
+            return this;
+        }
+        public String getShowName() {
+            return this.showName;
         }
 
         public GetProcessInstanceResponseBodyResultOperationRecords setType(String type) {
@@ -246,39 +353,77 @@ public class GetProcessInstanceResponseBody extends TeaModel {
     }
 
     public static class GetProcessInstanceResponseBodyResultTasks extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-08-31T11:52Z</p>
          */
         @NameInMap("createTime")
         public String createTime;
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-08-31T11:52Z</p>
          */
         @NameInMap("finishTime")
         public String finishTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.xxxx.com">https://www.xxxx.com</a></p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.xxxx.com">https://www.xxxx.com</a></p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>REDIRECTED</p>
+         */
         @NameInMap("result")
         public String result;
 
+        /**
+         * <strong>example:</strong>
+         * <p>NEW</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("taskId")
         public Long taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager1</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -373,15 +518,31 @@ public class GetProcessInstanceResponseBody extends TeaModel {
         @NameInMap("approverUserIds")
         public java.util.List<String> approverUserIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>[&quot;instance1&quot;,&quot;instance2&quot;]</p>
+         */
         @NameInMap("attachedProcessInstanceIds")
         public java.util.List<String> attachedProcessInstanceIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>MODIFY</p>
+         */
         @NameInMap("bizAction")
         public String bizAction;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;mykey&quot;: &quot;myData&quot;}</p>
+         */
         @NameInMap("bizData")
         public String bizData;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("businessId")
         public String businessId;
 
@@ -390,40 +551,75 @@ public class GetProcessInstanceResponseBody extends TeaModel {
 
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-08-31T11:52Z</p>
          */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-08-31T11:52Z</p>
+         */
         @NameInMap("finishTime")
         public String finishTime;
 
         @NameInMap("formComponentValues")
         public java.util.List<GetProcessInstanceResponseBodyResultFormComponentValues> formComponentValues;
 
+        /**
+         * <strong>example:</strong>
+         * <p>AG3U12xWRFex63h6bCPUWw10221698052827</p>
+         */
         @NameInMap("mainProcessInstanceId")
         public String mainProcessInstanceId;
 
         @NameInMap("operationRecords")
         public java.util.List<GetProcessInstanceResponseBodyResultOperationRecords> operationRecords;
 
+        /**
+         * <strong>example:</strong>
+         * <p>-1</p>
+         */
         @NameInMap("originatorDeptId")
         public String originatorDeptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试</p>
+         */
         @NameInMap("originatorDeptName")
         public String originatorDeptName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager1</p>
+         */
         @NameInMap("originatorUserId")
         public String originatorUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>agree</p>
+         */
         @NameInMap("result")
         public String result;
 
+        /**
+         * <strong>example:</strong>
+         * <p>NEW</p>
+         */
         @NameInMap("status")
         public String status;
 
         @NameInMap("tasks")
         public java.util.List<GetProcessInstanceResponseBodyResultTasks> tasks;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xx提交的请假申请</p>
+         */
         @NameInMap("title")
         public String title;
 

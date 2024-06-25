@@ -4,9 +4,17 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateWorkTimeApproveResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>执行成功</p>
+     */
     @NameInMap("message")
     public String message;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -43,30 +51,66 @@ public class CreateWorkTimeApproveResponseBody extends TeaModel {
     }
 
     public static class CreateWorkTimeApproveResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>636c9634b183ac0040ee85b4</p>
+         */
         @NameInMap("approveOpenId")
         public String approveOpenId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("createdAt")
         public String createdAt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6446626a9fb5a70c05fc3fc3</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding123xxx</p>
+         */
         @NameInMap("organizationId")
         public String organizationId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>NEW</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>636c9634b183ac0040ee85b4</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100000</p>
+         */
         @NameInMap("time")
         public Integer time;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updatedAt")
         public String updatedAt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6446626a9fb5a70c05fc3fc3</p>
+         */
         @NameInMap("userId")
         public String userId;
 

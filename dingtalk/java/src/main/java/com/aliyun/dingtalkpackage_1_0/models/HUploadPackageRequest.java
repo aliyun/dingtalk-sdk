@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class HUploadPackageRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5000000002793153</p>
      */
     @NameInMap("miniAppId")
     public String miniAppId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("ossObjectKey")
     public String ossObjectKey;

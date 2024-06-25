@@ -9,6 +9,9 @@ public class QueryTeachSubjectsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>24275037451244334</p>
      */
     @NameInMap("opUserId")
     public String opUserId;

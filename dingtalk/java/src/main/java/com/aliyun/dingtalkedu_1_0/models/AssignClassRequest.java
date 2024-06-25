@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class AssignClassRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>353534</p>
      */
     @NameInMap("classId")
     public Long classId;
@@ -15,18 +18,27 @@ public class AssignClassRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>staff234</p>
      */
     @NameInMap("operator")
     public String operator;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>675656</p>
      */
     @NameInMap("studentId")
     public Long studentId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>4240028</p>
      */
     @NameInMap("taskId")
     public Long taskId;

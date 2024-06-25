@@ -4,18 +4,44 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class SignEnterpriseAccountRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("bankCardNo")
     public String bankCardNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("bankOpenId")
     public String bankOpenId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>COMM_UNIONPAY</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("channelType")
     public String channelType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("operator")
     public String operator;
 
+    /**
+     * <strong>example:</strong>
+     * <p>signed</p>
+     */
     @NameInMap("signOperateType")
     public String signOperateType;
 

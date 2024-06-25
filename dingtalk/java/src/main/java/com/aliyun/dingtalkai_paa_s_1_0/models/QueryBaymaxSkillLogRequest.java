@@ -9,12 +9,18 @@ public class QueryBaymaxSkillLogRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>14da****2760</p>
      */
     @NameInMap("logLevel")
     public String logLevel;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>14da****2760</p>
      */
     @NameInMap("skillExecuteId")
     public String skillExecuteId;

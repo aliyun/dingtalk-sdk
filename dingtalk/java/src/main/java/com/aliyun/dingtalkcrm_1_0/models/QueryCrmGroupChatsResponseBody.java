@@ -6,16 +6,27 @@ import com.aliyun.tea.*;
 public class QueryCrmGroupChatsResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>agds12</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
     @NameInMap("resultList")
     public java.util.List<QueryCrmGroupChatsResponseBodyResultList> resultList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1000</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -59,39 +70,61 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
     public static class QueryCrmGroupChatsResponseBodyResultList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1640239655539</p>
          */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
          */
         @NameInMap("memberCount")
         public Integer memberCount;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>营销1群</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>afsad21</p>
          */
         @NameInMap("openConversationId")
         public String openConversationId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>afsdba23</p>
+         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>afds12</p>
          */
         @NameInMap("ownerUserId")
         public String ownerUserId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>XX</p>
          */
         @NameInMap("ownerUserName")
         public String ownerUserName;

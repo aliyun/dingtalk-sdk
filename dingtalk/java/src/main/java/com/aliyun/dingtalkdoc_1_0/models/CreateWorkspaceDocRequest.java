@@ -28,6 +28,10 @@ public class CreateWorkspaceDocRequest extends TeaModel {
     @NameInMap("templateId")
     public String templateId;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("templateType")
     public String templateType;
 

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryHasAppPermissionRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>34234dfdfddd</p>
      */
     @NameInMap("operatorUserId")
     public String operatorUserId;

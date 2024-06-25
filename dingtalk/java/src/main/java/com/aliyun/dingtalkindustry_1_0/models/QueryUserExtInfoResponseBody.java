@@ -23,42 +23,63 @@ public class QueryUserExtInfoResponseBody extends TeaModel {
     public static class QueryUserExtInfoResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-12-22 15:30:31</p>
          */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-12-22 15:30:31</p>
          */
         @NameInMap("gmtModified")
         public String gmtModified;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("status")
         public Integer status;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10320266246</p>
          */
         @NameInMap("userCode")
         public String userCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>扩展属性描述</p>
          */
         @NameInMap("userExtendDisplayName")
         public String userExtendDisplayName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>扩展属性Key</p>
          */
         @NameInMap("userExtendKey")
         public String userExtendKey;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>扩展属性值</p>
          */
         @NameInMap("userExtendValue")
         public String userExtendValue;

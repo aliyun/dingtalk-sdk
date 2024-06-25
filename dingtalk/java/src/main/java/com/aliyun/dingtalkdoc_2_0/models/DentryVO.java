@@ -4,11 +4,18 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class DentryVO extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>alidoc</p>
+     */
     @NameInMap("contentType")
     public String contentType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1663918630284</p>
      */
     @NameInMap("createdTime")
     public Long createdTime;
@@ -18,30 +25,50 @@ public class DentryVO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YRBd*****KGDA</p>
      */
     @NameInMap("dentryId")
     public String dentryId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>file</p>
      */
     @NameInMap("dentryType")
     public String dentryType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6or0dp8Z****XWa91xzy3</p>
      */
     @NameInMap("dentryUuid")
     public String dentryUuid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>v1GXn****KqD4</p>
+     */
     @NameInMap("docKey")
     public String docKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>alidoc</p>
+     */
     @NameInMap("extension")
     public String extension;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false</p>
      */
     @NameInMap("hasChildren")
     public Boolean hasChildren;
@@ -51,10 +78,17 @@ public class DentryVO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>钉钉文档</p>
      */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试组织/测试知识库/abc</p>
+     */
     @NameInMap("path")
     public String path;
 
@@ -63,12 +97,18 @@ public class DentryVO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YGv0****0xXAr</p>
      */
     @NameInMap("spaceId")
     public String spaceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1663918630284</p>
      */
     @NameInMap("updatedTime")
     public Long updatedTime;
@@ -76,6 +116,10 @@ public class DentryVO extends TeaModel {
     @NameInMap("updater")
     public DentryVOUpdater updater;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://xxx.yy">https://xxx.yy</a></p>
+     */
     @NameInMap("url")
     public String url;
 
@@ -234,12 +278,18 @@ public class DentryVO extends TeaModel {
     public static class DentryVOCreator extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>DingTalk</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>YEp3JcM******UIbhwiE</p>
          */
         @NameInMap("unionId")
         public String unionId;
@@ -270,12 +320,18 @@ public class DentryVO extends TeaModel {
     public static class DentryVOUpdater extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>DingTalk</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>YEp3JcM******UIbhwiE</p>
          */
         @NameInMap("unionId")
         public String unionId;
@@ -307,6 +363,10 @@ public class DentryVO extends TeaModel {
         @NameInMap("dentryActions")
         public java.util.List<String> dentryActions;
 
+        /**
+         * <strong>example:</strong>
+         * <p>5</p>
+         */
         @NameInMap("roleCode")
         public String roleCode;
 

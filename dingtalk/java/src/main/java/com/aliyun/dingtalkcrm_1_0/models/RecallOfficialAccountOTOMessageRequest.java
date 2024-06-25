@@ -4,11 +4,18 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class RecallOfficialAccountOTOMessageRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding123</p>
+     */
     @NameInMap("accountId")
     public String accountId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SWXXX</p>
      */
     @NameInMap("openPushId")
     public String openPushId;

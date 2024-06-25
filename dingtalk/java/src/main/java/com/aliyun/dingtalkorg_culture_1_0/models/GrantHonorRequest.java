@@ -9,19 +9,33 @@ public class GrantHonorRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>表现优秀，特此奖励！</p>
      */
     @NameInMap("grantReason")
     public String grantReason;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>组织文化团队</p>
      */
     @NameInMap("granterName")
     public String granterName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("noticeAnnouncer")
     public Boolean noticeAnnouncer;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("noticeSingle")
     public Boolean noticeSingle;
 
@@ -36,6 +50,9 @@ public class GrantHonorRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxUserId</p>
      */
     @NameInMap("senderUserId")
     public String senderUserId;

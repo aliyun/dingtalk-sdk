@@ -12,6 +12,9 @@ public class MasterDataSaveRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("tenantId")
     public Long tenantId;
@@ -40,12 +43,18 @@ public class MasterDataSaveRequest extends TeaModel {
     public static class MasterDataSaveRequestBodyFieldList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>name</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123</p>
          */
         @NameInMap("valueStr")
         public String valueStr;
@@ -76,10 +85,17 @@ public class MasterDataSaveRequest extends TeaModel {
     public static class MasterDataSaveRequestBodyScope extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>performance</p>
          */
         @NameInMap("scopeCode")
         public String scopeCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("version")
         public Integer version;
 
@@ -109,16 +125,26 @@ public class MasterDataSaveRequest extends TeaModel {
     public static class MasterDataSaveRequestBody extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>12312</p>
          */
         @NameInMap("bizTime")
         public Long bizTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>uk123</p>
          */
         @NameInMap("bizUk")
         public String bizUk;
 
+        /**
+         * <strong>example:</strong>
+         * <p>base</p>
+         */
         @NameInMap("entityCode")
         public String entityCode;
 
@@ -136,6 +162,9 @@ public class MasterDataSaveRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>user123</p>
          */
         @NameInMap("userId")
         public String userId;

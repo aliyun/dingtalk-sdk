@@ -26,15 +26,25 @@ public class QuerySingleGroupResponseBody extends TeaModel {
     public static class QuerySingleGroupResponseBodyOpenConversations extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1107****2120</p>
          */
         @NameInMap("appUserId")
         public String appUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>14da****2760</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1745****8778</p>
          */
         @NameInMap("userId")
         public String userId;

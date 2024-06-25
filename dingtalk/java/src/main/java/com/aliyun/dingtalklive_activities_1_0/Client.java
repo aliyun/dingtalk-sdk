@@ -6,11 +6,10 @@ import com.aliyun.dingtalklive_activities_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 实时活动发送接口
-     *
+     * <b>summary</b> : 
+     * <p>实时活动发送接口</p>
+     * 
      * @param request PushLiveActivityRequest
      * @param headers PushLiveActivityHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -70,8 +70,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 实时活动发送接口
-     *
+     * <b>summary</b> : 
+     * <p>实时活动发送接口</p>
+     * 
      * @param request PushLiveActivityRequest
      * @return PushLiveActivityResponse
      */
@@ -82,8 +83,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送实时活动
-     *
+     * <b>summary</b> : 
+     * <p>发送实时活动</p>
+     * 
      * @param request SendLiveActivityRequest
      * @param headers SendLiveActivityHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -132,8 +134,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送实时活动
-     *
+     * <b>summary</b> : 
+     * <p>发送实时活动</p>
+     * 
      * @param request SendLiveActivityRequest
      * @return SendLiveActivityResponse
      */

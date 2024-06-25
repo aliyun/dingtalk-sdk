@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CreateInnerAppRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>descxxx</p>
      */
     @NameInMap("desc")
     public String desc;
@@ -13,9 +16,17 @@ public class CreateInnerAppRequest extends TeaModel {
     @NameInMap("developType")
     public Integer developType;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+     */
     @NameInMap("homepageLink")
     public String homepageLink;
 
+    /**
+     * <strong>example:</strong>
+     * <p>mediaxxx</p>
+     */
     @NameInMap("icon")
     public String icon;
 
@@ -24,22 +35,40 @@ public class CreateInnerAppRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>namexx</p>
      */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+     */
     @NameInMap("ompLink")
     public String ompLink;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("opUnionId")
     public String opUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+     */
     @NameInMap("pcHomepageLink")
     public String pcHomepageLink;
 
+    /**
+     * <strong>example:</strong>
+     * <p>BASE</p>
+     */
     @NameInMap("scopeType")
     public String scopeType;
 

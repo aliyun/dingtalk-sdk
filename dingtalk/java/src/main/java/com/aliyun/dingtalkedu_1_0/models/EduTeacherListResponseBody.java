@@ -26,24 +26,36 @@ public class EduTeacherListResponseBody extends TeaModel {
     public static class EduTeacherListResponseBodyResultTeacherDetails extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>teacher</p>
          */
         @NameInMap("role")
         public String role;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>人员的unionId。</p>
          */
         @NameInMap("unionId")
         public String unionId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>77621233</p>
          */
         @NameInMap("userId")
         public String userId;
@@ -90,6 +102,9 @@ public class EduTeacherListResponseBody extends TeaModel {
     public static class EduTeacherListResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("hasMore")
         public Boolean hasMore;

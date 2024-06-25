@@ -23,12 +23,18 @@ public class ListMiniAppAvailableVersionResponseBody extends TeaModel {
     public static class ListMiniAppAvailableVersionResponseBodyList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("buildStatus")
         public Long buildStatus;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0.0.5</p>
          */
         @NameInMap("version")
         public String version;

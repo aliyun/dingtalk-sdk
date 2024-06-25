@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class RemoveRobotFromConversationRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("chatBotUserId")
     public String chatBotUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cid123cd</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

@@ -6,11 +6,10 @@ import com.aliyun.dingtalkgateway_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
@@ -21,8 +20,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 云上网关注册长连接
-     *
+     * <b>summary</b> : 
+     * <p>云上网关注册长连接</p>
+     * 
      * @param request OpenConnectionRequest
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
@@ -70,8 +70,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 云上网关注册长连接
-     *
+     * <b>summary</b> : 
+     * <p>云上网关注册长连接</p>
+     * 
      * @param request OpenConnectionRequest
      * @return OpenConnectionResponse
      */

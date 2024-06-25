@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class SetRowsVisibilityRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>row</p>
      */
     @NameInMap("row")
     public Long row;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>row_count</p>
      */
     @NameInMap("rowCount")
     public Long rowCount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>visible</p>
      */
     @NameInMap("visibility")
     public String visibility;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;

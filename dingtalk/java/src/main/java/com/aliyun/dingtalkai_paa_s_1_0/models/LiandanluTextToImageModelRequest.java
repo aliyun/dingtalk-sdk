@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class LiandanluTextToImageModelRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>IMAGE</p>
      */
     @NameInMap("module")
     public String module;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("number")
     public Long number;
 
@@ -18,12 +25,18 @@ public class LiandanluTextToImageModelRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>画一副风景画</p>
      */
     @NameInMap("prompt")
     public String prompt;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("userId")
     public String userId;

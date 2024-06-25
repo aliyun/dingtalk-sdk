@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class ReportDeviceLogRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xdfsf20001</p>
      */
     @NameInMap("mediaId")
     public String mediaId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sn123</p>
      */
     @NameInMap("sn")
     public String sn;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>file：普通文件</p>
      */
     @NameInMap("type")
     public String type;

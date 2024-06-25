@@ -6,15 +6,25 @@ import com.aliyun.tea.*;
 public class AgoalObjectiveKeyActionListRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>211042291978xxxx</p>
      */
     @NameInMap("dingUserId")
     public String dingUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>6444f5e9a4261c6e699dxxxx</p>
+     */
     @NameInMap("keyResultId")
     public String keyResultId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6444f5e9a4261c6e699dxxxx</p>
      */
     @NameInMap("objectiveId")
     public String objectiveId;

@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class BindCompanyAccountantBookRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc</p>
      */
     @NameInMap("accountantBookId")
     public String accountantBookId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>COM_DEFAULT</p>
+     */
     @NameInMap("companyCode")
     public String companyCode;
 

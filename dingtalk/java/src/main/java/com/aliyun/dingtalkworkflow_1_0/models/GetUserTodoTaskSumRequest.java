@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetUserTodoTaskSumRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager123</p>
      */
     @NameInMap("userId")
     public String userId;

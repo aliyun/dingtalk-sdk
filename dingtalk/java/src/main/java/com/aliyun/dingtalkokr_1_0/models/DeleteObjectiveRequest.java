@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class DeleteObjectiveRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>06186238011033616</p>
      */
     @NameInMap("userId")
     public String userId;

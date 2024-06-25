@@ -4,12 +4,27 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class InvokeInstanceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>dca://ding32fff839a3e0105d.connect.dingtalk.com/ding32fff839a3e0105d/action/G-ACT-101FDEBD3C6E213DB474000P</p>
+     */
     @NameInMap("connectAssetUri")
     public String connectAssetUri;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{}</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("inputJsonString")
     public String inputJsonString;
 
+    /**
+     * <strong>example:</strong>
+     * <p>SAMPLE</p>
+     */
     @NameInMap("instanceKey")
     public String instanceKey;
 

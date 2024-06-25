@@ -6,19 +6,33 @@ import com.aliyun.tea.*;
 public class SaveFormInstanceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{}</p>
      */
     @NameInMap("formDataList")
     public String formDataList;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8888</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>88888</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>8888</p>
+     */
     @NameInMap("ownerUnionId")
     public String ownerUnionId;
 

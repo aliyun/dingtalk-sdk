@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class MuteAllRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>mute</p>
      */
     @NameInMap("action")
     public String action;

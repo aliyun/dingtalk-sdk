@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class SupplyDeletePartnerManagersRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1231</p>
      */
     @NameInMap("deptId")
     public Long deptId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12131</p>
      */
     @NameInMap("interfaceId")
     public String interfaceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user</p>
      */
     @NameInMap("interfaceType")
     public String interfaceType;

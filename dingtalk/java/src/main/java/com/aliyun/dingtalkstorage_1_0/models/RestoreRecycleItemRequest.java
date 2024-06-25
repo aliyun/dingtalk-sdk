@@ -9,6 +9,9 @@ public class RestoreRecycleItemRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -35,6 +38,10 @@ public class RestoreRecycleItemRequest extends TeaModel {
     }
 
     public static class RestoreRecycleItemRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>AUTO_RENAME</p>
+         */
         @NameInMap("conflictStrategy")
         public String conflictStrategy;
 

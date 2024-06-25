@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class BatchUpdateContactsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager021a</p>
      */
     @NameInMap("operatorUserId")
     public String operatorUserId;
@@ -38,17 +41,27 @@ public class BatchUpdateContactsRequest extends TeaModel {
     }
 
     public static class BatchUpdateContactsRequestRelationListBizDataList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>{}</p>
+         */
         @NameInMap("extendValue")
         public String extendValue;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>TextField_71U51A</p>
          */
         @NameInMap("key")
         public String key;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>XX有限公司</p>
          */
         @NameInMap("value")
         public String value;
@@ -88,11 +101,18 @@ public class BatchUpdateContactsRequest extends TeaModel {
         @NameInMap("bizDataList")
         public java.util.List<BatchUpdateContactsRequestRelationListBizDataList> bizDataList;
 
+        /**
+         * <strong>if can be null:</strong>
+         * <p>true</p>
+         */
         @NameInMap("bizExtMap")
         public java.util.Map<String, String> bizExtMap;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>fasdg8i814-0afsd</p>
          */
         @NameInMap("relationId")
         public String relationId;

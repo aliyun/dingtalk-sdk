@@ -4,6 +4,10 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupInfoByMemberAuthResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>99</p>
+     */
     @NameInMap("memberCount")
     public Integer memberCount;
 

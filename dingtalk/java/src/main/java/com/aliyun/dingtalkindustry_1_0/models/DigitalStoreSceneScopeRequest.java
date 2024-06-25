@@ -4,9 +4,17 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreSceneScopeRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cidxxa9122s733s1==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>achieveAllocate</p>
+     */
     @NameInMap("sceneCode")
     public String sceneCode;
 

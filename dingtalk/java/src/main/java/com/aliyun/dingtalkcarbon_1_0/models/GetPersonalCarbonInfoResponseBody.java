@@ -9,6 +9,9 @@ public class GetPersonalCarbonInfoResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3.25</p>
      */
     @NameInMap("personalCarbonAmount")
     public Double personalCarbonAmount;

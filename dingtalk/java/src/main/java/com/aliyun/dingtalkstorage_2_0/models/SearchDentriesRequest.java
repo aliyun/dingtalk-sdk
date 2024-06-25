@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SearchDentriesRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>keyword</p>
      */
     @NameInMap("keyword")
     public String keyword;
@@ -15,6 +18,9 @@ public class SearchDentriesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -49,9 +55,17 @@ public class SearchDentriesRequest extends TeaModel {
     }
 
     public static class SearchDentriesRequestOptionCreateTimeRange extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>end_time</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>start_time</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
@@ -79,9 +93,17 @@ public class SearchDentriesRequest extends TeaModel {
     }
 
     public static class SearchDentriesRequestOptionVisitTimeRange extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>end_time</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>start_time</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
@@ -118,12 +140,20 @@ public class SearchDentriesRequest extends TeaModel {
         @NameInMap("dentryCategories")
         public java.util.List<String> dentryCategories;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
         @NameInMap("modifierIds")
         public java.util.List<String> modifierIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>next_token</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

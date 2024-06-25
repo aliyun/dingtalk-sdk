@@ -6,30 +6,50 @@ import com.aliyun.tea.*;
 public class ApproveCityCarApplyRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>corpx</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-03-18 20:26:56</p>
+     */
     @NameInMap("operateTime")
     public String operateTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>同意</p>
+     */
     @NameInMap("remark")
     public String remark;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("status")
     public Long status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>apply1</p>
      */
     @NameInMap("thirdPartApplyId")
     public String thirdPartApplyId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user1</p>
      */
     @NameInMap("userId")
     public String userId;

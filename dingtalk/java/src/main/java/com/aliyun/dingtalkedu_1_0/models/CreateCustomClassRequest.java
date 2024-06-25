@@ -12,12 +12,18 @@ public class CreateCustomClassRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234</p>
      */
     @NameInMap("operator")
     public String operator;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>12345</p>
      */
     @NameInMap("superId")
     public Long superId;
@@ -54,6 +60,9 @@ public class CreateCustomClassRequest extends TeaModel {
     public static class CreateCustomClassRequestCustomClass extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021级培训班</p>
          */
         @NameInMap("name")
         public String name;

@@ -6,11 +6,10 @@ import com.aliyun.dingtalkflashmsg_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 添加插件规则
-     *
+     * <b>summary</b> : 
+     * <p>添加插件规则</p>
+     * 
      * @param request AddPluginRuleRequest
      * @param headers AddPluginRuleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -78,8 +78,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加插件规则
-     *
+     * <b>summary</b> : 
+     * <p>添加插件规则</p>
+     * 
      * @param request AddPluginRuleRequest
      * @return AddPluginRuleResponse
      */
@@ -90,8 +91,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除插件规则
-     *
+     * <b>summary</b> : 
+     * <p>删除插件规则</p>
+     * 
      * @param request DeletePlguinRuleRequest
      * @param headers DeletePlguinRuleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -136,8 +138,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除插件规则
-     *
+     * <b>summary</b> : 
+     * <p>删除插件规则</p>
+     * 
      * @param request DeletePlguinRuleRequest
      * @return DeletePlguinRuleResponse
      */
@@ -148,8 +151,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 闪读用户基础信息查询
-     *
+     * <b>summary</b> : 
+     * <p>闪读用户基础信息查询</p>
+     * 
      * @param request GetBaseProfileListRequest
      * @param headers GetBaseProfileListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -185,8 +189,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 闪读用户基础信息查询
-     *
+     * <b>summary</b> : 
+     * <p>闪读用户基础信息查询</p>
+     * 
      * @param request GetBaseProfileListRequest
      * @return GetBaseProfileListResponse
      */
@@ -197,8 +202,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获得闪读会话信息
-     *
+     * <b>summary</b> : 
+     * <p>获得闪读会话信息</p>
+     * 
      * @param request GetConversationRequest
      * @param headers GetConversationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -243,8 +249,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获得闪读会话信息
-     *
+     * <b>summary</b> : 
+     * <p>获得闪读会话信息</p>
+     * 
      * @param request GetConversationRequest
      * @return GetConversationResponse
      */
@@ -255,8 +262,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获得成员ID列表
-     *
+     * <b>summary</b> : 
+     * <p>获得成员ID列表</p>
+     * 
      * @param request GetMemberListRequest
      * @param headers GetMemberListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -309,8 +317,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获得成员ID列表
-     *
+     * <b>summary</b> : 
+     * <p>获得成员ID列表</p>
+     * 
      * @param request GetMemberListRequest
      * @return GetMemberListResponse
      */
@@ -321,8 +330,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询插件规则
-     *
+     * <b>summary</b> : 
+     * <p>查询插件规则</p>
+     * 
      * @param request QueryPluginRuleRequest
      * @param headers QueryPluginRuleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -383,8 +393,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询插件规则
-     *
+     * <b>summary</b> : 
+     * <p>查询插件规则</p>
+     * 
      * @param request QueryPluginRuleRequest
      * @return QueryPluginRuleResponse
      */
@@ -395,8 +406,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送Ding提示消息
-     *
+     * <b>summary</b> : 
+     * <p>发送Ding提示消息</p>
+     * 
      * @param request SendDingTipRequest
      * @param headers SendDingTipHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -457,8 +469,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送Ding提示消息
-     *
+     * <b>summary</b> : 
+     * <p>发送Ding提示消息</p>
+     * 
      * @param request SendDingTipRequest
      * @return SendDingTipResponse
      */
@@ -469,8 +482,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送闪读消息提示
-     *
+     * <b>summary</b> : 
+     * <p>发送闪读消息提示</p>
+     * 
      * @param request SendMessageTipRequest
      * @param headers SendMessageTipHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -535,8 +549,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送闪读消息提示
-     *
+     * <b>summary</b> : 
+     * <p>发送闪读消息提示</p>
+     * 
      * @param request SendMessageTipRequest
      * @return SendMessageTipResponse
      */

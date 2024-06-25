@@ -12,6 +12,9 @@ public class QueryGroupMemberResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>14da****2760</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
@@ -38,23 +41,41 @@ public class QueryGroupMemberResponseBody extends TeaModel {
     }
 
     public static class QueryGroupMemberResponseBodyGroupMembers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>http://****.png</p>
+         */
         @NameInMap("groupMemberAvatar")
         public String groupMemberAvatar;
 
+        /**
+         * <strong>example:</strong>
+         * <p>认真工作,快乐生活</p>
+         */
         @NameInMap("groupMemberDynamics")
         public String groupMemberDynamics;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1107****2120</p>
+         */
         @NameInMap("groupMemberId")
         public String groupMemberId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>Foo</p>
          */
         @NameInMap("groupMemberName")
         public String groupMemberName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("groupMemberType")
         public Integer groupMemberType;

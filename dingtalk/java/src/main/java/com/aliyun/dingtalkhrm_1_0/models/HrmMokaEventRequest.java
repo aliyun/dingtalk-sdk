@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class HrmMokaEventRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>/user/role/get</p>
      */
     @NameInMap("bizId")
     public String bizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;a&quot;:&quot;b&quot;}</p>
      */
     @NameInMap("content")
     public String content;

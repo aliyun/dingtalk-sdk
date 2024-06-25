@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class OpenAgoalKeyActionDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6444f5e9a4261c6e699dxxxx</p>
      */
     @NameInMap("keyActionId")
     public String keyActionId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试</p>
      */
     @NameInMap("title")
     public String title;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://agoal.dingtalk.com">https://agoal.dingtalk.com</a></p>
      */
     @NameInMap("url")
     public String url;

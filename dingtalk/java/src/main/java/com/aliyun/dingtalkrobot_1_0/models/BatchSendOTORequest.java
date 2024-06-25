@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class BatchSendOTORequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sampleMarkdown</p>
      */
     @NameInMap("msgKey")
     public String msgKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;text&quot;: &quot;hello dafu&quot;,&quot;title&quot;: &quot;hello title&quot;}</p>
      */
     @NameInMap("msgParam")
     public String msgParam;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingxxxxxx</p>
      */
     @NameInMap("robotCode")
     public String robotCode;

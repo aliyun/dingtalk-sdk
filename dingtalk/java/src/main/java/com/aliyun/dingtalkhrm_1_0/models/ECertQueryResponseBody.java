@@ -4,45 +4,96 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class ECertQueryResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>3300111192912113</p>
+     */
     @NameInMap("certNO")
     public String certNO;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1123124124124</p>
+     */
     @NameInMap("employJobId")
     public String employJobId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>职务</p>
+     */
     @NameInMap("employJobIdLabel")
     public String employJobIdLabel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1231231232313123</p>
+     */
     @NameInMap("employPositionId")
     public String employPositionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>职位</p>
+     */
     @NameInMap("employPositionIdLabel")
     public String employPositionIdLabel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>498192313</p>
+     */
     @NameInMap("employPositionRankId")
     public String employPositionRankId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>职级</p>
+     */
     @NameInMap("employPositionRankIdLabel")
     public String employPositionRankIdLabel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2020-03-14</p>
+     */
     @NameInMap("hiredDate")
     public String hiredDate;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-03-14</p>
+     */
     @NameInMap("lastWorkDay")
     public String lastWorkDay;
 
+    /**
+     * <strong>example:</strong>
+     * <p>-1</p>
+     */
     @NameInMap("mainDeptId")
     public Long mainDeptId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试部门</p>
+     */
     @NameInMap("mainDeptName")
     public String mainDeptName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>李四</p>
      */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>张三</p>
+     */
     @NameInMap("realName")
     public String realName;
 

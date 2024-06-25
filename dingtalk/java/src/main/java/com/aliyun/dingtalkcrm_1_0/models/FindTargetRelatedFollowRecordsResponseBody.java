@@ -21,15 +21,31 @@ public class FindTargetRelatedFollowRecordsResponseBody extends TeaModel {
     }
 
     public static class FindTargetRelatedFollowRecordsResponseBodyResultResultListFollowContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>follow_record_related_content</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <strong>example:</strong>
+         * <p>扩展value</p>
+         */
         @NameInMap("extendValue")
         public String extendValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>TextareaField-K2U5UJAF</p>
+         */
         @NameInMap("key")
         public String key;
 
+        /**
+         * <strong>example:</strong>
+         * <p>重点跟进</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -73,29 +89,56 @@ public class FindTargetRelatedFollowRecordsResponseBody extends TeaModel {
     }
 
     public static class FindTargetRelatedFollowRecordsResponseBodyResultResultList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>manager7617</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
         @NameInMap("followContent")
         public java.util.List<FindTargetRelatedFollowRecordsResponseBodyResultResultListFollowContent> followContent;
 
+        /**
+         * <strong>example:</strong>
+         * <p>customerId</p>
+         */
         @NameInMap("followTargetDataId")
         public String followTargetDataId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>customer</p>
+         */
         @NameInMap("followTargetType")
         public String followTargetType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1712629910168</p>
+         */
         @NameInMap("gmtCreateMilliseconds")
         public String gmtCreateMilliseconds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1712629910168</p>
+         */
         @NameInMap("gmtModifiedMilliseconds")
         public String gmtModifiedMilliseconds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager7617</p>
+         */
         @NameInMap("modifierUserId")
         public String modifierUserId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>_aFFogIuRrWlL3hLdvbb5w09951712629910</p>
          */
         @NameInMap("recordInstId")
         public String recordInstId;
@@ -172,9 +215,17 @@ public class FindTargetRelatedFollowRecordsResponseBody extends TeaModel {
     }
 
     public static class FindTargetRelatedFollowRecordsResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1000</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

@@ -26,12 +26,18 @@ public class RecallAuditTemplateResponseBody extends TeaModel {
     public static class RecallAuditTemplateResponseBodyRecallResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>template_key_1</p>
          */
         @NameInMap("templateKey")
         public String templateKey;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>recall_success</p>
          */
         @NameInMap("value")
         public String value;

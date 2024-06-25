@@ -4,23 +4,37 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryFormInstanceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>SWAPP-dfeacds-example</p>
+     */
     @NameInMap("appUuid")
     public String appUuid;
 
     @NameInMap("attributes")
     public java.util.Map<String, ?> attributes;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1631870043000</p>
+     */
     @NameInMap("createTimestamp")
     public Long createTimestamp;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>00003</p>
      */
     @NameInMap("creator")
     public String creator;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROC-abcdef-example</p>
      */
     @NameInMap("formCode")
     public String formCode;
@@ -33,22 +47,45 @@ public class QueryFormInstanceResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>951a8-8828-430c-b3e-example</p>
      */
     @NameInMap("formInstanceId")
     public String formInstanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>000025</p>
+     */
     @NameInMap("modifier")
     public String modifier;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1631870043000</p>
+     */
     @NameInMap("modifyTimestamp")
     public Long modifyTimestamp;
 
+    /**
+     * <strong>example:</strong>
+     * <p>PROC-abcdef-example</p>
+     */
     @NameInMap("outBizCode")
     public String outBizCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>951a8-8828-430c-b3e-example</p>
+     */
     @NameInMap("outInstanceId")
     public String outInstanceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxx提交的表单数据</p>
+     */
     @NameInMap("title")
     public String title;
 

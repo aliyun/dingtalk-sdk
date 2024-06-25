@@ -5,28 +5,40 @@ import com.aliyun.tea.*;
 
 public class InsertOrUpdateDirRequest extends TeaModel {
     /**
-     * <p>This parameter is required.</p>
+     * <strong>example:</strong>
+     * <p>administeration</p>
      */
     @NameInMap("bizGroup")
     public String bizGroup;
 
+    /**
+     * <strong>example:</strong>
+     * <p>分组描述信息</p>
+     */
     @NameInMap("description")
     public String description;
 
     /**
-     * <p>This parameter is required.</p>
+     * <strong>example:</strong>
+     * <p>行政管理</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;en_US&quot;:&quot;test&quot;,&quot;ja_JP&quot;:&quot;test&quot;,&quot;vi_VN&quot;:&quot;test&quot;,&quot;zh_CN&quot;:&quot;测试&quot;,&quot;zh_HK&quot;:&quot;测试&quot;,&quot;zh_TW&quot;:&quot;测试&quot;}</p>
      */
     @NameInMap("name18n")
     public String name18n;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user001</p>
      */
     @NameInMap("operateUserId")
     public String operateUserId;

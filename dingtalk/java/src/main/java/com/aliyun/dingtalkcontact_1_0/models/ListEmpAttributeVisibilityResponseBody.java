@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ListEmpAttributeVisibilityResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -73,6 +76,10 @@ public class ListEmpAttributeVisibilityResponseBody extends TeaModel {
         @NameInMap("hideFields")
         public java.util.List<String> hideFields;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10001</p>
+         */
         @NameInMap("id")
         public Long id;
 

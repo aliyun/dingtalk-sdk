@@ -12,6 +12,9 @@ public class AddGroupMembersRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
      */
     @NameInMap("members")
     public java.util.List<AddGroupMembersRequestMembers> members;

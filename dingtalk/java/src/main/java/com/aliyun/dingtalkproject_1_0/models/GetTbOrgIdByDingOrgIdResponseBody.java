@@ -26,6 +26,9 @@ public class GetTbOrgIdByDingOrgIdResponseBody extends TeaModel {
     public static class GetTbOrgIdByDingOrgIdResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>50c32afae8cf1439xxxx</p>
          */
         @NameInMap("tbOrganizationId")
         public String tbOrganizationId;

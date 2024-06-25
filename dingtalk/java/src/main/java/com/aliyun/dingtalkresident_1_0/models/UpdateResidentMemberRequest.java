@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class UpdateResidentMemberRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试小区1</p>
      */
     @NameInMap("residentUpdateInfo")
     public UpdateResidentMemberRequestResidentUpdateInfo residentUpdateInfo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1212</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -40,31 +46,56 @@ public class UpdateResidentMemberRequest extends TeaModel {
     public static class UpdateResidentMemberRequestResidentUpdateInfo extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>11112</p>
          */
         @NameInMap("deptId")
         public Long deptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("isPropertyOwner")
         public Boolean isPropertyOwner;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;startTime&quot;:1652358627106,&quot;endTime&quot;:1652445027106}</p>
+         */
         @NameInMap("memberDeptExtension")
         public java.util.Map<String, String> memberDeptExtension;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>11123</p>
          */
         @NameInMap("oldDeptId")
         public Long oldDeptId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("relateType")
         public String relateType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>11123</p>
+         */
         @NameInMap("userId")
         public String userId;
 

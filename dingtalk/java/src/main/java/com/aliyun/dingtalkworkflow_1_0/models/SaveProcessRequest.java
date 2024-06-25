@@ -4,6 +4,10 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveProcessRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>用于员工差旅费用报销使用</p>
+     */
     @NameInMap("description")
     public String description;
 
@@ -15,16 +19,27 @@ public class SaveProcessRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>出差报销审批</p>
      */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>proc-abc</p>
+     */
     @NameInMap("processCode")
     public String processCode;
 
     @NameInMap("processFeatureConfig")
     public SaveProcessRequestProcessFeatureConfig processFeatureConfig;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("templateConfig")
     @Deprecated
     public SaveProcessRequestTemplateConfig templateConfig;
@@ -83,12 +98,24 @@ public class SaveProcessRequest extends TeaModel {
     }
 
     public static class SaveProcessRequestProcessFeatureConfigFeaturesCallback extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("apiKey")
         public String apiKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("appUuid")
         public String appUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("version")
         public String version;
 
@@ -127,18 +154,38 @@ public class SaveProcessRequest extends TeaModel {
         @NameInMap("callback")
         public SaveProcessRequestProcessFeatureConfigFeaturesCallback callback;
 
+        /**
+         * <strong>if can be null:</strong>
+         * <p>true</p>
+         */
         @NameInMap("config")
         public String config;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>abc</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ORIGIN</p>
+         */
         @NameInMap("runType")
         public String runType;
 
@@ -217,20 +264,43 @@ public class SaveProcessRequest extends TeaModel {
     }
 
     public static class SaveProcessRequestTemplateConfig extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://open.dingtalk.com/">https://open.dingtalk.com/</a></p>
+         */
         @NameInMap("createInstanceMobileUrl")
         @Deprecated
         public String createInstanceMobileUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://open.dingtalk.com/">https://open.dingtalk.com/</a></p>
+         */
         @NameInMap("createInstancePcUrl")
         @Deprecated
         public String createInstancePcUrl;
 
+        /**
+         * <strong>if can be null:</strong>
+         * <p>true</p>
+         */
         @NameInMap("disableSendCard")
         public Boolean disableSendCard;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("hidden")
         public Boolean hidden;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://open.dingtalk.com/">https://open.dingtalk.com/</a></p>
+         * 
+         * <strong>if can be null:</strong>
+         * <p>true</p>
+         */
         @NameInMap("templateEditUrl")
         @Deprecated
         public String templateEditUrl;

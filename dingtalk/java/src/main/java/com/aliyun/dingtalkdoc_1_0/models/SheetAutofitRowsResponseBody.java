@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SheetAutofitRowsResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>stxxxx</p>
      */
     @NameInMap("id")
     public String id;

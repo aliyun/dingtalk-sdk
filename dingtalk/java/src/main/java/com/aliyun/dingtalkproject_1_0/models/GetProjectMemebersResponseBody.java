@@ -21,16 +21,28 @@ public class GetProjectMemebersResponseBody extends TeaModel {
     }
 
     public static class GetProjectMemebersResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3b376ec29c45xxxxx</p>
+         */
         @NameInMap("memberId")
         @Deprecated
         public String memberId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("role")
         public Integer role;
 
         @NameInMap("roleIds")
         public java.util.List<String> roleIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0715153011125xxxx</p>
+         */
         @NameInMap("userId")
         public String userId;
 

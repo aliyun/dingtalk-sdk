@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdateOfficialAccountRobotInfoResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("result")
     public String result;

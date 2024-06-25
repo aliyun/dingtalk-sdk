@@ -6,16 +6,26 @@ import com.aliyun.tea.*;
 public class CreateBatchTradeOrderRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021070712440326300185114</p>
      */
     @NameInMap("accountId")
     public String accountId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>13****9</p>
      */
     @NameInMap("accountNo")
     public String accountNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>备注</p>
+     */
     @NameInMap("batchRemark")
     public String batchRemark;
 
@@ -27,30 +37,45 @@ public class CreateBatchTradeOrderRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20210901001</p>
      */
     @NameInMap("outBatchNo")
     public String outBatchNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>8476212471</p>
      */
     @NameInMap("staffId")
     public String staffId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1.00</p>
      */
     @NameInMap("totalAmount")
     public String totalAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("totalCount")
     public Long totalCount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>工资</p>
      */
     @NameInMap("tradeTitle")
     public String tradeTitle;
@@ -135,33 +160,52 @@ public class CreateBatchTradeOrderRequest extends TeaModel {
     public static class CreateBatchTradeOrderRequestBatchTradeDetails extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1.00</p>
          */
         @NameInMap("amount")
         public String amount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>工资</p>
+         */
         @NameInMap("memo")
         public String memo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>测试</p>
          */
         @NameInMap("payeeAccountName")
         public String payeeAccountName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>13000000000</p>
          */
         @NameInMap("payeeAccountNo")
         public String payeeAccountNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ALIPAY</p>
          */
         @NameInMap("payeeAccountType")
         public String payeeAccountType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("serialNo")
         public Long serialNo;

@@ -60,15 +60,31 @@ public class QueryCustomerTaskUserDetailResponseBody extends TeaModel {
     }
 
     public static class QueryCustomerTaskUserDetailResponseBodyRecordsEventTrackResponses extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2023-07-14 00:00:00</p>
+         */
         @NameInMap("clickTime")
         public String clickTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>88888</p>
+         */
         @NameInMap("eventTrackId")
         public String eventTrackId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("onClick")
         public Boolean onClick;
 
+        /**
+         * <strong>example:</strong>
+         * <p>标题名称</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -112,36 +128,76 @@ public class QueryCustomerTaskUserDetailResponseBody extends TeaModel {
     }
 
     public static class QueryCustomerTaskUserDetailResponseBodyRecords extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>客户名称</p>
+         */
         @NameInMap("customerNames")
         public String customerNames;
 
+        /**
+         * <strong>example:</strong>
+         * <p>11111</p>
+         */
         @NameInMap("errorCode")
         public String errorCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>错误信息</p>
+         */
         @NameInMap("errorDetail")
         public String errorDetail;
 
         @NameInMap("eventTrackResponses")
         public java.util.List<QueryCustomerTaskUserDetailResponseBodyRecordsEventTrackResponses> eventTrackResponses;
 
+        /**
+         * <strong>example:</strong>
+         * <p>8888</p>
+         */
         @NameInMap("openBatchTaskId")
         public String openBatchTaskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("readStatus")
         public Long readStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-07-14 00:00:00</p>
+         */
         @NameInMap("readTime")
         public String readTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>接收人姓名</p>
+         */
         @NameInMap("receiverName")
         public String receiverName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>接收人ID</p>
+         */
         @NameInMap("receiverUnionId")
         public String receiverUnionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-07-14 00:00:00</p>
+         */
         @NameInMap("sendTime")
         public String sendTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>UNSEND未发；SEND_SUCCESS成功；SEND_FAILED失败；EXCEED_LIMIT被限流</p>
+         */
         @NameInMap("status")
         public String status;
 

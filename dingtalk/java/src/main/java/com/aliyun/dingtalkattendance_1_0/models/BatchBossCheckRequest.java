@@ -35,11 +35,18 @@ public class BatchBossCheckRequest extends TeaModel {
     }
 
     public static class BatchBossCheckRequestModels extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("absentMin")
         public Long absentMin;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123</p>
          */
         @NameInMap("planId")
         public Long planId;
@@ -49,6 +56,9 @@ public class BatchBossCheckRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>Normal</p>
          */
         @NameInMap("timeResult")
         public String timeResult;

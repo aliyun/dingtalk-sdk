@@ -10,10 +10,17 @@ public class SaveWhiteAppRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;openShareControl&quot;:[123],&quot;openClipboardPaste&quot;:[123]}</p>
      */
     @NameInMap("agentIdMap")
     public String agentIdMap;
 
+    /**
+     * <strong>example:</strong>
+     * <p>add</p>
+     */
     @NameInMap("operation")
     @Deprecated
     public String operation;

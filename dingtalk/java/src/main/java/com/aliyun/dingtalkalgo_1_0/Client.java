@@ -6,11 +6,10 @@ import com.aliyun.dingtalkalgo_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 自然语言处理之关键词识别
-     *
+     * <b>summary</b> : 
+     * <p>自然语言处理之关键词识别</p>
+     * 
      * @param request NlpWordDistinguishRequest
      * @param headers NlpWordDistinguishHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -70,8 +70,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 自然语言处理之关键词识别
-     *
+     * <b>summary</b> : 
+     * <p>自然语言处理之关键词识别</p>
+     * 
      * @param request NlpWordDistinguishRequest
      * @return NlpWordDistinguishResponse
      */
@@ -82,8 +83,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary Okr内容推荐
-     *
+     * <b>summary</b> : 
+     * <p>Okr内容推荐</p>
+     * 
      * @param request OkrOpenRecommendRequest
      * @param headers OkrOpenRecommendHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -144,8 +146,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary Okr内容推荐
-     *
+     * <b>summary</b> : 
+     * <p>Okr内容推荐</p>
+     * 
      * @param request OkrOpenRecommendRequest
      * @return OkrOpenRecommendResponse
      */

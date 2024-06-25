@@ -12,6 +12,9 @@ public class BatchCreateTeamRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -43,18 +46,27 @@ public class BatchCreateTeamRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>creator_union_id</p>
          */
         @NameInMap("creatorUnionId")
         public String creatorUnionId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>dept_id</p>
          */
         @NameInMap("deptId")
         public String deptId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>team_name</p>
          */
         @NameInMap("teamName")
         public String teamName;

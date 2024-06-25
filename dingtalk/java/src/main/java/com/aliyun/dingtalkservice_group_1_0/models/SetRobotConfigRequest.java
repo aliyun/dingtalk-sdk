@@ -22,6 +22,10 @@ public class SetRobotConfigRequest extends TeaModel {
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("status")
     public String status;
 

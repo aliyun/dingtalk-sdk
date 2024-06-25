@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryAcquireRefundOrderRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>202100001</p>
      */
     @NameInMap("outRefundNo")
     public String outRefundNo;

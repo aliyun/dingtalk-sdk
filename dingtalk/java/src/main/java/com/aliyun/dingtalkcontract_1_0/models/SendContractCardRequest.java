@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SendContractCardRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>signing</p>
      */
     @NameInMap("cardType")
     public String cardType;
@@ -15,6 +18,9 @@ public class SendContractCardRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding5f62ac8a3c24952ebc961a6cb783455b</p>
      */
     @NameInMap("corpId")
     public String corpId;
@@ -22,6 +28,10 @@ public class SendContractCardRequest extends TeaModel {
     @NameInMap("extension")
     public java.util.Map<String, String> extension;
 
+    /**
+     * <strong>example:</strong>
+     * <p>PROC_Xxxxxxxx</p>
+     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
@@ -42,6 +52,9 @@ public class SendContractCardRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("syncSingleChat")
     public Boolean syncSingleChat;
@@ -124,15 +137,31 @@ public class SendContractCardRequest extends TeaModel {
     }
 
     public static class SendContractCardRequestContractInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>HT_xxxxxxx</p>
+         */
         @NameInMap("contractCode")
         public String contractCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>合同</p>
+         */
         @NameInMap("contractName")
         public String contractName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1242153453</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("signUserName")
         public String signUserName;
 
@@ -176,12 +205,24 @@ public class SendContractCardRequest extends TeaModel {
     }
 
     public static class SendContractCardRequestReceivers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ding5f62ac8a3c24952ebc961a6cb783455b</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1622265907855672</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>可以为空</p>
+         */
         @NameInMap("userType")
         public String userType;
 
@@ -217,12 +258,24 @@ public class SendContractCardRequest extends TeaModel {
     }
 
     public static class SendContractCardRequestSender extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ding5f62ac8a3c24952ebc961a6cb783455b</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1622265907855672</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>可以为空</p>
+         */
         @NameInMap("userType")
         public String userType;
 

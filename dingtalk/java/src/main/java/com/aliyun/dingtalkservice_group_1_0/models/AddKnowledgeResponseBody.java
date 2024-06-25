@@ -4,6 +4,10 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddKnowledgeResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>J23suw1irs</p>
+     */
     @NameInMap("openKnowledgeId")
     public String openKnowledgeId;
 

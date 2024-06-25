@@ -10,6 +10,10 @@ public class GetGroupSetResponseBody extends TeaModel {
     @NameInMap("gmtModified")
     public String gmtModified;
 
+    /**
+     * <strong>example:</strong>
+     * <p>5</p>
+     */
     @NameInMap("groupChatCount")
     public Integer groupChatCount;
 

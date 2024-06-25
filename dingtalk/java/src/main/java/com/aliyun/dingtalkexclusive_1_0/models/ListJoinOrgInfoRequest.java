@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class ListJoinOrgInfoRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>15800000000</p>
      */
     @NameInMap("mobile")
     public String mobile;

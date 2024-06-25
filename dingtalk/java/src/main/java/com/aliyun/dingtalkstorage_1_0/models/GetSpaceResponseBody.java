@@ -21,12 +21,24 @@ public class GetSpaceResponseBody extends TeaModel {
     }
 
     public static class GetSpaceResponseBodySpaceCapabilities extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("canRecordRecentFile")
         public Boolean canRecordRecentFile;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("canRename")
         public Boolean canRename;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("canSearch")
         public Boolean canSearch;
 
@@ -62,15 +74,31 @@ public class GetSpaceResponseBody extends TeaModel {
     }
 
     public static class GetSpaceResponseBodySpacePartitionsQuota extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>10000</p>
+         */
         @NameInMap("max")
         public Long max;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1000</p>
+         */
         @NameInMap("reserved")
         public Long reserved;
 
+        /**
+         * <strong>example:</strong>
+         * <p>SHARE</p>
+         */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1024</p>
+         */
         @NameInMap("used")
         public Long used;
 
@@ -114,6 +142,10 @@ public class GetSpaceResponseBody extends TeaModel {
     }
 
     public static class GetSpaceResponseBodySpacePartitions extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>PUBLIC_OSS_PARTITION</p>
+         */
         @NameInMap("partitionType")
         public String partitionType;
 
@@ -144,54 +176,114 @@ public class GetSpaceResponseBody extends TeaModel {
     }
 
     public static class GetSpaceResponseBodySpace extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>app_id</p>
+         */
         @NameInMap("appId")
         public String appId;
 
         @NameInMap("capabilities")
         public GetSpaceResponseBodySpaceCapabilities capabilities;
 
+        /**
+         * <strong>example:</strong>
+         * <p>corp_id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>creator_id</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>modifier_id</p>
+         */
         @NameInMap("modifierId")
         public String modifierId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>owner_id</p>
+         */
         @NameInMap("ownerId")
         public String ownerId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>USER</p>
+         */
         @NameInMap("ownerType")
         public String ownerType;
 
         @NameInMap("partitions")
         public java.util.List<GetSpaceResponseBodySpacePartitions> partitions;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1048576</p>
+         */
         @NameInMap("quota")
         public Long quota;
 
+        /**
+         * <strong>example:</strong>
+         * <p>scene</p>
+         */
         @NameInMap("scene")
         public String scene;
 
+        /**
+         * <strong>example:</strong>
+         * <p>scene_id</p>
+         */
         @NameInMap("sceneId")
         public String sceneId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>NORMAL</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1024</p>
+         */
         @NameInMap("usedQuota")
         public Long usedQuota;
 

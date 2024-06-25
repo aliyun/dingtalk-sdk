@@ -24,18 +24,34 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
     }
 
     public static class GetTrustDeviceListResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1628650483</p>
+         */
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>88:92:5a:1f:e8:24</p>
+         */
         @NameInMap("macAddress")
         public String macAddress;
 
         @NameInMap("model")
         public String model;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Mac</p>
+         */
         @NameInMap("platform")
         public String platform;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("status")
         public Integer status;
 
@@ -44,6 +60,9 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>65224157501039784</p>
          */
         @NameInMap("userId")
         public String userId;

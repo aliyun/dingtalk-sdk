@@ -4,9 +4,17 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateContactHideSettingRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("active")
     public Boolean active;
 
+    /**
+     * <strong>example:</strong>
+     * <p>description text</p>
+     */
     @NameInMap("description")
     public String description;
 
@@ -19,15 +27,31 @@ public class UpdateContactHideSettingRequest extends TeaModel {
     @NameInMap("excludeTagIds")
     public java.util.List<Long> excludeTagIds;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hideInSearch")
     public Boolean hideInSearch;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hideInUserProfile")
     public Boolean hideInUserProfile;
 
+    /**
+     * <strong>example:</strong>
+     * <p>11234</p>
+     */
     @NameInMap("id")
     public Long id;
 
+    /**
+     * <strong>example:</strong>
+     * <p>test name</p>
+     */
     @NameInMap("name")
     public String name;
 

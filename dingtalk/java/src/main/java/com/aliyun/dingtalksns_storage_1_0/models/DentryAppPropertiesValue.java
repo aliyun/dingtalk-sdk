@@ -4,12 +4,24 @@ package com.aliyun.dingtalksns_storage_1_0.models;
 import com.aliyun.tea.*;
 
 public class DentryAppPropertiesValue extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>property_name</p>
+     */
     @NameInMap("name")
     public String name;
 
+    /**
+     * <strong>example:</strong>
+     * <p>property_value</p>
+     */
     @NameInMap("value")
     public String value;
 
+    /**
+     * <strong>example:</strong>
+     * <p>PRIVATE</p>
+     */
     @NameInMap("visibility")
     public String visibility;
 

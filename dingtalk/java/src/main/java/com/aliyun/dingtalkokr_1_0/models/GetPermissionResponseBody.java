@@ -10,6 +10,10 @@ public class GetPermissionResponseBody extends TeaModel {
     @NameInMap("data")
     public GetPermissionResponseBodyData data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -146,12 +150,18 @@ public class GetPermissionResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>public</p>
          */
         @NameInMap("privacy")
         public String privacy;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>period</p>
          */
         @NameInMap("type")
         public String type;

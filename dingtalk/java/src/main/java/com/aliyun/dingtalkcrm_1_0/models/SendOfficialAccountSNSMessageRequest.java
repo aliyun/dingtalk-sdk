@@ -314,6 +314,9 @@ public class SendOfficialAccountSNSMessageRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>text</p>
          */
         @NameInMap("msgType")
         public String msgType;

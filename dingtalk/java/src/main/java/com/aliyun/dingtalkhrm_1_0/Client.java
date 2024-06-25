@@ -6,11 +6,10 @@ import com.aliyun.dingtalkhrm_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
@@ -21,8 +20,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 新增法人公司
-     *
+     * <b>summary</b> : 
+     * <p>新增法人公司</p>
+     * 
      * @param request AddHrmLegalEntityRequest
      * @param headers AddHrmLegalEntityHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -93,8 +93,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 新增法人公司
-     *
+     * <b>summary</b> : 
+     * <p>新增法人公司</p>
+     * 
      * @param request AddHrmLegalEntityRequest
      * @return AddHrmLegalEntityResponse
      */
@@ -105,8 +106,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
-     *
+     * <b>summary</b> : 
+     * <p>智能人事添加待入职员工信息(支持花名册数据和分组明细更新)</p>
+     * 
      * @param request AddHrmPreentryRequest
      * @param headers AddHrmPreentryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -167,8 +169,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
-     *
+     * <b>summary</b> : 
+     * <p>智能人事添加待入职员工信息(支持花名册数据和分组明细更新)</p>
+     * 
      * @param request AddHrmPreentryRequest
      * @return AddHrmPreentryResponse
      */
@@ -179,8 +182,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事设备市场管理
-     *
+     * <b>summary</b> : 
+     * <p>智能人事设备市场管理</p>
+     * 
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
      * @return DeviceMarketManagerResponse
@@ -204,8 +208,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事设备市场管理
-     *
+     * <b>summary</b> : 
+     * <p>智能人事设备市场管理</p>
      * @return DeviceMarketManagerResponse
      */
     public DeviceMarketManagerResponse deviceMarketManager() throws Exception {
@@ -215,8 +219,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事设备定向管理接口
-     *
+     * <b>summary</b> : 
+     * <p>智能人事设备定向管理接口</p>
+     * 
      * @param headers map
      * @param runtime runtime options for this request RuntimeOptions
      * @return DeviceMarketOrderManagerResponse
@@ -240,8 +245,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事设备定向管理接口
-     *
+     * <b>summary</b> : 
+     * <p>智能人事设备定向管理接口</p>
      * @return DeviceMarketOrderManagerResponse
      */
     public DeviceMarketOrderManagerResponse deviceMarketOrderManager() throws Exception {
@@ -251,8 +256,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary e签宝专有查询证件接口
-     *
+     * <b>summary</b> : 
+     * <p>e签宝专有查询证件接口</p>
+     * 
      * @param request ECertQueryRequest
      * @param headers ECertQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -293,8 +299,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary e签宝专有查询证件接口
-     *
+     * <b>summary</b> : 
+     * <p>e签宝专有查询证件接口</p>
+     * 
      * @param request ECertQueryRequest
      * @return ECertQueryResponse
      */
@@ -305,8 +312,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事员工档案附件更新
-     *
+     * <b>summary</b> : 
+     * <p>智能人事员工档案附件更新</p>
+     * 
      * @param request EmployeeAttachmentUpdateRequest
      * @param headers EmployeeAttachmentUpdateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -365,8 +373,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事员工档案附件更新
-     *
+     * <b>summary</b> : 
+     * <p>智能人事员工档案附件更新</p>
+     * 
      * @param request EmployeeAttachmentUpdateRequest
      * @return EmployeeAttachmentUpdateResponse
      */
@@ -377,8 +386,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人事高级合同管理回退
-     *
+     * <b>summary</b> : 
+     * <p>人事高级合同管理回退</p>
+     * 
      * @param request EsignRollbackRequest
      * @param headers EsignRollbackHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -419,8 +429,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人事高级合同管理回退
-     *
+     * <b>summary</b> : 
+     * <p>人事高级合同管理回退</p>
+     * 
      * @param request EsignRollbackRequest
      * @return EsignRollbackResponse
      */
@@ -431,8 +442,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取员工花名册指定字段的信息，支持明细分组字段
-     *
+     * <b>summary</b> : 
+     * <p>获取员工花名册指定字段的信息，支持明细分组字段</p>
+     * 
      * @param request GetEmployeeRosterByFieldRequest
      * @param headers GetEmployeeRosterByFieldHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -485,8 +497,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取员工花名册指定字段的信息，支持明细分组字段
-     *
+     * <b>summary</b> : 
+     * <p>获取员工花名册指定字段的信息，支持明细分组字段</p>
+     * 
      * @param request GetEmployeeRosterByFieldRequest
      * @return GetEmployeeRosterByFieldResponse
      */
@@ -497,8 +510,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事权限查询
-     *
+     * <b>summary</b> : 
+     * <p>智能人事权限查询</p>
+     * 
      * @param request HrmAuthResourcesQueryRequest
      * @param headers HrmAuthResourcesQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -543,8 +557,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事权限查询
-     *
+     * <b>summary</b> : 
+     * <p>智能人事权限查询</p>
+     * 
      * @param request HrmAuthResourcesQueryRequest
      * @return HrmAuthResourcesQueryResponse
      */
@@ -555,8 +570,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事权益查询
-     *
+     * <b>summary</b> : 
+     * <p>智能人事权益查询</p>
+     * 
      * @param request HrmBenefitQueryRequest
      * @param headers HrmBenefitQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -597,8 +613,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事权益查询
-     *
+     * <b>summary</b> : 
+     * <p>智能人事权益查询</p>
+     * 
      * @param request HrmBenefitQueryRequest
      * @return HrmBenefitQueryResponse
      */
@@ -609,8 +626,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事邮件发送
-     *
+     * <b>summary</b> : 
+     * <p>智能人事邮件发送</p>
+     * 
      * @param request HrmMailSendRequest
      * @param headers HrmMailSendHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -655,8 +673,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事邮件发送
-     *
+     * <b>summary</b> : 
+     * <p>智能人事邮件发送</p>
+     * 
      * @param request HrmMailSendRequest
      * @return HrmMailSendResponse
      */
@@ -667,8 +686,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人事2.0支持Moka事件转发
-     *
+     * <b>summary</b> : 
+     * <p>人事2.0支持Moka事件转发</p>
+     * 
      * @param request HrmMokaEventRequest
      * @param headers HrmMokaEventHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -713,8 +733,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人事2.0支持Moka事件转发
-     *
+     * <b>summary</b> : 
+     * <p>人事2.0支持Moka事件转发</p>
+     * 
      * @param request HrmMokaEventRequest
      * @return HrmMokaEventResponse
      */
@@ -725,8 +746,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人事2.0支持Moka接口转发
-     *
+     * <b>summary</b> : 
+     * <p>人事2.0支持Moka接口转发</p>
+     * 
      * @param request HrmMokaOapiRequest
      * @param headers HrmMokaOapiHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -771,8 +793,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人事2.0支持Moka接口转发
-     *
+     * <b>summary</b> : 
+     * <p>人事2.0支持Moka接口转发</p>
+     * 
      * @param request HrmMokaOapiRequest
      * @return HrmMokaOapiResponse
      */
@@ -783,8 +806,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事转正接口
-     *
+     * <b>summary</b> : 
+     * <p>智能人事转正接口</p>
+     * 
      * @param request HrmProcessRegularRequest
      * @param headers HrmProcessRegularHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -837,8 +861,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事转正接口
-     *
+     * <b>summary</b> : 
+     * <p>智能人事转正接口</p>
+     * 
      * @param request HrmProcessRegularRequest
      * @return HrmProcessRegularResponse
      */
@@ -849,8 +874,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事调岗接口
-     *
+     * <b>summary</b> : 
+     * <p>智能人事调岗接口</p>
+     * 
      * @param request HrmProcessTransferRequest
      * @param headers HrmProcessTransferHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -923,8 +949,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事调岗接口
-     *
+     * <b>summary</b> : 
+     * <p>智能人事调岗接口</p>
+     * 
      * @param request HrmProcessTransferRequest
      * @return HrmProcessTransferResponse
      */
@@ -935,8 +962,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改员工最后一次离职信息
-     *
+     * <b>summary</b> : 
+     * <p>修改员工最后一次离职信息</p>
+     * 
      * @param request HrmProcessUpdateTerminationInfoRequest
      * @param headers HrmProcessUpdateTerminationInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -985,8 +1013,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改员工最后一次离职信息
-     *
+     * <b>summary</b> : 
+     * <p>修改员工最后一次离职信息</p>
+     * 
      * @param request HrmProcessUpdateTerminationInfoRequest
      * @return HrmProcessUpdateTerminationInfoResponse
      */
@@ -997,8 +1026,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事pts能力调用
-     *
+     * <b>summary</b> : 
+     * <p>智能人事pts能力调用</p>
+     * 
      * @param request HrmPtsServiceRequest
      * @param headers HrmPtsServiceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1055,8 +1085,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事pts能力调用
-     *
+     * <b>summary</b> : 
+     * <p>智能人事pts能力调用</p>
+     * 
      * @param request HrmPtsServiceRequest
      * @return HrmPtsServiceResponse
      */
@@ -1067,8 +1098,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事主数据删除服务
-     *
+     * <b>summary</b> : 
+     * <p>智能人事主数据删除服务</p>
+     * 
      * @param request MasterDataDeleteRequest
      * @param headers MasterDataDeleteHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1110,8 +1142,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事主数据删除服务
-     *
+     * <b>summary</b> : 
+     * <p>智能人事主数据删除服务</p>
+     * 
      * @param request MasterDataDeleteRequest
      * @return MasterDataDeleteResponse
      */
@@ -1122,8 +1155,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事主数据查询服务
-     *
+     * <b>summary</b> : 
+     * <p>智能人事主数据查询服务</p>
+     * 
      * @param request MasterDataQueryRequest
      * @param headers MasterDataQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1196,8 +1230,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事主数据查询服务
-     *
+     * <b>summary</b> : 
+     * <p>智能人事主数据查询服务</p>
+     * 
      * @param request MasterDataQueryRequest
      * @return MasterDataQueryResponse
      */
@@ -1208,8 +1243,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事主数据保存服务
-     *
+     * <b>summary</b> : 
+     * <p>智能人事主数据保存服务</p>
+     * 
      * @param request MasterDataSaveRequest
      * @param headers MasterDataSaveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1251,8 +1287,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事主数据保存服务
-     *
+     * <b>summary</b> : 
+     * <p>智能人事主数据保存服务</p>
+     * 
      * @param request MasterDataSaveRequest
      * @return MasterDataSaveResponse
      */
@@ -1263,8 +1300,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 主数据中拥有某个领域数据的租户信息查询
-     *
+     * <b>summary</b> : 
+     * <p>主数据中拥有某个领域数据的租户信息查询</p>
+     * 
      * @param request MasterDataTenantQueyRequest
      * @param headers MasterDataTenantQueyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1309,8 +1347,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 主数据中拥有某个领域数据的租户信息查询
-     *
+     * <b>summary</b> : 
+     * <p>主数据中拥有某个领域数据的租户信息查询</p>
+     * 
      * @param request MasterDataTenantQueyRequest
      * @return MasterDataTenantQueyResponse
      */
@@ -1321,8 +1360,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事主数据查询服务
-     *
+     * <b>summary</b> : 
+     * <p>智能人事主数据查询服务</p>
+     * 
      * @param request MasterDatasQueryRequest
      * @param headers MasterDatasQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1391,8 +1431,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事主数据查询服务
-     *
+     * <b>summary</b> : 
+     * <p>智能人事主数据查询服务</p>
+     * 
      * @param request MasterDatasQueryRequest
      * @return MasterDatasQueryResponse
      */
@@ -1403,8 +1444,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 自定义入职流程数据查询
-     *
+     * <b>summary</b> : 
+     * <p>自定义入职流程数据查询</p>
+     * 
      * @param request QueryCustomEntryProcessesRequest
      * @param headers QueryCustomEntryProcessesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1453,8 +1495,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 自定义入职流程数据查询
-     *
+     * <b>summary</b> : 
+     * <p>自定义入职流程数据查询</p>
+     * 
      * @param request QueryCustomEntryProcessesRequest
      * @return QueryCustomEntryProcessesResponse
      */
@@ -1465,8 +1508,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询企业已离职员工列表
-     *
+     * <b>summary</b> : 
+     * <p>查询企业已离职员工列表</p>
+     * 
      * @param request QueryDismissionStaffIdListRequest
      * @param headers QueryDismissionStaffIdListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1511,8 +1555,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询企业已离职员工列表
-     *
+     * <b>summary</b> : 
+     * <p>查询企业已离职员工列表</p>
+     * 
      * @param request QueryDismissionStaffIdListRequest
      * @return QueryDismissionStaffIdListResponse
      */
@@ -1523,8 +1568,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据传入的staffId列表，批量查询员工的离职信息
-     *
+     * <b>summary</b> : 
+     * <p>根据传入的staffId列表，批量查询员工的离职信息</p>
+     * 
      * @param tmpReq QueryHrmEmployeeDismissionInfoRequest
      * @param headers QueryHrmEmployeeDismissionInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1571,8 +1617,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据传入的staffId列表，批量查询员工的离职信息
-     *
+     * <b>summary</b> : 
+     * <p>根据传入的staffId列表，批量查询员工的离职信息</p>
+     * 
      * @param request QueryHrmEmployeeDismissionInfoRequest
      * @return QueryHrmEmployeeDismissionInfoResponse
      */
@@ -1583,8 +1630,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询企业的职级信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询企业的职级信息</p>
+     * 
      * @param request QueryJobRanksRequest
      * @param headers QueryJobRanksHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1641,8 +1689,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询企业的职级信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询企业的职级信息</p>
+     * 
      * @param request QueryJobRanksRequest
      * @return QueryJobRanksResponse
      */
@@ -1653,8 +1702,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询企业职务信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询企业职务信息</p>
+     * 
      * @param request QueryJobsRequest
      * @param headers QueryJobsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1703,8 +1753,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询企业职务信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询企业职务信息</p>
+     * 
      * @param request QueryJobsRequest
      * @return QueryJobsResponse
      */
@@ -1715,8 +1766,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询企业职位信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询企业职位信息</p>
+     * 
      * @param request QueryPositionsRequest
      * @param headers QueryPositionsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1779,8 +1831,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询企业职位信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询企业职位信息</p>
+     * 
      * @param request QueryPositionsRequest
      * @return QueryPositionsResponse
      */
@@ -1791,8 +1844,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询花名册中有权限的字段列表
-     *
+     * <b>summary</b> : 
+     * <p>查询花名册中有权限的字段列表</p>
+     * 
      * @param request RosterMetaAvailableFieldListRequest
      * @param headers RosterMetaAvailableFieldListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1833,8 +1887,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询花名册中有权限的字段列表
-     *
+     * <b>summary</b> : 
+     * <p>查询花名册中有权限的字段列表</p>
+     * 
      * @param request RosterMetaAvailableFieldListRequest
      * @return RosterMetaAvailableFieldListResponse
      */
@@ -1845,8 +1900,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事花名册字段选项修改
-     *
+     * <b>summary</b> : 
+     * <p>智能人事花名册字段选项修改</p>
+     * 
      * @param request RosterMetaFieldOptionsUpdateRequest
      * @param headers RosterMetaFieldOptionsUpdateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1905,8 +1961,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能人事花名册字段选项修改
-     *
+     * <b>summary</b> : 
+     * <p>智能人事花名册字段选项修改</p>
+     * 
      * @param request RosterMetaFieldOptionsUpdateRequest
      * @return RosterMetaFieldOptionsUpdateResponse
      */
@@ -1917,8 +1974,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV发送卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>ISV发送卡片消息</p>
+     * 
      * @param request SendIsvCardMessageRequest
      * @param headers SendIsvCardMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1989,8 +2047,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV发送卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>ISV发送卡片消息</p>
+     * 
      * @param request SendIsvCardMessageRequest
      * @return SendIsvCardMessageResponse
      */
@@ -2001,8 +2060,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 初始化解决方案任务
-     *
+     * <b>summary</b> : 
+     * <p>初始化解决方案任务</p>
+     * 
      * @param request SolutionTaskInitRequest
      * @param headers SolutionTaskInitHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2077,8 +2137,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 初始化解决方案任务
-     *
+     * <b>summary</b> : 
+     * <p>初始化解决方案任务</p>
+     * 
      * @param request SolutionTaskInitRequest
      * @return SolutionTaskInitResponse
      */
@@ -2089,8 +2150,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 保存解决方案任务
-     *
+     * <b>summary</b> : 
+     * <p>保存解决方案任务</p>
+     * 
      * @param request SolutionTaskSaveRequest
      * @param headers SolutionTaskSaveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2177,8 +2239,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 保存解决方案任务
-     *
+     * <b>summary</b> : 
+     * <p>保存解决方案任务</p>
+     * 
      * @param request SolutionTaskSaveRequest
      * @return SolutionTaskSaveResponse
      */
@@ -2189,8 +2252,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步解决方案任务模版
-     *
+     * <b>summary</b> : 
+     * <p>同步解决方案任务模版</p>
+     * 
      * @param request SyncTaskTemplateRequest
      * @param headers SyncTaskTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2265,8 +2329,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步解决方案任务模版
-     *
+     * <b>summary</b> : 
+     * <p>同步解决方案任务模版</p>
+     * 
      * @param request SyncTaskTemplateRequest
      * @return SyncTaskTemplateResponse
      */
@@ -2277,8 +2342,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新法人公司名称
-     *
+     * <b>summary</b> : 
+     * <p>更新法人公司名称</p>
+     * 
      * @param request UpdateHrmLegalEntityNameRequest
      * @param headers UpdateHrmLegalEntityNameHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2327,8 +2393,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新法人公司名称
-     *
+     * <b>summary</b> : 
+     * <p>更新法人公司名称</p>
+     * 
      * @param request UpdateHrmLegalEntityNameRequest
      * @return UpdateHrmLegalEntityNameResponse
      */
@@ -2339,8 +2406,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新法人公司
-     *
+     * <b>summary</b> : 
+     * <p>更新法人公司</p>
+     * 
      * @param request UpdateHrmLegalEntityWithoutNameRequest
      * @param headers UpdateHrmLegalEntityWithoutNameHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2411,8 +2479,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新法人公司
-     *
+     * <b>summary</b> : 
+     * <p>更新法人公司</p>
+     * 
      * @param request UpdateHrmLegalEntityWithoutNameRequest
      * @return UpdateHrmLegalEntityWithoutNameResponse
      */
@@ -2423,8 +2492,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV更新卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>ISV更新卡片消息</p>
+     * 
      * @param request UpdateIsvCardMessageRequest
      * @param headers UpdateIsvCardMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2487,8 +2557,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary ISV更新卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>ISV更新卡片消息</p>
+     * 
      * @param request UpdateIsvCardMessageRequest
      * @return UpdateIsvCardMessageResponse
      */

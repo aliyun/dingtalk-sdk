@@ -6,48 +6,72 @@ import com.aliyun.tea.*;
 public class CreateDepartmentRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>zhangsan/password</p>
      */
     @NameInMap("authInfo")
     public String authInfo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Acount</p>
      */
     @NameInMap("authType")
     public String authType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;workdate&quot;:&quot;workday&quot;}</p>
      */
     @NameInMap("bizExt")
     public String bizExt;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>生产1组</p>
      */
     @NameInMap("departmentName")
     public String departmentName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Primary</p>
      */
     @NameInMap("departmentType")
     public String departmentType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>生产1组负责中控机的组装</p>
      */
     @NameInMap("description")
     public String description;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://xxx.xxx.com/manage">https://xxx.xxx.com/manage</a></p>
      */
     @NameInMap("systemUrl")
     public String systemUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager10</p>
      */
     @NameInMap("userId")
     public String userId;

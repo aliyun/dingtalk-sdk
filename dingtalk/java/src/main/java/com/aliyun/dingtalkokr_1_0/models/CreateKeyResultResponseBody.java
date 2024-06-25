@@ -12,6 +12,9 @@ public class CreateKeyResultResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -40,18 +43,27 @@ public class CreateKeyResultResponseBody extends TeaModel {
     public static class CreateKeyResultResponseBodyData extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>R45Y</p>
          */
         @NameInMap("id")
         public java.io.InputStream id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>420983</p>
          */
         @NameInMap("position")
         public Long position;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
          */
         @NameInMap("weight")
         public Long weight;

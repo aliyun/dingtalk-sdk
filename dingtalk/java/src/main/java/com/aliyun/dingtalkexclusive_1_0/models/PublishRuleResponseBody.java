@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class PublishRuleResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("isPublish")
     public Boolean isPublish;

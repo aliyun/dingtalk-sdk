@@ -62,6 +62,10 @@ public class SearchResponseBody extends TeaModel {
         @NameInMap("path")
         public String path;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("sceneType")
         public Integer sceneType;
 

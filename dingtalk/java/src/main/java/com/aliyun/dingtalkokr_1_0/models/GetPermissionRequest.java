@@ -18,6 +18,9 @@ public class GetPermissionRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>当前用户 userId。</p>
      */
     @NameInMap("userId")
     public String userId;

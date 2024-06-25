@@ -15,12 +15,18 @@ public class SpaceVO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc</p>
      */
     @NameInMap("id")
     public String id;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>hello</p>
      */
     @NameInMap("name")
     public String name;
@@ -28,9 +34,17 @@ public class SpaceVO extends TeaModel {
     @NameInMap("owner")
     public SpaceVOOwner owner;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("type")
     public Integer type;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://xx.yy">https://xx.yy</a></p>
+     */
     @NameInMap("url")
     public String url;
 
@@ -153,12 +167,18 @@ public class SpaceVO extends TeaModel {
     public static class SpaceVOOwner extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>dingtalk</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>abcd</p>
          */
         @NameInMap("unionId")
         public String unionId;

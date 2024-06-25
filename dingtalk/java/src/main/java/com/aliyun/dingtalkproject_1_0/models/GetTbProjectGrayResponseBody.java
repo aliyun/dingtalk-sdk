@@ -7,6 +7,10 @@ public class GetTbProjectGrayResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("result")
     public Boolean result;
 

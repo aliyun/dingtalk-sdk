@@ -6,24 +6,41 @@ import com.aliyun.tea.*;
 public class ListAuditLogRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1577945731837</p>
      */
     @NameInMap("endDate")
     public Long endDate;
 
+    /**
+     * <strong>example:</strong>
+     * <p>6406817113</p>
+     */
     @NameInMap("nextBizId")
     public Long nextBizId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1577340931837</p>
+     */
     @NameInMap("nextGmtCreate")
     public Long nextGmtCreate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>500</p>
      */
     @NameInMap("pageSize")
     public Integer pageSize;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1577340931837</p>
      */
     @NameInMap("startDate")
     public Long startDate;

@@ -4,27 +4,44 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusAddRenterMemberRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;age&quot;:8}</p>
+     */
     @NameInMap("extend")
     public String extend;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>158********</p>
      */
     @NameInMap("mobile")
     public String mobile;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>张三组</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>612355</p>
      */
     @NameInMap("renterId")
     public Long renterId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>admin</p>
+     */
     @NameInMap("type")
     public String type;
 

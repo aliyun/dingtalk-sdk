@@ -6,30 +6,45 @@ import com.aliyun.tea.*;
 public class OpenObjectiveRulePeriodDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1743436799000</p>
      */
     @NameInMap("endDate")
     public Long endDate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2024年度</p>
      */
     @NameInMap("name")
     public String name;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>6444f5e9a4261c6e699dxxxx</p>
      */
     @NameInMap("periodId")
     public String periodId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>season</p>
      */
     @NameInMap("periodType")
     public String periodType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1711900800000</p>
      */
     @NameInMap("startDate")
     public Long startDate;

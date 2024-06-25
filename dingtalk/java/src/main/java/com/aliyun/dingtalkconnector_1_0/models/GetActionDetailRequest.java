@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetActionDetailRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dca://ding32fff839a3e0105d.connect.dingtalk.com/ding32fff839a3e0105d/action/G-ACT-101FDEBD3C6E213DB474000P</p>
      */
     @NameInMap("connectAssetUri")
     public String connectAssetUri;

@@ -23,30 +23,45 @@ public class ListMiniAppHistoryVersionResponseBody extends TeaModel {
     public static class ListMiniAppHistoryVersionResponseBodyList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0-打包中 ，1-成功，2-失败</p>
          */
         @NameInMap("buildStatus")
         public Long buildStatus;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://xxx.con/download/id">https://xxx.con/download/id</a></p>
          */
         @NameInMap("h5Bundle")
         public String h5Bundle;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>5000</p>
          */
         @NameInMap("packageSize")
         public String packageSize;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p><a href="https://xxx.con/download/id">https://xxx.con/download/id</a></p>
          */
         @NameInMap("packageUrl")
         public String packageUrl;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0.0.5</p>
          */
         @NameInMap("version")
         public String version;

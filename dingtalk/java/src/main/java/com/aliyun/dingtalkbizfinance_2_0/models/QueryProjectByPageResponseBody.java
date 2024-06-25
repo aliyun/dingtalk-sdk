@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryProjectByPageResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
@@ -46,16 +49,26 @@ public class QueryProjectByPageResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1631524595555</p>
          */
         @NameInMap("createTime")
         public Long createTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>aaaa</p>
          */
         @NameInMap("creator")
         public String creator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>外派项目</p>
+         */
         @NameInMap("description")
         public String description;
 
@@ -64,18 +77,27 @@ public class QueryProjectByPageResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PROJ-xxx</p>
          */
         @NameInMap("projectCode")
         public String projectCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>外派项目</p>
          */
         @NameInMap("projectName")
         public String projectName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>valid</p>
          */
         @NameInMap("status")
         public String status;

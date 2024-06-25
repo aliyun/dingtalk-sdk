@@ -10,6 +10,10 @@ public class QueryRemindResultsResponseBody extends TeaModel {
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -43,6 +47,10 @@ public class QueryRemindResultsResponseBody extends TeaModel {
     }
 
     public static class QueryRemindResultsResponseBodyDataListToGroups extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxx群</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -62,15 +70,27 @@ public class QueryRemindResultsResponseBody extends TeaModel {
     }
 
     public static class QueryRemindResultsResponseBodyDataList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>user123</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
         @NameInMap("endDateTime")
         public java.util.List<String> endDateTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>18xxxx</p>
+         */
         @NameInMap("modifierId")
         public String modifierId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("periodType")
         public Integer periodType;
 
@@ -80,6 +100,10 @@ public class QueryRemindResultsResponseBody extends TeaModel {
         @NameInMap("startDateTime")
         public java.util.List<String> startDateTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123456</p>
+         */
         @NameInMap("templateId")
         public String templateId;
 

@@ -32,9 +32,17 @@ public class InsertOrUpdateDirResponseBody extends TeaModel {
     }
 
     public static class InsertOrUpdateDirResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>{应用appId}_administeration</p>
+         */
         @NameInMap("bizGroup")
         public String bizGroup;
 
+        /**
+         * <strong>example:</strong>
+         * <p>oaDirIdxxx</p>
+         */
         @NameInMap("dirId")
         public String dirId;
 

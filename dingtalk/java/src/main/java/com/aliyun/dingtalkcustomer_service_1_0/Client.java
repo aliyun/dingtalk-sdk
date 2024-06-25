@@ -6,11 +6,10 @@ import com.aliyun.dingtalkcustomer_service_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建工单
-     *
+     * <b>summary</b> : 
+     * <p>创建工单</p>
+     * 
      * @param request CreateTicketRequest
      * @param headers CreateTicketHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -90,8 +90,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建工单
-     *
+     * <b>summary</b> : 
+     * <p>创建工单</p>
+     * 
      * @param request CreateTicketRequest
      * @return CreateTicketResponse
      */
@@ -102,8 +103,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 执行工单活动
-     *
+     * <b>summary</b> : 
+     * <p>执行工单活动</p>
+     * 
      * @param request ExecuteActivityRequest
      * @param headers ExecuteActivityHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -168,8 +170,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 执行工单活动
-     *
+     * <b>summary</b> : 
+     * <p>执行工单活动</p>
+     * 
      * @param request ExecuteActivityRequest
      * @return ExecuteActivityResponse
      */
@@ -180,8 +183,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取source列表
-     *
+     * <b>summary</b> : 
+     * <p>获取source列表</p>
+     * 
      * @param request GetUserSourceListRequest
      * @param headers GetUserSourceListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -242,8 +246,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取source列表
-     *
+     * <b>summary</b> : 
+     * <p>获取source列表</p>
+     * 
      * @param request GetUserSourceListRequest
      * @return GetUserSourceListResponse
      */
@@ -254,8 +259,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询动作记录
-     *
+     * <b>summary</b> : 
+     * <p>查询动作记录</p>
+     * 
      * @param request PageListActionRequest
      * @param headers PageListActionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -308,8 +314,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询动作记录
-     *
+     * <b>summary</b> : 
+     * <p>查询动作记录</p>
+     * 
      * @param request PageListActionRequest
      * @return PageListActionResponse
      */
@@ -320,8 +327,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询机器人信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询机器人信息</p>
+     * 
      * @param request PageListRobotRequest
      * @param headers PageListRobotHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -378,8 +386,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询机器人信息
-     *
+     * <b>summary</b> : 
+     * <p>分页查询机器人信息</p>
+     * 
      * @param request PageListRobotRequest
      * @return PageListRobotResponse
      */
@@ -390,8 +399,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询工单
-     *
+     * <b>summary</b> : 
+     * <p>分页查询工单</p>
+     * 
      * @param request PageListTicketRequest
      * @param headers PageListTicketHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -472,8 +482,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页查询工单
-     *
+     * <b>summary</b> : 
+     * <p>分页查询工单</p>
+     * 
      * @param request PageListTicketRequest
      * @return PageListTicketResponse
      */

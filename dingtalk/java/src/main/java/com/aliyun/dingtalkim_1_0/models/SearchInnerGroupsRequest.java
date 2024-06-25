@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class SearchInnerGroupsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试关键词</p>
      */
     @NameInMap("searchKey")
     public String searchKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>015*****</p>
      */
     @NameInMap("userId")
     public String userId;

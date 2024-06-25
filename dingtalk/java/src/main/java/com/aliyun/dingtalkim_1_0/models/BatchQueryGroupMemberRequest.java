@@ -9,6 +9,9 @@ public class BatchQueryGroupMemberRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>200</p>
      */
     @NameInMap("maxResults")
     public Long maxResults;
@@ -18,6 +21,9 @@ public class BatchQueryGroupMemberRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidXXXXXXX</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

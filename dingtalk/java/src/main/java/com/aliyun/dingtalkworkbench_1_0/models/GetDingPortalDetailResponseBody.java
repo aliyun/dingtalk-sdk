@@ -4,9 +4,17 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDingPortalDetailResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>SWAPP-XXX</p>
+     */
     @NameInMap("appUuid")
     public String appUuid;
 
+    /**
+     * <strong>example:</strong>
+     * <p>我的自定义工作台</p>
+     */
     @NameInMap("dingPortalName")
     public String dingPortalName;
 
@@ -43,15 +51,27 @@ public class GetDingPortalDetailResponseBody extends TeaModel {
     }
 
     public static class GetDingPortalDetailResponseBodyPages extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("allVisible")
         public Boolean allVisible;
 
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>我的工作台页面</p>
+         */
         @NameInMap("pageName")
         public String pageName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>XX-XX-XX</p>
+         */
         @NameInMap("pageUuid")
         public String pageUuid;
 

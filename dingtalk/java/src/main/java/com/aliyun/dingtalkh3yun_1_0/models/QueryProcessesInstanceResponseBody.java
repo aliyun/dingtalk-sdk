@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryProcessesInstanceResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>success</p>
      */
     @NameInMap("code")
     public String code;
@@ -15,6 +18,9 @@ public class QueryProcessesInstanceResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>OK</p>
      */
     @NameInMap("message")
     public String message;
@@ -49,15 +55,31 @@ public class QueryProcessesInstanceResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesInstanceResponseBodyDataOriginator extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>18f923a7-5a5e-426d-94ae-a55ad1a4b240</p>
+         */
         @NameInMap("departmentId")
         public String departmentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>研发中心</p>
+         */
         @NameInMap("departmentName")
         public String departmentName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>aea4d7a7-d162-4c77-9c44-7bd9cb8316a5</p>
+         */
         @NameInMap("userId")
         public String userId;
 
@@ -101,39 +123,83 @@ public class QueryProcessesInstanceResponseBody extends TeaModel {
     }
 
     public static class QueryProcessesInstanceResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>D000183D000185</p>
+         */
         @NameInMap("appCode")
         public String appCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>006f870b-4d1c-4cd0-85b3-2e866798e947</p>
+         */
         @NameInMap("bizObjectId")
         public String bizObjectId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-11-19 19:36:54</p>
+         */
         @NameInMap("createdTimeGMT")
         public String createdTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("dingTalkProcessId")
         public String dingTalkProcessId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
         @NameInMap("originator")
         public QueryProcessesInstanceResponseBodyDataOriginator originator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>报销管理</p>
+         */
         @NameInMap("processDisplayName")
         public String processDisplayName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("processVersion")
         public Integer processVersion;
 
+        /**
+         * <strong>example:</strong>
+         * <p>D0001833abb0fb61524487eb01848207bc89b47</p>
+         */
         @NameInMap("schemaCode")
         public String schemaCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-11-19 19:36:54</p>
+         */
         @NameInMap("startTimeGMT")
         public String startTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Running</p>
+         */
         @NameInMap("state")
         public String state;
 

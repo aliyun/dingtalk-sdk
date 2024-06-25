@@ -16,9 +16,17 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
     @NameInMap("blueInvoiceStatus")
     public String blueInvoiceStatus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>COM_DEFAULT</p>
+     */
     @NameInMap("companyCode")
     public String companyCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("operator")
     public String operator;
 
@@ -28,12 +36,24 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
     @NameInMap("redInvoiceCode")
     public String redInvoiceCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("redInvoiceNo")
     public String redInvoiceNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("redInvoiceStatus")
     public String redInvoiceStatus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("targetInvoice")
     public String targetInvoice;
 
@@ -155,6 +175,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("taxPre")
         public String taxPre;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("taxPreType")
         public String taxPreType;
 
@@ -588,6 +612,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("importCertificateNo")
         public String importCertificateNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("inspectionListNo")
         public String inspectionListNo;
 
@@ -761,6 +789,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("drawerName")
         public String drawerName;
 
@@ -779,6 +811,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://XXX.jpg">http://XXX.jpg</a></p>
+         */
         @NameInMap("imageUrl")
         public String imageUrl;
 
@@ -812,9 +848,17 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("purchaserBankAccount")
         public String purchaserBankAccount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("purchaserBankNameAccount")
         public String purchaserBankNameAccount;
 
@@ -836,6 +880,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("sellerAddress")
         public String sellerAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("sellerBankAccount")
         public String sellerBankAccount;
 
@@ -1240,6 +1288,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("taxPre")
         public String taxPre;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("taxPreType")
         public String taxPreType;
 
@@ -1673,6 +1725,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("importCertificateNo")
         public String importCertificateNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("inspectionListNo")
         public String inspectionListNo;
 
@@ -1846,6 +1902,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("drawerName")
         public String drawerName;
 
@@ -1864,6 +1924,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://XXX.jpg">http://XXX.jpg</a></p>
+         */
         @NameInMap("imageUrl")
         public String imageUrl;
 
@@ -1897,6 +1961,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>aaa</p>
+         */
         @NameInMap("purchaserBankAccount")
         public String purchaserBankAccount;
 
@@ -1921,6 +1989,10 @@ public class UpdateInvoiceAbandonStatusRequest extends TeaModel {
         @NameInMap("sellerAddress")
         public String sellerAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>111</p>
+         */
         @NameInMap("sellerBankAccount")
         public String sellerBankAccount;
 

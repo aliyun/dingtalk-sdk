@@ -12,6 +12,9 @@ public class UpdatePointActionAutoAssignRuleRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>11185568-1380470824</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -40,24 +43,36 @@ public class UpdatePointActionAutoAssignRuleRequest extends TeaModel {
     public static class UpdatePointActionAutoAssignRuleRequestUpdatePointRuleRequestDTOList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
          */
         @NameInMap("awardScore")
         public Long awardScore;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>POST_IS_COMMENT</p>
          */
         @NameInMap("code")
         public String code;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10</p>
          */
         @NameInMap("dayLimitTimes")
         public Long dayLimitTimes;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("status")
         public Long status;

@@ -10,12 +10,24 @@ public class CreateScheduleConferenceResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>838 722 xxxxx</p>
+     */
     @NameInMap("roomCode")
     public String roomCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2a489c68-xxxx-xxxx-xxxx-xxxxxxxxxxxx</p>
+     */
     @NameInMap("scheduleConferenceId")
     public String scheduleConferenceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://meeting.dingtalk.com/j/Bsbp3ixxxxxUyJJ9">https://meeting.dingtalk.com/j/Bsbp3ixxxxxUyJJ9</a></p>
+     */
     @NameInMap("url")
     public String url;
 

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPositionsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>部门id</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
@@ -13,6 +17,10 @@ public class QueryPositionsRequest extends TeaModel {
     @NameInMap("inPositionIds")
     public java.util.List<String> inPositionIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>职位名称</p>
+     */
     @NameInMap("positionName")
     public String positionName;
 

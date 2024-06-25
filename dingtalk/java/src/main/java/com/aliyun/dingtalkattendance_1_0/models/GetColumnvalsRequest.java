@@ -12,12 +12,18 @@ public class GetColumnvalsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1709222400000</p>
      */
     @NameInMap("fromDate")
     public Long fromDate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1711728000000</p>
      */
     @NameInMap("toDate")
     public Long toDate;

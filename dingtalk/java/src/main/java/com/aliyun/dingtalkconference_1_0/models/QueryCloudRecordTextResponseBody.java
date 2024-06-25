@@ -4,6 +4,10 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCloudRecordTextResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -32,15 +36,31 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
     }
 
     public static class QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>7940</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>7940</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>这里</p>
+         */
         @NameInMap("word")
         public String word;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1631172050535000#0</p>
+         */
         @NameInMap("wordId")
         public String wordId;
 
@@ -84,15 +104,31 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
     }
 
     public static class QueryCloudRecordTextResponseBodyParagraphListSentenceList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>7940</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>这里是小钉</p>
+         */
         @NameInMap("sentence")
         public String sentence;
 
+        /**
+         * <strong>example:</strong>
+         * <p>7940</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>WFBkgJvt0xxxxSaA1jK4sgiEiE</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -147,30 +183,62 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
     }
 
     public static class QueryCloudRecordTextResponseBodyParagraphList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>7940</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1631172045153000</p>
+         */
         @NameInMap("nextTtoken")
         public Long nextTtoken;
 
+        /**
+         * <strong>example:</strong>
+         * <p>小钉</p>
+         */
         @NameInMap("nickName")
         public String nickName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>嘿！你好，这里是小钉</p>
+         */
         @NameInMap("paragraph")
         public String paragraph;
 
+        /**
+         * <strong>example:</strong>
+         * <p>44444</p>
+         */
         @NameInMap("recordId")
         public Long recordId;
 
         @NameInMap("sentenceList")
         public java.util.List<QueryCloudRecordTextResponseBodyParagraphListSentenceList> sentenceList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>7940</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("status")
         public Long status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>WFBkgJvt0xxxxSaA1jK4sgiEiE</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

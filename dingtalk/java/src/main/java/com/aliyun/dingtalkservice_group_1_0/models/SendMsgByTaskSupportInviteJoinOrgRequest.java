@@ -18,24 +18,36 @@ public class SendMsgByTaskSupportInviteJoinOrgRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("needUrlTrack")
     public Boolean needUrlTrack;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>88888</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>发送渠道      * 工作通知：WORK_NOTICE      * 机器人：SINGLE_ROBOT</p>
      */
     @NameInMap("sendChannel")
     public String sendChannel;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>群发任务</p>
      */
     @NameInMap("taskName")
     public String taskName;
@@ -94,9 +106,17 @@ public class SendMsgByTaskSupportInviteJoinOrgRequest extends TeaModel {
     }
 
     public static class SendMsgByTaskSupportInviteJoinOrgRequestMessageContentBtns extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.baidu.com">http://www.baidu.com</a></p>
+         */
         @NameInMap("actionURL")
         public String actionURL;
 
+        /**
+         * <strong>example:</strong>
+         * <p>按钮标题</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -129,18 +149,27 @@ public class SendMsgByTaskSupportInviteJoinOrgRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>内容</p>
          */
         @NameInMap("content")
         public String content;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ACTIONCARD：卡片消息</p>
          */
         @NameInMap("messageType")
         public String messageType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>标题内容</p>
          */
         @NameInMap("title")
         public String title;

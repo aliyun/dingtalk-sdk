@@ -4,30 +4,66 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdatePhysicalClassroomRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>主楼</p>
+     */
     @NameInMap("classroomBuilding")
     public String classroomBuilding;
 
+    /**
+     * <strong>example:</strong>
+     * <p>主校区</p>
+     */
     @NameInMap("classroomCampus")
     public String classroomCampus;
 
+    /**
+     * <strong>example:</strong>
+     * <p>3层</p>
+     */
     @NameInMap("classroomFloor")
     public String classroomFloor;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10001</p>
+     */
     @NameInMap("classroomId")
     public Long classroomId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>实验室</p>
+     */
     @NameInMap("classroomName")
     public String classroomName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>301</p>
+     */
     @NameInMap("classroomNumber")
     public String classroomNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>Y</p>
+     */
     @NameInMap("directBroadcast")
     public String directBroadcast;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{}</p>
+     */
     @NameInMap("ext")
     public String ext;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manger1234</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

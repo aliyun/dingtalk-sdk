@@ -4,6 +4,10 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchOranizationCustomfieldResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>f279e812-e431-428d-846d-cxxxxxx</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,9 +36,17 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
     }
 
     public static class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>63a5301e420637003f5dxxxx</p>
+         */
         @NameInMap("advancedCustomFieldId")
         public String advancedCustomFieldId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>所思文档</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -73,9 +85,17 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
     }
 
     public static class SearchOranizationCustomfieldResponseBodyResultChoices extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>60a2187eb72xxxxxxx</p>
+         */
         @NameInMap("choiceId")
         public String choiceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>选项一</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -109,21 +129,45 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
         @NameInMap("choices")
         public java.util.List<SearchOranizationCustomfieldResponseBodyResultChoices> choices;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0715153011125xxxx</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>60a2187eb72xxxxxxx</p>
+         */
         @NameInMap("customFieldsId")
         public String customFieldsId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>自定义字段</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;_appId&quot;:&quot;5937b10b83963200444b1ff8&quot;,&quot;kanbanCardAddCustomfieldDisable&quot;:true,&quot;locales&quot;:{&quot;name&quot;:{&quot;en&quot;:&quot;Progress update time&quot;,&quot;zh&quot;:&quot;进展更新时间&quot;}}}</p>
+         */
         @NameInMap("payload")
         public java.util.Map<String, ?> payload;
 
+        /**
+         * <strong>example:</strong>
+         * <p>number</p>
+         */
         @NameInMap("type")
         public String type;
 

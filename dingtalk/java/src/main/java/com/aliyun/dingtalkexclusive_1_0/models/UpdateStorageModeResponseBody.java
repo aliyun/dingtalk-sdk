@@ -4,6 +4,10 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateStorageModeResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding66b0e9d003fc91ed35c2f4xxxxxxxxxx</p>
+     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

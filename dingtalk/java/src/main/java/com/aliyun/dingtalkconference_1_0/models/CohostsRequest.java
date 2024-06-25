@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CohostsRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>add</p>
      */
     @NameInMap("action")
     public String action;
@@ -40,6 +43,9 @@ public class CohostsRequest extends TeaModel {
     public static class CohostsRequestUserList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>qzR1iSMDvzR9iP7Pxxxxxxxxxxxxxxx</p>
          */
         @NameInMap("unionId")
         public String unionId;

@@ -15,6 +15,9 @@ public class DeleteDentriesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -49,6 +52,10 @@ public class DeleteDentriesRequest extends TeaModel {
     }
 
     public static class DeleteDentriesRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("toRecycleBin")
         public Boolean toRecycleBin;
 

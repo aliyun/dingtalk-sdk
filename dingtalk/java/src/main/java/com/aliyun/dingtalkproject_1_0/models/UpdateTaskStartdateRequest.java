@@ -4,6 +4,10 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskStartdateRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2022-07-04T03:29:34.770Z</p>
+     */
     @NameInMap("startDate")
     public String startDate;
 

@@ -4,21 +4,45 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class BillSettementFlightRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("category")
     public Long category;
 
+    /**
+     * <strong>example:</strong>
+     * <p>corpx</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-10-01</p>
+     */
     @NameInMap("periodEnd")
     public String periodEnd;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2021-10-01</p>
+     */
     @NameInMap("periodStart")
     public String periodStart;
 

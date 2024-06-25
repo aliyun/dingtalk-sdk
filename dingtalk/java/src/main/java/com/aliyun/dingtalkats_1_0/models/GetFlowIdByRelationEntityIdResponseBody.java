@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetFlowIdByRelationEntityIdResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("flowId")
     public String flowId;

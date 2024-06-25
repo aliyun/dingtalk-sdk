@@ -26,18 +26,27 @@ public class CloseTopBoxInteractiveOTOMessageRequest extends TeaModel {
     public static class CloseTopBoxInteractiveOTOMessageRequestDetail extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>service-card-20220824-001</p>
          */
         @NameInMap("cardBizId")
         public String cardBizId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>3erkfi-42b0-4c83-bc56-ffhssde43</p>
          */
         @NameInMap("cardTemplateId")
         public String cardTemplateId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>user001</p>
          */
         @NameInMap("userId")
         public String userId;

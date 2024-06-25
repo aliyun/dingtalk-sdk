@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryTripProcessTemplatesRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingcd2016f425331dc1acaaa37764f94726</p>
      */
     @NameInMap("customerCorpId")
     public String customerCorpId;

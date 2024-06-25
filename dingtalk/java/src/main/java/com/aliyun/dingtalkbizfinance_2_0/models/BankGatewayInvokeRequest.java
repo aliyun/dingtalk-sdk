@@ -4,12 +4,20 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class BankGatewayInvokeRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>bankHttp</p>
+     */
     @NameInMap("actionType")
     public String actionType;
 
     @NameInMap("inputData")
     public String inputData;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://cdc.cmbchina.com/cdcserver/api/v2">https://cdc.cmbchina.com/cdcserver/api/v2</a></p>
+     */
     @NameInMap("url")
     public String url;
 

@@ -6,11 +6,10 @@ import com.aliyun.dingtalkconference_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 取消预约会议
-     *
+     * <b>summary</b> : 
+     * <p>取消预约会议</p>
+     * 
      * @param request CancelScheduleConferenceRequest
      * @param headers CancelScheduleConferenceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -66,8 +66,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 取消预约会议
-     *
+     * <b>summary</b> : 
+     * <p>取消预约会议</p>
+     * 
      * @param request CancelScheduleConferenceRequest
      * @return CancelScheduleConferenceResponse
      */
@@ -78,8 +79,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 关闭视频会议
-     *
+     * <b>summary</b> : 
+     * <p>关闭视频会议</p>
+     * 
      * @param request CloseVideoConferenceRequest
      * @param headers CloseVideoConferenceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -120,8 +122,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 关闭视频会议
-     *
+     * <b>summary</b> : 
+     * <p>关闭视频会议</p>
+     * 
      * @param request CloseVideoConferenceRequest
      * @return CloseVideoConferenceResponse
      */
@@ -132,8 +135,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置联席主持人
-     *
+     * <b>summary</b> : 
+     * <p>设置联席主持人</p>
+     * 
      * @param request CohostsRequest
      * @param headers CohostsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -178,8 +182,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置联席主持人
-     *
+     * <b>summary</b> : 
+     * <p>设置联席主持人</p>
+     * 
      * @param request CohostsRequest
      * @return CohostsResponse
      */
@@ -190,8 +195,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建专属短链
-     *
+     * <b>summary</b> : 
+     * <p>创建专属短链</p>
+     * 
      * @param request CreateCustomShortLinkRequest
      * @param headers CreateCustomShortLinkHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -248,8 +254,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建专属短链
-     *
+     * <b>summary</b> : 
+     * <p>创建专属短链</p>
+     * 
      * @param request CreateCustomShortLinkRequest
      * @return CreateCustomShortLinkResponse
      */
@@ -260,8 +267,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建预约会议
-     *
+     * <b>summary</b> : 
+     * <p>创建预约会议</p>
+     * 
      * @param request CreateScheduleConferenceRequest
      * @param headers CreateScheduleConferenceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -314,8 +322,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建预约会议
-     *
+     * <b>summary</b> : 
+     * <p>创建预约会议</p>
+     * 
      * @param request CreateScheduleConferenceRequest
      * @return CreateScheduleConferenceResponse
      */
@@ -326,8 +335,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建视频会议
-     *
+     * <b>summary</b> : 
+     * <p>创建视频会议</p>
+     * 
      * @param request CreateVideoConferenceRequest
      * @param headers CreateVideoConferenceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -380,8 +390,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建视频会议
-     *
+     * <b>summary</b> : 
+     * <p>创建视频会议</p>
+     * 
      * @param request CreateVideoConferenceRequest
      * @return CreateVideoConferenceResponse
      */
@@ -392,8 +403,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置全员看他
-     *
+     * <b>summary</b> : 
+     * <p>设置全员看他</p>
+     * 
      * @param request FocusRequest
      * @param headers FocusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -438,8 +450,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置全员看他
-     *
+     * <b>summary</b> : 
+     * <p>设置全员看他</p>
+     * 
      * @param request FocusRequest
      * @return FocusResponse
      */
@@ -450,8 +463,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过conferenceId获取指定音视频会议信息
-     *
+     * <b>summary</b> : 
+     * <p>通过conferenceId获取指定音视频会议信息</p>
+     * 
      * @param request GetConfDataByConferenceIdRequest
      * @param headers GetConfDataByConferenceIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -492,8 +506,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过conferenceId获取指定音视频会议信息
-     *
+     * <b>summary</b> : 
+     * <p>通过conferenceId获取指定音视频会议信息</p>
+     * 
      * @param request GetConfDataByConferenceIdRequest
      * @return GetConfDataByConferenceIdResponse
      */
@@ -504,8 +519,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过conferenceId获取指定音视频会议成员信息
-     *
+     * <b>summary</b> : 
+     * <p>通过conferenceId获取指定音视频会议成员信息</p>
+     * 
      * @param request GetConfDetailDataRequest
      * @param headers GetConfDetailDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -554,8 +570,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过conferenceId获取指定音视频会议成员信息
-     *
+     * <b>summary</b> : 
+     * <p>通过conferenceId获取指定音视频会议成员信息</p>
+     * 
      * @param request GetConfDetailDataRequest
      * @return GetConfDetailDataResponse
      */
@@ -566,8 +583,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取音视频会议列表数据
-     *
+     * <b>summary</b> : 
+     * <p>获取音视频会议列表数据</p>
+     * 
      * @param request GetHistoryConfDataListRequest
      * @param headers GetHistoryConfDataListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -640,8 +658,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取音视频会议列表数据
-     *
+     * <b>summary</b> : 
+     * <p>获取音视频会议列表数据</p>
+     * 
      * @param request GetHistoryConfDataListRequest
      * @return GetHistoryConfDataListResponse
      */
@@ -652,8 +671,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过conferenceId和unionId获取最新会议质量数据
-     *
+     * <b>summary</b> : 
+     * <p>通过conferenceId和unionId获取最新会议质量数据</p>
+     * 
      * @param request GetUserLastMetricRequest
      * @param headers GetUserLastMetricHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -694,8 +714,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过conferenceId和unionId获取最新会议质量数据
-     *
+     * <b>summary</b> : 
+     * <p>通过conferenceId和unionId获取最新会议质量数据</p>
+     * 
      * @param request GetUserLastMetricRequest
      * @return GetUserLastMetricResponse
      */
@@ -706,8 +727,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
-     *
+     * <b>summary</b> : 
+     * <p>通过conferenceId和unionId获取指定音视频会议人员的会议质量数据</p>
+     * 
      * @param request GetUserMetricDataRequest
      * @param headers GetUserMetricDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -756,8 +778,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
-     *
+     * <b>summary</b> : 
+     * <p>通过conferenceId和unionId获取指定音视频会议人员的会议质量数据</p>
+     * 
      * @param request GetUserMetricDataRequest
      * @return GetUserMetricDataResponse
      */
@@ -768,8 +791,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 邀请其他人员
-     *
+     * <b>summary</b> : 
+     * <p>邀请其他人员</p>
+     * 
      * @param request InviteUsersRequest
      * @param headers InviteUsersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -818,8 +842,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 邀请其他人员
-     *
+     * <b>summary</b> : 
+     * <p>邀请其他人员</p>
+     * 
      * @param request InviteUsersRequest
      * @return InviteUsersResponse
      */
@@ -830,8 +855,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 会议踢出成员
-     *
+     * <b>summary</b> : 
+     * <p>会议踢出成员</p>
+     * 
      * @param request KickMembersRequest
      * @param headers KickMembersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -876,8 +902,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 会议踢出成员
-     *
+     * <b>summary</b> : 
+     * <p>会议踢出成员</p>
+     * 
      * @param request KickMembersRequest
      * @return KickMembersResponse
      */
@@ -888,8 +915,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 锁定会议
-     *
+     * <b>summary</b> : 
+     * <p>锁定会议</p>
+     * 
      * @param request LockConferenceRequest
      * @param headers LockConferenceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -930,8 +958,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 锁定会议
-     *
+     * <b>summary</b> : 
+     * <p>锁定会议</p>
+     * 
      * @param request LockConferenceRequest
      * @return LockConferenceResponse
      */
@@ -942,8 +971,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 会议全员静音或解除静音
-     *
+     * <b>summary</b> : 
+     * <p>会议全员静音或解除静音</p>
+     * 
      * @param request MuteAllRequest
      * @param headers MuteAllHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -988,8 +1018,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 会议全员静音或解除静音
-     *
+     * <b>summary</b> : 
+     * <p>会议全员静音或解除静音</p>
+     * 
      * @param request MuteAllRequest
      * @return MuteAllResponse
      */
@@ -1000,8 +1031,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 指定人员静音或取消静音
-     *
+     * <b>summary</b> : 
+     * <p>指定人员静音或取消静音</p>
+     * 
      * @param request MuteMembersRequest
      * @param headers MuteMembersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1046,8 +1078,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 指定人员静音或取消静音
-     *
+     * <b>summary</b> : 
+     * <p>指定人员静音或取消静音</p>
+     * 
      * @param request MuteMembersRequest
      * @return MuteMembersResponse
      */
@@ -1058,8 +1091,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询云录制文本信息
-     *
+     * <b>summary</b> : 
+     * <p>查询云录制文本信息</p>
+     * 
      * @param request QueryCloudRecordTextRequest
      * @param headers QueryCloudRecordTextHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1116,8 +1150,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询云录制文本信息
-     *
+     * <b>summary</b> : 
+     * <p>查询云录制文本信息</p>
+     * 
      * @param request QueryCloudRecordTextRequest
      * @return QueryCloudRecordTextResponse
      */
@@ -1128,8 +1163,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询云录制视频
-     *
+     * <b>summary</b> : 
+     * <p>查询云录制视频</p>
+     * 
      * @param request QueryCloudRecordVideoRequest
      * @param headers QueryCloudRecordVideoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1170,8 +1206,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询云录制视频
-     *
+     * <b>summary</b> : 
+     * <p>查询云录制视频</p>
+     * 
      * @param request QueryCloudRecordVideoRequest
      * @return QueryCloudRecordVideoResponse
      */
@@ -1182,8 +1219,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询云录制视频播放信息
-     *
+     * <b>summary</b> : 
+     * <p>查询云录制视频播放信息</p>
+     * 
      * @param request QueryCloudRecordVideoPlayInfoRequest
      * @param headers QueryCloudRecordVideoPlayInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1232,8 +1270,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询云录制视频播放信息
-     *
+     * <b>summary</b> : 
+     * <p>查询云录制视频播放信息</p>
+     * 
      * @param request QueryCloudRecordVideoPlayInfoRequest
      * @return QueryCloudRecordVideoPlayInfoResponse
      */
@@ -1244,8 +1283,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询视频会议信息
-     *
+     * <b>summary</b> : 
+     * <p>查询视频会议信息</p>
+     * 
      * @param headers QueryConferenceInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryConferenceInfoResponse
@@ -1278,8 +1318,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询视频会议信息
-     *
+     * <b>summary</b> : 
+     * <p>查询视频会议信息</p>
      * @return QueryConferenceInfoResponse
      */
     public QueryConferenceInfoResponse queryConferenceInfo(String conferenceId) throws Exception {
@@ -1289,8 +1329,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询视频会议信息
-     *
+     * <b>summary</b> : 
+     * <p>批量查询视频会议信息</p>
+     * 
      * @param request QueryConferenceInfoBatchRequest
      * @param headers QueryConferenceInfoBatchHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1331,8 +1372,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询视频会议信息
-     *
+     * <b>summary</b> : 
+     * <p>批量查询视频会议信息</p>
+     * 
      * @param request QueryConferenceInfoBatchRequest
      * @return QueryConferenceInfoBatchResponse
      */
@@ -1343,8 +1385,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询视频会议成员
-     *
+     * <b>summary</b> : 
+     * <p>查询视频会议成员</p>
+     * 
      * @param request QueryConferenceMembersRequest
      * @param headers QueryConferenceMembersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1389,8 +1432,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询视频会议成员
-     *
+     * <b>summary</b> : 
+     * <p>查询视频会议成员</p>
+     * 
      * @param request QueryConferenceMembersRequest
      * @return QueryConferenceMembersResponse
      */
@@ -1401,8 +1445,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议闪记的音频信息
-     *
+     * <b>summary</b> : 
+     * <p>查询会议闪记的音频信息</p>
+     * 
      * @param request QueryMinutesAudioRequest
      * @param headers QueryMinutesAudioHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1443,8 +1488,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议闪记的音频信息
-     *
+     * <b>summary</b> : 
+     * <p>查询会议闪记的音频信息</p>
+     * 
      * @param request QueryMinutesAudioRequest
      * @return QueryMinutesAudioResponse
      */
@@ -1455,8 +1501,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议闪记智能纪要
-     *
+     * <b>summary</b> : 
+     * <p>查询会议闪记智能纪要</p>
+     * 
      * @param request QueryMinutesSummaryRequest
      * @param headers QueryMinutesSummaryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1501,8 +1548,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议闪记智能纪要
-     *
+     * <b>summary</b> : 
+     * <p>查询会议闪记智能纪要</p>
+     * 
      * @param request QueryMinutesSummaryRequest
      * @return QueryMinutesSummaryResponse
      */
@@ -1513,8 +1561,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议闪记文本信息
-     *
+     * <b>summary</b> : 
+     * <p>查询会议闪记文本信息</p>
+     * 
      * @param request QueryMinutesTextRequest
      * @param headers QueryMinutesTextHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1567,8 +1616,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会议闪记文本信息
-     *
+     * <b>summary</b> : 
+     * <p>查询会议闪记文本信息</p>
+     * 
      * @param request QueryMinutesTextRequest
      * @return QueryMinutesTextResponse
      */
@@ -1579,8 +1629,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询预约会议设置
-     *
+     * <b>summary</b> : 
+     * <p>查询预约会议设置</p>
+     * 
      * @param request QueryScheduleConfSettingsRequest
      * @param headers QueryScheduleConfSettingsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1621,8 +1672,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询预约会议设置
-     *
+     * <b>summary</b> : 
+     * <p>查询预约会议设置</p>
+     * 
      * @param request QueryScheduleConfSettingsRequest
      * @return QueryScheduleConfSettingsResponse
      */
@@ -1633,8 +1685,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询预约会议信息
-     *
+     * <b>summary</b> : 
+     * <p>查询预约会议信息</p>
+     * 
      * @param request QueryScheduleConferenceRequest
      * @param headers QueryScheduleConferenceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1675,8 +1728,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询预约会议信息
-     *
+     * <b>summary</b> : 
+     * <p>查询预约会议信息</p>
+     * 
      * @param request QueryScheduleConferenceRequest
      * @return QueryScheduleConferenceResponse
      */
@@ -1687,8 +1741,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
-     *
+     * <b>summary</b> : 
+     * <p>分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息</p>
+     * 
      * @param request QueryScheduleConferenceInfoRequest
      * @param headers QueryScheduleConferenceInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1733,8 +1788,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
-     *
+     * <b>summary</b> : 
+     * <p>分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息</p>
+     * 
      * @param request QueryScheduleConferenceInfoRequest
      * @return QueryScheduleConferenceInfoResponse
      */
@@ -1745,8 +1801,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户进行中会议
-     *
+     * <b>summary</b> : 
+     * <p>查询用户进行中会议</p>
+     * 
      * @param request QueryUserOnGoingConferenceRequest
      * @param headers QueryUserOnGoingConferenceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1787,8 +1844,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户进行中会议
-     *
+     * <b>summary</b> : 
+     * <p>查询用户进行中会议</p>
+     * 
      * @param request QueryUserOnGoingConferenceRequest
      * @return QueryUserOnGoingConferenceResponse
      */
@@ -1799,8 +1857,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 开启云录制
-     *
+     * <b>summary</b> : 
+     * <p>开启云录制</p>
+     * 
      * @param request StartCloudRecordRequest
      * @param headers StartCloudRecordHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1849,8 +1908,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 开启云录制
-     *
+     * <b>summary</b> : 
+     * <p>开启云录制</p>
+     * 
      * @param request StartCloudRecordRequest
      * @return StartCloudRecordResponse
      */
@@ -1861,8 +1921,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 开启会议闪记
-     *
+     * <b>summary</b> : 
+     * <p>开启会议闪记</p>
+     * 
      * @param request StartMinutesRequest
      * @param headers StartMinutesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1911,8 +1972,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 开启会议闪记
-     *
+     * <b>summary</b> : 
+     * <p>开启会议闪记</p>
+     * 
      * @param request StartMinutesRequest
      * @return StartMinutesResponse
      */
@@ -1923,8 +1985,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 会议开始直播推流
-     *
+     * <b>summary</b> : 
+     * <p>会议开始直播推流</p>
+     * 
      * @param request StartStreamOutRequest
      * @param headers StartStreamOutHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1985,8 +2048,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 会议开始直播推流
-     *
+     * <b>summary</b> : 
+     * <p>会议开始直播推流</p>
+     * 
      * @param request StartStreamOutRequest
      * @return StartStreamOutResponse
      */
@@ -1997,8 +2061,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 关闭云录制
-     *
+     * <b>summary</b> : 
+     * <p>关闭云录制</p>
+     * 
      * @param request StopCloudRecordRequest
      * @param headers StopCloudRecordHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2039,8 +2104,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 关闭云录制
-     *
+     * <b>summary</b> : 
+     * <p>关闭云录制</p>
+     * 
      * @param request StopCloudRecordRequest
      * @return StopCloudRecordResponse
      */
@@ -2051,8 +2117,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 暂停会议闪记
-     *
+     * <b>summary</b> : 
+     * <p>暂停会议闪记</p>
+     * 
      * @param request StopMinutesRequest
      * @param headers StopMinutesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2093,8 +2160,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 暂停会议闪记
-     *
+     * <b>summary</b> : 
+     * <p>暂停会议闪记</p>
+     * 
      * @param request StopMinutesRequest
      * @return StopMinutesResponse
      */
@@ -2105,8 +2173,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 会议停止直播推流
-     *
+     * <b>summary</b> : 
+     * <p>会议停止直播推流</p>
+     * 
      * @param request StopStreamOutRequest
      * @param headers StopStreamOutHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2155,8 +2224,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 会议停止直播推流
-     *
+     * <b>summary</b> : 
+     * <p>会议停止直播推流</p>
+     * 
      * @param request StopStreamOutRequest
      * @return StopStreamOutResponse
      */
@@ -2167,8 +2237,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新预约会议设置
-     *
+     * <b>summary</b> : 
+     * <p>更新预约会议设置</p>
+     * 
      * @param request UpdateScheduleConfSettingsRequest
      * @param headers UpdateScheduleConfSettingsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2217,8 +2288,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新预约会议设置
-     *
+     * <b>summary</b> : 
+     * <p>更新预约会议设置</p>
+     * 
      * @param request UpdateScheduleConfSettingsRequest
      * @return UpdateScheduleConfSettingsResponse
      */
@@ -2229,8 +2301,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新预约会议
-     *
+     * <b>summary</b> : 
+     * <p>更新预约会议</p>
+     * 
      * @param request UpdateScheduleConferenceRequest
      * @param headers UpdateScheduleConferenceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2287,8 +2360,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新预约会议
-     *
+     * <b>summary</b> : 
+     * <p>更新预约会议</p>
+     * 
      * @param request UpdateScheduleConferenceRequest
      * @return UpdateScheduleConferenceResponse
      */
@@ -2299,8 +2373,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新会议额外信息
-     *
+     * <b>summary</b> : 
+     * <p>更新会议额外信息</p>
+     * 
      * @param headers UpdateVideoConferenceExtInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return UpdateVideoConferenceExtInfoResponse
@@ -2333,8 +2408,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新会议额外信息
-     *
+     * <b>summary</b> : 
+     * <p>更新会议额外信息</p>
      * @return UpdateVideoConferenceExtInfoResponse
      */
     public UpdateVideoConferenceExtInfoResponse updateVideoConferenceExtInfo(String conferenceId) throws Exception {
@@ -2344,8 +2419,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置会议中的会议属性
-     *
+     * <b>summary</b> : 
+     * <p>设置会议中的会议属性</p>
+     * 
      * @param request UpdateVideoConferenceSettingRequest
      * @param headers UpdateVideoConferenceSettingHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2406,8 +2482,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置会议中的会议属性
-     *
+     * <b>summary</b> : 
+     * <p>设置会议中的会议属性</p>
+     * 
      * @param request UpdateVideoConferenceSettingRequest
      * @return UpdateVideoConferenceSettingResponse
      */

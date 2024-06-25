@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class LoginCodeGenRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>zs123</p>
      */
     @NameInMap("userId")
     public String userId;

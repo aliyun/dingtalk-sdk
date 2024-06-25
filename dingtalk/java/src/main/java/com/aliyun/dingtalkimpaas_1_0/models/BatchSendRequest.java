@@ -4,6 +4,10 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSendRequest extends TeaModel {
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("appUids")
     public java.util.List<String> appUids;
 
@@ -13,11 +17,18 @@ public class BatchSendRequest extends TeaModel {
     @NameInMap("content")
     public String content;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("conversationIds")
     public java.util.List<String> conversationIds;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>234#dingxxx@dingding</p>
      */
     @NameInMap("userId")
     public String userId;

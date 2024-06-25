@@ -4,9 +4,17 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class ChatMemoFaqAddResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxx</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>aaaa.doc</p>
+     */
     @NameInMap("mediaId")
     public String mediaId;
 

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetJobInfoResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>[     {       &quot;DEPARTMENT&quot;: &quot;xx&quot;,       &quot;IN_REASON&quot;: &quot;xx&quot;,       &quot;OUT_DATE&quot;: &quot;2006-12-07&quot;,       &quot;OUT_DEPARTMENT&quot;: &quot;xx&quot;,       &quot;IN_DATE&quot;: &quot;2006-12-07&quot;,       &quot;OUT_REASON&quot;: &quot;xx&quot;     }   ]</p>
+     */
     @NameInMap("data")
     public String data;
 

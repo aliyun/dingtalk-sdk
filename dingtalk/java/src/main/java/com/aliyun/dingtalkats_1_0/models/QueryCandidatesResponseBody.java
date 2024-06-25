@@ -10,9 +10,17 @@ public class QueryCandidatesResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<QueryCandidatesResponseBodyList> list;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxxx</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -54,15 +62,31 @@ public class QueryCandidatesResponseBody extends TeaModel {
     }
 
     public static class QueryCandidatesResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>64167133e3394c6b9959eexxxxxxxxxx</p>
+         */
         @NameInMap("candidateId")
         public String candidateId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding2c0158xxxxxxxxxx</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1701014400000</p>
+         */
         @NameInMap("entryDate")
         public Integer entryDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>013224566462xxxxxxxxxx</p>
+         */
         @NameInMap("userId")
         public String userId;
 

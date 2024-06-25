@@ -7,6 +7,10 @@ public class GetShanhuiByShanhuiKeyResponseBody extends TeaModel {
     @NameInMap("result")
     public GetShanhuiByShanhuiKeyResponseBodyResult result;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 
@@ -34,12 +38,18 @@ public class GetShanhuiByShanhuiKeyResponseBody extends TeaModel {
     public static class GetShanhuiByShanhuiKeyResponseBodyResultTopics extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>27Hio9BV23Ghj8LkRe34QzSdP94UtMkju</p>
          */
         @NameInMap("docKey")
         public String docKey;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>会议1</p>
          */
         @NameInMap("title")
         public String title;
@@ -68,24 +78,52 @@ public class GetShanhuiByShanhuiKeyResponseBody extends TeaModel {
     }
 
     public static class GetShanhuiByShanhuiKeyResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1685332800000</p>
+         */
         @NameInMap("endTime")
         public Long endTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2kms47sjhb882</p>
+         */
         @NameInMap("eventId")
         public String eventId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>8K4ny9P9No06sjhk</p>
+         */
         @NameInMap("flashmeetingKey")
         public String flashmeetingKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("hasSummary")
         public Boolean hasSummary;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1685318400000</p>
+         */
         @NameInMap("startTime")
         public Long startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2Hj32Uio28fjmMiu9Klsk</p>
+         */
         @NameInMap("summaryDocKey")
         public String summaryDocKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试闪会</p>
+         */
         @NameInMap("title")
         public String title;
 

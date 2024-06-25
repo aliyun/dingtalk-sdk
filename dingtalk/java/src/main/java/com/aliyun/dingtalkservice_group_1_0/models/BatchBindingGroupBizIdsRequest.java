@@ -12,6 +12,9 @@ public class BatchBindingGroupBizIdsRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Jciwnfw</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
@@ -40,12 +43,18 @@ public class BatchBindingGroupBizIdsRequest extends TeaModel {
     public static class BatchBindingGroupBizIdsRequestBindingGroupBizIds extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>hghhghghhg</p>
          */
         @NameInMap("bizId")
         public String bizId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>cid123</p>
          */
         @NameInMap("openConversationId")
         public String openConversationId;

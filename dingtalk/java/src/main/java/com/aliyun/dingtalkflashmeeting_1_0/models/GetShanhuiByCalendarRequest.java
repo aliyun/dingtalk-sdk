@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetShanhuiByCalendarRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>VGZCWXpvTmxpQmorbUhiSXUveTB98Iok</p>
      */
     @NameInMap("eventId")
     public String eventId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>EUiSN7beu1Q2wR</p>
      */
     @NameInMap("userId")
     public String userId;

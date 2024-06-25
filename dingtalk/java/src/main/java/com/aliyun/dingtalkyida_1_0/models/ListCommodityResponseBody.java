@@ -7,12 +7,24 @@ public class ListCommodityResponseBody extends TeaModel {
     @NameInMap("commodityVOList")
     public java.util.List<ListCommodityResponseBodyCommodityVOList> commodityVOList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Integer totalCount;
 

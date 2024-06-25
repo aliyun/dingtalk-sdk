@@ -9,6 +9,9 @@ public class GetEmployeeInfoByWorkNoResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -35,9 +38,17 @@ public class GetEmployeeInfoByWorkNoResponseBody extends TeaModel {
     }
 
     public static class GetEmployeeInfoByWorkNoResponseBodyContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>姜小白</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>305932</p>
+         */
         @NameInMap("workNo")
         public String workNo;
 

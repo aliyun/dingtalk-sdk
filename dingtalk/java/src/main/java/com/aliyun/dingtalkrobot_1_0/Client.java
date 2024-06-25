@@ -6,11 +6,10 @@ import com.aliyun.dingtalkrobot_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 批量查询人与机器人会话机器人消息是否已读
-     *
+     * <b>summary</b> : 
+     * <p>批量查询人与机器人会话机器人消息是否已读</p>
+     * 
      * @param request BatchOTOQueryRequest
      * @param headers BatchOTOQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -66,8 +66,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询人与机器人会话机器人消息是否已读
-     *
+     * <b>summary</b> : 
+     * <p>批量查询人与机器人会话机器人消息是否已读</p>
+     * 
      * @param request BatchOTOQueryRequest
      * @return BatchOTOQueryResponse
      */
@@ -78,8 +79,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量撤回群聊机器人消息
-     *
+     * <b>summary</b> : 
+     * <p>批量撤回群聊机器人消息</p>
+     * 
      * @param request BatchRecallGroupRequest
      * @param headers BatchRecallGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -128,8 +130,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量撤回群聊机器人消息
-     *
+     * <b>summary</b> : 
+     * <p>批量撤回群聊机器人消息</p>
+     * 
      * @param request BatchRecallGroupRequest
      * @return BatchRecallGroupResponse
      */
@@ -140,8 +143,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量撤回人与机器人会话中机器人消息
-     *
+     * <b>summary</b> : 
+     * <p>批量撤回人与机器人会话中机器人消息</p>
+     * 
      * @param request BatchRecallOTORequest
      * @param headers BatchRecallOTOHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -186,8 +190,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量撤回人与机器人会话中机器人消息
-     *
+     * <b>summary</b> : 
+     * <p>批量撤回人与机器人会话中机器人消息</p>
+     * 
      * @param request BatchRecallOTORequest
      * @return BatchRecallOTOResponse
      */
@@ -198,8 +203,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量撤回人与人会话中机器人消息
-     *
+     * <b>summary</b> : 
+     * <p>批量撤回人与人会话中机器人消息</p>
+     * 
      * @param request BatchRecallPrivateChatRequest
      * @param headers BatchRecallPrivateChatHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -248,8 +254,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量撤回人与人会话中机器人消息
-     *
+     * <b>summary</b> : 
+     * <p>批量撤回人与人会话中机器人消息</p>
+     * 
      * @param request BatchRecallPrivateChatRequest
      * @return BatchRecallPrivateChatResponse
      */
@@ -260,8 +267,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量发送人与机器人会话中机器人消息
-     *
+     * <b>summary</b> : 
+     * <p>批量发送人与机器人会话中机器人消息</p>
+     * 
      * @param request BatchSendOTORequest
      * @param headers BatchSendOTOHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -314,8 +322,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量发送人与机器人会话中机器人消息
-     *
+     * <b>summary</b> : 
+     * <p>批量发送人与机器人会话中机器人消息</p>
+     * 
      * @param request BatchSendOTORequest
      * @return BatchSendOTOResponse
      */
@@ -326,8 +335,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 清空单聊机器人快捷入口
-     *
+     * <b>summary</b> : 
+     * <p>清空单聊机器人快捷入口</p>
+     * 
      * @param request ClearRobotPluginRequest
      * @param headers ClearRobotPluginHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -368,8 +378,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 清空单聊机器人快捷入口
-     *
+     * <b>summary</b> : 
+     * <p>清空单聊机器人快捷入口</p>
+     * 
      * @param request ClearRobotPluginRequest
      * @return ClearRobotPluginResponse
      */
@@ -380,8 +391,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 执行机器人的AI技能
-     *
+     * <b>summary</b> : 
+     * <p>执行机器人的AI技能</p>
+     * 
      * @param request ExecuteRobotAiSkillRequest
      * @param headers ExecuteRobotAiSkillHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -434,8 +446,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 执行机器人的AI技能
-     *
+     * <b>summary</b> : 
+     * <p>执行机器人的AI技能</p>
+     * 
      * @param request ExecuteRobotAiSkillRequest
      * @return ExecuteRobotAiSkillResponse
      */
@@ -446,8 +459,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群内的机器人列表
-     *
+     * <b>summary</b> : 
+     * <p>查询群内的机器人列表</p>
+     * 
      * @param request GetBotListInGroupRequest
      * @param headers GetBotListInGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -488,8 +502,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群内的机器人列表
-     *
+     * <b>summary</b> : 
+     * <p>查询群内的机器人列表</p>
+     * 
      * @param request GetBotListInGroupRequest
      * @return GetBotListInGroupResponse
      */
@@ -500,8 +515,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 管理机器人启用，停用状态
-     *
+     * <b>summary</b> : 
+     * <p>管理机器人启用，停用状态</p>
+     * 
      * @param request ManageSingleChatRobotStatusRequest
      * @param headers ManageSingleChatRobotStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -546,8 +562,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 管理机器人启用，停用状态
-     *
+     * <b>summary</b> : 
+     * <p>管理机器人启用，停用状态</p>
+     * 
      * @param request ManageSingleChatRobotStatusRequest
      * @return ManageSingleChatRobotStatusResponse
      */
@@ -558,8 +575,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询企业机器人群聊消息用户已读状态
-     *
+     * <b>summary</b> : 
+     * <p>查询企业机器人群聊消息用户已读状态</p>
+     * 
      * @param request OrgGroupQueryRequest
      * @param headers OrgGroupQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -620,8 +638,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询企业机器人群聊消息用户已读状态
-     *
+     * <b>summary</b> : 
+     * <p>查询企业机器人群聊消息用户已读状态</p>
+     * 
      * @param request OrgGroupQueryRequest
      * @return OrgGroupQueryResponse
      */
@@ -632,8 +651,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 企业机器人撤回内部群消息
-     *
+     * <b>summary</b> : 
+     * <p>企业机器人撤回内部群消息</p>
+     * 
      * @param request OrgGroupRecallRequest
      * @param headers OrgGroupRecallHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -682,8 +702,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 企业机器人撤回内部群消息
-     *
+     * <b>summary</b> : 
+     * <p>企业机器人撤回内部群消息</p>
+     * 
      * @param request OrgGroupRecallRequest
      * @return OrgGroupRecallResponse
      */
@@ -694,8 +715,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机器人发送群聊消息
-     *
+     * <b>summary</b> : 
+     * <p>机器人发送群聊消息</p>
+     * 
      * @param request OrgGroupSendRequest
      * @param headers OrgGroupSendHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -756,8 +778,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机器人发送群聊消息
-     *
+     * <b>summary</b> : 
+     * <p>机器人发送群聊消息</p>
+     * 
      * @param request OrgGroupSendRequest
      * @return OrgGroupSendResponse
      */
@@ -768,8 +791,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询人与人会话中机器人已读消息
-     *
+     * <b>summary</b> : 
+     * <p>查询人与人会话中机器人已读消息</p>
+     * 
      * @param request PrivateChatQueryRequest
      * @param headers PrivateChatQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -826,8 +850,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询人与人会话中机器人已读消息
-     *
+     * <b>summary</b> : 
+     * <p>查询人与人会话中机器人已读消息</p>
+     * 
      * @param request PrivateChatQueryRequest
      * @return PrivateChatQueryResponse
      */
@@ -838,8 +863,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人与人会话中机器人发送普通消息
-     *
+     * <b>summary</b> : 
+     * <p>人与人会话中机器人发送普通消息</p>
+     * 
      * @param request PrivateChatSendRequest
      * @param headers PrivateChatSendHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -896,8 +922,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人与人会话中机器人发送普通消息
-     *
+     * <b>summary</b> : 
+     * <p>人与人会话中机器人发送普通消息</p>
+     * 
      * @param request PrivateChatSendRequest
      * @return PrivateChatSendResponse
      */
@@ -908,8 +935,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取机器人所在群信息
-     *
+     * <b>summary</b> : 
+     * <p>获取机器人所在群信息</p>
+     * 
      * @param request QueryBotInstanceInGroupInfoRequest
      * @param headers QueryBotInstanceInGroupInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -958,8 +986,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取机器人所在群信息
-     *
+     * <b>summary</b> : 
+     * <p>获取机器人所在群信息</p>
+     * 
      * @param request QueryBotInstanceInGroupInfoRequest
      * @return QueryBotInstanceInGroupInfoResponse
      */
@@ -970,8 +999,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询单聊机器人快捷入口
-     *
+     * <b>summary</b> : 
+     * <p>查询单聊机器人快捷入口</p>
+     * 
      * @param request QueryRobotPluginRequest
      * @param headers QueryRobotPluginHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1012,8 +1042,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询单聊机器人快捷入口
-     *
+     * <b>summary</b> : 
+     * <p>查询单聊机器人快捷入口</p>
+     * 
      * @param request QueryRobotPluginRequest
      * @return QueryRobotPluginResponse
      */
@@ -1024,8 +1055,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取机器人消息中文件下载链接
-     *
+     * <b>summary</b> : 
+     * <p>获取机器人消息中文件下载链接</p>
+     * 
      * @param request RobotMessageFileDownloadRequest
      * @param headers RobotMessageFileDownloadHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1070,8 +1102,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取机器人消息中文件下载链接
-     *
+     * <b>summary</b> : 
+     * <p>获取机器人消息中文件下载链接</p>
+     * 
      * @param request RobotMessageFileDownloadRequest
      * @return RobotMessageFileDownloadResponse
      */
@@ -1082,8 +1115,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤回已经发送的DING消息
-     *
+     * <b>summary</b> : 
+     * <p>撤回已经发送的DING消息</p>
+     * 
      * @param request RobotRecallDingRequest
      * @param headers RobotRecallDingHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1128,8 +1162,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 撤回已经发送的DING消息
-     *
+     * <b>summary</b> : 
+     * <p>撤回已经发送的DING消息</p>
+     * 
      * @param request RobotRecallDingRequest
      * @return RobotRecallDingResponse
      */
@@ -1140,8 +1175,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送DING消息
-     *
+     * <b>summary</b> : 
+     * <p>发送DING消息</p>
+     * 
      * @param request RobotSendDingRequest
      * @param headers RobotSendDingHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1194,8 +1230,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送DING消息
-     *
+     * <b>summary</b> : 
+     * <p>发送DING消息</p>
+     * 
      * @param request RobotSendDingRequest
      * @return RobotSendDingResponse
      */
@@ -1206,8 +1243,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机器人发送DING消息
-     *
+     * <b>summary</b> : 
+     * <p>机器人发送DING消息</p>
+     * 
      * @param request SendRobotDingMessageRequest
      * @param headers SendRobotDingMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1264,8 +1302,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机器人发送DING消息
-     *
+     * <b>summary</b> : 
+     * <p>机器人发送DING消息</p>
+     * 
      * @param request SendRobotDingMessageRequest
      * @return SendRobotDingMessageResponse
      */
@@ -1276,8 +1315,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置单聊机器人快捷入口
-     *
+     * <b>summary</b> : 
+     * <p>设置单聊机器人快捷入口</p>
+     * 
      * @param request SetRobotPluginRequest
      * @param headers SetRobotPluginHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1322,8 +1362,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置单聊机器人快捷入口
-     *
+     * <b>summary</b> : 
+     * <p>设置单聊机器人快捷入口</p>
+     * 
      * @param request SetRobotPluginRequest
      * @return SetRobotPluginResponse
      */
@@ -1334,8 +1375,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新安装到组织的机器人信息
-     *
+     * <b>summary</b> : 
+     * <p>更新安装到组织的机器人信息</p>
+     * 
      * @param request UpdateInstalledRobotRequest
      * @param headers UpdateInstalledRobotHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1396,8 +1438,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新安装到组织的机器人信息
-     *
+     * <b>summary</b> : 
+     * <p>更新安装到组织的机器人信息</p>
+     * 
      * @param request UpdateInstalledRobotRequest
      * @return UpdateInstalledRobotResponse
      */

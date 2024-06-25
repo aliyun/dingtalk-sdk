@@ -4,9 +4,17 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTaskByIdsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>60a2187eb72xxxxxxx</p>
+     */
     @NameInMap("parentTaskId")
     public String parentTaskId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>60a2187eb72xxxxxxx</p>
+     */
     @NameInMap("taskId")
     public String taskId;
 

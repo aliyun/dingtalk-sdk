@@ -6,45 +6,75 @@ import com.aliyun.tea.*;
 public class UpdateJobDeliverRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ddats</p>
      */
     @NameInMap("bizCode")
     public String bizCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>channelOuterId</p>
      */
     @NameInMap("channelOuterId")
     public String channelOuterId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>27016066248xxxxx</p>
      */
     @NameInMap("deliverUserId")
     public String deliverUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ATS001</p>
+     */
     @NameInMap("errorCode")
     public String errorCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>职位审核不通过</p>
+     */
     @NameInMap("errorMsg")
     public String errorMsg;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1666780239981</p>
      */
     @NameInMap("opTime")
     public Long opTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>27016066248xxxxx</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("status")
     public Integer status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>jobId23ed0d46548f4e88a7b808d3f3057xxx</p>
      */
     @NameInMap("jobId")
     public String jobId;

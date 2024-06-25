@@ -7,29 +7,60 @@ public class HrmProcessTransferRequest extends TeaModel {
     @NameInMap("deptIdsAfterTransfer")
     public java.util.List<Long> deptIdsAfterTransfer;
 
+    /**
+     * <strong>example:</strong>
+     * <p>aefadfadaewedad</p>
+     */
     @NameInMap("jobIdAfterTransfer")
     public String jobIdAfterTransfer;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123L</p>
+     */
     @NameInMap("mainDeptIdAfterTransfer")
     public Long mainDeptIdAfterTransfer;
 
+    /**
+     * <strong>example:</strong>
+     * <p>232312312</p>
+     */
     @NameInMap("operateUserId")
     public String operateUserId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fasdfaddsadfa</p>
+     */
     @NameInMap("positionIdAfterTransfer")
     public String positionIdAfterTransfer;
 
+    /**
+     * <strong>example:</strong>
+     * <p>L1</p>
+     */
     @NameInMap("positionLevelAfterTransfer")
     public String positionLevelAfterTransfer;
 
+    /**
+     * <strong>example:</strong>
+     * <p>经理</p>
+     */
     @NameInMap("positionNameAfterTransfer")
     public String positionNameAfterTransfer;
 
+    /**
+     * <strong>example:</strong>
+     * <p>fasdfaddsadfa</p>
+     */
     @NameInMap("rankIdAfterTransfer")
     public String rankIdAfterTransfer;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2332</p>
      */
     @NameInMap("userId")
     public String userId;

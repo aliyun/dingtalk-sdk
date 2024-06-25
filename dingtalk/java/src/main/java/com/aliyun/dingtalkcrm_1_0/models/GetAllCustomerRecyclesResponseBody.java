@@ -6,16 +6,26 @@ import com.aliyun.tea.*;
 public class GetAllCustomerRecyclesResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("resultList")
     public java.util.List<GetAllCustomerRecyclesResponseBodyResultList> resultList;
 
@@ -57,6 +67,9 @@ public class GetAllCustomerRecyclesResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-03-24T09:30Z</p>
          */
         @NameInMap("followUpActionTime")
         public String followUpActionTime;
@@ -64,12 +77,20 @@ public class GetAllCustomerRecyclesResponseBody extends TeaModel {
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-03-24T09:30Z</p>
+         */
         @NameInMap("notifyTime")
         public String notifyTime;
 
         @NameInMap("recycleRuleId")
         public Long recycleRuleId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-03-24T09:30Z</p>
+         */
         @NameInMap("recycleTime")
         public String recycleTime;
 

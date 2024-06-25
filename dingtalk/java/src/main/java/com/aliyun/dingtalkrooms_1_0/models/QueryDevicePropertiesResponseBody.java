@@ -21,9 +21,17 @@ public class QueryDevicePropertiesResponseBody extends TeaModel {
     }
 
     public static class QueryDevicePropertiesResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;dev_app_status&quot;</p>
+         */
         @NameInMap("propertyName")
         public String propertyName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;idle&quot;</p>
+         */
         @NameInMap("propertyValue")
         public String propertyValue;
 

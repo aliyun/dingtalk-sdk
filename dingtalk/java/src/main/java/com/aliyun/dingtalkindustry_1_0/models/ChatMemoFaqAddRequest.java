@@ -6,25 +6,42 @@ import com.aliyun.tea.*;
 public class ChatMemoFaqAddRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>办公室的电话是：13222333232</p>
      */
     @NameInMap("answer")
     public String answer;
 
+    /**
+     * <strong>example:</strong>
+     * <p>aaaaa</p>
+     */
     @NameInMap("bizId")
     public String bizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>111111</p>
      */
     @NameInMap("datasetId")
     public Long datasetId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>办公室的电话是多少</p>
      */
     @NameInMap("question")
     public String question;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://xxxxxxx.com/xxxxxx">https://xxxxxxx.com/xxxxxx</a></p>
+     */
     @NameInMap("redirection")
     public String redirection;
 

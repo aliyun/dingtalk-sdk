@@ -4,6 +4,10 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class InteractiveCardCreateInstanceResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxxx</p>
+     */
     @NameInMap("processQueryKey")
     public String processQueryKey;
 

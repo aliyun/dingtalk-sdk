@@ -10,9 +10,17 @@ public class StartProcessInstanceRequest extends TeaModel {
     @NameInMap("ccList")
     public java.util.List<String> ccList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>START、FINISH、START_FINISH</p>
+     */
     @NameInMap("ccPosition")
     public String ccPosition;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("deptId")
     public Long deptId;
 
@@ -22,17 +30,27 @@ public class StartProcessInstanceRequest extends TeaModel {
     @NameInMap("formComponentValues")
     public java.util.List<StartProcessInstanceRequestFormComponentValues> formComponentValues;
 
+    /**
+     * <strong>example:</strong>
+     * <p>41605932</p>
+     */
     @NameInMap("microappAgentId")
     public Long microappAgentId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager432</p>
      */
     @NameInMap("originatorUserId")
     public String originatorUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROC-EF6YJL35P2-SCKICSB7P750S0YISYKV3-xxxx-1</p>
      */
     @NameInMap("processCode")
     public String processCode;
@@ -118,6 +136,10 @@ public class StartProcessInstanceRequest extends TeaModel {
     }
 
     public static class StartProcessInstanceRequestApprovers extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>会签：AND；或签：OR；单人：NONE</p>
+         */
         @NameInMap("actionType")
         public String actionType;
 
@@ -148,21 +170,41 @@ public class StartProcessInstanceRequest extends TeaModel {
     }
 
     public static class StartProcessInstanceRequestFormComponentValuesDetailsDetails extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>Phone</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
         @NameInMap("componentType")
         public String componentType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>总个数:1</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PhoneField_IZI2LP8QF6O0</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PhoneField</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123xxxxxxxx</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -222,21 +264,41 @@ public class StartProcessInstanceRequest extends TeaModel {
     }
 
     public static class StartProcessInstanceRequestFormComponentValuesDetails extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>Phone</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
         @NameInMap("details")
         public java.util.List<StartProcessInstanceRequestFormComponentValuesDetailsDetails> details;
 
+        /**
+         * <strong>example:</strong>
+         * <p>总个数:1</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PhoneField_IZI2LP8QF6O0</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PhoneField</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123xxxxxxxx</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -296,6 +358,10 @@ public class StartProcessInstanceRequest extends TeaModel {
     }
 
     public static class StartProcessInstanceRequestFormComponentValues extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>Phone</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
@@ -305,20 +371,34 @@ public class StartProcessInstanceRequest extends TeaModel {
         @NameInMap("details")
         public java.util.List<StartProcessInstanceRequestFormComponentValuesDetails> details;
 
+        /**
+         * <strong>example:</strong>
+         * <p>总个数:1</p>
+         */
         @NameInMap("extValue")
         public String extValue;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PhoneField_IZI2LP8QF6O0</p>
+         */
         @NameInMap("id")
         public String id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PhoneField</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123xxxxxxxx</p>
          */
         @NameInMap("value")
         public String value;
@@ -387,6 +467,10 @@ public class StartProcessInstanceRequest extends TeaModel {
     }
 
     public static class StartProcessInstanceRequestTargetSelectActioners extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>manual_1918_5cd3_5e19_6a98</p>
+         */
         @NameInMap("actionerKey")
         public String actionerKey;
 

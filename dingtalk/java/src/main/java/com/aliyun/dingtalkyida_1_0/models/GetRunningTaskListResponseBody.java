@@ -21,18 +21,34 @@ public class GetRunningTaskListResponseBody extends TeaModel {
     }
 
     public static class GetRunningTaskListResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2021-02-01</p>
+         */
         @NameInMap("activeTimeGMT")
         public String activeTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager123</p>
+         */
         @NameInMap("actualActionExecutorId")
         public String actualActionExecutorId;
 
         @NameInMap("appType")
         public String appType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-01-01</p>
+         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-01-01</p>
+         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
@@ -66,18 +82,38 @@ public class GetRunningTaskListResponseBody extends TeaModel {
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>running</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>task-123</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>append task</p>
+         */
         @NameInMap("taskType")
         public String taskType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四发起的请购单</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p>title A</p>
+         */
         @NameInMap("titleInEnglish")
         public String titleInEnglish;
 

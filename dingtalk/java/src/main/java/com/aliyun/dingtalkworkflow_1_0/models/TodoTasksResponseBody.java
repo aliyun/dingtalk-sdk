@@ -21,6 +21,10 @@ public class TodoTasksResponseBody extends TeaModel {
     }
 
     public static class TodoTasksResponseBodyResultList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>RUNNING</p>
+         */
         @NameInMap("businessId")
         public String businessId;
 
@@ -30,18 +34,38 @@ public class TodoTasksResponseBody extends TeaModel {
         @NameInMap("createTime")
         public Long createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>act_0001</p>
+         */
         @NameInMap("processCode")
         public String processCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Siw2WNVZS4KiUt3tTmaNKg04*****809950</p>
+         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234567</p>
+         */
         @NameInMap("taskId")
         public Long taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager001</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-10-17T15:12Z</p>
+         */
         @NameInMap("userId")
         public String userId;
 

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetConversationIdRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>chatd575783672bb40c005ba4e8b2*****ab</p>
      */
     @NameInMap("chatId")
     public String chatId;

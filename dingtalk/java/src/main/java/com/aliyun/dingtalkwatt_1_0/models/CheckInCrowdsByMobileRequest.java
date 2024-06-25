@@ -4,11 +4,21 @@ package com.aliyun.dingtalkwatt_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckInCrowdsByMobileRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>12520</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
     @NameInMap("crowdIds")
     public byte[] crowdIds;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>N5u3hS6KJeoUdopXW4GzFg==</p>
      */
     @NameInMap("mobile")
     public String mobile;

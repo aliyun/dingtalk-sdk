@@ -12,12 +12,18 @@ public class UpateUserCodeInstanceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ccodexxxxx</p>
      */
     @NameInMap("codeId")
     public String codeId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>TEST</p>
      */
     @NameInMap("codeIdentity")
     public String codeIdentity;
@@ -27,6 +33,9 @@ public class UpateUserCodeInstanceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>corpIdxxxx</p>
      */
     @NameInMap("corpId")
     public String corpId;
@@ -43,17 +52,27 @@ public class UpateUserCodeInstanceRequest extends TeaModel {
     @NameInMap("gmtExpired")
     public String gmtExpired;
 
+    /**
+     * <strong>example:</strong>
+     * <p>OPEN</p>
+     */
     @NameInMap("status")
     public String status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>INTERNAL_STAFF</p>
      */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>86-xxxxxx</p>
      */
     @NameInMap("userIdentity")
     public String userIdentity;
@@ -146,12 +165,18 @@ public class UpateUserCodeInstanceRequest extends TeaModel {
     public static class UpateUserCodeInstanceRequestAvailableTimes extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd HH:mm:ss</p>
          */
         @NameInMap("gmtEnd")
         public String gmtEnd;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd HH:mm:ss</p>
          */
         @NameInMap("gmtStart")
         public String gmtStart;

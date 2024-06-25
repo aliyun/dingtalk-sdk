@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class DeleteTrustedDeviceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false</p>
      */
     @NameInMap("kickOff")
     public Boolean kickOff;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>88:92:5a:1f:e8:24</p>
      */
     @NameInMap("macAddress")
     public String macAddress;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0119194439361061403</p>
      */
     @NameInMap("userId")
     public String userId;

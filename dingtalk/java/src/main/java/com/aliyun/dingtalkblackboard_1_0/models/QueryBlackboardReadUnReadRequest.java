@@ -6,21 +6,34 @@ import com.aliyun.tea.*;
 public class QueryBlackboardReadUnReadRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>49dc87dc1b30cd099b13a</p>
      */
     @NameInMap("blackboardId")
     public String blackboardId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>200</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xb1dc</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>manager01</p>
      */
     @NameInMap("operationUserId")
     public String operationUserId;

@@ -4,6 +4,10 @@ package com.aliyun.dingtalknotable_2_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteFieldResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("success")
     public Boolean success;
 

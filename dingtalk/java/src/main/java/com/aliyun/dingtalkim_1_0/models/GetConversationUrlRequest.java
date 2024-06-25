@@ -6,22 +6,40 @@ import com.aliyun.tea.*;
 public class GetConversationUrlRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1107****2120</p>
      */
     @NameInMap("appUserId")
     public String appUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>oK4e****qER2</p>
      */
     @NameInMap("channelCode")
     public String channelCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123**789</p>
+     */
     @NameInMap("deviceId")
     public String deviceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>f67b****8a0f</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1745****8777</p>
+     */
     @NameInMap("userId")
     public String userId;
 

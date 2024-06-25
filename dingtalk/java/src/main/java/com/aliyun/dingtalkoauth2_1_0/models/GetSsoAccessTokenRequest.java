@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class GetSsoAccessTokenRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>corpxxxx</p>
      */
     @NameInMap("corpid")
     public String corpid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("ssoSecret")
     public String ssoSecret;

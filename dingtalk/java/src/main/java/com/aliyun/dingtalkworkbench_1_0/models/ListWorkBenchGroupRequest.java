@@ -4,17 +4,27 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListWorkBenchGroupRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>corpId</p>
+     */
     @NameInMap("ecologicalCorpId")
     public String ecologicalCorpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>首页 = WORK_HOME 全部页 = WORK_ALL_APP</p>
      */
     @NameInMap("groupType")
     public String groupType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxx</p>
      */
     @NameInMap("opUnionId")
     public String opUnionId;

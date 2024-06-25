@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class QueryCorpStatisticDataRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20230101</p>
      */
     @NameInMap("endTime")
     public String endTime;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20220101</p>
      */
     @NameInMap("startTime")
     public String startTime;
@@ -21,6 +27,9 @@ public class QueryCorpStatisticDataRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>RCsp7PJmmTUr7w0hbs9aKAiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

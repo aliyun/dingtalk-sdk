@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class BatchCreateRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>industry_center</p>
      */
     @NameInMap("cardBizCode")
     public String cardBizCode;
@@ -18,18 +21,27 @@ public class BatchCreateRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>AFC35F13-8A88-728F-27C5-3616AD7DFF2E</p>
      */
     @NameInMap("identifier")
     public String identifier;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>4</p>
      */
     @NameInMap("jsVersion")
     public Integer jsVersion;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>QUPEIYIN</p>
      */
     @NameInMap("sourceType")
     public String sourceType;
@@ -266,9 +278,17 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("canReissueCard")
         public Boolean canReissueCard;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("cardCycle")
         public Integer cardCycle;
 
@@ -292,6 +312,9 @@ public class BatchCreateRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>打卡的内容</p>
          */
         @NameInMap("content")
         public String content;

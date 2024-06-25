@@ -6,11 +6,10 @@ import com.aliyun.dingtalkim_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 添加企业文字表情
-     *
+     * <b>summary</b> : 
+     * <p>添加企业文字表情</p>
+     * 
      * @param request AddOrgTextEmotionRequest
      * @param headers AddOrgTextEmotionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -74,8 +74,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加企业文字表情
-     *
+     * <b>summary</b> : 
+     * <p>添加企业文字表情</p>
+     * 
      * @param request AddOrgTextEmotionRequest
      * @return AddOrgTextEmotionResponse
      */
@@ -86,8 +87,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加机器人到会话
-     *
+     * <b>summary</b> : 
+     * <p>添加机器人到会话</p>
+     * 
      * @param request AddRobotToConversationRequest
      * @param headers AddRobotToConversationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -140,8 +142,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加机器人到会话
-     *
+     * <b>summary</b> : 
+     * <p>添加机器人到会话</p>
+     * 
      * @param request AddRobotToConversationRequest
      * @return AddRobotToConversationResponse
      */
@@ -152,8 +155,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 自动开通钉钉客联微应用
-     *
+     * <b>summary</b> : 
+     * <p>自动开通钉钉客联微应用</p>
+     * 
      * @param headers AutoOpenDingTalkConnectHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return AutoOpenDingTalkConnectResponse
@@ -186,8 +190,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 自动开通钉钉客联微应用
-     *
+     * <b>summary</b> : 
+     * <p>自动开通钉钉客联微应用</p>
      * @return AutoOpenDingTalkConnectResponse
      */
     public AutoOpenDingTalkConnectResponse autoOpenDingTalkConnect() throws Exception {
@@ -197,8 +201,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询家校群消息详情
-     *
+     * <b>summary</b> : 
+     * <p>批量查询家校群消息详情</p>
+     * 
      * @param request BatchQueryFamilySchoolMessageRequest
      * @param headers BatchQueryFamilySchoolMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -247,8 +252,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询家校群消息详情
-     *
+     * <b>summary</b> : 
+     * <p>批量查询家校群消息详情</p>
+     * 
      * @param request BatchQueryFamilySchoolMessageRequest
      * @return BatchQueryFamilySchoolMessageResponse
      */
@@ -259,8 +265,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群成员
-     *
+     * <b>summary</b> : 
+     * <p>查询群成员</p>
+     * 
      * @param request BatchQueryGroupMemberRequest
      * @param headers BatchQueryGroupMemberHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -313,8 +320,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群成员
-     *
+     * <b>summary</b> : 
+     * <p>查询群成员</p>
+     * 
      * @param request BatchQueryGroupMemberRequest
      * @return BatchQueryGroupMemberResponse
      */
@@ -325,8 +333,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉钉互动卡片模板构建动作
-     *
+     * <b>summary</b> : 
+     * <p>钉钉互动卡片模板构建动作</p>
+     * 
      * @param request CardTemplateBuildActionRequest
      * @param headers CardTemplateBuildActionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -371,8 +380,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉钉互动卡片模板构建动作
-     *
+     * <b>summary</b> : 
+     * <p>钉钉互动卡片模板构建动作</p>
+     * 
      * @param request CardTemplateBuildActionRequest
      * @return CardTemplateBuildActionResponse
      */
@@ -383,8 +393,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更换群主
-     *
+     * <b>summary</b> : 
+     * <p>更换群主</p>
+     * 
      * @param request ChangeGroupOwnerRequest
      * @param headers ChangeGroupOwnerHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -433,8 +444,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更换群主
-     *
+     * <b>summary</b> : 
+     * <p>更换群主</p>
+     * 
      * @param request ChangeGroupOwnerRequest
      * @return ChangeGroupOwnerResponse
      */
@@ -445,8 +457,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 会话开放的ChatId转OpenConversationId
-     *
+     * <b>summary</b> : 
+     * <p>会话开放的ChatId转OpenConversationId</p>
+     * 
      * @param headers ChatIdToOpenConversationIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ChatIdToOpenConversationIdResponse
@@ -479,8 +492,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 会话开放的ChatId转OpenConversationId
-     *
+     * <b>summary</b> : 
+     * <p>会话开放的ChatId转OpenConversationId</p>
      * @return ChatIdToOpenConversationIdResponse
      */
     public ChatIdToOpenConversationIdResponse chatIdToOpenConversationId(String chatId) throws Exception {
@@ -490,8 +503,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置群管理员
-     *
+     * <b>summary</b> : 
+     * <p>设置群管理员</p>
+     * 
      * @param request ChatSubAdminUpdateRequest
      * @param headers ChatSubAdminUpdateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -540,8 +554,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置群管理员
-     *
+     * <b>summary</b> : 
+     * <p>设置群管理员</p>
+     * 
      * @param request ChatSubAdminUpdateRequest
      * @return ChatSubAdminUpdateResponse
      */
@@ -552,8 +567,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户是否为企业内部群成员
-     *
+     * <b>summary</b> : 
+     * <p>查询用户是否为企业内部群成员</p>
+     * 
      * @param request CheckUserIsGroupMemberRequest
      * @param headers CheckUserIsGroupMemberHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -598,8 +614,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户是否为企业内部群成员
-     *
+     * <b>summary</b> : 
+     * <p>查询用户是否为企业内部群成员</p>
+     * 
      * @param request CheckUserIsGroupMemberRequest
      * @return CheckUserIsGroupMemberResponse
      */
@@ -610,8 +627,65 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建钉外两人群
-     *
+     * <b>summary</b> : 
+     * <p>查询消息开放群模板下群计数</p>
+     * 
+     * @param request CountOpenMsgSceneGroupsRequest
+     * @param headers CountOpenMsgSceneGroupsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CountOpenMsgSceneGroupsResponse
+     */
+    public CountOpenMsgSceneGroupsResponse countOpenMsgSceneGroupsWithOptions(CountOpenMsgSceneGroupsRequest request, CountOpenMsgSceneGroupsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
+            body.put("templateId", request.templateId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CountOpenMsgSceneGroups"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/openMsgSceneGroups/templates/counts/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CountOpenMsgSceneGroupsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询消息开放群模板下群计数</p>
+     * 
+     * @param request CountOpenMsgSceneGroupsRequest
+     * @return CountOpenMsgSceneGroupsResponse
+     */
+    public CountOpenMsgSceneGroupsResponse countOpenMsgSceneGroups(CountOpenMsgSceneGroupsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CountOpenMsgSceneGroupsHeaders headers = new CountOpenMsgSceneGroupsHeaders();
+        return this.countOpenMsgSceneGroupsWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建钉外两人群</p>
+     * 
      * @param request CreateCoupleGroupConversationRequest
      * @param headers CreateCoupleGroupConversationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -672,8 +746,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建钉外两人群
-     *
+     * <b>summary</b> : 
+     * <p>创建钉外两人群</p>
+     * 
      * @param request CreateCoupleGroupConversationRequest
      * @return CreateCoupleGroupConversationResponse
      */
@@ -684,8 +759,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建互通群（支持普通互通群、跨钉两人群）
-     *
+     * <b>summary</b> : 
+     * <p>创建互通群（支持普通互通群、跨钉两人群）</p>
+     * 
      * @param request CreateGroupConversationRequest
      * @param headers CreateGroupConversationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -754,8 +830,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建互通群（支持普通互通群、跨钉两人群）
-     *
+     * <b>summary</b> : 
+     * <p>创建互通群（支持普通互通群、跨钉两人群）</p>
+     * 
      * @param request CreateGroupConversationRequest
      * @return CreateGroupConversationResponse
      */
@@ -766,8 +843,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建钉外账号
-     *
+     * <b>summary</b> : 
+     * <p>创建钉外账号</p>
+     * 
      * @param request CreateInterconnectionRequest
      * @param headers CreateInterconnectionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -808,8 +886,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建钉外账号
-     *
+     * <b>summary</b> : 
+     * <p>创建钉外账号</p>
+     * 
      * @param request CreateInterconnectionRequest
      * @return CreateInterconnectionResponse
      */
@@ -820,8 +899,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建场景群会话
-     *
+     * <b>summary</b> : 
+     * <p>创建场景群会话</p>
+     * 
      * @param request CreateSceneGroupConversationRequest
      * @param headers CreateSceneGroupConversationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -890,8 +970,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建场景群会话
-     *
+     * <b>summary</b> : 
+     * <p>创建场景群会话</p>
+     * 
      * @param request CreateSceneGroupConversationRequest
      * @return CreateSceneGroupConversationResponse
      */
@@ -902,8 +983,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建店铺群
-     *
+     * <b>summary</b> : 
+     * <p>创建店铺群</p>
+     * 
      * @param request CreateStoreGroupConversationRequest
      * @param headers CreateStoreGroupConversationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -968,8 +1050,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建店铺群
-     *
+     * <b>summary</b> : 
+     * <p>创建店铺群</p>
+     * 
      * @param request CreateStoreGroupConversationRequest
      * @return CreateStoreGroupConversationResponse
      */
@@ -980,8 +1063,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除企业文字表情
-     *
+     * <b>summary</b> : 
+     * <p>删除企业文字表情</p>
+     * 
      * @param request DeleteOrgTextEmotionRequest
      * @param headers DeleteOrgTextEmotionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1026,8 +1110,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除企业文字表情
-     *
+     * <b>summary</b> : 
+     * <p>删除企业文字表情</p>
+     * 
      * @param request DeleteOrgTextEmotionRequest
      * @return DeleteOrgTextEmotionResponse
      */
@@ -1038,8 +1123,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 解散互通群
-     *
+     * <b>summary</b> : 
+     * <p>解散互通群</p>
+     * 
      * @param request DismissGroupConversationRequest
      * @param headers DismissGroupConversationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1080,8 +1166,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 解散互通群
-     *
+     * <b>summary</b> : 
+     * <p>解散互通群</p>
+     * 
      * @param request DismissGroupConversationRequest
      * @return DismissGroupConversationResponse
      */
@@ -1092,8 +1179,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建ToB会话地址
-     *
+     * <b>summary</b> : 
+     * <p>创建ToB会话地址</p>
+     * 
      * @param request GetConversationUrlRequest
      * @param headers GetConversationUrlHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1150,8 +1238,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建ToB会话地址
-     *
+     * <b>summary</b> : 
+     * <p>创建ToB会话地址</p>
+     * 
      * @param request GetConversationUrlRequest
      * @return GetConversationUrlResponse
      */
@@ -1162,8 +1251,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户家校群消息(图片&视频Z&富文本)
-     *
+     * <b>summary</b> : 
+     * <p>查询用户家校群消息(图片&amp;视频Z&amp;富文本)</p>
+     * 
      * @param request GetFamilySchoolConversationMsgRequest
      * @param headers GetFamilySchoolConversationMsgHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1220,8 +1310,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户家校群消息(图片&视频Z&富文本)
-     *
+     * <b>summary</b> : 
+     * <p>查询用户家校群消息(图片&amp;视频Z&amp;富文本)</p>
+     * 
      * @param request GetFamilySchoolConversationMsgRequest
      * @return GetFamilySchoolConversationMsgResponse
      */
@@ -1232,8 +1323,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户家校群
-     *
+     * <b>summary</b> : 
+     * <p>查询用户家校群</p>
+     * 
      * @param request GetFamilySchoolConversationsRequest
      * @param headers GetFamilySchoolConversationsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1282,8 +1374,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询用户家校群
-     *
+     * <b>summary</b> : 
+     * <p>查询用户家校群</p>
+     * 
      * @param request GetFamilySchoolConversationsRequest
      * @return GetFamilySchoolConversationsResponse
      */
@@ -1294,8 +1387,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询企业内部群成员
-     *
+     * <b>summary</b> : 
+     * <p>查询企业内部群成员</p>
+     * 
      * @param request GetInnerGroupMembersRequest
      * @param headers GetInnerGroupMembersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1348,8 +1442,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询企业内部群成员
-     *
+     * <b>summary</b> : 
+     * <p>查询企业内部群成员</p>
+     * 
      * @param request GetInnerGroupMembersRequest
      * @return GetInnerGroupMembersResponse
      */
@@ -1360,8 +1455,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建客联互通会话地址
-     *
+     * <b>summary</b> : 
+     * <p>创建客联互通会话地址</p>
+     * 
      * @param request GetInterconnectionUrlRequest
      * @param headers GetInterconnectionUrlHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1442,8 +1538,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建客联互通会话地址
-     *
+     * <b>summary</b> : 
+     * <p>创建客联互通会话地址</p>
+     * 
      * @param request GetInterconnectionUrlRequest
      * @return GetInterconnectionUrlResponse
      */
@@ -1454,8 +1551,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询最近活跃的企业内部群列表
-     *
+     * <b>summary</b> : 
+     * <p>查询最近活跃的企业内部群列表</p>
+     * 
      * @param request GetNewestInnerGroupsRequest
      * @param headers GetNewestInnerGroupsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1496,8 +1594,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询最近活跃的企业内部群列表
-     *
+     * <b>summary</b> : 
+     * <p>查询最近活跃的企业内部群列表</p>
+     * 
      * @param request GetNewestInnerGroupsRequest
      * @return GetNewestInnerGroupsResponse
      */
@@ -1508,8 +1607,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群简要信息
-     *
+     * <b>summary</b> : 
+     * <p>查询群简要信息</p>
+     * 
      * @param request GetSceneGroupInfoRequest
      * @param headers GetSceneGroupInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1554,8 +1654,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群简要信息
-     *
+     * <b>summary</b> : 
+     * <p>查询群简要信息</p>
+     * 
      * @param request GetSceneGroupInfoRequest
      * @return GetSceneGroupInfoResponse
      */
@@ -1566,8 +1667,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群成员
-     *
+     * <b>summary</b> : 
+     * <p>查询群成员</p>
+     * 
      * @param request GetSceneGroupMembersRequest
      * @param headers GetSceneGroupMembersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1620,8 +1722,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群成员
-     *
+     * <b>summary</b> : 
+     * <p>查询群成员</p>
+     * 
      * @param request GetSceneGroupMembersRequest
      * @return GetSceneGroupMembersResponse
      */
@@ -1632,8 +1735,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群禁言
-     *
+     * <b>summary</b> : 
+     * <p>群禁言</p>
+     * 
      * @param request GroupBanWordsRequest
      * @param headers GroupBanWordsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1682,8 +1786,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群禁言
-     *
+     * <b>summary</b> : 
+     * <p>群禁言</p>
+     * 
      * @param request GroupBanWordsRequest
      * @return GroupBanWordsResponse
      */
@@ -1694,8 +1799,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群容量扩容询价
-     *
+     * <b>summary</b> : 
+     * <p>群容量扩容询价</p>
+     * 
      * @param request GroupCapacityInquiryRequest
      * @param headers GroupCapacityInquiryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1752,8 +1858,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群容量扩容询价
-     *
+     * <b>summary</b> : 
+     * <p>群容量扩容询价</p>
+     * 
      * @param request GroupCapacityInquiryRequest
      * @return GroupCapacityInquiryResponse
      */
@@ -1764,8 +1871,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群容量扩容确认下单
-     *
+     * <b>summary</b> : 
+     * <p>群容量扩容确认下单</p>
+     * 
      * @param request GroupCapacityOrderConfirmRequest
      * @param headers GroupCapacityOrderConfirmHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1810,8 +1918,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群容量扩容确认下单
-     *
+     * <b>summary</b> : 
+     * <p>群容量扩容确认下单</p>
+     * 
      * @param request GroupCapacityOrderConfirmRequest
      * @return GroupCapacityOrderConfirmResponse
      */
@@ -1822,8 +1931,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群容量请求扩容下单
-     *
+     * <b>summary</b> : 
+     * <p>群容量请求扩容下单</p>
+     * 
      * @param request GroupCapacityOrderPlaceRequest
      * @param headers GroupCapacityOrderPlaceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1904,8 +2014,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群容量请求扩容下单
-     *
+     * <b>summary</b> : 
+     * <p>群容量请求扩容下单</p>
+     * 
      * @param request GroupCapacityOrderPlaceRequest
      * @return GroupCapacityOrderPlaceResponse
      */
@@ -1916,8 +2027,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据群链接、群号等检索条件，查询群信息
-     *
+     * <b>summary</b> : 
+     * <p>根据群链接、群号等检索条件，查询群信息</p>
+     * 
      * @param request GroupManageQueryRequest
      * @param headers GroupManageQueryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1994,8 +2106,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据群链接、群号等检索条件，查询群信息
-     *
+     * <b>summary</b> : 
+     * <p>根据群链接、群号等检索条件，查询群信息</p>
+     * 
      * @param request GroupManageQueryRequest
      * @return GroupManageQueryResponse
      */
@@ -2006,8 +2119,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群管理缩容
-     *
+     * <b>summary</b> : 
+     * <p>群管理缩容</p>
+     * 
      * @param request GroupManageReduceRequest
      * @param headers GroupManageReduceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2056,8 +2170,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群管理缩容
-     *
+     * <b>summary</b> : 
+     * <p>群管理缩容</p>
+     * 
      * @param request GroupManageReduceRequest
      * @return GroupManageReduceResponse
      */
@@ -2068,8 +2183,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 安装机器人到组织
-     *
+     * <b>summary</b> : 
+     * <p>安装机器人到组织</p>
+     * 
      * @param request InstallRobotToOrgRequest
      * @param headers InstallRobotToOrgHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2138,8 +2254,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 安装机器人到组织
-     *
+     * <b>summary</b> : 
+     * <p>安装机器人到组织</p>
+     * 
      * @param request InstallRobotToOrgRequest
      * @return InstallRobotToOrgResponse
      */
@@ -2150,8 +2267,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建可交互式实例
-     *
+     * <b>summary</b> : 
+     * <p>创建可交互式实例</p>
+     * 
      * @param request InteractiveCardCreateInstanceRequest
      * @param headers InteractiveCardCreateInstanceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2236,8 +2354,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建可交互式实例
-     *
+     * <b>summary</b> : 
+     * <p>创建可交互式实例</p>
+     * 
      * @param request InteractiveCardCreateInstanceRequest
      * @return InteractiveCardCreateInstanceResponse
      */
@@ -2248,8 +2367,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 拉取企业的所有文字表情，包含正常使用的、已经删除了的、安全审核不通过的文字表情
-     *
+     * <b>summary</b> : 
+     * <p>拉取企业的所有文字表情，包含正常使用的、已经删除了的、安全审核不通过的文字表情</p>
+     * 
      * @param headers ListOrgTextEmotionHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ListOrgTextEmotionResponse
@@ -2282,8 +2402,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 拉取企业的所有文字表情，包含正常使用的、已经删除了的、安全审核不通过的文字表情
-     *
+     * <b>summary</b> : 
+     * <p>拉取企业的所有文字表情，包含正常使用的、已经删除了的、安全审核不通过的文字表情</p>
      * @return ListOrgTextEmotionResponse
      */
     public ListOrgTextEmotionResponse listOrgTextEmotion() throws Exception {
@@ -2293,8 +2413,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 内部群转部门群
-     *
+     * <b>summary</b> : 
+     * <p>内部群转部门群</p>
+     * 
      * @param request OpenInnerGroupTransferToDeptGroupRequest
      * @param headers OpenInnerGroupTransferToDeptGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2339,8 +2460,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 内部群转部门群
-     *
+     * <b>summary</b> : 
+     * <p>内部群转部门群</p>
+     * 
      * @param request OpenInnerGroupTransferToDeptGroupRequest
      * @return OpenInnerGroupTransferToDeptGroupResponse
      */
@@ -2351,8 +2473,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群搜索
-     *
+     * <b>summary</b> : 
+     * <p>群搜索</p>
+     * 
      * @param request OpenSearchGroupListRequest
      * @param headers OpenSearchGroupListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2397,8 +2520,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 群搜索
-     *
+     * <b>summary</b> : 
+     * <p>群搜索</p>
+     * 
      * @param request OpenSearchGroupListRequest
      * @return OpenSearchGroupListResponse
      */
@@ -2409,8 +2533,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 以个人身份发送卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>以个人身份发送卡片消息</p>
+     * 
      * @param request OpenUserSendCardMessageRequest
      * @param headers OpenUserSendCardMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2463,8 +2588,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 以个人身份发送卡片消息
-     *
+     * <b>summary</b> : 
+     * <p>以个人身份发送卡片消息</p>
+     * 
      * @param request OpenUserSendCardMessageRequest
      * @return OpenUserSendCardMessageResponse
      */
@@ -2475,8 +2601,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 成员授权场景下查询群信息
-     *
+     * <b>summary</b> : 
+     * <p>成员授权场景下查询群信息</p>
+     * 
      * @param request QueryGroupInfoByMemberAuthRequest
      * @param headers QueryGroupInfoByMemberAuthHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2521,8 +2648,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 成员授权场景下查询群信息
-     *
+     * <b>summary</b> : 
+     * <p>成员授权场景下查询群信息</p>
+     * 
      * @param request QueryGroupInfoByMemberAuthRequest
      * @return QueryGroupInfoByMemberAuthResponse
      */
@@ -2533,8 +2661,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群成员列表
-     *
+     * <b>summary</b> : 
+     * <p>查询群成员列表</p>
+     * 
      * @param request QueryGroupMemberRequest
      * @param headers QueryGroupMemberHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2575,8 +2704,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群成员列表
-     *
+     * <b>summary</b> : 
+     * <p>查询群成员列表</p>
+     * 
      * @param request QueryGroupMemberRequest
      * @return QueryGroupMemberResponse
      */
@@ -2587,8 +2717,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 成员授权场景下查询群成员
-     *
+     * <b>summary</b> : 
+     * <p>成员授权场景下查询群成员</p>
+     * 
      * @param request QueryGroupMemberByMemberAuthRequest
      * @param headers QueryGroupMemberByMemberAuthHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2633,8 +2764,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 成员授权场景下查询群成员
-     *
+     * <b>summary</b> : 
+     * <p>成员授权场景下查询群成员</p>
+     * 
      * @param request QueryGroupMemberByMemberAuthRequest
      * @return QueryGroupMemberByMemberAuthResponse
      */
@@ -2645,8 +2777,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群禁言状态
-     *
+     * <b>summary</b> : 
+     * <p>查询群禁言状态</p>
+     * 
      * @param request QueryGroupMuteStatusRequest
      * @param headers QueryGroupMuteStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2691,8 +2824,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群禁言状态
-     *
+     * <b>summary</b> : 
+     * <p>查询群禁言状态</p>
+     * 
      * @param request QueryGroupMuteStatusRequest
      * @return QueryGroupMuteStatusResponse
      */
@@ -2703,8 +2837,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 读取群成员列表
-     *
+     * <b>summary</b> : 
+     * <p>读取群成员列表</p>
+     * 
      * @param request QueryInnerGroupMemberListRequest
      * @param headers QueryInnerGroupMemberListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2757,8 +2892,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 读取群成员列表
-     *
+     * <b>summary</b> : 
+     * <p>读取群成员列表</p>
+     * 
      * @param request QueryInnerGroupMemberListRequest
      * @return QueryInnerGroupMemberListResponse
      */
@@ -2769,8 +2905,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询最近活跃的企业内部群列表
-     *
+     * <b>summary</b> : 
+     * <p>查询最近活跃的企业内部群列表</p>
+     * 
      * @param request QueryInnerGroupRecentListRequest
      * @param headers QueryInnerGroupRecentListHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2811,8 +2948,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询最近活跃的企业内部群列表
-     *
+     * <b>summary</b> : 
+     * <p>查询最近活跃的企业内部群列表</p>
+     * 
      * @param request QueryInnerGroupRecentListRequest
      * @return QueryInnerGroupRecentListResponse
      */
@@ -2823,8 +2961,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群内具有指定群角色的所有群成员
-     *
+     * <b>summary</b> : 
+     * <p>查询群内具有指定群角色的所有群成员</p>
+     * 
      * @param request QueryMembersOfGroupRoleRequest
      * @param headers QueryMembersOfGroupRoleHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2873,8 +3012,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群内具有指定群角色的所有群成员
-     *
+     * <b>summary</b> : 
+     * <p>查询群内具有指定群角色的所有群成员</p>
+     * 
      * @param request QueryMembersOfGroupRoleRequest
      * @return QueryMembersOfGroupRoleResponse
      */
@@ -2885,18 +3025,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取最近联系人及群组
-     *
-     * @param request QueryRecentConversationsRequest
-     * @param headers QueryRecentConversationsHeaders
+     * <b>summary</b> : 
+     * <p>根据单聊会话及发送方获取接收方用户信息</p>
+     * 
+     * @param request QueryOpenConversationReceiveUserRequest
+     * @param headers QueryOpenConversationReceiveUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
-     * @return QueryRecentConversationsResponse
+     * @return QueryOpenConversationReceiveUserResponse
      */
-    public QueryRecentConversationsResponse queryRecentConversationsWithOptions(QueryRecentConversationsRequest request, QueryRecentConversationsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public QueryOpenConversationReceiveUserResponse queryOpenConversationReceiveUserWithOptions(QueryOpenConversationReceiveUserRequest request, QueryOpenConversationReceiveUserHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
-            query.put("userId", request.userId);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sendUserId)) {
+            body.put("sendUserId", request.sendUserId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -2910,14 +3055,134 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryOpenConversationReceiveUser"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/otoChat/receiveUsers/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryOpenConversationReceiveUserResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据单聊会话及发送方获取接收方用户信息</p>
+     * 
+     * @param request QueryOpenConversationReceiveUserRequest
+     * @return QueryOpenConversationReceiveUserResponse
+     */
+    public QueryOpenConversationReceiveUserResponse queryOpenConversationReceiveUser(QueryOpenConversationReceiveUserRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryOpenConversationReceiveUserHeaders headers = new QueryOpenConversationReceiveUserHeaders();
+        return this.queryOpenConversationReceiveUserWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取群基础信息</p>
+     * 
+     * @param request QueryOpenGroupBaseInfoRequest
+     * @param headers QueryOpenGroupBaseInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryOpenGroupBaseInfoResponse
+     */
+    public QueryOpenGroupBaseInfoResponse queryOpenGroupBaseInfoWithOptions(QueryOpenGroupBaseInfoRequest request, QueryOpenGroupBaseInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryOpenGroupBaseInfo"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/groups/baseInfos/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryOpenGroupBaseInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取群基础信息</p>
+     * 
+     * @param request QueryOpenGroupBaseInfoRequest
+     * @return QueryOpenGroupBaseInfoResponse
+     */
+    public QueryOpenGroupBaseInfoResponse queryOpenGroupBaseInfo(QueryOpenGroupBaseInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryOpenGroupBaseInfoHeaders headers = new QueryOpenGroupBaseInfoHeaders();
+        return this.queryOpenGroupBaseInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取最近联系人及群组</p>
+     * 
+     * @param request QueryRecentConversationsRequest
+     * @param headers QueryRecentConversationsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryRecentConversationsResponse
+     */
+    public QueryRecentConversationsResponse queryRecentConversationsWithOptions(QueryRecentConversationsRequest request, QueryRecentConversationsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.onlyHuman)) {
+            body.put("onlyHuman", request.onlyHuman);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.onlyInnerGroup)) {
+            body.put("onlyInnerGroup", request.onlyInnerGroup);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "QueryRecentConversations"),
             new TeaPair("version", "im_1.0"),
             new TeaPair("protocol", "HTTP"),
-            new TeaPair("pathname", "/v1.0/im/conversations/recentLists"),
-            new TeaPair("method", "GET"),
+            new TeaPair("pathname", "/v1.0/im/conversations/recentLists/query"),
+            new TeaPair("method", "POST"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
             new TeaPair("reqBodyType", "none"),
@@ -2927,8 +3192,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取最近联系人及群组
-     *
+     * <b>summary</b> : 
+     * <p>获取最近联系人及群组</p>
+     * 
      * @param request QueryRecentConversationsRequest
      * @return QueryRecentConversationsResponse
      */
@@ -2939,8 +3205,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群内群模板机器人
-     *
+     * <b>summary</b> : 
+     * <p>查询群内群模板机器人</p>
+     * 
      * @param request QuerySceneGroupTemplateRobotRequest
      * @param headers QuerySceneGroupTemplateRobotHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -2985,8 +3252,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询群内群模板机器人
-     *
+     * <b>summary</b> : 
+     * <p>查询群内群模板机器人</p>
+     * 
      * @param request QuerySceneGroupTemplateRobotRequest
      * @return QuerySceneGroupTemplateRobotResponse
      */
@@ -2997,8 +3265,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询群信息
-     *
+     * <b>summary</b> : 
+     * <p>批量查询群信息</p>
+     * 
      * @param request QuerySingleGroupRequest
      * @param headers QuerySingleGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3043,8 +3312,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询群信息
-     *
+     * <b>summary</b> : 
+     * <p>批量查询群信息</p>
+     * 
      * @param request QuerySingleGroupRequest
      * @return QuerySingleGroupResponse
      */
@@ -3055,8 +3325,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询未读消息数
-     *
+     * <b>summary</b> : 
+     * <p>批量查询未读消息数</p>
+     * 
      * @param request QueryUnReadMessageRequest
      * @param headers QueryUnReadMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3101,8 +3372,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询未读消息数
-     *
+     * <b>summary</b> : 
+     * <p>批量查询未读消息数</p>
+     * 
      * @param request QueryUnReadMessageRequest
      * @return QueryUnReadMessageResponse
      */
@@ -3113,8 +3385,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移除会话机器人
-     *
+     * <b>summary</b> : 
+     * <p>移除会话机器人</p>
+     * 
      * @param request RemoveRobotFromConversationRequest
      * @param headers RemoveRobotFromConversationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3159,8 +3432,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移除会话机器人
-     *
+     * <b>summary</b> : 
+     * <p>移除会话机器人</p>
+     * 
      * @param request RemoveRobotFromConversationRequest
      * @return RemoveRobotFromConversationResponse
      */
@@ -3171,8 +3445,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据关键词搜索企业内部群
-     *
+     * <b>summary</b> : 
+     * <p>根据关键词搜索企业内部群</p>
+     * 
      * @param request SearchInnerGroupsRequest
      * @param headers SearchInnerGroupsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3221,8 +3496,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据关键词搜索企业内部群
-     *
+     * <b>summary</b> : 
+     * <p>根据关键词搜索企业内部群</p>
+     * 
      * @param request SearchInnerGroupsRequest
      * @return SearchInnerGroupsResponse
      */
@@ -3233,8 +3509,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送可交互式动态卡片
-     *
+     * <b>summary</b> : 
+     * <p>发送可交互式动态卡片</p>
+     * 
      * @param request SendInteractiveCardRequest
      * @param headers SendInteractiveCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3331,8 +3608,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送可交互式动态卡片
-     *
+     * <b>summary</b> : 
+     * <p>发送可交互式动态卡片</p>
+     * 
      * @param request SendInteractiveCardRequest
      * @return SendInteractiveCardResponse
      */
@@ -3343,8 +3621,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人与人单聊发送可交互式动态卡片
-     *
+     * <b>summary</b> : 
+     * <p>人与人单聊发送可交互式动态卡片</p>
+     * 
      * @param request SendOTOInteractiveCardRequest
      * @param headers SendOTOInteractiveCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3429,8 +3708,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人与人单聊发送可交互式动态卡片
-     *
+     * <b>summary</b> : 
+     * <p>人与人单聊发送可交互式动态卡片</p>
+     * 
      * @param request SendOTOInteractiveCardRequest
      * @return SendOTOInteractiveCardResponse
      */
@@ -3441,8 +3721,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机器人发送互动卡片（普通版）
-     *
+     * <b>summary</b> : 
+     * <p>机器人发送互动卡片（普通版）</p>
+     * 
      * @param request SendRobotInteractiveCardRequest
      * @param headers SendRobotInteractiveCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3523,8 +3804,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机器人发送互动卡片（普通版）
-     *
+     * <b>summary</b> : 
+     * <p>机器人发送互动卡片（普通版）</p>
+     * 
      * @param request SendRobotInteractiveCardRequest
      * @return SendRobotInteractiveCardResponse
      */
@@ -3535,8 +3817,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机器人发送消息
-     *
+     * <b>summary</b> : 
+     * <p>机器人发送消息</p>
+     * 
      * @param request SendRobotMessageRequest
      * @param headers SendRobotMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3601,8 +3884,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机器人发送消息
-     *
+     * <b>summary</b> : 
+     * <p>机器人发送消息</p>
+     * 
      * @param request SendRobotMessageRequest
      * @return SendRobotMessageResponse
      */
@@ -3613,8 +3897,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送模板响应式可交互式卡片
-     *
+     * <b>summary</b> : 
+     * <p>发送模板响应式可交互式卡片</p>
+     * 
      * @param request SendTemplateInteractiveCardRequest
      * @param headers SendTemplateInteractiveCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3683,8 +3968,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送模板响应式可交互式卡片
-     *
+     * <b>summary</b> : 
+     * <p>发送模板响应式可交互式卡片</p>
+     * 
      * @param request SendTemplateInteractiveCardRequest
      * @return SendTemplateInteractiveCardResponse
      */
@@ -3695,8 +3981,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置侧边栏
-     *
+     * <b>summary</b> : 
+     * <p>设置侧边栏</p>
+     * 
      * @param request SetRightPanelRequest
      * @param headers SetRightPanelHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3757,8 +4044,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置侧边栏
-     *
+     * <b>summary</b> : 
+     * <p>设置侧边栏</p>
+     * 
      * @param request SetRightPanelRequest
      * @return SetRightPanelResponse
      */
@@ -3769,8 +4057,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉钉吊顶卡片关闭
-     *
+     * <b>summary</b> : 
+     * <p>钉钉吊顶卡片关闭</p>
+     * 
      * @param request TopboxCloseRequest
      * @param headers TopboxCloseHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3831,8 +4120,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉钉吊顶卡片关闭
-     *
+     * <b>summary</b> : 
+     * <p>钉钉吊顶卡片关闭</p>
+     * 
      * @param request TopboxCloseRequest
      * @return TopboxCloseResponse
      */
@@ -3843,8 +4133,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉钉吊顶卡片开启
-     *
+     * <b>summary</b> : 
+     * <p>钉钉吊顶卡片开启</p>
+     * 
      * @param request TopboxOpenRequest
      * @param headers TopboxOpenHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3913,8 +4204,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉钉吊顶卡片开启
-     *
+     * <b>summary</b> : 
+     * <p>钉钉吊顶卡片开启</p>
+     * 
      * @param request TopboxOpenRequest
      * @return TopboxOpenResponse
      */
@@ -3925,8 +4217,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改群头像
-     *
+     * <b>summary</b> : 
+     * <p>修改群头像</p>
+     * 
      * @param request UpdateGroupAvatarRequest
      * @param headers UpdateGroupAvatarHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -3971,8 +4264,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改群头像
-     *
+     * <b>summary</b> : 
+     * <p>修改群头像</p>
+     * 
      * @param request UpdateGroupAvatarRequest
      * @return UpdateGroupAvatarResponse
      */
@@ -3983,8 +4277,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改群名称
-     *
+     * <b>summary</b> : 
+     * <p>修改群名称</p>
+     * 
      * @param request UpdateGroupNameRequest
      * @param headers UpdateGroupNameHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4029,8 +4324,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改群名称
-     *
+     * <b>summary</b> : 
+     * <p>修改群名称</p>
+     * 
      * @param request UpdateGroupNameRequest
      * @return UpdateGroupNameResponse
      */
@@ -4041,8 +4337,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置场景群权限项
-     *
+     * <b>summary</b> : 
+     * <p>设置场景群权限项</p>
+     * 
      * @param request UpdateGroupPermissionRequest
      * @param headers UpdateGroupPermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4091,8 +4388,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置场景群权限项
-     *
+     * <b>summary</b> : 
+     * <p>设置场景群权限项</p>
+     * 
      * @param request UpdateGroupPermissionRequest
      * @return UpdateGroupPermissionResponse
      */
@@ -4103,8 +4401,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新群管理员
-     *
+     * <b>summary</b> : 
+     * <p>更新群管理员</p>
+     * 
      * @param request UpdateGroupSubAdminRequest
      * @param headers UpdateGroupSubAdminHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4153,8 +4452,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新群管理员
-     *
+     * <b>summary</b> : 
+     * <p>更新群管理员</p>
+     * 
      * @param request UpdateGroupSubAdminRequest
      * @return UpdateGroupSubAdminResponse
      */
@@ -4165,8 +4465,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新可交互式动态卡片
-     *
+     * <b>summary</b> : 
+     * <p>更新可交互式动态卡片</p>
+     * 
      * @param request UpdateInteractiveCardRequest
      * @param headers UpdateInteractiveCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4223,8 +4524,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新可交互式动态卡片
-     *
+     * <b>summary</b> : 
+     * <p>更新可交互式动态卡片</p>
+     * 
      * @param request UpdateInteractiveCardRequest
      * @return UpdateInteractiveCardResponse
      */
@@ -4235,8 +4537,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置群成员禁言状态
-     *
+     * <b>summary</b> : 
+     * <p>设置群成员禁言状态</p>
+     * 
      * @param request UpdateMemberBanWordsRequest
      * @param headers UpdateMemberBanWordsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4289,8 +4592,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置群成员禁言状态
-     *
+     * <b>summary</b> : 
+     * <p>设置群成员禁言状态</p>
+     * 
      * @param request UpdateMemberBanWordsRequest
      * @return UpdateMemberBanWordsResponse
      */
@@ -4301,8 +4605,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新群成员的群昵称
-     *
+     * <b>summary</b> : 
+     * <p>更新群成员的群昵称</p>
+     * 
      * @param request UpdateMemberGroupNickRequest
      * @param headers UpdateMemberGroupNickHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4351,8 +4656,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新群成员的群昵称
-     *
+     * <b>summary</b> : 
+     * <p>更新群成员的群昵称</p>
+     * 
      * @param request UpdateMemberGroupNickRequest
      * @return UpdateMemberGroupNickResponse
      */
@@ -4363,8 +4669,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改组织里的机器人
-     *
+     * <b>summary</b> : 
+     * <p>修改组织里的机器人</p>
+     * 
      * @param request UpdateRobotInOrgRequest
      * @param headers UpdateRobotInOrgHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4433,8 +4740,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 修改组织里的机器人
-     *
+     * <b>summary</b> : 
+     * <p>修改组织里的机器人</p>
+     * 
      * @param request UpdateRobotInOrgRequest
      * @return UpdateRobotInOrgResponse
      */
@@ -4445,8 +4753,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机器人更新可交互式卡片(个人、企业)
-     *
+     * <b>summary</b> : 
+     * <p>机器人更新可交互式卡片(个人、企业)</p>
+     * 
      * @param request UpdateRobotInteractiveCardRequest
      * @param headers UpdateRobotInteractiveCardHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4503,8 +4812,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 机器人更新可交互式卡片(个人、企业)
-     *
+     * <b>summary</b> : 
+     * <p>机器人更新可交互式卡片(个人、企业)</p>
+     * 
      * @param request UpdateRobotInteractiveCardRequest
      * @return UpdateRobotInteractiveCardResponse
      */
@@ -4515,8 +4825,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置群成员的群角色
-     *
+     * <b>summary</b> : 
+     * <p>设置群成员的群角色</p>
+     * 
      * @param request UpdateTheGroupRolesOfGroupMemberRequest
      * @param headers UpdateTheGroupRolesOfGroupMemberHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4565,8 +4876,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 设置群成员的群角色
-     *
+     * <b>summary</b> : 
+     * <p>设置群成员的群角色</p>
+     * 
      * @param request UpdateTheGroupRolesOfGroupMemberRequest
      * @return UpdateTheGroupRolesOfGroupMemberResponse
      */
@@ -4577,8 +4889,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加群成员
-     *
+     * <b>summary</b> : 
+     * <p>添加群成员</p>
+     * 
      * @param request AddGroupMemberRequest
      * @param headers AddGroupMemberHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4631,8 +4944,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加群成员
-     *
+     * <b>summary</b> : 
+     * <p>添加群成员</p>
+     * 
      * @param request AddGroupMemberRequest
      * @return AddGroupMemberResponse
      */
@@ -4643,8 +4957,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移除群成员
-     *
+     * <b>summary</b> : 
+     * <p>移除群成员</p>
+     * 
      * @param request RemoveGroupMemberRequest
      * @param headers RemoveGroupMemberHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4697,8 +5012,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 移除群成员
-     *
+     * <b>summary</b> : 
+     * <p>移除群成员</p>
+     * 
      * @param request RemoveGroupMemberRequest
      * @return RemoveGroupMemberResponse
      */
@@ -4709,8 +5025,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送ToC消息
-     *
+     * <b>summary</b> : 
+     * <p>发送ToC消息</p>
+     * 
      * @param request SendDingMessageRequest
      * @param headers SendDingMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4771,8 +5088,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送ToC消息
-     *
+     * <b>summary</b> : 
+     * <p>发送ToC消息</p>
+     * 
      * @param request SendDingMessageRequest
      * @return SendDingMessageResponse
      */
@@ -4783,8 +5101,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送ToB消息
-     *
+     * <b>summary</b> : 
+     * <p>发送ToB消息</p>
+     * 
      * @param request SendMessageRequest
      * @param headers SendMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -4845,8 +5164,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 发送ToB消息
-     *
+     * <b>summary</b> : 
+     * <p>发送ToB消息</p>
+     * 
      * @param request SendMessageRequest
      * @return SendMessageResponse
      */

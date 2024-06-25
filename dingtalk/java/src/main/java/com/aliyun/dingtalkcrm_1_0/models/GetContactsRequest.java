@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetContactsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>user01</p>
+     */
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 
@@ -13,15 +17,31 @@ public class GetContactsRequest extends TeaModel {
     @NameInMap("maxResults")
     public Long maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>crm_contact</p>
+     */
     @NameInMap("objectType")
     public String objectType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dingxxx</p>
+     */
     @NameInMap("providerCorpId")
     public String providerCorpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;queryGroupList&quot;:[{&quot;logicType&quot;:&quot;AND&quot;,&quot;queryObjectList&quot;:[{&quot;fieldId&quot;:&quot;contact_phone&quot;,&quot;value&quot;:&quot;18000000000&quot;},{&quot;fieldId&quot;:&quot;contact_related_customer&quot;,&quot;value&quot;:&quot;INST-XXX&quot;}]}]}</p>
+     */
     @NameInMap("queryDsl")
     public String queryDsl;
 

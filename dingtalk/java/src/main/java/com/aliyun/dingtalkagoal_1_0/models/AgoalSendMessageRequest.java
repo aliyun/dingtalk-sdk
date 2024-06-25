@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class AgoalSendMessageRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://agoal.dingtalk.com">https://agoal.dingtalk.com</a></p>
      */
     @NameInMap("mobileUrl")
     public String mobileUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;A&quot;:&quot;a&quot;, &quot;B&quot;:&quot;b&quot;}</p>
      */
     @NameInMap("params")
     public String params;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://agoal.dingtalk.com">https://agoal.dingtalk.com</a></p>
      */
     @NameInMap("pcUrl")
     public String pcUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>211042291978xxxx</p>
      */
     @NameInMap("sourceDingUserId")
     public String sourceDingUserId;
@@ -36,6 +48,9 @@ public class AgoalSendMessageRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1d01a14febc7482ca3b6e1d30cf5xxxx</p>
      */
     @NameInMap("templateId")
     public String templateId;

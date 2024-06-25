@@ -4,6 +4,10 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SeachTaskStageResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>f279e812-e431-428d-846d-cxxxxxx</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,27 +36,59 @@ public class SeachTaskStageResponseBody extends TeaModel {
     }
 
     public static class SeachTaskStageResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0715153011125xxxx</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>描述...</p>
+         */
         @NameInMap("description")
         public String description;
 
+        /**
+         * <strong>example:</strong>
+         * <p>自定义列1</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3b376ecxxxxxxx</p>
+         */
         @NameInMap("projectId")
         public String projectId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>60a2187eb72xxxxxxx</p>
+         */
         @NameInMap("taskListId")
         public String taskListId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>60a2187eb72xxxxxxx</p>
+         */
         @NameInMap("taskStageId")
         public String taskStageId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

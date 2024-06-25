@@ -6,11 +6,10 @@ import com.aliyun.dingtalkamdp_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 人员角色数据推送
-     *
+     * <b>summary</b> : 
+     * <p>人员角色数据推送</p>
+     * 
      * @param request AmdpEmpRoleDataPushRequest
      * @param headers AmdpEmpRoleDataPushHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -62,8 +62,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人员角色数据推送
-     *
+     * <b>summary</b> : 
+     * <p>人员角色数据推送</p>
+     * 
      * @param request AmdpEmpRoleDataPushRequest
      * @return AmdpEmpRoleDataPushResponse
      */
@@ -74,8 +75,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人员数据推送
-     *
+     * <b>summary</b> : 
+     * <p>人员数据推送</p>
+     * 
      * @param request AmdpEmployeeDataPushRequest
      * @param headers AmdpEmployeeDataPushHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -116,8 +118,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 人员数据推送
-     *
+     * <b>summary</b> : 
+     * <p>人员数据推送</p>
+     * 
      * @param request AmdpEmployeeDataPushRequest
      * @return AmdpEmployeeDataPushResponse
      */
@@ -128,8 +131,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 任职数据推送
-     *
+     * <b>summary</b> : 
+     * <p>任职数据推送</p>
+     * 
      * @param request AmdpJobPositionDataPushRequest
      * @param headers AmdpJobPositionDataPushHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -170,8 +174,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 任职数据推送
-     *
+     * <b>summary</b> : 
+     * <p>任职数据推送</p>
+     * 
      * @param request AmdpJobPositionDataPushRequest
      * @return AmdpJobPositionDataPushResponse
      */
@@ -182,8 +187,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 组织部门数据推送
-     *
+     * <b>summary</b> : 
+     * <p>组织部门数据推送</p>
+     * 
      * @param request AmdpOrganizationDataPushRequest
      * @param headers AmdpOrganizationDataPushHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -224,8 +230,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 组织部门数据推送
-     *
+     * <b>summary</b> : 
+     * <p>组织部门数据推送</p>
+     * 
      * @param request AmdpOrganizationDataPushRequest
      * @return AmdpOrganizationDataPushResponse
      */

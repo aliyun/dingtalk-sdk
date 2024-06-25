@@ -4,9 +4,17 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupBanWordsRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("banWordsMode")
     public Integer banWordsMode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cidnvcxzklxv</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

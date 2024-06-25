@@ -23,25 +23,52 @@ public class ListInnerAppResponseBody extends TeaModel {
     public static class ListInnerAppResponseBodyAppList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("agentId")
         public Long agentId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>desc</p>
+         */
         @NameInMap("desc")
         public String desc;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+         */
         @NameInMap("homepageLink")
         public String homepageLink;
 
+        /**
+         * <strong>example:</strong>
+         * <p>icon</p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>name</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+         */
         @NameInMap("ompLink")
         public String ompLink;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
+         */
         @NameInMap("pcHomepageLink")
         public String pcHomepageLink;
 

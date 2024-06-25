@@ -4,15 +4,27 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFamilySchoolConversationMsgResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>corp123</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("hasMore")
     public String hasMore;
 
     @NameInMap("messages")
     public java.util.List<GetFamilySchoolConversationMsgResponseBodyMessages> messages;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1666671122000</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -65,21 +77,45 @@ public class GetFamilySchoolConversationMsgResponseBody extends TeaModel {
     }
 
     public static class GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>aa.png</p>
+         */
         @NameInMap("fileName")
         public String fileName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>png</p>
+         */
         @NameInMap("fileType")
         public String fileType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@12xxx34</p>
+         */
         @NameInMap("mediaId")
         public String mediaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234</p>
+         */
         @NameInMap("size")
         public String size;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://wukong-xxxx">https://wukong-xxxx</a></p>
+         */
         @NameInMap("url")
         public String url;
 
+        /**
+         * <strong>example:</strong>
+         * <p>@12xx34</p>
+         */
         @NameInMap("videoPicMediaId")
         public String videoPicMediaId;
 
@@ -148,6 +184,10 @@ public class GetFamilySchoolConversationMsgResponseBody extends TeaModel {
         @NameInMap("mediaModels")
         public java.util.List<GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels> mediaModels;
 
+        /**
+         * <strong>example:</strong>
+         * <p>msgxxx</p>
+         */
         @NameInMap("openMsgId")
         public String openMsgId;
 

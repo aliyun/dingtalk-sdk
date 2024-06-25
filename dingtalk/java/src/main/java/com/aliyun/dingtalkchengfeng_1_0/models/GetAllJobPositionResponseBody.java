@@ -7,6 +7,10 @@ public class GetAllJobPositionResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<CfJobPositionResp> content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 

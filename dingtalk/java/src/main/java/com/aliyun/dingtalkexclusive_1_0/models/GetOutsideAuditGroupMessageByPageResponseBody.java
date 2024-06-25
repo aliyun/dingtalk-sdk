@@ -24,12 +24,24 @@ public class GetOutsideAuditGroupMessageByPageResponseBody extends TeaModel {
     }
 
     public static class GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageListSender extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>user1234</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>userId</p>
+         */
         @NameInMap("idType")
         public String idType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>user</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -65,15 +77,31 @@ public class GetOutsideAuditGroupMessageByPageResponseBody extends TeaModel {
     }
 
     public static class GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>{   &quot;text&quot;: {     &quot;content&quot;: &quot;这是一段文本&quot;   } }</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>text/audio/video</p>
+         */
         @NameInMap("contentType")
         public String contentType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-05 15:43:03</p>
+         */
         @NameInMap("createAt")
         public String createAt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cid123456</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
@@ -131,6 +159,10 @@ public class GetOutsideAuditGroupMessageByPageResponseBody extends TeaModel {
         @NameInMap("messageList")
         public java.util.List<GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList> messageList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1680493837428</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 

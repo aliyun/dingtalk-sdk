@@ -6,15 +6,25 @@ import com.aliyun.tea.*;
 public class HrmPtsServiceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dev  or online</p>
      */
     @NameInMap("env")
     public String env;
 
+    /**
+     * <strong>example:</strong>
+     * <p>GET/POST</p>
+     */
     @NameInMap("method")
     public String method;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abd123213</p>
      */
     @NameInMap("outerId")
     public String outerId;
@@ -24,6 +34,9 @@ public class HrmPtsServiceRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>/user/role/get</p>
      */
     @NameInMap("path")
     public String path;

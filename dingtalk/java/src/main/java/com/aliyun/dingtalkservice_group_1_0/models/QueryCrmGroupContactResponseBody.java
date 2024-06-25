@@ -4,9 +4,17 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCrmGroupContactResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>token****</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cid****</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -43,15 +51,31 @@ public class QueryCrmGroupContactResponseBody extends TeaModel {
     }
 
     public static class QueryCrmGroupContactResponseBodyRecords extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>{} ,具体字段取决于客户管理-字段管理-联系人字段设置</p>
+         */
         @NameInMap("contactData")
         public String contactData;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ahghgg</p>
+         */
         @NameInMap("memberUnionId")
         public String memberUnionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("nickName")
         public String nickName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>88888</p>
+         */
         @NameInMap("userId")
         public String userId;
 

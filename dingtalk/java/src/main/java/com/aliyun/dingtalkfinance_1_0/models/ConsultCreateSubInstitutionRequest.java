@@ -4,6 +4,10 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConsultCreateSubInstitutionRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p><a href="mailto:asdf@163.com">asdf@163.com</a></p>
+     */
     @NameInMap("bindingAlipayLogonId")
     public String bindingAlipayLogonId;
 
@@ -15,6 +19,9 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>202111090001</p>
      */
     @NameInMap("instId")
     public String instId;
@@ -27,12 +34,18 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021000001</p>
      */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ALIPAY</p>
      */
     @NameInMap("payChannel")
     public String payChannel;
@@ -54,6 +67,9 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>S001</p>
      */
     @NameInMap("solution")
     public String solution;
@@ -78,6 +94,9 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1001</p>
      */
     @NameInMap("subInstId")
     public String subInstId;
@@ -232,12 +251,18 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     public static class ConsultCreateSubInstitutionRequestContactInfo extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>李某某</p>
          */
         @NameInMap("contactName")
         public String contactName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>13900000000</p>
          */
         @NameInMap("mobile")
         public String mobile;
@@ -266,23 +291,41 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestLegalPersonCertInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ossUrl</p>
+         */
         @NameInMap("certBackImage")
         public String certBackImage;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ossUrl</p>
+         */
         @NameInMap("certFrontImage")
         public String certFrontImage;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>李某某</p>
          */
         @NameInMap("certName")
         public String certName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("certType")
         public String certType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>330104200010109999</p>
          */
         @NameInMap("idCardNo")
         public String idCardNo;
@@ -337,12 +380,18 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     public static class ConsultCreateSubInstitutionRequestQualificationInfos extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ossUrl</p>
          */
         @NameInMap("qualificationImage")
         public String qualificationImage;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>301</p>
          */
         @NameInMap("qualificationType")
         public String qualificationType;
@@ -373,40 +422,82 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     public static class ConsultCreateSubInstitutionRequestSettleInfo extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>622202120200000000</p>
          */
         @NameInMap("accountId")
         public String accountId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李某某</p>
+         */
         @NameInMap("accountName")
         public String accountName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>DEBIT_CARD</p>
+         */
         @NameInMap("accountType")
         public String accountType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>城东支行</p>
+         */
         @NameInMap("bankBranchName")
         public String bankBranchName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州市</p>
+         */
         @NameInMap("bankCity")
         public String bankCity;
 
+        /**
+         * <strong>example:</strong>
+         * <p>313791000023</p>
+         */
         @NameInMap("bankCode")
         public String bankCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>工商银行</p>
+         */
         @NameInMap("bankName")
         public String bankName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>浙江省</p>
+         */
         @NameInMap("bankProvince")
         public String bankProvince;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ICBC</p>
+         */
         @NameInMap("bankShortNameCode")
         public String bankShortNameCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ALIPAY</p>
          */
         @NameInMap("type")
         public String type;
 
+        /**
+         * <strong>example:</strong>
+         * <p>TO_PRI</p>
+         */
         @NameInMap("usageType")
         public String usageType;
 
@@ -506,15 +597,31 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstAddressInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>未来park</p>
+         */
         @NameInMap("address")
         public String address;
 
+        /**
+         * <strong>example:</strong>
+         * <p>330100</p>
+         */
         @NameInMap("cityCode")
         public String cityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>330104</p>
+         */
         @NameInMap("districtCode")
         public String districtCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>330000</p>
+         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
@@ -558,6 +665,10 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstAuthInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ossUrl</p>
+         */
         @NameInMap("authorizationLetterUrl")
         public String authorizationLetterUrl;
 
@@ -577,23 +688,36 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstBasicInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>一食堂</p>
+         */
         @NameInMap("aliasName")
         public String aliasName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>5812</p>
          */
         @NameInMap("mcc")
         public String mcc;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>食堂</p>
          */
         @NameInMap("subInstName")
         public String subInstName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>01</p>
          */
         @NameInMap("type")
         public String type;
@@ -638,17 +762,27 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstCertifyInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>ossUrl</p>
+         */
         @NameInMap("certImage")
         public String certImage;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>331081198611111111</p>
          */
         @NameInMap("certNo")
         public String certNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>201</p>
          */
         @NameInMap("certType")
         public String certType;
@@ -685,15 +819,31 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstInvoiceInfoMailAddress extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>未来park</p>
+         */
         @NameInMap("address")
         public String address;
 
+        /**
+         * <strong>example:</strong>
+         * <p>330100</p>
+         */
         @NameInMap("cityCode")
         public String cityCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>330104</p>
+         */
         @NameInMap("districtCode")
         public String districtCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>330000</p>
+         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
@@ -737,42 +887,90 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstInvoiceInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("acceptElectronic")
         public Boolean acceptElectronic;
 
+        /**
+         * <strong>example:</strong>
+         * <p>浙江省杭州市西湖区西溪路蚂蚁金服</p>
+         */
         @NameInMap("address")
         public String address;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("autoInvoice")
         public Boolean autoInvoice;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234567812345678123</p>
+         */
         @NameInMap("bankAccount")
         public String bankAccount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>中国银行</p>
+         */
         @NameInMap("bankName")
         public String bankName;
 
         @NameInMap("mailAddress")
         public ConsultCreateSubInstitutionRequestSubInstInvoiceInfoMailAddress mailAddress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("mailName")
         public String mailName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>057162288888</p>
+         */
         @NameInMap("mailPhone")
         public String mailPhone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>51010482542598631219</p>
+         */
         @NameInMap("taxNo")
         public String taxNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>01</p>
+         */
         @NameInMap("taxPayerQualification")
         public String taxPayerQualification;
 
+        /**
+         * <strong>example:</strong>
+         * <p>19981011</p>
+         */
         @NameInMap("taxPayerValidDate")
         public String taxPayerValidDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>057162288888</p>
+         */
         @NameInMap("telephone")
         public String telephone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>**有限公司</p>
+         */
         @NameInMap("title")
         public String title;
 

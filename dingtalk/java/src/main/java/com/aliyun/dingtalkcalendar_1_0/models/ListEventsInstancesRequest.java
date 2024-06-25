@@ -4,14 +4,25 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEventsInstancesRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("maxAttendees")
     public Integer maxAttendees;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cnNTbW1YbxxxxdEgvdlQrQT09</p>
      */
     @NameInMap("seriesMasterId")
     public String seriesMasterId;

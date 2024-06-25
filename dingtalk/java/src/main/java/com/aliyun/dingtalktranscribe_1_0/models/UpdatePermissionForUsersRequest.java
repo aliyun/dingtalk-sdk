@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class UpdatePermissionForUsersRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("bizType")
     public Integer bizType;
@@ -18,6 +21,9 @@ public class UpdatePermissionForUsersRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>533xxxxxx</p>
      */
     @NameInMap("taskCreator")
     public Long taskCreator;
@@ -77,6 +83,9 @@ public class UpdatePermissionForUsersRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>EDITOR</p>
          */
         @NameInMap("policyType")
         public String policyType;

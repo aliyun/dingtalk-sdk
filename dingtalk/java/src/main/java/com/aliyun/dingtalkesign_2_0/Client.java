@@ -6,11 +6,10 @@ import com.aliyun.dingtalkesign_2_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 获取流程任务用印审批列表
-     *
+     * <b>summary</b> : 
+     * <p>获取流程任务用印审批列表</p>
+     * 
      * @param headers ApprovalListHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return ApprovalListResponse
@@ -58,8 +58,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取流程任务用印审批列表
-     *
+     * <b>summary</b> : 
+     * <p>获取流程任务用印审批列表</p>
      * @return ApprovalListResponse
      */
     public ApprovalListResponse approvalList(String taskId) throws Exception {
@@ -69,8 +69,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 取消企业的授权
-     *
+     * <b>summary</b> : 
+     * <p>取消企业的授权</p>
+     * 
      * @param request CancelCorpAuthRequest
      * @param headers CancelCorpAuthHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -109,8 +110,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 取消企业的授权
-     *
+     * <b>summary</b> : 
+     * <p>取消企业的授权</p>
+     * 
      * @param request CancelCorpAuthRequest
      * @return CancelCorpAuthResponse
      */
@@ -121,8 +123,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 套餐转售1（分润模式）
-     *
+     * <b>summary</b> : 
+     * <p>套餐转售1（分润模式）</p>
+     * 
      * @param request ChannelOrdersRequest
      * @param headers ChannelOrdersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -187,8 +190,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 套餐转售1（分润模式）
-     *
+     * <b>summary</b> : 
+     * <p>套餐转售1（分润模式）</p>
+     * 
      * @param request ChannelOrdersRequest
      * @return ChannelOrdersResponse
      */
@@ -199,8 +203,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 生成企业实名的跳转地址
-     *
+     * <b>summary</b> : 
+     * <p>生成企业实名的跳转地址</p>
+     * 
      * @param request CorpRealnameRequest
      * @param headers CorpRealnameHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -249,8 +254,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 生成企业实名的跳转地址
-     *
+     * <b>summary</b> : 
+     * <p>生成企业实名的跳转地址</p>
+     * 
      * @param request CorpRealnameRequest
      * @return CorpRealnameResponse
      */
@@ -261,8 +267,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉钉ISV服务商数据初始化
-     *
+     * <b>summary</b> : 
+     * <p>钉钉ISV服务商数据初始化</p>
+     * 
      * @param request CreateDevelopersRequest
      * @param headers CreateDevelopersHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -307,8 +314,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 钉钉ISV服务商数据初始化
-     *
+     * <b>summary</b> : 
+     * <p>钉钉ISV服务商数据初始化</p>
+     * 
      * @param request CreateDevelopersRequest
      * @return CreateDevelopersResponse
      */
@@ -319,8 +327,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过API发起签署流程
-     *
+     * <b>summary</b> : 
+     * <p>通过API发起签署流程</p>
+     * 
      * @param request CreateProcessRequest
      * @param headers CreateProcessHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -389,8 +398,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过API发起签署流程
-     *
+     * <b>summary</b> : 
+     * <p>通过API发起签署流程</p>
+     * 
      * @param request CreateProcessRequest
      * @return CreateProcessResponse
      */
@@ -401,8 +411,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取钉钉审批实例-电子附件信息
-     *
+     * <b>summary</b> : 
+     * <p>获取钉钉审批实例-电子附件信息</p>
+     * 
      * @param headers GetAttachsApprovalHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetAttachsApprovalResponse
@@ -443,8 +454,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取钉钉审批实例-电子附件信息
-     *
+     * <b>summary</b> : 
+     * <p>获取钉钉审批实例-电子附件信息</p>
      * @return GetAttachsApprovalResponse
      */
     public GetAttachsApprovalResponse getAttachsApproval(String instanceId) throws Exception {
@@ -454,8 +465,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 生成授权页面地址
-     *
+     * <b>summary</b> : 
+     * <p>生成授权页面地址</p>
+     * 
      * @param request GetAuthUrlRequest
      * @param headers GetAuthUrlHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -500,8 +512,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 生成授权页面地址
-     *
+     * <b>summary</b> : 
+     * <p>生成授权页面地址</p>
+     * 
      * @param request GetAuthUrlRequest
      * @return GetAuthUrlResponse
      */
@@ -512,8 +525,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询套餐余量
-     *
+     * <b>summary</b> : 
+     * <p>查询套餐余量</p>
+     * 
      * @param headers GetContractMarginHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetContractMarginResponse
@@ -550,8 +564,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询套餐余量
-     *
+     * <b>summary</b> : 
+     * <p>查询套餐余量</p>
      * @return GetContractMarginResponse
      */
     public GetContractMarginResponse getContractMargin() throws Exception {
@@ -561,8 +575,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业控制台地址
-     *
+     * <b>summary</b> : 
+     * <p>获取企业控制台地址</p>
+     * 
      * @param headers GetCorpConsoleHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetCorpConsoleResponse
@@ -599,8 +614,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业控制台地址
-     *
+     * <b>summary</b> : 
+     * <p>获取企业控制台地址</p>
      * @return GetCorpConsoleResponse
      */
     public GetCorpConsoleResponse getCorpConsole() throws Exception {
@@ -610,8 +625,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询企业信息
-     *
+     * <b>summary</b> : 
+     * <p>查询企业信息</p>
+     * 
      * @param headers GetCorpInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetCorpInfoResponse
@@ -648,8 +664,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询企业信息
-     *
+     * <b>summary</b> : 
+     * <p>查询企业信息</p>
      * @return GetCorpInfoResponse
      */
     public GetCorpInfoResponse getCorpInfo() throws Exception {
@@ -659,8 +675,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取签署人签署地址
-     *
+     * <b>summary</b> : 
+     * <p>获取签署人签署地址</p>
+     * 
      * @param request GetExecuteUrlRequest
      * @param headers GetExecuteUrlHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -713,8 +730,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取签署人签署地址
-     *
+     * <b>summary</b> : 
+     * <p>获取签署人签署地址</p>
+     * 
      * @param request GetExecuteUrlRequest
      * @return GetExecuteUrlResponse
      */
@@ -725,8 +743,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件详情
-     *
+     * <b>summary</b> : 
+     * <p>获取文件详情</p>
+     * 
      * @param headers GetFileInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetFileInfoResponse
@@ -763,8 +782,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件详情
-     *
+     * <b>summary</b> : 
+     * <p>获取文件详情</p>
      * @return GetFileInfoResponse
      */
     public GetFileInfoResponse getFileInfo(String fileId) throws Exception {
@@ -774,8 +793,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件上传地址
-     *
+     * <b>summary</b> : 
+     * <p>获取文件上传地址</p>
+     * 
      * @param request GetFileUploadUrlRequest
      * @param headers GetFileUploadUrlHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -836,8 +856,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取文件上传地址
-     *
+     * <b>summary</b> : 
+     * <p>获取文件上传地址</p>
+     * 
      * @param request GetFileUploadUrlRequest
      * @return GetFileUploadUrlResponse
      */
@@ -848,8 +869,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取流程详细信息及操作记录
-     *
+     * <b>summary</b> : 
+     * <p>获取流程详细信息及操作记录</p>
+     * 
      * @param headers GetFlowDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetFlowDetailResponse
@@ -886,8 +908,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取流程详细信息及操作记录
-     *
+     * <b>summary</b> : 
+     * <p>获取流程详细信息及操作记录</p>
      * @return GetFlowDetailResponse
      */
     public GetFlowDetailResponse getFlowDetail(String taskId) throws Exception {
@@ -897,8 +919,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取流程任务的所有合同列表，收到签署完成消息后查询
-     *
+     * <b>summary</b> : 
+     * <p>获取流程任务的所有合同列表，收到签署完成消息后查询</p>
+     * 
      * @param headers GetFlowDocsHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetFlowDocsResponse
@@ -935,8 +958,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取流程任务的所有合同列表，收到签署完成消息后查询
-     *
+     * <b>summary</b> : 
+     * <p>获取流程任务的所有合同列表，收到签署完成消息后查询</p>
      * @return GetFlowDocsResponse
      */
     public GetFlowDocsResponse getFlowDocs(String taskId) throws Exception {
@@ -946,8 +969,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业的e签宝微应用当前状态
-     *
+     * <b>summary</b> : 
+     * <p>获取企业的e签宝微应用当前状态</p>
+     * 
      * @param headers GetIsvStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetIsvStatusResponse
@@ -984,8 +1008,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取企业的e签宝微应用当前状态
-     *
+     * <b>summary</b> : 
+     * <p>获取企业的e签宝微应用当前状态</p>
      * @return GetIsvStatusResponse
      */
     public GetIsvStatusResponse getIsvStatus() throws Exception {
@@ -995,8 +1019,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取流程签署的详细信息
-     *
+     * <b>summary</b> : 
+     * <p>获取流程签署的详细信息</p>
+     * 
      * @param headers GetSignDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetSignDetailResponse
@@ -1033,8 +1058,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取流程签署的详细信息
-     *
+     * <b>summary</b> : 
+     * <p>获取流程签署的详细信息</p>
      * @return GetSignDetailResponse
      */
     public GetSignDetailResponse getSignDetail(String taskId) throws Exception {
@@ -1044,8 +1069,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询个人信息
-     *
+     * <b>summary</b> : 
+     * <p>查询个人信息</p>
+     * 
      * @param headers GetUserInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetUserInfoResponse
@@ -1082,8 +1108,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询个人信息
-     *
+     * <b>summary</b> : 
+     * <p>查询个人信息</p>
      * @return GetUserInfoResponse
      */
     public GetUserInfoResponse getUserInfo(String userId) throws Exception {
@@ -1093,8 +1119,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取发起签署任务的地址
-     *
+     * <b>summary</b> : 
+     * <p>获取发起签署任务的地址</p>
+     * 
      * @param request ProcessStartRequest
      * @param headers ProcessStartHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1167,8 +1194,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取发起签署任务的地址
-     *
+     * <b>summary</b> : 
+     * <p>获取发起签署任务的地址</p>
+     * 
      * @param request ProcessStartRequest
      * @return ProcessStartResponse
      */
@@ -1179,8 +1207,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 套餐转售2（底价结算模式）
-     *
+     * <b>summary</b> : 
+     * <p>套餐转售2（底价结算模式）</p>
+     * 
      * @param request ResaleOrderRequest
      * @param headers ResaleOrderHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1241,8 +1270,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 套餐转售2（底价结算模式）
-     *
+     * <b>summary</b> : 
+     * <p>套餐转售2（底价结算模式）</p>
+     * 
      * @param request ResaleOrderRequest
      * @return ResaleOrderResponse
      */
@@ -1253,8 +1283,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取跳转到个人实名的地址
-     *
+     * <b>summary</b> : 
+     * <p>获取跳转到个人实名的地址</p>
+     * 
      * @param request UsersRealnameRequest
      * @param headers UsersRealnameHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1303,8 +1334,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取跳转到个人实名的地址
-     *
+     * <b>summary</b> : 
+     * <p>获取跳转到个人实名的地址</p>
+     * 
      * @param request UsersRealnameRequest
      * @return UsersRealnameResponse
      */

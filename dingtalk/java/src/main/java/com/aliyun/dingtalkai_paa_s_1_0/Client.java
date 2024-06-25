@@ -6,11 +6,10 @@ import com.aliyun.dingtalkai_paa_s_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 执行AI技能
-     *
+     * <b>summary</b> : 
+     * <p>执行AI技能</p>
+     * 
      * @param request ExecuteAgentRequest
      * @param headers ExecuteAgentHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -78,8 +78,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 执行AI技能
-     *
+     * <b>summary</b> : 
+     * <p>执行AI技能</p>
+     * 
      * @param request ExecuteAgentRequest
      * @return ExecuteAgentResponse
      */
@@ -90,8 +91,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 炼丹炉文生图任务结果获取
-     *
+     * <b>summary</b> : 
+     * <p>炼丹炉文生图任务结果获取</p>
+     * 
      * @param request LiandanTextImageGetRequest
      * @param headers LiandanTextImageGetHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -140,8 +142,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 炼丹炉文生图任务结果获取
-     *
+     * <b>summary</b> : 
+     * <p>炼丹炉文生图任务结果获取</p>
+     * 
      * @param request LiandanTextImageGetRequest
      * @return LiandanTextImageGetResponse
      */
@@ -152,8 +155,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 炼丹炉专属模型接口
-     *
+     * <b>summary</b> : 
+     * <p>炼丹炉专属模型接口</p>
+     * 
      * @param request LiandanluExclusiveModelRequest
      * @param headers LiandanluExclusiveModelHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -206,8 +210,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 炼丹炉专属模型接口
-     *
+     * <b>summary</b> : 
+     * <p>炼丹炉专属模型接口</p>
+     * 
      * @param request LiandanluExclusiveModelRequest
      * @return LiandanluExclusiveModelResponse
      */
@@ -218,8 +223,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 炼丹炉通过提示词生成图片
-     *
+     * <b>summary</b> : 
+     * <p>炼丹炉通过提示词生成图片</p>
+     * 
      * @param request LiandanluTextToImageModelRequest
      * @param headers LiandanluTextToImageModelHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -276,8 +282,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 炼丹炉通过提示词生成图片
-     *
+     * <b>summary</b> : 
+     * <p>炼丹炉通过提示词生成图片</p>
+     * 
      * @param request LiandanluTextToImageModelRequest
      * @return LiandanluTextToImageModelResponse
      */
@@ -288,8 +295,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过配置的指令，连接用户和系统，训练大模型
-     *
+     * <b>summary</b> : 
+     * <p>通过配置的指令，连接用户和系统，训练大模型</p>
+     * 
      * @param request NLToFrameServiceRequest
      * @param headers NLToFrameServiceHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -346,8 +354,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过配置的指令，连接用户和系统，训练大模型
-     *
+     * <b>summary</b> : 
+     * <p>通过配置的指令，连接用户和系统，训练大模型</p>
+     * 
      * @param request NLToFrameServiceRequest
      * @return NLToFrameServiceResponse
      */
@@ -358,8 +367,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary Baymax技能执行日志
-     *
+     * <b>summary</b> : 
+     * <p>Baymax技能执行日志</p>
+     * 
      * @param request QueryBaymaxSkillLogRequest
      * @param headers QueryBaymaxSkillLogHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -412,8 +422,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary Baymax技能执行日志
-     *
+     * <b>summary</b> : 
+     * <p>Baymax技能执行日志</p>
+     * 
      * @param request QueryBaymaxSkillLogRequest
      * @return QueryBaymaxSkillLogResponse
      */
@@ -424,8 +435,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会话消息并以大模型友好的协议返回
-     *
+     * <b>summary</b> : 
+     * <p>查询会话消息并以大模型友好的协议返回</p>
+     * 
      * @param tmpReq QueryConversationMessageForAIRequest
      * @param headers QueryConversationMessageForAIHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -484,8 +496,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询会话消息并以大模型友好的协议返回
-     *
+     * <b>summary</b> : 
+     * <p>查询会话消息并以大模型友好的协议返回</p>
+     * 
      * @param request QueryConversationMessageForAIRequest
      * @return QueryConversationMessageForAIResponse
      */
@@ -496,8 +509,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询记忆学习进度
-     *
+     * <b>summary</b> : 
+     * <p>查询记忆学习进度</p>
+     * 
      * @param request QueryMemoryLearningTaskRequest
      * @param headers QueryMemoryLearningTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -542,8 +556,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询记忆学习进度
-     *
+     * <b>summary</b> : 
+     * <p>查询记忆学习进度</p>
+     * 
      * @param request QueryMemoryLearningTaskRequest
      * @return QueryMemoryLearningTaskResponse
      */
@@ -554,8 +569,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 提交记忆学习任务
-     *
+     * <b>summary</b> : 
+     * <p>提交记忆学习任务</p>
+     * 
      * @param tmpReq SubmitMemoryLearningTaskRequest
      * @param headers SubmitMemoryLearningTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -614,8 +630,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 提交记忆学习任务
-     *
+     * <b>summary</b> : 
+     * <p>提交记忆学习任务</p>
+     * 
      * @param request SubmitMemoryLearningTaskRequest
      * @return SubmitMemoryLearningTaskResponse
      */

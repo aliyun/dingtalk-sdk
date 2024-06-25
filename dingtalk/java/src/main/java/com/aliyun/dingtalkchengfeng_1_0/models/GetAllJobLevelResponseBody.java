@@ -7,6 +7,10 @@ public class GetAllJobLevelResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<CfJobLevelResp> content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>请求ID</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 

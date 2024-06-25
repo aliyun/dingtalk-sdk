@@ -7,9 +7,17 @@ public class GetNotifyMeResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetNotifyMeResponseBodyData> data;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -55,9 +63,17 @@ public class GetNotifyMeResponseBody extends TeaModel {
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding12345</p>
+         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>FORM_INST_12345</p>
+         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 

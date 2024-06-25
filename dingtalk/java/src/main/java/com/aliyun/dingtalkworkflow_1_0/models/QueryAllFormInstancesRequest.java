@@ -4,21 +4,35 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllFormInstancesRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>SWAPP-dacdsa-example</p>
+     */
     @NameInMap("appUuid")
     public String appUuid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>PROC-daccea-example</p>
      */
     @NameInMap("formCode")
     public String formCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100010</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 

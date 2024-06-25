@@ -4,6 +4,10 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListPermissionsResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>next_token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -32,12 +36,24 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyPermissionsMember extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>corp_id</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>member_id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>USER</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -73,9 +89,17 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyPermissionsRole extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>MANAGER</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>MANAGER</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -103,27 +127,51 @@ public class ListPermissionsResponseBody extends TeaModel {
     }
 
     public static class ListPermissionsResponseBodyPermissions extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dentry_id</p>
+         */
         @NameInMap("dentryId")
         public String dentryId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3600</p>
+         */
         @NameInMap("duration")
         public Long duration;
 
         @NameInMap("member")
         public ListPermissionsResponseBodyPermissionsMember member;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-01-01T10:00:00Z</p>
+         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>operator_id</p>
+         */
         @NameInMap("operatorId")
         public String operatorId;
 
         @NameInMap("role")
         public ListPermissionsResponseBodyPermissionsRole role;
 
+        /**
+         * <strong>example:</strong>
+         * <p>space_id</p>
+         */
         @NameInMap("spaceId")
         public String spaceId;
 

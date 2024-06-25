@@ -35,12 +35,24 @@ public class QueryBizOptLogResponseBody extends TeaModel {
     }
 
     public static class QueryBizOptLogResponseBodyContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>固定值 1-医疗组</p>
+         */
         @NameInMap("bizType")
         public Integer bizType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1-钉钉数据，2-自建数据</p>
+         */
         @NameInMap("dataType")
         public Integer dataType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>23821</p>
+         */
         @NameInMap("id")
         public Long id;
 
@@ -50,6 +62,10 @@ public class QueryBizOptLogResponseBody extends TeaModel {
         @NameInMap("optBeforeData")
         public String optBeforeData;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1-人员，2-部门</p>
+         */
         @NameInMap("optBizType")
         public Integer optBizType;
 
@@ -68,12 +84,24 @@ public class QueryBizOptLogResponseBody extends TeaModel {
         @NameInMap("optObjectUserJobNo")
         public String optObjectUserJobNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1-成功，2-失败</p>
+         */
         @NameInMap("optSuccess")
         public Integer optSuccess;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1622191102012</p>
+         */
         @NameInMap("optTime")
         public Long optTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0-删除，1-添加，2-修改，3-作废</p>
+         */
         @NameInMap("optType")
         public Integer optType;
 

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class OrgGroupRecallRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidfCSpXXXXXXXXXXXchatbotId</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
@@ -18,6 +21,9 @@ public class OrgGroupRecallRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dingXXXXXXXXXX</p>
      */
     @NameInMap("robotCode")
     public String robotCode;

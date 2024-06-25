@@ -4,53 +4,101 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchOrgInnerGroupInfoRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>创建时间查询最大时间戳</p>
+     */
     @NameInMap("createTimeEnd")
     public Long createTimeEnd;
 
+    /**
+     * <strong>example:</strong>
+     * <p>创建时间查询最小时间戳</p>
+     */
     @NameInMap("createTimeStart")
     public Long createTimeStart;
 
+    /**
+     * <strong>example:</strong>
+     * <p>群人数范围最大值，例如100</p>
+     */
     @NameInMap("groupMembersCountEnd")
     public Integer groupMembersCountEnd;
 
+    /**
+     * <strong>example:</strong>
+     * <p>群人数范围最小值，例如1</p>
+     */
     @NameInMap("groupMembersCountStart")
     public Integer groupMembersCountStart;
 
+    /**
+     * <strong>example:</strong>
+     * <p>群名称</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>群主userId</p>
+     */
     @NameInMap("groupOwner")
     public String groupOwner;
 
+    /**
+     * <strong>example:</strong>
+     * <p>最后一次活跃时间戳最大值</p>
+     */
     @NameInMap("lastActiveTimeEnd")
     public Long lastActiveTimeEnd;
 
+    /**
+     * <strong>example:</strong>
+     * <p>最后一次活跃时间戳最小值</p>
+     */
     @NameInMap("lastActiveTimeStart")
     public Long lastActiveTimeStart;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>当前查询人的userId</p>
      */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>分页大小，最大不能超过100</p>
      */
     @NameInMap("pageSize")
     public Integer pageSize;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>分页号，从1开始</p>
      */
     @NameInMap("pageStart")
     public Integer pageStart;
 
+    /**
+     * <strong>example:</strong>
+     * <p>是否同步到钉盘 0不同步 1同步</p>
+     */
     @NameInMap("syncToDingpan")
     public Integer syncToDingpan;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>每次查询唯一标识，保证每次分页查询时该值不变</p>
      */
     @NameInMap("uuid")
     public String uuid;

@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class GetTranslateFileJobResultResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("status")
     public String status;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxx</p>
+     */
     @NameInMap("url")
     public String url;
 

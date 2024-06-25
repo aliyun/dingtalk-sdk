@@ -12,10 +12,17 @@ public class ListManagementGroupsResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>111</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -51,12 +58,18 @@ public class ListManagementGroupsResponseBody extends TeaModel {
     public static class ListManagementGroupsResponseBodyGroupsMembers extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>WB001</p>
          */
         @NameInMap("memberId")
         public String memberId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>user</p>
          */
         @NameInMap("memberType")
         public String memberType;
@@ -90,6 +103,9 @@ public class ListManagementGroupsResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1:全公司 2:所在部门 3:指定部门</p>
          */
         @NameInMap("scopeType")
         public Integer scopeType;
@@ -120,10 +136,17 @@ public class ListManagementGroupsResponseBody extends TeaModel {
     public static class ListManagementGroupsResponseBodyGroups extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>rolexxx</p>
          */
         @NameInMap("groupId")
         public String groupId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>财务管理</p>
+         */
         @NameInMap("groupName")
         public String groupName;
 

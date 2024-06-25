@@ -6,11 +6,10 @@ import com.aliyun.dingtalkdingmi_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 添加智能客服机器人到钉钉群
-     *
+     * <b>summary</b> : 
+     * <p>添加智能客服机器人到钉钉群</p>
+     * 
      * @param request AddRobotInstanceToGroupRequest
      * @param headers AddRobotInstanceToGroupHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -66,8 +66,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加智能客服机器人到钉钉群
-     *
+     * <b>summary</b> : 
+     * <p>添加智能客服机器人到钉钉群</p>
+     * 
      * @param request AddRobotInstanceToGroupRequest
      * @return AddRobotInstanceToGroupResponse
      */
@@ -78,8 +79,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 调用小蜜机器人的问答能力
-     *
+     * <b>summary</b> : 
+     * <p>调用小蜜机器人的问答能力</p>
+     * 
      * @param request AskRobotRequest
      * @param headers AskRobotHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -132,8 +134,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 调用小蜜机器人的问答能力
-     *
+     * <b>summary</b> : 
+     * <p>调用小蜜机器人的问答能力</p>
+     * 
      * @param request AskRobotRequest
      * @return AskRobotResponse
      */
@@ -144,8 +147,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 小蜜机器人数据统计指标
-     *
+     * <b>summary</b> : 
+     * <p>小蜜机器人数据统计指标</p>
+     * 
      * @param request GetDingMeBaseDataRequest
      * @param headers GetDingMeBaseDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -198,8 +202,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 小蜜机器人数据统计指标
-     *
+     * <b>summary</b> : 
+     * <p>小蜜机器人数据统计指标</p>
+     * 
      * @param request GetDingMeBaseDataRequest
      * @return GetDingMeBaseDataResponse
      */
@@ -210,8 +215,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取智能客服机器人信息
-     *
+     * <b>summary</b> : 
+     * <p>获取智能客服机器人信息</p>
+     * 
      * @param request GetIntelligentRobotInfoRequest
      * @param headers GetIntelligentRobotInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -252,8 +258,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取智能客服机器人信息
-     *
+     * <b>summary</b> : 
+     * <p>获取智能客服机器人信息</p>
+     * 
      * @param request GetIntelligentRobotInfoRequest
      * @return GetIntelligentRobotInfoResponse
      */
@@ -264,8 +271,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取服务窗机器人信息
-     *
+     * <b>summary</b> : 
+     * <p>获取服务窗机器人信息</p>
+     * 
      * @param request GetOfficialAccountRobotInfoRequest
      * @param headers GetOfficialAccountRobotInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -306,8 +314,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取服务窗机器人信息
-     *
+     * <b>summary</b> : 
+     * <p>获取服务窗机器人信息</p>
+     * 
      * @param request GetOfficialAccountRobotInfoRequest
      * @return GetOfficialAccountRobotInfoResponse
      */
@@ -318,8 +327,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 小蜜客服网页渠道获取三方用户token
-     *
+     * <b>summary</b> : 
+     * <p>小蜜客服网页渠道获取三方用户token</p>
+     * 
      * @param request GetWebChannelUserTokenRequest
      * @param headers GetWebChannelUserTokenHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -368,8 +378,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 小蜜客服网页渠道获取三方用户token
-     *
+     * <b>summary</b> : 
+     * <p>小蜜客服网页渠道获取三方用户token</p>
+     * 
      * @param request GetWebChannelUserTokenRequest
      * @return GetWebChannelUserTokenResponse
      */
@@ -380,8 +391,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过小蜜机器人在客户群内推送消息
-     *
+     * <b>summary</b> : 
+     * <p>通过小蜜机器人在客户群内推送消息</p>
+     * 
      * @param request PushCustomerGroupMessageRequest
      * @param headers PushCustomerGroupMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -430,8 +442,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过小蜜机器人在客户群内推送消息
-     *
+     * <b>summary</b> : 
+     * <p>通过小蜜机器人在客户群内推送消息</p>
+     * 
      * @param request PushCustomerGroupMessageRequest
      * @return PushCustomerGroupMessageResponse
      */
@@ -442,8 +455,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 推送智能客服机器人钉钉群聊消息
-     *
+     * <b>summary</b> : 
+     * <p>推送智能客服机器人钉钉群聊消息</p>
+     * 
      * @param request PushIntelligentRobotGroupMessageRequest
      * @param headers PushIntelligentRobotGroupMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -496,8 +510,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 推送智能客服机器人钉钉群聊消息
-     *
+     * <b>summary</b> : 
+     * <p>推送智能客服机器人钉钉群聊消息</p>
+     * 
      * @param request PushIntelligentRobotGroupMessageRequest
      * @return PushIntelligentRobotGroupMessageResponse
      */
@@ -508,8 +523,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能客服机器人推送消息
-     *
+     * <b>summary</b> : 
+     * <p>智能客服机器人推送消息</p>
+     * 
      * @param request PushIntelligentRobotMessageRequest
      * @param headers PushIntelligentRobotMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -562,8 +578,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 智能客服机器人推送消息
-     *
+     * <b>summary</b> : 
+     * <p>智能客服机器人推送消息</p>
+     * 
      * @param request PushIntelligentRobotMessageRequest
      * @return PushIntelligentRobotMessageResponse
      */
@@ -574,8 +591,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过服务窗机器人推送单聊消息
-     *
+     * <b>summary</b> : 
+     * <p>通过服务窗机器人推送单聊消息</p>
+     * 
      * @param request PushOfficialAccountMessageRequest
      * @param headers PushOfficialAccountMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -624,8 +642,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过服务窗机器人推送单聊消息
-     *
+     * <b>summary</b> : 
+     * <p>通过服务窗机器人推送单聊消息</p>
+     * 
      * @param request PushOfficialAccountMessageRequest
      * @return PushOfficialAccountMessageResponse
      */
@@ -636,8 +655,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过小蜜客服机器人推送单聊消息
-     *
+     * <b>summary</b> : 
+     * <p>通过小蜜客服机器人推送单聊消息</p>
+     * 
      * @param request PushRobotMessageRequest
      * @param headers PushRobotMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -690,8 +710,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 通过小蜜客服机器人推送单聊消息
-     *
+     * <b>summary</b> : 
+     * <p>通过小蜜客服机器人推送单聊消息</p>
+     * 
      * @param request PushRobotMessageRequest
      * @return PushRobotMessageResponse
      */
@@ -702,8 +723,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 异步回复机器人消息
-     *
+     * <b>summary</b> : 
+     * <p>异步回复机器人消息</p>
+     * 
      * @param request ReplyRobotRequest
      * @param headers ReplyRobotHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -744,8 +766,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 异步回复机器人消息
-     *
+     * <b>summary</b> : 
+     * <p>异步回复机器人消息</p>
+     * 
      * @param request ReplyRobotRequest
      * @return ReplyRobotResponse
      */
@@ -756,8 +779,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新服务窗机器人信息
-     *
+     * <b>summary</b> : 
+     * <p>更新服务窗机器人信息</p>
+     * 
      * @param request UpdateOfficialAccountRobotInfoRequest
      * @param headers UpdateOfficialAccountRobotInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -820,8 +844,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新服务窗机器人信息
-     *
+     * <b>summary</b> : 
+     * <p>更新服务窗机器人信息</p>
+     * 
      * @param request UpdateOfficialAccountRobotInfoRequest
      * @return UpdateOfficialAccountRobotInfoResponse
      */

@@ -6,13 +6,24 @@ import com.aliyun.tea.*;
 public class UpdateLeaveTypeRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>general_leave</p>
      */
     @NameInMap("bizType")
     public String bizType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;validity_type&quot;:&quot;absolute_time&quot;,&quot;validity_value&quot;:&quot;12-31&quot;}</p>
+     */
     @NameInMap("extras")
     public String extras;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1000</p>
+     */
     @NameInMap("hoursInPerDay")
     public Long hoursInPerDay;
 
@@ -21,19 +32,33 @@ public class UpdateLeaveTypeRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>047477ae-1009-4632-b8e9-e919ae5e7973</p>
      */
     @NameInMap("leaveCode")
     public String leaveCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>年假</p>
+     */
     @NameInMap("leaveName")
     public String leaveName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>day</p>
      */
     @NameInMap("leaveViewUnit")
     public String leaveViewUnit;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("naturalDayLeave")
     public Boolean naturalDayLeave;
 
@@ -45,6 +70,9 @@ public class UpdateLeaveTypeRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>user01</p>
      */
     @NameInMap("opUserId")
     public String opUserId;
@@ -143,15 +171,31 @@ public class UpdateLeaveTypeRequest extends TeaModel {
     }
 
     public static class UpdateLeaveTypeRequestLeaveCertificate extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("duration")
         public Double duration;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("enable")
         public Boolean enable;
 
+        /**
+         * <strong>example:</strong>
+         * <p>请假文案</p>
+         */
         @NameInMap("promptInformation")
         public String promptInformation;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hour</p>
+         */
         @NameInMap("unit")
         public String unit;
 
@@ -195,15 +239,31 @@ public class UpdateLeaveTypeRequest extends TeaModel {
     }
 
     public static class UpdateLeaveTypeRequestSubmitTimeRule extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("enableTimeLimit")
         public Boolean enableTimeLimit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>before</p>
+         */
         @NameInMap("timeType")
         public String timeType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>day</p>
+         */
         @NameInMap("timeUnit")
         public String timeUnit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("timeValue")
         public Long timeValue;
 
@@ -247,6 +307,10 @@ public class UpdateLeaveTypeRequest extends TeaModel {
     }
 
     public static class UpdateLeaveTypeRequestVisibilityRules extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>staff</p>
+         */
         @NameInMap("type")
         public String type;
 

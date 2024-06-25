@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class CreateCoupleGroupConversationResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cid****8Q==</p>
      */
     @NameInMap("conversationId")
     public String conversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>14da****2760</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

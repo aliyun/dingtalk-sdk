@@ -6,11 +6,10 @@ import com.aliyun.dingtalkats_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 添加应聘登记表模板
-     *
+     * <b>summary</b> : 
+     * <p>添加应聘登记表模板</p>
+     * 
      * @param request AddApplicationRegFormTemplateRequest
      * @param headers AddApplicationRegFormTemplateHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -80,8 +80,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加应聘登记表模板
-     *
+     * <b>summary</b> : 
+     * <p>添加应聘登记表模板</p>
+     * 
      * @param request AddApplicationRegFormTemplateRequest
      * @return AddApplicationRegFormTemplateResponse
      */
@@ -92,8 +93,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加钉盘文件
-     *
+     * <b>summary</b> : 
+     * <p>添加钉盘文件</p>
+     * 
      * @param request AddFileRequest
      * @param headers AddFileHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -148,8 +150,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加钉盘文件
-     *
+     * <b>summary</b> : 
+     * <p>添加钉盘文件</p>
+     * 
      * @param request AddFileRequest
      * @return AddFileResponse
      */
@@ -160,8 +163,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加渠道个人账号
-     *
+     * <b>summary</b> : 
+     * <p>添加渠道个人账号</p>
+     * 
      * @param request AddUserAccountRequest
      * @param headers AddUserAccountHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -224,8 +228,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 添加渠道个人账号
-     *
+     * <b>summary</b> : 
+     * <p>添加渠道个人账号</p>
+     * 
      * @param request AddUserAccountRequest
      * @return AddUserAccountResponse
      */
@@ -236,8 +241,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 渠道招聘职位需求导入
-     *
+     * <b>summary</b> : 
+     * <p>渠道招聘职位需求导入</p>
+     * 
      * @param request CollectRecruitJobDetailRequest
      * @param headers CollectRecruitJobDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -308,8 +314,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 渠道招聘职位需求导入
-     *
+     * <b>summary</b> : 
+     * <p>渠道招聘职位需求导入</p>
+     * 
      * @param request CollectRecruitJobDetailRequest
      * @return CollectRecruitJobDetailResponse
      */
@@ -320,8 +327,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 结构化简历信息回流
-     *
+     * <b>summary</b> : 
+     * <p>结构化简历信息回流</p>
+     * 
      * @param request CollectResumeDetailRequest
      * @param headers CollectResumeDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -396,8 +404,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 结构化简历信息回流
-     *
+     * <b>summary</b> : 
+     * <p>结构化简历信息回流</p>
+     * 
      * @param request CollectResumeDetailRequest
      * @return CollectResumeDetailResponse
      */
@@ -408,8 +417,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 邮箱简历回流
-     *
+     * <b>summary</b> : 
+     * <p>邮箱简历回流</p>
+     * 
      * @param request CollectResumeMailRequest
      * @param headers CollectResumeMailHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -500,8 +510,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 邮箱简历回流
-     *
+     * <b>summary</b> : 
+     * <p>邮箱简历回流</p>
+     * 
      * @param request CollectResumeMailRequest
      * @return CollectResumeMailResponse
      */
@@ -512,8 +523,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 确认权益
-     *
+     * <b>summary</b> : 
+     * <p>确认权益</p>
+     * 
      * @param request ConfirmRightsRequest
      * @param headers ConfirmRightsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -554,8 +566,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 确认权益
-     *
+     * <b>summary</b> : 
+     * <p>确认权益</p>
+     * 
      * @param request ConfirmRightsRequest
      * @return ConfirmRightsResponse
      */
@@ -566,8 +579,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 完成指定的新手任务
-     *
+     * <b>summary</b> : 
+     * <p>完成指定的新手任务</p>
+     * 
      * @param request FinishBeginnerTaskRequest
      * @param headers FinishBeginnerTaskHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -612,8 +626,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 完成指定的新手任务
-     *
+     * <b>summary</b> : 
+     * <p>完成指定的新手任务</p>
+     * 
      * @param request FinishBeginnerTaskRequest
      * @return FinishBeginnerTaskResponse
      */
@@ -624,8 +639,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取招聘流程关联的应聘登记表信息
-     *
+     * <b>summary</b> : 
+     * <p>获取招聘流程关联的应聘登记表信息</p>
+     * 
      * @param request GetApplicationRegFormByFlowIdRequest
      * @param headers GetApplicationRegFormByFlowIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -666,8 +682,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取招聘流程关联的应聘登记表信息
-     *
+     * <b>summary</b> : 
+     * <p>获取招聘流程关联的应聘登记表信息</p>
+     * 
      * @param request GetApplicationRegFormByFlowIdRequest
      * @return GetApplicationRegFormByFlowIdResponse
      */
@@ -678,8 +695,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据手机号获取候选人信息
-     *
+     * <b>summary</b> : 
+     * <p>根据手机号获取候选人信息</p>
+     * 
      * @param request GetCandidateByPhoneNumberRequest
      * @param headers GetCandidateByPhoneNumberHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -724,8 +742,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据手机号获取候选人信息
-     *
+     * <b>summary</b> : 
+     * <p>根据手机号获取候选人信息</p>
+     * 
      * @param request GetCandidateByPhoneNumberRequest
      * @return GetCandidateByPhoneNumberResponse
      */
@@ -736,8 +755,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取钉盘上传文件信息
-     *
+     * <b>summary</b> : 
+     * <p>获取钉盘上传文件信息</p>
+     * 
      * @param request GetFileUploadInfoRequest
      * @param headers GetFileUploadInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -794,8 +814,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取钉盘上传文件信息
-     *
+     * <b>summary</b> : 
+     * <p>获取钉盘上传文件信息</p>
+     * 
      * @param request GetFileUploadInfoRequest
      * @return GetFileUploadInfoResponse
      */
@@ -806,8 +827,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据招聘流程关联的实体标识获取招聘流程标识
-     *
+     * <b>summary</b> : 
+     * <p>根据招聘流程关联的实体标识获取招聘流程标识</p>
+     * 
      * @param request GetFlowIdByRelationEntityIdRequest
      * @param headers GetFlowIdByRelationEntityIdHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -856,8 +878,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 根据招聘流程关联的实体标识获取招聘流程标识
-     *
+     * <b>summary</b> : 
+     * <p>根据招聘流程关联的实体标识获取招聘流程标识</p>
+     * 
      * @param request GetFlowIdByRelationEntityIdRequest
      * @return GetFlowIdByRelationEntityIdResponse
      */
@@ -868,8 +891,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取职位信息
-     *
+     * <b>summary</b> : 
+     * <p>获取职位信息</p>
+     * 
      * @param request GetJobAuthRequest
      * @param headers GetJobAuthHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -910,8 +934,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取职位信息
-     *
+     * <b>summary</b> : 
+     * <p>获取职位信息</p>
+     * 
      * @param request GetJobAuthRequest
      * @return GetJobAuthResponse
      */
@@ -922,8 +947,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询候选人详情列表
-     *
+     * <b>summary</b> : 
+     * <p>查询候选人详情列表</p>
+     * 
      * @param request QueryCandidatesRequest
      * @param headers QueryCandidatesHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -978,8 +1004,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询候选人详情列表
-     *
+     * <b>summary</b> : 
+     * <p>查询候选人详情列表</p>
+     * 
      * @param request QueryCandidatesRequest
      * @return QueryCandidatesResponse
      */
@@ -990,8 +1017,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询面试列表
-     *
+     * <b>summary</b> : 
+     * <p>查询面试列表</p>
+     * 
      * @param request QueryInterviewsRequest
      * @param headers QueryInterviewsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1054,8 +1082,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询面试列表
-     *
+     * <b>summary</b> : 
+     * <p>查询面试列表</p>
+     * 
      * @param request QueryInterviewsRequest
      * @return QueryInterviewsResponse
      */
@@ -1066,8 +1095,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 反馈渠道消息状态
-     *
+     * <b>summary</b> : 
+     * <p>反馈渠道消息状态</p>
+     * 
      * @param request ReportMessageStatusRequest
      * @param headers ReportMessageStatusHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1134,8 +1164,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 反馈渠道消息状态
-     *
+     * <b>summary</b> : 
+     * <p>反馈渠道消息状态</p>
+     * 
      * @param request ReportMessageStatusRequest
      * @return ReportMessageStatusResponse
      */
@@ -1146,8 +1177,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步渠道IM消息
-     *
+     * <b>summary</b> : 
+     * <p>同步渠道IM消息</p>
+     * 
      * @param request SyncChannelMessageRequest
      * @param headers SyncChannelMessageHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1214,8 +1246,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步渠道IM消息
-     *
+     * <b>summary</b> : 
+     * <p>同步渠道IM消息</p>
+     * 
      * @param request SyncChannelMessageRequest
      * @return SyncChannelMessageResponse
      */
@@ -1226,8 +1259,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新应聘登记表内容
-     *
+     * <b>summary</b> : 
+     * <p>更新应聘登记表内容</p>
+     * 
      * @param request UpdateApplicationRegFormRequest
      * @param headers UpdateApplicationRegFormHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1278,8 +1312,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新应聘登记表内容
-     *
+     * <b>summary</b> : 
+     * <p>更新应聘登记表内容</p>
+     * 
      * @param request UpdateApplicationRegFormRequest
      * @return UpdateApplicationRegFormResponse
      */
@@ -1290,8 +1325,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新面试签到信息
-     *
+     * <b>summary</b> : 
+     * <p>更新面试签到信息</p>
+     * 
      * @param request UpdateInterviewSignInInfoRequest
      * @param headers UpdateInterviewSignInInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1338,8 +1374,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新面试签到信息
-     *
+     * <b>summary</b> : 
+     * <p>更新面试签到信息</p>
+     * 
      * @param request UpdateInterviewSignInInfoRequest
      * @return UpdateInterviewSignInInfoResponse
      */
@@ -1350,8 +1387,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 渠道侧职位发布状态变更回调
-     *
+     * <b>summary</b> : 
+     * <p>渠道侧职位发布状态变更回调</p>
+     * 
      * @param request UpdateJobDeliverRequest
      * @param headers UpdateJobDeliverHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1426,8 +1464,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 渠道侧职位发布状态变更回调
-     *
+     * <b>summary</b> : 
+     * <p>渠道侧职位发布状态变更回调</p>
+     * 
      * @param request UpdateJobDeliverRequest
      * @return UpdateJobDeliverResponse
      */

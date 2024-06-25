@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryBenefitInventoryRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>B_CUSTOMER_CAPACITY</p>
      */
     @NameInMap("benefitCode")
     public String benefitCode;

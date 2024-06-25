@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class QueryOrgSecretKeyRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>DDISV</p>
      */
     @NameInMap("isvCode")
     public String isvCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manger1234</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

@@ -4,9 +4,17 @@ package com.aliyun.dingtalkmanufacturing_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustrializeManufactureJobBookRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>ding2fff8349a3ae0105d</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>[     { 		&quot;code&quot;: &quot;equipmentName&quot;， 		&quot;name&quot;: &quot;设备名称&quot;, 		&quot;value&quot;: &quot;8000&quot;, 		&quot;valueType&quot;: &quot;类型：字符串，数字等&quot; 	}, { 		&quot;code&quot;: &quot;唯一标识&quot;， 		&quot;name&quot;: &quot;自定义字段1&quot;, 		&quot;value&quot;: &quot;值&quot;, 		&quot;valueType&quot;: &quot;类型：字符串，数字等&quot; 	}, { 		&quot;code&quot;: &quot;唯一标识&quot;， 		&quot;name&quot;: &quot;自定义字段2&quot;, 		&quot;value&quot;: &quot;值&quot;, 		&quot;valueType&quot;: &quot;类型：字符串，数字等&quot; 	}  ]</p>
+     */
     @NameInMap("extend")
     public String extend;
 
@@ -16,11 +24,18 @@ public class IndustrializeManufactureJobBookRequest extends TeaModel {
     @NameInMap("instNo")
     public String instNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>n</p>
+     */
     @NameInMap("isBatchJob")
     public String isBatchJob;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-07-05 08:00:21</p>
      */
     @NameInMap("manufactureDate")
     public String manufactureDate;
@@ -61,15 +76,27 @@ public class IndustrializeManufactureJobBookRequest extends TeaModel {
     @NameInMap("scrappedQuantity")
     public String scrappedQuantity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1.02</p>
+     */
     @NameInMap("unitPrice")
     public String unitPrice;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1919442747879777, 1919442747879774</p>
+     */
     @NameInMap("userIdList")
     public String userIdList;
 
     @NameInMap("userName")
     public String userName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>张三,李四</p>
+     */
     @NameInMap("userNameList")
     public String userNameList;
 

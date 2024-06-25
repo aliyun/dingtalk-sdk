@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class AddApplicationRegFormTemplateResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxxxx</p>
      */
     @NameInMap("templateId")
     public String templateId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0</p>
      */
     @NameInMap("version")
     public Integer version;

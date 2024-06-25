@@ -12,12 +12,18 @@ public class CreateGroupConversationResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidpZ****Vcp4g==</p>
      */
     @NameInMap("conversationId")
     public String conversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>14da****2760</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

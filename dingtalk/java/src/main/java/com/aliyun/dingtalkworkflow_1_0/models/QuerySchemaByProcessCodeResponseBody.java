@@ -92,6 +92,9 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>TextField</p>
          */
         @NameInMap("componentName")
         public String componentName;
@@ -126,9 +129,17 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("behavior")
         public String behavior;
 
+        /**
+         * <strong>example:</strong>
+         * <p>TextField-K2AD4O5B</p>
+         */
         @NameInMap("fieldId")
         public String fieldId;
 
@@ -159,6 +170,10 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("targets")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets> targets;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("value")
         public String value;
 
@@ -205,12 +220,24 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("attendanceRule")
         public Integer attendanceRule;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("pushSwitch")
         public Integer pushSwitch;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("pushTag")
         public String pushTag;
 
@@ -246,15 +273,31 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>TextField-K2AD4O5B</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>单行输入框</p>
+         */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("upper")
         public Boolean upper;
 
@@ -298,99 +341,209 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>添加</p>
+         */
         @NameInMap("actionName")
         public String actionName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>top</p>
+         */
         @NameInMap("align")
         public String align;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1234567</p>
+         */
         @NameInMap("appId")
         public Long appId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("asyncCondition")
         public Boolean asyncCondition;
 
+        /**
+         * <strong>example:</strong>
+         * <p>请假</p>
+         */
         @NameInMap("attendTypeLabel")
         public String attendTypeLabel;
 
         @NameInMap("behaviorLinkage")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage> behaviorLinkage;
 
+        /**
+         * <strong>example:</strong>
+         * <p>我的单行输入框</p>
+         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hrm.xxxx</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
         @NameInMap("childFieldVisible")
         public java.util.Map<String, Boolean> childFieldVisible;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("choice")
         public Integer choice;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("commonBizType")
         public String commonBizType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("disabled")
         public Boolean disabled;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("duration")
         public Boolean duration;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("durationLabel")
         public String durationLabel;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("eSign")
         public Boolean eSign;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("extract")
         public Boolean extract;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("fieldsInfo")
         public String fieldsInfo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>yyyy-MM-dd</p>
+         */
         @NameInMap("format")
         public String format;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("formula")
         public String formula;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("hidden")
         public Boolean hidden;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("hiddenInApprovalDetail")
         public Boolean hiddenInApprovalDetail;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("hideLabel")
         public Boolean hideLabel;
 
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;[{&quot;name&quot;:&quot;\open&quot;}]&quot;</p>
+         */
         @NameInMap("holidayOptions")
         public java.util.List<java.util.Map<String, String>> holidayOptions;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>TextField-K2AD4O5B</p>
          */
         @NameInMap("id")
         public String id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>单行输入框</p>
          */
         @NameInMap("label")
         public String label;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("link")
         public String link;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("mainTitle")
         public String mainTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("notPrint")
         public String notPrint;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("notUpper")
         public String notUpper;
 
@@ -400,45 +553,93 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("options")
         public java.util.List<String> options;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
+        /**
+         * <strong>example:</strong>
+         * <p>请输入文字</p>
+         */
         @NameInMap("placeholder")
         public String placeholder;
 
         @NameInMap("push")
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush push;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("pushToAttendance")
         public Boolean pushToAttendance;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("pushToCalendar")
         public Integer pushToCalendar;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("required")
         public Boolean required;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("showAttendOptions")
         public Boolean showAttendOptions;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("staffStatusEnabled")
         public Boolean staffStatusEnabled;
 
         @NameInMap("statField")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField> statField;
 
+        /**
+         * <strong>example:</strong>
+         * <p>list</p>
+         */
         @NameInMap("tableViewMode")
         public String tableViewMode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>天</p>
+         */
         @NameInMap("unit")
         public String unit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("useCalendar")
         public Boolean useCalendar;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
@@ -823,6 +1024,9 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>TextField</p>
          */
         @NameInMap("componentName")
         public String componentName;
@@ -865,6 +1069,10 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>common</p>
+         */
         @NameInMap("icon")
         public String icon;
 
@@ -876,6 +1084,9 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>示例模板</p>
          */
         @NameInMap("title")
         public String title;
@@ -914,73 +1125,129 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     public static class QuerySchemaByProcessCodeResponseBodyResult extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0</p>
          */
         @NameInMap("appType")
         public Integer appType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>xxxx</p>
          */
         @NameInMap("appUuid")
         public String appUuid;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hrm.xxxx</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>26652461xxxx5992</p>
          */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("customSetting")
         public String customSetting;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("engineType")
         public Integer engineType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PROC-17428B8C-6C60-470E-xxxx-64F1037AE067</p>
          */
         @NameInMap("formCode")
         public String formCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>FORM-28215C3E-00E3-4118-xxxx-4091F828AF2F</p>
          */
         @NameInMap("formUuid")
         public String formUuid;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-12-01T10:49Z</p>
          */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-12-01T10:49Z</p>
          */
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        /**
+         * <strong>example:</strong>
+         * <p>null</p>
+         */
         @NameInMap("icon")
         public String icon;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("listOrder")
         public Integer listOrder;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxxx</p>
+         */
         @NameInMap("memo")
         public String memo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>示例模板</p>
+         */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>25xxxx01</p>
          */
         @NameInMap("ownerIdType")
         public String ownerIdType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>inner</p>
+         */
         @NameInMap("procType")
         public String procType;
 
@@ -990,9 +1257,17 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
         @NameInMap("schemaContent")
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContent schemaContent;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PUBLISHED</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PRIVATE</p>
+         */
         @NameInMap("visibleRange")
         public String visibleRange;
 

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class WriteIsvStateRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ISV</p>
      */
     @NameInMap("isvName")
     public String isvName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20220328</p>
      */
     @NameInMap("statDate")
     public String statDate;

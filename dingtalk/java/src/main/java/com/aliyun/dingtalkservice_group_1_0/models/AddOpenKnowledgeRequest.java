@@ -4,77 +4,127 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOpenKnowledgeRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("attachments")
     public java.util.List<AddOpenKnowledgeRequestAttachments> attachments;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>44555</p>
      */
     @NameInMap("categoryId")
     public Long categoryId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>这是服务群的介绍</p>
      */
     @NameInMap("content")
     public String content;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2100-01-01 23:59:59</p>
+     */
     @NameInMap("effectTimeend")
     public String effectTimeend;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1980-01-01 00:00:00</p>
+     */
     @NameInMap("effectTimestart")
     public String effectTimestart;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>这是问法1,这是问法2</p>
      */
     @NameInMap("extTitle")
     public String extTitle;
 
+    /**
+     * <strong>example:</strong>
+     * <p>服务群,智能场景群</p>
+     */
     @NameInMap("keyword")
     public String keyword;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("libraryId")
     public Long libraryId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Jxi12wo3qxoa</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>XMD</p>
      */
     @NameInMap("source")
     public String source;
 
+    /**
+     * <strong>example:</strong>
+     * <p>服务群,智能场景群</p>
+     */
     @NameInMap("tags")
     public String tags;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>服务群是什么</p>
      */
     @NameInMap("title")
     public String title;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>EXTERNAL</p>
      */
     @NameInMap("type")
     public String type;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0159003451667222</p>
      */
     @NameInMap("userId")
     public String userId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>钉三多</p>
      */
     @NameInMap("userName")
     public String userName;
@@ -205,18 +255,38 @@ public class AddOpenKnowledgeRequest extends TeaModel {
     }
 
     public static class AddOpenKnowledgeRequestAttachments extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>PDF</p>
+         */
         @NameInMap("mimeType")
         public String mimeType;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://dtapp-pub.dingtalk.com/dingtalkdesktop/test.pdf">https://dtapp-pub.dingtalk.com/dingtalkdesktop/test.pdf</a></p>
+         */
         @NameInMap("path")
         public String path;
 
+        /**
+         * <strong>example:</strong>
+         * <p>444556</p>
+         */
         @NameInMap("size")
         public Double size;
 
+        /**
+         * <strong>example:</strong>
+         * <p>pdf</p>
+         */
         @NameInMap("suffix")
         public String suffix;
 
+        /**
+         * <strong>example:</strong>
+         * <p>这是一个附件文档</p>
+         */
         @NameInMap("title")
         public String title;
 

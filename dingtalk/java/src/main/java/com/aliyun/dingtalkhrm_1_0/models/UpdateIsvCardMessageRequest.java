@@ -21,12 +21,18 @@ public class UpdateIsvCardMessageRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>16690147049882572</p>
      */
     @NameInMap("sceneType")
     public String sceneType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>同意转正</p>
      */
     @NameInMap("scope")
     public String scope;

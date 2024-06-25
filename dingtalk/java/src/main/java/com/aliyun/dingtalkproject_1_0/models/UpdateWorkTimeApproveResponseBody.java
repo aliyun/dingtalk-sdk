@@ -4,9 +4,17 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateWorkTimeApproveResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>执行成功</p>
+     */
     @NameInMap("message")
     public String message;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -43,45 +51,101 @@ public class UpdateWorkTimeApproveResponseBody extends TeaModel {
     }
 
     public static class UpdateWorkTimeApproveResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>6446626a9fb5a70c05fc3fc3</p>
+         */
         @NameInMap("approveOpenId")
         public String approveOpenId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("createdAt")
         public String createdAt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6446626a9fb5a70c05fc3fc3</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-04-04T00:00:00.000Z</p>
+         */
         @NameInMap("finishTime")
         public String finishTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12345</p>
+         */
         @NameInMap("instanceId")
         public String instanceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingxxxx</p>
+         */
         @NameInMap("organizationId")
         public String organizationId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>NEW</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-04-04T00:00:00.000Z</p>
+         */
         @NameInMap("submitTime")
         public String submitTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6446626a9fb5a70c05fc3fc3</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10000</p>
+         */
         @NameInMap("time")
         public Integer time;
 
+        /**
+         * <strong>example:</strong>
+         * <p>xxx用工申请</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updatedAt")
         public String updatedAt;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://xxxbpms.xxx/xxxx">https://xxxbpms.xxx/xxxx</a></p>
+         */
         @NameInMap("url")
         public String url;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6446626a9fb5a70c05fc3fc3</p>
+         */
         @NameInMap("userId")
         public String userId;
 

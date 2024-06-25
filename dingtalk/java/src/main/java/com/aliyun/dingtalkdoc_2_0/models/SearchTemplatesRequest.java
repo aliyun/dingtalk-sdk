@@ -15,6 +15,9 @@ public class SearchTemplatesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -52,18 +55,34 @@ public class SearchTemplatesRequest extends TeaModel {
         @NameInMap("excludeWorkspaceIds")
         public java.util.List<String> excludeWorkspaceIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("maxResults")
         public Integer maxResults;
 
+        /**
+         * <strong>example:</strong>
+         * <p>next_token</p>
+         */
         @NameInMap("nextToken")
         public String nextToken;
 
+        /**
+         * <strong>example:</strong>
+         * <p>pc</p>
+         */
         @NameInMap("platform")
         public String platform;
 
         @NameInMap("templateTypes")
         public java.util.List<Integer> templateTypes;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("version")
         public Integer version;
 
@@ -136,12 +155,18 @@ public class SearchTemplatesRequest extends TeaModel {
     public static class SearchTemplatesRequestParam extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>user_template</p>
          */
         @NameInMap("belong")
         public String belong;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>searchName</p>
          */
         @NameInMap("searchName")
         public String searchName;

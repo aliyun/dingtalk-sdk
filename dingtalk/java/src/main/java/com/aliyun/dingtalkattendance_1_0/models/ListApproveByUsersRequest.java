@@ -7,12 +7,24 @@ public class ListApproveByUsersRequest extends TeaModel {
     @NameInMap("bizTypes")
     public java.util.List<Integer> bizTypes;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1678636800000</p>
+     */
     @NameInMap("fromDateTime")
     public Long fromDateTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1678636800000</p>
+     */
     @NameInMap("toDateTime")
     public Long toDateTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>user1,user2</p>
+     */
     @NameInMap("userIds")
     public String userIds;
 

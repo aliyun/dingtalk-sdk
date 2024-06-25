@@ -12,6 +12,9 @@ public class BatchCreateClueDataRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>d124</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -236,6 +239,9 @@ public class BatchCreateClueDataRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>钉钉中国</p>
          */
         @NameInMap("name")
         public String name;
@@ -248,6 +254,9 @@ public class BatchCreateClueDataRequest extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>demo</p>
          */
         @NameInMap("sourceType")
         public String sourceType;

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class CreateUniversityStudentResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("result")
     public Boolean result;

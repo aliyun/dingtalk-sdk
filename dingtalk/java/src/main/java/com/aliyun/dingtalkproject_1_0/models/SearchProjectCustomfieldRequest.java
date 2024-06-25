@@ -4,21 +4,45 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchProjectCustomfieldRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>60a2187eb72xxxxxxx,60a2187eb72xxxxxxx</p>
+     */
     @NameInMap("customFieldIds")
     public String customFieldIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>60a2187eb72xxxxxxx,60a2187eb72xxxxxxx</p>
+     */
     @NameInMap("instanceIds")
     public String instanceIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>f279e812xxxxxx</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>自定义字段名1</p>
+     */
     @NameInMap("query")
     public String query;
 
+    /**
+     * <strong>example:</strong>
+     * <p>60a2187eb72xxxxxxx</p>
+     */
     @NameInMap("scenarioFieldConfigId")
     public String scenarioFieldConfigId;
 

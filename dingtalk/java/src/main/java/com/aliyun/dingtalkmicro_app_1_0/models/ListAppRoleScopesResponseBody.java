@@ -7,9 +7,17 @@ public class ListAppRoleScopesResponseBody extends TeaModel {
     @NameInMap("dataList")
     public java.util.List<ListAppRoleScopesResponseBodyDataList> dataList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -43,21 +51,41 @@ public class ListAppRoleScopesResponseBody extends TeaModel {
     }
 
     public static class ListAppRoleScopesResponseBodyDataList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("canManageRole")
         public Boolean canManageRole;
 
         @NameInMap("deptIdList")
         public java.util.List<Long> deptIdList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("roleId")
         public Long roleId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>财务</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>PART_VISIBLE</p>
+         */
         @NameInMap("scopeType")
         public String scopeType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("scopeVersion")
         public Long scopeVersion;
 

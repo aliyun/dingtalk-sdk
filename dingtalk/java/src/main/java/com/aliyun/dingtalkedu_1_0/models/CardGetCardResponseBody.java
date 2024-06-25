@@ -32,45 +32,97 @@ public class CardGetCardResponseBody extends TeaModel {
     }
 
     public static class CardGetCardResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("attr")
         public String attr;
 
+        /**
+         * <strong>example:</strong>
+         * <p>industry_center</p>
+         */
         @NameInMap("cardBizCode")
         public String cardBizCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>23424234</p>
+         */
         @NameInMap("cardBizId")
         public String cardBizId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("cardContentCount")
         public Integer cardContentCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("cardCycle")
         public Integer cardCycle;
 
         @NameInMap("cardFrequency")
         public java.util.List<Integer> cardFrequency;
 
+        /**
+         * <strong>example:</strong>
+         * <p>234234234324</p>
+         */
         @NameInMap("cardId")
         public Long cardId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("cardStatus")
         public Integer cardStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("cardUrl")
         public String cardUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>音乐</p>
+         */
         @NameInMap("categoryContentTag")
         public String categoryContentTag;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("categoryCoverImageUrl")
         public String categoryCoverImageUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("categoryCreateCardSmallImageUrl")
         public String categoryCreateCardSmallImageUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("categoryListSmallImageUrl")
         public String categoryListSmallImageUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>美术</p>
+         */
         @NameInMap("categoryName")
         public String categoryName;
 
@@ -80,63 +132,139 @@ public class CardGetCardResponseBody extends TeaModel {
         @NameInMap("classNames")
         public java.util.List<String> classNames;
 
+        /**
+         * <strong>example:</strong>
+         * <p>打卡任务</p>
+         */
         @NameInMap("content")
         public String content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingdf19b4ee0d73233735c2f4657eb6378f</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-15</p>
+         */
         @NameInMap("effectTime")
         public String effectTime;
 
         @NameInMap("finished")
         public Boolean finished;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("media")
         public String media;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-15</p>
+         */
         @NameInMap("optEndTime")
         public String optEndTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>234234234</p>
+         */
         @NameInMap("optEndUserId")
         public String optEndUserId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("optEndUserName")
         public String optEndUserName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("remindNotPunchCardHour")
         public Integer remindNotPunchCardHour;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("remindNotPunchCardMinute")
         public Integer remindNotPunchCardMinute;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-15</p>
+         */
         @NameInMap("sendTime")
         public String sendTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>YUFANAI</p>
+         */
         @NameInMap("sourceType")
         public String sourceType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2023-11-15</p>
+         */
         @NameInMap("startTime")
         public String startTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>424234324324</p>
+         */
         @NameInMap("systemTime")
         public Long systemTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>234234234</p>
+         */
         @NameInMap("teacherId")
         public String teacherId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("teacherName")
         public String teacherName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://www.dingtalk.com">www.dingtalk.com</a></p>
+         */
         @NameInMap("templateCoverImageUrl")
         public String templateCoverImageUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>每日复习</p>
+         */
         @NameInMap("title")
         public String title;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("type")
         public Integer type;
 

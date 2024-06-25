@@ -32,21 +32,45 @@ public class EsignQueryGrantInfoResponseBody extends TeaModel {
     }
 
     public static class EsignQueryGrantInfoResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>何一兵</p>
+         */
         @NameInMap("legalPerson")
         public String legalPerson;
 
+        /**
+         * <strong>example:</strong>
+         * <p>18667021101</p>
+         */
         @NameInMap("mobilePhoneNumber")
         public String mobilePhoneNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>杭州天谷信息科技有限公司</p>
+         */
         @NameInMap("orgName")
         public String orgName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>86</p>
+         */
         @NameInMap("stateCode")
         public String stateCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>913301087458306077</p>
+         */
         @NameInMap("unifiedSocialCredit")
         public String unifiedSocialCredit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>某人名</p>
+         */
         @NameInMap("userName")
         public String userName;
 

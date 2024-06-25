@@ -10,9 +10,17 @@ public class QueryCorpUserStatisticResponseBody extends TeaModel {
     @NameInMap("list")
     public java.util.List<QueryCorpUserStatisticResponseBodyList> list;
 
+    /**
+     * <strong>example:</strong>
+     * <p>5</p>
+     */
     @NameInMap("nextToken")
     public Long nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20</p>
+     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -54,18 +62,38 @@ public class QueryCorpUserStatisticResponseBody extends TeaModel {
     }
 
     public static class QueryCorpUserStatisticResponseBodyList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>w<a href="http://www.xxxxx.com/xxx.jpg">www.xxxxx.com/xxx.jpg</a></p>
+         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>5</p>
+         */
         @NameInMap("receiveCnt")
         public Long receiveCnt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
         @NameInMap("sendCnt")
         public Long sendCnt;
 
+        /**
+         * <strong>example:</strong>
+         * <p>RCsp7PJmmTUr7w0hbs9aKAiEiE</p>
+         */
         @NameInMap("unionId")
         public String unionId;
 

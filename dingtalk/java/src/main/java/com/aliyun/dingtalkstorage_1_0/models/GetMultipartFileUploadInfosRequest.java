@@ -15,12 +15,18 @@ public class GetMultipartFileUploadInfosRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>upload_key</p>
      */
     @NameInMap("uploadKey")
     public String uploadKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -63,6 +69,10 @@ public class GetMultipartFileUploadInfosRequest extends TeaModel {
     }
 
     public static class GetMultipartFileUploadInfosRequestOption extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("preferIntranet")
         public Boolean preferIntranet;
 

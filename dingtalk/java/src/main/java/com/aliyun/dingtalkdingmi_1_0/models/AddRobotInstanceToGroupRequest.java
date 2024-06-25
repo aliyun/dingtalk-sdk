@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class AddRobotInstanceToGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abcd123</p>
      */
     @NameInMap("chatbotId")
     public String chatbotId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidxxxx</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;

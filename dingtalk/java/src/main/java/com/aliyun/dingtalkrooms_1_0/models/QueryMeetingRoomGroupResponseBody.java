@@ -4,12 +4,24 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMeetingRoomGroupResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>172</p>
+     */
     @NameInMap("groupId")
     public Long groupId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>测试分组</p>
+     */
     @NameInMap("groupName")
     public String groupName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("parentId")
     public Long parentId;
 

@@ -10,24 +10,44 @@ public class OpenObjectiveDTO extends TeaModel {
     @NameInMap("keyResults")
     public java.util.List<OpenKeyResultDTO> keyResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>65222640d0e8b868f9f9ae3c</p>
+     */
     @NameInMap("objectiveId")
     public String objectiveId;
 
     @NameInMap("period")
     public OpenPeriodDTO period;
 
+    /**
+     * <strong>example:</strong>
+     * <p>80</p>
+     */
     @NameInMap("progress")
     public Long progress;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("status")
     public Long status;
 
     @NameInMap("teams")
     public java.util.List<OpenTeamDTO> teams;
 
+    /**
+     * <strong>example:</strong>
+     * <p>这是一个O的标题</p>
+     */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10.00</p>
+     */
     @NameInMap("weight")
     public Double weight;
 

@@ -4,24 +4,47 @@ package com.aliyun.dingtalkwiki_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListWorkspacesRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>30</p>
+     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    /**
+     * <strong>example:</strong>
+     * <p>next_token</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>VIEW_TIME_DESC</p>
+     */
     @NameInMap("orderBy")
     public String orderBy;
 
+    /**
+     * <strong>example:</strong>
+     * <p>team_id</p>
+     */
     @NameInMap("teamId")
     public String teamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
     @NameInMap("withPermissionRole")
     public Boolean withPermissionRole;
 

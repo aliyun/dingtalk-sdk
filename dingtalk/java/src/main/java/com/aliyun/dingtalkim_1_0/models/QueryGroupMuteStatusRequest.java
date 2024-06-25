@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class QueryGroupMuteStatusRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidCtneF+XyQjcyF2ROdgSeIg==</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>004741900</p>
      */
     @NameInMap("userId")
     public String userId;

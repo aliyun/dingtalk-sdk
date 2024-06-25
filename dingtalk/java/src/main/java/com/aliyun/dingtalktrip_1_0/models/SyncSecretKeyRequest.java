@@ -6,25 +6,47 @@ import com.aliyun.tea.*;
 public class SyncSecretKeyRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ADD</p>
      */
     @NameInMap("actionType")
     public String actionType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dnsuuiwenudsjid</p>
+     */
     @NameInMap("secretString")
     public String secretString;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding001</p>
      */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dingduisdvfd</p>
+     */
     @NameInMap("tripAppKey")
     public String tripAppKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>dhsuibdusijue</p>
+     */
     @NameInMap("tripAppSecurity")
     public String tripAppSecurity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>isv001</p>
+     */
     @NameInMap("tripCorpId")
     public String tripCorpId;
 

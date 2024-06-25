@@ -21,20 +21,34 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentDept extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2021-06-02 17:44:17</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-06-02 17:44:17</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123</p>
          */
         @NameInMap("id")
         public Long id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>科室名称2</p>
          */
         @NameInMap("name")
         public String name;
@@ -92,30 +106,50 @@ public class QueryUserInfoResponseBody extends TeaModel {
     public static class QueryUserInfoResponseBodyContentGroup extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123</p>
          */
         @NameInMap("deptId")
         public Long deptId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>科室名称2</p>
          */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-06-02 17:44:17</p>
+         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-06-02 17:44:17</p>
+         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>123</p>
          */
         @NameInMap("id")
         public Long id;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>医疗组名称2</p>
          */
         @NameInMap("name")
         public String name;
@@ -189,24 +223,36 @@ public class QueryUserInfoResponseBody extends TeaModel {
     public static class QueryUserInfoResponseBodyContentJob extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("bizType")
         public String bizType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>分类</p>
          */
         @NameInMap("category")
         public String category;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>code1</p>
          */
         @NameInMap("code")
         public String code;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>展示名称</p>
          */
         @NameInMap("displayName")
         public String displayName;
@@ -253,24 +299,36 @@ public class QueryUserInfoResponseBody extends TeaModel {
     public static class QueryUserInfoResponseBodyContentJobStatus extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("bizType")
         public String bizType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>分类</p>
          */
         @NameInMap("category")
         public String category;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>标签Code</p>
          */
         @NameInMap("code")
         public String code;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>展示名称</p>
          */
         @NameInMap("displayName")
         public String displayName;
@@ -317,24 +375,36 @@ public class QueryUserInfoResponseBody extends TeaModel {
     public static class QueryUserInfoResponseBodyContentJobStatusList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("bizType")
         public String bizType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>分类</p>
          */
         @NameInMap("category")
         public String category;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>标签Code</p>
          */
         @NameInMap("code")
         public String code;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>展示名称</p>
          */
         @NameInMap("displayName")
         public String displayName;
@@ -381,24 +451,36 @@ public class QueryUserInfoResponseBody extends TeaModel {
     public static class QueryUserInfoResponseBodyContentUserProb extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("bizType")
         public String bizType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>分类</p>
          */
         @NameInMap("category")
         public String category;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>标签Code</p>
          */
         @NameInMap("code")
         public String code;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>展示名称</p>
          */
         @NameInMap("displayName")
         public String displayName;
@@ -445,6 +527,9 @@ public class QueryUserInfoResponseBody extends TeaModel {
     public static class QueryUserInfoResponseBodyContent extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>comments</p>
          */
         @NameInMap("comments")
         public String comments;
@@ -469,6 +554,9 @@ public class QueryUserInfoResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0001</p>
          */
         @NameInMap("jobNum")
         public String jobNum;
@@ -487,12 +575,18 @@ public class QueryUserInfoResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>u0398812938821</p>
          */
         @NameInMap("uid")
         public String uid;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>用户名称</p>
          */
         @NameInMap("userName")
         public String userName;

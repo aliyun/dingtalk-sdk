@@ -103,51 +103,111 @@ public class CreateProjectResponseBody extends TeaModel {
     }
 
     public static class CreateProjectResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0517xxxxxxx</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
         @NameInMap("customFields")
         public java.util.List<CreateProjectResponseBodyResultCustomFields> customFields;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6398042ec98a4e4e33xxxxxx</p>
+         */
         @NameInMap("defaultCollectionId")
         public String defaultCollectionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isArchived")
         public Boolean isArchived;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isSuspended")
         public Boolean isSuspended;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isTemplate")
         public Boolean isTemplate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;<a href="https://tcs-ga.teambition.net/thumb/xxxxxxx">https://tcs-ga.teambition.net/thumb/xxxxxxx</a></p>
+         */
         @NameInMap("logo")
         public String logo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>项目1</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>taskflow</p>
+         */
         @NameInMap("normalType")
         public String normalType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3b376ecxxxxxxx</p>
+         */
         @NameInMap("projectId")
         public String projectId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>6398042ec98a4e4e33</p>
+         */
         @NameInMap("rootCollectionId")
         public String rootCollectionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3b376ecxxxxxxx</p>
+         */
         @NameInMap("sourceId")
         public String sourceId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;&quot;</p>
+         */
         @NameInMap("uniqueIdPrefix")
         public String uniqueIdPrefix;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 
+        /**
+         * <strong>example:</strong>
+         * <p>project</p>
+         */
         @NameInMap("visibility")
         public String visibility;
 

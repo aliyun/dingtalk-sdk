@@ -6,34 +6,63 @@ import com.aliyun.tea.*;
 public class GetOrgAuthInfoResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("authLevel")
     public Long authLevel;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxx</p>
+     */
     @NameInMap("legalPerson")
     public String legalPerson;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试有限公司</p>
      */
     @NameInMap("licenseOrgName")
     public String licenseOrgName;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://XXX.XX">https://XXX.XX</a></p>
+     */
     @NameInMap("licenseUrl")
     public String licenseUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试</p>
      */
     @NameInMap("orgName")
     public String orgName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>2456677</p>
+     */
     @NameInMap("organizationCode")
     public String organizationCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1233</p>
+     */
     @NameInMap("registrationNum")
     public String registrationNum;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123566788</p>
+     */
     @NameInMap("unifiedSocialCredit")
     public String unifiedSocialCredit;
 

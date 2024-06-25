@@ -6,11 +6,10 @@ import com.aliyun.dingtalkactivity_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 创建活动
-     *
+     * <b>summary</b> : 
+     * <p>创建活动</p>
+     * 
      * @param request CreateActivityRequest
      * @param headers CreateActivityHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -62,8 +62,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建活动
-     *
+     * <b>summary</b> : 
+     * <p>创建活动</p>
+     * 
      * @param request CreateActivityRequest
      * @return CreateActivityResponse
      */
@@ -74,8 +75,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询活动列表
-     *
+     * <b>summary</b> : 
+     * <p>查询活动列表</p>
+     * 
      * @param request ListActivityRequest
      * @param headers ListActivityHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -120,8 +122,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询活动列表
-     *
+     * <b>summary</b> : 
+     * <p>查询活动列表</p>
+     * 
      * @param request ListActivityRequest
      * @return ListActivityResponse
      */

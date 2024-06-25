@@ -4,6 +4,10 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEmpLeaveRecordsResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>DCCD7A656FFA6F07</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -37,36 +41,54 @@ public class ListEmpLeaveRecordsResponseBody extends TeaModel {
     public static class ListEmpLeaveRecordsResponseBodyRecords extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>oapi</p>
          */
         @NameInMap("leaveReason")
         public String leaveReason;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-01-06T11:47:37Z</p>
          */
         @NameInMap("leaveTime")
         public String leaveTime;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>185xxxx7676</p>
          */
         @NameInMap("mobile")
         public String mobile;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>86</p>
          */
         @NameInMap("stateCode")
         public String stateCode;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>10000</p>
          */
         @NameInMap("userId")
         public String userId;

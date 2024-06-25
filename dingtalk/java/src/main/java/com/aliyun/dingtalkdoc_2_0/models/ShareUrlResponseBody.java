@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ShareUrlResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>shareUrlInfo</p>
+     */
     @NameInMap("shareUrlInfo")
     public ShareUrlResponseBodyShareUrlInfo shareUrlInfo;
 
@@ -21,9 +25,17 @@ public class ShareUrlResponseBody extends TeaModel {
     }
 
     public static class ShareUrlResponseBodyShareUrlInfo extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://example.com">http://example.com</a></p>
+         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="http://example.com">http://example.com</a></p>
+         */
         @NameInMap("pcUrl")
         public String pcUrl;
 

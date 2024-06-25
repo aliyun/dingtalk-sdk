@@ -4,27 +4,55 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartCoursePrepareRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2021-11-16</p>
+     */
     @NameInMap("courseDate")
     public String courseDate;
 
+    /**
+     * <strong>example:</strong>
+     * <p>course1</p>
+     */
     @NameInMap("courseGroupCode")
     public String courseGroupCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>device1</p>
+     */
     @NameInMap("deviceId")
     public String deviceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>extNumber</p>
+     */
     @NameInMap("ext")
     public String ext;
 
+    /**
+     * <strong>example:</strong>
+     * <p>DDISV</p>
+     */
     @NameInMap("isvCode")
     public String isvCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>&quot;&quot;</p>
+     */
     @NameInMap("liveCoverImage")
     public String liveCoverImage;
 
     @NameInMap("sectionIndex")
     public java.util.List<Integer> sectionIndex;
 
+    /**
+     * <strong>example:</strong>
+     * <p>manger1234</p>
+     */
     @NameInMap("opUserId")
     public String opUserId;
 

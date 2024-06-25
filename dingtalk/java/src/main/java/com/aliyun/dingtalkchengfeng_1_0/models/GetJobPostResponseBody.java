@@ -32,6 +32,10 @@ public class GetJobPostResponseBody extends TeaModel {
     }
 
     public static class GetJobPostResponseBodyContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("code")
         public String code;
 
@@ -41,6 +45,10 @@ public class GetJobPostResponseBody extends TeaModel {
         @NameInMap("establishDate")
         public String establishDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试</p>
+         */
         @NameInMap("name")
         public String name;
 

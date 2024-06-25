@@ -9,6 +9,9 @@ public class FormComponent extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>TextField</p>
      */
     @NameInMap("componentType")
     public String componentType;

@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class RemoveDeviceRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>123</p>
      */
     @NameInMap("merchantId")
     public String merchantId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SN123</p>
      */
     @NameInMap("sn")
     public String sn;

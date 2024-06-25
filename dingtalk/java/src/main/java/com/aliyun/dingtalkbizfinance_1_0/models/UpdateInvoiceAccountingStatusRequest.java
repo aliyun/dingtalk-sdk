@@ -4,12 +4,20 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceAccountingStatusRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>COM_DEFAULT</p>
+     */
     @NameInMap("companyCode")
     public String companyCode;
 
     @NameInMap("invoiceFinanceInfoVOList")
     public java.util.List<UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList> invoiceFinanceInfoVOList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234567</p>
+     */
     @NameInMap("operator")
     public String operator;
 
@@ -43,15 +51,31 @@ public class UpdateInvoiceAccountingStatusRequest extends TeaModel {
     }
 
     public static class UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>in_account</p>
+         */
         @NameInMap("accountingStatus")
         public String accountingStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022002022</p>
+         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20022</p>
+         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
+        /**
+         * <strong>example:</strong>
+         * <p>VAT_DIGITAL_NORMAL</p>
+         */
         @NameInMap("invoiceType")
         public String invoiceType;
 

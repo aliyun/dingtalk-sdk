@@ -12,12 +12,18 @@ public class SendRobotDingMessageRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>template_ding_diot_monitor</p>
      */
     @NameInMap("dingTemplateId")
     public String dingTemplateId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cidfCSpXXXXXXXXXXXchatbotId</p>
      */
     @NameInMap("openConversationId")
     public String openConversationId;
@@ -30,6 +36,9 @@ public class SendRobotDingMessageRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>qF9j5G8hmFLiqJ11629XXXXXXXX</p>
      */
     @NameInMap("robotCode")
     public String robotCode;

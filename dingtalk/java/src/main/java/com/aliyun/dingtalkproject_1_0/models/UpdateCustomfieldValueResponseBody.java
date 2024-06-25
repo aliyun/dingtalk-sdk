@@ -21,6 +21,10 @@ public class UpdateCustomfieldValueResponseBody extends TeaModel {
     }
 
     public static class UpdateCustomfieldValueResponseBodyResultCustomFieldsValue extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>我是具体显示值</p>
+         */
         @NameInMap("title")
         public String title;
 
@@ -40,6 +44,10 @@ public class UpdateCustomfieldValueResponseBody extends TeaModel {
     }
 
     public static class UpdateCustomfieldValueResponseBodyResultCustomFields extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>62fb0b77xxxxx</p>
+         */
         @NameInMap("customFieldId")
         public String customFieldId;
 

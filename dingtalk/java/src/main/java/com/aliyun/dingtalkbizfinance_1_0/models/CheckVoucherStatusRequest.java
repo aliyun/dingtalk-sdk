@@ -4,33 +4,73 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckVoucherStatusRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>COM_DEFUALT</p>
+     */
     @NameInMap("companyCode")
     public String companyCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1631526550994</p>
+     */
     @NameInMap("endTime")
     public Long endTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>VAT_IN</p>
+     */
     @NameInMap("financeType")
     public String financeType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>3121234560</p>
+     */
     @NameInMap("invoiceCode")
     public String invoiceCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234567890</p>
+     */
     @NameInMap("invoiceNo")
     public String invoiceNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
+    /**
+     * <strong>example:</strong>
+     * <p>100</p>
+     */
     @NameInMap("pageSize")
     public Long pageSize;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1631526550994</p>
+     */
     @NameInMap("startTime")
     public Long startTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>12345678901</p>
+     */
     @NameInMap("taxNo")
     public String taxNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>VERIFIED</p>
+     */
     @NameInMap("verifyStatus")
     public String verifyStatus;
 

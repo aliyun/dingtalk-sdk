@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class TakeTicketRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>eKWh3GBwsKEiE</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>a8iS4X94TgtgiE</p>
      */
     @NameInMap("openTicketId")
     public String openTicketId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>Dq9hP8Sk2v6vQ6l05nCe5wiEiE</p>
      */
     @NameInMap("takerUnionId")
     public String takerUnionId;

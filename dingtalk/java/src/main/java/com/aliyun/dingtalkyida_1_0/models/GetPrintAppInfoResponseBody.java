@@ -51,6 +51,10 @@ public class GetPrintAppInfoResponseBody extends TeaModel {
     }
 
     public static class GetPrintAppInfoResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>李四的宜搭应用</p>
+         */
         @NameInMap("appName")
         public String appName;
 

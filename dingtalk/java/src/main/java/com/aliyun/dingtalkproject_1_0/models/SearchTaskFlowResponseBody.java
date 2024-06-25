@@ -21,27 +21,59 @@ public class SearchTaskFlowResponseBody extends TeaModel {
     }
 
     public static class SearchTaskFlowResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>62c25e3b376ecxxxxxxx</p>
+         */
         @NameInMap("boundToObjectId")
         public String boundToObjectId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>project</p>
+         */
         @NameInMap("boundToObjectType")
         public String boundToObjectType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("created")
         public String created;
 
+        /**
+         * <strong>example:</strong>
+         * <p>07151530111xxxxx</p>
+         */
         @NameInMap("creatorId")
         public String creatorId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
+        /**
+         * <strong>example:</strong>
+         * <p>工作流1</p>
+         */
         @NameInMap("name")
         public String name;
 
+        /**
+         * <strong>example:</strong>
+         * <p>60a2187eb72xxxxxxx</p>
+         */
         @NameInMap("taskflowId")
         public String taskflowId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

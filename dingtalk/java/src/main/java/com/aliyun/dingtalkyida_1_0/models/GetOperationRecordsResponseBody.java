@@ -21,27 +21,59 @@ public class GetOperationRecordsResponseBody extends TeaModel {
     }
 
     public static class GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>开发部成立于2000年</p>
+         */
         @NameInMap("departmentDescription")
         public String departmentDescription;
 
+        /**
+         * <strong>example:</strong>
+         * <p>测试应用</p>
+         */
         @NameInMap("displayName")
         public String displayName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ZhangSan</p>
+         */
         @NameInMap("displayNameInEnglish")
         public String displayNameInEnglish;
 
+        /**
+         * <strong>example:</strong>
+         * <p>o-YDJKINSSDLLND</p>
+         */
         @NameInMap("orderNumber")
         public String orderNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://abc.com/a.png">https://abc.com/a.png</a></p>
+         */
         @NameInMap("personalPhoto")
         public String personalPhoto;
 
+        /**
+         * <strong>example:</strong>
+         * <p>running</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding173982232112232</p>
+         */
         @NameInMap("userId")
         public String userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("userInformation")
         public String userInformation;
 
@@ -117,48 +149,108 @@ public class GetOperationRecordsResponseBody extends TeaModel {
     }
 
     public static class GetOperationRecordsResponseBodyResultDomainList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>return</p>
+         */
         @NameInMap("action")
         public String action;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-02-01</p>
+         */
         @NameInMap("activeTimeGMT")
         public String activeTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>act-xxaanfaf</p>
+         */
         @NameInMap("activityId")
         public String activityId;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://oss.com/Signature.pdf">https://oss.com/Signature.pdf</a></p>
+         */
         @NameInMap("digitalSignature")
         public String digitalSignature;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://oss.com/a.pdf">https://oss.com/a.pdf</a></p>
+         */
         @NameInMap("files")
         public String files;
 
+        /**
+         * <strong>example:</strong>
+         * <p>同意</p>
+         */
         @NameInMap("formatAction")
         public String formatAction;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-01-01</p>
+         */
         @NameInMap("operateTimeGMT")
         public String operateTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>remove</p>
+         */
         @NameInMap("operateType")
         public String operateType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>manager123</p>
+         */
         @NameInMap("operator")
         public String operator;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1732223326,1232321888,12188991</p>
+         */
         @NameInMap("operatorAgentIdList")
         public java.util.List<GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList> operatorAgentIdList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>张三</p>
+         */
         @NameInMap("operatorDisplayName")
         public String operatorDisplayName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李四</p>
+         */
         @NameInMap("operatorName")
         public String operatorName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>无冬</p>
+         */
         @NameInMap("operatorNickName")
         public String operatorNickName;
 
+        /**
+         * <strong>example:</strong>
+         * <p><a href="https://oss.com/a.jpeg">https://oss.com/a.jpeg</a></p>
+         */
         @NameInMap("operatorPhotoUrl")
         public String operatorPhotoUrl;
 
+        /**
+         * <strong>example:</strong>
+         * <p>良好</p>
+         */
         @NameInMap("operatorStatus")
         public String operatorStatus;
 
@@ -168,24 +260,52 @@ public class GetOperationRecordsResponseBody extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <strong>example:</strong>
+         * <p>请购类型</p>
+         */
         @NameInMap("showName")
         public String showName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>12</p>
+         */
         @NameInMap("size")
         public Integer size;
 
+        /**
+         * <strong>example:</strong>
+         * <p>同步</p>
+         */
         @NameInMap("taskExecuteType")
         public String taskExecuteType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-01-01</p>
+         */
         @NameInMap("taskHoldTimeGMT")
         public Long taskHoldTimeGMT;
 
+        /**
+         * <strong>example:</strong>
+         * <p>task-123</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>append task</p>
+         */
         @NameInMap("taskType")
         public String taskType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>i18n</p>
+         */
         @NameInMap("type")
         public String type;
 

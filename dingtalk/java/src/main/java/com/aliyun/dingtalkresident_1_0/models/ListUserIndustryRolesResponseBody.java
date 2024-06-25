@@ -21,12 +21,24 @@ public class ListUserIndustryRolesResponseBody extends TeaModel {
     }
 
     public static class ListUserIndustryRolesResponseBodyRoleList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>312423423</p>
+         */
         @NameInMap("roleId")
         public Long roleId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>安保部经理</p>
+         */
         @NameInMap("roleName")
         public String roleName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>SecurityManager</p>
+         */
         @NameInMap("tagCode")
         public String tagCode;
 

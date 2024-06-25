@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetJobPostRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234</p>
      */
     @NameInMap("jobPostCode")
     public String jobPostCode;

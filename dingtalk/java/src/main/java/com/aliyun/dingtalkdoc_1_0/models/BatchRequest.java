@@ -12,6 +12,9 @@ public class BatchRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ppgAQuHxxxxx</p>
      */
     @NameInMap("operatorId")
     public String operatorId;
@@ -38,17 +41,27 @@ public class BatchRequest extends TeaModel {
     }
 
     public static class BatchRequestRequests extends TeaModel {
+        /**
+         * <strong>if can be null:</strong>
+         * <p>true</p>
+         */
         @NameInMap("body")
         public Object body;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>get</p>
          */
         @NameInMap("method")
         public String method;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>sheets</p>
          */
         @NameInMap("path")
         public String path;

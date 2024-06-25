@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class DeleteLiveRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>4d383876-1ff9-4b73-a057-a8f47b346ecb</p>
      */
     @NameInMap("liveId")
     public String liveId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>DC7wZGOSueEEIGOf3WKwWgiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

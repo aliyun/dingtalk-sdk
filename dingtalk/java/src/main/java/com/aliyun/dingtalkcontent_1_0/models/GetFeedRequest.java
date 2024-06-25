@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class GetFeedRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>50730********40554</p>
      */
     @NameInMap("mcnId")
     public String mcnId;

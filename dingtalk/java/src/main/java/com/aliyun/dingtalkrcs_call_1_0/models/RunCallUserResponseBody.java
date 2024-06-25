@@ -4,6 +4,10 @@ package com.aliyun.dingtalkrcs_call_1_0.models;
 import com.aliyun.tea.*;
 
 public class RunCallUserResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>true、false</p>
+     */
     @NameInMap("success")
     public String success;
 

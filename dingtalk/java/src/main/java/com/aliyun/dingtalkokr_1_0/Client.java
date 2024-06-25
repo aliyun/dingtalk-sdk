@@ -6,11 +6,10 @@ import com.aliyun.dingtalkokr_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 增加对齐目标
-     *
+     * <b>summary</b> : 
+     * <p>增加对齐目标</p>
+     * 
      * @param request AlignObjectiveRequest
      * @param headers AlignObjectiveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -72,8 +72,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 增加对齐目标
-     *
+     * <b>summary</b> : 
+     * <p>增加对齐目标</p>
+     * 
      * @param request AlignObjectiveRequest
      * @return AlignObjectiveResponse
      */
@@ -84,8 +85,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  批量添加权限信息
-     *
+     * <b>summary</b> : 
+     * <p>批量添加权限信息</p>
+     * 
      * @param request BatchAddPermissionRequest
      * @param headers BatchAddPermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -140,8 +142,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  批量添加权限信息
-     *
+     * <b>summary</b> : 
+     * <p>批量添加权限信息</p>
+     * 
      * @param request BatchAddPermissionRequest
      * @return BatchAddPermissionResponse
      */
@@ -152,8 +155,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询目标
-     *
+     * <b>summary</b> : 
+     * <p>批量查询目标</p>
+     * 
      * @param request BatchQueryObjectiveRequest
      * @param headers BatchQueryObjectiveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -216,8 +220,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询目标
-     *
+     * <b>summary</b> : 
+     * <p>批量查询目标</p>
+     * 
      * @param request BatchQueryObjectiveRequest
      * @return BatchQueryObjectiveResponse
      */
@@ -228,8 +233,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询用户信息
-     *
+     * <b>summary</b> : 
+     * <p>批量查询用户信息</p>
+     * 
      * @param request BatchQueryUserRequest
      * @param headers BatchQueryUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -274,8 +280,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询用户信息
-     *
+     * <b>summary</b> : 
+     * <p>批量查询用户信息</p>
+     * 
      * @param request BatchQueryUserRequest
      * @return BatchQueryUserResponse
      */
@@ -286,8 +293,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建keyResult
-     *
+     * <b>summary</b> : 
+     * <p>创建keyResult</p>
+     * 
      * @param request CreateKeyResultRequest
      * @param headers CreateKeyResultHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -350,8 +358,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建keyResult
-     *
+     * <b>summary</b> : 
+     * <p>创建keyResult</p>
+     * 
      * @param request CreateKeyResultRequest
      * @return CreateKeyResultResponse
      */
@@ -362,8 +371,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建目标
-     *
+     * <b>summary</b> : 
+     * <p>创建目标</p>
+     * 
      * @param request CreateObjectiveRequest
      * @param headers CreateObjectiveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -418,8 +428,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 创建目标
-     *
+     * <b>summary</b> : 
+     * <p>创建目标</p>
+     * 
      * @param request CreateObjectiveRequest
      * @return CreateObjectiveResponse
      */
@@ -430,8 +441,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除keyresult的方法
-     *
+     * <b>summary</b> : 
+     * <p>删除keyresult的方法</p>
+     * 
      * @param request DeleteKeyResultRequest
      * @param headers DeleteKeyResultHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -476,8 +488,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除keyresult的方法
-     *
+     * <b>summary</b> : 
+     * <p>删除keyresult的方法</p>
+     * 
      * @param request DeleteKeyResultRequest
      * @return DeleteKeyResultResponse
      */
@@ -488,8 +501,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除目标
-     *
+     * <b>summary</b> : 
+     * <p>删除目标</p>
+     * 
      * @param request DeleteObjectiveRequest
      * @param headers DeleteObjectiveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -530,8 +544,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 删除目标
-     *
+     * <b>summary</b> : 
+     * <p>删除目标</p>
+     * 
      * @param request DeleteObjectiveRequest
      * @return DeleteObjectiveResponse
      */
@@ -542,8 +557,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  删除权限信息
-     *
+     * <b>summary</b> : 
+     * <p>删除权限信息</p>
+     * 
      * @param request DeletePermissionRequest
      * @param headers DeletePermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -604,8 +620,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  删除权限信息
-     *
+     * <b>summary</b> : 
+     * <p>删除权限信息</p>
+     * 
      * @param request DeletePermissionRequest
      * @return DeletePermissionResponse
      */
@@ -616,8 +633,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取周期列表
-     *
+     * <b>summary</b> : 
+     * <p>获取周期列表</p>
+     * 
      * @param headers GetPeriodListHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetPeriodListResponse
@@ -650,8 +668,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取周期列表
-     *
+     * <b>summary</b> : 
+     * <p>获取周期列表</p>
      * @return GetPeriodListResponse
      */
     public GetPeriodListResponse getPeriodList() throws Exception {
@@ -661,8 +679,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取权限信息
-     *
+     * <b>summary</b> : 
+     * <p>获取权限信息</p>
+     * 
      * @param request GetPermissionRequest
      * @param headers GetPermissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -719,8 +738,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取权限信息
-     *
+     * <b>summary</b> : 
+     * <p>获取权限信息</p>
+     * 
      * @param request GetPermissionRequest
      * @return GetPermissionResponse
      */
@@ -731,8 +751,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  获取用户当前周期下的全部 OKR 内容
-     *
+     * <b>summary</b> : 
+     * <p>获取用户当前周期下的全部 OKR 内容</p>
+     * 
      * @param request GetUserOkrRequest
      * @param headers GetUserOkrHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -785,8 +806,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  获取用户当前周期下的全部 OKR 内容
-     *
+     * <b>summary</b> : 
+     * <p>获取用户当前周期下的全部 OKR 内容</p>
+     * 
      * @param request GetUserOkrRequest
      * @return GetUserOkrResponse
      */
@@ -797,8 +819,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询OKR
-     *
+     * <b>summary</b> : 
+     * <p>批量查询OKR</p>
+     * 
      * @param request OkrObjectivesBatchRequest
      * @param headers OkrObjectivesBatchHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -843,8 +866,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 批量查询OKR
-     *
+     * <b>summary</b> : 
+     * <p>批量查询OKR</p>
+     * 
      * @param request OkrObjectivesBatchRequest
      * @return OkrObjectivesBatchResponse
      */
@@ -855,8 +879,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询单个用户的OKR
-     *
+     * <b>summary</b> : 
+     * <p>查询单个用户的OKR</p>
+     * 
      * @param request OkrObjectivesByUserRequest
      * @param headers OkrObjectivesByUserHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -905,8 +930,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 查询单个用户的OKR
-     *
+     * <b>summary</b> : 
+     * <p>查询单个用户的OKR</p>
+     * 
      * @param request OkrObjectivesByUserRequest
      * @return OkrObjectivesByUserResponse
      */
@@ -917,8 +943,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取 OKR 周期
-     *
+     * <b>summary</b> : 
+     * <p>获取 OKR 周期</p>
+     * 
      * @param request OkrPeriodsRequest
      * @param headers OkrPeriodsHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -971,8 +998,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 获取 OKR 周期
-     *
+     * <b>summary</b> : 
+     * <p>获取 OKR 周期</p>
+     * 
      * @param request OkrPeriodsRequest
      * @return OkrPeriodsResponse
      */
@@ -983,8 +1011,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  取消对齐Objective
-     *
+     * <b>summary</b> : 
+     * <p>取消对齐Objective</p>
+     * 
      * @param request UnAlignObjectiveRequest
      * @param headers UnAlignObjectiveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1035,8 +1064,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary  取消对齐Objective
-     *
+     * <b>summary</b> : 
+     * <p>取消对齐Objective</p>
+     * 
      * @param request UnAlignObjectiveRequest
      * @return UnAlignObjectiveResponse
      */
@@ -1047,8 +1077,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更改KR内容
-     *
+     * <b>summary</b> : 
+     * <p>更改KR内容</p>
+     * 
      * @param request UpdateKROfContentRequest
      * @param headers UpdateKROfContentHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1103,8 +1134,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更改KR内容
-     *
+     * <b>summary</b> : 
+     * <p>更改KR内容</p>
+     * 
      * @param request UpdateKROfContentRequest
      * @return UpdateKROfContentResponse
      */
@@ -1115,8 +1147,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更改KR分数
-     *
+     * <b>summary</b> : 
+     * <p>更改KR分数</p>
+     * 
      * @param request UpdateKROfScoreRequest
      * @param headers UpdateKROfScoreHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1167,8 +1200,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更改KR分数
-     *
+     * <b>summary</b> : 
+     * <p>更改KR分数</p>
+     * 
      * @param request UpdateKROfScoreRequest
      * @return UpdateKROfScoreResponse
      */
@@ -1179,8 +1213,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更改 KR 权重
-     *
+     * <b>summary</b> : 
+     * <p>更改 KR 权重</p>
+     * 
      * @param request UpdateKROfWeightRequest
      * @param headers UpdateKROfWeightHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1231,8 +1266,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更改 KR 权重
-     *
+     * <b>summary</b> : 
+     * <p>更改 KR 权重</p>
+     * 
      * @param request UpdateKROfWeightRequest
      * @return UpdateKROfWeightResponse
      */
@@ -1243,8 +1279,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新目标
-     *
+     * <b>summary</b> : 
+     * <p>更新目标</p>
+     * 
      * @param request UpdateObjectiveRequest
      * @param headers UpdateObjectiveHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1291,8 +1328,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新目标
-     *
+     * <b>summary</b> : 
+     * <p>更新目标</p>
+     * 
      * @param request UpdateObjectiveRequest
      * @return UpdateObjectiveResponse
      */
@@ -1303,8 +1341,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新资源隐私策略
-     *
+     * <b>summary</b> : 
+     * <p>更新资源隐私策略</p>
+     * 
      * @param request UpdatePrivacyRequest
      * @param headers UpdatePrivacyHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -1359,8 +1398,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 更新资源隐私策略
-     *
+     * <b>summary</b> : 
+     * <p>更新资源隐私策略</p>
+     * 
      * @param request UpdatePrivacyRequest
      * @return UpdatePrivacyResponse
      */

@@ -6,10 +6,17 @@ import com.aliyun.tea.*;
 public class DeviceDingRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>xxxx</p>
      */
     @NameInMap("deviceKey")
     public String deviceKey;
 
+    /**
+     * <strong>example:</strong>
+     * <p>json字符串</p>
+     */
     @NameInMap("paramsJson")
     public String paramsJson;
 

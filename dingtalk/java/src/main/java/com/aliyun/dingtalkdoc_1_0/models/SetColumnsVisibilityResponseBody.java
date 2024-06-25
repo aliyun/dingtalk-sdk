@@ -4,6 +4,10 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetColumnsVisibilityResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>sheet_id</p>
+     */
     @NameInMap("id")
     public String id;
 

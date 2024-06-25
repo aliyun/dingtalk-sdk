@@ -21,6 +21,10 @@ public class SaveBenefitLicenseResponseBody extends TeaModel {
     }
 
     public static class SaveBenefitLicenseResponseBodyResultLicenses extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>license账号信息</p>
+         */
         @NameInMap("licenseUserId")
         public String licenseUserId;
 
@@ -40,6 +44,10 @@ public class SaveBenefitLicenseResponseBody extends TeaModel {
     }
 
     public static class SaveBenefitLicenseResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>B_ACCOUNT_NUMBER</p>
+         */
         @NameInMap("domain")
         public String domain;
 

@@ -4,6 +4,10 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreUserInfoResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>张三</p>
+     */
     @NameInMap("name")
     public String name;
 
@@ -12,6 +16,9 @@ public class DigitalStoreUserInfoResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>5647993312</p>
      */
     @NameInMap("scopeList")
     public java.util.List<Long> scopeList;
@@ -24,6 +31,9 @@ public class DigitalStoreUserInfoResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>331222222</p>
      */
     @NameInMap("userId")
     public String userId;

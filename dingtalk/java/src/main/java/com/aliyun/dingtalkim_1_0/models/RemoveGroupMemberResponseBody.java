@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class RemoveGroupMemberResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>移除成功</p>
      */
     @NameInMap("message")
     public String message;

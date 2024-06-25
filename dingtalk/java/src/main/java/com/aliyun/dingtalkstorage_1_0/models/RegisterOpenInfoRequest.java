@@ -12,12 +12,18 @@ public class RegisterOpenInfoRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>DINGTALK</p>
      */
     @NameInMap("provider")
     public String provider;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -54,12 +60,18 @@ public class RegisterOpenInfoRequest extends TeaModel {
     public static class RegisterOpenInfoRequestOpenInfos extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PREVIEW</p>
          */
         @NameInMap("openType")
         public String openType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>url</p>
          */
         @NameInMap("url")
         public String url;

@@ -4,33 +4,73 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class DecodePayCodeResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>2512345678</p>
+     */
     @NameInMap("alipayCode")
     public String alipayCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>codeIdxxxxx</p>
+     */
     @NameInMap("codeId")
     public String codeId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>DT_VISITOR</p>
+     */
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>PURE_IDENTIFY_CODE</p>
+     */
     @NameInMap("codeType")
     public String codeType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding1234</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{&quot;authRules&quot;:{}}</p>
+     */
     @NameInMap("extInfo")
     public String extInfo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>xxxxx</p>
+     */
     @NameInMap("outBizId")
     public String outBizId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>INTERNAL_STAFF</p>
+     */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>staffId</p>
+     */
     @NameInMap("userId")
     public String userId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("userInCorp")
     public Boolean userInCorp;
 

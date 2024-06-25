@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryRelationDatasByTargetIdRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc123</p>
      */
     @NameInMap("relationType")
     public String relationType;

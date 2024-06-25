@@ -12,6 +12,9 @@ public class SheetFindAllRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>DingTalk</p>
      */
     @NameInMap("text")
     public String text;
@@ -66,12 +69,24 @@ public class SheetFindAllRequest extends TeaModel {
         @NameInMap("includeHidden")
         public Boolean includeHidden;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("matchCase")
         public Boolean matchCase;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("matchEntireCell")
         public Boolean matchEntireCell;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("matchFormulaText")
         public Boolean matchFormulaText;
 
@@ -84,6 +99,10 @@ public class SheetFindAllRequest extends TeaModel {
         @NameInMap("unionCells")
         public Boolean unionCells;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("useRegExp")
         public Boolean useRegExp;
 

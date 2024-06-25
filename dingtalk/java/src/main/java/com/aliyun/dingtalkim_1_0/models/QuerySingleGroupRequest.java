@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class QuerySingleGroupRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1745****8777</p>
      */
     @NameInMap("groupMembers")
     public java.util.List<QuerySingleGroupRequestGroupMembers> groupMembers;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>14da****2760</p>
      */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
@@ -40,12 +46,18 @@ public class QuerySingleGroupRequest extends TeaModel {
     public static class QuerySingleGroupRequestGroupMembers extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1107****2120</p>
          */
         @NameInMap("appUserId")
         public String appUserId;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1745****8778</p>
          */
         @NameInMap("userId")
         public String userId;

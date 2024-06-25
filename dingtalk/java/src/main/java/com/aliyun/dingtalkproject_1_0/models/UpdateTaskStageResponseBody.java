@@ -21,24 +21,52 @@ public class UpdateTaskStageResponseBody extends TeaModel {
     }
 
     public static class UpdateTaskStageResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("accomplishTime")
         public String accomplishTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("isDone")
         public Boolean isDone;
 
+        /**
+         * <strong>example:</strong>
+         * <p>64a5301e420637003f5dxxxx</p>
+         */
         @NameInMap("projectId")
         public String projectId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>63a5301e420637003f5dxxxx</p>
+         */
         @NameInMap("taskId")
         public String taskId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>66a5301e420637003f5dxxxx</p>
+         */
         @NameInMap("taskListId")
         public String taskListId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>69a5301e420637003f5dxxxx</p>
+         */
         @NameInMap("taskStageId")
         public String taskStageId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2022-07-04T03:29:34.770Z</p>
+         */
         @NameInMap("updated")
         public String updated;
 

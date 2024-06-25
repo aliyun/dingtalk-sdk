@@ -6,39 +6,61 @@ import com.aliyun.tea.*;
 public class NotifyPayCodePayResultRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234.56</p>
      */
     @NameInMap("amount")
     public String amount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1.00, 没有传0.00</p>
      */
     @NameInMap("chargeAmount")
     public String chargeAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding1234</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>{ &quot;akey&quot;: &quot;avalue“}</p>
+     */
     @NameInMap("extInfo")
     public String extInfo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-01-01 11:11:11</p>
      */
     @NameInMap("gmtTradeCreate")
     public String gmtTradeCreate;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2021-01-01 11:11:11</p>
      */
     @NameInMap("gmtTradeFinish")
     public String gmtTradeFinish;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>XX公司食堂</p>
      */
     @NameInMap("merchantName")
     public String merchantName;
@@ -51,48 +73,77 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>261234567890</p>
      */
     @NameInMap("payCode")
     public String payCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1.23，没有传0.00</p>
      */
     @NameInMap("promotionAmount")
     public String promotionAmount;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>备注</p>
      */
     @NameInMap("remark")
     public String remark;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>晚餐100.0元</p>
      */
     @NameInMap("title")
     public String title;
 
+    /**
+     * <strong>example:</strong>
+     * <p>BALANCE_NOT_ENOUGH</p>
+     */
     @NameInMap("tradeErrorCode")
     public String tradeErrorCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>余额不足，请充值</p>
+     */
     @NameInMap("tradeErrorMsg")
     public String tradeErrorMsg;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>202101012345678</p>
      */
     @NameInMap("tradeNo")
     public String tradeNo;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>SUCCESS/FAIL</p>
      */
     @NameInMap("tradeStatus")
     public String tradeStatus;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>userId1234</p>
      */
     @NameInMap("userId")
     public String userId;
@@ -241,33 +292,52 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
     public static class NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>金额</p>
          */
         @NameInMap("amount")
         public String amount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>{&quot;key&quot;:&quot;value&quot;}</p>
+         */
         @NameInMap("extInfo")
         public String extInfo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>优惠券</p>
          */
         @NameInMap("fundToolName")
         public String fundToolName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-01-01</p>
          */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2021-01-01 11:11:11</p>
          */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true</p>
          */
         @NameInMap("promotionFundTool")
         public Boolean promotionFundTool;
@@ -330,6 +400,9 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
     public static class NotifyPayCodePayResultRequestPayChannelDetailList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1.23</p>
          */
         @NameInMap("amount")
         public String amount;
@@ -340,32 +413,52 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
         @NameInMap("fundToolDetailList")
         public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-01-01 11:11:11</p>
+         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2021-01-01 11:11:11</p>
+         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>卡余额</p>
          */
         @NameInMap("payChannelName")
         public String payChannelName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>20211234</p>
          */
         @NameInMap("payChannelOrderNo")
         public String payChannelOrderNo;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>ALIPAY|BALANCE</p>
          */
         @NameInMap("payChannelType")
         public String payChannelType;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>0.00</p>
          */
         @NameInMap("promotionAmount")
         public String promotionAmount;

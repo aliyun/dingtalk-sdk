@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class SetDeptPartnerTypeAndNumRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1234</p>
      */
     @NameInMap("deptId")
     public String deptId;
@@ -13,6 +16,10 @@ public class SetDeptPartnerTypeAndNumRequest extends TeaModel {
     @NameInMap("labelIds")
     public java.util.List<String> labelIds;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1234</p>
+     */
     @NameInMap("partnerNum")
     public String partnerNum;
 

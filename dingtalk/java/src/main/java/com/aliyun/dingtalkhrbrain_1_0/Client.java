@@ -6,11 +6,10 @@ import com.aliyun.dingtalkhrbrain_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
-    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._client = new com.aliyun.gateway.dingtalk.Client();
-        this._spi = _client;
+        com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = gatewayClient;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -20,8 +19,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
 
     /**
-     * @summary 集成奖励记录
-     *
+     * <b>summary</b> : 
+     * <p>集成奖励记录</p>
+     * 
      * @param request HrbrainImportAwardDetailRequest
      * @param headers HrbrainImportAwardDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -63,8 +63,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成奖励记录
-     *
+     * <b>summary</b> : 
+     * <p>集成奖励记录</p>
+     * 
      * @param request HrbrainImportAwardDetailRequest
      * @return HrbrainImportAwardDetailResponse
      */
@@ -75,8 +76,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成组织架构
-     *
+     * <b>summary</b> : 
+     * <p>集成组织架构</p>
+     * 
      * @param request HrbrainImportDeptInfoRequest
      * @param headers HrbrainImportDeptInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -118,8 +120,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成组织架构
-     *
+     * <b>summary</b> : 
+     * <p>集成组织架构</p>
+     * 
      * @param request HrbrainImportDeptInfoRequest
      * @return HrbrainImportDeptInfoResponse
      */
@@ -130,8 +133,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成离职信息
-     *
+     * <b>summary</b> : 
+     * <p>集成离职信息</p>
+     * 
      * @param request HrbrainImportDimissionRequest
      * @param headers HrbrainImportDimissionHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -173,8 +177,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成离职信息
-     *
+     * <b>summary</b> : 
+     * <p>集成离职信息</p>
+     * 
      * @param request HrbrainImportDimissionRequest
      * @return HrbrainImportDimissionResponse
      */
@@ -185,8 +190,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成教育经历
-     *
+     * <b>summary</b> : 
+     * <p>集成教育经历</p>
+     * 
      * @param request HrbrainImportEduExpRequest
      * @param headers HrbrainImportEduExpHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -228,8 +234,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成教育经历
-     *
+     * <b>summary</b> : 
+     * <p>集成教育经历</p>
+     * 
      * @param request HrbrainImportEduExpRequest
      * @return HrbrainImportEduExpResponse
      */
@@ -240,8 +247,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成人员信息
-     *
+     * <b>summary</b> : 
+     * <p>集成人员信息</p>
+     * 
      * @param request HrbrainImportEmpInfoRequest
      * @param headers HrbrainImportEmpInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -283,8 +291,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成人员信息
-     *
+     * <b>summary</b> : 
+     * <p>集成人员信息</p>
+     * 
      * @param request HrbrainImportEmpInfoRequest
      * @return HrbrainImportEmpInfoResponse
      */
@@ -295,8 +304,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成基础标签
-     *
+     * <b>summary</b> : 
+     * <p>集成基础标签</p>
+     * 
      * @param request HrbrainImportLabelBaseRequest
      * @param headers HrbrainImportLabelBaseHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -338,8 +348,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成基础标签
-     *
+     * <b>summary</b> : 
+     * <p>集成基础标签</p>
+     * 
      * @param request HrbrainImportLabelBaseRequest
      * @return HrbrainImportLabelBaseResponse
      */
@@ -350,8 +361,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成自定义标签
-     *
+     * <b>summary</b> : 
+     * <p>集成自定义标签</p>
+     * 
      * @param request HrbrainImportLabelCustomRequest
      * @param headers HrbrainImportLabelCustomHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -393,8 +405,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成自定义标签
-     *
+     * <b>summary</b> : 
+     * <p>集成自定义标签</p>
+     * 
      * @param request HrbrainImportLabelCustomRequest
      * @return HrbrainImportLabelCustomResponse
      */
@@ -405,8 +418,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成领域经验
-     *
+     * <b>summary</b> : 
+     * <p>集成领域经验</p>
+     * 
      * @param request HrbrainImportLabelIndustryRequest
      * @param headers HrbrainImportLabelIndustryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -448,8 +462,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成领域经验
-     *
+     * <b>summary</b> : 
+     * <p>集成领域经验</p>
+     * 
      * @param request HrbrainImportLabelIndustryRequest
      * @return HrbrainImportLabelIndustryResponse
      */
@@ -460,8 +475,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成盘点数据
-     *
+     * <b>summary</b> : 
+     * <p>集成盘点数据</p>
+     * 
      * @param request HrbrainImportLabelInventoryRequest
      * @param headers HrbrainImportLabelInventoryHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -503,8 +519,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成盘点数据
-     *
+     * <b>summary</b> : 
+     * <p>集成盘点数据</p>
+     * 
      * @param request HrbrainImportLabelInventoryRequest
      * @return HrbrainImportLabelInventoryResponse
      */
@@ -515,8 +532,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成专业技能
-     *
+     * <b>summary</b> : 
+     * <p>集成专业技能</p>
+     * 
      * @param request HrbrainImportLabelProfSkillRequest
      * @param headers HrbrainImportLabelProfSkillHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -558,8 +576,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成专业技能
-     *
+     * <b>summary</b> : 
+     * <p>集成专业技能</p>
+     * 
      * @param request HrbrainImportLabelProfSkillRequest
      * @return HrbrainImportLabelProfSkillResponse
      */
@@ -570,8 +589,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成绩效记录
-     *
+     * <b>summary</b> : 
+     * <p>集成绩效记录</p>
+     * 
      * @param request HrbrainImportPerfEvalRequest
      * @param headers HrbrainImportPerfEvalHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -613,8 +633,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成绩效记录
-     *
+     * <b>summary</b> : 
+     * <p>集成绩效记录</p>
+     * 
      * @param request HrbrainImportPerfEvalRequest
      * @return HrbrainImportPerfEvalResponse
      */
@@ -625,8 +646,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成晋升记录
-     *
+     * <b>summary</b> : 
+     * <p>集成晋升记录</p>
+     * 
      * @param request HrbrainImportPromEvalRequest
      * @param headers HrbrainImportPromEvalHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -668,8 +690,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成晋升记录
-     *
+     * <b>summary</b> : 
+     * <p>集成晋升记录</p>
+     * 
      * @param request HrbrainImportPromEvalRequest
      * @return HrbrainImportPromEvalResponse
      */
@@ -680,8 +703,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成处分记录
-     *
+     * <b>summary</b> : 
+     * <p>集成处分记录</p>
+     * 
      * @param request HrbrainImportPunDetailRequest
      * @param headers HrbrainImportPunDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -723,8 +747,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成处分记录
-     *
+     * <b>summary</b> : 
+     * <p>集成处分记录</p>
+     * 
      * @param request HrbrainImportPunDetailRequest
      * @return HrbrainImportPunDetailResponse
      */
@@ -735,8 +760,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成入职信息
-     *
+     * <b>summary</b> : 
+     * <p>集成入职信息</p>
+     * 
      * @param request HrbrainImportRegistRequest
      * @param headers HrbrainImportRegistHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -778,8 +804,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成入职信息
-     *
+     * <b>summary</b> : 
+     * <p>集成入职信息</p>
+     * 
      * @param request HrbrainImportRegistRequest
      * @return HrbrainImportRegistResponse
      */
@@ -790,8 +817,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成异动记录
-     *
+     * <b>summary</b> : 
+     * <p>集成异动记录</p>
+     * 
      * @param request HrbrainImportTransferEvalRequest
      * @param headers HrbrainImportTransferEvalHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -833,8 +861,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成异动记录
-     *
+     * <b>summary</b> : 
+     * <p>集成异动记录</p>
+     * 
      * @param request HrbrainImportTransferEvalRequest
      * @return HrbrainImportTransferEvalResponse
      */
@@ -845,8 +874,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成工作经历
-     *
+     * <b>summary</b> : 
+     * <p>集成工作经历</p>
+     * 
      * @param request HrbrainImportWorkExpRequest
      * @param headers HrbrainImportWorkExpHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -888,8 +918,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 集成工作经历
-     *
+     * <b>summary</b> : 
+     * <p>集成工作经历</p>
+     * 
      * @param request HrbrainImportWorkExpRequest
      * @return HrbrainImportWorkExpResponse
      */
@@ -900,8 +931,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步统计基础数据
-     *
+     * <b>summary</b> : 
+     * <p>人员标签查询</p>
+     * 
+     * @param request StaffLabelRecordsQueryRequest
+     * @param headers StaffLabelRecordsQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return StaffLabelRecordsQueryResponse
+     */
+    public StaffLabelRecordsQueryResponse staffLabelRecordsQueryWithOptions(StaffLabelRecordsQueryRequest request, StaffLabelRecordsQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingCorpId)) {
+            query.put("dingCorpId", request.dingCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResult)) {
+            query.put("maxResult", request.maxResult);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.teautil.Common.toArray(request.body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "StaffLabelRecordsQuery"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/datas/labelRecords/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new StaffLabelRecordsQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人员标签查询</p>
+     * 
+     * @param request StaffLabelRecordsQueryRequest
+     * @return StaffLabelRecordsQueryResponse
+     */
+    public StaffLabelRecordsQueryResponse staffLabelRecordsQuery(StaffLabelRecordsQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        StaffLabelRecordsQueryHeaders headers = new StaffLabelRecordsQueryHeaders();
+        return this.staffLabelRecordsQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>同步统计基础数据</p>
+     * 
      * @param request SyncDataRequest
      * @param headers SyncDataHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -958,8 +1055,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
     /**
-     * @summary 同步统计基础数据
-     *
+     * <b>summary</b> : 
+     * <p>同步统计基础数据</p>
+     * 
      * @param request SyncDataRequest
      * @return SyncDataResponse
      */

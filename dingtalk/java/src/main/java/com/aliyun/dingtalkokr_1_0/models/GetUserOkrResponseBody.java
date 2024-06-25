@@ -9,6 +9,9 @@ public class GetUserOkrResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -35,6 +38,10 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataListKrListProgress extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>30</p>
+         */
         @NameInMap("percent")
         public Integer percent;
 
@@ -54,36 +61,67 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataListKrList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>你好</p>
+         */
         @NameInMap("content")
         public java.io.InputStream content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1648625407694</p>
+         */
         @NameInMap("gmtCreate")
         public Float gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1648625407694</p>
+         */
         @NameInMap("gmtModified")
         public Float gmtModified;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>5w9f</p>
          */
         @NameInMap("id")
         public java.io.InputStream id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>5wf8</p>
+         */
         @NameInMap("objectiveId")
         public java.io.InputStream objectiveId;
 
         @NameInMap("permission")
         public java.util.List<Float> permission;
 
+        /**
+         * <strong>example:</strong>
+         * <p>35614536</p>
+         */
         @NameInMap("position")
         public Long position;
 
         @NameInMap("progress")
         public GetUserOkrResponseBodyDataListKrListProgress progress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>44</p>
+         */
         @NameInMap("score")
         public Float score;
 
+        /**
+         * <strong>example:</strong>
+         * <p>44</p>
+         */
         @NameInMap("weight")
         public Float weight;
 
@@ -175,18 +213,38 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataListOwner extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>@lADPDh0cQ_j4Mi_NBULNBUA</p>
+         */
         @NameInMap("avatarMediaId")
         public java.io.InputStream avatarMediaId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>ding4d1c8883ff63ee8124f2f5cc6abecb85</p>
+         */
         @NameInMap("corpId")
         public java.io.InputStream corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>K1AMgq</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>你好</p>
+         */
         @NameInMap("nickname")
         public java.io.InputStream nickname;
 
+        /**
+         * <strong>example:</strong>
+         * <p>06186238011033616</p>
+         */
         @NameInMap("userId")
         public java.io.InputStream userId;
 
@@ -238,6 +296,10 @@ public class GetUserOkrResponseBody extends TeaModel {
     }
 
     public static class GetUserOkrResponseBodyDataListProgress extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("percent")
         public Integer percent;
 
@@ -263,15 +325,31 @@ public class GetUserOkrResponseBody extends TeaModel {
         @NameInMap("alignToIds")
         public java.util.List<java.io.InputStream> alignToIds;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Objective demo</p>
+         */
         @NameInMap("content")
         public java.io.InputStream content;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1648625407694</p>
+         */
         @NameInMap("gmtCreate")
         public Float gmtCreate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1648625407694</p>
+         */
         @NameInMap("gmtModified")
         public Float gmtModified;
 
+        /**
+         * <strong>example:</strong>
+         * <p>5dAX8</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 
@@ -281,33 +359,65 @@ public class GetUserOkrResponseBody extends TeaModel {
         @NameInMap("owner")
         public GetUserOkrResponseBodyDataListOwner owner;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1006</p>
+         */
         @NameInMap("periodId")
         public java.io.InputStream periodId;
 
         @NameInMap("permission")
         public java.util.List<Float> permission;
 
+        /**
+         * <strong>example:</strong>
+         * <p>3021332</p>
+         */
         @NameInMap("position")
         public Integer position;
 
         @NameInMap("progress")
         public GetUserOkrResponseBodyDataListProgress progress;
 
+        /**
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
         @NameInMap("progressPercent")
         public Float progressPercent;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("published")
         public Boolean published;
 
+        /**
+         * <strong>example:</strong>
+         * <p>20</p>
+         */
         @NameInMap("score")
         public Float score;
 
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("status")
         public Integer status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>s34d</p>
+         */
         @NameInMap("userId")
         public java.io.InputStream userId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>50</p>
+         */
         @NameInMap("weight")
         public Float weight;
 
@@ -466,14 +576,25 @@ public class GetUserOkrResponseBody extends TeaModel {
         @NameInMap("list")
         public java.util.List<GetUserOkrResponseBodyDataList> list;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
         @NameInMap("pageNumber")
         public Long pageNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>50</p>
+         */
         @NameInMap("pageSize")
         public Long pageSize;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("totalCount")
         public Long totalCount;

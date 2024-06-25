@@ -21,24 +21,52 @@ public class QueryTeachSubjectsResponseBody extends TeaModel {
     }
 
     public static class QueryTeachSubjectsResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>333333</p>
+         */
         @NameInMap("classId")
         public Long classId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>dingding142523424</p>
+         */
         @NameInMap("corpId")
         public String corpId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>kindergarten</p>
+         */
         @NameInMap("periodCode")
         public String periodCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cn_yuwen</p>
+         */
         @NameInMap("subjectCode")
         public String subjectCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>语文</p>
+         */
         @NameInMap("subjectName")
         public String subjectName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>李老师</p>
+         */
         @NameInMap("teacherName")
         public String teacherName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>50142345134</p>
+         */
         @NameInMap("teacherUserId")
         public String teacherUserId;
 

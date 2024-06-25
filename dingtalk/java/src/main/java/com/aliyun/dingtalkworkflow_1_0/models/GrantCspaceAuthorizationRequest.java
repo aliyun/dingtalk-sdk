@@ -4,23 +4,36 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GrantCspaceAuthorizationRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>3600</p>
+     */
     @NameInMap("durationSeconds")
     public Long durationSeconds;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>163xxxx658</p>
      */
     @NameInMap("spaceId")
     public String spaceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>add</p>
      */
     @NameInMap("type")
     public String type;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>26652461xxxx5992</p>
      */
     @NameInMap("userId")
     public String userId;

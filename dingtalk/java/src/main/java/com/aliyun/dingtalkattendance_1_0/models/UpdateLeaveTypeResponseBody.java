@@ -24,15 +24,31 @@ public class UpdateLeaveTypeResponseBody extends TeaModel {
     }
 
     public static class UpdateLeaveTypeResponseBodyResultLeaveCertificate extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("duration")
         public Double duration;
 
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("enable")
         public Boolean enable;
 
+        /**
+         * <strong>example:</strong>
+         * <p>请假文案</p>
+         */
         @NameInMap("promptInformation")
         public String promptInformation;
 
+        /**
+         * <strong>example:</strong>
+         * <p>hour</p>
+         */
         @NameInMap("unit")
         public String unit;
 
@@ -76,15 +92,31 @@ public class UpdateLeaveTypeResponseBody extends TeaModel {
     }
 
     public static class UpdateLeaveTypeResponseBodyResultSubmitTimeRule extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>false</p>
+         */
         @NameInMap("enableTimeLimit")
         public Boolean enableTimeLimit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>before</p>
+         */
         @NameInMap("timeType")
         public String timeType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>day</p>
+         */
         @NameInMap("timeUnit")
         public String timeUnit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("timeValue")
         public Long timeValue;
 
@@ -128,6 +160,10 @@ public class UpdateLeaveTypeResponseBody extends TeaModel {
     }
 
     public static class UpdateLeaveTypeResponseBodyResultVisibilityRules extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>staff</p>
+         */
         @NameInMap("type")
         public String type;
 
@@ -158,24 +194,48 @@ public class UpdateLeaveTypeResponseBody extends TeaModel {
     }
 
     public static class UpdateLeaveTypeResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>general_leave</p>
+         */
         @NameInMap("bizType")
         public String bizType;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1000</p>
+         */
         @NameInMap("hoursInPerDay")
         public Long hoursInPerDay;
 
         @NameInMap("leaveCertificate")
         public UpdateLeaveTypeResponseBodyResultLeaveCertificate leaveCertificate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>037477ae-1009-4632-b8e9-e919ae5e7973</p>
+         */
         @NameInMap("leaveCode")
         public String leaveCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>年假</p>
+         */
         @NameInMap("leaveName")
         public String leaveName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>day</p>
+         */
         @NameInMap("leaveViewUnit")
         public String leaveViewUnit;
 
+        /**
+         * <strong>example:</strong>
+         * <p>true</p>
+         */
         @NameInMap("naturalDayLeave")
         public Boolean naturalDayLeave;
 

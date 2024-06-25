@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class StartProcessInstanceResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>91ef1076-c3ed-4a78-a7a5-fa29ef2d6252</p>
      */
     @NameInMap("instanceId")
     public String instanceId;

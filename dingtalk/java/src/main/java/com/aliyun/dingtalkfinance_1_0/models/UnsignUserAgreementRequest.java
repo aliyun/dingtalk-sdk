@@ -4,29 +4,50 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UnsignUserAgreementRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>23021_12342134</p>
+     */
     @NameInMap("agreementNo")
     public String agreementNo;
 
+    /**
+     * <strong>example:</strong>
+     * <p>TRADE</p>
+     */
     @NameInMap("bizCode")
     public String bizCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>WITHHOLDING</p>
+     */
     @NameInMap("bizScene")
     public String bizScene;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>202111090001</p>
      */
     @NameInMap("instId")
     public String instId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1001</p>
      */
     @NameInMap("subInstId")
     public String subInstId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2120493284</p>
      */
     @NameInMap("userId")
     public String userId;

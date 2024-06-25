@@ -12,6 +12,9 @@ public class DeletePlguinRuleRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>0847493113802787</p>
      */
     @NameInMap("userId")
     public String userId;

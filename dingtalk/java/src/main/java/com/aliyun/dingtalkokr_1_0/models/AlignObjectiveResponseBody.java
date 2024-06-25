@@ -9,6 +9,9 @@ public class AlignObjectiveResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("success")
     public Boolean success;
@@ -35,9 +38,17 @@ public class AlignObjectiveResponseBody extends TeaModel {
     }
 
     public static class AlignObjectiveResponseBodyData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>59YD</p>
+         */
         @NameInMap("alignId")
         public java.io.InputStream alignId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>5dAX8</p>
+         */
         @NameInMap("id")
         public java.io.InputStream id;
 

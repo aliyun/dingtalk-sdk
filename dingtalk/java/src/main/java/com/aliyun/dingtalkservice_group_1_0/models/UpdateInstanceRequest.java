@@ -4,36 +4,60 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInstanceRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>hhdhg</p>
+     */
     @NameInMap("externalBizId")
     public String externalBizId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>DING_CUSTOMER</p>
      */
     @NameInMap("formCode")
     public String formCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>{&quot;node_888&quot;:&quot;hhhh&quot;}</p>
      */
     @NameInMap("formDataList")
     public String formDataList;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>888555</p>
      */
     @NameInMap("openDataInstanceId")
     public String openDataInstanceId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>888***</p>
      */
     @NameInMap("openTeamId")
     public String openTeamId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>8888</p>
+     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>88888</p>
+     */
     @NameInMap("ownerUnionId")
     public String ownerUnionId;
 

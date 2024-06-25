@@ -6,25 +6,42 @@ import com.aliyun.tea.*;
 public class CreateCustomShortLinkRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>COOLAPP-0-1026633886192127xxxB000W</p>
      */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
      */
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>bizData</p>
+     */
     @NameInMap("extensionAppBizData")
     public String extensionAppBizData;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>f6fb627e-a7e8-403e-b1f8-26e85450f4a9</p>
      */
     @NameInMap("scheduleConferenceId")
     public String scheduleConferenceId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true：使用 false：不使用</p>
+     */
     @NameInMap("useExtensionApp")
     public Boolean useExtensionApp;
 

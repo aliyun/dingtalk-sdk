@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class GetDingMeBaseDataRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>dsfsfr434</p>
      */
     @NameInMap("appKey")
     public String appKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("byDay")
     public Boolean byDay;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20210506</p>
      */
     @NameInMap("endDay")
     public String endDay;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20210405</p>
      */
     @NameInMap("startDay")
     public String startDay;

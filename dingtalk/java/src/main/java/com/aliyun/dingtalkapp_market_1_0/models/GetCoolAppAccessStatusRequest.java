@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class GetCoolAppAccessStatusRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>b195bb70dde337aabf3bcc020bf6250c</p>
      */
     @NameInMap("authCode")
     public String authCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>COOLAPP-1-1019F4BBC7D6212C5861000T</p>
      */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>cid5uZRmigtVWpjcKPLrp5Pag==</p>
      */
     @NameInMap("encFieldBizCode")
     public String encFieldBizCode;

@@ -24,9 +24,17 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>审批模板id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>审批模板名称</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -1212,6 +1220,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1：多选，0：单选</p>
          */
         @NameInMap("choice")
         public Long choice;
@@ -1224,12 +1235,18 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：可编辑</p>
          */
         @NameInMap("disabled")
         public Boolean disabled;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：自动</p>
          */
         @NameInMap("duration")
         public String duration;
@@ -1242,6 +1259,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>DDDateField和DDDateRangeField</p>
          */
         @NameInMap("format")
         public String format;
@@ -1254,6 +1274,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：隐藏</p>
          */
         @NameInMap("invisible")
         public Boolean invisible;
@@ -1284,6 +1307,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1:不需要大写, 空或者0:需要大写</p>
          */
         @NameInMap("notUpper")
         public String notUpper;
@@ -1296,6 +1322,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：是</p>
          */
         @NameInMap("payEnable")
         public Boolean payEnable;
@@ -1314,6 +1343,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：必填</p>
          */
         @NameInMap("required")
         public Boolean required;
@@ -1338,6 +1370,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：纵向，false：横向</p>
          */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
@@ -1761,6 +1796,10 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("dataSource")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource dataSource;
 
+        /**
+         * <strong>example:</strong>
+         * <p>标签字段 颜色属性，格式：#0089FF</p>
+         */
         @NameInMap("defaultColor")
         public String defaultColor;
 
@@ -1844,6 +1883,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：支持多选，false：单选</p>
          */
         @NameInMap("multiple")
         public Boolean multiple;
@@ -2320,9 +2362,17 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>审批模板id</p>
+         */
         @NameInMap("id")
         public String id;
 
+        /**
+         * <strong>example:</strong>
+         * <p>审批模板名称</p>
+         */
         @NameInMap("name")
         public String name;
 
@@ -2436,6 +2486,10 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0：流程表单，1：纯表单</p>
+         */
         @NameInMap("appType")
         public Long appType;
 
@@ -2682,6 +2736,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1：多选，0：单选</p>
          */
         @NameInMap("choice")
         public Long choice;
@@ -2694,12 +2751,18 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：可编辑</p>
          */
         @NameInMap("disabled")
         public Boolean disabled;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：自动</p>
          */
         @NameInMap("duration")
         public String duration;
@@ -2718,6 +2781,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>DDDateField和DDDateRangeField</p>
          */
         @NameInMap("format")
         public String format;
@@ -2730,6 +2796,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：隐藏</p>
          */
         @NameInMap("invisible")
         public Boolean invisible;
@@ -2766,6 +2835,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1:不需要大写, 空或者0:需要大写</p>
          */
         @NameInMap("notUpper")
         public String notUpper;
@@ -2778,6 +2850,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：是</p>
          */
         @NameInMap("payEnable")
         public Boolean payEnable;
@@ -2796,6 +2871,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：必填</p>
          */
         @NameInMap("required")
         public Boolean required;
@@ -2826,6 +2904,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：纵向，false：横向</p>
          */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
@@ -3540,6 +3621,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1：多选，0：单选</p>
          */
         @NameInMap("choice")
         public Long choice;
@@ -3552,12 +3636,18 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：可编辑</p>
          */
         @NameInMap("disabled")
         public Boolean disabled;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：自动</p>
          */
         @NameInMap("duration")
         public String duration;
@@ -3570,6 +3660,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>DDDateField和DDDateRangeField</p>
          */
         @NameInMap("format")
         public String format;
@@ -3582,6 +3675,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：隐藏</p>
          */
         @NameInMap("invisible")
         public Boolean invisible;
@@ -3612,6 +3708,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1:不需要大写, 空或者0:需要大写</p>
          */
         @NameInMap("notUpper")
         public String notUpper;
@@ -3624,6 +3723,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：是</p>
          */
         @NameInMap("payEnable")
         public Boolean payEnable;
@@ -3642,6 +3744,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：必填</p>
          */
         @NameInMap("required")
         public Boolean required;
@@ -3666,6 +3771,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：纵向，false：横向</p>
          */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
@@ -4055,12 +4163,18 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>明细动作名称</p>
          */
         @NameInMap("actionName")
         public String actionName;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>top|middle|bottom</p>
          */
         @NameInMap("align")
         public String align;
@@ -4076,6 +4190,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1：多选，0：单选</p>
          */
         @NameInMap("choice")
         public Long choice;
@@ -4089,23 +4206,36 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("dataSource")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource dataSource;
 
+        /**
+         * <strong>example:</strong>
+         * <p>标签字段 颜色属性，格式：#0089FF</p>
+         */
         @NameInMap("defaultColor")
         public String defaultColor;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：可编辑</p>
          */
         @NameInMap("disabled")
         public Boolean disabled;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：自动</p>
          */
         @NameInMap("duration")
         public Boolean duration;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>日期区间控件，自动计算时长的标题</p>
          */
         @NameInMap("durationLabel")
         public String durationLabel;
@@ -4124,6 +4254,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>DDDateField和DDDateRangeField</p>
          */
         @NameInMap("format")
         public String format;
@@ -4136,6 +4269,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：隐藏</p>
          */
         @NameInMap("invisible")
         public Boolean invisible;
@@ -4148,12 +4284,18 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：不可修改</p>
          */
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>评分组件限制</p>
          */
         @NameInMap("limit")
         public Long limit;
@@ -4166,6 +4308,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>电话控件模式 phone：仅手机，phone_tel： 手机和固话，tel：仅固话</p>
          */
         @NameInMap("mode")
         public String mode;
@@ -4178,6 +4323,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：支持多选，false：单选</p>
          */
         @NameInMap("multiple")
         public Boolean multiple;
@@ -4190,12 +4338,18 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1：不打印，0：打印</p>
          */
         @NameInMap("notPrint")
         public String notPrint;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1:不需要大写, 空或者0:需要大写</p>
          */
         @NameInMap("notUpper")
         public String notUpper;
@@ -4208,6 +4362,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：是</p>
          */
         @NameInMap("payEnable")
         public Boolean payEnable;
@@ -4220,12 +4377,18 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>关联表单 1：引用，0：拷贝</p>
          */
         @NameInMap("quote")
         public Long quote;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>文本控件、选项控件等限制文本字数ratio</p>
          */
         @NameInMap("ratio")
         public Long ratio;
@@ -4238,12 +4401,18 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：必填</p>
          */
         @NameInMap("required")
         public Boolean required;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：不可修改</p>
          */
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
@@ -4262,6 +4431,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>选项控件spread</p>
          */
         @NameInMap("spread")
         public Boolean spread;
@@ -4274,6 +4446,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>明细填写方式 table：表格，list：列表</p>
          */
         @NameInMap("tableViewMode")
         public String tableViewMode;
@@ -4286,12 +4461,18 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>true：纵向，false：横向</p>
          */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>是否水印照片 true：是，false：否</p>
          */
         @NameInMap("watermark")
         public Boolean watermark;
@@ -4698,6 +4879,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>企业客户表</p>
          */
         @NameInMap("desc")
         public String desc;
@@ -4722,6 +4906,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>企业客户</p>
          */
         @NameInMap("name")
         public String name;
@@ -4740,6 +4927,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>crm_customer</p>
          */
         @NameInMap("relationType")
         public String relationType;

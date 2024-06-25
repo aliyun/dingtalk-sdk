@@ -6,12 +6,18 @@ import com.aliyun.tea.*;
 public class CardGetCardRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>80264668258</p>
      */
     @NameInMap("cardId")
     public Long cardId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>YUFANAI</p>
      */
     @NameInMap("sourceType")
     public String sourceType;

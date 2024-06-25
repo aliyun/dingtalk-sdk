@@ -230,12 +230,24 @@ public class CreateEventRequest extends TeaModel {
     }
 
     public static class CreateEventRequestEnd extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2020-01-01</p>
+         */
         @NameInMap("date")
         public String date;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2020-01-01T10:15:30+08:00</p>
+         */
         @NameInMap("dateTime")
         public String dateTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Asia/Shanghai</p>
+         */
         @NameInMap("timeZone")
         public String timeZone;
 
@@ -506,12 +518,24 @@ public class CreateEventRequest extends TeaModel {
     }
 
     public static class CreateEventRequestStart extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2020-01-01</p>
+         */
         @NameInMap("date")
         public String date;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2020-01-01T10:15:30+08:00</p>
+         */
         @NameInMap("dateTime")
         public String dateTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>Asia/Shanghai</p>
+         */
         @NameInMap("timeZone")
         public String timeZone;
 

@@ -7,6 +7,10 @@ public class BatchOTOQueryResponseBody extends TeaModel {
     @NameInMap("messageReadInfoList")
     public java.util.List<BatchOTOQueryResponseBodyMessageReadInfoList> messageReadInfoList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>SUCESS</p>
+     */
     @NameInMap("sendStatus")
     public String sendStatus;
 
@@ -34,24 +38,36 @@ public class BatchOTOQueryResponseBody extends TeaModel {
     public static class BatchOTOQueryResponseBodyMessageReadInfoList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>曲大岳</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>READ</p>
          */
         @NameInMap("readStatus")
         public String readStatus;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1433138400000</p>
          */
         @NameInMap("readTimestamp")
         public Long readTimestamp;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>201382020</p>
          */
         @NameInMap("userId")
         public String userId;

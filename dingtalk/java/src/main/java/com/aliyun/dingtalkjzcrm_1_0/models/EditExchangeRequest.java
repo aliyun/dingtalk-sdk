@@ -9,15 +9,25 @@ public class EditExchangeRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>228</p>
      */
     @NameInMap("datatype")
     public Long datatype;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("msgid")
     public Long msgid;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1621822122</p>
      */
     @NameInMap("stamp")
     public Long stamp;
@@ -60,11 +70,21 @@ public class EditExchangeRequest extends TeaModel {
     }
 
     public static class EditExchangeRequestData extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;child_mx&quot;:[{&quot;产品ID&quot;:&quot;1&quot;,&quot;数量&quot;:&quot;10&quot;,&quot;明细备注&quot;:&quot;包含的测试产品&quot;,&quot;序列号-换入&quot;:&quot;• in1001• in1002...无则不传递&quot;,&quot;批次号-换入&quot;:&quot;• in2001 (10)• in2002 (20)...无则不传递&quot;,&quot;序列号-换出&quot;:&quot;• out1001• out1002...无则不传递&quot;,&quot;批次号-换出&quot;:&quot;• out2001 (10)• out2002 (20)...无则不传递&quot;}]</p>
+         */
         @NameInMap("child_mx")
         public String childMx;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>张三</p>
+         * 
+         * <strong>if can be null:</strong>
+         * <p>false</p>
          */
         @NameInMap("data_userid")
         public String dataUserid;

@@ -21,12 +21,24 @@ public class QueryMultiCompanyInfoResponseBody extends TeaModel {
     }
 
     public static class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>relatedInvoice</p>
+         */
         @NameInMap("advancedSettingKey")
         public String advancedSettingKey;
 
+        /**
+         * <strong>example:</strong>
+         * <p>关联发票</p>
+         */
         @NameInMap("advancedSettingName")
         public String advancedSettingName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123456789</p>
+         */
         @NameInMap("endDate")
         public Long endDate;
 
@@ -76,24 +88,52 @@ public class QueryMultiCompanyInfoResponseBody extends TeaModel {
         @NameInMap("advancedSettingList")
         public java.util.List<QueryMultiCompanyInfoResponseBodyListAdvancedSettingList> advancedSettingList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>COM_DEFAULT</p>
+         */
         @NameInMap("companyCode")
         public String companyCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>钉钉</p>
+         */
         @NameInMap("companyName")
         public String companyName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123456789</p>
+         */
         @NameInMap("createTime")
         public String createTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>备注</p>
+         */
         @NameInMap("remark")
         public String remark;
 
+        /**
+         * <strong>example:</strong>
+         * <p>valid</p>
+         */
         @NameInMap("status")
         public String status;
 
+        /**
+         * <strong>example:</strong>
+         * <p>generalTaxpayer</p>
+         */
         @NameInMap("taxNature")
         public String taxNature;
 
+        /**
+         * <strong>example:</strong>
+         * <p>123456789012345</p>
+         */
         @NameInMap("taxNo")
         public String taxNo;
 

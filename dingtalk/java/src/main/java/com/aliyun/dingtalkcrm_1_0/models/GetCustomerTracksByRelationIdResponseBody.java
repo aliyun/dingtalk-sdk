@@ -6,16 +6,26 @@ import com.aliyun.tea.*;
 public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>true</p>
      */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10</p>
      */
     @NameInMap("nextToken")
     public String nextToken;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("resultList")
     public java.util.List<GetCustomerTracksByRelationIdResponseBodyResultList> resultList;
 
@@ -87,6 +97,9 @@ public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>华佗</p>
          */
         @NameInMap("creatorName")
         public String creatorName;
@@ -96,15 +109,28 @@ public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>markdown</p>
          */
         @NameInMap("format")
         public String format;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2022-03-24T09:30Z</p>
          */
         @NameInMap("gmtCreate")
         public String gmtCreate;
+
+        /**
+         * <strong>example:</strong>
+         * <p>dadf134234</p>
+         */
+        @NameInMap("id")
+        public String id;
 
         @NameInMap("isvInfo")
         public GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo isvInfo;
@@ -114,12 +140,18 @@ public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>201</p>
          */
         @NameInMap("type")
         public Integer type;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1</p>
          */
         @NameInMap("typeGroup")
         public Integer typeGroup;
@@ -167,6 +199,14 @@ public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
         }
         public String getGmtCreate() {
             return this.gmtCreate;
+        }
+
+        public GetCustomerTracksByRelationIdResponseBodyResultList setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
         }
 
         public GetCustomerTracksByRelationIdResponseBodyResultList setIsvInfo(GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo isvInfo) {

@@ -9,6 +9,9 @@ public class QueryMinutesSummaryRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>27SaQ3iiHLN0uwqcPisedfreNwiEiE</p>
      */
     @NameInMap("unionId")
     public String unionId;

@@ -6,6 +6,9 @@ import com.aliyun.tea.*;
 public class QueryStatusResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>false/true</p>
      */
     @NameInMap("disable")
     public Boolean disable;

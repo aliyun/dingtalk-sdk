@@ -6,33 +6,57 @@ import com.aliyun.tea.*;
 public class GetMediaCerficateRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>D:****.mp4</p>
      */
     @NameInMap("fileName")
     public String fileName;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>87712****6723412</p>
      */
     @NameInMap("mcnId")
     public String mcnId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>cd8b21090b6*********b78fa733</p>
+     */
     @NameInMap("mediaId")
     public String mediaId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>视频描述。  长度不超过1024个字符。 UTF-8编码。</p>
+     */
     @NameInMap("mediaIntroduction")
     public String mediaIntroduction;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>UploadTest</p>
      */
     @NameInMap("mediaTitle")
     public String mediaTitle;
 
+    /**
+     * <strong>example:</strong>
+     * <p>https://<em><strong><strong>test.cn/image/D22F553</strong></strong></em>TEST.jpeg</p>
+     */
     @NameInMap("thumbUrl")
     public String thumbUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>edb2*****1090b66</p>
      */
     @NameInMap("userId")
     public String userId;

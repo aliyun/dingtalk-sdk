@@ -6,18 +6,27 @@ import com.aliyun.tea.*;
 public class QueryMarketOrderResponseBody extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>2092310001312</p>
      */
     @NameInMap("bizOrderId")
     public Long bizOrderId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>ding23219001</p>
      */
     @NameInMap("corpId")
     public String corpId;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>10003298001</p>
      */
     @NameInMap("createTimestamp")
     public Long createTimestamp;
@@ -27,12 +36,18 @@ public class QueryMarketOrderResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FW_GOODS_12319001</p>
      */
     @NameInMap("goodsCode")
     public String goodsCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试商品001</p>
      */
     @NameInMap("goodsName")
     public String goodsName;
@@ -45,33 +60,57 @@ public class QueryMarketOrderResponseBody extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>FW_GOODS_31001</p>
      */
     @NameInMap("itemCode")
     public String itemCode;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>测试规格001</p>
      */
     @NameInMap("itemName")
     public String itemName;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10003299001</p>
+     */
     @NameInMap("paidTimestamp")
     public Long paidTimestamp;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1</p>
+     */
     @NameInMap("quantity")
     public Long quantity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>10003298003</p>
+     */
     @NameInMap("startTimestamp")
     public Long startTimestamp;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>1</p>
      */
     @NameInMap("status")
     public Long status;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>100</p>
      */
     @NameInMap("totalActualPayFee")
     public Long totalActualPayFee;

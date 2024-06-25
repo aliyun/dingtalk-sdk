@@ -7,9 +7,17 @@ public class GroupManageQueryResponseBody extends TeaModel {
     @NameInMap("groupInfoList")
     public java.util.List<GroupManageQueryResponseBodyGroupInfoList> groupInfoList;
 
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
+    /**
+     * <strong>example:</strong>
+     * <p>500</p>
+     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -43,12 +51,24 @@ public class GroupManageQueryResponseBody extends TeaModel {
     }
 
     public static class GroupManageQueryResponseBodyGroupInfoList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
         @NameInMap("banWordsMode")
         public Integer banWordsMode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1000</p>
+         */
         @NameInMap("capacity")
         public Integer capacity;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1652183395772</p>
+         */
         @NameInMap("createdAt")
         public Long createdAt;
 
@@ -58,18 +78,38 @@ public class GroupManageQueryResponseBody extends TeaModel {
         @NameInMap("groupAdminList")
         public java.util.List<String> groupAdminList;
 
+        /**
+         * <strong>example:</strong>
+         * <p>574892167781263748</p>
+         */
         @NameInMap("groupOwner")
         public String groupOwner;
 
+        /**
+         * <strong>example:</strong>
+         * <p>今天吃肘子群</p>
+         */
         @NameInMap("groupTitle")
         public String groupTitle;
 
+        /**
+         * <strong>example:</strong>
+         * <p>500</p>
+         */
         @NameInMap("memberCount")
         public Integer memberCount;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cidnvcxzklxv23jhkg412hj==</p>
+         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>INNER</p>
+         */
         @NameInMap("type")
         public String type;
 

@@ -4,6 +4,13 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class WearOrgHonorRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>accs233sxx</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
     @NameInMap("userId")
     public String userId;
 

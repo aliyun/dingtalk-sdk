@@ -23,24 +23,36 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
     public static class QueryAllSubjectsFromClassScheduleResponseBodyResultExtTeacherList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>url</p>
          */
         @NameInMap("avator")
         public String avator;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>李老师</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>5824343</p>
          */
         @NameInMap("uid")
         public Long uid;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>2534523452</p>
          */
         @NameInMap("userId")
         public String userId;
@@ -85,12 +97,24 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryAllSubjectsFromClassScheduleResponseBodyResultExt extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>#000000</p>
+         */
         @NameInMap("backgroundColor")
         public String backgroundColor;
 
+        /**
+         * <strong>example:</strong>
+         * <p>2345</p>
+         */
         @NameInMap("classId")
         public Long classId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>#000000</p>
+         */
         @NameInMap("fontColor")
         public String fontColor;
 
@@ -137,18 +161,34 @@ public class QueryAllSubjectsFromClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryAllSubjectsFromClassScheduleResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>创建者orgId</p>
+         */
         @NameInMap("creatorOrgId")
         public Long creatorOrgId;
 
         @NameInMap("ext")
         public QueryAllSubjectsFromClassScheduleResponseBodyResultExt ext;
 
+        /**
+         * <strong>example:</strong>
+         * <p>HIGH_SCHOOL</p>
+         */
         @NameInMap("periodCode")
         public String periodCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>cn_yuwen</p>
+         */
         @NameInMap("subjectCode")
         public String subjectCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>语文</p>
+         */
         @NameInMap("subjectName")
         public String subjectName;
 

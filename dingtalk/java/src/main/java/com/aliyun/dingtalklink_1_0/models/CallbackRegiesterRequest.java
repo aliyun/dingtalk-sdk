@@ -6,24 +6,36 @@ import com.aliyun.tea.*;
 public class CallbackRegiesterRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>3b89df4dfaaccd5b8e1f9a2</p>
      */
     @NameInMap("apiSecret")
     public String apiSecret;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>abc-123</p>
      */
     @NameInMap("callbackKey")
     public String callbackKey;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p><a href="https://www.your.com/callback">https://www.your.com/callback</a></p>
      */
     @NameInMap("callbackUrl")
     public String callbackUrl;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>shortcut</p>
      */
     @NameInMap("type")
     public String type;

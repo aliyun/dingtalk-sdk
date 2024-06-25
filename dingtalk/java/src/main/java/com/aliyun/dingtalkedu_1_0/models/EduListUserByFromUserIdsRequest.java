@@ -7,9 +7,17 @@ public class EduListUserByFromUserIdsRequest extends TeaModel {
     @NameInMap("classId")
     public Long classId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>ding123456</p>
+     */
     @NameInMap("corpId")
     public String corpId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>123456</p>
+     */
     @NameInMap("guardianUserId")
     public String guardianUserId;
 

@@ -4,18 +4,34 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class LinkSourceInfo extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>docx</p>
+     */
     @NameInMap("extension")
     public String extension;
 
     @NameInMap("iconUrl")
     public LinkSourceInfoIconUrl iconUrl;
 
+    /**
+     * <strong>example:</strong>
+     * <p>abc</p>
+     */
     @NameInMap("id")
     public String id;
 
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
     @NameInMap("linkType")
     public Long linkType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>def</p>
+     */
     @NameInMap("spaceId")
     public String spaceId;
 
@@ -65,9 +81,17 @@ public class LinkSourceInfo extends TeaModel {
     }
 
     public static class LinkSourceInfoIconUrl extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>gh</p>
+         */
         @NameInMap("line")
         public String line;
 
+        /**
+         * <strong>example:</strong>
+         * <p>def</p>
+         */
         @NameInMap("small")
         public String small;
 

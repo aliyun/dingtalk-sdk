@@ -4,12 +4,24 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupSetRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>cidkeQXxEC9VaGQ2M6nTlhNWQ==</p>
+     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>iPnLAZk8oV4AiE</p>
+     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>u9iSGISL3bqIiE</p>
+     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

@@ -32,33 +32,73 @@ public class GetOrgInfoResponseBody extends TeaModel {
     }
 
     public static class GetOrgInfoResponseBodyContent extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123</p>
+         */
         @NameInMap("deptCode")
         public String deptCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>开发技术部</p>
+         */
         @NameInMap("deptName")
         public String deptName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>10</p>
+         */
         @NameInMap("deptNum")
         public String deptNum;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("level")
         public String level;
 
+        /**
+         * <strong>example:</strong>
+         * <p>/1/123</p>
+         */
         @NameInMap("organizationCodePath")
         public String organizationCodePath;
 
+        /**
+         * <strong>example:</strong>
+         * <p>/开发技术部</p>
+         */
         @NameInMap("organizationPath")
         public String organizationPath;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
         @NameInMap("parentDeptCode")
         public String parentDeptCode;
 
+        /**
+         * <strong>example:</strong>
+         * <p>开发部</p>
+         */
         @NameInMap("shortName")
         public String shortName;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1678886770065</p>
+         */
         @NameInMap("startDate")
         public String startDate;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1678886770065</p>
+         */
         @NameInMap("stopDate")
         public String stopDate;
 

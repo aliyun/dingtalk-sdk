@@ -12,6 +12,9 @@ public class UpdateDentryAppPropertiesRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>union_id</p>
      */
     @NameInMap("unionId")
     public String unionId;
@@ -40,18 +43,27 @@ public class UpdateDentryAppPropertiesRequest extends TeaModel {
     public static class UpdateDentryAppPropertiesRequestAppProperties extends TeaModel {
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>property_name</p>
          */
         @NameInMap("name")
         public String name;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>property_value</p>
          */
         @NameInMap("value")
         public String value;
 
         /**
          * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>PRIVATE</p>
          */
         @NameInMap("visibility")
         public String visibility;
