@@ -4432,6 +4432,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>根据手机号查询渠道组织中的员工信息</p>
+     * 
+     * @param request QueryChannelStaffInfoByMobileRequest
+     * @param headers QueryChannelStaffInfoByMobileHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryChannelStaffInfoByMobileResponse
+     */
+    public QueryChannelStaffInfoByMobileResponse queryChannelStaffInfoByMobileWithOptions(QueryChannelStaffInfoByMobileRequest request, QueryChannelStaffInfoByMobileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.mobile)) {
+            query.put("mobile", request.mobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            query.put("targetCorpId", request.targetCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryChannelStaffInfoByMobile"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/channelOrganizations/users"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryChannelStaffInfoByMobileResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据手机号查询渠道组织中的员工信息</p>
+     * 
+     * @param request QueryChannelStaffInfoByMobileRequest
+     * @return QueryChannelStaffInfoByMobileResponse
+     */
+    public QueryChannelStaffInfoByMobileResponse queryChannelStaffInfoByMobile(QueryChannelStaffInfoByMobileRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryChannelStaffInfoByMobileHeaders headers = new QueryChannelStaffInfoByMobileHeaders();
+        return this.queryChannelStaffInfoByMobileWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>伙伴钉根据uid查询人员的标签信息</p>
      * 
      * @param headers QueryPartnerInfoHeaders

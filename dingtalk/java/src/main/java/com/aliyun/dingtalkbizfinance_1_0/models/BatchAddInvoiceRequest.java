@@ -737,6 +737,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("electronicUrl")
         public String electronicUrl;
 
+        @NameInMap("fileId")
+        public String fileId;
+
         /**
          * <strong>example:</strong>
          * <p>INPUT_VAT</p>
@@ -922,6 +925,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("sellerTel")
         public String sellerTel;
 
+        @NameInMap("spaceId")
+        public String spaceId;
+
         /**
          * <strong>example:</strong>
          * <p>abc</p>
@@ -1030,6 +1036,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getElectronicUrl() {
             return this.electronicUrl;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setFileId(String fileId) {
+            this.fileId = fileId;
+            return this;
+        }
+        public String getFileId() {
+            return this.fileId;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setFinanceType(String financeType) {
@@ -1278,6 +1292,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getSellerTel() {
             return this.sellerTel;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setSpaceId(String spaceId) {
+            this.spaceId = spaceId;
+            return this;
+        }
+        public String getSpaceId() {
+            return this.spaceId;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setSupplySign(String supplySign) {

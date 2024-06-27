@@ -2399,6 +2399,78 @@ public class DescribeMetaModelResponseBody extends TeaModel {
 
     }
 
+    public static class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>NORMAL</p>
+         */
+        @NameInMap("behavior")
+        public String behavior;
+
+        /**
+         * <strong>example:</strong>
+         * <p>TextField_1LTIYOR4XIF40</p>
+         */
+        @NameInMap("fieldId")
+        public String fieldId;
+
+        public static DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets build(java.util.Map<String, ?> map) throws Exception {
+            DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets self = new DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets();
+            return TeaModel.build(map, self);
+        }
+
+        public DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets setBehavior(String behavior) {
+            this.behavior = behavior;
+            return this;
+        }
+        public String getBehavior() {
+            return this.behavior;
+        }
+
+        public DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets setFieldId(String fieldId) {
+            this.fieldId = fieldId;
+            return this;
+        }
+        public String getFieldId() {
+            return this.fieldId;
+        }
+
+    }
+
+    public static class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>option_0</p>
+         */
+        @NameInMap("optionKey")
+        public String optionKey;
+
+        @NameInMap("targets")
+        public java.util.List<DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets> targets;
+
+        public static DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage build(java.util.Map<String, ?> map) throws Exception {
+            DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage self = new DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage();
+            return TeaModel.build(map, self);
+        }
+
+        public DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage setOptionKey(String optionKey) {
+            this.optionKey = optionKey;
+            return this;
+        }
+        public String getOptionKey() {
+            return this.optionKey;
+        }
+
+        public DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage setTargets(java.util.List<DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets> targets) {
+            this.targets = targets;
+            return this;
+        }
+        public java.util.List<DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets> getTargets() {
+            return this.targets;
+        }
+
+    }
+
     public static class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsDataSourceParamsFilters extends TeaModel {
         /**
          * <p>This parameter is required.</p>
@@ -4182,6 +4254,9 @@ public class DescribeMetaModelResponseBody extends TeaModel {
         @NameInMap("availableTemplates")
         public java.util.List<DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsAvailableTemplates> availableTemplates;
 
+        @NameInMap("behaviorLinkage")
+        public java.util.List<DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage> behaviorLinkage;
+
         /**
          * <p>This parameter is required.</p>
          */
@@ -4504,6 +4579,14 @@ public class DescribeMetaModelResponseBody extends TeaModel {
         }
         public java.util.List<DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsAvailableTemplates> getAvailableTemplates() {
             return this.availableTemplates;
+        }
+
+        public DescribeMetaModelResponseBodyMetaModelDTOListItemsProps setBehaviorLinkage(java.util.List<DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage> behaviorLinkage) {
+            this.behaviorLinkage = behaviorLinkage;
+            return this;
+        }
+        public java.util.List<DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage> getBehaviorLinkage() {
+            return this.behaviorLinkage;
         }
 
         public DescribeMetaModelResponseBodyMetaModelDTOListItemsProps setBizAlias(String bizAlias) {
