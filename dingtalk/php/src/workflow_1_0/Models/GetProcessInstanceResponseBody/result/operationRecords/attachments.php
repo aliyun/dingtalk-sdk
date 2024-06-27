@@ -35,11 +35,17 @@ class attachments extends Model
      * @var string
      */
     public $fileType;
+
+    /**
+     * @var string
+     */
+    public $spaceId;
     protected $_name = [
         'fileId'   => 'fileId',
         'fileName' => 'fileName',
         'fileSize' => 'fileSize',
         'fileType' => 'fileType',
+        'spaceId'  => 'spaceId',
     ];
 
     public function validate()
@@ -60,6 +66,9 @@ class attachments extends Model
         }
         if (null !== $this->fileType) {
             $res['fileType'] = $this->fileType;
+        }
+        if (null !== $this->spaceId) {
+            $res['spaceId'] = $this->spaceId;
         }
 
         return $res;
@@ -84,6 +93,9 @@ class attachments extends Model
         }
         if (isset($map['fileType'])) {
             $model->fileType = $map['fileType'];
+        }
+        if (isset($map['spaceId'])) {
+            $model->spaceId = $map['spaceId'];
         }
 
         return $model;

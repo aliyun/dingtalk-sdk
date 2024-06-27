@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items;
 
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\availableTemplates;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\behaviorLinkage;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\dataSource;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\fields;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\DescribeRelationMetaResponseBody\relationMetaDTOList\items\props\options;
@@ -37,6 +38,11 @@ class props extends Model
      * @var availableTemplates[]
      */
     public $availableTemplates;
+
+    /**
+     * @var behaviorLinkage[]
+     */
+    public $behaviorLinkage;
 
     /**
      * @description This parameter is required.
@@ -354,6 +360,7 @@ class props extends Model
         'actionName'             => 'actionName',
         'align'                  => 'align',
         'availableTemplates'     => 'availableTemplates',
+        'behaviorLinkage'        => 'behaviorLinkage',
         'bizAlias'               => 'bizAlias',
         'choice'                 => 'choice',
         'content'                => 'content',
@@ -414,6 +421,15 @@ class props extends Model
                 $n = 0;
                 foreach ($this->availableTemplates as $item) {
                     $res['availableTemplates'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->behaviorLinkage) {
+            $res['behaviorLinkage'] = [];
+            if (null !== $this->behaviorLinkage && \is_array($this->behaviorLinkage)) {
+                $n = 0;
+                foreach ($this->behaviorLinkage as $item) {
+                    $res['behaviorLinkage'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -588,6 +604,15 @@ class props extends Model
                 $n                         = 0;
                 foreach ($map['availableTemplates'] as $item) {
                     $model->availableTemplates[$n++] = null !== $item ? availableTemplates::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['behaviorLinkage'])) {
+            if (!empty($map['behaviorLinkage'])) {
+                $model->behaviorLinkage = [];
+                $n                      = 0;
+                foreach ($map['behaviorLinkage'] as $item) {
+                    $model->behaviorLinkage[$n++] = null !== $item ? behaviorLinkage::fromMap($item) : $item;
                 }
             }
         }

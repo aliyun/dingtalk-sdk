@@ -60,20 +60,18 @@ use AlibabaCloud\SDK\Dingtalk\Vesign_1_0\Models\OrderResaleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vesign_1_0\Models\OrderResaleResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
-use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
+use Darabonba\GatewayDingTalk\Client;
 use Darabonba\OpenApi\Models\OpenApiRequest;
 use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
-    protected $_client;
-
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_client       = new DarabonbaGatewayDingTalkClient();
-        $this->_spi          = $this->_client;
+        $gatewayClient       = new Client();
+        $this->_spi          = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';

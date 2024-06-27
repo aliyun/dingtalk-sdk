@@ -29,8 +29,6 @@ class UploadFileRequest extends Model
     /**
      * @description This parameter is required.
      *
-     * @example https://oss.***\/111.png
-     *
      * @var string
      */
     public $fileUrl;

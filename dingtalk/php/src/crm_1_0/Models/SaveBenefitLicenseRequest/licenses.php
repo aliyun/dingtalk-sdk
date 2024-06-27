@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class licenses extends Model
 {
     /**
-     * @description This parameter is required.
-     *
      * @example licenseStaffId
      *
      * @var string

@@ -211,6 +211,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PushBadgeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfigsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryChannelStaffInfoByMobileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryChannelStaffInfoByMobileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryChannelStaffInfoByMobileResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryUserBehaviorHeaders;
@@ -284,20 +287,18 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateVoiceMsgCtrlStatusRequ
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateVoiceMsgCtrlStatusResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
-use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
+use Darabonba\GatewayDingTalk\Client;
 use Darabonba\OpenApi\Models\OpenApiRequest;
 use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
-    protected $_client;
-
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_client       = new DarabonbaGatewayDingTalkClient();
-        $this->_spi          = $this->_client;
+        $gatewayClient       = new Client();
+        $this->_spi          = $gatewayClient;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -4718,6 +4719,66 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryAcrossCloudStroageConfigsHeaders([]);
 
         return $this->queryAcrossCloudStroageConfigsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据手机号查询渠道组织中的员工信息
+     *  *
+     * @param QueryChannelStaffInfoByMobileRequest $request QueryChannelStaffInfoByMobileRequest
+     * @param QueryChannelStaffInfoByMobileHeaders $headers QueryChannelStaffInfoByMobileHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryChannelStaffInfoByMobileResponse QueryChannelStaffInfoByMobileResponse
+     */
+    public function queryChannelStaffInfoByMobileWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->mobile)) {
+            $query['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $query['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryChannelStaffInfoByMobile',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/channelOrganizations/users',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryChannelStaffInfoByMobileResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据手机号查询渠道组织中的员工信息
+     *  *
+     * @param QueryChannelStaffInfoByMobileRequest $request QueryChannelStaffInfoByMobileRequest
+     *
+     * @return QueryChannelStaffInfoByMobileResponse QueryChannelStaffInfoByMobileResponse
+     */
+    public function queryChannelStaffInfoByMobile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryChannelStaffInfoByMobileHeaders([]);
+
+        return $this->queryChannelStaffInfoByMobileWithOptions($request, $headers, $runtime);
     }
 
     /**

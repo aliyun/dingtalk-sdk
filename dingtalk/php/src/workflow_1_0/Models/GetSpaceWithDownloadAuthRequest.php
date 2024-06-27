@@ -46,12 +46,18 @@ class GetSpaceWithDownloadAuthRequest extends Model
      * @var string
      */
     public $userId;
+
+    /**
+     * @var bool
+     */
+    public $withCommentAttatchment;
     protected $_name = [
-        'agentId'           => 'agentId',
-        'fileId'            => 'fileId',
-        'fileIdList'        => 'fileIdList',
-        'processInstanceId' => 'processInstanceId',
-        'userId'            => 'userId',
+        'agentId'                => 'agentId',
+        'fileId'                 => 'fileId',
+        'fileIdList'             => 'fileIdList',
+        'processInstanceId'      => 'processInstanceId',
+        'userId'                 => 'userId',
+        'withCommentAttatchment' => 'withCommentAttatchment',
     ];
 
     public function validate()
@@ -75,6 +81,9 @@ class GetSpaceWithDownloadAuthRequest extends Model
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
+        }
+        if (null !== $this->withCommentAttatchment) {
+            $res['withCommentAttatchment'] = $this->withCommentAttatchment;
         }
 
         return $res;
@@ -104,6 +113,9 @@ class GetSpaceWithDownloadAuthRequest extends Model
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];
+        }
+        if (isset($map['withCommentAttatchment'])) {
+            $model->withCommentAttatchment = $map['withCommentAttatchment'];
         }
 
         return $model;

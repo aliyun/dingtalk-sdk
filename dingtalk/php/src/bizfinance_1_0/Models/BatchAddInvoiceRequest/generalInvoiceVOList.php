@@ -69,6 +69,11 @@ class generalInvoiceVOList extends Model
     public $electronicUrl;
 
     /**
+     * @var string
+     */
+    public $fileId;
+
+    /**
      * @example INPUT_VAT
      *
      * @var string
@@ -270,6 +275,11 @@ class generalInvoiceVOList extends Model
     public $sellerTel;
 
     /**
+     * @var string
+     */
+    public $spaceId;
+
+    /**
      * @example abc
      *
      * @var string
@@ -322,6 +332,7 @@ class generalInvoiceVOList extends Model
         'drawerName'                     => 'drawerName',
         'drewDate'                       => 'drewDate',
         'electronicUrl'                  => 'electronicUrl',
+        'fileId'                         => 'fileId',
         'financeType'                    => 'financeType',
         'fundType'                       => 'fundType',
         'generalInvoiceDetailVOList'     => 'generalInvoiceDetailVOList',
@@ -353,6 +364,7 @@ class generalInvoiceVOList extends Model
         'sellerName'                     => 'sellerName',
         'sellerTaxNo'                    => 'sellerTaxNo',
         'sellerTel'                      => 'sellerTel',
+        'spaceId'                        => 'spaceId',
         'supplySign'                     => 'supplySign',
         'taxAmount'                      => 'taxAmount',
         'usedVehicleSaleDetailVOList'    => 'usedVehicleSaleDetailVOList',
@@ -392,6 +404,9 @@ class generalInvoiceVOList extends Model
         }
         if (null !== $this->electronicUrl) {
             $res['electronicUrl'] = $this->electronicUrl;
+        }
+        if (null !== $this->fileId) {
+            $res['fileId'] = $this->fileId;
         }
         if (null !== $this->financeType) {
             $res['financeType'] = $this->financeType;
@@ -498,6 +513,9 @@ class generalInvoiceVOList extends Model
         if (null !== $this->sellerTel) {
             $res['sellerTel'] = $this->sellerTel;
         }
+        if (null !== $this->spaceId) {
+            $res['spaceId'] = $this->spaceId;
+        }
         if (null !== $this->supplySign) {
             $res['supplySign'] = $this->supplySign;
         }
@@ -566,6 +584,9 @@ class generalInvoiceVOList extends Model
         }
         if (isset($map['electronicUrl'])) {
             $model->electronicUrl = $map['electronicUrl'];
+        }
+        if (isset($map['fileId'])) {
+            $model->fileId = $map['fileId'];
         }
         if (isset($map['financeType'])) {
             $model->financeType = $map['financeType'];
@@ -671,6 +692,9 @@ class generalInvoiceVOList extends Model
         }
         if (isset($map['sellerTel'])) {
             $model->sellerTel = $map['sellerTel'];
+        }
+        if (isset($map['spaceId'])) {
+            $model->spaceId = $map['spaceId'];
         }
         if (isset($map['supplySign'])) {
             $model->supplySign = $map['supplySign'];

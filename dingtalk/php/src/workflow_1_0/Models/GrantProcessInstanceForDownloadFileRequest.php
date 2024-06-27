@@ -25,9 +25,15 @@ class GrantProcessInstanceForDownloadFileRequest extends Model
      * @var string
      */
     public $processInstanceId;
+
+    /**
+     * @var bool
+     */
+    public $withCommentAttatchment;
     protected $_name = [
-        'fileId'            => 'fileId',
-        'processInstanceId' => 'processInstanceId',
+        'fileId'                 => 'fileId',
+        'processInstanceId'      => 'processInstanceId',
+        'withCommentAttatchment' => 'withCommentAttatchment',
     ];
 
     public function validate()
@@ -42,6 +48,9 @@ class GrantProcessInstanceForDownloadFileRequest extends Model
         }
         if (null !== $this->processInstanceId) {
             $res['processInstanceId'] = $this->processInstanceId;
+        }
+        if (null !== $this->withCommentAttatchment) {
+            $res['withCommentAttatchment'] = $this->withCommentAttatchment;
         }
 
         return $res;
@@ -60,6 +69,9 @@ class GrantProcessInstanceForDownloadFileRequest extends Model
         }
         if (isset($map['processInstanceId'])) {
             $model->processInstanceId = $map['processInstanceId'];
+        }
+        if (isset($map['withCommentAttatchment'])) {
+            $model->withCommentAttatchment = $map['withCommentAttatchment'];
         }
 
         return $model;
