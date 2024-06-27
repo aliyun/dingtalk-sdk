@@ -15,12 +15,11 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
-        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
-            this._client = new AlibabaCloud.GatewayDingTalk.Client();
-            this._spi = _client;
+            AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = gatewayClient;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {

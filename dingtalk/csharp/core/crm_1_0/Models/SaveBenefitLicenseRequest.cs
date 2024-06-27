@@ -23,9 +23,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public List<SaveBenefitLicenseRequestLicenses> Licenses { get; set; }
         public class SaveBenefitLicenseRequestLicenses : TeaModel {
-            /// <summary>
-            /// This parameter is required.
-            /// </summary>
             [NameInMap("licenseUserId")]
             [Validation(Required=false)]
             public string LicenseUserId { get; set; }

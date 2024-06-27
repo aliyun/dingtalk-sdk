@@ -38,6 +38,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public string UserId { get; set; }
 
+        [NameInMap("withCommentAttatchment")]
+        [Validation(Required=false)]
+        public bool? WithCommentAttatchment { get; set; }
+
     }
 
 }

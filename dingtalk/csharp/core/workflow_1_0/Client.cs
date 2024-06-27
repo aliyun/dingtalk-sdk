@@ -15,12 +15,11 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
-        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
-            this._client = new AlibabaCloud.GatewayDingTalk.Client();
-            this._spi = _client;
+            AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = gatewayClient;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -2863,6 +2862,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 body["userId"] = request.UserId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithCommentAttatchment))
+            {
+                body["withCommentAttatchment"] = request.WithCommentAttatchment;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2923,6 +2926,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithCommentAttatchment))
+            {
+                body["withCommentAttatchment"] = request.WithCommentAttatchment;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3255,6 +3262,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 body["processInstanceId"] = request.ProcessInstanceId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithCommentAttatchment))
+            {
+                body["withCommentAttatchment"] = request.WithCommentAttatchment;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -3303,6 +3314,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
             {
                 body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WithCommentAttatchment))
+            {
+                body["withCommentAttatchment"] = request.WithCommentAttatchment;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

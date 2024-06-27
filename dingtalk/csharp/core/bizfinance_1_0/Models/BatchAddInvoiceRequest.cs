@@ -49,6 +49,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string ElectronicUrl { get; set; }
 
+            [NameInMap("fileId")]
+            [Validation(Required=false)]
+            public string FileId { get; set; }
+
             [NameInMap("financeType")]
             [Validation(Required=false)]
             public string FinanceType { get; set; }
@@ -264,6 +268,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("sellerTel")]
             [Validation(Required=false)]
             public string SellerTel { get; set; }
+
+            [NameInMap("spaceId")]
+            [Validation(Required=false)]
+            public string SpaceId { get; set; }
 
             [NameInMap("supplySign")]
             [Validation(Required=false)]

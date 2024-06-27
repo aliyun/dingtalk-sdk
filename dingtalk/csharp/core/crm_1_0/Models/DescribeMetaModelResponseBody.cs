@@ -1189,6 +1189,30 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
                     }
 
+                    [NameInMap("behaviorLinkage")]
+                    [Validation(Required=false)]
+                    public List<DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage> BehaviorLinkage { get; set; }
+                    public class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage : TeaModel {
+                        [NameInMap("optionKey")]
+                        [Validation(Required=false)]
+                        public string OptionKey { get; set; }
+
+                        [NameInMap("targets")]
+                        [Validation(Required=false)]
+                        public List<DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets> Targets { get; set; }
+                        public class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets : TeaModel {
+                            [NameInMap("behavior")]
+                            [Validation(Required=false)]
+                            public string Behavior { get; set; }
+
+                            [NameInMap("fieldId")]
+                            [Validation(Required=false)]
+                            public string FieldId { get; set; }
+
+                        }
+
+                    }
+
                     /// <summary>
                     /// This parameter is required.
                     /// </summary>

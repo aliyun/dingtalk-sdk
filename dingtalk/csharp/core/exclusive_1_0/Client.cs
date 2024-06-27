@@ -15,12 +15,11 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
-        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
-            this._client = new AlibabaCloud.GatewayDingTalk.Client();
-            this._spi = _client;
+            AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = gatewayClient;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -9163,6 +9162,130 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryAcrossCloudStroageConfigsHeaders headers = new QueryAcrossCloudStroageConfigsHeaders();
             return await QueryAcrossCloudStroageConfigsWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 根据手机号查询渠道组织中的员工信息
+         *
+         * @param request QueryChannelStaffInfoByMobileRequest
+         * @param headers QueryChannelStaffInfoByMobileHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryChannelStaffInfoByMobileResponse
+         */
+        public QueryChannelStaffInfoByMobileResponse QueryChannelStaffInfoByMobileWithOptions(QueryChannelStaffInfoByMobileRequest request, QueryChannelStaffInfoByMobileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                query["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                query["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryChannelStaffInfoByMobile",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/channelOrganizations/users",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryChannelStaffInfoByMobileResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 根据手机号查询渠道组织中的员工信息
+         *
+         * @param request QueryChannelStaffInfoByMobileRequest
+         * @param headers QueryChannelStaffInfoByMobileHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryChannelStaffInfoByMobileResponse
+         */
+        public async Task<QueryChannelStaffInfoByMobileResponse> QueryChannelStaffInfoByMobileWithOptionsAsync(QueryChannelStaffInfoByMobileRequest request, QueryChannelStaffInfoByMobileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                query["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                query["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryChannelStaffInfoByMobile",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/channelOrganizations/users",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryChannelStaffInfoByMobileResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 根据手机号查询渠道组织中的员工信息
+         *
+         * @param request QueryChannelStaffInfoByMobileRequest
+         * @return QueryChannelStaffInfoByMobileResponse
+         */
+        public QueryChannelStaffInfoByMobileResponse QueryChannelStaffInfoByMobile(QueryChannelStaffInfoByMobileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryChannelStaffInfoByMobileHeaders headers = new QueryChannelStaffInfoByMobileHeaders();
+            return QueryChannelStaffInfoByMobileWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 根据手机号查询渠道组织中的员工信息
+         *
+         * @param request QueryChannelStaffInfoByMobileRequest
+         * @return QueryChannelStaffInfoByMobileResponse
+         */
+        public async Task<QueryChannelStaffInfoByMobileResponse> QueryChannelStaffInfoByMobileAsync(QueryChannelStaffInfoByMobileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryChannelStaffInfoByMobileHeaders headers = new QueryChannelStaffInfoByMobileHeaders();
+            return await QueryChannelStaffInfoByMobileWithOptionsAsync(request, headers, runtime);
         }
 
         /**

@@ -86,6 +86,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public List<GetProcessInstanceResponseBodyResultOperationRecords> OperationRecords { get; set; }
             public class GetProcessInstanceResponseBodyResultOperationRecords : TeaModel {
+                [NameInMap("activityId")]
+                [Validation(Required=false)]
+                public string ActivityId { get; set; }
+
                 [NameInMap("attachments")]
                 [Validation(Required=false)]
                 public List<GetProcessInstanceResponseBodyResultOperationRecordsAttachments> Attachments { get; set; }
@@ -106,6 +110,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                     [Validation(Required=false)]
                     public string FileType { get; set; }
 
+                    [NameInMap("spaceId")]
+                    [Validation(Required=false)]
+                    public string SpaceId { get; set; }
+
                 }
 
                 [NameInMap("ccUserIds")]
@@ -119,6 +127,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [Validation(Required=false)]
                 public string Date { get; set; }
 
+                [NameInMap("images")]
+                [Validation(Required=false)]
+                public List<string> Images { get; set; }
+
                 [NameInMap("remark")]
                 [Validation(Required=false)]
                 public string Remark { get; set; }
@@ -126,6 +138,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [NameInMap("result")]
                 [Validation(Required=false)]
                 public string Result { get; set; }
+
+                [NameInMap("showName")]
+                [Validation(Required=false)]
+                public string ShowName { get; set; }
 
                 [NameInMap("type")]
                 [Validation(Required=false)]
