@@ -785,6 +785,7 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         drawer_name: str = None,
         drew_date: str = None,
         electronic_url: str = None,
+        file_id: str = None,
         finance_type: str = None,
         fund_type: str = None,
         general_invoice_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
@@ -816,6 +817,7 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         seller_name: str = None,
         seller_tax_no: str = None,
         seller_tel: str = None,
+        space_id: str = None,
         supply_sign: str = None,
         tax_amount: str = None,
         used_vehicle_sale_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList] = None,
@@ -832,6 +834,7 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.drawer_name = drawer_name
         self.drew_date = drew_date
         self.electronic_url = electronic_url
+        self.file_id = file_id
         self.finance_type = finance_type
         self.fund_type = fund_type
         self.general_invoice_detail_volist = general_invoice_detail_volist
@@ -863,6 +866,7 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.seller_name = seller_name
         self.seller_tax_no = seller_tax_no
         self.seller_tel = seller_tel
+        self.space_id = space_id
         self.supply_sign = supply_sign
         self.tax_amount = tax_amount
         self.used_vehicle_sale_detail_volist = used_vehicle_sale_detail_volist
@@ -911,6 +915,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['drewDate'] = self.drew_date
         if self.electronic_url is not None:
             result['electronicUrl'] = self.electronic_url
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
         if self.finance_type is not None:
             result['financeType'] = self.finance_type
         if self.fund_type is not None:
@@ -977,6 +983,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['sellerTaxNo'] = self.seller_tax_no
         if self.seller_tel is not None:
             result['sellerTel'] = self.seller_tel
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
         if self.supply_sign is not None:
             result['supplySign'] = self.supply_sign
         if self.tax_amount is not None:
@@ -1015,6 +1023,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.drew_date = m.get('drewDate')
         if m.get('electronicUrl') is not None:
             self.electronic_url = m.get('electronicUrl')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
         if m.get('financeType') is not None:
             self.finance_type = m.get('financeType')
         if m.get('fundType') is not None:
@@ -1083,6 +1093,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.seller_tax_no = m.get('sellerTaxNo')
         if m.get('sellerTel') is not None:
             self.seller_tel = m.get('sellerTel')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
         if m.get('supplySign') is not None:
             self.supply_sign = m.get('supplySign')
         if m.get('taxAmount') is not None:

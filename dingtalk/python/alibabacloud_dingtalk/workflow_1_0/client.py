@@ -2677,6 +2677,8 @@ class Client(OpenApiClient):
             body['processInstanceId'] = request.process_instance_id
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.with_comment_attatchment):
+            body['withCommentAttatchment'] = request.with_comment_attatchment
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2728,6 +2730,8 @@ class Client(OpenApiClient):
             body['processInstanceId'] = request.process_instance_id
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.with_comment_attatchment):
+            body['withCommentAttatchment'] = request.with_comment_attatchment
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3041,6 +3045,8 @@ class Client(OpenApiClient):
             body['fileId'] = request.file_id
         if not UtilClient.is_unset(request.process_instance_id):
             body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.with_comment_attatchment):
+            body['withCommentAttatchment'] = request.with_comment_attatchment
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3086,6 +3092,8 @@ class Client(OpenApiClient):
             body['fileId'] = request.file_id
         if not UtilClient.is_unset(request.process_instance_id):
             body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.with_comment_attatchment):
+            body['withCommentAttatchment'] = request.with_comment_attatchment
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

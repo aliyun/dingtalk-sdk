@@ -5046,11 +5046,13 @@ class GetProcessInstanceResponseBodyResultOperationRecordsAttachments(TeaModel):
         file_name: str = None,
         file_size: str = None,
         file_type: str = None,
+        space_id: str = None,
     ):
         self.file_id = file_id
         self.file_name = file_name
         self.file_size = file_size
         self.file_type = file_type
+        self.space_id = space_id
 
     def validate(self):
         pass
@@ -5069,6 +5071,8 @@ class GetProcessInstanceResponseBodyResultOperationRecordsAttachments(TeaModel):
             result['fileSize'] = self.file_size
         if self.file_type is not None:
             result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
         return result
 
     def from_map(self, m: dict = None):
@@ -5081,26 +5085,34 @@ class GetProcessInstanceResponseBodyResultOperationRecordsAttachments(TeaModel):
             self.file_size = m.get('fileSize')
         if m.get('fileType') is not None:
             self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
         return self
 
 
 class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
     def __init__(
         self,
+        activity_id: str = None,
         attachments: List[GetProcessInstanceResponseBodyResultOperationRecordsAttachments] = None,
         cc_user_ids: List[str] = None,
         date: str = None,
+        images: List[str] = None,
         remark: str = None,
         result: str = None,
+        show_name: str = None,
         type: str = None,
         user_id: str = None,
     ):
+        self.activity_id = activity_id
         self.attachments = attachments
         self.cc_user_ids = cc_user_ids
         # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.date = date
+        self.images = images
         self.remark = remark
         self.result = result
+        self.show_name = show_name
         self.type = type
         self.user_id = user_id
 
@@ -5116,6 +5128,8 @@ class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
             return _map
 
         result = dict()
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
         result['attachments'] = []
         if self.attachments is not None:
             for k in self.attachments:
@@ -5124,10 +5138,14 @@ class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
             result['ccUserIds'] = self.cc_user_ids
         if self.date is not None:
             result['date'] = self.date
+        if self.images is not None:
+            result['images'] = self.images
         if self.remark is not None:
             result['remark'] = self.remark
         if self.result is not None:
             result['result'] = self.result
+        if self.show_name is not None:
+            result['showName'] = self.show_name
         if self.type is not None:
             result['type'] = self.type
         if self.user_id is not None:
@@ -5136,6 +5154,8 @@ class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
         self.attachments = []
         if m.get('attachments') is not None:
             for k in m.get('attachments'):
@@ -5145,10 +5165,14 @@ class GetProcessInstanceResponseBodyResultOperationRecords(TeaModel):
             self.cc_user_ids = m.get('ccUserIds')
         if m.get('date') is not None:
             self.date = m.get('date')
+        if m.get('images') is not None:
+            self.images = m.get('images')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
         if m.get('result') is not None:
             self.result = m.get('result')
+        if m.get('showName') is not None:
+            self.show_name = m.get('showName')
         if m.get('type') is not None:
             self.type = m.get('type')
         if m.get('userId') is not None:
@@ -5780,6 +5804,7 @@ class GetSpaceWithDownloadAuthRequest(TeaModel):
         file_id_list: List[str] = None,
         process_instance_id: str = None,
         user_id: str = None,
+        with_comment_attatchment: bool = None,
     ):
         self.agent_id = agent_id
         # This parameter is required.
@@ -5789,6 +5814,7 @@ class GetSpaceWithDownloadAuthRequest(TeaModel):
         self.process_instance_id = process_instance_id
         # This parameter is required.
         self.user_id = user_id
+        self.with_comment_attatchment = with_comment_attatchment
 
     def validate(self):
         pass
@@ -5809,6 +5835,8 @@ class GetSpaceWithDownloadAuthRequest(TeaModel):
             result['processInstanceId'] = self.process_instance_id
         if self.user_id is not None:
             result['userId'] = self.user_id
+        if self.with_comment_attatchment is not None:
+            result['withCommentAttatchment'] = self.with_comment_attatchment
         return result
 
     def from_map(self, m: dict = None):
@@ -5823,6 +5851,8 @@ class GetSpaceWithDownloadAuthRequest(TeaModel):
             self.process_instance_id = m.get('processInstanceId')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
+        if m.get('withCommentAttatchment') is not None:
+            self.with_comment_attatchment = m.get('withCommentAttatchment')
         return self
 
 
@@ -6210,11 +6240,13 @@ class GrantProcessInstanceForDownloadFileRequest(TeaModel):
         self,
         file_id: str = None,
         process_instance_id: str = None,
+        with_comment_attatchment: bool = None,
     ):
         # This parameter is required.
         self.file_id = file_id
         # This parameter is required.
         self.process_instance_id = process_instance_id
+        self.with_comment_attatchment = with_comment_attatchment
 
     def validate(self):
         pass
@@ -6229,6 +6261,8 @@ class GrantProcessInstanceForDownloadFileRequest(TeaModel):
             result['fileId'] = self.file_id
         if self.process_instance_id is not None:
             result['processInstanceId'] = self.process_instance_id
+        if self.with_comment_attatchment is not None:
+            result['withCommentAttatchment'] = self.with_comment_attatchment
         return result
 
     def from_map(self, m: dict = None):
@@ -6237,6 +6271,8 @@ class GrantProcessInstanceForDownloadFileRequest(TeaModel):
             self.file_id = m.get('fileId')
         if m.get('processInstanceId') is not None:
             self.process_instance_id = m.get('processInstanceId')
+        if m.get('withCommentAttatchment') is not None:
+            self.with_comment_attatchment = m.get('withCommentAttatchment')
         return self
 
 

@@ -8585,6 +8585,124 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.QueryAcrossCloudStroageConfigsHeaders()
         return await self.query_across_cloud_stroage_configs_with_options_async(request, headers, runtime)
 
+    def query_channel_staff_info_by_mobile_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileRequest,
+        headers: dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileResponse:
+        """
+        @summary 根据手机号查询渠道组织中的员工信息
+        
+        @param request: QueryChannelStaffInfoByMobileRequest
+        @param headers: QueryChannelStaffInfoByMobileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryChannelStaffInfoByMobileResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryChannelStaffInfoByMobile',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/channelOrganizations/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_channel_staff_info_by_mobile_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileRequest,
+        headers: dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileResponse:
+        """
+        @summary 根据手机号查询渠道组织中的员工信息
+        
+        @param request: QueryChannelStaffInfoByMobileRequest
+        @param headers: QueryChannelStaffInfoByMobileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryChannelStaffInfoByMobileResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.mobile):
+            query['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.target_corp_id):
+            query['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryChannelStaffInfoByMobile',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/channelOrganizations/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_channel_staff_info_by_mobile(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileRequest,
+    ) -> dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileResponse:
+        """
+        @summary 根据手机号查询渠道组织中的员工信息
+        
+        @param request: QueryChannelStaffInfoByMobileRequest
+        @return: QueryChannelStaffInfoByMobileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileHeaders()
+        return self.query_channel_staff_info_by_mobile_with_options(request, headers, runtime)
+
+    async def query_channel_staff_info_by_mobile_async(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileRequest,
+    ) -> dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileResponse:
+        """
+        @summary 根据手机号查询渠道组织中的员工信息
+        
+        @param request: QueryChannelStaffInfoByMobileRequest
+        @return: QueryChannelStaffInfoByMobileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileHeaders()
+        return await self.query_channel_staff_info_by_mobile_with_options_async(request, headers, runtime)
+
     def query_partner_info_with_options(
         self,
         user_id: str,

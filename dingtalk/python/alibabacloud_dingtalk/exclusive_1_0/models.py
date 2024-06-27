@@ -14165,6 +14165,225 @@ class QueryAcrossCloudStroageConfigsResponse(TeaModel):
         return self
 
 
+class QueryChannelStaffInfoByMobileHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryChannelStaffInfoByMobileRequest(TeaModel):
+    def __init__(
+        self,
+        mobile: str = None,
+        target_corp_id: str = None,
+    ):
+        # This parameter is required.
+        self.mobile = mobile
+        # This parameter is required.
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class QueryChannelStaffInfoByMobileResponseBodyEmpInfo(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryChannelStaffInfoByMobileResponseBodyExclusiveAccountEmpInfoList(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryChannelStaffInfoByMobileResponseBody(TeaModel):
+    def __init__(
+        self,
+        emp_info: QueryChannelStaffInfoByMobileResponseBodyEmpInfo = None,
+        exclusive_account_emp_info_list: List[QueryChannelStaffInfoByMobileResponseBodyExclusiveAccountEmpInfoList] = None,
+    ):
+        self.emp_info = emp_info
+        self.exclusive_account_emp_info_list = exclusive_account_emp_info_list
+
+    def validate(self):
+        if self.emp_info:
+            self.emp_info.validate()
+        if self.exclusive_account_emp_info_list:
+            for k in self.exclusive_account_emp_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.emp_info is not None:
+            result['empInfo'] = self.emp_info.to_map()
+        result['exclusiveAccountEmpInfoList'] = []
+        if self.exclusive_account_emp_info_list is not None:
+            for k in self.exclusive_account_emp_info_list:
+                result['exclusiveAccountEmpInfoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('empInfo') is not None:
+            temp_model = QueryChannelStaffInfoByMobileResponseBodyEmpInfo()
+            self.emp_info = temp_model.from_map(m['empInfo'])
+        self.exclusive_account_emp_info_list = []
+        if m.get('exclusiveAccountEmpInfoList') is not None:
+            for k in m.get('exclusiveAccountEmpInfoList'):
+                temp_model = QueryChannelStaffInfoByMobileResponseBodyExclusiveAccountEmpInfoList()
+                self.exclusive_account_emp_info_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryChannelStaffInfoByMobileResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryChannelStaffInfoByMobileResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryChannelStaffInfoByMobileResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryPartnerInfoHeaders(TeaModel):
     def __init__(
         self,

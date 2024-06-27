@@ -8996,6 +8996,80 @@ class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsAvailableTemplates(
         return self
 
 
+class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets(TeaModel):
+    def __init__(
+        self,
+        behavior: str = None,
+        field_id: str = None,
+    ):
+        self.behavior = behavior
+        self.field_id = field_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.behavior is not None:
+            result['behavior'] = self.behavior
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('behavior') is not None:
+            self.behavior = m.get('behavior')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        return self
+
+
+class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage(TeaModel):
+    def __init__(
+        self,
+        option_key: str = None,
+        targets: List[DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets] = None,
+    ):
+        self.option_key = option_key
+        self.targets = targets
+
+    def validate(self):
+        if self.targets:
+            for k in self.targets:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option_key is not None:
+            result['optionKey'] = self.option_key
+        result['targets'] = []
+        if self.targets is not None:
+            for k in self.targets:
+                result['targets'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('optionKey') is not None:
+            self.option_key = m.get('optionKey')
+        self.targets = []
+        if m.get('targets') is not None:
+            for k in m.get('targets'):
+                temp_model = DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets()
+                self.targets.append(temp_model.from_map(k))
+        return self
+
+
 class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsDataSourceParamsFilters(TeaModel):
     def __init__(
         self,
@@ -10329,6 +10403,7 @@ class DescribeMetaModelResponseBodyMetaModelDTOListItemsProps(TeaModel):
         action_name: str = None,
         align: str = None,
         available_templates: List[DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsAvailableTemplates] = None,
+        behavior_linkage: List[DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage] = None,
         biz_alias: str = None,
         choice: int = None,
         content: str = None,
@@ -10374,6 +10449,7 @@ class DescribeMetaModelResponseBodyMetaModelDTOListItemsProps(TeaModel):
         # This parameter is required.
         self.align = align
         self.available_templates = available_templates
+        self.behavior_linkage = behavior_linkage
         # This parameter is required.
         self.biz_alias = biz_alias
         # This parameter is required.
@@ -10456,6 +10532,10 @@ class DescribeMetaModelResponseBodyMetaModelDTOListItemsProps(TeaModel):
             for k in self.available_templates:
                 if k:
                     k.validate()
+        if self.behavior_linkage:
+            for k in self.behavior_linkage:
+                if k:
+                    k.validate()
         if self.data_source:
             self.data_source.validate()
         if self.fields:
@@ -10493,6 +10573,10 @@ class DescribeMetaModelResponseBodyMetaModelDTOListItemsProps(TeaModel):
         if self.available_templates is not None:
             for k in self.available_templates:
                 result['availableTemplates'].append(k.to_map() if k else None)
+        result['behaviorLinkage'] = []
+        if self.behavior_linkage is not None:
+            for k in self.behavior_linkage:
+                result['behaviorLinkage'].append(k.to_map() if k else None)
         if self.biz_alias is not None:
             result['bizAlias'] = self.biz_alias
         if self.choice is not None:
@@ -10594,6 +10678,11 @@ class DescribeMetaModelResponseBodyMetaModelDTOListItemsProps(TeaModel):
             for k in m.get('availableTemplates'):
                 temp_model = DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsAvailableTemplates()
                 self.available_templates.append(temp_model.from_map(k))
+        self.behavior_linkage = []
+        if m.get('behaviorLinkage') is not None:
+            for k in m.get('behaviorLinkage'):
+                temp_model = DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage()
+                self.behavior_linkage.append(temp_model.from_map(k))
         if m.get('bizAlias') is not None:
             self.biz_alias = m.get('bizAlias')
         if m.get('choice') is not None:
@@ -12734,6 +12823,80 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemp
         return self
 
 
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkageTargets(TeaModel):
+    def __init__(
+        self,
+        behavior: str = None,
+        field_id: str = None,
+    ):
+        self.behavior = behavior
+        self.field_id = field_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.behavior is not None:
+            result['behavior'] = self.behavior
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('behavior') is not None:
+            self.behavior = m.get('behavior')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        return self
+
+
+class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkage(TeaModel):
+    def __init__(
+        self,
+        option_key: str = None,
+        targets: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkageTargets] = None,
+    ):
+        self.option_key = option_key
+        self.targets = targets
+
+    def validate(self):
+        if self.targets:
+            for k in self.targets:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.option_key is not None:
+            result['optionKey'] = self.option_key
+        result['targets'] = []
+        if self.targets is not None:
+            for k in self.targets:
+                result['targets'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('optionKey') is not None:
+            self.option_key = m.get('optionKey')
+        self.targets = []
+        if m.get('targets') is not None:
+            for k in m.get('targets'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkageTargets()
+                self.targets.append(temp_model.from_map(k))
+        return self
+
+
 class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParamsFilters(TeaModel):
     def __init__(
         self,
@@ -14067,6 +14230,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         action_name: str = None,
         align: str = None,
         available_templates: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates] = None,
+        behavior_linkage: List[DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkage] = None,
         biz_alias: str = None,
         choice: int = None,
         content: str = None,
@@ -14112,6 +14276,7 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         # This parameter is required.
         self.align = align
         self.available_templates = available_templates
+        self.behavior_linkage = behavior_linkage
         # This parameter is required.
         self.biz_alias = biz_alias
         # This parameter is required.
@@ -14194,6 +14359,10 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
             for k in self.available_templates:
                 if k:
                     k.validate()
+        if self.behavior_linkage:
+            for k in self.behavior_linkage:
+                if k:
+                    k.validate()
         if self.data_source:
             self.data_source.validate()
         if self.fields:
@@ -14231,6 +14400,10 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
         if self.available_templates is not None:
             for k in self.available_templates:
                 result['availableTemplates'].append(k.to_map() if k else None)
+        result['behaviorLinkage'] = []
+        if self.behavior_linkage is not None:
+            for k in self.behavior_linkage:
+                result['behaviorLinkage'].append(k.to_map() if k else None)
         if self.biz_alias is not None:
             result['bizAlias'] = self.biz_alias
         if self.choice is not None:
@@ -14332,6 +14505,11 @@ class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps(TeaModel):
             for k in m.get('availableTemplates'):
                 temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates()
                 self.available_templates.append(temp_model.from_map(k))
+        self.behavior_linkage = []
+        if m.get('behaviorLinkage') is not None:
+            for k in m.get('behaviorLinkage'):
+                temp_model = DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkage()
+                self.behavior_linkage.append(temp_model.from_map(k))
         if m.get('bizAlias') is not None:
             self.biz_alias = m.get('bizAlias')
         if m.get('choice') is not None:
@@ -22884,7 +23062,6 @@ class SaveBenefitLicenseRequestLicenses(TeaModel):
         self,
         license_user_id: str = None,
     ):
-        # This parameter is required.
         self.license_user_id = license_user_id
 
     def validate(self):
