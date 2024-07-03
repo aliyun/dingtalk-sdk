@@ -2465,6 +2465,91 @@ export class GetUuidByDentryIdResponse extends $tea.Model {
   }
 }
 
+export class HandoverTeamWithoutAuthHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HandoverTeamWithoutAuthRequest extends $tea.Model {
+  param?: HandoverTeamWithoutAuthRequestParam;
+  static names(): { [key: string]: string } {
+    return {
+      param: 'param',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      param: HandoverTeamWithoutAuthRequestParam,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HandoverTeamWithoutAuthResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HandoverTeamWithoutAuthResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: HandoverTeamWithoutAuthResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: HandoverTeamWithoutAuthResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListFeedsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6005,6 +6090,34 @@ export class DocContentRequestOption extends $tea.Model {
   }
 }
 
+export class HandoverTeamWithoutAuthRequestParam extends $tea.Model {
+  leave?: boolean;
+  newOwner?: string;
+  notify?: boolean;
+  teamId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      leave: 'leave',
+      newOwner: 'newOwner',
+      notify: 'notify',
+      teamId: 'teamId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      leave: 'boolean',
+      newOwner: 'string',
+      notify: 'boolean',
+      teamId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListFeedsResponseBodyItems extends $tea.Model {
   content?: string;
   time?: number;
@@ -9121,6 +9234,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUuidByDentryIdHeaders({ });
     return await this.getUuidByDentryIdWithOptions(dentryId, request, headers, runtime);
+  }
+
+  /**
+   * @summary 以超级管理员身份转交小组
+   *
+   * @param request HandoverTeamWithoutAuthRequest
+   * @param headers HandoverTeamWithoutAuthHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HandoverTeamWithoutAuthResponse
+   */
+  async handoverTeamWithoutAuthWithOptions(request: HandoverTeamWithoutAuthRequest, headers: HandoverTeamWithoutAuthHeaders, runtime: $Util.RuntimeOptions): Promise<HandoverTeamWithoutAuthResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "HandoverTeamWithoutAuth",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/members/handoverWithoutAuth`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HandoverTeamWithoutAuthResponse>(await this.execute(params, req, runtime), new HandoverTeamWithoutAuthResponse({}));
+  }
+
+  /**
+   * @summary 以超级管理员身份转交小组
+   *
+   * @param request HandoverTeamWithoutAuthRequest
+   * @return HandoverTeamWithoutAuthResponse
+   */
+  async handoverTeamWithoutAuth(request: HandoverTeamWithoutAuthRequest): Promise<HandoverTeamWithoutAuthResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HandoverTeamWithoutAuthHeaders({ });
+    return await this.handoverTeamWithoutAuthWithOptions(request, headers, runtime);
   }
 
   /**

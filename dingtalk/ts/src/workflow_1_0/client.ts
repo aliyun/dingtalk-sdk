@@ -2264,6 +2264,7 @@ export class GetSpaceWithDownloadAuthRequest extends $tea.Model {
   fileIdList?: string[];
   processInstanceId?: string;
   userId?: string;
+  withCommentAttatchment?: boolean;
   static names(): { [key: string]: string } {
     return {
       agentId: 'agentId',
@@ -2271,6 +2272,7 @@ export class GetSpaceWithDownloadAuthRequest extends $tea.Model {
       fileIdList: 'fileIdList',
       processInstanceId: 'processInstanceId',
       userId: 'userId',
+      withCommentAttatchment: 'withCommentAttatchment',
     };
   }
 
@@ -2281,6 +2283,7 @@ export class GetSpaceWithDownloadAuthRequest extends $tea.Model {
       fileIdList: { 'type': 'array', 'itemType': 'string' },
       processInstanceId: 'string',
       userId: 'string',
+      withCommentAttatchment: 'boolean',
     };
   }
 
@@ -2518,10 +2521,12 @@ export class GrantProcessInstanceForDownloadFileHeaders extends $tea.Model {
 export class GrantProcessInstanceForDownloadFileRequest extends $tea.Model {
   fileId?: string;
   processInstanceId?: string;
+  withCommentAttatchment?: boolean;
   static names(): { [key: string]: string } {
     return {
       fileId: 'fileId',
       processInstanceId: 'processInstanceId',
+      withCommentAttatchment: 'withCommentAttatchment',
     };
   }
 
@@ -2529,6 +2534,7 @@ export class GrantProcessInstanceForDownloadFileRequest extends $tea.Model {
     return {
       fileId: 'string',
       processInstanceId: 'string',
+      withCommentAttatchment: 'boolean',
     };
   }
 
@@ -5768,12 +5774,14 @@ export class GetProcessInstanceResponseBodyResultOperationRecordsAttachments ext
   fileName?: string;
   fileSize?: string;
   fileType?: string;
+  spaceId?: string;
   static names(): { [key: string]: string } {
     return {
       fileId: 'fileId',
       fileName: 'fileName',
       fileSize: 'fileSize',
       fileType: 'fileType',
+      spaceId: 'spaceId',
     };
   }
 
@@ -5783,6 +5791,7 @@ export class GetProcessInstanceResponseBodyResultOperationRecordsAttachments ext
       fileName: 'string',
       fileSize: 'string',
       fileType: 'string',
+      spaceId: 'string',
     };
   }
 
@@ -5792,20 +5801,26 @@ export class GetProcessInstanceResponseBodyResultOperationRecordsAttachments ext
 }
 
 export class GetProcessInstanceResponseBodyResultOperationRecords extends $tea.Model {
+  activityId?: string;
   attachments?: GetProcessInstanceResponseBodyResultOperationRecordsAttachments[];
   ccUserIds?: string[];
   date?: string;
+  images?: string[];
   remark?: string;
   result?: string;
+  showName?: string;
   type?: string;
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      activityId: 'activityId',
       attachments: 'attachments',
       ccUserIds: 'ccUserIds',
       date: 'date',
+      images: 'images',
       remark: 'remark',
       result: 'result',
+      showName: 'showName',
       type: 'type',
       userId: 'userId',
     };
@@ -5813,11 +5828,14 @@ export class GetProcessInstanceResponseBodyResultOperationRecords extends $tea.M
 
   static types(): { [key: string]: any } {
     return {
+      activityId: 'string',
       attachments: { 'type': 'array', 'itemType': GetProcessInstanceResponseBodyResultOperationRecordsAttachments },
       ccUserIds: { 'type': 'array', 'itemType': 'string' },
       date: 'string',
+      images: { 'type': 'array', 'itemType': 'string' },
       remark: 'string',
       result: 'string',
+      showName: 'string',
       type: 'string',
       userId: 'string',
     };
@@ -9729,6 +9747,10 @@ export default class Client extends OpenApi {
       body["userId"] = request.userId;
     }
 
+    if (!Util.isUnset(request.withCommentAttatchment)) {
+      body["withCommentAttatchment"] = request.withCommentAttatchment;
+    }
+
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -9905,6 +9927,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.processInstanceId)) {
       body["processInstanceId"] = request.processInstanceId;
+    }
+
+    if (!Util.isUnset(request.withCommentAttatchment)) {
+      body["withCommentAttatchment"] = request.withCommentAttatchment;
     }
 
     let realHeaders : {[key: string ]: string} = { };

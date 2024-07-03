@@ -9549,6 +9549,50 @@ export class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsAvailableTem
   }
 }
 
+export class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets extends $tea.Model {
+  behavior?: string;
+  fieldId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      behavior: 'behavior',
+      fieldId: 'fieldId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      behavior: 'string',
+      fieldId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage extends $tea.Model {
+  optionKey?: string;
+  targets?: DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets[];
+  static names(): { [key: string]: string } {
+    return {
+      optionKey: 'optionKey',
+      targets: 'targets',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      optionKey: 'string',
+      targets: { 'type': 'array', 'itemType': DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkageTargets },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsDataSourceParamsFilters extends $tea.Model {
   fieldId?: string;
   filterType?: string;
@@ -10251,6 +10295,7 @@ export class DescribeMetaModelResponseBodyMetaModelDTOListItemsProps extends $te
   actionName?: string;
   align?: string;
   availableTemplates?: DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsAvailableTemplates[];
+  behaviorLinkage?: DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage[];
   bizAlias?: string;
   choice?: number;
   content?: string;
@@ -10295,6 +10340,7 @@ export class DescribeMetaModelResponseBodyMetaModelDTOListItemsProps extends $te
       actionName: 'actionName',
       align: 'align',
       availableTemplates: 'availableTemplates',
+      behaviorLinkage: 'behaviorLinkage',
       bizAlias: 'bizAlias',
       choice: 'choice',
       content: 'content',
@@ -10342,6 +10388,7 @@ export class DescribeMetaModelResponseBodyMetaModelDTOListItemsProps extends $te
       actionName: 'string',
       align: 'string',
       availableTemplates: { 'type': 'array', 'itemType': DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsAvailableTemplates },
+      behaviorLinkage: { 'type': 'array', 'itemType': DescribeMetaModelResponseBodyMetaModelDTOListItemsPropsBehaviorLinkage },
       bizAlias: 'string',
       choice: 'number',
       content: 'string',
@@ -11332,6 +11379,50 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvaila
   }
 }
 
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkageTargets extends $tea.Model {
+  behavior?: string;
+  fieldId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      behavior: 'behavior',
+      fieldId: 'fieldId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      behavior: 'string',
+      fieldId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkage extends $tea.Model {
+  optionKey?: string;
+  targets?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkageTargets[];
+  static names(): { [key: string]: string } {
+    return {
+      optionKey: 'optionKey',
+      targets: 'targets',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      optionKey: 'string',
+      targets: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkageTargets },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParamsFilters extends $tea.Model {
   fieldId?: string;
   filterType?: string;
@@ -12034,6 +12125,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps exten
   actionName?: string;
   align?: string;
   availableTemplates?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates[];
+  behaviorLinkage?: DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkage[];
   bizAlias?: string;
   choice?: number;
   content?: string;
@@ -12078,6 +12170,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps exten
       actionName: 'actionName',
       align: 'align',
       availableTemplates: 'availableTemplates',
+      behaviorLinkage: 'behaviorLinkage',
       bizAlias: 'bizAlias',
       choice: 'choice',
       content: 'content',
@@ -12125,6 +12218,7 @@ export class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps exten
       actionName: 'string',
       align: 'string',
       availableTemplates: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates },
+      behaviorLinkage: { 'type': 'array', 'itemType': DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsBehaviorLinkage },
       bizAlias: 'string',
       choice: 'number',
       content: 'string',

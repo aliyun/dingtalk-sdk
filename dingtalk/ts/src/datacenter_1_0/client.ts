@@ -9,6 +9,97 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class CloseDataDeliverHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseDataDeliverRequest extends $tea.Model {
+  deliverId?: string;
+  dispatchingItemType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deliverId: 'deliverId',
+      dispatchingItemType: 'dispatchingItemType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deliverId: 'string',
+      dispatchingItemType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseDataDeliverResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CloseDataDeliverResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CloseDataDeliverResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CloseDataDeliverResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateDataDeliverHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -762,6 +853,97 @@ export class GetChangeRecordResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetChangeRecordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDataDeliverHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDataDeliverRequest extends $tea.Model {
+  deliverId?: string;
+  dispatchingItemType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deliverId: 'deliverId',
+      dispatchingItemType: 'dispatchingItemType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deliverId: 'string',
+      dispatchingItemType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDataDeliverResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDataDeliverResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetDataDeliverResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetDataDeliverResponseBody,
     };
   }
 
@@ -2266,6 +2448,94 @@ export class GetWorkCopyrightResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetWorkCopyrightResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListDataDeliversHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListDataDeliversRequest extends $tea.Model {
+  dispatchingItemType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dispatchingItemType: 'dispatchingItemType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dispatchingItemType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListDataDeliversResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListDataDeliversResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListDataDeliversResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListDataDeliversResponseBody,
     };
   }
 
@@ -11059,6 +11329,64 @@ export default class Client extends OpenApi {
 
 
   /**
+   * @summary 关闭数据投递任务
+   *
+   * @param request CloseDataDeliverRequest
+   * @param headers CloseDataDeliverHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CloseDataDeliverResponse
+   */
+  async closeDataDeliverWithOptions(request: CloseDataDeliverRequest, headers: CloseDataDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<CloseDataDeliverResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deliverId)) {
+      query["deliverId"] = request.deliverId;
+    }
+
+    if (!Util.isUnset(request.dispatchingItemType)) {
+      query["dispatchingItemType"] = request.dispatchingItemType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "CloseDataDeliver",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/dataDeliverServices/close`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CloseDataDeliverResponse>(await this.execute(params, req, runtime), new CloseDataDeliverResponse({}));
+  }
+
+  /**
+   * @summary 关闭数据投递任务
+   *
+   * @param request CloseDataDeliverRequest
+   * @return CloseDataDeliverResponse
+   */
+  async closeDataDeliver(request: CloseDataDeliverRequest): Promise<CloseDataDeliverResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CloseDataDeliverHeaders({ });
+    return await this.closeDataDeliverWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 创建数据投递
    *
    * @param request CreateDataDeliverRequest
@@ -11566,6 +11894,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetChangeRecordHeaders({ });
     return await this.getChangeRecordWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 获取投递任务信息
+   *
+   * @param request GetDataDeliverRequest
+   * @param headers GetDataDeliverHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetDataDeliverResponse
+   */
+  async getDataDeliverWithOptions(request: GetDataDeliverRequest, headers: GetDataDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<GetDataDeliverResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deliverId)) {
+      query["deliverId"] = request.deliverId;
+    }
+
+    if (!Util.isUnset(request.dispatchingItemType)) {
+      query["dispatchingItemType"] = request.dispatchingItemType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetDataDeliver",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/dataDeliverServices/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDataDeliverResponse>(await this.execute(params, req, runtime), new GetDataDeliverResponse({}));
+  }
+
+  /**
+   * @summary 获取投递任务信息
+   *
+   * @param request GetDataDeliverRequest
+   * @return GetDataDeliverResponse
+   */
+  async getDataDeliver(request: GetDataDeliverRequest): Promise<GetDataDeliverResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDataDeliverHeaders({ });
+    return await this.getDataDeliverWithOptions(request, headers, runtime);
   }
 
   /**
@@ -12558,6 +12944,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetWorkCopyrightHeaders({ });
     return await this.getWorkCopyrightWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 数据投递列表
+   *
+   * @param request ListDataDeliversRequest
+   * @param headers ListDataDeliversHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListDataDeliversResponse
+   */
+  async listDataDeliversWithOptions(request: ListDataDeliversRequest, headers: ListDataDeliversHeaders, runtime: $Util.RuntimeOptions): Promise<ListDataDeliversResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dispatchingItemType)) {
+      query["dispatchingItemType"] = request.dispatchingItemType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListDataDelivers",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/dataDeliverServices/lists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListDataDeliversResponse>(await this.execute(params, req, runtime), new ListDataDeliversResponse({}));
+  }
+
+  /**
+   * @summary 数据投递列表
+   *
+   * @param request ListDataDeliversRequest
+   * @return ListDataDeliversResponse
+   */
+  async listDataDelivers(request: ListDataDeliversRequest): Promise<ListDataDeliversResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListDataDeliversHeaders({ });
+    return await this.listDataDeliversWithOptions(request, headers, runtime);
   }
 
   /**

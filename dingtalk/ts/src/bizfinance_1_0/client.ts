@@ -3588,6 +3588,8 @@ export class QueryReceiptsBaseInfoHeaders extends $tea.Model {
 
 export class QueryReceiptsBaseInfoRequest extends $tea.Model {
   accountantBookId?: string;
+  amountEnd?: number;
+  amountStart?: number;
   companyCode?: string;
   endTime?: number;
   pageNumber?: number;
@@ -3599,6 +3601,8 @@ export class QueryReceiptsBaseInfoRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       accountantBookId: 'accountantBookId',
+      amountEnd: 'amountEnd',
+      amountStart: 'amountStart',
       companyCode: 'companyCode',
       endTime: 'endTime',
       pageNumber: 'pageNumber',
@@ -3613,6 +3617,8 @@ export class QueryReceiptsBaseInfoRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       accountantBookId: 'string',
+      amountEnd: 'number',
+      amountStart: 'number',
       companyCode: 'string',
       endTime: 'number',
       pageNumber: 'number',
@@ -5826,6 +5832,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
+  fileId?: string;
   financeType?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
@@ -5857,6 +5864,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
   sellerName?: string;
   sellerTaxNo?: string;
   sellerTel?: string;
+  spaceId?: string;
   supplySign?: string;
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
@@ -5874,6 +5882,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       drawerName: 'drawerName',
       drewDate: 'drewDate',
       electronicUrl: 'electronicUrl',
+      fileId: 'fileId',
       financeType: 'financeType',
       fundType: 'fundType',
       generalInvoiceDetailVOList: 'generalInvoiceDetailVOList',
@@ -5905,6 +5914,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       sellerName: 'sellerName',
       sellerTaxNo: 'sellerTaxNo',
       sellerTel: 'sellerTel',
+      spaceId: 'spaceId',
       supplySign: 'supplySign',
       taxAmount: 'taxAmount',
       usedVehicleSaleDetailVOList: 'usedVehicleSaleDetailVOList',
@@ -5925,6 +5935,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       drawerName: 'string',
       drewDate: 'string',
       electronicUrl: 'string',
+      fileId: 'string',
       financeType: 'string',
       fundType: 'string',
       generalInvoiceDetailVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList },
@@ -5956,6 +5967,7 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
       sellerName: 'string',
       sellerTaxNo: 'string',
       sellerTel: 'string',
+      spaceId: 'string',
       supplySign: 'string',
       taxAmount: 'string',
       usedVehicleSaleDetailVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList },
@@ -6890,12 +6902,14 @@ export class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList extends $t
   advancedSettingKey?: string;
   advancedSettingName?: string;
   endDate?: number;
+  valid?: boolean;
   value?: boolean;
   static names(): { [key: string]: string } {
     return {
       advancedSettingKey: 'advancedSettingKey',
       advancedSettingName: 'advancedSettingName',
       endDate: 'endDate',
+      valid: 'valid',
       value: 'value',
     };
   }
@@ -6905,6 +6919,7 @@ export class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList extends $t
       advancedSettingKey: 'string',
       advancedSettingName: 'string',
       endDate: 'number',
+      valid: 'boolean',
       value: 'boolean',
     };
   }
@@ -12798,6 +12813,14 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accountantBookId)) {
       query["accountantBookId"] = request.accountantBookId;
+    }
+
+    if (!Util.isUnset(request.amountEnd)) {
+      query["amountEnd"] = request.amountEnd;
+    }
+
+    if (!Util.isUnset(request.amountStart)) {
+      query["amountStart"] = request.amountStart;
     }
 
     if (!Util.isUnset(request.companyCode)) {

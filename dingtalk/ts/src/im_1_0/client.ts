@@ -3424,6 +3424,476 @@ export class ListOrgTextEmotionResponse extends $tea.Model {
   }
 }
 
+export class OpenGroupRoleAddHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleAddRequest extends $tea.Model {
+  openConversationId?: string;
+  roleName?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      roleName: 'roleName',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      roleName: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleAddResponseBody extends $tea.Model {
+  result?: OpenGroupRoleAddResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: OpenGroupRoleAddResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleAddResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OpenGroupRoleAddResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OpenGroupRoleAddResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleQueryRequest extends $tea.Model {
+  openConversationId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleQueryResponseBody extends $tea.Model {
+  result?: OpenGroupRoleQueryResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: OpenGroupRoleQueryResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleQueryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OpenGroupRoleQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OpenGroupRoleQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleRemoveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleRemoveRequest extends $tea.Model {
+  openConversationId?: string;
+  openRoleId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      openRoleId: 'openRoleId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      openRoleId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleRemoveResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleRemoveResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OpenGroupRoleRemoveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OpenGroupRoleRemoveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleUpdateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleUpdateRequest extends $tea.Model {
+  openConversationId?: string;
+  openRoleId?: string;
+  roleName?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      openRoleId: 'openRoleId',
+      roleName: 'roleName',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      openRoleId: 'string',
+      roleName: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleUpdateResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleUpdateResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OpenGroupRoleUpdateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OpenGroupRoleUpdateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupUserRoleQueryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupUserRoleQueryRequest extends $tea.Model {
+  openConversationId?: string;
+  userId?: string;
+  viewedUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      userId: 'userId',
+      viewedUserId: 'viewedUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      userId: 'string',
+      viewedUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupUserRoleQueryResponseBody extends $tea.Model {
+  result?: OpenGroupUserRoleQueryResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: OpenGroupUserRoleQueryResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupUserRoleQueryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OpenGroupUserRoleQueryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OpenGroupUserRoleQueryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class OpenInnerGroupTransferToDeptGroupHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7643,6 +8113,107 @@ export class ListOrgTextEmotionResponseBodyResult extends $tea.Model {
   }
 }
 
+export class OpenGroupRoleAddResponseBodyResult extends $tea.Model {
+  openRoleId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openRoleId: 'openRoleId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openRoleId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleQueryResponseBodyResultGroupRoles extends $tea.Model {
+  openRoleId?: string;
+  roleName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openRoleId: 'openRoleId',
+      roleName: 'roleName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openRoleId: 'string',
+      roleName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupRoleQueryResponseBodyResult extends $tea.Model {
+  groupRoles?: OpenGroupRoleQueryResponseBodyResultGroupRoles[];
+  static names(): { [key: string]: string } {
+    return {
+      groupRoles: 'groupRoles',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupRoles: { 'type': 'array', 'itemType': OpenGroupRoleQueryResponseBodyResultGroupRoles },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupUserRoleQueryResponseBodyResultGroupRoles extends $tea.Model {
+  openRoleId?: string;
+  roleName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openRoleId: 'openRoleId',
+      roleName: 'roleName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openRoleId: 'string',
+      roleName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenGroupUserRoleQueryResponseBodyResult extends $tea.Model {
+  groupRoles?: OpenGroupUserRoleQueryResponseBodyResultGroupRoles[];
+  static names(): { [key: string]: string } {
+    return {
+      groupRoles: 'groupRoles',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupRoles: { 'type': 'array', 'itemType': OpenGroupUserRoleQueryResponseBodyResultGroupRoles },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class OpenSearchGroupListResponseBodyResultGroupList extends $tea.Model {
   icon?: string;
   memberCount?: number;
@@ -10729,6 +11300,316 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListOrgTextEmotionHeaders({ });
     return await this.listOrgTextEmotionWithOptions(headers, runtime);
+  }
+
+  /**
+   * @summary 开放场景群新增群角色
+   *
+   * @param request OpenGroupRoleAddRequest
+   * @param headers OpenGroupRoleAddHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OpenGroupRoleAddResponse
+   */
+  async openGroupRoleAddWithOptions(request: OpenGroupRoleAddRequest, headers: OpenGroupRoleAddHeaders, runtime: $Util.RuntimeOptions): Promise<OpenGroupRoleAddResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.roleName)) {
+      body["roleName"] = request.roleName;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "OpenGroupRoleAdd",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/roles`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OpenGroupRoleAddResponse>(await this.execute(params, req, runtime), new OpenGroupRoleAddResponse({}));
+  }
+
+  /**
+   * @summary 开放场景群新增群角色
+   *
+   * @param request OpenGroupRoleAddRequest
+   * @return OpenGroupRoleAddResponse
+   */
+  async openGroupRoleAdd(request: OpenGroupRoleAddRequest): Promise<OpenGroupRoleAddResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OpenGroupRoleAddHeaders({ });
+    return await this.openGroupRoleAddWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 开放场景群群角色查询
+   *
+   * @param request OpenGroupRoleQueryRequest
+   * @param headers OpenGroupRoleQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OpenGroupRoleQueryResponse
+   */
+  async openGroupRoleQueryWithOptions(request: OpenGroupRoleQueryRequest, headers: OpenGroupRoleQueryHeaders, runtime: $Util.RuntimeOptions): Promise<OpenGroupRoleQueryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "OpenGroupRoleQuery",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/roles/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OpenGroupRoleQueryResponse>(await this.execute(params, req, runtime), new OpenGroupRoleQueryResponse({}));
+  }
+
+  /**
+   * @summary 开放场景群群角色查询
+   *
+   * @param request OpenGroupRoleQueryRequest
+   * @return OpenGroupRoleQueryResponse
+   */
+  async openGroupRoleQuery(request: OpenGroupRoleQueryRequest): Promise<OpenGroupRoleQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OpenGroupRoleQueryHeaders({ });
+    return await this.openGroupRoleQueryWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 开放场景群群角色移除
+   *
+   * @param request OpenGroupRoleRemoveRequest
+   * @param headers OpenGroupRoleRemoveHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OpenGroupRoleRemoveResponse
+   */
+  async openGroupRoleRemoveWithOptions(request: OpenGroupRoleRemoveRequest, headers: OpenGroupRoleRemoveHeaders, runtime: $Util.RuntimeOptions): Promise<OpenGroupRoleRemoveResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.openRoleId)) {
+      body["openRoleId"] = request.openRoleId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "OpenGroupRoleRemove",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/roles/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OpenGroupRoleRemoveResponse>(await this.execute(params, req, runtime), new OpenGroupRoleRemoveResponse({}));
+  }
+
+  /**
+   * @summary 开放场景群群角色移除
+   *
+   * @param request OpenGroupRoleRemoveRequest
+   * @return OpenGroupRoleRemoveResponse
+   */
+  async openGroupRoleRemove(request: OpenGroupRoleRemoveRequest): Promise<OpenGroupRoleRemoveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OpenGroupRoleRemoveHeaders({ });
+    return await this.openGroupRoleRemoveWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 开放场景群群角色变更
+   *
+   * @param request OpenGroupRoleUpdateRequest
+   * @param headers OpenGroupRoleUpdateHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OpenGroupRoleUpdateResponse
+   */
+  async openGroupRoleUpdateWithOptions(request: OpenGroupRoleUpdateRequest, headers: OpenGroupRoleUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<OpenGroupRoleUpdateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.openRoleId)) {
+      body["openRoleId"] = request.openRoleId;
+    }
+
+    if (!Util.isUnset(request.roleName)) {
+      body["roleName"] = request.roleName;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "OpenGroupRoleUpdate",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/roles`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OpenGroupRoleUpdateResponse>(await this.execute(params, req, runtime), new OpenGroupRoleUpdateResponse({}));
+  }
+
+  /**
+   * @summary 开放场景群群角色变更
+   *
+   * @param request OpenGroupRoleUpdateRequest
+   * @return OpenGroupRoleUpdateResponse
+   */
+  async openGroupRoleUpdate(request: OpenGroupRoleUpdateRequest): Promise<OpenGroupRoleUpdateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OpenGroupRoleUpdateHeaders({ });
+    return await this.openGroupRoleUpdateWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 开放场景群群成员的群角色信息查询
+   *
+   * @param request OpenGroupUserRoleQueryRequest
+   * @param headers OpenGroupUserRoleQueryHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OpenGroupUserRoleQueryResponse
+   */
+  async openGroupUserRoleQueryWithOptions(request: OpenGroupUserRoleQueryRequest, headers: OpenGroupUserRoleQueryHeaders, runtime: $Util.RuntimeOptions): Promise<OpenGroupUserRoleQueryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.viewedUserId)) {
+      body["viewedUserId"] = request.viewedUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "OpenGroupUserRoleQuery",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/users/roles/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OpenGroupUserRoleQueryResponse>(await this.execute(params, req, runtime), new OpenGroupUserRoleQueryResponse({}));
+  }
+
+  /**
+   * @summary 开放场景群群成员的群角色信息查询
+   *
+   * @param request OpenGroupUserRoleQueryRequest
+   * @return OpenGroupUserRoleQueryResponse
+   */
+  async openGroupUserRoleQuery(request: OpenGroupUserRoleQueryRequest): Promise<OpenGroupUserRoleQueryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OpenGroupUserRoleQueryHeaders({ });
+    return await this.openGroupUserRoleQueryWithOptions(request, headers, runtime);
   }
 
   /**

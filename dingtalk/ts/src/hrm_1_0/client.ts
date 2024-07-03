@@ -1252,6 +1252,118 @@ export class HrmProcessRegularResponse extends $tea.Model {
   }
 }
 
+export class HrmProcessTerminationAndHandoverHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessTerminationAndHandoverRequest extends $tea.Model {
+  aflowHandOverUserId?: string;
+  dingPanHandoverUserId?: string;
+  directSubordinatesHandoverUserId?: string;
+  dismissionMemo?: string;
+  dismissionReason?: number;
+  docNoteHandoverUserId?: string;
+  lastWorkDate?: number;
+  optUserId?: string;
+  permissionHandoverUserId?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      aflowHandOverUserId: 'aflowHandOverUserId',
+      dingPanHandoverUserId: 'dingPanHandoverUserId',
+      directSubordinatesHandoverUserId: 'directSubordinatesHandoverUserId',
+      dismissionMemo: 'dismissionMemo',
+      dismissionReason: 'dismissionReason',
+      docNoteHandoverUserId: 'docNoteHandoverUserId',
+      lastWorkDate: 'lastWorkDate',
+      optUserId: 'optUserId',
+      permissionHandoverUserId: 'permissionHandoverUserId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      aflowHandOverUserId: 'string',
+      dingPanHandoverUserId: 'string',
+      directSubordinatesHandoverUserId: 'string',
+      dismissionMemo: 'string',
+      dismissionReason: 'number',
+      docNoteHandoverUserId: 'string',
+      lastWorkDate: 'number',
+      optUserId: 'string',
+      permissionHandoverUserId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessTerminationAndHandoverResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class HrmProcessTerminationAndHandoverResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: HrmProcessTerminationAndHandoverResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: HrmProcessTerminationAndHandoverResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class HrmProcessTransferHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6001,6 +6113,96 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmProcessRegularHeaders({ });
     return await this.hrmProcessRegularWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 智能人事离职和交接接口
+   *
+   * @param request HrmProcessTerminationAndHandoverRequest
+   * @param headers HrmProcessTerminationAndHandoverHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return HrmProcessTerminationAndHandoverResponse
+   */
+  async hrmProcessTerminationAndHandoverWithOptions(request: HrmProcessTerminationAndHandoverRequest, headers: HrmProcessTerminationAndHandoverHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessTerminationAndHandoverResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.aflowHandOverUserId)) {
+      body["aflowHandOverUserId"] = request.aflowHandOverUserId;
+    }
+
+    if (!Util.isUnset(request.dingPanHandoverUserId)) {
+      body["dingPanHandoverUserId"] = request.dingPanHandoverUserId;
+    }
+
+    if (!Util.isUnset(request.directSubordinatesHandoverUserId)) {
+      body["directSubordinatesHandoverUserId"] = request.directSubordinatesHandoverUserId;
+    }
+
+    if (!Util.isUnset(request.dismissionMemo)) {
+      body["dismissionMemo"] = request.dismissionMemo;
+    }
+
+    if (!Util.isUnset(request.dismissionReason)) {
+      body["dismissionReason"] = request.dismissionReason;
+    }
+
+    if (!Util.isUnset(request.docNoteHandoverUserId)) {
+      body["docNoteHandoverUserId"] = request.docNoteHandoverUserId;
+    }
+
+    if (!Util.isUnset(request.lastWorkDate)) {
+      body["lastWorkDate"] = request.lastWorkDate;
+    }
+
+    if (!Util.isUnset(request.optUserId)) {
+      body["optUserId"] = request.optUserId;
+    }
+
+    if (!Util.isUnset(request.permissionHandoverUserId)) {
+      body["permissionHandoverUserId"] = request.permissionHandoverUserId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "HrmProcessTerminationAndHandover",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/processes/terminateAndHandOver`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HrmProcessTerminationAndHandoverResponse>(await this.execute(params, req, runtime), new HrmProcessTerminationAndHandoverResponse({}));
+  }
+
+  /**
+   * @summary 智能人事离职和交接接口
+   *
+   * @param request HrmProcessTerminationAndHandoverRequest
+   * @return HrmProcessTerminationAndHandoverResponse
+   */
+  async hrmProcessTerminationAndHandover(request: HrmProcessTerminationAndHandoverRequest): Promise<HrmProcessTerminationAndHandoverResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new HrmProcessTerminationAndHandoverHeaders({ });
+    return await this.hrmProcessTerminationAndHandoverWithOptions(request, headers, runtime);
   }
 
   /**

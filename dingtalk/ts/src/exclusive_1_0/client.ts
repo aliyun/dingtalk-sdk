@@ -6483,6 +6483,97 @@ export class QueryAcrossCloudStroageConfigsResponse extends $tea.Model {
   }
 }
 
+export class QueryChannelStaffInfoByMobileHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryChannelStaffInfoByMobileRequest extends $tea.Model {
+  mobile?: string;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mobile: 'mobile',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mobile: 'string',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryChannelStaffInfoByMobileResponseBody extends $tea.Model {
+  empInfo?: QueryChannelStaffInfoByMobileResponseBodyEmpInfo;
+  exclusiveAccountEmpInfoList?: QueryChannelStaffInfoByMobileResponseBodyExclusiveAccountEmpInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      empInfo: 'empInfo',
+      exclusiveAccountEmpInfoList: 'exclusiveAccountEmpInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      empInfo: QueryChannelStaffInfoByMobileResponseBodyEmpInfo,
+      exclusiveAccountEmpInfoList: { 'type': 'array', 'itemType': QueryChannelStaffInfoByMobileResponseBodyExclusiveAccountEmpInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryChannelStaffInfoByMobileResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryChannelStaffInfoByMobileResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryChannelStaffInfoByMobileResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryPartnerInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10772,6 +10863,50 @@ export class PushBadgeRequestBadgeItems extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       pushValue: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryChannelStaffInfoByMobileResponseBodyEmpInfo extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryChannelStaffInfoByMobileResponseBodyExclusiveAccountEmpInfoList extends $tea.Model {
+  name?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
       userId: 'string',
     };
   }
@@ -15510,6 +15645,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryAcrossCloudStroageConfigsHeaders({ });
     return await this.queryAcrossCloudStroageConfigsWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 根据手机号查询渠道组织中的员工信息
+   *
+   * @param request QueryChannelStaffInfoByMobileRequest
+   * @param headers QueryChannelStaffInfoByMobileHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryChannelStaffInfoByMobileResponse
+   */
+  async queryChannelStaffInfoByMobileWithOptions(request: QueryChannelStaffInfoByMobileRequest, headers: QueryChannelStaffInfoByMobileHeaders, runtime: $Util.RuntimeOptions): Promise<QueryChannelStaffInfoByMobileResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.mobile)) {
+      query["mobile"] = request.mobile;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      query["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryChannelStaffInfoByMobile",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/channelOrganizations/users`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryChannelStaffInfoByMobileResponse>(await this.execute(params, req, runtime), new QueryChannelStaffInfoByMobileResponse({}));
+  }
+
+  /**
+   * @summary 根据手机号查询渠道组织中的员工信息
+   *
+   * @param request QueryChannelStaffInfoByMobileRequest
+   * @return QueryChannelStaffInfoByMobileResponse
+   */
+  async queryChannelStaffInfoByMobile(request: QueryChannelStaffInfoByMobileRequest): Promise<QueryChannelStaffInfoByMobileResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryChannelStaffInfoByMobileHeaders({ });
+    return await this.queryChannelStaffInfoByMobileWithOptions(request, headers, runtime);
   }
 
   /**
