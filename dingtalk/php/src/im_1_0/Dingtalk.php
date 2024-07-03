@@ -110,6 +110,21 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceReques
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleAddHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleAddRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleAddResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleRemoveHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleRemoveRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleRemoveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupUserRoleQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupUserRoleQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupUserRoleQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenInnerGroupTransferToDeptGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenInnerGroupTransferToDeptGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenInnerGroupTransferToDeptGroupResponse;
@@ -2564,6 +2579,321 @@ class Dingtalk extends OpenApiClient
         $headers = new ListOrgTextEmotionHeaders([]);
 
         return $this->listOrgTextEmotionWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 开放场景群新增群角色
+     *  *
+     * @param OpenGroupRoleAddRequest $request OpenGroupRoleAddRequest
+     * @param OpenGroupRoleAddHeaders $headers OpenGroupRoleAddHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenGroupRoleAddResponse OpenGroupRoleAddResponse
+     */
+    public function openGroupRoleAddWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->roleName)) {
+            $body['roleName'] = $request->roleName;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenGroupRoleAdd',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/groups/roles',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpenGroupRoleAddResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 开放场景群新增群角色
+     *  *
+     * @param OpenGroupRoleAddRequest $request OpenGroupRoleAddRequest
+     *
+     * @return OpenGroupRoleAddResponse OpenGroupRoleAddResponse
+     */
+    public function openGroupRoleAdd($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenGroupRoleAddHeaders([]);
+
+        return $this->openGroupRoleAddWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 开放场景群群角色查询
+     *  *
+     * @param OpenGroupRoleQueryRequest $request OpenGroupRoleQueryRequest
+     * @param OpenGroupRoleQueryHeaders $headers OpenGroupRoleQueryHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenGroupRoleQueryResponse OpenGroupRoleQueryResponse
+     */
+    public function openGroupRoleQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenGroupRoleQuery',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/groups/roles/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpenGroupRoleQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 开放场景群群角色查询
+     *  *
+     * @param OpenGroupRoleQueryRequest $request OpenGroupRoleQueryRequest
+     *
+     * @return OpenGroupRoleQueryResponse OpenGroupRoleQueryResponse
+     */
+    public function openGroupRoleQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenGroupRoleQueryHeaders([]);
+
+        return $this->openGroupRoleQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 开放场景群群角色移除
+     *  *
+     * @param OpenGroupRoleRemoveRequest $request OpenGroupRoleRemoveRequest
+     * @param OpenGroupRoleRemoveHeaders $headers OpenGroupRoleRemoveHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenGroupRoleRemoveResponse OpenGroupRoleRemoveResponse
+     */
+    public function openGroupRoleRemoveWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openRoleId)) {
+            $body['openRoleId'] = $request->openRoleId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenGroupRoleRemove',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/groups/roles/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpenGroupRoleRemoveResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 开放场景群群角色移除
+     *  *
+     * @param OpenGroupRoleRemoveRequest $request OpenGroupRoleRemoveRequest
+     *
+     * @return OpenGroupRoleRemoveResponse OpenGroupRoleRemoveResponse
+     */
+    public function openGroupRoleRemove($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenGroupRoleRemoveHeaders([]);
+
+        return $this->openGroupRoleRemoveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 开放场景群群角色变更
+     *  *
+     * @param OpenGroupRoleUpdateRequest $request OpenGroupRoleUpdateRequest
+     * @param OpenGroupRoleUpdateHeaders $headers OpenGroupRoleUpdateHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenGroupRoleUpdateResponse OpenGroupRoleUpdateResponse
+     */
+    public function openGroupRoleUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openRoleId)) {
+            $body['openRoleId'] = $request->openRoleId;
+        }
+        if (!Utils::isUnset($request->roleName)) {
+            $body['roleName'] = $request->roleName;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenGroupRoleUpdate',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/groups/roles',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpenGroupRoleUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 开放场景群群角色变更
+     *  *
+     * @param OpenGroupRoleUpdateRequest $request OpenGroupRoleUpdateRequest
+     *
+     * @return OpenGroupRoleUpdateResponse OpenGroupRoleUpdateResponse
+     */
+    public function openGroupRoleUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenGroupRoleUpdateHeaders([]);
+
+        return $this->openGroupRoleUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 开放场景群群成员的群角色信息查询
+     *  *
+     * @param OpenGroupUserRoleQueryRequest $request OpenGroupUserRoleQueryRequest
+     * @param OpenGroupUserRoleQueryHeaders $headers OpenGroupUserRoleQueryHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenGroupUserRoleQueryResponse OpenGroupUserRoleQueryResponse
+     */
+    public function openGroupUserRoleQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->viewedUserId)) {
+            $body['viewedUserId'] = $request->viewedUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenGroupUserRoleQuery',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/groups/users/roles/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpenGroupUserRoleQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 开放场景群群成员的群角色信息查询
+     *  *
+     * @param OpenGroupUserRoleQueryRequest $request OpenGroupUserRoleQueryRequest
+     *
+     * @return OpenGroupUserRoleQueryResponse OpenGroupUserRoleQueryResponse
+     */
+    public function openGroupUserRoleQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenGroupUserRoleQueryHeaders([]);
+
+        return $this->openGroupUserRoleQueryWithOptions($request, $headers, $runtime);
     }
 
     /**

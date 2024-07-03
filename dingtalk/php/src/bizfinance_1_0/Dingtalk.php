@@ -2472,6 +2472,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->accountantBookId)) {
             $query['accountantBookId'] = $request->accountantBookId;
         }
+        if (!Utils::isUnset($request->amountEnd)) {
+            $query['amountEnd'] = $request->amountEnd;
+        }
+        if (!Utils::isUnset($request->amountStart)) {
+            $query['amountStart'] = $request->amountStart;
+        }
         if (!Utils::isUnset($request->companyCode)) {
             $query['companyCode'] = $request->companyCode;
         }

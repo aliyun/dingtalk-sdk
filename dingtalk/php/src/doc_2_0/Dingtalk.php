@@ -74,6 +74,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\HandoverTeamWithoutAuthHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\HandoverTeamWithoutAuthRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\HandoverTeamWithoutAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ListFeedsResponse;
@@ -1644,6 +1647,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetUuidByDentryIdHeaders([]);
 
         return $this->getUuidByDentryIdWithOptions($dentryId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 以超级管理员身份转交小组
+     *  *
+     * @param HandoverTeamWithoutAuthRequest $request HandoverTeamWithoutAuthRequest
+     * @param HandoverTeamWithoutAuthHeaders $headers HandoverTeamWithoutAuthHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HandoverTeamWithoutAuthResponse HandoverTeamWithoutAuthResponse
+     */
+    public function handoverTeamWithoutAuthWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'HandoverTeamWithoutAuth',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/teams/members/handoverWithoutAuth',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return HandoverTeamWithoutAuthResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 以超级管理员身份转交小组
+     *  *
+     * @param HandoverTeamWithoutAuthRequest $request HandoverTeamWithoutAuthRequest
+     *
+     * @return HandoverTeamWithoutAuthResponse HandoverTeamWithoutAuthResponse
+     */
+    public function handoverTeamWithoutAuth($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HandoverTeamWithoutAuthHeaders([]);
+
+        return $this->handoverTeamWithoutAuthWithOptions($request, $headers, $runtime);
     }
 
     /**

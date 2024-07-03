@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CloseDataDeliverHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CloseDataDeliverRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CloseDataDeliverResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateDataDeliverHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateDataDeliverRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateDataDeliverResponse;
@@ -29,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetBranchInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetChangeRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetChangeRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetChangeRecordResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetDataDeliverHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetDataDeliverRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetDataDeliverResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetDomainInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetDomainInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetDomainInfoResponse;
@@ -77,6 +83,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetTrademarkInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetWorkCopyrightHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetWorkCopyrightRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetWorkCopyrightResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\ListDataDeliversHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\ListDataDeliversRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\ListDataDeliversResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\PostCorpAuthInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\PostCorpAuthInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryActiveUserStatisticalDataHeaders;
@@ -319,6 +328,66 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 关闭数据投递任务
+     *  *
+     * @param CloseDataDeliverRequest $request CloseDataDeliverRequest
+     * @param CloseDataDeliverHeaders $headers CloseDataDeliverHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CloseDataDeliverResponse CloseDataDeliverResponse
+     */
+    public function closeDataDeliverWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deliverId)) {
+            $query['deliverId'] = $request->deliverId;
+        }
+        if (!Utils::isUnset($request->dispatchingItemType)) {
+            $query['dispatchingItemType'] = $request->dispatchingItemType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CloseDataDeliver',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/dataDeliverServices/close',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CloseDataDeliverResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 关闭数据投递任务
+     *  *
+     * @param CloseDataDeliverRequest $request CloseDataDeliverRequest
+     *
+     * @return CloseDataDeliverResponse CloseDataDeliverResponse
+     */
+    public function closeDataDeliver($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CloseDataDeliverHeaders([]);
+
+        return $this->closeDataDeliverWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -834,6 +903,66 @@ class Dingtalk extends OpenApiClient
         $headers = new GetChangeRecordHeaders([]);
 
         return $this->getChangeRecordWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取投递任务信息
+     *  *
+     * @param GetDataDeliverRequest $request GetDataDeliverRequest
+     * @param GetDataDeliverHeaders $headers GetDataDeliverHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetDataDeliverResponse GetDataDeliverResponse
+     */
+    public function getDataDeliverWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deliverId)) {
+            $query['deliverId'] = $request->deliverId;
+        }
+        if (!Utils::isUnset($request->dispatchingItemType)) {
+            $query['dispatchingItemType'] = $request->dispatchingItemType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDataDeliver',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/dataDeliverServices/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetDataDeliverResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取投递任务信息
+     *  *
+     * @param GetDataDeliverRequest $request GetDataDeliverRequest
+     *
+     * @return GetDataDeliverResponse GetDataDeliverResponse
+     */
+    public function getDataDeliver($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDataDeliverHeaders([]);
+
+        return $this->getDataDeliverWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1842,6 +1971,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetWorkCopyrightHeaders([]);
 
         return $this->getWorkCopyrightWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 数据投递列表
+     *  *
+     * @param ListDataDeliversRequest $request ListDataDeliversRequest
+     * @param ListDataDeliversHeaders $headers ListDataDeliversHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListDataDeliversResponse ListDataDeliversResponse
+     */
+    public function listDataDeliversWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dispatchingItemType)) {
+            $query['dispatchingItemType'] = $request->dispatchingItemType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListDataDelivers',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/dataDeliverServices/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListDataDeliversResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 数据投递列表
+     *  *
+     * @param ListDataDeliversRequest $request ListDataDeliversRequest
+     *
+     * @return ListDataDeliversResponse ListDataDeliversResponse
+     */
+    public function listDataDelivers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListDataDeliversHeaders([]);
+
+        return $this->listDataDeliversWithOptions($request, $headers, $runtime);
     }
 
     /**

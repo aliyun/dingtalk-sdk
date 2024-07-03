@@ -43,6 +43,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMokaOapiResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTerminationAndHandoverHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTerminationAndHandoverRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTerminationAndHandoverResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessTransferResponse;
@@ -980,6 +983,90 @@ class Dingtalk extends OpenApiClient
         $headers = new HrmProcessRegularHeaders([]);
 
         return $this->hrmProcessRegularWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 智能人事离职和交接接口
+     *  *
+     * @param HrmProcessTerminationAndHandoverRequest $request HrmProcessTerminationAndHandoverRequest
+     * @param HrmProcessTerminationAndHandoverHeaders $headers HrmProcessTerminationAndHandoverHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrmProcessTerminationAndHandoverResponse HrmProcessTerminationAndHandoverResponse
+     */
+    public function hrmProcessTerminationAndHandoverWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->aflowHandOverUserId)) {
+            $body['aflowHandOverUserId'] = $request->aflowHandOverUserId;
+        }
+        if (!Utils::isUnset($request->dingPanHandoverUserId)) {
+            $body['dingPanHandoverUserId'] = $request->dingPanHandoverUserId;
+        }
+        if (!Utils::isUnset($request->directSubordinatesHandoverUserId)) {
+            $body['directSubordinatesHandoverUserId'] = $request->directSubordinatesHandoverUserId;
+        }
+        if (!Utils::isUnset($request->dismissionMemo)) {
+            $body['dismissionMemo'] = $request->dismissionMemo;
+        }
+        if (!Utils::isUnset($request->dismissionReason)) {
+            $body['dismissionReason'] = $request->dismissionReason;
+        }
+        if (!Utils::isUnset($request->docNoteHandoverUserId)) {
+            $body['docNoteHandoverUserId'] = $request->docNoteHandoverUserId;
+        }
+        if (!Utils::isUnset($request->lastWorkDate)) {
+            $body['lastWorkDate'] = $request->lastWorkDate;
+        }
+        if (!Utils::isUnset($request->optUserId)) {
+            $body['optUserId'] = $request->optUserId;
+        }
+        if (!Utils::isUnset($request->permissionHandoverUserId)) {
+            $body['permissionHandoverUserId'] = $request->permissionHandoverUserId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'HrmProcessTerminationAndHandover',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/processes/terminateAndHandOver',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return HrmProcessTerminationAndHandoverResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 智能人事离职和交接接口
+     *  *
+     * @param HrmProcessTerminationAndHandoverRequest $request HrmProcessTerminationAndHandoverRequest
+     *
+     * @return HrmProcessTerminationAndHandoverResponse HrmProcessTerminationAndHandoverResponse
+     */
+    public function hrmProcessTerminationAndHandover($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrmProcessTerminationAndHandoverHeaders([]);
+
+        return $this->hrmProcessTerminationAndHandoverWithOptions($request, $headers, $runtime);
     }
 
     /**

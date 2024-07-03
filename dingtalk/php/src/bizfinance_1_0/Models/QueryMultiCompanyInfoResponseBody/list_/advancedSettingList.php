@@ -32,11 +32,17 @@ class advancedSettingList extends Model
     /**
      * @var bool
      */
+    public $valid;
+
+    /**
+     * @var bool
+     */
     public $value;
     protected $_name = [
         'advancedSettingKey'  => 'advancedSettingKey',
         'advancedSettingName' => 'advancedSettingName',
         'endDate'             => 'endDate',
+        'valid'               => 'valid',
         'value'               => 'value',
     ];
 
@@ -55,6 +61,9 @@ class advancedSettingList extends Model
         }
         if (null !== $this->endDate) {
             $res['endDate'] = $this->endDate;
+        }
+        if (null !== $this->valid) {
+            $res['valid'] = $this->valid;
         }
         if (null !== $this->value) {
             $res['value'] = $this->value;
@@ -79,6 +88,9 @@ class advancedSettingList extends Model
         }
         if (isset($map['endDate'])) {
             $model->endDate = $map['endDate'];
+        }
+        if (isset($map['valid'])) {
+            $model->valid = $map['valid'];
         }
         if (isset($map['value'])) {
             $model->value = $map['value'];

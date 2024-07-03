@@ -16,6 +16,16 @@ class QueryReceiptsBaseInfoRequest extends Model
     public $accountantBookId;
 
     /**
+     * @var float
+     */
+    public $amountEnd;
+
+    /**
+     * @var float
+     */
+    public $amountStart;
+
+    /**
      * @example COM_DEFAULT
      *
      * @var string
@@ -68,6 +78,8 @@ class QueryReceiptsBaseInfoRequest extends Model
     public $voucherStatus;
     protected $_name = [
         'accountantBookId' => 'accountantBookId',
+        'amountEnd'        => 'amountEnd',
+        'amountStart'      => 'amountStart',
         'companyCode'      => 'companyCode',
         'endTime'          => 'endTime',
         'pageNumber'       => 'pageNumber',
@@ -87,6 +99,12 @@ class QueryReceiptsBaseInfoRequest extends Model
         $res = [];
         if (null !== $this->accountantBookId) {
             $res['accountantBookId'] = $this->accountantBookId;
+        }
+        if (null !== $this->amountEnd) {
+            $res['amountEnd'] = $this->amountEnd;
+        }
+        if (null !== $this->amountStart) {
+            $res['amountStart'] = $this->amountStart;
         }
         if (null !== $this->companyCode) {
             $res['companyCode'] = $this->companyCode;
@@ -126,6 +144,12 @@ class QueryReceiptsBaseInfoRequest extends Model
         $model = new self();
         if (isset($map['accountantBookId'])) {
             $model->accountantBookId = $map['accountantBookId'];
+        }
+        if (isset($map['amountEnd'])) {
+            $model->amountEnd = $map['amountEnd'];
+        }
+        if (isset($map['amountStart'])) {
+            $model->amountStart = $map['amountStart'];
         }
         if (isset($map['companyCode'])) {
             $model->companyCode = $map['companyCode'];
