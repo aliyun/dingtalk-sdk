@@ -2302,6 +2302,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("accountantBookId", request.accountantBookId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.amountEnd)) {
+            query.put("amountEnd", request.amountEnd);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.amountStart)) {
+            query.put("amountStart", request.amountStart);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.companyCode)) {
             query.put("companyCode", request.companyCode);
         }

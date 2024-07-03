@@ -1,0 +1,54 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkim_1_0.models;
+
+import com.aliyun.tea.*;
+
+public class OpenGroupRoleRemoveRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("openConversationId")
+    public String openConversationId;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("openRoleId")
+    public String openRoleId;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("userId")
+    public String userId;
+
+    public static OpenGroupRoleRemoveRequest build(java.util.Map<String, ?> map) throws Exception {
+        OpenGroupRoleRemoveRequest self = new OpenGroupRoleRemoveRequest();
+        return TeaModel.build(map, self);
+    }
+
+    public OpenGroupRoleRemoveRequest setOpenConversationId(String openConversationId) {
+        this.openConversationId = openConversationId;
+        return this;
+    }
+    public String getOpenConversationId() {
+        return this.openConversationId;
+    }
+
+    public OpenGroupRoleRemoveRequest setOpenRoleId(String openRoleId) {
+        this.openRoleId = openRoleId;
+        return this;
+    }
+    public String getOpenRoleId() {
+        return this.openRoleId;
+    }
+
+    public OpenGroupRoleRemoveRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
+    }
+
+}

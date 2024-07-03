@@ -11,6 +11,12 @@ public class QueryReceiptsBaseInfoRequest extends TeaModel {
     @NameInMap("accountantBookId")
     public String accountantBookId;
 
+    @NameInMap("amountEnd")
+    public Double amountEnd;
+
+    @NameInMap("amountStart")
+    public Double amountStart;
+
     /**
      * <strong>example:</strong>
      * <p>COM_DEFAULT</p>
@@ -70,6 +76,22 @@ public class QueryReceiptsBaseInfoRequest extends TeaModel {
     }
     public String getAccountantBookId() {
         return this.accountantBookId;
+    }
+
+    public QueryReceiptsBaseInfoRequest setAmountEnd(Double amountEnd) {
+        this.amountEnd = amountEnd;
+        return this;
+    }
+    public Double getAmountEnd() {
+        return this.amountEnd;
+    }
+
+    public QueryReceiptsBaseInfoRequest setAmountStart(Double amountStart) {
+        this.amountStart = amountStart;
+        return this;
+    }
+    public Double getAmountStart() {
+        return this.amountStart;
     }
 
     public QueryReceiptsBaseInfoRequest setCompanyCode(String companyCode) {

@@ -42,6 +42,9 @@ public class QueryMultiCompanyInfoResponseBody extends TeaModel {
         @NameInMap("endDate")
         public Long endDate;
 
+        @NameInMap("valid")
+        public Boolean valid;
+
         @NameInMap("value")
         public Boolean value;
 
@@ -72,6 +75,14 @@ public class QueryMultiCompanyInfoResponseBody extends TeaModel {
         }
         public Long getEndDate() {
             return this.endDate;
+        }
+
+        public QueryMultiCompanyInfoResponseBodyListAdvancedSettingList setValid(Boolean valid) {
+            this.valid = valid;
+            return this;
+        }
+        public Boolean getValid() {
+            return this.valid;
         }
 
         public QueryMultiCompanyInfoResponseBodyListAdvancedSettingList setValue(Boolean value) {

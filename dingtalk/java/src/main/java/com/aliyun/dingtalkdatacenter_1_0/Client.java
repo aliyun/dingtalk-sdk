@@ -20,6 +20,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>关闭数据投递任务</p>
+     * 
+     * @param request CloseDataDeliverRequest
+     * @param headers CloseDataDeliverHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CloseDataDeliverResponse
+     */
+    public CloseDataDeliverResponse closeDataDeliverWithOptions(CloseDataDeliverRequest request, CloseDataDeliverHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deliverId)) {
+            query.put("deliverId", request.deliverId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dispatchingItemType)) {
+            query.put("dispatchingItemType", request.dispatchingItemType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CloseDataDeliver"),
+            new TeaPair("version", "datacenter_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/datacenter/dataDeliverServices/close"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CloseDataDeliverResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>关闭数据投递任务</p>
+     * 
+     * @param request CloseDataDeliverRequest
+     * @return CloseDataDeliverResponse
+     */
+    public CloseDataDeliverResponse closeDataDeliver(CloseDataDeliverRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CloseDataDeliverHeaders headers = new CloseDataDeliverHeaders();
+        return this.closeDataDeliverWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建数据投递</p>
      * 
      * @param request CreateDataDeliverRequest
@@ -542,6 +602,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetChangeRecordHeaders headers = new GetChangeRecordHeaders();
         return this.getChangeRecordWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取投递任务信息</p>
+     * 
+     * @param request GetDataDeliverRequest
+     * @param headers GetDataDeliverHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetDataDeliverResponse
+     */
+    public GetDataDeliverResponse getDataDeliverWithOptions(GetDataDeliverRequest request, GetDataDeliverHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deliverId)) {
+            query.put("deliverId", request.deliverId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dispatchingItemType)) {
+            query.put("dispatchingItemType", request.dispatchingItemType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetDataDeliver"),
+            new TeaPair("version", "datacenter_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/datacenter/dataDeliverServices/infos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetDataDeliverResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取投递任务信息</p>
+     * 
+     * @param request GetDataDeliverRequest
+     * @return GetDataDeliverResponse
+     */
+    public GetDataDeliverResponse getDataDeliver(GetDataDeliverRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetDataDeliverHeaders headers = new GetDataDeliverHeaders();
+        return this.getDataDeliverWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1566,6 +1686,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetWorkCopyrightHeaders headers = new GetWorkCopyrightHeaders();
         return this.getWorkCopyrightWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>数据投递列表</p>
+     * 
+     * @param request ListDataDeliversRequest
+     * @param headers ListDataDeliversHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListDataDeliversResponse
+     */
+    public ListDataDeliversResponse listDataDeliversWithOptions(ListDataDeliversRequest request, ListDataDeliversHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dispatchingItemType)) {
+            query.put("dispatchingItemType", request.dispatchingItemType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListDataDelivers"),
+            new TeaPair("version", "datacenter_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/datacenter/dataDeliverServices/lists"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListDataDeliversResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>数据投递列表</p>
+     * 
+     * @param request ListDataDeliversRequest
+     * @return ListDataDeliversResponse
+     */
+    public ListDataDeliversResponse listDataDelivers(ListDataDeliversRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListDataDeliversHeaders headers = new ListDataDeliversHeaders();
+        return this.listDataDeliversWithOptions(request, headers, runtime);
     }
 
     /**
