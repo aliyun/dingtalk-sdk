@@ -4435,6 +4435,10 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.accountant_book_id):
             query['accountantBookId'] = request.accountant_book_id
+        if not UtilClient.is_unset(request.amount_end):
+            query['amountEnd'] = request.amount_end
+        if not UtilClient.is_unset(request.amount_start):
+            query['amountStart'] = request.amount_start
         if not UtilClient.is_unset(request.company_code):
             query['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.end_time):
@@ -4494,6 +4498,10 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.accountant_book_id):
             query['accountantBookId'] = request.accountant_book_id
+        if not UtilClient.is_unset(request.amount_end):
+            query['amountEnd'] = request.amount_end
+        if not UtilClient.is_unset(request.amount_start):
+            query['amountStart'] = request.amount_start
         if not UtilClient.is_unset(request.company_code):
             query['companyCode'] = request.company_code
         if not UtilClient.is_unset(request.end_time):

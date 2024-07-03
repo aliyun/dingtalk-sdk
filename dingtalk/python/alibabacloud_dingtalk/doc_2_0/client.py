@@ -2875,6 +2875,120 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.GetUuidByDentryIdHeaders()
         return await self.get_uuid_by_dentry_id_with_options_async(dentry_id, request, headers, runtime)
 
+    def handover_team_without_auth_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.HandoverTeamWithoutAuthRequest,
+        headers: dingtalkdoc__2__0_models.HandoverTeamWithoutAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.HandoverTeamWithoutAuthResponse:
+        """
+        @summary 以超级管理员身份转交小组
+        
+        @param request: HandoverTeamWithoutAuthRequest
+        @param headers: HandoverTeamWithoutAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HandoverTeamWithoutAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HandoverTeamWithoutAuth',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/teams/members/handoverWithoutAuth',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.HandoverTeamWithoutAuthResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def handover_team_without_auth_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.HandoverTeamWithoutAuthRequest,
+        headers: dingtalkdoc__2__0_models.HandoverTeamWithoutAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.HandoverTeamWithoutAuthResponse:
+        """
+        @summary 以超级管理员身份转交小组
+        
+        @param request: HandoverTeamWithoutAuthRequest
+        @param headers: HandoverTeamWithoutAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HandoverTeamWithoutAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HandoverTeamWithoutAuth',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/teams/members/handoverWithoutAuth',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.HandoverTeamWithoutAuthResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def handover_team_without_auth(
+        self,
+        request: dingtalkdoc__2__0_models.HandoverTeamWithoutAuthRequest,
+    ) -> dingtalkdoc__2__0_models.HandoverTeamWithoutAuthResponse:
+        """
+        @summary 以超级管理员身份转交小组
+        
+        @param request: HandoverTeamWithoutAuthRequest
+        @return: HandoverTeamWithoutAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.HandoverTeamWithoutAuthHeaders()
+        return self.handover_team_without_auth_with_options(request, headers, runtime)
+
+    async def handover_team_without_auth_async(
+        self,
+        request: dingtalkdoc__2__0_models.HandoverTeamWithoutAuthRequest,
+    ) -> dingtalkdoc__2__0_models.HandoverTeamWithoutAuthResponse:
+        """
+        @summary 以超级管理员身份转交小组
+        
+        @param request: HandoverTeamWithoutAuthRequest
+        @return: HandoverTeamWithoutAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.HandoverTeamWithoutAuthHeaders()
+        return await self.handover_team_without_auth_with_options_async(request, headers, runtime)
+
     def list_feeds_with_options(
         self,
         team_id: str,

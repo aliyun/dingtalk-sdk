@@ -4425,6 +4425,616 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.ListOrgTextEmotionHeaders()
         return await self.list_org_text_emotion_with_options_async(headers, runtime)
 
+    def open_group_role_add_with_options(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleAddRequest,
+        headers: dingtalkim__1__0_models.OpenGroupRoleAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleAddResponse:
+        """
+        @summary 开放场景群新增群角色
+        
+        @param request: OpenGroupRoleAddRequest
+        @param headers: OpenGroupRoleAddHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenGroupRoleAddResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.role_name):
+            body['roleName'] = request.role_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenGroupRoleAdd',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/roles',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OpenGroupRoleAddResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def open_group_role_add_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleAddRequest,
+        headers: dingtalkim__1__0_models.OpenGroupRoleAddHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleAddResponse:
+        """
+        @summary 开放场景群新增群角色
+        
+        @param request: OpenGroupRoleAddRequest
+        @param headers: OpenGroupRoleAddHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenGroupRoleAddResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.role_name):
+            body['roleName'] = request.role_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenGroupRoleAdd',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/roles',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OpenGroupRoleAddResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def open_group_role_add(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleAddRequest,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleAddResponse:
+        """
+        @summary 开放场景群新增群角色
+        
+        @param request: OpenGroupRoleAddRequest
+        @return: OpenGroupRoleAddResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OpenGroupRoleAddHeaders()
+        return self.open_group_role_add_with_options(request, headers, runtime)
+
+    async def open_group_role_add_async(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleAddRequest,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleAddResponse:
+        """
+        @summary 开放场景群新增群角色
+        
+        @param request: OpenGroupRoleAddRequest
+        @return: OpenGroupRoleAddResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OpenGroupRoleAddHeaders()
+        return await self.open_group_role_add_with_options_async(request, headers, runtime)
+
+    def open_group_role_query_with_options(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleQueryRequest,
+        headers: dingtalkim__1__0_models.OpenGroupRoleQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleQueryResponse:
+        """
+        @summary 开放场景群群角色查询
+        
+        @param request: OpenGroupRoleQueryRequest
+        @param headers: OpenGroupRoleQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenGroupRoleQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenGroupRoleQuery',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/roles/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OpenGroupRoleQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def open_group_role_query_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleQueryRequest,
+        headers: dingtalkim__1__0_models.OpenGroupRoleQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleQueryResponse:
+        """
+        @summary 开放场景群群角色查询
+        
+        @param request: OpenGroupRoleQueryRequest
+        @param headers: OpenGroupRoleQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenGroupRoleQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenGroupRoleQuery',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/roles/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OpenGroupRoleQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def open_group_role_query(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleQueryRequest,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleQueryResponse:
+        """
+        @summary 开放场景群群角色查询
+        
+        @param request: OpenGroupRoleQueryRequest
+        @return: OpenGroupRoleQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OpenGroupRoleQueryHeaders()
+        return self.open_group_role_query_with_options(request, headers, runtime)
+
+    async def open_group_role_query_async(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleQueryRequest,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleQueryResponse:
+        """
+        @summary 开放场景群群角色查询
+        
+        @param request: OpenGroupRoleQueryRequest
+        @return: OpenGroupRoleQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OpenGroupRoleQueryHeaders()
+        return await self.open_group_role_query_with_options_async(request, headers, runtime)
+
+    def open_group_role_remove_with_options(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleRemoveRequest,
+        headers: dingtalkim__1__0_models.OpenGroupRoleRemoveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleRemoveResponse:
+        """
+        @summary 开放场景群群角色移除
+        
+        @param request: OpenGroupRoleRemoveRequest
+        @param headers: OpenGroupRoleRemoveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenGroupRoleRemoveResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_id):
+            body['openRoleId'] = request.open_role_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenGroupRoleRemove',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/roles/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OpenGroupRoleRemoveResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def open_group_role_remove_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleRemoveRequest,
+        headers: dingtalkim__1__0_models.OpenGroupRoleRemoveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleRemoveResponse:
+        """
+        @summary 开放场景群群角色移除
+        
+        @param request: OpenGroupRoleRemoveRequest
+        @param headers: OpenGroupRoleRemoveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenGroupRoleRemoveResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_id):
+            body['openRoleId'] = request.open_role_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenGroupRoleRemove',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/roles/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OpenGroupRoleRemoveResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def open_group_role_remove(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleRemoveRequest,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleRemoveResponse:
+        """
+        @summary 开放场景群群角色移除
+        
+        @param request: OpenGroupRoleRemoveRequest
+        @return: OpenGroupRoleRemoveResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OpenGroupRoleRemoveHeaders()
+        return self.open_group_role_remove_with_options(request, headers, runtime)
+
+    async def open_group_role_remove_async(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleRemoveRequest,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleRemoveResponse:
+        """
+        @summary 开放场景群群角色移除
+        
+        @param request: OpenGroupRoleRemoveRequest
+        @return: OpenGroupRoleRemoveResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OpenGroupRoleRemoveHeaders()
+        return await self.open_group_role_remove_with_options_async(request, headers, runtime)
+
+    def open_group_role_update_with_options(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleUpdateRequest,
+        headers: dingtalkim__1__0_models.OpenGroupRoleUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleUpdateResponse:
+        """
+        @summary 开放场景群群角色变更
+        
+        @param request: OpenGroupRoleUpdateRequest
+        @param headers: OpenGroupRoleUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenGroupRoleUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_id):
+            body['openRoleId'] = request.open_role_id
+        if not UtilClient.is_unset(request.role_name):
+            body['roleName'] = request.role_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenGroupRoleUpdate',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/roles',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OpenGroupRoleUpdateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def open_group_role_update_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleUpdateRequest,
+        headers: dingtalkim__1__0_models.OpenGroupRoleUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleUpdateResponse:
+        """
+        @summary 开放场景群群角色变更
+        
+        @param request: OpenGroupRoleUpdateRequest
+        @param headers: OpenGroupRoleUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenGroupRoleUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_id):
+            body['openRoleId'] = request.open_role_id
+        if not UtilClient.is_unset(request.role_name):
+            body['roleName'] = request.role_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenGroupRoleUpdate',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/roles',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OpenGroupRoleUpdateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def open_group_role_update(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleUpdateRequest,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleUpdateResponse:
+        """
+        @summary 开放场景群群角色变更
+        
+        @param request: OpenGroupRoleUpdateRequest
+        @return: OpenGroupRoleUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OpenGroupRoleUpdateHeaders()
+        return self.open_group_role_update_with_options(request, headers, runtime)
+
+    async def open_group_role_update_async(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupRoleUpdateRequest,
+    ) -> dingtalkim__1__0_models.OpenGroupRoleUpdateResponse:
+        """
+        @summary 开放场景群群角色变更
+        
+        @param request: OpenGroupRoleUpdateRequest
+        @return: OpenGroupRoleUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OpenGroupRoleUpdateHeaders()
+        return await self.open_group_role_update_with_options_async(request, headers, runtime)
+
+    def open_group_user_role_query_with_options(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupUserRoleQueryRequest,
+        headers: dingtalkim__1__0_models.OpenGroupUserRoleQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OpenGroupUserRoleQueryResponse:
+        """
+        @summary 开放场景群群成员的群角色信息查询
+        
+        @param request: OpenGroupUserRoleQueryRequest
+        @param headers: OpenGroupUserRoleQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenGroupUserRoleQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.viewed_user_id):
+            body['viewedUserId'] = request.viewed_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenGroupUserRoleQuery',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/users/roles/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OpenGroupUserRoleQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def open_group_user_role_query_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupUserRoleQueryRequest,
+        headers: dingtalkim__1__0_models.OpenGroupUserRoleQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OpenGroupUserRoleQueryResponse:
+        """
+        @summary 开放场景群群成员的群角色信息查询
+        
+        @param request: OpenGroupUserRoleQueryRequest
+        @param headers: OpenGroupUserRoleQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenGroupUserRoleQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.viewed_user_id):
+            body['viewedUserId'] = request.viewed_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenGroupUserRoleQuery',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groups/users/roles/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OpenGroupUserRoleQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def open_group_user_role_query(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupUserRoleQueryRequest,
+    ) -> dingtalkim__1__0_models.OpenGroupUserRoleQueryResponse:
+        """
+        @summary 开放场景群群成员的群角色信息查询
+        
+        @param request: OpenGroupUserRoleQueryRequest
+        @return: OpenGroupUserRoleQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OpenGroupUserRoleQueryHeaders()
+        return self.open_group_user_role_query_with_options(request, headers, runtime)
+
+    async def open_group_user_role_query_async(
+        self,
+        request: dingtalkim__1__0_models.OpenGroupUserRoleQueryRequest,
+    ) -> dingtalkim__1__0_models.OpenGroupUserRoleQueryResponse:
+        """
+        @summary 开放场景群群成员的群角色信息查询
+        
+        @param request: OpenGroupUserRoleQueryRequest
+        @return: OpenGroupUserRoleQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OpenGroupUserRoleQueryHeaders()
+        return await self.open_group_user_role_query_with_options_async(request, headers, runtime)
+
     def open_inner_group_transfer_to_dept_group_with_options(
         self,
         request: dingtalkim__1__0_models.OpenInnerGroupTransferToDeptGroupRequest,

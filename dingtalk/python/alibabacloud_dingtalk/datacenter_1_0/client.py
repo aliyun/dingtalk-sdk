@@ -29,6 +29,124 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def close_data_deliver_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.CloseDataDeliverRequest,
+        headers: dingtalkdatacenter__1__0_models.CloseDataDeliverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.CloseDataDeliverResponse:
+        """
+        @summary 关闭数据投递任务
+        
+        @param request: CloseDataDeliverRequest
+        @param headers: CloseDataDeliverHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseDataDeliverResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.deliver_id):
+            query['deliverId'] = request.deliver_id
+        if not UtilClient.is_unset(request.dispatching_item_type):
+            query['dispatchingItemType'] = request.dispatching_item_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CloseDataDeliver',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataDeliverServices/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.CloseDataDeliverResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def close_data_deliver_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.CloseDataDeliverRequest,
+        headers: dingtalkdatacenter__1__0_models.CloseDataDeliverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.CloseDataDeliverResponse:
+        """
+        @summary 关闭数据投递任务
+        
+        @param request: CloseDataDeliverRequest
+        @param headers: CloseDataDeliverHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseDataDeliverResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.deliver_id):
+            query['deliverId'] = request.deliver_id
+        if not UtilClient.is_unset(request.dispatching_item_type):
+            query['dispatchingItemType'] = request.dispatching_item_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CloseDataDeliver',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataDeliverServices/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.CloseDataDeliverResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def close_data_deliver(
+        self,
+        request: dingtalkdatacenter__1__0_models.CloseDataDeliverRequest,
+    ) -> dingtalkdatacenter__1__0_models.CloseDataDeliverResponse:
+        """
+        @summary 关闭数据投递任务
+        
+        @param request: CloseDataDeliverRequest
+        @return: CloseDataDeliverResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.CloseDataDeliverHeaders()
+        return self.close_data_deliver_with_options(request, headers, runtime)
+
+    async def close_data_deliver_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.CloseDataDeliverRequest,
+    ) -> dingtalkdatacenter__1__0_models.CloseDataDeliverResponse:
+        """
+        @summary 关闭数据投递任务
+        
+        @param request: CloseDataDeliverRequest
+        @return: CloseDataDeliverResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.CloseDataDeliverHeaders()
+        return await self.close_data_deliver_with_options_async(request, headers, runtime)
+
     def create_data_deliver_with_options(
         self,
         request: dingtalkdatacenter__1__0_models.CreateDataDeliverRequest,
@@ -1020,6 +1138,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdatacenter__1__0_models.GetChangeRecordHeaders()
         return await self.get_change_record_with_options_async(request, headers, runtime)
+
+    def get_data_deliver_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDataDeliverRequest,
+        headers: dingtalkdatacenter__1__0_models.GetDataDeliverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetDataDeliverResponse:
+        """
+        @summary 获取投递任务信息
+        
+        @param request: GetDataDeliverRequest
+        @param headers: GetDataDeliverHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDataDeliverResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.deliver_id):
+            query['deliverId'] = request.deliver_id
+        if not UtilClient.is_unset(request.dispatching_item_type):
+            query['dispatchingItemType'] = request.dispatching_item_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDataDeliver',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataDeliverServices/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetDataDeliverResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_data_deliver_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDataDeliverRequest,
+        headers: dingtalkdatacenter__1__0_models.GetDataDeliverHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.GetDataDeliverResponse:
+        """
+        @summary 获取投递任务信息
+        
+        @param request: GetDataDeliverRequest
+        @param headers: GetDataDeliverHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDataDeliverResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.deliver_id):
+            query['deliverId'] = request.deliver_id
+        if not UtilClient.is_unset(request.dispatching_item_type):
+            query['dispatchingItemType'] = request.dispatching_item_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDataDeliver',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataDeliverServices/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.GetDataDeliverResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_data_deliver(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDataDeliverRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetDataDeliverResponse:
+        """
+        @summary 获取投递任务信息
+        
+        @param request: GetDataDeliverRequest
+        @return: GetDataDeliverResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetDataDeliverHeaders()
+        return self.get_data_deliver_with_options(request, headers, runtime)
+
+    async def get_data_deliver_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.GetDataDeliverRequest,
+    ) -> dingtalkdatacenter__1__0_models.GetDataDeliverResponse:
+        """
+        @summary 获取投递任务信息
+        
+        @param request: GetDataDeliverRequest
+        @return: GetDataDeliverResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.GetDataDeliverHeaders()
+        return await self.get_data_deliver_with_options_async(request, headers, runtime)
 
     def get_domain_info_with_options(
         self,
@@ -2972,6 +3208,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdatacenter__1__0_models.GetWorkCopyrightHeaders()
         return await self.get_work_copyright_with_options_async(request, headers, runtime)
+
+    def list_data_delivers_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.ListDataDeliversRequest,
+        headers: dingtalkdatacenter__1__0_models.ListDataDeliversHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.ListDataDeliversResponse:
+        """
+        @summary 数据投递列表
+        
+        @param request: ListDataDeliversRequest
+        @param headers: ListDataDeliversHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListDataDeliversResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dispatching_item_type):
+            query['dispatchingItemType'] = request.dispatching_item_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListDataDelivers',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataDeliverServices/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.ListDataDeliversResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_data_delivers_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.ListDataDeliversRequest,
+        headers: dingtalkdatacenter__1__0_models.ListDataDeliversHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.ListDataDeliversResponse:
+        """
+        @summary 数据投递列表
+        
+        @param request: ListDataDeliversRequest
+        @param headers: ListDataDeliversHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListDataDeliversResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dispatching_item_type):
+            query['dispatchingItemType'] = request.dispatching_item_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListDataDelivers',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataDeliverServices/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.ListDataDeliversResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_data_delivers(
+        self,
+        request: dingtalkdatacenter__1__0_models.ListDataDeliversRequest,
+    ) -> dingtalkdatacenter__1__0_models.ListDataDeliversResponse:
+        """
+        @summary 数据投递列表
+        
+        @param request: ListDataDeliversRequest
+        @return: ListDataDeliversResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.ListDataDeliversHeaders()
+        return self.list_data_delivers_with_options(request, headers, runtime)
+
+    async def list_data_delivers_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.ListDataDeliversRequest,
+    ) -> dingtalkdatacenter__1__0_models.ListDataDeliversResponse:
+        """
+        @summary 数据投递列表
+        
+        @param request: ListDataDeliversRequest
+        @return: ListDataDeliversResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.ListDataDeliversHeaders()
+        return await self.list_data_delivers_with_options_async(request, headers, runtime)
 
     def post_corp_auth_info_with_options(
         self,

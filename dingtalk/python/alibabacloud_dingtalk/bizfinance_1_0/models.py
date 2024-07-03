@@ -7358,11 +7358,13 @@ class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList(TeaModel):
         advanced_setting_key: str = None,
         advanced_setting_name: str = None,
         end_date: int = None,
+        valid: bool = None,
         value: bool = None,
     ):
         self.advanced_setting_key = advanced_setting_key
         self.advanced_setting_name = advanced_setting_name
         self.end_date = end_date
+        self.valid = valid
         self.value = value
 
     def validate(self):
@@ -7380,6 +7382,8 @@ class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList(TeaModel):
             result['advancedSettingName'] = self.advanced_setting_name
         if self.end_date is not None:
             result['endDate'] = self.end_date
+        if self.valid is not None:
+            result['valid'] = self.valid
         if self.value is not None:
             result['value'] = self.value
         return result
@@ -7392,6 +7396,8 @@ class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList(TeaModel):
             self.advanced_setting_name = m.get('advancedSettingName')
         if m.get('endDate') is not None:
             self.end_date = m.get('endDate')
+        if m.get('valid') is not None:
+            self.valid = m.get('valid')
         if m.get('value') is not None:
             self.value = m.get('value')
         return self
@@ -9425,6 +9431,8 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
     def __init__(
         self,
         accountant_book_id: str = None,
+        amount_end: float = None,
+        amount_start: float = None,
         company_code: str = None,
         end_time: int = None,
         page_number: int = None,
@@ -9435,6 +9443,8 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
         voucher_status: str = None,
     ):
         self.accountant_book_id = accountant_book_id
+        self.amount_end = amount_end
+        self.amount_start = amount_start
         self.company_code = company_code
         self.end_time = end_time
         self.page_number = page_number
@@ -9455,6 +9465,10 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
         result = dict()
         if self.accountant_book_id is not None:
             result['accountantBookId'] = self.accountant_book_id
+        if self.amount_end is not None:
+            result['amountEnd'] = self.amount_end
+        if self.amount_start is not None:
+            result['amountStart'] = self.amount_start
         if self.company_code is not None:
             result['companyCode'] = self.company_code
         if self.end_time is not None:
@@ -9477,6 +9491,10 @@ class QueryReceiptsBaseInfoRequest(TeaModel):
         m = m or dict()
         if m.get('accountantBookId') is not None:
             self.accountant_book_id = m.get('accountantBookId')
+        if m.get('amountEnd') is not None:
+            self.amount_end = m.get('amountEnd')
+        if m.get('amountStart') is not None:
+            self.amount_start = m.get('amountStart')
         if m.get('companyCode') is not None:
             self.company_code = m.get('companyCode')
         if m.get('endTime') is not None:

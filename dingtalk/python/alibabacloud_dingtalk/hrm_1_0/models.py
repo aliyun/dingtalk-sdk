@@ -2989,6 +2989,193 @@ class HrmProcessRegularResponse(TeaModel):
         return self
 
 
+class HrmProcessTerminationAndHandoverHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrmProcessTerminationAndHandoverRequest(TeaModel):
+    def __init__(
+        self,
+        aflow_hand_over_user_id: str = None,
+        ding_pan_handover_user_id: str = None,
+        direct_subordinates_handover_user_id: str = None,
+        dismission_memo: str = None,
+        dismission_reason: int = None,
+        doc_note_handover_user_id: str = None,
+        last_work_date: int = None,
+        opt_user_id: str = None,
+        permission_handover_user_id: str = None,
+        user_id: str = None,
+    ):
+        self.aflow_hand_over_user_id = aflow_hand_over_user_id
+        self.ding_pan_handover_user_id = ding_pan_handover_user_id
+        self.direct_subordinates_handover_user_id = direct_subordinates_handover_user_id
+        # This parameter is required.
+        self.dismission_memo = dismission_memo
+        # This parameter is required.
+        self.dismission_reason = dismission_reason
+        self.doc_note_handover_user_id = doc_note_handover_user_id
+        # This parameter is required.
+        self.last_work_date = last_work_date
+        # This parameter is required.
+        self.opt_user_id = opt_user_id
+        self.permission_handover_user_id = permission_handover_user_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.aflow_hand_over_user_id is not None:
+            result['aflowHandOverUserId'] = self.aflow_hand_over_user_id
+        if self.ding_pan_handover_user_id is not None:
+            result['dingPanHandoverUserId'] = self.ding_pan_handover_user_id
+        if self.direct_subordinates_handover_user_id is not None:
+            result['directSubordinatesHandoverUserId'] = self.direct_subordinates_handover_user_id
+        if self.dismission_memo is not None:
+            result['dismissionMemo'] = self.dismission_memo
+        if self.dismission_reason is not None:
+            result['dismissionReason'] = self.dismission_reason
+        if self.doc_note_handover_user_id is not None:
+            result['docNoteHandoverUserId'] = self.doc_note_handover_user_id
+        if self.last_work_date is not None:
+            result['lastWorkDate'] = self.last_work_date
+        if self.opt_user_id is not None:
+            result['optUserId'] = self.opt_user_id
+        if self.permission_handover_user_id is not None:
+            result['permissionHandoverUserId'] = self.permission_handover_user_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('aflowHandOverUserId') is not None:
+            self.aflow_hand_over_user_id = m.get('aflowHandOverUserId')
+        if m.get('dingPanHandoverUserId') is not None:
+            self.ding_pan_handover_user_id = m.get('dingPanHandoverUserId')
+        if m.get('directSubordinatesHandoverUserId') is not None:
+            self.direct_subordinates_handover_user_id = m.get('directSubordinatesHandoverUserId')
+        if m.get('dismissionMemo') is not None:
+            self.dismission_memo = m.get('dismissionMemo')
+        if m.get('dismissionReason') is not None:
+            self.dismission_reason = m.get('dismissionReason')
+        if m.get('docNoteHandoverUserId') is not None:
+            self.doc_note_handover_user_id = m.get('docNoteHandoverUserId')
+        if m.get('lastWorkDate') is not None:
+            self.last_work_date = m.get('lastWorkDate')
+        if m.get('optUserId') is not None:
+            self.opt_user_id = m.get('optUserId')
+        if m.get('permissionHandoverUserId') is not None:
+            self.permission_handover_user_id = m.get('permissionHandoverUserId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class HrmProcessTerminationAndHandoverResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class HrmProcessTerminationAndHandoverResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrmProcessTerminationAndHandoverResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrmProcessTerminationAndHandoverResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class HrmProcessTransferHeaders(TeaModel):
     def __init__(
         self,
