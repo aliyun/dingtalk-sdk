@@ -29,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public long? EndDate { get; set; }
 
+                [NameInMap("valid")]
+                [Validation(Required=false)]
+                public bool? Valid { get; set; }
+
                 [NameInMap("value")]
                 [Validation(Required=false)]
                 public bool? Value { get; set; }

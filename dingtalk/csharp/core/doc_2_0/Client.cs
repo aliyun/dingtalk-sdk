@@ -3017,6 +3017,122 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
         }
 
         /**
+         * @summary 以超级管理员身份转交小组
+         *
+         * @param request HandoverTeamWithoutAuthRequest
+         * @param headers HandoverTeamWithoutAuthHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return HandoverTeamWithoutAuthResponse
+         */
+        public HandoverTeamWithoutAuthResponse HandoverTeamWithoutAuthWithOptions(HandoverTeamWithoutAuthRequest request, HandoverTeamWithoutAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HandoverTeamWithoutAuth",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/teams/members/handoverWithoutAuth",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HandoverTeamWithoutAuthResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 以超级管理员身份转交小组
+         *
+         * @param request HandoverTeamWithoutAuthRequest
+         * @param headers HandoverTeamWithoutAuthHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return HandoverTeamWithoutAuthResponse
+         */
+        public async Task<HandoverTeamWithoutAuthResponse> HandoverTeamWithoutAuthWithOptionsAsync(HandoverTeamWithoutAuthRequest request, HandoverTeamWithoutAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HandoverTeamWithoutAuth",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/teams/members/handoverWithoutAuth",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HandoverTeamWithoutAuthResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 以超级管理员身份转交小组
+         *
+         * @param request HandoverTeamWithoutAuthRequest
+         * @return HandoverTeamWithoutAuthResponse
+         */
+        public HandoverTeamWithoutAuthResponse HandoverTeamWithoutAuth(HandoverTeamWithoutAuthRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HandoverTeamWithoutAuthHeaders headers = new HandoverTeamWithoutAuthHeaders();
+            return HandoverTeamWithoutAuthWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 以超级管理员身份转交小组
+         *
+         * @param request HandoverTeamWithoutAuthRequest
+         * @return HandoverTeamWithoutAuthResponse
+         */
+        public async Task<HandoverTeamWithoutAuthResponse> HandoverTeamWithoutAuthAsync(HandoverTeamWithoutAuthRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HandoverTeamWithoutAuthHeaders headers = new HandoverTeamWithoutAuthHeaders();
+            return await HandoverTeamWithoutAuthWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 查询小组动态
          *
          * @param request ListFeedsRequest

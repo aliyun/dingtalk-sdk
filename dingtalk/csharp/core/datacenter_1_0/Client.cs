@@ -29,6 +29,130 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
 
 
         /**
+         * @summary 关闭数据投递任务
+         *
+         * @param request CloseDataDeliverRequest
+         * @param headers CloseDataDeliverHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CloseDataDeliverResponse
+         */
+        public CloseDataDeliverResponse CloseDataDeliverWithOptions(CloseDataDeliverRequest request, CloseDataDeliverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliverId))
+            {
+                query["deliverId"] = request.DeliverId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingItemType))
+            {
+                query["dispatchingItemType"] = request.DispatchingItemType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CloseDataDeliver",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/dataDeliverServices/close",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CloseDataDeliverResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 关闭数据投递任务
+         *
+         * @param request CloseDataDeliverRequest
+         * @param headers CloseDataDeliverHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CloseDataDeliverResponse
+         */
+        public async Task<CloseDataDeliverResponse> CloseDataDeliverWithOptionsAsync(CloseDataDeliverRequest request, CloseDataDeliverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliverId))
+            {
+                query["deliverId"] = request.DeliverId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingItemType))
+            {
+                query["dispatchingItemType"] = request.DispatchingItemType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CloseDataDeliver",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/dataDeliverServices/close",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CloseDataDeliverResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 关闭数据投递任务
+         *
+         * @param request CloseDataDeliverRequest
+         * @return CloseDataDeliverResponse
+         */
+        public CloseDataDeliverResponse CloseDataDeliver(CloseDataDeliverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CloseDataDeliverHeaders headers = new CloseDataDeliverHeaders();
+            return CloseDataDeliverWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 关闭数据投递任务
+         *
+         * @param request CloseDataDeliverRequest
+         * @return CloseDataDeliverResponse
+         */
+        public async Task<CloseDataDeliverResponse> CloseDataDeliverAsync(CloseDataDeliverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CloseDataDeliverHeaders headers = new CloseDataDeliverHeaders();
+            return await CloseDataDeliverWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 创建数据投递
          *
          * @param request CreateDataDeliverRequest
@@ -1110,6 +1234,130 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetChangeRecordHeaders headers = new GetChangeRecordHeaders();
             return await GetChangeRecordWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取投递任务信息
+         *
+         * @param request GetDataDeliverRequest
+         * @param headers GetDataDeliverHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetDataDeliverResponse
+         */
+        public GetDataDeliverResponse GetDataDeliverWithOptions(GetDataDeliverRequest request, GetDataDeliverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliverId))
+            {
+                query["deliverId"] = request.DeliverId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingItemType))
+            {
+                query["dispatchingItemType"] = request.DispatchingItemType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDataDeliver",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/dataDeliverServices/infos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDataDeliverResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取投递任务信息
+         *
+         * @param request GetDataDeliverRequest
+         * @param headers GetDataDeliverHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetDataDeliverResponse
+         */
+        public async Task<GetDataDeliverResponse> GetDataDeliverWithOptionsAsync(GetDataDeliverRequest request, GetDataDeliverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliverId))
+            {
+                query["deliverId"] = request.DeliverId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingItemType))
+            {
+                query["dispatchingItemType"] = request.DispatchingItemType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDataDeliver",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/dataDeliverServices/infos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDataDeliverResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取投递任务信息
+         *
+         * @param request GetDataDeliverRequest
+         * @return GetDataDeliverResponse
+         */
+        public GetDataDeliverResponse GetDataDeliver(GetDataDeliverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDataDeliverHeaders headers = new GetDataDeliverHeaders();
+            return GetDataDeliverWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取投递任务信息
+         *
+         * @param request GetDataDeliverRequest
+         * @return GetDataDeliverResponse
+         */
+        public async Task<GetDataDeliverResponse> GetDataDeliverAsync(GetDataDeliverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDataDeliverHeaders headers = new GetDataDeliverHeaders();
+            return await GetDataDeliverWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -3222,6 +3470,122 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetWorkCopyrightHeaders headers = new GetWorkCopyrightHeaders();
             return await GetWorkCopyrightWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 数据投递列表
+         *
+         * @param request ListDataDeliversRequest
+         * @param headers ListDataDeliversHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListDataDeliversResponse
+         */
+        public ListDataDeliversResponse ListDataDeliversWithOptions(ListDataDeliversRequest request, ListDataDeliversHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingItemType))
+            {
+                query["dispatchingItemType"] = request.DispatchingItemType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListDataDelivers",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/dataDeliverServices/lists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListDataDeliversResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 数据投递列表
+         *
+         * @param request ListDataDeliversRequest
+         * @param headers ListDataDeliversHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListDataDeliversResponse
+         */
+        public async Task<ListDataDeliversResponse> ListDataDeliversWithOptionsAsync(ListDataDeliversRequest request, ListDataDeliversHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DispatchingItemType))
+            {
+                query["dispatchingItemType"] = request.DispatchingItemType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListDataDelivers",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/dataDeliverServices/lists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListDataDeliversResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 数据投递列表
+         *
+         * @param request ListDataDeliversRequest
+         * @return ListDataDeliversResponse
+         */
+        public ListDataDeliversResponse ListDataDelivers(ListDataDeliversRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListDataDeliversHeaders headers = new ListDataDeliversHeaders();
+            return ListDataDeliversWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 数据投递列表
+         *
+         * @param request ListDataDeliversRequest
+         * @return ListDataDeliversResponse
+         */
+        public async Task<ListDataDeliversResponse> ListDataDeliversAsync(ListDataDeliversRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListDataDeliversHeaders headers = new ListDataDeliversHeaders();
+            return await ListDataDeliversWithOptionsAsync(request, headers, runtime);
         }
 
         /**

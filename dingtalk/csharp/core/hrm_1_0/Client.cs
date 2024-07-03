@@ -1798,6 +1798,194 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
+         * @summary 智能人事离职和交接接口
+         *
+         * @param request HrmProcessTerminationAndHandoverRequest
+         * @param headers HrmProcessTerminationAndHandoverHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return HrmProcessTerminationAndHandoverResponse
+         */
+        public HrmProcessTerminationAndHandoverResponse HrmProcessTerminationAndHandoverWithOptions(HrmProcessTerminationAndHandoverRequest request, HrmProcessTerminationAndHandoverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AflowHandOverUserId))
+            {
+                body["aflowHandOverUserId"] = request.AflowHandOverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingPanHandoverUserId))
+            {
+                body["dingPanHandoverUserId"] = request.DingPanHandoverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DirectSubordinatesHandoverUserId))
+            {
+                body["directSubordinatesHandoverUserId"] = request.DirectSubordinatesHandoverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DismissionMemo))
+            {
+                body["dismissionMemo"] = request.DismissionMemo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DismissionReason))
+            {
+                body["dismissionReason"] = request.DismissionReason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocNoteHandoverUserId))
+            {
+                body["docNoteHandoverUserId"] = request.DocNoteHandoverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LastWorkDate))
+            {
+                body["lastWorkDate"] = request.LastWorkDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUserId))
+            {
+                body["optUserId"] = request.OptUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionHandoverUserId))
+            {
+                body["permissionHandoverUserId"] = request.PermissionHandoverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmProcessTerminationAndHandover",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/processes/terminateAndHandOver",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmProcessTerminationAndHandoverResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 智能人事离职和交接接口
+         *
+         * @param request HrmProcessTerminationAndHandoverRequest
+         * @param headers HrmProcessTerminationAndHandoverHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return HrmProcessTerminationAndHandoverResponse
+         */
+        public async Task<HrmProcessTerminationAndHandoverResponse> HrmProcessTerminationAndHandoverWithOptionsAsync(HrmProcessTerminationAndHandoverRequest request, HrmProcessTerminationAndHandoverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AflowHandOverUserId))
+            {
+                body["aflowHandOverUserId"] = request.AflowHandOverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingPanHandoverUserId))
+            {
+                body["dingPanHandoverUserId"] = request.DingPanHandoverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DirectSubordinatesHandoverUserId))
+            {
+                body["directSubordinatesHandoverUserId"] = request.DirectSubordinatesHandoverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DismissionMemo))
+            {
+                body["dismissionMemo"] = request.DismissionMemo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DismissionReason))
+            {
+                body["dismissionReason"] = request.DismissionReason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocNoteHandoverUserId))
+            {
+                body["docNoteHandoverUserId"] = request.DocNoteHandoverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LastWorkDate))
+            {
+                body["lastWorkDate"] = request.LastWorkDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUserId))
+            {
+                body["optUserId"] = request.OptUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionHandoverUserId))
+            {
+                body["permissionHandoverUserId"] = request.PermissionHandoverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmProcessTerminationAndHandover",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/processes/terminateAndHandOver",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmProcessTerminationAndHandoverResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 智能人事离职和交接接口
+         *
+         * @param request HrmProcessTerminationAndHandoverRequest
+         * @return HrmProcessTerminationAndHandoverResponse
+         */
+        public HrmProcessTerminationAndHandoverResponse HrmProcessTerminationAndHandover(HrmProcessTerminationAndHandoverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrmProcessTerminationAndHandoverHeaders headers = new HrmProcessTerminationAndHandoverHeaders();
+            return HrmProcessTerminationAndHandoverWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 智能人事离职和交接接口
+         *
+         * @param request HrmProcessTerminationAndHandoverRequest
+         * @return HrmProcessTerminationAndHandoverResponse
+         */
+        public async Task<HrmProcessTerminationAndHandoverResponse> HrmProcessTerminationAndHandoverAsync(HrmProcessTerminationAndHandoverRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrmProcessTerminationAndHandoverHeaders headers = new HrmProcessTerminationAndHandoverHeaders();
+            return await HrmProcessTerminationAndHandoverWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 智能人事调岗接口
          *
          * @param request HrmProcessTransferRequest

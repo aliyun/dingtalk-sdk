@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
-    public class CreateDataDeliverHeaders : TeaModel {
+    public class HandoverTeamWithoutAuthHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }

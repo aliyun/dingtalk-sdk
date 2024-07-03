@@ -4748,6 +4748,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 query["accountantBookId"] = request.AccountantBookId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AmountEnd))
+            {
+                query["amountEnd"] = request.AmountEnd;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AmountStart))
+            {
+                query["amountStart"] = request.AmountStart;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
             {
                 query["companyCode"] = request.CompanyCode;
@@ -4824,6 +4832,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AccountantBookId))
             {
                 query["accountantBookId"] = request.AccountantBookId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AmountEnd))
+            {
+                query["amountEnd"] = request.AmountEnd;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AmountStart))
+            {
+                query["amountStart"] = request.AmountStart;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
             {

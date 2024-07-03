@@ -13,6 +13,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string AccountantBookId { get; set; }
 
+        [NameInMap("amountEnd")]
+        [Validation(Required=false)]
+        public double? AmountEnd { get; set; }
+
+        [NameInMap("amountStart")]
+        [Validation(Required=false)]
+        public double? AmountStart { get; set; }
+
         [NameInMap("companyCode")]
         [Validation(Required=false)]
         public string CompanyCode { get; set; }

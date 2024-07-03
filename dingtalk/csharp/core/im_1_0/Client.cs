@@ -4963,6 +4963,666 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         }
 
         /**
+         * @summary 开放场景群新增群角色
+         *
+         * @param request OpenGroupRoleAddRequest
+         * @param headers OpenGroupRoleAddHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenGroupRoleAddResponse
+         */
+        public OpenGroupRoleAddResponse OpenGroupRoleAddWithOptions(OpenGroupRoleAddRequest request, OpenGroupRoleAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleName))
+            {
+                body["roleName"] = request.RoleName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenGroupRoleAdd",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/roles",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenGroupRoleAddResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 开放场景群新增群角色
+         *
+         * @param request OpenGroupRoleAddRequest
+         * @param headers OpenGroupRoleAddHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenGroupRoleAddResponse
+         */
+        public async Task<OpenGroupRoleAddResponse> OpenGroupRoleAddWithOptionsAsync(OpenGroupRoleAddRequest request, OpenGroupRoleAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleName))
+            {
+                body["roleName"] = request.RoleName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenGroupRoleAdd",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/roles",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenGroupRoleAddResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 开放场景群新增群角色
+         *
+         * @param request OpenGroupRoleAddRequest
+         * @return OpenGroupRoleAddResponse
+         */
+        public OpenGroupRoleAddResponse OpenGroupRoleAdd(OpenGroupRoleAddRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenGroupRoleAddHeaders headers = new OpenGroupRoleAddHeaders();
+            return OpenGroupRoleAddWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 开放场景群新增群角色
+         *
+         * @param request OpenGroupRoleAddRequest
+         * @return OpenGroupRoleAddResponse
+         */
+        public async Task<OpenGroupRoleAddResponse> OpenGroupRoleAddAsync(OpenGroupRoleAddRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenGroupRoleAddHeaders headers = new OpenGroupRoleAddHeaders();
+            return await OpenGroupRoleAddWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 开放场景群群角色查询
+         *
+         * @param request OpenGroupRoleQueryRequest
+         * @param headers OpenGroupRoleQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenGroupRoleQueryResponse
+         */
+        public OpenGroupRoleQueryResponse OpenGroupRoleQueryWithOptions(OpenGroupRoleQueryRequest request, OpenGroupRoleQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenGroupRoleQuery",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/roles/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenGroupRoleQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 开放场景群群角色查询
+         *
+         * @param request OpenGroupRoleQueryRequest
+         * @param headers OpenGroupRoleQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenGroupRoleQueryResponse
+         */
+        public async Task<OpenGroupRoleQueryResponse> OpenGroupRoleQueryWithOptionsAsync(OpenGroupRoleQueryRequest request, OpenGroupRoleQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenGroupRoleQuery",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/roles/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenGroupRoleQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 开放场景群群角色查询
+         *
+         * @param request OpenGroupRoleQueryRequest
+         * @return OpenGroupRoleQueryResponse
+         */
+        public OpenGroupRoleQueryResponse OpenGroupRoleQuery(OpenGroupRoleQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenGroupRoleQueryHeaders headers = new OpenGroupRoleQueryHeaders();
+            return OpenGroupRoleQueryWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 开放场景群群角色查询
+         *
+         * @param request OpenGroupRoleQueryRequest
+         * @return OpenGroupRoleQueryResponse
+         */
+        public async Task<OpenGroupRoleQueryResponse> OpenGroupRoleQueryAsync(OpenGroupRoleQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenGroupRoleQueryHeaders headers = new OpenGroupRoleQueryHeaders();
+            return await OpenGroupRoleQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 开放场景群群角色移除
+         *
+         * @param request OpenGroupRoleRemoveRequest
+         * @param headers OpenGroupRoleRemoveHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenGroupRoleRemoveResponse
+         */
+        public OpenGroupRoleRemoveResponse OpenGroupRoleRemoveWithOptions(OpenGroupRoleRemoveRequest request, OpenGroupRoleRemoveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenRoleId))
+            {
+                body["openRoleId"] = request.OpenRoleId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenGroupRoleRemove",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/roles/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenGroupRoleRemoveResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 开放场景群群角色移除
+         *
+         * @param request OpenGroupRoleRemoveRequest
+         * @param headers OpenGroupRoleRemoveHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenGroupRoleRemoveResponse
+         */
+        public async Task<OpenGroupRoleRemoveResponse> OpenGroupRoleRemoveWithOptionsAsync(OpenGroupRoleRemoveRequest request, OpenGroupRoleRemoveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenRoleId))
+            {
+                body["openRoleId"] = request.OpenRoleId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenGroupRoleRemove",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/roles/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenGroupRoleRemoveResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 开放场景群群角色移除
+         *
+         * @param request OpenGroupRoleRemoveRequest
+         * @return OpenGroupRoleRemoveResponse
+         */
+        public OpenGroupRoleRemoveResponse OpenGroupRoleRemove(OpenGroupRoleRemoveRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenGroupRoleRemoveHeaders headers = new OpenGroupRoleRemoveHeaders();
+            return OpenGroupRoleRemoveWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 开放场景群群角色移除
+         *
+         * @param request OpenGroupRoleRemoveRequest
+         * @return OpenGroupRoleRemoveResponse
+         */
+        public async Task<OpenGroupRoleRemoveResponse> OpenGroupRoleRemoveAsync(OpenGroupRoleRemoveRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenGroupRoleRemoveHeaders headers = new OpenGroupRoleRemoveHeaders();
+            return await OpenGroupRoleRemoveWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 开放场景群群角色变更
+         *
+         * @param request OpenGroupRoleUpdateRequest
+         * @param headers OpenGroupRoleUpdateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenGroupRoleUpdateResponse
+         */
+        public OpenGroupRoleUpdateResponse OpenGroupRoleUpdateWithOptions(OpenGroupRoleUpdateRequest request, OpenGroupRoleUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenRoleId))
+            {
+                body["openRoleId"] = request.OpenRoleId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleName))
+            {
+                body["roleName"] = request.RoleName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenGroupRoleUpdate",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/roles",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenGroupRoleUpdateResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 开放场景群群角色变更
+         *
+         * @param request OpenGroupRoleUpdateRequest
+         * @param headers OpenGroupRoleUpdateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenGroupRoleUpdateResponse
+         */
+        public async Task<OpenGroupRoleUpdateResponse> OpenGroupRoleUpdateWithOptionsAsync(OpenGroupRoleUpdateRequest request, OpenGroupRoleUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenRoleId))
+            {
+                body["openRoleId"] = request.OpenRoleId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleName))
+            {
+                body["roleName"] = request.RoleName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenGroupRoleUpdate",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/roles",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenGroupRoleUpdateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 开放场景群群角色变更
+         *
+         * @param request OpenGroupRoleUpdateRequest
+         * @return OpenGroupRoleUpdateResponse
+         */
+        public OpenGroupRoleUpdateResponse OpenGroupRoleUpdate(OpenGroupRoleUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenGroupRoleUpdateHeaders headers = new OpenGroupRoleUpdateHeaders();
+            return OpenGroupRoleUpdateWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 开放场景群群角色变更
+         *
+         * @param request OpenGroupRoleUpdateRequest
+         * @return OpenGroupRoleUpdateResponse
+         */
+        public async Task<OpenGroupRoleUpdateResponse> OpenGroupRoleUpdateAsync(OpenGroupRoleUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenGroupRoleUpdateHeaders headers = new OpenGroupRoleUpdateHeaders();
+            return await OpenGroupRoleUpdateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 开放场景群群成员的群角色信息查询
+         *
+         * @param request OpenGroupUserRoleQueryRequest
+         * @param headers OpenGroupUserRoleQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenGroupUserRoleQueryResponse
+         */
+        public OpenGroupUserRoleQueryResponse OpenGroupUserRoleQueryWithOptions(OpenGroupUserRoleQueryRequest request, OpenGroupUserRoleQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewedUserId))
+            {
+                body["viewedUserId"] = request.ViewedUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenGroupUserRoleQuery",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/users/roles/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenGroupUserRoleQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 开放场景群群成员的群角色信息查询
+         *
+         * @param request OpenGroupUserRoleQueryRequest
+         * @param headers OpenGroupUserRoleQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenGroupUserRoleQueryResponse
+         */
+        public async Task<OpenGroupUserRoleQueryResponse> OpenGroupUserRoleQueryWithOptionsAsync(OpenGroupUserRoleQueryRequest request, OpenGroupUserRoleQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewedUserId))
+            {
+                body["viewedUserId"] = request.ViewedUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenGroupUserRoleQuery",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/groups/users/roles/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenGroupUserRoleQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 开放场景群群成员的群角色信息查询
+         *
+         * @param request OpenGroupUserRoleQueryRequest
+         * @return OpenGroupUserRoleQueryResponse
+         */
+        public OpenGroupUserRoleQueryResponse OpenGroupUserRoleQuery(OpenGroupUserRoleQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenGroupUserRoleQueryHeaders headers = new OpenGroupUserRoleQueryHeaders();
+            return OpenGroupUserRoleQueryWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 开放场景群群成员的群角色信息查询
+         *
+         * @param request OpenGroupUserRoleQueryRequest
+         * @return OpenGroupUserRoleQueryResponse
+         */
+        public async Task<OpenGroupUserRoleQueryResponse> OpenGroupUserRoleQueryAsync(OpenGroupUserRoleQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenGroupUserRoleQueryHeaders headers = new OpenGroupUserRoleQueryHeaders();
+            return await OpenGroupUserRoleQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 内部群转部门群
          *
          * @param request OpenInnerGroupTransferToDeptGroupRequest

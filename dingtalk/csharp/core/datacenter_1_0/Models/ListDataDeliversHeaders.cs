@@ -8,7 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 {
-    public class CreateDataDeliverHeaders : TeaModel {
+    public class ListDataDeliversHeaders : TeaModel {
         [NameInMap("commonHeaders")]
         [Validation(Required=false)]
         public Dictionary<string, string> CommonHeaders { get; set; }
