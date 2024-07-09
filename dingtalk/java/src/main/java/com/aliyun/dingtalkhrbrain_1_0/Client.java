@@ -946,8 +946,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("dingCorpId", request.dingCorpId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.maxResult)) {
-            query.put("maxResult", request.maxResult);
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {

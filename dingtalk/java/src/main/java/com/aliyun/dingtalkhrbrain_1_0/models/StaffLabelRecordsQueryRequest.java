@@ -18,8 +18,8 @@ public class StaffLabelRecordsQueryRequest extends TeaModel {
      * <strong>example:</strong>
      * <p>10</p>
      */
-    @NameInMap("maxResult")
-    public Integer maxResult;
+    @NameInMap("maxResults")
+    public Long maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
@@ -45,12 +45,12 @@ public class StaffLabelRecordsQueryRequest extends TeaModel {
         return this.dingCorpId;
     }
 
-    public StaffLabelRecordsQueryRequest setMaxResult(Integer maxResult) {
-        this.maxResult = maxResult;
+    public StaffLabelRecordsQueryRequest setMaxResults(Long maxResults) {
+        this.maxResults = maxResults;
         return this;
     }
-    public Integer getMaxResult() {
-        return this.maxResult;
+    public Long getMaxResults() {
+        return this.maxResults;
     }
 
     public StaffLabelRecordsQueryRequest setNextToken(String nextToken) {
