@@ -1023,8 +1023,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->dingCorpId)) {
             $query['dingCorpId'] = $request->dingCorpId;
         }
-        if (!Utils::isUnset($request->maxResult)) {
-            $query['maxResult'] = $request->maxResult;
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->nextToken)) {
             $query['nextToken'] = $request->nextToken;

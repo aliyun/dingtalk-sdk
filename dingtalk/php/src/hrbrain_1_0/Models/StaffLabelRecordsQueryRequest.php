@@ -26,7 +26,7 @@ class StaffLabelRecordsQueryRequest extends Model
      *
      * @var int
      */
-    public $maxResult;
+    public $maxResults;
 
     /**
      * @var string
@@ -35,7 +35,7 @@ class StaffLabelRecordsQueryRequest extends Model
     protected $_name = [
         'body'       => 'body',
         'dingCorpId' => 'dingCorpId',
-        'maxResult'  => 'maxResult',
+        'maxResults' => 'maxResults',
         'nextToken'  => 'nextToken',
     ];
 
@@ -58,8 +58,8 @@ class StaffLabelRecordsQueryRequest extends Model
         if (null !== $this->dingCorpId) {
             $res['dingCorpId'] = $this->dingCorpId;
         }
-        if (null !== $this->maxResult) {
-            $res['maxResult'] = $this->maxResult;
+        if (null !== $this->maxResults) {
+            $res['maxResults'] = $this->maxResults;
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
@@ -88,8 +88,8 @@ class StaffLabelRecordsQueryRequest extends Model
         if (isset($map['dingCorpId'])) {
             $model->dingCorpId = $map['dingCorpId'];
         }
-        if (isset($map['maxResult'])) {
-            $model->maxResult = $map['maxResult'];
+        if (isset($map['maxResults'])) {
+            $model->maxResults = $map['maxResults'];
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
