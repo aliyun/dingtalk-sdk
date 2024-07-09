@@ -1538,13 +1538,13 @@ export class StaffLabelRecordsQueryHeaders extends $tea.Model {
 export class StaffLabelRecordsQueryRequest extends $tea.Model {
   body?: StaffLabelRecordsQueryRequestBody[];
   dingCorpId?: string;
-  maxResult?: number;
+  maxResults?: number;
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
       body: 'body',
       dingCorpId: 'dingCorpId',
-      maxResult: 'maxResult',
+      maxResults: 'maxResults',
       nextToken: 'nextToken',
     };
   }
@@ -1553,7 +1553,7 @@ export class StaffLabelRecordsQueryRequest extends $tea.Model {
     return {
       body: { 'type': 'array', 'itemType': StaffLabelRecordsQueryRequestBody },
       dingCorpId: 'string',
-      maxResult: 'number',
+      maxResults: 'number',
       nextToken: 'string',
     };
   }
@@ -3483,8 +3483,8 @@ export default class Client extends OpenApi {
       query["dingCorpId"] = request.dingCorpId;
     }
 
-    if (!Util.isUnset(request.maxResult)) {
-      query["maxResult"] = request.maxResult;
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
     }
 
     if (!Util.isUnset(request.nextToken)) {
