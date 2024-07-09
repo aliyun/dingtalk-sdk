@@ -1932,9 +1932,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             {
                 query["dingCorpId"] = request.DingCorpId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResult))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["maxResult"] = request.MaxResult;
+                query["maxResults"] = request.MaxResults;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
@@ -1986,9 +1986,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             {
                 query["dingCorpId"] = request.DingCorpId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResult))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
-                query["maxResult"] = request.MaxResult;
+                query["maxResults"] = request.MaxResults;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {

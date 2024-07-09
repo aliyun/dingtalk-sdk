@@ -37,9 +37,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
         [Validation(Required=false)]
         public string DingCorpId { get; set; }
 
-        [NameInMap("maxResult")]
+        [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public int? MaxResult { get; set; }
+        public long? MaxResults { get; set; }
 
         [NameInMap("nextToken")]
         [Validation(Required=false)]
