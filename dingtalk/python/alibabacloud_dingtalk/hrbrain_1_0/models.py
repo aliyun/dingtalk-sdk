@@ -3933,12 +3933,12 @@ class StaffLabelRecordsQueryRequest(TeaModel):
         self,
         body: List[StaffLabelRecordsQueryRequestBody] = None,
         ding_corp_id: str = None,
-        max_result: int = None,
+        max_results: int = None,
         next_token: str = None,
     ):
         self.body = body
         self.ding_corp_id = ding_corp_id
-        self.max_result = max_result
+        self.max_results = max_results
         self.next_token = next_token
 
     def validate(self):
@@ -3959,8 +3959,8 @@ class StaffLabelRecordsQueryRequest(TeaModel):
                 result['body'].append(k.to_map() if k else None)
         if self.ding_corp_id is not None:
             result['dingCorpId'] = self.ding_corp_id
-        if self.max_result is not None:
-            result['maxResult'] = self.max_result
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
         return result
@@ -3974,8 +3974,8 @@ class StaffLabelRecordsQueryRequest(TeaModel):
                 self.body.append(temp_model.from_map(k))
         if m.get('dingCorpId') is not None:
             self.ding_corp_id = m.get('dingCorpId')
-        if m.get('maxResult') is not None:
-            self.max_result = m.get('maxResult')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
         return self

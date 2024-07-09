@@ -1903,8 +1903,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.ding_corp_id):
             query['dingCorpId'] = request.ding_corp_id
-        if not UtilClient.is_unset(request.max_result):
-            query['maxResult'] = request.max_result
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
         real_headers = {}
@@ -1951,8 +1951,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.ding_corp_id):
             query['dingCorpId'] = request.ding_corp_id
-        if not UtilClient.is_unset(request.max_result):
-            query['maxResult'] = request.max_result
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
         real_headers = {}
