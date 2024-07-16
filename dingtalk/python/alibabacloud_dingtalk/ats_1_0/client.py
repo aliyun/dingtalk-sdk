@@ -1739,6 +1739,114 @@ class Client(OpenApiClient):
         headers = dingtalkats__1__0_models.GetJobAuthHeaders()
         return await self.get_job_auth_with_options_async(job_id, request, headers, runtime)
 
+    def import_job_data_with_options(
+        self,
+        request: dingtalkats__1__0_models.ImportJobDataRequest,
+        headers: dingtalkats__1__0_models.ImportJobDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ImportJobDataResponse:
+        """
+        @summary 导入外部渠道发布的职位数据
+        
+        @param request: ImportJobDataRequest
+        @param headers: ImportJobDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ImportJobDataResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='ImportJobData',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/weHire/jobs/import',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ImportJobDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def import_job_data_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.ImportJobDataRequest,
+        headers: dingtalkats__1__0_models.ImportJobDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ImportJobDataResponse:
+        """
+        @summary 导入外部渠道发布的职位数据
+        
+        @param request: ImportJobDataRequest
+        @param headers: ImportJobDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ImportJobDataResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='ImportJobData',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/weHire/jobs/import',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ImportJobDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def import_job_data(
+        self,
+        request: dingtalkats__1__0_models.ImportJobDataRequest,
+    ) -> dingtalkats__1__0_models.ImportJobDataResponse:
+        """
+        @summary 导入外部渠道发布的职位数据
+        
+        @param request: ImportJobDataRequest
+        @return: ImportJobDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.ImportJobDataHeaders()
+        return self.import_job_data_with_options(request, headers, runtime)
+
+    async def import_job_data_async(
+        self,
+        request: dingtalkats__1__0_models.ImportJobDataRequest,
+    ) -> dingtalkats__1__0_models.ImportJobDataResponse:
+        """
+        @summary 导入外部渠道发布的职位数据
+        
+        @param request: ImportJobDataRequest
+        @return: ImportJobDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.ImportJobDataHeaders()
+        return await self.import_job_data_with_options_async(request, headers, runtime)
+
     def query_candidates_with_options(
         self,
         request: dingtalkats__1__0_models.QueryCandidatesRequest,

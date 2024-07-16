@@ -1423,6 +1423,132 @@ class Client(OpenApiClient):
         headers = dingtalknotable__1__0_models.InsertRecordsHeaders()
         return await self.insert_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
 
+    def prepare_set_rich_text_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.PrepareSetRichTextRequest,
+        headers: dingtalknotable__1__0_models.PrepareSetRichTextHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.PrepareSetRichTextResponse:
+        """
+        @summary 富文本值预处理
+        
+        @param request: PrepareSetRichTextRequest
+        @param headers: PrepareSetRichTextHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PrepareSetRichTextResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.markdown):
+            body['markdown'] = request.markdown
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PrepareSetRichText',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/prepareSetRichText',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.PrepareSetRichTextResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def prepare_set_rich_text_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.PrepareSetRichTextRequest,
+        headers: dingtalknotable__1__0_models.PrepareSetRichTextHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.PrepareSetRichTextResponse:
+        """
+        @summary 富文本值预处理
+        
+        @param request: PrepareSetRichTextRequest
+        @param headers: PrepareSetRichTextHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PrepareSetRichTextResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.markdown):
+            body['markdown'] = request.markdown
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PrepareSetRichText',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/prepareSetRichText',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.PrepareSetRichTextResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def prepare_set_rich_text(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.PrepareSetRichTextRequest,
+    ) -> dingtalknotable__1__0_models.PrepareSetRichTextResponse:
+        """
+        @summary 富文本值预处理
+        
+        @param request: PrepareSetRichTextRequest
+        @return: PrepareSetRichTextResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.PrepareSetRichTextHeaders()
+        return self.prepare_set_rich_text_with_options(base_id, request, headers, runtime)
+
+    async def prepare_set_rich_text_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.PrepareSetRichTextRequest,
+    ) -> dingtalknotable__1__0_models.PrepareSetRichTextResponse:
+        """
+        @summary 富文本值预处理
+        
+        @param request: PrepareSetRichTextRequest
+        @return: PrepareSetRichTextResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.PrepareSetRichTextHeaders()
+        return await self.prepare_set_rich_text_with_options_async(base_id, request, headers, runtime)
+
     def update_field_with_options(
         self,
         base_id: str,

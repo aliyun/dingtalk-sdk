@@ -3163,6 +3163,347 @@ class GetJobAuthResponse(TeaModel):
         return self
 
 
+class ImportJobDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ImportJobDataRequestBodyAddress(TeaModel):
+    def __init__(
+        self,
+        city_code: str = None,
+        custom_name: str = None,
+        district_code: str = None,
+        latitude: str = None,
+        longitude: str = None,
+        name: str = None,
+        province_code: str = None,
+    ):
+        # This parameter is required.
+        self.city_code = city_code
+        self.custom_name = custom_name
+        # This parameter is required.
+        self.district_code = district_code
+        # This parameter is required.
+        self.latitude = latitude
+        # This parameter is required.
+        self.longitude = longitude
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.province_code = province_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.city_code is not None:
+            result['cityCode'] = self.city_code
+        if self.custom_name is not None:
+            result['customName'] = self.custom_name
+        if self.district_code is not None:
+            result['districtCode'] = self.district_code
+        if self.latitude is not None:
+            result['latitude'] = self.latitude
+        if self.longitude is not None:
+            result['longitude'] = self.longitude
+        if self.name is not None:
+            result['name'] = self.name
+        if self.province_code is not None:
+            result['provinceCode'] = self.province_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cityCode') is not None:
+            self.city_code = m.get('cityCode')
+        if m.get('customName') is not None:
+            self.custom_name = m.get('customName')
+        if m.get('districtCode') is not None:
+            self.district_code = m.get('districtCode')
+        if m.get('latitude') is not None:
+            self.latitude = m.get('latitude')
+        if m.get('longitude') is not None:
+            self.longitude = m.get('longitude')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('provinceCode') is not None:
+            self.province_code = m.get('provinceCode')
+        return self
+
+
+class ImportJobDataRequestBodyFullTimeExt(TeaModel):
+    def __init__(
+        self,
+        salary_month: int = None,
+    ):
+        self.salary_month = salary_month
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.salary_month is not None:
+            result['salaryMonth'] = self.salary_month
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('salaryMonth') is not None:
+            self.salary_month = m.get('salaryMonth')
+        return self
+
+
+class ImportJobDataRequestBody(TeaModel):
+    def __init__(
+        self,
+        address: ImportJobDataRequestBodyAddress = None,
+        category: str = None,
+        description: str = None,
+        experience: str = None,
+        full_time_ext: ImportJobDataRequestBodyFullTimeExt = None,
+        job_nature: str = None,
+        max_salary: int = None,
+        min_salary: int = None,
+        name: str = None,
+        required_edu: int = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.address = address
+        # This parameter is required.
+        self.category = category
+        # This parameter is required.
+        self.description = description
+        # This parameter is required.
+        self.experience = experience
+        self.full_time_ext = full_time_ext
+        # This parameter is required.
+        self.job_nature = job_nature
+        # This parameter is required.
+        self.max_salary = max_salary
+        # This parameter is required.
+        self.min_salary = min_salary
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.required_edu = required_edu
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        if self.address:
+            self.address.validate()
+        if self.full_time_ext:
+            self.full_time_ext.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address.to_map()
+        if self.category is not None:
+            result['category'] = self.category
+        if self.description is not None:
+            result['description'] = self.description
+        if self.experience is not None:
+            result['experience'] = self.experience
+        if self.full_time_ext is not None:
+            result['fullTimeExt'] = self.full_time_ext.to_map()
+        if self.job_nature is not None:
+            result['jobNature'] = self.job_nature
+        if self.max_salary is not None:
+            result['maxSalary'] = self.max_salary
+        if self.min_salary is not None:
+            result['minSalary'] = self.min_salary
+        if self.name is not None:
+            result['name'] = self.name
+        if self.required_edu is not None:
+            result['requiredEdu'] = self.required_edu
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            temp_model = ImportJobDataRequestBodyAddress()
+            self.address = temp_model.from_map(m['address'])
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('experience') is not None:
+            self.experience = m.get('experience')
+        if m.get('fullTimeExt') is not None:
+            temp_model = ImportJobDataRequestBodyFullTimeExt()
+            self.full_time_ext = temp_model.from_map(m['fullTimeExt'])
+        if m.get('jobNature') is not None:
+            self.job_nature = m.get('jobNature')
+        if m.get('maxSalary') is not None:
+            self.max_salary = m.get('maxSalary')
+        if m.get('minSalary') is not None:
+            self.min_salary = m.get('minSalary')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('requiredEdu') is not None:
+            self.required_edu = m.get('requiredEdu')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ImportJobDataRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[ImportJobDataRequestBody] = None,
+    ):
+        # This parameter is required.
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            for k in self.body:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = ImportJobDataRequestBody()
+                self.body.append(temp_model.from_map(k))
+        return self
+
+
+class ImportJobDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ImportJobDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ImportJobDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ImportJobDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCandidatesHeaders(TeaModel):
     def __init__(
         self,

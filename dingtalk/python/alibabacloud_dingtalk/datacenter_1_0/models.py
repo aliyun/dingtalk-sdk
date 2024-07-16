@@ -7249,10 +7249,15 @@ class QueryGeneralDataServiceBatchRequest(TeaModel):
         user_ids: List[str] = None,
     ):
         self.dept_ids = dept_ids
+        # This parameter is required.
         self.end_date = end_date
+        # This parameter is required.
         self.page_number = page_number
+        # This parameter is required.
         self.page_size = page_size
+        # This parameter is required.
         self.service_id = service_id
+        # This parameter is required.
         self.start_date = start_date
         self.user_id = user_id
         self.user_ids = user_ids
@@ -7474,6 +7479,7 @@ class QueryGeneralDataUpdateDateRequest(TeaModel):
         self,
         service_id: str = None,
     ):
+        # This parameter is required.
         self.service_id = service_id
 
     def validate(self):
@@ -10625,6 +10631,182 @@ class QueryTodoStatisticalDataResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryTodoStatisticalDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryTotalDataCountServiceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryTotalDataCountServiceRequest(TeaModel):
+    def __init__(
+        self,
+        dept_ids: List[str] = None,
+        end_date: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        service_id: str = None,
+        start_date: str = None,
+        user_id: str = None,
+        user_ids: List[str] = None,
+    ):
+        self.dept_ids = dept_ids
+        self.end_date = end_date
+        self.page_number = page_number
+        self.page_size = page_size
+        self.service_id = service_id
+        self.start_date = start_date
+        self.user_id = user_id
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.service_id is not None:
+            result['serviceId'] = self.service_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('serviceId') is not None:
+            self.service_id = m.get('serviceId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class QueryTotalDataCountServiceResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: str = None,
+        total: int = None,
+    ):
+        self.success = success
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class QueryTotalDataCountServiceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryTotalDataCountServiceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryTotalDataCountServiceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

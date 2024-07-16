@@ -9702,6 +9702,7 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
         create_time: str = None,
         creator: QueryReceiptsBaseInfoResponseBodyListCreator = None,
         customer: QueryReceiptsBaseInfoResponseBodyListCustomer = None,
+        instance_jump_url: str = None,
         model_id: str = None,
         principal: QueryReceiptsBaseInfoResponseBodyListPrincipal = None,
         project: QueryReceiptsBaseInfoResponseBodyListProject = None,
@@ -9722,6 +9723,7 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
         self.create_time = create_time
         self.creator = creator
         self.customer = customer
+        self.instance_jump_url = instance_jump_url
         self.model_id = model_id
         self.principal = principal
         self.project = project
@@ -9768,6 +9770,8 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
             result['creator'] = self.creator.to_map()
         if self.customer is not None:
             result['customer'] = self.customer.to_map()
+        if self.instance_jump_url is not None:
+            result['instanceJumpUrl'] = self.instance_jump_url
         if self.model_id is not None:
             result['modelId'] = self.model_id
         if self.principal is not None:
@@ -9812,6 +9816,8 @@ class QueryReceiptsBaseInfoResponseBodyList(TeaModel):
         if m.get('customer') is not None:
             temp_model = QueryReceiptsBaseInfoResponseBodyListCustomer()
             self.customer = temp_model.from_map(m['customer'])
+        if m.get('instanceJumpUrl') is not None:
+            self.instance_jump_url = m.get('instanceJumpUrl')
         if m.get('modelId') is not None:
             self.model_id = m.get('modelId')
         if m.get('principal') is not None:
