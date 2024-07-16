@@ -3,52 +3,53 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class QueryGeneralDataServiceBatchRequest extends TeaModel {
+public class QueryTotalDataCountServiceRequest extends TeaModel {
     @NameInMap("deptIds")
     public java.util.List<String> deptIds;
 
     /**
-     * <p>This parameter is required.</p>
+     * <strong>example:</strong>
+     * <p>20240611</p>
      */
     @NameInMap("endDate")
     public String endDate;
 
-    /**
-     * <p>This parameter is required.</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>This parameter is required.</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
     /**
-     * <p>This parameter is required.</p>
+     * <strong>example:</strong>
+     * <p>API-xxxx</p>
      */
     @NameInMap("serviceId")
     public String serviceId;
 
     /**
-     * <p>This parameter is required.</p>
+     * <strong>example:</strong>
+     * <p>20240611</p>
      */
     @NameInMap("startDate")
     public String startDate;
 
+    /**
+     * <strong>example:</strong>
+     * <p>222</p>
+     */
     @NameInMap("userId")
     public String userId;
 
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 
-    public static QueryGeneralDataServiceBatchRequest build(java.util.Map<String, ?> map) throws Exception {
-        QueryGeneralDataServiceBatchRequest self = new QueryGeneralDataServiceBatchRequest();
+    public static QueryTotalDataCountServiceRequest build(java.util.Map<String, ?> map) throws Exception {
+        QueryTotalDataCountServiceRequest self = new QueryTotalDataCountServiceRequest();
         return TeaModel.build(map, self);
     }
 
-    public QueryGeneralDataServiceBatchRequest setDeptIds(java.util.List<String> deptIds) {
+    public QueryTotalDataCountServiceRequest setDeptIds(java.util.List<String> deptIds) {
         this.deptIds = deptIds;
         return this;
     }
@@ -56,7 +57,7 @@ public class QueryGeneralDataServiceBatchRequest extends TeaModel {
         return this.deptIds;
     }
 
-    public QueryGeneralDataServiceBatchRequest setEndDate(String endDate) {
+    public QueryTotalDataCountServiceRequest setEndDate(String endDate) {
         this.endDate = endDate;
         return this;
     }
@@ -64,7 +65,7 @@ public class QueryGeneralDataServiceBatchRequest extends TeaModel {
         return this.endDate;
     }
 
-    public QueryGeneralDataServiceBatchRequest setPageNumber(Long pageNumber) {
+    public QueryTotalDataCountServiceRequest setPageNumber(Long pageNumber) {
         this.pageNumber = pageNumber;
         return this;
     }
@@ -72,7 +73,7 @@ public class QueryGeneralDataServiceBatchRequest extends TeaModel {
         return this.pageNumber;
     }
 
-    public QueryGeneralDataServiceBatchRequest setPageSize(Long pageSize) {
+    public QueryTotalDataCountServiceRequest setPageSize(Long pageSize) {
         this.pageSize = pageSize;
         return this;
     }
@@ -80,7 +81,7 @@ public class QueryGeneralDataServiceBatchRequest extends TeaModel {
         return this.pageSize;
     }
 
-    public QueryGeneralDataServiceBatchRequest setServiceId(String serviceId) {
+    public QueryTotalDataCountServiceRequest setServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
     }
@@ -88,7 +89,7 @@ public class QueryGeneralDataServiceBatchRequest extends TeaModel {
         return this.serviceId;
     }
 
-    public QueryGeneralDataServiceBatchRequest setStartDate(String startDate) {
+    public QueryTotalDataCountServiceRequest setStartDate(String startDate) {
         this.startDate = startDate;
         return this;
     }
@@ -96,7 +97,7 @@ public class QueryGeneralDataServiceBatchRequest extends TeaModel {
         return this.startDate;
     }
 
-    public QueryGeneralDataServiceBatchRequest setUserId(String userId) {
+    public QueryTotalDataCountServiceRequest setUserId(String userId) {
         this.userId = userId;
         return this;
     }
@@ -104,7 +105,7 @@ public class QueryGeneralDataServiceBatchRequest extends TeaModel {
         return this.userId;
     }
 
-    public QueryGeneralDataServiceBatchRequest setUserIds(java.util.List<String> userIds) {
+    public QueryTotalDataCountServiceRequest setUserIds(java.util.List<String> userIds) {
         this.userIds = userIds;
         return this;
     }

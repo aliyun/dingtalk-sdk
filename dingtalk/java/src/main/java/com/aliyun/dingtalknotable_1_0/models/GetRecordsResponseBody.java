@@ -50,16 +50,82 @@ public class GetRecordsResponseBody extends TeaModel {
         return this.records;
     }
 
+    public static class GetRecordsResponseBodyRecordsCreatedBy extends TeaModel {
+        @NameInMap("unionId")
+        public String unionId;
+
+        public static GetRecordsResponseBodyRecordsCreatedBy build(java.util.Map<String, ?> map) throws Exception {
+            GetRecordsResponseBodyRecordsCreatedBy self = new GetRecordsResponseBodyRecordsCreatedBy();
+            return TeaModel.build(map, self);
+        }
+
+        public GetRecordsResponseBodyRecordsCreatedBy setUnionId(String unionId) {
+            this.unionId = unionId;
+            return this;
+        }
+        public String getUnionId() {
+            return this.unionId;
+        }
+
+    }
+
+    public static class GetRecordsResponseBodyRecordsLastModifiedBy extends TeaModel {
+        @NameInMap("unionId")
+        public String unionId;
+
+        public static GetRecordsResponseBodyRecordsLastModifiedBy build(java.util.Map<String, ?> map) throws Exception {
+            GetRecordsResponseBodyRecordsLastModifiedBy self = new GetRecordsResponseBodyRecordsLastModifiedBy();
+            return TeaModel.build(map, self);
+        }
+
+        public GetRecordsResponseBodyRecordsLastModifiedBy setUnionId(String unionId) {
+            this.unionId = unionId;
+            return this;
+        }
+        public String getUnionId() {
+            return this.unionId;
+        }
+
+    }
+
     public static class GetRecordsResponseBodyRecords extends TeaModel {
+        @NameInMap("createdBy")
+        public GetRecordsResponseBodyRecordsCreatedBy createdBy;
+
+        @NameInMap("createdTime")
+        public Long createdTime;
+
         @NameInMap("fields")
         public java.util.Map<String, ?> fields;
 
         @NameInMap("id")
         public String id;
 
+        @NameInMap("lastModifiedBy")
+        public GetRecordsResponseBodyRecordsLastModifiedBy lastModifiedBy;
+
+        @NameInMap("lastModifiedTime")
+        public Long lastModifiedTime;
+
         public static GetRecordsResponseBodyRecords build(java.util.Map<String, ?> map) throws Exception {
             GetRecordsResponseBodyRecords self = new GetRecordsResponseBodyRecords();
             return TeaModel.build(map, self);
+        }
+
+        public GetRecordsResponseBodyRecords setCreatedBy(GetRecordsResponseBodyRecordsCreatedBy createdBy) {
+            this.createdBy = createdBy;
+            return this;
+        }
+        public GetRecordsResponseBodyRecordsCreatedBy getCreatedBy() {
+            return this.createdBy;
+        }
+
+        public GetRecordsResponseBodyRecords setCreatedTime(Long createdTime) {
+            this.createdTime = createdTime;
+            return this;
+        }
+        public Long getCreatedTime() {
+            return this.createdTime;
         }
 
         public GetRecordsResponseBodyRecords setFields(java.util.Map<String, ?> fields) {
@@ -76,6 +142,22 @@ public class GetRecordsResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
+        }
+
+        public GetRecordsResponseBodyRecords setLastModifiedBy(GetRecordsResponseBodyRecordsLastModifiedBy lastModifiedBy) {
+            this.lastModifiedBy = lastModifiedBy;
+            return this;
+        }
+        public GetRecordsResponseBodyRecordsLastModifiedBy getLastModifiedBy() {
+            return this.lastModifiedBy;
+        }
+
+        public GetRecordsResponseBodyRecords setLastModifiedTime(Long lastModifiedTime) {
+            this.lastModifiedTime = lastModifiedTime;
+            return this;
+        }
+        public Long getLastModifiedTime() {
+            return this.lastModifiedTime;
         }
 
     }

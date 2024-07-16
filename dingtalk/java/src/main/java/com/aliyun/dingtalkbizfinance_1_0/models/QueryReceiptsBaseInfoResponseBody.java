@@ -293,6 +293,13 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p><a href="https://abc.com">https://abc.com</a></p>
+         */
+        @NameInMap("instanceJumpUrl")
+        public String instanceJumpUrl;
+
+        /**
+         * <strong>example:</strong>
          * <p>EM-xxxxx</p>
          */
         @NameInMap("modelId")
@@ -419,6 +426,14 @@ public class QueryReceiptsBaseInfoResponseBody extends TeaModel {
         }
         public QueryReceiptsBaseInfoResponseBodyListCustomer getCustomer() {
             return this.customer;
+        }
+
+        public QueryReceiptsBaseInfoResponseBodyList setInstanceJumpUrl(String instanceJumpUrl) {
+            this.instanceJumpUrl = instanceJumpUrl;
+            return this;
+        }
+        public String getInstanceJumpUrl() {
+            return this.instanceJumpUrl;
         }
 
         public QueryReceiptsBaseInfoResponseBodyList setModelId(String modelId) {
