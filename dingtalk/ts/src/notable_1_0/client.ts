@@ -676,19 +676,31 @@ export class GetRecordRequest extends $tea.Model {
 }
 
 export class GetRecordResponseBody extends $tea.Model {
+  createdBy?: GetRecordResponseBodyCreatedBy;
+  createdTime?: number;
   fields?: { [key: string]: any };
   id?: string;
+  lastModifiedBy?: GetRecordResponseBodyLastModifiedBy;
+  lastModifiedTime?: number;
   static names(): { [key: string]: string } {
     return {
+      createdBy: 'createdBy',
+      createdTime: 'createdTime',
       fields: 'fields',
       id: 'id',
+      lastModifiedBy: 'lastModifiedBy',
+      lastModifiedTime: 'lastModifiedTime',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      createdBy: GetRecordResponseBodyCreatedBy,
+      createdTime: 'number',
       fields: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       id: 'string',
+      lastModifiedBy: GetRecordResponseBodyLastModifiedBy,
+      lastModifiedTime: 'number',
     };
   }
 
@@ -987,6 +999,97 @@ export class InsertRecordsResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: InsertRecordsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrepareSetRichTextHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrepareSetRichTextRequest extends $tea.Model {
+  markdown?: string;
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      markdown: 'markdown',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      markdown: 'string',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrepareSetRichTextResponseBody extends $tea.Model {
+  markdown?: string;
+  uploadInfos?: PrepareSetRichTextResponseBodyUploadInfos[];
+  static names(): { [key: string]: string } {
+    return {
+      markdown: 'markdown',
+      uploadInfos: 'uploadInfos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      markdown: 'string',
+      uploadInfos: { 'type': 'array', 'itemType': PrepareSetRichTextResponseBodyUploadInfos },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrepareSetRichTextResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PrepareSetRichTextResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PrepareSetRichTextResponseBody,
     };
   }
 
@@ -1340,20 +1443,108 @@ export class GetAllSheetsResponseBodyValue extends $tea.Model {
   }
 }
 
-export class GetRecordsResponseBodyRecords extends $tea.Model {
-  fields?: { [key: string]: any };
-  id?: string;
+export class GetRecordResponseBodyCreatedBy extends $tea.Model {
+  unionId?: string;
   static names(): { [key: string]: string } {
     return {
-      fields: 'fields',
-      id: 'id',
+      unionId: 'unionId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecordResponseBodyLastModifiedBy extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecordsResponseBodyRecordsCreatedBy extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecordsResponseBodyRecordsLastModifiedBy extends $tea.Model {
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRecordsResponseBodyRecords extends $tea.Model {
+  createdBy?: GetRecordsResponseBodyRecordsCreatedBy;
+  createdTime?: number;
+  fields?: { [key: string]: any };
+  id?: string;
+  lastModifiedBy?: GetRecordsResponseBodyRecordsLastModifiedBy;
+  lastModifiedTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      createdBy: 'createdBy',
+      createdTime: 'createdTime',
+      fields: 'fields',
+      id: 'id',
+      lastModifiedBy: 'lastModifiedBy',
+      lastModifiedTime: 'lastModifiedTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createdBy: GetRecordsResponseBodyRecordsCreatedBy,
+      createdTime: 'number',
       fields: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       id: 'string',
+      lastModifiedBy: GetRecordsResponseBodyRecordsLastModifiedBy,
+      lastModifiedTime: 'number',
     };
   }
 
@@ -1392,6 +1583,31 @@ export class InsertRecordsResponseBodyValue extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       id: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PrepareSetRichTextResponseBodyUploadInfos extends $tea.Model {
+  resourceId?: string;
+  resourceUrl?: string;
+  uploadUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      resourceId: 'resourceId',
+      resourceUrl: 'resourceUrl',
+      uploadUrl: 'uploadUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      resourceId: 'string',
+      resourceUrl: 'string',
+      uploadUrl: 'string',
     };
   }
 
@@ -2093,6 +2309,66 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new InsertRecordsHeaders({ });
     return await this.insertRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
+  }
+
+  /**
+   * @summary 富文本值预处理
+   *
+   * @param request PrepareSetRichTextRequest
+   * @param headers PrepareSetRichTextHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PrepareSetRichTextResponse
+   */
+  async prepareSetRichTextWithOptions(baseId: string, request: PrepareSetRichTextRequest, headers: PrepareSetRichTextHeaders, runtime: $Util.RuntimeOptions): Promise<PrepareSetRichTextResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.markdown)) {
+      body["markdown"] = request.markdown;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PrepareSetRichText",
+      version: "notable_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/notable/bases/${baseId}/prepareSetRichText`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PrepareSetRichTextResponse>(await this.execute(params, req, runtime), new PrepareSetRichTextResponse({}));
+  }
+
+  /**
+   * @summary 富文本值预处理
+   *
+   * @param request PrepareSetRichTextRequest
+   * @return PrepareSetRichTextResponse
+   */
+  async prepareSetRichText(baseId: string, request: PrepareSetRichTextRequest): Promise<PrepareSetRichTextResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PrepareSetRichTextHeaders({ });
+    return await this.prepareSetRichTextWithOptions(baseId, request, headers, runtime);
   }
 
   /**

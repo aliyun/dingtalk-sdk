@@ -1315,6 +1315,94 @@ export class GetJobAuthResponse extends $tea.Model {
   }
 }
 
+export class ImportJobDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ImportJobDataRequest extends $tea.Model {
+  body?: ImportJobDataRequestBody[];
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': ImportJobDataRequestBody },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ImportJobDataResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ImportJobDataResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ImportJobDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ImportJobDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCandidatesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2585,6 +2673,111 @@ export class GetJobAuthResponseBodyJobOwners extends $tea.Model {
   }
 }
 
+export class ImportJobDataRequestBodyAddress extends $tea.Model {
+  cityCode?: string;
+  customName?: string;
+  districtCode?: string;
+  latitude?: string;
+  longitude?: string;
+  name?: string;
+  provinceCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cityCode: 'cityCode',
+      customName: 'customName',
+      districtCode: 'districtCode',
+      latitude: 'latitude',
+      longitude: 'longitude',
+      name: 'name',
+      provinceCode: 'provinceCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cityCode: 'string',
+      customName: 'string',
+      districtCode: 'string',
+      latitude: 'string',
+      longitude: 'string',
+      name: 'string',
+      provinceCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ImportJobDataRequestBodyFullTimeExt extends $tea.Model {
+  salaryMonth?: number;
+  static names(): { [key: string]: string } {
+    return {
+      salaryMonth: 'salaryMonth',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      salaryMonth: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ImportJobDataRequestBody extends $tea.Model {
+  address?: ImportJobDataRequestBodyAddress;
+  category?: string;
+  description?: string;
+  experience?: string;
+  fullTimeExt?: ImportJobDataRequestBodyFullTimeExt;
+  jobNature?: string;
+  maxSalary?: number;
+  minSalary?: number;
+  name?: string;
+  requiredEdu?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      category: 'category',
+      description: 'description',
+      experience: 'experience',
+      fullTimeExt: 'fullTimeExt',
+      jobNature: 'jobNature',
+      maxSalary: 'maxSalary',
+      minSalary: 'minSalary',
+      name: 'name',
+      requiredEdu: 'requiredEdu',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: ImportJobDataRequestBodyAddress,
+      category: 'string',
+      description: 'string',
+      experience: 'string',
+      fullTimeExt: ImportJobDataRequestBodyFullTimeExt,
+      jobNature: 'string',
+      maxSalary: 'number',
+      minSalary: 'number',
+      name: 'string',
+      requiredEdu: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCandidatesResponseBodyList extends $tea.Model {
   candidateId?: string;
   corpId?: string;
@@ -3616,6 +3809,55 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetJobAuthHeaders({ });
     return await this.getJobAuthWithOptions(jobId, request, headers, runtime);
+  }
+
+  /**
+   * @summary 导入外部渠道发布的职位数据
+   *
+   * @param request ImportJobDataRequest
+   * @param headers ImportJobDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ImportJobDataResponse
+   */
+  async importJobDataWithOptions(request: ImportJobDataRequest, headers: ImportJobDataHeaders, runtime: $Util.RuntimeOptions): Promise<ImportJobDataResponse> {
+    Util.validateModel(request);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: Util.toArray(request.body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ImportJobData",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/weHire/jobs/import`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ImportJobDataResponse>(await this.execute(params, req, runtime), new ImportJobDataResponse({}));
+  }
+
+  /**
+   * @summary 导入外部渠道发布的职位数据
+   *
+   * @param request ImportJobDataRequest
+   * @return ImportJobDataResponse
+   */
+  async importJobData(request: ImportJobDataRequest): Promise<ImportJobDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ImportJobDataHeaders({ });
+    return await this.importJobDataWithOptions(request, headers, runtime);
   }
 
   /**

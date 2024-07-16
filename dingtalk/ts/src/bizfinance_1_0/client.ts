@@ -7588,6 +7588,7 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
   createTime?: string;
   creator?: QueryReceiptsBaseInfoResponseBodyListCreator;
   customer?: QueryReceiptsBaseInfoResponseBodyListCustomer;
+  instanceJumpUrl?: string;
   modelId?: string;
   principal?: QueryReceiptsBaseInfoResponseBodyListPrincipal;
   project?: QueryReceiptsBaseInfoResponseBodyListProject;
@@ -7609,6 +7610,7 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
       createTime: 'createTime',
       creator: 'creator',
       customer: 'customer',
+      instanceJumpUrl: 'instanceJumpUrl',
       modelId: 'modelId',
       principal: 'principal',
       project: 'project',
@@ -7633,6 +7635,7 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
       createTime: 'string',
       creator: QueryReceiptsBaseInfoResponseBodyListCreator,
       customer: QueryReceiptsBaseInfoResponseBodyListCustomer,
+      instanceJumpUrl: 'string',
       modelId: 'string',
       principal: QueryReceiptsBaseInfoResponseBodyListPrincipal,
       project: QueryReceiptsBaseInfoResponseBodyListProject,

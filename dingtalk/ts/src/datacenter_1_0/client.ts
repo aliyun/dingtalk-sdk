@@ -5683,6 +5683,115 @@ export class QueryTodoStatisticalDataResponse extends $tea.Model {
   }
 }
 
+export class QueryTotalDataCountServiceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTotalDataCountServiceRequest extends $tea.Model {
+  deptIds?: string[];
+  endDate?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  serviceId?: string;
+  startDate?: string;
+  userId?: string;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptIds: 'deptIds',
+      endDate: 'endDate',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      serviceId: 'serviceId',
+      startDate: 'startDate',
+      userId: 'userId',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptIds: { 'type': 'array', 'itemType': 'string' },
+      endDate: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      serviceId: 'string',
+      startDate: 'string',
+      userId: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTotalDataCountServiceResponseBody extends $tea.Model {
+  success?: string;
+  total?: number;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      total: 'total',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'string',
+      total: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTotalDataCountServiceResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryTotalDataCountServiceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryTotalDataCountServiceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryVedioMeetingStatisticalDataHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -14013,7 +14122,7 @@ export default class Client extends OpenApi {
       action: "QueryGeneralDataServiceBatch",
       version: "datacenter_1.0",
       protocol: "HTTP",
-      pathname: `/v1.0/datacenter/generalDataServicesBatch`,
+      pathname: `/v1.0/datacenter/dataServices/query`,
       method: "POST",
       authType: "AK",
       style: "ROA",
@@ -14067,7 +14176,7 @@ export default class Client extends OpenApi {
       action: "QueryGeneralDataUpdateDate",
       version: "datacenter_1.0",
       protocol: "HTTP",
-      pathname: `/v1.0/datacenter/queryDataUpdateDates`,
+      pathname: `/v1.0/datacenter/dataUpdateDates`,
       method: "GET",
       authType: "AK",
       style: "ROA",
@@ -14975,6 +15084,88 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryTodoStatisticalDataHeaders({ });
     return await this.queryTodoStatisticalDataWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 数据资产平台查询数据记录数
+   *
+   * @param request QueryTotalDataCountServiceRequest
+   * @param headers QueryTotalDataCountServiceHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryTotalDataCountServiceResponse
+   */
+  async queryTotalDataCountServiceWithOptions(request: QueryTotalDataCountServiceRequest, headers: QueryTotalDataCountServiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTotalDataCountServiceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptIds)) {
+      body["deptIds"] = request.deptIds;
+    }
+
+    if (!Util.isUnset(request.endDate)) {
+      body["endDate"] = request.endDate;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.serviceId)) {
+      body["serviceId"] = request.serviceId;
+    }
+
+    if (!Util.isUnset(request.startDate)) {
+      body["startDate"] = request.startDate;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryTotalDataCountService",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/datas/totalCounts/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryTotalDataCountServiceResponse>(await this.execute(params, req, runtime), new QueryTotalDataCountServiceResponse({}));
+  }
+
+  /**
+   * @summary 数据资产平台查询数据记录数
+   *
+   * @param request QueryTotalDataCountServiceRequest
+   * @return QueryTotalDataCountServiceResponse
+   */
+  async queryTotalDataCountService(request: QueryTotalDataCountServiceRequest): Promise<QueryTotalDataCountServiceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryTotalDataCountServiceHeaders({ });
+    return await this.queryTotalDataCountServiceWithOptions(request, headers, runtime);
   }
 
   /**
