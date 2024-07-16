@@ -2,20 +2,22 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryGeneralDataUpdateDateRequest extends Model
+class QueryAppManagerRequest extends Model
 {
     /**
      * @description This parameter is required.
      *
+     * @example 34234dfdfddd
+     *
      * @var string
      */
-    public $serviceId;
+    public $operatorUserId;
     protected $_name = [
-        'serviceId' => 'serviceId',
+        'operatorUserId' => 'operatorUserId',
     ];
 
     public function validate()
@@ -25,8 +27,8 @@ class QueryGeneralDataUpdateDateRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->serviceId) {
-            $res['serviceId'] = $this->serviceId;
+        if (null !== $this->operatorUserId) {
+            $res['operatorUserId'] = $this->operatorUserId;
         }
 
         return $res;
@@ -35,13 +37,13 @@ class QueryGeneralDataUpdateDateRequest extends Model
     /**
      * @param array $map
      *
-     * @return QueryGeneralDataUpdateDateRequest
+     * @return QueryAppManagerRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['serviceId'])) {
-            $model->serviceId = $map['serviceId'];
+        if (isset($map['operatorUserId'])) {
+            $model->operatorUserId = $map['operatorUserId'];
         }
 
         return $model;

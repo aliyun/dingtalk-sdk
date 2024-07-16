@@ -38,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetSheetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldResponse;
@@ -771,6 +774,70 @@ class Dingtalk extends OpenApiClient
         $headers = new InsertRecordsHeaders([]);
 
         return $this->insertRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 富文本值预处理
+     *  *
+     * @param string                    $baseId
+     * @param PrepareSetRichTextRequest $request PrepareSetRichTextRequest
+     * @param PrepareSetRichTextHeaders $headers PrepareSetRichTextHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PrepareSetRichTextResponse PrepareSetRichTextResponse
+     */
+    public function prepareSetRichTextWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->markdown)) {
+            $body['markdown'] = $request->markdown;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PrepareSetRichText',
+            'version'     => 'notable_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/prepareSetRichText',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PrepareSetRichTextResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 富文本值预处理
+     *  *
+     * @param string                    $baseId
+     * @param PrepareSetRichTextRequest $request PrepareSetRichTextRequest
+     *
+     * @return PrepareSetRichTextResponse PrepareSetRichTextResponse
+     */
+    public function prepareSetRichText($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PrepareSetRichTextHeaders([]);
+
+        return $this->prepareSetRichTextWithOptions($baseId, $request, $headers, $runtime);
     }
 
     /**

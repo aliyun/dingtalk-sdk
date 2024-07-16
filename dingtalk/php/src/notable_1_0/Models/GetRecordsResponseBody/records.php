@@ -4,10 +4,22 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordsResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordsResponseBody\records\createdBy;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordsResponseBody\records\lastModifiedBy;
 use AlibabaCloud\Tea\Model;
 
 class records extends Model
 {
+    /**
+     * @var createdBy
+     */
+    public $createdBy;
+
+    /**
+     * @var int
+     */
+    public $createdTime;
+
     /**
      * @var mixed[]
      */
@@ -17,9 +29,23 @@ class records extends Model
      * @var string
      */
     public $id;
+
+    /**
+     * @var lastModifiedBy
+     */
+    public $lastModifiedBy;
+
+    /**
+     * @var int
+     */
+    public $lastModifiedTime;
     protected $_name = [
-        'fields' => 'fields',
-        'id'     => 'id',
+        'createdBy'        => 'createdBy',
+        'createdTime'      => 'createdTime',
+        'fields'           => 'fields',
+        'id'               => 'id',
+        'lastModifiedBy'   => 'lastModifiedBy',
+        'lastModifiedTime' => 'lastModifiedTime',
     ];
 
     public function validate()
@@ -29,11 +55,23 @@ class records extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->createdBy) {
+            $res['createdBy'] = null !== $this->createdBy ? $this->createdBy->toMap() : null;
+        }
+        if (null !== $this->createdTime) {
+            $res['createdTime'] = $this->createdTime;
+        }
         if (null !== $this->fields) {
             $res['fields'] = $this->fields;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
+        }
+        if (null !== $this->lastModifiedBy) {
+            $res['lastModifiedBy'] = null !== $this->lastModifiedBy ? $this->lastModifiedBy->toMap() : null;
+        }
+        if (null !== $this->lastModifiedTime) {
+            $res['lastModifiedTime'] = $this->lastModifiedTime;
         }
 
         return $res;
@@ -47,11 +85,23 @@ class records extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['createdBy'])) {
+            $model->createdBy = createdBy::fromMap($map['createdBy']);
+        }
+        if (isset($map['createdTime'])) {
+            $model->createdTime = $map['createdTime'];
+        }
         if (isset($map['fields'])) {
             $model->fields = $map['fields'];
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];
+        }
+        if (isset($map['lastModifiedBy'])) {
+            $model->lastModifiedBy = lastModifiedBy::fromMap($map['lastModifiedBy']);
+        }
+        if (isset($map['lastModifiedTime'])) {
+            $model->lastModifiedTime = $map['lastModifiedTime'];
         }
 
         return $model;

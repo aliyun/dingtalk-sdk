@@ -2,20 +2,18 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordResponseBody;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryGeneralDataUpdateDateRequest extends Model
+class createdBy extends Model
 {
     /**
-     * @description This parameter is required.
-     *
      * @var string
      */
-    public $serviceId;
+    public $unionId;
     protected $_name = [
-        'serviceId' => 'serviceId',
+        'unionId' => 'unionId',
     ];
 
     public function validate()
@@ -25,8 +23,8 @@ class QueryGeneralDataUpdateDateRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->serviceId) {
-            $res['serviceId'] = $this->serviceId;
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
 
         return $res;
@@ -35,13 +33,13 @@ class QueryGeneralDataUpdateDateRequest extends Model
     /**
      * @param array $map
      *
-     * @return QueryGeneralDataUpdateDateRequest
+     * @return createdBy
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['serviceId'])) {
-            $model->serviceId = $map['serviceId'];
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
 
         return $model;

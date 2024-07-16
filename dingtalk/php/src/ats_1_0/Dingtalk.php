@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetFlowIdByRelationEntityIdRespons
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportJobDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportJobDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportJobDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryCandidatesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryCandidatesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\QueryCandidatesResponse;
@@ -985,6 +988,59 @@ class Dingtalk extends OpenApiClient
         $headers = new GetJobAuthHeaders([]);
 
         return $this->getJobAuthWithOptions($jobId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 导入外部渠道发布的职位数据
+     *  *
+     * @param ImportJobDataRequest $request ImportJobDataRequest
+     * @param ImportJobDataHeaders $headers ImportJobDataHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ImportJobDataResponse ImportJobDataResponse
+     */
+    public function importJobDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action'      => 'ImportJobData',
+            'version'     => 'ats_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/ats/weHire/jobs/import',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ImportJobDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 导入外部渠道发布的职位数据
+     *  *
+     * @param ImportJobDataRequest $request ImportJobDataRequest
+     *
+     * @return ImportJobDataResponse ImportJobDataResponse
+     */
+    public function importJobData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ImportJobDataHeaders([]);
+
+        return $this->importJobDataWithOptions($request, $headers, $runtime);
     }
 
     /**

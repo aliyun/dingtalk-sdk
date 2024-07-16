@@ -66,6 +66,13 @@ class list_ extends Model
     public $customer;
 
     /**
+     * @example https://abc.com
+     *
+     * @var string
+     */
+    public $instanceJumpUrl;
+
+    /**
      * @example EM-xxxxx
      *
      * @var string
@@ -142,6 +149,7 @@ class list_ extends Model
         'createTime'       => 'createTime',
         'creator'          => 'creator',
         'customer'         => 'customer',
+        'instanceJumpUrl'  => 'instanceJumpUrl',
         'modelId'          => 'modelId',
         'principal'        => 'principal',
         'project'          => 'project',
@@ -185,6 +193,9 @@ class list_ extends Model
         }
         if (null !== $this->customer) {
             $res['customer'] = null !== $this->customer ? $this->customer->toMap() : null;
+        }
+        if (null !== $this->instanceJumpUrl) {
+            $res['instanceJumpUrl'] = $this->instanceJumpUrl;
         }
         if (null !== $this->modelId) {
             $res['modelId'] = $this->modelId;
@@ -254,6 +265,9 @@ class list_ extends Model
         }
         if (isset($map['customer'])) {
             $model->customer = customer::fromMap($map['customer']);
+        }
+        if (isset($map['instanceJumpUrl'])) {
+            $model->instanceJumpUrl = $map['instanceJumpUrl'];
         }
         if (isset($map['modelId'])) {
             $model->modelId = $map['modelId'];

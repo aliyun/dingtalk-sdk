@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryGeneralDataServiceBatchRequest extends Model
+class QueryTotalDataCountServiceRequest extends Model
 {
     /**
      * @var string[]
@@ -14,41 +14,39 @@ class QueryGeneralDataServiceBatchRequest extends Model
     public $deptIds;
 
     /**
-     * @description This parameter is required.
+     * @example 20240611
      *
      * @var string
      */
     public $endDate;
 
     /**
-     * @description This parameter is required.
-     *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description This parameter is required.
-     *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description This parameter is required.
+     * @example API-xxxx
      *
      * @var string
      */
     public $serviceId;
 
     /**
-     * @description This parameter is required.
+     * @example 20240611
      *
      * @var string
      */
     public $startDate;
 
     /**
+     * @example 222
+     *
      * @var string
      */
     public $userId;
@@ -106,7 +104,7 @@ class QueryGeneralDataServiceBatchRequest extends Model
     /**
      * @param array $map
      *
-     * @return QueryGeneralDataServiceBatchRequest
+     * @return QueryTotalDataCountServiceRequest
      */
     public static function fromMap($map = [])
     {

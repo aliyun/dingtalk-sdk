@@ -164,6 +164,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllCustomerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAllTracksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAppManagerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAppManagerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryAppManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryBenefitInventoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryBenefitInventoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\QueryBenefitInventoryResponse;
@@ -3666,6 +3669,63 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryAllTracksHeaders([]);
 
         return $this->queryAllTracksWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询客户管理应用管理员
+     *  *
+     * @param QueryAppManagerRequest $request QueryAppManagerRequest
+     * @param QueryAppManagerHeaders $headers QueryAppManagerHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryAppManagerResponse QueryAppManagerResponse
+     */
+    public function queryAppManagerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryAppManager',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/apps/managers/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryAppManagerResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询客户管理应用管理员
+     *  *
+     * @param QueryAppManagerRequest $request QueryAppManagerRequest
+     *
+     * @return QueryAppManagerResponse QueryAppManagerResponse
+     */
+    public function queryAppManager($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAppManagerHeaders([]);
+
+        return $this->queryAppManagerWithOptions($request, $headers, $runtime);
     }
 
     /**

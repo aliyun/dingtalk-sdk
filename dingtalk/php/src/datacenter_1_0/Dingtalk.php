@@ -190,6 +190,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryTelMeetingStatisticalD
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryTodoStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryTodoStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryTodoStatisticalDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryTotalDataCountServiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryTotalDataCountServiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryTotalDataCountServiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryVedioMeetingStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryVedioMeetingStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryVedioMeetingStatisticalDataResponse;
@@ -3075,7 +3078,7 @@ class Dingtalk extends OpenApiClient
             'action'      => 'QueryGeneralDataServiceBatch',
             'version'     => 'datacenter_1.0',
             'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/generalDataServicesBatch',
+            'pathname'    => '/v1.0/datacenter/dataServices/query',
             'method'      => 'POST',
             'authType'    => 'AK',
             'style'       => 'ROA',
@@ -3132,7 +3135,7 @@ class Dingtalk extends OpenApiClient
             'action'      => 'QueryGeneralDataUpdateDate',
             'version'     => 'datacenter_1.0',
             'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/datacenter/queryDataUpdateDates',
+            'pathname'    => '/v1.0/datacenter/dataUpdateDates',
             'method'      => 'GET',
             'authType'    => 'AK',
             'style'       => 'ROA',
@@ -4086,6 +4089,84 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryTodoStatisticalDataHeaders([]);
 
         return $this->queryTodoStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 数据资产平台查询数据记录数
+     *  *
+     * @param QueryTotalDataCountServiceRequest $request QueryTotalDataCountServiceRequest
+     * @param QueryTotalDataCountServiceHeaders $headers QueryTotalDataCountServiceHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryTotalDataCountServiceResponse QueryTotalDataCountServiceResponse
+     */
+    public function queryTotalDataCountServiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptIds)) {
+            $body['deptIds'] = $request->deptIds;
+        }
+        if (!Utils::isUnset($request->endDate)) {
+            $body['endDate'] = $request->endDate;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->serviceId)) {
+            $body['serviceId'] = $request->serviceId;
+        }
+        if (!Utils::isUnset($request->startDate)) {
+            $body['startDate'] = $request->startDate;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryTotalDataCountService',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/datas/totalCounts/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryTotalDataCountServiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 数据资产平台查询数据记录数
+     *  *
+     * @param QueryTotalDataCountServiceRequest $request QueryTotalDataCountServiceRequest
+     *
+     * @return QueryTotalDataCountServiceResponse QueryTotalDataCountServiceResponse
+     */
+    public function queryTotalDataCountService($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTotalDataCountServiceHeaders([]);
+
+        return $this->queryTotalDataCountServiceWithOptions($request, $headers, $runtime);
     }
 
     /**
