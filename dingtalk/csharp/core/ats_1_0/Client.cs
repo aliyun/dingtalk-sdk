@@ -1937,6 +1937,112 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0
         }
 
         /**
+         * @summary 导入外部渠道发布的职位数据
+         *
+         * @param request ImportJobDataRequest
+         * @param headers ImportJobDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ImportJobDataResponse
+         */
+        public ImportJobDataResponse ImportJobDataWithOptions(ImportJobDataRequest request, ImportJobDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ImportJobData",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/weHire/jobs/import",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ImportJobDataResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 导入外部渠道发布的职位数据
+         *
+         * @param request ImportJobDataRequest
+         * @param headers ImportJobDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ImportJobDataResponse
+         */
+        public async Task<ImportJobDataResponse> ImportJobDataWithOptionsAsync(ImportJobDataRequest request, ImportJobDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ImportJobData",
+                Version = "ats_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/ats/weHire/jobs/import",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ImportJobDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 导入外部渠道发布的职位数据
+         *
+         * @param request ImportJobDataRequest
+         * @return ImportJobDataResponse
+         */
+        public ImportJobDataResponse ImportJobData(ImportJobDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ImportJobDataHeaders headers = new ImportJobDataHeaders();
+            return ImportJobDataWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 导入外部渠道发布的职位数据
+         *
+         * @param request ImportJobDataRequest
+         * @return ImportJobDataResponse
+         */
+        public async Task<ImportJobDataResponse> ImportJobDataAsync(ImportJobDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ImportJobDataHeaders headers = new ImportJobDataHeaders();
+            return await ImportJobDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 查询候选人详情列表
          *
          * @param request QueryCandidatesRequest

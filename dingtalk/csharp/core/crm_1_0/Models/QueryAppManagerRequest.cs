@@ -6,15 +6,15 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
-    public class QueryGeneralDataUpdateDateRequest : TeaModel {
+    public class QueryAppManagerRequest : TeaModel {
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("serviceId")]
+        [NameInMap("operatorUserId")]
         [Validation(Required=false)]
-        public string ServiceId { get; set; }
+        public string OperatorUserId { get; set; }
 
     }
 

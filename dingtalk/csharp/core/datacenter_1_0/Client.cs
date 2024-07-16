@@ -5693,7 +5693,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Action = "QueryGeneralDataServiceBatch",
                 Version = "datacenter_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/datacenter/generalDataServicesBatch",
+                Pathname = "/v1.0/datacenter/dataServices/query",
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
@@ -5766,7 +5766,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Action = "QueryGeneralDataServiceBatch",
                 Version = "datacenter_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/datacenter/generalDataServicesBatch",
+                Pathname = "/v1.0/datacenter/dataServices/query",
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
@@ -5837,7 +5837,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Action = "QueryGeneralDataUpdateDate",
                 Version = "datacenter_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/datacenter/queryDataUpdateDates",
+                Pathname = "/v1.0/datacenter/dataUpdateDates",
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
@@ -5882,7 +5882,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
                 Action = "QueryGeneralDataUpdateDate",
                 Version = "datacenter_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/datacenter/queryDataUpdateDates",
+                Pathname = "/v1.0/datacenter/dataUpdateDates",
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
@@ -7820,6 +7820,178 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryTodoStatisticalDataHeaders headers = new QueryTodoStatisticalDataHeaders();
             return await QueryTodoStatisticalDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 数据资产平台查询数据记录数
+         *
+         * @param request QueryTotalDataCountServiceRequest
+         * @param headers QueryTotalDataCountServiceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryTotalDataCountServiceResponse
+         */
+        public QueryTotalDataCountServiceResponse QueryTotalDataCountServiceWithOptions(QueryTotalDataCountServiceRequest request, QueryTotalDataCountServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ServiceId))
+            {
+                body["serviceId"] = request.ServiceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryTotalDataCountService",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/datas/totalCounts/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryTotalDataCountServiceResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 数据资产平台查询数据记录数
+         *
+         * @param request QueryTotalDataCountServiceRequest
+         * @param headers QueryTotalDataCountServiceHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryTotalDataCountServiceResponse
+         */
+        public async Task<QueryTotalDataCountServiceResponse> QueryTotalDataCountServiceWithOptionsAsync(QueryTotalDataCountServiceRequest request, QueryTotalDataCountServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ServiceId))
+            {
+                body["serviceId"] = request.ServiceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryTotalDataCountService",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/datas/totalCounts/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryTotalDataCountServiceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 数据资产平台查询数据记录数
+         *
+         * @param request QueryTotalDataCountServiceRequest
+         * @return QueryTotalDataCountServiceResponse
+         */
+        public QueryTotalDataCountServiceResponse QueryTotalDataCountService(QueryTotalDataCountServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryTotalDataCountServiceHeaders headers = new QueryTotalDataCountServiceHeaders();
+            return QueryTotalDataCountServiceWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 数据资产平台查询数据记录数
+         *
+         * @param request QueryTotalDataCountServiceRequest
+         * @return QueryTotalDataCountServiceResponse
+         */
+        public async Task<QueryTotalDataCountServiceResponse> QueryTotalDataCountServiceAsync(QueryTotalDataCountServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryTotalDataCountServiceHeaders headers = new QueryTotalDataCountServiceHeaders();
+            return await QueryTotalDataCountServiceWithOptionsAsync(request, headers, runtime);
         }
 
         /**

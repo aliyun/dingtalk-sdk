@@ -7193,6 +7193,122 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
         }
 
         /**
+         * @summary 查询客户管理应用管理员
+         *
+         * @param request QueryAppManagerRequest
+         * @param headers QueryAppManagerHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryAppManagerResponse
+         */
+        public QueryAppManagerResponse QueryAppManagerWithOptions(QueryAppManagerRequest request, QueryAppManagerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryAppManager",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/apps/managers/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryAppManagerResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询客户管理应用管理员
+         *
+         * @param request QueryAppManagerRequest
+         * @param headers QueryAppManagerHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryAppManagerResponse
+         */
+        public async Task<QueryAppManagerResponse> QueryAppManagerWithOptionsAsync(QueryAppManagerRequest request, QueryAppManagerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryAppManager",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/apps/managers/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryAppManagerResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询客户管理应用管理员
+         *
+         * @param request QueryAppManagerRequest
+         * @return QueryAppManagerResponse
+         */
+        public QueryAppManagerResponse QueryAppManager(QueryAppManagerRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryAppManagerHeaders headers = new QueryAppManagerHeaders();
+            return QueryAppManagerWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询客户管理应用管理员
+         *
+         * @param request QueryAppManagerRequest
+         * @return QueryAppManagerResponse
+         */
+        public async Task<QueryAppManagerResponse> QueryAppManagerAsync(QueryAppManagerRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryAppManagerHeaders headers = new QueryAppManagerHeaders();
+            return await QueryAppManagerWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 查询权益库存
          *
          * @param request QueryBenefitInventoryRequest

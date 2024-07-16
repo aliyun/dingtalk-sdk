@@ -1393,6 +1393,134 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
         }
 
         /**
+         * @summary 富文本值预处理
+         *
+         * @param request PrepareSetRichTextRequest
+         * @param headers PrepareSetRichTextHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PrepareSetRichTextResponse
+         */
+        public PrepareSetRichTextResponse PrepareSetRichTextWithOptions(string baseId, PrepareSetRichTextRequest request, PrepareSetRichTextHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Markdown))
+            {
+                body["markdown"] = request.Markdown;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PrepareSetRichText",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/prepareSetRichText",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PrepareSetRichTextResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 富文本值预处理
+         *
+         * @param request PrepareSetRichTextRequest
+         * @param headers PrepareSetRichTextHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PrepareSetRichTextResponse
+         */
+        public async Task<PrepareSetRichTextResponse> PrepareSetRichTextWithOptionsAsync(string baseId, PrepareSetRichTextRequest request, PrepareSetRichTextHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Markdown))
+            {
+                body["markdown"] = request.Markdown;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PrepareSetRichText",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/prepareSetRichText",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PrepareSetRichTextResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 富文本值预处理
+         *
+         * @param request PrepareSetRichTextRequest
+         * @return PrepareSetRichTextResponse
+         */
+        public PrepareSetRichTextResponse PrepareSetRichText(string baseId, PrepareSetRichTextRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PrepareSetRichTextHeaders headers = new PrepareSetRichTextHeaders();
+            return PrepareSetRichTextWithOptions(baseId, request, headers, runtime);
+        }
+
+        /**
+         * @summary 富文本值预处理
+         *
+         * @param request PrepareSetRichTextRequest
+         * @return PrepareSetRichTextResponse
+         */
+        public async Task<PrepareSetRichTextResponse> PrepareSetRichTextAsync(string baseId, PrepareSetRichTextRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PrepareSetRichTextHeaders headers = new PrepareSetRichTextHeaders();
+            return await PrepareSetRichTextWithOptionsAsync(baseId, request, headers, runtime);
+        }
+
+        /**
          * @summary 更新数据表字段
          *
          * @param request UpdateFieldRequest

@@ -73,6 +73,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
             }
 
+            [NameInMap("instanceJumpUrl")]
+            [Validation(Required=false)]
+            public string InstanceJumpUrl { get; set; }
+
             [NameInMap("modelId")]
             [Validation(Required=false)]
             public string ModelId { get; set; }
