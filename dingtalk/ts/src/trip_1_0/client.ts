@@ -1759,7 +1759,51 @@ export class GetTravelProcessDetailResponseBodyResultJourneys extends $tea.Model
   }
 }
 
+export class GetTravelProcessDetailResponseBodyResultTasks extends $tea.Model {
+  activityId?: string;
+  createTime?: string;
+  finishTime?: string;
+  processInstanceId?: string;
+  result?: string;
+  status?: string;
+  taskId?: number;
+  url?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activityId: 'activityId',
+      createTime: 'createTime',
+      finishTime: 'finishTime',
+      processInstanceId: 'processInstanceId',
+      result: 'result',
+      status: 'status',
+      taskId: 'taskId',
+      url: 'url',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityId: 'string',
+      createTime: 'string',
+      finishTime: 'string',
+      processInstanceId: 'string',
+      result: 'string',
+      status: 'string',
+      taskId: 'number',
+      url: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
+  archiveTime?: string;
   bizCategoryId?: string;
   businessId?: string;
   corpId?: string;
@@ -1783,11 +1827,13 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
   processResult?: string;
   processStatus?: string;
   remark?: string;
+  tasks?: GetTravelProcessDetailResponseBodyResultTasks[];
   travelCategory?: string;
   travelers?: string[];
   tripDays?: string;
   static names(): { [key: string]: string } {
     return {
+      archiveTime: 'archiveTime',
       bizCategoryId: 'bizCategoryId',
       businessId: 'businessId',
       corpId: 'corpId',
@@ -1811,6 +1857,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
       processResult: 'processResult',
       processStatus: 'processStatus',
       remark: 'remark',
+      tasks: 'tasks',
       travelCategory: 'travelCategory',
       travelers: 'travelers',
       tripDays: 'tripDays',
@@ -1819,6 +1866,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      archiveTime: 'string',
       bizCategoryId: 'string',
       businessId: 'string',
       corpId: 'string',
@@ -1842,6 +1890,7 @@ export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
       processResult: 'string',
       processStatus: 'string',
       remark: 'string',
+      tasks: { 'type': 'array', 'itemType': GetTravelProcessDetailResponseBodyResultTasks },
       travelCategory: 'string',
       travelers: { 'type': 'array', 'itemType': 'string' },
       tripDays: 'string',

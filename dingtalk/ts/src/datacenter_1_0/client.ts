@@ -2544,6 +2544,106 @@ export class ListDataDeliversResponse extends $tea.Model {
   }
 }
 
+export class OperateChartConfigHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OperateChartConfigRequest extends $tea.Model {
+  apiKey?: string;
+  corpId?: string;
+  param?: { [key: string]: any };
+  ticket?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      apiKey: 'apiKey',
+      corpId: 'corpId',
+      param: 'param',
+      ticket: 'ticket',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiKey: 'string',
+      corpId: 'string',
+      param: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      ticket: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OperateChartConfigResponseBody extends $tea.Model {
+  result?: { [key: string]: string };
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OperateChartConfigResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OperateChartConfigResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OperateChartConfigResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PostCorpAuthInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3136,6 +3236,97 @@ export class QueryCalendarStatisticalDataResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryCalendarStatisticalDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryChartDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryChartDataRequest extends $tea.Model {
+  code?: string;
+  ticket?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      ticket: 'ticket',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+      ticket: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryChartDataResponseBody extends $tea.Model {
+  result?: any[];
+  success?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': 'any' },
+      success: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryChartDataResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryChartDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryChartDataResponseBody,
     };
   }
 
@@ -9318,6 +9509,97 @@ export class SearchCompanyResponse extends $tea.Model {
   }
 }
 
+export class SyncDataScreenHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncDataScreenRequest extends $tea.Model {
+  screenId?: string;
+  ticket?: string;
+  static names(): { [key: string]: string } {
+    return {
+      screenId: 'screenId',
+      ticket: 'ticket',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      screenId: 'string',
+      ticket: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncDataScreenResponseBody extends $tea.Model {
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncDataScreenResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncDataScreenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SyncDataScreenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryActiveUserStatisticalDataResponseBodyMetaList extends $tea.Model {
   kpiCaliber?: string;
   kpiId?: string;
@@ -13110,6 +13392,76 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 操作表格配置
+   *
+   * @param request OperateChartConfigRequest
+   * @param headers OperateChartConfigHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OperateChartConfigResponse
+   */
+  async operateChartConfigWithOptions(request: OperateChartConfigRequest, headers: OperateChartConfigHeaders, runtime: $Util.RuntimeOptions): Promise<OperateChartConfigResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.apiKey)) {
+      body["apiKey"] = request.apiKey;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    if (!Util.isUnset(request.ticket)) {
+      body["ticket"] = request.ticket;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "OperateChartConfig",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/chartConfigs/operate`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OperateChartConfigResponse>(await this.execute(params, req, runtime), new OperateChartConfigResponse({}));
+  }
+
+  /**
+   * @summary 操作表格配置
+   *
+   * @param request OperateChartConfigRequest
+   * @return OperateChartConfigResponse
+   */
+  async operateChartConfig(request: OperateChartConfigRequest): Promise<OperateChartConfigResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OperateChartConfigHeaders({ });
+    return await this.operateChartConfigWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 企业授权信息
    *
    * @param headers PostCorpAuthInfoHeaders
@@ -13484,6 +13836,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryCalendarStatisticalDataHeaders({ });
     return await this.queryCalendarStatisticalDataWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 获取图表数据
+   *
+   * @param request QueryChartDataRequest
+   * @param headers QueryChartDataHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryChartDataResponse
+   */
+  async queryChartDataWithOptions(request: QueryChartDataRequest, headers: QueryChartDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryChartDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.ticket)) {
+      body["ticket"] = request.ticket;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryChartData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/chartDatas/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryChartDataResponse>(await this.execute(params, req, runtime), new QueryChartDataResponse({}));
+  }
+
+  /**
+   * @summary 获取图表数据
+   *
+   * @param request QueryChartDataRequest
+   * @return QueryChartDataResponse
+   */
+  async queryChartData(request: QueryChartDataRequest): Promise<QueryChartDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryChartDataHeaders({ });
+    return await this.queryChartDataWithOptions(request, headers, runtime);
   }
 
   /**
@@ -17334,6 +17744,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SearchCompanyHeaders({ });
     return await this.searchCompanyWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 同步数据大屏
+   *
+   * @param request SyncDataScreenRequest
+   * @param headers SyncDataScreenHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SyncDataScreenResponse
+   */
+  async syncDataScreenWithOptions(request: SyncDataScreenRequest, headers: SyncDataScreenHeaders, runtime: $Util.RuntimeOptions): Promise<SyncDataScreenResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.screenId)) {
+      body["screenId"] = request.screenId;
+    }
+
+    if (!Util.isUnset(request.ticket)) {
+      body["ticket"] = request.ticket;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SyncDataScreen",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/dataScreens/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncDataScreenResponse>(await this.execute(params, req, runtime), new SyncDataScreenResponse({}));
+  }
+
+  /**
+   * @summary 同步数据大屏
+   *
+   * @param request SyncDataScreenRequest
+   * @return SyncDataScreenResponse
+   */
+  async syncDataScreen(request: SyncDataScreenRequest): Promise<SyncDataScreenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncDataScreenHeaders({ });
+    return await this.syncDataScreenWithOptions(request, headers, runtime);
   }
 
 }

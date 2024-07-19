@@ -4170,6 +4170,103 @@ export class OpenUserSendCardMessageResponse extends $tea.Model {
   }
 }
 
+export class PersonalSendCardMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PersonalSendCardMessageRequest extends $tea.Model {
+  atUserIds?: string[];
+  cardContent?: PersonalSendCardMessageRequestCardContent;
+  openConversationId?: string;
+  receiveUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atUserIds: 'atUserIds',
+      cardContent: 'cardContent',
+      openConversationId: 'openConversationId',
+      receiveUserId: 'receiveUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atUserIds: { 'type': 'array', 'itemType': 'string' },
+      cardContent: PersonalSendCardMessageRequestCardContent,
+      openConversationId: 'string',
+      receiveUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PersonalSendCardMessageResponseBody extends $tea.Model {
+  result?: PersonalSendCardMessageResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PersonalSendCardMessageResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PersonalSendCardMessageResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PersonalSendCardMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PersonalSendCardMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGroupInfoByMemberAuthHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -8305,6 +8402,47 @@ export class OpenUserSendCardMessageResponseBodyResult extends $tea.Model {
   }
 }
 
+export class PersonalSendCardMessageRequestCardContent extends $tea.Model {
+  lastMessage?: string;
+  outTrackId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      lastMessage: 'lastMessage',
+      outTrackId: 'outTrackId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      lastMessage: 'string',
+      outTrackId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PersonalSendCardMessageResponseBodyResult extends $tea.Model {
+  openTaskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTaskId: 'openTaskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTaskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGroupMemberResponseBodyGroupMembers extends $tea.Model {
   groupMemberAvatar?: string;
   groupMemberDynamics?: string;
@@ -11792,6 +11930,72 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new OpenUserSendCardMessageHeaders({ });
     return await this.openUserSendCardMessageWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 以用户身份发送卡片消息
+   *
+   * @param request PersonalSendCardMessageRequest
+   * @param headers PersonalSendCardMessageHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return PersonalSendCardMessageResponse
+   */
+  async personalSendCardMessageWithOptions(request: PersonalSendCardMessageRequest, headers: PersonalSendCardMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PersonalSendCardMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.atUserIds)) {
+      body["atUserIds"] = request.atUserIds;
+    }
+
+    if (!Util.isUnset(request.cardContent)) {
+      body["cardContent"] = request.cardContent;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.receiveUserId)) {
+      body["receiveUserId"] = request.receiveUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PersonalSendCardMessage",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/me/messages/cards/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PersonalSendCardMessageResponse>(await this.execute(params, req, runtime), new PersonalSendCardMessageResponse({}));
+  }
+
+  /**
+   * @summary 以用户身份发送卡片消息
+   *
+   * @param request PersonalSendCardMessageRequest
+   * @return PersonalSendCardMessageResponse
+   */
+  async personalSendCardMessage(request: PersonalSendCardMessageRequest): Promise<PersonalSendCardMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PersonalSendCardMessageHeaders({ });
+    return await this.personalSendCardMessageWithOptions(request, headers, runtime);
   }
 
   /**

@@ -7300,6 +7300,182 @@ export class SaveOpenTerminalInfoResponse extends $tea.Model {
   }
 }
 
+export class SaveStorageFunctionSwitchHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStorageFunctionSwitchRequest extends $tea.Model {
+  functionList?: SaveStorageFunctionSwitchRequestFunctionList[];
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      functionList: 'functionList',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      functionList: { 'type': 'array', 'itemType': SaveStorageFunctionSwitchRequestFunctionList },
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStorageFunctionSwitchResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStorageFunctionSwitchResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SaveStorageFunctionSwitchResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SaveStorageFunctionSwitchResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStorageSwitchHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStorageSwitchRequest extends $tea.Model {
+  openStorage?: number;
+  targetCorpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openStorage: 'openStorage',
+      targetCorpId: 'targetCorpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openStorage: 'number',
+      targetCorpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStorageSwitchResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStorageSwitchResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SaveStorageSwitchResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SaveStorageSwitchResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SaveWhiteAppHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -11126,6 +11302,28 @@ export class RuleBatchReceiverResponseBodyRows extends $tea.Model {
     return {
       serialNumber: 'string',
       msgId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveStorageFunctionSwitchRequestFunctionList extends $tea.Model {
+  functionKey?: string;
+  functionValue?: string;
+  static names(): { [key: string]: string } {
+    return {
+      functionKey: 'functionKey',
+      functionValue: 'functionValue',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      functionKey: 'string',
+      functionValue: 'string',
     };
   }
 
@@ -16228,6 +16426,122 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SaveOpenTerminalInfoHeaders({ });
     return await this.saveOpenTerminalInfoWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 保存专属文件存储的功能项
+   *
+   * @param request SaveStorageFunctionSwitchRequest
+   * @param headers SaveStorageFunctionSwitchHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SaveStorageFunctionSwitchResponse
+   */
+  async saveStorageFunctionSwitchWithOptions(request: SaveStorageFunctionSwitchRequest, headers: SaveStorageFunctionSwitchHeaders, runtime: $Util.RuntimeOptions): Promise<SaveStorageFunctionSwitchResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.functionList)) {
+      body["functionList"] = request.functionList;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SaveStorageFunctionSwitch",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/storages/functions/save`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveStorageFunctionSwitchResponse>(await this.execute(params, req, runtime), new SaveStorageFunctionSwitchResponse({}));
+  }
+
+  /**
+   * @summary 保存专属文件存储的功能项
+   *
+   * @param request SaveStorageFunctionSwitchRequest
+   * @return SaveStorageFunctionSwitchResponse
+   */
+  async saveStorageFunctionSwitch(request: SaveStorageFunctionSwitchRequest): Promise<SaveStorageFunctionSwitchResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveStorageFunctionSwitchHeaders({ });
+    return await this.saveStorageFunctionSwitchWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 保存专属文件存储整体开关
+   *
+   * @param request SaveStorageSwitchRequest
+   * @param headers SaveStorageSwitchHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return SaveStorageSwitchResponse
+   */
+  async saveStorageSwitchWithOptions(request: SaveStorageSwitchRequest, headers: SaveStorageSwitchHeaders, runtime: $Util.RuntimeOptions): Promise<SaveStorageSwitchResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openStorage)) {
+      body["openStorage"] = request.openStorage;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SaveStorageSwitch",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/storages/switches/save`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveStorageSwitchResponse>(await this.execute(params, req, runtime), new SaveStorageSwitchResponse({}));
+  }
+
+  /**
+   * @summary 保存专属文件存储整体开关
+   *
+   * @param request SaveStorageSwitchRequest
+   * @return SaveStorageSwitchResponse
+   */
+  async saveStorageSwitch(request: SaveStorageSwitchRequest): Promise<SaveStorageSwitchResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveStorageSwitchHeaders({ });
+    return await this.saveStorageSwitchWithOptions(request, headers, runtime);
   }
 
   /**
