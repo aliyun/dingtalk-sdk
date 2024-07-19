@@ -5397,6 +5397,132 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.OpenUserSendCardMessageHeaders()
         return await self.open_user_send_card_message_with_options_async(request, headers, runtime)
 
+    def personal_send_card_message_with_options(
+        self,
+        request: dingtalkim__1__0_models.PersonalSendCardMessageRequest,
+        headers: dingtalkim__1__0_models.PersonalSendCardMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.PersonalSendCardMessageResponse:
+        """
+        @summary 以用户身份发送卡片消息
+        
+        @param request: PersonalSendCardMessageRequest
+        @param headers: PersonalSendCardMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PersonalSendCardMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.at_user_ids):
+            body['atUserIds'] = request.at_user_ids
+        if not UtilClient.is_unset(request.card_content):
+            body['cardContent'] = request.card_content
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.receive_user_id):
+            body['receiveUserId'] = request.receive_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PersonalSendCardMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/messages/cards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.PersonalSendCardMessageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def personal_send_card_message_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.PersonalSendCardMessageRequest,
+        headers: dingtalkim__1__0_models.PersonalSendCardMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.PersonalSendCardMessageResponse:
+        """
+        @summary 以用户身份发送卡片消息
+        
+        @param request: PersonalSendCardMessageRequest
+        @param headers: PersonalSendCardMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PersonalSendCardMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.at_user_ids):
+            body['atUserIds'] = request.at_user_ids
+        if not UtilClient.is_unset(request.card_content):
+            body['cardContent'] = request.card_content
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.receive_user_id):
+            body['receiveUserId'] = request.receive_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PersonalSendCardMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/messages/cards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.PersonalSendCardMessageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def personal_send_card_message(
+        self,
+        request: dingtalkim__1__0_models.PersonalSendCardMessageRequest,
+    ) -> dingtalkim__1__0_models.PersonalSendCardMessageResponse:
+        """
+        @summary 以用户身份发送卡片消息
+        
+        @param request: PersonalSendCardMessageRequest
+        @return: PersonalSendCardMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.PersonalSendCardMessageHeaders()
+        return self.personal_send_card_message_with_options(request, headers, runtime)
+
+    async def personal_send_card_message_async(
+        self,
+        request: dingtalkim__1__0_models.PersonalSendCardMessageRequest,
+    ) -> dingtalkim__1__0_models.PersonalSendCardMessageResponse:
+        """
+        @summary 以用户身份发送卡片消息
+        
+        @param request: PersonalSendCardMessageRequest
+        @return: PersonalSendCardMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.PersonalSendCardMessageHeaders()
+        return await self.personal_send_card_message_with_options_async(request, headers, runtime)
+
     def query_group_info_by_member_auth_with_options(
         self,
         request: dingtalkim__1__0_models.QueryGroupInfoByMemberAuthRequest,

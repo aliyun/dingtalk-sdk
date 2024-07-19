@@ -9643,6 +9643,242 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.SaveOpenTerminalInfoHeaders()
         return await self.save_open_terminal_info_with_options_async(request, headers, runtime)
 
+    def save_storage_function_switch_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchRequest,
+        headers: dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchResponse:
+        """
+        @summary 保存专属文件存储的功能项
+        
+        @param request: SaveStorageFunctionSwitchRequest
+        @param headers: SaveStorageFunctionSwitchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveStorageFunctionSwitchResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.function_list):
+            body['functionList'] = request.function_list
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveStorageFunctionSwitch',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/storages/functions/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def save_storage_function_switch_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchRequest,
+        headers: dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchResponse:
+        """
+        @summary 保存专属文件存储的功能项
+        
+        @param request: SaveStorageFunctionSwitchRequest
+        @param headers: SaveStorageFunctionSwitchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveStorageFunctionSwitchResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.function_list):
+            body['functionList'] = request.function_list
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveStorageFunctionSwitch',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/storages/functions/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def save_storage_function_switch(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchResponse:
+        """
+        @summary 保存专属文件存储的功能项
+        
+        @param request: SaveStorageFunctionSwitchRequest
+        @return: SaveStorageFunctionSwitchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchHeaders()
+        return self.save_storage_function_switch_with_options(request, headers, runtime)
+
+    async def save_storage_function_switch_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchResponse:
+        """
+        @summary 保存专属文件存储的功能项
+        
+        @param request: SaveStorageFunctionSwitchRequest
+        @return: SaveStorageFunctionSwitchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveStorageFunctionSwitchHeaders()
+        return await self.save_storage_function_switch_with_options_async(request, headers, runtime)
+
+    def save_storage_switch_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveStorageSwitchRequest,
+        headers: dingtalkexclusive__1__0_models.SaveStorageSwitchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveStorageSwitchResponse:
+        """
+        @summary 保存专属文件存储整体开关
+        
+        @param request: SaveStorageSwitchRequest
+        @param headers: SaveStorageSwitchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveStorageSwitchResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_storage):
+            body['openStorage'] = request.open_storage
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveStorageSwitch',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/storages/switches/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveStorageSwitchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def save_storage_switch_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveStorageSwitchRequest,
+        headers: dingtalkexclusive__1__0_models.SaveStorageSwitchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SaveStorageSwitchResponse:
+        """
+        @summary 保存专属文件存储整体开关
+        
+        @param request: SaveStorageSwitchRequest
+        @param headers: SaveStorageSwitchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveStorageSwitchResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_storage):
+            body['openStorage'] = request.open_storage
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveStorageSwitch',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/storages/switches/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SaveStorageSwitchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def save_storage_switch(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveStorageSwitchRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveStorageSwitchResponse:
+        """
+        @summary 保存专属文件存储整体开关
+        
+        @param request: SaveStorageSwitchRequest
+        @return: SaveStorageSwitchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveStorageSwitchHeaders()
+        return self.save_storage_switch_with_options(request, headers, runtime)
+
+    async def save_storage_switch_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SaveStorageSwitchRequest,
+    ) -> dingtalkexclusive__1__0_models.SaveStorageSwitchResponse:
+        """
+        @summary 保存专属文件存储整体开关
+        
+        @param request: SaveStorageSwitchRequest
+        @return: SaveStorageSwitchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SaveStorageSwitchHeaders()
+        return await self.save_storage_switch_with_options_async(request, headers, runtime)
+
     def save_white_app_with_options(
         self,
         request: dingtalkexclusive__1__0_models.SaveWhiteAppRequest,

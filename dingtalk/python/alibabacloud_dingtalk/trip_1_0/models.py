@@ -370,9 +370,85 @@ class GetTravelProcessDetailResponseBodyResultJourneys(TeaModel):
         return self
 
 
+class GetTravelProcessDetailResponseBodyResultTasks(TeaModel):
+    def __init__(
+        self,
+        activity_id: str = None,
+        create_time: str = None,
+        finish_time: str = None,
+        process_instance_id: str = None,
+        result: str = None,
+        status: str = None,
+        task_id: int = None,
+        url: str = None,
+        user_id: str = None,
+    ):
+        self.activity_id = activity_id
+        self.create_time = create_time
+        self.finish_time = finish_time
+        self.process_instance_id = process_instance_id
+        self.result = result
+        self.status = status
+        self.task_id = task_id
+        self.url = url
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.finish_time is not None:
+            result['finishTime'] = self.finish_time
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.url is not None:
+            result['url'] = self.url
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('finishTime') is not None:
+            self.finish_time = m.get('finishTime')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
 class GetTravelProcessDetailResponseBodyResult(TeaModel):
     def __init__(
         self,
+        archive_time: str = None,
         biz_category_id: str = None,
         business_id: str = None,
         corp_id: str = None,
@@ -396,10 +472,12 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         process_result: str = None,
         process_status: str = None,
         remark: str = None,
+        tasks: List[GetTravelProcessDetailResponseBodyResultTasks] = None,
         travel_category: str = None,
         travelers: List[str] = None,
         trip_days: str = None,
     ):
+        self.archive_time = archive_time
         self.biz_category_id = biz_category_id
         self.business_id = business_id
         self.corp_id = corp_id
@@ -423,6 +501,7 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         self.process_result = process_result
         self.process_status = process_status
         self.remark = remark
+        self.tasks = tasks
         self.travel_category = travel_category
         self.travelers = travelers
         self.trip_days = trip_days
@@ -436,6 +515,10 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             for k in self.journeys:
                 if k:
                     k.validate()
+        if self.tasks:
+            for k in self.tasks:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -443,6 +526,8 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
+        if self.archive_time is not None:
+            result['archiveTime'] = self.archive_time
         if self.biz_category_id is not None:
             result['bizCategoryId'] = self.biz_category_id
         if self.business_id is not None:
@@ -493,6 +578,10 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             result['processStatus'] = self.process_status
         if self.remark is not None:
             result['remark'] = self.remark
+        result['tasks'] = []
+        if self.tasks is not None:
+            for k in self.tasks:
+                result['tasks'].append(k.to_map() if k else None)
         if self.travel_category is not None:
             result['travelCategory'] = self.travel_category
         if self.travelers is not None:
@@ -503,6 +592,8 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('archiveTime') is not None:
+            self.archive_time = m.get('archiveTime')
         if m.get('bizCategoryId') is not None:
             self.biz_category_id = m.get('bizCategoryId')
         if m.get('businessId') is not None:
@@ -555,6 +646,11 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             self.process_status = m.get('processStatus')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
+        self.tasks = []
+        if m.get('tasks') is not None:
+            for k in m.get('tasks'):
+                temp_model = GetTravelProcessDetailResponseBodyResultTasks()
+                self.tasks.append(temp_model.from_map(k))
         if m.get('travelCategory') is not None:
             self.travel_category = m.get('travelCategory')
         if m.get('travelers') is not None:

@@ -3323,6 +3323,136 @@ class Client(OpenApiClient):
         headers = dingtalkdatacenter__1__0_models.ListDataDeliversHeaders()
         return await self.list_data_delivers_with_options_async(request, headers, runtime)
 
+    def operate_chart_config_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.OperateChartConfigRequest,
+        headers: dingtalkdatacenter__1__0_models.OperateChartConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.OperateChartConfigResponse:
+        """
+        @summary 操作表格配置
+        
+        @param request: OperateChartConfigRequest
+        @param headers: OperateChartConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OperateChartConfigResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_key):
+            body['apiKey'] = request.api_key
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        if not UtilClient.is_unset(request.ticket):
+            body['ticket'] = request.ticket
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OperateChartConfig',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/chartConfigs/operate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.OperateChartConfigResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def operate_chart_config_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.OperateChartConfigRequest,
+        headers: dingtalkdatacenter__1__0_models.OperateChartConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.OperateChartConfigResponse:
+        """
+        @summary 操作表格配置
+        
+        @param request: OperateChartConfigRequest
+        @param headers: OperateChartConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OperateChartConfigResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_key):
+            body['apiKey'] = request.api_key
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        if not UtilClient.is_unset(request.ticket):
+            body['ticket'] = request.ticket
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OperateChartConfig',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/chartConfigs/operate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.OperateChartConfigResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def operate_chart_config(
+        self,
+        request: dingtalkdatacenter__1__0_models.OperateChartConfigRequest,
+    ) -> dingtalkdatacenter__1__0_models.OperateChartConfigResponse:
+        """
+        @summary 操作表格配置
+        
+        @param request: OperateChartConfigRequest
+        @return: OperateChartConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.OperateChartConfigHeaders()
+        return self.operate_chart_config_with_options(request, headers, runtime)
+
+    async def operate_chart_config_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.OperateChartConfigRequest,
+    ) -> dingtalkdatacenter__1__0_models.OperateChartConfigResponse:
+        """
+        @summary 操作表格配置
+        
+        @param request: OperateChartConfigRequest
+        @return: OperateChartConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.OperateChartConfigHeaders()
+        return await self.operate_chart_config_with_options_async(request, headers, runtime)
+
     def post_corp_auth_info_with_options(
         self,
         headers: dingtalkdatacenter__1__0_models.PostCorpAuthInfoHeaders,
@@ -4106,6 +4236,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdatacenter__1__0_models.QueryCalendarStatisticalDataHeaders()
         return await self.query_calendar_statistical_data_with_options_async(request, headers, runtime)
+
+    def query_chart_data_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryChartDataRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryChartDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryChartDataResponse:
+        """
+        @summary 获取图表数据
+        
+        @param request: QueryChartDataRequest
+        @param headers: QueryChartDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryChartDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.ticket):
+            body['ticket'] = request.ticket
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryChartData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/chartDatas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryChartDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_chart_data_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryChartDataRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryChartDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryChartDataResponse:
+        """
+        @summary 获取图表数据
+        
+        @param request: QueryChartDataRequest
+        @param headers: QueryChartDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryChartDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.ticket):
+            body['ticket'] = request.ticket
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryChartData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/chartDatas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryChartDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_chart_data(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryChartDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryChartDataResponse:
+        """
+        @summary 获取图表数据
+        
+        @param request: QueryChartDataRequest
+        @return: QueryChartDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryChartDataHeaders()
+        return self.query_chart_data_with_options(request, headers, runtime)
+
+    async def query_chart_data_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryChartDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryChartDataResponse:
+        """
+        @summary 获取图表数据
+        
+        @param request: QueryChartDataRequest
+        @return: QueryChartDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryChartDataHeaders()
+        return await self.query_chart_data_with_options_async(request, headers, runtime)
 
     def query_checkin_statistical_data_with_options(
         self,
@@ -12096,3 +12344,121 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdatacenter__1__0_models.SearchCompanyHeaders()
         return await self.search_company_with_options_async(request, headers, runtime)
+
+    def sync_data_screen_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.SyncDataScreenRequest,
+        headers: dingtalkdatacenter__1__0_models.SyncDataScreenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.SyncDataScreenResponse:
+        """
+        @summary 同步数据大屏
+        
+        @param request: SyncDataScreenRequest
+        @param headers: SyncDataScreenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncDataScreenResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.screen_id):
+            body['screenId'] = request.screen_id
+        if not UtilClient.is_unset(request.ticket):
+            body['ticket'] = request.ticket
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncDataScreen',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataScreens/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.SyncDataScreenResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_data_screen_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.SyncDataScreenRequest,
+        headers: dingtalkdatacenter__1__0_models.SyncDataScreenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.SyncDataScreenResponse:
+        """
+        @summary 同步数据大屏
+        
+        @param request: SyncDataScreenRequest
+        @param headers: SyncDataScreenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncDataScreenResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.screen_id):
+            body['screenId'] = request.screen_id
+        if not UtilClient.is_unset(request.ticket):
+            body['ticket'] = request.ticket
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncDataScreen',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataScreens/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.SyncDataScreenResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_data_screen(
+        self,
+        request: dingtalkdatacenter__1__0_models.SyncDataScreenRequest,
+    ) -> dingtalkdatacenter__1__0_models.SyncDataScreenResponse:
+        """
+        @summary 同步数据大屏
+        
+        @param request: SyncDataScreenRequest
+        @return: SyncDataScreenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.SyncDataScreenHeaders()
+        return self.sync_data_screen_with_options(request, headers, runtime)
+
+    async def sync_data_screen_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.SyncDataScreenRequest,
+    ) -> dingtalkdatacenter__1__0_models.SyncDataScreenResponse:
+        """
+        @summary 同步数据大屏
+        
+        @param request: SyncDataScreenRequest
+        @return: SyncDataScreenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.SyncDataScreenHeaders()
+        return await self.sync_data_screen_with_options_async(request, headers, runtime)
