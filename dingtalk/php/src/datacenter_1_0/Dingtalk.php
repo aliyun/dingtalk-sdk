@@ -86,6 +86,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetWorkCopyrightResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\ListDataDeliversHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\ListDataDeliversRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\ListDataDeliversResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\OperateChartConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\OperateChartConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\OperateChartConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\PostCorpAuthInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\PostCorpAuthInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryActiveUserStatisticalDataHeaders;
@@ -106,6 +109,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryBlackboardStatisticalD
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCalendarStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCalendarStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCalendarStatisticalDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryChartDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryChartDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryChartDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCheckinStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCheckinStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryCheckinStatisticalDataResponse;
@@ -313,6 +319,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryYydTotalWeekStatistica
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\SearchCompanyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\SearchCompanyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\SearchCompanyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\SyncDataScreenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\SyncDataScreenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\SyncDataScreenResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -2034,6 +2043,75 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 操作表格配置
+     *  *
+     * @param OperateChartConfigRequest $request OperateChartConfigRequest
+     * @param OperateChartConfigHeaders $headers OperateChartConfigHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OperateChartConfigResponse OperateChartConfigResponse
+     */
+    public function operateChartConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->apiKey)) {
+            $body['apiKey'] = $request->apiKey;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        if (!Utils::isUnset($request->ticket)) {
+            $body['ticket'] = $request->ticket;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OperateChartConfig',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/chartConfigs/operate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OperateChartConfigResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 操作表格配置
+     *  *
+     * @param OperateChartConfigRequest $request OperateChartConfigRequest
+     *
+     * @return OperateChartConfigResponse OperateChartConfigResponse
+     */
+    public function operateChartConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OperateChartConfigHeaders([]);
+
+        return $this->operateChartConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 企业授权信息
      *  *
      * @param PostCorpAuthInfoHeaders $headers PostCorpAuthInfoHeaders
@@ -2427,6 +2505,66 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryCalendarStatisticalDataHeaders([]);
 
         return $this->queryCalendarStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取图表数据
+     *  *
+     * @param QueryChartDataRequest $request QueryChartDataRequest
+     * @param QueryChartDataHeaders $headers QueryChartDataHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryChartDataResponse QueryChartDataResponse
+     */
+    public function queryChartDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            $body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->ticket)) {
+            $body['ticket'] = $request->ticket;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryChartData',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/chartDatas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryChartDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取图表数据
+     *  *
+     * @param QueryChartDataRequest $request QueryChartDataRequest
+     *
+     * @return QueryChartDataResponse QueryChartDataResponse
+     */
+    public function queryChartData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryChartDataHeaders([]);
+
+        return $this->queryChartDataWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -6453,5 +6591,65 @@ class Dingtalk extends OpenApiClient
         $headers = new SearchCompanyHeaders([]);
 
         return $this->searchCompanyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 同步数据大屏
+     *  *
+     * @param SyncDataScreenRequest $request SyncDataScreenRequest
+     * @param SyncDataScreenHeaders $headers SyncDataScreenHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SyncDataScreenResponse SyncDataScreenResponse
+     */
+    public function syncDataScreenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->screenId)) {
+            $body['screenId'] = $request->screenId;
+        }
+        if (!Utils::isUnset($request->ticket)) {
+            $body['ticket'] = $request->ticket;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SyncDataScreen',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/dataScreens/sync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SyncDataScreenResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 同步数据大屏
+     *  *
+     * @param SyncDataScreenRequest $request SyncDataScreenRequest
+     *
+     * @return SyncDataScreenResponse SyncDataScreenResponse
+     */
+    public function syncDataScreen($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncDataScreenHeaders([]);
+
+        return $this->syncDataScreenWithOptions($request, $headers, $runtime);
     }
 }

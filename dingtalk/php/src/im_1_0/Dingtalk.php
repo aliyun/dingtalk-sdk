@@ -134,6 +134,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenSearchGroupListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenUserSendCardMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenUserSendCardMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenUserSendCardMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\PersonalSendCardMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\PersonalSendCardMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\PersonalSendCardMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByMemberAuthResponse;
@@ -3080,6 +3083,72 @@ class Dingtalk extends OpenApiClient
         $headers = new OpenUserSendCardMessageHeaders([]);
 
         return $this->openUserSendCardMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 以用户身份发送卡片消息
+     *  *
+     * @param PersonalSendCardMessageRequest $request PersonalSendCardMessageRequest
+     * @param PersonalSendCardMessageHeaders $headers PersonalSendCardMessageHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PersonalSendCardMessageResponse PersonalSendCardMessageResponse
+     */
+    public function personalSendCardMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->atUserIds)) {
+            $body['atUserIds'] = $request->atUserIds;
+        }
+        if (!Utils::isUnset($request->cardContent)) {
+            $body['cardContent'] = $request->cardContent;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->receiveUserId)) {
+            $body['receiveUserId'] = $request->receiveUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PersonalSendCardMessage',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/me/messages/cards/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PersonalSendCardMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 以用户身份发送卡片消息
+     *  *
+     * @param PersonalSendCardMessageRequest $request PersonalSendCardMessageRequest
+     *
+     * @return PersonalSendCardMessageResponse PersonalSendCardMessageResponse
+     */
+    public function personalSendCardMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PersonalSendCardMessageHeaders([]);
+
+        return $this->personalSendCardMessageWithOptions($request, $headers, $runtime);
     }
 
     /**

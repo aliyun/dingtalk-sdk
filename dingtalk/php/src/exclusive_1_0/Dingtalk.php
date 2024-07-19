@@ -234,6 +234,12 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoRespons
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveOpenTerminalInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveOpenTerminalInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveOpenTerminalInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveStorageFunctionSwitchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveStorageFunctionSwitchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveStorageFunctionSwitchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveStorageSwitchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveStorageSwitchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveStorageSwitchResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppResponse;
@@ -5289,6 +5295,126 @@ class Dingtalk extends OpenApiClient
         $headers = new SaveOpenTerminalInfoHeaders([]);
 
         return $this->saveOpenTerminalInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 保存专属文件存储的功能项
+     *  *
+     * @param SaveStorageFunctionSwitchRequest $request SaveStorageFunctionSwitchRequest
+     * @param SaveStorageFunctionSwitchHeaders $headers SaveStorageFunctionSwitchHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SaveStorageFunctionSwitchResponse SaveStorageFunctionSwitchResponse
+     */
+    public function saveStorageFunctionSwitchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->functionList)) {
+            $body['functionList'] = $request->functionList;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SaveStorageFunctionSwitch',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/storages/functions/save',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SaveStorageFunctionSwitchResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 保存专属文件存储的功能项
+     *  *
+     * @param SaveStorageFunctionSwitchRequest $request SaveStorageFunctionSwitchRequest
+     *
+     * @return SaveStorageFunctionSwitchResponse SaveStorageFunctionSwitchResponse
+     */
+    public function saveStorageFunctionSwitch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveStorageFunctionSwitchHeaders([]);
+
+        return $this->saveStorageFunctionSwitchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 保存专属文件存储整体开关
+     *  *
+     * @param SaveStorageSwitchRequest $request SaveStorageSwitchRequest
+     * @param SaveStorageSwitchHeaders $headers SaveStorageSwitchHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SaveStorageSwitchResponse SaveStorageSwitchResponse
+     */
+    public function saveStorageSwitchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openStorage)) {
+            $body['openStorage'] = $request->openStorage;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SaveStorageSwitch',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/storages/switches/save',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SaveStorageSwitchResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 保存专属文件存储整体开关
+     *  *
+     * @param SaveStorageSwitchRequest $request SaveStorageSwitchRequest
+     *
+     * @return SaveStorageSwitchResponse SaveStorageSwitchResponse
+     */
+    public function saveStorageSwitch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveStorageSwitchHeaders([]);
+
+        return $this->saveStorageSwitchWithOptions($request, $headers, $runtime);
     }
 
     /**

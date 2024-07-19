@@ -6,10 +6,18 @@ namespace AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\GetTravelProcessDetailRespo
 
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\GetTravelProcessDetailResponseBody\result\extFormComponent;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\GetTravelProcessDetailResponseBody\result\journeys;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\GetTravelProcessDetailResponseBody\result\tasks;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
 {
+    /**
+     * @example 2024-07-18 00:00:00
+     *
+     * @var string
+     */
+    public $archiveTime;
+
     /**
      * @example alitrip.business
      *
@@ -168,6 +176,11 @@ class result extends Model
     public $remark;
 
     /**
+     * @var tasks[]
+     */
+    public $tasks;
+
+    /**
      * @example 费用归属部门
      *
      * @var string
@@ -186,6 +199,7 @@ class result extends Model
      */
     public $tripDays;
     protected $_name = [
+        'archiveTime'                  => 'archiveTime',
         'bizCategoryId'                => 'bizCategoryId',
         'businessId'                   => 'businessId',
         'corpId'                       => 'corpId',
@@ -209,6 +223,7 @@ class result extends Model
         'processResult'                => 'processResult',
         'processStatus'                => 'processStatus',
         'remark'                       => 'remark',
+        'tasks'                        => 'tasks',
         'travelCategory'               => 'travelCategory',
         'travelers'                    => 'travelers',
         'tripDays'                     => 'tripDays',
@@ -221,6 +236,9 @@ class result extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->archiveTime) {
+            $res['archiveTime'] = $this->archiveTime;
+        }
         if (null !== $this->bizCategoryId) {
             $res['bizCategoryId'] = $this->bizCategoryId;
         }
@@ -302,6 +320,15 @@ class result extends Model
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
         }
+        if (null !== $this->tasks) {
+            $res['tasks'] = [];
+            if (null !== $this->tasks && \is_array($this->tasks)) {
+                $n = 0;
+                foreach ($this->tasks as $item) {
+                    $res['tasks'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->travelCategory) {
             $res['travelCategory'] = $this->travelCategory;
         }
@@ -323,6 +350,9 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['archiveTime'])) {
+            $model->archiveTime = $map['archiveTime'];
+        }
         if (isset($map['bizCategoryId'])) {
             $model->bizCategoryId = $map['bizCategoryId'];
         }
@@ -403,6 +433,15 @@ class result extends Model
         }
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];
+        }
+        if (isset($map['tasks'])) {
+            if (!empty($map['tasks'])) {
+                $model->tasks = [];
+                $n            = 0;
+                foreach ($map['tasks'] as $item) {
+                    $model->tasks[$n++] = null !== $item ? tasks::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['travelCategory'])) {
             $model->travelCategory = $map['travelCategory'];
