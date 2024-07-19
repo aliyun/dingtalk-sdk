@@ -10395,6 +10395,254 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         }
 
         /**
+         * @summary 保存专属文件存储的功能项
+         *
+         * @param request SaveStorageFunctionSwitchRequest
+         * @param headers SaveStorageFunctionSwitchHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SaveStorageFunctionSwitchResponse
+         */
+        public SaveStorageFunctionSwitchResponse SaveStorageFunctionSwitchWithOptions(SaveStorageFunctionSwitchRequest request, SaveStorageFunctionSwitchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FunctionList))
+            {
+                body["functionList"] = request.FunctionList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveStorageFunctionSwitch",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/storages/functions/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveStorageFunctionSwitchResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 保存专属文件存储的功能项
+         *
+         * @param request SaveStorageFunctionSwitchRequest
+         * @param headers SaveStorageFunctionSwitchHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SaveStorageFunctionSwitchResponse
+         */
+        public async Task<SaveStorageFunctionSwitchResponse> SaveStorageFunctionSwitchWithOptionsAsync(SaveStorageFunctionSwitchRequest request, SaveStorageFunctionSwitchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FunctionList))
+            {
+                body["functionList"] = request.FunctionList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveStorageFunctionSwitch",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/storages/functions/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveStorageFunctionSwitchResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 保存专属文件存储的功能项
+         *
+         * @param request SaveStorageFunctionSwitchRequest
+         * @return SaveStorageFunctionSwitchResponse
+         */
+        public SaveStorageFunctionSwitchResponse SaveStorageFunctionSwitch(SaveStorageFunctionSwitchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveStorageFunctionSwitchHeaders headers = new SaveStorageFunctionSwitchHeaders();
+            return SaveStorageFunctionSwitchWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 保存专属文件存储的功能项
+         *
+         * @param request SaveStorageFunctionSwitchRequest
+         * @return SaveStorageFunctionSwitchResponse
+         */
+        public async Task<SaveStorageFunctionSwitchResponse> SaveStorageFunctionSwitchAsync(SaveStorageFunctionSwitchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveStorageFunctionSwitchHeaders headers = new SaveStorageFunctionSwitchHeaders();
+            return await SaveStorageFunctionSwitchWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 保存专属文件存储整体开关
+         *
+         * @param request SaveStorageSwitchRequest
+         * @param headers SaveStorageSwitchHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SaveStorageSwitchResponse
+         */
+        public SaveStorageSwitchResponse SaveStorageSwitchWithOptions(SaveStorageSwitchRequest request, SaveStorageSwitchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenStorage))
+            {
+                body["openStorage"] = request.OpenStorage;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveStorageSwitch",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/storages/switches/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveStorageSwitchResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 保存专属文件存储整体开关
+         *
+         * @param request SaveStorageSwitchRequest
+         * @param headers SaveStorageSwitchHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SaveStorageSwitchResponse
+         */
+        public async Task<SaveStorageSwitchResponse> SaveStorageSwitchWithOptionsAsync(SaveStorageSwitchRequest request, SaveStorageSwitchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenStorage))
+            {
+                body["openStorage"] = request.OpenStorage;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetCorpId))
+            {
+                body["targetCorpId"] = request.TargetCorpId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveStorageSwitch",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/storages/switches/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveStorageSwitchResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 保存专属文件存储整体开关
+         *
+         * @param request SaveStorageSwitchRequest
+         * @return SaveStorageSwitchResponse
+         */
+        public SaveStorageSwitchResponse SaveStorageSwitch(SaveStorageSwitchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveStorageSwitchHeaders headers = new SaveStorageSwitchHeaders();
+            return SaveStorageSwitchWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 保存专属文件存储整体开关
+         *
+         * @param request SaveStorageSwitchRequest
+         * @return SaveStorageSwitchResponse
+         */
+        public async Task<SaveStorageSwitchResponse> SaveStorageSwitchAsync(SaveStorageSwitchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveStorageSwitchHeaders headers = new SaveStorageSwitchHeaders();
+            return await SaveStorageSwitchWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 用于提供mdm微应用白名单配置能力
          *
          * @param request SaveWhiteAppRequest

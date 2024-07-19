@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public GetTravelProcessDetailResponseBodyResult Result { get; set; }
         public class GetTravelProcessDetailResponseBodyResult : TeaModel {
+            [NameInMap("archiveTime")]
+            [Validation(Required=false)]
+            public string ArchiveTime { get; set; }
+
             [NameInMap("bizCategoryId")]
             [Validation(Required=false)]
             public string BizCategoryId { get; set; }
@@ -252,6 +256,48 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
             [NameInMap("remark")]
             [Validation(Required=false)]
             public string Remark { get; set; }
+
+            [NameInMap("tasks")]
+            [Validation(Required=false)]
+            public List<GetTravelProcessDetailResponseBodyResultTasks> Tasks { get; set; }
+            public class GetTravelProcessDetailResponseBodyResultTasks : TeaModel {
+                [NameInMap("activityId")]
+                [Validation(Required=false)]
+                public string ActivityId { get; set; }
+
+                [NameInMap("createTime")]
+                [Validation(Required=false)]
+                public string CreateTime { get; set; }
+
+                [NameInMap("finishTime")]
+                [Validation(Required=false)]
+                public string FinishTime { get; set; }
+
+                [NameInMap("processInstanceId")]
+                [Validation(Required=false)]
+                public string ProcessInstanceId { get; set; }
+
+                [NameInMap("result")]
+                [Validation(Required=false)]
+                public string Result { get; set; }
+
+                [NameInMap("status")]
+                [Validation(Required=false)]
+                public string Status { get; set; }
+
+                [NameInMap("taskId")]
+                [Validation(Required=false)]
+                public long? TaskId { get; set; }
+
+                [NameInMap("url")]
+                [Validation(Required=false)]
+                public string Url { get; set; }
+
+                [NameInMap("userId")]
+                [Validation(Required=false)]
+                public string UserId { get; set; }
+
+            }
 
             [NameInMap("travelCategory")]
             [Validation(Required=false)]

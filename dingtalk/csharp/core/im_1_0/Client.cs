@@ -6011,6 +6011,146 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         }
 
         /**
+         * @summary 以用户身份发送卡片消息
+         *
+         * @param request PersonalSendCardMessageRequest
+         * @param headers PersonalSendCardMessageHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PersonalSendCardMessageResponse
+         */
+        public PersonalSendCardMessageResponse PersonalSendCardMessageWithOptions(PersonalSendCardMessageRequest request, PersonalSendCardMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtUserIds))
+            {
+                body["atUserIds"] = request.AtUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardContent))
+            {
+                body["cardContent"] = request.CardContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiveUserId))
+            {
+                body["receiveUserId"] = request.ReceiveUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PersonalSendCardMessage",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/me/messages/cards/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PersonalSendCardMessageResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 以用户身份发送卡片消息
+         *
+         * @param request PersonalSendCardMessageRequest
+         * @param headers PersonalSendCardMessageHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PersonalSendCardMessageResponse
+         */
+        public async Task<PersonalSendCardMessageResponse> PersonalSendCardMessageWithOptionsAsync(PersonalSendCardMessageRequest request, PersonalSendCardMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AtUserIds))
+            {
+                body["atUserIds"] = request.AtUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardContent))
+            {
+                body["cardContent"] = request.CardContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiveUserId))
+            {
+                body["receiveUserId"] = request.ReceiveUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PersonalSendCardMessage",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/me/messages/cards/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PersonalSendCardMessageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 以用户身份发送卡片消息
+         *
+         * @param request PersonalSendCardMessageRequest
+         * @return PersonalSendCardMessageResponse
+         */
+        public PersonalSendCardMessageResponse PersonalSendCardMessage(PersonalSendCardMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PersonalSendCardMessageHeaders headers = new PersonalSendCardMessageHeaders();
+            return PersonalSendCardMessageWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 以用户身份发送卡片消息
+         *
+         * @param request PersonalSendCardMessageRequest
+         * @return PersonalSendCardMessageResponse
+         */
+        public async Task<PersonalSendCardMessageResponse> PersonalSendCardMessageAsync(PersonalSendCardMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PersonalSendCardMessageHeaders headers = new PersonalSendCardMessageHeaders();
+            return await PersonalSendCardMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 成员授权场景下查询群信息
          *
          * @param request QueryGroupInfoByMemberAuthRequest
