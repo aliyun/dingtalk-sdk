@@ -580,7 +580,157 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
 
     }
 
+    public static class GetTravelProcessDetailResponseBodyResultTasks extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>1918_5cd3</p>
+         */
+        @NameInMap("activityId")
+        public String activityId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>2024-07-01 00:00:00</p>
+         */
+        @NameInMap("createTime")
+        public String createTime;
+
+        /**
+         * <strong>example:</strong>
+         * <p>2024-07-01 01:00:00</p>
+         */
+        @NameInMap("finishTime")
+        public String finishTime;
+
+        /**
+         * <strong>example:</strong>
+         * <p>e7fh112WTTawy6dLtiIlqQ10051721014983</p>
+         */
+        @NameInMap("processInstanceId")
+        public String processInstanceId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>AGREE</p>
+         */
+        @NameInMap("result")
+        public String result;
+
+        /**
+         * <strong>example:</strong>
+         * <p>COMPLETED</p>
+         */
+        @NameInMap("status")
+        public String status;
+
+        /**
+         * <strong>example:</strong>
+         * <p>87882310449</p>
+         */
+        @NameInMap("taskId")
+        public Long taskId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>aflow.dingtalk.com?procInsId=xxx&amp;taskId=yyy&amp;businessId=zzz</p>
+         */
+        @NameInMap("url")
+        public String url;
+
+        /**
+         * <strong>example:</strong>
+         * <p>2220314</p>
+         */
+        @NameInMap("userId")
+        public String userId;
+
+        public static GetTravelProcessDetailResponseBodyResultTasks build(java.util.Map<String, ?> map) throws Exception {
+            GetTravelProcessDetailResponseBodyResultTasks self = new GetTravelProcessDetailResponseBodyResultTasks();
+            return TeaModel.build(map, self);
+        }
+
+        public GetTravelProcessDetailResponseBodyResultTasks setActivityId(String activityId) {
+            this.activityId = activityId;
+            return this;
+        }
+        public String getActivityId() {
+            return this.activityId;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultTasks setCreateTime(String createTime) {
+            this.createTime = createTime;
+            return this;
+        }
+        public String getCreateTime() {
+            return this.createTime;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultTasks setFinishTime(String finishTime) {
+            this.finishTime = finishTime;
+            return this;
+        }
+        public String getFinishTime() {
+            return this.finishTime;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultTasks setProcessInstanceId(String processInstanceId) {
+            this.processInstanceId = processInstanceId;
+            return this;
+        }
+        public String getProcessInstanceId() {
+            return this.processInstanceId;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultTasks setResult(String result) {
+            this.result = result;
+            return this;
+        }
+        public String getResult() {
+            return this.result;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultTasks setStatus(String status) {
+            this.status = status;
+            return this;
+        }
+        public String getStatus() {
+            return this.status;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultTasks setTaskId(Long taskId) {
+            this.taskId = taskId;
+            return this;
+        }
+        public Long getTaskId() {
+            return this.taskId;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultTasks setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultTasks setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+    }
+
     public static class GetTravelProcessDetailResponseBodyResult extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>2024-07-18 00:00:00</p>
+         */
+        @NameInMap("archiveTime")
+        public String archiveTime;
+
         /**
          * <strong>example:</strong>
          * <p>alitrip.business</p>
@@ -734,6 +884,9 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
+        @NameInMap("tasks")
+        public java.util.List<GetTravelProcessDetailResponseBodyResultTasks> tasks;
+
         /**
          * <strong>example:</strong>
          * <p>费用归属部门</p>
@@ -754,6 +907,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         public static GetTravelProcessDetailResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetTravelProcessDetailResponseBodyResult self = new GetTravelProcessDetailResponseBodyResult();
             return TeaModel.build(map, self);
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setArchiveTime(String archiveTime) {
+            this.archiveTime = archiveTime;
+            return this;
+        }
+        public String getArchiveTime() {
+            return this.archiveTime;
         }
 
         public GetTravelProcessDetailResponseBodyResult setBizCategoryId(String bizCategoryId) {
@@ -938,6 +1099,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         }
         public String getRemark() {
             return this.remark;
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setTasks(java.util.List<GetTravelProcessDetailResponseBodyResultTasks> tasks) {
+            this.tasks = tasks;
+            return this;
+        }
+        public java.util.List<GetTravelProcessDetailResponseBodyResultTasks> getTasks() {
+            return this.tasks;
         }
 
         public GetTravelProcessDetailResponseBodyResult setTravelCategory(String travelCategory) {

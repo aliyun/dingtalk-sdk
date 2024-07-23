@@ -5030,6 +5030,126 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>保存专属文件存储的功能项</p>
+     * 
+     * @param request SaveStorageFunctionSwitchRequest
+     * @param headers SaveStorageFunctionSwitchHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SaveStorageFunctionSwitchResponse
+     */
+    public SaveStorageFunctionSwitchResponse saveStorageFunctionSwitchWithOptions(SaveStorageFunctionSwitchRequest request, SaveStorageFunctionSwitchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.functionList)) {
+            body.put("functionList", request.functionList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SaveStorageFunctionSwitch"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/storages/functions/save"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SaveStorageFunctionSwitchResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>保存专属文件存储的功能项</p>
+     * 
+     * @param request SaveStorageFunctionSwitchRequest
+     * @return SaveStorageFunctionSwitchResponse
+     */
+    public SaveStorageFunctionSwitchResponse saveStorageFunctionSwitch(SaveStorageFunctionSwitchRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SaveStorageFunctionSwitchHeaders headers = new SaveStorageFunctionSwitchHeaders();
+        return this.saveStorageFunctionSwitchWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>保存专属文件存储整体开关</p>
+     * 
+     * @param request SaveStorageSwitchRequest
+     * @param headers SaveStorageSwitchHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SaveStorageSwitchResponse
+     */
+    public SaveStorageSwitchResponse saveStorageSwitchWithOptions(SaveStorageSwitchRequest request, SaveStorageSwitchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openStorage)) {
+            body.put("openStorage", request.openStorage);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SaveStorageSwitch"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/storages/switches/save"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SaveStorageSwitchResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>保存专属文件存储整体开关</p>
+     * 
+     * @param request SaveStorageSwitchRequest
+     * @return SaveStorageSwitchResponse
+     */
+    public SaveStorageSwitchResponse saveStorageSwitch(SaveStorageSwitchRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SaveStorageSwitchHeaders headers = new SaveStorageSwitchHeaders();
+        return this.saveStorageSwitchWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>用于提供mdm微应用白名单配置能力</p>
      * 
      * @param request SaveWhiteAppRequest

@@ -85,4 +85,60 @@ public class Client extends com.aliyun.teaopenapi.Client {
         CreateUserHeaders headers = new CreateUserHeaders();
         return this.createUserWithOptions(request, headers, runtime);
     }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取指定文件夹的子文件夹列表</p>
+     * 
+     * @param request ListMailFoldersRequest
+     * @param headers ListMailFoldersHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListMailFoldersResponse
+     */
+    public ListMailFoldersResponse listMailFoldersWithOptions(String email, ListMailFoldersRequest request, ListMailFoldersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.folderId)) {
+            query.put("folderId", request.folderId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListMailFolders"),
+            new TeaPair("version", "mail_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/mail/users/emails/" + email + "/mailFolders"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListMailFoldersResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取指定文件夹的子文件夹列表</p>
+     * 
+     * @param request ListMailFoldersRequest
+     * @return ListMailFoldersResponse
+     */
+    public ListMailFoldersResponse listMailFolders(String email, ListMailFoldersRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListMailFoldersHeaders headers = new ListMailFoldersHeaders();
+        return this.listMailFoldersWithOptions(email, request, headers, runtime);
+    }
 }

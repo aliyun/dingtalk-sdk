@@ -92,6 +92,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建小记</p>
+     * 
+     * @param request CreateNoteForIsvRequest
+     * @param headers CreateNoteForIsvHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateNoteForIsvResponse
+     */
+    public CreateNoteForIsvResponse createNoteForIsvWithOptions(CreateNoteForIsvRequest request, CreateNoteForIsvHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.contactName)) {
+            body.put("contactName", request.contactName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contactPhoneNum)) {
+            body.put("contactPhoneNum", request.contactPhoneNum);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contactTitle)) {
+            body.put("contactTitle", request.contactTitle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.inputPhoneNum)) {
+            body.put("inputPhoneNum", request.inputPhoneNum);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateNoteForIsv"),
+            new TeaPair("version", "trade_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/trade/notes"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateNoteForIsvResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建小记</p>
+     * 
+     * @param request CreateNoteForIsvRequest
+     * @return CreateNoteForIsvResponse
+     */
+    public CreateNoteForIsvResponse createNoteForIsv(CreateNoteForIsvRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateNoteForIsvHeaders headers = new CreateNoteForIsvHeaders();
+        return this.createNoteForIsvWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>isv创建商机</p>
      * 
      * @param request CreateOpportunityRequest
