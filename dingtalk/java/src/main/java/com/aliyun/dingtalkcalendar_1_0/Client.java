@@ -998,6 +998,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询闲忙(me接口）</p>
+     * 
+     * @param request GetScheduleByMeRequest
+     * @param headers GetScheduleByMeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetScheduleByMeResponse
+     */
+    public GetScheduleByMeResponse getScheduleByMeWithOptions(GetScheduleByMeRequest request, GetScheduleByMeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            body.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            body.put("startTime", request.startTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetScheduleByMe"),
+            new TeaPair("version", "calendar_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/calendar/me/schedules/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetScheduleByMeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询闲忙(me接口）</p>
+     * 
+     * @param request GetScheduleByMeRequest
+     * @return GetScheduleByMeResponse
+     */
+    public GetScheduleByMeResponse getScheduleByMe(GetScheduleByMeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetScheduleByMeHeaders headers = new GetScheduleByMeHeaders();
+        return this.getScheduleByMeWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取签到链接</p>
      * 
      * @param headers GetSignInLinkHeaders
@@ -1636,6 +1704,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListEventsViewHeaders headers = new ListEventsViewHeaders();
         return this.listEventsViewWithOptions(userId, calendarId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询日程视图列表以查看闲忙，展开循环日程(me接口）</p>
+     * 
+     * @param request ListEventsViewByMeRequest
+     * @param headers ListEventsViewByMeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListEventsViewByMeResponse
+     */
+    public ListEventsViewByMeResponse listEventsViewByMeWithOptions(String calendarId, ListEventsViewByMeRequest request, ListEventsViewByMeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxAttendees)) {
+            query.put("maxAttendees", request.maxAttendees);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.timeMax)) {
+            query.put("timeMax", request.timeMax);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.timeMin)) {
+            query.put("timeMin", request.timeMin);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xClientToken)) {
+            realHeaders.put("x-client-token", com.aliyun.teautil.Common.toJSONString(headers.xClientToken));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListEventsViewByMe"),
+            new TeaPair("version", "calendar_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/calendar/me/calendars/" + calendarId + "/eventsview"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListEventsViewByMeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询日程视图列表以查看闲忙，展开循环日程(me接口）</p>
+     * 
+     * @param request ListEventsViewByMeRequest
+     * @return ListEventsViewByMeResponse
+     */
+    public ListEventsViewByMeResponse listEventsViewByMe(String calendarId, ListEventsViewByMeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListEventsViewByMeHeaders headers = new ListEventsViewByMeHeaders();
+        return this.listEventsViewByMeWithOptions(calendarId, request, headers, runtime);
     }
 
     /**

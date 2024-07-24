@@ -156,6 +156,94 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>新增链接增强注册规则</p>
+     * 
+     * @param request AddUnfurlingRegisterRequest
+     * @param headers AddUnfurlingRegisterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddUnfurlingRegisterResponse
+     */
+    public AddUnfurlingRegisterResponse addUnfurlingRegisterWithOptions(AddUnfurlingRegisterRequest request, AddUnfurlingRegisterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.apiSecret)) {
+            body.put("apiSecret", request.apiSecret);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
+            body.put("appId", request.appId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.callbackUrl)) {
+            body.put("callbackUrl", request.callbackUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardTemplateId)) {
+            body.put("cardTemplateId", request.cardTemplateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.domain)) {
+            body.put("domain", request.domain);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.path)) {
+            body.put("path", request.path);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ruleDesc)) {
+            body.put("ruleDesc", request.ruleDesc);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ruleMatchType)) {
+            body.put("ruleMatchType", request.ruleMatchType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddUnfurlingRegister"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/unfurling/rules"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddUnfurlingRegisterResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>新增链接增强注册规则</p>
+     * 
+     * @param request AddUnfurlingRegisterRequest
+     * @return AddUnfurlingRegisterResponse
+     */
+    public AddUnfurlingRegisterResponse addUnfurlingRegister(AddUnfurlingRegisterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddUnfurlingRegisterHeaders headers = new AddUnfurlingRegisterHeaders();
+        return this.addUnfurlingRegisterWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>自动开通钉钉客联微应用</p>
      * 
      * @param headers AutoOpenDingTalkConnectHeaders
@@ -1060,6 +1148,78 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateStoreGroupConversationHeaders headers = new CreateStoreGroupConversationHeaders();
         return this.createStoreGroupConversationWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>链接增强规则调试</p>
+     * 
+     * @param request DebugUnfurlingRegisterRequest
+     * @param headers DebugUnfurlingRegisterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DebugUnfurlingRegisterResponse
+     */
+    public DebugUnfurlingRegisterResponse debugUnfurlingRegisterWithOptions(DebugUnfurlingRegisterRequest request, DebugUnfurlingRegisterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
+            body.put("appId", request.appId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.grayGroupIdList)) {
+            body.put("grayGroupIdList", request.grayGroupIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.grayUserIdList)) {
+            body.put("grayUserIdList", request.grayUserIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.id)) {
+            body.put("id", request.id);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DebugUnfurlingRegister"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/unfurling/rules/debug"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DebugUnfurlingRegisterResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>链接增强规则调试</p>
+     * 
+     * @param request DebugUnfurlingRegisterRequest
+     * @return DebugUnfurlingRegisterResponse
+     */
+    public DebugUnfurlingRegisterResponse debugUnfurlingRegister(DebugUnfurlingRegisterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DebugUnfurlingRegisterHeaders headers = new DebugUnfurlingRegisterHeaders();
+        return this.debugUnfurlingRegisterWithOptions(request, headers, runtime);
     }
 
     /**
@@ -2410,6 +2570,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListOrgTextEmotionHeaders headers = new ListOrgTextEmotionHeaders();
         return this.listOrgTextEmotionWithOptions(headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>链接增强规则下线</p>
+     * 
+     * @param request OfflineUnfurlingRegisterRequest
+     * @param headers OfflineUnfurlingRegisterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OfflineUnfurlingRegisterResponse
+     */
+    public OfflineUnfurlingRegisterResponse offlineUnfurlingRegisterWithOptions(OfflineUnfurlingRegisterRequest request, OfflineUnfurlingRegisterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
+            body.put("appId", request.appId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.id)) {
+            body.put("id", request.id);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OfflineUnfurlingRegister"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/unfurling/rules/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OfflineUnfurlingRegisterResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>链接增强规则下线</p>
+     * 
+     * @param request OfflineUnfurlingRegisterRequest
+     * @return OfflineUnfurlingRegisterResponse
+     */
+    public OfflineUnfurlingRegisterResponse offlineUnfurlingRegister(OfflineUnfurlingRegisterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        OfflineUnfurlingRegisterHeaders headers = new OfflineUnfurlingRegisterHeaders();
+        return this.offlineUnfurlingRegisterWithOptions(request, headers, runtime);
     }
 
     /**
@@ -3770,6 +3994,194 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryUnReadMessageHeaders headers = new QueryUnReadMessageHeaders();
         return this.queryUnReadMessageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询链接查询链接增强注册信息创建者</p>
+     * 
+     * @param request QueryUnfurlingRegisterCreatorRequest
+     * @param headers QueryUnfurlingRegisterCreatorHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryUnfurlingRegisterCreatorResponse
+     */
+    public QueryUnfurlingRegisterCreatorResponse queryUnfurlingRegisterCreatorWithOptions(QueryUnfurlingRegisterCreatorRequest request, QueryUnfurlingRegisterCreatorHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.domain)) {
+            query.put("domain", request.domain);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.path)) {
+            query.put("path", request.path);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryUnfurlingRegisterCreator"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/unfurling/rules/creators"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryUnfurlingRegisterCreatorResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询链接查询链接增强注册信息创建者</p>
+     * 
+     * @param request QueryUnfurlingRegisterCreatorRequest
+     * @return QueryUnfurlingRegisterCreatorResponse
+     */
+    public QueryUnfurlingRegisterCreatorResponse queryUnfurlingRegisterCreator(QueryUnfurlingRegisterCreatorRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryUnfurlingRegisterCreatorHeaders headers = new QueryUnfurlingRegisterCreatorHeaders();
+        return this.queryUnfurlingRegisterCreatorWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询链接增强注册信息列表</p>
+     * 
+     * @param request QueryUnfurlingRegisterInfoRequest
+     * @param headers QueryUnfurlingRegisterInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryUnfurlingRegisterInfoResponse
+     */
+    public QueryUnfurlingRegisterInfoResponse queryUnfurlingRegisterInfoWithOptions(QueryUnfurlingRegisterInfoRequest request, QueryUnfurlingRegisterInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
+            query.put("appId", request.appId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryUnfurlingRegisterInfo"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/unfurling/rules"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryUnfurlingRegisterInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询链接增强注册信息列表</p>
+     * 
+     * @param request QueryUnfurlingRegisterInfoRequest
+     * @return QueryUnfurlingRegisterInfoResponse
+     */
+    public QueryUnfurlingRegisterInfoResponse queryUnfurlingRegisterInfo(QueryUnfurlingRegisterInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryUnfurlingRegisterInfoHeaders headers = new QueryUnfurlingRegisterInfoHeaders();
+        return this.queryUnfurlingRegisterInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>链接增强规则发布</p>
+     * 
+     * @param request ReleaseUnfurlingRegisterRequest
+     * @param headers ReleaseUnfurlingRegisterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ReleaseUnfurlingRegisterResponse
+     */
+    public ReleaseUnfurlingRegisterResponse releaseUnfurlingRegisterWithOptions(ReleaseUnfurlingRegisterRequest request, ReleaseUnfurlingRegisterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
+            body.put("appId", request.appId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.id)) {
+            body.put("id", request.id);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ReleaseUnfurlingRegister"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/unfurling/rules/publish"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ReleaseUnfurlingRegisterResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>链接增强规则发布</p>
+     * 
+     * @param request ReleaseUnfurlingRegisterRequest
+     * @return ReleaseUnfurlingRegisterResponse
+     */
+    public ReleaseUnfurlingRegisterResponse releaseUnfurlingRegister(ReleaseUnfurlingRegisterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ReleaseUnfurlingRegisterHeaders headers = new ReleaseUnfurlingRegisterHeaders();
+        return this.releaseUnfurlingRegisterWithOptions(request, headers, runtime);
     }
 
     /**
@@ -5274,6 +5686,166 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateTheGroupRolesOfGroupMemberHeaders headers = new UpdateTheGroupRolesOfGroupMemberHeaders();
         return this.updateTheGroupRolesOfGroupMemberWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>编辑链接增强注册规则</p>
+     * 
+     * @param request UpdateUnfurlingRegisterRequest
+     * @param headers UpdateUnfurlingRegisterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateUnfurlingRegisterResponse
+     */
+    public UpdateUnfurlingRegisterResponse updateUnfurlingRegisterWithOptions(UpdateUnfurlingRegisterRequest request, UpdateUnfurlingRegisterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.apiSecret)) {
+            body.put("apiSecret", request.apiSecret);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
+            body.put("appId", request.appId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.callbackUrl)) {
+            body.put("callbackUrl", request.callbackUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardTemplateId)) {
+            body.put("cardTemplateId", request.cardTemplateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.domain)) {
+            body.put("domain", request.domain);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.id)) {
+            body.put("id", request.id);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.path)) {
+            body.put("path", request.path);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ruleDesc)) {
+            body.put("ruleDesc", request.ruleDesc);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ruleMatchType)) {
+            body.put("ruleMatchType", request.ruleMatchType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateUnfurlingRegister"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/unfurling/rules"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateUnfurlingRegisterResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>编辑链接增强注册规则</p>
+     * 
+     * @param request UpdateUnfurlingRegisterRequest
+     * @return UpdateUnfurlingRegisterResponse
+     */
+    public UpdateUnfurlingRegisterResponse updateUnfurlingRegister(UpdateUnfurlingRegisterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateUnfurlingRegisterHeaders headers = new UpdateUnfurlingRegisterHeaders();
+        return this.updateUnfurlingRegisterWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>链接增强规则状态更新</p>
+     * 
+     * @param request UpdateUnfurlingRegisterStatusRequest
+     * @param headers UpdateUnfurlingRegisterStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateUnfurlingRegisterStatusResponse
+     */
+    public UpdateUnfurlingRegisterStatusResponse updateUnfurlingRegisterStatusWithOptions(UpdateUnfurlingRegisterStatusRequest request, UpdateUnfurlingRegisterStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appId)) {
+            body.put("appId", request.appId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.id)) {
+            body.put("id", request.id);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateUnfurlingRegisterStatus"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/unfurling/rules/statuses"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateUnfurlingRegisterStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>链接增强规则状态更新</p>
+     * 
+     * @param request UpdateUnfurlingRegisterStatusRequest
+     * @return UpdateUnfurlingRegisterStatusResponse
+     */
+    public UpdateUnfurlingRegisterStatusResponse updateUnfurlingRegisterStatus(UpdateUnfurlingRegisterStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateUnfurlingRegisterStatusHeaders headers = new UpdateUnfurlingRegisterStatusHeaders();
+        return this.updateUnfurlingRegisterStatusWithOptions(request, headers, runtime);
     }
 
     /**
