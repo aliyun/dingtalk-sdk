@@ -214,6 +214,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>预核销智能财务的权益</p>
+     * 
+     * @param request BeginConsumeRequest
+     * @param headers BeginConsumeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BeginConsumeResponse
+     */
+    public BeginConsumeResponse beginConsumeWithOptions(BeginConsumeRequest request, BeginConsumeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.benefitCode)) {
+            query.put("benefitCode", request.benefitCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizRequestId)) {
+            query.put("bizRequestId", request.bizRequestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.quota)) {
+            query.put("quota", request.quota);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BeginConsume"),
+            new TeaPair("version", "bizfinance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/bizfinance/consumedBenefits/prepare"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BeginConsumeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>预核销智能财务的权益</p>
+     * 
+     * @param request BeginConsumeRequest
+     * @return BeginConsumeResponse
+     */
+    public BeginConsumeResponse beginConsume(BeginConsumeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        BeginConsumeHeaders headers = new BeginConsumeHeaders();
+        return this.beginConsumeWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>绑定钉钉智能财务企业主体的账套信息</p>
      * 
      * @param request BindCompanyAccountantBookRequest
@@ -270,6 +338,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BindCompanyAccountantBookHeaders headers = new BindCompanyAccountantBookHeaders();
         return this.bindCompanyAccountantBookWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>取消核销智能财务的权益</p>
+     * 
+     * @param request CancelConsumeRequest
+     * @param headers CancelConsumeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CancelConsumeResponse
+     */
+    public CancelConsumeResponse cancelConsumeWithOptions(CancelConsumeRequest request, CancelConsumeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.benefitCode)) {
+            query.put("benefitCode", request.benefitCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizRequestId)) {
+            query.put("bizRequestId", request.bizRequestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.quota)) {
+            query.put("quota", request.quota);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CancelConsume"),
+            new TeaPair("version", "bizfinance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/bizfinance/consumedBenefits/cancel"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CancelConsumeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>取消核销智能财务的权益</p>
+     * 
+     * @param request CancelConsumeRequest
+     * @return CancelConsumeResponse
+     */
+    public CancelConsumeResponse cancelConsume(CancelConsumeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CancelConsumeHeaders headers = new CancelConsumeHeaders();
+        return this.cancelConsumeWithOptions(request, headers, runtime);
     }
 
     /**
@@ -362,6 +498,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CheckVoucherStatusHeaders headers = new CheckVoucherStatusHeaders();
         return this.checkVoucherStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>确认核销智能财务的权益</p>
+     * 
+     * @param request CommitConsumeRequest
+     * @param headers CommitConsumeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CommitConsumeResponse
+     */
+    public CommitConsumeResponse commitConsumeWithOptions(CommitConsumeRequest request, CommitConsumeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.benefitCode)) {
+            query.put("benefitCode", request.benefitCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.bizRequestId)) {
+            query.put("bizRequestId", request.bizRequestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.quota)) {
+            query.put("quota", request.quota);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CommitConsume"),
+            new TeaPair("version", "bizfinance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/bizfinance/consumedBenefits/commit"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CommitConsumeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>确认核销智能财务的权益</p>
+     * 
+     * @param request CommitConsumeRequest
+     * @return CommitConsumeResponse
+     */
+    public CommitConsumeResponse commitConsume(CommitConsumeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CommitConsumeHeaders headers = new CommitConsumeHeaders();
+        return this.commitConsumeWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1450,6 +1654,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PushHistoricalReceiptsHeaders headers = new PushHistoricalReceiptsHeaders();
         return this.pushHistoricalReceiptsWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询智能财务计量型权益</p>
+     * 
+     * @param request QueryBenefitRequest
+     * @param headers QueryBenefitHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryBenefitResponse
+     */
+    public QueryBenefitResponse queryBenefitWithOptions(QueryBenefitRequest request, QueryBenefitHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.benefitCode)) {
+            query.put("benefitCode", request.benefitCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryBenefit"),
+            new TeaPair("version", "bizfinance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/bizfinance/benefits"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryBenefitResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询智能财务计量型权益</p>
+     * 
+     * @param request QueryBenefitRequest
+     * @return QueryBenefitResponse
+     */
+    public QueryBenefitResponse queryBenefit(QueryBenefitRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryBenefitHeaders headers = new QueryBenefitHeaders();
+        return this.queryBenefitWithOptions(request, headers, runtime);
     }
 
     /**

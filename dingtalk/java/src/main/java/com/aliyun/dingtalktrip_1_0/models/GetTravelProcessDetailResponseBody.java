@@ -604,6 +604,13 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>12374</p>
+         */
+        @NameInMap("originUserId")
+        public String originUserId;
+
+        /**
+         * <strong>example:</strong>
          * <p>e7fh112WTTawy6dLtiIlqQ10051721014983</p>
          */
         @NameInMap("processInstanceId")
@@ -671,6 +678,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         }
         public String getFinishTime() {
             return this.finishTime;
+        }
+
+        public GetTravelProcessDetailResponseBodyResultTasks setOriginUserId(String originUserId) {
+            this.originUserId = originUserId;
+            return this;
+        }
+        public String getOriginUserId() {
+            return this.originUserId;
         }
 
         public GetTravelProcessDetailResponseBodyResultTasks setProcessInstanceId(String processInstanceId) {

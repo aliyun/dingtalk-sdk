@@ -84,6 +84,57 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>点众下架视频接口</p>
+     * 
+     * @param request DeleteVideosRequest
+     * @param headers DeleteVideosHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteVideosResponse
+     */
+    public DeleteVideosResponse deleteVideosWithOptions(DeleteVideosRequest request, DeleteVideosHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", request.body)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteVideos"),
+            new TeaPair("version", "content_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/content/dian/videos/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteVideosResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>点众下架视频接口</p>
+     * 
+     * @param request DeleteVideosRequest
+     * @return DeleteVideosResponse
+     */
+    public DeleteVideosResponse deleteVideos(DeleteVideosRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteVideosHeaders headers = new DeleteVideosHeaders();
+        return this.deleteVideosWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取feed的详细信息，包括子课程的信息</p>
      * 
      * @param request GetFeedRequest
@@ -332,5 +383,67 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         PageFeedHeaders headers = new PageFeedHeaders();
         return this.pageFeedWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>点众上传视频信息</p>
+     * 
+     * @param tmpReq UploadVideosRequest
+     * @param headers UploadVideosHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UploadVideosResponse
+     */
+    public UploadVideosResponse uploadVideosWithOptions(UploadVideosRequest tmpReq, UploadVideosHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        UploadVideosShrinkRequest request = new UploadVideosShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.videoList)) {
+            request.videoListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.videoList, "videoList", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.videoListShrink)) {
+            query.put("videoList", request.videoListShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UploadVideos"),
+            new TeaPair("version", "content_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/content/dian/videos/upload"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UploadVideosResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>点众上传视频信息</p>
+     * 
+     * @param request UploadVideosRequest
+     * @return UploadVideosResponse
+     */
+    public UploadVideosResponse uploadVideos(UploadVideosRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UploadVideosHeaders headers = new UploadVideosHeaders();
+        return this.uploadVideosWithOptions(request, headers, runtime);
     }
 }
