@@ -1458,6 +1458,100 @@ export class GetScheduleResponse extends $tea.Model {
   }
 }
 
+export class GetScheduleByMeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xClientToken?: string;
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xClientToken: 'x-client-token',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xClientToken: 'string',
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetScheduleByMeRequest extends $tea.Model {
+  endTime?: string;
+  startTime?: string;
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      endTime: 'endTime',
+      startTime: 'startTime',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endTime: 'string',
+      startTime: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetScheduleByMeResponseBody extends $tea.Model {
+  scheduleInformation?: GetScheduleByMeResponseBodyScheduleInformation[];
+  static names(): { [key: string]: string } {
+    return {
+      scheduleInformation: 'scheduleInformation',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scheduleInformation: { 'type': 'array', 'itemType': GetScheduleByMeResponseBodyScheduleInformation },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetScheduleByMeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetScheduleByMeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetScheduleByMeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetSignInLinkHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2380,6 +2474,109 @@ export class ListEventsViewResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: ListEventsViewResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xClientToken?: string;
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xClientToken: 'x-client-token',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xClientToken: 'string',
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeRequest extends $tea.Model {
+  maxAttendees?: number;
+  maxResults?: number;
+  nextToken?: string;
+  timeMax?: string;
+  timeMin?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxAttendees: 'maxAttendees',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      timeMax: 'timeMax',
+      timeMin: 'timeMin',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxAttendees: 'number',
+      maxResults: 'number',
+      nextToken: 'string',
+      timeMax: 'string',
+      timeMin: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBody extends $tea.Model {
+  events?: ListEventsViewByMeResponseBodyEvents[];
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      events: 'events',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      events: { 'type': 'array', 'itemType': ListEventsViewByMeResponseBodyEvents },
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListEventsViewByMeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListEventsViewByMeResponseBody,
     };
   }
 
@@ -5317,6 +5514,106 @@ export class GetScheduleResponseBodyScheduleInformation extends $tea.Model {
   }
 }
 
+export class GetScheduleByMeResponseBodyScheduleInformationScheduleItemsEnd extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetScheduleByMeResponseBodyScheduleInformationScheduleItemsStart extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetScheduleByMeResponseBodyScheduleInformationScheduleItems extends $tea.Model {
+  end?: GetScheduleByMeResponseBodyScheduleInformationScheduleItemsEnd;
+  start?: GetScheduleByMeResponseBodyScheduleInformationScheduleItemsStart;
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      end: 'end',
+      start: 'start',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      end: GetScheduleByMeResponseBodyScheduleInformationScheduleItemsEnd,
+      start: GetScheduleByMeResponseBodyScheduleInformationScheduleItemsStart,
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetScheduleByMeResponseBodyScheduleInformation extends $tea.Model {
+  error?: string;
+  scheduleItems?: GetScheduleByMeResponseBodyScheduleInformationScheduleItems[];
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      error: 'error',
+      scheduleItems: 'scheduleItems',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      error: 'string',
+      scheduleItems: { 'type': 'array', 'itemType': GetScheduleByMeResponseBodyScheduleInformationScheduleItems },
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetSignInListResponseBodyUsers extends $tea.Model {
   checkInTime?: number;
   displayName?: string;
@@ -6779,6 +7076,445 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
       richTextDescription: ListEventsViewResponseBodyEventsRichTextDescription,
       seriesMasterId: 'string',
       start: ListEventsViewResponseBodyEventsStart,
+      status: 'string',
+      summary: 'string',
+      updateTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsAttendees extends $tea.Model {
+  displayName?: string;
+  id?: string;
+  isOptional?: boolean;
+  responseStatus?: string;
+  self?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+      id: 'id',
+      isOptional: 'isOptional',
+      responseStatus: 'responseStatus',
+      self: 'self',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+      id: 'string',
+      isOptional: 'boolean',
+      responseStatus: 'string',
+      self: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsCategories extends $tea.Model {
+  displayName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsEnd extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsExtendedPropertiesSharedProperties extends $tea.Model {
+  belongCorpId?: string;
+  sourceOpenCid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      belongCorpId: 'belongCorpId',
+      sourceOpenCid: 'sourceOpenCid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      belongCorpId: 'string',
+      sourceOpenCid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsExtendedProperties extends $tea.Model {
+  sharedProperties?: ListEventsViewByMeResponseBodyEventsExtendedPropertiesSharedProperties;
+  static names(): { [key: string]: string } {
+    return {
+      sharedProperties: 'sharedProperties',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sharedProperties: ListEventsViewByMeResponseBodyEventsExtendedPropertiesSharedProperties,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsLocation extends $tea.Model {
+  displayName?: string;
+  meetingRooms?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+      meetingRooms: 'meetingRooms',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+      meetingRooms: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsMeetingRooms extends $tea.Model {
+  displayName?: string;
+  responseStatus?: string;
+  roomId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+      responseStatus: 'responseStatus',
+      roomId: 'roomId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+      responseStatus: 'string',
+      roomId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsOnlineMeetingInfo extends $tea.Model {
+  conferenceId?: string;
+  extraInfo?: { [key: string]: any };
+  type?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conferenceId: 'conferenceId',
+      extraInfo: 'extraInfo',
+      type: 'type',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conferenceId: 'string',
+      extraInfo: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      type: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsOrganizer extends $tea.Model {
+  displayName?: string;
+  id?: string;
+  responseStatus?: string;
+  self?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      displayName: 'displayName',
+      id: 'id',
+      responseStatus: 'responseStatus',
+      self: 'self',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      displayName: 'string',
+      id: 'string',
+      responseStatus: 'string',
+      self: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsOriginStart extends $tea.Model {
+  dateTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dateTime: 'dateTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dateTime: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsRecurrencePattern extends $tea.Model {
+  dayOfMonth?: number;
+  daysOfWeek?: string;
+  firstDayOfWeek?: string;
+  index?: string;
+  interval?: number;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dayOfMonth: 'dayOfMonth',
+      daysOfWeek: 'daysOfWeek',
+      firstDayOfWeek: 'firstDayOfWeek',
+      index: 'index',
+      interval: 'interval',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dayOfMonth: 'number',
+      daysOfWeek: 'string',
+      firstDayOfWeek: 'string',
+      index: 'string',
+      interval: 'number',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsRecurrenceRange extends $tea.Model {
+  endDate?: string;
+  numberOfOccurrences?: number;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      endDate: 'endDate',
+      numberOfOccurrences: 'numberOfOccurrences',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      endDate: 'string',
+      numberOfOccurrences: 'number',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsRecurrence extends $tea.Model {
+  pattern?: ListEventsViewByMeResponseBodyEventsRecurrencePattern;
+  range?: ListEventsViewByMeResponseBodyEventsRecurrenceRange;
+  static names(): { [key: string]: string } {
+    return {
+      pattern: 'pattern',
+      range: 'range',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pattern: ListEventsViewByMeResponseBodyEventsRecurrencePattern,
+      range: ListEventsViewByMeResponseBodyEventsRecurrenceRange,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsRichTextDescription extends $tea.Model {
+  text?: string;
+  static names(): { [key: string]: string } {
+    return {
+      text: 'text',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      text: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEventsStart extends $tea.Model {
+  date?: string;
+  dateTime?: string;
+  timeZone?: string;
+  static names(): { [key: string]: string } {
+    return {
+      date: 'date',
+      dateTime: 'dateTime',
+      timeZone: 'timeZone',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      date: 'string',
+      dateTime: 'string',
+      timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListEventsViewByMeResponseBodyEvents extends $tea.Model {
+  attendees?: ListEventsViewByMeResponseBodyEventsAttendees[];
+  categories?: ListEventsViewByMeResponseBodyEventsCategories[];
+  createTime?: string;
+  description?: string;
+  end?: ListEventsViewByMeResponseBodyEventsEnd;
+  extendedProperties?: ListEventsViewByMeResponseBodyEventsExtendedProperties;
+  id?: string;
+  isAllDay?: boolean;
+  location?: ListEventsViewByMeResponseBodyEventsLocation;
+  meetingRooms?: ListEventsViewByMeResponseBodyEventsMeetingRooms[];
+  onlineMeetingInfo?: ListEventsViewByMeResponseBodyEventsOnlineMeetingInfo;
+  organizer?: ListEventsViewByMeResponseBodyEventsOrganizer;
+  originStart?: ListEventsViewByMeResponseBodyEventsOriginStart;
+  recurrence?: ListEventsViewByMeResponseBodyEventsRecurrence;
+  richTextDescription?: ListEventsViewByMeResponseBodyEventsRichTextDescription;
+  seriesMasterId?: string;
+  start?: ListEventsViewByMeResponseBodyEventsStart;
+  status?: string;
+  summary?: string;
+  updateTime?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attendees: 'attendees',
+      categories: 'categories',
+      createTime: 'createTime',
+      description: 'description',
+      end: 'end',
+      extendedProperties: 'extendedProperties',
+      id: 'id',
+      isAllDay: 'isAllDay',
+      location: 'location',
+      meetingRooms: 'meetingRooms',
+      onlineMeetingInfo: 'onlineMeetingInfo',
+      organizer: 'organizer',
+      originStart: 'originStart',
+      recurrence: 'recurrence',
+      richTextDescription: 'richTextDescription',
+      seriesMasterId: 'seriesMasterId',
+      start: 'start',
+      status: 'status',
+      summary: 'summary',
+      updateTime: 'updateTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attendees: { 'type': 'array', 'itemType': ListEventsViewByMeResponseBodyEventsAttendees },
+      categories: { 'type': 'array', 'itemType': ListEventsViewByMeResponseBodyEventsCategories },
+      createTime: 'string',
+      description: 'string',
+      end: ListEventsViewByMeResponseBodyEventsEnd,
+      extendedProperties: ListEventsViewByMeResponseBodyEventsExtendedProperties,
+      id: 'string',
+      isAllDay: 'boolean',
+      location: ListEventsViewByMeResponseBodyEventsLocation,
+      meetingRooms: { 'type': 'array', 'itemType': ListEventsViewByMeResponseBodyEventsMeetingRooms },
+      onlineMeetingInfo: ListEventsViewByMeResponseBodyEventsOnlineMeetingInfo,
+      organizer: ListEventsViewByMeResponseBodyEventsOrganizer,
+      originStart: ListEventsViewByMeResponseBodyEventsOriginStart,
+      recurrence: ListEventsViewByMeResponseBodyEventsRecurrence,
+      richTextDescription: ListEventsViewByMeResponseBodyEventsRichTextDescription,
+      seriesMasterId: 'string',
+      start: ListEventsViewByMeResponseBodyEventsStart,
       status: 'string',
       summary: 'string',
       updateTime: 'string',
@@ -8814,6 +9550,72 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 查询闲忙(me接口）
+   *
+   * @param request GetScheduleByMeRequest
+   * @param headers GetScheduleByMeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return GetScheduleByMeResponse
+   */
+  async getScheduleByMeWithOptions(request: GetScheduleByMeRequest, headers: GetScheduleByMeHeaders, runtime: $Util.RuntimeOptions): Promise<GetScheduleByMeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.endTime)) {
+      body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      body["startTime"] = request.startTime;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetScheduleByMe",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/me/schedules/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetScheduleByMeResponse>(await this.execute(params, req, runtime), new GetScheduleByMeResponse({}));
+  }
+
+  /**
+   * @summary 查询闲忙(me接口）
+   *
+   * @param request GetScheduleByMeRequest
+   * @return GetScheduleByMeResponse
+   */
+  async getScheduleByMe(request: GetScheduleByMeRequest): Promise<GetScheduleByMeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetScheduleByMeHeaders({ });
+    return await this.getScheduleByMeWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 获取签到链接
    *
    * @param headers GetSignInLinkHeaders
@@ -9436,6 +10238,80 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListEventsViewHeaders({ });
     return await this.listEventsViewWithOptions(userId, calendarId, request, headers, runtime);
+  }
+
+  /**
+   * @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+   *
+   * @param request ListEventsViewByMeRequest
+   * @param headers ListEventsViewByMeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListEventsViewByMeResponse
+   */
+  async listEventsViewByMeWithOptions(calendarId: string, request: ListEventsViewByMeRequest, headers: ListEventsViewByMeHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsViewByMeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxAttendees)) {
+      query["maxAttendees"] = request.maxAttendees;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.timeMax)) {
+      query["timeMax"] = request.timeMax;
+    }
+
+    if (!Util.isUnset(request.timeMin)) {
+      query["timeMin"] = request.timeMin;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xClientToken)) {
+      realHeaders["x-client-token"] = Util.toJSONString(headers.xClientToken);
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListEventsViewByMe",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/me/calendars/${calendarId}/eventsview`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListEventsViewByMeResponse>(await this.execute(params, req, runtime), new ListEventsViewByMeResponse({}));
+  }
+
+  /**
+   * @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+   *
+   * @param request ListEventsViewByMeRequest
+   * @return ListEventsViewByMeResponse
+   */
+  async listEventsViewByMe(calendarId: string, request: ListEventsViewByMeRequest): Promise<ListEventsViewByMeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListEventsViewByMeHeaders({ });
+    return await this.listEventsViewByMeWithOptions(calendarId, request, headers, runtime);
   }
 
   /**

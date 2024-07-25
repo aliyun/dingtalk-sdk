@@ -103,6 +103,128 @@ export class CreateUserResponse extends $tea.Model {
   }
 }
 
+export class ListMailFoldersHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListMailFoldersRequest extends $tea.Model {
+  folderId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      folderId: 'folderId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      folderId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListMailFoldersResponseBody extends $tea.Model {
+  folders?: ListMailFoldersResponseBodyFolders[];
+  static names(): { [key: string]: string } {
+    return {
+      folders: 'folders',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      folders: { 'type': 'array', 'itemType': ListMailFoldersResponseBodyFolders },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListMailFoldersResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListMailFoldersResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListMailFoldersResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListMailFoldersResponseBodyFolders extends $tea.Model {
+  childFolderCount?: number;
+  displayName?: string;
+  extensions?: { [key: string]: string };
+  id?: string;
+  parentFolderId?: string;
+  totalItemCount?: number;
+  unreadItemCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      childFolderCount: 'childFolderCount',
+      displayName: 'displayName',
+      extensions: 'extensions',
+      id: 'id',
+      parentFolderId: 'parentFolderId',
+      totalItemCount: 'totalItemCount',
+      unreadItemCount: 'unreadItemCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      childFolderCount: 'number',
+      displayName: 'string',
+      extensions: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      id: 'string',
+      parentFolderId: 'string',
+      totalItemCount: 'number',
+      unreadItemCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
   _client: SPI;
@@ -183,6 +305,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateUserHeaders({ });
     return await this.createUserWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 获取指定文件夹的子文件夹列表
+   *
+   * @param request ListMailFoldersRequest
+   * @param headers ListMailFoldersHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ListMailFoldersResponse
+   */
+  async listMailFoldersWithOptions(email: string, request: ListMailFoldersRequest, headers: ListMailFoldersHeaders, runtime: $Util.RuntimeOptions): Promise<ListMailFoldersResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.folderId)) {
+      query["folderId"] = request.folderId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListMailFolders",
+      version: "mail_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/mail/users/emails/${email}/mailFolders`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListMailFoldersResponse>(await this.execute(params, req, runtime), new ListMailFoldersResponse({}));
+  }
+
+  /**
+   * @summary 获取指定文件夹的子文件夹列表
+   *
+   * @param request ListMailFoldersRequest
+   * @return ListMailFoldersResponse
+   */
+  async listMailFolders(email: string, request: ListMailFoldersRequest): Promise<ListMailFoldersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListMailFoldersHeaders({ });
+    return await this.listMailFoldersWithOptions(email, request, headers, runtime);
   }
 
 }

@@ -100,6 +100,94 @@ export class CreateFeedResponse extends $tea.Model {
   }
 }
 
+export class DeleteVideosHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteVideosRequest extends $tea.Model {
+  body?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteVideosResponseBody extends $tea.Model {
+  result?: DeleteVideosResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: DeleteVideosResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteVideosResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteVideosResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeleteVideosResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetFeedHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -497,6 +585,113 @@ export class PageFeedResponse extends $tea.Model {
   }
 }
 
+export class UploadVideosHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadVideosRequest extends $tea.Model {
+  videoList?: UploadVideosRequestVideoList[];
+  static names(): { [key: string]: string } {
+    return {
+      videoList: 'videoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      videoList: { 'type': 'array', 'itemType': UploadVideosRequestVideoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadVideosShrinkRequest extends $tea.Model {
+  videoListShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      videoListShrink: 'videoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      videoListShrink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadVideosResponseBody extends $tea.Model {
+  result?: UploadVideosResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: UploadVideosResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadVideosResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UploadVideosResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UploadVideosResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateFeedRequestCourseInfoLectorUserInfo extends $tea.Model {
   avatar?: string;
   name?: string;
@@ -727,6 +922,31 @@ export class CreateFeedRequestFeedInfo extends $tea.Model {
   }
 }
 
+export class DeleteVideosResponseBodyResult extends $tea.Model {
+  failed?: string[];
+  success?: number;
+  total?: number;
+  static names(): { [key: string]: string } {
+    return {
+      failed: 'failed',
+      success: 'success',
+      total: 'total',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failed: { 'type': 'array', 'itemType': 'string' },
+      success: 'number',
+      total: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetFeedResponseBodyFeedItem extends $tea.Model {
   durationMillis?: number;
   feedContentType?: number;
@@ -814,6 +1034,89 @@ export class PageFeedResponseBodyFeedList extends $tea.Model {
   }
 }
 
+export class UploadVideosRequestVideoList extends $tea.Model {
+  authorIconUrl?: string;
+  authorId?: string;
+  authorName?: string;
+  coverUrl?: string;
+  jumpIconUrl?: string;
+  jumpTitle?: string;
+  jumpUrl?: string;
+  videoDuration?: string;
+  videoHeight?: string;
+  videoId?: string;
+  videoTitle?: string;
+  videoWidth?: string;
+  webpUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorIconUrl: 'authorIconUrl',
+      authorId: 'authorId',
+      authorName: 'authorName',
+      coverUrl: 'coverUrl',
+      jumpIconUrl: 'jumpIconUrl',
+      jumpTitle: 'jumpTitle',
+      jumpUrl: 'jumpUrl',
+      videoDuration: 'videoDuration',
+      videoHeight: 'videoHeight',
+      videoId: 'videoId',
+      videoTitle: 'videoTitle',
+      videoWidth: 'videoWidth',
+      webpUrl: 'webpUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorIconUrl: 'string',
+      authorId: 'string',
+      authorName: 'string',
+      coverUrl: 'string',
+      jumpIconUrl: 'string',
+      jumpTitle: 'string',
+      jumpUrl: 'string',
+      videoDuration: 'string',
+      videoHeight: 'string',
+      videoId: 'string',
+      videoTitle: 'string',
+      videoWidth: 'string',
+      webpUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadVideosResponseBodyResult extends $tea.Model {
+  failed?: string[];
+  hasUploaded?: number;
+  success?: number;
+  total?: number;
+  static names(): { [key: string]: string } {
+    return {
+      failed: 'failed',
+      hasUploaded: 'hasUploaded',
+      success: 'success',
+      total: 'total',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failed: { 'type': 'array', 'itemType': 'string' },
+      hasUploaded: 'number',
+      success: 'number',
+      total: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
   _client: SPI;
@@ -890,6 +1193,55 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateFeedHeaders({ });
     return await this.createFeedWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 点众下架视频接口
+   *
+   * @param request DeleteVideosRequest
+   * @param headers DeleteVideosHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DeleteVideosResponse
+   */
+  async deleteVideosWithOptions(request: DeleteVideosRequest, headers: DeleteVideosHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteVideosResponse> {
+    Util.validateModel(request);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: request.body,
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteVideos",
+      version: "content_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/content/dian/videos/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteVideosResponse>(await this.execute(params, req, runtime), new DeleteVideosResponse({}));
+  }
+
+  /**
+   * @summary 点众下架视频接口
+   *
+   * @param request DeleteVideosRequest
+   * @return DeleteVideosResponse
+   */
+  async deleteVideos(request: DeleteVideosRequest): Promise<DeleteVideosResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteVideosHeaders({ });
+    return await this.deleteVideosWithOptions(request, headers, runtime);
   }
 
   /**
@@ -1134,6 +1486,66 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PageFeedHeaders({ });
     return await this.pageFeedWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 点众上传视频信息
+   *
+   * @param tmpReq UploadVideosRequest
+   * @param headers UploadVideosHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UploadVideosResponse
+   */
+  async uploadVideosWithOptions(tmpReq: UploadVideosRequest, headers: UploadVideosHeaders, runtime: $Util.RuntimeOptions): Promise<UploadVideosResponse> {
+    Util.validateModel(tmpReq);
+    let request = new UploadVideosShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset(tmpReq.videoList)) {
+      request.videoListShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.videoList, "videoList", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.videoListShrink)) {
+      query["videoList"] = request.videoListShrink;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "UploadVideos",
+      version: "content_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/content/dian/videos/upload`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UploadVideosResponse>(await this.execute(params, req, runtime), new UploadVideosResponse({}));
+  }
+
+  /**
+   * @summary 点众上传视频信息
+   *
+   * @param request UploadVideosRequest
+   * @return UploadVideosResponse
+   */
+  async uploadVideos(request: UploadVideosRequest): Promise<UploadVideosResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UploadVideosHeaders({ });
+    return await this.uploadVideosWithOptions(request, headers, runtime);
   }
 
 }

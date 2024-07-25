@@ -106,6 +106,106 @@ export class CheckOpportunityResultResponse extends $tea.Model {
   }
 }
 
+export class CreateNoteForIsvHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateNoteForIsvRequest extends $tea.Model {
+  contactName?: string;
+  contactPhoneNum?: string;
+  contactTitle?: string;
+  content?: string;
+  corpId?: string;
+  inputPhoneNum?: string;
+  static names(): { [key: string]: string } {
+    return {
+      contactName: 'contactName',
+      contactPhoneNum: 'contactPhoneNum',
+      contactTitle: 'contactTitle',
+      content: 'content',
+      corpId: 'corpId',
+      inputPhoneNum: 'inputPhoneNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      contactName: 'string',
+      contactPhoneNum: 'string',
+      contactTitle: 'string',
+      content: 'string',
+      corpId: 'string',
+      inputPhoneNum: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateNoteForIsvResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateNoteForIsvResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateNoteForIsvResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateNoteForIsvResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateOpportunityHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -395,6 +495,80 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CheckOpportunityResultHeaders({ });
     return await this.checkOpportunityResultWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 创建小记
+   *
+   * @param request CreateNoteForIsvRequest
+   * @param headers CreateNoteForIsvHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CreateNoteForIsvResponse
+   */
+  async createNoteForIsvWithOptions(request: CreateNoteForIsvRequest, headers: CreateNoteForIsvHeaders, runtime: $Util.RuntimeOptions): Promise<CreateNoteForIsvResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.contactName)) {
+      body["contactName"] = request.contactName;
+    }
+
+    if (!Util.isUnset(request.contactPhoneNum)) {
+      body["contactPhoneNum"] = request.contactPhoneNum;
+    }
+
+    if (!Util.isUnset(request.contactTitle)) {
+      body["contactTitle"] = request.contactTitle;
+    }
+
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.corpId)) {
+      body["corpId"] = request.corpId;
+    }
+
+    if (!Util.isUnset(request.inputPhoneNum)) {
+      body["inputPhoneNum"] = request.inputPhoneNum;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateNoteForIsv",
+      version: "trade_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trade/notes`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateNoteForIsvResponse>(await this.execute(params, req, runtime), new CreateNoteForIsvResponse({}));
+  }
+
+  /**
+   * @summary 创建小记
+   *
+   * @param request CreateNoteForIsvRequest
+   * @return CreateNoteForIsvResponse
+   */
+  async createNoteForIsv(request: CreateNoteForIsvRequest): Promise<CreateNoteForIsvResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateNoteForIsvHeaders({ });
+    return await this.createNoteForIsvWithOptions(request, headers, runtime);
   }
 
   /**

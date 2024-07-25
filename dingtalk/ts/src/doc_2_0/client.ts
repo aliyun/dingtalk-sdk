@@ -1515,15 +1515,18 @@ export class GetDocContentHeaders extends $tea.Model {
 }
 
 export class GetDocContentRequest extends $tea.Model {
+  generateCp?: boolean;
   targetFormat?: string;
   static names(): { [key: string]: string } {
     return {
+      generateCp: 'generateCp',
       targetFormat: 'targetFormat',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      generateCp: 'boolean',
       targetFormat: 'string',
     };
   }
@@ -8625,6 +8628,10 @@ export default class Client extends OpenApi {
   async getDocContentWithOptions(dentryUuid: string, request: GetDocContentRequest, headers: GetDocContentHeaders, runtime: $Util.RuntimeOptions): Promise<GetDocContentResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.generateCp)) {
+      query["generateCp"] = request.generateCp;
+    }
+
     if (!Util.isUnset(request.targetFormat)) {
       query["targetFormat"] = request.targetFormat;
     }

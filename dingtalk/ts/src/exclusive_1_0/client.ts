@@ -8198,6 +8198,181 @@ export class SpecialRuleBatchReceiverResponse extends $tea.Model {
   }
 }
 
+export class TaskInfoCreateAndStartTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskRequest extends $tea.Model {
+  attr?: TaskInfoCreateAndStartTaskRequestAttr;
+  backlogDTO?: TaskInfoCreateAndStartTaskRequestBacklogDTO;
+  backlogGenerateFlag?: number;
+  businessCode?: string;
+  canceldelTaskCardId?: string;
+  cardDTO?: TaskInfoCreateAndStartTaskRequestCardDTO;
+  customFlag?: number;
+  detailUrl?: TaskInfoCreateAndStartTaskRequestDetailUrl;
+  finishTaskCardId?: string;
+  operatorAccount?: string;
+  outTaskId?: string;
+  projId?: string;
+  robotCode?: string;
+  secretKey?: string;
+  sendMsgFlag?: number;
+  sort?: number;
+  startTaskCardId?: string;
+  state?: number;
+  taskContent?: string;
+  taskEndTime?: number;
+  taskExecutePersonDTOS?: TaskInfoCreateAndStartTaskRequestTaskExecutePersonDTOS[];
+  taskGroupDTOList?: TaskInfoCreateAndStartTaskRequestTaskGroupDTOList[];
+  taskSystem?: string;
+  taskTemplCode?: string;
+  taskTitle?: string;
+  taskType?: string;
+  taskUrlMobile?: string;
+  taskUrlPc?: string;
+  updateTaskCardId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attr: 'attr',
+      backlogDTO: 'backlogDTO',
+      backlogGenerateFlag: 'backlogGenerateFlag',
+      businessCode: 'businessCode',
+      canceldelTaskCardId: 'canceldelTaskCardId',
+      cardDTO: 'cardDTO',
+      customFlag: 'customFlag',
+      detailUrl: 'detailUrl',
+      finishTaskCardId: 'finishTaskCardId',
+      operatorAccount: 'operatorAccount',
+      outTaskId: 'outTaskId',
+      projId: 'projId',
+      robotCode: 'robotCode',
+      secretKey: 'secretKey',
+      sendMsgFlag: 'sendMsgFlag',
+      sort: 'sort',
+      startTaskCardId: 'startTaskCardId',
+      state: 'state',
+      taskContent: 'taskContent',
+      taskEndTime: 'taskEndTime',
+      taskExecutePersonDTOS: 'taskExecutePersonDTOS',
+      taskGroupDTOList: 'taskGroupDTOList',
+      taskSystem: 'taskSystem',
+      taskTemplCode: 'taskTemplCode',
+      taskTitle: 'taskTitle',
+      taskType: 'taskType',
+      taskUrlMobile: 'taskUrlMobile',
+      taskUrlPc: 'taskUrlPc',
+      updateTaskCardId: 'updateTaskCardId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attr: TaskInfoCreateAndStartTaskRequestAttr,
+      backlogDTO: TaskInfoCreateAndStartTaskRequestBacklogDTO,
+      backlogGenerateFlag: 'number',
+      businessCode: 'string',
+      canceldelTaskCardId: 'string',
+      cardDTO: TaskInfoCreateAndStartTaskRequestCardDTO,
+      customFlag: 'number',
+      detailUrl: TaskInfoCreateAndStartTaskRequestDetailUrl,
+      finishTaskCardId: 'string',
+      operatorAccount: 'string',
+      outTaskId: 'string',
+      projId: 'string',
+      robotCode: 'string',
+      secretKey: 'string',
+      sendMsgFlag: 'number',
+      sort: 'number',
+      startTaskCardId: 'string',
+      state: 'number',
+      taskContent: 'string',
+      taskEndTime: 'number',
+      taskExecutePersonDTOS: { 'type': 'array', 'itemType': TaskInfoCreateAndStartTaskRequestTaskExecutePersonDTOS },
+      taskGroupDTOList: { 'type': 'array', 'itemType': TaskInfoCreateAndStartTaskRequestTaskGroupDTOList },
+      taskSystem: 'string',
+      taskTemplCode: 'string',
+      taskTitle: 'string',
+      taskType: 'string',
+      taskUrlMobile: 'string',
+      taskUrlPc: 'string',
+      updateTaskCardId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskResponseBody extends $tea.Model {
+  code?: number;
+  data?: TaskInfoCreateAndStartTaskResponseBodyData;
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      data: 'data',
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'number',
+      data: TaskInfoCreateAndStartTaskResponseBodyData,
+      message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: TaskInfoCreateAndStartTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TaskInfoCreateAndStartTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCategoryNameHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -11494,6 +11669,226 @@ export class SpecialRuleBatchReceiverResponseBodyRows extends $tea.Model {
     return {
       serialNumber: 'string',
       msgId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskRequestAttrListTaskDynamicAttr extends $tea.Model {
+  attrCode?: string;
+  listAttrOptionsCode?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      attrCode: 'attrCode',
+      listAttrOptionsCode: 'listAttrOptionsCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attrCode: 'string',
+      listAttrOptionsCode: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskRequestAttr extends $tea.Model {
+  listTaskDynamicAttr?: TaskInfoCreateAndStartTaskRequestAttrListTaskDynamicAttr[];
+  static names(): { [key: string]: string } {
+    return {
+      listTaskDynamicAttr: 'listTaskDynamicAttr',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      listTaskDynamicAttr: { 'type': 'array', 'itemType': TaskInfoCreateAndStartTaskRequestAttrListTaskDynamicAttr },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskRequestBacklogDTOContent extends $tea.Model {
+  isOnlyShowExecutor?: boolean;
+  priority?: number;
+  static names(): { [key: string]: string } {
+    return {
+      isOnlyShowExecutor: 'isOnlyShowExecutor',
+      priority: 'priority',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isOnlyShowExecutor: 'boolean',
+      priority: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskRequestBacklogDTO extends $tea.Model {
+  content?: TaskInfoCreateAndStartTaskRequestBacklogDTOContent;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: TaskInfoCreateAndStartTaskRequestBacklogDTOContent,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskRequestCardDTO extends $tea.Model {
+  atAccount?: string;
+  cardCallbackUrl?: string;
+  content?: any;
+  isAtAll?: boolean;
+  receiverAccount?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atAccount: 'atAccount',
+      cardCallbackUrl: 'cardCallbackUrl',
+      content: 'content',
+      isAtAll: 'isAtAll',
+      receiverAccount: 'receiverAccount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atAccount: 'string',
+      cardCallbackUrl: 'string',
+      content: 'any',
+      isAtAll: 'boolean',
+      receiverAccount: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskRequestDetailUrl extends $tea.Model {
+  appUrl?: string;
+  pcUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUrl: 'appUrl',
+      pcUrl: 'pcUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUrl: 'string',
+      pcUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskRequestTaskExecutePersonDTOS extends $tea.Model {
+  employeeCode?: string;
+  personType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      employeeCode: 'employeeCode',
+      personType: 'personType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      employeeCode: 'string',
+      personType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskRequestTaskGroupDTOList extends $tea.Model {
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskResponseBodyDataGroupVoList extends $tea.Model {
+  corpId?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCreateAndStartTaskResponseBodyData extends $tea.Model {
+  groupVoList?: TaskInfoCreateAndStartTaskResponseBodyDataGroupVoList[];
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupVoList: 'groupVoList',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupVoList: { 'type': 'array', 'itemType': TaskInfoCreateAndStartTaskResponseBodyDataGroupVoList },
+      taskId: 'string',
     };
   }
 
@@ -17090,6 +17485,172 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SpecialRuleBatchReceiverHeaders({ });
     return await this.specialRuleBatchReceiverWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 创建并启动任务
+   *
+   * @param request TaskInfoCreateAndStartTaskRequest
+   * @param headers TaskInfoCreateAndStartTaskHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return TaskInfoCreateAndStartTaskResponse
+   */
+  async taskInfoCreateAndStartTaskWithOptions(request: TaskInfoCreateAndStartTaskRequest, headers: TaskInfoCreateAndStartTaskHeaders, runtime: $Util.RuntimeOptions): Promise<TaskInfoCreateAndStartTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.attr)) {
+      body["attr"] = request.attr;
+    }
+
+    if (!Util.isUnset(request.backlogDTO)) {
+      body["backlogDTO"] = request.backlogDTO;
+    }
+
+    if (!Util.isUnset(request.backlogGenerateFlag)) {
+      body["backlogGenerateFlag"] = request.backlogGenerateFlag;
+    }
+
+    if (!Util.isUnset(request.businessCode)) {
+      body["businessCode"] = request.businessCode;
+    }
+
+    if (!Util.isUnset(request.canceldelTaskCardId)) {
+      body["canceldelTaskCardId"] = request.canceldelTaskCardId;
+    }
+
+    if (!Util.isUnset(request.cardDTO)) {
+      body["cardDTO"] = request.cardDTO;
+    }
+
+    if (!Util.isUnset(request.customFlag)) {
+      body["customFlag"] = request.customFlag;
+    }
+
+    if (!Util.isUnset(request.detailUrl)) {
+      body["detailUrl"] = request.detailUrl;
+    }
+
+    if (!Util.isUnset(request.finishTaskCardId)) {
+      body["finishTaskCardId"] = request.finishTaskCardId;
+    }
+
+    if (!Util.isUnset(request.operatorAccount)) {
+      body["operatorAccount"] = request.operatorAccount;
+    }
+
+    if (!Util.isUnset(request.outTaskId)) {
+      body["outTaskId"] = request.outTaskId;
+    }
+
+    if (!Util.isUnset(request.projId)) {
+      body["projId"] = request.projId;
+    }
+
+    if (!Util.isUnset(request.robotCode)) {
+      body["robotCode"] = request.robotCode;
+    }
+
+    if (!Util.isUnset(request.secretKey)) {
+      body["secretKey"] = request.secretKey;
+    }
+
+    if (!Util.isUnset(request.sendMsgFlag)) {
+      body["sendMsgFlag"] = request.sendMsgFlag;
+    }
+
+    if (!Util.isUnset(request.sort)) {
+      body["sort"] = request.sort;
+    }
+
+    if (!Util.isUnset(request.startTaskCardId)) {
+      body["startTaskCardId"] = request.startTaskCardId;
+    }
+
+    if (!Util.isUnset(request.state)) {
+      body["state"] = request.state;
+    }
+
+    if (!Util.isUnset(request.taskContent)) {
+      body["taskContent"] = request.taskContent;
+    }
+
+    if (!Util.isUnset(request.taskEndTime)) {
+      body["taskEndTime"] = request.taskEndTime;
+    }
+
+    if (!Util.isUnset(request.taskExecutePersonDTOS)) {
+      body["taskExecutePersonDTOS"] = request.taskExecutePersonDTOS;
+    }
+
+    if (!Util.isUnset(request.taskGroupDTOList)) {
+      body["taskGroupDTOList"] = request.taskGroupDTOList;
+    }
+
+    if (!Util.isUnset(request.taskSystem)) {
+      body["taskSystem"] = request.taskSystem;
+    }
+
+    if (!Util.isUnset(request.taskTemplCode)) {
+      body["taskTemplCode"] = request.taskTemplCode;
+    }
+
+    if (!Util.isUnset(request.taskTitle)) {
+      body["taskTitle"] = request.taskTitle;
+    }
+
+    if (!Util.isUnset(request.taskType)) {
+      body["taskType"] = request.taskType;
+    }
+
+    if (!Util.isUnset(request.taskUrlMobile)) {
+      body["taskUrlMobile"] = request.taskUrlMobile;
+    }
+
+    if (!Util.isUnset(request.taskUrlPc)) {
+      body["taskUrlPc"] = request.taskUrlPc;
+    }
+
+    if (!Util.isUnset(request.updateTaskCardId)) {
+      body["updateTaskCardId"] = request.updateTaskCardId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "TaskInfoCreateAndStartTask",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/taskCenters/taskInfos/createAndStart`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TaskInfoCreateAndStartTaskResponse>(await this.execute(params, req, runtime), new TaskInfoCreateAndStartTaskResponse({}));
+  }
+
+  /**
+   * @summary 创建并启动任务
+   *
+   * @param request TaskInfoCreateAndStartTaskRequest
+   * @return TaskInfoCreateAndStartTaskResponse
+   */
+  async taskInfoCreateAndStartTask(request: TaskInfoCreateAndStartTaskRequest): Promise<TaskInfoCreateAndStartTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TaskInfoCreateAndStartTaskHeaders({ });
+    return await this.taskInfoCreateAndStartTaskWithOptions(request, headers, runtime);
   }
 
   /**

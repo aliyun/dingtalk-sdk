@@ -222,6 +222,118 @@ export class AddRobotToConversationResponse extends $tea.Model {
   }
 }
 
+export class AddUnfurlingRegisterHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddUnfurlingRegisterRequest extends $tea.Model {
+  apiSecret?: string;
+  appId?: string;
+  callbackUrl?: string;
+  cardTemplateId?: string;
+  domain?: string;
+  path?: string;
+  ruleDesc?: string;
+  ruleMatchType?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      apiSecret: 'apiSecret',
+      appId: 'appId',
+      callbackUrl: 'callbackUrl',
+      cardTemplateId: 'cardTemplateId',
+      domain: 'domain',
+      path: 'path',
+      ruleDesc: 'ruleDesc',
+      ruleMatchType: 'ruleMatchType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiSecret: 'string',
+      appId: 'string',
+      callbackUrl: 'string',
+      cardTemplateId: 'string',
+      domain: 'string',
+      path: 'string',
+      ruleDesc: 'string',
+      ruleMatchType: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddUnfurlingRegisterResponseBody extends $tea.Model {
+  id?: number;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      id: 'id',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      id: 'number',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddUnfurlingRegisterResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddUnfurlingRegisterResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddUnfurlingRegisterResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AutoOpenDingTalkConnectHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1504,6 +1616,103 @@ export class CreateStoreGroupConversationResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: CreateStoreGroupConversationResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DebugUnfurlingRegisterHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DebugUnfurlingRegisterRequest extends $tea.Model {
+  appId?: string;
+  grayGroupIdList?: string[];
+  grayUserIdList?: string[];
+  id?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      grayGroupIdList: 'grayGroupIdList',
+      grayUserIdList: 'grayUserIdList',
+      id: 'id',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'string',
+      grayGroupIdList: { 'type': 'array', 'itemType': 'string' },
+      grayUserIdList: { 'type': 'array', 'itemType': 'string' },
+      id: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DebugUnfurlingRegisterResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DebugUnfurlingRegisterResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DebugUnfurlingRegisterResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DebugUnfurlingRegisterResponseBody,
     };
   }
 
@@ -3416,6 +3625,97 @@ export class ListOrgTextEmotionResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: ListOrgTextEmotionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OfflineUnfurlingRegisterHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OfflineUnfurlingRegisterRequest extends $tea.Model {
+  appId?: string;
+  id?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      id: 'id',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'string',
+      id: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OfflineUnfurlingRegisterResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OfflineUnfurlingRegisterResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OfflineUnfurlingRegisterResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OfflineUnfurlingRegisterResponseBody,
     };
   }
 
@@ -5447,6 +5747,288 @@ export class QueryUnReadMessageResponse extends $tea.Model {
   }
 }
 
+export class QueryUnfurlingRegisterCreatorHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnfurlingRegisterCreatorRequest extends $tea.Model {
+  domain?: string;
+  path?: string;
+  static names(): { [key: string]: string } {
+    return {
+      domain: 'domain',
+      path: 'path',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      domain: 'string',
+      path: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnfurlingRegisterCreatorResponseBody extends $tea.Model {
+  data?: QueryUnfurlingRegisterCreatorResponseBodyData;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: QueryUnfurlingRegisterCreatorResponseBodyData,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnfurlingRegisterCreatorResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryUnfurlingRegisterCreatorResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryUnfurlingRegisterCreatorResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnfurlingRegisterInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnfurlingRegisterInfoRequest extends $tea.Model {
+  appId?: string;
+  maxResults?: number;
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'string',
+      maxResults: 'number',
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnfurlingRegisterInfoResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: QueryUnfurlingRegisterInfoResponseBodyList[];
+  nextToken?: number;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextToken: 'nextToken',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': QueryUnfurlingRegisterInfoResponseBodyList },
+      nextToken: 'number',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnfurlingRegisterInfoResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryUnfurlingRegisterInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryUnfurlingRegisterInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReleaseUnfurlingRegisterHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReleaseUnfurlingRegisterRequest extends $tea.Model {
+  appId?: string;
+  id?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      id: 'id',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'string',
+      id: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReleaseUnfurlingRegisterResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ReleaseUnfurlingRegisterResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ReleaseUnfurlingRegisterResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ReleaseUnfurlingRegisterResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RemoveRobotFromConversationHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7375,6 +7957,212 @@ export class UpdateTheGroupRolesOfGroupMemberResponse extends $tea.Model {
   }
 }
 
+export class UpdateUnfurlingRegisterHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUnfurlingRegisterRequest extends $tea.Model {
+  apiSecret?: string;
+  appId?: string;
+  callbackUrl?: string;
+  cardTemplateId?: string;
+  domain?: string;
+  id?: number;
+  path?: string;
+  ruleDesc?: string;
+  ruleMatchType?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      apiSecret: 'apiSecret',
+      appId: 'appId',
+      callbackUrl: 'callbackUrl',
+      cardTemplateId: 'cardTemplateId',
+      domain: 'domain',
+      id: 'id',
+      path: 'path',
+      ruleDesc: 'ruleDesc',
+      ruleMatchType: 'ruleMatchType',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiSecret: 'string',
+      appId: 'string',
+      callbackUrl: 'string',
+      cardTemplateId: 'string',
+      domain: 'string',
+      id: 'number',
+      path: 'string',
+      ruleDesc: 'string',
+      ruleMatchType: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUnfurlingRegisterResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUnfurlingRegisterResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateUnfurlingRegisterResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateUnfurlingRegisterResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUnfurlingRegisterStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUnfurlingRegisterStatusRequest extends $tea.Model {
+  appId?: string;
+  id?: number;
+  status?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      id: 'id',
+      status: 'status',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'string',
+      id: 'number',
+      status: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUnfurlingRegisterStatusResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateUnfurlingRegisterStatusResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateUnfurlingRegisterStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateUnfurlingRegisterStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddGroupMemberHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -8811,6 +9599,101 @@ export class QueryUnReadMessageResponseBodyUnReadItems extends $tea.Model {
   }
 }
 
+export class QueryUnfurlingRegisterCreatorResponseBodyData extends $tea.Model {
+  appId?: string;
+  creatorUserId?: string;
+  id?: number;
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      creatorUserId: 'creatorUserId',
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'string',
+      creatorUserId: 'string',
+      id: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUnfurlingRegisterInfoResponseBodyList extends $tea.Model {
+  apiSecret?: string;
+  appId?: string;
+  appName?: string;
+  callbackType?: number;
+  callbackUrl?: string;
+  cardTemplateId?: string;
+  creatorUserId?: string;
+  domain?: string;
+  grayGroupIdList?: string[];
+  grayUserIdList?: string[];
+  hsfMethodName?: string;
+  hsfServiceName?: string;
+  hsfVersion?: string;
+  id?: number;
+  path?: string;
+  ruleDesc?: string;
+  ruleMatchType?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      apiSecret: 'apiSecret',
+      appId: 'appId',
+      appName: 'appName',
+      callbackType: 'callbackType',
+      callbackUrl: 'callbackUrl',
+      cardTemplateId: 'cardTemplateId',
+      creatorUserId: 'creatorUserId',
+      domain: 'domain',
+      grayGroupIdList: 'grayGroupIdList',
+      grayUserIdList: 'grayUserIdList',
+      hsfMethodName: 'hsfMethodName',
+      hsfServiceName: 'hsfServiceName',
+      hsfVersion: 'hsfVersion',
+      id: 'id',
+      path: 'path',
+      ruleDesc: 'ruleDesc',
+      ruleMatchType: 'ruleMatchType',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiSecret: 'string',
+      appId: 'string',
+      appName: 'string',
+      callbackType: 'number',
+      callbackUrl: 'string',
+      cardTemplateId: 'string',
+      creatorUserId: 'string',
+      domain: 'string',
+      grayGroupIdList: { 'type': 'array', 'itemType': 'string' },
+      grayUserIdList: { 'type': 'array', 'itemType': 'string' },
+      hsfMethodName: 'string',
+      hsfServiceName: 'string',
+      hsfVersion: 'string',
+      id: 'number',
+      path: 'string',
+      ruleDesc: 'string',
+      ruleMatchType: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SearchInnerGroupsResponseBodyGroupInfos extends $tea.Model {
   icon?: string;
   memberAmount?: string;
@@ -9243,6 +10126,92 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddRobotToConversationHeaders({ });
     return await this.addRobotToConversationWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 新增链接增强注册规则
+   *
+   * @param request AddUnfurlingRegisterRequest
+   * @param headers AddUnfurlingRegisterHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return AddUnfurlingRegisterResponse
+   */
+  async addUnfurlingRegisterWithOptions(request: AddUnfurlingRegisterRequest, headers: AddUnfurlingRegisterHeaders, runtime: $Util.RuntimeOptions): Promise<AddUnfurlingRegisterResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.apiSecret)) {
+      body["apiSecret"] = request.apiSecret;
+    }
+
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.callbackUrl)) {
+      body["callbackUrl"] = request.callbackUrl;
+    }
+
+    if (!Util.isUnset(request.cardTemplateId)) {
+      body["cardTemplateId"] = request.cardTemplateId;
+    }
+
+    if (!Util.isUnset(request.domain)) {
+      body["domain"] = request.domain;
+    }
+
+    if (!Util.isUnset(request.path)) {
+      body["path"] = request.path;
+    }
+
+    if (!Util.isUnset(request.ruleDesc)) {
+      body["ruleDesc"] = request.ruleDesc;
+    }
+
+    if (!Util.isUnset(request.ruleMatchType)) {
+      body["ruleMatchType"] = request.ruleMatchType;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddUnfurlingRegister",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/unfurling/rules`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddUnfurlingRegisterResponse>(await this.execute(params, req, runtime), new AddUnfurlingRegisterResponse({}));
+  }
+
+  /**
+   * @summary 新增链接增强注册规则
+   *
+   * @param request AddUnfurlingRegisterRequest
+   * @return AddUnfurlingRegisterResponse
+   */
+  async addUnfurlingRegister(request: AddUnfurlingRegisterRequest): Promise<AddUnfurlingRegisterResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddUnfurlingRegisterHeaders({ });
+    return await this.addUnfurlingRegisterWithOptions(request, headers, runtime);
   }
 
   /**
@@ -10125,6 +11094,76 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateStoreGroupConversationHeaders({ });
     return await this.createStoreGroupConversationWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 链接增强规则调试
+   *
+   * @param request DebugUnfurlingRegisterRequest
+   * @param headers DebugUnfurlingRegisterHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return DebugUnfurlingRegisterResponse
+   */
+  async debugUnfurlingRegisterWithOptions(request: DebugUnfurlingRegisterRequest, headers: DebugUnfurlingRegisterHeaders, runtime: $Util.RuntimeOptions): Promise<DebugUnfurlingRegisterResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.grayGroupIdList)) {
+      body["grayGroupIdList"] = request.grayGroupIdList;
+    }
+
+    if (!Util.isUnset(request.grayUserIdList)) {
+      body["grayUserIdList"] = request.grayUserIdList;
+    }
+
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DebugUnfurlingRegister",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/unfurling/rules/debug`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DebugUnfurlingRegisterResponse>(await this.execute(params, req, runtime), new DebugUnfurlingRegisterResponse({}));
+  }
+
+  /**
+   * @summary 链接增强规则调试
+   *
+   * @param request DebugUnfurlingRegisterRequest
+   * @return DebugUnfurlingRegisterResponse
+   */
+  async debugUnfurlingRegister(request: DebugUnfurlingRegisterRequest): Promise<DebugUnfurlingRegisterResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DebugUnfurlingRegisterHeaders({ });
+    return await this.debugUnfurlingRegisterWithOptions(request, headers, runtime);
   }
 
   /**
@@ -11441,6 +12480,68 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 链接增强规则下线
+   *
+   * @param request OfflineUnfurlingRegisterRequest
+   * @param headers OfflineUnfurlingRegisterHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return OfflineUnfurlingRegisterResponse
+   */
+  async offlineUnfurlingRegisterWithOptions(request: OfflineUnfurlingRegisterRequest, headers: OfflineUnfurlingRegisterHeaders, runtime: $Util.RuntimeOptions): Promise<OfflineUnfurlingRegisterResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "OfflineUnfurlingRegister",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/unfurling/rules/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OfflineUnfurlingRegisterResponse>(await this.execute(params, req, runtime), new OfflineUnfurlingRegisterResponse({}));
+  }
+
+  /**
+   * @summary 链接增强规则下线
+   *
+   * @param request OfflineUnfurlingRegisterRequest
+   * @return OfflineUnfurlingRegisterResponse
+   */
+  async offlineUnfurlingRegister(request: OfflineUnfurlingRegisterRequest): Promise<OfflineUnfurlingRegisterResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OfflineUnfurlingRegisterHeaders({ });
+    return await this.offlineUnfurlingRegisterWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 开放场景群新增群角色
    *
    * @param request OpenGroupRoleAddRequest
@@ -12754,6 +13855,188 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryUnReadMessageHeaders({ });
     return await this.queryUnReadMessageWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 查询链接查询链接增强注册信息创建者
+   *
+   * @param request QueryUnfurlingRegisterCreatorRequest
+   * @param headers QueryUnfurlingRegisterCreatorHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryUnfurlingRegisterCreatorResponse
+   */
+  async queryUnfurlingRegisterCreatorWithOptions(request: QueryUnfurlingRegisterCreatorRequest, headers: QueryUnfurlingRegisterCreatorHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUnfurlingRegisterCreatorResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.domain)) {
+      query["domain"] = request.domain;
+    }
+
+    if (!Util.isUnset(request.path)) {
+      query["path"] = request.path;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryUnfurlingRegisterCreator",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/unfurling/rules/creators`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUnfurlingRegisterCreatorResponse>(await this.execute(params, req, runtime), new QueryUnfurlingRegisterCreatorResponse({}));
+  }
+
+  /**
+   * @summary 查询链接查询链接增强注册信息创建者
+   *
+   * @param request QueryUnfurlingRegisterCreatorRequest
+   * @return QueryUnfurlingRegisterCreatorResponse
+   */
+  async queryUnfurlingRegisterCreator(request: QueryUnfurlingRegisterCreatorRequest): Promise<QueryUnfurlingRegisterCreatorResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUnfurlingRegisterCreatorHeaders({ });
+    return await this.queryUnfurlingRegisterCreatorWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 查询链接增强注册信息列表
+   *
+   * @param request QueryUnfurlingRegisterInfoRequest
+   * @param headers QueryUnfurlingRegisterInfoHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryUnfurlingRegisterInfoResponse
+   */
+  async queryUnfurlingRegisterInfoWithOptions(request: QueryUnfurlingRegisterInfoRequest, headers: QueryUnfurlingRegisterInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUnfurlingRegisterInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appId)) {
+      query["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryUnfurlingRegisterInfo",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/unfurling/rules`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUnfurlingRegisterInfoResponse>(await this.execute(params, req, runtime), new QueryUnfurlingRegisterInfoResponse({}));
+  }
+
+  /**
+   * @summary 查询链接增强注册信息列表
+   *
+   * @param request QueryUnfurlingRegisterInfoRequest
+   * @return QueryUnfurlingRegisterInfoResponse
+   */
+  async queryUnfurlingRegisterInfo(request: QueryUnfurlingRegisterInfoRequest): Promise<QueryUnfurlingRegisterInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUnfurlingRegisterInfoHeaders({ });
+    return await this.queryUnfurlingRegisterInfoWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 链接增强规则发布
+   *
+   * @param request ReleaseUnfurlingRegisterRequest
+   * @param headers ReleaseUnfurlingRegisterHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return ReleaseUnfurlingRegisterResponse
+   */
+  async releaseUnfurlingRegisterWithOptions(request: ReleaseUnfurlingRegisterRequest, headers: ReleaseUnfurlingRegisterHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseUnfurlingRegisterResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ReleaseUnfurlingRegister",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/unfurling/rules/publish`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ReleaseUnfurlingRegisterResponse>(await this.execute(params, req, runtime), new ReleaseUnfurlingRegisterResponse({}));
+  }
+
+  /**
+   * @summary 链接增强规则发布
+   *
+   * @param request ReleaseUnfurlingRegisterRequest
+   * @return ReleaseUnfurlingRegisterResponse
+   */
+  async releaseUnfurlingRegister(request: ReleaseUnfurlingRegisterRequest): Promise<ReleaseUnfurlingRegisterResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ReleaseUnfurlingRegisterHeaders({ });
+    return await this.releaseUnfurlingRegisterWithOptions(request, headers, runtime);
   }
 
   /**
@@ -14218,6 +15501,162 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateTheGroupRolesOfGroupMemberHeaders({ });
     return await this.updateTheGroupRolesOfGroupMemberWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 编辑链接增强注册规则
+   *
+   * @param request UpdateUnfurlingRegisterRequest
+   * @param headers UpdateUnfurlingRegisterHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateUnfurlingRegisterResponse
+   */
+  async updateUnfurlingRegisterWithOptions(request: UpdateUnfurlingRegisterRequest, headers: UpdateUnfurlingRegisterHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUnfurlingRegisterResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.apiSecret)) {
+      body["apiSecret"] = request.apiSecret;
+    }
+
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.callbackUrl)) {
+      body["callbackUrl"] = request.callbackUrl;
+    }
+
+    if (!Util.isUnset(request.cardTemplateId)) {
+      body["cardTemplateId"] = request.cardTemplateId;
+    }
+
+    if (!Util.isUnset(request.domain)) {
+      body["domain"] = request.domain;
+    }
+
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
+    if (!Util.isUnset(request.path)) {
+      body["path"] = request.path;
+    }
+
+    if (!Util.isUnset(request.ruleDesc)) {
+      body["ruleDesc"] = request.ruleDesc;
+    }
+
+    if (!Util.isUnset(request.ruleMatchType)) {
+      body["ruleMatchType"] = request.ruleMatchType;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateUnfurlingRegister",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/unfurling/rules`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateUnfurlingRegisterResponse>(await this.execute(params, req, runtime), new UpdateUnfurlingRegisterResponse({}));
+  }
+
+  /**
+   * @summary 编辑链接增强注册规则
+   *
+   * @param request UpdateUnfurlingRegisterRequest
+   * @return UpdateUnfurlingRegisterResponse
+   */
+  async updateUnfurlingRegister(request: UpdateUnfurlingRegisterRequest): Promise<UpdateUnfurlingRegisterResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateUnfurlingRegisterHeaders({ });
+    return await this.updateUnfurlingRegisterWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 链接增强规则状态更新
+   *
+   * @param request UpdateUnfurlingRegisterStatusRequest
+   * @param headers UpdateUnfurlingRegisterStatusHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return UpdateUnfurlingRegisterStatusResponse
+   */
+  async updateUnfurlingRegisterStatusWithOptions(request: UpdateUnfurlingRegisterStatusRequest, headers: UpdateUnfurlingRegisterStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUnfurlingRegisterStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateUnfurlingRegisterStatus",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/unfurling/rules/statuses`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateUnfurlingRegisterStatusResponse>(await this.execute(params, req, runtime), new UpdateUnfurlingRegisterStatusResponse({}));
+  }
+
+  /**
+   * @summary 链接增强规则状态更新
+   *
+   * @param request UpdateUnfurlingRegisterStatusRequest
+   * @return UpdateUnfurlingRegisterStatusResponse
+   */
+  async updateUnfurlingRegisterStatus(request: UpdateUnfurlingRegisterStatusRequest): Promise<UpdateUnfurlingRegisterStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateUnfurlingRegisterStatusHeaders({ });
+    return await this.updateUnfurlingRegisterStatusWithOptions(request, headers, runtime);
   }
 
   /**

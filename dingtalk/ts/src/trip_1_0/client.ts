@@ -1763,6 +1763,7 @@ export class GetTravelProcessDetailResponseBodyResultTasks extends $tea.Model {
   activityId?: string;
   createTime?: string;
   finishTime?: string;
+  originUserId?: string;
   processInstanceId?: string;
   result?: string;
   status?: string;
@@ -1774,6 +1775,7 @@ export class GetTravelProcessDetailResponseBodyResultTasks extends $tea.Model {
       activityId: 'activityId',
       createTime: 'createTime',
       finishTime: 'finishTime',
+      originUserId: 'originUserId',
       processInstanceId: 'processInstanceId',
       result: 'result',
       status: 'status',
@@ -1788,6 +1790,7 @@ export class GetTravelProcessDetailResponseBodyResultTasks extends $tea.Model {
       activityId: 'string',
       createTime: 'string',
       finishTime: 'string',
+      originUserId: 'string',
       processInstanceId: 'string',
       result: 'string',
       status: 'string',

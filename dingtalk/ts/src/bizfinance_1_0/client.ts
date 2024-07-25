@@ -332,6 +332,100 @@ export class BatchCreateCustomerResponse extends $tea.Model {
   }
 }
 
+export class BeginConsumeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BeginConsumeRequest extends $tea.Model {
+  benefitCode?: string;
+  bizRequestId?: string;
+  quota?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      benefitCode: 'benefitCode',
+      bizRequestId: 'bizRequestId',
+      quota: 'quota',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCode: 'string',
+      bizRequestId: 'string',
+      quota: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BeginConsumeResponseBody extends $tea.Model {
+  result?: BeginConsumeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: BeginConsumeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class BeginConsumeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: BeginConsumeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: BeginConsumeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BindCompanyAccountantBookHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -412,6 +506,100 @@ export class BindCompanyAccountantBookResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: BindCompanyAccountantBookResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelConsumeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelConsumeRequest extends $tea.Model {
+  benefitCode?: string;
+  bizRequestId?: string;
+  quota?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      benefitCode: 'benefitCode',
+      bizRequestId: 'bizRequestId',
+      quota: 'quota',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCode: 'string',
+      bizRequestId: 'string',
+      quota: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelConsumeResponseBody extends $tea.Model {
+  result?: CancelConsumeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CancelConsumeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelConsumeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CancelConsumeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CancelConsumeResponseBody,
     };
   }
 
@@ -527,6 +715,100 @@ export class CheckVoucherStatusResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: CheckVoucherStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CommitConsumeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CommitConsumeRequest extends $tea.Model {
+  benefitCode?: string;
+  bizRequestId?: string;
+  quota?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      benefitCode: 'benefitCode',
+      bizRequestId: 'bizRequestId',
+      quota: 'quota',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCode: 'string',
+      bizRequestId: 'string',
+      quota: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CommitConsumeResponseBody extends $tea.Model {
+  result?: CommitConsumeResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CommitConsumeResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CommitConsumeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CommitConsumeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CommitConsumeResponseBody,
     };
   }
 
@@ -2324,6 +2606,91 @@ export class PushHistoricalReceiptsResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: PushHistoricalReceiptsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBenefitHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBenefitRequest extends $tea.Model {
+  benefitCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      benefitCode: 'benefitCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBenefitResponseBody extends $tea.Model {
+  result?: QueryBenefitResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryBenefitResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBenefitResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryBenefitResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryBenefitResponseBody,
     };
   }
 
@@ -6095,6 +6462,63 @@ export class BatchCreateCustomerResponseBodyErrorResult extends $tea.Model {
   }
 }
 
+export class BeginConsumeResponseBodyResult extends $tea.Model {
+  isSuccess?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccess: 'isSuccess',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccess: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CancelConsumeResponseBodyResult extends $tea.Model {
+  isSuccess?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccess: 'isSuccess',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccess: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CommitConsumeResponseBodyResult extends $tea.Model {
+  isSuccess?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      isSuccess: 'isSuccess',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSuccess: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateReceiptRequestReceipts extends $tea.Model {
   amount?: string;
   categoryCode?: string;
@@ -6706,6 +7130,28 @@ export class GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList extends $t
       advancedSettingName: 'string',
       endDate: 'number',
       value: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryBenefitResponseBodyResult extends $tea.Model {
+  remainQuota?: number;
+  totalQuota?: number;
+  static names(): { [key: string]: string } {
+    return {
+      remainQuota: 'remainQuota',
+      totalQuota: 'totalQuota',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      remainQuota: 'number',
+      totalQuota: 'number',
     };
   }
 
@@ -10792,6 +11238,72 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * @summary 预核销智能财务的权益
+   *
+   * @param request BeginConsumeRequest
+   * @param headers BeginConsumeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return BeginConsumeResponse
+   */
+  async beginConsumeWithOptions(request: BeginConsumeRequest, headers: BeginConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<BeginConsumeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitCode)) {
+      query["benefitCode"] = request.benefitCode;
+    }
+
+    if (!Util.isUnset(request.bizRequestId)) {
+      query["bizRequestId"] = request.bizRequestId;
+    }
+
+    if (!Util.isUnset(request.quota)) {
+      query["quota"] = request.quota;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "BeginConsume",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/consumedBenefits/prepare`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BeginConsumeResponse>(await this.execute(params, req, runtime), new BeginConsumeResponse({}));
+  }
+
+  /**
+   * @summary 预核销智能财务的权益
+   *
+   * @param request BeginConsumeRequest
+   * @return BeginConsumeResponse
+   */
+  async beginConsume(request: BeginConsumeRequest): Promise<BeginConsumeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BeginConsumeHeaders({ });
+    return await this.beginConsumeWithOptions(request, headers, runtime);
+  }
+
+  /**
    * @summary 绑定钉钉智能财务企业主体的账套信息
    *
    * @param request BindCompanyAccountantBookRequest
@@ -10847,6 +11359,72 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new BindCompanyAccountantBookHeaders({ });
     return await this.bindCompanyAccountantBookWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 取消核销智能财务的权益
+   *
+   * @param request CancelConsumeRequest
+   * @param headers CancelConsumeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CancelConsumeResponse
+   */
+  async cancelConsumeWithOptions(request: CancelConsumeRequest, headers: CancelConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<CancelConsumeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitCode)) {
+      query["benefitCode"] = request.benefitCode;
+    }
+
+    if (!Util.isUnset(request.bizRequestId)) {
+      query["bizRequestId"] = request.bizRequestId;
+    }
+
+    if (!Util.isUnset(request.quota)) {
+      query["quota"] = request.quota;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "CancelConsume",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/consumedBenefits/cancel`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CancelConsumeResponse>(await this.execute(params, req, runtime), new CancelConsumeResponse({}));
+  }
+
+  /**
+   * @summary 取消核销智能财务的权益
+   *
+   * @param request CancelConsumeRequest
+   * @return CancelConsumeResponse
+   */
+  async cancelConsume(request: CancelConsumeRequest): Promise<CancelConsumeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CancelConsumeHeaders({ });
+    return await this.cancelConsumeWithOptions(request, headers, runtime);
   }
 
   /**
@@ -10937,6 +11515,72 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CheckVoucherStatusHeaders({ });
     return await this.checkVoucherStatusWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 确认核销智能财务的权益
+   *
+   * @param request CommitConsumeRequest
+   * @param headers CommitConsumeHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return CommitConsumeResponse
+   */
+  async commitConsumeWithOptions(request: CommitConsumeRequest, headers: CommitConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<CommitConsumeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitCode)) {
+      query["benefitCode"] = request.benefitCode;
+    }
+
+    if (!Util.isUnset(request.bizRequestId)) {
+      query["bizRequestId"] = request.bizRequestId;
+    }
+
+    if (!Util.isUnset(request.quota)) {
+      query["quota"] = request.quota;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "CommitConsume",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/consumedBenefits/commit`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CommitConsumeResponse>(await this.execute(params, req, runtime), new CommitConsumeResponse({}));
+  }
+
+  /**
+   * @summary 确认核销智能财务的权益
+   *
+   * @param request CommitConsumeRequest
+   * @return CommitConsumeResponse
+   */
+  async commitConsume(request: CommitConsumeRequest): Promise<CommitConsumeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CommitConsumeHeaders({ });
+    return await this.commitConsumeWithOptions(request, headers, runtime);
   }
 
   /**
@@ -11992,6 +12636,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PushHistoricalReceiptsHeaders({ });
     return await this.pushHistoricalReceiptsWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * @summary 查询智能财务计量型权益
+   *
+   * @param request QueryBenefitRequest
+   * @param headers QueryBenefitHeaders
+   * @param runtime runtime options for this request RuntimeOptions
+   * @return QueryBenefitResponse
+   */
+  async queryBenefitWithOptions(request: QueryBenefitRequest, headers: QueryBenefitHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBenefitResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.benefitCode)) {
+      query["benefitCode"] = request.benefitCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryBenefit",
+      version: "bizfinance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/bizfinance/benefits`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryBenefitResponse>(await this.execute(params, req, runtime), new QueryBenefitResponse({}));
+  }
+
+  /**
+   * @summary 查询智能财务计量型权益
+   *
+   * @param request QueryBenefitRequest
+   * @return QueryBenefitResponse
+   */
+  async queryBenefit(request: QueryBenefitRequest): Promise<QueryBenefitResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryBenefitHeaders({ });
+    return await this.queryBenefitWithOptions(request, headers, runtime);
   }
 
   /**
