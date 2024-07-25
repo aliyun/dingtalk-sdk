@@ -177,6 +177,162 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
         }
 
         /**
+         * @summary 创建小记
+         *
+         * @param request CreateNoteForIsvRequest
+         * @param headers CreateNoteForIsvHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateNoteForIsvResponse
+         */
+        public CreateNoteForIsvResponse CreateNoteForIsvWithOptions(CreateNoteForIsvRequest request, CreateNoteForIsvHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactName))
+            {
+                body["contactName"] = request.ContactName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactPhoneNum))
+            {
+                body["contactPhoneNum"] = request.ContactPhoneNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactTitle))
+            {
+                body["contactTitle"] = request.ContactTitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InputPhoneNum))
+            {
+                body["inputPhoneNum"] = request.InputPhoneNum;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateNoteForIsv",
+                Version = "trade_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trade/notes",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateNoteForIsvResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建小记
+         *
+         * @param request CreateNoteForIsvRequest
+         * @param headers CreateNoteForIsvHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateNoteForIsvResponse
+         */
+        public async Task<CreateNoteForIsvResponse> CreateNoteForIsvWithOptionsAsync(CreateNoteForIsvRequest request, CreateNoteForIsvHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactName))
+            {
+                body["contactName"] = request.ContactName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactPhoneNum))
+            {
+                body["contactPhoneNum"] = request.ContactPhoneNum;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContactTitle))
+            {
+                body["contactTitle"] = request.ContactTitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InputPhoneNum))
+            {
+                body["inputPhoneNum"] = request.InputPhoneNum;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateNoteForIsv",
+                Version = "trade_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trade/notes",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateNoteForIsvResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建小记
+         *
+         * @param request CreateNoteForIsvRequest
+         * @return CreateNoteForIsvResponse
+         */
+        public CreateNoteForIsvResponse CreateNoteForIsv(CreateNoteForIsvRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateNoteForIsvHeaders headers = new CreateNoteForIsvHeaders();
+            return CreateNoteForIsvWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建小记
+         *
+         * @param request CreateNoteForIsvRequest
+         * @return CreateNoteForIsvResponse
+         */
+        public async Task<CreateNoteForIsvResponse> CreateNoteForIsvAsync(CreateNoteForIsvRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateNoteForIsvHeaders headers = new CreateNoteForIsvHeaders();
+            return await CreateNoteForIsvWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary isv创建商机
          *
          * @param request CreateOpportunityRequest

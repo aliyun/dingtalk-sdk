@@ -11803,6 +11803,346 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         }
 
         /**
+         * @summary 创建并启动任务
+         *
+         * @param request TaskInfoCreateAndStartTaskRequest
+         * @param headers TaskInfoCreateAndStartTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return TaskInfoCreateAndStartTaskResponse
+         */
+        public TaskInfoCreateAndStartTaskResponse TaskInfoCreateAndStartTaskWithOptions(TaskInfoCreateAndStartTaskRequest request, TaskInfoCreateAndStartTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attr))
+            {
+                body["attr"] = request.Attr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BacklogDTO))
+            {
+                body["backlogDTO"] = request.BacklogDTO;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BacklogGenerateFlag))
+            {
+                body["backlogGenerateFlag"] = request.BacklogGenerateFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessCode))
+            {
+                body["businessCode"] = request.BusinessCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CanceldelTaskCardId))
+            {
+                body["canceldelTaskCardId"] = request.CanceldelTaskCardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardDTO))
+            {
+                body["cardDTO"] = request.CardDTO;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomFlag))
+            {
+                body["customFlag"] = request.CustomFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailUrl))
+            {
+                body["detailUrl"] = request.DetailUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FinishTaskCardId))
+            {
+                body["finishTaskCardId"] = request.FinishTaskCardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorAccount))
+            {
+                body["operatorAccount"] = request.OperatorAccount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTaskId))
+            {
+                body["outTaskId"] = request.OutTaskId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProjId))
+            {
+                body["projId"] = request.ProjId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SecretKey))
+            {
+                body["secretKey"] = request.SecretKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendMsgFlag))
+            {
+                body["sendMsgFlag"] = request.SendMsgFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sort))
+            {
+                body["sort"] = request.Sort;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTaskCardId))
+            {
+                body["startTaskCardId"] = request.StartTaskCardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.State))
+            {
+                body["state"] = request.State;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskContent))
+            {
+                body["taskContent"] = request.TaskContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskEndTime))
+            {
+                body["taskEndTime"] = request.TaskEndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskExecutePersonDTOS))
+            {
+                body["taskExecutePersonDTOS"] = request.TaskExecutePersonDTOS;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskGroupDTOList))
+            {
+                body["taskGroupDTOList"] = request.TaskGroupDTOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskSystem))
+            {
+                body["taskSystem"] = request.TaskSystem;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskTemplCode))
+            {
+                body["taskTemplCode"] = request.TaskTemplCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskTitle))
+            {
+                body["taskTitle"] = request.TaskTitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskType))
+            {
+                body["taskType"] = request.TaskType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUrlMobile))
+            {
+                body["taskUrlMobile"] = request.TaskUrlMobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUrlPc))
+            {
+                body["taskUrlPc"] = request.TaskUrlPc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateTaskCardId))
+            {
+                body["updateTaskCardId"] = request.UpdateTaskCardId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TaskInfoCreateAndStartTask",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/taskCenters/taskInfos/createAndStart",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TaskInfoCreateAndStartTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建并启动任务
+         *
+         * @param request TaskInfoCreateAndStartTaskRequest
+         * @param headers TaskInfoCreateAndStartTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return TaskInfoCreateAndStartTaskResponse
+         */
+        public async Task<TaskInfoCreateAndStartTaskResponse> TaskInfoCreateAndStartTaskWithOptionsAsync(TaskInfoCreateAndStartTaskRequest request, TaskInfoCreateAndStartTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attr))
+            {
+                body["attr"] = request.Attr;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BacklogDTO))
+            {
+                body["backlogDTO"] = request.BacklogDTO;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BacklogGenerateFlag))
+            {
+                body["backlogGenerateFlag"] = request.BacklogGenerateFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessCode))
+            {
+                body["businessCode"] = request.BusinessCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CanceldelTaskCardId))
+            {
+                body["canceldelTaskCardId"] = request.CanceldelTaskCardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardDTO))
+            {
+                body["cardDTO"] = request.CardDTO;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomFlag))
+            {
+                body["customFlag"] = request.CustomFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailUrl))
+            {
+                body["detailUrl"] = request.DetailUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FinishTaskCardId))
+            {
+                body["finishTaskCardId"] = request.FinishTaskCardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorAccount))
+            {
+                body["operatorAccount"] = request.OperatorAccount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTaskId))
+            {
+                body["outTaskId"] = request.OutTaskId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProjId))
+            {
+                body["projId"] = request.ProjId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SecretKey))
+            {
+                body["secretKey"] = request.SecretKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendMsgFlag))
+            {
+                body["sendMsgFlag"] = request.SendMsgFlag;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sort))
+            {
+                body["sort"] = request.Sort;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTaskCardId))
+            {
+                body["startTaskCardId"] = request.StartTaskCardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.State))
+            {
+                body["state"] = request.State;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskContent))
+            {
+                body["taskContent"] = request.TaskContent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskEndTime))
+            {
+                body["taskEndTime"] = request.TaskEndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskExecutePersonDTOS))
+            {
+                body["taskExecutePersonDTOS"] = request.TaskExecutePersonDTOS;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskGroupDTOList))
+            {
+                body["taskGroupDTOList"] = request.TaskGroupDTOList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskSystem))
+            {
+                body["taskSystem"] = request.TaskSystem;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskTemplCode))
+            {
+                body["taskTemplCode"] = request.TaskTemplCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskTitle))
+            {
+                body["taskTitle"] = request.TaskTitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskType))
+            {
+                body["taskType"] = request.TaskType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUrlMobile))
+            {
+                body["taskUrlMobile"] = request.TaskUrlMobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUrlPc))
+            {
+                body["taskUrlPc"] = request.TaskUrlPc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UpdateTaskCardId))
+            {
+                body["updateTaskCardId"] = request.UpdateTaskCardId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TaskInfoCreateAndStartTask",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/taskCenters/taskInfos/createAndStart",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TaskInfoCreateAndStartTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建并启动任务
+         *
+         * @param request TaskInfoCreateAndStartTaskRequest
+         * @return TaskInfoCreateAndStartTaskResponse
+         */
+        public TaskInfoCreateAndStartTaskResponse TaskInfoCreateAndStartTask(TaskInfoCreateAndStartTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TaskInfoCreateAndStartTaskHeaders headers = new TaskInfoCreateAndStartTaskHeaders();
+            return TaskInfoCreateAndStartTaskWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建并启动任务
+         *
+         * @param request TaskInfoCreateAndStartTaskRequest
+         * @return TaskInfoCreateAndStartTaskResponse
+         */
+        public async Task<TaskInfoCreateAndStartTaskResponse> TaskInfoCreateAndStartTaskAsync(TaskInfoCreateAndStartTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TaskInfoCreateAndStartTaskHeaders headers = new TaskInfoCreateAndStartTaskHeaders();
+            return await TaskInfoCreateAndStartTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 更改分组名称
          *
          * @param request UpdateCategoryNameRequest

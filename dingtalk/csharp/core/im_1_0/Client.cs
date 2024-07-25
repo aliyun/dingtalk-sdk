@@ -309,6 +309,186 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         }
 
         /**
+         * @summary 新增链接增强注册规则
+         *
+         * @param request AddUnfurlingRegisterRequest
+         * @param headers AddUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddUnfurlingRegisterResponse
+         */
+        public AddUnfurlingRegisterResponse AddUnfurlingRegisterWithOptions(AddUnfurlingRegisterRequest request, AddUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApiSecret))
+            {
+                body["apiSecret"] = request.ApiSecret;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackUrl))
+            {
+                body["callbackUrl"] = request.CallbackUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTemplateId))
+            {
+                body["cardTemplateId"] = request.CardTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Domain))
+            {
+                body["domain"] = request.Domain;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Path))
+            {
+                body["path"] = request.Path;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleDesc))
+            {
+                body["ruleDesc"] = request.RuleDesc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleMatchType))
+            {
+                body["ruleMatchType"] = request.RuleMatchType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddUnfurlingRegisterResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 新增链接增强注册规则
+         *
+         * @param request AddUnfurlingRegisterRequest
+         * @param headers AddUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddUnfurlingRegisterResponse
+         */
+        public async Task<AddUnfurlingRegisterResponse> AddUnfurlingRegisterWithOptionsAsync(AddUnfurlingRegisterRequest request, AddUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApiSecret))
+            {
+                body["apiSecret"] = request.ApiSecret;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackUrl))
+            {
+                body["callbackUrl"] = request.CallbackUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTemplateId))
+            {
+                body["cardTemplateId"] = request.CardTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Domain))
+            {
+                body["domain"] = request.Domain;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Path))
+            {
+                body["path"] = request.Path;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleDesc))
+            {
+                body["ruleDesc"] = request.RuleDesc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleMatchType))
+            {
+                body["ruleMatchType"] = request.RuleMatchType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddUnfurlingRegisterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 新增链接增强注册规则
+         *
+         * @param request AddUnfurlingRegisterRequest
+         * @return AddUnfurlingRegisterResponse
+         */
+        public AddUnfurlingRegisterResponse AddUnfurlingRegister(AddUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddUnfurlingRegisterHeaders headers = new AddUnfurlingRegisterHeaders();
+            return AddUnfurlingRegisterWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 新增链接增强注册规则
+         *
+         * @param request AddUnfurlingRegisterRequest
+         * @return AddUnfurlingRegisterResponse
+         */
+        public async Task<AddUnfurlingRegisterResponse> AddUnfurlingRegisterAsync(AddUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddUnfurlingRegisterHeaders headers = new AddUnfurlingRegisterHeaders();
+            return await AddUnfurlingRegisterWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 自动开通钉钉客联微应用
          *
          * @param headers AutoOpenDingTalkConnectHeaders
@@ -2182,6 +2362,154 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateStoreGroupConversationHeaders headers = new CreateStoreGroupConversationHeaders();
             return await CreateStoreGroupConversationWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 链接增强规则调试
+         *
+         * @param request DebugUnfurlingRegisterRequest
+         * @param headers DebugUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DebugUnfurlingRegisterResponse
+         */
+        public DebugUnfurlingRegisterResponse DebugUnfurlingRegisterWithOptions(DebugUnfurlingRegisterRequest request, DebugUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GrayGroupIdList))
+            {
+                body["grayGroupIdList"] = request.GrayGroupIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GrayUserIdList))
+            {
+                body["grayUserIdList"] = request.GrayUserIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DebugUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/debug",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DebugUnfurlingRegisterResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 链接增强规则调试
+         *
+         * @param request DebugUnfurlingRegisterRequest
+         * @param headers DebugUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DebugUnfurlingRegisterResponse
+         */
+        public async Task<DebugUnfurlingRegisterResponse> DebugUnfurlingRegisterWithOptionsAsync(DebugUnfurlingRegisterRequest request, DebugUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GrayGroupIdList))
+            {
+                body["grayGroupIdList"] = request.GrayGroupIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GrayUserIdList))
+            {
+                body["grayUserIdList"] = request.GrayUserIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DebugUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/debug",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DebugUnfurlingRegisterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 链接增强规则调试
+         *
+         * @param request DebugUnfurlingRegisterRequest
+         * @return DebugUnfurlingRegisterResponse
+         */
+        public DebugUnfurlingRegisterResponse DebugUnfurlingRegister(DebugUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DebugUnfurlingRegisterHeaders headers = new DebugUnfurlingRegisterHeaders();
+            return DebugUnfurlingRegisterWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 链接增强规则调试
+         *
+         * @param request DebugUnfurlingRegisterRequest
+         * @return DebugUnfurlingRegisterResponse
+         */
+        public async Task<DebugUnfurlingRegisterResponse> DebugUnfurlingRegisterAsync(DebugUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DebugUnfurlingRegisterHeaders headers = new DebugUnfurlingRegisterHeaders();
+            return await DebugUnfurlingRegisterWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -4960,6 +5288,138 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListOrgTextEmotionHeaders headers = new ListOrgTextEmotionHeaders();
             return await ListOrgTextEmotionWithOptionsAsync(headers, runtime);
+        }
+
+        /**
+         * @summary 链接增强规则下线
+         *
+         * @param request OfflineUnfurlingRegisterRequest
+         * @param headers OfflineUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OfflineUnfurlingRegisterResponse
+         */
+        public OfflineUnfurlingRegisterResponse OfflineUnfurlingRegisterWithOptions(OfflineUnfurlingRegisterRequest request, OfflineUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OfflineUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OfflineUnfurlingRegisterResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 链接增强规则下线
+         *
+         * @param request OfflineUnfurlingRegisterRequest
+         * @param headers OfflineUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OfflineUnfurlingRegisterResponse
+         */
+        public async Task<OfflineUnfurlingRegisterResponse> OfflineUnfurlingRegisterWithOptionsAsync(OfflineUnfurlingRegisterRequest request, OfflineUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OfflineUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OfflineUnfurlingRegisterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 链接增强规则下线
+         *
+         * @param request OfflineUnfurlingRegisterRequest
+         * @return OfflineUnfurlingRegisterResponse
+         */
+        public OfflineUnfurlingRegisterResponse OfflineUnfurlingRegister(OfflineUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OfflineUnfurlingRegisterHeaders headers = new OfflineUnfurlingRegisterHeaders();
+            return OfflineUnfurlingRegisterWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 链接增强规则下线
+         *
+         * @param request OfflineUnfurlingRegisterRequest
+         * @return OfflineUnfurlingRegisterResponse
+         */
+        public async Task<OfflineUnfurlingRegisterResponse> OfflineUnfurlingRegisterAsync(OfflineUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OfflineUnfurlingRegisterHeaders headers = new OfflineUnfurlingRegisterHeaders();
+            return await OfflineUnfurlingRegisterWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -7768,6 +8228,394 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryUnReadMessageHeaders headers = new QueryUnReadMessageHeaders();
             return await QueryUnReadMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询链接查询链接增强注册信息创建者
+         *
+         * @param request QueryUnfurlingRegisterCreatorRequest
+         * @param headers QueryUnfurlingRegisterCreatorHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUnfurlingRegisterCreatorResponse
+         */
+        public QueryUnfurlingRegisterCreatorResponse QueryUnfurlingRegisterCreatorWithOptions(QueryUnfurlingRegisterCreatorRequest request, QueryUnfurlingRegisterCreatorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Domain))
+            {
+                query["domain"] = request.Domain;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Path))
+            {
+                query["path"] = request.Path;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUnfurlingRegisterCreator",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/creators",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUnfurlingRegisterCreatorResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询链接查询链接增强注册信息创建者
+         *
+         * @param request QueryUnfurlingRegisterCreatorRequest
+         * @param headers QueryUnfurlingRegisterCreatorHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUnfurlingRegisterCreatorResponse
+         */
+        public async Task<QueryUnfurlingRegisterCreatorResponse> QueryUnfurlingRegisterCreatorWithOptionsAsync(QueryUnfurlingRegisterCreatorRequest request, QueryUnfurlingRegisterCreatorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Domain))
+            {
+                query["domain"] = request.Domain;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Path))
+            {
+                query["path"] = request.Path;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUnfurlingRegisterCreator",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/creators",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUnfurlingRegisterCreatorResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询链接查询链接增强注册信息创建者
+         *
+         * @param request QueryUnfurlingRegisterCreatorRequest
+         * @return QueryUnfurlingRegisterCreatorResponse
+         */
+        public QueryUnfurlingRegisterCreatorResponse QueryUnfurlingRegisterCreator(QueryUnfurlingRegisterCreatorRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUnfurlingRegisterCreatorHeaders headers = new QueryUnfurlingRegisterCreatorHeaders();
+            return QueryUnfurlingRegisterCreatorWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询链接查询链接增强注册信息创建者
+         *
+         * @param request QueryUnfurlingRegisterCreatorRequest
+         * @return QueryUnfurlingRegisterCreatorResponse
+         */
+        public async Task<QueryUnfurlingRegisterCreatorResponse> QueryUnfurlingRegisterCreatorAsync(QueryUnfurlingRegisterCreatorRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUnfurlingRegisterCreatorHeaders headers = new QueryUnfurlingRegisterCreatorHeaders();
+            return await QueryUnfurlingRegisterCreatorWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询链接增强注册信息列表
+         *
+         * @param request QueryUnfurlingRegisterInfoRequest
+         * @param headers QueryUnfurlingRegisterInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUnfurlingRegisterInfoResponse
+         */
+        public QueryUnfurlingRegisterInfoResponse QueryUnfurlingRegisterInfoWithOptions(QueryUnfurlingRegisterInfoRequest request, QueryUnfurlingRegisterInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                query["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUnfurlingRegisterInfo",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUnfurlingRegisterInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询链接增强注册信息列表
+         *
+         * @param request QueryUnfurlingRegisterInfoRequest
+         * @param headers QueryUnfurlingRegisterInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryUnfurlingRegisterInfoResponse
+         */
+        public async Task<QueryUnfurlingRegisterInfoResponse> QueryUnfurlingRegisterInfoWithOptionsAsync(QueryUnfurlingRegisterInfoRequest request, QueryUnfurlingRegisterInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                query["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUnfurlingRegisterInfo",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUnfurlingRegisterInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询链接增强注册信息列表
+         *
+         * @param request QueryUnfurlingRegisterInfoRequest
+         * @return QueryUnfurlingRegisterInfoResponse
+         */
+        public QueryUnfurlingRegisterInfoResponse QueryUnfurlingRegisterInfo(QueryUnfurlingRegisterInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUnfurlingRegisterInfoHeaders headers = new QueryUnfurlingRegisterInfoHeaders();
+            return QueryUnfurlingRegisterInfoWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询链接增强注册信息列表
+         *
+         * @param request QueryUnfurlingRegisterInfoRequest
+         * @return QueryUnfurlingRegisterInfoResponse
+         */
+        public async Task<QueryUnfurlingRegisterInfoResponse> QueryUnfurlingRegisterInfoAsync(QueryUnfurlingRegisterInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUnfurlingRegisterInfoHeaders headers = new QueryUnfurlingRegisterInfoHeaders();
+            return await QueryUnfurlingRegisterInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 链接增强规则发布
+         *
+         * @param request ReleaseUnfurlingRegisterRequest
+         * @param headers ReleaseUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ReleaseUnfurlingRegisterResponse
+         */
+        public ReleaseUnfurlingRegisterResponse ReleaseUnfurlingRegisterWithOptions(ReleaseUnfurlingRegisterRequest request, ReleaseUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ReleaseUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/publish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ReleaseUnfurlingRegisterResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 链接增强规则发布
+         *
+         * @param request ReleaseUnfurlingRegisterRequest
+         * @param headers ReleaseUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ReleaseUnfurlingRegisterResponse
+         */
+        public async Task<ReleaseUnfurlingRegisterResponse> ReleaseUnfurlingRegisterWithOptionsAsync(ReleaseUnfurlingRegisterRequest request, ReleaseUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ReleaseUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/publish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ReleaseUnfurlingRegisterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 链接增强规则发布
+         *
+         * @param request ReleaseUnfurlingRegisterRequest
+         * @return ReleaseUnfurlingRegisterResponse
+         */
+        public ReleaseUnfurlingRegisterResponse ReleaseUnfurlingRegister(ReleaseUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ReleaseUnfurlingRegisterHeaders headers = new ReleaseUnfurlingRegisterHeaders();
+            return ReleaseUnfurlingRegisterWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 链接增强规则发布
+         *
+         * @param request ReleaseUnfurlingRegisterRequest
+         * @return ReleaseUnfurlingRegisterResponse
+         */
+        public async Task<ReleaseUnfurlingRegisterResponse> ReleaseUnfurlingRegisterAsync(ReleaseUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ReleaseUnfurlingRegisterHeaders headers = new ReleaseUnfurlingRegisterHeaders();
+            return await ReleaseUnfurlingRegisterWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -10856,6 +11704,334 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateTheGroupRolesOfGroupMemberHeaders headers = new UpdateTheGroupRolesOfGroupMemberHeaders();
             return await UpdateTheGroupRolesOfGroupMemberWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 编辑链接增强注册规则
+         *
+         * @param request UpdateUnfurlingRegisterRequest
+         * @param headers UpdateUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateUnfurlingRegisterResponse
+         */
+        public UpdateUnfurlingRegisterResponse UpdateUnfurlingRegisterWithOptions(UpdateUnfurlingRegisterRequest request, UpdateUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApiSecret))
+            {
+                body["apiSecret"] = request.ApiSecret;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackUrl))
+            {
+                body["callbackUrl"] = request.CallbackUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTemplateId))
+            {
+                body["cardTemplateId"] = request.CardTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Domain))
+            {
+                body["domain"] = request.Domain;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Path))
+            {
+                body["path"] = request.Path;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleDesc))
+            {
+                body["ruleDesc"] = request.RuleDesc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleMatchType))
+            {
+                body["ruleMatchType"] = request.RuleMatchType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateUnfurlingRegisterResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 编辑链接增强注册规则
+         *
+         * @param request UpdateUnfurlingRegisterRequest
+         * @param headers UpdateUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateUnfurlingRegisterResponse
+         */
+        public async Task<UpdateUnfurlingRegisterResponse> UpdateUnfurlingRegisterWithOptionsAsync(UpdateUnfurlingRegisterRequest request, UpdateUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ApiSecret))
+            {
+                body["apiSecret"] = request.ApiSecret;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallbackUrl))
+            {
+                body["callbackUrl"] = request.CallbackUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTemplateId))
+            {
+                body["cardTemplateId"] = request.CardTemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Domain))
+            {
+                body["domain"] = request.Domain;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Path))
+            {
+                body["path"] = request.Path;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleDesc))
+            {
+                body["ruleDesc"] = request.RuleDesc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleMatchType))
+            {
+                body["ruleMatchType"] = request.RuleMatchType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateUnfurlingRegisterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 编辑链接增强注册规则
+         *
+         * @param request UpdateUnfurlingRegisterRequest
+         * @return UpdateUnfurlingRegisterResponse
+         */
+        public UpdateUnfurlingRegisterResponse UpdateUnfurlingRegister(UpdateUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateUnfurlingRegisterHeaders headers = new UpdateUnfurlingRegisterHeaders();
+            return UpdateUnfurlingRegisterWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 编辑链接增强注册规则
+         *
+         * @param request UpdateUnfurlingRegisterRequest
+         * @return UpdateUnfurlingRegisterResponse
+         */
+        public async Task<UpdateUnfurlingRegisterResponse> UpdateUnfurlingRegisterAsync(UpdateUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateUnfurlingRegisterHeaders headers = new UpdateUnfurlingRegisterHeaders();
+            return await UpdateUnfurlingRegisterWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 链接增强规则状态更新
+         *
+         * @param request UpdateUnfurlingRegisterStatusRequest
+         * @param headers UpdateUnfurlingRegisterStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateUnfurlingRegisterStatusResponse
+         */
+        public UpdateUnfurlingRegisterStatusResponse UpdateUnfurlingRegisterStatusWithOptions(UpdateUnfurlingRegisterStatusRequest request, UpdateUnfurlingRegisterStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateUnfurlingRegisterStatus",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/statuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateUnfurlingRegisterStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 链接增强规则状态更新
+         *
+         * @param request UpdateUnfurlingRegisterStatusRequest
+         * @param headers UpdateUnfurlingRegisterStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateUnfurlingRegisterStatusResponse
+         */
+        public async Task<UpdateUnfurlingRegisterStatusResponse> UpdateUnfurlingRegisterStatusWithOptionsAsync(UpdateUnfurlingRegisterStatusRequest request, UpdateUnfurlingRegisterStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateUnfurlingRegisterStatus",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/statuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateUnfurlingRegisterStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 链接增强规则状态更新
+         *
+         * @param request UpdateUnfurlingRegisterStatusRequest
+         * @return UpdateUnfurlingRegisterStatusResponse
+         */
+        public UpdateUnfurlingRegisterStatusResponse UpdateUnfurlingRegisterStatus(UpdateUnfurlingRegisterStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateUnfurlingRegisterStatusHeaders headers = new UpdateUnfurlingRegisterStatusHeaders();
+            return UpdateUnfurlingRegisterStatusWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 链接增强规则状态更新
+         *
+         * @param request UpdateUnfurlingRegisterStatusRequest
+         * @return UpdateUnfurlingRegisterStatusResponse
+         */
+        public async Task<UpdateUnfurlingRegisterStatusResponse> UpdateUnfurlingRegisterStatusAsync(UpdateUnfurlingRegisterStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateUnfurlingRegisterStatusHeaders headers = new UpdateUnfurlingRegisterStatusHeaders();
+            return await UpdateUnfurlingRegisterStatusWithOptionsAsync(request, headers, runtime);
         }
 
         /**

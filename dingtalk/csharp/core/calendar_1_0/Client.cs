@@ -2051,6 +2051,146 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
         }
 
         /**
+         * @summary 查询闲忙(me接口）
+         *
+         * @param request GetScheduleByMeRequest
+         * @param headers GetScheduleByMeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetScheduleByMeResponse
+         */
+        public GetScheduleByMeResponse GetScheduleByMeWithOptions(GetScheduleByMeRequest request, GetScheduleByMeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetScheduleByMe",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/me/schedules/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetScheduleByMeResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询闲忙(me接口）
+         *
+         * @param request GetScheduleByMeRequest
+         * @param headers GetScheduleByMeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetScheduleByMeResponse
+         */
+        public async Task<GetScheduleByMeResponse> GetScheduleByMeWithOptionsAsync(GetScheduleByMeRequest request, GetScheduleByMeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetScheduleByMe",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/me/schedules/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetScheduleByMeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询闲忙(me接口）
+         *
+         * @param request GetScheduleByMeRequest
+         * @return GetScheduleByMeResponse
+         */
+        public GetScheduleByMeResponse GetScheduleByMe(GetScheduleByMeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetScheduleByMeHeaders headers = new GetScheduleByMeHeaders();
+            return GetScheduleByMeWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询闲忙(me接口）
+         *
+         * @param request GetScheduleByMeRequest
+         * @return GetScheduleByMeResponse
+         */
+        public async Task<GetScheduleByMeResponse> GetScheduleByMeAsync(GetScheduleByMeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetScheduleByMeHeaders headers = new GetScheduleByMeHeaders();
+            return await GetScheduleByMeWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取签到链接
          *
          * @param headers GetSignInLinkHeaders
@@ -3386,6 +3526,162 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListEventsViewHeaders headers = new ListEventsViewHeaders();
             return await ListEventsViewWithOptionsAsync(userId, calendarId, request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+         *
+         * @param request ListEventsViewByMeRequest
+         * @param headers ListEventsViewByMeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListEventsViewByMeResponse
+         */
+        public ListEventsViewByMeResponse ListEventsViewByMeWithOptions(string calendarId, ListEventsViewByMeRequest request, ListEventsViewByMeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxAttendees))
+            {
+                query["maxAttendees"] = request.MaxAttendees;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMax))
+            {
+                query["timeMax"] = request.TimeMax;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
+            {
+                query["timeMin"] = request.TimeMin;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListEventsViewByMe",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/me/calendars/" + calendarId + "/eventsview",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListEventsViewByMeResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+         *
+         * @param request ListEventsViewByMeRequest
+         * @param headers ListEventsViewByMeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListEventsViewByMeResponse
+         */
+        public async Task<ListEventsViewByMeResponse> ListEventsViewByMeWithOptionsAsync(string calendarId, ListEventsViewByMeRequest request, ListEventsViewByMeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxAttendees))
+            {
+                query["maxAttendees"] = request.MaxAttendees;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMax))
+            {
+                query["timeMax"] = request.TimeMax;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeMin))
+            {
+                query["timeMin"] = request.TimeMin;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListEventsViewByMe",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/me/calendars/" + calendarId + "/eventsview",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListEventsViewByMeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+         *
+         * @param request ListEventsViewByMeRequest
+         * @return ListEventsViewByMeResponse
+         */
+        public ListEventsViewByMeResponse ListEventsViewByMe(string calendarId, ListEventsViewByMeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListEventsViewByMeHeaders headers = new ListEventsViewByMeHeaders();
+            return ListEventsViewByMeWithOptions(calendarId, request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+         *
+         * @param request ListEventsViewByMeRequest
+         * @return ListEventsViewByMeResponse
+         */
+        public async Task<ListEventsViewByMeResponse> ListEventsViewByMeAsync(string calendarId, ListEventsViewByMeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListEventsViewByMeHeaders headers = new ListEventsViewByMeHeaders();
+            return await ListEventsViewByMeWithOptionsAsync(calendarId, request, headers, runtime);
         }
 
         /**
