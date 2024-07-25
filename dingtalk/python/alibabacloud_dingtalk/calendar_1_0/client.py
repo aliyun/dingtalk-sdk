@@ -2,7 +2,6 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
-from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
@@ -16,15 +15,13 @@ class Client(OpenApiClient):
     """
     *\
     """
-    _client: SPIClient = None
-
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
-        self._client = GatewayClientClient()
-        self._spi = self._client
+        gateway_client = GatewayClientClient()
+        self._spi = gateway_client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -1973,6 +1970,132 @@ class Client(OpenApiClient):
         headers = dingtalkcalendar__1__0_models.GetScheduleHeaders()
         return await self.get_schedule_with_options_async(user_id, request, headers, runtime)
 
+    def get_schedule_by_me_with_options(
+        self,
+        request: dingtalkcalendar__1__0_models.GetScheduleByMeRequest,
+        headers: dingtalkcalendar__1__0_models.GetScheduleByMeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetScheduleByMeResponse:
+        """
+        @summary 查询闲忙(me接口）
+        
+        @param request: GetScheduleByMeRequest
+        @param headers: GetScheduleByMeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetScheduleByMeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetScheduleByMe',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/me/schedules/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.GetScheduleByMeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_schedule_by_me_with_options_async(
+        self,
+        request: dingtalkcalendar__1__0_models.GetScheduleByMeRequest,
+        headers: dingtalkcalendar__1__0_models.GetScheduleByMeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.GetScheduleByMeResponse:
+        """
+        @summary 查询闲忙(me接口）
+        
+        @param request: GetScheduleByMeRequest
+        @param headers: GetScheduleByMeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetScheduleByMeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetScheduleByMe',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/me/schedules/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.GetScheduleByMeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_schedule_by_me(
+        self,
+        request: dingtalkcalendar__1__0_models.GetScheduleByMeRequest,
+    ) -> dingtalkcalendar__1__0_models.GetScheduleByMeResponse:
+        """
+        @summary 查询闲忙(me接口）
+        
+        @param request: GetScheduleByMeRequest
+        @return: GetScheduleByMeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetScheduleByMeHeaders()
+        return self.get_schedule_by_me_with_options(request, headers, runtime)
+
+    async def get_schedule_by_me_async(
+        self,
+        request: dingtalkcalendar__1__0_models.GetScheduleByMeRequest,
+    ) -> dingtalkcalendar__1__0_models.GetScheduleByMeResponse:
+        """
+        @summary 查询闲忙(me接口）
+        
+        @param request: GetScheduleByMeRequest
+        @return: GetScheduleByMeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.GetScheduleByMeHeaders()
+        return await self.get_schedule_by_me_with_options_async(request, headers, runtime)
+
     def get_sign_in_link_with_options(
         self,
         calendar_id: str,
@@ -3316,6 +3439,144 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.ListEventsViewHeaders()
         return await self.list_events_view_with_options_async(user_id, calendar_id, request, headers, runtime)
+
+    def list_events_view_by_me_with_options(
+        self,
+        calendar_id: str,
+        request: dingtalkcalendar__1__0_models.ListEventsViewByMeRequest,
+        headers: dingtalkcalendar__1__0_models.ListEventsViewByMeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ListEventsViewByMeResponse:
+        """
+        @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+        
+        @param request: ListEventsViewByMeRequest
+        @param headers: ListEventsViewByMeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListEventsViewByMeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_attendees):
+            query['maxAttendees'] = request.max_attendees
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.time_max):
+            query['timeMax'] = request.time_max
+        if not UtilClient.is_unset(request.time_min):
+            query['timeMin'] = request.time_min
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListEventsViewByMe',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/me/calendars/{calendar_id}/eventsview',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ListEventsViewByMeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_events_view_by_me_with_options_async(
+        self,
+        calendar_id: str,
+        request: dingtalkcalendar__1__0_models.ListEventsViewByMeRequest,
+        headers: dingtalkcalendar__1__0_models.ListEventsViewByMeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ListEventsViewByMeResponse:
+        """
+        @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+        
+        @param request: ListEventsViewByMeRequest
+        @param headers: ListEventsViewByMeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListEventsViewByMeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_attendees):
+            query['maxAttendees'] = request.max_attendees
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.time_max):
+            query['timeMax'] = request.time_max
+        if not UtilClient.is_unset(request.time_min):
+            query['timeMin'] = request.time_min
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_client_token):
+            real_headers['x-client-token'] = UtilClient.to_jsonstring(headers.x_client_token)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListEventsViewByMe',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/me/calendars/{calendar_id}/eventsview',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ListEventsViewByMeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_events_view_by_me(
+        self,
+        calendar_id: str,
+        request: dingtalkcalendar__1__0_models.ListEventsViewByMeRequest,
+    ) -> dingtalkcalendar__1__0_models.ListEventsViewByMeResponse:
+        """
+        @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+        
+        @param request: ListEventsViewByMeRequest
+        @return: ListEventsViewByMeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ListEventsViewByMeHeaders()
+        return self.list_events_view_by_me_with_options(calendar_id, request, headers, runtime)
+
+    async def list_events_view_by_me_async(
+        self,
+        calendar_id: str,
+        request: dingtalkcalendar__1__0_models.ListEventsViewByMeRequest,
+    ) -> dingtalkcalendar__1__0_models.ListEventsViewByMeResponse:
+        """
+        @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+        
+        @param request: ListEventsViewByMeRequest
+        @return: ListEventsViewByMeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ListEventsViewByMeHeaders()
+        return await self.list_events_view_by_me_with_options_async(calendar_id, request, headers, runtime)
 
     def list_instances_with_options(
         self,

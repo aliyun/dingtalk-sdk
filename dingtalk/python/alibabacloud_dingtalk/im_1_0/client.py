@@ -2,7 +2,6 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
-from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
@@ -16,15 +15,13 @@ class Client(OpenApiClient):
     """
     *\
     """
-    _client: SPIClient = None
-
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
-        self._client = GatewayClientClient()
-        self._spi = self._client
+        gateway_client = GatewayClientClient()
+        self._spi = gateway_client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -280,6 +277,152 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.AddRobotToConversationHeaders()
         return await self.add_robot_to_conversation_with_options_async(request, headers, runtime)
+
+    def add_unfurling_register_with_options(
+        self,
+        request: dingtalkim__1__0_models.AddUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.AddUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AddUnfurlingRegisterResponse:
+        """
+        @summary 新增链接增强注册规则
+        
+        @param request: AddUnfurlingRegisterRequest
+        @param headers: AddUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_secret):
+            body['apiSecret'] = request.api_secret
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.callback_url):
+            body['callbackUrl'] = request.callback_url
+        if not UtilClient.is_unset(request.card_template_id):
+            body['cardTemplateId'] = request.card_template_id
+        if not UtilClient.is_unset(request.domain):
+            body['domain'] = request.domain
+        if not UtilClient.is_unset(request.path):
+            body['path'] = request.path
+        if not UtilClient.is_unset(request.rule_desc):
+            body['ruleDesc'] = request.rule_desc
+        if not UtilClient.is_unset(request.rule_match_type):
+            body['ruleMatchType'] = request.rule_match_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AddUnfurlingRegisterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_unfurling_register_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.AddUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.AddUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AddUnfurlingRegisterResponse:
+        """
+        @summary 新增链接增强注册规则
+        
+        @param request: AddUnfurlingRegisterRequest
+        @param headers: AddUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_secret):
+            body['apiSecret'] = request.api_secret
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.callback_url):
+            body['callbackUrl'] = request.callback_url
+        if not UtilClient.is_unset(request.card_template_id):
+            body['cardTemplateId'] = request.card_template_id
+        if not UtilClient.is_unset(request.domain):
+            body['domain'] = request.domain
+        if not UtilClient.is_unset(request.path):
+            body['path'] = request.path
+        if not UtilClient.is_unset(request.rule_desc):
+            body['ruleDesc'] = request.rule_desc
+        if not UtilClient.is_unset(request.rule_match_type):
+            body['ruleMatchType'] = request.rule_match_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AddUnfurlingRegisterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_unfurling_register(
+        self,
+        request: dingtalkim__1__0_models.AddUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.AddUnfurlingRegisterResponse:
+        """
+        @summary 新增链接增强注册规则
+        
+        @param request: AddUnfurlingRegisterRequest
+        @return: AddUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AddUnfurlingRegisterHeaders()
+        return self.add_unfurling_register_with_options(request, headers, runtime)
+
+    async def add_unfurling_register_async(
+        self,
+        request: dingtalkim__1__0_models.AddUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.AddUnfurlingRegisterResponse:
+        """
+        @summary 新增链接增强注册规则
+        
+        @param request: AddUnfurlingRegisterRequest
+        @return: AddUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AddUnfurlingRegisterHeaders()
+        return await self.add_unfurling_register_with_options_async(request, headers, runtime)
 
     def auto_open_ding_talk_connect_with_options(
         self,
@@ -1984,6 +2127,136 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateStoreGroupConversationHeaders()
         return await self.create_store_group_conversation_with_options_async(request, headers, runtime)
+
+    def debug_unfurling_register_with_options(
+        self,
+        request: dingtalkim__1__0_models.DebugUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.DebugUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.DebugUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则调试
+        
+        @param request: DebugUnfurlingRegisterRequest
+        @param headers: DebugUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DebugUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.gray_group_id_list):
+            body['grayGroupIdList'] = request.gray_group_id_list
+        if not UtilClient.is_unset(request.gray_user_id_list):
+            body['grayUserIdList'] = request.gray_user_id_list
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DebugUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/debug',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.DebugUnfurlingRegisterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def debug_unfurling_register_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.DebugUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.DebugUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.DebugUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则调试
+        
+        @param request: DebugUnfurlingRegisterRequest
+        @param headers: DebugUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DebugUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.gray_group_id_list):
+            body['grayGroupIdList'] = request.gray_group_id_list
+        if not UtilClient.is_unset(request.gray_user_id_list):
+            body['grayUserIdList'] = request.gray_user_id_list
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DebugUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/debug',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.DebugUnfurlingRegisterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def debug_unfurling_register(
+        self,
+        request: dingtalkim__1__0_models.DebugUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.DebugUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则调试
+        
+        @param request: DebugUnfurlingRegisterRequest
+        @return: DebugUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.DebugUnfurlingRegisterHeaders()
+        return self.debug_unfurling_register_with_options(request, headers, runtime)
+
+    async def debug_unfurling_register_async(
+        self,
+        request: dingtalkim__1__0_models.DebugUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.DebugUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则调试
+        
+        @param request: DebugUnfurlingRegisterRequest
+        @return: DebugUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.DebugUnfurlingRegisterHeaders()
+        return await self.debug_unfurling_register_with_options_async(request, headers, runtime)
 
     def delete_org_text_emotion_with_options(
         self,
@@ -4424,6 +4697,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ListOrgTextEmotionHeaders()
         return await self.list_org_text_emotion_with_options_async(headers, runtime)
+
+    def offline_unfurling_register_with_options(
+        self,
+        request: dingtalkim__1__0_models.OfflineUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.OfflineUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OfflineUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则下线
+        
+        @param request: OfflineUnfurlingRegisterRequest
+        @param headers: OfflineUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OfflineUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OfflineUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OfflineUnfurlingRegisterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def offline_unfurling_register_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.OfflineUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.OfflineUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.OfflineUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则下线
+        
+        @param request: OfflineUnfurlingRegisterRequest
+        @param headers: OfflineUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OfflineUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OfflineUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.OfflineUnfurlingRegisterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def offline_unfurling_register(
+        self,
+        request: dingtalkim__1__0_models.OfflineUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.OfflineUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则下线
+        
+        @param request: OfflineUnfurlingRegisterRequest
+        @return: OfflineUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OfflineUnfurlingRegisterHeaders()
+        return self.offline_unfurling_register_with_options(request, headers, runtime)
+
+    async def offline_unfurling_register_async(
+        self,
+        request: dingtalkim__1__0_models.OfflineUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.OfflineUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则下线
+        
+        @param request: OfflineUnfurlingRegisterRequest
+        @return: OfflineUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.OfflineUnfurlingRegisterHeaders()
+        return await self.offline_unfurling_register_with_options_async(request, headers, runtime)
 
     def open_group_role_add_with_options(
         self,
@@ -7060,6 +7455,368 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.QueryUnReadMessageHeaders()
         return await self.query_un_read_message_with_options_async(request, headers, runtime)
+
+    def query_unfurling_register_creator_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorRequest,
+        headers: dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorResponse:
+        """
+        @summary 查询链接查询链接增强注册信息创建者
+        
+        @param request: QueryUnfurlingRegisterCreatorRequest
+        @param headers: QueryUnfurlingRegisterCreatorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUnfurlingRegisterCreatorResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.domain):
+            query['domain'] = request.domain
+        if not UtilClient.is_unset(request.path):
+            query['path'] = request.path
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUnfurlingRegisterCreator',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/creators',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_unfurling_register_creator_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorRequest,
+        headers: dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorResponse:
+        """
+        @summary 查询链接查询链接增强注册信息创建者
+        
+        @param request: QueryUnfurlingRegisterCreatorRequest
+        @param headers: QueryUnfurlingRegisterCreatorHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUnfurlingRegisterCreatorResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.domain):
+            query['domain'] = request.domain
+        if not UtilClient.is_unset(request.path):
+            query['path'] = request.path
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUnfurlingRegisterCreator',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/creators',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_unfurling_register_creator(
+        self,
+        request: dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorRequest,
+    ) -> dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorResponse:
+        """
+        @summary 查询链接查询链接增强注册信息创建者
+        
+        @param request: QueryUnfurlingRegisterCreatorRequest
+        @return: QueryUnfurlingRegisterCreatorResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorHeaders()
+        return self.query_unfurling_register_creator_with_options(request, headers, runtime)
+
+    async def query_unfurling_register_creator_async(
+        self,
+        request: dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorRequest,
+    ) -> dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorResponse:
+        """
+        @summary 查询链接查询链接增强注册信息创建者
+        
+        @param request: QueryUnfurlingRegisterCreatorRequest
+        @return: QueryUnfurlingRegisterCreatorResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryUnfurlingRegisterCreatorHeaders()
+        return await self.query_unfurling_register_creator_with_options_async(request, headers, runtime)
+
+    def query_unfurling_register_info_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryUnfurlingRegisterInfoRequest,
+        headers: dingtalkim__1__0_models.QueryUnfurlingRegisterInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryUnfurlingRegisterInfoResponse:
+        """
+        @summary 查询链接增强注册信息列表
+        
+        @param request: QueryUnfurlingRegisterInfoRequest
+        @param headers: QueryUnfurlingRegisterInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUnfurlingRegisterInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUnfurlingRegisterInfo',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryUnfurlingRegisterInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_unfurling_register_info_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryUnfurlingRegisterInfoRequest,
+        headers: dingtalkim__1__0_models.QueryUnfurlingRegisterInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryUnfurlingRegisterInfoResponse:
+        """
+        @summary 查询链接增强注册信息列表
+        
+        @param request: QueryUnfurlingRegisterInfoRequest
+        @param headers: QueryUnfurlingRegisterInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUnfurlingRegisterInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUnfurlingRegisterInfo',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryUnfurlingRegisterInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_unfurling_register_info(
+        self,
+        request: dingtalkim__1__0_models.QueryUnfurlingRegisterInfoRequest,
+    ) -> dingtalkim__1__0_models.QueryUnfurlingRegisterInfoResponse:
+        """
+        @summary 查询链接增强注册信息列表
+        
+        @param request: QueryUnfurlingRegisterInfoRequest
+        @return: QueryUnfurlingRegisterInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryUnfurlingRegisterInfoHeaders()
+        return self.query_unfurling_register_info_with_options(request, headers, runtime)
+
+    async def query_unfurling_register_info_async(
+        self,
+        request: dingtalkim__1__0_models.QueryUnfurlingRegisterInfoRequest,
+    ) -> dingtalkim__1__0_models.QueryUnfurlingRegisterInfoResponse:
+        """
+        @summary 查询链接增强注册信息列表
+        
+        @param request: QueryUnfurlingRegisterInfoRequest
+        @return: QueryUnfurlingRegisterInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryUnfurlingRegisterInfoHeaders()
+        return await self.query_unfurling_register_info_with_options_async(request, headers, runtime)
+
+    def release_unfurling_register_with_options(
+        self,
+        request: dingtalkim__1__0_models.ReleaseUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.ReleaseUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ReleaseUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则发布
+        
+        @param request: ReleaseUnfurlingRegisterRequest
+        @param headers: ReleaseUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ReleaseUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ReleaseUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/publish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ReleaseUnfurlingRegisterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def release_unfurling_register_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.ReleaseUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.ReleaseUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ReleaseUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则发布
+        
+        @param request: ReleaseUnfurlingRegisterRequest
+        @param headers: ReleaseUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ReleaseUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ReleaseUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/publish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ReleaseUnfurlingRegisterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def release_unfurling_register(
+        self,
+        request: dingtalkim__1__0_models.ReleaseUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.ReleaseUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则发布
+        
+        @param request: ReleaseUnfurlingRegisterRequest
+        @return: ReleaseUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ReleaseUnfurlingRegisterHeaders()
+        return self.release_unfurling_register_with_options(request, headers, runtime)
+
+    async def release_unfurling_register_async(
+        self,
+        request: dingtalkim__1__0_models.ReleaseUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.ReleaseUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则发布
+        
+        @param request: ReleaseUnfurlingRegisterRequest
+        @return: ReleaseUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ReleaseUnfurlingRegisterHeaders()
+        return await self.release_unfurling_register_with_options_async(request, headers, runtime)
 
     def remove_robot_from_conversation_with_options(
         self,
@@ -9724,6 +10481,282 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateTheGroupRolesOfGroupMemberHeaders()
         return await self.update_the_group_roles_of_group_member_with_options_async(request, headers, runtime)
+
+    def update_unfurling_register_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.UpdateUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateUnfurlingRegisterResponse:
+        """
+        @summary 编辑链接增强注册规则
+        
+        @param request: UpdateUnfurlingRegisterRequest
+        @param headers: UpdateUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_secret):
+            body['apiSecret'] = request.api_secret
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.callback_url):
+            body['callbackUrl'] = request.callback_url
+        if not UtilClient.is_unset(request.card_template_id):
+            body['cardTemplateId'] = request.card_template_id
+        if not UtilClient.is_unset(request.domain):
+            body['domain'] = request.domain
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.path):
+            body['path'] = request.path
+        if not UtilClient.is_unset(request.rule_desc):
+            body['ruleDesc'] = request.rule_desc
+        if not UtilClient.is_unset(request.rule_match_type):
+            body['ruleMatchType'] = request.rule_match_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateUnfurlingRegisterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_unfurling_register_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.UpdateUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateUnfurlingRegisterResponse:
+        """
+        @summary 编辑链接增强注册规则
+        
+        @param request: UpdateUnfurlingRegisterRequest
+        @param headers: UpdateUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_secret):
+            body['apiSecret'] = request.api_secret
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.callback_url):
+            body['callbackUrl'] = request.callback_url
+        if not UtilClient.is_unset(request.card_template_id):
+            body['cardTemplateId'] = request.card_template_id
+        if not UtilClient.is_unset(request.domain):
+            body['domain'] = request.domain
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.path):
+            body['path'] = request.path
+        if not UtilClient.is_unset(request.rule_desc):
+            body['ruleDesc'] = request.rule_desc
+        if not UtilClient.is_unset(request.rule_match_type):
+            body['ruleMatchType'] = request.rule_match_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateUnfurlingRegisterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_unfurling_register(
+        self,
+        request: dingtalkim__1__0_models.UpdateUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.UpdateUnfurlingRegisterResponse:
+        """
+        @summary 编辑链接增强注册规则
+        
+        @param request: UpdateUnfurlingRegisterRequest
+        @return: UpdateUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateUnfurlingRegisterHeaders()
+        return self.update_unfurling_register_with_options(request, headers, runtime)
+
+    async def update_unfurling_register_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.UpdateUnfurlingRegisterResponse:
+        """
+        @summary 编辑链接增强注册规则
+        
+        @param request: UpdateUnfurlingRegisterRequest
+        @return: UpdateUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateUnfurlingRegisterHeaders()
+        return await self.update_unfurling_register_with_options_async(request, headers, runtime)
+
+    def update_unfurling_register_status_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusRequest,
+        headers: dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusResponse:
+        """
+        @summary 链接增强规则状态更新
+        
+        @param request: UpdateUnfurlingRegisterStatusRequest
+        @param headers: UpdateUnfurlingRegisterStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateUnfurlingRegisterStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateUnfurlingRegisterStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/statuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_unfurling_register_status_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusRequest,
+        headers: dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusResponse:
+        """
+        @summary 链接增强规则状态更新
+        
+        @param request: UpdateUnfurlingRegisterStatusRequest
+        @param headers: UpdateUnfurlingRegisterStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateUnfurlingRegisterStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateUnfurlingRegisterStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/statuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_unfurling_register_status(
+        self,
+        request: dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusRequest,
+    ) -> dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusResponse:
+        """
+        @summary 链接增强规则状态更新
+        
+        @param request: UpdateUnfurlingRegisterStatusRequest
+        @return: UpdateUnfurlingRegisterStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusHeaders()
+        return self.update_unfurling_register_status_with_options(request, headers, runtime)
+
+    async def update_unfurling_register_status_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusRequest,
+    ) -> dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusResponse:
+        """
+        @summary 链接增强规则状态更新
+        
+        @param request: UpdateUnfurlingRegisterStatusRequest
+        @return: UpdateUnfurlingRegisterStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateUnfurlingRegisterStatusHeaders()
+        return await self.update_unfurling_register_status_with_options_async(request, headers, runtime)
 
     def add_group_member_with_options(
         self,

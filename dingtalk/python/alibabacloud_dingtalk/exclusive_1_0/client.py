@@ -2,7 +2,6 @@
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
 
-from alibabacloud_gateway_spi.client import Client as SPIClient
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
 from alibabacloud_gateway_dingtalk.client import Client as GatewayClientClient
@@ -16,15 +15,13 @@ class Client(OpenApiClient):
     """
     *\
     """
-    _client: SPIClient = None
-
     def __init__(
         self, 
         config: open_api_models.Config,
     ):
         super().__init__(config)
-        self._client = GatewayClientClient()
-        self._spi = self._client
+        gateway_client = GatewayClientClient()
+        self._spi = gateway_client
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -10906,6 +10903,232 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverHeaders()
         return await self.special_rule_batch_receiver_with_options_async(request, headers, runtime)
+
+    def task_info_create_and_start_task_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskRequest,
+        headers: dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskResponse:
+        """
+        @summary 创建并启动任务
+        
+        @param request: TaskInfoCreateAndStartTaskRequest
+        @param headers: TaskInfoCreateAndStartTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TaskInfoCreateAndStartTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attr):
+            body['attr'] = request.attr
+        if not UtilClient.is_unset(request.backlog_dto):
+            body['backlogDTO'] = request.backlog_dto
+        if not UtilClient.is_unset(request.backlog_generate_flag):
+            body['backlogGenerateFlag'] = request.backlog_generate_flag
+        if not UtilClient.is_unset(request.business_code):
+            body['businessCode'] = request.business_code
+        if not UtilClient.is_unset(request.canceldel_task_card_id):
+            body['canceldelTaskCardId'] = request.canceldel_task_card_id
+        if not UtilClient.is_unset(request.card_dto):
+            body['cardDTO'] = request.card_dto
+        if not UtilClient.is_unset(request.custom_flag):
+            body['customFlag'] = request.custom_flag
+        if not UtilClient.is_unset(request.detail_url):
+            body['detailUrl'] = request.detail_url
+        if not UtilClient.is_unset(request.finish_task_card_id):
+            body['finishTaskCardId'] = request.finish_task_card_id
+        if not UtilClient.is_unset(request.operator_account):
+            body['operatorAccount'] = request.operator_account
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        if not UtilClient.is_unset(request.proj_id):
+            body['projId'] = request.proj_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.send_msg_flag):
+            body['sendMsgFlag'] = request.send_msg_flag
+        if not UtilClient.is_unset(request.sort):
+            body['sort'] = request.sort
+        if not UtilClient.is_unset(request.start_task_card_id):
+            body['startTaskCardId'] = request.start_task_card_id
+        if not UtilClient.is_unset(request.state):
+            body['state'] = request.state
+        if not UtilClient.is_unset(request.task_content):
+            body['taskContent'] = request.task_content
+        if not UtilClient.is_unset(request.task_end_time):
+            body['taskEndTime'] = request.task_end_time
+        if not UtilClient.is_unset(request.task_execute_person_dtos):
+            body['taskExecutePersonDTOS'] = request.task_execute_person_dtos
+        if not UtilClient.is_unset(request.task_group_dtolist):
+            body['taskGroupDTOList'] = request.task_group_dtolist
+        if not UtilClient.is_unset(request.task_system):
+            body['taskSystem'] = request.task_system
+        if not UtilClient.is_unset(request.task_templ_code):
+            body['taskTemplCode'] = request.task_templ_code
+        if not UtilClient.is_unset(request.task_title):
+            body['taskTitle'] = request.task_title
+        if not UtilClient.is_unset(request.task_type):
+            body['taskType'] = request.task_type
+        if not UtilClient.is_unset(request.task_url_mobile):
+            body['taskUrlMobile'] = request.task_url_mobile
+        if not UtilClient.is_unset(request.task_url_pc):
+            body['taskUrlPc'] = request.task_url_pc
+        if not UtilClient.is_unset(request.update_task_card_id):
+            body['updateTaskCardId'] = request.update_task_card_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TaskInfoCreateAndStartTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/taskCenters/taskInfos/createAndStart',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def task_info_create_and_start_task_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskRequest,
+        headers: dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskResponse:
+        """
+        @summary 创建并启动任务
+        
+        @param request: TaskInfoCreateAndStartTaskRequest
+        @param headers: TaskInfoCreateAndStartTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TaskInfoCreateAndStartTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attr):
+            body['attr'] = request.attr
+        if not UtilClient.is_unset(request.backlog_dto):
+            body['backlogDTO'] = request.backlog_dto
+        if not UtilClient.is_unset(request.backlog_generate_flag):
+            body['backlogGenerateFlag'] = request.backlog_generate_flag
+        if not UtilClient.is_unset(request.business_code):
+            body['businessCode'] = request.business_code
+        if not UtilClient.is_unset(request.canceldel_task_card_id):
+            body['canceldelTaskCardId'] = request.canceldel_task_card_id
+        if not UtilClient.is_unset(request.card_dto):
+            body['cardDTO'] = request.card_dto
+        if not UtilClient.is_unset(request.custom_flag):
+            body['customFlag'] = request.custom_flag
+        if not UtilClient.is_unset(request.detail_url):
+            body['detailUrl'] = request.detail_url
+        if not UtilClient.is_unset(request.finish_task_card_id):
+            body['finishTaskCardId'] = request.finish_task_card_id
+        if not UtilClient.is_unset(request.operator_account):
+            body['operatorAccount'] = request.operator_account
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        if not UtilClient.is_unset(request.proj_id):
+            body['projId'] = request.proj_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.send_msg_flag):
+            body['sendMsgFlag'] = request.send_msg_flag
+        if not UtilClient.is_unset(request.sort):
+            body['sort'] = request.sort
+        if not UtilClient.is_unset(request.start_task_card_id):
+            body['startTaskCardId'] = request.start_task_card_id
+        if not UtilClient.is_unset(request.state):
+            body['state'] = request.state
+        if not UtilClient.is_unset(request.task_content):
+            body['taskContent'] = request.task_content
+        if not UtilClient.is_unset(request.task_end_time):
+            body['taskEndTime'] = request.task_end_time
+        if not UtilClient.is_unset(request.task_execute_person_dtos):
+            body['taskExecutePersonDTOS'] = request.task_execute_person_dtos
+        if not UtilClient.is_unset(request.task_group_dtolist):
+            body['taskGroupDTOList'] = request.task_group_dtolist
+        if not UtilClient.is_unset(request.task_system):
+            body['taskSystem'] = request.task_system
+        if not UtilClient.is_unset(request.task_templ_code):
+            body['taskTemplCode'] = request.task_templ_code
+        if not UtilClient.is_unset(request.task_title):
+            body['taskTitle'] = request.task_title
+        if not UtilClient.is_unset(request.task_type):
+            body['taskType'] = request.task_type
+        if not UtilClient.is_unset(request.task_url_mobile):
+            body['taskUrlMobile'] = request.task_url_mobile
+        if not UtilClient.is_unset(request.task_url_pc):
+            body['taskUrlPc'] = request.task_url_pc
+        if not UtilClient.is_unset(request.update_task_card_id):
+            body['updateTaskCardId'] = request.update_task_card_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TaskInfoCreateAndStartTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/taskCenters/taskInfos/createAndStart',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def task_info_create_and_start_task(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskResponse:
+        """
+        @summary 创建并启动任务
+        
+        @param request: TaskInfoCreateAndStartTaskRequest
+        @return: TaskInfoCreateAndStartTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskHeaders()
+        return self.task_info_create_and_start_task_with_options(request, headers, runtime)
+
+    async def task_info_create_and_start_task_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskResponse:
+        """
+        @summary 创建并启动任务
+        
+        @param request: TaskInfoCreateAndStartTaskRequest
+        @return: TaskInfoCreateAndStartTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskHeaders()
+        return await self.task_info_create_and_start_task_with_options_async(request, headers, runtime)
 
     def update_category_name_with_options(
         self,
