@@ -273,6 +273,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
                 [Validation(Required=false)]
                 public string FinishTime { get; set; }
 
+                [NameInMap("originUserId")]
+                [Validation(Required=false)]
+                public string OriginUserId { get; set; }
+
                 [NameInMap("processInstanceId")]
                 [Validation(Required=false)]
                 public string ProcessInstanceId { get; set; }

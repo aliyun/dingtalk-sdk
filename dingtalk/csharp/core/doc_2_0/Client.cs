@@ -1696,6 +1696,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GenerateCp))
+            {
+                query["generateCp"] = request.GenerateCp;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetFormat))
             {
                 query["targetFormat"] = request.TargetFormat;
@@ -1741,6 +1745,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GenerateCp))
+            {
+                query["generateCp"] = request.GenerateCp;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetFormat))
             {
                 query["targetFormat"] = request.TargetFormat;

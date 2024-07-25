@@ -161,6 +161,112 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
         }
 
         /**
+         * @summary 点众下架视频接口
+         *
+         * @param request DeleteVideosRequest
+         * @param headers DeleteVideosHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteVideosResponse
+         */
+        public DeleteVideosResponse DeleteVideosWithOptions(DeleteVideosRequest request, DeleteVideosHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteVideos",
+                Version = "content_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/content/dian/videos/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteVideosResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 点众下架视频接口
+         *
+         * @param request DeleteVideosRequest
+         * @param headers DeleteVideosHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteVideosResponse
+         */
+        public async Task<DeleteVideosResponse> DeleteVideosWithOptionsAsync(DeleteVideosRequest request, DeleteVideosHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteVideos",
+                Version = "content_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/content/dian/videos/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteVideosResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 点众下架视频接口
+         *
+         * @param request DeleteVideosRequest
+         * @return DeleteVideosResponse
+         */
+        public DeleteVideosResponse DeleteVideos(DeleteVideosRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteVideosHeaders headers = new DeleteVideosHeaders();
+            return DeleteVideosWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 点众下架视频接口
+         *
+         * @param request DeleteVideosRequest
+         * @return DeleteVideosResponse
+         */
+        public async Task<DeleteVideosResponse> DeleteVideosAsync(DeleteVideosRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteVideosHeaders headers = new DeleteVideosHeaders();
+            return await DeleteVideosWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取feed的详细信息，包括子课程的信息
          *
          * @param request GetFeedRequest
@@ -678,6 +784,134 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             PageFeedHeaders headers = new PageFeedHeaders();
             return await PageFeedWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 点众上传视频信息
+         *
+         * @param tmpReq UploadVideosRequest
+         * @param headers UploadVideosHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadVideosResponse
+         */
+        public UploadVideosResponse UploadVideosWithOptions(UploadVideosRequest tmpReq, UploadVideosHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            UploadVideosShrinkRequest request = new UploadVideosShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.VideoList))
+            {
+                request.VideoListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.VideoList, "videoList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VideoListShrink))
+            {
+                query["videoList"] = request.VideoListShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UploadVideos",
+                Version = "content_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/content/dian/videos/upload",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UploadVideosResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 点众上传视频信息
+         *
+         * @param tmpReq UploadVideosRequest
+         * @param headers UploadVideosHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadVideosResponse
+         */
+        public async Task<UploadVideosResponse> UploadVideosWithOptionsAsync(UploadVideosRequest tmpReq, UploadVideosHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            UploadVideosShrinkRequest request = new UploadVideosShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.VideoList))
+            {
+                request.VideoListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.VideoList, "videoList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VideoListShrink))
+            {
+                query["videoList"] = request.VideoListShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UploadVideos",
+                Version = "content_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/content/dian/videos/upload",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UploadVideosResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 点众上传视频信息
+         *
+         * @param request UploadVideosRequest
+         * @return UploadVideosResponse
+         */
+        public UploadVideosResponse UploadVideos(UploadVideosRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UploadVideosHeaders headers = new UploadVideosHeaders();
+            return UploadVideosWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 点众上传视频信息
+         *
+         * @param request UploadVideosRequest
+         * @return UploadVideosResponse
+         */
+        public async Task<UploadVideosResponse> UploadVideosAsync(UploadVideosRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UploadVideosHeaders headers = new UploadVideosHeaders();
+            return await UploadVideosWithOptionsAsync(request, headers, runtime);
         }
 
     }
