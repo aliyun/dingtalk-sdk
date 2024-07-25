@@ -1001,6 +1001,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->generateCp)) {
+            $query['generateCp'] = $request->generateCp;
+        }
         if (!Utils::isUnset($request->targetFormat)) {
             $query['targetFormat'] = $request->targetFormat;
         }

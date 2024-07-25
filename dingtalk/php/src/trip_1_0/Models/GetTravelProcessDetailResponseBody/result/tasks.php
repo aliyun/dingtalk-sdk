@@ -30,6 +30,13 @@ class tasks extends Model
     public $finishTime;
 
     /**
+     * @example 12374
+     *
+     * @var string
+     */
+    public $originUserId;
+
+    /**
      * @example e7fh112WTTawy6dLtiIlqQ10051721014983
      *
      * @var string
@@ -74,6 +81,7 @@ class tasks extends Model
         'activityId'        => 'activityId',
         'createTime'        => 'createTime',
         'finishTime'        => 'finishTime',
+        'originUserId'      => 'originUserId',
         'processInstanceId' => 'processInstanceId',
         'result'            => 'result',
         'status'            => 'status',
@@ -97,6 +105,9 @@ class tasks extends Model
         }
         if (null !== $this->finishTime) {
             $res['finishTime'] = $this->finishTime;
+        }
+        if (null !== $this->originUserId) {
+            $res['originUserId'] = $this->originUserId;
         }
         if (null !== $this->processInstanceId) {
             $res['processInstanceId'] = $this->processInstanceId;
@@ -136,6 +147,9 @@ class tasks extends Model
         }
         if (isset($map['finishTime'])) {
             $model->finishTime = $map['finishTime'];
+        }
+        if (isset($map['originUserId'])) {
+            $model->originUserId = $map['originUserId'];
         }
         if (isset($map['processInstanceId'])) {
             $model->processInstanceId = $map['processInstanceId'];

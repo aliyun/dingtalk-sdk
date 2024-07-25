@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\CreateFeedHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\CreateFeedRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\CreateFeedResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\DeleteVideosHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\DeleteVideosRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\DeleteVideosResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\GetFeedHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\GetFeedRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\GetFeedResponse;
@@ -20,6 +23,10 @@ use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\ListItemUserDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\PageFeedHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\PageFeedRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\PageFeedResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\UploadVideosHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\UploadVideosRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\UploadVideosResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\UploadVideosShrinkRequest;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -101,6 +108,59 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateFeedHeaders([]);
 
         return $this->createFeedWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 点众下架视频接口
+     *  *
+     * @param DeleteVideosRequest $request DeleteVideosRequest
+     * @param DeleteVideosHeaders $headers DeleteVideosHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteVideosResponse DeleteVideosResponse
+     */
+    public function deleteVideosWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => $request->body,
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteVideos',
+            'version'     => 'content_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/content/dian/videos/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteVideosResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 点众下架视频接口
+     *  *
+     * @param DeleteVideosRequest $request DeleteVideosRequest
+     *
+     * @return DeleteVideosResponse DeleteVideosResponse
+     */
+    public function deleteVideos($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteVideosHeaders([]);
+
+        return $this->deleteVideosWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -354,5 +414,67 @@ class Dingtalk extends OpenApiClient
         $headers = new PageFeedHeaders([]);
 
         return $this->pageFeedWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 点众上传视频信息
+     *  *
+     * @param UploadVideosRequest $tmpReq  UploadVideosRequest
+     * @param UploadVideosHeaders $headers UploadVideosHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UploadVideosResponse UploadVideosResponse
+     */
+    public function uploadVideosWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new UploadVideosShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->videoList)) {
+            $request->videoListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->videoList, 'videoList', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->videoListShrink)) {
+            $query['videoList'] = $request->videoListShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'UploadVideos',
+            'version'     => 'content_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/content/dian/videos/upload',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UploadVideosResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 点众上传视频信息
+     *  *
+     * @param UploadVideosRequest $request UploadVideosRequest
+     *
+     * @return UploadVideosResponse UploadVideosResponse
+     */
+    public function uploadVideos($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UploadVideosHeaders([]);
+
+        return $this->uploadVideosWithOptions($request, $headers, $runtime);
     }
 }

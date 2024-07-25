@@ -15,12 +15,21 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchCreateCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchCreateCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchCreateCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BeginConsumeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BeginConsumeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BeginConsumeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BindCompanyAccountantBookHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BindCompanyAccountantBookRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BindCompanyAccountantBookResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CancelConsumeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CancelConsumeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CancelConsumeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CheckVoucherStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CheckVoucherStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CheckVoucherStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CommitConsumeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CommitConsumeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CommitConsumeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CreateCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CreateCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\CreateCustomerResponse;
@@ -74,6 +83,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\ProfessionBenefitConsumeRes
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\PushHistoricalReceiptsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\PushHistoricalReceiptsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\PushHistoricalReceiptsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryBenefitHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryBenefitRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryBenefitResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryCategoryByPageResponse;
@@ -385,6 +397,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 预核销智能财务的权益
+     *  *
+     * @param BeginConsumeRequest $request BeginConsumeRequest
+     * @param BeginConsumeHeaders $headers BeginConsumeHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BeginConsumeResponse BeginConsumeResponse
+     */
+    public function beginConsumeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->benefitCode)) {
+            $query['benefitCode'] = $request->benefitCode;
+        }
+        if (!Utils::isUnset($request->bizRequestId)) {
+            $query['bizRequestId'] = $request->bizRequestId;
+        }
+        if (!Utils::isUnset($request->quota)) {
+            $query['quota'] = $request->quota;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'BeginConsume',
+            'version'     => 'bizfinance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/bizfinance/consumedBenefits/prepare',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BeginConsumeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 预核销智能财务的权益
+     *  *
+     * @param BeginConsumeRequest $request BeginConsumeRequest
+     *
+     * @return BeginConsumeResponse BeginConsumeResponse
+     */
+    public function beginConsume($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BeginConsumeHeaders([]);
+
+        return $this->beginConsumeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 绑定钉钉智能财务企业主体的账套信息
      *  *
      * @param BindCompanyAccountantBookRequest $request BindCompanyAccountantBookRequest
@@ -442,6 +520,72 @@ class Dingtalk extends OpenApiClient
         $headers = new BindCompanyAccountantBookHeaders([]);
 
         return $this->bindCompanyAccountantBookWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 取消核销智能财务的权益
+     *  *
+     * @param CancelConsumeRequest $request CancelConsumeRequest
+     * @param CancelConsumeHeaders $headers CancelConsumeHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CancelConsumeResponse CancelConsumeResponse
+     */
+    public function cancelConsumeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->benefitCode)) {
+            $query['benefitCode'] = $request->benefitCode;
+        }
+        if (!Utils::isUnset($request->bizRequestId)) {
+            $query['bizRequestId'] = $request->bizRequestId;
+        }
+        if (!Utils::isUnset($request->quota)) {
+            $query['quota'] = $request->quota;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CancelConsume',
+            'version'     => 'bizfinance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/bizfinance/consumedBenefits/cancel',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CancelConsumeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 取消核销智能财务的权益
+     *  *
+     * @param CancelConsumeRequest $request CancelConsumeRequest
+     *
+     * @return CancelConsumeResponse CancelConsumeResponse
+     */
+    public function cancelConsume($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CancelConsumeHeaders([]);
+
+        return $this->cancelConsumeWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -526,6 +670,72 @@ class Dingtalk extends OpenApiClient
         $headers = new CheckVoucherStatusHeaders([]);
 
         return $this->checkVoucherStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 确认核销智能财务的权益
+     *  *
+     * @param CommitConsumeRequest $request CommitConsumeRequest
+     * @param CommitConsumeHeaders $headers CommitConsumeHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CommitConsumeResponse CommitConsumeResponse
+     */
+    public function commitConsumeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->benefitCode)) {
+            $query['benefitCode'] = $request->benefitCode;
+        }
+        if (!Utils::isUnset($request->bizRequestId)) {
+            $query['bizRequestId'] = $request->bizRequestId;
+        }
+        if (!Utils::isUnset($request->quota)) {
+            $query['quota'] = $request->quota;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CommitConsume',
+            'version'     => 'bizfinance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/bizfinance/consumedBenefits/commit',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CommitConsumeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 确认核销智能财务的权益
+     *  *
+     * @param CommitConsumeRequest $request CommitConsumeRequest
+     *
+     * @return CommitConsumeResponse CommitConsumeResponse
+     */
+    public function commitConsume($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CommitConsumeHeaders([]);
+
+        return $this->commitConsumeWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1623,6 +1833,63 @@ class Dingtalk extends OpenApiClient
         $headers = new PushHistoricalReceiptsHeaders([]);
 
         return $this->pushHistoricalReceiptsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询智能财务计量型权益
+     *  *
+     * @param QueryBenefitRequest $request QueryBenefitRequest
+     * @param QueryBenefitHeaders $headers QueryBenefitHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryBenefitResponse QueryBenefitResponse
+     */
+    public function queryBenefitWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->benefitCode)) {
+            $query['benefitCode'] = $request->benefitCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryBenefit',
+            'version'     => 'bizfinance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/bizfinance/benefits',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryBenefitResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询智能财务计量型权益
+     *  *
+     * @param QueryBenefitRequest $request QueryBenefitRequest
+     *
+     * @return QueryBenefitResponse QueryBenefitResponse
+     */
+    public function queryBenefit($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryBenefitHeaders([]);
+
+        return $this->queryBenefitWithOptions($request, $headers, $runtime);
     }
 
     /**
