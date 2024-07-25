@@ -376,6 +376,7 @@ class GetTravelProcessDetailResponseBodyResultTasks(TeaModel):
         activity_id: str = None,
         create_time: str = None,
         finish_time: str = None,
+        origin_user_id: str = None,
         process_instance_id: str = None,
         result: str = None,
         status: str = None,
@@ -386,6 +387,7 @@ class GetTravelProcessDetailResponseBodyResultTasks(TeaModel):
         self.activity_id = activity_id
         self.create_time = create_time
         self.finish_time = finish_time
+        self.origin_user_id = origin_user_id
         self.process_instance_id = process_instance_id
         self.result = result
         self.status = status
@@ -408,6 +410,8 @@ class GetTravelProcessDetailResponseBodyResultTasks(TeaModel):
             result['createTime'] = self.create_time
         if self.finish_time is not None:
             result['finishTime'] = self.finish_time
+        if self.origin_user_id is not None:
+            result['originUserId'] = self.origin_user_id
         if self.process_instance_id is not None:
             result['processInstanceId'] = self.process_instance_id
         if self.result is not None:
@@ -430,6 +434,8 @@ class GetTravelProcessDetailResponseBodyResultTasks(TeaModel):
             self.create_time = m.get('createTime')
         if m.get('finishTime') is not None:
             self.finish_time = m.get('finishTime')
+        if m.get('originUserId') is not None:
+            self.origin_user_id = m.get('originUserId')
         if m.get('processInstanceId') is not None:
             self.process_instance_id = m.get('processInstanceId')
         if m.get('result') is not None:

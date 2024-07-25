@@ -3988,8 +3988,10 @@ class GetDocContentHeaders(TeaModel):
 class GetDocContentRequest(TeaModel):
     def __init__(
         self,
+        generate_cp: bool = None,
         target_format: str = None,
     ):
+        self.generate_cp = generate_cp
         self.target_format = target_format
 
     def validate(self):
@@ -4001,12 +4003,16 @@ class GetDocContentRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.generate_cp is not None:
+            result['generateCp'] = self.generate_cp
         if self.target_format is not None:
             result['targetFormat'] = self.target_format
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('generateCp') is not None:
+            self.generate_cp = m.get('generateCp')
         if m.get('targetFormat') is not None:
             self.target_format = m.get('targetFormat')
         return self

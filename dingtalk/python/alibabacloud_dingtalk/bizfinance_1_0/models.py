@@ -1600,6 +1600,181 @@ class BatchCreateCustomerResponse(TeaModel):
         return self
 
 
+class BeginConsumeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BeginConsumeRequest(TeaModel):
+    def __init__(
+        self,
+        benefit_code: str = None,
+        biz_request_id: str = None,
+        quota: int = None,
+        user_id: str = None,
+    ):
+        self.benefit_code = benefit_code
+        self.biz_request_id = biz_request_id
+        self.quota = quota
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.benefit_code is not None:
+            result['benefitCode'] = self.benefit_code
+        if self.biz_request_id is not None:
+            result['bizRequestId'] = self.biz_request_id
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('benefitCode') is not None:
+            self.benefit_code = m.get('benefitCode')
+        if m.get('bizRequestId') is not None:
+            self.biz_request_id = m.get('bizRequestId')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class BeginConsumeResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        is_success: bool = None,
+    ):
+        self.is_success = is_success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_success is not None:
+            result['isSuccess'] = self.is_success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isSuccess') is not None:
+            self.is_success = m.get('isSuccess')
+        return self
+
+
+class BeginConsumeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: BeginConsumeResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = BeginConsumeResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class BeginConsumeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BeginConsumeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BeginConsumeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BindCompanyAccountantBookHeaders(TeaModel):
     def __init__(
         self,
@@ -1731,6 +1906,181 @@ class BindCompanyAccountantBookResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BindCompanyAccountantBookResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CancelConsumeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CancelConsumeRequest(TeaModel):
+    def __init__(
+        self,
+        benefit_code: str = None,
+        biz_request_id: str = None,
+        quota: int = None,
+        user_id: str = None,
+    ):
+        self.benefit_code = benefit_code
+        self.biz_request_id = biz_request_id
+        self.quota = quota
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.benefit_code is not None:
+            result['benefitCode'] = self.benefit_code
+        if self.biz_request_id is not None:
+            result['bizRequestId'] = self.biz_request_id
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('benefitCode') is not None:
+            self.benefit_code = m.get('benefitCode')
+        if m.get('bizRequestId') is not None:
+            self.biz_request_id = m.get('bizRequestId')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CancelConsumeResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        is_success: bool = None,
+    ):
+        self.is_success = is_success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_success is not None:
+            result['isSuccess'] = self.is_success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isSuccess') is not None:
+            self.is_success = m.get('isSuccess')
+        return self
+
+
+class CancelConsumeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CancelConsumeResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CancelConsumeResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CancelConsumeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CancelConsumeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CancelConsumeResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1919,6 +2269,181 @@ class CheckVoucherStatusResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CheckVoucherStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CommitConsumeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CommitConsumeRequest(TeaModel):
+    def __init__(
+        self,
+        benefit_code: str = None,
+        biz_request_id: str = None,
+        quota: int = None,
+        user_id: str = None,
+    ):
+        self.benefit_code = benefit_code
+        self.biz_request_id = biz_request_id
+        self.quota = quota
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.benefit_code is not None:
+            result['benefitCode'] = self.benefit_code
+        if self.biz_request_id is not None:
+            result['bizRequestId'] = self.biz_request_id
+        if self.quota is not None:
+            result['quota'] = self.quota
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('benefitCode') is not None:
+            self.benefit_code = m.get('benefitCode')
+        if m.get('bizRequestId') is not None:
+            self.biz_request_id = m.get('bizRequestId')
+        if m.get('quota') is not None:
+            self.quota = m.get('quota')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CommitConsumeResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        is_success: bool = None,
+    ):
+        self.is_success = is_success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_success is not None:
+            result['isSuccess'] = self.is_success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isSuccess') is not None:
+            self.is_success = m.get('isSuccess')
+        return self
+
+
+class CommitConsumeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CommitConsumeResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CommitConsumeResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CommitConsumeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CommitConsumeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CommitConsumeResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -6011,6 +6536,169 @@ class PushHistoricalReceiptsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PushHistoricalReceiptsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryBenefitHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryBenefitRequest(TeaModel):
+    def __init__(
+        self,
+        benefit_code: str = None,
+    ):
+        self.benefit_code = benefit_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.benefit_code is not None:
+            result['benefitCode'] = self.benefit_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('benefitCode') is not None:
+            self.benefit_code = m.get('benefitCode')
+        return self
+
+
+class QueryBenefitResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        remain_quota: int = None,
+        total_quota: int = None,
+    ):
+        self.remain_quota = remain_quota
+        self.total_quota = total_quota
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.remain_quota is not None:
+            result['remainQuota'] = self.remain_quota
+        if self.total_quota is not None:
+            result['totalQuota'] = self.total_quota
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('remainQuota') is not None:
+            self.remain_quota = m.get('remainQuota')
+        if m.get('totalQuota') is not None:
+            self.total_quota = m.get('totalQuota')
+        return self
+
+
+class QueryBenefitResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryBenefitResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryBenefitResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class QueryBenefitResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryBenefitResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryBenefitResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -148,6 +148,114 @@ class Client(OpenApiClient):
         headers = dingtalkcontent__1__0_models.CreateFeedHeaders()
         return await self.create_feed_with_options_async(request, headers, runtime)
 
+    def delete_videos_with_options(
+        self,
+        request: dingtalkcontent__1__0_models.DeleteVideosRequest,
+        headers: dingtalkcontent__1__0_models.DeleteVideosHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontent__1__0_models.DeleteVideosResponse:
+        """
+        @summary 点众下架视频接口
+        
+        @param request: DeleteVideosRequest
+        @param headers: DeleteVideosHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteVideosResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=request.body
+        )
+        params = open_api_models.Params(
+            action='DeleteVideos',
+            version='content_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/content/dian/videos/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontent__1__0_models.DeleteVideosResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_videos_with_options_async(
+        self,
+        request: dingtalkcontent__1__0_models.DeleteVideosRequest,
+        headers: dingtalkcontent__1__0_models.DeleteVideosHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontent__1__0_models.DeleteVideosResponse:
+        """
+        @summary 点众下架视频接口
+        
+        @param request: DeleteVideosRequest
+        @param headers: DeleteVideosHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteVideosResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=request.body
+        )
+        params = open_api_models.Params(
+            action='DeleteVideos',
+            version='content_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/content/dian/videos/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontent__1__0_models.DeleteVideosResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_videos(
+        self,
+        request: dingtalkcontent__1__0_models.DeleteVideosRequest,
+    ) -> dingtalkcontent__1__0_models.DeleteVideosResponse:
+        """
+        @summary 点众下架视频接口
+        
+        @param request: DeleteVideosRequest
+        @return: DeleteVideosResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontent__1__0_models.DeleteVideosHeaders()
+        return self.delete_videos_with_options(request, headers, runtime)
+
+    async def delete_videos_async(
+        self,
+        request: dingtalkcontent__1__0_models.DeleteVideosRequest,
+    ) -> dingtalkcontent__1__0_models.DeleteVideosResponse:
+        """
+        @summary 点众下架视频接口
+        
+        @param request: DeleteVideosRequest
+        @return: DeleteVideosResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontent__1__0_models.DeleteVideosHeaders()
+        return await self.delete_videos_with_options_async(request, headers, runtime)
+
     def get_feed_with_options(
         self,
         feed_id: str,
@@ -639,3 +747,125 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontent__1__0_models.PageFeedHeaders()
         return await self.page_feed_with_options_async(request, headers, runtime)
+
+    def upload_videos_with_options(
+        self,
+        tmp_req: dingtalkcontent__1__0_models.UploadVideosRequest,
+        headers: dingtalkcontent__1__0_models.UploadVideosHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontent__1__0_models.UploadVideosResponse:
+        """
+        @summary 点众上传视频信息
+        
+        @param tmp_req: UploadVideosRequest
+        @param headers: UploadVideosHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadVideosResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontent__1__0_models.UploadVideosShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.video_list):
+            request.video_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.video_list, 'videoList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.video_list_shrink):
+            query['videoList'] = request.video_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UploadVideos',
+            version='content_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/content/dian/videos/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontent__1__0_models.UploadVideosResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def upload_videos_with_options_async(
+        self,
+        tmp_req: dingtalkcontent__1__0_models.UploadVideosRequest,
+        headers: dingtalkcontent__1__0_models.UploadVideosHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontent__1__0_models.UploadVideosResponse:
+        """
+        @summary 点众上传视频信息
+        
+        @param tmp_req: UploadVideosRequest
+        @param headers: UploadVideosHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadVideosResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontent__1__0_models.UploadVideosShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.video_list):
+            request.video_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.video_list, 'videoList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.video_list_shrink):
+            query['videoList'] = request.video_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UploadVideos',
+            version='content_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/content/dian/videos/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontent__1__0_models.UploadVideosResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def upload_videos(
+        self,
+        request: dingtalkcontent__1__0_models.UploadVideosRequest,
+    ) -> dingtalkcontent__1__0_models.UploadVideosResponse:
+        """
+        @summary 点众上传视频信息
+        
+        @param request: UploadVideosRequest
+        @return: UploadVideosResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontent__1__0_models.UploadVideosHeaders()
+        return self.upload_videos_with_options(request, headers, runtime)
+
+    async def upload_videos_async(
+        self,
+        request: dingtalkcontent__1__0_models.UploadVideosRequest,
+    ) -> dingtalkcontent__1__0_models.UploadVideosResponse:
+        """
+        @summary 点众上传视频信息
+        
+        @param request: UploadVideosRequest
+        @return: UploadVideosResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontent__1__0_models.UploadVideosHeaders()
+        return await self.upload_videos_with_options_async(request, headers, runtime)

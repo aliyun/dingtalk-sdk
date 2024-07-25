@@ -1579,6 +1579,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.generate_cp):
+            query['generateCp'] = request.generate_cp
         if not UtilClient.is_unset(request.target_format):
             query['targetFormat'] = request.target_format
         real_headers = {}
@@ -1623,6 +1625,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.generate_cp):
+            query['generateCp'] = request.generate_cp
         if not UtilClient.is_unset(request.target_format):
             query['targetFormat'] = request.target_format
         real_headers = {}

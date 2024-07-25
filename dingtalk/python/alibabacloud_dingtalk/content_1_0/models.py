@@ -575,6 +575,181 @@ class CreateFeedResponse(TeaModel):
         return self
 
 
+class DeleteVideosHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteVideosRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[str] = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        return self
+
+
+class DeleteVideosResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        failed: List[str] = None,
+        success: int = None,
+        total: int = None,
+    ):
+        self.failed = failed
+        self.success = success
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.failed is not None:
+            result['failed'] = self.failed
+        if self.success is not None:
+            result['success'] = self.success
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('failed') is not None:
+            self.failed = m.get('failed')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class DeleteVideosResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: DeleteVideosResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = DeleteVideosResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteVideosResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteVideosResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteVideosResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetFeedHeaders(TeaModel):
     def __init__(
         self,
@@ -1398,6 +1573,321 @@ class PageFeedResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PageFeedResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UploadVideosHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UploadVideosRequestVideoList(TeaModel):
+    def __init__(
+        self,
+        author_icon_url: str = None,
+        author_id: str = None,
+        author_name: str = None,
+        cover_url: str = None,
+        jump_icon_url: str = None,
+        jump_title: str = None,
+        jump_url: str = None,
+        video_duration: str = None,
+        video_height: str = None,
+        video_id: str = None,
+        video_title: str = None,
+        video_width: str = None,
+        webp_url: str = None,
+    ):
+        self.author_icon_url = author_icon_url
+        self.author_id = author_id
+        self.author_name = author_name
+        self.cover_url = cover_url
+        self.jump_icon_url = jump_icon_url
+        self.jump_title = jump_title
+        self.jump_url = jump_url
+        self.video_duration = video_duration
+        self.video_height = video_height
+        self.video_id = video_id
+        self.video_title = video_title
+        self.video_width = video_width
+        self.webp_url = webp_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.author_icon_url is not None:
+            result['authorIconUrl'] = self.author_icon_url
+        if self.author_id is not None:
+            result['authorId'] = self.author_id
+        if self.author_name is not None:
+            result['authorName'] = self.author_name
+        if self.cover_url is not None:
+            result['coverUrl'] = self.cover_url
+        if self.jump_icon_url is not None:
+            result['jumpIconUrl'] = self.jump_icon_url
+        if self.jump_title is not None:
+            result['jumpTitle'] = self.jump_title
+        if self.jump_url is not None:
+            result['jumpUrl'] = self.jump_url
+        if self.video_duration is not None:
+            result['videoDuration'] = self.video_duration
+        if self.video_height is not None:
+            result['videoHeight'] = self.video_height
+        if self.video_id is not None:
+            result['videoId'] = self.video_id
+        if self.video_title is not None:
+            result['videoTitle'] = self.video_title
+        if self.video_width is not None:
+            result['videoWidth'] = self.video_width
+        if self.webp_url is not None:
+            result['webpUrl'] = self.webp_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authorIconUrl') is not None:
+            self.author_icon_url = m.get('authorIconUrl')
+        if m.get('authorId') is not None:
+            self.author_id = m.get('authorId')
+        if m.get('authorName') is not None:
+            self.author_name = m.get('authorName')
+        if m.get('coverUrl') is not None:
+            self.cover_url = m.get('coverUrl')
+        if m.get('jumpIconUrl') is not None:
+            self.jump_icon_url = m.get('jumpIconUrl')
+        if m.get('jumpTitle') is not None:
+            self.jump_title = m.get('jumpTitle')
+        if m.get('jumpUrl') is not None:
+            self.jump_url = m.get('jumpUrl')
+        if m.get('videoDuration') is not None:
+            self.video_duration = m.get('videoDuration')
+        if m.get('videoHeight') is not None:
+            self.video_height = m.get('videoHeight')
+        if m.get('videoId') is not None:
+            self.video_id = m.get('videoId')
+        if m.get('videoTitle') is not None:
+            self.video_title = m.get('videoTitle')
+        if m.get('videoWidth') is not None:
+            self.video_width = m.get('videoWidth')
+        if m.get('webpUrl') is not None:
+            self.webp_url = m.get('webpUrl')
+        return self
+
+
+class UploadVideosRequest(TeaModel):
+    def __init__(
+        self,
+        video_list: List[UploadVideosRequestVideoList] = None,
+    ):
+        self.video_list = video_list
+
+    def validate(self):
+        if self.video_list:
+            for k in self.video_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['videoList'] = []
+        if self.video_list is not None:
+            for k in self.video_list:
+                result['videoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.video_list = []
+        if m.get('videoList') is not None:
+            for k in m.get('videoList'):
+                temp_model = UploadVideosRequestVideoList()
+                self.video_list.append(temp_model.from_map(k))
+        return self
+
+
+class UploadVideosShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        video_list_shrink: str = None,
+    ):
+        self.video_list_shrink = video_list_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.video_list_shrink is not None:
+            result['videoList'] = self.video_list_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('videoList') is not None:
+            self.video_list_shrink = m.get('videoList')
+        return self
+
+
+class UploadVideosResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        failed: List[str] = None,
+        has_uploaded: int = None,
+        success: int = None,
+        total: int = None,
+    ):
+        self.failed = failed
+        self.has_uploaded = has_uploaded
+        self.success = success
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.failed is not None:
+            result['failed'] = self.failed
+        if self.has_uploaded is not None:
+            result['hasUploaded'] = self.has_uploaded
+        if self.success is not None:
+            result['success'] = self.success
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('failed') is not None:
+            self.failed = m.get('failed')
+        if m.get('hasUploaded') is not None:
+            self.has_uploaded = m.get('hasUploaded')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class UploadVideosResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UploadVideosResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UploadVideosResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UploadVideosResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UploadVideosResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UploadVideosResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

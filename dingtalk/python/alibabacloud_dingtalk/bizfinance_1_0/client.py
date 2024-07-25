@@ -396,6 +396,132 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__1__0_models.BatchCreateCustomerHeaders()
         return await self.batch_create_customer_with_options_async(request, headers, runtime)
 
+    def begin_consume_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.BeginConsumeRequest,
+        headers: dingtalkbizfinance__1__0_models.BeginConsumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.BeginConsumeResponse:
+        """
+        @summary 预核销智能财务的权益
+        
+        @param request: BeginConsumeRequest
+        @param headers: BeginConsumeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BeginConsumeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            query['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            query['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.quota):
+            query['quota'] = request.quota
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BeginConsume',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/consumedBenefits/prepare',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.BeginConsumeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def begin_consume_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.BeginConsumeRequest,
+        headers: dingtalkbizfinance__1__0_models.BeginConsumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.BeginConsumeResponse:
+        """
+        @summary 预核销智能财务的权益
+        
+        @param request: BeginConsumeRequest
+        @param headers: BeginConsumeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BeginConsumeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            query['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            query['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.quota):
+            query['quota'] = request.quota
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BeginConsume',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/consumedBenefits/prepare',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.BeginConsumeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def begin_consume(
+        self,
+        request: dingtalkbizfinance__1__0_models.BeginConsumeRequest,
+    ) -> dingtalkbizfinance__1__0_models.BeginConsumeResponse:
+        """
+        @summary 预核销智能财务的权益
+        
+        @param request: BeginConsumeRequest
+        @return: BeginConsumeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.BeginConsumeHeaders()
+        return self.begin_consume_with_options(request, headers, runtime)
+
+    async def begin_consume_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.BeginConsumeRequest,
+    ) -> dingtalkbizfinance__1__0_models.BeginConsumeResponse:
+        """
+        @summary 预核销智能财务的权益
+        
+        @param request: BeginConsumeRequest
+        @return: BeginConsumeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.BeginConsumeHeaders()
+        return await self.begin_consume_with_options_async(request, headers, runtime)
+
     def bind_company_accountant_book_with_options(
         self,
         request: dingtalkbizfinance__1__0_models.BindCompanyAccountantBookRequest,
@@ -513,6 +639,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__1__0_models.BindCompanyAccountantBookHeaders()
         return await self.bind_company_accountant_book_with_options_async(request, headers, runtime)
+
+    def cancel_consume_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.CancelConsumeRequest,
+        headers: dingtalkbizfinance__1__0_models.CancelConsumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.CancelConsumeResponse:
+        """
+        @summary 取消核销智能财务的权益
+        
+        @param request: CancelConsumeRequest
+        @param headers: CancelConsumeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CancelConsumeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            query['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            query['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.quota):
+            query['quota'] = request.quota
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CancelConsume',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/consumedBenefits/cancel',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.CancelConsumeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def cancel_consume_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.CancelConsumeRequest,
+        headers: dingtalkbizfinance__1__0_models.CancelConsumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.CancelConsumeResponse:
+        """
+        @summary 取消核销智能财务的权益
+        
+        @param request: CancelConsumeRequest
+        @param headers: CancelConsumeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CancelConsumeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            query['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            query['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.quota):
+            query['quota'] = request.quota
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CancelConsume',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/consumedBenefits/cancel',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.CancelConsumeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def cancel_consume(
+        self,
+        request: dingtalkbizfinance__1__0_models.CancelConsumeRequest,
+    ) -> dingtalkbizfinance__1__0_models.CancelConsumeResponse:
+        """
+        @summary 取消核销智能财务的权益
+        
+        @param request: CancelConsumeRequest
+        @return: CancelConsumeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.CancelConsumeHeaders()
+        return self.cancel_consume_with_options(request, headers, runtime)
+
+    async def cancel_consume_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.CancelConsumeRequest,
+    ) -> dingtalkbizfinance__1__0_models.CancelConsumeResponse:
+        """
+        @summary 取消核销智能财务的权益
+        
+        @param request: CancelConsumeRequest
+        @return: CancelConsumeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.CancelConsumeHeaders()
+        return await self.cancel_consume_with_options_async(request, headers, runtime)
 
     def check_voucher_status_with_options(
         self,
@@ -663,6 +915,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__1__0_models.CheckVoucherStatusHeaders()
         return await self.check_voucher_status_with_options_async(request, headers, runtime)
+
+    def commit_consume_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.CommitConsumeRequest,
+        headers: dingtalkbizfinance__1__0_models.CommitConsumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.CommitConsumeResponse:
+        """
+        @summary 确认核销智能财务的权益
+        
+        @param request: CommitConsumeRequest
+        @param headers: CommitConsumeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CommitConsumeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            query['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            query['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.quota):
+            query['quota'] = request.quota
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CommitConsume',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/consumedBenefits/commit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.CommitConsumeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def commit_consume_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.CommitConsumeRequest,
+        headers: dingtalkbizfinance__1__0_models.CommitConsumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.CommitConsumeResponse:
+        """
+        @summary 确认核销智能财务的权益
+        
+        @param request: CommitConsumeRequest
+        @param headers: CommitConsumeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CommitConsumeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            query['benefitCode'] = request.benefit_code
+        if not UtilClient.is_unset(request.biz_request_id):
+            query['bizRequestId'] = request.biz_request_id
+        if not UtilClient.is_unset(request.quota):
+            query['quota'] = request.quota
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CommitConsume',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/consumedBenefits/commit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.CommitConsumeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def commit_consume(
+        self,
+        request: dingtalkbizfinance__1__0_models.CommitConsumeRequest,
+    ) -> dingtalkbizfinance__1__0_models.CommitConsumeResponse:
+        """
+        @summary 确认核销智能财务的权益
+        
+        @param request: CommitConsumeRequest
+        @return: CommitConsumeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.CommitConsumeHeaders()
+        return self.commit_consume_with_options(request, headers, runtime)
+
+    async def commit_consume_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.CommitConsumeRequest,
+    ) -> dingtalkbizfinance__1__0_models.CommitConsumeResponse:
+        """
+        @summary 确认核销智能财务的权益
+        
+        @param request: CommitConsumeRequest
+        @return: CommitConsumeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.CommitConsumeHeaders()
+        return await self.commit_consume_with_options_async(request, headers, runtime)
 
     def create_customer_with_options(
         self,
@@ -2803,6 +3181,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__1__0_models.PushHistoricalReceiptsHeaders()
         return await self.push_historical_receipts_with_options_async(request, headers, runtime)
+
+    def query_benefit_with_options(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryBenefitRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryBenefitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryBenefitResponse:
+        """
+        @summary 查询智能财务计量型权益
+        
+        @param request: QueryBenefitRequest
+        @param headers: QueryBenefitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBenefitResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            query['benefitCode'] = request.benefit_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryBenefit',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/benefits',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryBenefitResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_benefit_with_options_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryBenefitRequest,
+        headers: dingtalkbizfinance__1__0_models.QueryBenefitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__1__0_models.QueryBenefitResponse:
+        """
+        @summary 查询智能财务计量型权益
+        
+        @param request: QueryBenefitRequest
+        @param headers: QueryBenefitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBenefitResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.benefit_code):
+            query['benefitCode'] = request.benefit_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryBenefit',
+            version='bizfinance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/bizfinance/benefits',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__1__0_models.QueryBenefitResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_benefit(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryBenefitRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryBenefitResponse:
+        """
+        @summary 查询智能财务计量型权益
+        
+        @param request: QueryBenefitRequest
+        @return: QueryBenefitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryBenefitHeaders()
+        return self.query_benefit_with_options(request, headers, runtime)
+
+    async def query_benefit_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryBenefitRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryBenefitResponse:
+        """
+        @summary 查询智能财务计量型权益
+        
+        @param request: QueryBenefitRequest
+        @return: QueryBenefitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__1__0_models.QueryBenefitHeaders()
+        return await self.query_benefit_with_options_async(request, headers, runtime)
 
     def query_category_by_page_with_options(
         self,
