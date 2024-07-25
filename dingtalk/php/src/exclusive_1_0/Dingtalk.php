@@ -264,6 +264,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumResp
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoCreateAndStartTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoCreateAndStartTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoCreateAndStartTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameResponse;
@@ -5958,6 +5961,147 @@ class Dingtalk extends OpenApiClient
         $headers = new SpecialRuleBatchReceiverHeaders([]);
 
         return $this->specialRuleBatchReceiverWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建并启动任务
+     *  *
+     * @param TaskInfoCreateAndStartTaskRequest $request TaskInfoCreateAndStartTaskRequest
+     * @param TaskInfoCreateAndStartTaskHeaders $headers TaskInfoCreateAndStartTaskHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TaskInfoCreateAndStartTaskResponse TaskInfoCreateAndStartTaskResponse
+     */
+    public function taskInfoCreateAndStartTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attr)) {
+            $body['attr'] = $request->attr;
+        }
+        if (!Utils::isUnset($request->backlogDTO)) {
+            $body['backlogDTO'] = $request->backlogDTO;
+        }
+        if (!Utils::isUnset($request->backlogGenerateFlag)) {
+            $body['backlogGenerateFlag'] = $request->backlogGenerateFlag;
+        }
+        if (!Utils::isUnset($request->businessCode)) {
+            $body['businessCode'] = $request->businessCode;
+        }
+        if (!Utils::isUnset($request->canceldelTaskCardId)) {
+            $body['canceldelTaskCardId'] = $request->canceldelTaskCardId;
+        }
+        if (!Utils::isUnset($request->cardDTO)) {
+            $body['cardDTO'] = $request->cardDTO;
+        }
+        if (!Utils::isUnset($request->customFlag)) {
+            $body['customFlag'] = $request->customFlag;
+        }
+        if (!Utils::isUnset($request->detailUrl)) {
+            $body['detailUrl'] = $request->detailUrl;
+        }
+        if (!Utils::isUnset($request->finishTaskCardId)) {
+            $body['finishTaskCardId'] = $request->finishTaskCardId;
+        }
+        if (!Utils::isUnset($request->operatorAccount)) {
+            $body['operatorAccount'] = $request->operatorAccount;
+        }
+        if (!Utils::isUnset($request->outTaskId)) {
+            $body['outTaskId'] = $request->outTaskId;
+        }
+        if (!Utils::isUnset($request->projId)) {
+            $body['projId'] = $request->projId;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            $body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->secretKey)) {
+            $body['secretKey'] = $request->secretKey;
+        }
+        if (!Utils::isUnset($request->sendMsgFlag)) {
+            $body['sendMsgFlag'] = $request->sendMsgFlag;
+        }
+        if (!Utils::isUnset($request->sort)) {
+            $body['sort'] = $request->sort;
+        }
+        if (!Utils::isUnset($request->startTaskCardId)) {
+            $body['startTaskCardId'] = $request->startTaskCardId;
+        }
+        if (!Utils::isUnset($request->state)) {
+            $body['state'] = $request->state;
+        }
+        if (!Utils::isUnset($request->taskContent)) {
+            $body['taskContent'] = $request->taskContent;
+        }
+        if (!Utils::isUnset($request->taskEndTime)) {
+            $body['taskEndTime'] = $request->taskEndTime;
+        }
+        if (!Utils::isUnset($request->taskExecutePersonDTOS)) {
+            $body['taskExecutePersonDTOS'] = $request->taskExecutePersonDTOS;
+        }
+        if (!Utils::isUnset($request->taskGroupDTOList)) {
+            $body['taskGroupDTOList'] = $request->taskGroupDTOList;
+        }
+        if (!Utils::isUnset($request->taskSystem)) {
+            $body['taskSystem'] = $request->taskSystem;
+        }
+        if (!Utils::isUnset($request->taskTemplCode)) {
+            $body['taskTemplCode'] = $request->taskTemplCode;
+        }
+        if (!Utils::isUnset($request->taskTitle)) {
+            $body['taskTitle'] = $request->taskTitle;
+        }
+        if (!Utils::isUnset($request->taskType)) {
+            $body['taskType'] = $request->taskType;
+        }
+        if (!Utils::isUnset($request->taskUrlMobile)) {
+            $body['taskUrlMobile'] = $request->taskUrlMobile;
+        }
+        if (!Utils::isUnset($request->taskUrlPc)) {
+            $body['taskUrlPc'] = $request->taskUrlPc;
+        }
+        if (!Utils::isUnset($request->updateTaskCardId)) {
+            $body['updateTaskCardId'] = $request->updateTaskCardId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TaskInfoCreateAndStartTask',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/taskCenters/taskInfos/createAndStart',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TaskInfoCreateAndStartTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建并启动任务
+     *  *
+     * @param TaskInfoCreateAndStartTaskRequest $request TaskInfoCreateAndStartTaskRequest
+     *
+     * @return TaskInfoCreateAndStartTaskResponse TaskInfoCreateAndStartTaskResponse
+     */
+    public function taskInfoCreateAndStartTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TaskInfoCreateAndStartTaskHeaders([]);
+
+        return $this->taskInfoCreateAndStartTaskWithOptions($request, $headers, $runtime);
     }
 
     /**

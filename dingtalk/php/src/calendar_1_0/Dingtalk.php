@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetMeetingRoomsScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleByMeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleByMeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleByMeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetScheduleResponse;
@@ -72,6 +75,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsInstancesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewByMeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewByMeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewByMeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponse;
@@ -1145,6 +1151,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询闲忙(me接口）
+     *  *
+     * @param GetScheduleByMeRequest $request GetScheduleByMeRequest
+     * @param GetScheduleByMeHeaders $headers GetScheduleByMeHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetScheduleByMeResponse GetScheduleByMeResponse
+     */
+    public function getScheduleByMeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetScheduleByMe',
+            'version'     => 'calendar_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/calendar/me/schedules/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetScheduleByMeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询闲忙(me接口）
+     *  *
+     * @param GetScheduleByMeRequest $request GetScheduleByMeRequest
+     *
+     * @return GetScheduleByMeResponse GetScheduleByMeResponse
+     */
+    public function getScheduleByMe($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetScheduleByMeHeaders([]);
+
+        return $this->getScheduleByMeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取签到链接
      *  *
      * @param string               $calendarId
@@ -1838,6 +1910,80 @@ class Dingtalk extends OpenApiClient
         $headers = new ListEventsViewHeaders([]);
 
         return $this->listEventsViewWithOptions($userId, $calendarId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+     *  *
+     * @param string                    $calendarId
+     * @param ListEventsViewByMeRequest $request    ListEventsViewByMeRequest
+     * @param ListEventsViewByMeHeaders $headers    ListEventsViewByMeHeaders
+     * @param RuntimeOptions            $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return ListEventsViewByMeResponse ListEventsViewByMeResponse
+     */
+    public function listEventsViewByMeWithOptions($calendarId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxAttendees)) {
+            $query['maxAttendees'] = $request->maxAttendees;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->timeMax)) {
+            $query['timeMax'] = $request->timeMax;
+        }
+        if (!Utils::isUnset($request->timeMin)) {
+            $query['timeMin'] = $request->timeMin;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListEventsViewByMe',
+            'version'     => 'calendar_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/calendar/me/calendars/' . $calendarId . '/eventsview',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListEventsViewByMeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+     *  *
+     * @param string                    $calendarId
+     * @param ListEventsViewByMeRequest $request    ListEventsViewByMeRequest
+     *
+     * @return ListEventsViewByMeResponse ListEventsViewByMeResponse
+     */
+    public function listEventsViewByMe($calendarId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListEventsViewByMeHeaders([]);
+
+        return $this->listEventsViewByMeWithOptions($calendarId, $request, $headers, $runtime);
     }
 
     /**

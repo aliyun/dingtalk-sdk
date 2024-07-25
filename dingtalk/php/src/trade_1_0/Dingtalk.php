@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CheckOpportunityResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CheckOpportunityResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CheckOpportunityResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateNoteForIsvHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateNoteForIsvRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateNoteForIsvResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateOpportunityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateOpportunityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateOpportunityResponse;
@@ -101,6 +104,78 @@ class Dingtalk extends OpenApiClient
         $headers = new CheckOpportunityResultHeaders([]);
 
         return $this->checkOpportunityResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建小记
+     *  *
+     * @param CreateNoteForIsvRequest $request CreateNoteForIsvRequest
+     * @param CreateNoteForIsvHeaders $headers CreateNoteForIsvHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateNoteForIsvResponse CreateNoteForIsvResponse
+     */
+    public function createNoteForIsvWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->contactName)) {
+            $body['contactName'] = $request->contactName;
+        }
+        if (!Utils::isUnset($request->contactPhoneNum)) {
+            $body['contactPhoneNum'] = $request->contactPhoneNum;
+        }
+        if (!Utils::isUnset($request->contactTitle)) {
+            $body['contactTitle'] = $request->contactTitle;
+        }
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->inputPhoneNum)) {
+            $body['inputPhoneNum'] = $request->inputPhoneNum;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateNoteForIsv',
+            'version'     => 'trade_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trade/notes',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateNoteForIsvResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建小记
+     *  *
+     * @param CreateNoteForIsvRequest $request CreateNoteForIsvRequest
+     *
+     * @return CreateNoteForIsvResponse CreateNoteForIsvResponse
+     */
+    public function createNoteForIsv($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateNoteForIsvHeaders([]);
+
+        return $this->createNoteForIsvWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddOrgTextEmotionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddRobotToConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddRobotToConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddRobotToConversationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddUnfurlingRegisterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddUnfurlingRegisterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddUnfurlingRegisterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AutoOpenDingTalkConnectHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AutoOpenDingTalkConnectResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\BatchQueryFamilySchoolMessageHeaders;
@@ -54,6 +57,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateSceneGroupConversationRespons
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DebugUnfurlingRegisterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DebugUnfurlingRegisterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DebugUnfurlingRegisterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteOrgTextEmotionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteOrgTextEmotionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteOrgTextEmotionResponse;
@@ -110,6 +116,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceReques
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OfflineUnfurlingRegisterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OfflineUnfurlingRegisterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OfflineUnfurlingRegisterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleAddHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleAddRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenGroupRoleAddResponse;
@@ -173,9 +182,18 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySceneGroupTemplateRobotRespons
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySingleGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySingleGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QuerySingleGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnfurlingRegisterCreatorHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnfurlingRegisterCreatorRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnfurlingRegisterCreatorResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnfurlingRegisterInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnfurlingRegisterInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnfurlingRegisterInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReleaseUnfurlingRegisterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReleaseUnfurlingRegisterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReleaseUnfurlingRegisterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveGroupMemberResponse;
@@ -245,6 +263,12 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInteractiveCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateTheGroupRolesOfGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateTheGroupRolesOfGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateTheGroupRolesOfGroupMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateUnfurlingRegisterStatusResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -395,6 +419,87 @@ class Dingtalk extends OpenApiClient
         $headers = new AddRobotToConversationHeaders([]);
 
         return $this->addRobotToConversationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 新增链接增强注册规则
+     *  *
+     * @param AddUnfurlingRegisterRequest $request AddUnfurlingRegisterRequest
+     * @param AddUnfurlingRegisterHeaders $headers AddUnfurlingRegisterHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddUnfurlingRegisterResponse AddUnfurlingRegisterResponse
+     */
+    public function addUnfurlingRegisterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->apiSecret)) {
+            $body['apiSecret'] = $request->apiSecret;
+        }
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->callbackUrl)) {
+            $body['callbackUrl'] = $request->callbackUrl;
+        }
+        if (!Utils::isUnset($request->cardTemplateId)) {
+            $body['cardTemplateId'] = $request->cardTemplateId;
+        }
+        if (!Utils::isUnset($request->domain)) {
+            $body['domain'] = $request->domain;
+        }
+        if (!Utils::isUnset($request->path)) {
+            $body['path'] = $request->path;
+        }
+        if (!Utils::isUnset($request->ruleDesc)) {
+            $body['ruleDesc'] = $request->ruleDesc;
+        }
+        if (!Utils::isUnset($request->ruleMatchType)) {
+            $body['ruleMatchType'] = $request->ruleMatchType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddUnfurlingRegister',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/unfurling/rules',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddUnfurlingRegisterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 新增链接增强注册规则
+     *  *
+     * @param AddUnfurlingRegisterRequest $request AddUnfurlingRegisterRequest
+     *
+     * @return AddUnfurlingRegisterResponse AddUnfurlingRegisterResponse
+     */
+    public function addUnfurlingRegister($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddUnfurlingRegisterHeaders([]);
+
+        return $this->addUnfurlingRegisterWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1286,6 +1391,75 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateStoreGroupConversationHeaders([]);
 
         return $this->createStoreGroupConversationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 链接增强规则调试
+     *  *
+     * @param DebugUnfurlingRegisterRequest $request DebugUnfurlingRegisterRequest
+     * @param DebugUnfurlingRegisterHeaders $headers DebugUnfurlingRegisterHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DebugUnfurlingRegisterResponse DebugUnfurlingRegisterResponse
+     */
+    public function debugUnfurlingRegisterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->grayGroupIdList)) {
+            $body['grayGroupIdList'] = $request->grayGroupIdList;
+        }
+        if (!Utils::isUnset($request->grayUserIdList)) {
+            $body['grayUserIdList'] = $request->grayUserIdList;
+        }
+        if (!Utils::isUnset($request->id)) {
+            $body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DebugUnfurlingRegister',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/unfurling/rules/debug',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DebugUnfurlingRegisterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 链接增强规则调试
+     *  *
+     * @param DebugUnfurlingRegisterRequest $request DebugUnfurlingRegisterRequest
+     *
+     * @return DebugUnfurlingRegisterResponse DebugUnfurlingRegisterResponse
+     */
+    public function debugUnfurlingRegister($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DebugUnfurlingRegisterHeaders([]);
+
+        return $this->debugUnfurlingRegisterWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2582,6 +2756,69 @@ class Dingtalk extends OpenApiClient
         $headers = new ListOrgTextEmotionHeaders([]);
 
         return $this->listOrgTextEmotionWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 链接增强规则下线
+     *  *
+     * @param OfflineUnfurlingRegisterRequest $request OfflineUnfurlingRegisterRequest
+     * @param OfflineUnfurlingRegisterHeaders $headers OfflineUnfurlingRegisterHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OfflineUnfurlingRegisterResponse OfflineUnfurlingRegisterResponse
+     */
+    public function offlineUnfurlingRegisterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->id)) {
+            $body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OfflineUnfurlingRegister',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/unfurling/rules/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OfflineUnfurlingRegisterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 链接增强规则下线
+     *  *
+     * @param OfflineUnfurlingRegisterRequest $request OfflineUnfurlingRegisterRequest
+     *
+     * @return OfflineUnfurlingRegisterResponse OfflineUnfurlingRegisterResponse
+     */
+    public function offlineUnfurlingRegister($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OfflineUnfurlingRegisterHeaders([]);
+
+        return $this->offlineUnfurlingRegisterWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3932,6 +4169,192 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryUnReadMessageHeaders([]);
 
         return $this->queryUnReadMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询链接查询链接增强注册信息创建者
+     *  *
+     * @param QueryUnfurlingRegisterCreatorRequest $request QueryUnfurlingRegisterCreatorRequest
+     * @param QueryUnfurlingRegisterCreatorHeaders $headers QueryUnfurlingRegisterCreatorHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryUnfurlingRegisterCreatorResponse QueryUnfurlingRegisterCreatorResponse
+     */
+    public function queryUnfurlingRegisterCreatorWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->domain)) {
+            $query['domain'] = $request->domain;
+        }
+        if (!Utils::isUnset($request->path)) {
+            $query['path'] = $request->path;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryUnfurlingRegisterCreator',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/unfurling/rules/creators',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryUnfurlingRegisterCreatorResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询链接查询链接增强注册信息创建者
+     *  *
+     * @param QueryUnfurlingRegisterCreatorRequest $request QueryUnfurlingRegisterCreatorRequest
+     *
+     * @return QueryUnfurlingRegisterCreatorResponse QueryUnfurlingRegisterCreatorResponse
+     */
+    public function queryUnfurlingRegisterCreator($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUnfurlingRegisterCreatorHeaders([]);
+
+        return $this->queryUnfurlingRegisterCreatorWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询链接增强注册信息列表
+     *  *
+     * @param QueryUnfurlingRegisterInfoRequest $request QueryUnfurlingRegisterInfoRequest
+     * @param QueryUnfurlingRegisterInfoHeaders $headers QueryUnfurlingRegisterInfoHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryUnfurlingRegisterInfoResponse QueryUnfurlingRegisterInfoResponse
+     */
+    public function queryUnfurlingRegisterInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appId)) {
+            $query['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryUnfurlingRegisterInfo',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/unfurling/rules',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryUnfurlingRegisterInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询链接增强注册信息列表
+     *  *
+     * @param QueryUnfurlingRegisterInfoRequest $request QueryUnfurlingRegisterInfoRequest
+     *
+     * @return QueryUnfurlingRegisterInfoResponse QueryUnfurlingRegisterInfoResponse
+     */
+    public function queryUnfurlingRegisterInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUnfurlingRegisterInfoHeaders([]);
+
+        return $this->queryUnfurlingRegisterInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 链接增强规则发布
+     *  *
+     * @param ReleaseUnfurlingRegisterRequest $request ReleaseUnfurlingRegisterRequest
+     * @param ReleaseUnfurlingRegisterHeaders $headers ReleaseUnfurlingRegisterHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ReleaseUnfurlingRegisterResponse ReleaseUnfurlingRegisterResponse
+     */
+    public function releaseUnfurlingRegisterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->id)) {
+            $body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ReleaseUnfurlingRegister',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/unfurling/rules/publish',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ReleaseUnfurlingRegisterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 链接增强规则发布
+     *  *
+     * @param ReleaseUnfurlingRegisterRequest $request ReleaseUnfurlingRegisterRequest
+     *
+     * @return ReleaseUnfurlingRegisterResponse ReleaseUnfurlingRegisterResponse
+     */
+    public function releaseUnfurlingRegister($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ReleaseUnfurlingRegisterHeaders([]);
+
+        return $this->releaseUnfurlingRegisterWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -5360,6 +5783,156 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateTheGroupRolesOfGroupMemberHeaders([]);
 
         return $this->updateTheGroupRolesOfGroupMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 编辑链接增强注册规则
+     *  *
+     * @param UpdateUnfurlingRegisterRequest $request UpdateUnfurlingRegisterRequest
+     * @param UpdateUnfurlingRegisterHeaders $headers UpdateUnfurlingRegisterHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateUnfurlingRegisterResponse UpdateUnfurlingRegisterResponse
+     */
+    public function updateUnfurlingRegisterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->apiSecret)) {
+            $body['apiSecret'] = $request->apiSecret;
+        }
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->callbackUrl)) {
+            $body['callbackUrl'] = $request->callbackUrl;
+        }
+        if (!Utils::isUnset($request->cardTemplateId)) {
+            $body['cardTemplateId'] = $request->cardTemplateId;
+        }
+        if (!Utils::isUnset($request->domain)) {
+            $body['domain'] = $request->domain;
+        }
+        if (!Utils::isUnset($request->id)) {
+            $body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->path)) {
+            $body['path'] = $request->path;
+        }
+        if (!Utils::isUnset($request->ruleDesc)) {
+            $body['ruleDesc'] = $request->ruleDesc;
+        }
+        if (!Utils::isUnset($request->ruleMatchType)) {
+            $body['ruleMatchType'] = $request->ruleMatchType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateUnfurlingRegister',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/unfurling/rules',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateUnfurlingRegisterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 编辑链接增强注册规则
+     *  *
+     * @param UpdateUnfurlingRegisterRequest $request UpdateUnfurlingRegisterRequest
+     *
+     * @return UpdateUnfurlingRegisterResponse UpdateUnfurlingRegisterResponse
+     */
+    public function updateUnfurlingRegister($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateUnfurlingRegisterHeaders([]);
+
+        return $this->updateUnfurlingRegisterWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 链接增强规则状态更新
+     *  *
+     * @param UpdateUnfurlingRegisterStatusRequest $request UpdateUnfurlingRegisterStatusRequest
+     * @param UpdateUnfurlingRegisterStatusHeaders $headers UpdateUnfurlingRegisterStatusHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateUnfurlingRegisterStatusResponse UpdateUnfurlingRegisterStatusResponse
+     */
+    public function updateUnfurlingRegisterStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->id)) {
+            $body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateUnfurlingRegisterStatus',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/unfurling/rules/statuses',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateUnfurlingRegisterStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 链接增强规则状态更新
+     *  *
+     * @param UpdateUnfurlingRegisterStatusRequest $request UpdateUnfurlingRegisterStatusRequest
+     *
+     * @return UpdateUnfurlingRegisterStatusResponse UpdateUnfurlingRegisterStatusResponse
+     */
+    public function updateUnfurlingRegisterStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateUnfurlingRegisterStatusHeaders([]);
+
+        return $this->updateUnfurlingRegisterStatusWithOptions($request, $headers, $runtime);
     }
 
     /**
