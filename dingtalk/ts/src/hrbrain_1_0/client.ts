@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,15 @@ export class HrbrainImportAwardDetailHeaders extends $tea.Model {
 }
 
 export class HrbrainImportAwardDetailRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportAwardDetailRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -126,7 +132,15 @@ export class HrbrainImportDeptInfoHeaders extends $tea.Model {
 }
 
 export class HrbrainImportDeptInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportDeptInfoRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -220,7 +234,15 @@ export class HrbrainImportDimissionHeaders extends $tea.Model {
 }
 
 export class HrbrainImportDimissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportDimissionRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -314,7 +336,15 @@ export class HrbrainImportEduExpHeaders extends $tea.Model {
 }
 
 export class HrbrainImportEduExpRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportEduExpRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -408,7 +438,15 @@ export class HrbrainImportEmpInfoHeaders extends $tea.Model {
 }
 
 export class HrbrainImportEmpInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportEmpInfoRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -502,7 +540,15 @@ export class HrbrainImportLabelBaseHeaders extends $tea.Model {
 }
 
 export class HrbrainImportLabelBaseRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportLabelBaseRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -596,7 +642,15 @@ export class HrbrainImportLabelCustomHeaders extends $tea.Model {
 }
 
 export class HrbrainImportLabelCustomRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportLabelCustomRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -690,7 +744,15 @@ export class HrbrainImportLabelIndustryHeaders extends $tea.Model {
 }
 
 export class HrbrainImportLabelIndustryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportLabelIndustryRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -784,7 +846,15 @@ export class HrbrainImportLabelInventoryHeaders extends $tea.Model {
 }
 
 export class HrbrainImportLabelInventoryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportLabelInventoryRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -878,7 +948,15 @@ export class HrbrainImportLabelProfSkillHeaders extends $tea.Model {
 }
 
 export class HrbrainImportLabelProfSkillRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportLabelProfSkillRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -972,7 +1050,15 @@ export class HrbrainImportPerfEvalHeaders extends $tea.Model {
 }
 
 export class HrbrainImportPerfEvalRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportPerfEvalRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1066,7 +1152,15 @@ export class HrbrainImportPromEvalHeaders extends $tea.Model {
 }
 
 export class HrbrainImportPromEvalRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportPromEvalRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1160,7 +1254,15 @@ export class HrbrainImportPunDetailHeaders extends $tea.Model {
 }
 
 export class HrbrainImportPunDetailRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportPunDetailRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1254,7 +1356,15 @@ export class HrbrainImportRegistHeaders extends $tea.Model {
 }
 
 export class HrbrainImportRegistRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportRegistRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1348,7 +1458,15 @@ export class HrbrainImportTransferEvalHeaders extends $tea.Model {
 }
 
 export class HrbrainImportTransferEvalRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportTransferEvalRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1442,7 +1560,15 @@ export class HrbrainImportWorkExpHeaders extends $tea.Model {
 }
 
 export class HrbrainImportWorkExpRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: HrbrainImportWorkExpRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1537,7 +1663,15 @@ export class StaffLabelRecordsQueryHeaders extends $tea.Model {
 
 export class StaffLabelRecordsQueryRequest extends $tea.Model {
   body?: StaffLabelRecordsQueryRequestBody[];
+  /**
+   * @example
+   * 0140180438261064274667
+   */
   dingCorpId?: string;
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
   nextToken?: string;
   static names(): { [key: string]: string } {
@@ -1565,8 +1699,20 @@ export class StaffLabelRecordsQueryRequest extends $tea.Model {
 
 export class StaffLabelRecordsQueryResponseBody extends $tea.Model {
   content?: StaffLabelRecordsQueryResponseBodyContent;
+  /**
+   * @example
+   * 0140180438261064274667
+   */
   requestId?: string;
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1639,10 +1785,30 @@ export class SyncDataHeaders extends $tea.Model {
 }
 
 export class SyncDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dataId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   etlTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   projectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   schemaId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1714,13 +1880,29 @@ export class SyncDataResponse extends $tea.Model {
 }
 
 export class HrbrainImportAwardDetailRequestBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   awardDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   awardName?: string;
   awardOrg?: string;
   awardType?: string;
   comment?: string;
   extendInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1755,12 +1937,24 @@ export class HrbrainImportAwardDetailRequestBody extends $tea.Model {
 
 export class HrbrainImportDeptInfoRequestBody extends $tea.Model {
   createDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deptName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deptNo?: string;
   effectiveDate?: string;
   extendInfo?: { [key: string]: any };
   isEffective?: string;
   superDeptName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   superDeptNo?: string;
   superEmpId?: string;
   superName?: string;
@@ -1800,19 +1994,55 @@ export class HrbrainImportDeptInfoRequestBody extends $tea.Model {
 }
 
 export class HrbrainImportDimissionRequestBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deptName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deptNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dimissionDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dimissionReaasonDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dimissionReason?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   empType?: string;
   extendInfo?: { [key: string]: any };
   jobCodeName?: string;
   jobLevel?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   postName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   superName?: string;
   workLocAddr?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1858,13 +2088,37 @@ export class HrbrainImportDimissionRequestBody extends $tea.Model {
 }
 
 export class HrbrainImportEduExpRequestBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   eduName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endDate?: string;
   extendInfo?: { [key: string]: any };
   major?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   schoolName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1898,26 +2152,78 @@ export class HrbrainImportEduExpRequestBody extends $tea.Model {
 }
 
 export class HrbrainImportEmpInfoRequestBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   birthday?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deptName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deptNo?: string;
   dimissionDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   empSource?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   empStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   empType?: string;
   extendInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gender?: string;
   highestDegree?: string;
   highestEduName?: string;
   isDimission?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   jobCodeName?: string;
   jobLevel?: string;
   lastSchoolName?: string;
   marriage?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nation?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nationCtry?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   politicalStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   postName?: string;
   registDate?: string;
   regularDate?: string;
@@ -1926,6 +2232,10 @@ export class HrbrainImportEmpInfoRequestBody extends $tea.Model {
   workEmail?: string;
   workLocAddr?: string;
   workLocCity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2001,8 +2311,20 @@ export class HrbrainImportEmpInfoRequestBody extends $tea.Model {
 }
 
 export class HrbrainImportLabelBaseRequestBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   extendInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2027,8 +2349,20 @@ export class HrbrainImportLabelBaseRequestBody extends $tea.Model {
 
 export class HrbrainImportLabelCustomRequestBody extends $tea.Model {
   extendInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tag?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2055,10 +2389,30 @@ export class HrbrainImportLabelCustomRequestBody extends $tea.Model {
 
 export class HrbrainImportLabelIndustryRequestBody extends $tea.Model {
   extendInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   level1?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   level2?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   level3?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2089,8 +2443,20 @@ export class HrbrainImportLabelIndustryRequestBody extends $tea.Model {
 
 export class HrbrainImportLabelInventoryRequestBody extends $tea.Model {
   extendInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2117,10 +2483,30 @@ export class HrbrainImportLabelInventoryRequestBody extends $tea.Model {
 
 export class HrbrainImportLabelProfSkillRequestBody extends $tea.Model {
   extendInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   level1?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   level2?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   level3?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2152,14 +2538,42 @@ export class HrbrainImportLabelProfSkillRequestBody extends $tea.Model {
 export class HrbrainImportPerfEvalRequestBody extends $tea.Model {
   comment?: string;
   extendInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   perfCate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   perfPlanName?: string;
   perfScore?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   periodEndDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   periodStartDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   score?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2200,14 +2614,38 @@ export class HrbrainImportPerfEvalRequestBody extends $tea.Model {
 
 export class HrbrainImportPromEvalRequestBody extends $tea.Model {
   comment?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   effectiveDate?: string;
   extendInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   newJobLevel?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
   periodEndDate?: string;
   periodStartDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   preJobLevel?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2246,11 +2684,27 @@ export class HrbrainImportPromEvalRequestBody extends $tea.Model {
 
 export class HrbrainImportPunDetailRequestBody extends $tea.Model {
   comment?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   effectiveDate?: string;
   extendInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   punName?: string;
   punOrg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2282,18 +2736,46 @@ export class HrbrainImportPunDetailRequestBody extends $tea.Model {
 }
 
 export class HrbrainImportRegistRequestBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deptName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deptNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   empSource?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   empType?: string;
   extendInfo?: { [key: string]: any };
   jobCodeName?: string;
   jobLevel?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   postName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   registDate?: string;
   superName?: string;
   workLocAddr?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2337,13 +2819,41 @@ export class HrbrainImportRegistRequestBody extends $tea.Model {
 }
 
 export class HrbrainImportTransferEvalRequestBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   currInfo?: { [key: string]: any };
   extendInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   preInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   transferDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   transferReason?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   transferType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2377,13 +2887,33 @@ export class HrbrainImportTransferEvalRequestBody extends $tea.Model {
 }
 
 export class HrbrainImportWorkExpRequestBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   companyName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endDate?: string;
   extendInfo?: { [key: string]: any };
   jobDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   postName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2417,7 +2947,15 @@ export class HrbrainImportWorkExpRequestBody extends $tea.Model {
 }
 
 export class StaffLabelRecordsQueryRequestBodyLabels extends $tea.Model {
+  /**
+   * @example
+   * long_termism_score
+   */
   code?: string;
+  /**
+   * @example
+   * values
+   */
   typeCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2440,6 +2978,10 @@ export class StaffLabelRecordsQueryRequestBodyLabels extends $tea.Model {
 
 export class StaffLabelRecordsQueryRequestBody extends $tea.Model {
   labels?: StaffLabelRecordsQueryRequestBodyLabels[];
+  /**
+   * @example
+   * 0140180438261064274667
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2486,12 +3028,36 @@ export class StaffLabelRecordsQueryResponseBodyContentDataLabelsOptions extends 
 }
 
 export class StaffLabelRecordsQueryResponseBodyContentDataLabels extends $tea.Model {
+  /**
+   * @example
+   * long_termism_score
+   */
   code?: string;
+  /**
+   * @example
+   * values.long_termism_score
+   */
   guid?: string;
+  /**
+   * @example
+   * 持续业绩
+   */
   name?: string;
   options?: StaffLabelRecordsQueryResponseBodyContentDataLabelsOptions[];
+  /**
+   * @example
+   * values
+   */
   typeCode?: string;
+  /**
+   * @example
+   * 价值
+   */
   typeName?: string;
+  /**
+   * @example
+   * 5（总是）
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2524,6 +3090,10 @@ export class StaffLabelRecordsQueryResponseBodyContentDataLabels extends $tea.Mo
 
 export class StaffLabelRecordsQueryResponseBodyContentData extends $tea.Model {
   labels?: StaffLabelRecordsQueryResponseBodyContentDataLabels[];
+  /**
+   * @example
+   * 0140180438261064274667
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2546,8 +3116,16 @@ export class StaffLabelRecordsQueryResponseBodyContentData extends $tea.Model {
 
 export class StaffLabelRecordsQueryResponseBodyContent extends $tea.Model {
   data?: StaffLabelRecordsQueryResponseBodyContentData[];
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @example
+   * 100
+   */
   totalCountt?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2574,12 +3152,11 @@ export class StaffLabelRecordsQueryResponseBodyContent extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2589,12 +3166,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 集成奖励记录
-   *
-   * @param request HrbrainImportAwardDetailRequest
-   * @param headers HrbrainImportAwardDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportAwardDetailResponse
+   * 集成奖励记录
+   * 
+   * @param request - HrbrainImportAwardDetailRequest
+   * @param headers - HrbrainImportAwardDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportAwardDetailResponse
    */
   async hrbrainImportAwardDetailWithOptions(request: HrbrainImportAwardDetailRequest, headers: HrbrainImportAwardDetailHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportAwardDetailResponse> {
     Util.validateModel(request);
@@ -2632,10 +3209,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成奖励记录
-   *
-   * @param request HrbrainImportAwardDetailRequest
-   * @return HrbrainImportAwardDetailResponse
+   * 集成奖励记录
+   * 
+   * @param request - HrbrainImportAwardDetailRequest
+   * @returns HrbrainImportAwardDetailResponse
    */
   async hrbrainImportAwardDetail(request: HrbrainImportAwardDetailRequest): Promise<HrbrainImportAwardDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2644,12 +3221,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成组织架构
-   *
-   * @param request HrbrainImportDeptInfoRequest
-   * @param headers HrbrainImportDeptInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportDeptInfoResponse
+   * 集成组织架构
+   * 
+   * @param request - HrbrainImportDeptInfoRequest
+   * @param headers - HrbrainImportDeptInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportDeptInfoResponse
    */
   async hrbrainImportDeptInfoWithOptions(request: HrbrainImportDeptInfoRequest, headers: HrbrainImportDeptInfoHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportDeptInfoResponse> {
     Util.validateModel(request);
@@ -2687,10 +3264,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成组织架构
-   *
-   * @param request HrbrainImportDeptInfoRequest
-   * @return HrbrainImportDeptInfoResponse
+   * 集成组织架构
+   * 
+   * @param request - HrbrainImportDeptInfoRequest
+   * @returns HrbrainImportDeptInfoResponse
    */
   async hrbrainImportDeptInfo(request: HrbrainImportDeptInfoRequest): Promise<HrbrainImportDeptInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2699,12 +3276,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成离职信息
-   *
-   * @param request HrbrainImportDimissionRequest
-   * @param headers HrbrainImportDimissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportDimissionResponse
+   * 集成离职信息
+   * 
+   * @param request - HrbrainImportDimissionRequest
+   * @param headers - HrbrainImportDimissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportDimissionResponse
    */
   async hrbrainImportDimissionWithOptions(request: HrbrainImportDimissionRequest, headers: HrbrainImportDimissionHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportDimissionResponse> {
     Util.validateModel(request);
@@ -2742,10 +3319,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成离职信息
-   *
-   * @param request HrbrainImportDimissionRequest
-   * @return HrbrainImportDimissionResponse
+   * 集成离职信息
+   * 
+   * @param request - HrbrainImportDimissionRequest
+   * @returns HrbrainImportDimissionResponse
    */
   async hrbrainImportDimission(request: HrbrainImportDimissionRequest): Promise<HrbrainImportDimissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2754,12 +3331,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成教育经历
-   *
-   * @param request HrbrainImportEduExpRequest
-   * @param headers HrbrainImportEduExpHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportEduExpResponse
+   * 集成教育经历
+   * 
+   * @param request - HrbrainImportEduExpRequest
+   * @param headers - HrbrainImportEduExpHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportEduExpResponse
    */
   async hrbrainImportEduExpWithOptions(request: HrbrainImportEduExpRequest, headers: HrbrainImportEduExpHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportEduExpResponse> {
     Util.validateModel(request);
@@ -2797,10 +3374,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成教育经历
-   *
-   * @param request HrbrainImportEduExpRequest
-   * @return HrbrainImportEduExpResponse
+   * 集成教育经历
+   * 
+   * @param request - HrbrainImportEduExpRequest
+   * @returns HrbrainImportEduExpResponse
    */
   async hrbrainImportEduExp(request: HrbrainImportEduExpRequest): Promise<HrbrainImportEduExpResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2809,12 +3386,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成人员信息
-   *
-   * @param request HrbrainImportEmpInfoRequest
-   * @param headers HrbrainImportEmpInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportEmpInfoResponse
+   * 集成人员信息
+   * 
+   * @param request - HrbrainImportEmpInfoRequest
+   * @param headers - HrbrainImportEmpInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportEmpInfoResponse
    */
   async hrbrainImportEmpInfoWithOptions(request: HrbrainImportEmpInfoRequest, headers: HrbrainImportEmpInfoHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportEmpInfoResponse> {
     Util.validateModel(request);
@@ -2852,10 +3429,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成人员信息
-   *
-   * @param request HrbrainImportEmpInfoRequest
-   * @return HrbrainImportEmpInfoResponse
+   * 集成人员信息
+   * 
+   * @param request - HrbrainImportEmpInfoRequest
+   * @returns HrbrainImportEmpInfoResponse
    */
   async hrbrainImportEmpInfo(request: HrbrainImportEmpInfoRequest): Promise<HrbrainImportEmpInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2864,12 +3441,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成基础标签
-   *
-   * @param request HrbrainImportLabelBaseRequest
-   * @param headers HrbrainImportLabelBaseHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportLabelBaseResponse
+   * 集成基础标签
+   * 
+   * @param request - HrbrainImportLabelBaseRequest
+   * @param headers - HrbrainImportLabelBaseHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportLabelBaseResponse
    */
   async hrbrainImportLabelBaseWithOptions(request: HrbrainImportLabelBaseRequest, headers: HrbrainImportLabelBaseHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportLabelBaseResponse> {
     Util.validateModel(request);
@@ -2907,10 +3484,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成基础标签
-   *
-   * @param request HrbrainImportLabelBaseRequest
-   * @return HrbrainImportLabelBaseResponse
+   * 集成基础标签
+   * 
+   * @param request - HrbrainImportLabelBaseRequest
+   * @returns HrbrainImportLabelBaseResponse
    */
   async hrbrainImportLabelBase(request: HrbrainImportLabelBaseRequest): Promise<HrbrainImportLabelBaseResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2919,12 +3496,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成自定义标签
-   *
-   * @param request HrbrainImportLabelCustomRequest
-   * @param headers HrbrainImportLabelCustomHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportLabelCustomResponse
+   * 集成自定义标签
+   * 
+   * @param request - HrbrainImportLabelCustomRequest
+   * @param headers - HrbrainImportLabelCustomHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportLabelCustomResponse
    */
   async hrbrainImportLabelCustomWithOptions(request: HrbrainImportLabelCustomRequest, headers: HrbrainImportLabelCustomHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportLabelCustomResponse> {
     Util.validateModel(request);
@@ -2962,10 +3539,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成自定义标签
-   *
-   * @param request HrbrainImportLabelCustomRequest
-   * @return HrbrainImportLabelCustomResponse
+   * 集成自定义标签
+   * 
+   * @param request - HrbrainImportLabelCustomRequest
+   * @returns HrbrainImportLabelCustomResponse
    */
   async hrbrainImportLabelCustom(request: HrbrainImportLabelCustomRequest): Promise<HrbrainImportLabelCustomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2974,12 +3551,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成领域经验
-   *
-   * @param request HrbrainImportLabelIndustryRequest
-   * @param headers HrbrainImportLabelIndustryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportLabelIndustryResponse
+   * 集成领域经验
+   * 
+   * @param request - HrbrainImportLabelIndustryRequest
+   * @param headers - HrbrainImportLabelIndustryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportLabelIndustryResponse
    */
   async hrbrainImportLabelIndustryWithOptions(request: HrbrainImportLabelIndustryRequest, headers: HrbrainImportLabelIndustryHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportLabelIndustryResponse> {
     Util.validateModel(request);
@@ -3017,10 +3594,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成领域经验
-   *
-   * @param request HrbrainImportLabelIndustryRequest
-   * @return HrbrainImportLabelIndustryResponse
+   * 集成领域经验
+   * 
+   * @param request - HrbrainImportLabelIndustryRequest
+   * @returns HrbrainImportLabelIndustryResponse
    */
   async hrbrainImportLabelIndustry(request: HrbrainImportLabelIndustryRequest): Promise<HrbrainImportLabelIndustryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3029,12 +3606,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成盘点数据
-   *
-   * @param request HrbrainImportLabelInventoryRequest
-   * @param headers HrbrainImportLabelInventoryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportLabelInventoryResponse
+   * 集成盘点数据
+   * 
+   * @param request - HrbrainImportLabelInventoryRequest
+   * @param headers - HrbrainImportLabelInventoryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportLabelInventoryResponse
    */
   async hrbrainImportLabelInventoryWithOptions(request: HrbrainImportLabelInventoryRequest, headers: HrbrainImportLabelInventoryHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportLabelInventoryResponse> {
     Util.validateModel(request);
@@ -3072,10 +3649,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成盘点数据
-   *
-   * @param request HrbrainImportLabelInventoryRequest
-   * @return HrbrainImportLabelInventoryResponse
+   * 集成盘点数据
+   * 
+   * @param request - HrbrainImportLabelInventoryRequest
+   * @returns HrbrainImportLabelInventoryResponse
    */
   async hrbrainImportLabelInventory(request: HrbrainImportLabelInventoryRequest): Promise<HrbrainImportLabelInventoryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3084,12 +3661,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成专业技能
-   *
-   * @param request HrbrainImportLabelProfSkillRequest
-   * @param headers HrbrainImportLabelProfSkillHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportLabelProfSkillResponse
+   * 集成专业技能
+   * 
+   * @param request - HrbrainImportLabelProfSkillRequest
+   * @param headers - HrbrainImportLabelProfSkillHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportLabelProfSkillResponse
    */
   async hrbrainImportLabelProfSkillWithOptions(request: HrbrainImportLabelProfSkillRequest, headers: HrbrainImportLabelProfSkillHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportLabelProfSkillResponse> {
     Util.validateModel(request);
@@ -3127,10 +3704,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成专业技能
-   *
-   * @param request HrbrainImportLabelProfSkillRequest
-   * @return HrbrainImportLabelProfSkillResponse
+   * 集成专业技能
+   * 
+   * @param request - HrbrainImportLabelProfSkillRequest
+   * @returns HrbrainImportLabelProfSkillResponse
    */
   async hrbrainImportLabelProfSkill(request: HrbrainImportLabelProfSkillRequest): Promise<HrbrainImportLabelProfSkillResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3139,12 +3716,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成绩效记录
-   *
-   * @param request HrbrainImportPerfEvalRequest
-   * @param headers HrbrainImportPerfEvalHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportPerfEvalResponse
+   * 集成绩效记录
+   * 
+   * @param request - HrbrainImportPerfEvalRequest
+   * @param headers - HrbrainImportPerfEvalHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportPerfEvalResponse
    */
   async hrbrainImportPerfEvalWithOptions(request: HrbrainImportPerfEvalRequest, headers: HrbrainImportPerfEvalHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportPerfEvalResponse> {
     Util.validateModel(request);
@@ -3182,10 +3759,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成绩效记录
-   *
-   * @param request HrbrainImportPerfEvalRequest
-   * @return HrbrainImportPerfEvalResponse
+   * 集成绩效记录
+   * 
+   * @param request - HrbrainImportPerfEvalRequest
+   * @returns HrbrainImportPerfEvalResponse
    */
   async hrbrainImportPerfEval(request: HrbrainImportPerfEvalRequest): Promise<HrbrainImportPerfEvalResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3194,12 +3771,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成晋升记录
-   *
-   * @param request HrbrainImportPromEvalRequest
-   * @param headers HrbrainImportPromEvalHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportPromEvalResponse
+   * 集成晋升记录
+   * 
+   * @param request - HrbrainImportPromEvalRequest
+   * @param headers - HrbrainImportPromEvalHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportPromEvalResponse
    */
   async hrbrainImportPromEvalWithOptions(request: HrbrainImportPromEvalRequest, headers: HrbrainImportPromEvalHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportPromEvalResponse> {
     Util.validateModel(request);
@@ -3237,10 +3814,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成晋升记录
-   *
-   * @param request HrbrainImportPromEvalRequest
-   * @return HrbrainImportPromEvalResponse
+   * 集成晋升记录
+   * 
+   * @param request - HrbrainImportPromEvalRequest
+   * @returns HrbrainImportPromEvalResponse
    */
   async hrbrainImportPromEval(request: HrbrainImportPromEvalRequest): Promise<HrbrainImportPromEvalResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3249,12 +3826,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成处分记录
-   *
-   * @param request HrbrainImportPunDetailRequest
-   * @param headers HrbrainImportPunDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportPunDetailResponse
+   * 集成处分记录
+   * 
+   * @param request - HrbrainImportPunDetailRequest
+   * @param headers - HrbrainImportPunDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportPunDetailResponse
    */
   async hrbrainImportPunDetailWithOptions(request: HrbrainImportPunDetailRequest, headers: HrbrainImportPunDetailHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportPunDetailResponse> {
     Util.validateModel(request);
@@ -3292,10 +3869,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成处分记录
-   *
-   * @param request HrbrainImportPunDetailRequest
-   * @return HrbrainImportPunDetailResponse
+   * 集成处分记录
+   * 
+   * @param request - HrbrainImportPunDetailRequest
+   * @returns HrbrainImportPunDetailResponse
    */
   async hrbrainImportPunDetail(request: HrbrainImportPunDetailRequest): Promise<HrbrainImportPunDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3304,12 +3881,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成入职信息
-   *
-   * @param request HrbrainImportRegistRequest
-   * @param headers HrbrainImportRegistHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportRegistResponse
+   * 集成入职信息
+   * 
+   * @param request - HrbrainImportRegistRequest
+   * @param headers - HrbrainImportRegistHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportRegistResponse
    */
   async hrbrainImportRegistWithOptions(request: HrbrainImportRegistRequest, headers: HrbrainImportRegistHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportRegistResponse> {
     Util.validateModel(request);
@@ -3347,10 +3924,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成入职信息
-   *
-   * @param request HrbrainImportRegistRequest
-   * @return HrbrainImportRegistResponse
+   * 集成入职信息
+   * 
+   * @param request - HrbrainImportRegistRequest
+   * @returns HrbrainImportRegistResponse
    */
   async hrbrainImportRegist(request: HrbrainImportRegistRequest): Promise<HrbrainImportRegistResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3359,12 +3936,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成异动记录
-   *
-   * @param request HrbrainImportTransferEvalRequest
-   * @param headers HrbrainImportTransferEvalHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportTransferEvalResponse
+   * 集成异动记录
+   * 
+   * @param request - HrbrainImportTransferEvalRequest
+   * @param headers - HrbrainImportTransferEvalHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportTransferEvalResponse
    */
   async hrbrainImportTransferEvalWithOptions(request: HrbrainImportTransferEvalRequest, headers: HrbrainImportTransferEvalHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportTransferEvalResponse> {
     Util.validateModel(request);
@@ -3402,10 +3979,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成异动记录
-   *
-   * @param request HrbrainImportTransferEvalRequest
-   * @return HrbrainImportTransferEvalResponse
+   * 集成异动记录
+   * 
+   * @param request - HrbrainImportTransferEvalRequest
+   * @returns HrbrainImportTransferEvalResponse
    */
   async hrbrainImportTransferEval(request: HrbrainImportTransferEvalRequest): Promise<HrbrainImportTransferEvalResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3414,12 +3991,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成工作经历
-   *
-   * @param request HrbrainImportWorkExpRequest
-   * @param headers HrbrainImportWorkExpHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrbrainImportWorkExpResponse
+   * 集成工作经历
+   * 
+   * @param request - HrbrainImportWorkExpRequest
+   * @param headers - HrbrainImportWorkExpHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrbrainImportWorkExpResponse
    */
   async hrbrainImportWorkExpWithOptions(request: HrbrainImportWorkExpRequest, headers: HrbrainImportWorkExpHeaders, runtime: $Util.RuntimeOptions): Promise<HrbrainImportWorkExpResponse> {
     Util.validateModel(request);
@@ -3457,10 +4034,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 集成工作经历
-   *
-   * @param request HrbrainImportWorkExpRequest
-   * @return HrbrainImportWorkExpResponse
+   * 集成工作经历
+   * 
+   * @param request - HrbrainImportWorkExpRequest
+   * @returns HrbrainImportWorkExpResponse
    */
   async hrbrainImportWorkExp(request: HrbrainImportWorkExpRequest): Promise<HrbrainImportWorkExpResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3469,12 +4046,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人员标签查询
-   *
-   * @param request StaffLabelRecordsQueryRequest
-   * @param headers StaffLabelRecordsQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return StaffLabelRecordsQueryResponse
+   * 人员标签查询
+   * 
+   * @param request - StaffLabelRecordsQueryRequest
+   * @param headers - StaffLabelRecordsQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns StaffLabelRecordsQueryResponse
    */
   async staffLabelRecordsQueryWithOptions(request: StaffLabelRecordsQueryRequest, headers: StaffLabelRecordsQueryHeaders, runtime: $Util.RuntimeOptions): Promise<StaffLabelRecordsQueryResponse> {
     Util.validateModel(request);
@@ -3520,10 +4097,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人员标签查询
-   *
-   * @param request StaffLabelRecordsQueryRequest
-   * @return StaffLabelRecordsQueryResponse
+   * 人员标签查询
+   * 
+   * @param request - StaffLabelRecordsQueryRequest
+   * @returns StaffLabelRecordsQueryResponse
    */
   async staffLabelRecordsQuery(request: StaffLabelRecordsQueryRequest): Promise<StaffLabelRecordsQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3532,12 +4109,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步统计基础数据
-   *
-   * @param request SyncDataRequest
-   * @param headers SyncDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncDataResponse
+   * 同步统计基础数据
+   * 
+   * @param request - SyncDataRequest
+   * @param headers - SyncDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncDataResponse
    */
   async syncDataWithOptions(request: SyncDataRequest, headers: SyncDataHeaders, runtime: $Util.RuntimeOptions): Promise<SyncDataResponse> {
     Util.validateModel(request);
@@ -3590,10 +4167,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步统计基础数据
-   *
-   * @param request SyncDataRequest
-   * @return SyncDataResponse
+   * 同步统计基础数据
+   * 
+   * @param request - SyncDataRequest
+   * @returns SyncDataResponse
    */
   async syncData(request: SyncDataRequest): Promise<SyncDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });

@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -11,12 +9,36 @@ import { Readable } from 'stream';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class OpenKeyResultDTO extends $tea.Model {
+  /**
+   * @example
+   * 65222713d0e8b868f9f9ae51
+   */
   krId?: string;
+  /**
+   * @example
+   * 80
+   */
   progress?: number;
+  /**
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @example
+   * 这是一个KR
+   */
   title?: string;
   titleMentions?: TitleMention[];
+  /**
+   * @example
+   * 1
+   */
   type?: number;
+  /**
+   * @example
+   * 10.00
+   */
   weight?: number;
   static names(): { [key: string]: string } {
     return {
@@ -50,12 +72,32 @@ export class OpenKeyResultDTO extends $tea.Model {
 export class OpenObjectiveDTO extends $tea.Model {
   executor?: OpenUserDTO;
   keyResults?: OpenKeyResultDTO[];
+  /**
+   * @example
+   * 65222640d0e8b868f9f9ae3c
+   */
   objectiveId?: string;
   period?: OpenPeriodDTO;
+  /**
+   * @example
+   * 80
+   */
   progress?: number;
+  /**
+   * @example
+   * 1
+   */
   status?: number;
   teams?: OpenTeamDTO[];
+  /**
+   * @example
+   * 这是一个O的标题
+   */
   title?: string;
+  /**
+   * @example
+   * 10.00
+   */
   weight?: number;
   static names(): { [key: string]: string } {
     return {
@@ -94,6 +136,10 @@ export class OpenPeriodDTO extends $tea.Model {
   endDate?: number;
   nameCn?: string;
   nameEn?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   periodId?: string;
   startDate?: number;
   status?: number;
@@ -125,8 +171,20 @@ export class OpenPeriodDTO extends $tea.Model {
 }
 
 export class OpenTeamDTO extends $tea.Model {
+  /**
+   * @example
+   * 0342464558835299
+   */
   deptUid?: string;
+  /**
+   * @example
+   * 64cd2e9bb80efb17244c650d
+   */
   dingDeptId?: string;
+  /**
+   * @example
+   * xx部门
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -150,9 +208,25 @@ export class OpenTeamDTO extends $tea.Model {
 }
 
 export class OpenUserDTO extends $tea.Model {
+  /**
+   * @example
+   * 0342464558835299
+   */
   dingUserId?: string;
+  /**
+   * @example
+   * 小明
+   */
   name?: string;
+  /**
+   * @example
+   * 64cd2e9bb80efb17244c650d
+   */
   userUid?: string;
+  /**
+   * @example
+   * 2639402752-1812711657
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -178,7 +252,15 @@ export class OpenUserDTO extends $tea.Model {
 }
 
 export class TitleMention extends $tea.Model {
+  /**
+   * @example
+   * 20
+   */
   length?: number;
+  /**
+   * @example
+   * 1
+   */
   offset?: number;
   user?: OpenUserDTO;
   static names(): { [key: string]: string } {
@@ -225,8 +307,29 @@ export class AlignObjectiveHeaders extends $tea.Model {
 }
 
 export class AlignObjectiveRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1006
+   */
   periodId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 59YD
+   */
   targetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0115396701752283
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -251,6 +354,13 @@ export class AlignObjectiveRequest extends $tea.Model {
 
 export class AlignObjectiveResponseBody extends $tea.Model {
   data?: AlignObjectiveResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -319,9 +429,28 @@ export class BatchAddPermissionHeaders extends $tea.Model {
 }
 
 export class BatchAddPermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: BatchAddPermissionRequestList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 当前用户 userId。
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -347,7 +476,15 @@ export class BatchAddPermissionRequest extends $tea.Model {
 }
 
 export class BatchAddPermissionResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: BatchAddPermissionResponseBodyData;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -416,11 +553,44 @@ export class BatchQueryObjectiveHeaders extends $tea.Model {
 }
 
 export class BatchQueryObjectiveRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   objectiveIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10056
+   */
   periodId?: string;
+  /**
+   * @example
+   * false
+   */
   withAlign?: boolean;
+  /**
+   * @example
+   * false
+   */
   withKr?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   withProgress?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0115396701752283
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -451,6 +621,13 @@ export class BatchQueryObjectiveRequest extends $tea.Model {
 
 export class BatchQueryObjectiveResponseBody extends $tea.Model {
   data?: BatchQueryObjectiveResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -541,7 +718,18 @@ export class BatchQueryUserRequest extends $tea.Model {
 }
 
 export class BatchQueryUserResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: BatchQueryUserResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -610,11 +798,47 @@ export class CreateKeyResultHeaders extends $tea.Model {
 }
 
 export class CreateKeyResultRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 我的内容
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 58Y4
+   */
   objectiveId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1006
+   */
   periodId?: string;
+  /**
+   * @example
+   * 234631
+   */
   prevPosition?: number;
+  /**
+   * @example
+   * 100
+   */
   weight?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 06186238011033616
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -644,7 +868,18 @@ export class CreateKeyResultRequest extends $tea.Model {
 }
 
 export class CreateKeyResultResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: CreateKeyResultResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -713,9 +948,37 @@ export class CreateObjectiveHeaders extends $tea.Model {
 }
 
 export class CreateObjectiveRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 我是内容
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1006
+   */
   periodId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1334543
+   */
   prevPosition?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 06186238011033616
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -742,6 +1005,10 @@ export class CreateObjectiveRequest extends $tea.Model {
 
 export class CreateObjectiveResponseBody extends $tea.Model {
   data?: CreateObjectiveResponseBodyData;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -810,7 +1077,21 @@ export class DeleteKeyResultHeaders extends $tea.Model {
 }
 
 export class DeleteKeyResultRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 4d2d
+   */
   krId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 06186238011033616
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -832,7 +1113,21 @@ export class DeleteKeyResultRequest extends $tea.Model {
 }
 
 export class DeleteKeyResultResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   data?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -901,6 +1196,13 @@ export class DeleteObjectiveHeaders extends $tea.Model {
 }
 
 export class DeleteObjectiveRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 06186238011033616
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -921,6 +1223,13 @@ export class DeleteObjectiveRequest extends $tea.Model {
 
 export class DeleteObjectiveResponseBody extends $tea.Model {
   data?: DeleteObjectiveResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -989,11 +1298,38 @@ export class DeletePermissionHeaders extends $tea.Model {
 }
 
 export class DeletePermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   policyType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0115396701752283
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1023,7 +1359,15 @@ export class DeletePermissionRequest extends $tea.Model {
 }
 
 export class DeletePermissionResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: DeletePermissionResponseBodyData;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1161,8 +1505,23 @@ export class GetPermissionHeaders extends $tea.Model {
 }
 
 export class GetPermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 当前用户 userId。
+   */
   userId?: string;
   withKr?: boolean;
   withObjective?: boolean;
@@ -1192,7 +1551,15 @@ export class GetPermissionRequest extends $tea.Model {
 }
 
 export class GetPermissionResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: GetPermissionResponseBodyData;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1261,9 +1628,31 @@ export class GetUserOkrHeaders extends $tea.Model {
 }
 
 export class GetUserOkrRequest extends $tea.Model {
+  /**
+   * @example
+   * 2
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 30
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1005
+   */
   periodId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 011539670175223
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1290,6 +1679,13 @@ export class GetUserOkrRequest extends $tea.Model {
 
 export class GetUserOkrResponseBody extends $tea.Model {
   data?: GetUserOkrResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1358,6 +1754,10 @@ export class OkrObjectivesBatchHeaders extends $tea.Model {
 }
 
 export class OkrObjectivesBatchRequest extends $tea.Model {
+  /**
+   * @example
+   * dingOKR
+   */
   goodsCode?: string;
   objectiveIds?: string[];
   static names(): { [key: string]: string } {
@@ -1449,8 +1849,16 @@ export class OkrObjectivesByUserHeaders extends $tea.Model {
 }
 
 export class OkrObjectivesByUserRequest extends $tea.Model {
+  /**
+   * @example
+   * dingOKR
+   */
   goodsCode?: string;
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1546,9 +1954,25 @@ export class OkrPeriodsHeaders extends $tea.Model {
 }
 
 export class OkrPeriodsRequest extends $tea.Model {
+  /**
+   * @example
+   * dingOKR
+   */
   goodsCode?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 0
+   */
   status?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1576,6 +2000,10 @@ export class OkrPeriodsRequest extends $tea.Model {
 export class OkrPeriodsResponseBody extends $tea.Model {
   content?: OkrPeriodsResponseBodyContent;
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1646,8 +2074,29 @@ export class UnAlignObjectiveHeaders extends $tea.Model {
 }
 
 export class UnAlignObjectiveRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1006
+   */
   periodId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 59YD
+   */
   targetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0115396701752283
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1672,6 +2121,13 @@ export class UnAlignObjectiveRequest extends $tea.Model {
 
 export class UnAlignObjectiveResponseBody extends $tea.Model {
   data?: UnAlignObjectiveResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1740,9 +2196,30 @@ export class UpdateKROfContentHeaders extends $tea.Model {
 }
 
 export class UpdateKROfContentRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 更新内容
+   */
   content?: string;
   updateQuoteList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 46GM2
+   */
   krId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0115396701752283
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1768,7 +2245,18 @@ export class UpdateKROfContentRequest extends $tea.Model {
 }
 
 export class UpdateKROfContentResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1837,8 +2325,29 @@ export class UpdateKROfScoreHeaders extends $tea.Model {
 }
 
 export class UpdateKROfScoreRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   score?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 46GM2
+   */
   krId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0115396701752283
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1862,7 +2371,18 @@ export class UpdateKROfScoreRequest extends $tea.Model {
 }
 
 export class UpdateKROfScoreResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: UpdateKROfScoreResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1931,8 +2451,29 @@ export class UpdateKROfWeightHeaders extends $tea.Model {
 }
 
 export class UpdateKROfWeightRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   weight?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 46GM2
+   */
   krId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0115396701752283
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1956,7 +2497,18 @@ export class UpdateKROfWeightRequest extends $tea.Model {
 }
 
 export class UpdateKROfWeightResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: UpdateKROfWeightResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2025,7 +2577,21 @@ export class UpdateObjectiveHeaders extends $tea.Model {
 }
 
 export class UpdateObjectiveRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 更新的内容
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 06186238011033616
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2048,6 +2614,10 @@ export class UpdateObjectiveRequest extends $tea.Model {
 
 export class UpdateObjectiveResponseBody extends $tea.Model {
   data?: UpdateObjectiveResponseBodyData;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2116,9 +2686,37 @@ export class UpdatePrivacyHeaders extends $tea.Model {
 }
 
 export class UpdatePrivacyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * public
+   */
   privacy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3RF5
+   */
   targetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2
+   */
   targetType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0115396701752283
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2144,7 +2742,15 @@ export class UpdatePrivacyRequest extends $tea.Model {
 }
 
 export class UpdatePrivacyResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: UpdatePrivacyResponseBodyData;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2191,7 +2797,15 @@ export class UpdatePrivacyResponse extends $tea.Model {
 }
 
 export class AlignObjectiveResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * 59YD
+   */
   alignId?: Readable;
+  /**
+   * @example
+   * 5dAX8
+   */
   id?: Readable;
   static names(): { [key: string]: string } {
     return {
@@ -2213,7 +2827,15 @@ export class AlignObjectiveResponseBodyData extends $tea.Model {
 }
 
 export class BatchAddPermissionRequestListMember extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2235,7 +2857,15 @@ export class BatchAddPermissionRequestListMember extends $tea.Model {
 }
 
 export class BatchAddPermissionRequestList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   member?: BatchAddPermissionRequestListMember;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   policyType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2257,8 +2887,16 @@ export class BatchAddPermissionRequestList extends $tea.Model {
 }
 
 export class BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
   nickname?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2282,8 +2920,20 @@ export class BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberLis
 }
 
 export class BatchAddPermissionResponseBodyDataPermissionTreePolicyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberList?: BatchAddPermissionResponseBodyDataPermissionTreePolicyListMemberList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2307,9 +2957,31 @@ export class BatchAddPermissionResponseBodyDataPermissionTreePolicyList extends 
 }
 
 export class BatchAddPermissionResponseBodyDataPermissionTree extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   policyList?: BatchAddPermissionResponseBodyDataPermissionTreePolicyList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * public
+   */
   privacy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * period
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2335,7 +3007,15 @@ export class BatchAddPermissionResponseBodyDataPermissionTree extends $tea.Model
 }
 
 export class BatchAddPermissionResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasInvalidUser?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   permissionTree?: BatchAddPermissionResponseBodyDataPermissionTree;
   static names(): { [key: string]: string } {
     return {
@@ -2357,6 +3037,10 @@ export class BatchAddPermissionResponseBodyData extends $tea.Model {
 }
 
 export class BatchQueryObjectiveResponseBodyDataKrListProgress extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   percent?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2376,15 +3060,50 @@ export class BatchQueryObjectiveResponseBodyDataKrListProgress extends $tea.Mode
 }
 
 export class BatchQueryObjectiveResponseBodyDataKrList extends $tea.Model {
+  /**
+   * @example
+   * 你好
+   */
   content?: Readable;
+  /**
+   * @example
+   * 1648625407694
+   */
   gmtCreate?: number;
+  /**
+   * @example
+   * 1648625407694
+   */
   gmtModified?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 5w9f
+   */
   id?: Readable;
+  /**
+   * @example
+   * 5wf8
+   */
   objectiveId?: Readable;
   permission?: number[];
+  /**
+   * @example
+   * 35614536
+   */
   position?: number;
   progress?: BatchQueryObjectiveResponseBodyDataKrListProgress;
+  /**
+   * @example
+   * 44
+   */
   score?: number;
+  /**
+   * @example
+   * 44
+   */
   weight?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2422,10 +3141,30 @@ export class BatchQueryObjectiveResponseBodyDataKrList extends $tea.Model {
 }
 
 export class BatchQueryObjectiveResponseBodyDataOwner extends $tea.Model {
+  /**
+   * @example
+   * @lADPDh0cQ_j4Mi_NBULNBUA
+   */
   avatarMediaId?: Readable;
+  /**
+   * @example
+   * ding4d1c8883ff63ee8124f2f5cc6abecb85
+   */
   corpId?: Readable;
+  /**
+   * @example
+   * K1AMgq
+   */
   id?: Readable;
+  /**
+   * @example
+   * 你好
+   */
   nickname?: Readable;
+  /**
+   * @example
+   * 06186238011033616
+   */
   userId?: Readable;
   static names(): { [key: string]: string } {
     return {
@@ -2453,6 +3192,10 @@ export class BatchQueryObjectiveResponseBodyDataOwner extends $tea.Model {
 }
 
 export class BatchQueryObjectiveResponseBodyDataProgress extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
   percent?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2474,21 +3217,69 @@ export class BatchQueryObjectiveResponseBodyDataProgress extends $tea.Model {
 export class BatchQueryObjectiveResponseBodyData extends $tea.Model {
   alignFromIds?: Readable[];
   alignToIds?: Readable[];
+  /**
+   * @example
+   * Objective demo
+   */
   content?: Readable;
+  /**
+   * @example
+   * 1648625407694
+   */
   gmtCreate?: number;
+  /**
+   * @example
+   * 1648625407694
+   */
   gmtModified?: number;
+  /**
+   * @example
+   * 5dAX8
+   */
   id?: Readable;
   krList?: BatchQueryObjectiveResponseBodyDataKrList[];
   owner?: BatchQueryObjectiveResponseBodyDataOwner;
+  /**
+   * @example
+   * 1006
+   */
   periodId?: Readable;
   permission?: number[];
+  /**
+   * @example
+   * 3021332
+   */
   position?: number;
   progress?: BatchQueryObjectiveResponseBodyDataProgress;
+  /**
+   * @example
+   * 100
+   */
   progressPercent?: number;
+  /**
+   * @example
+   * true
+   */
   published?: boolean;
+  /**
+   * @example
+   * 20
+   */
   score?: number;
+  /**
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @example
+   * s34d
+   */
   userId?: Readable;
+  /**
+   * @example
+   * 50
+   */
   weight?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2542,11 +3333,38 @@ export class BatchQueryObjectiveResponseBodyData extends $tea.Model {
 }
 
 export class BatchQueryUserResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * @lADPDh0cQ_j4Mi_NBULNBUA
+   */
   avatarMediaId?: Readable;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://static.dingtalk.com/media/lADPEj_RiGhUdKjNC9TNC9A_3024_3028.jpg_620x10000q90.jpg
+   */
   avatarUrl?: Readable;
+  /**
+   * @example
+   * ding4d1c8883ff63ee8124f2f5cc6abecb85
+   */
   corpId?: Readable;
+  /**
+   * @example
+   * K1AMgq
+   */
   id?: Readable;
+  /**
+   * @example
+   * 你好
+   */
   nickname?: Readable;
+  /**
+   * @example
+   * 06186238011033616
+   */
   userId?: Readable;
   static names(): { [key: string]: string } {
     return {
@@ -2576,8 +3394,29 @@ export class BatchQueryUserResponseBodyData extends $tea.Model {
 }
 
 export class CreateKeyResultResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * R45Y
+   */
   id?: Readable;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 420983
+   */
   position?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   weight?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2601,7 +3440,21 @@ export class CreateKeyResultResponseBodyData extends $tea.Model {
 }
 
 export class CreateObjectiveResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 58YD
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33453
+   */
   position?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2623,6 +3476,13 @@ export class CreateObjectiveResponseBodyData extends $tea.Model {
 }
 
 export class DeleteObjectiveResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 58YD
+   */
   id?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2642,8 +3502,16 @@ export class DeleteObjectiveResponseBodyData extends $tea.Model {
 }
 
 export class DeletePermissionResponseBodyDataPolicyListMemberList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
   nickname?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2667,8 +3535,20 @@ export class DeletePermissionResponseBodyDataPolicyListMemberList extends $tea.M
 }
 
 export class DeletePermissionResponseBodyDataPolicyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberList?: DeletePermissionResponseBodyDataPolicyListMemberList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2692,9 +3572,31 @@ export class DeletePermissionResponseBodyDataPolicyList extends $tea.Model {
 }
 
 export class DeletePermissionResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   policyList?: DeletePermissionResponseBodyDataPolicyList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * public
+   */
   privacy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * period
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2720,11 +3622,35 @@ export class DeletePermissionResponseBodyData extends $tea.Model {
 }
 
 export class GetPeriodListResponseBodyDataPeriodList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: Readable;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isCurrent?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isYearly?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: Readable;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2754,6 +3680,10 @@ export class GetPeriodListResponseBodyDataPeriodList extends $tea.Model {
 }
 
 export class GetPeriodListResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   periodList?: GetPeriodListResponseBodyDataPeriodList[];
   static names(): { [key: string]: string } {
     return {
@@ -2773,8 +3703,16 @@ export class GetPeriodListResponseBodyData extends $tea.Model {
 }
 
 export class GetPermissionResponseBodyDataPolicyListMemberList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
   nickname?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2798,8 +3736,20 @@ export class GetPermissionResponseBodyDataPolicyListMemberList extends $tea.Mode
 }
 
 export class GetPermissionResponseBodyDataPolicyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberList?: GetPermissionResponseBodyDataPolicyListMemberList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2823,9 +3773,31 @@ export class GetPermissionResponseBodyDataPolicyList extends $tea.Model {
 }
 
 export class GetPermissionResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   policyList?: GetPermissionResponseBodyDataPolicyList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * public
+   */
   privacy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * period
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2851,6 +3823,10 @@ export class GetPermissionResponseBodyData extends $tea.Model {
 }
 
 export class GetUserOkrResponseBodyDataListKrListProgress extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   percent?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2870,15 +3846,50 @@ export class GetUserOkrResponseBodyDataListKrListProgress extends $tea.Model {
 }
 
 export class GetUserOkrResponseBodyDataListKrList extends $tea.Model {
+  /**
+   * @example
+   * 你好
+   */
   content?: Readable;
+  /**
+   * @example
+   * 1648625407694
+   */
   gmtCreate?: number;
+  /**
+   * @example
+   * 1648625407694
+   */
   gmtModified?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 5w9f
+   */
   id?: Readable;
+  /**
+   * @example
+   * 5wf8
+   */
   objectiveId?: Readable;
   permission?: number[];
+  /**
+   * @example
+   * 35614536
+   */
   position?: number;
   progress?: GetUserOkrResponseBodyDataListKrListProgress;
+  /**
+   * @example
+   * 44
+   */
   score?: number;
+  /**
+   * @example
+   * 44
+   */
   weight?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2916,10 +3927,30 @@ export class GetUserOkrResponseBodyDataListKrList extends $tea.Model {
 }
 
 export class GetUserOkrResponseBodyDataListOwner extends $tea.Model {
+  /**
+   * @example
+   * @lADPDh0cQ_j4Mi_NBULNBUA
+   */
   avatarMediaId?: Readable;
+  /**
+   * @example
+   * ding4d1c8883ff63ee8124f2f5cc6abecb85
+   */
   corpId?: Readable;
+  /**
+   * @example
+   * K1AMgq
+   */
   id?: Readable;
+  /**
+   * @example
+   * 你好
+   */
   nickname?: Readable;
+  /**
+   * @example
+   * 06186238011033616
+   */
   userId?: Readable;
   static names(): { [key: string]: string } {
     return {
@@ -2947,6 +3978,10 @@ export class GetUserOkrResponseBodyDataListOwner extends $tea.Model {
 }
 
 export class GetUserOkrResponseBodyDataListProgress extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
   percent?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2968,21 +4003,69 @@ export class GetUserOkrResponseBodyDataListProgress extends $tea.Model {
 export class GetUserOkrResponseBodyDataList extends $tea.Model {
   alignFromIds?: Readable[];
   alignToIds?: Readable[];
+  /**
+   * @example
+   * Objective demo
+   */
   content?: Readable;
+  /**
+   * @example
+   * 1648625407694
+   */
   gmtCreate?: number;
+  /**
+   * @example
+   * 1648625407694
+   */
   gmtModified?: number;
+  /**
+   * @example
+   * 5dAX8
+   */
   id?: Readable;
   krList?: GetUserOkrResponseBodyDataListKrList[];
   owner?: GetUserOkrResponseBodyDataListOwner;
+  /**
+   * @example
+   * 1006
+   */
   periodId?: Readable;
   permission?: number[];
+  /**
+   * @example
+   * 3021332
+   */
   position?: number;
   progress?: GetUserOkrResponseBodyDataListProgress;
+  /**
+   * @example
+   * 100
+   */
   progressPercent?: number;
+  /**
+   * @example
+   * true
+   */
   published?: boolean;
+  /**
+   * @example
+   * 20
+   */
   score?: number;
+  /**
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @example
+   * s34d
+   */
   userId?: Readable;
+  /**
+   * @example
+   * 50
+   */
   weight?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3037,8 +4120,23 @@ export class GetUserOkrResponseBodyDataList extends $tea.Model {
 
 export class GetUserOkrResponseBodyData extends $tea.Model {
   list?: GetUserOkrResponseBodyDataList[];
+  /**
+   * @example
+   * 2
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 50
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3065,6 +4163,10 @@ export class GetUserOkrResponseBodyData extends $tea.Model {
 
 export class OkrObjectivesByUserResponseBodyContent extends $tea.Model {
   result?: OpenObjectiveDTO[];
+  /**
+   * @example
+   * 15
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3086,9 +4188,21 @@ export class OkrObjectivesByUserResponseBodyContent extends $tea.Model {
 }
 
 export class OkrPeriodsResponseBodyContent extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
   result?: OpenPeriodDTO[];
+  /**
+   * @example
+   * 15
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3114,7 +4228,15 @@ export class OkrPeriodsResponseBodyContent extends $tea.Model {
 }
 
 export class UnAlignObjectiveResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * 59YD
+   */
   alignId?: Readable;
+  /**
+   * @example
+   * 5dAX8
+   */
   id?: Readable;
   static names(): { [key: string]: string } {
     return {
@@ -3136,6 +4258,13 @@ export class UnAlignObjectiveResponseBodyData extends $tea.Model {
 }
 
 export class UpdateKROfScoreResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 50
+   */
   objectiveScore?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3155,6 +4284,13 @@ export class UpdateKROfScoreResponseBodyData extends $tea.Model {
 }
 
 export class UpdateKROfWeightResponseBodyDataObjectiveProgress extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   percent?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3174,7 +4310,18 @@ export class UpdateKROfWeightResponseBodyDataObjectiveProgress extends $tea.Mode
 }
 
 export class UpdateKROfWeightResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   objectiveProgress?: UpdateKROfWeightResponseBodyDataObjectiveProgress;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   objectiveScore?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3196,7 +4343,21 @@ export class UpdateKROfWeightResponseBodyData extends $tea.Model {
 }
 
 export class UpdateObjectiveResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 58YD
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33453
+   */
   position?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3218,8 +4379,16 @@ export class UpdateObjectiveResponseBodyData extends $tea.Model {
 }
 
 export class UpdatePrivacyResponseBodyDataPolicyListMemberList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
   nickname?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3243,8 +4412,20 @@ export class UpdatePrivacyResponseBodyDataPolicyListMemberList extends $tea.Mode
 }
 
 export class UpdatePrivacyResponseBodyDataPolicyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberList?: UpdatePrivacyResponseBodyDataPolicyListMemberList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3268,9 +4449,31 @@ export class UpdatePrivacyResponseBodyDataPolicyList extends $tea.Model {
 }
 
 export class UpdatePrivacyResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   policyList?: UpdatePrivacyResponseBodyDataPolicyList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * public
+   */
   privacy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * period
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3297,12 +4500,11 @@ export class UpdatePrivacyResponseBodyData extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -3312,12 +4514,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 增加对齐目标
-   *
-   * @param request AlignObjectiveRequest
-   * @param headers AlignObjectiveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AlignObjectiveResponse
+   * 增加对齐目标
+   * 
+   * @param request - AlignObjectiveRequest
+   * @param headers - AlignObjectiveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AlignObjectiveResponse
    */
   async alignObjectiveWithOptions(objectiveId: string, request: AlignObjectiveRequest, headers: AlignObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<AlignObjectiveResponse> {
     Util.validateModel(request);
@@ -3364,10 +4566,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 增加对齐目标
-   *
-   * @param request AlignObjectiveRequest
-   * @return AlignObjectiveResponse
+   * 增加对齐目标
+   * 
+   * @param request - AlignObjectiveRequest
+   * @returns AlignObjectiveResponse
    */
   async alignObjective(objectiveId: string, request: AlignObjectiveRequest): Promise<AlignObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3376,12 +4578,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  批量添加权限信息
-   *
-   * @param request BatchAddPermissionRequest
-   * @param headers BatchAddPermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchAddPermissionResponse
+   * 批量添加权限信息
+   * 
+   * @param request - BatchAddPermissionRequest
+   * @param headers - BatchAddPermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchAddPermissionResponse
    */
   async batchAddPermissionWithOptions(request: BatchAddPermissionRequest, headers: BatchAddPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddPermissionResponse> {
     Util.validateModel(request);
@@ -3432,10 +4634,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  批量添加权限信息
-   *
-   * @param request BatchAddPermissionRequest
-   * @return BatchAddPermissionResponse
+   * 批量添加权限信息
+   * 
+   * @param request - BatchAddPermissionRequest
+   * @returns BatchAddPermissionResponse
    */
   async batchAddPermission(request: BatchAddPermissionRequest): Promise<BatchAddPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3444,12 +4646,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询目标
-   *
-   * @param request BatchQueryObjectiveRequest
-   * @param headers BatchQueryObjectiveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchQueryObjectiveResponse
+   * 批量查询目标
+   * 
+   * @param request - BatchQueryObjectiveRequest
+   * @param headers - BatchQueryObjectiveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchQueryObjectiveResponse
    */
   async batchQueryObjectiveWithOptions(request: BatchQueryObjectiveRequest, headers: BatchQueryObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryObjectiveResponse> {
     Util.validateModel(request);
@@ -3508,10 +4710,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询目标
-   *
-   * @param request BatchQueryObjectiveRequest
-   * @return BatchQueryObjectiveResponse
+   * 批量查询目标
+   * 
+   * @param request - BatchQueryObjectiveRequest
+   * @returns BatchQueryObjectiveResponse
    */
   async batchQueryObjective(request: BatchQueryObjectiveRequest): Promise<BatchQueryObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3520,12 +4722,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询用户信息
-   *
-   * @param request BatchQueryUserRequest
-   * @param headers BatchQueryUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchQueryUserResponse
+   * 批量查询用户信息
+   * 
+   * @param request - BatchQueryUserRequest
+   * @param headers - BatchQueryUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchQueryUserResponse
    */
   async batchQueryUserWithOptions(request: BatchQueryUserRequest, headers: BatchQueryUserHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryUserResponse> {
     Util.validateModel(request);
@@ -3566,10 +4768,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询用户信息
-   *
-   * @param request BatchQueryUserRequest
-   * @return BatchQueryUserResponse
+   * 批量查询用户信息
+   * 
+   * @param request - BatchQueryUserRequest
+   * @returns BatchQueryUserResponse
    */
   async batchQueryUser(request: BatchQueryUserRequest): Promise<BatchQueryUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3578,12 +4780,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建keyResult
-   *
-   * @param request CreateKeyResultRequest
-   * @param headers CreateKeyResultHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateKeyResultResponse
+   * 创建keyResult
+   * 
+   * @param request - CreateKeyResultRequest
+   * @param headers - CreateKeyResultHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateKeyResultResponse
    */
   async createKeyResultWithOptions(request: CreateKeyResultRequest, headers: CreateKeyResultHeaders, runtime: $Util.RuntimeOptions): Promise<CreateKeyResultResponse> {
     Util.validateModel(request);
@@ -3642,10 +4844,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建keyResult
-   *
-   * @param request CreateKeyResultRequest
-   * @return CreateKeyResultResponse
+   * 创建keyResult
+   * 
+   * @param request - CreateKeyResultRequest
+   * @returns CreateKeyResultResponse
    */
   async createKeyResult(request: CreateKeyResultRequest): Promise<CreateKeyResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3654,12 +4856,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建目标
-   *
-   * @param request CreateObjectiveRequest
-   * @param headers CreateObjectiveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateObjectiveResponse
+   * 创建目标
+   * 
+   * @param request - CreateObjectiveRequest
+   * @param headers - CreateObjectiveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateObjectiveResponse
    */
   async createObjectiveWithOptions(request: CreateObjectiveRequest, headers: CreateObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateObjectiveResponse> {
     Util.validateModel(request);
@@ -3710,10 +4912,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建目标
-   *
-   * @param request CreateObjectiveRequest
-   * @return CreateObjectiveResponse
+   * 创建目标
+   * 
+   * @param request - CreateObjectiveRequest
+   * @returns CreateObjectiveResponse
    */
   async createObjective(request: CreateObjectiveRequest): Promise<CreateObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3722,12 +4924,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除keyresult的方法
-   *
-   * @param request DeleteKeyResultRequest
-   * @param headers DeleteKeyResultHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteKeyResultResponse
+   * 删除keyresult的方法
+   * 
+   * @param request - DeleteKeyResultRequest
+   * @param headers - DeleteKeyResultHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteKeyResultResponse
    */
   async deleteKeyResultWithOptions(request: DeleteKeyResultRequest, headers: DeleteKeyResultHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteKeyResultResponse> {
     Util.validateModel(request);
@@ -3768,10 +4970,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除keyresult的方法
-   *
-   * @param request DeleteKeyResultRequest
-   * @return DeleteKeyResultResponse
+   * 删除keyresult的方法
+   * 
+   * @param request - DeleteKeyResultRequest
+   * @returns DeleteKeyResultResponse
    */
   async deleteKeyResult(request: DeleteKeyResultRequest): Promise<DeleteKeyResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3780,12 +4982,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除目标
-   *
-   * @param request DeleteObjectiveRequest
-   * @param headers DeleteObjectiveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteObjectiveResponse
+   * 删除目标
+   * 
+   * @param request - DeleteObjectiveRequest
+   * @param headers - DeleteObjectiveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteObjectiveResponse
    */
   async deleteObjectiveWithOptions(objectiveId: string, request: DeleteObjectiveRequest, headers: DeleteObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteObjectiveResponse> {
     Util.validateModel(request);
@@ -3822,10 +5024,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除目标
-   *
-   * @param request DeleteObjectiveRequest
-   * @return DeleteObjectiveResponse
+   * 删除目标
+   * 
+   * @param request - DeleteObjectiveRequest
+   * @returns DeleteObjectiveResponse
    */
   async deleteObjective(objectiveId: string, request: DeleteObjectiveRequest): Promise<DeleteObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3834,12 +5036,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  删除权限信息
-   *
-   * @param request DeletePermissionRequest
-   * @param headers DeletePermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeletePermissionResponse
+   * 删除权限信息
+   * 
+   * @param request - DeletePermissionRequest
+   * @param headers - DeletePermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeletePermissionResponse
    */
   async deletePermissionWithOptions(request: DeletePermissionRequest, headers: DeletePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePermissionResponse> {
     Util.validateModel(request);
@@ -3896,10 +5098,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  删除权限信息
-   *
-   * @param request DeletePermissionRequest
-   * @return DeletePermissionResponse
+   * 删除权限信息
+   * 
+   * @param request - DeletePermissionRequest
+   * @returns DeletePermissionResponse
    */
   async deletePermission(request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3908,11 +5110,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取周期列表
-   *
-   * @param headers GetPeriodListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPeriodListResponse
+   * 获取周期列表
+   * 
+   * @param headers - GetPeriodListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPeriodListResponse
    */
   async getPeriodListWithOptions(headers: GetPeriodListHeaders, runtime: $Util.RuntimeOptions): Promise<GetPeriodListResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -3942,9 +5144,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取周期列表
-   *
-   * @return GetPeriodListResponse
+   * 获取周期列表
+   * @returns GetPeriodListResponse
    */
   async getPeriodList(): Promise<GetPeriodListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3953,12 +5154,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取权限信息
-   *
-   * @param request GetPermissionRequest
-   * @param headers GetPermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPermissionResponse
+   * 获取权限信息
+   * 
+   * @param request - GetPermissionRequest
+   * @param headers - GetPermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPermissionResponse
    */
   async getPermissionWithOptions(request: GetPermissionRequest, headers: GetPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<GetPermissionResponse> {
     Util.validateModel(request);
@@ -4011,10 +5212,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取权限信息
-   *
-   * @param request GetPermissionRequest
-   * @return GetPermissionResponse
+   * 获取权限信息
+   * 
+   * @param request - GetPermissionRequest
+   * @returns GetPermissionResponse
    */
   async getPermission(request: GetPermissionRequest): Promise<GetPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4023,12 +5224,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  获取用户当前周期下的全部 OKR 内容
-   *
-   * @param request GetUserOkrRequest
-   * @param headers GetUserOkrHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserOkrResponse
+   * 获取用户当前周期下的全部 OKR 内容
+   * 
+   * @param request - GetUserOkrRequest
+   * @param headers - GetUserOkrHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserOkrResponse
    */
   async getUserOkrWithOptions(request: GetUserOkrRequest, headers: GetUserOkrHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserOkrResponse> {
     Util.validateModel(request);
@@ -4077,10 +5278,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  获取用户当前周期下的全部 OKR 内容
-   *
-   * @param request GetUserOkrRequest
-   * @return GetUserOkrResponse
+   * 获取用户当前周期下的全部 OKR 内容
+   * 
+   * @param request - GetUserOkrRequest
+   * @returns GetUserOkrResponse
    */
   async getUserOkr(request: GetUserOkrRequest): Promise<GetUserOkrResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4089,12 +5290,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询OKR
-   *
-   * @param request OkrObjectivesBatchRequest
-   * @param headers OkrObjectivesBatchHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return OkrObjectivesBatchResponse
+   * 批量查询OKR
+   * 
+   * @param request - OkrObjectivesBatchRequest
+   * @param headers - OkrObjectivesBatchHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OkrObjectivesBatchResponse
    */
   async okrObjectivesBatchWithOptions(request: OkrObjectivesBatchRequest, headers: OkrObjectivesBatchHeaders, runtime: $Util.RuntimeOptions): Promise<OkrObjectivesBatchResponse> {
     Util.validateModel(request);
@@ -4135,10 +5336,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询OKR
-   *
-   * @param request OkrObjectivesBatchRequest
-   * @return OkrObjectivesBatchResponse
+   * 批量查询OKR
+   * 
+   * @param request - OkrObjectivesBatchRequest
+   * @returns OkrObjectivesBatchResponse
    */
   async okrObjectivesBatch(request: OkrObjectivesBatchRequest): Promise<OkrObjectivesBatchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4147,12 +5348,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询单个用户的OKR
-   *
-   * @param request OkrObjectivesByUserRequest
-   * @param headers OkrObjectivesByUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return OkrObjectivesByUserResponse
+   * 查询单个用户的OKR
+   * 
+   * @param request - OkrObjectivesByUserRequest
+   * @param headers - OkrObjectivesByUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OkrObjectivesByUserResponse
    */
   async okrObjectivesByUserWithOptions(dingUserId: string, request: OkrObjectivesByUserRequest, headers: OkrObjectivesByUserHeaders, runtime: $Util.RuntimeOptions): Promise<OkrObjectivesByUserResponse> {
     Util.validateModel(request);
@@ -4197,10 +5398,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询单个用户的OKR
-   *
-   * @param request OkrObjectivesByUserRequest
-   * @return OkrObjectivesByUserResponse
+   * 查询单个用户的OKR
+   * 
+   * @param request - OkrObjectivesByUserRequest
+   * @returns OkrObjectivesByUserResponse
    */
   async okrObjectivesByUser(dingUserId: string, request: OkrObjectivesByUserRequest): Promise<OkrObjectivesByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4209,12 +5410,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取 OKR 周期
-   *
-   * @param request OkrPeriodsRequest
-   * @param headers OkrPeriodsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return OkrPeriodsResponse
+   * 获取 OKR 周期
+   * 
+   * @param request - OkrPeriodsRequest
+   * @param headers - OkrPeriodsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OkrPeriodsResponse
    */
   async okrPeriodsWithOptions(request: OkrPeriodsRequest, headers: OkrPeriodsHeaders, runtime: $Util.RuntimeOptions): Promise<OkrPeriodsResponse> {
     Util.validateModel(request);
@@ -4263,10 +5464,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取 OKR 周期
-   *
-   * @param request OkrPeriodsRequest
-   * @return OkrPeriodsResponse
+   * 获取 OKR 周期
+   * 
+   * @param request - OkrPeriodsRequest
+   * @returns OkrPeriodsResponse
    */
   async okrPeriods(request: OkrPeriodsRequest): Promise<OkrPeriodsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4275,12 +5476,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  取消对齐Objective
-   *
-   * @param request UnAlignObjectiveRequest
-   * @param headers UnAlignObjectiveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UnAlignObjectiveResponse
+   * 取消对齐Objective
+   * 
+   * @param request - UnAlignObjectiveRequest
+   * @param headers - UnAlignObjectiveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UnAlignObjectiveResponse
    */
   async unAlignObjectiveWithOptions(objectiveId: string, request: UnAlignObjectiveRequest, headers: UnAlignObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<UnAlignObjectiveResponse> {
     Util.validateModel(request);
@@ -4327,10 +5528,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  取消对齐Objective
-   *
-   * @param request UnAlignObjectiveRequest
-   * @return UnAlignObjectiveResponse
+   * 取消对齐Objective
+   * 
+   * @param request - UnAlignObjectiveRequest
+   * @returns UnAlignObjectiveResponse
    */
   async unAlignObjective(objectiveId: string, request: UnAlignObjectiveRequest): Promise<UnAlignObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4339,12 +5540,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改KR内容
-   *
-   * @param request UpdateKROfContentRequest
-   * @param headers UpdateKROfContentHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateKROfContentResponse
+   * 更改KR内容
+   * 
+   * @param request - UpdateKROfContentRequest
+   * @param headers - UpdateKROfContentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateKROfContentResponse
    */
   async updateKROfContentWithOptions(request: UpdateKROfContentRequest, headers: UpdateKROfContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateKROfContentResponse> {
     Util.validateModel(request);
@@ -4395,10 +5596,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改KR内容
-   *
-   * @param request UpdateKROfContentRequest
-   * @return UpdateKROfContentResponse
+   * 更改KR内容
+   * 
+   * @param request - UpdateKROfContentRequest
+   * @returns UpdateKROfContentResponse
    */
   async updateKROfContent(request: UpdateKROfContentRequest): Promise<UpdateKROfContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4407,12 +5608,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改KR分数
-   *
-   * @param request UpdateKROfScoreRequest
-   * @param headers UpdateKROfScoreHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateKROfScoreResponse
+   * 更改KR分数
+   * 
+   * @param request - UpdateKROfScoreRequest
+   * @param headers - UpdateKROfScoreHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateKROfScoreResponse
    */
   async updateKROfScoreWithOptions(request: UpdateKROfScoreRequest, headers: UpdateKROfScoreHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateKROfScoreResponse> {
     Util.validateModel(request);
@@ -4459,10 +5660,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改KR分数
-   *
-   * @param request UpdateKROfScoreRequest
-   * @return UpdateKROfScoreResponse
+   * 更改KR分数
+   * 
+   * @param request - UpdateKROfScoreRequest
+   * @returns UpdateKROfScoreResponse
    */
   async updateKROfScore(request: UpdateKROfScoreRequest): Promise<UpdateKROfScoreResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4471,12 +5672,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改 KR 权重
-   *
-   * @param request UpdateKROfWeightRequest
-   * @param headers UpdateKROfWeightHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateKROfWeightResponse
+   * 更改 KR 权重
+   * 
+   * @param request - UpdateKROfWeightRequest
+   * @param headers - UpdateKROfWeightHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateKROfWeightResponse
    */
   async updateKROfWeightWithOptions(request: UpdateKROfWeightRequest, headers: UpdateKROfWeightHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateKROfWeightResponse> {
     Util.validateModel(request);
@@ -4523,10 +5724,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改 KR 权重
-   *
-   * @param request UpdateKROfWeightRequest
-   * @return UpdateKROfWeightResponse
+   * 更改 KR 权重
+   * 
+   * @param request - UpdateKROfWeightRequest
+   * @returns UpdateKROfWeightResponse
    */
   async updateKROfWeight(request: UpdateKROfWeightRequest): Promise<UpdateKROfWeightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4535,12 +5736,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新目标
-   *
-   * @param request UpdateObjectiveRequest
-   * @param headers UpdateObjectiveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateObjectiveResponse
+   * 更新目标
+   * 
+   * @param request - UpdateObjectiveRequest
+   * @param headers - UpdateObjectiveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateObjectiveResponse
    */
   async updateObjectiveWithOptions(objectiveId: string, request: UpdateObjectiveRequest, headers: UpdateObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateObjectiveResponse> {
     Util.validateModel(request);
@@ -4583,10 +5784,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新目标
-   *
-   * @param request UpdateObjectiveRequest
-   * @return UpdateObjectiveResponse
+   * 更新目标
+   * 
+   * @param request - UpdateObjectiveRequest
+   * @returns UpdateObjectiveResponse
    */
   async updateObjective(objectiveId: string, request: UpdateObjectiveRequest): Promise<UpdateObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4595,12 +5796,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新资源隐私策略
-   *
-   * @param request UpdatePrivacyRequest
-   * @param headers UpdatePrivacyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdatePrivacyResponse
+   * 更新资源隐私策略
+   * 
+   * @param request - UpdatePrivacyRequest
+   * @param headers - UpdatePrivacyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdatePrivacyResponse
    */
   async updatePrivacyWithOptions(request: UpdatePrivacyRequest, headers: UpdatePrivacyHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePrivacyResponse> {
     Util.validateModel(request);
@@ -4651,10 +5852,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新资源隐私策略
-   *
-   * @param request UpdatePrivacyRequest
-   * @return UpdatePrivacyResponse
+   * 更新资源隐私策略
+   * 
+   * @param request - UpdatePrivacyRequest
+   * @returns UpdatePrivacyResponse
    */
   async updatePrivacy(request: UpdatePrivacyRequest): Promise<UpdatePrivacyResponse> {
     let runtime = new $Util.RuntimeOptions({ });

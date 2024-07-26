@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,15 @@ export class CreateFlashMeetingHeaders extends $tea.Model {
 }
 
 export class CreateFlashMeetingRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   creator?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   eventId?: string;
   title?: string;
   static names(): { [key: string]: string } {
@@ -57,10 +63,30 @@ export class CreateFlashMeetingRequest extends $tea.Model {
 }
 
 export class CreateFlashMeetingResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   flashMeetingKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -135,7 +161,21 @@ export class GetShanhuiByCalendarHeaders extends $tea.Model {
 }
 
 export class GetShanhuiByCalendarRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * VGZCWXpvTmxpQmorbUhiSXUveTB98Iok
+   */
   eventId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EUiSN7beu1Q2wR
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -158,6 +198,10 @@ export class GetShanhuiByCalendarRequest extends $tea.Model {
 
 export class GetShanhuiByCalendarResponseBody extends $tea.Model {
   result?: GetShanhuiByCalendarResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -227,6 +271,10 @@ export class GetShanhuiByShanhuiKeyHeaders extends $tea.Model {
 
 export class GetShanhuiByShanhuiKeyResponseBody extends $tea.Model {
   result?: GetShanhuiByShanhuiKeyResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -295,9 +343,31 @@ export class GetTaskFromShanhuiDocHeaders extends $tea.Model {
 }
 
 export class GetTaskFromShanhuiDocRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * gMp7ldNxoWbAqBQN
+   */
   docKey?: string;
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * DMvP2vrwe5QVUk0RcNb2FgiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -370,7 +440,15 @@ export class GetTaskFromShanhuiDocResponse extends $tea.Model {
 }
 
 export class GetShanhuiByCalendarResponseBodyResultTopics extends $tea.Model {
+  /**
+   * @example
+   * 27Hio9BV23Ghj8LkRe34QzSdP94UtMkju
+   */
   docKey?: string;
+  /**
+   * @example
+   * 会议1
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -392,11 +470,38 @@ export class GetShanhuiByCalendarResponseBodyResultTopics extends $tea.Model {
 }
 
 export class GetShanhuiByCalendarResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 1685332800000
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8K4ny9P9No06sjhk
+   */
   flashmeetingKey?: string;
+  /**
+   * @example
+   * false
+   */
   hasSummary?: boolean;
+  /**
+   * @example
+   * 1685318400000
+   */
   startTime?: number;
+  /**
+   * @example
+   * 2Hj32Uio28fjmMiu9Klsk
+   */
   summaryDocKey?: string;
+  /**
+   * @example
+   * 测试闪会
+   */
   title?: string;
   topics?: GetShanhuiByCalendarResponseBodyResultTopics[];
   static names(): { [key: string]: string } {
@@ -429,7 +534,21 @@ export class GetShanhuiByCalendarResponseBodyResult extends $tea.Model {
 }
 
 export class GetShanhuiByShanhuiKeyResponseBodyResultTopics extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 27Hio9BV23Ghj8LkRe34QzSdP94UtMkju
+   */
   docKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 会议1
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -451,12 +570,40 @@ export class GetShanhuiByShanhuiKeyResponseBodyResultTopics extends $tea.Model {
 }
 
 export class GetShanhuiByShanhuiKeyResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 1685332800000
+   */
   endTime?: number;
+  /**
+   * @example
+   * 2kms47sjhb882
+   */
   eventId?: string;
+  /**
+   * @example
+   * 8K4ny9P9No06sjhk
+   */
   flashmeetingKey?: string;
+  /**
+   * @example
+   * false
+   */
   hasSummary?: boolean;
+  /**
+   * @example
+   * 1685318400000
+   */
   startTime?: number;
+  /**
+   * @example
+   * 2Hj32Uio28fjmMiu9Klsk
+   */
   summaryDocKey?: string;
+  /**
+   * @example
+   * 测试闪会
+   */
   title?: string;
   topics?: GetShanhuiByShanhuiKeyResponseBodyResultTopics[];
   static names(): { [key: string]: string } {
@@ -563,12 +710,11 @@ export class GetTaskFromShanhuiDocResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -578,12 +724,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 创建钉闪会并绑定日程
-   *
-   * @param request CreateFlashMeetingRequest
-   * @param headers CreateFlashMeetingHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateFlashMeetingResponse
+   * 创建钉闪会并绑定日程
+   * 
+   * @param request - CreateFlashMeetingRequest
+   * @param headers - CreateFlashMeetingHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateFlashMeetingResponse
    */
   async createFlashMeetingWithOptions(request: CreateFlashMeetingRequest, headers: CreateFlashMeetingHeaders, runtime: $Util.RuntimeOptions): Promise<CreateFlashMeetingResponse> {
     Util.validateModel(request);
@@ -628,10 +774,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建钉闪会并绑定日程
-   *
-   * @param request CreateFlashMeetingRequest
-   * @return CreateFlashMeetingResponse
+   * 创建钉闪会并绑定日程
+   * 
+   * @param request - CreateFlashMeetingRequest
+   * @returns CreateFlashMeetingResponse
    */
   async createFlashMeeting(request: CreateFlashMeetingRequest): Promise<CreateFlashMeetingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -640,12 +786,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据日程获取闪会的信息
-   *
-   * @param request GetShanhuiByCalendarRequest
-   * @param headers GetShanhuiByCalendarHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetShanhuiByCalendarResponse
+   * 根据日程获取闪会的信息
+   * 
+   * @param request - GetShanhuiByCalendarRequest
+   * @param headers - GetShanhuiByCalendarHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetShanhuiByCalendarResponse
    */
   async getShanhuiByCalendarWithOptions(request: GetShanhuiByCalendarRequest, headers: GetShanhuiByCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<GetShanhuiByCalendarResponse> {
     Util.validateModel(request);
@@ -686,10 +832,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据日程获取闪会的信息
-   *
-   * @param request GetShanhuiByCalendarRequest
-   * @return GetShanhuiByCalendarResponse
+   * 根据日程获取闪会的信息
+   * 
+   * @param request - GetShanhuiByCalendarRequest
+   * @returns GetShanhuiByCalendarResponse
    */
   async getShanhuiByCalendar(request: GetShanhuiByCalendarRequest): Promise<GetShanhuiByCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -698,11 +844,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
-   *
-   * @param headers GetShanhuiByShanhuiKeyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetShanhuiByShanhuiKeyResponse
+   * 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+   * 
+   * @param headers - GetShanhuiByShanhuiKeyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetShanhuiByShanhuiKeyResponse
    */
   async getShanhuiByShanhuiKeyWithOptions(flashmeetingKey: string, headers: GetShanhuiByShanhuiKeyHeaders, runtime: $Util.RuntimeOptions): Promise<GetShanhuiByShanhuiKeyResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -732,9 +878,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
-   *
-   * @return GetShanhuiByShanhuiKeyResponse
+   * 根据闪会key来闪会的信息，包含关联的日程、会议时间、议题等
+   * @returns GetShanhuiByShanhuiKeyResponse
    */
   async getShanhuiByShanhuiKey(flashmeetingKey: string): Promise<GetShanhuiByShanhuiKeyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -743,12 +888,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据闪会文档id获取待办任务
-   *
-   * @param request GetTaskFromShanhuiDocRequest
-   * @param headers GetTaskFromShanhuiDocHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTaskFromShanhuiDocResponse
+   * 根据闪会文档id获取待办任务
+   * 
+   * @param request - GetTaskFromShanhuiDocRequest
+   * @param headers - GetTaskFromShanhuiDocHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTaskFromShanhuiDocResponse
    */
   async getTaskFromShanhuiDocWithOptions(request: GetTaskFromShanhuiDocRequest, headers: GetTaskFromShanhuiDocHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskFromShanhuiDocResponse> {
     Util.validateModel(request);
@@ -797,10 +942,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据闪会文档id获取待办任务
-   *
-   * @param request GetTaskFromShanhuiDocRequest
-   * @return GetTaskFromShanhuiDocResponse
+   * 根据闪会文档id获取待办任务
+   * 
+   * @param request - GetTaskFromShanhuiDocRequest
+   * @returns GetTaskFromShanhuiDocResponse
    */
   async getTaskFromShanhuiDoc(request: GetTaskFromShanhuiDocRequest): Promise<GetTaskFromShanhuiDocResponse> {
     let runtime = new $Util.RuntimeOptions({ });

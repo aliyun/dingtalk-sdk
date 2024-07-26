@@ -1,17 +1,36 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class OpenAgoalKeyActionDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   keyActionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://agoal.dingtalk.com
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -35,13 +54,63 @@ export class OpenAgoalKeyActionDTO extends $tea.Model {
 }
 
 export class OpenAgoalKeyResultDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   keyActions?: OpenAgoalKeyActionDTO[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   keyResultId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   progress?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试KR
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   titleMentions?: TitleMention[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   type?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 30
+   */
   weight?: number;
   static names(): { [key: string]: string } {
     return {
@@ -75,9 +144,34 @@ export class OpenAgoalKeyResultDTO extends $tea.Model {
 }
 
 export class OpenAgoalLatestProgressDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1716952481672
+   */
   created?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   creator?: OpenAgoalUserDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * <article class=\"4ever-article\"><p style=\"text-align:left;text-indent:0;margin-left:0;margin-top:0;margin-bottom:0\"><span>xxx</span></p></article>
+   */
   htmldescription?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   progressId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -103,17 +197,80 @@ export class OpenAgoalLatestProgressDTO extends $tea.Model {
 }
 
 export class OpenAgoalObjectiveDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   executor?: OpenAgoalUserDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   keyActions?: OpenAgoalKeyActionDTO[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   keyResults?: OpenAgoalKeyResultDTO[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   latestProgress?: OpenAgoalLatestProgressDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   objectiveId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   objectiveRule?: OpenOrgObjectiveRuleDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: OpenObjectiveRulePeriodDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   progress?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   teams?: OpenAgoalTeamDTO[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试目标
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 30
+   */
   weight?: number;
   static names(): { [key: string]: string } {
     return {
@@ -155,8 +312,29 @@ export class OpenAgoalObjectiveDTO extends $tea.Model {
 }
 
 export class OpenAgoalTeamDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8535683xx
+   */
   deptId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试部门
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   teamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -180,8 +358,29 @@ export class OpenAgoalTeamDTO extends $tea.Model {
 }
 
 export class OpenAgoalUserDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 211042291978xxxx
+   */
   dingUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -205,10 +404,45 @@ export class OpenAgoalUserDTO extends $tea.Model {
 }
 
 export class OpenObjectiveRulePeriodDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1743436799000
+   */
   endDate?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2024年度
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   periodId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * season
+   */
   periodType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1711900800000
+   */
   startDate?: number;
   static names(): { [key: string]: string } {
     return {
@@ -236,7 +470,21 @@ export class OpenObjectiveRulePeriodDTO extends $tea.Model {
 }
 
 export class OpenOrgObjectiveRuleDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   objectiveRuleId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试规则
+   */
   objectiveRuleName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -258,7 +506,21 @@ export class OpenOrgObjectiveRuleDTO extends $tea.Model {
 }
 
 export class OpenUserAdminDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingxxxxe3d8c283bb4aa39a90f97fcb1e09
+   */
   dingCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 211042291978xxxx
+   */
   dingUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -280,8 +542,26 @@ export class OpenUserAdminDTO extends $tea.Model {
 }
 
 export class TitleMention extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   length?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   offset?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   user?: OpenAgoalUserDTO;
   static names(): { [key: string]: string } {
     return {
@@ -327,8 +607,26 @@ export class AgoalObjectiveKeyActionListHeaders extends $tea.Model {
 }
 
 export class AgoalObjectiveKeyActionListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 211042291978xxxx
+   */
   dingUserId?: string;
+  /**
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   keyResultId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   objectiveId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -352,8 +650,20 @@ export class AgoalObjectiveKeyActionListRequest extends $tea.Model {
 }
 
 export class AgoalObjectiveKeyActionListResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: OpenAgoalKeyActionDTO[];
+  /**
+   * @example
+   * 7478B23C-80E8-1AD6-BE8C-09D480E0xxxx
+   */
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -424,6 +734,13 @@ export class AgoalObjectiveRulePeriodListHeaders extends $tea.Model {
 }
 
 export class AgoalObjectiveRulePeriodListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   objectiveRuleId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -443,8 +760,20 @@ export class AgoalObjectiveRulePeriodListRequest extends $tea.Model {
 }
 
 export class AgoalObjectiveRulePeriodListResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: OpenObjectiveRulePeriodDTO[];
+  /**
+   * @example
+   * 7478B23C-80E8-1AD6-BE8C-09D480E0xxxx
+   */
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -515,8 +844,20 @@ export class AgoalOrgObjectiveRuleListHeaders extends $tea.Model {
 }
 
 export class AgoalOrgObjectiveRuleListResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: OpenOrgObjectiveRuleDTO[];
+  /**
+   * @example
+   * 7478B23C-80E8-1AD6-BE8C-09D480E0xxxx
+   */
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -587,11 +928,50 @@ export class AgoalSendMessageHeaders extends $tea.Model {
 }
 
 export class AgoalSendMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://agoal.dingtalk.com
+   */
   mobileUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"A":"a", "B":"b"}
+   */
   params?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://agoal.dingtalk.com
+   */
   pcUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 211042291978xxxx
+   */
   sourceDingUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetDingUserIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1d01a14febc7482ca3b6e1d30cf5xxxx
+   */
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -621,8 +1001,23 @@ export class AgoalSendMessageRequest extends $tea.Model {
 }
 
 export class AgoalSendMessageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 7478B23C-80E8-1AD6-BE8C-09D480E0xxxx
+   */
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -693,8 +1088,20 @@ export class AgoalUserAdminListHeaders extends $tea.Model {
 }
 
 export class AgoalUserAdminListResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: OpenUserAdminDTO[];
+  /**
+   * @example
+   * 7478B23C-80E8-1AD6-BE8C-09D480E0xxxx
+   */
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -765,8 +1172,26 @@ export class AgoalUserObjectiveListHeaders extends $tea.Model {
 }
 
 export class AgoalUserObjectiveListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 211042291978xxxx
+   */
   dingUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6444f5e9a4261c6e699dxxxx
+   */
   objectiveRuleId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   periodIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -841,12 +1266,11 @@ export class AgoalUserObjectiveListResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -856,12 +1280,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 获取Agoal指定目标或者关键结果关联的关键行动
-   *
-   * @param request AgoalObjectiveKeyActionListRequest
-   * @param headers AgoalObjectiveKeyActionListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AgoalObjectiveKeyActionListResponse
+   * 获取Agoal指定目标或者关键结果关联的关键行动
+   * 
+   * @param request - AgoalObjectiveKeyActionListRequest
+   * @param headers - AgoalObjectiveKeyActionListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AgoalObjectiveKeyActionListResponse
    */
   async agoalObjectiveKeyActionListWithOptions(request: AgoalObjectiveKeyActionListRequest, headers: AgoalObjectiveKeyActionListHeaders, runtime: $Util.RuntimeOptions): Promise<AgoalObjectiveKeyActionListResponse> {
     Util.validateModel(request);
@@ -906,10 +1330,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取Agoal指定目标或者关键结果关联的关键行动
-   *
-   * @param request AgoalObjectiveKeyActionListRequest
-   * @return AgoalObjectiveKeyActionListResponse
+   * 获取Agoal指定目标或者关键结果关联的关键行动
+   * 
+   * @param request - AgoalObjectiveKeyActionListRequest
+   * @returns AgoalObjectiveKeyActionListResponse
    */
   async agoalObjectiveKeyActionList(request: AgoalObjectiveKeyActionListRequest): Promise<AgoalObjectiveKeyActionListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -918,12 +1342,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取Agoal目标规则下的周期列表
-   *
-   * @param request AgoalObjectiveRulePeriodListRequest
-   * @param headers AgoalObjectiveRulePeriodListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AgoalObjectiveRulePeriodListResponse
+   * 获取Agoal目标规则下的周期列表
+   * 
+   * @param request - AgoalObjectiveRulePeriodListRequest
+   * @param headers - AgoalObjectiveRulePeriodListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AgoalObjectiveRulePeriodListResponse
    */
   async agoalObjectiveRulePeriodListWithOptions(request: AgoalObjectiveRulePeriodListRequest, headers: AgoalObjectiveRulePeriodListHeaders, runtime: $Util.RuntimeOptions): Promise<AgoalObjectiveRulePeriodListResponse> {
     Util.validateModel(request);
@@ -960,10 +1384,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取Agoal目标规则下的周期列表
-   *
-   * @param request AgoalObjectiveRulePeriodListRequest
-   * @return AgoalObjectiveRulePeriodListResponse
+   * 获取Agoal目标规则下的周期列表
+   * 
+   * @param request - AgoalObjectiveRulePeriodListRequest
+   * @returns AgoalObjectiveRulePeriodListResponse
    */
   async agoalObjectiveRulePeriodList(request: AgoalObjectiveRulePeriodListRequest): Promise<AgoalObjectiveRulePeriodListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -972,11 +1396,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取Agoal目标规则列表
-   *
-   * @param headers AgoalOrgObjectiveRuleListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AgoalOrgObjectiveRuleListResponse
+   * 获取Agoal目标规则列表
+   * 
+   * @param headers - AgoalOrgObjectiveRuleListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AgoalOrgObjectiveRuleListResponse
    */
   async agoalOrgObjectiveRuleListWithOptions(headers: AgoalOrgObjectiveRuleListHeaders, runtime: $Util.RuntimeOptions): Promise<AgoalOrgObjectiveRuleListResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1006,9 +1430,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取Agoal目标规则列表
-   *
-   * @return AgoalOrgObjectiveRuleListResponse
+   * 获取Agoal目标规则列表
+   * @returns AgoalOrgObjectiveRuleListResponse
    */
   async agoalOrgObjectiveRuleList(): Promise<AgoalOrgObjectiveRuleListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1017,12 +1440,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary Agoal消息发送
-   *
-   * @param request AgoalSendMessageRequest
-   * @param headers AgoalSendMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AgoalSendMessageResponse
+   * Agoal消息发送
+   * 
+   * @param request - AgoalSendMessageRequest
+   * @param headers - AgoalSendMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AgoalSendMessageResponse
    */
   async agoalSendMessageWithOptions(request: AgoalSendMessageRequest, headers: AgoalSendMessageHeaders, runtime: $Util.RuntimeOptions): Promise<AgoalSendMessageResponse> {
     Util.validateModel(request);
@@ -1079,10 +1502,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary Agoal消息发送
-   *
-   * @param request AgoalSendMessageRequest
-   * @return AgoalSendMessageResponse
+   * Agoal消息发送
+   * 
+   * @param request - AgoalSendMessageRequest
+   * @returns AgoalSendMessageResponse
    */
   async agoalSendMessage(request: AgoalSendMessageRequest): Promise<AgoalSendMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1091,11 +1514,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取Agoal管理员列表
-   *
-   * @param headers AgoalUserAdminListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AgoalUserAdminListResponse
+   * 获取Agoal管理员列表
+   * 
+   * @param headers - AgoalUserAdminListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AgoalUserAdminListResponse
    */
   async agoalUserAdminListWithOptions(headers: AgoalUserAdminListHeaders, runtime: $Util.RuntimeOptions): Promise<AgoalUserAdminListResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1125,9 +1548,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取Agoal管理员列表
-   *
-   * @return AgoalUserAdminListResponse
+   * 获取Agoal管理员列表
+   * @returns AgoalUserAdminListResponse
    */
   async agoalUserAdminList(): Promise<AgoalUserAdminListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1136,12 +1558,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary Agoal用户目标列表
-   *
-   * @param request AgoalUserObjectiveListRequest
-   * @param headers AgoalUserObjectiveListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AgoalUserObjectiveListResponse
+   * Agoal用户目标列表
+   * 
+   * @param request - AgoalUserObjectiveListRequest
+   * @param headers - AgoalUserObjectiveListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AgoalUserObjectiveListResponse
    */
   async agoalUserObjectiveListWithOptions(request: AgoalUserObjectiveListRequest, headers: AgoalUserObjectiveListHeaders, runtime: $Util.RuntimeOptions): Promise<AgoalUserObjectiveListResponse> {
     Util.validateModel(request);
@@ -1186,10 +1608,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary Agoal用户目标列表
-   *
-   * @param request AgoalUserObjectiveListRequest
-   * @return AgoalUserObjectiveListResponse
+   * Agoal用户目标列表
+   * 
+   * @param request - AgoalUserObjectiveListRequest
+   * @returns AgoalUserObjectiveListResponse
    */
   async agoalUserObjectiveList(request: AgoalUserObjectiveListRequest): Promise<AgoalUserObjectiveListResponse> {
     let runtime = new $Util.RuntimeOptions({ });

@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -180,10 +178,30 @@ export class UpdateIsvOppStatusResponse extends $tea.Model {
 }
 
 export class BatchQueryOpportunityTagResponseBodyResultOpportunityList extends $tea.Model {
+  /**
+   * @example
+   * 50
+   */
   activeUserCnt7d?: number;
+  /**
+   * @example
+   * c:近7日活跃
+   */
   appActiveState?: string;
+  /**
+   * @example
+   * ding939a85cb101e83b0
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2-广场
+   */
   fstFunnelsourceNameLv1?: string;
+  /**
+   * @example
+   * 2-广场
+   */
   funnelsourceNameLv1?: string;
   static names(): { [key: string]: string } {
     return {
@@ -231,15 +249,47 @@ export class BatchQueryOpportunityTagResponseBodyResult extends $tea.Model {
 
 export class UpdateIsvOppStatusRequestIsvOpportunityStatusList extends $tea.Model {
   isvCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   microAppId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   note?: string;
   operCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   oppSourceCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   opportunityStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -280,12 +330,11 @@ export class UpdateIsvOppStatusRequestIsvOpportunityStatusList extends $tea.Mode
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -295,12 +344,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary ISV批量查询商机标签
-   *
-   * @param request BatchQueryOpportunityTagRequest
-   * @param headers BatchQueryOpportunityTagHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchQueryOpportunityTagResponse
+   * ISV批量查询商机标签
+   * 
+   * @param request - BatchQueryOpportunityTagRequest
+   * @param headers - BatchQueryOpportunityTagHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchQueryOpportunityTagResponse
    */
   async batchQueryOpportunityTagWithOptions(request: BatchQueryOpportunityTagRequest, headers: BatchQueryOpportunityTagHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryOpportunityTagResponse> {
     Util.validateModel(request);
@@ -337,10 +386,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV批量查询商机标签
-   *
-   * @param request BatchQueryOpportunityTagRequest
-   * @return BatchQueryOpportunityTagResponse
+   * ISV批量查询商机标签
+   * 
+   * @param request - BatchQueryOpportunityTagRequest
+   * @returns BatchQueryOpportunityTagResponse
    */
   async batchQueryOpportunityTag(request: BatchQueryOpportunityTagRequest): Promise<BatchQueryOpportunityTagResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -349,12 +398,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV商机状态同步
-   *
-   * @param request UpdateIsvOppStatusRequest
-   * @param headers UpdateIsvOppStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateIsvOppStatusResponse
+   * ISV商机状态同步
+   * 
+   * @param request - UpdateIsvOppStatusRequest
+   * @param headers - UpdateIsvOppStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateIsvOppStatusResponse
    */
   async updateIsvOppStatusWithOptions(request: UpdateIsvOppStatusRequest, headers: UpdateIsvOppStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateIsvOppStatusResponse> {
     Util.validateModel(request);
@@ -391,10 +440,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV商机状态同步
-   *
-   * @param request UpdateIsvOppStatusRequest
-   * @return UpdateIsvOppStatusResponse
+   * ISV商机状态同步
+   * 
+   * @param request - UpdateIsvOppStatusRequest
+   * @returns UpdateIsvOppStatusResponse
    */
   async updateIsvOppStatus(request: UpdateIsvOppStatusRequest): Promise<UpdateIsvOppStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });

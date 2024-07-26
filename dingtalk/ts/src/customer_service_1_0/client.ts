@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,13 +30,37 @@ export class CreateTicketHeaders extends $tea.Model {
 }
 
 export class CreateTicketRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   foreignId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   foreignName?: string;
   openInstanceId?: string;
+  /**
+   * @example
+   * 1
+   */
   productionType?: number;
   properties?: CreateTicketRequestProperties[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sourceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -138,12 +160,39 @@ export class ExecuteActivityHeaders extends $tea.Model {
 }
 
 export class ExecuteActivityRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   activityCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   foreignId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   foreignName?: string;
+  /**
+   * @example
+   * default
+   */
   openInstanceId?: string;
+  /**
+   * @example
+   * 1
+   */
   productionType?: number;
   properties?: ExecuteActivityRequestProperties[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dcd6cb6b-b537-493c-8953-3507700e9c4b
+   */
   sourceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -341,9 +390,31 @@ export class PageListActionHeaders extends $tea.Model {
 }
 
 export class PageListActionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: string;
+  /**
+   * @example
+   * default
+   */
   openInstanceId?: string;
+  /**
+   * @example
+   * 1
+   */
   productionType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -441,10 +512,36 @@ export class PageListRobotHeaders extends $tea.Model {
 }
 
 export class PageListRobotRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 50
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @example
+   * default
+   */
   openInstanceId?: string;
+  /**
+   * @example
+   * 1
+   */
   productionType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -472,9 +569,21 @@ export class PageListRobotRequest extends $tea.Model {
 }
 
 export class PageListRobotResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
   list?: PageListRobotResponseBodyList[];
+  /**
+   * @example
+   * 50
+   */
   nextCursor?: number;
+  /**
+   * @example
+   * 90
+   */
   total?: number;
   static names(): { [key: string]: string } {
     return {
@@ -549,12 +658,41 @@ export class PageListTicketHeaders extends $tea.Model {
 export class PageListTicketRequest extends $tea.Model {
   endTime?: number;
   foreignId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: string;
+  /**
+   * @example
+   * default
+   */
   openInstanceId?: string;
+  /**
+   * @example
+   * 1
+   */
   productionType?: number;
   sourceId?: string;
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 42
+   */
   templateId?: string;
   ticketId?: string;
   ticketStatus?: string;
@@ -646,7 +784,15 @@ export class PageListTicketResponse extends $tea.Model {
 }
 
 export class CreateTicketRequestProperties extends $tea.Model {
+  /**
+   * @example
+   * 字段名称
+   */
   name?: string;
+  /**
+   * @example
+   * 字段取值
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -786,10 +932,30 @@ export class PageListActionResponseBodyList extends $tea.Model {
 }
 
 export class PageListRobotResponseBodyList extends $tea.Model {
+  /**
+   * @example
+   * 32001
+   */
   accountId?: number;
+  /**
+   * @example
+   * U1xup2nKKQ9zwXynjpAHVDOD
+   */
   appKey?: string;
+  /**
+   * @example
+   * 62703378
+   */
   id?: number;
+  /**
+   * @example
+   * 测试的机器人
+   */
   name?: string;
+  /**
+   * @example
+   * 1
+   */
   status?: number;
   static names(): { [key: string]: string } {
     return {
@@ -870,12 +1036,11 @@ export class PageListTicketResponseBodyList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -885,12 +1050,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 创建工单
-   *
-   * @param request CreateTicketRequest
-   * @param headers CreateTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateTicketResponse
+   * 创建工单
+   * 
+   * @param request - CreateTicketRequest
+   * @param headers - CreateTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateTicketResponse
    */
   async createTicketWithOptions(request: CreateTicketRequest, headers: CreateTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTicketResponse> {
     Util.validateModel(request);
@@ -955,10 +1120,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建工单
-   *
-   * @param request CreateTicketRequest
-   * @return CreateTicketResponse
+   * 创建工单
+   * 
+   * @param request - CreateTicketRequest
+   * @returns CreateTicketResponse
    */
   async createTicket(request: CreateTicketRequest): Promise<CreateTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -967,12 +1132,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行工单活动
-   *
-   * @param request ExecuteActivityRequest
-   * @param headers ExecuteActivityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ExecuteActivityResponse
+   * 执行工单活动
+   * 
+   * @param request - ExecuteActivityRequest
+   * @param headers - ExecuteActivityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ExecuteActivityResponse
    */
   async executeActivityWithOptions(ticketId: string, request: ExecuteActivityRequest, headers: ExecuteActivityHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteActivityResponse> {
     Util.validateModel(request);
@@ -1033,10 +1198,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行工单活动
-   *
-   * @param request ExecuteActivityRequest
-   * @return ExecuteActivityResponse
+   * 执行工单活动
+   * 
+   * @param request - ExecuteActivityRequest
+   * @returns ExecuteActivityResponse
    */
   async executeActivity(ticketId: string, request: ExecuteActivityRequest): Promise<ExecuteActivityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1045,12 +1210,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取source列表
-   *
-   * @param request GetUserSourceListRequest
-   * @param headers GetUserSourceListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserSourceListResponse
+   * 获取source列表
+   * 
+   * @param request - GetUserSourceListRequest
+   * @param headers - GetUserSourceListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserSourceListResponse
    */
   async getUserSourceListWithOptions(request: GetUserSourceListRequest, headers: GetUserSourceListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserSourceListResponse> {
     Util.validateModel(request);
@@ -1107,10 +1272,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取source列表
-   *
-   * @param request GetUserSourceListRequest
-   * @return GetUserSourceListResponse
+   * 获取source列表
+   * 
+   * @param request - GetUserSourceListRequest
+   * @returns GetUserSourceListResponse
    */
   async getUserSourceList(request: GetUserSourceListRequest): Promise<GetUserSourceListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1119,12 +1284,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询动作记录
-   *
-   * @param request PageListActionRequest
-   * @param headers PageListActionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PageListActionResponse
+   * 查询动作记录
+   * 
+   * @param request - PageListActionRequest
+   * @param headers - PageListActionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PageListActionResponse
    */
   async pageListActionWithOptions(ticketId: string, request: PageListActionRequest, headers: PageListActionHeaders, runtime: $Util.RuntimeOptions): Promise<PageListActionResponse> {
     Util.validateModel(request);
@@ -1173,10 +1338,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询动作记录
-   *
-   * @param request PageListActionRequest
-   * @return PageListActionResponse
+   * 查询动作记录
+   * 
+   * @param request - PageListActionRequest
+   * @returns PageListActionResponse
    */
   async pageListAction(ticketId: string, request: PageListActionRequest): Promise<PageListActionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1185,12 +1350,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询机器人信息
-   *
-   * @param request PageListRobotRequest
-   * @param headers PageListRobotHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PageListRobotResponse
+   * 分页查询机器人信息
+   * 
+   * @param request - PageListRobotRequest
+   * @param headers - PageListRobotHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PageListRobotResponse
    */
   async pageListRobotWithOptions(request: PageListRobotRequest, headers: PageListRobotHeaders, runtime: $Util.RuntimeOptions): Promise<PageListRobotResponse> {
     Util.validateModel(request);
@@ -1243,10 +1408,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询机器人信息
-   *
-   * @param request PageListRobotRequest
-   * @return PageListRobotResponse
+   * 分页查询机器人信息
+   * 
+   * @param request - PageListRobotRequest
+   * @returns PageListRobotResponse
    */
   async pageListRobot(request: PageListRobotRequest): Promise<PageListRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1255,12 +1420,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询工单
-   *
-   * @param request PageListTicketRequest
-   * @param headers PageListTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PageListTicketResponse
+   * 分页查询工单
+   * 
+   * @param request - PageListTicketRequest
+   * @param headers - PageListTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PageListTicketResponse
    */
   async pageListTicketWithOptions(request: PageListTicketRequest, headers: PageListTicketHeaders, runtime: $Util.RuntimeOptions): Promise<PageListTicketResponse> {
     Util.validateModel(request);
@@ -1337,10 +1502,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询工单
-   *
-   * @param request PageListTicketRequest
-   * @return PageListTicketResponse
+   * 分页查询工单
+   * 
+   * @param request - PageListTicketRequest
+   * @returns PageListTicketResponse
    */
   async pageListTicket(request: PageListTicketRequest): Promise<PageListTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });

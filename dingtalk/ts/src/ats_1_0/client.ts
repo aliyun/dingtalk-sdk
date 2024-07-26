@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,10 +30,39 @@ export class AddApplicationRegFormTemplateHeaders extends $tea.Model {
 }
 
 export class AddApplicationRegFormTemplateRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"key":"value"}
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 应聘登记表
+   */
   name?: string;
+  /**
+   * @example
+   * xxx
+   */
   outerId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -63,7 +90,21 @@ export class AddApplicationRegFormTemplateRequest extends $tea.Model {
 }
 
 export class AddApplicationRegFormTemplateResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxxxx
+   */
   templateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -132,9 +173,31 @@ export class AddFileHeaders extends $tea.Model {
 }
 
 export class AddFileRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三的简历
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   mediaId?: string;
+  /**
+   * @example
+   * manager5875
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -160,8 +223,29 @@ export class AddFileRequest extends $tea.Model {
 }
 
 export class AddFileResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111111
+   */
   fileId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三的简历
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   spaceId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -232,11 +316,35 @@ export class AddUserAccountHeaders extends $tea.Model {
 }
 
 export class AddUserAccountRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @example
+   * 示例昵称xxx
+   */
   channelAccountName?: string;
+  /**
+   * @example
+   * 6FSe51616SOdd394d6
+   */
   channelUserIdentify?: string;
+  /**
+   * @example
+   * 16600010001
+   */
   phoneNumber?: string;
+  /**
+   * @example
+   * ding123456789
+   */
   corpId?: string;
+  /**
+   * @example
+   * 1676451039
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -332,13 +440,37 @@ export class CollectRecruitJobDetailHeaders extends $tea.Model {
 }
 
 export class CollectRecruitJobDetailRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @example
+   * zhilian
+   */
   channel?: string;
   jobInfo?: CollectRecruitJobDetailRequestJobInfo;
+  /**
+   * @example
+   * corpxxxxxxxxx
+   */
   outCorpId?: string;
+  /**
+   * @example
+   * 小莫科技有限公司
+   */
   outCorpName?: string;
   recruitUserInfo?: CollectRecruitJobDetailRequestRecruitUserInfo;
+  /**
+   * @example
+   * BOSS
+   */
   source?: string;
+  /**
+   * @example
+   * 1677465956008
+   */
   updateTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -438,13 +570,51 @@ export class CollectResumeDetailHeaders extends $tea.Model {
 }
 
 export class CollectResumeDetailRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @example
+   * liepin
+   */
   channelCode?: string;
+  /**
+   * @example
+   * resumexxxxxxxxxx
+   */
   channelOuterId?: string;
+  /**
+   * @example
+   * xxxxxx
+   */
   channelTalentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * jobId8fc0d56a605d495ea0214af7axxxxxxx
+   */
   deliverJobId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2701606624233xxxxx
+   */
   optUserId?: string;
+  /**
+   * @example
+   * http:www.xxx.com
+   */
   resumeChannelUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   resumeData?: CollectResumeDetailRequestResumeData;
   resumeFile?: CollectResumeDetailRequestResumeFile;
   static names(): { [key: string]: string } {
@@ -547,18 +717,84 @@ export class CollectResumeMailHeaders extends $tea.Model {
 }
 
 export class CollectResumeMailRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * liepin
+   */
   channelCode?: string;
+  /**
+   * @example
+   * jobId8fc0d56a605d495ea0214af7axxxxxxx
+   */
   deliverJobId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxx@163.com
+   */
   fromMailAddress?: string;
   historyMailImport?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxxxxxx
+   */
   mailId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxxx应聘贵公司xxx职位
+   */
   mailTitle?: string;
+  /**
+   * @example
+   * 2701606624233xxxxx
+   */
   optUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxx@163.com
+   */
   receiveMailAddress?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receiveMailType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receivedTime?: number;
+  /**
+   * @example
+   * http:www.xxx.com
+   */
   resumeChannelUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   resumeFile?: CollectResumeMailRequestResumeFile;
   static names(): { [key: string]: string } {
     return {
@@ -668,6 +904,10 @@ export class ConfirmRightsHeaders extends $tea.Model {
 }
 
 export class ConfirmRightsRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -687,6 +927,13 @@ export class ConfirmRightsRequest extends $tea.Model {
 }
 
 export class ConfirmRightsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -753,7 +1000,18 @@ export class FinishBeginnerTaskHeaders extends $tea.Model {
 }
 
 export class FinishBeginnerTaskRequest extends $tea.Model {
+  /**
+   * @example
+   * advancedBeginnerTask
+   */
   scope?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager5875
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -775,6 +1033,13 @@ export class FinishBeginnerTaskRequest extends $tea.Model {
 }
 
 export class FinishBeginnerTaskResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -841,6 +1106,10 @@ export class GetApplicationRegFormByFlowIdHeaders extends $tea.Model {
 }
 
 export class GetApplicationRegFormByFlowIdRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -860,15 +1129,85 @@ export class GetApplicationRegFormByFlowIdRequest extends $tea.Model {
 }
 
 export class GetApplicationRegFormByFlowIdResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   candidateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager5875
+   */
   creatorUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * flowXXX
+   */
   flowId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * formXXX
+   */
   formId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1626775016427
+   */
   gmtCreateMillis?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1626775016427
+   */
   gmtModifiedMillis?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * jobXXX
+   */
   jobId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * templateXXX
+   */
   templateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   templateVersion?: number;
   static names(): { [key: string]: string } {
     return {
@@ -953,7 +1292,18 @@ export class GetCandidateByPhoneNumberHeaders extends $tea.Model {
 }
 
 export class GetCandidateByPhoneNumberRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 13688888888
+   */
   phoneNumber?: string;
   static names(): { [key: string]: string } {
     return {
@@ -975,7 +1325,18 @@ export class GetCandidateByPhoneNumberRequest extends $tea.Model {
 }
 
 export class GetCandidateByPhoneNumberResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   candidateId?: string;
+  /**
+   * @example
+   * 张三
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1044,10 +1405,39 @@ export class GetFileUploadInfoHeaders extends $tea.Model {
 }
 
 export class GetFileUploadInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三的简历
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1024
+   */
   fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   md5?: string;
+  /**
+   * @example
+   * manager5875
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1075,12 +1465,61 @@ export class GetFileUploadInfoRequest extends $tea.Model {
 }
 
 export class GetFileUploadInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   accessKeyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   accessKeySecret?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   accessToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1626923829000
+   */
   accessTokenExpirationMillis?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * lippi-space-zjk
+   */
   bucket?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * oss-cn-zhangjiakou.aliyuncs.com
+   */
   endPoint?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   mediaId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1159,8 +1598,26 @@ export class GetFlowIdByRelationEntityIdHeaders extends $tea.Model {
 }
 
 export class GetFlowIdByRelationEntityIdRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * interview
+   */
   relationEntity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   relationEntityId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1184,6 +1641,13 @@ export class GetFlowIdByRelationEntityIdRequest extends $tea.Model {
 }
 
 export class GetFlowIdByRelationEntityIdResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   flowId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1338,6 +1802,10 @@ export class ImportJobDataHeaders extends $tea.Model {
 }
 
 export class ImportJobDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: ImportJobDataRequestBody[];
   static names(): { [key: string]: string } {
     return {
@@ -1426,9 +1894,31 @@ export class QueryCandidatesHeaders extends $tea.Model {
 }
 
 export class QueryCandidatesRequest extends $tea.Model {
+  /**
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 154XXX
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * entry
+   */
   statId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 013224566462XXXXXXXXXX
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1456,7 +1946,15 @@ export class QueryCandidatesRequest extends $tea.Model {
 export class QueryCandidatesResponseBody extends $tea.Model {
   hasMore?: boolean;
   list?: QueryCandidatesResponseBodyList[];
+  /**
+   * @example
+   * xxxxxx
+   */
   nextToken?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1529,11 +2027,44 @@ export class QueryInterviewsHeaders extends $tea.Model {
 }
 
 export class QueryInterviewsRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   candidateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1626796800000
+   */
   startTimeBeginMillis?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1626883199000
+   */
   startTimeEndMillis?: number;
+  /**
+   * @example
+   * xxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 10
+   */
   size?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1563,9 +2094,21 @@ export class QueryInterviewsRequest extends $tea.Model {
 }
 
 export class QueryInterviewsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
   list?: QueryInterviewsResponseBodyList[];
+  /**
+   * @example
+   * xxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 总数量
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1638,12 +2181,40 @@ export class ReportMessageStatusHeaders extends $tea.Model {
 }
 
 export class ReportMessageStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @example
+   * corp-ABC-prd
+   */
   channel?: string;
+  /**
+   * @example
+   * INVALID_USER
+   */
   errorCode?: string;
+  /**
+   * @example
+   * 无效用户
+   */
   errorMsg?: string;
+  /**
+   * @example
+   * 594c5b30-57bd-4001-8903-4dc64cdc6739
+   */
   messageId?: string;
+  /**
+   * @example
+   * AppUid@Channel
+   */
   receiverUserId?: string;
+  /**
+   * @example
+   * AppUid@Channel
+   */
   senderUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1741,12 +2312,40 @@ export class SyncChannelMessageHeaders extends $tea.Model {
 }
 
 export class SyncChannelMessageRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @example
+   * Corp-ABC-prd
+   */
   channel?: string;
+  /**
+   * @example
+   * {"msgtype":"text","text":{"content":"月会通知"}}
+   */
   content?: string;
+  /**
+   * @example
+   * 1667964772048
+   */
   createTime?: number;
+  /**
+   * @example
+   * AppUid@Channel
+   */
   receiverUserId?: string;
+  /**
+   * @example
+   * AppUid@Channel
+   */
   senderUserId?: string;
+  /**
+   * @example
+   * 594c5b30-57bd-4001-8903-4dc64cdc6739
+   */
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1844,8 +2443,23 @@ export class UpdateApplicationRegFormHeaders extends $tea.Model {
 }
 
 export class UpdateApplicationRegFormRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"key":"value"}
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dingPanFile?: UpdateApplicationRegFormRequestDingPanFile;
   static names(): { [key: string]: string } {
     return {
@@ -1869,12 +2483,61 @@ export class UpdateApplicationRegFormRequest extends $tea.Model {
 }
 
 export class UpdateApplicationRegFormResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager5875
+   */
   creatorUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * formXXX
+   */
   formId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1626775016427
+   */
   gmtCreateMillis?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1626775016427
+   */
   gmtModifiedMillis?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * templateXXX
+   */
   templateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   templateVersion?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1953,7 +2616,18 @@ export class UpdateInterviewSignInInfoHeaders extends $tea.Model {
 }
 
 export class UpdateInterviewSignInInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1626796800000
+   */
   signInTimeMillis?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2019,14 +2693,68 @@ export class UpdateJobDeliverHeaders extends $tea.Model {
 }
 
 export class UpdateJobDeliverRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ddats
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * channelOuterId
+   */
   channelOuterId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 27016066248xxxxx
+   */
   deliverUserId?: string;
+  /**
+   * @example
+   * ATS001
+   */
   errorCode?: string;
+  /**
+   * @example
+   * 职位审核不通过
+   */
   errorMsg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1666780239981
+   */
   opTime?: number;
+  /**
+   * @example
+   * 27016066248xxxxx
+   */
   opUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * jobId23ed0d46548f4e88a7b808d3f3057xxx
+   */
   jobId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2106,12 +2834,40 @@ export class UpdateJobDeliverResponse extends $tea.Model {
 }
 
 export class CollectRecruitJobDetailRequestJobInfoAddress extends $tea.Model {
+  /**
+   * @example
+   * 310000
+   */
   cityCode?: string;
+  /**
+   * @example
+   * 文一西路999号
+   */
   detail?: string;
+  /**
+   * @example
+   * 311000
+   */
   districtCode?: string;
+  /**
+   * @example
+   * 89.54613
+   */
   latitude?: string;
+  /**
+   * @example
+   * 128.45613
+   */
   longitude?: string;
+  /**
+   * @example
+   * 总部大楼
+   */
   name?: string;
+  /**
+   * @example
+   * 300000
+   */
   provinceCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2143,8 +2899,20 @@ export class CollectRecruitJobDetailRequestJobInfoAddress extends $tea.Model {
 }
 
 export class CollectRecruitJobDetailRequestJobInfoFullTimeInfo extends $tea.Model {
+  /**
+   * @example
+   * 20
+   */
   maxJobExperience?: string;
+  /**
+   * @example
+   * 2
+   */
   minJobExperience?: string;
+  /**
+   * @example
+   * 12
+   */
   salaryMonth?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2168,15 +2936,55 @@ export class CollectRecruitJobDetailRequestJobInfoFullTimeInfo extends $tea.Mode
 }
 
 export class CollectRecruitJobDetailRequestJobInfoPartTimeInfo extends $tea.Model {
+  /**
+   * @example
+   * 158****8718
+   */
   contactNumber?: string;
+  /**
+   * @example
+   * MONTH
+   */
   salaryPeriod?: string;
+  /**
+   * @example
+   * MONTH
+   */
   settleType?: string;
+  /**
+   * @example
+   * N
+   */
   specifyWorkDate?: string;
+  /**
+   * @example
+   * N
+   */
   specifyWorkTime?: string;
+  /**
+   * @example
+   * 480
+   */
   workBeginTimeMin?: string;
+  /**
+   * @example
+   * WORKDAY
+   */
   workDateType?: string;
+  /**
+   * @example
+   * 2024-02-18
+   */
   workEndDate?: string;
+  /**
+   * @example
+   * 1080
+   */
   workEndTimeMin?: string;
+  /**
+   * @example
+   * 2023-02-18
+   */
   workStartDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2215,18 +3023,54 @@ export class CollectRecruitJobDetailRequestJobInfoPartTimeInfo extends $tea.Mode
 
 export class CollectRecruitJobDetailRequestJobInfo extends $tea.Model {
   address?: CollectRecruitJobDetailRequestJobInfoAddress;
+  /**
+   * @example
+   * C10001
+   */
   category?: string;
+  /**
+   * @example
+   * 园艺师职位描述
+   */
   description?: string;
   extInfo?: string;
   fullTimeInfo?: CollectRecruitJobDetailRequestJobInfoFullTimeInfo;
+  /**
+   * @example
+   * 20
+   */
   headCount?: string;
+  /**
+   * @example
+   * FULL-TIME
+   */
   jobNature?: string;
   jobTags?: string[];
+  /**
+   * @example
+   * 8000
+   */
   maxSalary?: string;
+  /**
+   * @example
+   * 3000
+   */
   minSalary?: string;
+  /**
+   * @example
+   * 园艺师
+   */
   name?: string;
+  /**
+   * @example
+   * jobIdxxxxxxx
+   */
   outJobId?: string;
   partTimeInfo?: CollectRecruitJobDetailRequestJobInfoPartTimeInfo;
+  /**
+   * @example
+   * 高中
+   */
   requiredEdu?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2272,9 +3116,25 @@ export class CollectRecruitJobDetailRequestJobInfo extends $tea.Model {
 }
 
 export class CollectRecruitJobDetailRequestRecruitUserInfo extends $tea.Model {
+  /**
+   * @example
+   * {"sex":"male"}
+   */
   extInfo?: string;
+  /**
+   * @example
+   * userxxxxx
+   */
   outUserId?: string;
+  /**
+   * @example
+   * 158****8717
+   */
   userMobile?: string;
+  /**
+   * @example
+   * 陈*
+   */
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2300,26 +3160,113 @@ export class CollectRecruitJobDetailRequestRecruitUserInfo extends $tea.Model {
 }
 
 export class CollectResumeDetailRequestResumeDataBaseInfo extends $tea.Model {
+  /**
+   * @example
+   * 18
+   */
   age?: number;
+  /**
+   * @example
+   * http://www.xxxx.com
+   */
   avatar?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   beginWorkTime?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   birthday?: string;
+  /**
+   * @example
+   * xxxxxxx@alibaba-inc.com
+   */
   email?: string;
+  /**
+   * @example
+   * Jason
+   */
   englishName?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   graduateTime?: string;
+  /**
+   * @example
+   * 1
+   */
   highestEducation?: number;
+  /**
+   * @example
+   * java开发工程师
+   */
   jobTitle?: string;
+  /**
+   * @example
+   * 清华大学
+   */
   lastSchoolName?: string;
+  /**
+   * @example
+   * 1
+   */
   married?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 孙先生
+   */
   name?: string;
+  /**
+   * @example
+   * 浙江省杭州市余杭区仓前街道
+   */
   nativePlace?: string;
+  /**
+   * @example
+   * 浙江省杭州市余杭区仓前街道欧美金融城
+   */
   nowLocation?: string;
+  /**
+   * @example
+   * 曾获得xxx比赛xxx奖项
+   */
   personalHonor?: string;
+  /**
+   * @example
+   * 187xxxxxxxx
+   */
   phoneNum?: string;
+  /**
+   * @example
+   * 1
+   */
   politicalStatus?: number;
+  /**
+   * @example
+   * 沟通能力强......
+   */
   selfEvaluation?: string;
+  /**
+   * @example
+   * 1
+   */
   sex?: number;
+  /**
+   * @example
+   * 187xxxxxxxx
+   */
   virtualPhoneNum?: string;
+  /**
+   * @example
+   * 3
+   */
   workingYears?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2379,7 +3326,15 @@ export class CollectResumeDetailRequestResumeDataBaseInfo extends $tea.Model {
 }
 
 export class CollectResumeDetailRequestResumeDataCertificates extends $tea.Model {
+  /**
+   * @example
+   * 高级技工证书
+   */
   certificateName?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   grantTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2401,12 +3356,40 @@ export class CollectResumeDetailRequestResumeDataCertificates extends $tea.Model
 }
 
 export class CollectResumeDetailRequestResumeDataEducationExperiences extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   degree?: number;
+  /**
+   * @example
+   * 计算机学院
+   */
   department?: string;
+  /**
+   * @example
+   * 在校期间.......
+   */
   description?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   endDate?: string;
+  /**
+   * @example
+   * 计算机科学与技术
+   */
   major?: string;
+  /**
+   * @example
+   * 清华大学
+   */
   schoolName?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   startDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2438,10 +3421,26 @@ export class CollectResumeDetailRequestResumeDataEducationExperiences extends $t
 }
 
 export class CollectResumeDetailRequestResumeDataJobExpect extends $tea.Model {
+  /**
+   * @example
+   * Java开发工程师
+   */
   jobName?: string;
   locations?: string[];
+  /**
+   * @example
+   * 8000
+   */
   maxSalary?: string;
+  /**
+   * @example
+   * 3000
+   */
   minSalary?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   onboardTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2469,7 +3468,15 @@ export class CollectResumeDetailRequestResumeDataJobExpect extends $tea.Model {
 }
 
 export class CollectResumeDetailRequestResumeDataLanguageSkill extends $tea.Model {
+  /**
+   * @example
+   * 大学英语六级
+   */
   certificateName?: string;
+  /**
+   * @example
+   * 英语
+   */
   languageName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2491,11 +3498,35 @@ export class CollectResumeDetailRequestResumeDataLanguageSkill extends $tea.Mode
 }
 
 export class CollectResumeDetailRequestResumeDataTrainingExperiences extends $tea.Model {
+  /**
+   * @example
+   * 培训期间，学习了xxxx技能，获取xxxx证书。
+   */
   description?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   endDate?: string;
+  /**
+   * @example
+   * 新东方挖掘机学校
+   */
   institutionName?: string;
+  /**
+   * @example
+   * 浙江省杭州市余杭区
+   */
   location?: string;
+  /**
+   * @example
+   * 挖掘机专业技能培训
+   */
   name?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   startDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2525,13 +3556,45 @@ export class CollectResumeDetailRequestResumeDataTrainingExperiences extends $te
 }
 
 export class CollectResumeDetailRequestResumeDataWorkExperiences extends $tea.Model {
+  /**
+   * @example
+   * 钉钉（中国）信息技术有限公司
+   */
   companyName?: string;
+  /**
+   * @example
+   * 智能人事
+   */
   department?: string;
+  /**
+   * @example
+   * 工作期间负责......取得了......成果
+   */
   description?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   endDate?: string;
+  /**
+   * @example
+   * Java开发工程师
+   */
   jobTitle?: string;
+  /**
+   * @example
+   * 杭州
+   */
   location?: string;
+  /**
+   * @example
+   * 负责......
+   */
   responsibility?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   startDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2565,6 +3628,10 @@ export class CollectResumeDetailRequestResumeDataWorkExperiences extends $tea.Mo
 }
 
 export class CollectResumeDetailRequestResumeData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   baseInfo?: CollectResumeDetailRequestResumeDataBaseInfo;
   certificates?: CollectResumeDetailRequestResumeDataCertificates[];
   educationExperiences?: CollectResumeDetailRequestResumeDataEducationExperiences[];
@@ -2602,8 +3669,20 @@ export class CollectResumeDetailRequestResumeData extends $tea.Model {
 }
 
 export class CollectResumeDetailRequestResumeFile extends $tea.Model {
+  /**
+   * @example
+   * http:www.xxx.com
+   */
   downloadUrl?: string;
+  /**
+   * @example
+   * xxx.pdf
+   */
   fileName?: string;
+  /**
+   * @example
+   * pdf
+   */
   fileType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2627,8 +3706,29 @@ export class CollectResumeDetailRequestResumeFile extends $tea.Model {
 }
 
 export class CollectResumeMailRequestResumeFile extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * http:www.xxx.com
+   */
   downloadUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxx的简历.pdf
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * pdf
+   */
   fileType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2674,12 +3774,36 @@ export class GetJobAuthResponseBodyJobOwners extends $tea.Model {
 }
 
 export class ImportJobDataRequestBodyAddress extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cityCode?: string;
   customName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   districtCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   latitude?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   longitude?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   provinceCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2730,16 +3854,56 @@ export class ImportJobDataRequestBodyFullTimeExt extends $tea.Model {
 }
 
 export class ImportJobDataRequestBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   address?: ImportJobDataRequestBodyAddress;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   category?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   experience?: string;
   fullTimeExt?: ImportJobDataRequestBodyFullTimeExt;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   jobNature?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxSalary?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   minSalary?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   requiredEdu?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2779,9 +3943,25 @@ export class ImportJobDataRequestBody extends $tea.Model {
 }
 
 export class QueryCandidatesResponseBodyList extends $tea.Model {
+  /**
+   * @example
+   * 64167133e3394c6b9959eexxxxxxxxxx
+   */
   candidateId?: string;
+  /**
+   * @example
+   * ding2c0158xxxxxxxxxx
+   */
   corpId?: string;
+  /**
+   * @example
+   * 1701014400000
+   */
   entryDate?: number;
+  /**
+   * @example
+   * 013224566462xxxxxxxxxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2807,6 +3987,10 @@ export class QueryCandidatesResponseBodyList extends $tea.Model {
 }
 
 export class QueryInterviewsResponseBodyListInterviewers extends $tea.Model {
+  /**
+   * @example
+   * xxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2826,12 +4010,36 @@ export class QueryInterviewsResponseBodyListInterviewers extends $tea.Model {
 }
 
 export class QueryInterviewsResponseBodyList extends $tea.Model {
+  /**
+   * @example
+   * false
+   */
   cancelled?: boolean;
+  /**
+   * @example
+   * xxx
+   */
   creatorUserId?: string;
+  /**
+   * @example
+   * 1626861600000
+   */
   endTimeMillis?: number;
+  /**
+   * @example
+   * xxx
+   */
   interviewId?: string;
   interviewers?: QueryInterviewsResponseBodyListInterviewers[];
+  /**
+   * @example
+   * xxx
+   */
   jobId?: string;
+  /**
+   * @example
+   * 1626858000000
+   */
   startTimeMillis?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2863,10 +4071,42 @@ export class QueryInterviewsResponseBodyList extends $tea.Model {
 }
 
 export class UpdateApplicationRegFormRequestDingPanFile extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * "123456"
+   */
   fileId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * "张三的应聘登记表（开发工程师）"
+   */
   fileName?: string;
+  /**
+   * @example
+   * 1024
+   */
   fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * pdf
+   */
   fileType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 223344
+   */
   spaceId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2895,12 +4135,11 @@ export class UpdateApplicationRegFormRequestDingPanFile extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2910,12 +4149,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 添加应聘登记表模板
-   *
-   * @param request AddApplicationRegFormTemplateRequest
-   * @param headers AddApplicationRegFormTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddApplicationRegFormTemplateResponse
+   * 添加应聘登记表模板
+   * 
+   * @param request - AddApplicationRegFormTemplateRequest
+   * @param headers - AddApplicationRegFormTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddApplicationRegFormTemplateResponse
    */
   async addApplicationRegFormTemplateWithOptions(request: AddApplicationRegFormTemplateRequest, headers: AddApplicationRegFormTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<AddApplicationRegFormTemplateResponse> {
     Util.validateModel(request);
@@ -2970,10 +4209,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加应聘登记表模板
-   *
-   * @param request AddApplicationRegFormTemplateRequest
-   * @return AddApplicationRegFormTemplateResponse
+   * 添加应聘登记表模板
+   * 
+   * @param request - AddApplicationRegFormTemplateRequest
+   * @returns AddApplicationRegFormTemplateResponse
    */
   async addApplicationRegFormTemplate(request: AddApplicationRegFormTemplateRequest): Promise<AddApplicationRegFormTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2982,12 +4221,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加钉盘文件
-   *
-   * @param request AddFileRequest
-   * @param headers AddFileHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddFileResponse
+   * 添加钉盘文件
+   * 
+   * @param request - AddFileRequest
+   * @param headers - AddFileHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddFileResponse
    */
   async addFileWithOptions(request: AddFileRequest, headers: AddFileHeaders, runtime: $Util.RuntimeOptions): Promise<AddFileResponse> {
     Util.validateModel(request);
@@ -3038,10 +4277,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加钉盘文件
-   *
-   * @param request AddFileRequest
-   * @return AddFileResponse
+   * 添加钉盘文件
+   * 
+   * @param request - AddFileRequest
+   * @returns AddFileResponse
    */
   async addFile(request: AddFileRequest): Promise<AddFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3050,12 +4289,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加渠道个人账号
-   *
-   * @param request AddUserAccountRequest
-   * @param headers AddUserAccountHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddUserAccountResponse
+   * 添加渠道个人账号
+   * 
+   * @param request - AddUserAccountRequest
+   * @param headers - AddUserAccountHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddUserAccountResponse
    */
   async addUserAccountWithOptions(request: AddUserAccountRequest, headers: AddUserAccountHeaders, runtime: $Util.RuntimeOptions): Promise<AddUserAccountResponse> {
     Util.validateModel(request);
@@ -3114,10 +4353,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加渠道个人账号
-   *
-   * @param request AddUserAccountRequest
-   * @return AddUserAccountResponse
+   * 添加渠道个人账号
+   * 
+   * @param request - AddUserAccountRequest
+   * @returns AddUserAccountResponse
    */
   async addUserAccount(request: AddUserAccountRequest): Promise<AddUserAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3126,12 +4365,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 渠道招聘职位需求导入
-   *
-   * @param request CollectRecruitJobDetailRequest
-   * @param headers CollectRecruitJobDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CollectRecruitJobDetailResponse
+   * 渠道招聘职位需求导入
+   * 
+   * @param request - CollectRecruitJobDetailRequest
+   * @param headers - CollectRecruitJobDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CollectRecruitJobDetailResponse
    */
   async collectRecruitJobDetailWithOptions(request: CollectRecruitJobDetailRequest, headers: CollectRecruitJobDetailHeaders, runtime: $Util.RuntimeOptions): Promise<CollectRecruitJobDetailResponse> {
     Util.validateModel(request);
@@ -3198,10 +4437,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 渠道招聘职位需求导入
-   *
-   * @param request CollectRecruitJobDetailRequest
-   * @return CollectRecruitJobDetailResponse
+   * 渠道招聘职位需求导入
+   * 
+   * @param request - CollectRecruitJobDetailRequest
+   * @returns CollectRecruitJobDetailResponse
    */
   async collectRecruitJobDetail(request: CollectRecruitJobDetailRequest): Promise<CollectRecruitJobDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3210,12 +4449,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 结构化简历信息回流
-   *
-   * @param request CollectResumeDetailRequest
-   * @param headers CollectResumeDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CollectResumeDetailResponse
+   * 结构化简历信息回流
+   * 
+   * @param request - CollectResumeDetailRequest
+   * @param headers - CollectResumeDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CollectResumeDetailResponse
    */
   async collectResumeDetailWithOptions(request: CollectResumeDetailRequest, headers: CollectResumeDetailHeaders, runtime: $Util.RuntimeOptions): Promise<CollectResumeDetailResponse> {
     Util.validateModel(request);
@@ -3286,10 +4525,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 结构化简历信息回流
-   *
-   * @param request CollectResumeDetailRequest
-   * @return CollectResumeDetailResponse
+   * 结构化简历信息回流
+   * 
+   * @param request - CollectResumeDetailRequest
+   * @returns CollectResumeDetailResponse
    */
   async collectResumeDetail(request: CollectResumeDetailRequest): Promise<CollectResumeDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3298,12 +4537,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 邮箱简历回流
-   *
-   * @param request CollectResumeMailRequest
-   * @param headers CollectResumeMailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CollectResumeMailResponse
+   * 邮箱简历回流
+   * 
+   * @param request - CollectResumeMailRequest
+   * @param headers - CollectResumeMailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CollectResumeMailResponse
    */
   async collectResumeMailWithOptions(request: CollectResumeMailRequest, headers: CollectResumeMailHeaders, runtime: $Util.RuntimeOptions): Promise<CollectResumeMailResponse> {
     Util.validateModel(request);
@@ -3390,10 +4629,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 邮箱简历回流
-   *
-   * @param request CollectResumeMailRequest
-   * @return CollectResumeMailResponse
+   * 邮箱简历回流
+   * 
+   * @param request - CollectResumeMailRequest
+   * @returns CollectResumeMailResponse
    */
   async collectResumeMail(request: CollectResumeMailRequest): Promise<CollectResumeMailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3402,12 +4641,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 确认权益
-   *
-   * @param request ConfirmRightsRequest
-   * @param headers ConfirmRightsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ConfirmRightsResponse
+   * 确认权益
+   * 
+   * @param request - ConfirmRightsRequest
+   * @param headers - ConfirmRightsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ConfirmRightsResponse
    */
   async confirmRightsWithOptions(rightsCode: string, request: ConfirmRightsRequest, headers: ConfirmRightsHeaders, runtime: $Util.RuntimeOptions): Promise<ConfirmRightsResponse> {
     Util.validateModel(request);
@@ -3444,10 +4683,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 确认权益
-   *
-   * @param request ConfirmRightsRequest
-   * @return ConfirmRightsResponse
+   * 确认权益
+   * 
+   * @param request - ConfirmRightsRequest
+   * @returns ConfirmRightsResponse
    */
   async confirmRights(rightsCode: string, request: ConfirmRightsRequest): Promise<ConfirmRightsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3456,12 +4695,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 完成指定的新手任务
-   *
-   * @param request FinishBeginnerTaskRequest
-   * @param headers FinishBeginnerTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return FinishBeginnerTaskResponse
+   * 完成指定的新手任务
+   * 
+   * @param request - FinishBeginnerTaskRequest
+   * @param headers - FinishBeginnerTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns FinishBeginnerTaskResponse
    */
   async finishBeginnerTaskWithOptions(taskCode: string, request: FinishBeginnerTaskRequest, headers: FinishBeginnerTaskHeaders, runtime: $Util.RuntimeOptions): Promise<FinishBeginnerTaskResponse> {
     Util.validateModel(request);
@@ -3502,10 +4741,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 完成指定的新手任务
-   *
-   * @param request FinishBeginnerTaskRequest
-   * @return FinishBeginnerTaskResponse
+   * 完成指定的新手任务
+   * 
+   * @param request - FinishBeginnerTaskRequest
+   * @returns FinishBeginnerTaskResponse
    */
   async finishBeginnerTask(taskCode: string, request: FinishBeginnerTaskRequest): Promise<FinishBeginnerTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3514,12 +4753,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取招聘流程关联的应聘登记表信息
-   *
-   * @param request GetApplicationRegFormByFlowIdRequest
-   * @param headers GetApplicationRegFormByFlowIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetApplicationRegFormByFlowIdResponse
+   * 获取招聘流程关联的应聘登记表信息
+   * 
+   * @param request - GetApplicationRegFormByFlowIdRequest
+   * @param headers - GetApplicationRegFormByFlowIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetApplicationRegFormByFlowIdResponse
    */
   async getApplicationRegFormByFlowIdWithOptions(flowId: string, request: GetApplicationRegFormByFlowIdRequest, headers: GetApplicationRegFormByFlowIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetApplicationRegFormByFlowIdResponse> {
     Util.validateModel(request);
@@ -3556,10 +4795,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取招聘流程关联的应聘登记表信息
-   *
-   * @param request GetApplicationRegFormByFlowIdRequest
-   * @return GetApplicationRegFormByFlowIdResponse
+   * 获取招聘流程关联的应聘登记表信息
+   * 
+   * @param request - GetApplicationRegFormByFlowIdRequest
+   * @returns GetApplicationRegFormByFlowIdResponse
    */
   async getApplicationRegFormByFlowId(flowId: string, request: GetApplicationRegFormByFlowIdRequest): Promise<GetApplicationRegFormByFlowIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3568,12 +4807,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据手机号获取候选人信息
-   *
-   * @param request GetCandidateByPhoneNumberRequest
-   * @param headers GetCandidateByPhoneNumberHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCandidateByPhoneNumberResponse
+   * 根据手机号获取候选人信息
+   * 
+   * @param request - GetCandidateByPhoneNumberRequest
+   * @param headers - GetCandidateByPhoneNumberHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCandidateByPhoneNumberResponse
    */
   async getCandidateByPhoneNumberWithOptions(request: GetCandidateByPhoneNumberRequest, headers: GetCandidateByPhoneNumberHeaders, runtime: $Util.RuntimeOptions): Promise<GetCandidateByPhoneNumberResponse> {
     Util.validateModel(request);
@@ -3614,10 +4853,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据手机号获取候选人信息
-   *
-   * @param request GetCandidateByPhoneNumberRequest
-   * @return GetCandidateByPhoneNumberResponse
+   * 根据手机号获取候选人信息
+   * 
+   * @param request - GetCandidateByPhoneNumberRequest
+   * @returns GetCandidateByPhoneNumberResponse
    */
   async getCandidateByPhoneNumber(request: GetCandidateByPhoneNumberRequest): Promise<GetCandidateByPhoneNumberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3626,12 +4865,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取钉盘上传文件信息
-   *
-   * @param request GetFileUploadInfoRequest
-   * @param headers GetFileUploadInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFileUploadInfoResponse
+   * 获取钉盘上传文件信息
+   * 
+   * @param request - GetFileUploadInfoRequest
+   * @param headers - GetFileUploadInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFileUploadInfoResponse
    */
   async getFileUploadInfoWithOptions(request: GetFileUploadInfoRequest, headers: GetFileUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileUploadInfoResponse> {
     Util.validateModel(request);
@@ -3684,10 +4923,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取钉盘上传文件信息
-   *
-   * @param request GetFileUploadInfoRequest
-   * @return GetFileUploadInfoResponse
+   * 获取钉盘上传文件信息
+   * 
+   * @param request - GetFileUploadInfoRequest
+   * @returns GetFileUploadInfoResponse
    */
   async getFileUploadInfo(request: GetFileUploadInfoRequest): Promise<GetFileUploadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3696,12 +4935,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据招聘流程关联的实体标识获取招聘流程标识
-   *
-   * @param request GetFlowIdByRelationEntityIdRequest
-   * @param headers GetFlowIdByRelationEntityIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFlowIdByRelationEntityIdResponse
+   * 根据招聘流程关联的实体标识获取招聘流程标识
+   * 
+   * @param request - GetFlowIdByRelationEntityIdRequest
+   * @param headers - GetFlowIdByRelationEntityIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFlowIdByRelationEntityIdResponse
    */
   async getFlowIdByRelationEntityIdWithOptions(request: GetFlowIdByRelationEntityIdRequest, headers: GetFlowIdByRelationEntityIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlowIdByRelationEntityIdResponse> {
     Util.validateModel(request);
@@ -3746,10 +4985,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据招聘流程关联的实体标识获取招聘流程标识
-   *
-   * @param request GetFlowIdByRelationEntityIdRequest
-   * @return GetFlowIdByRelationEntityIdResponse
+   * 根据招聘流程关联的实体标识获取招聘流程标识
+   * 
+   * @param request - GetFlowIdByRelationEntityIdRequest
+   * @returns GetFlowIdByRelationEntityIdResponse
    */
   async getFlowIdByRelationEntityId(request: GetFlowIdByRelationEntityIdRequest): Promise<GetFlowIdByRelationEntityIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3758,12 +4997,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取职位信息
-   *
-   * @param request GetJobAuthRequest
-   * @param headers GetJobAuthHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetJobAuthResponse
+   * 获取职位信息
+   * 
+   * @param request - GetJobAuthRequest
+   * @param headers - GetJobAuthHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetJobAuthResponse
    */
   async getJobAuthWithOptions(jobId: string, request: GetJobAuthRequest, headers: GetJobAuthHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobAuthResponse> {
     Util.validateModel(request);
@@ -3800,10 +5039,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取职位信息
-   *
-   * @param request GetJobAuthRequest
-   * @return GetJobAuthResponse
+   * 获取职位信息
+   * 
+   * @param request - GetJobAuthRequest
+   * @returns GetJobAuthResponse
    */
   async getJobAuth(jobId: string, request: GetJobAuthRequest): Promise<GetJobAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3812,12 +5051,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 导入外部渠道发布的职位数据
-   *
-   * @param request ImportJobDataRequest
-   * @param headers ImportJobDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ImportJobDataResponse
+   * 导入外部渠道发布的职位数据
+   * 
+   * @param request - ImportJobDataRequest
+   * @param headers - ImportJobDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ImportJobDataResponse
    */
   async importJobDataWithOptions(request: ImportJobDataRequest, headers: ImportJobDataHeaders, runtime: $Util.RuntimeOptions): Promise<ImportJobDataResponse> {
     Util.validateModel(request);
@@ -3849,10 +5088,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 导入外部渠道发布的职位数据
-   *
-   * @param request ImportJobDataRequest
-   * @return ImportJobDataResponse
+   * 导入外部渠道发布的职位数据
+   * 
+   * @param request - ImportJobDataRequest
+   * @returns ImportJobDataResponse
    */
   async importJobData(request: ImportJobDataRequest): Promise<ImportJobDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3861,12 +5100,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询候选人详情列表
-   *
-   * @param request QueryCandidatesRequest
-   * @param headers QueryCandidatesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCandidatesResponse
+   * 查询候选人详情列表
+   * 
+   * @param request - QueryCandidatesRequest
+   * @param headers - QueryCandidatesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCandidatesResponse
    */
   async queryCandidatesWithOptions(request: QueryCandidatesRequest, headers: QueryCandidatesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCandidatesResponse> {
     Util.validateModel(request);
@@ -3917,10 +5156,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询候选人详情列表
-   *
-   * @param request QueryCandidatesRequest
-   * @return QueryCandidatesResponse
+   * 查询候选人详情列表
+   * 
+   * @param request - QueryCandidatesRequest
+   * @returns QueryCandidatesResponse
    */
   async queryCandidates(request: QueryCandidatesRequest): Promise<QueryCandidatesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3929,12 +5168,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询面试列表
-   *
-   * @param request QueryInterviewsRequest
-   * @param headers QueryInterviewsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryInterviewsResponse
+   * 查询面试列表
+   * 
+   * @param request - QueryInterviewsRequest
+   * @param headers - QueryInterviewsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryInterviewsResponse
    */
   async queryInterviewsWithOptions(request: QueryInterviewsRequest, headers: QueryInterviewsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryInterviewsResponse> {
     Util.validateModel(request);
@@ -3993,10 +5232,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询面试列表
-   *
-   * @param request QueryInterviewsRequest
-   * @return QueryInterviewsResponse
+   * 查询面试列表
+   * 
+   * @param request - QueryInterviewsRequest
+   * @returns QueryInterviewsResponse
    */
   async queryInterviews(request: QueryInterviewsRequest): Promise<QueryInterviewsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4005,12 +5244,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 反馈渠道消息状态
-   *
-   * @param request ReportMessageStatusRequest
-   * @param headers ReportMessageStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ReportMessageStatusResponse
+   * 反馈渠道消息状态
+   * 
+   * @param request - ReportMessageStatusRequest
+   * @param headers - ReportMessageStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ReportMessageStatusResponse
    */
   async reportMessageStatusWithOptions(request: ReportMessageStatusRequest, headers: ReportMessageStatusHeaders, runtime: $Util.RuntimeOptions): Promise<ReportMessageStatusResponse> {
     Util.validateModel(request);
@@ -4073,10 +5312,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 反馈渠道消息状态
-   *
-   * @param request ReportMessageStatusRequest
-   * @return ReportMessageStatusResponse
+   * 反馈渠道消息状态
+   * 
+   * @param request - ReportMessageStatusRequest
+   * @returns ReportMessageStatusResponse
    */
   async reportMessageStatus(request: ReportMessageStatusRequest): Promise<ReportMessageStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4085,12 +5324,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步渠道IM消息
-   *
-   * @param request SyncChannelMessageRequest
-   * @param headers SyncChannelMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncChannelMessageResponse
+   * 同步渠道IM消息
+   * 
+   * @param request - SyncChannelMessageRequest
+   * @param headers - SyncChannelMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncChannelMessageResponse
    */
   async syncChannelMessageWithOptions(request: SyncChannelMessageRequest, headers: SyncChannelMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SyncChannelMessageResponse> {
     Util.validateModel(request);
@@ -4153,10 +5392,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步渠道IM消息
-   *
-   * @param request SyncChannelMessageRequest
-   * @return SyncChannelMessageResponse
+   * 同步渠道IM消息
+   * 
+   * @param request - SyncChannelMessageRequest
+   * @returns SyncChannelMessageResponse
    */
   async syncChannelMessage(request: SyncChannelMessageRequest): Promise<SyncChannelMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4165,12 +5404,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新应聘登记表内容
-   *
-   * @param request UpdateApplicationRegFormRequest
-   * @param headers UpdateApplicationRegFormHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateApplicationRegFormResponse
+   * 更新应聘登记表内容
+   * 
+   * @param request - UpdateApplicationRegFormRequest
+   * @param headers - UpdateApplicationRegFormHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateApplicationRegFormResponse
    */
   async updateApplicationRegFormWithOptions(flowId: string, request: UpdateApplicationRegFormRequest, headers: UpdateApplicationRegFormHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateApplicationRegFormResponse> {
     Util.validateModel(request);
@@ -4217,10 +5456,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新应聘登记表内容
-   *
-   * @param request UpdateApplicationRegFormRequest
-   * @return UpdateApplicationRegFormResponse
+   * 更新应聘登记表内容
+   * 
+   * @param request - UpdateApplicationRegFormRequest
+   * @returns UpdateApplicationRegFormResponse
    */
   async updateApplicationRegForm(flowId: string, request: UpdateApplicationRegFormRequest): Promise<UpdateApplicationRegFormResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4229,12 +5468,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新面试签到信息
-   *
-   * @param request UpdateInterviewSignInInfoRequest
-   * @param headers UpdateInterviewSignInInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInterviewSignInInfoResponse
+   * 更新面试签到信息
+   * 
+   * @param request - UpdateInterviewSignInInfoRequest
+   * @param headers - UpdateInterviewSignInInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInterviewSignInInfoResponse
    */
   async updateInterviewSignInInfoWithOptions(interviewId: string, request: UpdateInterviewSignInInfoRequest, headers: UpdateInterviewSignInInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInterviewSignInInfoResponse> {
     Util.validateModel(request);
@@ -4277,10 +5516,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新面试签到信息
-   *
-   * @param request UpdateInterviewSignInInfoRequest
-   * @return UpdateInterviewSignInInfoResponse
+   * 更新面试签到信息
+   * 
+   * @param request - UpdateInterviewSignInInfoRequest
+   * @returns UpdateInterviewSignInInfoResponse
    */
   async updateInterviewSignInInfo(interviewId: string, request: UpdateInterviewSignInInfoRequest): Promise<UpdateInterviewSignInInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4289,12 +5528,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 渠道侧职位发布状态变更回调
-   *
-   * @param request UpdateJobDeliverRequest
-   * @param headers UpdateJobDeliverHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateJobDeliverResponse
+   * 渠道侧职位发布状态变更回调
+   * 
+   * @param request - UpdateJobDeliverRequest
+   * @param headers - UpdateJobDeliverHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateJobDeliverResponse
    */
   async updateJobDeliverWithOptions(request: UpdateJobDeliverRequest, headers: UpdateJobDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateJobDeliverResponse> {
     Util.validateModel(request);
@@ -4365,10 +5604,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 渠道侧职位发布状态变更回调
-   *
-   * @param request UpdateJobDeliverRequest
-   * @return UpdateJobDeliverResponse
+   * 渠道侧职位发布状态变更回调
+   * 
+   * @param request - UpdateJobDeliverRequest
+   * @returns UpdateJobDeliverResponse
    */
   async updateJobDeliver(request: UpdateJobDeliverRequest): Promise<UpdateJobDeliverResponse> {
     let runtime = new $Util.RuntimeOptions({ });

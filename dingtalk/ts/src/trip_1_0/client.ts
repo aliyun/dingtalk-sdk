@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,18 @@ export class GetTravelProcessDetailHeaders extends $tea.Model {
 }
 
 export class GetTravelProcessDetailRequest extends $tea.Model {
+  /**
+   * @example
+   * dingLamaXHExxxxxx
+   */
   processCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1fbmtOweRdqLamaXHExxxxxx
+   */
   processInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -123,6 +132,13 @@ export class PreCheckTemplateHeaders extends $tea.Model {
 }
 
 export class PreCheckTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding60f2b247ac1cb24024f2f5cc6abecb85
+   */
   customerCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -211,6 +227,13 @@ export class QueryTripProcessTemplatesHeaders extends $tea.Model {
 }
 
 export class QueryTripProcessTemplatesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingcd2016f425331dc1acaaa37764f94726
+   */
   customerCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -300,10 +323,39 @@ export class SyncBusinessSignInfoHeaders extends $tea.Model {
 
 export class SyncBusinessSignInfoRequest extends $tea.Model {
   bizTypeList?: string[];
+  /**
+   * @example
+   * 1661927020219
+   */
   gmtOrgPay?: string;
+  /**
+   * @example
+   * 1661927020219
+   */
   gmtSign?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ORG_PAY
+   */
   orgPayStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SIGN
+   */
   signStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding89233847892ndkas
+   */
   targetCorpId?: string;
   tmcProductDetailList?: SyncBusinessSignInfoRequestTmcProductDetailList[];
   tmcProductList?: SyncBusinessSignInfoRequestTmcProductList[];
@@ -408,16 +460,68 @@ export class SyncCostCenterHeaders extends $tea.Model {
 }
 
 export class SyncCostCenterRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding89233847892ndkas
+   */
   channelCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   costCenterId?: string;
+  /**
+   * **if can be null:**
+   * false
+   */
   deleteFlag?: boolean;
+  /**
+   * **if can be null:**
+   * true
+   */
   extension?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2022-02-21 11:11:11
+   */
   gmtAction?: string;
+  /**
+   * @example
+   * 123456
+   */
   number?: string;
+  /**
+   * @example
+   * 1
+   */
   scope?: number;
+  /**
+   * @example
+   * 阿里商旅
+   */
   source?: string;
   thirdPartId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 默认成本中心
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20881001829000
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -523,10 +627,35 @@ export class SyncCostCenterEntityHeaders extends $tea.Model {
 }
 
 export class SyncCostCenterEntityRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding89233847892ndkas
+   */
   channelCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   costCenterId?: string;
+  /**
+   * **if can be null:**
+   * true
+   */
   delAll?: boolean;
   entityList?: SyncCostCenterEntityRequestEntityList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20881001829000
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -621,21 +750,68 @@ export class SyncInvoiceHeaders extends $tea.Model {
 
 export class SyncInvoiceRequest extends $tea.Model {
   address?: string;
+  /**
+   * @example
+   * xxx银行
+   */
   bankName?: string;
   bankNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding89233847892ndkas
+   */
   channelCorpId?: string;
   deleteFlag?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2022-02-21 11:11:11
+   */
   gmtAction?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   invoiceId?: string;
   projectIds?: string[];
+  /**
+   * @example
+   * 1
+   */
   scope?: number;
   source?: string;
   taxNo?: string;
   tel?: string;
+  /**
+   * @example
+   * 123456
+   */
   thirdPartId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 默认发票抬头
+   */
   title?: string;
   type?: number;
   unitType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20881001829000
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -753,10 +929,32 @@ export class SyncInvoiceEntityHeaders extends $tea.Model {
 }
 
 export class SyncInvoiceEntityRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding89233847892ndkas
+   */
   channelCorpId?: string;
+  /**
+   * **if can be null:**
+   * true
+   */
   delAll?: boolean;
   entityList?: SyncInvoiceEntityRequestEntityList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   invoiceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20881001829000
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -850,19 +1048,62 @@ export class SyncProjectHeaders extends $tea.Model {
 }
 
 export class SyncProjectRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding89233847892ndkas
+   */
   channelCorpId?: string;
   code?: string;
   costCenterId?: string;
   deleteFlag?: boolean;
+  /**
+   * **if can be null:**
+   * true
+   */
   extension?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2022-02-21 11:11:11
+   */
   gmtAction?: string;
   invoiceId?: string;
   managerIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   projectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 默认项目
+   */
   projectName?: string;
+  /**
+   * @example
+   * 1
+   */
   scope?: number;
   source?: string;
   thirdPartId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20881001829000
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -974,10 +1215,35 @@ export class SyncProjectEntityHeaders extends $tea.Model {
 }
 
 export class SyncProjectEntityRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding89233847892ndkas
+   */
   channelCorpId?: string;
+  /**
+   * **if can be null:**
+   * true
+   */
   delAll?: boolean;
   entityList?: SyncProjectEntityRequestEntityList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   projectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20881001829000
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1071,11 +1337,41 @@ export class SyncSecretKeyHeaders extends $tea.Model {
 }
 
 export class SyncSecretKeyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ADD
+   */
   actionType?: string;
+  /**
+   * @example
+   * dnsuuiwenudsjid
+   */
   secretString?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding001
+   */
   targetCorpId?: string;
+  /**
+   * @example
+   * dingduisdvfd
+   */
   tripAppKey?: string;
+  /**
+   * @example
+   * dhsuibdusijue
+   */
   tripAppSecurity?: string;
+  /**
+   * @example
+   * isv001
+   */
   tripCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1106,6 +1402,10 @@ export class SyncSecretKeyRequest extends $tea.Model {
 
 export class SyncSecretKeyResponseBody extends $tea.Model {
   result?: SyncSecretKeyResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
   success?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1174,31 +1474,121 @@ export class SyncTripOrderHeaders extends $tea.Model {
 }
 
 export class SyncTripOrderRequest extends $tea.Model {
+  /**
+   * **if can be null:**
+   * true
+   */
   bizExtension?: string;
+  /**
+   * @example
+   * BUSSINESS
+   */
   channelType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * CNY
+   */
   currency?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20881001829000
+   */
   dingUserId?: string;
+  /**
+   * @example
+   * 0
+   */
   discountAmount?: string;
   endorseFlag?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   event?: SyncTripOrderRequestEvent;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2022-05-15 10:10:10
+   */
   gmtOrder?: string;
+  /**
+   * @example
+   * 2022-05-15 10:10:10
+   */
   gmtPay?: string;
+  /**
+   * @example
+   * 2022-05-15 10:10:10
+   */
   gmtRefund?: string;
   invoiceApplyUrl?: string;
+  /**
+   * @example
+   * 20220510170058192311
+   */
   journeyBizNo?: string;
   orderDetails?: SyncTripOrderRequestOrderDetails[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20881001829000
+   */
   orderNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https:dingtalk.com/tripOrder/20220510170058192311
+   */
   orderUrl?: string;
   processId?: string;
+  /**
+   * @example
+   * 100.00
+   */
   realAmount?: string;
+  /**
+   * @example
+   * 0
+   */
   refundAmount?: string;
+  /**
+   * @example
+   * 20881001829000
+   */
   relativeOrderNo?: string;
   source?: string;
   supplyLogo?: string;
   supplyName?: string;
+  /**
+   * @example
+   * ding32fff839a3e0105d
+   */
   targetCorpId?: string;
   tmcCorpId?: string;
+  /**
+   * @example
+   * 100.00
+   */
   totalAmount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FLIGHT
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1269,6 +1659,10 @@ export class SyncTripOrderRequest extends $tea.Model {
 
 export class SyncTripOrderResponseBody extends $tea.Model {
   requestId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1425,7 +1819,18 @@ export class TripPlatformUnifiedEntryHeaders extends $tea.Model {
 }
 
 export class TripPlatformUnifiedEntryRequest extends $tea.Model {
+  /**
+   * @example
+   * {"projects":[{"thirdId":"00001","number":"00001","scope":1,"action":0,"name":"总务01项目"}]}
+   */
   messages?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * partner_syncProject
+   */
   method?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1519,8 +1924,22 @@ export class UpgradeTemplateHeaders extends $tea.Model {
 }
 
 export class UpgradeTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingcd2016f425331dc1acaaa37764f94726
+   */
   channelCorpId?: string;
   forceUpgrade?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingcd2016f425331dc1acaaa37764f94726
+   */
   tmcCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1591,11 +2010,35 @@ export class UpgradeTemplateResponse extends $tea.Model {
 }
 
 export class GetTravelProcessDetailResponseBodyResultExtFormComponent extends $tea.Model {
+  /**
+   * @example
+   * ""
+   */
   bizAlias?: string;
+  /**
+   * @example
+   * MoneyField
+   */
   componentType?: string;
+  /**
+   * @example
+   * "{\"upper\":\"玖元玖角玖分\",\"componentName\":\"MoneyField\"}"
+   */
   extValue?: string;
+  /**
+   * @example
+   * MoneyField_18PDM5K773FK0
+   */
   id?: string;
+  /**
+   * @example
+   * 预估金额
+   */
   name?: string;
+  /**
+   * @example
+   * 9.99
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1625,10 +2068,30 @@ export class GetTravelProcessDetailResponseBodyResultExtFormComponent extends $t
 }
 
 export class GetTravelProcessDetailResponseBodyResultJourneysArrival extends $tea.Model {
+  /**
+   * @example
+   * TSN
+   */
   code?: string;
+  /**
+   * @example
+   * CN
+   */
   countryCode?: string;
+  /**
+   * @example
+   * 中国
+   */
   countryName?: string;
+  /**
+   * @example
+   * 天津市
+   */
   name?: string;
+  /**
+   * @example
+   * 120000
+   */
   nationalCityCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1656,10 +2119,30 @@ export class GetTravelProcessDetailResponseBodyResultJourneysArrival extends $te
 }
 
 export class GetTravelProcessDetailResponseBodyResultJourneysDeparture extends $tea.Model {
+  /**
+   * @example
+   * BJK
+   */
   code?: string;
+  /**
+   * @example
+   * CN
+   */
   countryCode?: string;
+  /**
+   * @example
+   * 中国
+   */
   countryName?: string;
+  /**
+   * @example
+   * 北京市
+   */
   name?: string;
+  /**
+   * @example
+   * 110000
+   */
   nationalCityCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1688,23 +2171,91 @@ export class GetTravelProcessDetailResponseBodyResultJourneysDeparture extends $
 
 export class GetTravelProcessDetailResponseBodyResultJourneys extends $tea.Model {
   arrival?: GetTravelProcessDetailResponseBodyResultJourneysArrival;
+  /**
+   * @example
+   * 成本中心一
+   */
   costCenter?: string;
+  /**
+   * @example
+   * 123
+   */
   costCenterId?: string;
+  /**
+   * @example
+   * c00001
+   */
   costCenterThirdPartyId?: string;
   departure?: GetTravelProcessDetailResponseBodyResultJourneysDeparture;
+  /**
+   * @example
+   * 2023-10-25
+   */
   endTime?: string;
+  /**
+   * @example
+   * 2024-03-12 10:54:00
+   */
   endTimeAcc?: string;
+  /**
+   * @example
+   * 发票抬头一
+   */
   invoiceTitle?: string;
+  /**
+   * @example
+   * 123
+   */
   invoiceTitleId?: string;
+  /**
+   * @example
+   * i0001
+   */
   invoiceTitleThirdPartyId?: string;
+  /**
+   * @example
+   * 费用归属项目一
+   */
   itineraryProject?: string;
+  /**
+   * @example
+   * 123
+   */
   itineraryProjectId?: string;
+  /**
+   * @example
+   * y00001
+   */
   itineraryProjectThirdPartyId?: string;
+  /**
+   * @example
+   * 123455xxxxxxxx
+   */
   journeyBizNo?: string;
+  /**
+   * @example
+   * 2023-10-20
+   */
   startTime?: string;
+  /**
+   * @example
+   * 2024-03-12 10:54:00
+   */
   startTimeAcc?: string;
+  /**
+   * @example
+   * 天
+   */
   timeUnit?: string;
+  /**
+   * @example
+   * 飞机
+   */
   travelType?: string;
+  /**
+   * @example
+   * 单程
+   */
   tripWay?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1760,15 +2311,55 @@ export class GetTravelProcessDetailResponseBodyResultJourneys extends $tea.Model
 }
 
 export class GetTravelProcessDetailResponseBodyResultTasks extends $tea.Model {
+  /**
+   * @example
+   * 1918_5cd3
+   */
   activityId?: string;
+  /**
+   * @example
+   * 2024-07-01 00:00:00
+   */
   createTime?: string;
+  /**
+   * @example
+   * 2024-07-01 01:00:00
+   */
   finishTime?: string;
+  /**
+   * @example
+   * 12374
+   */
   originUserId?: string;
+  /**
+   * @example
+   * e7fh112WTTawy6dLtiIlqQ10051721014983
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * AGREE
+   */
   result?: string;
+  /**
+   * @example
+   * COMPLETED
+   */
   status?: string;
+  /**
+   * @example
+   * 87882310449
+   */
   taskId?: number;
+  /**
+   * @example
+   * aflow.dingtalk.com?procInsId=xxx&taskId=yyy&businessId=zzz
+   */
   url?: string;
+  /**
+   * @example
+   * 2220314
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1806,33 +2397,129 @@ export class GetTravelProcessDetailResponseBodyResultTasks extends $tea.Model {
 }
 
 export class GetTravelProcessDetailResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2024-07-18 00:00:00
+   */
   archiveTime?: string;
+  /**
+   * @example
+   * alitrip.business
+   */
   bizCategoryId?: string;
+  /**
+   * @example
+   * 202310231720000276784
+   */
   businessId?: string;
+  /**
+   * @example
+   * ding123456xxxx
+   */
   corpId?: string;
+  /**
+   * @example
+   * it成本中心
+   */
   costCenter?: string;
+  /**
+   * @example
+   * 成本中心id
+   */
   costCenterId?: string;
+  /**
+   * @example
+   * c00001
+   */
   costCenterThirdPartyId?: string;
+  /**
+   * @example
+   * 2024-03-18 17:07:00
+   */
   createTime?: string;
   extFormComponent?: GetTravelProcessDetailResponseBodyResultExtFormComponent[];
+  /**
+   * @example
+   * 部门费用
+   */
   feeType?: string;
+  /**
+   * @example
+   * 发票抬头
+   */
   invoiceTitle?: string;
+  /**
+   * @example
+   * 发票抬头id
+   */
   invoiceTitleId?: string;
+  /**
+   * @example
+   * i0001
+   */
   invoiceTitleThirdPartyId?: string;
+  /**
+   * @example
+   * 电商对接项目
+   */
   itineraryProject?: string;
+  /**
+   * @example
+   * y00001
+   */
   itineraryProjectThirdPartyId?: string;
   journeys?: GetTravelProcessDetailResponseBodyResultJourneys[];
+  /**
+   * @example
+   * AG3WERxWRFex63xxxxx
+   */
   mainProcessInstanceId?: string;
+  /**
+   * @example
+   * 坐飞机出差
+   */
   memo?: string;
+  /**
+   * @example
+   * staffidxxxxx
+   */
   originatorId?: string;
+  /**
+   * @example
+   * staffIdxyy
+   */
   originatorIdOnBehalf?: string;
+  /**
+   * @example
+   * AG3U12xWRFex63hxxxxx
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * agree
+   */
   processResult?: string;
+  /**
+   * @example
+   * COMPLETED
+   */
   processStatus?: string;
+  /**
+   * @example
+   * 因公出差
+   */
   remark?: string;
   tasks?: GetTravelProcessDetailResponseBodyResultTasks[];
+  /**
+   * @example
+   * 费用归属部门
+   */
   travelCategory?: string;
   travelers?: string[];
+  /**
+   * @example
+   * 2
+   */
   tripDays?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1994,8 +2681,16 @@ export class QueryTripProcessTemplatesResponseBodyResult extends $tea.Model {
 }
 
 export class SyncBusinessSignInfoRequestTmcProductDetailList extends $tea.Model {
+  /**
+   * @example
+   * 1661927020219
+   */
   gmtOrgPay?: string;
   payType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   product?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2020,9 +2715,17 @@ export class SyncBusinessSignInfoRequestTmcProductDetailList extends $tea.Model 
 
 export class SyncBusinessSignInfoRequestTmcProductListProductDetailList extends $tea.Model {
   categoryType?: string;
+  /**
+   * @example
+   * 1661927020219
+   */
   gmtOrgPay?: string;
   openStatus?: boolean;
   payType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   product?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2051,6 +2754,10 @@ export class SyncBusinessSignInfoRequestTmcProductListProductDetailList extends 
 
 export class SyncBusinessSignInfoRequestTmcProductList extends $tea.Model {
   productDetailList?: SyncBusinessSignInfoRequestTmcProductListProductDetailList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tmcCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2072,7 +2779,15 @@ export class SyncBusinessSignInfoRequestTmcProductList extends $tea.Model {
 }
 
 export class SyncCostCenterEntityRequestEntityList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   entityId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   entityType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2094,7 +2809,15 @@ export class SyncCostCenterEntityRequestEntityList extends $tea.Model {
 }
 
 export class SyncInvoiceEntityRequestEntityList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   entityId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   entityType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2116,7 +2839,15 @@ export class SyncInvoiceEntityRequestEntityList extends $tea.Model {
 }
 
 export class SyncProjectEntityRequestEntityList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   entityId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   entityType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2138,10 +2869,30 @@ export class SyncProjectEntityRequestEntityList extends $tea.Model {
 }
 
 export class SyncSecretKeyResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * dsiuuuuiasudnuai
+   */
   secretString?: string;
+  /**
+   * @example
+   * ding001
+   */
   targetCorpId?: string;
+  /**
+   * @example
+   * dingwieudsiu
+   */
   tripAppKey?: string;
+  /**
+   * @example
+   * dusuduiidvs
+   */
   tripAppSecurity?: string;
+  /**
+   * @example
+   * isv001
+   */
   tripCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2169,7 +2920,21 @@ export class SyncSecretKeyResponseBodyResult extends $tea.Model {
 }
 
 export class SyncTripOrderRequestEvent extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INIT
+   */
   action?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2022-05-15 10:10:10
+   */
   gmtAction?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2191,9 +2956,25 @@ export class SyncTripOrderRequestEvent extends $tea.Model {
 }
 
 export class SyncTripOrderRequestOrderDetailsHotelLocation extends $tea.Model {
+  /**
+   * @example
+   * 30.278569
+   */
   lat?: string;
+  /**
+   * @example
+   * 120.023458
+   */
   lon?: string;
+  /**
+   * @example
+   * GCJ02
+   */
   source?: string;
+  /**
+   * @example
+   * https://ditu.amap.com/place/B0FFIYYAIA
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2256,36 +3037,144 @@ export class SyncTripOrderRequestOrderDetailsOpenConsumerInfo extends $tea.Model
 }
 
 export class SyncTripOrderRequestOrderDetails extends $tea.Model {
+  /**
+   * @example
+   * 2022-05-20 12:20:00
+   */
   arrivalTime?: string;
+  /**
+   * @example
+   * 红色
+   */
   carColor?: string;
+  /**
+   * @example
+   * 帕萨特
+   */
   carModel?: string;
+  /**
+   * @example
+   * 浙A0Z***7
+   */
   carNumber?: string;
+  /**
+   * @example
+   * 单早
+   */
   cateringType?: string;
+  /**
+   * @example
+   * 2022-05-20 14:00:00
+   */
   checkInTime?: string;
+  /**
+   * @example
+   * 2022-05-21 12:00:00
+   */
   checkOutTime?: string;
+  /**
+   * @example
+   * 2022-05-20 10:00:00
+   */
   departTime?: string;
+  /**
+   * @example
+   * 杭州
+   */
   destinationCity?: string;
+  /**
+   * @example
+   * 151
+   */
   destinationCityCode?: string;
+  /**
+   * @example
+   * 杭州
+   */
   destinationStation?: string;
+  /**
+   * @example
+   * T3
+   */
   destinationTerminalBuilding?: string;
   detailAmount?: string;
+  /**
+   * @example
+   * 浙江省杭州市余杭区聚橙路文昌路
+   */
   hotelAddress?: string;
+  /**
+   * @example
+   * 杭州
+   */
   hotelCity?: string;
   hotelLocation?: SyncTripOrderRequestOrderDetailsHotelLocation;
+  /**
+   * @example
+   * 亲橙客栈
+   */
   hotelName?: string;
   openConsumerInfo?: SyncTripOrderRequestOrderDetailsOpenConsumerInfo[];
+  /**
+   * @example
+   * 北京
+   */
   originCity?: string;
+  /**
+   * @example
+   * 150
+   */
   originCityCode?: string;
+  /**
+   * @example
+   * 北京
+   */
   originStation?: string;
+  /**
+   * @example
+   * T3
+   */
   originTerminalBuilding?: string;
   roomCount?: number;
+  /**
+   * @example
+   * 经济舱/7车12A
+   */
   seatInfo?: string;
+  /**
+   * @example
+   * REALTIME
+   */
   serviceType?: string;
+  /**
+   * @example
+   * http://dingtalk.com/static/logo.png
+   */
   subSupplyLogo?: string;
+  /**
+   * @example
+   * 国航
+   */
   subSupplyName?: string;
+  /**
+   * @example
+   * 专车
+   */
   taxiType?: string;
+  /**
+   * @example
+   * 2022-05-20 14:00:00
+   */
   telephone?: string;
+  /**
+   * @example
+   * CA1762
+   */
   transportNumber?: string;
+  /**
+   * @example
+   * 商务标准间
+   */
   typeDescription?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2450,12 +3339,11 @@ export class UpgradeTemplateResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2465,12 +3353,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 获取差旅审批实例详情
-   *
-   * @param request GetTravelProcessDetailRequest
-   * @param headers GetTravelProcessDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTravelProcessDetailResponse
+   * 获取差旅审批实例详情
+   * 
+   * @param request - GetTravelProcessDetailRequest
+   * @param headers - GetTravelProcessDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTravelProcessDetailResponse
    */
   async getTravelProcessDetailWithOptions(request: GetTravelProcessDetailRequest, headers: GetTravelProcessDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetTravelProcessDetailResponse> {
     Util.validateModel(request);
@@ -2511,10 +3399,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取差旅审批实例详情
-   *
-   * @param request GetTravelProcessDetailRequest
-   * @return GetTravelProcessDetailResponse
+   * 获取差旅审批实例详情
+   * 
+   * @param request - GetTravelProcessDetailRequest
+   * @returns GetTravelProcessDetailResponse
    */
   async getTravelProcessDetail(request: GetTravelProcessDetailRequest): Promise<GetTravelProcessDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2523,12 +3411,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 表单升级预校验
-   *
-   * @param request PreCheckTemplateRequest
-   * @param headers PreCheckTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PreCheckTemplateResponse
+   * 表单升级预校验
+   * 
+   * @param request - PreCheckTemplateRequest
+   * @param headers - PreCheckTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PreCheckTemplateResponse
    */
   async preCheckTemplateWithOptions(request: PreCheckTemplateRequest, headers: PreCheckTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<PreCheckTemplateResponse> {
     Util.validateModel(request);
@@ -2565,10 +3453,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 表单升级预校验
-   *
-   * @param request PreCheckTemplateRequest
-   * @return PreCheckTemplateResponse
+   * 表单升级预校验
+   * 
+   * @param request - PreCheckTemplateRequest
+   * @returns PreCheckTemplateResponse
    */
   async preCheckTemplate(request: PreCheckTemplateRequest): Promise<PreCheckTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2577,12 +3465,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询审批套件详情
-   *
-   * @param request QueryTripProcessTemplatesRequest
-   * @param headers QueryTripProcessTemplatesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryTripProcessTemplatesResponse
+   * 查询审批套件详情
+   * 
+   * @param request - QueryTripProcessTemplatesRequest
+   * @param headers - QueryTripProcessTemplatesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryTripProcessTemplatesResponse
    */
   async queryTripProcessTemplatesWithOptions(request: QueryTripProcessTemplatesRequest, headers: QueryTripProcessTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTripProcessTemplatesResponse> {
     Util.validateModel(request);
@@ -2619,10 +3507,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询审批套件详情
-   *
-   * @param request QueryTripProcessTemplatesRequest
-   * @return QueryTripProcessTemplatesResponse
+   * 查询审批套件详情
+   * 
+   * @param request - QueryTripProcessTemplatesRequest
+   * @returns QueryTripProcessTemplatesResponse
    */
   async queryTripProcessTemplates(request: QueryTripProcessTemplatesRequest): Promise<QueryTripProcessTemplatesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2631,12 +3519,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步服务商企业签约变更事件
-   *
-   * @param request SyncBusinessSignInfoRequest
-   * @param headers SyncBusinessSignInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncBusinessSignInfoResponse
+   * 同步服务商企业签约变更事件
+   * 
+   * @param request - SyncBusinessSignInfoRequest
+   * @param headers - SyncBusinessSignInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncBusinessSignInfoResponse
    */
   async syncBusinessSignInfoWithOptions(request: SyncBusinessSignInfoRequest, headers: SyncBusinessSignInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SyncBusinessSignInfoResponse> {
     Util.validateModel(request);
@@ -2701,10 +3589,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步服务商企业签约变更事件
-   *
-   * @param request SyncBusinessSignInfoRequest
-   * @return SyncBusinessSignInfoResponse
+   * 同步服务商企业签约变更事件
+   * 
+   * @param request - SyncBusinessSignInfoRequest
+   * @returns SyncBusinessSignInfoResponse
    */
   async syncBusinessSignInfo(request: SyncBusinessSignInfoRequest): Promise<SyncBusinessSignInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2713,12 +3601,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单成本中心同步
-   *
-   * @param request SyncCostCenterRequest
-   * @param headers SyncCostCenterHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncCostCenterResponse
+   * 出差表单成本中心同步
+   * 
+   * @param request - SyncCostCenterRequest
+   * @param headers - SyncCostCenterHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncCostCenterResponse
    */
   async syncCostCenterWithOptions(request: SyncCostCenterRequest, headers: SyncCostCenterHeaders, runtime: $Util.RuntimeOptions): Promise<SyncCostCenterResponse> {
     Util.validateModel(request);
@@ -2795,10 +3683,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单成本中心同步
-   *
-   * @param request SyncCostCenterRequest
-   * @return SyncCostCenterResponse
+   * 出差表单成本中心同步
+   * 
+   * @param request - SyncCostCenterRequest
+   * @returns SyncCostCenterResponse
    */
   async syncCostCenter(request: SyncCostCenterRequest): Promise<SyncCostCenterResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2807,12 +3695,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单成本中心可用范围
-   *
-   * @param request SyncCostCenterEntityRequest
-   * @param headers SyncCostCenterEntityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncCostCenterEntityResponse
+   * 出差表单成本中心可用范围
+   * 
+   * @param request - SyncCostCenterEntityRequest
+   * @param headers - SyncCostCenterEntityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncCostCenterEntityResponse
    */
   async syncCostCenterEntityWithOptions(request: SyncCostCenterEntityRequest, headers: SyncCostCenterEntityHeaders, runtime: $Util.RuntimeOptions): Promise<SyncCostCenterEntityResponse> {
     Util.validateModel(request);
@@ -2865,10 +3753,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单成本中心可用范围
-   *
-   * @param request SyncCostCenterEntityRequest
-   * @return SyncCostCenterEntityResponse
+   * 出差表单成本中心可用范围
+   * 
+   * @param request - SyncCostCenterEntityRequest
+   * @returns SyncCostCenterEntityResponse
    */
   async syncCostCenterEntity(request: SyncCostCenterEntityRequest): Promise<SyncCostCenterEntityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2877,12 +3765,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单发票抬头
-   *
-   * @param request SyncInvoiceRequest
-   * @param headers SyncInvoiceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncInvoiceResponse
+   * 出差表单发票抬头
+   * 
+   * @param request - SyncInvoiceRequest
+   * @param headers - SyncInvoiceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncInvoiceResponse
    */
   async syncInvoiceWithOptions(request: SyncInvoiceRequest, headers: SyncInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<SyncInvoiceResponse> {
     Util.validateModel(request);
@@ -2983,10 +3871,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单发票抬头
-   *
-   * @param request SyncInvoiceRequest
-   * @return SyncInvoiceResponse
+   * 出差表单发票抬头
+   * 
+   * @param request - SyncInvoiceRequest
+   * @returns SyncInvoiceResponse
    */
   async syncInvoice(request: SyncInvoiceRequest): Promise<SyncInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2995,12 +3883,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单发票抬头可用范围
-   *
-   * @param request SyncInvoiceEntityRequest
-   * @param headers SyncInvoiceEntityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncInvoiceEntityResponse
+   * 出差表单发票抬头可用范围
+   * 
+   * @param request - SyncInvoiceEntityRequest
+   * @param headers - SyncInvoiceEntityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncInvoiceEntityResponse
    */
   async syncInvoiceEntityWithOptions(request: SyncInvoiceEntityRequest, headers: SyncInvoiceEntityHeaders, runtime: $Util.RuntimeOptions): Promise<SyncInvoiceEntityResponse> {
     Util.validateModel(request);
@@ -3053,10 +3941,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单发票抬头可用范围
-   *
-   * @param request SyncInvoiceEntityRequest
-   * @return SyncInvoiceEntityResponse
+   * 出差表单发票抬头可用范围
+   * 
+   * @param request - SyncInvoiceEntityRequest
+   * @returns SyncInvoiceEntityResponse
    */
   async syncInvoiceEntity(request: SyncInvoiceEntityRequest): Promise<SyncInvoiceEntityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3065,12 +3953,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单项目
-   *
-   * @param request SyncProjectRequest
-   * @param headers SyncProjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncProjectResponse
+   * 出差表单项目
+   * 
+   * @param request - SyncProjectRequest
+   * @param headers - SyncProjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncProjectResponse
    */
   async syncProjectWithOptions(request: SyncProjectRequest, headers: SyncProjectHeaders, runtime: $Util.RuntimeOptions): Promise<SyncProjectResponse> {
     Util.validateModel(request);
@@ -3159,10 +4047,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单项目
-   *
-   * @param request SyncProjectRequest
-   * @return SyncProjectResponse
+   * 出差表单项目
+   * 
+   * @param request - SyncProjectRequest
+   * @returns SyncProjectResponse
    */
   async syncProject(request: SyncProjectRequest): Promise<SyncProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3171,12 +4059,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单项目可用范围
-   *
-   * @param request SyncProjectEntityRequest
-   * @param headers SyncProjectEntityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncProjectEntityResponse
+   * 出差表单项目可用范围
+   * 
+   * @param request - SyncProjectEntityRequest
+   * @param headers - SyncProjectEntityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncProjectEntityResponse
    */
   async syncProjectEntityWithOptions(request: SyncProjectEntityRequest, headers: SyncProjectEntityHeaders, runtime: $Util.RuntimeOptions): Promise<SyncProjectEntityResponse> {
     Util.validateModel(request);
@@ -3229,10 +4117,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 出差表单项目可用范围
-   *
-   * @param request SyncProjectEntityRequest
-   * @return SyncProjectEntityResponse
+   * 出差表单项目可用范围
+   * 
+   * @param request - SyncProjectEntityRequest
+   * @returns SyncProjectEntityResponse
    */
   async syncProjectEntity(request: SyncProjectEntityRequest): Promise<SyncProjectEntityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3241,12 +4129,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 调用本接口同步公司密钥信息。
-   *
-   * @param request SyncSecretKeyRequest
-   * @param headers SyncSecretKeyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncSecretKeyResponse
+   * 调用本接口同步公司密钥信息。
+   * 
+   * @param request - SyncSecretKeyRequest
+   * @param headers - SyncSecretKeyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncSecretKeyResponse
    */
   async syncSecretKeyWithOptions(request: SyncSecretKeyRequest, headers: SyncSecretKeyHeaders, runtime: $Util.RuntimeOptions): Promise<SyncSecretKeyResponse> {
     Util.validateModel(request);
@@ -3303,10 +4191,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 调用本接口同步公司密钥信息。
-   *
-   * @param request SyncSecretKeyRequest
-   * @return SyncSecretKeyResponse
+   * 调用本接口同步公司密钥信息。
+   * 
+   * @param request - SyncSecretKeyRequest
+   * @returns SyncSecretKeyResponse
    */
   async syncSecretKey(request: SyncSecretKeyRequest): Promise<SyncSecretKeyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3315,12 +4203,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步出行订单变更事件
-   *
-   * @param request SyncTripOrderRequest
-   * @param headers SyncTripOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncTripOrderResponse
+   * 同步出行订单变更事件
+   * 
+   * @param request - SyncTripOrderRequest
+   * @param headers - SyncTripOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncTripOrderResponse
    */
   async syncTripOrderWithOptions(request: SyncTripOrderRequest, headers: SyncTripOrderHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTripOrderResponse> {
     Util.validateModel(request);
@@ -3457,10 +4345,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步出行订单变更事件
-   *
-   * @param request SyncTripOrderRequest
-   * @return SyncTripOrderResponse
+   * 同步出行订单变更事件
+   * 
+   * @param request - SyncTripOrderRequest
+   * @returns SyncTripOrderResponse
    */
   async syncTripOrder(request: SyncTripOrderRequest): Promise<SyncTripOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3469,12 +4357,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 预订管理产品线配置同步
-   *
-   * @param request SyncTripProductConfigRequest
-   * @param headers SyncTripProductConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncTripProductConfigResponse
+   * 预订管理产品线配置同步
+   * 
+   * @param request - SyncTripProductConfigRequest
+   * @param headers - SyncTripProductConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncTripProductConfigResponse
    */
   async syncTripProductConfigWithOptions(request: SyncTripProductConfigRequest, headers: SyncTripProductConfigHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTripProductConfigResponse> {
     Util.validateModel(request);
@@ -3515,10 +4403,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 预订管理产品线配置同步
-   *
-   * @param request SyncTripProductConfigRequest
-   * @return SyncTripProductConfigResponse
+   * 预订管理产品线配置同步
+   * 
+   * @param request - SyncTripProductConfigRequest
+   * @returns SyncTripProductConfigResponse
    */
   async syncTripProductConfig(request: SyncTripProductConfigRequest): Promise<SyncTripProductConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3527,12 +4415,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能差旅平台数据互通统一入口
-   *
-   * @param request TripPlatformUnifiedEntryRequest
-   * @param headers TripPlatformUnifiedEntryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return TripPlatformUnifiedEntryResponse
+   * 智能差旅平台数据互通统一入口
+   * 
+   * @param request - TripPlatformUnifiedEntryRequest
+   * @param headers - TripPlatformUnifiedEntryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TripPlatformUnifiedEntryResponse
    */
   async tripPlatformUnifiedEntryWithOptions(request: TripPlatformUnifiedEntryRequest, headers: TripPlatformUnifiedEntryHeaders, runtime: $Util.RuntimeOptions): Promise<TripPlatformUnifiedEntryResponse> {
     Util.validateModel(request);
@@ -3573,10 +4461,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能差旅平台数据互通统一入口
-   *
-   * @param request TripPlatformUnifiedEntryRequest
-   * @return TripPlatformUnifiedEntryResponse
+   * 智能差旅平台数据互通统一入口
+   * 
+   * @param request - TripPlatformUnifiedEntryRequest
+   * @returns TripPlatformUnifiedEntryResponse
    */
   async tripPlatformUnifiedEntry(request: TripPlatformUnifiedEntryRequest): Promise<TripPlatformUnifiedEntryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3585,12 +4473,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 升级套件
-   *
-   * @param request UpgradeTemplateRequest
-   * @param headers UpgradeTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpgradeTemplateResponse
+   * 升级套件
+   * 
+   * @param request - UpgradeTemplateRequest
+   * @param headers - UpgradeTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpgradeTemplateResponse
    */
   async upgradeTemplateWithOptions(request: UpgradeTemplateRequest, headers: UpgradeTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<UpgradeTemplateResponse> {
     Util.validateModel(request);
@@ -3635,10 +4523,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 升级套件
-   *
-   * @param request UpgradeTemplateRequest
-   * @return UpgradeTemplateResponse
+   * 升级套件
+   * 
+   * @param request - UpgradeTemplateRequest
+   * @returns UpgradeTemplateResponse
    */
   async upgradeTemplate(request: UpgradeTemplateRequest): Promise<UpgradeTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });

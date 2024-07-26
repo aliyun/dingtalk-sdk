@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,9 +30,34 @@ export class BatchInsertBizObjectHeaders extends $tea.Model {
 }
 
 export class BatchInsertBizObjectRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizObjectJsonArray?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   isDraft?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1eeb5ad3-b6da-4d4d-b6a5-8d342567d189
+   */
   opUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D0001839bbbbe346bbf496498bb76c44c7eb972
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -60,8 +83,22 @@ export class BatchInsertBizObjectRequest extends $tea.Model {
 }
 
 export class BatchInsertBizObjectResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: BatchInsertBizObjectResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -132,6 +169,13 @@ export class CancelProcessInstanceHeaders extends $tea.Model {
 }
 
 export class CancelProcessInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 76fa1ccd-cc8a-48ca-b4e5-634fdc7af78c
+   */
   processInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -151,7 +195,21 @@ export class CancelProcessInstanceRequest extends $tea.Model {
 }
 
 export class CancelProcessInstanceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -220,9 +278,37 @@ export class CreateBizObjectHeaders extends $tea.Model {
 }
 
 export class CreateBizObjectRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {\"F0000010\": \"0000004\", \"F0000011\": \"王五1\",\"F0000012\": \"D1级客户\",\"F0000013\": 7000,\"D000183Fcd15f3a51e624bbc9945392d190b6aa8\": [{\"F0000014\": \"里斯\",\"F0000015\": 156666365656, \"F0000016\": \"技术部\",\"F0000017\": \"经理1\",\"F0000018\":\"男\",\"F0000019\": \"lgbxunmi@dd.com\", \"F0000020\": true, \"F0000021\": \"测试数据\"}]}
+   */
   bizObjectJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   isDraft?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * aea4d7a7-d162-4c77-9c44-7bd9cb8316a5
+   */
   opUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D0001839bbbbe346bbf496498bb76c44c7eb972
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -248,8 +334,22 @@ export class CreateBizObjectRequest extends $tea.Model {
 }
 
 export class CreateBizObjectResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: CreateBizObjectResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Code
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -320,8 +420,29 @@ export class CreateProcessesInstanceHeaders extends $tea.Model {
 }
 
 export class CreateProcessesInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 006f870b-4d1c-4cd0-85b3-2e866798e947
+   */
   bizObjectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * aea4d7a7-d162-4c77-9c44-7bd9cb8316a5
+   */
   opUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D0001833abb0fb61524487eb01848207bc89b47
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -345,8 +466,22 @@ export class CreateProcessesInstanceRequest extends $tea.Model {
 }
 
 export class CreateProcessesInstanceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: CreateProcessesInstanceResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -417,7 +552,21 @@ export class DeleteBizObjectHeaders extends $tea.Model {
 }
 
 export class DeleteBizObjectRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1a1ce0ab-0181-4dc2-9968-793d20906b27
+   */
   bizObjectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D0001839bbbbe346bbf496498bb76c44c7eb972
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -439,7 +588,21 @@ export class DeleteBizObjectRequest extends $tea.Model {
 }
 
 export class DeleteBizObjectResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -508,7 +671,21 @@ export class DeleteProcessesInstanceHeaders extends $tea.Model {
 }
 
 export class DeleteProcessesInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   isAutoUpdateBizObject?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713
+   */
   processInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -530,7 +707,21 @@ export class DeleteProcessesInstanceRequest extends $tea.Model {
 }
 
 export class DeleteProcessesInstanceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -599,6 +790,13 @@ export class GetAppsHeaders extends $tea.Model {
 }
 
 export class GetAppsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * All
+   */
   queryType?: string;
   values?: string[];
   static names(): { [key: string]: string } {
@@ -621,8 +819,22 @@ export class GetAppsRequest extends $tea.Model {
 }
 
 export class GetAppsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: GetAppsResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -693,6 +905,13 @@ export class GetAttachmentTemporaryUrlHeaders extends $tea.Model {
 }
 
 export class GetAttachmentTemporaryUrlRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 006f870b-4d1c-4cd0-85b3-2e866798e947
+   */
   attachmentId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -712,8 +931,22 @@ export class GetAttachmentTemporaryUrlRequest extends $tea.Model {
 }
 
 export class GetAttachmentTemporaryUrlResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: GetAttachmentTemporaryUrlResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -784,6 +1017,10 @@ export class GetOrganizationsHeaders extends $tea.Model {
 }
 
 export class GetOrganizationsRequest extends $tea.Model {
+  /**
+   * @example
+   * 部门id。获取指定部门及其下的子部门（以及子部门的子部门等等，递归获取）。 如果不填，默认获取全量组织架构
+   */
   departmentId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -803,8 +1040,22 @@ export class GetOrganizationsRequest extends $tea.Model {
 }
 
 export class GetOrganizationsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: GetOrganizationsResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -875,6 +1126,13 @@ export class GetRoleUsersHeaders extends $tea.Model {
 }
 
 export class GetRoleUsersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 34ddd46f-e6c4-4eb0-b63a-aac0dd9232b0
+   */
   roleId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -894,8 +1152,22 @@ export class GetRoleUsersRequest extends $tea.Model {
 }
 
 export class GetRoleUsersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: GetRoleUsersResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -966,8 +1238,22 @@ export class GetRolesHeaders extends $tea.Model {
 }
 
 export class GetRolesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: GetRolesResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1038,9 +1324,37 @@ export class GetUploadUrlHeaders extends $tea.Model {
 }
 
 export class GetUploadUrlRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 006f870b-4d1c-4cd0-85b3-2e866798e947
+   */
   bizObjectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Image
+   */
   fieldName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   isOverwrite?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D0001833abb0fb61524487eb01848207bc89b47
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1066,8 +1380,22 @@ export class GetUploadUrlRequest extends $tea.Model {
 }
 
 export class GetUploadUrlResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: GetUploadUrlResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1138,7 +1466,18 @@ export class GetUsersHeaders extends $tea.Model {
 }
 
 export class GetUsersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 18f923a7-5a5e-426d-94ae-a55ad1a4b240
+   */
   departmentId?: string;
+  /**
+   * @example
+   * true
+   */
   isRecursive?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1160,8 +1499,22 @@ export class GetUsersRequest extends $tea.Model {
 }
 
 export class GetUsersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: GetUsersResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1232,6 +1585,13 @@ export class LoadBizFieldsHeaders extends $tea.Model {
 }
 
 export class LoadBizFieldsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D0001839bbbbe346bbf496498bb76c44c7eb972
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1251,8 +1611,22 @@ export class LoadBizFieldsRequest extends $tea.Model {
 }
 
 export class LoadBizFieldsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: LoadBizFieldsResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1323,7 +1697,21 @@ export class LoadBizObjectHeaders extends $tea.Model {
 }
 
 export class LoadBizObjectRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 193f9efea-e27b-427d-bd13-e3be65e00ef9
+   */
   bizObjectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D0001839bbbbe346bbf496498bb76c44c7eb972
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1345,8 +1733,26 @@ export class LoadBizObjectRequest extends $tea.Model {
 }
 
 export class LoadBizObjectResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
+  /**
+   * @example
+   * {                 "ObjectId": "f2eef8c4-0455-4e3e-bb15-258fb409e077",                 "Name": "0000007",                 "CreatedBy": "张三",                 "OwnerId": "张三",                 "OwnerDeptId": "深圳**公司",                 "CreatedTime": "2021/11/15 17:41:11",                 "ModifiedBy": "",                 "ModifiedTime": "2021/11/15 17:41:11",                 "WorkflowInstanceId": "",                 "Status": 1,                 "F0000010": "0000007",                 "F0000011": "王五",                 "F0000012": "D1级客户",                 "F0000013": "7000",                 "F0000023": null,                 "F0000024": null,                 "D000183Fcd15f3a51e624bbc9945392d190b6aa8": [                     {                         "ObjectId": "836314cf-e25f-448b-ac79-9a0f58154299",                         "Name": null,                         "ParentObjectId": "f2eef8c4-0455-4e3e-bb15-258fb409e077",                         "F0000014": "里斯",                         "F0000015": "156********",                         "F0000016": "技术部",                         "F0000017": "经理",                         "F0000018": "男",                         "F0000019": "lgbxunmi@dd.com",                         "F0000020": true,                         "F0000021": "无"                     }                 ],                 "F0000022": null,                 "CreatedByObject": {                     "ObjectId": "aea4d7a7-d162-4c77-9c44-7bd9cb8316a5",                     "Name": "张三"                 },                 "OwnerIdObject": {                     "ObjectId": "aea4d7a7-d162-4c77-9c44-7bd9cb8316a5",                     "Name": "张三"                 },                 "OwnerDeptIdObject": {                     "ObjectId": "18f923a7-5a5e-426d-94ae-a55ad1a4b240",                     "Name": "深圳**公司"                 }             }
+   */
   data?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1417,10 +1823,35 @@ export class LoadBizObjectsHeaders extends $tea.Model {
 }
 
 export class LoadBizObjectsRequest extends $tea.Model {
+  /**
+   * @example
+   * {     "Type": "Item",     "Name": "F0000010",     "Operator": 2,     "Value": "0000007" }
+   */
   matcherJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   returnFields?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D0001839bbbbe346bbf496498bb76c44c7eb972
+   */
   schemaCode?: string;
   sortByFields?: LoadBizObjectsRequestSortByFields[];
   static names(): { [key: string]: string } {
@@ -1451,8 +1882,22 @@ export class LoadBizObjectsRequest extends $tea.Model {
 }
 
 export class LoadBizObjectsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: LoadBizObjectsResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1523,6 +1968,13 @@ export class QueryAppFunctionNodesHeaders extends $tea.Model {
 }
 
 export class QueryAppFunctionNodesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D000001
+   */
   appCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1542,8 +1994,22 @@ export class QueryAppFunctionNodesRequest extends $tea.Model {
 }
 
 export class QueryAppFunctionNodesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: QueryAppFunctionNodesResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1614,7 +2080,21 @@ export class QueryProcessesInstanceHeaders extends $tea.Model {
 }
 
 export class QueryProcessesInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 006f870b-4d1c-4cd0-85b3-2e866798e947
+   */
   bizObjectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D0001833abb0fb61524487eb01848207bc89b47
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1636,8 +2116,22 @@ export class QueryProcessesInstanceRequest extends $tea.Model {
 }
 
 export class QueryProcessesInstanceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: QueryProcessesInstanceResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1708,6 +2202,13 @@ export class QueryProcessesWorkItemsHeaders extends $tea.Model {
 }
 
 export class QueryProcessesWorkItemsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 006f870b-4d1c-4cd0-85b3-2e866798e947
+   */
   processInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1727,8 +2228,22 @@ export class QueryProcessesWorkItemsRequest extends $tea.Model {
 }
 
 export class QueryProcessesWorkItemsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
   data?: QueryProcessesWorkItemsResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1799,8 +2314,29 @@ export class UpdateBizObjectHeaders extends $tea.Model {
 }
 
 export class UpdateBizObjectRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ceeb5ad3-b6da-4d4d-b6a5-8d342567d189
+   */
   bizObjectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {     "F0000010": "0001111",     "F0000011": "王五",     "F0000012": "D1级客户",     "F0000013": 7000,     "D000183Fcd15f3a51e624bbc9945392d190b6aa8": [         {             "F0000014": "里斯",             "F0000015": "156********",             "F0000016": "技术部",             "F0000017": "经理",             "F0000018": "男",             "F0000019": "lgbxunmi@dd.com",             "F0000020": true,             "F0000021": "无"         }     ] }
+   */
   bizObjectJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D0001839bbbbe346bbf496498bb76c44c7eb972
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1824,7 +2360,21 @@ export class UpdateBizObjectRequest extends $tea.Model {
 }
 
 export class UpdateBizObjectResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OK
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1899,9 +2449,25 @@ export class BatchInsertBizObjectResponseBodyData extends $tea.Model {
 }
 
 export class CreateBizObjectResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * 50599800-af82-487e-9386-0a7278cab69f
+   */
   bizObjectId?: string;
+  /**
+   * @example
+   * DataList
+   */
   formUsageType?: string;
+  /**
+   * @example
+   * 3b5451bc-9fd3-4d0c-ba47-191f8bff95ab
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * D0001839bbbbe346bbf496498bb76c44c7eb972
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1927,6 +2493,10 @@ export class CreateBizObjectResponseBodyData extends $tea.Model {
 }
 
 export class CreateProcessesInstanceResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * 3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713
+   */
   processInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1946,10 +2516,30 @@ export class CreateProcessesInstanceResponseBodyData extends $tea.Model {
 }
 
 export class GetAppsResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * D000183inventory
+   */
   appCode?: string;
+  /**
+   * @example
+   * Installed
+   */
   appSource?: string;
+  /**
+   * @example
+   * Enable
+   */
   appState?: string;
+  /**
+   * @example
+   * 人事管理
+   */
   displayName?: string;
+  /**
+   * @example
+   * dev001
+   */
   solution?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1977,6 +2567,10 @@ export class GetAppsResponseBodyData extends $tea.Model {
 }
 
 export class GetAttachmentTemporaryUrlResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * http://h3yun-infrastructure.oss-cn-shenzhen.aliyuncs.com/mi4x54jcr54b0p8hwoad4wxo3/Formal/D000183te0qsxc20pulavqhgv8sky2p1/F0000041/21a42cb3-f679-4206-8314-597a59a7fd7a/01a27595-53ba-406f-8f39-cd31d99435d8?Expires=1641113859&OSSAccessKeyId=LTAI4G6TouCWDLHSHpAsM1eq&Signature=6FBbQbHMt7lrwi6wX1EsEo0Kr84%3D
+   */
   attachmentUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1996,12 +2590,40 @@ export class GetAttachmentTemporaryUrlResponseBodyData extends $tea.Model {
 }
 
 export class GetOrganizationsResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * G06935
+   */
   code?: string;
+  /**
+   * @example
+   * null
+   */
   description?: string;
+  /**
+   * @example
+   * 2b1a79e9-7545-437f-94ad-b6ab5561733f
+   */
   id?: string;
+  /**
+   * @example
+   * 行政部
+   */
   name?: string;
+  /**
+   * @example
+   * 18f923a7-5a5e-426d-94ae-a55ad1a4b240
+   */
   parentId?: string;
+  /**
+   * @example
+   * 1
+   */
   sortKey?: number;
+  /**
+   * @example
+   * OrganizationUnit
+   */
   unitType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2033,17 +2655,61 @@ export class GetOrganizationsResponseBodyData extends $tea.Model {
 }
 
 export class GetRoleUsersResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * zhangsan
+   */
   code?: string;
+  /**
+   * @example
+   * 18f923a7-5a5e-426d-94ae-a55ad1a4b240
+   */
   departmentId?: string;
+  /**
+   * @example
+   * 研发中心
+   */
   departmentName?: string;
+  /**
+   * @example
+   * Null
+   */
   description?: string;
+  /**
+   * @example
+   * Internal
+   */
   domainType?: string;
+  /**
+   * @example
+   * zhangsan@example.com
+   */
   email?: string;
+  /**
+   * @example
+   * 156*******
+   */
   mobile?: string;
+  /**
+   * @example
+   * 张三
+   */
   name?: string;
   partDepartmentIds?: string[];
+  /**
+   * @example
+   * Man
+   */
   sex?: string;
+  /**
+   * @example
+   * 176294501822126512
+   */
   sortKey?: number;
+  /**
+   * @example
+   * 018bbb56-a9dd-49a1-8495-129c6b0d95c5
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2085,12 +2751,40 @@ export class GetRoleUsersResponseBodyData extends $tea.Model {
 }
 
 export class GetRolesResponseBodyDataRoleGroups extends $tea.Model {
+  /**
+   * @example
+   * 18f923a7-5a5e-426d-94ae-a55ad1a4b240
+   */
   companyId?: string;
+  /**
+   * @example
+   * 这是一个游客体验组
+   */
   description?: string;
+  /**
+   * @example
+   * 261befb8-728d-4b79-a0b4-7b6ddfb3f94e
+   */
   groupCode?: string;
+  /**
+   * @example
+   * 261befb8-728d-4b79-a0b4-7b6ddfb3f94e
+   */
   groupId?: string;
+  /**
+   * @example
+   * 游客体验组
+   */
   groupName?: string;
+  /**
+   * @example
+   * Active
+   */
   state?: string;
+  /**
+   * @example
+   * All
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2122,13 +2816,45 @@ export class GetRolesResponseBodyDataRoleGroups extends $tea.Model {
 }
 
 export class GetRolesResponseBodyDataRoles extends $tea.Model {
+  /**
+   * @example
+   * 18f923a7-5a5e-426d-94ae-a55ad1a4b240
+   */
   companyId?: string;
+  /**
+   * @example
+   * 这是一个游客体验角色
+   */
   description?: string;
+  /**
+   * @example
+   * 261befb8-728d-4b79-a0b4-7b6ddfb3f94e
+   */
   groupId?: string;
+  /**
+   * @example
+   * 88cfc4a2-22ba-48e2-bc5e-8d475ce49d38
+   */
   roleCode?: string;
+  /**
+   * @example
+   * 085b47cf-ab7b-417f-bb7a-b5ee3b32de16
+   */
   roleId?: string;
+  /**
+   * @example
+   * 游客体验角色
+   */
   roleName?: string;
+  /**
+   * @example
+   * Active
+   */
   state?: string;
+  /**
+   * @example
+   * All
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2184,6 +2910,10 @@ export class GetRolesResponseBodyData extends $tea.Model {
 }
 
 export class GetUploadUrlResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * https://***?uploadSecret=***
+   */
   uploadUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2203,17 +2933,61 @@ export class GetUploadUrlResponseBodyData extends $tea.Model {
 }
 
 export class GetUsersResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * zhangsan
+   */
   code?: string;
+  /**
+   * @example
+   * 18f923a7-5a5e-426d-94ae-a55ad1a4b240
+   */
   departmentId?: string;
+  /**
+   * @example
+   * 研发中心
+   */
   departmentName?: string;
+  /**
+   * @example
+   * Null
+   */
   description?: string;
+  /**
+   * @example
+   * Internal
+   */
   domainType?: string;
+  /**
+   * @example
+   * zhangsan@example.com
+   */
   email?: string;
+  /**
+   * @example
+   * 018bbb56-a9dd-49a1-8495-129c6b0d95c5
+   */
   id?: string;
+  /**
+   * @example
+   * 156********
+   */
   mobile?: string;
+  /**
+   * @example
+   * 张三
+   */
   name?: string;
   partDepartmentIds?: string[];
+  /**
+   * @example
+   * Man
+   */
   sex?: string;
+  /**
+   * @example
+   * 176294501822126512
+   */
   sortKey?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2255,8 +3029,20 @@ export class GetUsersResponseBodyData extends $tea.Model {
 }
 
 export class LoadBizFieldsResponseBodyDataChildFormsFields extends $tea.Model {
+  /**
+   * @example
+   * ShortString
+   */
   bizDataType?: string;
+  /**
+   * @example
+   * Phone
+   */
   fieldName?: string;
+  /**
+   * @example
+   * 电话
+   */
   label?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2281,7 +3067,15 @@ export class LoadBizFieldsResponseBodyDataChildFormsFields extends $tea.Model {
 
 export class LoadBizFieldsResponseBodyDataChildForms extends $tea.Model {
   fields?: LoadBizFieldsResponseBodyDataChildFormsFields[];
+  /**
+   * @example
+   * 子表
+   */
   formName?: string;
+  /**
+   * @example
+   * D000183Fcd15f3a51e624bbc9945392d190b6aa8
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2305,8 +3099,20 @@ export class LoadBizFieldsResponseBodyDataChildForms extends $tea.Model {
 }
 
 export class LoadBizFieldsResponseBodyDataFields extends $tea.Model {
+  /**
+   * @example
+   * ShortString
+   */
   bizDataType?: string;
+  /**
+   * @example
+   * Name
+   */
   fieldName?: string;
+  /**
+   * @example
+   * 姓名
+   */
   label?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2332,7 +3138,15 @@ export class LoadBizFieldsResponseBodyDataFields extends $tea.Model {
 export class LoadBizFieldsResponseBodyData extends $tea.Model {
   childForms?: LoadBizFieldsResponseBodyDataChildForms[];
   fields?: LoadBizFieldsResponseBodyDataFields[];
+  /**
+   * @example
+   * 客户管理
+   */
   formName?: string;
+  /**
+   * @example
+   * D0001839bbbbe346bbf496498bb76c44c7eb972
+   */
   schemaCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2358,7 +3172,15 @@ export class LoadBizFieldsResponseBodyData extends $tea.Model {
 }
 
 export class LoadBizObjectsRequestSortByFields extends $tea.Model {
+  /**
+   * @example
+   * Ascending
+   */
   direction?: string;
+  /**
+   * @example
+   * Age
+   */
   fieldName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2381,8 +3203,20 @@ export class LoadBizObjectsRequestSortByFields extends $tea.Model {
 
 export class LoadBizObjectsResponseBodyData extends $tea.Model {
   bizObjects?: { [key: string]: any }[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 20
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2408,14 +3242,50 @@ export class LoadBizObjectsResponseBodyData extends $tea.Model {
 }
 
 export class QueryAppFunctionNodesResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * D000001
+   */
   appCode?: string;
+  /**
+   * @example
+   * 客户管理
+   */
   displayName?: string;
+  /**
+   * @example
+   * false
+   */
   isSystem?: boolean;
+  /**
+   * @example
+   * FormModule
+   */
   nodeType?: string;
+  /**
+   * @example
+   * AllVisible
+   */
   nodeVisibleType?: string;
+  /**
+   * @example
+   * 6b42e223-c849-4fe9-9916-52f52d1a41b5
+   */
   parentCode?: string;
+  /**
+   * @example
+   * 8d56c3b7-e996-4223-96a0-85ad16c11825
+   */
   schemaCode?: string;
+  /**
+   * @example
+   * 1000000011
+   */
   sortKey?: number;
+  /**
+   * @example
+   * Active
+   */
   state?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2451,9 +3321,25 @@ export class QueryAppFunctionNodesResponseBodyData extends $tea.Model {
 }
 
 export class QueryProcessesInstanceResponseBodyDataOriginator extends $tea.Model {
+  /**
+   * @example
+   * 18f923a7-5a5e-426d-94ae-a55ad1a4b240
+   */
   departmentId?: string;
+  /**
+   * @example
+   * 研发中心
+   */
   departmentName?: string;
+  /**
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @example
+   * aea4d7a7-d162-4c77-9c44-7bd9cb8316a5
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2479,17 +3365,61 @@ export class QueryProcessesInstanceResponseBodyDataOriginator extends $tea.Model
 }
 
 export class QueryProcessesInstanceResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * D000183D000185
+   */
   appCode?: string;
+  /**
+   * @example
+   * 006f870b-4d1c-4cd0-85b3-2e866798e947
+   */
   bizObjectId?: string;
+  /**
+   * @example
+   * 2021-11-19 19:36:54
+   */
   createdTimeGMT?: string;
+  /**
+   * @example
+   * null
+   */
   dingTalkProcessId?: string;
+  /**
+   * @example
+   * null
+   */
   finishTimeGMT?: string;
   originator?: QueryProcessesInstanceResponseBodyDataOriginator;
+  /**
+   * @example
+   * 报销管理
+   */
   processDisplayName?: string;
+  /**
+   * @example
+   * 3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * 3
+   */
   processVersion?: number;
+  /**
+   * @example
+   * D0001833abb0fb61524487eb01848207bc89b47
+   */
   schemaCode?: string;
+  /**
+   * @example
+   * 2021-11-19 19:36:54
+   */
   startTimeGMT?: string;
+  /**
+   * @example
+   * Running
+   */
   state?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2531,9 +3461,25 @@ export class QueryProcessesInstanceResponseBodyData extends $tea.Model {
 }
 
 export class QueryProcessesWorkItemsResponseBodyDataFinisher extends $tea.Model {
+  /**
+   * @example
+   * 18f923a7-5a5e-426d-94ae-a55ad1a4b240
+   */
   departmentId?: string;
+  /**
+   * @example
+   * 研发中心
+   */
   departmentName?: string;
+  /**
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @example
+   * aea4d7a7-d162-4c77-9c44-7bd9cb8316a5
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2559,9 +3505,25 @@ export class QueryProcessesWorkItemsResponseBodyDataFinisher extends $tea.Model 
 }
 
 export class QueryProcessesWorkItemsResponseBodyDataParticipant extends $tea.Model {
+  /**
+   * @example
+   * 18f923a7-5a5e-426d-94ae-a55ad1a4b240
+   */
   departmentId?: string;
+  /**
+   * @example
+   * 研发中心
+   */
   departmentName?: string;
+  /**
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @example
+   * aea4d7a7-d162-4c77-9c44-7bd9cb8316a5
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2587,9 +3549,25 @@ export class QueryProcessesWorkItemsResponseBodyDataParticipant extends $tea.Mod
 }
 
 export class QueryProcessesWorkItemsResponseBodyDataReceiptor extends $tea.Model {
+  /**
+   * @example
+   * null
+   */
   departmentId?: string;
+  /**
+   * @example
+   * null
+   */
   departmentName?: string;
+  /**
+   * @example
+   * null
+   */
   name?: string;
+  /**
+   * @example
+   * null
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2615,25 +3593,93 @@ export class QueryProcessesWorkItemsResponseBodyDataReceiptor extends $tea.Model
 }
 
 export class QueryProcessesWorkItemsResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * Activity1
+   */
   activityCode?: string;
+  /**
+   * @example
+   * 发起流程
+   */
   activityName?: string;
+  /**
+   * @example
+   * D000001
+   */
   appCode?: string;
+  /**
+   * @example
+   * 106f870b-4d1c-4cd0-85b3-2e866798e947
+   */
   bizObjectId?: string;
+  /**
+   * @example
+   * 同意
+   */
   comment?: string;
+  /**
+   * @example
+   * 发起流程
+   */
   displayName?: string;
+  /**
+   * @example
+   * null
+   */
   finishTimeGMT?: string;
   finisher?: QueryProcessesWorkItemsResponseBodyDataFinisher;
+  /**
+   * @example
+   * true
+   */
   isApproval?: boolean;
+  /**
+   * @example
+   * false
+   */
   isFinish?: boolean;
   participant?: QueryProcessesWorkItemsResponseBodyDataParticipant;
+  /**
+   * @example
+   * 006f870b-4d1c-4cd0-85b3-2e866798e947
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * 3
+   */
   processVersion?: string;
   receiptor?: QueryProcessesWorkItemsResponseBodyDataReceiptor;
+  /**
+   * @example
+   * 2021-11-19 19:36:54
+   */
   receiveTimeGMT?: string;
+  /**
+   * @example
+   * D0001833abb0fb61524487eb01848207bc89b47
+   */
   schemaCode?: string;
+  /**
+   * @example
+   * 2021-11-19 19:36:54
+   */
   startTimeGMT?: string;
+  /**
+   * @example
+   * Waiting
+   */
   state?: string;
+  /**
+   * @example
+   * 3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713
+   */
   workItemId?: string;
+  /**
+   * @example
+   * Fill
+   */
   workItemType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2692,12 +3738,11 @@ export class QueryProcessesWorkItemsResponseBodyData extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2707,12 +3752,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 批量创建表单业务对象数据
-   *
-   * @param request BatchInsertBizObjectRequest
-   * @param headers BatchInsertBizObjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchInsertBizObjectResponse
+   * 批量创建表单业务对象数据
+   * 
+   * @param request - BatchInsertBizObjectRequest
+   * @param headers - BatchInsertBizObjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchInsertBizObjectResponse
    */
   async batchInsertBizObjectWithOptions(request: BatchInsertBizObjectRequest, headers: BatchInsertBizObjectHeaders, runtime: $Util.RuntimeOptions): Promise<BatchInsertBizObjectResponse> {
     Util.validateModel(request);
@@ -2761,10 +3806,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量创建表单业务对象数据
-   *
-   * @param request BatchInsertBizObjectRequest
-   * @return BatchInsertBizObjectResponse
+   * 批量创建表单业务对象数据
+   * 
+   * @param request - BatchInsertBizObjectRequest
+   * @returns BatchInsertBizObjectResponse
    */
   async batchInsertBizObject(request: BatchInsertBizObjectRequest): Promise<BatchInsertBizObjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2773,12 +3818,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消流程实例
-   *
-   * @param request CancelProcessInstanceRequest
-   * @param headers CancelProcessInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CancelProcessInstanceResponse
+   * 取消流程实例
+   * 
+   * @param request - CancelProcessInstanceRequest
+   * @param headers - CancelProcessInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CancelProcessInstanceResponse
    */
   async cancelProcessInstanceWithOptions(request: CancelProcessInstanceRequest, headers: CancelProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CancelProcessInstanceResponse> {
     Util.validateModel(request);
@@ -2815,10 +3860,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消流程实例
-   *
-   * @param request CancelProcessInstanceRequest
-   * @return CancelProcessInstanceResponse
+   * 取消流程实例
+   * 
+   * @param request - CancelProcessInstanceRequest
+   * @returns CancelProcessInstanceResponse
    */
   async cancelProcessInstance(request: CancelProcessInstanceRequest): Promise<CancelProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2827,12 +3872,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建单条表单业务对象实例
-   *
-   * @param request CreateBizObjectRequest
-   * @param headers CreateBizObjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateBizObjectResponse
+   * 创建单条表单业务对象实例
+   * 
+   * @param request - CreateBizObjectRequest
+   * @param headers - CreateBizObjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateBizObjectResponse
    */
   async createBizObjectWithOptions(request: CreateBizObjectRequest, headers: CreateBizObjectHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBizObjectResponse> {
     Util.validateModel(request);
@@ -2881,10 +3926,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建单条表单业务对象实例
-   *
-   * @param request CreateBizObjectRequest
-   * @return CreateBizObjectResponse
+   * 创建单条表单业务对象实例
+   * 
+   * @param request - CreateBizObjectRequest
+   * @returns CreateBizObjectResponse
    */
   async createBizObject(request: CreateBizObjectRequest): Promise<CreateBizObjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2893,12 +3938,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建流程实例
-   *
-   * @param request CreateProcessesInstanceRequest
-   * @param headers CreateProcessesInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateProcessesInstanceResponse
+   * 创建流程实例
+   * 
+   * @param request - CreateProcessesInstanceRequest
+   * @param headers - CreateProcessesInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateProcessesInstanceResponse
    */
   async createProcessesInstanceWithOptions(request: CreateProcessesInstanceRequest, headers: CreateProcessesInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProcessesInstanceResponse> {
     Util.validateModel(request);
@@ -2943,10 +3988,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建流程实例
-   *
-   * @param request CreateProcessesInstanceRequest
-   * @return CreateProcessesInstanceResponse
+   * 创建流程实例
+   * 
+   * @param request - CreateProcessesInstanceRequest
+   * @returns CreateProcessesInstanceResponse
    */
   async createProcessesInstance(request: CreateProcessesInstanceRequest): Promise<CreateProcessesInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2955,12 +4000,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除表单业务对象实例
-   *
-   * @param request DeleteBizObjectRequest
-   * @param headers DeleteBizObjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteBizObjectResponse
+   * 删除表单业务对象实例
+   * 
+   * @param request - DeleteBizObjectRequest
+   * @param headers - DeleteBizObjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteBizObjectResponse
    */
   async deleteBizObjectWithOptions(request: DeleteBizObjectRequest, headers: DeleteBizObjectHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteBizObjectResponse> {
     Util.validateModel(request);
@@ -3001,10 +4046,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除表单业务对象实例
-   *
-   * @param request DeleteBizObjectRequest
-   * @return DeleteBizObjectResponse
+   * 删除表单业务对象实例
+   * 
+   * @param request - DeleteBizObjectRequest
+   * @returns DeleteBizObjectResponse
    */
   async deleteBizObject(request: DeleteBizObjectRequest): Promise<DeleteBizObjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3013,12 +4058,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除流程实例
-   *
-   * @param request DeleteProcessesInstanceRequest
-   * @param headers DeleteProcessesInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteProcessesInstanceResponse
+   * 删除流程实例
+   * 
+   * @param request - DeleteProcessesInstanceRequest
+   * @param headers - DeleteProcessesInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteProcessesInstanceResponse
    */
   async deleteProcessesInstanceWithOptions(request: DeleteProcessesInstanceRequest, headers: DeleteProcessesInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteProcessesInstanceResponse> {
     Util.validateModel(request);
@@ -3059,10 +4104,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除流程实例
-   *
-   * @param request DeleteProcessesInstanceRequest
-   * @return DeleteProcessesInstanceResponse
+   * 删除流程实例
+   * 
+   * @param request - DeleteProcessesInstanceRequest
+   * @returns DeleteProcessesInstanceResponse
    */
   async deleteProcessesInstance(request: DeleteProcessesInstanceRequest): Promise<DeleteProcessesInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3071,12 +4116,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取应用数据
-   *
-   * @param request GetAppsRequest
-   * @param headers GetAppsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAppsResponse
+   * 获取应用数据
+   * 
+   * @param request - GetAppsRequest
+   * @param headers - GetAppsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAppsResponse
    */
   async getAppsWithOptions(request: GetAppsRequest, headers: GetAppsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAppsResponse> {
     Util.validateModel(request);
@@ -3117,10 +4162,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取应用数据
-   *
-   * @param request GetAppsRequest
-   * @return GetAppsResponse
+   * 获取应用数据
+   * 
+   * @param request - GetAppsRequest
+   * @returns GetAppsResponse
    */
   async getApps(request: GetAppsRequest): Promise<GetAppsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3129,12 +4174,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取附件临时免登地址
-   *
-   * @param request GetAttachmentTemporaryUrlRequest
-   * @param headers GetAttachmentTemporaryUrlHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAttachmentTemporaryUrlResponse
+   * 获取附件临时免登地址
+   * 
+   * @param request - GetAttachmentTemporaryUrlRequest
+   * @param headers - GetAttachmentTemporaryUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAttachmentTemporaryUrlResponse
    */
   async getAttachmentTemporaryUrlWithOptions(request: GetAttachmentTemporaryUrlRequest, headers: GetAttachmentTemporaryUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetAttachmentTemporaryUrlResponse> {
     Util.validateModel(request);
@@ -3171,10 +4216,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取附件临时免登地址
-   *
-   * @param request GetAttachmentTemporaryUrlRequest
-   * @return GetAttachmentTemporaryUrlResponse
+   * 获取附件临时免登地址
+   * 
+   * @param request - GetAttachmentTemporaryUrlRequest
+   * @returns GetAttachmentTemporaryUrlResponse
    */
   async getAttachmentTemporaryUrl(request: GetAttachmentTemporaryUrlRequest): Promise<GetAttachmentTemporaryUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3183,12 +4228,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织数据
-   *
-   * @param request GetOrganizationsRequest
-   * @param headers GetOrganizationsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetOrganizationsResponse
+   * 获取组织数据
+   * 
+   * @param request - GetOrganizationsRequest
+   * @param headers - GetOrganizationsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOrganizationsResponse
    */
   async getOrganizationsWithOptions(request: GetOrganizationsRequest, headers: GetOrganizationsHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationsResponse> {
     Util.validateModel(request);
@@ -3225,10 +4270,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织数据
-   *
-   * @param request GetOrganizationsRequest
-   * @return GetOrganizationsResponse
+   * 获取组织数据
+   * 
+   * @param request - GetOrganizationsRequest
+   * @returns GetOrganizationsResponse
    */
   async getOrganizations(request: GetOrganizationsRequest): Promise<GetOrganizationsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3237,12 +4282,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取角色用户信息
-   *
-   * @param request GetRoleUsersRequest
-   * @param headers GetRoleUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRoleUsersResponse
+   * 获取角色用户信息
+   * 
+   * @param request - GetRoleUsersRequest
+   * @param headers - GetRoleUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRoleUsersResponse
    */
   async getRoleUsersWithOptions(request: GetRoleUsersRequest, headers: GetRoleUsersHeaders, runtime: $Util.RuntimeOptions): Promise<GetRoleUsersResponse> {
     Util.validateModel(request);
@@ -3279,10 +4324,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取角色用户信息
-   *
-   * @param request GetRoleUsersRequest
-   * @return GetRoleUsersResponse
+   * 获取角色用户信息
+   * 
+   * @param request - GetRoleUsersRequest
+   * @returns GetRoleUsersResponse
    */
   async getRoleUsers(request: GetRoleUsersRequest): Promise<GetRoleUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3291,11 +4336,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取角色数据
-   *
-   * @param headers GetRolesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRolesResponse
+   * 获取角色数据
+   * 
+   * @param headers - GetRolesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRolesResponse
    */
   async getRolesWithOptions(headers: GetRolesHeaders, runtime: $Util.RuntimeOptions): Promise<GetRolesResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -3325,9 +4370,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取角色数据
-   *
-   * @return GetRolesResponse
+   * 获取角色数据
+   * @returns GetRolesResponse
    */
   async getRoles(): Promise<GetRolesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3336,12 +4380,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件上传地址
-   *
-   * @param request GetUploadUrlRequest
-   * @param headers GetUploadUrlHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUploadUrlResponse
+   * 获取文件上传地址
+   * 
+   * @param request - GetUploadUrlRequest
+   * @param headers - GetUploadUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUploadUrlResponse
    */
   async getUploadUrlWithOptions(request: GetUploadUrlRequest, headers: GetUploadUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadUrlResponse> {
     Util.validateModel(request);
@@ -3390,10 +4434,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件上传地址
-   *
-   * @param request GetUploadUrlRequest
-   * @return GetUploadUrlResponse
+   * 获取文件上传地址
+   * 
+   * @param request - GetUploadUrlRequest
+   * @returns GetUploadUrlResponse
    */
   async getUploadUrl(request: GetUploadUrlRequest): Promise<GetUploadUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3402,12 +4446,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户数据
-   *
-   * @param request GetUsersRequest
-   * @param headers GetUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUsersResponse
+   * 获取用户数据
+   * 
+   * @param request - GetUsersRequest
+   * @param headers - GetUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUsersResponse
    */
   async getUsersWithOptions(request: GetUsersRequest, headers: GetUsersHeaders, runtime: $Util.RuntimeOptions): Promise<GetUsersResponse> {
     Util.validateModel(request);
@@ -3448,10 +4492,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户数据
-   *
-   * @param request GetUsersRequest
-   * @return GetUsersResponse
+   * 获取用户数据
+   * 
+   * @param request - GetUsersRequest
+   * @returns GetUsersResponse
    */
   async getUsers(request: GetUsersRequest): Promise<GetUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3460,12 +4504,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取表单业务字段信息
-   *
-   * @param request LoadBizFieldsRequest
-   * @param headers LoadBizFieldsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return LoadBizFieldsResponse
+   * 获取表单业务字段信息
+   * 
+   * @param request - LoadBizFieldsRequest
+   * @param headers - LoadBizFieldsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns LoadBizFieldsResponse
    */
   async loadBizFieldsWithOptions(request: LoadBizFieldsRequest, headers: LoadBizFieldsHeaders, runtime: $Util.RuntimeOptions): Promise<LoadBizFieldsResponse> {
     Util.validateModel(request);
@@ -3502,10 +4546,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取表单业务字段信息
-   *
-   * @param request LoadBizFieldsRequest
-   * @return LoadBizFieldsResponse
+   * 获取表单业务字段信息
+   * 
+   * @param request - LoadBizFieldsRequest
+   * @returns LoadBizFieldsResponse
    */
   async loadBizFields(request: LoadBizFieldsRequest): Promise<LoadBizFieldsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3514,12 +4558,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取单条表单业务对象实例
-   *
-   * @param request LoadBizObjectRequest
-   * @param headers LoadBizObjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return LoadBizObjectResponse
+   * 获取单条表单业务对象实例
+   * 
+   * @param request - LoadBizObjectRequest
+   * @param headers - LoadBizObjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns LoadBizObjectResponse
    */
   async loadBizObjectWithOptions(request: LoadBizObjectRequest, headers: LoadBizObjectHeaders, runtime: $Util.RuntimeOptions): Promise<LoadBizObjectResponse> {
     Util.validateModel(request);
@@ -3560,10 +4604,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取单条表单业务对象实例
-   *
-   * @param request LoadBizObjectRequest
-   * @return LoadBizObjectResponse
+   * 获取单条表单业务对象实例
+   * 
+   * @param request - LoadBizObjectRequest
+   * @returns LoadBizObjectResponse
    */
   async loadBizObject(request: LoadBizObjectRequest): Promise<LoadBizObjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3572,12 +4616,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询表单实例列表
-   *
-   * @param request LoadBizObjectsRequest
-   * @param headers LoadBizObjectsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return LoadBizObjectsResponse
+   * 查询表单实例列表
+   * 
+   * @param request - LoadBizObjectsRequest
+   * @param headers - LoadBizObjectsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns LoadBizObjectsResponse
    */
   async loadBizObjectsWithOptions(request: LoadBizObjectsRequest, headers: LoadBizObjectsHeaders, runtime: $Util.RuntimeOptions): Promise<LoadBizObjectsResponse> {
     Util.validateModel(request);
@@ -3634,10 +4678,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询表单实例列表
-   *
-   * @param request LoadBizObjectsRequest
-   * @return LoadBizObjectsResponse
+   * 查询表单实例列表
+   * 
+   * @param request - LoadBizObjectsRequest
+   * @returns LoadBizObjectsResponse
    */
   async loadBizObjects(request: LoadBizObjectsRequest): Promise<LoadBizObjectsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3646,12 +4690,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取应用的功能节点信息
-   *
-   * @param request QueryAppFunctionNodesRequest
-   * @param headers QueryAppFunctionNodesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryAppFunctionNodesResponse
+   * 获取应用的功能节点信息
+   * 
+   * @param request - QueryAppFunctionNodesRequest
+   * @param headers - QueryAppFunctionNodesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryAppFunctionNodesResponse
    */
   async queryAppFunctionNodesWithOptions(request: QueryAppFunctionNodesRequest, headers: QueryAppFunctionNodesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAppFunctionNodesResponse> {
     Util.validateModel(request);
@@ -3688,10 +4732,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取应用的功能节点信息
-   *
-   * @param request QueryAppFunctionNodesRequest
-   * @return QueryAppFunctionNodesResponse
+   * 获取应用的功能节点信息
+   * 
+   * @param request - QueryAppFunctionNodesRequest
+   * @returns QueryAppFunctionNodesResponse
    */
   async queryAppFunctionNodes(request: QueryAppFunctionNodesRequest): Promise<QueryAppFunctionNodesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3700,12 +4744,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程实例
-   *
-   * @param request QueryProcessesInstanceRequest
-   * @param headers QueryProcessesInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryProcessesInstanceResponse
+   * 获取流程实例
+   * 
+   * @param request - QueryProcessesInstanceRequest
+   * @param headers - QueryProcessesInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryProcessesInstanceResponse
    */
   async queryProcessesInstanceWithOptions(request: QueryProcessesInstanceRequest, headers: QueryProcessesInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProcessesInstanceResponse> {
     Util.validateModel(request);
@@ -3746,10 +4790,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程实例
-   *
-   * @param request QueryProcessesInstanceRequest
-   * @return QueryProcessesInstanceResponse
+   * 获取流程实例
+   * 
+   * @param request - QueryProcessesInstanceRequest
+   * @returns QueryProcessesInstanceResponse
    */
   async queryProcessesInstance(request: QueryProcessesInstanceRequest): Promise<QueryProcessesInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3758,12 +4802,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程实例节点工作项
-   *
-   * @param request QueryProcessesWorkItemsRequest
-   * @param headers QueryProcessesWorkItemsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryProcessesWorkItemsResponse
+   * 获取流程实例节点工作项
+   * 
+   * @param request - QueryProcessesWorkItemsRequest
+   * @param headers - QueryProcessesWorkItemsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryProcessesWorkItemsResponse
    */
   async queryProcessesWorkItemsWithOptions(request: QueryProcessesWorkItemsRequest, headers: QueryProcessesWorkItemsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProcessesWorkItemsResponse> {
     Util.validateModel(request);
@@ -3800,10 +4844,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程实例节点工作项
-   *
-   * @param request QueryProcessesWorkItemsRequest
-   * @return QueryProcessesWorkItemsResponse
+   * 获取流程实例节点工作项
+   * 
+   * @param request - QueryProcessesWorkItemsRequest
+   * @returns QueryProcessesWorkItemsResponse
    */
   async queryProcessesWorkItems(request: QueryProcessesWorkItemsRequest): Promise<QueryProcessesWorkItemsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3812,12 +4856,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改表单业务对象数据
-   *
-   * @param request UpdateBizObjectRequest
-   * @param headers UpdateBizObjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateBizObjectResponse
+   * 修改表单业务对象数据
+   * 
+   * @param request - UpdateBizObjectRequest
+   * @param headers - UpdateBizObjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateBizObjectResponse
    */
   async updateBizObjectWithOptions(request: UpdateBizObjectRequest, headers: UpdateBizObjectHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateBizObjectResponse> {
     Util.validateModel(request);
@@ -3862,10 +4906,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改表单业务对象数据
-   *
-   * @param request UpdateBizObjectRequest
-   * @return UpdateBizObjectResponse
+   * 修改表单业务对象数据
+   * 
+   * @param request - UpdateBizObjectRequest
+   * @returns UpdateBizObjectResponse
    */
   async updateBizObject(request: UpdateBizObjectRequest): Promise<UpdateBizObjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });

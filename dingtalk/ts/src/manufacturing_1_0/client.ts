@@ -1,20 +1,45 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class IndustrializeManufactureJobBookRequest extends $tea.Model {
+  /**
+   * @example
+   * ding2fff8349a3ae0105d
+   */
   corpId?: string;
+  /**
+   * @example
+   * [     { 		"code": "equipmentName"， 		"name": "设备名称", 		"value": "8000", 		"valueType": "类型：字符串，数字等" 	}, { 		"code": "唯一标识"， 		"name": "自定义字段1", 		"value": "值", 		"valueType": "类型：字符串，数字等" 	}, { 		"code": "唯一标识"， 		"name": "自定义字段2", 		"value": "值", 		"valueType": "类型：字符串，数字等" 	}  ]
+   */
   extend?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   instNo?: string;
+  /**
+   * @example
+   * n
+   */
   isBatchJob?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-07-05 08:00:21
+   */
   manufactureDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mesAppKey?: string;
   processEnName?: string;
   processName?: string;
@@ -22,13 +47,33 @@ export class IndustrializeManufactureJobBookRequest extends $tea.Model {
   productEnName?: string;
   productName?: string;
   productSpecification?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   qualifiedQuantity?: string;
   reworkableQuantity?: string;
   scrappedQuantity?: string;
+  /**
+   * @example
+   * 1.02
+   */
   unitPrice?: string;
+  /**
+   * @example
+   * 1919442747879777, 1919442747879774
+   */
   userIdList?: string;
   userName?: string;
+  /**
+   * @example
+   * 张三,李四
+   */
   userNameList?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -91,6 +136,10 @@ export class IndustrializeManufactureJobBookResponseBody extends $tea.Model {
   errorLevel?: number;
   errorMsg?: string;
   httpCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   uuid?: string;
   static names(): { [key: string]: string } {
@@ -170,20 +219,76 @@ export class IndustrializeManufactureQueryJobsHeaders extends $tea.Model {
 }
 
 export class IndustrializeManufactureQueryJobsRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   currentPage?: number;
+  /**
+   * @example
+   * d41d8cd98f00b204e9800998ecf8427e
+   */
   instNo?: string;
+  /**
+   * @example
+   * 2021-07-05
+   */
   manufactureDay?: string;
+  /**
+   * @example
+   * mes41d8cd98f00b204e9800998ecf8427e
+   */
   mesAppKey?: string;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
   processName?: string;
+  /**
+   * @example
+   * A001
+   */
   productCode?: string;
+  /**
+   * @example
+   * 双头螺柱001
+   */
   productName?: string;
+  /**
+   * @example
+   * M56*3*10501
+   */
   productSpecification?: string;
+  /**
+   * @example
+   * 100
+   */
   qualifiedQuantity?: string;
+  /**
+   * @example
+   * 1.2
+   */
   unitPrice?: string;
+  /**
+   * @example
+   * 1919442747879773
+   */
   userId?: string;
+  /**
+   * @example
+   * 111,222
+   */
   userIdList?: string;
+  /**
+   * @example
+   * 张三
+   */
   userName?: string;
+  /**
+   * @example
+   * d41d8cd98f00b204e9800998ecf8427e
+   */
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -232,6 +337,10 @@ export class IndustrializeManufactureQueryJobsRequest extends $tea.Model {
 
 export class IndustrializeManufactureQueryJobsResponseBody extends $tea.Model {
   content?: IndustrializeManufactureQueryJobsResponseBodyContent;
+  /**
+   * @example
+   * 200
+   */
   httpCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -278,6 +387,10 @@ export class IndustrializeManufactureQueryJobsResponse extends $tea.Model {
 }
 
 export class IndustrializeManufactureJobBookResponseBodyContent extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   count?: number;
   id?: number;
   static names(): { [key: string]: string } {
@@ -300,22 +413,93 @@ export class IndustrializeManufactureJobBookResponseBodyContent extends $tea.Mod
 }
 
 export class IndustrializeManufactureQueryJobsResponseBodyContent extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingdb6elngd253073ad370d8dc3ec89bb366ab
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtModified?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   instNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isBatchJob?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   manufactureDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   manufactureDay?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mesAppKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   qualifiedQuantity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   scrappedQuantity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unitPrice?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIdList?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userNameList?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -368,12 +552,11 @@ export class IndustrializeManufactureQueryJobsResponseBodyContent extends $tea.M
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
@@ -384,12 +567,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 日清月结-计件报工接口
-   *
-   * @param request IndustrializeManufactureJobBookRequest
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return IndustrializeManufactureJobBookResponse
+   * 日清月结-计件报工接口
+   * 
+   * @param request - IndustrializeManufactureJobBookRequest
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns IndustrializeManufactureJobBookResponse
    */
   async industrializeManufactureJobBookWithOptions(userId: string, request: IndustrializeManufactureJobBookRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<IndustrializeManufactureJobBookResponse> {
     Util.validateModel(request);
@@ -493,10 +676,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 日清月结-计件报工接口
-   *
-   * @param request IndustrializeManufactureJobBookRequest
-   * @return IndustrializeManufactureJobBookResponse
+   * 日清月结-计件报工接口
+   * 
+   * @param request - IndustrializeManufactureJobBookRequest
+   * @returns IndustrializeManufactureJobBookResponse
    */
   async industrializeManufactureJobBook(userId: string, request: IndustrializeManufactureJobBookRequest): Promise<IndustrializeManufactureJobBookResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -505,12 +688,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 日清月结-计件报工查询接口
-   *
-   * @param request IndustrializeManufactureQueryJobsRequest
-   * @param headers IndustrializeManufactureQueryJobsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return IndustrializeManufactureQueryJobsResponse
+   * 日清月结-计件报工查询接口
+   * 
+   * @param request - IndustrializeManufactureQueryJobsRequest
+   * @param headers - IndustrializeManufactureQueryJobsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns IndustrializeManufactureQueryJobsResponse
    */
   async industrializeManufactureQueryJobsWithOptions(request: IndustrializeManufactureQueryJobsRequest, headers: IndustrializeManufactureQueryJobsHeaders, runtime: $Util.RuntimeOptions): Promise<IndustrializeManufactureQueryJobsResponse> {
     Util.validateModel(request);
@@ -603,10 +786,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 日清月结-计件报工查询接口
-   *
-   * @param request IndustrializeManufactureQueryJobsRequest
-   * @return IndustrializeManufactureQueryJobsResponse
+   * 日清月结-计件报工查询接口
+   * 
+   * @param request - IndustrializeManufactureQueryJobsRequest
+   * @returns IndustrializeManufactureQueryJobsResponse
    */
   async industrializeManufactureQueryJobs(request: IndustrializeManufactureQueryJobsRequest): Promise<IndustrializeManufactureQueryJobsResponse> {
     let runtime = new $Util.RuntimeOptions({ });

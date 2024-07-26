@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,6 +30,10 @@ export class CreateActivityHeaders extends $tea.Model {
 }
 
 export class CreateActivityRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   detail?: CreateActivityRequestDetail;
   static names(): { [key: string]: string } {
     return {
@@ -117,7 +119,15 @@ export class ListActivityHeaders extends $tea.Model {
 }
 
 export class ListActivityRequest extends $tea.Model {
+  /**
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @example
+   * Rp3Rqcts7BE08y49Jr6iu6xW4iQ
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -140,7 +150,15 @@ export class ListActivityRequest extends $tea.Model {
 
 export class ListActivityResponseBody extends $tea.Model {
   list?: ListActivityResponseBodyList[];
+  /**
+   * @example
+   * 10
+   */
   maxResults?: string;
+  /**
+   * @example
+   * 1686633306552
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -189,9 +207,25 @@ export class ListActivityResponse extends $tea.Model {
 }
 
 export class CreateActivityRequestDetailAddress extends $tea.Model {
+  /**
+   * @example
+   * 重庆市重庆市
+   */
   district?: string;
+  /**
+   * @example
+   * 29.533939
+   */
   lat?: string;
+  /**
+   * @example
+   * 106.561853
+   */
   lng?: string;
+  /**
+   * @example
+   * 国际会议展览中心
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -218,15 +252,76 @@ export class CreateActivityRequestDetailAddress extends $tea.Model {
 
 export class CreateActivityRequestDetail extends $tea.Model {
   address?: CreateActivityRequestDetailAddress;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * @mediaId
+   */
   bannerMediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2OGnTRTcoH6OQ0209168
+   */
   foreignId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * IT
+   */
   industry?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * CTO
+   */
   roleName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hdx
+   */
   source?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 钉峰会
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://www.dingtalk.com/
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -266,14 +361,50 @@ export class CreateActivityRequestDetail extends $tea.Model {
 }
 
 export class ListActivityResponseBodyList extends $tea.Model {
+  /**
+   * @example
+   * 5tL2HIQiQiOARCZ6xWAPHA02091683513
+   */
   activityId?: string;
+  /**
+   * @example
+   * @mediaId
+   */
   bannerMediaId?: string;
+  /**
+   * @example
+   * 1683515695000
+   */
   endTime?: number;
+  /**
+   * @example
+   * 20230613_001
+   */
   foreignId?: string;
+  /**
+   * @example
+   * 1683514695000
+   */
   startTime?: number;
+  /**
+   * @example
+   * 3
+   */
   status?: string;
+  /**
+   * @example
+   * AIGC研讨会
+   */
   title?: string;
+  /**
+   * @example
+   * 0
+   */
   type?: string;
+  /**
+   * @example
+   * https://www.dingtalk.com
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -310,12 +441,11 @@ export class ListActivityResponseBodyList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -325,12 +455,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 创建活动
-   *
-   * @param request CreateActivityRequest
-   * @param headers CreateActivityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateActivityResponse
+   * 创建活动
+   * 
+   * @param request - CreateActivityRequest
+   * @param headers - CreateActivityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateActivityResponse
    */
   async createActivityWithOptions(request: CreateActivityRequest, headers: CreateActivityHeaders, runtime: $Util.RuntimeOptions): Promise<CreateActivityResponse> {
     Util.validateModel(request);
@@ -367,10 +497,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建活动
-   *
-   * @param request CreateActivityRequest
-   * @return CreateActivityResponse
+   * 创建活动
+   * 
+   * @param request - CreateActivityRequest
+   * @returns CreateActivityResponse
    */
   async createActivity(request: CreateActivityRequest): Promise<CreateActivityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -379,12 +509,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询活动列表
-   *
-   * @param request ListActivityRequest
-   * @param headers ListActivityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListActivityResponse
+   * 查询活动列表
+   * 
+   * @param request - ListActivityRequest
+   * @param headers - ListActivityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListActivityResponse
    */
   async listActivityWithOptions(request: ListActivityRequest, headers: ListActivityHeaders, runtime: $Util.RuntimeOptions): Promise<ListActivityResponse> {
     Util.validateModel(request);
@@ -425,10 +555,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询活动列表
-   *
-   * @param request ListActivityRequest
-   * @return ListActivityResponse
+   * 查询活动列表
+   * 
+   * @param request - ListActivityRequest
+   * @returns ListActivityResponse
    */
   async listActivity(request: ListActivityRequest): Promise<ListActivityResponse> {
     let runtime = new $Util.RuntimeOptions({ });

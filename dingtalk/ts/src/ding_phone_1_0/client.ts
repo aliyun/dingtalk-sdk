@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,9 +30,28 @@ export class AddCallConfigHeaders extends $tea.Model {
 }
 
 export class AddCallConfigRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding3f583b067f2q450c12d
+   */
   corpId?: string;
+  /**
+   * @example
+   * token12345
+   */
   isvToken?: string;
+  /**
+   * @example
+   * 057112345678
+   */
   phoneNumber?: string;
+  /**
+   * @example
+   * call
+   */
   scopeType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -126,8 +143,20 @@ export class DelCallConfigHeaders extends $tea.Model {
 }
 
 export class DelCallConfigRequest extends $tea.Model {
+  /**
+   * @example
+   * ding3f583b067250d34dd
+   */
   corpId?: string;
+  /**
+   * @example
+   * token1233143
+   */
   isvToken?: string;
+  /**
+   * @example
+   * 057112345678
+   */
   phoneNumber?: string;
   static names(): { [key: string]: string } {
     return {
@@ -217,9 +246,25 @@ export class QueryCallConfigHeaders extends $tea.Model {
 }
 
 export class QueryCallConfigRequest extends $tea.Model {
+  /**
+   * @example
+   * ding3f583b0672efc12d
+   */
   corpId?: string;
+  /**
+   * @example
+   * token23dafds
+   */
   isvToken?: string;
+  /**
+   * @example
+   * 057112345678
+   */
   phoneNumber?: string;
+  /**
+   * @example
+   * call
+   */
   scopeType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -336,12 +381,11 @@ export class QueryCallConfigResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -351,12 +395,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 添加外呼码号配置
-   *
-   * @param request AddCallConfigRequest
-   * @param headers AddCallConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddCallConfigResponse
+   * 添加外呼码号配置
+   * 
+   * @param request - AddCallConfigRequest
+   * @param headers - AddCallConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddCallConfigResponse
    */
   async addCallConfigWithOptions(request: AddCallConfigRequest, headers: AddCallConfigHeaders, runtime: $Util.RuntimeOptions): Promise<AddCallConfigResponse> {
     Util.validateModel(request);
@@ -405,10 +449,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加外呼码号配置
-   *
-   * @param request AddCallConfigRequest
-   * @return AddCallConfigResponse
+   * 添加外呼码号配置
+   * 
+   * @param request - AddCallConfigRequest
+   * @returns AddCallConfigResponse
    */
   async addCallConfig(request: AddCallConfigRequest): Promise<AddCallConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -417,12 +461,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除码号配置
-   *
-   * @param request DelCallConfigRequest
-   * @param headers DelCallConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DelCallConfigResponse
+   * 删除码号配置
+   * 
+   * @param request - DelCallConfigRequest
+   * @param headers - DelCallConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DelCallConfigResponse
    */
   async delCallConfigWithOptions(request: DelCallConfigRequest, headers: DelCallConfigHeaders, runtime: $Util.RuntimeOptions): Promise<DelCallConfigResponse> {
     Util.validateModel(request);
@@ -467,10 +511,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除码号配置
-   *
-   * @param request DelCallConfigRequest
-   * @return DelCallConfigResponse
+   * 删除码号配置
+   * 
+   * @param request - DelCallConfigRequest
+   * @returns DelCallConfigResponse
    */
   async delCallConfig(request: DelCallConfigRequest): Promise<DelCallConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -479,12 +523,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询外呼码号配置
-   *
-   * @param request QueryCallConfigRequest
-   * @param headers QueryCallConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCallConfigResponse
+   * 查询外呼码号配置
+   * 
+   * @param request - QueryCallConfigRequest
+   * @param headers - QueryCallConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCallConfigResponse
    */
   async queryCallConfigWithOptions(request: QueryCallConfigRequest, headers: QueryCallConfigHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCallConfigResponse> {
     Util.validateModel(request);
@@ -533,10 +577,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询外呼码号配置
-   *
-   * @param request QueryCallConfigRequest
-   * @return QueryCallConfigResponse
+   * 查询外呼码号配置
+   * 
+   * @param request - QueryCallConfigRequest
+   * @returns QueryCallConfigResponse
    */
   async queryCallConfig(request: QueryCallConfigRequest): Promise<QueryCallConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });

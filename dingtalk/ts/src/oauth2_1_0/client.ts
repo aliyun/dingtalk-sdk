@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -79,6 +77,10 @@ export class CreateJsapiTicketResponse extends $tea.Model {
 }
 
 export class GetAccessTokenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appKey?: string;
   appSecret?: string;
   static names(): { [key: string]: string } {
@@ -170,6 +172,10 @@ export class GetAuthInfoHeaders extends $tea.Model {
 }
 
 export class GetAuthInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   authCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -189,8 +195,20 @@ export class GetAuthInfoRequest extends $tea.Model {
 }
 
 export class GetAuthInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   authAppInfo?: GetAuthInfoResponseBodyAuthAppInfo;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   authCorpInfo?: GetAuthInfoResponseBodyAuthCorpInfo;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   authUserInfo?: GetAuthInfoResponseBodyAuthUserInfo;
   static names(): { [key: string]: string } {
     return {
@@ -239,9 +257,25 @@ export class GetAuthInfoResponse extends $tea.Model {
 }
 
 export class GetCorpAccessTokenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   authCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   suiteKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   suiteSecret?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   suiteTicket?: string;
   static names(): { [key: string]: string } {
     return {
@@ -380,7 +414,21 @@ export class GetPersonalAuthRuleResponse extends $tea.Model {
 }
 
 export class GetSsoAccessTokenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * corpxxxx
+   */
   corpid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxx
+   */
   ssoSecret?: string;
   static names(): { [key: string]: string } {
     return {
@@ -402,7 +450,15 @@ export class GetSsoAccessTokenRequest extends $tea.Model {
 }
 
 export class GetSsoAccessTokenResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 1234
+   */
   accessToken?: string;
+  /**
+   * @example
+   * 3600
+   */
   expireIn?: number;
   static names(): { [key: string]: string } {
     return {
@@ -471,6 +527,10 @@ export class GetSsoUserInfoHeaders extends $tea.Model {
 }
 
 export class GetSsoUserInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   code?: string;
   static names(): { [key: string]: string } {
     return {
@@ -490,12 +550,40 @@ export class GetSsoUserInfoRequest extends $tea.Model {
 }
 
 export class GetSsoUserInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   avatar?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   email?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isAdmin?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -552,8 +640,20 @@ export class GetSsoUserInfoResponse extends $tea.Model {
 }
 
 export class GetSuiteAccessTokenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   suiteKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   suiteSecret?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   suiteTicket?: string;
   static names(): { [key: string]: string } {
     return {
@@ -624,8 +724,20 @@ export class GetSuiteAccessTokenResponse extends $tea.Model {
 }
 
 export class GetTokenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   clientId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   clientSecret?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   grantType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -696,6 +808,10 @@ export class GetTokenResponse extends $tea.Model {
 }
 
 export class GetUserTokenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   clientId?: string;
   clientSecret?: string;
   code?: string;
@@ -780,9 +896,34 @@ export class GetUserTokenResponse extends $tea.Model {
 }
 
 export class GetAuthInfoResponseBodyAuthAppInfoAgentList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   adminList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 835880322
+   */
   agentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 小程序DEMO
+   */
   agentName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   appId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -808,6 +949,10 @@ export class GetAuthInfoResponseBodyAuthAppInfoAgentList extends $tea.Model {
 }
 
 export class GetAuthInfoResponseBodyAuthAppInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   agentList?: GetAuthInfoResponseBodyAuthAppInfoAgentList[];
   static names(): { [key: string]: string } {
     return {
@@ -827,14 +972,77 @@ export class GetAuthInfoResponseBodyAuthAppInfo extends $tea.Model {
 }
 
 export class GetAuthInfoResponseBodyAuthCorpInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   authChannel?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   authChannelType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   authLevel?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://static-legacy.dingtalk.com/xxx
+   */
   corpLogoUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 小程序体验HTTP
+   */
   corpName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 201
+   */
   industry?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   inviteCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://wx.dingtalk.com/invite-page/xxx
+   */
   inviteUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   licenseCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -870,6 +1078,13 @@ export class GetAuthInfoResponseBodyAuthCorpInfo extends $tea.Model {
 }
 
 export class GetAuthInfoResponseBodyAuthUserInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager975
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -889,7 +1104,18 @@ export class GetAuthInfoResponseBodyAuthUserInfo extends $tea.Model {
 }
 
 export class GetPersonalAuthRuleResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   authItems?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Contact.User
+   */
   resource?: string;
   static names(): { [key: string]: string } {
     return {
@@ -912,12 +1138,11 @@ export class GetPersonalAuthRuleResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
@@ -928,11 +1153,11 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 生成jsapi ticket
-   *
-   * @param headers CreateJsapiTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateJsapiTicketResponse
+   * 生成jsapi ticket
+   * 
+   * @param headers - CreateJsapiTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateJsapiTicketResponse
    */
   async createJsapiTicketWithOptions(headers: CreateJsapiTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CreateJsapiTicketResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -962,9 +1187,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生成jsapi ticket
-   *
-   * @return CreateJsapiTicketResponse
+   * 生成jsapi ticket
+   * @returns CreateJsapiTicketResponse
    */
   async createJsapiTicket(): Promise<CreateJsapiTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -973,12 +1197,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业accessToken(企业内部应用)
-   *
-   * @param request GetAccessTokenRequest
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAccessTokenResponse
+   * 获取企业accessToken(企业内部应用)
+   * 
+   * @param request - GetAccessTokenRequest
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAccessTokenResponse
    */
   async getAccessTokenWithOptions(request: GetAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetAccessTokenResponse> {
     Util.validateModel(request);
@@ -1010,10 +1234,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业accessToken(企业内部应用)
-   *
-   * @param request GetAccessTokenRequest
-   * @return GetAccessTokenResponse
+   * 获取企业accessToken(企业内部应用)
+   * 
+   * @param request - GetAccessTokenRequest
+   * @returns GetAccessTokenResponse
    */
   async getAccessToken(request: GetAccessTokenRequest): Promise<GetAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1022,12 +1246,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业开通应用后的授权信息
-   *
-   * @param request GetAuthInfoRequest
-   * @param headers GetAuthInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAuthInfoResponse
+   * 获取企业开通应用后的授权信息
+   * 
+   * @param request - GetAuthInfoRequest
+   * @param headers - GetAuthInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAuthInfoResponse
    */
   async getAuthInfoWithOptions(request: GetAuthInfoRequest, headers: GetAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetAuthInfoResponse> {
     Util.validateModel(request);
@@ -1064,10 +1288,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业开通应用后的授权信息
-   *
-   * @param request GetAuthInfoRequest
-   * @return GetAuthInfoResponse
+   * 获取企业开通应用后的授权信息
+   * 
+   * @param request - GetAuthInfoRequest
+   * @returns GetAuthInfoResponse
    */
   async getAuthInfo(request: GetAuthInfoRequest): Promise<GetAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1076,12 +1300,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业accessToken(应用商店应用)
-   *
-   * @param request GetCorpAccessTokenRequest
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCorpAccessTokenResponse
+   * 获取企业accessToken(应用商店应用)
+   * 
+   * @param request - GetCorpAccessTokenRequest
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCorpAccessTokenResponse
    */
   async getCorpAccessTokenWithOptions(request: GetCorpAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetCorpAccessTokenResponse> {
     Util.validateModel(request);
@@ -1121,10 +1345,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业accessToken(应用商店应用)
-   *
-   * @param request GetCorpAccessTokenRequest
-   * @return GetCorpAccessTokenResponse
+   * 获取企业accessToken(应用商店应用)
+   * 
+   * @param request - GetCorpAccessTokenRequest
+   * @returns GetCorpAccessTokenResponse
    */
   async getCorpAccessToken(request: GetCorpAccessTokenRequest): Promise<GetCorpAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1133,11 +1357,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询个人授权记录
-   *
-   * @param headers GetPersonalAuthRuleHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPersonalAuthRuleResponse
+   * 查询个人授权记录
+   * 
+   * @param headers - GetPersonalAuthRuleHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPersonalAuthRuleResponse
    */
   async getPersonalAuthRuleWithOptions(headers: GetPersonalAuthRuleHeaders, runtime: $Util.RuntimeOptions): Promise<GetPersonalAuthRuleResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1167,9 +1391,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询个人授权记录
-   *
-   * @return GetPersonalAuthRuleResponse
+   * 查询个人授权记录
+   * @returns GetPersonalAuthRuleResponse
    */
   async getPersonalAuthRule(): Promise<GetPersonalAuthRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1178,12 +1401,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生成微应用管理后台accessToken
-   *
-   * @param request GetSsoAccessTokenRequest
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSsoAccessTokenResponse
+   * 生成微应用管理后台accessToken
+   * 
+   * @param request - GetSsoAccessTokenRequest
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSsoAccessTokenResponse
    */
   async getSsoAccessTokenWithOptions(request: GetSsoAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetSsoAccessTokenResponse> {
     Util.validateModel(request);
@@ -1215,10 +1438,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生成微应用管理后台accessToken
-   *
-   * @param request GetSsoAccessTokenRequest
-   * @return GetSsoAccessTokenResponse
+   * 生成微应用管理后台accessToken
+   * 
+   * @param request - GetSsoAccessTokenRequest
+   * @returns GetSsoAccessTokenResponse
    */
   async getSsoAccessToken(request: GetSsoAccessTokenRequest): Promise<GetSsoAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1227,12 +1450,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询微应用后台免登的用户信息
-   *
-   * @param request GetSsoUserInfoRequest
-   * @param headers GetSsoUserInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSsoUserInfoResponse
+   * 查询微应用后台免登的用户信息
+   * 
+   * @param request - GetSsoUserInfoRequest
+   * @param headers - GetSsoUserInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSsoUserInfoResponse
    */
   async getSsoUserInfoWithOptions(request: GetSsoUserInfoRequest, headers: GetSsoUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetSsoUserInfoResponse> {
     Util.validateModel(request);
@@ -1269,10 +1492,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询微应用后台免登的用户信息
-   *
-   * @param request GetSsoUserInfoRequest
-   * @return GetSsoUserInfoResponse
+   * 查询微应用后台免登的用户信息
+   * 
+   * @param request - GetSsoUserInfoRequest
+   * @returns GetSsoUserInfoResponse
    */
   async getSsoUserInfo(request: GetSsoUserInfoRequest): Promise<GetSsoUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1281,12 +1504,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取isvAccessToken（三方企业应用）
-   *
-   * @param request GetSuiteAccessTokenRequest
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSuiteAccessTokenResponse
+   * 获取isvAccessToken（三方企业应用）
+   * 
+   * @param request - GetSuiteAccessTokenRequest
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSuiteAccessTokenResponse
    */
   async getSuiteAccessTokenWithOptions(request: GetSuiteAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetSuiteAccessTokenResponse> {
     Util.validateModel(request);
@@ -1322,10 +1545,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取isvAccessToken（三方企业应用）
-   *
-   * @param request GetSuiteAccessTokenRequest
-   * @return GetSuiteAccessTokenResponse
+   * 获取isvAccessToken（三方企业应用）
+   * 
+   * @param request - GetSuiteAccessTokenRequest
+   * @returns GetSuiteAccessTokenResponse
    */
   async getSuiteAccessToken(request: GetSuiteAccessTokenRequest): Promise<GetSuiteAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1334,12 +1557,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取Access Token
-   *
-   * @param request GetTokenRequest
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTokenResponse
+   * 获取Access Token
+   * 
+   * @param request - GetTokenRequest
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTokenResponse
    */
   async getTokenWithOptions(corpId: string, request: GetTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetTokenResponse> {
     Util.validateModel(request);
@@ -1375,10 +1598,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取Access Token
-   *
-   * @param request GetTokenRequest
-   * @return GetTokenResponse
+   * 获取Access Token
+   * 
+   * @param request - GetTokenRequest
+   * @returns GetTokenResponse
    */
   async getToken(corpId: string, request: GetTokenRequest): Promise<GetTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1387,12 +1610,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户token
-   *
-   * @param request GetUserTokenRequest
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserTokenResponse
+   * 获取用户token
+   * 
+   * @param request - GetUserTokenRequest
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserTokenResponse
    */
   async getUserTokenWithOptions(request: GetUserTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetUserTokenResponse> {
     Util.validateModel(request);
@@ -1436,10 +1659,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户token
-   *
-   * @param request GetUserTokenRequest
-   * @return GetUserTokenResponse
+   * 获取用户token
+   * 
+   * @param request - GetUserTokenRequest
+   * @returns GetUserTokenResponse
    */
   async getUserToken(request: GetUserTokenRequest): Promise<GetUserTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });

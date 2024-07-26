@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,9 +30,37 @@ export class SaveOpenExternalLogHeaders extends $tea.Model {
 }
 
 export class SaveOpenExternalLogRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingf8d907412a586
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * yunshu
+   */
   logSource?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * terminalInfo
+   */
   logType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * [{"date":"2023-05-10","macAddress":"34-2E-B7-AF-EA-JF","devSn":"68D1F0-B76A-5CC9-BCFC-BD7548BA","staffId":"05166141678164"}]
+   */
   openExt?: string;
   static names(): { [key: string]: string } {
     return {
@@ -105,12 +131,11 @@ export class SaveOpenExternalLogResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -120,12 +145,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 生态日志数据互通
-   *
-   * @param request SaveOpenExternalLogRequest
-   * @param headers SaveOpenExternalLogHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SaveOpenExternalLogResponse
+   * 生态日志数据互通
+   * 
+   * @param request - SaveOpenExternalLogRequest
+   * @param headers - SaveOpenExternalLogHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SaveOpenExternalLogResponse
    */
   async saveOpenExternalLogWithOptions(request: SaveOpenExternalLogRequest, headers: SaveOpenExternalLogHeaders, runtime: $Util.RuntimeOptions): Promise<SaveOpenExternalLogResponse> {
     Util.validateModel(request);
@@ -174,10 +199,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生态日志数据互通
-   *
-   * @param request SaveOpenExternalLogRequest
-   * @return SaveOpenExternalLogResponse
+   * 生态日志数据互通
+   * 
+   * @param request - SaveOpenExternalLogRequest
+   * @returns SaveOpenExternalLogResponse
    */
   async saveOpenExternalLog(request: SaveOpenExternalLogRequest): Promise<SaveOpenExternalLogResponse> {
     let runtime = new $Util.RuntimeOptions({ });

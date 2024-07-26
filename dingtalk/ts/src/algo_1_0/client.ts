@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,8 +30,20 @@ export class NlpWordDistinguishHeaders extends $tea.Model {
 }
 
 export class NlpWordDistinguishRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   attachExtractDecisionInfo?: NlpWordDistinguishRequestAttachExtractDecisionInfo;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isvAppId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   text?: string;
   static names(): { [key: string]: string } {
     return {
@@ -57,6 +67,10 @@ export class NlpWordDistinguishRequest extends $tea.Model {
 }
 
 export class NlpWordDistinguishResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   requestId?: string;
   wordEntities?: NlpWordDistinguishResponseBodyWordEntities[];
   static names(): { [key: string]: string } {
@@ -126,10 +140,30 @@ export class OkrOpenRecommendHeaders extends $tea.Model {
 }
 
 export class OkrOpenRecommendRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   candidateOkrItems?: OkrOpenRecommendRequestCandidateOkrItems[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deptIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isvAppId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   words?: string[];
   static names(): { [key: string]: string } {
@@ -161,6 +195,10 @@ export class OkrOpenRecommendRequest extends $tea.Model {
 
 export class OkrOpenRecommendResponseBody extends $tea.Model {
   okrRecommendItems?: OkrOpenRecommendResponseBodyOkrRecommendItems[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   requestId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -209,8 +247,20 @@ export class OkrOpenRecommendResponse extends $tea.Model {
 export class NlpWordDistinguishRequestAttachExtractDecisionInfo extends $tea.Model {
   blackWords?: string[];
   candidateWords?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deptIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -311,7 +361,15 @@ export class OkrOpenRecommendRequestCandidateOkrItemsOkrInfos extends $tea.Model
 
 export class OkrOpenRecommendRequestCandidateOkrItems extends $tea.Model {
   okrInfos?: OkrOpenRecommendRequestCandidateOkrItemsOkrInfos[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   relation?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -335,8 +393,23 @@ export class OkrOpenRecommendRequestCandidateOkrItems extends $tea.Model {
 }
 
 export class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   krId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   semanticLevel?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   words?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -360,8 +433,23 @@ export class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults
 }
 
 export class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   objectiveId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   semanticLevel?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   words?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -387,8 +475,26 @@ export class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResult
 export class OkrOpenRecommendResponseBodyOkrRecommendItems extends $tea.Model {
   krResultRelatedResults?: OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults[];
   objectiveRelatedResults?: OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   relatedLevel?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   semanticLevel?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -417,12 +523,11 @@ export class OkrOpenRecommendResponseBodyOkrRecommendItems extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -432,12 +537,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 自然语言处理之关键词识别
-   *
-   * @param request NlpWordDistinguishRequest
-   * @param headers NlpWordDistinguishHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return NlpWordDistinguishResponse
+   * 自然语言处理之关键词识别
+   * 
+   * @param request - NlpWordDistinguishRequest
+   * @param headers - NlpWordDistinguishHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns NlpWordDistinguishResponse
    */
   async nlpWordDistinguishWithOptions(request: NlpWordDistinguishRequest, headers: NlpWordDistinguishHeaders, runtime: $Util.RuntimeOptions): Promise<NlpWordDistinguishResponse> {
     Util.validateModel(request);
@@ -482,10 +587,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 自然语言处理之关键词识别
-   *
-   * @param request NlpWordDistinguishRequest
-   * @return NlpWordDistinguishResponse
+   * 自然语言处理之关键词识别
+   * 
+   * @param request - NlpWordDistinguishRequest
+   * @returns NlpWordDistinguishResponse
    */
   async nlpWordDistinguish(request: NlpWordDistinguishRequest): Promise<NlpWordDistinguishResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -494,12 +599,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary Okr内容推荐
-   *
-   * @param request OkrOpenRecommendRequest
-   * @param headers OkrOpenRecommendHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return OkrOpenRecommendResponse
+   * Okr内容推荐
+   * 
+   * @param request - OkrOpenRecommendRequest
+   * @param headers - OkrOpenRecommendHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OkrOpenRecommendResponse
    */
   async okrOpenRecommendWithOptions(request: OkrOpenRecommendRequest, headers: OkrOpenRecommendHeaders, runtime: $Util.RuntimeOptions): Promise<OkrOpenRecommendResponse> {
     Util.validateModel(request);
@@ -556,10 +661,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary Okr内容推荐
-   *
-   * @param request OkrOpenRecommendRequest
-   * @return OkrOpenRecommendResponse
+   * Okr内容推荐
+   * 
+   * @param request - OkrOpenRecommendRequest
+   * @returns OkrOpenRecommendResponse
    */
   async okrOpenRecommend(request: OkrOpenRecommendRequest): Promise<OkrOpenRecommendResponse> {
     let runtime = new $Util.RuntimeOptions({ });

@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,15 @@ export class GetCallBackFaileResultHeaders extends $tea.Model {
 }
 
 export class GetCallBackFaileResultRequest extends $tea.Model {
+  /**
+   * @example
+   * 1606126433000
+   */
   beginTime?: number;
+  /**
+   * @example
+   * 1606126493000
+   */
   endTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -217,13 +223,37 @@ export class InstallCoolAppHeaders extends $tea.Model {
 }
 
 export class InstallCoolAppRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   coolAppCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   feature?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   installUid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openConversationId?: string;
   options?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   suiteId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -257,13 +287,37 @@ export class InstallCoolAppRequest extends $tea.Model {
 }
 
 export class InstallCoolAppShrinkRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   coolAppCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   featureShrink?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   installUid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openConversationId?: string;
   optionsShrink?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   suiteId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -407,9 +461,25 @@ export class RePushSuiteTicketResponse extends $tea.Model {
 }
 
 export class GetCallBackFaileResultResponseBodyFailedList extends $tea.Model {
+  /**
+   * @example
+   * {\"CalendarEventUpdateTime\":1668735924619,\"CorpId\":\"ding9**cd16741\",\"ChangeType\":\"updated\",\"EventType\":\"calendar_event_change\",\"CalendarId\":\"NzE3MjU0NEB1c2V***5jb218MTQwMDE2\",\"EventTime\":1668735924640,\"LegacyCalendarEventId\":\"1C1BB56076***8A338\",\"BizId\":\"1668**4640\",\"CalendarEventId\":\"RVNUZllHK**elEydz09\",\"operator\":{\"type\":\"user\"},\"UnionIdList\":[\"QQa**mYiE\"]}
+   */
   callBackData?: string;
+  /**
+   * @example
+   * calendar_event_change
+   */
   callBackTag?: string;
+  /**
+   * @example
+   * ding9f50b15b*****41
+   */
   corpId?: string;
+  /**
+   * @example
+   * 166***39184
+   */
   eventTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -436,12 +506,11 @@ export class GetCallBackFaileResultResponseBodyFailedList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
@@ -452,12 +521,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 调用本获取推送失败的变更事件。
-   *
-   * @param request GetCallBackFaileResultRequest
-   * @param headers GetCallBackFaileResultHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCallBackFaileResultResponse
+   * 调用本获取推送失败的变更事件。
+   * 
+   * @param request - GetCallBackFaileResultRequest
+   * @param headers - GetCallBackFaileResultHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCallBackFaileResultResponse
    */
   async getCallBackFaileResultWithOptions(request: GetCallBackFaileResultRequest, headers: GetCallBackFaileResultHeaders, runtime: $Util.RuntimeOptions): Promise<GetCallBackFaileResultResponse> {
     Util.validateModel(request);
@@ -498,10 +567,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 调用本获取推送失败的变更事件。
-   *
-   * @param request GetCallBackFaileResultRequest
-   * @return GetCallBackFaileResultResponse
+   * 调用本获取推送失败的变更事件。
+   * 
+   * @param request - GetCallBackFaileResultRequest
+   * @returns GetCallBackFaileResultResponse
    */
   async getCallBackFaileResult(request: GetCallBackFaileResultRequest): Promise<GetCallBackFaileResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -510,12 +579,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 安装一方应用
-   *
-   * @param request InstallAppRequest
-   * @param headers InstallAppHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InstallAppResponse
+   * 安装一方应用
+   * 
+   * @param request - InstallAppRequest
+   * @param headers - InstallAppHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InstallAppResponse
    */
   async installAppWithOptions(request: InstallAppRequest, headers: InstallAppHeaders, runtime: $Util.RuntimeOptions): Promise<InstallAppResponse> {
     Util.validateModel(request);
@@ -564,10 +633,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 安装一方应用
-   *
-   * @param request InstallAppRequest
-   * @return InstallAppResponse
+   * 安装一方应用
+   * 
+   * @param request - InstallAppRequest
+   * @returns InstallAppResponse
    */
   async installApp(request: InstallAppRequest): Promise<InstallAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -576,12 +645,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 安装酷应用
-   *
-   * @param tmpReq InstallCoolAppRequest
-   * @param headers InstallCoolAppHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InstallCoolAppResponse
+   * 安装酷应用
+   * 
+   * @param tmpReq - InstallCoolAppRequest
+   * @param headers - InstallCoolAppHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InstallCoolAppResponse
    */
   async installCoolAppWithOptions(tmpReq: InstallCoolAppRequest, headers: InstallCoolAppHeaders, runtime: $Util.RuntimeOptions): Promise<InstallCoolAppResponse> {
     Util.validateModel(tmpReq);
@@ -656,10 +725,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 安装酷应用
-   *
-   * @param request InstallCoolAppRequest
-   * @return InstallCoolAppResponse
+   * 安装酷应用
+   * 
+   * @param request - InstallCoolAppRequest
+   * @returns InstallCoolAppResponse
    */
   async installCoolApp(request: InstallCoolAppRequest): Promise<InstallCoolAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -668,12 +737,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 重新获取suiteTicket
-   *
-   * @param request RePushSuiteTicketRequest
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RePushSuiteTicketResponse
+   * 重新获取suiteTicket
+   * 
+   * @param request - RePushSuiteTicketRequest
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RePushSuiteTicketResponse
    */
   async rePushSuiteTicketWithOptions(request: RePushSuiteTicketRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<RePushSuiteTicketResponse> {
     Util.validateModel(request);
@@ -705,10 +774,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 重新获取suiteTicket
-   *
-   * @param request RePushSuiteTicketRequest
-   * @return RePushSuiteTicketResponse
+   * 重新获取suiteTicket
+   * 
+   * @param request - RePushSuiteTicketRequest
+   * @returns RePushSuiteTicketResponse
    */
   async rePushSuiteTicket(request: RePushSuiteTicketRequest): Promise<RePushSuiteTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });

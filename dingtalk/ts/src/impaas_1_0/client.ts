@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -35,7 +33,18 @@ export class AddGroupMembersHeaders extends $tea.Model {
 }
 
 export class AddGroupMembersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * **if can be null:**
+   * true
+   */
   members?: AddGroupMembersRequestMembers[];
   operatorUid?: string;
   static names(): { [key: string]: string } {
@@ -60,6 +69,10 @@ export class AddGroupMembersRequest extends $tea.Model {
 }
 
 export class AddGroupMembersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberUids?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -126,9 +139,24 @@ export class AddProfileHeaders extends $tea.Model {
 }
 
 export class AddProfileRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appUid?: string;
   avatarMediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mobileNumber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * usertest
+   */
   nick?: string;
   static names(): { [key: string]: string } {
     return {
@@ -198,9 +226,28 @@ export class BatchSendHeaders extends $tea.Model {
 }
 
 export class BatchSendRequest extends $tea.Model {
+  /**
+   * **if can be null:**
+   * true
+   */
   appUids?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: string;
+  /**
+   * **if can be null:**
+   * true
+   */
   conversationIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 234#dingxxx@dingding
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -226,6 +273,13 @@ export class BatchSendRequest extends $tea.Model {
 }
 
 export class BatchSendResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 23233434
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -295,11 +349,31 @@ export class CreateGroupHeaders extends $tea.Model {
 }
 
 export class CreateGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   channel?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   creatorUid?: string;
   iconMediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   properties?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -329,8 +403,20 @@ export class CreateGroupRequest extends $tea.Model {
 }
 
 export class CreateGroupResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   chatId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   createTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -404,12 +490,41 @@ export class CreateTrustGroupHeaders extends $tea.Model {
 }
 
 export class CreateTrustGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * channel_abcd
+   */
   channel?: string;
+  /**
+   * @example
+   * @lALOKACADDA
+   */
   iconMediaId?: string;
   members?: CreateTrustGroupRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试群名称XXX
+   */
   name?: string;
   properties?: { [key: string]: string };
+  /**
+   * @example
+   * 你有新的会话
+   */
   systemMsg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1657099913071
+   */
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -441,8 +556,20 @@ export class CreateTrustGroupRequest extends $tea.Model {
 }
 
 export class CreateTrustGroupResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   chatId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -516,6 +643,10 @@ export class DismissGroupHeaders extends $tea.Model {
 }
 
 export class DismissGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conversationId?: string;
   operatorUid?: string;
   static names(): { [key: string]: string } {
@@ -582,7 +713,15 @@ export class GetConversationIdHeaders extends $tea.Model {
 }
 
 export class GetConversationIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appUid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -604,6 +743,10 @@ export class GetConversationIdRequest extends $tea.Model {
 }
 
 export class GetConversationIdResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conversationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -670,7 +813,18 @@ export class GetMediaUrlHeaders extends $tea.Model {
 }
 
 export class GetMediaUrlRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * @wesfsdfsfwe
+   */
   mediaId?: string;
+  /**
+   * @example
+   * 86399
+   */
   urlExpireTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -692,6 +846,10 @@ export class GetMediaUrlRequest extends $tea.Model {
 }
 
 export class GetMediaUrlResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -758,7 +916,15 @@ export class GetMediaUrlsHeaders extends $tea.Model {
 }
 
 export class GetMediaUrlsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mediaIds?: string[];
+  /**
+   * @example
+   * 86399
+   */
   urlExpireTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -846,8 +1012,29 @@ export class GetSpaceFileUrlHeaders extends $tea.Model {
 }
 
 export class GetSpaceFileUrlRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   fileId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123#123@dingding
+   */
   senderUid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   spaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -871,8 +1058,20 @@ export class GetSpaceFileUrlRequest extends $tea.Model {
 }
 
 export class GetSpaceFileUrlResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   headers?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   internalResourceUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   resourceUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -943,6 +1142,10 @@ export class ListGroupStaffMembersHeaders extends $tea.Model {
 }
 
 export class ListGroupStaffMembersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conversationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -962,6 +1165,10 @@ export class ListGroupStaffMembersRequest extends $tea.Model {
 }
 
 export class ListGroupStaffMembersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: ListGroupStaffMembersResponseBodyMembers[];
   static names(): { [key: string]: string } {
     return {
@@ -1028,7 +1235,21 @@ export class QueryBatchSendResultHeaders extends $tea.Model {
 }
 
 export class QueryBatchSendResultRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 234#dingxxx@dingding
+   */
   senderUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234567890
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1050,7 +1271,18 @@ export class QueryBatchSendResultRequest extends $tea.Model {
 }
 
 export class QueryBatchSendResultResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   results?: QueryBatchSendResultResponseBodyResults[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   status?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1122,7 +1354,15 @@ export class ReadMessageHeaders extends $tea.Model {
 }
 
 export class ReadMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   messageId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorUid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1191,7 +1431,15 @@ export class RecallMessageHeaders extends $tea.Model {
 }
 
 export class RecallMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   messageId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorUid?: string;
   type?: number;
   static names(): { [key: string]: string } {
@@ -1263,7 +1511,18 @@ export class RemoveGroupMembersHeaders extends $tea.Model {
 }
 
 export class RemoveGroupMembersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * **if can be null:**
+   * true
+   */
   memberUids?: string[];
   operatorUid?: string;
   static names(): { [key: string]: string } {
@@ -1335,11 +1594,23 @@ export class SendMessageHeaders extends $tea.Model {
 }
 
 export class SendMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: string;
   conversationId?: string;
   createTime?: number;
   receiverUid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   senderUid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1369,8 +1640,20 @@ export class SendMessageRequest extends $tea.Model {
 }
 
 export class SendMessageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   messageId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1441,20 +1724,48 @@ export class SendRobotMessageHeaders extends $tea.Model {
 }
 
 export class SendRobotMessageRequest extends $tea.Model {
+  /**
+   * @example
+   * false
+   */
   atAll?: boolean;
   atAppUids?: string[];
   atMobiles?: string[];
   atUnionIds?: string[];
   atUsers?: string[];
+  /**
+   * @example
+   * 123
+   */
   channel?: string;
+  /**
+   * @example
+   * {\"pic1\":\"@123\",\"pic2\":\"@456\"}
+   */
   msgMediaIdParamMap?: { [key: string]: any };
+  /**
+   * @example
+   * {\"text1\":\"hello\",\"text2\":\"world\"}
+   */
   msgParamMap?: { [key: string]: any };
+  /**
+   * @example
+   * 123
+   */
   msgTemplateId?: string;
   receiverAppUids?: string[];
   receiverMobiles?: string[];
   receiverUnionIds?: string[];
   receiverUserIds?: string[];
+  /**
+   * @example
+   * 123
+   */
   robotCode?: string;
+  /**
+   * @example
+   * 123
+   */
   targetOpenConversationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1571,7 +1882,15 @@ export class UpdateGroupNameHeaders extends $tea.Model {
 }
 
 export class UpdateGroupNameRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   operatorUid?: string;
   static names(): { [key: string]: string } {
@@ -1640,8 +1959,16 @@ export class UpdateGroupOwnerHeaders extends $tea.Model {
 }
 
 export class UpdateGroupOwnerRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conversationId?: string;
   operatorUid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   ownerUid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1665,6 +1992,13 @@ export class UpdateGroupOwnerRequest extends $tea.Model {
 }
 
 export class UpdateGroupOwnerResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1731,9 +2065,34 @@ export class UploadFileHeaders extends $tea.Model {
 }
 
 export class UploadFileRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111.png
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * image
+   */
   fileType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111@dingdingkelian
+   */
   senderUid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1759,6 +2118,13 @@ export class UploadFileRequest extends $tea.Model {
 }
 
 export class UploadFileResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * $csvsvsdvsvdscs
+   */
   mediaId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1804,6 +2170,10 @@ export class UploadFileResponse extends $tea.Model {
 
 export class AddGroupMembersRequestMembers extends $tea.Model {
   nick?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   uid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1848,6 +2218,10 @@ export class CreateTrustGroupRequestMembers extends $tea.Model {
 
 export class ListGroupStaffMembersResponseBodyMembers extends $tea.Model {
   nick?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   uid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1869,10 +2243,30 @@ export class ListGroupStaffMembersResponseBodyMembers extends $tea.Model {
 }
 
 export class QueryBatchSendResultResponseBodyResults extends $tea.Model {
+  /**
+   * @example
+   * 123@channel
+   */
   appUid?: string;
+  /**
+   * @example
+   * cid1234567890==
+   */
   conversationId?: string;
+  /**
+   * @example
+   * 0
+   */
   errorCode?: string;
+  /**
+   * @example
+   * success
+   */
   errorMessage?: string;
+  /**
+   * @example
+   * msg1234567890==
+   */
   msgId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1901,12 +2295,11 @@ export class QueryBatchSendResultResponseBodyResults extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1916,12 +2309,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 添加群成员
-   *
-   * @param request AddGroupMembersRequest
-   * @param headers AddGroupMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddGroupMembersResponse
+   * 添加群成员
+   * 
+   * @param request - AddGroupMembersRequest
+   * @param headers - AddGroupMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddGroupMembersResponse
    */
   async addGroupMembersWithOptions(request: AddGroupMembersRequest, headers: AddGroupMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddGroupMembersResponse> {
     Util.validateModel(request);
@@ -1970,10 +2363,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加群成员
-   *
-   * @param request AddGroupMembersRequest
-   * @return AddGroupMembersResponse
+   * 添加群成员
+   * 
+   * @param request - AddGroupMembersRequest
+   * @returns AddGroupMembersResponse
    */
   async addGroupMembers(request: AddGroupMembersRequest): Promise<AddGroupMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1982,12 +2375,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 外部用户导入profile
-   *
-   * @param request AddProfileRequest
-   * @param headers AddProfileHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddProfileResponse
+   * 外部用户导入profile
+   * 
+   * @param request - AddProfileRequest
+   * @param headers - AddProfileHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddProfileResponse
    */
   async addProfileWithOptions(request: AddProfileRequest, headers: AddProfileHeaders, runtime: $Util.RuntimeOptions): Promise<AddProfileResponse> {
     Util.validateModel(request);
@@ -2036,10 +2429,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 外部用户导入profile
-   *
-   * @param request AddProfileRequest
-   * @return AddProfileResponse
+   * 外部用户导入profile
+   * 
+   * @param request - AddProfileRequest
+   * @returns AddProfileResponse
    */
   async addProfile(request: AddProfileRequest): Promise<AddProfileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2048,12 +2441,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 消息批量接口
-   *
-   * @param request BatchSendRequest
-   * @param headers BatchSendHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchSendResponse
+   * 消息批量接口
+   * 
+   * @param request - BatchSendRequest
+   * @param headers - BatchSendHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchSendResponse
    */
   async batchSendWithOptions(request: BatchSendRequest, headers: BatchSendHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSendResponse> {
     Util.validateModel(request);
@@ -2102,10 +2495,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 消息批量接口
-   *
-   * @param request BatchSendRequest
-   * @return BatchSendResponse
+   * 消息批量接口
+   * 
+   * @param request - BatchSendRequest
+   * @returns BatchSendResponse
    */
   async batchSend(request: BatchSendRequest): Promise<BatchSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2114,12 +2507,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建群
-   *
-   * @param request CreateGroupRequest
-   * @param headers CreateGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateGroupResponse
+   * 创建群
+   * 
+   * @param request - CreateGroupRequest
+   * @param headers - CreateGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateGroupResponse
    */
   async createGroupWithOptions(request: CreateGroupRequest, headers: CreateGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupResponse> {
     Util.validateModel(request);
@@ -2180,10 +2573,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建群
-   *
-   * @param request CreateGroupRequest
-   * @return CreateGroupResponse
+   * 创建群
+   * 
+   * @param request - CreateGroupRequest
+   * @returns CreateGroupResponse
    */
   async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2192,12 +2585,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建托管账号为群主的群
-   *
-   * @param request CreateTrustGroupRequest
-   * @param headers CreateTrustGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateTrustGroupResponse
+   * 创建托管账号为群主的群
+   * 
+   * @param request - CreateTrustGroupRequest
+   * @param headers - CreateTrustGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateTrustGroupResponse
    */
   async createTrustGroupWithOptions(request: CreateTrustGroupRequest, headers: CreateTrustGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTrustGroupResponse> {
     Util.validateModel(request);
@@ -2262,10 +2655,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建托管账号为群主的群
-   *
-   * @param request CreateTrustGroupRequest
-   * @return CreateTrustGroupResponse
+   * 创建托管账号为群主的群
+   * 
+   * @param request - CreateTrustGroupRequest
+   * @returns CreateTrustGroupResponse
    */
   async createTrustGroup(request: CreateTrustGroupRequest): Promise<CreateTrustGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2274,12 +2667,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 解散群
-   *
-   * @param request DismissGroupRequest
-   * @param headers DismissGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DismissGroupResponse
+   * 解散群
+   * 
+   * @param request - DismissGroupRequest
+   * @param headers - DismissGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DismissGroupResponse
    */
   async dismissGroupWithOptions(request: DismissGroupRequest, headers: DismissGroupHeaders, runtime: $Util.RuntimeOptions): Promise<DismissGroupResponse> {
     Util.validateModel(request);
@@ -2324,10 +2717,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 解散群
-   *
-   * @param request DismissGroupRequest
-   * @return DismissGroupResponse
+   * 解散群
+   * 
+   * @param request - DismissGroupRequest
+   * @returns DismissGroupResponse
    */
   async dismissGroup(request: DismissGroupRequest): Promise<DismissGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2336,12 +2729,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生成单聊会话Id
-   *
-   * @param request GetConversationIdRequest
-   * @param headers GetConversationIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetConversationIdResponse
+   * 生成单聊会话Id
+   * 
+   * @param request - GetConversationIdRequest
+   * @param headers - GetConversationIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetConversationIdResponse
    */
   async getConversationIdWithOptions(request: GetConversationIdRequest, headers: GetConversationIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetConversationIdResponse> {
     Util.validateModel(request);
@@ -2382,10 +2775,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生成单聊会话Id
-   *
-   * @param request GetConversationIdRequest
-   * @return GetConversationIdResponse
+   * 生成单聊会话Id
+   * 
+   * @param request - GetConversationIdRequest
+   * @returns GetConversationIdResponse
    */
   async getConversationId(request: GetConversationIdRequest): Promise<GetConversationIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2394,12 +2787,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多媒体文件下载
-   *
-   * @param request GetMediaUrlRequest
-   * @param headers GetMediaUrlHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMediaUrlResponse
+   * 多媒体文件下载
+   * 
+   * @param request - GetMediaUrlRequest
+   * @param headers - GetMediaUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMediaUrlResponse
    */
   async getMediaUrlWithOptions(request: GetMediaUrlRequest, headers: GetMediaUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetMediaUrlResponse> {
     Util.validateModel(request);
@@ -2440,10 +2833,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多媒体文件下载
-   *
-   * @param request GetMediaUrlRequest
-   * @return GetMediaUrlResponse
+   * 多媒体文件下载
+   * 
+   * @param request - GetMediaUrlRequest
+   * @returns GetMediaUrlResponse
    */
   async getMediaUrl(request: GetMediaUrlRequest): Promise<GetMediaUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2452,12 +2845,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多媒体文件批量下载
-   *
-   * @param request GetMediaUrlsRequest
-   * @param headers GetMediaUrlsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMediaUrlsResponse
+   * 多媒体文件批量下载
+   * 
+   * @param request - GetMediaUrlsRequest
+   * @param headers - GetMediaUrlsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMediaUrlsResponse
    */
   async getMediaUrlsWithOptions(request: GetMediaUrlsRequest, headers: GetMediaUrlsHeaders, runtime: $Util.RuntimeOptions): Promise<GetMediaUrlsResponse> {
     Util.validateModel(request);
@@ -2498,10 +2891,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多媒体文件批量下载
-   *
-   * @param request GetMediaUrlsRequest
-   * @return GetMediaUrlsResponse
+   * 多媒体文件批量下载
+   * 
+   * @param request - GetMediaUrlsRequest
+   * @returns GetMediaUrlsResponse
    */
   async getMediaUrls(request: GetMediaUrlsRequest): Promise<GetMediaUrlsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2510,12 +2903,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取钉盘文件下载信息
-   *
-   * @param request GetSpaceFileUrlRequest
-   * @param headers GetSpaceFileUrlHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSpaceFileUrlResponse
+   * 获取钉盘文件下载信息
+   * 
+   * @param request - GetSpaceFileUrlRequest
+   * @param headers - GetSpaceFileUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSpaceFileUrlResponse
    */
   async getSpaceFileUrlWithOptions(request: GetSpaceFileUrlRequest, headers: GetSpaceFileUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceFileUrlResponse> {
     Util.validateModel(request);
@@ -2560,10 +2953,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取钉盘文件下载信息
-   *
-   * @param request GetSpaceFileUrlRequest
-   * @return GetSpaceFileUrlResponse
+   * 获取钉盘文件下载信息
+   * 
+   * @param request - GetSpaceFileUrlRequest
+   * @returns GetSpaceFileUrlResponse
    */
   async getSpaceFileUrl(request: GetSpaceFileUrlRequest): Promise<GetSpaceFileUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2572,12 +2965,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业员工类型的群成员
-   *
-   * @param request ListGroupStaffMembersRequest
-   * @param headers ListGroupStaffMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListGroupStaffMembersResponse
+   * 获取企业员工类型的群成员
+   * 
+   * @param request - ListGroupStaffMembersRequest
+   * @param headers - ListGroupStaffMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListGroupStaffMembersResponse
    */
   async listGroupStaffMembersWithOptions(request: ListGroupStaffMembersRequest, headers: ListGroupStaffMembersHeaders, runtime: $Util.RuntimeOptions): Promise<ListGroupStaffMembersResponse> {
     Util.validateModel(request);
@@ -2614,10 +3007,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业员工类型的群成员
-   *
-   * @param request ListGroupStaffMembersRequest
-   * @return ListGroupStaffMembersResponse
+   * 获取企业员工类型的群成员
+   * 
+   * @param request - ListGroupStaffMembersRequest
+   * @returns ListGroupStaffMembersResponse
    */
   async listGroupStaffMembers(request: ListGroupStaffMembersRequest): Promise<ListGroupStaffMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2626,12 +3019,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询batchSend结果
-   *
-   * @param request QueryBatchSendResultRequest
-   * @param headers QueryBatchSendResultHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryBatchSendResultResponse
+   * 查询batchSend结果
+   * 
+   * @param request - QueryBatchSendResultRequest
+   * @param headers - QueryBatchSendResultHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryBatchSendResultResponse
    */
   async queryBatchSendResultWithOptions(request: QueryBatchSendResultRequest, headers: QueryBatchSendResultHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBatchSendResultResponse> {
     Util.validateModel(request);
@@ -2672,10 +3065,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询batchSend结果
-   *
-   * @param request QueryBatchSendResultRequest
-   * @return QueryBatchSendResultResponse
+   * 查询batchSend结果
+   * 
+   * @param request - QueryBatchSendResultRequest
+   * @returns QueryBatchSendResultResponse
    */
   async queryBatchSendResult(request: QueryBatchSendResultRequest): Promise<QueryBatchSendResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2684,12 +3077,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 消息已读
-   *
-   * @param request ReadMessageRequest
-   * @param headers ReadMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ReadMessageResponse
+   * 消息已读
+   * 
+   * @param request - ReadMessageRequest
+   * @param headers - ReadMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ReadMessageResponse
    */
   async readMessageWithOptions(request: ReadMessageRequest, headers: ReadMessageHeaders, runtime: $Util.RuntimeOptions): Promise<ReadMessageResponse> {
     Util.validateModel(request);
@@ -2734,10 +3127,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 消息已读
-   *
-   * @param request ReadMessageRequest
-   * @return ReadMessageResponse
+   * 消息已读
+   * 
+   * @param request - ReadMessageRequest
+   * @returns ReadMessageResponse
    */
   async readMessage(request: ReadMessageRequest): Promise<ReadMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2746,12 +3139,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 消息撤回
-   *
-   * @param request RecallMessageRequest
-   * @param headers RecallMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RecallMessageResponse
+   * 消息撤回
+   * 
+   * @param request - RecallMessageRequest
+   * @param headers - RecallMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RecallMessageResponse
    */
   async recallMessageWithOptions(request: RecallMessageRequest, headers: RecallMessageHeaders, runtime: $Util.RuntimeOptions): Promise<RecallMessageResponse> {
     Util.validateModel(request);
@@ -2800,10 +3193,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 消息撤回
-   *
-   * @param request RecallMessageRequest
-   * @return RecallMessageResponse
+   * 消息撤回
+   * 
+   * @param request - RecallMessageRequest
+   * @returns RecallMessageResponse
    */
   async recallMessage(request: RecallMessageRequest): Promise<RecallMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2812,12 +3205,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 移除群成员
-   *
-   * @param request RemoveGroupMembersRequest
-   * @param headers RemoveGroupMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RemoveGroupMembersResponse
+   * 移除群成员
+   * 
+   * @param request - RemoveGroupMembersRequest
+   * @param headers - RemoveGroupMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RemoveGroupMembersResponse
    */
   async removeGroupMembersWithOptions(request: RemoveGroupMembersRequest, headers: RemoveGroupMembersHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveGroupMembersResponse> {
     Util.validateModel(request);
@@ -2866,10 +3259,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 移除群成员
-   *
-   * @param request RemoveGroupMembersRequest
-   * @return RemoveGroupMembersResponse
+   * 移除群成员
+   * 
+   * @param request - RemoveGroupMembersRequest
+   * @returns RemoveGroupMembersResponse
    */
   async removeGroupMembers(request: RemoveGroupMembersRequest): Promise<RemoveGroupMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2878,12 +3271,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 消息发送
-   *
-   * @param request SendMessageRequest
-   * @param headers SendMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendMessageResponse
+   * 消息发送
+   * 
+   * @param request - SendMessageRequest
+   * @param headers - SendMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendMessageResponse
    */
   async sendMessageWithOptions(request: SendMessageRequest, headers: SendMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendMessageResponse> {
     Util.validateModel(request);
@@ -2944,10 +3337,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 消息发送
-   *
-   * @param request SendMessageRequest
-   * @return SendMessageResponse
+   * 消息发送
+   * 
+   * @param request - SendMessageRequest
+   * @returns SendMessageResponse
    */
   async sendMessage(request: SendMessageRequest): Promise<SendMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2956,12 +3349,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过群模板机器人发送消息
-   *
-   * @param request SendRobotMessageRequest
-   * @param headers SendRobotMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendRobotMessageResponse
+   * 通过群模板机器人发送消息
+   * 
+   * @param request - SendRobotMessageRequest
+   * @param headers - SendRobotMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendRobotMessageResponse
    */
   async sendRobotMessageWithOptions(request: SendRobotMessageRequest, headers: SendRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotMessageResponse> {
     Util.validateModel(request);
@@ -3054,10 +3447,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过群模板机器人发送消息
-   *
-   * @param request SendRobotMessageRequest
-   * @return SendRobotMessageResponse
+   * 通过群模板机器人发送消息
+   * 
+   * @param request - SendRobotMessageRequest
+   * @returns SendRobotMessageResponse
    */
   async sendRobotMessage(request: SendRobotMessageRequest): Promise<SendRobotMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3066,12 +3459,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改群名称
-   *
-   * @param request UpdateGroupNameRequest
-   * @param headers UpdateGroupNameHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateGroupNameResponse
+   * 修改群名称
+   * 
+   * @param request - UpdateGroupNameRequest
+   * @param headers - UpdateGroupNameHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateGroupNameResponse
    */
   async updateGroupNameWithOptions(request: UpdateGroupNameRequest, headers: UpdateGroupNameHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupNameResponse> {
     Util.validateModel(request);
@@ -3120,10 +3513,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改群名称
-   *
-   * @param request UpdateGroupNameRequest
-   * @return UpdateGroupNameResponse
+   * 修改群名称
+   * 
+   * @param request - UpdateGroupNameRequest
+   * @returns UpdateGroupNameResponse
    */
   async updateGroupName(request: UpdateGroupNameRequest): Promise<UpdateGroupNameResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3132,12 +3525,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转让群主
-   *
-   * @param request UpdateGroupOwnerRequest
-   * @param headers UpdateGroupOwnerHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateGroupOwnerResponse
+   * 转让群主
+   * 
+   * @param request - UpdateGroupOwnerRequest
+   * @param headers - UpdateGroupOwnerHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateGroupOwnerResponse
    */
   async updateGroupOwnerWithOptions(request: UpdateGroupOwnerRequest, headers: UpdateGroupOwnerHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupOwnerResponse> {
     Util.validateModel(request);
@@ -3182,10 +3575,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转让群主
-   *
-   * @param request UpdateGroupOwnerRequest
-   * @return UpdateGroupOwnerResponse
+   * 转让群主
+   * 
+   * @param request - UpdateGroupOwnerRequest
+   * @returns UpdateGroupOwnerResponse
    */
   async updateGroupOwner(request: UpdateGroupOwnerRequest): Promise<UpdateGroupOwnerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3194,12 +3587,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 互联互通上传文件
-   *
-   * @param request UploadFileRequest
-   * @param headers UploadFileHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UploadFileResponse
+   * 互联互通上传文件
+   * 
+   * @param request - UploadFileRequest
+   * @param headers - UploadFileHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UploadFileResponse
    */
   async uploadFileWithOptions(request: UploadFileRequest, headers: UploadFileHeaders, runtime: $Util.RuntimeOptions): Promise<UploadFileResponse> {
     Util.validateModel(request);
@@ -3248,10 +3641,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 互联互通上传文件
-   *
-   * @param request UploadFileRequest
-   * @return UploadFileResponse
+   * 互联互通上传文件
+   * 
+   * @param request - UploadFileRequest
+   * @returns UploadFileResponse
    */
   async uploadFile(request: UploadFileRequest): Promise<UploadFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });

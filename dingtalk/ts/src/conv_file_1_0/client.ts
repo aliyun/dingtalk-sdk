@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,21 @@ export class GetSpaceHeaders extends $tea.Model {
 }
 
 export class GetSpaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * open_conversation_id
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -120,9 +132,37 @@ export class SendHeaders extends $tea.Model {
 }
 
 export class SendRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * file_id
+   */
   dentryId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * open_conversation_id
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -214,8 +254,29 @@ export class SendByAppHeaders extends $tea.Model {
 }
 
 export class SendByAppRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * file_id
+   */
   dentryId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -305,9 +366,37 @@ export class SendLinkHeaders extends $tea.Model {
 }
 
 export class SendLinkRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * file_id
+   */
   dentryId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * open_conversation_id
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -377,8 +466,20 @@ export class SendLinkResponse extends $tea.Model {
 }
 
 export class GetSpaceResponseBodySpace extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
   spaceId?: string;
   static names(): { [key: string]: string } {
@@ -405,21 +506,85 @@ export class GetSpaceResponseBodySpace extends $tea.Model {
 }
 
 export class SendResponseBodyFile extends $tea.Model {
+  /**
+   * @example
+   * open_conversation_id
+   */
   conversationId?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * file_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modified_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * file_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * file_path
+   */
   path?: string;
+  /**
+   * @example
+   * 256
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -469,21 +634,85 @@ export class SendResponseBodyFile extends $tea.Model {
 }
 
 export class SendByAppResponseBodyFile extends $tea.Model {
+  /**
+   * @example
+   * open_conversation_id
+   */
   conversationId?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * file_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modified_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * file_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * file_path
+   */
   path?: string;
+  /**
+   * @example
+   * 256
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -533,21 +762,85 @@ export class SendByAppResponseBodyFile extends $tea.Model {
 }
 
 export class SendLinkResponseBodyFile extends $tea.Model {
+  /**
+   * @example
+   * open_conversation_id
+   */
   conversationId?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * file_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modified_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * file_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * file_path
+   */
   path?: string;
+  /**
+   * @example
+   * 256
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -598,12 +891,11 @@ export class SendLinkResponseBodyFile extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -613,12 +905,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 获取IM会话存储空间信息
-   *
-   * @param request GetSpaceRequest
-   * @param headers GetSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSpaceResponse
+   * 获取IM会话存储空间信息
+   * 
+   * @param request - GetSpaceRequest
+   * @param headers - GetSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSpaceResponse
    */
   async getSpaceWithOptions(request: GetSpaceRequest, headers: GetSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceResponse> {
     Util.validateModel(request);
@@ -661,10 +953,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取IM会话存储空间信息
-   *
-   * @param request GetSpaceRequest
-   * @return GetSpaceResponse
+   * 获取IM会话存储空间信息
+   * 
+   * @param request - GetSpaceRequest
+   * @returns GetSpaceResponse
    */
   async getSpace(request: GetSpaceRequest): Promise<GetSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -673,12 +965,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送文件到指定会话
-   *
-   * @param request SendRequest
-   * @param headers SendHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendResponse
+   * 发送文件到指定会话
+   * 
+   * @param request - SendRequest
+   * @param headers - SendHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendResponse
    */
   async sendWithOptions(request: SendRequest, headers: SendHeaders, runtime: $Util.RuntimeOptions): Promise<SendResponse> {
     Util.validateModel(request);
@@ -729,10 +1021,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送文件到指定会话
-   *
-   * @param request SendRequest
-   * @return SendResponse
+   * 发送文件到指定会话
+   * 
+   * @param request - SendRequest
+   * @returns SendResponse
    */
   async send(request: SendRequest): Promise<SendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -741,12 +1033,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 以应用身份发送文件给自己
-   *
-   * @param request SendByAppRequest
-   * @param headers SendByAppHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendByAppResponse
+   * 以应用身份发送文件给自己
+   * 
+   * @param request - SendByAppRequest
+   * @param headers - SendByAppHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendByAppResponse
    */
   async sendByAppWithOptions(request: SendByAppRequest, headers: SendByAppHeaders, runtime: $Util.RuntimeOptions): Promise<SendByAppResponse> {
     Util.validateModel(request);
@@ -793,10 +1085,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 以应用身份发送文件给自己
-   *
-   * @param request SendByAppRequest
-   * @return SendByAppResponse
+   * 以应用身份发送文件给自己
+   * 
+   * @param request - SendByAppRequest
+   * @returns SendByAppResponse
    */
   async sendByApp(request: SendByAppRequest): Promise<SendByAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -805,12 +1097,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送文件链接到指定会话
-   *
-   * @param request SendLinkRequest
-   * @param headers SendLinkHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendLinkResponse
+   * 发送文件链接到指定会话
+   * 
+   * @param request - SendLinkRequest
+   * @param headers - SendLinkHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendLinkResponse
    */
   async sendLinkWithOptions(request: SendLinkRequest, headers: SendLinkHeaders, runtime: $Util.RuntimeOptions): Promise<SendLinkResponse> {
     Util.validateModel(request);
@@ -861,10 +1153,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送文件链接到指定会话
-   *
-   * @param request SendLinkRequest
-   * @return SendLinkResponse
+   * 发送文件链接到指定会话
+   * 
+   * @param request - SendLinkRequest
+   * @returns SendLinkResponse
    */
   async sendLink(request: SendLinkRequest): Promise<SendLinkResponse> {
     let runtime = new $Util.RuntimeOptions({ });

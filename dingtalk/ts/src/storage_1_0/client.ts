@@ -1,17 +1,27 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class DentryAppPropertiesValue extends $tea.Model {
+  /**
+   * @example
+   * property_name
+   */
   name?: string;
+  /**
+   * @example
+   * property_value
+   */
   value?: string;
+  /**
+   * @example
+   * PRIVATE
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -35,8 +45,20 @@ export class DentryAppPropertiesValue extends $tea.Model {
 }
 
 export class ResultItemsDentryAppPropertiesValue extends $tea.Model {
+  /**
+   * @example
+   * property_name
+   */
   name?: string;
+  /**
+   * @example
+   * property_value
+   */
   value?: string;
+  /**
+   * @example
+   * PRIVATE
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -60,8 +82,20 @@ export class ResultItemsDentryAppPropertiesValue extends $tea.Model {
 }
 
 export class DentriesAppPropertiesValue extends $tea.Model {
+  /**
+   * @example
+   * property_name
+   */
   name?: string;
+  /**
+   * @example
+   * property_value
+   */
   value?: string;
+  /**
+   * @example
+   * PRIVATE
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -107,8 +141,22 @@ export class AddFolderHeaders extends $tea.Model {
 }
 
 export class AddFolderRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dentry_name
+   */
   name?: string;
   option?: AddFolderRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -198,9 +246,27 @@ export class AddPermissionHeaders extends $tea.Model {
 }
 
 export class AddPermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: AddPermissionRequestMembers[];
   option?: AddPermissionRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * MANAGER
+   */
   roleId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -226,6 +292,10 @@ export class AddPermissionRequest extends $tea.Model {
 }
 
 export class AddPermissionResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -293,6 +363,13 @@ export class AddSpaceHeaders extends $tea.Model {
 
 export class AddSpaceRequest extends $tea.Model {
   option?: AddSpaceRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -380,6 +457,13 @@ export class ClearRecycleBinHeaders extends $tea.Model {
 }
 
 export class ClearRecycleBinRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -399,6 +483,10 @@ export class ClearRecycleBinRequest extends $tea.Model {
 }
 
 export class ClearRecycleBinResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -465,10 +553,38 @@ export class CommitFileHeaders extends $tea.Model {
 }
 
 export class CommitFileRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dentry_name
+   */
   name?: string;
   option?: CommitFileRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * upload_key
+   */
   uploadKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -562,10 +678,35 @@ export class CopyDentriesHeaders extends $tea.Model {
 }
 
 export class CopyDentriesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dentryIds?: string[];
   option?: CopyDentriesRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * target_folder_id
+   */
   targetFolderId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * target_space_id
+   */
   targetSpaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -660,8 +801,29 @@ export class CopyDentryHeaders extends $tea.Model {
 
 export class CopyDentryRequest extends $tea.Model {
   option?: CopyDentryRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * target_folder_id
+   */
   targetFolderId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * target_space_id
+   */
   targetSpaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -687,8 +849,16 @@ export class CopyDentryRequest extends $tea.Model {
 }
 
 export class CopyDentryResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   async?: boolean;
   dentry?: CopyDentryResponseBodyDentry;
+  /**
+   * @example
+   * task_id
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -759,8 +929,19 @@ export class DeleteDentriesHeaders extends $tea.Model {
 }
 
 export class DeleteDentriesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dentryIds?: string[];
   option?: DeleteDentriesRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -850,7 +1031,18 @@ export class DeleteDentryHeaders extends $tea.Model {
 }
 
 export class DeleteDentryRequest extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   toRecycleBin?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -872,7 +1064,15 @@ export class DeleteDentryRequest extends $tea.Model {
 }
 
 export class DeleteDentryResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   async?: boolean;
+  /**
+   * @example
+   * task_id
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -941,7 +1141,18 @@ export class DeleteDentryAppPropertiesHeaders extends $tea.Model {
 }
 
 export class DeleteDentryAppPropertiesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   propertyNames?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -963,6 +1174,10 @@ export class DeleteDentryAppPropertiesRequest extends $tea.Model {
 }
 
 export class DeleteDentryAppPropertiesResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1029,8 +1244,26 @@ export class DeletePermissionHeaders extends $tea.Model {
 }
 
 export class DeletePermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: DeletePermissionRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * MANAGER
+   */
   roleId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1054,6 +1287,10 @@ export class DeletePermissionRequest extends $tea.Model {
 }
 
 export class DeletePermissionResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1120,6 +1357,13 @@ export class DeleteRecycleItemHeaders extends $tea.Model {
 }
 
 export class DeleteRecycleItemRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1139,6 +1383,10 @@ export class DeleteRecycleItemRequest extends $tea.Model {
 }
 
 export class DeleteRecycleItemResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1205,7 +1453,18 @@ export class DeleteRecycleItemsHeaders extends $tea.Model {
 }
 
 export class DeleteRecycleItemsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recycleItemIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1227,6 +1486,10 @@ export class DeleteRecycleItemsRequest extends $tea.Model {
 }
 
 export class DeleteRecycleItemsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1293,6 +1556,13 @@ export class GetCurrentAppHeaders extends $tea.Model {
 }
 
 export class GetCurrentAppRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1378,8 +1648,19 @@ export class GetDentriesHeaders extends $tea.Model {
 }
 
 export class GetDentriesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dentryIds?: string[];
   option?: GetDentriesRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1470,6 +1751,13 @@ export class GetDentryHeaders extends $tea.Model {
 
 export class GetDentryRequest extends $tea.Model {
   option?: GetDentryRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1558,6 +1846,13 @@ export class GetDentryOpenInfoHeaders extends $tea.Model {
 
 export class GetDentryOpenInfoRequest extends $tea.Model {
   option?: GetDentryOpenInfoRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1579,7 +1874,15 @@ export class GetDentryOpenInfoRequest extends $tea.Model {
 }
 
 export class GetDentryOpenInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasWaterMark?: boolean;
+  /**
+   * @example
+   * url
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1648,7 +1951,18 @@ export class GetDentryThumbnailsHeaders extends $tea.Model {
 }
 
 export class GetDentryThumbnailsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dentryIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1737,6 +2051,13 @@ export class GetFileDownloadInfoHeaders extends $tea.Model {
 
 export class GetFileDownloadInfoRequest extends $tea.Model {
   option?: GetFileDownloadInfoRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1759,6 +2080,10 @@ export class GetFileDownloadInfoRequest extends $tea.Model {
 
 export class GetFileDownloadInfoResponseBody extends $tea.Model {
   headerSignatureInfo?: GetFileDownloadInfoResponseBodyHeaderSignatureInfo;
+  /**
+   * @example
+   * HEADER_SIGNATURE
+   */
   protocol?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1827,9 +2152,30 @@ export class GetFileUploadInfoHeaders extends $tea.Model {
 }
 
 export class GetFileUploadInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   multipart?: boolean;
   option?: GetFileUploadInfoRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * HEADER_SIGNATURE
+   */
   protocol?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1856,8 +2202,20 @@ export class GetFileUploadInfoRequest extends $tea.Model {
 
 export class GetFileUploadInfoResponseBody extends $tea.Model {
   headerSignatureInfo?: GetFileUploadInfoResponseBodyHeaderSignatureInfo;
+  /**
+   * @example
+   * HEADER_SIGNATURE
+   */
   protocol?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
+  /**
+   * @example
+   * upload_key
+   */
   uploadKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1931,8 +2289,26 @@ export class GetMultipartFileUploadInfosHeaders extends $tea.Model {
 
 export class GetMultipartFileUploadInfosRequest extends $tea.Model {
   option?: GetMultipartFileUploadInfosRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   partNumbers?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * upload_key
+   */
   uploadKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2024,6 +2400,13 @@ export class GetOrgHeaders extends $tea.Model {
 }
 
 export class GetOrgRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2109,8 +2492,29 @@ export class GetRecycleBinHeaders extends $tea.Model {
 }
 
 export class GetRecycleBinRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SPACE
+   */
   recycleBinScope?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * scope_id
+   */
   scopeId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2200,6 +2604,13 @@ export class GetRecycleItemHeaders extends $tea.Model {
 }
 
 export class GetRecycleItemRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2285,6 +2696,13 @@ export class GetSpaceHeaders extends $tea.Model {
 }
 
 export class GetSpaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2370,6 +2788,13 @@ export class GetTaskHeaders extends $tea.Model {
 }
 
 export class GetTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2456,6 +2881,13 @@ export class InitMultipartFileUploadHeaders extends $tea.Model {
 
 export class InitMultipartFileUploadRequest extends $tea.Model {
   option?: InitMultipartFileUploadRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2477,7 +2909,15 @@ export class InitMultipartFileUploadRequest extends $tea.Model {
 }
 
 export class InitMultipartFileUploadResponseBody extends $tea.Model {
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
+  /**
+   * @example
+   * upload_key
+   */
   uploadKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2547,6 +2987,13 @@ export class ListAllDentriesHeaders extends $tea.Model {
 
 export class ListAllDentriesRequest extends $tea.Model {
   option?: ListAllDentriesRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2569,6 +3016,10 @@ export class ListAllDentriesRequest extends $tea.Model {
 
 export class ListAllDentriesResponseBody extends $tea.Model {
   dentries?: ListAllDentriesResponseBodyDentries[];
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2637,12 +3088,46 @@ export class ListDentriesHeaders extends $tea.Model {
 }
 
 export class ListDentriesRequest extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
+  /**
+   * @example
+   * DESC
+   */
   order?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   orderBy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
+  /**
+   * @example
+   * true
+   */
   withThumbnail?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2675,6 +3160,10 @@ export class ListDentriesRequest extends $tea.Model {
 
 export class ListDentriesResponseBody extends $tea.Model {
   dentries?: ListDentriesResponseBodyDentries[];
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2743,8 +3232,23 @@ export class ListDentryVersionsHeaders extends $tea.Model {
 }
 
 export class ListDentryVersionsRequest extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2769,6 +3273,10 @@ export class ListDentryVersionsRequest extends $tea.Model {
 
 export class ListDentryVersionsResponseBody extends $tea.Model {
   dentries?: ListDentryVersionsResponseBodyDentries[];
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2838,6 +3346,13 @@ export class ListPermissionsHeaders extends $tea.Model {
 
 export class ListPermissionsRequest extends $tea.Model {
   option?: ListPermissionsRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2859,6 +3374,10 @@ export class ListPermissionsRequest extends $tea.Model {
 }
 
 export class ListPermissionsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   permissions?: ListPermissionsResponseBodyPermissions[];
   static names(): { [key: string]: string } {
@@ -2928,8 +3447,23 @@ export class ListRecycleItemsHeaders extends $tea.Model {
 }
 
 export class ListRecycleItemsRequest extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2953,6 +3487,10 @@ export class ListRecycleItemsRequest extends $tea.Model {
 }
 
 export class ListRecycleItemsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   recycleItems?: ListRecycleItemsResponseBodyRecycleItems[];
   static names(): { [key: string]: string } {
@@ -3022,10 +3560,35 @@ export class MoveDentriesHeaders extends $tea.Model {
 }
 
 export class MoveDentriesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dentryIds?: string[];
   option?: MoveDentriesRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * target_folder_id
+   */
   targetFolderId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * target_space_id
+   */
   targetSpaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3120,8 +3683,29 @@ export class MoveDentryHeaders extends $tea.Model {
 
 export class MoveDentryRequest extends $tea.Model {
   option?: MoveDentryRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * target_folder_id
+   */
   targetFolderId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * target_space_id
+   */
   targetSpaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3147,8 +3731,16 @@ export class MoveDentryRequest extends $tea.Model {
 }
 
 export class MoveDentryResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   async?: boolean;
   dentry?: MoveDentryResponseBodyDentry;
+  /**
+   * @example
+   * task_id
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3219,8 +3811,26 @@ export class RegisterOpenInfoHeaders extends $tea.Model {
 }
 
 export class RegisterOpenInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openInfos?: RegisterOpenInfoRequestOpenInfos[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * DINGTALK
+   */
   provider?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3244,6 +3854,10 @@ export class RegisterOpenInfoRequest extends $tea.Model {
 }
 
 export class RegisterOpenInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -3310,7 +3924,21 @@ export class RenameDentryHeaders extends $tea.Model {
 }
 
 export class RenameDentryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dentry_name
+   */
   newName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3399,6 +4027,13 @@ export class RestoreRecycleItemHeaders extends $tea.Model {
 
 export class RestoreRecycleItemRequest extends $tea.Model {
   option?: RestoreRecycleItemRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3420,9 +4055,25 @@ export class RestoreRecycleItemRequest extends $tea.Model {
 }
 
 export class RestoreRecycleItemResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   async?: boolean;
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * task_id
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3496,7 +4147,18 @@ export class RestoreRecycleItemsHeaders extends $tea.Model {
 
 export class RestoreRecycleItemsRequest extends $tea.Model {
   option?: RestoreRecycleItemsRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recycleItemIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3586,6 +4248,13 @@ export class RevertDentryVersionHeaders extends $tea.Model {
 }
 
 export class RevertDentryVersionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3605,6 +4274,10 @@ export class RevertDentryVersionRequest extends $tea.Model {
 }
 
 export class RevertDentryVersionResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -3671,8 +4344,29 @@ export class SubscribeEventHeaders extends $tea.Model {
 }
 
 export class SubscribeEventRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SPACE
+   */
   scope?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * scope_id
+   */
   scopeId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3696,6 +4390,10 @@ export class SubscribeEventRequest extends $tea.Model {
 }
 
 export class SubscribeEventResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -3762,8 +4460,29 @@ export class UnsubscribeEventHeaders extends $tea.Model {
 }
 
 export class UnsubscribeEventRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SPACE
+   */
   scope?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * scope_id
+   */
   scopeId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3787,6 +4506,10 @@ export class UnsubscribeEventRequest extends $tea.Model {
 }
 
 export class UnsubscribeEventResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -3853,7 +4576,18 @@ export class UpdateDentryAppPropertiesHeaders extends $tea.Model {
 }
 
 export class UpdateDentryAppPropertiesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appProperties?: UpdateDentryAppPropertiesRequestAppProperties[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3875,6 +4609,10 @@ export class UpdateDentryAppPropertiesRequest extends $tea.Model {
 }
 
 export class UpdateDentryAppPropertiesResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -3941,9 +4679,27 @@ export class UpdatePermissionHeaders extends $tea.Model {
 }
 
 export class UpdatePermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: UpdatePermissionRequestMembers[];
   option?: UpdatePermissionRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * MANAGER
+   */
   roleId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3969,6 +4725,10 @@ export class UpdatePermissionRequest extends $tea.Model {
 }
 
 export class UpdatePermissionResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4013,8 +4773,29 @@ export class UpdatePermissionResponse extends $tea.Model {
 }
 
 export class AddFolderRequestOptionAppProperties extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * property_name
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * property_value
+   */
   value?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PRIVATE
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4039,6 +4820,10 @@ export class AddFolderRequestOptionAppProperties extends $tea.Model {
 
 export class AddFolderRequestOption extends $tea.Model {
   appProperties?: AddFolderRequestOptionAppProperties[];
+  /**
+   * @example
+   * AUTO_RENAME
+   */
   conflictStrategy?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4060,6 +4845,10 @@ export class AddFolderRequestOption extends $tea.Model {
 }
 
 export class AddFolderResponseBodyDentryProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4080,23 +4869,91 @@ export class AddFolderResponseBodyDentryProperties extends $tea.Model {
 
 export class AddFolderResponseBodyDentry extends $tea.Model {
   appProperties?: { [key: string]: DentryAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: AddFolderResponseBodyDentryProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4152,8 +5009,26 @@ export class AddFolderResponseBodyDentry extends $tea.Model {
 }
 
 export class AddPermissionRequestMembers extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * member_id
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * USER
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4177,6 +5052,10 @@ export class AddPermissionRequestMembers extends $tea.Model {
 }
 
 export class AddPermissionRequestOption extends $tea.Model {
+  /**
+   * @example
+   * 3600
+   */
   duration?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4196,8 +5075,20 @@ export class AddPermissionRequestOption extends $tea.Model {
 }
 
 export class AddSpaceRequestOptionCapabilities extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   canRecordRecentFile?: boolean;
+  /**
+   * @example
+   * true
+   */
   canRename?: boolean;
+  /**
+   * @example
+   * true
+   */
   canSearch?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4222,10 +5113,26 @@ export class AddSpaceRequestOptionCapabilities extends $tea.Model {
 
 export class AddSpaceRequestOption extends $tea.Model {
   capabilities?: AddSpaceRequestOptionCapabilities;
+  /**
+   * @example
+   * space_name
+   */
   name?: string;
+  /**
+   * @example
+   * USER
+   */
   ownerType?: string;
   quota?: number;
+  /**
+   * @example
+   * scene
+   */
   scene?: string;
+  /**
+   * @example
+   * scene_id
+   */
   sceneId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4255,8 +5162,20 @@ export class AddSpaceRequestOption extends $tea.Model {
 }
 
 export class AddSpaceResponseBodySpaceCapabilities extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   canRecordRecentFile?: boolean;
+  /**
+   * @example
+   * true
+   */
   canRename?: boolean;
+  /**
+   * @example
+   * true
+   */
   canSearch?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4280,9 +5199,25 @@ export class AddSpaceResponseBodySpaceCapabilities extends $tea.Model {
 }
 
 export class AddSpaceResponseBodySpacePartitionsQuota extends $tea.Model {
+  /**
+   * @example
+   * 10000
+   */
   max?: number;
+  /**
+   * @example
+   * 1000
+   */
   reserved?: number;
+  /**
+   * @example
+   * SHARE
+   */
   type?: string;
+  /**
+   * @example
+   * 1024
+   */
   used?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4308,6 +5243,10 @@ export class AddSpaceResponseBodySpacePartitionsQuota extends $tea.Model {
 }
 
 export class AddSpaceResponseBodySpacePartitions extends $tea.Model {
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
   quota?: AddSpaceResponseBodySpacePartitionsQuota;
   static names(): { [key: string]: string } {
@@ -4330,22 +5269,82 @@ export class AddSpaceResponseBodySpacePartitions extends $tea.Model {
 }
 
 export class AddSpaceResponseBodySpace extends $tea.Model {
+  /**
+   * @example
+   * app_id
+   */
   appId?: string;
   capabilities?: AddSpaceResponseBodySpaceCapabilities;
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * space_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * space_name
+   */
   name?: string;
+  /**
+   * @example
+   * owner_id
+   */
   ownerId?: string;
+  /**
+   * @example
+   * USER
+   */
   ownerType?: string;
   partitions?: AddSpaceResponseBodySpacePartitions[];
+  /**
+   * @example
+   * 1048576
+   */
   quota?: number;
+  /**
+   * @example
+   * scene
+   */
   scene?: string;
+  /**
+   * @example
+   * scene_id
+   */
   sceneId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * 1024
+   */
   usedQuota?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4397,8 +5396,29 @@ export class AddSpaceResponseBodySpace extends $tea.Model {
 }
 
 export class CommitFileRequestOptionAppProperties extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * property_name
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * property_value
+   */
   value?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PRIVATE
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4423,7 +5443,15 @@ export class CommitFileRequestOptionAppProperties extends $tea.Model {
 
 export class CommitFileRequestOption extends $tea.Model {
   appProperties?: CommitFileRequestOptionAppProperties[];
+  /**
+   * @example
+   * AUTO_RENAME
+   */
   conflictStrategy?: string;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4447,6 +5475,10 @@ export class CommitFileRequestOption extends $tea.Model {
 }
 
 export class CommitFileResponseBodyDentryProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4467,23 +5499,91 @@ export class CommitFileResponseBodyDentryProperties extends $tea.Model {
 
 export class CommitFileResponseBodyDentry extends $tea.Model {
   appProperties?: { [key: string]: DentryAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: CommitFileResponseBodyDentryProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4539,6 +5639,10 @@ export class CommitFileResponseBodyDentry extends $tea.Model {
 }
 
 export class CopyDentriesRequestOption extends $tea.Model {
+  /**
+   * @example
+   * AUTO_RENAME
+   */
   conflictStrategy?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4558,13 +5662,45 @@ export class CopyDentriesRequestOption extends $tea.Model {
 }
 
 export class CopyDentriesResponseBodyResultItems extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   async?: boolean;
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * permissionDenied
+   */
   errorCode?: string;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
+  /**
+   * @example
+   * target_dentry_id
+   */
   targetDentryId?: string;
+  /**
+   * @example
+   * target_space_id
+   */
   targetSpaceId?: string;
+  /**
+   * @example
+   * task_id
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4598,6 +5734,10 @@ export class CopyDentriesResponseBodyResultItems extends $tea.Model {
 }
 
 export class CopyDentryRequestOption extends $tea.Model {
+  /**
+   * @example
+   * AUTO_RENAME
+   */
   conflictStrategy?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4617,6 +5757,10 @@ export class CopyDentryRequestOption extends $tea.Model {
 }
 
 export class CopyDentryResponseBodyDentryProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4637,23 +5781,91 @@ export class CopyDentryResponseBodyDentryProperties extends $tea.Model {
 
 export class CopyDentryResponseBodyDentry extends $tea.Model {
   appProperties?: { [key: string]: DentryAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: CopyDentryResponseBodyDentryProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4709,6 +5921,10 @@ export class CopyDentryResponseBodyDentry extends $tea.Model {
 }
 
 export class DeleteDentriesRequestOption extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   toRecycleBin?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4728,11 +5944,35 @@ export class DeleteDentriesRequestOption extends $tea.Model {
 }
 
 export class DeleteDentriesResponseBodyResultItems extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   async?: boolean;
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * permissionDenied
+   */
   errorCode?: string;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
+  /**
+   * @example
+   * task_id
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4762,8 +6002,26 @@ export class DeleteDentriesResponseBodyResultItems extends $tea.Model {
 }
 
 export class DeletePermissionRequestMembers extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * member_id
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * USER
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4787,9 +6045,25 @@ export class DeletePermissionRequestMembers extends $tea.Model {
 }
 
 export class GetCurrentAppResponseBodyAppPartitionsQuota extends $tea.Model {
+  /**
+   * @example
+   * 10000
+   */
   max?: number;
+  /**
+   * @example
+   * 1000
+   */
   reserved?: number;
+  /**
+   * @example
+   * SHARE
+   */
   type?: string;
+  /**
+   * @example
+   * 1024
+   */
   used?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4815,6 +6089,10 @@ export class GetCurrentAppResponseBodyAppPartitionsQuota extends $tea.Model {
 }
 
 export class GetCurrentAppResponseBodyAppPartitions extends $tea.Model {
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
   quota?: GetCurrentAppResponseBodyAppPartitionsQuota;
   static names(): { [key: string]: string } {
@@ -4837,10 +6115,30 @@ export class GetCurrentAppResponseBodyAppPartitions extends $tea.Model {
 }
 
 export class GetCurrentAppResponseBodyApp extends $tea.Model {
+  /**
+   * @example
+   * app_id
+   */
   appId?: string;
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * app_name
+   */
   name?: string;
   partitions?: GetCurrentAppResponseBodyAppPartitions[];
   static names(): { [key: string]: string } {
@@ -4872,6 +6170,10 @@ export class GetCurrentAppResponseBodyApp extends $tea.Model {
 
 export class GetDentriesRequestOption extends $tea.Model {
   appIdsForAppProperties?: string[];
+  /**
+   * @example
+   * true
+   */
   withThumbnail?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4893,6 +6195,10 @@ export class GetDentriesRequestOption extends $tea.Model {
 }
 
 export class GetDentriesResponseBodyResultItemsDentryProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4912,8 +6218,20 @@ export class GetDentriesResponseBodyResultItemsDentryProperties extends $tea.Mod
 }
 
 export class GetDentriesResponseBodyResultItemsDentryThumbnail extends $tea.Model {
+  /**
+   * @example
+   * 64
+   */
   height?: number;
+  /**
+   * @example
+   * url
+   */
   url?: string;
+  /**
+   * @example
+   * 64
+   */
   width?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4938,24 +6256,92 @@ export class GetDentriesResponseBodyResultItemsDentryThumbnail extends $tea.Mode
 
 export class GetDentriesResponseBodyResultItemsDentry extends $tea.Model {
   appProperties?: { [key: string]: ResultItemsDentryAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: GetDentriesResponseBodyResultItemsDentryProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
   thumbnail?: GetDentriesResponseBodyResultItemsDentryThumbnail;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5014,9 +6400,25 @@ export class GetDentriesResponseBodyResultItemsDentry extends $tea.Model {
 
 export class GetDentriesResponseBodyResultItems extends $tea.Model {
   dentry?: GetDentriesResponseBodyResultItemsDentry;
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * permissionDenied
+   */
   errorCode?: string;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -5045,6 +6447,10 @@ export class GetDentriesResponseBodyResultItems extends $tea.Model {
 
 export class GetDentryRequestOption extends $tea.Model {
   appIdsForAppProperties?: string[];
+  /**
+   * @example
+   * true
+   */
   withThumbnail?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -5066,6 +6472,10 @@ export class GetDentryRequestOption extends $tea.Model {
 }
 
 export class GetDentryResponseBodyDentryProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -5085,8 +6495,20 @@ export class GetDentryResponseBodyDentryProperties extends $tea.Model {
 }
 
 export class GetDentryResponseBodyDentryThumbnail extends $tea.Model {
+  /**
+   * @example
+   * 64
+   */
   height?: number;
+  /**
+   * @example
+   * url
+   */
   url?: string;
+  /**
+   * @example
+   * 64
+   */
   width?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5111,24 +6533,92 @@ export class GetDentryResponseBodyDentryThumbnail extends $tea.Model {
 
 export class GetDentryResponseBodyDentry extends $tea.Model {
   appProperties?: { [key: string]: DentryAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: GetDentryResponseBodyDentryProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
   thumbnail?: GetDentryResponseBodyDentryThumbnail;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5186,9 +6676,25 @@ export class GetDentryResponseBodyDentry extends $tea.Model {
 }
 
 export class GetDentryOpenInfoRequestOption extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   checkLogin?: boolean;
+  /**
+   * @example
+   * PREVIEW
+   */
   type?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
+  /**
+   * @example
+   * true
+   */
   waterMark?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -5214,8 +6720,20 @@ export class GetDentryOpenInfoRequestOption extends $tea.Model {
 }
 
 export class GetDentryThumbnailsResponseBodyResultItemsThumbnail extends $tea.Model {
+  /**
+   * @example
+   * 64
+   */
   height?: number;
+  /**
+   * @example
+   * url
+   */
   url?: string;
+  /**
+   * @example
+   * 64
+   */
   width?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5239,9 +6757,25 @@ export class GetDentryThumbnailsResponseBodyResultItemsThumbnail extends $tea.Mo
 }
 
 export class GetDentryThumbnailsResponseBodyResultItems extends $tea.Model {
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * permissionDenied
+   */
   errorCode?: string;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   thumbnail?: GetDentryThumbnailsResponseBodyResultItemsThumbnail;
   static names(): { [key: string]: string } {
@@ -5270,7 +6804,15 @@ export class GetDentryThumbnailsResponseBodyResultItems extends $tea.Model {
 }
 
 export class GetFileDownloadInfoRequestOption extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   preferIntranet?: boolean;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5292,9 +6834,17 @@ export class GetFileDownloadInfoRequestOption extends $tea.Model {
 }
 
 export class GetFileDownloadInfoResponseBodyHeaderSignatureInfo extends $tea.Model {
+  /**
+   * @example
+   * 900
+   */
   expirationSeconds?: number;
   headers?: { [key: string]: string };
   internalResourceUrls?: string[];
+  /**
+   * @example
+   * ZHANGJIAKOU
+   */
   region?: string;
   resourceUrls?: string[];
   static names(): { [key: string]: string } {
@@ -5323,9 +6873,25 @@ export class GetFileDownloadInfoResponseBodyHeaderSignatureInfo extends $tea.Mod
 }
 
 export class GetFileUploadInfoRequestOptionPreCheckParam extends $tea.Model {
+  /**
+   * @example
+   * md5
+   */
   md5?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5352,8 +6918,20 @@ export class GetFileUploadInfoRequestOptionPreCheckParam extends $tea.Model {
 
 export class GetFileUploadInfoRequestOption extends $tea.Model {
   preCheckParam?: GetFileUploadInfoRequestOptionPreCheckParam;
+  /**
+   * @example
+   * true
+   */
   preferIntranet?: boolean;
+  /**
+   * @example
+   * ZHANGJIAKOU
+   */
   preferRegion?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5379,9 +6957,17 @@ export class GetFileUploadInfoRequestOption extends $tea.Model {
 }
 
 export class GetFileUploadInfoResponseBodyHeaderSignatureInfo extends $tea.Model {
+  /**
+   * @example
+   * 900
+   */
   expirationSeconds?: number;
   headers?: { [key: string]: string };
   internalResourceUrls?: string[];
+  /**
+   * @example
+   * ZHANGJIAKOU
+   */
   region?: string;
   resourceUrls?: string[];
   static names(): { [key: string]: string } {
@@ -5410,6 +6996,10 @@ export class GetFileUploadInfoResponseBodyHeaderSignatureInfo extends $tea.Model
 }
 
 export class GetMultipartFileUploadInfosRequestOption extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   preferIntranet?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -5429,9 +7019,17 @@ export class GetMultipartFileUploadInfosRequestOption extends $tea.Model {
 }
 
 export class GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeaderSignatureInfo extends $tea.Model {
+  /**
+   * @example
+   * 900
+   */
   expirationSeconds?: number;
   headers?: { [key: string]: string };
   internalResourceUrls?: string[];
+  /**
+   * @example
+   * ZHANGJIAKOU
+   */
   region?: string;
   resourceUrls?: string[];
   static names(): { [key: string]: string } {
@@ -5482,9 +7080,25 @@ export class GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfo
 }
 
 export class GetOrgResponseBodyOrgPartitionsQuota extends $tea.Model {
+  /**
+   * @example
+   * 10000
+   */
   max?: number;
+  /**
+   * @example
+   * 1000
+   */
   reserved?: number;
+  /**
+   * @example
+   * SHARE
+   */
   type?: string;
+  /**
+   * @example
+   * 1024
+   */
   used?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5510,6 +7124,10 @@ export class GetOrgResponseBodyOrgPartitionsQuota extends $tea.Model {
 }
 
 export class GetOrgResponseBodyOrgPartitions extends $tea.Model {
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
   quota?: GetOrgResponseBodyOrgPartitionsQuota;
   static names(): { [key: string]: string } {
@@ -5532,6 +7150,10 @@ export class GetOrgResponseBodyOrgPartitions extends $tea.Model {
 }
 
 export class GetOrgResponseBodyOrg extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
   partitions?: GetOrgResponseBodyOrgPartitions[];
   static names(): { [key: string]: string } {
@@ -5554,8 +7176,20 @@ export class GetOrgResponseBodyOrg extends $tea.Model {
 }
 
 export class GetRecycleBinResponseBodyRecycleBin extends $tea.Model {
+  /**
+   * @example
+   * recyclebin_id
+   */
   id?: string;
+  /**
+   * @example
+   * SPACE
+   */
   scope?: string;
+  /**
+   * @example
+   * scope_id
+   */
   scopeId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5579,14 +7213,50 @@ export class GetRecycleBinResponseBodyRecycleBin extends $tea.Model {
 }
 
 export class GetRecycleItemResponseBodyItem extends $tea.Model {
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * recycle_item_id
+   */
   id?: string;
+  /**
+   * @example
+   * operator_id
+   */
   operatorId?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   operatorTime?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   originalName?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   originalPath?: string;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5622,8 +7292,20 @@ export class GetRecycleItemResponseBodyItem extends $tea.Model {
 }
 
 export class GetSpaceResponseBodySpaceCapabilities extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   canRecordRecentFile?: boolean;
+  /**
+   * @example
+   * true
+   */
   canRename?: boolean;
+  /**
+   * @example
+   * true
+   */
   canSearch?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -5647,9 +7329,25 @@ export class GetSpaceResponseBodySpaceCapabilities extends $tea.Model {
 }
 
 export class GetSpaceResponseBodySpacePartitionsQuota extends $tea.Model {
+  /**
+   * @example
+   * 10000
+   */
   max?: number;
+  /**
+   * @example
+   * 1000
+   */
   reserved?: number;
+  /**
+   * @example
+   * SHARE
+   */
   type?: string;
+  /**
+   * @example
+   * 1024
+   */
   used?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5675,6 +7373,10 @@ export class GetSpaceResponseBodySpacePartitionsQuota extends $tea.Model {
 }
 
 export class GetSpaceResponseBodySpacePartitions extends $tea.Model {
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
   quota?: GetSpaceResponseBodySpacePartitionsQuota;
   static names(): { [key: string]: string } {
@@ -5697,22 +7399,82 @@ export class GetSpaceResponseBodySpacePartitions extends $tea.Model {
 }
 
 export class GetSpaceResponseBodySpace extends $tea.Model {
+  /**
+   * @example
+   * app_id
+   */
   appId?: string;
   capabilities?: GetSpaceResponseBodySpaceCapabilities;
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * space_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * space_name
+   */
   name?: string;
+  /**
+   * @example
+   * owner_id
+   */
   ownerId?: string;
+  /**
+   * @example
+   * USER
+   */
   ownerType?: string;
   partitions?: GetSpaceResponseBodySpacePartitions[];
+  /**
+   * @example
+   * 1048576
+   */
   quota?: number;
+  /**
+   * @example
+   * scene
+   */
   scene?: string;
+  /**
+   * @example
+   * scene_id
+   */
   sceneId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * 1024
+   */
   usedQuota?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5764,13 +7526,45 @@ export class GetSpaceResponseBodySpace extends $tea.Model {
 }
 
 export class GetTaskResponseBodyTask extends $tea.Model {
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   beginTime?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   endTime?: string;
+  /**
+   * @example
+   * 1
+   */
   failCount?: number;
+  /**
+   * @example
+   * permissionDenied
+   */
   failMessage?: string;
+  /**
+   * @example
+   * task_id
+   */
   id?: string;
+  /**
+   * @example
+   * IN_PROGRESS
+   */
   status?: string;
+  /**
+   * @example
+   * 3
+   */
   successCount?: number;
+  /**
+   * @example
+   * 6
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5804,9 +7598,25 @@ export class GetTaskResponseBodyTask extends $tea.Model {
 }
 
 export class InitMultipartFileUploadRequestOptionPreCheckParam extends $tea.Model {
+  /**
+   * @example
+   * md5
+   */
   md5?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5833,7 +7643,15 @@ export class InitMultipartFileUploadRequestOptionPreCheckParam extends $tea.Mode
 
 export class InitMultipartFileUploadRequestOption extends $tea.Model {
   preCheckParam?: InitMultipartFileUploadRequestOptionPreCheckParam;
+  /**
+   * @example
+   * ZHANGJIAKOU
+   */
   preferRegion?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5857,9 +7675,25 @@ export class InitMultipartFileUploadRequestOption extends $tea.Model {
 }
 
 export class ListAllDentriesRequestOption extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
+  /**
+   * @example
+   * DESC
+   */
   order?: string;
+  /**
+   * @example
+   * true
+   */
   withThumbnail?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -5885,6 +7719,10 @@ export class ListAllDentriesRequestOption extends $tea.Model {
 }
 
 export class ListAllDentriesResponseBodyDentriesProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -5904,8 +7742,20 @@ export class ListAllDentriesResponseBodyDentriesProperties extends $tea.Model {
 }
 
 export class ListAllDentriesResponseBodyDentriesThumbnail extends $tea.Model {
+  /**
+   * @example
+   * 64
+   */
   height?: number;
+  /**
+   * @example
+   * url
+   */
   url?: string;
+  /**
+   * @example
+   * 64
+   */
   width?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5930,24 +7780,92 @@ export class ListAllDentriesResponseBodyDentriesThumbnail extends $tea.Model {
 
 export class ListAllDentriesResponseBodyDentries extends $tea.Model {
   appProperties?: { [key: string]: DentriesAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: ListAllDentriesResponseBodyDentriesProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
   thumbnail?: ListAllDentriesResponseBodyDentriesThumbnail;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6005,6 +7923,10 @@ export class ListAllDentriesResponseBodyDentries extends $tea.Model {
 }
 
 export class ListDentriesResponseBodyDentriesProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6024,8 +7946,20 @@ export class ListDentriesResponseBodyDentriesProperties extends $tea.Model {
 }
 
 export class ListDentriesResponseBodyDentriesThumbnail extends $tea.Model {
+  /**
+   * @example
+   * 64
+   */
   height?: number;
+  /**
+   * @example
+   * url
+   */
   url?: string;
+  /**
+   * @example
+   * 64
+   */
   width?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6050,24 +7984,92 @@ export class ListDentriesResponseBodyDentriesThumbnail extends $tea.Model {
 
 export class ListDentriesResponseBodyDentries extends $tea.Model {
   appProperties?: { [key: string]: DentriesAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: ListDentriesResponseBodyDentriesProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
   thumbnail?: ListDentriesResponseBodyDentriesThumbnail;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6125,6 +8127,10 @@ export class ListDentriesResponseBodyDentries extends $tea.Model {
 }
 
 export class ListDentryVersionsResponseBodyDentriesProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6145,23 +8151,91 @@ export class ListDentryVersionsResponseBodyDentriesProperties extends $tea.Model
 
 export class ListDentryVersionsResponseBodyDentries extends $tea.Model {
   appProperties?: { [key: string]: DentriesAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: ListDentryVersionsResponseBodyDentriesProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6218,7 +8292,15 @@ export class ListDentryVersionsResponseBodyDentries extends $tea.Model {
 
 export class ListPermissionsRequestOption extends $tea.Model {
   filterRoleIds?: string[];
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6242,8 +8324,20 @@ export class ListPermissionsRequestOption extends $tea.Model {
 }
 
 export class ListPermissionsResponseBodyPermissionsMember extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * member_id
+   */
   id?: string;
+  /**
+   * @example
+   * USER
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6267,7 +8361,15 @@ export class ListPermissionsResponseBodyPermissionsMember extends $tea.Model {
 }
 
 export class ListPermissionsResponseBodyPermissionsRole extends $tea.Model {
+  /**
+   * @example
+   * MANAGER
+   */
   id?: string;
+  /**
+   * @example
+   * MANAGER
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6289,13 +8391,37 @@ export class ListPermissionsResponseBodyPermissionsRole extends $tea.Model {
 }
 
 export class ListPermissionsResponseBodyPermissions extends $tea.Model {
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * 3600
+   */
   duration?: number;
   member?: ListPermissionsResponseBodyPermissionsMember;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * operator_id
+   */
   operatorId?: string;
   role?: ListPermissionsResponseBodyPermissionsRole;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6329,14 +8455,50 @@ export class ListPermissionsResponseBodyPermissions extends $tea.Model {
 }
 
 export class ListRecycleItemsResponseBodyRecycleItems extends $tea.Model {
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * recycle_item_id
+   */
   id?: string;
+  /**
+   * @example
+   * operator_id
+   */
   operatorId?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   operatorTime?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   originalName?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   originalPath?: string;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6372,7 +8534,15 @@ export class ListRecycleItemsResponseBodyRecycleItems extends $tea.Model {
 }
 
 export class MoveDentriesRequestOption extends $tea.Model {
+  /**
+   * @example
+   * AUTO_RENAME
+   */
   conflictStrategy?: string;
+  /**
+   * @example
+   * true
+   */
   preservePermissions?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6394,13 +8564,45 @@ export class MoveDentriesRequestOption extends $tea.Model {
 }
 
 export class MoveDentriesResponseBodyResultItems extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   async?: boolean;
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * permissionDenied
+   */
   errorCode?: string;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
+  /**
+   * @example
+   * target_dentry_id
+   */
   targetDentryId?: string;
+  /**
+   * @example
+   * target_space_id
+   */
   targetSpaceId?: string;
+  /**
+   * @example
+   * task_id
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6434,7 +8636,15 @@ export class MoveDentriesResponseBodyResultItems extends $tea.Model {
 }
 
 export class MoveDentryRequestOption extends $tea.Model {
+  /**
+   * @example
+   * AUTO_RENAME
+   */
   conflictStrategy?: string;
+  /**
+   * @example
+   * true
+   */
   presevePermissions?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6456,6 +8666,10 @@ export class MoveDentryRequestOption extends $tea.Model {
 }
 
 export class MoveDentryResponseBodyDentryProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6476,23 +8690,91 @@ export class MoveDentryResponseBodyDentryProperties extends $tea.Model {
 
 export class MoveDentryResponseBodyDentry extends $tea.Model {
   appProperties?: { [key: string]: DentryAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: MoveDentryResponseBodyDentryProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6548,7 +8830,21 @@ export class MoveDentryResponseBodyDentry extends $tea.Model {
 }
 
 export class RegisterOpenInfoRequestOpenInfos extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PREVIEW
+   */
   openType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * url
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6570,6 +8866,10 @@ export class RegisterOpenInfoRequestOpenInfos extends $tea.Model {
 }
 
 export class RenameDentryResponseBodyDentryProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6590,23 +8890,91 @@ export class RenameDentryResponseBodyDentryProperties extends $tea.Model {
 
 export class RenameDentryResponseBodyDentry extends $tea.Model {
   appProperties?: { [key: string]: DentryAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: RenameDentryResponseBodyDentryProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6662,6 +9030,10 @@ export class RenameDentryResponseBodyDentry extends $tea.Model {
 }
 
 export class RestoreRecycleItemRequestOption extends $tea.Model {
+  /**
+   * @example
+   * AUTO_RENAME
+   */
   conflictStrategy?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6681,6 +9053,10 @@ export class RestoreRecycleItemRequestOption extends $tea.Model {
 }
 
 export class RestoreRecycleItemsRequestOption extends $tea.Model {
+  /**
+   * @example
+   * AUTO_RENAME
+   */
   conflictStrategy?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6700,13 +9076,45 @@ export class RestoreRecycleItemsRequestOption extends $tea.Model {
 }
 
 export class RestoreRecycleItemsResponseBodyResultItems extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   async?: boolean;
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * permissionDenied
+   */
   errorCode?: string;
+  /**
+   * @example
+   * recyclebin_id
+   */
   recycleBinId?: string;
+  /**
+   * @example
+   * recycle_item_id
+   */
   recycleItemId?: string;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
+  /**
+   * @example
+   * task_id
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6740,8 +9148,29 @@ export class RestoreRecycleItemsResponseBodyResultItems extends $tea.Model {
 }
 
 export class UpdateDentryAppPropertiesRequestAppProperties extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * property_name
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * property_value
+   */
   value?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PRIVATE
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6765,8 +9194,26 @@ export class UpdateDentryAppPropertiesRequestAppProperties extends $tea.Model {
 }
 
 export class UpdatePermissionRequestMembers extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * member_id
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * USER
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6790,6 +9237,10 @@ export class UpdatePermissionRequestMembers extends $tea.Model {
 }
 
 export class UpdatePermissionRequestOption extends $tea.Model {
+  /**
+   * @example
+   * 3600
+   */
   duration?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6810,12 +9261,11 @@ export class UpdatePermissionRequestOption extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -6825,12 +9275,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 添加文件夹
-   *
-   * @param request AddFolderRequest
-   * @param headers AddFolderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddFolderResponse
+   * 添加文件夹
+   * 
+   * @param request - AddFolderRequest
+   * @param headers - AddFolderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddFolderResponse
    */
   async addFolderWithOptions(spaceId: string, parentId: string, request: AddFolderRequest, headers: AddFolderHeaders, runtime: $Util.RuntimeOptions): Promise<AddFolderResponse> {
     Util.validateModel(request);
@@ -6877,10 +9327,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加文件夹
-   *
-   * @param request AddFolderRequest
-   * @return AddFolderResponse
+   * 添加文件夹
+   * 
+   * @param request - AddFolderRequest
+   * @returns AddFolderResponse
    */
   async addFolder(spaceId: string, parentId: string, request: AddFolderRequest): Promise<AddFolderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6889,12 +9339,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加权限
-   *
-   * @param request AddPermissionRequest
-   * @param headers AddPermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddPermissionResponse
+   * 添加权限
+   * 
+   * @param request - AddPermissionRequest
+   * @param headers - AddPermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddPermissionResponse
    */
   async addPermissionWithOptions(spaceId: string, dentryId: string, request: AddPermissionRequest, headers: AddPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<AddPermissionResponse> {
     Util.validateModel(request);
@@ -6945,10 +9395,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加权限
-   *
-   * @param request AddPermissionRequest
-   * @return AddPermissionResponse
+   * 添加权限
+   * 
+   * @param request - AddPermissionRequest
+   * @returns AddPermissionResponse
    */
   async addPermission(spaceId: string, dentryId: string, request: AddPermissionRequest): Promise<AddPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6957,12 +9407,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加空间
-   *
-   * @param request AddSpaceRequest
-   * @param headers AddSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddSpaceResponse
+   * 添加空间
+   * 
+   * @param request - AddSpaceRequest
+   * @param headers - AddSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddSpaceResponse
    */
   async addSpaceWithOptions(request: AddSpaceRequest, headers: AddSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<AddSpaceResponse> {
     Util.validateModel(request);
@@ -7005,10 +9455,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加空间
-   *
-   * @param request AddSpaceRequest
-   * @return AddSpaceResponse
+   * 添加空间
+   * 
+   * @param request - AddSpaceRequest
+   * @returns AddSpaceResponse
    */
   async addSpace(request: AddSpaceRequest): Promise<AddSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7017,12 +9467,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清空回收站
-   *
-   * @param request ClearRecycleBinRequest
-   * @param headers ClearRecycleBinHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ClearRecycleBinResponse
+   * 清空回收站
+   * 
+   * @param request - ClearRecycleBinRequest
+   * @param headers - ClearRecycleBinHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ClearRecycleBinResponse
    */
   async clearRecycleBinWithOptions(recycleBinId: string, request: ClearRecycleBinRequest, headers: ClearRecycleBinHeaders, runtime: $Util.RuntimeOptions): Promise<ClearRecycleBinResponse> {
     Util.validateModel(request);
@@ -7059,10 +9509,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清空回收站
-   *
-   * @param request ClearRecycleBinRequest
-   * @return ClearRecycleBinResponse
+   * 清空回收站
+   * 
+   * @param request - ClearRecycleBinRequest
+   * @returns ClearRecycleBinResponse
    */
   async clearRecycleBin(recycleBinId: string, request: ClearRecycleBinRequest): Promise<ClearRecycleBinResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7071,12 +9521,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 提交文件
-   *
-   * @param request CommitFileRequest
-   * @param headers CommitFileHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CommitFileResponse
+   * 提交文件
+   * 
+   * @param request - CommitFileRequest
+   * @param headers - CommitFileHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CommitFileResponse
    */
   async commitFileWithOptions(spaceId: string, request: CommitFileRequest, headers: CommitFileHeaders, runtime: $Util.RuntimeOptions): Promise<CommitFileResponse> {
     Util.validateModel(request);
@@ -7131,10 +9581,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 提交文件
-   *
-   * @param request CommitFileRequest
-   * @return CommitFileResponse
+   * 提交文件
+   * 
+   * @param request - CommitFileRequest
+   * @returns CommitFileResponse
    */
   async commitFile(spaceId: string, request: CommitFileRequest): Promise<CommitFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7143,12 +9593,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量拷贝文件或文件夹
-   *
-   * @param request CopyDentriesRequest
-   * @param headers CopyDentriesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CopyDentriesResponse
+   * 批量拷贝文件或文件夹
+   * 
+   * @param request - CopyDentriesRequest
+   * @param headers - CopyDentriesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CopyDentriesResponse
    */
   async copyDentriesWithOptions(spaceId: string, request: CopyDentriesRequest, headers: CopyDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<CopyDentriesResponse> {
     Util.validateModel(request);
@@ -7203,10 +9653,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量拷贝文件或文件夹
-   *
-   * @param request CopyDentriesRequest
-   * @return CopyDentriesResponse
+   * 批量拷贝文件或文件夹
+   * 
+   * @param request - CopyDentriesRequest
+   * @returns CopyDentriesResponse
    */
   async copyDentries(spaceId: string, request: CopyDentriesRequest): Promise<CopyDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7215,12 +9665,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 拷贝文件或文件夹
-   *
-   * @param request CopyDentryRequest
-   * @param headers CopyDentryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CopyDentryResponse
+   * 拷贝文件或文件夹
+   * 
+   * @param request - CopyDentryRequest
+   * @param headers - CopyDentryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CopyDentryResponse
    */
   async copyDentryWithOptions(spaceId: string, dentryId: string, request: CopyDentryRequest, headers: CopyDentryHeaders, runtime: $Util.RuntimeOptions): Promise<CopyDentryResponse> {
     Util.validateModel(request);
@@ -7271,10 +9721,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 拷贝文件或文件夹
-   *
-   * @param request CopyDentryRequest
-   * @return CopyDentryResponse
+   * 拷贝文件或文件夹
+   * 
+   * @param request - CopyDentryRequest
+   * @returns CopyDentryResponse
    */
   async copyDentry(spaceId: string, dentryId: string, request: CopyDentryRequest): Promise<CopyDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7283,12 +9733,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除文件或文件夹
-   *
-   * @param request DeleteDentriesRequest
-   * @param headers DeleteDentriesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteDentriesResponse
+   * 批量删除文件或文件夹
+   * 
+   * @param request - DeleteDentriesRequest
+   * @param headers - DeleteDentriesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteDentriesResponse
    */
   async deleteDentriesWithOptions(spaceId: string, request: DeleteDentriesRequest, headers: DeleteDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDentriesResponse> {
     Util.validateModel(request);
@@ -7335,10 +9785,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除文件或文件夹
-   *
-   * @param request DeleteDentriesRequest
-   * @return DeleteDentriesResponse
+   * 批量删除文件或文件夹
+   * 
+   * @param request - DeleteDentriesRequest
+   * @returns DeleteDentriesResponse
    */
   async deleteDentries(spaceId: string, request: DeleteDentriesRequest): Promise<DeleteDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7347,12 +9797,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除文件或文件夹
-   *
-   * @param request DeleteDentryRequest
-   * @param headers DeleteDentryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteDentryResponse
+   * 删除文件或文件夹
+   * 
+   * @param request - DeleteDentryRequest
+   * @param headers - DeleteDentryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteDentryResponse
    */
   async deleteDentryWithOptions(spaceId: string, dentryId: string, request: DeleteDentryRequest, headers: DeleteDentryHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDentryResponse> {
     Util.validateModel(request);
@@ -7393,10 +9843,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除文件或文件夹
-   *
-   * @param request DeleteDentryRequest
-   * @return DeleteDentryResponse
+   * 删除文件或文件夹
+   * 
+   * @param request - DeleteDentryRequest
+   * @returns DeleteDentryResponse
    */
   async deleteDentry(spaceId: string, dentryId: string, request: DeleteDentryRequest): Promise<DeleteDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7405,12 +9855,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除文件上的App属性值
-   *
-   * @param request DeleteDentryAppPropertiesRequest
-   * @param headers DeleteDentryAppPropertiesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteDentryAppPropertiesResponse
+   * 删除文件上的App属性值
+   * 
+   * @param request - DeleteDentryAppPropertiesRequest
+   * @param headers - DeleteDentryAppPropertiesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteDentryAppPropertiesResponse
    */
   async deleteDentryAppPropertiesWithOptions(spaceId: string, dentryId: string, request: DeleteDentryAppPropertiesRequest, headers: DeleteDentryAppPropertiesHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDentryAppPropertiesResponse> {
     Util.validateModel(request);
@@ -7453,10 +9903,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除文件上的App属性值
-   *
-   * @param request DeleteDentryAppPropertiesRequest
-   * @return DeleteDentryAppPropertiesResponse
+   * 删除文件上的App属性值
+   * 
+   * @param request - DeleteDentryAppPropertiesRequest
+   * @returns DeleteDentryAppPropertiesResponse
    */
   async deleteDentryAppProperties(spaceId: string, dentryId: string, request: DeleteDentryAppPropertiesRequest): Promise<DeleteDentryAppPropertiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7465,12 +9915,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除权限
-   *
-   * @param request DeletePermissionRequest
-   * @param headers DeletePermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeletePermissionResponse
+   * 删除权限
+   * 
+   * @param request - DeletePermissionRequest
+   * @param headers - DeletePermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeletePermissionResponse
    */
   async deletePermissionWithOptions(spaceId: string, dentryId: string, request: DeletePermissionRequest, headers: DeletePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePermissionResponse> {
     Util.validateModel(request);
@@ -7517,10 +9967,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除权限
-   *
-   * @param request DeletePermissionRequest
-   * @return DeletePermissionResponse
+   * 删除权限
+   * 
+   * @param request - DeletePermissionRequest
+   * @returns DeletePermissionResponse
    */
   async deletePermission(spaceId: string, dentryId: string, request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7529,12 +9979,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除回收项, 删除之后该记录从回收站删除, 后续文件就无法恢复了
-   *
-   * @param request DeleteRecycleItemRequest
-   * @param headers DeleteRecycleItemHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteRecycleItemResponse
+   * 删除回收项, 删除之后该记录从回收站删除, 后续文件就无法恢复了
+   * 
+   * @param request - DeleteRecycleItemRequest
+   * @param headers - DeleteRecycleItemHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteRecycleItemResponse
    */
   async deleteRecycleItemWithOptions(recycleBinId: string, recycleItemId: string, request: DeleteRecycleItemRequest, headers: DeleteRecycleItemHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRecycleItemResponse> {
     Util.validateModel(request);
@@ -7571,10 +10021,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除回收项, 删除之后该记录从回收站删除, 后续文件就无法恢复了
-   *
-   * @param request DeleteRecycleItemRequest
-   * @return DeleteRecycleItemResponse
+   * 删除回收项, 删除之后该记录从回收站删除, 后续文件就无法恢复了
+   * 
+   * @param request - DeleteRecycleItemRequest
+   * @returns DeleteRecycleItemResponse
    */
   async deleteRecycleItem(recycleBinId: string, recycleItemId: string, request: DeleteRecycleItemRequest): Promise<DeleteRecycleItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7583,12 +10033,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除回收项, 删除之后该记录从回收站删除, 后续文件就无法恢复了
-   *
-   * @param request DeleteRecycleItemsRequest
-   * @param headers DeleteRecycleItemsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteRecycleItemsResponse
+   * 批量删除回收项, 删除之后该记录从回收站删除, 后续文件就无法恢复了
+   * 
+   * @param request - DeleteRecycleItemsRequest
+   * @param headers - DeleteRecycleItemsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteRecycleItemsResponse
    */
   async deleteRecycleItemsWithOptions(recycleBinId: string, request: DeleteRecycleItemsRequest, headers: DeleteRecycleItemsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRecycleItemsResponse> {
     Util.validateModel(request);
@@ -7631,10 +10081,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除回收项, 删除之后该记录从回收站删除, 后续文件就无法恢复了
-   *
-   * @param request DeleteRecycleItemsRequest
-   * @return DeleteRecycleItemsResponse
+   * 批量删除回收项, 删除之后该记录从回收站删除, 后续文件就无法恢复了
+   * 
+   * @param request - DeleteRecycleItemsRequest
+   * @returns DeleteRecycleItemsResponse
    */
   async deleteRecycleItems(recycleBinId: string, request: DeleteRecycleItemsRequest): Promise<DeleteRecycleItemsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7643,12 +10093,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取开放平台应用在企业存储中的相关应用信息
-   *
-   * @param request GetCurrentAppRequest
-   * @param headers GetCurrentAppHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCurrentAppResponse
+   * 获取开放平台应用在企业存储中的相关应用信息
+   * 
+   * @param request - GetCurrentAppRequest
+   * @param headers - GetCurrentAppHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCurrentAppResponse
    */
   async getCurrentAppWithOptions(request: GetCurrentAppRequest, headers: GetCurrentAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetCurrentAppResponse> {
     Util.validateModel(request);
@@ -7685,10 +10135,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取开放平台应用在企业存储中的相关应用信息
-   *
-   * @param request GetCurrentAppRequest
-   * @return GetCurrentAppResponse
+   * 获取开放平台应用在企业存储中的相关应用信息
+   * 
+   * @param request - GetCurrentAppRequest
+   * @returns GetCurrentAppResponse
    */
   async getCurrentApp(request: GetCurrentAppRequest): Promise<GetCurrentAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7697,12 +10147,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取文件(夹)信息
-   *
-   * @param request GetDentriesRequest
-   * @param headers GetDentriesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDentriesResponse
+   * 批量获取文件(夹)信息
+   * 
+   * @param request - GetDentriesRequest
+   * @param headers - GetDentriesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDentriesResponse
    */
   async getDentriesWithOptions(spaceId: string, request: GetDentriesRequest, headers: GetDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentriesResponse> {
     Util.validateModel(request);
@@ -7749,10 +10199,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取文件(夹)信息
-   *
-   * @param request GetDentriesRequest
-   * @return GetDentriesResponse
+   * 批量获取文件(夹)信息
+   * 
+   * @param request - GetDentriesRequest
+   * @returns GetDentriesResponse
    */
   async getDentries(spaceId: string, request: GetDentriesRequest): Promise<GetDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7761,12 +10211,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件(夹)信息
-   *
-   * @param request GetDentryRequest
-   * @param headers GetDentryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDentryResponse
+   * 获取文件(夹)信息
+   * 
+   * @param request - GetDentryRequest
+   * @param headers - GetDentryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDentryResponse
    */
   async getDentryWithOptions(spaceId: string, dentryId: string, request: GetDentryRequest, headers: GetDentryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryResponse> {
     Util.validateModel(request);
@@ -7809,10 +10259,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件(夹)信息
-   *
-   * @param request GetDentryRequest
-   * @return GetDentryResponse
+   * 获取文件(夹)信息
+   * 
+   * @param request - GetDentryRequest
+   * @returns GetDentryResponse
    */
   async getDentry(spaceId: string, dentryId: string, request: GetDentryRequest): Promise<GetDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7821,12 +10271,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件打开链接
-   *
-   * @param request GetDentryOpenInfoRequest
-   * @param headers GetDentryOpenInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDentryOpenInfoResponse
+   * 获取文件打开链接
+   * 
+   * @param request - GetDentryOpenInfoRequest
+   * @param headers - GetDentryOpenInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDentryOpenInfoResponse
    */
   async getDentryOpenInfoWithOptions(spaceId: string, dentryId: string, request: GetDentryOpenInfoRequest, headers: GetDentryOpenInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryOpenInfoResponse> {
     Util.validateModel(request);
@@ -7869,10 +10319,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件打开链接
-   *
-   * @param request GetDentryOpenInfoRequest
-   * @return GetDentryOpenInfoResponse
+   * 获取文件打开链接
+   * 
+   * @param request - GetDentryOpenInfoRequest
+   * @returns GetDentryOpenInfoResponse
    */
   async getDentryOpenInfo(spaceId: string, dentryId: string, request: GetDentryOpenInfoRequest): Promise<GetDentryOpenInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7881,12 +10331,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取文件缩略图
-   *
-   * @param request GetDentryThumbnailsRequest
-   * @param headers GetDentryThumbnailsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDentryThumbnailsResponse
+   * 批量获取文件缩略图
+   * 
+   * @param request - GetDentryThumbnailsRequest
+   * @param headers - GetDentryThumbnailsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDentryThumbnailsResponse
    */
   async getDentryThumbnailsWithOptions(spaceId: string, request: GetDentryThumbnailsRequest, headers: GetDentryThumbnailsHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryThumbnailsResponse> {
     Util.validateModel(request);
@@ -7929,10 +10379,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取文件缩略图
-   *
-   * @param request GetDentryThumbnailsRequest
-   * @return GetDentryThumbnailsResponse
+   * 批量获取文件缩略图
+   * 
+   * @param request - GetDentryThumbnailsRequest
+   * @returns GetDentryThumbnailsResponse
    */
   async getDentryThumbnails(spaceId: string, request: GetDentryThumbnailsRequest): Promise<GetDentryThumbnailsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7941,12 +10391,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件下载信息
-   *
-   * @param request GetFileDownloadInfoRequest
-   * @param headers GetFileDownloadInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFileDownloadInfoResponse
+   * 获取文件下载信息
+   * 
+   * @param request - GetFileDownloadInfoRequest
+   * @param headers - GetFileDownloadInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFileDownloadInfoResponse
    */
   async getFileDownloadInfoWithOptions(spaceId: string, dentryId: string, request: GetFileDownloadInfoRequest, headers: GetFileDownloadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileDownloadInfoResponse> {
     Util.validateModel(request);
@@ -7989,10 +10439,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件下载信息
-   *
-   * @param request GetFileDownloadInfoRequest
-   * @return GetFileDownloadInfoResponse
+   * 获取文件下载信息
+   * 
+   * @param request - GetFileDownloadInfoRequest
+   * @returns GetFileDownloadInfoResponse
    */
   async getFileDownloadInfo(spaceId: string, dentryId: string, request: GetFileDownloadInfoRequest): Promise<GetFileDownloadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8001,12 +10451,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件上传信息
-   *
-   * @param request GetFileUploadInfoRequest
-   * @param headers GetFileUploadInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFileUploadInfoResponse
+   * 获取文件上传信息
+   * 
+   * @param request - GetFileUploadInfoRequest
+   * @param headers - GetFileUploadInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFileUploadInfoResponse
    */
   async getFileUploadInfoWithOptions(spaceId: string, request: GetFileUploadInfoRequest, headers: GetFileUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileUploadInfoResponse> {
     Util.validateModel(request);
@@ -8057,10 +10507,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件上传信息
-   *
-   * @param request GetFileUploadInfoRequest
-   * @return GetFileUploadInfoResponse
+   * 获取文件上传信息
+   * 
+   * @param request - GetFileUploadInfoRequest
+   * @returns GetFileUploadInfoResponse
    */
   async getFileUploadInfo(spaceId: string, request: GetFileUploadInfoRequest): Promise<GetFileUploadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8069,12 +10519,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件上传信息(分片上传)
-   *
-   * @param request GetMultipartFileUploadInfosRequest
-   * @param headers GetMultipartFileUploadInfosHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMultipartFileUploadInfosResponse
+   * 获取文件上传信息(分片上传)
+   * 
+   * @param request - GetMultipartFileUploadInfosRequest
+   * @param headers - GetMultipartFileUploadInfosHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMultipartFileUploadInfosResponse
    */
   async getMultipartFileUploadInfosWithOptions(request: GetMultipartFileUploadInfosRequest, headers: GetMultipartFileUploadInfosHeaders, runtime: $Util.RuntimeOptions): Promise<GetMultipartFileUploadInfosResponse> {
     Util.validateModel(request);
@@ -8125,10 +10575,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件上传信息(分片上传)
-   *
-   * @param request GetMultipartFileUploadInfosRequest
-   * @return GetMultipartFileUploadInfosResponse
+   * 获取文件上传信息(分片上传)
+   * 
+   * @param request - GetMultipartFileUploadInfosRequest
+   * @returns GetMultipartFileUploadInfosResponse
    */
   async getMultipartFileUploadInfos(request: GetMultipartFileUploadInfosRequest): Promise<GetMultipartFileUploadInfosResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8137,12 +10587,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业存储中企业维度的信息
-   *
-   * @param request GetOrgRequest
-   * @param headers GetOrgHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetOrgResponse
+   * 获取企业存储中企业维度的信息
+   * 
+   * @param request - GetOrgRequest
+   * @param headers - GetOrgHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOrgResponse
    */
   async getOrgWithOptions(corpId: string, request: GetOrgRequest, headers: GetOrgHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrgResponse> {
     Util.validateModel(request);
@@ -8179,10 +10629,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业存储中企业维度的信息
-   *
-   * @param request GetOrgRequest
-   * @return GetOrgResponse
+   * 获取企业存储中企业维度的信息
+   * 
+   * @param request - GetOrgRequest
+   * @returns GetOrgResponse
    */
   async getOrg(corpId: string, request: GetOrgRequest): Promise<GetOrgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8191,12 +10641,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取回收站信息
-   *
-   * @param request GetRecycleBinRequest
-   * @param headers GetRecycleBinHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRecycleBinResponse
+   * 获取回收站信息
+   * 
+   * @param request - GetRecycleBinRequest
+   * @param headers - GetRecycleBinHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRecycleBinResponse
    */
   async getRecycleBinWithOptions(request: GetRecycleBinRequest, headers: GetRecycleBinHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecycleBinResponse> {
     Util.validateModel(request);
@@ -8241,10 +10691,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取回收站信息
-   *
-   * @param request GetRecycleBinRequest
-   * @return GetRecycleBinResponse
+   * 获取回收站信息
+   * 
+   * @param request - GetRecycleBinRequest
+   * @returns GetRecycleBinResponse
    */
   async getRecycleBin(request: GetRecycleBinRequest): Promise<GetRecycleBinResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8253,12 +10703,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取回收项详情
-   *
-   * @param request GetRecycleItemRequest
-   * @param headers GetRecycleItemHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRecycleItemResponse
+   * 获取回收项详情
+   * 
+   * @param request - GetRecycleItemRequest
+   * @param headers - GetRecycleItemHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRecycleItemResponse
    */
   async getRecycleItemWithOptions(recycleBinId: string, recycleItemId: string, request: GetRecycleItemRequest, headers: GetRecycleItemHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecycleItemResponse> {
     Util.validateModel(request);
@@ -8295,10 +10745,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取回收项详情
-   *
-   * @param request GetRecycleItemRequest
-   * @return GetRecycleItemResponse
+   * 获取回收项详情
+   * 
+   * @param request - GetRecycleItemRequest
+   * @returns GetRecycleItemResponse
    */
   async getRecycleItem(recycleBinId: string, recycleItemId: string, request: GetRecycleItemRequest): Promise<GetRecycleItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8307,12 +10757,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取空间信息
-   *
-   * @param request GetSpaceRequest
-   * @param headers GetSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSpaceResponse
+   * 获取空间信息
+   * 
+   * @param request - GetSpaceRequest
+   * @param headers - GetSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSpaceResponse
    */
   async getSpaceWithOptions(spaceId: string, request: GetSpaceRequest, headers: GetSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceResponse> {
     Util.validateModel(request);
@@ -8349,10 +10799,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取空间信息
-   *
-   * @param request GetSpaceRequest
-   * @return GetSpaceResponse
+   * 获取空间信息
+   * 
+   * @param request - GetSpaceRequest
+   * @returns GetSpaceResponse
    */
   async getSpace(spaceId: string, request: GetSpaceRequest): Promise<GetSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8361,12 +10811,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取异步任务信息
-   *
-   * @param request GetTaskRequest
-   * @param headers GetTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTaskResponse
+   * 获取异步任务信息
+   * 
+   * @param request - GetTaskRequest
+   * @param headers - GetTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTaskResponse
    */
   async getTaskWithOptions(taskId: string, request: GetTaskRequest, headers: GetTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskResponse> {
     Util.validateModel(request);
@@ -8403,10 +10853,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取异步任务信息
-   *
-   * @param request GetTaskRequest
-   * @return GetTaskResponse
+   * 获取异步任务信息
+   * 
+   * @param request - GetTaskRequest
+   * @returns GetTaskResponse
    */
   async getTask(taskId: string, request: GetTaskRequest): Promise<GetTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8415,12 +10865,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 初始化文件分片上传
-   *
-   * @param request InitMultipartFileUploadRequest
-   * @param headers InitMultipartFileUploadHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InitMultipartFileUploadResponse
+   * 初始化文件分片上传
+   * 
+   * @param request - InitMultipartFileUploadRequest
+   * @param headers - InitMultipartFileUploadHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InitMultipartFileUploadResponse
    */
   async initMultipartFileUploadWithOptions(spaceId: string, request: InitMultipartFileUploadRequest, headers: InitMultipartFileUploadHeaders, runtime: $Util.RuntimeOptions): Promise<InitMultipartFileUploadResponse> {
     Util.validateModel(request);
@@ -8463,10 +10913,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 初始化文件分片上传
-   *
-   * @param request InitMultipartFileUploadRequest
-   * @return InitMultipartFileUploadResponse
+   * 初始化文件分片上传
+   * 
+   * @param request - InitMultipartFileUploadRequest
+   * @returns InitMultipartFileUploadResponse
    */
   async initMultipartFileUpload(spaceId: string, request: InitMultipartFileUploadRequest): Promise<InitMultipartFileUploadResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8475,12 +10925,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件列表
-   *
-   * @param request ListAllDentriesRequest
-   * @param headers ListAllDentriesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListAllDentriesResponse
+   * 获取文件列表
+   * 
+   * @param request - ListAllDentriesRequest
+   * @param headers - ListAllDentriesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListAllDentriesResponse
    */
   async listAllDentriesWithOptions(spaceId: string, request: ListAllDentriesRequest, headers: ListAllDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<ListAllDentriesResponse> {
     Util.validateModel(request);
@@ -8523,10 +10973,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件列表
-   *
-   * @param request ListAllDentriesRequest
-   * @return ListAllDentriesResponse
+   * 获取文件列表
+   * 
+   * @param request - ListAllDentriesRequest
+   * @returns ListAllDentriesResponse
    */
   async listAllDentries(spaceId: string, request: ListAllDentriesRequest): Promise<ListAllDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8535,12 +10985,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件列表
-   *
-   * @param request ListDentriesRequest
-   * @param headers ListDentriesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListDentriesResponse
+   * 获取文件列表
+   * 
+   * @param request - ListDentriesRequest
+   * @param headers - ListDentriesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListDentriesResponse
    */
   async listDentriesWithOptions(spaceId: string, request: ListDentriesRequest, headers: ListDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<ListDentriesResponse> {
     Util.validateModel(request);
@@ -8601,10 +11051,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件列表
-   *
-   * @param request ListDentriesRequest
-   * @return ListDentriesResponse
+   * 获取文件列表
+   * 
+   * @param request - ListDentriesRequest
+   * @returns ListDentriesResponse
    */
   async listDentries(spaceId: string, request: ListDentriesRequest): Promise<ListDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8613,12 +11063,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件历史版本
-   *
-   * @param request ListDentryVersionsRequest
-   * @param headers ListDentryVersionsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListDentryVersionsResponse
+   * 获取文件历史版本
+   * 
+   * @param request - ListDentryVersionsRequest
+   * @param headers - ListDentryVersionsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListDentryVersionsResponse
    */
   async listDentryVersionsWithOptions(spaceId: string, dentryId: string, request: ListDentryVersionsRequest, headers: ListDentryVersionsHeaders, runtime: $Util.RuntimeOptions): Promise<ListDentryVersionsResponse> {
     Util.validateModel(request);
@@ -8663,10 +11113,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件历史版本
-   *
-   * @param request ListDentryVersionsRequest
-   * @return ListDentryVersionsResponse
+   * 获取文件历史版本
+   * 
+   * @param request - ListDentryVersionsRequest
+   * @returns ListDentryVersionsResponse
    */
   async listDentryVersions(spaceId: string, dentryId: string, request: ListDentryVersionsRequest): Promise<ListDentryVersionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8675,12 +11125,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取权限列表
-   *
-   * @param request ListPermissionsRequest
-   * @param headers ListPermissionsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListPermissionsResponse
+   * 获取权限列表
+   * 
+   * @param request - ListPermissionsRequest
+   * @param headers - ListPermissionsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListPermissionsResponse
    */
   async listPermissionsWithOptions(spaceId: string, dentryId: string, request: ListPermissionsRequest, headers: ListPermissionsHeaders, runtime: $Util.RuntimeOptions): Promise<ListPermissionsResponse> {
     Util.validateModel(request);
@@ -8723,10 +11173,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取权限列表
-   *
-   * @param request ListPermissionsRequest
-   * @return ListPermissionsResponse
+   * 获取权限列表
+   * 
+   * @param request - ListPermissionsRequest
+   * @returns ListPermissionsResponse
    */
   async listPermissions(spaceId: string, dentryId: string, request: ListPermissionsRequest): Promise<ListPermissionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8735,12 +11185,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取回收项列表
-   *
-   * @param request ListRecycleItemsRequest
-   * @param headers ListRecycleItemsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListRecycleItemsResponse
+   * 获取回收项列表
+   * 
+   * @param request - ListRecycleItemsRequest
+   * @param headers - ListRecycleItemsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListRecycleItemsResponse
    */
   async listRecycleItemsWithOptions(recycleBinId: string, request: ListRecycleItemsRequest, headers: ListRecycleItemsHeaders, runtime: $Util.RuntimeOptions): Promise<ListRecycleItemsResponse> {
     Util.validateModel(request);
@@ -8785,10 +11235,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取回收项列表
-   *
-   * @param request ListRecycleItemsRequest
-   * @return ListRecycleItemsResponse
+   * 获取回收项列表
+   * 
+   * @param request - ListRecycleItemsRequest
+   * @returns ListRecycleItemsResponse
    */
   async listRecycleItems(recycleBinId: string, request: ListRecycleItemsRequest): Promise<ListRecycleItemsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8797,12 +11247,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量移动文件或文件夹
-   *
-   * @param request MoveDentriesRequest
-   * @param headers MoveDentriesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MoveDentriesResponse
+   * 批量移动文件或文件夹
+   * 
+   * @param request - MoveDentriesRequest
+   * @param headers - MoveDentriesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MoveDentriesResponse
    */
   async moveDentriesWithOptions(spaceId: string, request: MoveDentriesRequest, headers: MoveDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<MoveDentriesResponse> {
     Util.validateModel(request);
@@ -8857,10 +11307,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量移动文件或文件夹
-   *
-   * @param request MoveDentriesRequest
-   * @return MoveDentriesResponse
+   * 批量移动文件或文件夹
+   * 
+   * @param request - MoveDentriesRequest
+   * @returns MoveDentriesResponse
    */
   async moveDentries(spaceId: string, request: MoveDentriesRequest): Promise<MoveDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8869,12 +11319,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 移动文件或文件夹
-   *
-   * @param request MoveDentryRequest
-   * @param headers MoveDentryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MoveDentryResponse
+   * 移动文件或文件夹
+   * 
+   * @param request - MoveDentryRequest
+   * @param headers - MoveDentryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MoveDentryResponse
    */
   async moveDentryWithOptions(spaceId: string, dentryId: string, request: MoveDentryRequest, headers: MoveDentryHeaders, runtime: $Util.RuntimeOptions): Promise<MoveDentryResponse> {
     Util.validateModel(request);
@@ -8925,10 +11375,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 移动文件或文件夹
-   *
-   * @param request MoveDentryRequest
-   * @return MoveDentryResponse
+   * 移动文件或文件夹
+   * 
+   * @param request - MoveDentryRequest
+   * @returns MoveDentryResponse
    */
   async moveDentry(spaceId: string, dentryId: string, request: MoveDentryRequest): Promise<MoveDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8937,12 +11387,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 注册文件预览或编辑链接
-   *
-   * @param request RegisterOpenInfoRequest
-   * @param headers RegisterOpenInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RegisterOpenInfoResponse
+   * 注册文件预览或编辑链接
+   * 
+   * @param request - RegisterOpenInfoRequest
+   * @param headers - RegisterOpenInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RegisterOpenInfoResponse
    */
   async registerOpenInfoWithOptions(spaceId: string, dentryId: string, request: RegisterOpenInfoRequest, headers: RegisterOpenInfoHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterOpenInfoResponse> {
     Util.validateModel(request);
@@ -8989,10 +11439,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 注册文件预览或编辑链接
-   *
-   * @param request RegisterOpenInfoRequest
-   * @return RegisterOpenInfoResponse
+   * 注册文件预览或编辑链接
+   * 
+   * @param request - RegisterOpenInfoRequest
+   * @returns RegisterOpenInfoResponse
    */
   async registerOpenInfo(spaceId: string, dentryId: string, request: RegisterOpenInfoRequest): Promise<RegisterOpenInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9001,12 +11451,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 重命名文件或文件夹
-   *
-   * @param request RenameDentryRequest
-   * @param headers RenameDentryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RenameDentryResponse
+   * 重命名文件或文件夹
+   * 
+   * @param request - RenameDentryRequest
+   * @param headers - RenameDentryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RenameDentryResponse
    */
   async renameDentryWithOptions(spaceId: string, dentryId: string, request: RenameDentryRequest, headers: RenameDentryHeaders, runtime: $Util.RuntimeOptions): Promise<RenameDentryResponse> {
     Util.validateModel(request);
@@ -9049,10 +11499,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 重命名文件或文件夹
-   *
-   * @param request RenameDentryRequest
-   * @return RenameDentryResponse
+   * 重命名文件或文件夹
+   * 
+   * @param request - RenameDentryRequest
+   * @returns RenameDentryResponse
    */
   async renameDentry(spaceId: string, dentryId: string, request: RenameDentryRequest): Promise<RenameDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9061,12 +11511,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 还原回收站中的回收项
-   *
-   * @param request RestoreRecycleItemRequest
-   * @param headers RestoreRecycleItemHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RestoreRecycleItemResponse
+   * 还原回收站中的回收项
+   * 
+   * @param request - RestoreRecycleItemRequest
+   * @param headers - RestoreRecycleItemHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RestoreRecycleItemResponse
    */
   async restoreRecycleItemWithOptions(recycleBinId: string, recycleItemId: string, request: RestoreRecycleItemRequest, headers: RestoreRecycleItemHeaders, runtime: $Util.RuntimeOptions): Promise<RestoreRecycleItemResponse> {
     Util.validateModel(request);
@@ -9109,10 +11559,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 还原回收站中的回收项
-   *
-   * @param request RestoreRecycleItemRequest
-   * @return RestoreRecycleItemResponse
+   * 还原回收站中的回收项
+   * 
+   * @param request - RestoreRecycleItemRequest
+   * @returns RestoreRecycleItemResponse
    */
   async restoreRecycleItem(recycleBinId: string, recycleItemId: string, request: RestoreRecycleItemRequest): Promise<RestoreRecycleItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9121,12 +11571,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量还原回收站中的回收项
-   *
-   * @param request RestoreRecycleItemsRequest
-   * @param headers RestoreRecycleItemsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RestoreRecycleItemsResponse
+   * 批量还原回收站中的回收项
+   * 
+   * @param request - RestoreRecycleItemsRequest
+   * @param headers - RestoreRecycleItemsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RestoreRecycleItemsResponse
    */
   async restoreRecycleItemsWithOptions(recycleBinId: string, request: RestoreRecycleItemsRequest, headers: RestoreRecycleItemsHeaders, runtime: $Util.RuntimeOptions): Promise<RestoreRecycleItemsResponse> {
     Util.validateModel(request);
@@ -9173,10 +11623,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量还原回收站中的回收项
-   *
-   * @param request RestoreRecycleItemsRequest
-   * @return RestoreRecycleItemsResponse
+   * 批量还原回收站中的回收项
+   * 
+   * @param request - RestoreRecycleItemsRequest
+   * @returns RestoreRecycleItemsResponse
    */
   async restoreRecycleItems(recycleBinId: string, request: RestoreRecycleItemsRequest): Promise<RestoreRecycleItemsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9185,12 +11635,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 恢复文件历史版本
-   *
-   * @param request RevertDentryVersionRequest
-   * @param headers RevertDentryVersionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RevertDentryVersionResponse
+   * 恢复文件历史版本
+   * 
+   * @param request - RevertDentryVersionRequest
+   * @param headers - RevertDentryVersionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RevertDentryVersionResponse
    */
   async revertDentryVersionWithOptions(spaceId: string, dentryId: string, version: string, request: RevertDentryVersionRequest, headers: RevertDentryVersionHeaders, runtime: $Util.RuntimeOptions): Promise<RevertDentryVersionResponse> {
     Util.validateModel(request);
@@ -9227,10 +11677,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 恢复文件历史版本
-   *
-   * @param request RevertDentryVersionRequest
-   * @return RevertDentryVersionResponse
+   * 恢复文件历史版本
+   * 
+   * @param request - RevertDentryVersionRequest
+   * @returns RevertDentryVersionResponse
    */
   async revertDentryVersion(spaceId: string, dentryId: string, version: string, request: RevertDentryVersionRequest): Promise<RevertDentryVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9239,12 +11689,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 订阅文件变更事件
-   *
-   * @param request SubscribeEventRequest
-   * @param headers SubscribeEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SubscribeEventResponse
+   * 订阅文件变更事件
+   * 
+   * @param request - SubscribeEventRequest
+   * @param headers - SubscribeEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SubscribeEventResponse
    */
   async subscribeEventWithOptions(request: SubscribeEventRequest, headers: SubscribeEventHeaders, runtime: $Util.RuntimeOptions): Promise<SubscribeEventResponse> {
     Util.validateModel(request);
@@ -9291,10 +11741,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 订阅文件变更事件
-   *
-   * @param request SubscribeEventRequest
-   * @return SubscribeEventResponse
+   * 订阅文件变更事件
+   * 
+   * @param request - SubscribeEventRequest
+   * @returns SubscribeEventResponse
    */
   async subscribeEvent(request: SubscribeEventRequest): Promise<SubscribeEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9303,12 +11753,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消订阅文件变更事件
-   *
-   * @param request UnsubscribeEventRequest
-   * @param headers UnsubscribeEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UnsubscribeEventResponse
+   * 取消订阅文件变更事件
+   * 
+   * @param request - UnsubscribeEventRequest
+   * @param headers - UnsubscribeEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UnsubscribeEventResponse
    */
   async unsubscribeEventWithOptions(request: UnsubscribeEventRequest, headers: UnsubscribeEventHeaders, runtime: $Util.RuntimeOptions): Promise<UnsubscribeEventResponse> {
     Util.validateModel(request);
@@ -9355,10 +11805,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消订阅文件变更事件
-   *
-   * @param request UnsubscribeEventRequest
-   * @return UnsubscribeEventResponse
+   * 取消订阅文件变更事件
+   * 
+   * @param request - UnsubscribeEventRequest
+   * @returns UnsubscribeEventResponse
    */
   async unsubscribeEvent(request: UnsubscribeEventRequest): Promise<UnsubscribeEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9367,12 +11817,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改文件上的App属性值
-   *
-   * @param request UpdateDentryAppPropertiesRequest
-   * @param headers UpdateDentryAppPropertiesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateDentryAppPropertiesResponse
+   * 修改文件上的App属性值
+   * 
+   * @param request - UpdateDentryAppPropertiesRequest
+   * @param headers - UpdateDentryAppPropertiesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateDentryAppPropertiesResponse
    */
   async updateDentryAppPropertiesWithOptions(spaceId: string, dentryId: string, request: UpdateDentryAppPropertiesRequest, headers: UpdateDentryAppPropertiesHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDentryAppPropertiesResponse> {
     Util.validateModel(request);
@@ -9415,10 +11865,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改文件上的App属性值
-   *
-   * @param request UpdateDentryAppPropertiesRequest
-   * @return UpdateDentryAppPropertiesResponse
+   * 修改文件上的App属性值
+   * 
+   * @param request - UpdateDentryAppPropertiesRequest
+   * @returns UpdateDentryAppPropertiesResponse
    */
   async updateDentryAppProperties(spaceId: string, dentryId: string, request: UpdateDentryAppPropertiesRequest): Promise<UpdateDentryAppPropertiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9427,12 +11877,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改权限
-   *
-   * @param request UpdatePermissionRequest
-   * @param headers UpdatePermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdatePermissionResponse
+   * 修改权限
+   * 
+   * @param request - UpdatePermissionRequest
+   * @param headers - UpdatePermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdatePermissionResponse
    */
   async updatePermissionWithOptions(spaceId: string, dentryId: string, request: UpdatePermissionRequest, headers: UpdatePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePermissionResponse> {
     Util.validateModel(request);
@@ -9483,10 +11933,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改权限
-   *
-   * @param request UpdatePermissionRequest
-   * @return UpdatePermissionResponse
+   * 修改权限
+   * 
+   * @param request - UpdatePermissionRequest
+   * @returns UpdatePermissionResponse
    */
   async updatePermission(spaceId: string, dentryId: string, request: UpdatePermissionRequest): Promise<UpdatePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });

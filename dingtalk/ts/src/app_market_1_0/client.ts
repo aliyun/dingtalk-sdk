@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,15 @@ export class CreateAppGoodsServiceConversationHeaders extends $tea.Model {
 }
 
 export class CreateAppGoodsServiceConversationRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isvUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   orderId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -123,8 +129,29 @@ export class GetCoolAppAccessStatusHeaders extends $tea.Model {
 }
 
 export class GetCoolAppAccessStatusRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * b195bb70dde337aabf3bcc020bf6250c
+   */
   authCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * COOLAPP-1-1019F4BBC7D6212C5861000T
+   */
   coolAppCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cid5uZRmigtVWpjcKPLrp5Pag==
+   */
   encFieldBizCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -216,6 +243,10 @@ export class GetInAppSkuUrlHeaders extends $tea.Model {
 export class GetInAppSkuUrlRequest extends $tea.Model {
   callbackPage?: string;
   extendParam?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   goodsCode?: string;
   itemCode?: string;
   static names(): { [key: string]: string } {
@@ -393,19 +424,98 @@ export class QueryMarketOrderHeaders extends $tea.Model {
 }
 
 export class QueryMarketOrderResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2092310001312
+   */
   bizOrderId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding23219001
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10003298001
+   */
   createTimestamp?: number;
   endTimestamp?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FW_GOODS_12319001
+   */
   goodsCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试商品001
+   */
   goodsName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   inAppOrder?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FW_GOODS_31001
+   */
   itemCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试规格001
+   */
   itemName?: string;
+  /**
+   * @example
+   * 10003299001
+   */
   paidTimestamp?: number;
+  /**
+   * @example
+   * 1
+   */
   quantity?: number;
+  /**
+   * @example
+   * 10003298003
+   */
   startTimestamp?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   totalActualPayFee?: number;
   static names(): { [key: string]: string } {
     return {
@@ -498,9 +608,37 @@ export class UserTaskReportHeaders extends $tea.Model {
 }
 
 export class UserTaskReportRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * biz1231231231abcd
+   */
   bizNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2020-12-12 12:00:00
+   */
   operateDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * task-create
+   */
   taskTag?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2312
+   */
   userid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -551,6 +689,10 @@ export class UserTaskReportResponse extends $tea.Model {
 }
 
 export class GetPersonalExperienceInfoResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * ding1234
+   */
   mainCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -571,12 +713,11 @@ export class GetPersonalExperienceInfoResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -586,12 +727,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 创建应用商品服务群
-   *
-   * @param request CreateAppGoodsServiceConversationRequest
-   * @param headers CreateAppGoodsServiceConversationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateAppGoodsServiceConversationResponse
+   * 创建应用商品服务群
+   * 
+   * @param request - CreateAppGoodsServiceConversationRequest
+   * @param headers - CreateAppGoodsServiceConversationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateAppGoodsServiceConversationResponse
    */
   async createAppGoodsServiceConversationWithOptions(request: CreateAppGoodsServiceConversationRequest, headers: CreateAppGoodsServiceConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAppGoodsServiceConversationResponse> {
     Util.validateModel(request);
@@ -632,10 +773,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建应用商品服务群
-   *
-   * @param request CreateAppGoodsServiceConversationRequest
-   * @return CreateAppGoodsServiceConversationResponse
+   * 创建应用商品服务群
+   * 
+   * @param request - CreateAppGoodsServiceConversationRequest
+   * @returns CreateAppGoodsServiceConversationResponse
    */
   async createAppGoodsServiceConversation(request: CreateAppGoodsServiceConversationRequest): Promise<CreateAppGoodsServiceConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -644,12 +785,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取酷应用访问状态
-   *
-   * @param request GetCoolAppAccessStatusRequest
-   * @param headers GetCoolAppAccessStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCoolAppAccessStatusResponse
+   * 获取酷应用访问状态
+   * 
+   * @param request - GetCoolAppAccessStatusRequest
+   * @param headers - GetCoolAppAccessStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCoolAppAccessStatusResponse
    */
   async getCoolAppAccessStatusWithOptions(request: GetCoolAppAccessStatusRequest, headers: GetCoolAppAccessStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetCoolAppAccessStatusResponse> {
     Util.validateModel(request);
@@ -694,10 +835,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取酷应用访问状态
-   *
-   * @param request GetCoolAppAccessStatusRequest
-   * @return GetCoolAppAccessStatusResponse
+   * 获取酷应用访问状态
+   * 
+   * @param request - GetCoolAppAccessStatusRequest
+   * @returns GetCoolAppAccessStatusResponse
    */
   async getCoolAppAccessStatus(request: GetCoolAppAccessStatusRequest): Promise<GetCoolAppAccessStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -706,12 +847,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取内购商品SKU页面地址
-   *
-   * @param request GetInAppSkuUrlRequest
-   * @param headers GetInAppSkuUrlHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetInAppSkuUrlResponse
+   * 获取内购商品SKU页面地址
+   * 
+   * @param request - GetInAppSkuUrlRequest
+   * @param headers - GetInAppSkuUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetInAppSkuUrlResponse
    */
   async getInAppSkuUrlWithOptions(request: GetInAppSkuUrlRequest, headers: GetInAppSkuUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetInAppSkuUrlResponse> {
     Util.validateModel(request);
@@ -760,10 +901,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取内购商品SKU页面地址
-   *
-   * @param request GetInAppSkuUrlRequest
-   * @return GetInAppSkuUrlResponse
+   * 获取内购商品SKU页面地址
+   * 
+   * @param request - GetInAppSkuUrlRequest
+   * @returns GetInAppSkuUrlResponse
    */
   async getInAppSkuUrl(request: GetInAppSkuUrlRequest): Promise<GetInAppSkuUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -772,12 +913,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取个人体验相关信息
-   *
-   * @param request GetPersonalExperienceInfoRequest
-   * @param headers GetPersonalExperienceInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPersonalExperienceInfoResponse
+   * 获取个人体验相关信息
+   * 
+   * @param request - GetPersonalExperienceInfoRequest
+   * @param headers - GetPersonalExperienceInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPersonalExperienceInfoResponse
    */
   async getPersonalExperienceInfoWithOptions(request: GetPersonalExperienceInfoRequest, headers: GetPersonalExperienceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPersonalExperienceInfoResponse> {
     Util.validateModel(request);
@@ -814,10 +955,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取个人体验相关信息
-   *
-   * @param request GetPersonalExperienceInfoRequest
-   * @return GetPersonalExperienceInfoResponse
+   * 获取个人体验相关信息
+   * 
+   * @param request - GetPersonalExperienceInfoRequest
+   * @returns GetPersonalExperienceInfoResponse
    */
   async getPersonalExperienceInfo(request: GetPersonalExperienceInfoRequest): Promise<GetPersonalExperienceInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -826,11 +967,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 应用市场订单查询
-   *
-   * @param headers QueryMarketOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMarketOrderResponse
+   * 应用市场订单查询
+   * 
+   * @param headers - QueryMarketOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMarketOrderResponse
    */
   async queryMarketOrderWithOptions(orderId: string, headers: QueryMarketOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMarketOrderResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -860,9 +1001,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 应用市场订单查询
-   *
-   * @return QueryMarketOrderResponse
+   * 应用市场订单查询
+   * @returns QueryMarketOrderResponse
    */
   async queryMarketOrder(orderId: string): Promise<QueryMarketOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -871,12 +1011,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary app内用户操作任务同步
-   *
-   * @param request UserTaskReportRequest
-   * @param headers UserTaskReportHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UserTaskReportResponse
+   * app内用户操作任务同步
+   * 
+   * @param request - UserTaskReportRequest
+   * @param headers - UserTaskReportHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UserTaskReportResponse
    */
   async userTaskReportWithOptions(request: UserTaskReportRequest, headers: UserTaskReportHeaders, runtime: $Util.RuntimeOptions): Promise<UserTaskReportResponse> {
     Util.validateModel(request);
@@ -925,10 +1065,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary app内用户操作任务同步
-   *
-   * @param request UserTaskReportRequest
-   * @return UserTaskReportResponse
+   * app内用户操作任务同步
+   * 
+   * @param request - UserTaskReportRequest
+   * @returns UserTaskReportResponse
    */
   async userTaskReport(request: UserTaskReportRequest): Promise<UserTaskReportResponse> {
     let runtime = new $Util.RuntimeOptions({ });

@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,21 @@ export class BatchOTOQueryHeaders extends $tea.Model {
 }
 
 export class BatchOTOQueryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * asdfasdfasdf
+   */
   processQueryKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingcxx5317
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -55,6 +67,10 @@ export class BatchOTOQueryRequest extends $tea.Model {
 
 export class BatchOTOQueryResponseBody extends $tea.Model {
   messageReadInfoList?: BatchOTOQueryResponseBodyMessageReadInfoList[];
+  /**
+   * @example
+   * SUCESS
+   */
   sendStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -123,8 +139,26 @@ export class BatchRecallGroupHeaders extends $tea.Model {
 }
 
 export class BatchRecallGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingXXXXXXXXXX
+   */
   chatbotId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidfCSpXXXXXXXXXXXchatbotId
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processQueryKeys?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -148,7 +182,18 @@ export class BatchRecallGroupRequest extends $tea.Model {
 }
 
 export class BatchRecallGroupResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 5fe11095f46315d8d30d3f8XXXXXX:SYSTEM_ERROR
+   */
   failedResult?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   successResult?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -217,7 +262,18 @@ export class BatchRecallOTOHeaders extends $tea.Model {
 }
 
 export class BatchRecallOTORequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processQueryKeys?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingXXXXXX
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -239,6 +295,10 @@ export class BatchRecallOTORequest extends $tea.Model {
 }
 
 export class BatchRecallOTOResponseBody extends $tea.Model {
+  /**
+   * @example
+   * b5fe11095f46315d8d30d3f8XXXXXX:system error
+   */
   failedResult?: { [key: string]: string };
   successResult?: string[];
   static names(): { [key: string]: string } {
@@ -308,8 +368,26 @@ export class BatchRecallPrivateChatHeaders extends $tea.Model {
 }
 
 export class BatchRecallPrivateChatRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidfCSpXXXXXXXXXXXchatbotId
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processQueryKeys?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingXXXXXXXXXX
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -333,7 +411,18 @@ export class BatchRecallPrivateChatRequest extends $tea.Model {
 }
 
 export class BatchRecallPrivateChatResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 5fe11095f46315d8d30d3f8XXXXXX:SYSTEM_ERROR
+   */
   failedResult?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   successResult?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -402,9 +491,34 @@ export class BatchSendOTOHeaders extends $tea.Model {
 }
 
 export class BatchSendOTORequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sampleMarkdown
+   */
   msgKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"text": "hello dafu","title": "hello title"}
+   */
   msgParam?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingxxxxxx
+   */
   robotCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -502,6 +616,13 @@ export class ClearRobotPluginHeaders extends $tea.Model {
 }
 
 export class ClearRobotPluginRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingkxnemxbqkifzl
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -588,7 +709,15 @@ export class ExecuteRobotAiSkillHeaders extends $tea.Model {
 
 export class ExecuteRobotAiSkillRequest extends $tea.Model {
   context?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   input?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   robotCode?: string;
   skillId?: string;
   static names(): { [key: string]: string } {
@@ -684,6 +813,13 @@ export class GetBotListInGroupHeaders extends $tea.Model {
 }
 
 export class GetBotListInGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidjknasndcbaXXXXX
+   */
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -769,7 +905,21 @@ export class ManageSingleChatRobotStatusHeaders extends $tea.Model {
 }
 
 export class ManageSingleChatRobotStatusRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingykcdkjnwpcll27gm
+   */
   robotCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * enable
+   */
   status?: string;
   static names(): { [key: string]: string } {
     return {
@@ -857,11 +1007,38 @@ export class OrgGroupQueryHeaders extends $tea.Model {
 }
 
 export class OrgGroupQueryRequest extends $tea.Model {
+  /**
+   * @example
+   * 50
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 50
+   */
   nextToken?: string;
+  /**
+   * @example
+   * cid6KeBBLoveMJOGXoYKF5x7EeiodoA==
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Kna29Ra5pdJznx1ghavbumkQKwDzgfxZLapw55G7x0Q=
+   */
   processQueryKey?: string;
+  /**
+   * @example
+   * dingue4kfzdxbyn0pjqd
+   */
   robotCode?: string;
+  /**
+   * @example
+   * 02feb1cd4ncmed92998723813a6bfa89eea1df91a750721979992870dd90bdfa
+   */
   token?: string;
   static names(): { [key: string]: string } {
     return {
@@ -891,9 +1068,21 @@ export class OrgGroupQueryRequest extends $tea.Model {
 }
 
 export class OrgGroupQueryResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @example
+   * Kna29Ra5pdJznx1ghavbumkQKwDzgfxZLapw55G7x0Q=
+   */
   nextToken?: string;
   readUserIds?: string[];
+  /**
+   * @example
+   * SUCCESS
+   */
   sendStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -966,8 +1155,26 @@ export class OrgGroupRecallHeaders extends $tea.Model {
 }
 
 export class OrgGroupRecallRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidfCSpXXXXXXXXXXXchatbotId
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processQueryKeys?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingXXXXXXXXXX
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -991,7 +1198,18 @@ export class OrgGroupRecallRequest extends $tea.Model {
 }
 
 export class OrgGroupRecallResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 5fe11095f46315d8d30d3f8XXXXXX:SYSTEM_ERROR
+   */
   failedResult?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   successResult?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1060,11 +1278,41 @@ export class OrgGroupSendHeaders extends $tea.Model {
 }
 
 export class OrgGroupSendRequest extends $tea.Model {
+  /**
+   * @example
+   * COOLAPP-1-10182EEDD1AC0BA600D9000J
+   */
   coolAppCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sampleText
+   */
   msgKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"content":"今天吃肘子"}
+   */
   msgParam?: string;
+  /**
+   * @example
+   * cid6KeBBLoveMJOGXoYKF5x7EeiodoA==
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * dingue4kfzdxbyn0pjqd
+   */
   robotCode?: string;
+  /**
+   * @example
+   * 02feb1cd4ncmed92998723813a6bfa89eea1df91a750721979992870dd90bdfa
+   */
   token?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1094,6 +1342,10 @@ export class OrgGroupSendRequest extends $tea.Model {
 }
 
 export class OrgGroupSendResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processQueryKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1160,10 +1412,33 @@ export class PrivateChatQueryHeaders extends $tea.Model {
 }
 
 export class PrivateChatQueryRequest extends $tea.Model {
+  /**
+   * @example
+   * 50
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 50
+   */
   nextToken?: string;
+  /**
+   * @example
+   * cid6KeBBLoveMJOGXoYKF5x7EeiodoA==
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Kna29Ra5pdJznx1ghavbumkQKwDzgfxZLapw55G7x0Q=
+   */
   processQueryKey?: string;
+  /**
+   * @example
+   * dingue4kfzdxbyn0pjqd
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1191,9 +1466,21 @@ export class PrivateChatQueryRequest extends $tea.Model {
 }
 
 export class PrivateChatQueryResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @example
+   * Kna29Ra5pdJznx1ghavbumkQKwDzgfxZLapw55G7x0Q=
+   */
   nextToken?: string;
   readUserIds?: string[];
+  /**
+   * @example
+   * SUCCESS
+   */
   sendStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1266,10 +1553,36 @@ export class PrivateChatSendHeaders extends $tea.Model {
 }
 
 export class PrivateChatSendRequest extends $tea.Model {
+  /**
+   * @example
+   * COOLAPP-1-10182EEDD1AC0BA600D9000J
+   */
   coolAppCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sampleText
+   */
   msgKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"content":"今天吃肘子"}
+   */
   msgParam?: string;
+  /**
+   * @example
+   * cid6KeBBLoveMJOGXoYKF5x7EeiodoA==
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * dingue4kfzdxbyn0pjqd
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1297,6 +1610,10 @@ export class PrivateChatSendRequest extends $tea.Model {
 }
 
 export class PrivateChatSendResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processQueryKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1363,8 +1680,29 @@ export class QueryBotInstanceInGroupInfoHeaders extends $tea.Model {
 }
 
 export class QueryBotInstanceInGroupInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingykcdkjnwpcll27gm
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1457,6 +1795,13 @@ export class QueryRobotPluginHeaders extends $tea.Model {
 }
 
 export class QueryRobotPluginRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingykcdkjnwpcll27gm
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1542,7 +1887,21 @@ export class RobotMessageFileDownloadHeaders extends $tea.Model {
 }
 
 export class RobotMessageFileDownloadRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * mIofN681YE3f/+m+NntqpZSvSH2iMD6xP7Ow/ezdb1Wgn38tqVwL+zoRgzXipAMzmV5uhVKUlBdjKugAIvsm+TrvaPI0JYCMjvFMAlXvMWnMJsi2nZ9a0+N2c9CoV90hiB/B+fEThASPz+jmIa4J6x4WTsmmU3E/AopGsSGugE+hkHBcu52o76Yd2SCpPNUqenvdySSqjowEt1+Ddz55/9Qj8Y8ZhTryqsb7tYwzLFB+F3lsWCotXBOQvEgy3e/bEQtOyV6YrP3KG6YNSb3Q==
+   */
   downloadCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingue4kfzdxbyn0pjqd
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1564,6 +1923,10 @@ export class RobotMessageFileDownloadRequest extends $tea.Model {
 }
 
 export class RobotMessageFileDownloadResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   downloadUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1630,7 +1993,15 @@ export class RobotRecallDingHeaders extends $tea.Model {
 }
 
 export class RobotRecallDingRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openDingId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1718,9 +2089,28 @@ export class RobotSendDingHeaders extends $tea.Model {
 }
 
 export class RobotSendDingRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receiverUserIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1:APP，2:短信，3:电话
+   */
   remindType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1746,7 +2136,15 @@ export class RobotSendDingRequest extends $tea.Model {
 }
 
 export class RobotSendDingResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   failedList?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openDingId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1815,10 +2213,39 @@ export class SendRobotDingMessageHeaders extends $tea.Model {
 }
 
 export class SendRobotDingMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   contentParams?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * template_ding_diot_monitor
+   */
   dingTemplateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidfCSpXXXXXXXXXXXchatbotId
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receiverUserIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * qF9j5G8hmFLiqJ11629XXXXXXXX
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1846,6 +2273,10 @@ export class SendRobotDingMessageRequest extends $tea.Model {
 }
 
 export class SendRobotDingMessageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dingSendResultId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1913,6 +2344,10 @@ export class SetRobotPluginHeaders extends $tea.Model {
 
 export class SetRobotPluginRequest extends $tea.Model {
   pluginInfoList?: SetRobotPluginRequestPluginInfoList[];
+  /**
+   * @example
+   * dingncjdnfpkN7dsh
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2000,11 +2435,41 @@ export class UpdateInstalledRobotHeaders extends $tea.Model {
 }
 
 export class UpdateInstalledRobotRequest extends $tea.Model {
+  /**
+   * @example
+   * 钉钉的助手机器人
+   */
   brief?: string;
+  /**
+   * @example
+   * 钉钉的助手机器人的详细描述
+   */
   description?: string;
+  /**
+   * @example
+   * @IAfnkdsanfnkljn
+   */
   icon?: string;
+  /**
+   * @example
+   * 钉钉助手
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingXXXXXXXXXX
+   */
   robotCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   updateType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2078,9 +2543,37 @@ export class UpdateInstalledRobotResponse extends $tea.Model {
 }
 
 export class BatchOTOQueryResponseBodyMessageReadInfoList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 曲大岳
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * READ
+   */
   readStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1433138400000
+   */
   readTimestamp?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 201382020
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2134,9 +2627,25 @@ export class GetBotListInGroupResponseBodyChatbotInstanceVOList extends $tea.Mod
 }
 
 export class QueryRobotPluginResponseBodyPluginInfoList extends $tea.Model {
+  /**
+   * @example
+   * @lALPDtXaDkO3j7hgYA
+   */
   icon?: string;
+  /**
+   * @example
+   * https://www.dingtalk.com
+   */
   mobileUrl?: string;
+  /**
+   * @example
+   * 快捷入口名称
+   */
   name?: string;
+  /**
+   * @example
+   * https://www.dingtalk.com
+   */
   pcUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2162,9 +2671,31 @@ export class QueryRobotPluginResponseBodyPluginInfoList extends $tea.Model {
 }
 
 export class SetRobotPluginRequestPluginInfoList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * @lALPDtXaDkO3j7hgYA
+   */
   icon?: string;
+  /**
+   * @example
+   * https://www.dingtalk.com
+   */
   mobileUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 快捷入口名字
+   */
   name?: string;
+  /**
+   * @example
+   * https://www.dingtalk.com
+   */
   pcUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2191,12 +2722,11 @@ export class SetRobotPluginRequestPluginInfoList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2206,12 +2736,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 批量查询人与机器人会话机器人消息是否已读
-   *
-   * @param request BatchOTOQueryRequest
-   * @param headers BatchOTOQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchOTOQueryResponse
+   * 批量查询人与机器人会话机器人消息是否已读
+   * 
+   * @param request - BatchOTOQueryRequest
+   * @param headers - BatchOTOQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchOTOQueryResponse
    */
   async batchOTOQueryWithOptions(request: BatchOTOQueryRequest, headers: BatchOTOQueryHeaders, runtime: $Util.RuntimeOptions): Promise<BatchOTOQueryResponse> {
     Util.validateModel(request);
@@ -2252,10 +2782,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询人与机器人会话机器人消息是否已读
-   *
-   * @param request BatchOTOQueryRequest
-   * @return BatchOTOQueryResponse
+   * 批量查询人与机器人会话机器人消息是否已读
+   * 
+   * @param request - BatchOTOQueryRequest
+   * @returns BatchOTOQueryResponse
    */
   async batchOTOQuery(request: BatchOTOQueryRequest): Promise<BatchOTOQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2264,12 +2794,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量撤回群聊机器人消息
-   *
-   * @param request BatchRecallGroupRequest
-   * @param headers BatchRecallGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchRecallGroupResponse
+   * 批量撤回群聊机器人消息
+   * 
+   * @param request - BatchRecallGroupRequest
+   * @param headers - BatchRecallGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchRecallGroupResponse
    */
   async batchRecallGroupWithOptions(request: BatchRecallGroupRequest, headers: BatchRecallGroupHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallGroupResponse> {
     Util.validateModel(request);
@@ -2314,10 +2844,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量撤回群聊机器人消息
-   *
-   * @param request BatchRecallGroupRequest
-   * @return BatchRecallGroupResponse
+   * 批量撤回群聊机器人消息
+   * 
+   * @param request - BatchRecallGroupRequest
+   * @returns BatchRecallGroupResponse
    */
   async batchRecallGroup(request: BatchRecallGroupRequest): Promise<BatchRecallGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2326,12 +2856,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量撤回人与机器人会话中机器人消息
-   *
-   * @param request BatchRecallOTORequest
-   * @param headers BatchRecallOTOHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchRecallOTOResponse
+   * 批量撤回人与机器人会话中机器人消息
+   * 
+   * @param request - BatchRecallOTORequest
+   * @param headers - BatchRecallOTOHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchRecallOTOResponse
    */
   async batchRecallOTOWithOptions(request: BatchRecallOTORequest, headers: BatchRecallOTOHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallOTOResponse> {
     Util.validateModel(request);
@@ -2372,10 +2902,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量撤回人与机器人会话中机器人消息
-   *
-   * @param request BatchRecallOTORequest
-   * @return BatchRecallOTOResponse
+   * 批量撤回人与机器人会话中机器人消息
+   * 
+   * @param request - BatchRecallOTORequest
+   * @returns BatchRecallOTOResponse
    */
   async batchRecallOTO(request: BatchRecallOTORequest): Promise<BatchRecallOTOResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2384,12 +2914,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量撤回人与人会话中机器人消息
-   *
-   * @param request BatchRecallPrivateChatRequest
-   * @param headers BatchRecallPrivateChatHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchRecallPrivateChatResponse
+   * 批量撤回人与人会话中机器人消息
+   * 
+   * @param request - BatchRecallPrivateChatRequest
+   * @param headers - BatchRecallPrivateChatHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchRecallPrivateChatResponse
    */
   async batchRecallPrivateChatWithOptions(request: BatchRecallPrivateChatRequest, headers: BatchRecallPrivateChatHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallPrivateChatResponse> {
     Util.validateModel(request);
@@ -2434,10 +2964,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量撤回人与人会话中机器人消息
-   *
-   * @param request BatchRecallPrivateChatRequest
-   * @return BatchRecallPrivateChatResponse
+   * 批量撤回人与人会话中机器人消息
+   * 
+   * @param request - BatchRecallPrivateChatRequest
+   * @returns BatchRecallPrivateChatResponse
    */
   async batchRecallPrivateChat(request: BatchRecallPrivateChatRequest): Promise<BatchRecallPrivateChatResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2446,12 +2976,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量发送人与机器人会话中机器人消息
-   *
-   * @param request BatchSendOTORequest
-   * @param headers BatchSendOTOHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchSendOTOResponse
+   * 批量发送人与机器人会话中机器人消息
+   * 
+   * @param request - BatchSendOTORequest
+   * @param headers - BatchSendOTOHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchSendOTOResponse
    */
   async batchSendOTOWithOptions(request: BatchSendOTORequest, headers: BatchSendOTOHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSendOTOResponse> {
     Util.validateModel(request);
@@ -2500,10 +3030,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量发送人与机器人会话中机器人消息
-   *
-   * @param request BatchSendOTORequest
-   * @return BatchSendOTOResponse
+   * 批量发送人与机器人会话中机器人消息
+   * 
+   * @param request - BatchSendOTORequest
+   * @returns BatchSendOTOResponse
    */
   async batchSendOTO(request: BatchSendOTORequest): Promise<BatchSendOTOResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2512,12 +3042,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清空单聊机器人快捷入口
-   *
-   * @param request ClearRobotPluginRequest
-   * @param headers ClearRobotPluginHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ClearRobotPluginResponse
+   * 清空单聊机器人快捷入口
+   * 
+   * @param request - ClearRobotPluginRequest
+   * @param headers - ClearRobotPluginHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ClearRobotPluginResponse
    */
   async clearRobotPluginWithOptions(request: ClearRobotPluginRequest, headers: ClearRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<ClearRobotPluginResponse> {
     Util.validateModel(request);
@@ -2554,10 +3084,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清空单聊机器人快捷入口
-   *
-   * @param request ClearRobotPluginRequest
-   * @return ClearRobotPluginResponse
+   * 清空单聊机器人快捷入口
+   * 
+   * @param request - ClearRobotPluginRequest
+   * @returns ClearRobotPluginResponse
    */
   async clearRobotPlugin(request: ClearRobotPluginRequest): Promise<ClearRobotPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2566,12 +3096,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行机器人的AI技能
-   *
-   * @param request ExecuteRobotAiSkillRequest
-   * @param headers ExecuteRobotAiSkillHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ExecuteRobotAiSkillResponse
+   * 执行机器人的AI技能
+   * 
+   * @param request - ExecuteRobotAiSkillRequest
+   * @param headers - ExecuteRobotAiSkillHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ExecuteRobotAiSkillResponse
    */
   async executeRobotAiSkillWithOptions(request: ExecuteRobotAiSkillRequest, headers: ExecuteRobotAiSkillHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteRobotAiSkillResponse> {
     Util.validateModel(request);
@@ -2620,10 +3150,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行机器人的AI技能
-   *
-   * @param request ExecuteRobotAiSkillRequest
-   * @return ExecuteRobotAiSkillResponse
+   * 执行机器人的AI技能
+   * 
+   * @param request - ExecuteRobotAiSkillRequest
+   * @returns ExecuteRobotAiSkillResponse
    */
   async executeRobotAiSkill(request: ExecuteRobotAiSkillRequest): Promise<ExecuteRobotAiSkillResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2632,12 +3162,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询群内的机器人列表
-   *
-   * @param request GetBotListInGroupRequest
-   * @param headers GetBotListInGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetBotListInGroupResponse
+   * 查询群内的机器人列表
+   * 
+   * @param request - GetBotListInGroupRequest
+   * @param headers - GetBotListInGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetBotListInGroupResponse
    */
   async getBotListInGroupWithOptions(request: GetBotListInGroupRequest, headers: GetBotListInGroupHeaders, runtime: $Util.RuntimeOptions): Promise<GetBotListInGroupResponse> {
     Util.validateModel(request);
@@ -2674,10 +3204,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询群内的机器人列表
-   *
-   * @param request GetBotListInGroupRequest
-   * @return GetBotListInGroupResponse
+   * 查询群内的机器人列表
+   * 
+   * @param request - GetBotListInGroupRequest
+   * @returns GetBotListInGroupResponse
    */
   async getBotListInGroup(request: GetBotListInGroupRequest): Promise<GetBotListInGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2686,12 +3216,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 管理机器人启用，停用状态
-   *
-   * @param request ManageSingleChatRobotStatusRequest
-   * @param headers ManageSingleChatRobotStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ManageSingleChatRobotStatusResponse
+   * 管理机器人启用，停用状态
+   * 
+   * @param request - ManageSingleChatRobotStatusRequest
+   * @param headers - ManageSingleChatRobotStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ManageSingleChatRobotStatusResponse
    */
   async manageSingleChatRobotStatusWithOptions(request: ManageSingleChatRobotStatusRequest, headers: ManageSingleChatRobotStatusHeaders, runtime: $Util.RuntimeOptions): Promise<ManageSingleChatRobotStatusResponse> {
     Util.validateModel(request);
@@ -2732,10 +3262,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 管理机器人启用，停用状态
-   *
-   * @param request ManageSingleChatRobotStatusRequest
-   * @return ManageSingleChatRobotStatusResponse
+   * 管理机器人启用，停用状态
+   * 
+   * @param request - ManageSingleChatRobotStatusRequest
+   * @returns ManageSingleChatRobotStatusResponse
    */
   async manageSingleChatRobotStatus(request: ManageSingleChatRobotStatusRequest): Promise<ManageSingleChatRobotStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2744,12 +3274,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询企业机器人群聊消息用户已读状态
-   *
-   * @param request OrgGroupQueryRequest
-   * @param headers OrgGroupQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return OrgGroupQueryResponse
+   * 查询企业机器人群聊消息用户已读状态
+   * 
+   * @param request - OrgGroupQueryRequest
+   * @param headers - OrgGroupQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OrgGroupQueryResponse
    */
   async orgGroupQueryWithOptions(request: OrgGroupQueryRequest, headers: OrgGroupQueryHeaders, runtime: $Util.RuntimeOptions): Promise<OrgGroupQueryResponse> {
     Util.validateModel(request);
@@ -2806,10 +3336,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询企业机器人群聊消息用户已读状态
-   *
-   * @param request OrgGroupQueryRequest
-   * @return OrgGroupQueryResponse
+   * 查询企业机器人群聊消息用户已读状态
+   * 
+   * @param request - OrgGroupQueryRequest
+   * @returns OrgGroupQueryResponse
    */
   async orgGroupQuery(request: OrgGroupQueryRequest): Promise<OrgGroupQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2818,12 +3348,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 企业机器人撤回内部群消息
-   *
-   * @param request OrgGroupRecallRequest
-   * @param headers OrgGroupRecallHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return OrgGroupRecallResponse
+   * 企业机器人撤回内部群消息
+   * 
+   * @param request - OrgGroupRecallRequest
+   * @param headers - OrgGroupRecallHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OrgGroupRecallResponse
    */
   async orgGroupRecallWithOptions(request: OrgGroupRecallRequest, headers: OrgGroupRecallHeaders, runtime: $Util.RuntimeOptions): Promise<OrgGroupRecallResponse> {
     Util.validateModel(request);
@@ -2868,10 +3398,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 企业机器人撤回内部群消息
-   *
-   * @param request OrgGroupRecallRequest
-   * @return OrgGroupRecallResponse
+   * 企业机器人撤回内部群消息
+   * 
+   * @param request - OrgGroupRecallRequest
+   * @returns OrgGroupRecallResponse
    */
   async orgGroupRecall(request: OrgGroupRecallRequest): Promise<OrgGroupRecallResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2880,12 +3410,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 机器人发送群聊消息
-   *
-   * @param request OrgGroupSendRequest
-   * @param headers OrgGroupSendHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return OrgGroupSendResponse
+   * 机器人发送群聊消息
+   * 
+   * @param request - OrgGroupSendRequest
+   * @param headers - OrgGroupSendHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OrgGroupSendResponse
    */
   async orgGroupSendWithOptions(request: OrgGroupSendRequest, headers: OrgGroupSendHeaders, runtime: $Util.RuntimeOptions): Promise<OrgGroupSendResponse> {
     Util.validateModel(request);
@@ -2942,10 +3472,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 机器人发送群聊消息
-   *
-   * @param request OrgGroupSendRequest
-   * @return OrgGroupSendResponse
+   * 机器人发送群聊消息
+   * 
+   * @param request - OrgGroupSendRequest
+   * @returns OrgGroupSendResponse
    */
   async orgGroupSend(request: OrgGroupSendRequest): Promise<OrgGroupSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2954,12 +3484,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询人与人会话中机器人已读消息
-   *
-   * @param request PrivateChatQueryRequest
-   * @param headers PrivateChatQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PrivateChatQueryResponse
+   * 查询人与人会话中机器人已读消息
+   * 
+   * @param request - PrivateChatQueryRequest
+   * @param headers - PrivateChatQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PrivateChatQueryResponse
    */
   async privateChatQueryWithOptions(request: PrivateChatQueryRequest, headers: PrivateChatQueryHeaders, runtime: $Util.RuntimeOptions): Promise<PrivateChatQueryResponse> {
     Util.validateModel(request);
@@ -3012,10 +3542,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询人与人会话中机器人已读消息
-   *
-   * @param request PrivateChatQueryRequest
-   * @return PrivateChatQueryResponse
+   * 查询人与人会话中机器人已读消息
+   * 
+   * @param request - PrivateChatQueryRequest
+   * @returns PrivateChatQueryResponse
    */
   async privateChatQuery(request: PrivateChatQueryRequest): Promise<PrivateChatQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3024,12 +3554,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人与人会话中机器人发送普通消息
-   *
-   * @param request PrivateChatSendRequest
-   * @param headers PrivateChatSendHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PrivateChatSendResponse
+   * 人与人会话中机器人发送普通消息
+   * 
+   * @param request - PrivateChatSendRequest
+   * @param headers - PrivateChatSendHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PrivateChatSendResponse
    */
   async privateChatSendWithOptions(request: PrivateChatSendRequest, headers: PrivateChatSendHeaders, runtime: $Util.RuntimeOptions): Promise<PrivateChatSendResponse> {
     Util.validateModel(request);
@@ -3082,10 +3612,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人与人会话中机器人发送普通消息
-   *
-   * @param request PrivateChatSendRequest
-   * @return PrivateChatSendResponse
+   * 人与人会话中机器人发送普通消息
+   * 
+   * @param request - PrivateChatSendRequest
+   * @returns PrivateChatSendResponse
    */
   async privateChatSend(request: PrivateChatSendRequest): Promise<PrivateChatSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3094,12 +3624,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取机器人所在群信息
-   *
-   * @param request QueryBotInstanceInGroupInfoRequest
-   * @param headers QueryBotInstanceInGroupInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryBotInstanceInGroupInfoResponse
+   * 获取机器人所在群信息
+   * 
+   * @param request - QueryBotInstanceInGroupInfoRequest
+   * @param headers - QueryBotInstanceInGroupInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryBotInstanceInGroupInfoResponse
    */
   async queryBotInstanceInGroupInfoWithOptions(request: QueryBotInstanceInGroupInfoRequest, headers: QueryBotInstanceInGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBotInstanceInGroupInfoResponse> {
     Util.validateModel(request);
@@ -3144,10 +3674,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取机器人所在群信息
-   *
-   * @param request QueryBotInstanceInGroupInfoRequest
-   * @return QueryBotInstanceInGroupInfoResponse
+   * 获取机器人所在群信息
+   * 
+   * @param request - QueryBotInstanceInGroupInfoRequest
+   * @returns QueryBotInstanceInGroupInfoResponse
    */
   async queryBotInstanceInGroupInfo(request: QueryBotInstanceInGroupInfoRequest): Promise<QueryBotInstanceInGroupInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3156,12 +3686,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询单聊机器人快捷入口
-   *
-   * @param request QueryRobotPluginRequest
-   * @param headers QueryRobotPluginHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryRobotPluginResponse
+   * 查询单聊机器人快捷入口
+   * 
+   * @param request - QueryRobotPluginRequest
+   * @param headers - QueryRobotPluginHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryRobotPluginResponse
    */
   async queryRobotPluginWithOptions(request: QueryRobotPluginRequest, headers: QueryRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRobotPluginResponse> {
     Util.validateModel(request);
@@ -3198,10 +3728,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询单聊机器人快捷入口
-   *
-   * @param request QueryRobotPluginRequest
-   * @return QueryRobotPluginResponse
+   * 查询单聊机器人快捷入口
+   * 
+   * @param request - QueryRobotPluginRequest
+   * @returns QueryRobotPluginResponse
    */
   async queryRobotPlugin(request: QueryRobotPluginRequest): Promise<QueryRobotPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3210,12 +3740,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取机器人消息中文件下载链接
-   *
-   * @param request RobotMessageFileDownloadRequest
-   * @param headers RobotMessageFileDownloadHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RobotMessageFileDownloadResponse
+   * 获取机器人消息中文件下载链接
+   * 
+   * @param request - RobotMessageFileDownloadRequest
+   * @param headers - RobotMessageFileDownloadHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RobotMessageFileDownloadResponse
    */
   async robotMessageFileDownloadWithOptions(request: RobotMessageFileDownloadRequest, headers: RobotMessageFileDownloadHeaders, runtime: $Util.RuntimeOptions): Promise<RobotMessageFileDownloadResponse> {
     Util.validateModel(request);
@@ -3256,10 +3786,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取机器人消息中文件下载链接
-   *
-   * @param request RobotMessageFileDownloadRequest
-   * @return RobotMessageFileDownloadResponse
+   * 获取机器人消息中文件下载链接
+   * 
+   * @param request - RobotMessageFileDownloadRequest
+   * @returns RobotMessageFileDownloadResponse
    */
   async robotMessageFileDownload(request: RobotMessageFileDownloadRequest): Promise<RobotMessageFileDownloadResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3268,12 +3798,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤回已经发送的DING消息
-   *
-   * @param request RobotRecallDingRequest
-   * @param headers RobotRecallDingHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RobotRecallDingResponse
+   * 撤回已经发送的DING消息
+   * 
+   * @param request - RobotRecallDingRequest
+   * @param headers - RobotRecallDingHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RobotRecallDingResponse
    */
   async robotRecallDingWithOptions(request: RobotRecallDingRequest, headers: RobotRecallDingHeaders, runtime: $Util.RuntimeOptions): Promise<RobotRecallDingResponse> {
     Util.validateModel(request);
@@ -3314,10 +3844,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤回已经发送的DING消息
-   *
-   * @param request RobotRecallDingRequest
-   * @return RobotRecallDingResponse
+   * 撤回已经发送的DING消息
+   * 
+   * @param request - RobotRecallDingRequest
+   * @returns RobotRecallDingResponse
    */
   async robotRecallDing(request: RobotRecallDingRequest): Promise<RobotRecallDingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3326,12 +3856,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送DING消息
-   *
-   * @param request RobotSendDingRequest
-   * @param headers RobotSendDingHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RobotSendDingResponse
+   * 发送DING消息
+   * 
+   * @param request - RobotSendDingRequest
+   * @param headers - RobotSendDingHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RobotSendDingResponse
    */
   async robotSendDingWithOptions(request: RobotSendDingRequest, headers: RobotSendDingHeaders, runtime: $Util.RuntimeOptions): Promise<RobotSendDingResponse> {
     Util.validateModel(request);
@@ -3380,10 +3910,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送DING消息
-   *
-   * @param request RobotSendDingRequest
-   * @return RobotSendDingResponse
+   * 发送DING消息
+   * 
+   * @param request - RobotSendDingRequest
+   * @returns RobotSendDingResponse
    */
   async robotSendDing(request: RobotSendDingRequest): Promise<RobotSendDingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3392,12 +3922,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 机器人发送DING消息
-   *
-   * @param request SendRobotDingMessageRequest
-   * @param headers SendRobotDingMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendRobotDingMessageResponse
+   * 机器人发送DING消息
+   * 
+   * @param request - SendRobotDingMessageRequest
+   * @param headers - SendRobotDingMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendRobotDingMessageResponse
    */
   async sendRobotDingMessageWithOptions(request: SendRobotDingMessageRequest, headers: SendRobotDingMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotDingMessageResponse> {
     Util.validateModel(request);
@@ -3450,10 +3980,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 机器人发送DING消息
-   *
-   * @param request SendRobotDingMessageRequest
-   * @return SendRobotDingMessageResponse
+   * 机器人发送DING消息
+   * 
+   * @param request - SendRobotDingMessageRequest
+   * @returns SendRobotDingMessageResponse
    */
   async sendRobotDingMessage(request: SendRobotDingMessageRequest): Promise<SendRobotDingMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3462,12 +3992,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置单聊机器人快捷入口
-   *
-   * @param request SetRobotPluginRequest
-   * @param headers SetRobotPluginHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SetRobotPluginResponse
+   * 设置单聊机器人快捷入口
+   * 
+   * @param request - SetRobotPluginRequest
+   * @param headers - SetRobotPluginHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SetRobotPluginResponse
    */
   async setRobotPluginWithOptions(request: SetRobotPluginRequest, headers: SetRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<SetRobotPluginResponse> {
     Util.validateModel(request);
@@ -3508,10 +4038,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置单聊机器人快捷入口
-   *
-   * @param request SetRobotPluginRequest
-   * @return SetRobotPluginResponse
+   * 设置单聊机器人快捷入口
+   * 
+   * @param request - SetRobotPluginRequest
+   * @returns SetRobotPluginResponse
    */
   async setRobotPlugin(request: SetRobotPluginRequest): Promise<SetRobotPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3520,12 +4050,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新安装到组织的机器人信息
-   *
-   * @param request UpdateInstalledRobotRequest
-   * @param headers UpdateInstalledRobotHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInstalledRobotResponse
+   * 更新安装到组织的机器人信息
+   * 
+   * @param request - UpdateInstalledRobotRequest
+   * @param headers - UpdateInstalledRobotHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInstalledRobotResponse
    */
   async updateInstalledRobotWithOptions(request: UpdateInstalledRobotRequest, headers: UpdateInstalledRobotHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInstalledRobotResponse> {
     Util.validateModel(request);
@@ -3582,10 +4112,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新安装到组织的机器人信息
-   *
-   * @param request UpdateInstalledRobotRequest
-   * @return UpdateInstalledRobotResponse
+   * 更新安装到组织的机器人信息
+   * 
+   * @param request - UpdateInstalledRobotRequest
+   * @returns UpdateInstalledRobotResponse
    */
   async updateInstalledRobot(request: UpdateInstalledRobotRequest): Promise<UpdateInstalledRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });

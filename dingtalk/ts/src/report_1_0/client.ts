@@ -1,17 +1,27 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class UserMapValue extends $tea.Model {
+  /**
+   * @example
+   * user123
+   */
   userId?: string;
+  /**
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @example
+   * xxx
+   */
   deptId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -62,14 +72,50 @@ export class CreateTemplatesRequest extends $tea.Model {
   allowGetLocation?: boolean;
   authDeptIds?: string[];
   authUserIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 182942
+   */
   creator?: string;
   defaultReceivedCids?: string[];
   defaultReceivedMasterLevels?: string[];
   defaultReceivers?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fields?: CreateTemplatesRequestFields[];
+  /**
+   * @example
+   * https://xxx.jpg
+   */
   logo?: string;
+  /**
+   * @example
+   * 1000
+   * 
+   * **if can be null:**
+   * true
+   */
   maxWordCount?: number;
+  /**
+   * @example
+   * 1
+   * 
+   * **if can be null:**
+   * true
+   */
   minWordCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 工作日报
+   */
   name?: string;
   templateManagers?: string[];
   static names(): { [key: string]: string } {
@@ -118,6 +164,10 @@ export class CreateTemplatesRequest extends $tea.Model {
 }
 
 export class CreateTemplatesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -184,10 +234,45 @@ export class GetSendAndReceiveReportListHeaders extends $tea.Model {
 }
 
 export class GetSendAndReceiveReportListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1507564800000
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user123
+   */
   operationUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1507564800000
+   */
   startTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -217,7 +302,15 @@ export class GetSendAndReceiveReportListRequest extends $tea.Model {
 export class GetSendAndReceiveReportListResponseBody extends $tea.Model {
   dataList?: GetSendAndReceiveReportListResponseBodyDataList[];
   hasMore?: boolean;
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 10
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -290,10 +383,45 @@ export class GetSubmitStatisticsHeaders extends $tea.Model {
 }
 
 export class GetSubmitStatisticsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1507564800000
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user123
+   */
   operationUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   remindId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1507564800000
+   */
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 18xxxxx
+   */
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -321,7 +449,15 @@ export class GetSubmitStatisticsRequest extends $tea.Model {
 }
 
 export class GetSubmitStatisticsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 3
+   */
   shouldRemindTimes?: number;
+  /**
+   * @example
+   * 日报
+   */
   templateName?: string;
   userDeptMap?: { [key: string]: string };
   userIdCountMap?: { [key: string]: number };
@@ -405,9 +541,37 @@ export class QueryRemindResultsHeaders extends $tea.Model {
 }
 
 export class QueryRemindResultsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user123
+   */
   operationUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 18xxxx
+   */
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -435,6 +599,10 @@ export class QueryRemindResultsRequest extends $tea.Model {
 export class QueryRemindResultsResponseBody extends $tea.Model {
   dataList?: QueryRemindResultsResponseBodyDataList[];
   hasMore?: boolean;
+  /**
+   * @example
+   * 20
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -505,6 +673,13 @@ export class QueryReportDetailHeaders extends $tea.Model {
 }
 
 export class QueryReportDetailRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 18XXXX
+   */
   reportId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -525,13 +700,45 @@ export class QueryReportDetailRequest extends $tea.Model {
 
 export class QueryReportDetailResponseBody extends $tea.Model {
   content?: QueryReportDetailResponseBodyContent[];
+  /**
+   * @example
+   * 1507564800000
+   */
   createTime?: number;
+  /**
+   * @example
+   * user123
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 张三
+   */
   creatorName?: string;
+  /**
+   * @example
+   * 部门1
+   */
   deptName?: string;
+  /**
+   * @example
+   * 1507564800000
+   */
   modifiedTime?: number;
+  /**
+   * @example
+   * 这是备注
+   */
   remark?: string;
+  /**
+   * @example
+   * 18XXXX
+   */
   reportId?: string;
+  /**
+   * @example
+   * 日报
+   */
   templateName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -593,6 +800,10 @@ export class QueryReportDetailResponse extends $tea.Model {
 
 export class CreateTemplatesRequestFieldsDataValueOpenInfo extends $tea.Model {
   attribute?: { [key: string]: string };
+  /**
+   * @example
+   * abc
+   */
   openId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -639,11 +850,40 @@ export class CreateTemplatesRequestFieldsDataValue extends $tea.Model {
 }
 
 export class CreateTemplatesRequestFields extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   dataType?: number;
   dataValue?: CreateTemplatesRequestFieldsDataValue;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fieldName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   need?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   order?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   sort?: number;
   static names(): { [key: string]: string } {
     return {
@@ -673,11 +913,35 @@ export class CreateTemplatesRequestFields extends $tea.Model {
 }
 
 export class GetSendAndReceiveReportListResponseBodyDataList extends $tea.Model {
+  /**
+   * @example
+   * 1507564800000
+   */
   createTime?: number;
+  /**
+   * @example
+   * user123
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 张三
+   */
   creatorName?: string;
+  /**
+   * @example
+   * 1507564800000
+   */
   modifiedTime?: number;
+  /**
+   * @example
+   * xxxxxx
+   */
   reportId?: string;
+  /**
+   * @example
+   * 日报
+   */
   templateName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -707,6 +971,10 @@ export class GetSendAndReceiveReportListResponseBodyDataList extends $tea.Model 
 }
 
 export class QueryRemindResultsResponseBodyDataListToGroups extends $tea.Model {
+  /**
+   * @example
+   * xxx群
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -726,12 +994,28 @@ export class QueryRemindResultsResponseBodyDataListToGroups extends $tea.Model {
 }
 
 export class QueryRemindResultsResponseBodyDataList extends $tea.Model {
+  /**
+   * @example
+   * user123
+   */
   creatorId?: string;
   endDateTime?: string[];
+  /**
+   * @example
+   * 18xxxx
+   */
   modifierId?: string;
+  /**
+   * @example
+   * 1
+   */
   periodType?: number;
   remindId?: number;
   startDateTime?: string[];
+  /**
+   * @example
+   * 123456
+   */
   templateId?: string;
   toGroups?: QueryRemindResultsResponseBodyDataListToGroups[];
   static names(): { [key: string]: string } {
@@ -767,9 +1051,25 @@ export class QueryRemindResultsResponseBodyDataList extends $tea.Model {
 
 export class QueryReportDetailResponseBodyContent extends $tea.Model {
   images?: string[];
+  /**
+   * @example
+   * 今日工作
+   */
   key?: string;
+  /**
+   * @example
+   * 0
+   */
   sort?: string;
+  /**
+   * @example
+   * 1
+   */
   type?: string;
+  /**
+   * @example
+   * 开发工作
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -798,12 +1098,11 @@ export class QueryReportDetailResponseBodyContent extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -813,12 +1112,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 创建模板
-   *
-   * @param request CreateTemplatesRequest
-   * @param headers CreateTemplatesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateTemplatesResponse
+   * 创建模板
+   * 
+   * @param request - CreateTemplatesRequest
+   * @param headers - CreateTemplatesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateTemplatesResponse
    */
   async createTemplatesWithOptions(request: CreateTemplatesRequest, headers: CreateTemplatesHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTemplatesResponse> {
     Util.validateModel(request);
@@ -911,10 +1210,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建模板
-   *
-   * @param request CreateTemplatesRequest
-   * @return CreateTemplatesResponse
+   * 创建模板
+   * 
+   * @param request - CreateTemplatesRequest
+   * @returns CreateTemplatesResponse
    */
   async createTemplates(request: CreateTemplatesRequest): Promise<CreateTemplatesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -923,12 +1222,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询员工提交和收到的日志列表
-   *
-   * @param request GetSendAndReceiveReportListRequest
-   * @param headers GetSendAndReceiveReportListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSendAndReceiveReportListResponse
+   * 查询员工提交和收到的日志列表
+   * 
+   * @param request - GetSendAndReceiveReportListRequest
+   * @param headers - GetSendAndReceiveReportListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSendAndReceiveReportListResponse
    */
   async getSendAndReceiveReportListWithOptions(request: GetSendAndReceiveReportListRequest, headers: GetSendAndReceiveReportListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSendAndReceiveReportListResponse> {
     Util.validateModel(request);
@@ -981,10 +1280,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询员工提交和收到的日志列表
-   *
-   * @param request GetSendAndReceiveReportListRequest
-   * @return GetSendAndReceiveReportListResponse
+   * 查询员工提交和收到的日志列表
+   * 
+   * @param request - GetSendAndReceiveReportListRequest
+   * @returns GetSendAndReceiveReportListResponse
    */
   async getSendAndReceiveReportList(request: GetSendAndReceiveReportListRequest): Promise<GetSendAndReceiveReportListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -993,12 +1292,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定周期的提交统计结果
-   *
-   * @param request GetSubmitStatisticsRequest
-   * @param headers GetSubmitStatisticsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSubmitStatisticsResponse
+   * 获取指定周期的提交统计结果
+   * 
+   * @param request - GetSubmitStatisticsRequest
+   * @param headers - GetSubmitStatisticsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSubmitStatisticsResponse
    */
   async getSubmitStatisticsWithOptions(request: GetSubmitStatisticsRequest, headers: GetSubmitStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<GetSubmitStatisticsResponse> {
     Util.validateModel(request);
@@ -1051,10 +1350,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定周期的提交统计结果
-   *
-   * @param request GetSubmitStatisticsRequest
-   * @return GetSubmitStatisticsResponse
+   * 获取指定周期的提交统计结果
+   * 
+   * @param request - GetSubmitStatisticsRequest
+   * @returns GetSubmitStatisticsResponse
    */
   async getSubmitStatistics(request: GetSubmitStatisticsRequest): Promise<GetSubmitStatisticsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1063,12 +1362,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取创建的统计规则信息
-   *
-   * @param request QueryRemindResultsRequest
-   * @param headers QueryRemindResultsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryRemindResultsResponse
+   * 获取创建的统计规则信息
+   * 
+   * @param request - QueryRemindResultsRequest
+   * @param headers - QueryRemindResultsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryRemindResultsResponse
    */
   async queryRemindResultsWithOptions(request: QueryRemindResultsRequest, headers: QueryRemindResultsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRemindResultsResponse> {
     Util.validateModel(request);
@@ -1117,10 +1416,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取创建的统计规则信息
-   *
-   * @param request QueryRemindResultsRequest
-   * @return QueryRemindResultsResponse
+   * 获取创建的统计规则信息
+   * 
+   * @param request - QueryRemindResultsRequest
+   * @returns QueryRemindResultsResponse
    */
   async queryRemindResults(request: QueryRemindResultsRequest): Promise<QueryRemindResultsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1129,12 +1428,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取日志详情
-   *
-   * @param request QueryReportDetailRequest
-   * @param headers QueryReportDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryReportDetailResponse
+   * 获取日志详情
+   * 
+   * @param request - QueryReportDetailRequest
+   * @param headers - QueryReportDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryReportDetailResponse
    */
   async queryReportDetailWithOptions(request: QueryReportDetailRequest, headers: QueryReportDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReportDetailResponse> {
     Util.validateModel(request);
@@ -1171,10 +1470,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取日志详情
-   *
-   * @param request QueryReportDetailRequest
-   * @return QueryReportDetailResponse
+   * 获取日志详情
+   * 
+   * @param request - QueryReportDetailRequest
+   * @returns QueryReportDetailResponse
    */
   async queryReportDetail(request: QueryReportDetailRequest): Promise<QueryReportDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });

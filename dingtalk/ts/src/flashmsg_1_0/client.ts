@@ -1,15 +1,17 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class PrivateFieldMapValue extends $tea.Model {
+  /**
+   * @example
+   * XXX发了一条闪读消息，请于今天 12:00前查看
+   */
   tipTitle?: string;
   isDingSend?: boolean;
   isRead?: boolean;
@@ -63,10 +65,42 @@ export class AddPluginRuleHeaders extends $tea.Model {
 }
 
 export class AddPluginRuleRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * group_chat
+   */
   chatType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * -10050
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * group
+   */
   itemType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   rules?: AddPluginRuleRequestRules[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0847493113802787
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -160,7 +194,18 @@ export class DeletePlguinRuleHeaders extends $tea.Model {
 }
 
 export class DeletePlguinRuleRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0847493113802787
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -248,6 +293,10 @@ export class GetBaseProfileListHeaders extends $tea.Model {
 }
 
 export class GetBaseProfileListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -336,7 +385,18 @@ export class GetConversationHeaders extends $tea.Model {
 }
 
 export class GetConversationRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidjyErBTyw0FnIQQigHAbcGCg==
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * 080854121612617211
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -427,9 +487,31 @@ export class GetMemberListHeaders extends $tea.Model {
 }
 
 export class GetMemberListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidjyErBTyw0FnIQQXXX2223==
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 08474931138022787
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -521,11 +603,41 @@ export class QueryPluginRuleHeaders extends $tea.Model {
 }
 
 export class QueryPluginRuleRequest extends $tea.Model {
+  /**
+   * @example
+   * group_chat
+   */
   chatType?: string;
+  /**
+   * @example
+   * -10050
+   */
   code?: string;
+  /**
+   * @example
+   * 100
+   */
   itemId?: string;
+  /**
+   * @example
+   * group
+   */
   itemType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -626,9 +738,31 @@ export class SendDingTipHeaders extends $tea.Model {
 export class SendDingTipRequest extends $tea.Model {
   extension?: { [key: string]: string };
   link?: SendDingTipRequestLink;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * msg_f9aae78558b34e20a5badead4c29244c_223
+   */
   messageId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receiverUserId?: string[];
+  /**
+   * @example
+   * 080854121612261721
+   */
   senderUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 您有一条闪读消息，请注意查收XX
+   */
   textContent?: string;
   static names(): { [key: string]: string } {
     return {
@@ -725,11 +859,33 @@ export class SendMessageTipHeaders extends $tea.Model {
 
 export class SendMessageTipRequest extends $tea.Model {
   defaultView?: SendMessageTipRequestDefaultView;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * msg_f9aae78558b34e20a5badead4c29244c_123
+   */
   messageId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidVcYPzxnAySJOMhYX2QDbLwUA==
+   */
   openConversationId?: string;
   privateFieldMap?: { [key: string]: PrivateFieldMapValue };
   publicField?: SendMessageTipRequestPublicField;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receiverUserId?: string[];
+  /**
+   * @example
+   * 0808541222161261721
+   */
   senderUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -808,7 +964,21 @@ export class SendMessageTipResponse extends $tea.Model {
 }
 
 export class AddPluginRuleRequestRules extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   itemId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 管理员角色
+   */
   itemName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -943,8 +1113,26 @@ export class QueryPluginRuleResponseBodyResult extends $tea.Model {
 
 export class SendDingTipRequestLink extends $tea.Model {
   extension?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingtalk://dingtalkclient/page/link?pc_slide=true
+   */
   linkUrl?: string;
+  /**
+   * @example
+   * @lQLPDhrngMo4hi3NAZDNAZCwqp0RL2MfbesBqImWncBnAA2BCD
+   */
   picMediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 今天 10:00后超期
+   */
   text?: string;
   static names(): { [key: string]: string } {
     return {
@@ -974,12 +1162,24 @@ export class SendMessageTipRequestDefaultView extends $tea.Model {
   actionUrl?: string;
   authCode?: string;
   authMediaId?: string;
+  /**
+   * @example
+   * 闪读消息卡片1
+   */
   cardTitle?: string;
   cardTitleColor?: string;
+  /**
+   * @example
+   * 查看详情
+   */
   desc?: string;
   mediaId?: string;
   needShowUpdateTail?: string;
   summary?: string;
+  /**
+   * @example
+   * 闪读消息卡片2
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1019,11 +1219,27 @@ export class SendMessageTipRequestDefaultView extends $tea.Model {
 }
 
 export class SendMessageTipRequestPublicField extends $tea.Model {
+  /**
+   * @example
+   * dingtalk://dingtalkclient/page/link33
+   */
   detailUrl?: string;
+  /**
+   * @example
+   * 限时阅读5分钟
+   */
   durationDesc?: string;
   extension?: { [key: string]: string };
   isExpired?: boolean;
+  /**
+   * @example
+   * dingtalk://dingtalkclient/page/linkxx
+   */
   readActionUrl?: string;
+  /**
+   * @example
+   * 已查收 0/1
+   */
   readProgressDesc?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1076,12 +1292,11 @@ export class SendMessageTipResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1091,12 +1306,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 添加插件规则
-   *
-   * @param request AddPluginRuleRequest
-   * @param headers AddPluginRuleHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddPluginRuleResponse
+   * 添加插件规则
+   * 
+   * @param request - AddPluginRuleRequest
+   * @param headers - AddPluginRuleHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddPluginRuleResponse
    */
   async addPluginRuleWithOptions(request: AddPluginRuleRequest, headers: AddPluginRuleHeaders, runtime: $Util.RuntimeOptions): Promise<AddPluginRuleResponse> {
     Util.validateModel(request);
@@ -1149,10 +1364,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加插件规则
-   *
-   * @param request AddPluginRuleRequest
-   * @return AddPluginRuleResponse
+   * 添加插件规则
+   * 
+   * @param request - AddPluginRuleRequest
+   * @returns AddPluginRuleResponse
    */
   async addPluginRule(request: AddPluginRuleRequest): Promise<AddPluginRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1161,12 +1376,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除插件规则
-   *
-   * @param request DeletePlguinRuleRequest
-   * @param headers DeletePlguinRuleHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeletePlguinRuleResponse
+   * 删除插件规则
+   * 
+   * @param request - DeletePlguinRuleRequest
+   * @param headers - DeletePlguinRuleHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeletePlguinRuleResponse
    */
   async deletePlguinRuleWithOptions(request: DeletePlguinRuleRequest, headers: DeletePlguinRuleHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePlguinRuleResponse> {
     Util.validateModel(request);
@@ -1207,10 +1422,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除插件规则
-   *
-   * @param request DeletePlguinRuleRequest
-   * @return DeletePlguinRuleResponse
+   * 删除插件规则
+   * 
+   * @param request - DeletePlguinRuleRequest
+   * @returns DeletePlguinRuleResponse
    */
   async deletePlguinRule(request: DeletePlguinRuleRequest): Promise<DeletePlguinRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1219,12 +1434,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 闪读用户基础信息查询
-   *
-   * @param request GetBaseProfileListRequest
-   * @param headers GetBaseProfileListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetBaseProfileListResponse
+   * 闪读用户基础信息查询
+   * 
+   * @param request - GetBaseProfileListRequest
+   * @param headers - GetBaseProfileListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetBaseProfileListResponse
    */
   async getBaseProfileListWithOptions(request: GetBaseProfileListRequest, headers: GetBaseProfileListHeaders, runtime: $Util.RuntimeOptions): Promise<GetBaseProfileListResponse> {
     Util.validateModel(request);
@@ -1256,10 +1471,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 闪读用户基础信息查询
-   *
-   * @param request GetBaseProfileListRequest
-   * @return GetBaseProfileListResponse
+   * 闪读用户基础信息查询
+   * 
+   * @param request - GetBaseProfileListRequest
+   * @returns GetBaseProfileListResponse
    */
   async getBaseProfileList(request: GetBaseProfileListRequest): Promise<GetBaseProfileListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1268,12 +1483,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获得闪读会话信息
-   *
-   * @param request GetConversationRequest
-   * @param headers GetConversationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetConversationResponse
+   * 获得闪读会话信息
+   * 
+   * @param request - GetConversationRequest
+   * @param headers - GetConversationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetConversationResponse
    */
   async getConversationWithOptions(request: GetConversationRequest, headers: GetConversationHeaders, runtime: $Util.RuntimeOptions): Promise<GetConversationResponse> {
     Util.validateModel(request);
@@ -1314,10 +1529,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获得闪读会话信息
-   *
-   * @param request GetConversationRequest
-   * @return GetConversationResponse
+   * 获得闪读会话信息
+   * 
+   * @param request - GetConversationRequest
+   * @returns GetConversationResponse
    */
   async getConversation(request: GetConversationRequest): Promise<GetConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1326,12 +1541,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获得成员ID列表
-   *
-   * @param request GetMemberListRequest
-   * @param headers GetMemberListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMemberListResponse
+   * 获得成员ID列表
+   * 
+   * @param request - GetMemberListRequest
+   * @param headers - GetMemberListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMemberListResponse
    */
   async getMemberListWithOptions(request: GetMemberListRequest, headers: GetMemberListHeaders, runtime: $Util.RuntimeOptions): Promise<GetMemberListResponse> {
     Util.validateModel(request);
@@ -1380,10 +1595,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获得成员ID列表
-   *
-   * @param request GetMemberListRequest
-   * @return GetMemberListResponse
+   * 获得成员ID列表
+   * 
+   * @param request - GetMemberListRequest
+   * @returns GetMemberListResponse
    */
   async getMemberList(request: GetMemberListRequest): Promise<GetMemberListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1392,12 +1607,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询插件规则
-   *
-   * @param request QueryPluginRuleRequest
-   * @param headers QueryPluginRuleHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryPluginRuleResponse
+   * 查询插件规则
+   * 
+   * @param request - QueryPluginRuleRequest
+   * @param headers - QueryPluginRuleHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryPluginRuleResponse
    */
   async queryPluginRuleWithOptions(request: QueryPluginRuleRequest, headers: QueryPluginRuleHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPluginRuleResponse> {
     Util.validateModel(request);
@@ -1454,10 +1669,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询插件规则
-   *
-   * @param request QueryPluginRuleRequest
-   * @return QueryPluginRuleResponse
+   * 查询插件规则
+   * 
+   * @param request - QueryPluginRuleRequest
+   * @returns QueryPluginRuleResponse
    */
   async queryPluginRule(request: QueryPluginRuleRequest): Promise<QueryPluginRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1466,12 +1681,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送Ding提示消息
-   *
-   * @param request SendDingTipRequest
-   * @param headers SendDingTipHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendDingTipResponse
+   * 发送Ding提示消息
+   * 
+   * @param request - SendDingTipRequest
+   * @param headers - SendDingTipHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendDingTipResponse
    */
   async sendDingTipWithOptions(request: SendDingTipRequest, headers: SendDingTipHeaders, runtime: $Util.RuntimeOptions): Promise<SendDingTipResponse> {
     Util.validateModel(request);
@@ -1528,10 +1743,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送Ding提示消息
-   *
-   * @param request SendDingTipRequest
-   * @return SendDingTipResponse
+   * 发送Ding提示消息
+   * 
+   * @param request - SendDingTipRequest
+   * @returns SendDingTipResponse
    */
   async sendDingTip(request: SendDingTipRequest): Promise<SendDingTipResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1540,12 +1755,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送闪读消息提示
-   *
-   * @param request SendMessageTipRequest
-   * @param headers SendMessageTipHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendMessageTipResponse
+   * 发送闪读消息提示
+   * 
+   * @param request - SendMessageTipRequest
+   * @param headers - SendMessageTipHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendMessageTipResponse
    */
   async sendMessageTipWithOptions(request: SendMessageTipRequest, headers: SendMessageTipHeaders, runtime: $Util.RuntimeOptions): Promise<SendMessageTipResponse> {
     Util.validateModel(request);
@@ -1606,10 +1821,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送闪读消息提示
-   *
-   * @param request SendMessageTipRequest
-   * @return SendMessageTipResponse
+   * 发送闪读消息提示
+   * 
+   * @param request - SendMessageTipRequest
+   * @returns SendMessageTipResponse
    */
   async sendMessageTip(request: SendMessageTipRequest): Promise<SendMessageTipResponse> {
     let runtime = new $Util.RuntimeOptions({ });

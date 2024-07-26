@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,6 +30,10 @@ export class WikiWordsDetailHeaders extends $tea.Model {
 }
 
 export class WikiWordsDetailRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   wordName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -51,8 +53,20 @@ export class WikiWordsDetailRequest extends $tea.Model {
 }
 
 export class WikiWordsDetailResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: WikiWordsDetailResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   errMsg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -123,6 +137,10 @@ export class WikiWordsParseHeaders extends $tea.Model {
 }
 
 export class WikiWordsParseRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: string;
   static names(): { [key: string]: string } {
     return {
@@ -142,7 +160,15 @@ export class WikiWordsParseRequest extends $tea.Model {
 }
 
 export class WikiWordsParseResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: WikiWordsParseResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   errMsg?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
@@ -192,10 +218,30 @@ export class WikiWordsParseResponse extends $tea.Model {
 }
 
 export class WikiWordsDetailResponseBodyDataAppLink extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   iconLink?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pcLink?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   phoneLink?: string;
   static names(): { [key: string]: string } {
     return {
@@ -223,8 +269,20 @@ export class WikiWordsDetailResponseBodyDataAppLink extends $tea.Model {
 }
 
 export class WikiWordsDetailResponseBodyDataRelatedDoc extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   link?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -248,8 +306,20 @@ export class WikiWordsDetailResponseBodyDataRelatedDoc extends $tea.Model {
 }
 
 export class WikiWordsDetailResponseBodyDataRelatedLink extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   link?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -273,25 +343,105 @@ export class WikiWordsDetailResponseBodyDataRelatedLink extends $tea.Model {
 }
 
 export class WikiWordsDetailResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appLink?: WikiWordsDetailResponseBodyDataAppLink[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   approveName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   contacts?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   creatorName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtCreate?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtModify?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   highLightWordAlias?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   imHighLight?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   orgName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   relatedDoc?: WikiWordsDetailResponseBodyDataRelatedDoc[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   relatedLink?: WikiWordsDetailResponseBodyDataRelatedLink[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   simHighLight?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   simpleWordParaphrase?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tagsList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   updaterName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   uuid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   wordAlias?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   wordFullName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   wordName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   wordParaphrase?: string;
   static names(): { [key: string]: string } {
     return {
@@ -349,8 +499,20 @@ export class WikiWordsDetailResponseBodyData extends $tea.Model {
 }
 
 export class WikiWordsParseResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endIndex?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startIndex?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   wordName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -375,12 +537,11 @@ export class WikiWordsParseResponseBodyData extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -390,12 +551,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 根据词条名称获取该词条释义
-   *
-   * @param request WikiWordsDetailRequest
-   * @param headers WikiWordsDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return WikiWordsDetailResponse
+   * 根据词条名称获取该词条释义
+   * 
+   * @param request - WikiWordsDetailRequest
+   * @param headers - WikiWordsDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns WikiWordsDetailResponse
    */
   async wikiWordsDetailWithOptions(request: WikiWordsDetailRequest, headers: WikiWordsDetailHeaders, runtime: $Util.RuntimeOptions): Promise<WikiWordsDetailResponse> {
     Util.validateModel(request);
@@ -432,10 +593,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据词条名称获取该词条释义
-   *
-   * @param request WikiWordsDetailRequest
-   * @return WikiWordsDetailResponse
+   * 根据词条名称获取该词条释义
+   * 
+   * @param request - WikiWordsDetailRequest
+   * @returns WikiWordsDetailResponse
    */
   async wikiWordsDetail(request: WikiWordsDetailRequest): Promise<WikiWordsDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -444,12 +605,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 外部传递过来的消息根据百科词库分词
-   *
-   * @param request WikiWordsParseRequest
-   * @param headers WikiWordsParseHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return WikiWordsParseResponse
+   * 外部传递过来的消息根据百科词库分词
+   * 
+   * @param request - WikiWordsParseRequest
+   * @param headers - WikiWordsParseHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns WikiWordsParseResponse
    */
   async wikiWordsParseWithOptions(request: WikiWordsParseRequest, headers: WikiWordsParseHeaders, runtime: $Util.RuntimeOptions): Promise<WikiWordsParseResponse> {
     Util.validateModel(request);
@@ -486,10 +647,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 外部传递过来的消息根据百科词库分词
-   *
-   * @param request WikiWordsParseRequest
-   * @return WikiWordsParseResponse
+   * 外部传递过来的消息根据百科词库分词
+   * 
+   * @param request - WikiWordsParseRequest
+   * @returns WikiWordsParseResponse
    */
   async wikiWordsParse(request: WikiWordsParseRequest): Promise<WikiWordsParseResponse> {
     let runtime = new $Util.RuntimeOptions({ });

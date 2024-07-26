@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -33,7 +31,18 @@ export class CreateFeedHeaders extends $tea.Model {
 
 export class CreateFeedRequest extends $tea.Model {
   courseInfo?: CreateFeedRequestCourseInfo;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 16621*******284773
+   */
   createUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   feedInfo?: CreateFeedRequestFeedInfo;
   static names(): { [key: string]: string } {
     return {
@@ -57,6 +66,13 @@ export class CreateFeedRequest extends $tea.Model {
 }
 
 export class CreateFeedResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * c497****-8a89-****-bc9b-*****48610d3
+   */
   feedId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -211,6 +227,13 @@ export class GetFeedHeaders extends $tea.Model {
 }
 
 export class GetFeedRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 50730********40554
+   */
   mcnId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -230,7 +253,18 @@ export class GetFeedRequest extends $tea.Model {
 }
 
 export class GetFeedResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3d******-1cd2-****-ba1d-8******3c6dc
+   */
   feedId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   feedItem?: GetFeedResponseBodyFeedItem[];
   static names(): { [key: string]: string } {
     return {
@@ -299,12 +333,52 @@ export class GetMediaCerficateHeaders extends $tea.Model {
 }
 
 export class GetMediaCerficateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * D:\****.mp4
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 87712****6723412
+   */
   mcnId?: string;
+  /**
+   * @example
+   * cd8b21090b6*********b78fa733
+   */
   mediaId?: string;
+  /**
+   * @example
+   * 视频描述。  长度不超过1024个字符。 UTF-8编码。
+   */
   mediaIntroduction?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * UploadTest
+   */
   mediaTitle?: string;
+  /**
+   * @example
+   * https://*****test.cn/image/D22F553*****TEST.jpeg
+   */
   thumbUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * edb2*****1090b66
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -336,13 +410,69 @@ export class GetMediaCerficateRequest extends $tea.Model {
 }
 
 export class GetMediaCerficateResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 378a1a01**********6fa2886313948e
+   */
   mediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * STS.NTR**********q8LrHkgS7w97
+   */
   ossAccessKeyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * DFCXzE5r8x9d4kp**********r1N8eUeh5aU7tM9vVcu
+   */
   ossAccessKeySecret?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * outin-5e342d**********8bfb00163e024c6a
+   */
   ossBucketName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://oss-cn-*******.aliyuncs.com
+   */
   ossEndpoint?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3000
+   */
   ossExpiration?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sv/1c****53-17a*****202/1c****53-17a*****02.mp4
+   */
   ossFileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * CAIS0AR1q6Ft5B2yfSjIr5**********+au5c1eJqHIdZ+h/2LKS***********oAO8fvvU0m2tY7PsZlrUqFMQZHBaUPJoutc0OoFL4JpfZv8u84YADi5C***********28Wf7waf+AUBXGCTm***********lQCZuW//toJV7b9MRcxClZD5dfrl/LRdjr8lo1xGzUPG2KUzSn3b3BkhlsRYe72Rk8vaHxdaAzRDcgVbmqJcSvJ+jC4C8Ys9gG519XtypvopxbbGT8CNZ5z9A9qp9kM49/izc7P6QH35b4RiNL8/Z7tQNXwhiffobHa9YrfHgmNhlvvDSj43t1ytVOeZcX0akQ5u7ku7ZHP+oLt8jaYvjP3PE3rLpMYLu4T48ZXUSODtDYcZDUHhrEk4RUjXdI6Of8UrWSQC7Wsr217otg7Fyyk3s8MaHAkWLX7SB2DwEB4c4aEokVW4RxnezW6UBaRBpbld7Bq6cV5lOdBRZoK+KzQrJTX9Ez2pLmuD6e/LOs7oDVJ37WZtKyuh4Y49d4U8rVEjPQqiykT0pFgpfTK1RzbPmNLKm9baB25/zW+PdDe0dsVgoIFKOpiGWG3RLNn+ztJ9xbkeE+sKUkaGXr8lsTAIl6t4CVFiIIIZnoVY+u/LstBnLqrPoDHnt5XR/uPugptgRuRo8I6372bTJ42WG5Ub9O/dpxJ3lP0R0WgmydnBDx/Sfu2kKvRhpkRvvZEpPtwzIij/gLZZEiazRmyhefo5XmPXFTQmn8l5pAMmy/60xXudvbE2R0EQDY9YCGoABVx6uDvU/Q1kkRe4S00MofmJkOWVwk8jVgBbmlA6LUJQm70f9nksTLYjJ2HVOFHQO8MrnE2ur/xx5jYWpCHI0Aa4sGCjZShV0NNuT8yqNmGOKUReffWW47gxKv5Hhc6j8cAKUMZivrqCCuQaEqhNnKjDH7NS3PsXXyvhNF1KS6uQ=
+   */
   ossSecurityToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -423,6 +553,10 @@ export class ListItemUserDataHeaders extends $tea.Model {
 }
 
 export class ListItemUserDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -442,6 +576,10 @@ export class ListItemUserDataRequest extends $tea.Model {
 }
 
 export class ListItemUserDataResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   studyInfos?: ListItemUserDataResponseBodyStudyInfos[];
   static names(): { [key: string]: string } {
     return {
@@ -509,8 +647,29 @@ export class PageFeedHeaders extends $tea.Model {
 
 export class PageFeedRequest extends $tea.Model {
   body?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 50730********40554
+   */
   mcnId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -536,8 +695,26 @@ export class PageFeedRequest extends $tea.Model {
 }
 
 export class PageFeedResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   feedList?: PageFeedResponseBodyFeedList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasNext?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   nextCursor?: number;
   static names(): { [key: string]: string } {
     return {
@@ -693,8 +870,26 @@ export class UploadVideosResponse extends $tea.Model {
 }
 
 export class CreateFeedRequestCourseInfoLectorUserInfo extends $tea.Model {
+  /**
+   * @example
+   * https://static.dingtalk.com/media/lA****************p_169_169.png_60x60q90.jpg?bizType=avatar
+   */
   avatar?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 用户名
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 16621*******284773
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -718,8 +913,26 @@ export class CreateFeedRequestCourseInfoLectorUserInfo extends $tea.Model {
 }
 
 export class CreateFeedRequestCourseInfoPayInfoCsUserInfo extends $tea.Model {
+  /**
+   * @example
+   * https://static.dingtalk.com/media/lA****************p_169_169.png_60x60q90.jpg?bizType=avatar
+   */
   avatar?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 用户名
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 16621*******284773
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -743,8 +956,29 @@ export class CreateFeedRequestCourseInfoPayInfoCsUserInfo extends $tea.Model {
 }
 
 export class CreateFeedRequestCourseInfoPayInfoDiscountInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1624507431777
+   */
   endTimeMillis?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   price?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1624507431777
+   */
   startTimeMillis?: number;
   static names(): { [key: string]: string } {
     return {
@@ -768,8 +1002,19 @@ export class CreateFeedRequestCourseInfoPayInfoDiscountInfo extends $tea.Model {
 }
 
 export class CreateFeedRequestCourseInfoPayInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   csUserInfo?: CreateFeedRequestCourseInfoPayInfoCsUserInfo;
   discountInfo?: CreateFeedRequestCourseInfoPayInfoDiscountInfo;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10000
+   */
   price?: number;
   static names(): { [key: string]: string } {
     return {
@@ -793,8 +1038,16 @@ export class CreateFeedRequestCourseInfoPayInfo extends $tea.Model {
 }
 
 export class CreateFeedRequestCourseInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   lectorUserInfo?: CreateFeedRequestCourseInfoLectorUserInfo;
   payInfo?: CreateFeedRequestCourseInfoPayInfo;
+  /**
+   * @example
+   * xx学习群
+   */
   studyGroupName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -818,8 +1071,29 @@ export class CreateFeedRequestCourseInfo extends $tea.Model {
 }
 
 export class CreateFeedRequestFeedInfoMediaContents extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 378a1a0154b34**********86313948e
+   */
   mediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 媒体标题
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2
+   */
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -843,7 +1117,21 @@ export class CreateFeedRequestFeedInfoMediaContents extends $tea.Model {
 }
 
 export class CreateFeedRequestFeedInfoRecommends extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * c497****-8a89-****-bc9b-*****48610d3
+   */
   objectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -865,19 +1153,95 @@ export class CreateFeedRequestFeedInfoRecommends extends $tea.Model {
 }
 
 export class CreateFeedRequestFeedInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2
+   */
   actionType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   belongsTo?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 200000257
+   */
   feedCategory?: number;
+  /**
+   * @example
+   * c497****-8a89-****-bc9b-*****48610d3
+   */
   feedId?: string;
+  /**
+   * @example
+   * 标签
+   */
   feedTag?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 4
+   */
   feedType?: number;
+  /**
+   * @example
+   * 10001
+   */
   industryId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 描述
+   */
   introduction?: string;
+  /**
+   * @example
+   * https://static.dingtalk.com/media/**************NAlg_600_337.jpg
+   */
   introductionPicUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 50730********40554
+   */
   mcnId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mediaContents?: CreateFeedRequestFeedInfoMediaContents[];
   recommends?: CreateFeedRequestFeedInfoRecommends[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://static.dingtalk.com/media/**************NAlg_600_337.jpg
+   */
   thumbUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 课程标题
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -948,10 +1312,45 @@ export class DeleteVideosResponseBodyResult extends $tea.Model {
 }
 
 export class GetFeedResponseBodyFeedItem extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 9320
+   */
   durationMillis?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   feedContentType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 08****b5-2442-****-bd56-99cf****8861
+   */
   itemId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 子内容标题
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://h5.dingtalk.com/live/video_lesson.htm?feedId=66****03-a825-****-9501-b1eeb****a8d&mcnId=1832**********06173&feedProperty=2&itemId=08****b5-2442-****-bd56-99c*****8861&dd_nav_bgcolor=FF2C2D2F#/video
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -979,7 +1378,21 @@ export class GetFeedResponseBodyFeedItem extends $tea.Model {
 }
 
 export class ListItemUserDataResponseBodyStudyInfos extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10000
+   */
   durationMillis?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 16621*******284773
+   */
   uid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1001,11 +1414,53 @@ export class ListItemUserDataResponseBodyStudyInfos extends $tea.Model {
 }
 
 export class PageFeedResponseBodyFeedList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 200000257
+   */
   feedCategory?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3d******-1cd2-****-ba1d-8******3c6dc
+   */
   feedId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 4
+   */
   feedType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 名称
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://static.dingtalk.com/media/**************NAlg_600_337.jpg
+   */
   thumbUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://h5.dingtalk.com/live/video_lesson.htm?spm=a1zdd.*******.0.0.3e9617129vSDL8&feedId=5e*****-17ec-45f1-8cc0-e******4a3&mcnId=183206*******06173&feedProperty=1&itemId=5ef7*****-17ec-45f1-8cc0-e64*****954a3&dd_nav_bgcolor=FF2****F#/video
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1119,12 +1574,11 @@ export class UploadVideosResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1134,12 +1588,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 创建内容
-   *
-   * @param request CreateFeedRequest
-   * @param headers CreateFeedHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateFeedResponse
+   * 创建内容
+   * 
+   * @param request - CreateFeedRequest
+   * @param headers - CreateFeedHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateFeedResponse
    */
   async createFeedWithOptions(request: CreateFeedRequest, headers: CreateFeedHeaders, runtime: $Util.RuntimeOptions): Promise<CreateFeedResponse> {
     Util.validateModel(request);
@@ -1184,10 +1638,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建内容
-   *
-   * @param request CreateFeedRequest
-   * @return CreateFeedResponse
+   * 创建内容
+   * 
+   * @param request - CreateFeedRequest
+   * @returns CreateFeedResponse
    */
   async createFeed(request: CreateFeedRequest): Promise<CreateFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1196,12 +1650,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 点众下架视频接口
-   *
-   * @param request DeleteVideosRequest
-   * @param headers DeleteVideosHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteVideosResponse
+   * 点众下架视频接口
+   * 
+   * @param request - DeleteVideosRequest
+   * @param headers - DeleteVideosHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteVideosResponse
    */
   async deleteVideosWithOptions(request: DeleteVideosRequest, headers: DeleteVideosHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteVideosResponse> {
     Util.validateModel(request);
@@ -1233,10 +1687,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 点众下架视频接口
-   *
-   * @param request DeleteVideosRequest
-   * @return DeleteVideosResponse
+   * 点众下架视频接口
+   * 
+   * @param request - DeleteVideosRequest
+   * @returns DeleteVideosResponse
    */
   async deleteVideos(request: DeleteVideosRequest): Promise<DeleteVideosResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1245,12 +1699,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取feed的详细信息，包括子课程的信息
-   *
-   * @param request GetFeedRequest
-   * @param headers GetFeedHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFeedResponse
+   * 获取feed的详细信息，包括子课程的信息
+   * 
+   * @param request - GetFeedRequest
+   * @param headers - GetFeedHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFeedResponse
    */
   async getFeedWithOptions(feedId: string, request: GetFeedRequest, headers: GetFeedHeaders, runtime: $Util.RuntimeOptions): Promise<GetFeedResponse> {
     Util.validateModel(request);
@@ -1287,10 +1741,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取feed的详细信息，包括子课程的信息
-   *
-   * @param request GetFeedRequest
-   * @return GetFeedResponse
+   * 获取feed的详细信息，包括子课程的信息
+   * 
+   * @param request - GetFeedRequest
+   * @returns GetFeedResponse
    */
   async getFeed(feedId: string, request: GetFeedRequest): Promise<GetFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1299,12 +1753,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取oss上传凭证
-   *
-   * @param request GetMediaCerficateRequest
-   * @param headers GetMediaCerficateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMediaCerficateResponse
+   * 获取oss上传凭证
+   * 
+   * @param request - GetMediaCerficateRequest
+   * @param headers - GetMediaCerficateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMediaCerficateResponse
    */
   async getMediaCerficateWithOptions(request: GetMediaCerficateRequest, headers: GetMediaCerficateHeaders, runtime: $Util.RuntimeOptions): Promise<GetMediaCerficateResponse> {
     Util.validateModel(request);
@@ -1365,10 +1819,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取oss上传凭证
-   *
-   * @param request GetMediaCerficateRequest
-   * @return GetMediaCerficateResponse
+   * 获取oss上传凭证
+   * 
+   * @param request - GetMediaCerficateRequest
+   * @returns GetMediaCerficateResponse
    */
   async getMediaCerficate(request: GetMediaCerficateRequest): Promise<GetMediaCerficateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1377,12 +1831,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 展示机构内观看内容的统计信息
-   *
-   * @param request ListItemUserDataRequest
-   * @param headers ListItemUserDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListItemUserDataResponse
+   * 展示机构内观看内容的统计信息
+   * 
+   * @param request - ListItemUserDataRequest
+   * @param headers - ListItemUserDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListItemUserDataResponse
    */
   async listItemUserDataWithOptions(itemId: string, request: ListItemUserDataRequest, headers: ListItemUserDataHeaders, runtime: $Util.RuntimeOptions): Promise<ListItemUserDataResponse> {
     Util.validateModel(request);
@@ -1414,10 +1868,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 展示机构内观看内容的统计信息
-   *
-   * @param request ListItemUserDataRequest
-   * @return ListItemUserDataResponse
+   * 展示机构内观看内容的统计信息
+   * 
+   * @param request - ListItemUserDataRequest
+   * @returns ListItemUserDataResponse
    */
   async listItemUserData(itemId: string, request: ListItemUserDataRequest): Promise<ListItemUserDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1426,12 +1880,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取机构下课程列表
-   *
-   * @param request PageFeedRequest
-   * @param headers PageFeedHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PageFeedResponse
+   * 获取机构下课程列表
+   * 
+   * @param request - PageFeedRequest
+   * @param headers - PageFeedHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PageFeedResponse
    */
   async pageFeedWithOptions(request: PageFeedRequest, headers: PageFeedHeaders, runtime: $Util.RuntimeOptions): Promise<PageFeedResponse> {
     Util.validateModel(request);
@@ -1477,10 +1931,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取机构下课程列表
-   *
-   * @param request PageFeedRequest
-   * @return PageFeedResponse
+   * 获取机构下课程列表
+   * 
+   * @param request - PageFeedRequest
+   * @returns PageFeedResponse
    */
   async pageFeed(request: PageFeedRequest): Promise<PageFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1489,12 +1943,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 点众上传视频信息
-   *
-   * @param tmpReq UploadVideosRequest
-   * @param headers UploadVideosHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UploadVideosResponse
+   * 点众上传视频信息
+   * 
+   * @param tmpReq - UploadVideosRequest
+   * @param headers - UploadVideosHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UploadVideosResponse
    */
   async uploadVideosWithOptions(tmpReq: UploadVideosRequest, headers: UploadVideosHeaders, runtime: $Util.RuntimeOptions): Promise<UploadVideosResponse> {
     Util.validateModel(tmpReq);
@@ -1537,10 +1991,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 点众上传视频信息
-   *
-   * @param request UploadVideosRequest
-   * @return UploadVideosResponse
+   * 点众上传视频信息
+   * 
+   * @param request - UploadVideosRequest
+   * @returns UploadVideosResponse
    */
   async uploadVideos(request: UploadVideosRequest): Promise<UploadVideosResponse> {
     let runtime = new $Util.RuntimeOptions({ });

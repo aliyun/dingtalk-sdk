@@ -1,19 +1,39 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class OpenConnectionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * suiteudabcd123
+   */
   clientId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 9W1berqrwfs
+   */
   clientSecret?: string;
   extras?: { [key: string]: any };
+  /**
+   * @example
+   * 32.78.48.10
+   */
   localIp?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subscriptions?: OpenConnectionRequestSubscriptions[];
   static names(): { [key: string]: string } {
     return {
@@ -41,7 +61,15 @@ export class OpenConnectionRequest extends $tea.Model {
 }
 
 export class OpenConnectionResponseBody extends $tea.Model {
+  /**
+   * @example
+   * wss://open-connection.dingtalk.com/connect
+   */
   endpoint?: string;
+  /**
+   * @example
+   * 67e5aeb3-de99-11ed-897e-e251245ed5d2
+   */
   ticket?: string;
   static names(): { [key: string]: string } {
     return {
@@ -88,7 +116,21 @@ export class OpenConnectionResponse extends $tea.Model {
 }
 
 export class OpenConnectionRequestSubscriptions extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * /v1.0/im/bot/messages/get
+   */
   topic?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EVENT
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -111,12 +153,11 @@ export class OpenConnectionRequestSubscriptions extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
@@ -127,12 +168,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 云上网关注册长连接
-   *
-   * @param request OpenConnectionRequest
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return OpenConnectionResponse
+   * 云上网关注册长连接
+   * 
+   * @param request - OpenConnectionRequest
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OpenConnectionResponse
    */
   async openConnectionWithOptions(request: OpenConnectionRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<OpenConnectionResponse> {
     Util.validateModel(request);
@@ -176,10 +217,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 云上网关注册长连接
-   *
-   * @param request OpenConnectionRequest
-   * @return OpenConnectionResponse
+   * 云上网关注册长连接
+   * 
+   * @param request - OpenConnectionRequest
+   * @returns OpenConnectionResponse
    */
   async openConnection(request: OpenConnectionRequest): Promise<OpenConnectionResponse> {
     let runtime = new $Util.RuntimeOptions({ });

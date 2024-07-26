@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,12 +30,51 @@ export class ContractBenefitConsumeHeaders extends $tea.Model {
 }
 
 export class ContractBenefitConsumeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * esign
+   */
   benefitPoint?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sjdaujii129w9qej2nqas
+   */
   bizRequestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   consumeQuota?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding1231ndu29923312
+   */
   corpId?: string;
   extParams?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding12939912nduaejjwe
+   */
   isvCorpId?: string;
+  /**
+   * @example
+   * djauihjauiwnkndjknkjanaae
+   */
   optUnionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -138,8 +175,20 @@ export class EsignQueryApprovalInfoHeaders extends $tea.Model {
 }
 
 export class EsignQueryApprovalInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * dingd0c871e2dfc941a34ac5d6980864d335
+   */
   corpId?: string;
+  /**
+   * @example
+   * 5556ae0359c64c4b9491c0c3c339341f
+   */
   esignFlowId?: string;
+  /**
+   * @example
+   * PbnhW6rVXRg8u6T4NiiOwwQiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -232,8 +281,16 @@ export class EsignQueryGrantInfoHeaders extends $tea.Model {
 }
 
 export class EsignQueryGrantInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * dingd0c871e2dfc941a34ac5d6980864d335
+   */
   corpId?: string;
   extension?: { [key: string]: string };
+  /**
+   * @example
+   * PbnhW6rVXRg8u6T4NiiOwwQiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -326,8 +383,22 @@ export class EsignQueryIdentityByTicketHeaders extends $tea.Model {
 }
 
 export class EsignQueryIdentityByTicketRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingd0c871e2dfc941a34ac5d6980864d335
+   */
   corpId?: string;
   extension?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * feb4b8e5-d6d9-4d22-a6b8-c8e26823a73a
+   */
   ticket?: string;
   static names(): { [key: string]: string } {
     return {
@@ -420,10 +491,29 @@ export class EsignSyncEventHeaders extends $tea.Model {
 }
 
 export class EsignSyncEventRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * openEsign
+   */
   action?: string;
+  /**
+   * @example
+   * dingd0c871e2dfc941a34ac5d6980864d335
+   */
   corpId?: string;
+  /**
+   * @example
+   * {"name": "名字"}
+   */
   esignData?: string;
   extension?: { [key: string]: string };
+  /**
+   * @example
+   * PbnhW6rVXRg8u6T4NiiOwwQiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -521,7 +611,15 @@ export class FinishReviewOrderHeaders extends $tea.Model {
 
 export class FinishReviewOrderRequest extends $tea.Model {
   endFiles?: FinishReviewOrderRequestEndFiles[];
+  /**
+   * @example
+   * {}
+   */
   extension?: string;
+  /**
+   * @example
+   * 12345678
+   */
   orderId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -611,6 +709,10 @@ export class QueryAdvancedContractVersionHeaders extends $tea.Model {
 }
 
 export class QueryAdvancedContractVersionRequest extends $tea.Model {
+  /**
+   * @example
+   * dingff048f704a8b6d8e4ac5d6980864d335
+   */
   corpId?: string;
   extension?: { [key: string]: string };
   static names(): { [key: string]: string } {
@@ -702,14 +804,47 @@ export class SendContractCardHeaders extends $tea.Model {
 }
 
 export class SendContractCardRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * signing
+   */
   cardType?: string;
   contractInfo?: SendContractCardRequestContractInfo;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding5f62ac8a3c24952ebc961a6cb783455b
+   */
   corpId?: string;
   extension?: { [key: string]: string };
+  /**
+   * @example
+   * PROC_Xxxxxxxx
+   */
   processInstanceId?: string;
   receiveGroups?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receivers?: SendContractCardRequestReceivers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sender?: SendContractCardRequestSender;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   syncSingleChat?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -808,8 +943,20 @@ export class ContractBenefitConsumeResponseBodyResult extends $tea.Model {
 }
 
 export class EsignQueryApprovalInfoResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 202311081619000455501
+   */
   bpmsProcessBusinessId?: string;
+  /**
+   * @example
+   * O6wNhB4wTMajvNW8Dc_Rjg09301699431585
+   */
   bpmsProcessInstanceId?: string;
+  /**
+   * @example
+   * https://aflow.dingtalk.com/dingtalk/pc/query/pchomepage.htm?corpid=ding6c3948a9e37c439c35c2f4657eb6378f&swfrom=https://n.dingtalk.com/dingding/h5-contract/contractPC/index.html#/approval?procInstId=O6wNhB4wTMajvNW8Dc_Rjg09301699431585
+   */
   bpmsProcessInstanceUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -833,11 +980,35 @@ export class EsignQueryApprovalInfoResponseBodyResult extends $tea.Model {
 }
 
 export class EsignQueryGrantInfoResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 何一兵
+   */
   legalPerson?: string;
+  /**
+   * @example
+   * 18667021101
+   */
   mobilePhoneNumber?: string;
+  /**
+   * @example
+   * 杭州天谷信息科技有限公司
+   */
   orgName?: string;
+  /**
+   * @example
+   * 86
+   */
   stateCode?: string;
+  /**
+   * @example
+   * 913301087458306077
+   */
   unifiedSocialCredit?: string;
+  /**
+   * @example
+   * 某人名
+   */
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -886,6 +1057,10 @@ export class EsignQueryIdentityByTicketResponseBodyResult extends $tea.Model {
 }
 
 export class EsignSyncEventResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 外部服务异常
+   */
   message?: string;
   static names(): { [key: string]: string } {
     return {
@@ -905,10 +1080,30 @@ export class EsignSyncEventResponseBodyResult extends $tea.Model {
 }
 
 export class FinishReviewOrderRequestEndFiles extends $tea.Model {
+  /**
+   * @example
+   * 合同文件
+   */
   fileName?: string;
+  /**
+   * @example
+   * 12
+   */
   fileSize?: string;
+  /**
+   * @example
+   * word
+   */
   fileType?: string;
+  /**
+   * @example
+   * 0
+   */
   fileVersion?: number;
+  /**
+   * @example
+   * http://oss.com
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -938,6 +1133,10 @@ export class FinishReviewOrderRequestEndFiles extends $tea.Model {
 export class QueryAdvancedContractVersionResponseBodyResult extends $tea.Model {
   enableEsignAttachmentSign?: boolean;
   extension?: { [key: string]: string };
+  /**
+   * @example
+   * advanced
+   */
   version?: string;
   static names(): { [key: string]: string } {
     return {
@@ -961,9 +1160,25 @@ export class QueryAdvancedContractVersionResponseBodyResult extends $tea.Model {
 }
 
 export class SendContractCardRequestContractInfo extends $tea.Model {
+  /**
+   * @example
+   * HT_xxxxxxx
+   */
   contractCode?: string;
+  /**
+   * @example
+   * 合同
+   */
   contractName?: string;
+  /**
+   * @example
+   * 1242153453
+   */
   createTime?: number;
+  /**
+   * @example
+   * 张三
+   */
   signUserName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -989,8 +1204,20 @@ export class SendContractCardRequestContractInfo extends $tea.Model {
 }
 
 export class SendContractCardRequestReceivers extends $tea.Model {
+  /**
+   * @example
+   * ding5f62ac8a3c24952ebc961a6cb783455b
+   */
   corpId?: string;
+  /**
+   * @example
+   * 1622265907855672
+   */
   userId?: string;
+  /**
+   * @example
+   * 可以为空
+   */
   userType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1014,8 +1241,20 @@ export class SendContractCardRequestReceivers extends $tea.Model {
 }
 
 export class SendContractCardRequestSender extends $tea.Model {
+  /**
+   * @example
+   * ding5f62ac8a3c24952ebc961a6cb783455b
+   */
   corpId?: string;
+  /**
+   * @example
+   * 1622265907855672
+   */
   userId?: string;
+  /**
+   * @example
+   * 可以为空
+   */
   userType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1040,12 +1279,11 @@ export class SendContractCardRequestSender extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1055,12 +1293,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 合同权益核销
-   *
-   * @param request ContractBenefitConsumeRequest
-   * @param headers ContractBenefitConsumeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ContractBenefitConsumeResponse
+   * 合同权益核销
+   * 
+   * @param request - ContractBenefitConsumeRequest
+   * @param headers - ContractBenefitConsumeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ContractBenefitConsumeResponse
    */
   async contractBenefitConsumeWithOptions(request: ContractBenefitConsumeRequest, headers: ContractBenefitConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<ContractBenefitConsumeResponse> {
     Util.validateModel(request);
@@ -1121,10 +1359,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 合同权益核销
-   *
-   * @param request ContractBenefitConsumeRequest
-   * @return ContractBenefitConsumeResponse
+   * 合同权益核销
+   * 
+   * @param request - ContractBenefitConsumeRequest
+   * @returns ContractBenefitConsumeResponse
    */
   async contractBenefitConsume(request: ContractBenefitConsumeRequest): Promise<ContractBenefitConsumeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1133,12 +1371,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 天谷侧查询审批单
-   *
-   * @param request EsignQueryApprovalInfoRequest
-   * @param headers EsignQueryApprovalInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EsignQueryApprovalInfoResponse
+   * 天谷侧查询审批单
+   * 
+   * @param request - EsignQueryApprovalInfoRequest
+   * @param headers - EsignQueryApprovalInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EsignQueryApprovalInfoResponse
    */
   async esignQueryApprovalInfoWithOptions(request: EsignQueryApprovalInfoRequest, headers: EsignQueryApprovalInfoHeaders, runtime: $Util.RuntimeOptions): Promise<EsignQueryApprovalInfoResponse> {
     Util.validateModel(request);
@@ -1183,10 +1421,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 天谷侧查询审批单
-   *
-   * @param request EsignQueryApprovalInfoRequest
-   * @return EsignQueryApprovalInfoResponse
+   * 天谷侧查询审批单
+   * 
+   * @param request - EsignQueryApprovalInfoRequest
+   * @returns EsignQueryApprovalInfoResponse
    */
   async esignQueryApprovalInfo(request: EsignQueryApprovalInfoRequest): Promise<EsignQueryApprovalInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1195,12 +1433,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 天谷侧查询授权信息接口
-   *
-   * @param request EsignQueryGrantInfoRequest
-   * @param headers EsignQueryGrantInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EsignQueryGrantInfoResponse
+   * 天谷侧查询授权信息接口
+   * 
+   * @param request - EsignQueryGrantInfoRequest
+   * @param headers - EsignQueryGrantInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EsignQueryGrantInfoResponse
    */
   async esignQueryGrantInfoWithOptions(request: EsignQueryGrantInfoRequest, headers: EsignQueryGrantInfoHeaders, runtime: $Util.RuntimeOptions): Promise<EsignQueryGrantInfoResponse> {
     Util.validateModel(request);
@@ -1245,10 +1483,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 天谷侧查询授权信息接口
-   *
-   * @param request EsignQueryGrantInfoRequest
-   * @return EsignQueryGrantInfoResponse
+   * 天谷侧查询授权信息接口
+   * 
+   * @param request - EsignQueryGrantInfoRequest
+   * @returns EsignQueryGrantInfoResponse
    */
   async esignQueryGrantInfo(request: EsignQueryGrantInfoRequest): Promise<EsignQueryGrantInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1257,12 +1495,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 天谷侧查询获取免登信息
-   *
-   * @param request EsignQueryIdentityByTicketRequest
-   * @param headers EsignQueryIdentityByTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EsignQueryIdentityByTicketResponse
+   * 天谷侧查询获取免登信息
+   * 
+   * @param request - EsignQueryIdentityByTicketRequest
+   * @param headers - EsignQueryIdentityByTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EsignQueryIdentityByTicketResponse
    */
   async esignQueryIdentityByTicketWithOptions(request: EsignQueryIdentityByTicketRequest, headers: EsignQueryIdentityByTicketHeaders, runtime: $Util.RuntimeOptions): Promise<EsignQueryIdentityByTicketResponse> {
     Util.validateModel(request);
@@ -1307,10 +1545,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 天谷侧查询获取免登信息
-   *
-   * @param request EsignQueryIdentityByTicketRequest
-   * @return EsignQueryIdentityByTicketResponse
+   * 天谷侧查询获取免登信息
+   * 
+   * @param request - EsignQueryIdentityByTicketRequest
+   * @returns EsignQueryIdentityByTicketResponse
    */
   async esignQueryIdentityByTicket(request: EsignQueryIdentityByTicketRequest): Promise<EsignQueryIdentityByTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1319,12 +1557,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary e签宝电子签事件同步回传接口
-   *
-   * @param request EsignSyncEventRequest
-   * @param headers EsignSyncEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EsignSyncEventResponse
+   * e签宝电子签事件同步回传接口
+   * 
+   * @param request - EsignSyncEventRequest
+   * @param headers - EsignSyncEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EsignSyncEventResponse
    */
   async esignSyncEventWithOptions(request: EsignSyncEventRequest, headers: EsignSyncEventHeaders, runtime: $Util.RuntimeOptions): Promise<EsignSyncEventResponse> {
     Util.validateModel(request);
@@ -1377,10 +1615,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary e签宝电子签事件同步回传接口
-   *
-   * @param request EsignSyncEventRequest
-   * @return EsignSyncEventResponse
+   * e签宝电子签事件同步回传接口
+   * 
+   * @param request - EsignSyncEventRequest
+   * @returns EsignSyncEventResponse
    */
   async esignSyncEvent(request: EsignSyncEventRequest): Promise<EsignSyncEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1389,12 +1627,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 完成工单审查接口
-   *
-   * @param request FinishReviewOrderRequest
-   * @param headers FinishReviewOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return FinishReviewOrderResponse
+   * 完成工单审查接口
+   * 
+   * @param request - FinishReviewOrderRequest
+   * @param headers - FinishReviewOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns FinishReviewOrderResponse
    */
   async finishReviewOrderWithOptions(request: FinishReviewOrderRequest, headers: FinishReviewOrderHeaders, runtime: $Util.RuntimeOptions): Promise<FinishReviewOrderResponse> {
     Util.validateModel(request);
@@ -1439,10 +1677,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 完成工单审查接口
-   *
-   * @param request FinishReviewOrderRequest
-   * @return FinishReviewOrderResponse
+   * 完成工单审查接口
+   * 
+   * @param request - FinishReviewOrderRequest
+   * @returns FinishReviewOrderResponse
    */
   async finishReviewOrder(request: FinishReviewOrderRequest): Promise<FinishReviewOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1451,12 +1689,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary e签宝查询智能合同版本接口
-   *
-   * @param request QueryAdvancedContractVersionRequest
-   * @param headers QueryAdvancedContractVersionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryAdvancedContractVersionResponse
+   * e签宝查询智能合同版本接口
+   * 
+   * @param request - QueryAdvancedContractVersionRequest
+   * @param headers - QueryAdvancedContractVersionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryAdvancedContractVersionResponse
    */
   async queryAdvancedContractVersionWithOptions(request: QueryAdvancedContractVersionRequest, headers: QueryAdvancedContractVersionHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAdvancedContractVersionResponse> {
     Util.validateModel(request);
@@ -1497,10 +1735,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary e签宝查询智能合同版本接口
-   *
-   * @param request QueryAdvancedContractVersionRequest
-   * @return QueryAdvancedContractVersionResponse
+   * e签宝查询智能合同版本接口
+   * 
+   * @param request - QueryAdvancedContractVersionRequest
+   * @returns QueryAdvancedContractVersionResponse
    */
   async queryAdvancedContractVersion(request: QueryAdvancedContractVersionRequest): Promise<QueryAdvancedContractVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1509,12 +1747,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送合同相关卡片
-   *
-   * @param request SendContractCardRequest
-   * @param headers SendContractCardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendContractCardResponse
+   * 发送合同相关卡片
+   * 
+   * @param request - SendContractCardRequest
+   * @param headers - SendContractCardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendContractCardResponse
    */
   async sendContractCardWithOptions(request: SendContractCardRequest, headers: SendContractCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendContractCardResponse> {
     Util.validateModel(request);
@@ -1583,10 +1821,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送合同相关卡片
-   *
-   * @param request SendContractCardRequest
-   * @return SendContractCardResponse
+   * 发送合同相关卡片
+   * 
+   * @param request - SendContractCardRequest
+   * @returns SendContractCardResponse
    */
   async sendContractCard(request: SendContractCardRequest): Promise<SendContractCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });

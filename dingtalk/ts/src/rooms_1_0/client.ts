@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -33,22 +31,57 @@ export class CreateDeviceCustomTemplateHeaders extends $tea.Model {
 
 export class CreateDeviceCustomTemplateRequest extends $tea.Model {
   bgImgList?: string[];
+  /**
+   * @example
+   * 1
+   */
   bgType?: number;
+  /**
+   * @example
+   * https://img.alicdn.com/imgextra/i2/O1CN01GWWCCR1y2D9D9EHej_!!6000000006520-2-tps-1920-470.png
+   */
   bgUrl?: string;
+  /**
+   * @example
+   * 测试文本
+   */
   customDoc?: string;
   desensitizeUserName?: boolean;
   deviceUnionIds?: string[];
   groupIds?: number[];
   hideServerCodeWhenProjecting?: boolean;
   instruction?: boolean;
+  /**
+   * @example
+   * 1
+   */
   isPicTop?: number;
+  /**
+   * @example
+   * logo
+   */
   logo?: string;
+  /**
+   * @example
+   * 测试企业
+   */
   orgName?: string;
+  /**
+   * @example
+   * 10
+   */
   picturePlayInterval?: number;
   roomIds?: string[];
   showCalendarCard?: boolean;
   showCalendarTitle?: boolean;
   showFunctionCard?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试模板
+   */
   templateName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -169,15 +202,55 @@ export class CreateMeetingRoomHeaders extends $tea.Model {
 
 export class CreateMeetingRoomRequest extends $tea.Model {
   enableCycleReservation?: boolean;
+  /**
+   * @example
+   * 0
+   */
   groupId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxIsvRoomId
+   */
   isvRoomId?: string;
   reservationAuthority?: CreateMeetingRoomRequestReservationAuthority;
+  /**
+   * @example
+   * 10
+   */
   roomCapacity?: number;
   roomLabelIds?: number[];
   roomLocation?: CreateMeetingRoomRequestRoomLocation;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试会议室
+   */
   roomName?: string;
+  /**
+   * @example
+   * https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg
+   */
   roomPicture?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0.全员可用 1.仅管理员可用
+   */
   roomStatus?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -217,6 +290,10 @@ export class CreateMeetingRoomRequest extends $tea.Model {
 }
 
 export class CreateMeetingRoomResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -284,9 +361,31 @@ export class CreateMeetingRoomControlPanelHeaders extends $tea.Model {
 
 export class CreateMeetingRoomControlPanelRequest extends $tea.Model {
   extra?: CreateMeetingRoomControlPanelRequestExtra;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roomConfig?: CreateMeetingRoomControlPanelRequestRoomConfig[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 25SDWxxxxxx
+   */
   roomId?: string;
+  /**
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -380,8 +479,26 @@ export class CreateMeetingRoomGroupHeaders extends $tea.Model {
 }
 
 export class CreateMeetingRoomGroupRequest extends $tea.Model {
+  /**
+   * @example
+   * 测试分组
+   */
   groupName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 172
+   */
   parentGroupId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -405,6 +522,10 @@ export class CreateMeetingRoomGroupRequest extends $tea.Model {
 }
 
 export class CreateMeetingRoomGroupResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 172
+   */
   result?: number;
   static names(): { [key: string]: string } {
     return {
@@ -471,6 +592,10 @@ export class DeleteDeviceCustomTemplateHeaders extends $tea.Model {
 }
 
 export class DeleteDeviceCustomTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -490,6 +615,10 @@ export class DeleteDeviceCustomTemplateRequest extends $tea.Model {
 }
 
 export class DeleteDeviceCustomTemplateResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -556,6 +685,13 @@ export class DeleteMeetingRoomHeaders extends $tea.Model {
 }
 
 export class DeleteMeetingRoomRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -575,6 +711,10 @@ export class DeleteMeetingRoomRequest extends $tea.Model {
 }
 
 export class DeleteMeetingRoomResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -641,7 +781,18 @@ export class DeleteMeetingRoomControlPanelHeaders extends $tea.Model {
 }
 
 export class DeleteMeetingRoomControlPanelRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roomIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * A1FAxxxxx
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -729,6 +880,13 @@ export class DeleteMeetingRoomGroupHeaders extends $tea.Model {
 }
 
 export class DeleteMeetingRoomGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -748,6 +906,10 @@ export class DeleteMeetingRoomGroupRequest extends $tea.Model {
 }
 
 export class DeleteMeetingRoomGroupResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -946,6 +1108,10 @@ export class QueryDeviceIpByCodeHeaders extends $tea.Model {
 }
 
 export class QueryDeviceIpByCodeRequest extends $tea.Model {
+  /**
+   * @example
+   * 1005F1K203604N000676
+   */
   deviceSn?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1035,8 +1201,23 @@ export class QueryDevicePropertiesHeaders extends $tea.Model {
 
 export class QueryDevicePropertiesRequest extends $tea.Model {
   propertyNames?: string[];
+  /**
+   * @example
+   * 1234
+   */
   deviceId?: string;
+  /**
+   * @example
+   * "lmvUrRkpboRrSMtgsiS9V3AiEiE"
+   */
   deviceUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * "lmvUrEjpboFrSMtgsiS9V3AiEiE"
+   */
   operatorUnionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1128,6 +1309,13 @@ export class QueryMeetingRoomHeaders extends $tea.Model {
 }
 
 export class QueryMeetingRoomRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1213,9 +1401,25 @@ export class QueryMeetingRoomControlPanelListHeaders extends $tea.Model {
 }
 
 export class QueryMeetingRoomControlPanelListRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @example
+   * 2iPOLxxxxx
+   */
   roomId?: string;
+  /**
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1242,8 +1446,16 @@ export class QueryMeetingRoomControlPanelListRequest extends $tea.Model {
 
 export class QueryMeetingRoomControlPanelListResponseBody extends $tea.Model {
   hasMore?: boolean;
+  /**
+   * @example
+   * 0
+   */
   nextToken?: number;
   result?: QueryMeetingRoomControlPanelListResponseBodyResult[];
+  /**
+   * @example
+   * 10
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1316,8 +1528,23 @@ export class QueryMeetingRoomDeviceHeaders extends $tea.Model {
 }
 
 export class QueryMeetingRoomDeviceRequest extends $tea.Model {
+  /**
+   * @example
+   * 1234
+   */
   deviceId?: string;
+  /**
+   * @example
+   * "lmvUrRkpboRrSMtgsiS9V3AiEiE"
+   */
   deviceUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * "lmvUrEjpboFrSMtgsiS9V3AiEiE"
+   */
   operatorUnionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1407,6 +1634,13 @@ export class QueryMeetingRoomGroupHeaders extends $tea.Model {
 }
 
 export class QueryMeetingRoomGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1426,8 +1660,20 @@ export class QueryMeetingRoomGroupRequest extends $tea.Model {
 }
 
 export class QueryMeetingRoomGroupResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 172
+   */
   groupId?: number;
+  /**
+   * @example
+   * 测试分组
+   */
   groupName?: string;
+  /**
+   * @example
+   * 0
+   */
   parentId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1498,6 +1744,13 @@ export class QueryMeetingRoomGroupListHeaders extends $tea.Model {
 }
 
 export class QueryMeetingRoomGroupListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1583,8 +1836,23 @@ export class QueryMeetingRoomListHeaders extends $tea.Model {
 }
 
 export class QueryMeetingRoomListRequest extends $tea.Model {
+  /**
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 124
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1608,7 +1876,15 @@ export class QueryMeetingRoomListRequest extends $tea.Model {
 }
 
 export class QueryMeetingRoomListResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @example
+   * 123
+   */
   nextToken?: number;
   result?: QueryMeetingRoomListResponseBodyResult[];
   static names(): { [key: string]: string } {
@@ -1680,7 +1956,21 @@ export class RemoveSuperUserMeetingRoomHeaders extends $tea.Model {
 }
 
 export class RemoveSuperUserMeetingRoomRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed
+   */
   roomId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1769,7 +2059,18 @@ export class SetSuperUserMeetingRoomHeaders extends $tea.Model {
 
 export class SetSuperUserMeetingRoomRequest extends $tea.Model {
   deptIdWhiteList?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roomId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OcMXXXXXM2eRogiEiE
+   */
   unionId?: string;
   userIdWhiteList?: string[];
   static names(): { [key: string]: string } {
@@ -1863,23 +2164,89 @@ export class UpdateDeviceCustomTemplateHeaders extends $tea.Model {
 
 export class UpdateDeviceCustomTemplateRequest extends $tea.Model {
   bgImgList?: string[];
+  /**
+   * @example
+   * 1
+   */
   bgType?: number;
+  /**
+   * @example
+   * https://img.alicdn.com/imgextra/i2/O1CN01GWWCCR1y2D9D9EHej_!!6000000006520-2-tps-1920-470.png
+   */
   bgUrl?: string;
+  /**
+   * @example
+   * 测试文本
+   */
   customDoc?: string;
+  /**
+   * @example
+   * true：脱敏 false：不脱敏
+   */
   desensitizeUserName?: boolean;
   deviceUnionIds?: string[];
   groupIds?: number[];
+  /**
+   * @example
+   * true：隐藏 false：不隐藏
+   */
   hideServerCodeWhenProjecting?: boolean;
+  /**
+   * @example
+   * true：显示 false：不显示
+   */
   instruction?: boolean;
+  /**
+   * @example
+   * 1
+   */
   isPicTop?: number;
+  /**
+   * @example
+   * logo
+   */
   logo?: string;
+  /**
+   * @example
+   * 测试企业
+   */
   orgName?: string;
+  /**
+   * @example
+   * 10
+   */
   picturePlayInterval?: number;
   roomIds?: string[];
+  /**
+   * @example
+   * true：展示 false：不展示
+   */
   showCalendarCard?: boolean;
+  /**
+   * @example
+   * true：展示 false：不展示
+   */
   showCalendarTitle?: boolean;
+  /**
+   * @example
+   * true：展示 false：不展示
+   */
   showFunctionCard?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 89
+   */
   templateId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试模板
+   */
   templateName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1935,6 +2302,10 @@ export class UpdateDeviceCustomTemplateRequest extends $tea.Model {
 }
 
 export class UpdateDeviceCustomTemplateResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2002,16 +2373,54 @@ export class UpdateMeetingRoomHeaders extends $tea.Model {
 
 export class UpdateMeetingRoomRequest extends $tea.Model {
   enableCycleReservation?: boolean;
+  /**
+   * @example
+   * 0
+   */
   groupId?: number;
+  /**
+   * @example
+   * xxxIsvRoomId
+   */
   isvRoomId?: string;
   reservationAuthority?: UpdateMeetingRoomRequestReservationAuthority;
+  /**
+   * @example
+   * 10
+   */
   roomCapacity?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed
+   */
   roomId?: string;
   roomLabelIds?: number[];
   roomLocation?: UpdateMeetingRoomRequestRoomLocation;
+  /**
+   * @example
+   * 测试会议室
+   */
   roomName?: string;
+  /**
+   * @example
+   * https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg
+   */
   roomPicture?: string;
+  /**
+   * @example
+   * 0.全员可用 1.仅管理员可用
+   */
   roomStatus?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2053,6 +2462,10 @@ export class UpdateMeetingRoomRequest extends $tea.Model {
 }
 
 export class UpdateMeetingRoomResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2119,8 +2532,26 @@ export class UpdateMeetingRoomGroupHeaders extends $tea.Model {
 }
 
 export class UpdateMeetingRoomGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 172
+   */
   groupId?: number;
+  /**
+   * @example
+   * 测试分组
+   */
   groupName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2144,6 +2575,10 @@ export class UpdateMeetingRoomGroupRequest extends $tea.Model {
 }
 
 export class UpdateMeetingRoomGroupResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2188,8 +2623,20 @@ export class UpdateMeetingRoomGroupResponse extends $tea.Model {
 }
 
 export class CreateMeetingRoomRequestReservationAuthorityAuthorizedMembers extends $tea.Model {
+  /**
+   * @example
+   * lPHhSZDLXXXXXXpBlC9lxLwiEiE
+   */
   memberId?: string;
+  /**
+   * @example
+   * 张三
+   */
   memberName?: string;
+  /**
+   * @example
+   * user
+   */
   memberType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2232,7 +2679,15 @@ export class CreateMeetingRoomRequestReservationAuthority extends $tea.Model {
 }
 
 export class CreateMeetingRoomRequestRoomLocation extends $tea.Model {
+  /**
+   * @example
+   * xx市xx区xx路xx号
+   */
   desc?: string;
+  /**
+   * @example
+   * xxx公司
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2273,11 +2728,53 @@ export class CreateMeetingRoomControlPanelRequestExtra extends $tea.Model {
 }
 
 export class CreateMeetingRoomControlPanelRequestRoomConfig extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * name
+   */
   enName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * www.xxx.com
+   */
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 栗子xx
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 30
+   */
   showTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   sort?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://www.taoxxx.com
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2308,23 +2805,95 @@ export class CreateMeetingRoomControlPanelRequestRoomConfig extends $tea.Model {
 
 export class QueryDeviceCustomTemplateResponseBodyResultDeviceCustomTemplate extends $tea.Model {
   bgImageList?: string[];
+  /**
+   * @example
+   * 1
+   */
   bgType?: number;
+  /**
+   * @example
+   * https://img.alicdn.com/imgextra/i2/O1CN01GWWCCR1y2D9D9EHej_!!6000000006520-2-tps-1920-470.png
+   */
   bgUrl?: string;
+  /**
+   * @example
+   * 1
+   */
   confSubType?: number;
+  /**
+   * @example
+   * 1
+   */
   confType?: number;
+  /**
+   * @example
+   * dingc02f685faxxxxc44ac5d6980864d335
+   */
   corpId?: string;
+  /**
+   * @example
+   * 测试文本
+   */
   customDoc?: string;
+  /**
+   * @example
+   * true：脱敏 false：不脱敏
+   */
   desensitizeUserName?: boolean;
+  /**
+   * @example
+   * true：隐藏 false：不隐藏
+   */
   hideServerCodeWhenProjecting?: boolean;
+  /**
+   * @example
+   * true：显示 false：不显示
+   */
   instruction?: boolean;
+  /**
+   * @example
+   * 1
+   */
   isPicTop?: number;
+  /**
+   * @example
+   * logo
+   */
   logo?: string;
+  /**
+   * @example
+   * 测试企业
+   */
   orgName?: string;
+  /**
+   * @example
+   * 10
+   */
   picturePlayInterval?: number;
+  /**
+   * @example
+   * true：展示 false：不展示
+   */
   showCalendarCard?: boolean;
+  /**
+   * @example
+   * true：展示 false：不展示
+   */
   showCalendarTitle?: boolean;
+  /**
+   * @example
+   * true：展示 false：不展示
+   */
   showFunctionCard?: boolean;
+  /**
+   * @example
+   * 89
+   */
   templateId?: number;
+  /**
+   * @example
+   * 测试模板
+   */
   templateName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2409,23 +2978,95 @@ export class QueryDeviceCustomTemplateResponseBodyResult extends $tea.Model {
 
 export class QueryDeviceCustomTemplateListResponseBodyResultDeviceCustomTemplates extends $tea.Model {
   bgImageList?: string[];
+  /**
+   * @example
+   * 1
+   */
   bgType?: number;
+  /**
+   * @example
+   * https://img.alicdn.com/imgextra/i2/O1CN01GWWCCR1y2D9D9EHej_!!6000000006520-2-tps-1920-470.png
+   */
   bgUrl?: string;
+  /**
+   * @example
+   * 1
+   */
   confSubType?: number;
+  /**
+   * @example
+   * 1
+   */
   confType?: number;
+  /**
+   * @example
+   * dingc02f685fxxxx81c44ac5d6980864d335
+   */
   corpId?: string;
+  /**
+   * @example
+   * 测试文本
+   */
   customDoc?: string;
+  /**
+   * @example
+   * true：脱敏 false：不脱敏
+   */
   desensitizeUserName?: boolean;
+  /**
+   * @example
+   * true：隐藏 false：不隐藏
+   */
   hideServerCodeWhenProjecting?: boolean;
+  /**
+   * @example
+   * true：显示 false：不显示
+   */
   instruction?: boolean;
+  /**
+   * @example
+   * 1
+   */
   isPicTop?: number;
+  /**
+   * @example
+   * logo
+   */
   logo?: string;
+  /**
+   * @example
+   * 测试企业
+   */
   orgName?: string;
+  /**
+   * @example
+   * 10
+   */
   picturePlayInterval?: number;
+  /**
+   * @example
+   * true：展示 false：不展示
+   */
   showCalendarCard?: boolean;
+  /**
+   * @example
+   * true：展示 false：不展示
+   */
   showCalendarTitle?: boolean;
+  /**
+   * @example
+   * true：展示 false：不展示
+   */
   showFunctionCard?: boolean;
+  /**
+   * @example
+   * 89
+   */
   templateId?: number;
+  /**
+   * @example
+   * 测试模板
+   */
   templateName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2509,6 +3150,10 @@ export class QueryDeviceCustomTemplateListResponseBodyResult extends $tea.Model 
 }
 
 export class QueryDeviceIpByCodeResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 30.12.1.100
+   */
   deviceIp?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2528,7 +3173,15 @@ export class QueryDeviceIpByCodeResponseBodyResult extends $tea.Model {
 }
 
 export class QueryDevicePropertiesResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * "dev_app_status"
+   */
   propertyName?: string;
+  /**
+   * @example
+   * "idle"
+   */
   propertyValue?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2550,8 +3203,20 @@ export class QueryDevicePropertiesResponseBodyResult extends $tea.Model {
 }
 
 export class QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers extends $tea.Model {
+  /**
+   * @example
+   * lPHhSZDLXXXXXXpBlC9lxLwiEiE
+   */
   memberId?: string;
+  /**
+   * @example
+   * 张三
+   */
   memberName?: string;
+  /**
+   * @example
+   * user
+   */
   memberType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2594,8 +3259,20 @@ export class QueryMeetingRoomResponseBodyResultReservationAuthority extends $tea
 }
 
 export class QueryMeetingRoomResponseBodyResultRoomGroup extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   groupId?: number;
+  /**
+   * @example
+   * 测试分组
+   */
   groupName?: string;
+  /**
+   * @example
+   * 0
+   */
   parentId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2641,7 +3318,15 @@ export class QueryMeetingRoomResponseBodyResultRoomLabels extends $tea.Model {
 }
 
 export class QueryMeetingRoomResponseBodyResultRoomLocation extends $tea.Model {
+  /**
+   * @example
+   * xx市xx区xx街道xx号
+   */
   desc?: string;
+  /**
+   * @example
+   * xxx公司
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2663,19 +3348,51 @@ export class QueryMeetingRoomResponseBodyResultRoomLocation extends $tea.Model {
 }
 
 export class QueryMeetingRoomResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * ding994a046bca84545935c2f4657eb6378f
+   */
   corpId?: string;
   deviceUnionIds?: string[];
   enableCycleReservation?: boolean;
+  /**
+   * @example
+   * xxxIsvRoomId
+   */
   isvRoomId?: string;
   reservationAuthority?: QueryMeetingRoomResponseBodyResultReservationAuthority;
+  /**
+   * @example
+   * 10
+   */
   roomCapacity?: number;
   roomGroup?: QueryMeetingRoomResponseBodyResultRoomGroup;
+  /**
+   * @example
+   * 0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed
+   */
   roomId?: string;
   roomLabels?: QueryMeetingRoomResponseBodyResultRoomLabels[];
   roomLocation?: QueryMeetingRoomResponseBodyResultRoomLocation;
+  /**
+   * @example
+   * 测试会议室
+   */
   roomName?: string;
+  /**
+   * @example
+   * https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg
+   */
   roomPicture?: string;
+  /**
+   * @example
+   * 01224148194623278976
+   */
   roomStaffId?: string;
+  /**
+   * @example
+   * 0.全员可用 1.仅管理员可用
+   */
   roomStatus?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2721,11 +3438,35 @@ export class QueryMeetingRoomResponseBodyResult extends $tea.Model {
 }
 
 export class QueryMeetingRoomControlPanelListResponseBodyResultRoomIotConfig extends $tea.Model {
+  /**
+   * @example
+   * name
+   */
   enName?: string;
+  /**
+   * @example
+   * https://www.taoxxxxx.com
+   */
   icon?: string;
+  /**
+   * @example
+   * 栗子xx
+   */
   name?: string;
+  /**
+   * @example
+   * 30
+   */
   showTime?: number;
+  /**
+   * @example
+   * 0
+   */
   sort?: number;
+  /**
+   * @example
+   * https://www.taoxxxxx.com
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2755,6 +3496,10 @@ export class QueryMeetingRoomControlPanelListResponseBodyResultRoomIotConfig ext
 }
 
 export class QueryMeetingRoomControlPanelListResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 1WADFxxxxxx
+   */
   roomId?: string;
   roomIotConfig?: QueryMeetingRoomControlPanelListResponseBodyResultRoomIotConfig[];
   static names(): { [key: string]: string } {
@@ -2777,17 +3522,65 @@ export class QueryMeetingRoomControlPanelListResponseBodyResult extends $tea.Mod
 }
 
 export class QueryMeetingRoomDeviceResponseBodyResultControllers extends $tea.Model {
+  /**
+   * @example
+   * "ding994a046bca84545935c2f4657eb6378f"
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2345
+   */
   deviceId?: string;
+  /**
+   * @example
+   * "d8:2f:e6:d9:ab:5b"
+   */
   deviceMac?: string;
+  /**
+   * @example
+   * "AILABS_S3_T1"
+   */
   deviceModel?: string;
+  /**
+   * @example
+   * 会控平板_xxxx
+   */
   deviceName?: string;
+  /**
+   * @example
+   * 1190
+   */
   deviceServiceId?: number;
+  /**
+   * @example
+   * "02caa8169c80f74a2d375093a6107017"
+   */
   deviceSn?: string;
+  /**
+   * @example
+   * 空闲：idle  投屏中：projection   会议响铃中：conf_incoming   会议中：conf_running   使用白板中：white_board   离线: offline
+   */
   deviceStatus?: string;
+  /**
+   * @example
+   * 视频会议设备:"touyingyi"   设备控制器:"meetingaccessory"
+   */
   deviceType?: string;
+  /**
+   * @example
+   * "lmvUrRkpboRrSMtgsiS9V4AiEiE"
+   */
   deviceUnionId?: string;
+  /**
+   * @example
+   * "7263defed6b361fedf0fe6a3b578b96e808b09d6ca6282ed"
+   */
   openRoomId?: string;
+  /**
+   * @example
+   * 234567
+   */
   shareCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2829,33 +3622,141 @@ export class QueryMeetingRoomDeviceResponseBodyResultControllers extends $tea.Mo
 }
 
 export class QueryMeetingRoomDeviceResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 1697198045000
+   */
   activeTime?: number;
   controllers?: QueryMeetingRoomDeviceResponseBodyResultControllers[];
+  /**
+   * @example
+   * "ding994a046bca84545935c2f4657eb6378f"
+   */
   corpId?: string;
+  /**
+   * @example
+   * lPHhSZDLXXXXXXpBlC9lxLwiEiE
+   */
   creatorUnionId?: string;
+  /**
+   * @example
+   * Smart Camera
+   */
   devCamera?: string;
+  /**
+   * @example
+   * false
+   */
   devHdmi?: string;
+  /**
+   * @example
+   * Microphone (2- Built-in Audio)
+   */
   devMic?: string;
+  /**
+   * @example
+   * false
+   */
   devMirror?: string;
+  /**
+   * @example
+   * 127.0.0.10
+   */
   devNetIp?: string;
+  /**
+   * @example
+   * net_wired
+   */
   devNetType?: string;
+  /**
+   * @example
+   * Speaker (2- Built-in Audio)
+   */
   devVoice?: string;
+  /**
+   * @example
+   * d4:aa:ee:e8:4d:55
+   */
   devWifiMac?: string;
+  /**
+   * @example
+   * d4:3a:ee:aa:45:85
+   */
   devWireMac?: string;
+  /**
+   * @example
+   * 1234
+   */
   deviceId?: string;
+  /**
+   * @example
+   * "14:85:7f:e5:f3:f3"
+   */
   deviceMac?: string;
+  /**
+   * @example
+   * winbox
+   */
   deviceModel?: string;
+  /**
+   * @example
+   * 钉钉会议设备_xxxx
+   */
   deviceName?: string;
+  /**
+   * @example
+   * 1204
+   */
   deviceServiceId?: number;
+  /**
+   * @example
+   * "02caa8169c80f74a2d375093a6107016"
+   */
   deviceSn?: string;
+  /**
+   * @example
+   * 空闲：idle  投屏中：projection   会议响铃中：conf_incoming   会议中：conf_running   使用白板中：white_board   离线: offline
+   */
   deviceStatus?: string;
+  /**
+   * @example
+   * 视频会议设备:"touyingyi"   设备控制器:"meetingaccessory"
+   */
   deviceType?: string;
+  /**
+   * @example
+   * "lmvUrRkpboRrSMtgsiS9V3AiEiE"
+   */
   deviceUnionId?: string;
+  /**
+   * @example
+   * LMVXXX.20XX0818
+   */
   firmwareVersion?: string;
+  /**
+   * @example
+   * "7263defed6b361fedf0fe6a3b578b96e808b09d6ca6282ed"
+   */
   openRoomId?: string;
+  /**
+   * @example
+   * 测试会议室
+   */
   roomName?: string;
+  /**
+   * @example
+   * 123456
+   */
   shareCode?: string;
+  /**
+   * @example
+   * sip13492
+   */
   sipAccountName?: string;
+  /**
+   * @example
+   * 7.14.1
+   */
   softwareVersion?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2929,8 +3830,20 @@ export class QueryMeetingRoomDeviceResponseBodyResult extends $tea.Model {
 }
 
 export class QueryMeetingRoomGroupListResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 172
+   */
   groupId?: number;
+  /**
+   * @example
+   * 测试分组
+   */
   groupName?: string;
+  /**
+   * @example
+   * 0
+   */
   parentId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2954,8 +3867,20 @@ export class QueryMeetingRoomGroupListResponseBodyResult extends $tea.Model {
 }
 
 export class QueryMeetingRoomListResponseBodyResultRoomGroup extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   groupId?: number;
+  /**
+   * @example
+   * 测试分组
+   */
   groupName?: string;
+  /**
+   * @example
+   * 0
+   */
   parentId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3001,7 +3926,15 @@ export class QueryMeetingRoomListResponseBodyResultRoomLabels extends $tea.Model
 }
 
 export class QueryMeetingRoomListResponseBodyResultRoomLocation extends $tea.Model {
+  /**
+   * @example
+   * xx市xx区xx街道xx号
+   */
   desc?: string;
+  /**
+   * @example
+   * xxx公司
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3023,16 +3956,48 @@ export class QueryMeetingRoomListResponseBodyResultRoomLocation extends $tea.Mod
 }
 
 export class QueryMeetingRoomListResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * ding994a046bca84545935c2f4657eb6378f
+   */
   corpId?: string;
+  /**
+   * @example
+   * xxxIsvRoomId
+   */
   isvRoomId?: string;
+  /**
+   * @example
+   * 10
+   */
   roomCapacity?: number;
   roomGroup?: QueryMeetingRoomListResponseBodyResultRoomGroup;
+  /**
+   * @example
+   * 0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed
+   */
   roomId?: string;
   roomLabels?: QueryMeetingRoomListResponseBodyResultRoomLabels[];
   roomLocation?: QueryMeetingRoomListResponseBodyResultRoomLocation;
+  /**
+   * @example
+   * 测试会议室
+   */
   roomName?: string;
+  /**
+   * @example
+   * https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg
+   */
   roomPicture?: string;
+  /**
+   * @example
+   * 01224148194623278976
+   */
   roomStaffId?: string;
+  /**
+   * @example
+   * 0.全员可用 1.仅管理员可用
+   */
   roomStatus?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3072,8 +4037,20 @@ export class QueryMeetingRoomListResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateMeetingRoomRequestReservationAuthorityAuthorizedMembers extends $tea.Model {
+  /**
+   * @example
+   * lPHhSZDLXXXXXXpBlC9lxLwiEiE
+   */
   memberId?: string;
+  /**
+   * @example
+   * 张三
+   */
   memberName?: string;
+  /**
+   * @example
+   * user
+   */
   memberType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3116,7 +4093,15 @@ export class UpdateMeetingRoomRequestReservationAuthority extends $tea.Model {
 }
 
 export class UpdateMeetingRoomRequestRoomLocation extends $tea.Model {
+  /**
+   * @example
+   * xx市xx区xx路xx号
+   */
   desc?: string;
+  /**
+   * @example
+   * xxx公司
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3139,12 +4124,11 @@ export class UpdateMeetingRoomRequestRoomLocation extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -3154,12 +4138,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 创建自定义屏幕模版
-   *
-   * @param request CreateDeviceCustomTemplateRequest
-   * @param headers CreateDeviceCustomTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateDeviceCustomTemplateResponse
+   * 创建自定义屏幕模版
+   * 
+   * @param request - CreateDeviceCustomTemplateRequest
+   * @param headers - CreateDeviceCustomTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateDeviceCustomTemplateResponse
    */
   async createDeviceCustomTemplateWithOptions(request: CreateDeviceCustomTemplateRequest, headers: CreateDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeviceCustomTemplateResponse> {
     Util.validateModel(request);
@@ -3264,10 +4248,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建自定义屏幕模版
-   *
-   * @param request CreateDeviceCustomTemplateRequest
-   * @return CreateDeviceCustomTemplateResponse
+   * 创建自定义屏幕模版
+   * 
+   * @param request - CreateDeviceCustomTemplateRequest
+   * @returns CreateDeviceCustomTemplateResponse
    */
   async createDeviceCustomTemplate(request: CreateDeviceCustomTemplateRequest): Promise<CreateDeviceCustomTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3276,12 +4260,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建智能会议室
-   *
-   * @param request CreateMeetingRoomRequest
-   * @param headers CreateMeetingRoomHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateMeetingRoomResponse
+   * 创建智能会议室
+   * 
+   * @param request - CreateMeetingRoomRequest
+   * @param headers - CreateMeetingRoomHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateMeetingRoomResponse
    */
   async createMeetingRoomWithOptions(request: CreateMeetingRoomRequest, headers: CreateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMeetingRoomResponse> {
     Util.validateModel(request);
@@ -3358,10 +4342,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建智能会议室
-   *
-   * @param request CreateMeetingRoomRequest
-   * @return CreateMeetingRoomResponse
+   * 创建智能会议室
+   * 
+   * @param request - CreateMeetingRoomRequest
+   * @returns CreateMeetingRoomResponse
    */
   async createMeetingRoom(request: CreateMeetingRoomRequest): Promise<CreateMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3370,12 +4354,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建智能会议室IOT配置
-   *
-   * @param request CreateMeetingRoomControlPanelRequest
-   * @param headers CreateMeetingRoomControlPanelHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateMeetingRoomControlPanelResponse
+   * 创建智能会议室IOT配置
+   * 
+   * @param request - CreateMeetingRoomControlPanelRequest
+   * @param headers - CreateMeetingRoomControlPanelHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateMeetingRoomControlPanelResponse
    */
   async createMeetingRoomControlPanelWithOptions(request: CreateMeetingRoomControlPanelRequest, headers: CreateMeetingRoomControlPanelHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMeetingRoomControlPanelResponse> {
     Util.validateModel(request);
@@ -3428,10 +4412,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建智能会议室IOT配置
-   *
-   * @param request CreateMeetingRoomControlPanelRequest
-   * @return CreateMeetingRoomControlPanelResponse
+   * 创建智能会议室IOT配置
+   * 
+   * @param request - CreateMeetingRoomControlPanelRequest
+   * @returns CreateMeetingRoomControlPanelResponse
    */
   async createMeetingRoomControlPanel(request: CreateMeetingRoomControlPanelRequest): Promise<CreateMeetingRoomControlPanelResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3440,12 +4424,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建会议室分组
-   *
-   * @param request CreateMeetingRoomGroupRequest
-   * @param headers CreateMeetingRoomGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateMeetingRoomGroupResponse
+   * 创建会议室分组
+   * 
+   * @param request - CreateMeetingRoomGroupRequest
+   * @param headers - CreateMeetingRoomGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateMeetingRoomGroupResponse
    */
   async createMeetingRoomGroupWithOptions(request: CreateMeetingRoomGroupRequest, headers: CreateMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMeetingRoomGroupResponse> {
     Util.validateModel(request);
@@ -3490,10 +4474,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建会议室分组
-   *
-   * @param request CreateMeetingRoomGroupRequest
-   * @return CreateMeetingRoomGroupResponse
+   * 创建会议室分组
+   * 
+   * @param request - CreateMeetingRoomGroupRequest
+   * @returns CreateMeetingRoomGroupResponse
    */
   async createMeetingRoomGroup(request: CreateMeetingRoomGroupRequest): Promise<CreateMeetingRoomGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3502,12 +4486,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除自定义屏幕模板
-   *
-   * @param request DeleteDeviceCustomTemplateRequest
-   * @param headers DeleteDeviceCustomTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteDeviceCustomTemplateResponse
+   * 删除自定义屏幕模板
+   * 
+   * @param request - DeleteDeviceCustomTemplateRequest
+   * @param headers - DeleteDeviceCustomTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteDeviceCustomTemplateResponse
    */
   async deleteDeviceCustomTemplateWithOptions(request: DeleteDeviceCustomTemplateRequest, headers: DeleteDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDeviceCustomTemplateResponse> {
     Util.validateModel(request);
@@ -3544,10 +4528,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除自定义屏幕模板
-   *
-   * @param request DeleteDeviceCustomTemplateRequest
-   * @return DeleteDeviceCustomTemplateResponse
+   * 删除自定义屏幕模板
+   * 
+   * @param request - DeleteDeviceCustomTemplateRequest
+   * @returns DeleteDeviceCustomTemplateResponse
    */
   async deleteDeviceCustomTemplate(request: DeleteDeviceCustomTemplateRequest): Promise<DeleteDeviceCustomTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3556,12 +4540,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除会议室
-   *
-   * @param request DeleteMeetingRoomRequest
-   * @param headers DeleteMeetingRoomHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteMeetingRoomResponse
+   * 删除会议室
+   * 
+   * @param request - DeleteMeetingRoomRequest
+   * @param headers - DeleteMeetingRoomHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteMeetingRoomResponse
    */
   async deleteMeetingRoomWithOptions(roomId: string, request: DeleteMeetingRoomRequest, headers: DeleteMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomResponse> {
     Util.validateModel(request);
@@ -3598,10 +4582,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除会议室
-   *
-   * @param request DeleteMeetingRoomRequest
-   * @return DeleteMeetingRoomResponse
+   * 删除会议室
+   * 
+   * @param request - DeleteMeetingRoomRequest
+   * @returns DeleteMeetingRoomResponse
    */
   async deleteMeetingRoom(roomId: string, request: DeleteMeetingRoomRequest): Promise<DeleteMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3610,12 +4594,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除会议室配置
-   *
-   * @param request DeleteMeetingRoomControlPanelRequest
-   * @param headers DeleteMeetingRoomControlPanelHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteMeetingRoomControlPanelResponse
+   * 删除会议室配置
+   * 
+   * @param request - DeleteMeetingRoomControlPanelRequest
+   * @param headers - DeleteMeetingRoomControlPanelHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteMeetingRoomControlPanelResponse
    */
   async deleteMeetingRoomControlPanelWithOptions(request: DeleteMeetingRoomControlPanelRequest, headers: DeleteMeetingRoomControlPanelHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomControlPanelResponse> {
     Util.validateModel(request);
@@ -3656,10 +4640,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除会议室配置
-   *
-   * @param request DeleteMeetingRoomControlPanelRequest
-   * @return DeleteMeetingRoomControlPanelResponse
+   * 删除会议室配置
+   * 
+   * @param request - DeleteMeetingRoomControlPanelRequest
+   * @returns DeleteMeetingRoomControlPanelResponse
    */
   async deleteMeetingRoomControlPanel(request: DeleteMeetingRoomControlPanelRequest): Promise<DeleteMeetingRoomControlPanelResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3668,12 +4652,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除会议室分组
-   *
-   * @param request DeleteMeetingRoomGroupRequest
-   * @param headers DeleteMeetingRoomGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteMeetingRoomGroupResponse
+   * 删除会议室分组
+   * 
+   * @param request - DeleteMeetingRoomGroupRequest
+   * @param headers - DeleteMeetingRoomGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteMeetingRoomGroupResponse
    */
   async deleteMeetingRoomGroupWithOptions(groupId: string, request: DeleteMeetingRoomGroupRequest, headers: DeleteMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomGroupResponse> {
     Util.validateModel(request);
@@ -3710,10 +4694,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除会议室分组
-   *
-   * @param request DeleteMeetingRoomGroupRequest
-   * @return DeleteMeetingRoomGroupResponse
+   * 删除会议室分组
+   * 
+   * @param request - DeleteMeetingRoomGroupRequest
+   * @returns DeleteMeetingRoomGroupResponse
    */
   async deleteMeetingRoomGroup(groupId: string, request: DeleteMeetingRoomGroupRequest): Promise<DeleteMeetingRoomGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3722,11 +4706,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询自定义屏幕模板
-   *
-   * @param headers QueryDeviceCustomTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDeviceCustomTemplateResponse
+   * 查询自定义屏幕模板
+   * 
+   * @param headers - QueryDeviceCustomTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDeviceCustomTemplateResponse
    */
   async queryDeviceCustomTemplateWithOptions(templateId: string, headers: QueryDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceCustomTemplateResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -3756,9 +4740,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询自定义屏幕模板
-   *
-   * @return QueryDeviceCustomTemplateResponse
+   * 查询自定义屏幕模板
+   * @returns QueryDeviceCustomTemplateResponse
    */
   async queryDeviceCustomTemplate(templateId: string): Promise<QueryDeviceCustomTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3767,11 +4750,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询自定义屏幕模板列表
-   *
-   * @param headers QueryDeviceCustomTemplateListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDeviceCustomTemplateListResponse
+   * 查询自定义屏幕模板列表
+   * 
+   * @param headers - QueryDeviceCustomTemplateListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDeviceCustomTemplateListResponse
    */
   async queryDeviceCustomTemplateListWithOptions(headers: QueryDeviceCustomTemplateListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceCustomTemplateListResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -3801,9 +4784,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询自定义屏幕模板列表
-   *
-   * @return QueryDeviceCustomTemplateListResponse
+   * 查询自定义屏幕模板列表
+   * @returns QueryDeviceCustomTemplateListResponse
    */
   async queryDeviceCustomTemplateList(): Promise<QueryDeviceCustomTemplateListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3812,12 +4794,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据设备投屏码查询设备ip
-   *
-   * @param request QueryDeviceIpByCodeRequest
-   * @param headers QueryDeviceIpByCodeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDeviceIpByCodeResponse
+   * 根据设备投屏码查询设备ip
+   * 
+   * @param request - QueryDeviceIpByCodeRequest
+   * @param headers - QueryDeviceIpByCodeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDeviceIpByCodeResponse
    */
   async queryDeviceIpByCodeWithOptions(shareCode: string, request: QueryDeviceIpByCodeRequest, headers: QueryDeviceIpByCodeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceIpByCodeResponse> {
     Util.validateModel(request);
@@ -3854,10 +4836,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据设备投屏码查询设备ip
-   *
-   * @param request QueryDeviceIpByCodeRequest
-   * @return QueryDeviceIpByCodeResponse
+   * 根据设备投屏码查询设备ip
+   * 
+   * @param request - QueryDeviceIpByCodeRequest
+   * @returns QueryDeviceIpByCodeResponse
    */
   async queryDeviceIpByCode(shareCode: string, request: QueryDeviceIpByCodeRequest): Promise<QueryDeviceIpByCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3866,12 +4848,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询设备属性
-   *
-   * @param request QueryDevicePropertiesRequest
-   * @param headers QueryDevicePropertiesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDevicePropertiesResponse
+   * 查询设备属性
+   * 
+   * @param request - QueryDevicePropertiesRequest
+   * @param headers - QueryDevicePropertiesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDevicePropertiesResponse
    */
   async queryDevicePropertiesWithOptions(request: QueryDevicePropertiesRequest, headers: QueryDevicePropertiesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDevicePropertiesResponse> {
     Util.validateModel(request);
@@ -3922,10 +4904,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询设备属性
-   *
-   * @param request QueryDevicePropertiesRequest
-   * @return QueryDevicePropertiesResponse
+   * 查询设备属性
+   * 
+   * @param request - QueryDevicePropertiesRequest
+   * @returns QueryDevicePropertiesResponse
    */
   async queryDeviceProperties(request: QueryDevicePropertiesRequest): Promise<QueryDevicePropertiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3934,12 +4916,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议室详情
-   *
-   * @param request QueryMeetingRoomRequest
-   * @param headers QueryMeetingRoomHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMeetingRoomResponse
+   * 查询会议室详情
+   * 
+   * @param request - QueryMeetingRoomRequest
+   * @param headers - QueryMeetingRoomHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMeetingRoomResponse
    */
   async queryMeetingRoomWithOptions(roomId: string, request: QueryMeetingRoomRequest, headers: QueryMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomResponse> {
     Util.validateModel(request);
@@ -3976,10 +4958,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议室详情
-   *
-   * @param request QueryMeetingRoomRequest
-   * @return QueryMeetingRoomResponse
+   * 查询会议室详情
+   * 
+   * @param request - QueryMeetingRoomRequest
+   * @returns QueryMeetingRoomResponse
    */
   async queryMeetingRoom(roomId: string, request: QueryMeetingRoomRequest): Promise<QueryMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3988,12 +4970,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取会议室IOT配置列表
-   *
-   * @param request QueryMeetingRoomControlPanelListRequest
-   * @param headers QueryMeetingRoomControlPanelListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMeetingRoomControlPanelListResponse
+   * 获取会议室IOT配置列表
+   * 
+   * @param request - QueryMeetingRoomControlPanelListRequest
+   * @param headers - QueryMeetingRoomControlPanelListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMeetingRoomControlPanelListResponse
    */
   async queryMeetingRoomControlPanelListWithOptions(request: QueryMeetingRoomControlPanelListRequest, headers: QueryMeetingRoomControlPanelListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomControlPanelListResponse> {
     Util.validateModel(request);
@@ -4042,10 +5024,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取会议室IOT配置列表
-   *
-   * @param request QueryMeetingRoomControlPanelListRequest
-   * @return QueryMeetingRoomControlPanelListResponse
+   * 获取会议室IOT配置列表
+   * 
+   * @param request - QueryMeetingRoomControlPanelListRequest
+   * @returns QueryMeetingRoomControlPanelListResponse
    */
   async queryMeetingRoomControlPanelList(request: QueryMeetingRoomControlPanelListRequest): Promise<QueryMeetingRoomControlPanelListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4054,12 +5036,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询设备信息
-   *
-   * @param request QueryMeetingRoomDeviceRequest
-   * @param headers QueryMeetingRoomDeviceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMeetingRoomDeviceResponse
+   * 查询设备信息
+   * 
+   * @param request - QueryMeetingRoomDeviceRequest
+   * @param headers - QueryMeetingRoomDeviceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMeetingRoomDeviceResponse
    */
   async queryMeetingRoomDeviceWithOptions(request: QueryMeetingRoomDeviceRequest, headers: QueryMeetingRoomDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomDeviceResponse> {
     Util.validateModel(request);
@@ -4104,10 +5086,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询设备信息
-   *
-   * @param request QueryMeetingRoomDeviceRequest
-   * @return QueryMeetingRoomDeviceResponse
+   * 查询设备信息
+   * 
+   * @param request - QueryMeetingRoomDeviceRequest
+   * @returns QueryMeetingRoomDeviceResponse
    */
   async queryMeetingRoomDevice(request: QueryMeetingRoomDeviceRequest): Promise<QueryMeetingRoomDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4116,12 +5098,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议室分组信息
-   *
-   * @param request QueryMeetingRoomGroupRequest
-   * @param headers QueryMeetingRoomGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMeetingRoomGroupResponse
+   * 查询会议室分组信息
+   * 
+   * @param request - QueryMeetingRoomGroupRequest
+   * @param headers - QueryMeetingRoomGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMeetingRoomGroupResponse
    */
   async queryMeetingRoomGroupWithOptions(groupId: string, request: QueryMeetingRoomGroupRequest, headers: QueryMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomGroupResponse> {
     Util.validateModel(request);
@@ -4158,10 +5140,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议室分组信息
-   *
-   * @param request QueryMeetingRoomGroupRequest
-   * @return QueryMeetingRoomGroupResponse
+   * 查询会议室分组信息
+   * 
+   * @param request - QueryMeetingRoomGroupRequest
+   * @returns QueryMeetingRoomGroupResponse
    */
   async queryMeetingRoomGroup(groupId: string, request: QueryMeetingRoomGroupRequest): Promise<QueryMeetingRoomGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4170,12 +5152,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议室分组列表
-   *
-   * @param request QueryMeetingRoomGroupListRequest
-   * @param headers QueryMeetingRoomGroupListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMeetingRoomGroupListResponse
+   * 查询会议室分组列表
+   * 
+   * @param request - QueryMeetingRoomGroupListRequest
+   * @param headers - QueryMeetingRoomGroupListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMeetingRoomGroupListResponse
    */
   async queryMeetingRoomGroupListWithOptions(request: QueryMeetingRoomGroupListRequest, headers: QueryMeetingRoomGroupListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomGroupListResponse> {
     Util.validateModel(request);
@@ -4212,10 +5194,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议室分组列表
-   *
-   * @param request QueryMeetingRoomGroupListRequest
-   * @return QueryMeetingRoomGroupListResponse
+   * 查询会议室分组列表
+   * 
+   * @param request - QueryMeetingRoomGroupListRequest
+   * @returns QueryMeetingRoomGroupListResponse
    */
   async queryMeetingRoomGroupList(request: QueryMeetingRoomGroupListRequest): Promise<QueryMeetingRoomGroupListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4224,12 +5206,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议室列表
-   *
-   * @param request QueryMeetingRoomListRequest
-   * @param headers QueryMeetingRoomListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMeetingRoomListResponse
+   * 查询会议室列表
+   * 
+   * @param request - QueryMeetingRoomListRequest
+   * @param headers - QueryMeetingRoomListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMeetingRoomListResponse
    */
   async queryMeetingRoomListWithOptions(request: QueryMeetingRoomListRequest, headers: QueryMeetingRoomListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomListResponse> {
     Util.validateModel(request);
@@ -4274,10 +5256,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议室列表
-   *
-   * @param request QueryMeetingRoomListRequest
-   * @return QueryMeetingRoomListResponse
+   * 查询会议室列表
+   * 
+   * @param request - QueryMeetingRoomListRequest
+   * @returns QueryMeetingRoomListResponse
    */
   async queryMeetingRoomList(request: QueryMeetingRoomListRequest): Promise<QueryMeetingRoomListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4286,12 +5268,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消会议室高级用户模式。
-   *
-   * @param request RemoveSuperUserMeetingRoomRequest
-   * @param headers RemoveSuperUserMeetingRoomHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RemoveSuperUserMeetingRoomResponse
+   * 取消会议室高级用户模式。
+   * 
+   * @param request - RemoveSuperUserMeetingRoomRequest
+   * @param headers - RemoveSuperUserMeetingRoomHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RemoveSuperUserMeetingRoomResponse
    */
   async removeSuperUserMeetingRoomWithOptions(request: RemoveSuperUserMeetingRoomRequest, headers: RemoveSuperUserMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveSuperUserMeetingRoomResponse> {
     Util.validateModel(request);
@@ -4332,10 +5314,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消会议室高级用户模式。
-   *
-   * @param request RemoveSuperUserMeetingRoomRequest
-   * @return RemoveSuperUserMeetingRoomResponse
+   * 取消会议室高级用户模式。
+   * 
+   * @param request - RemoveSuperUserMeetingRoomRequest
+   * @returns RemoveSuperUserMeetingRoomResponse
    */
   async removeSuperUserMeetingRoom(request: RemoveSuperUserMeetingRoomRequest): Promise<RemoveSuperUserMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4344,12 +5326,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
-   *
-   * @param request SetSuperUserMeetingRoomRequest
-   * @param headers SetSuperUserMeetingRoomHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SetSuperUserMeetingRoomResponse
+   * 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
+   * 
+   * @param request - SetSuperUserMeetingRoomRequest
+   * @param headers - SetSuperUserMeetingRoomHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SetSuperUserMeetingRoomResponse
    */
   async setSuperUserMeetingRoomWithOptions(request: SetSuperUserMeetingRoomRequest, headers: SetSuperUserMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<SetSuperUserMeetingRoomResponse> {
     Util.validateModel(request);
@@ -4398,10 +5380,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
-   *
-   * @param request SetSuperUserMeetingRoomRequest
-   * @return SetSuperUserMeetingRoomResponse
+   * 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
+   * 
+   * @param request - SetSuperUserMeetingRoomRequest
+   * @returns SetSuperUserMeetingRoomResponse
    */
   async setSuperUserMeetingRoom(request: SetSuperUserMeetingRoomRequest): Promise<SetSuperUserMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4410,12 +5392,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新自定义屏幕模板
-   *
-   * @param request UpdateDeviceCustomTemplateRequest
-   * @param headers UpdateDeviceCustomTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateDeviceCustomTemplateResponse
+   * 更新自定义屏幕模板
+   * 
+   * @param request - UpdateDeviceCustomTemplateRequest
+   * @param headers - UpdateDeviceCustomTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateDeviceCustomTemplateResponse
    */
   async updateDeviceCustomTemplateWithOptions(request: UpdateDeviceCustomTemplateRequest, headers: UpdateDeviceCustomTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDeviceCustomTemplateResponse> {
     Util.validateModel(request);
@@ -4524,10 +5506,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新自定义屏幕模板
-   *
-   * @param request UpdateDeviceCustomTemplateRequest
-   * @return UpdateDeviceCustomTemplateResponse
+   * 更新自定义屏幕模板
+   * 
+   * @param request - UpdateDeviceCustomTemplateRequest
+   * @returns UpdateDeviceCustomTemplateResponse
    */
   async updateDeviceCustomTemplate(request: UpdateDeviceCustomTemplateRequest): Promise<UpdateDeviceCustomTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4536,12 +5518,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新会议室信息
-   *
-   * @param request UpdateMeetingRoomRequest
-   * @param headers UpdateMeetingRoomHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateMeetingRoomResponse
+   * 更新会议室信息
+   * 
+   * @param request - UpdateMeetingRoomRequest
+   * @param headers - UpdateMeetingRoomHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateMeetingRoomResponse
    */
   async updateMeetingRoomWithOptions(request: UpdateMeetingRoomRequest, headers: UpdateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMeetingRoomResponse> {
     Util.validateModel(request);
@@ -4622,10 +5604,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新会议室信息
-   *
-   * @param request UpdateMeetingRoomRequest
-   * @return UpdateMeetingRoomResponse
+   * 更新会议室信息
+   * 
+   * @param request - UpdateMeetingRoomRequest
+   * @returns UpdateMeetingRoomResponse
    */
   async updateMeetingRoom(request: UpdateMeetingRoomRequest): Promise<UpdateMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4634,12 +5616,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新会议室分组
-   *
-   * @param request UpdateMeetingRoomGroupRequest
-   * @param headers UpdateMeetingRoomGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateMeetingRoomGroupResponse
+   * 更新会议室分组
+   * 
+   * @param request - UpdateMeetingRoomGroupRequest
+   * @param headers - UpdateMeetingRoomGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateMeetingRoomGroupResponse
    */
   async updateMeetingRoomGroupWithOptions(request: UpdateMeetingRoomGroupRequest, headers: UpdateMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMeetingRoomGroupResponse> {
     Util.validateModel(request);
@@ -4684,10 +5666,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新会议室分组
-   *
-   * @param request UpdateMeetingRoomGroupRequest
-   * @return UpdateMeetingRoomGroupResponse
+   * 更新会议室分组
+   * 
+   * @param request - UpdateMeetingRoomGroupRequest
+   * @returns UpdateMeetingRoomGroupResponse
    */
   async updateMeetingRoomGroup(request: UpdateMeetingRoomGroupRequest): Promise<UpdateMeetingRoomGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });

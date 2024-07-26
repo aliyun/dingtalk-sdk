@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,10 +30,36 @@ export class AddContactMemberToGroupHeaders extends $tea.Model {
 }
 
 export class AddContactMemberToGroupRequest extends $tea.Model {
+  /**
+   * @example
+   * 不裂变：STANDARD；裂变：FISSION
+   */
   fissionType?: string;
+  /**
+   * @example
+   * 888
+   */
   memberUnionId?: string;
+  /**
+   * @example
+   * 1
+   */
   memberUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cid***
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 888
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -130,19 +154,55 @@ export class AddKnowledgeHeaders extends $tea.Model {
 
 export class AddKnowledgeRequest extends $tea.Model {
   attachmentList?: AddKnowledgeRequestAttachmentList[];
+  /**
+   * @example
+   * 测试内容
+   */
   content?: string;
   effectTimeend?: number;
   effectTimestart?: number;
   extTitle?: string;
   keyword?: string;
+  /**
+   * @example
+   * xuvw1245
+   */
   libraryKey?: string;
+  /**
+   * @example
+   * http://www.test.com/xxxxx
+   */
   linkUrl?: string;
+  /**
+   * @example
+   * Jxi12wo3qxoa
+   */
   openTeamId?: string;
   questionIds?: number[];
+  /**
+   * @example
+   * CCM
+   */
   source?: string;
+  /**
+   * @example
+   * CCM-123
+   */
   sourcePrimaryKey?: string;
+  /**
+   * @example
+   * 测试
+   */
   title?: string;
+  /**
+   * @example
+   * CONDITION
+   */
   type?: string;
+  /**
+   * @example
+   * V0193859102
+   */
   version?: string;
   static names(): { [key: string]: string } {
     return {
@@ -190,6 +250,10 @@ export class AddKnowledgeRequest extends $tea.Model {
 }
 
 export class AddKnowledgeResponseBody extends $tea.Model {
+  /**
+   * @example
+   * J23suw1irs
+   */
   openKnowledgeId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -256,12 +320,36 @@ export class AddLibraryHeaders extends $tea.Model {
 }
 
 export class AddLibraryRequest extends $tea.Model {
+  /**
+   * @example
+   * 测试库描述
+   */
   description?: string;
   openTeamIds?: string[];
+  /**
+   * @example
+   * CCM
+   */
   source?: string;
+  /**
+   * @example
+   * CCM-123
+   */
   sourcePrimaryKey?: string;
+  /**
+   * @example
+   * 测试库
+   */
   title?: string;
+  /**
+   * @example
+   * EXTERNAL
+   */
   type?: string;
+  /**
+   * @example
+   * manager123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -359,8 +447,26 @@ export class AddMemberToServiceGroupHeaders extends $tea.Model {
 }
 
 export class AddMemberToServiceGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidxxxxxx==
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Jciwnfw
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -450,11 +556,50 @@ export class AddOpenCategoryHeaders extends $tea.Model {
 }
 
 export class AddOpenCategoryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 5555
+   */
   libraryId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Jxi12wo3qxoa
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 0
+   */
   parentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试类目
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0159003451667222
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 钉三多
+   */
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -484,7 +629,15 @@ export class AddOpenCategoryRequest extends $tea.Model {
 }
 
 export class AddOpenCategoryResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 2
+   */
   result?: AddOpenCategoryResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -553,20 +706,110 @@ export class AddOpenKnowledgeHeaders extends $tea.Model {
 }
 
 export class AddOpenKnowledgeRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   attachments?: AddOpenKnowledgeRequestAttachments[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 44555
+   */
   categoryId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 这是服务群的介绍
+   */
   content?: string;
+  /**
+   * @example
+   * 2100-01-01 23:59:59
+   */
   effectTimeend?: string;
+  /**
+   * @example
+   * 1980-01-01 00:00:00
+   */
   effectTimestart?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 这是问法1,这是问法2
+   */
   extTitle?: string;
+  /**
+   * @example
+   * 服务群,智能场景群
+   */
   keyword?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   libraryId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Jxi12wo3qxoa
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XMD
+   */
   source?: string;
+  /**
+   * @example
+   * 服务群,智能场景群
+   */
   tags?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 服务群是什么
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EXTERNAL
+   */
   type?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0159003451667222
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 钉三多
+   */
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -614,7 +857,21 @@ export class AddOpenKnowledgeRequest extends $tea.Model {
 }
 
 export class AddOpenKnowledgeResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 22
+   */
   result?: AddOpenKnowledgeResponseBodyResult;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -683,12 +940,64 @@ export class AddOpenLibraryHeaders extends $tea.Model {
 }
 
 export class AddOpenLibraryRequest extends $tea.Model {
+  /**
+   * @example
+   * 这个是业务知识库
+   * 
+   * **if can be null:**
+   * true
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Jxi12wo3qxoa
+   * 
+   * **if can be null:**
+   * false
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XMD
+   */
   source?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试库
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EXTERNAL
+   */
   type?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0159003451667222
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 钉三多
+   */
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -720,7 +1029,18 @@ export class AddOpenLibraryRequest extends $tea.Model {
 }
 
 export class AddOpenLibraryResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: AddOpenLibraryResponseBodyResult;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -789,8 +1109,29 @@ export class AddTicketMemoHeaders extends $tea.Model {
 }
 
 export class AddTicketMemoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eKWh3GBwsKEiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a8iS4X94TgtgiE
+   */
   openTicketId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Dq9hP8Sk2v6vQ6l05nCe5wiEiE
+   */
   processorUnionId?: string;
   ticketMemo?: AddTicketMemoRequestTicketMemo;
   static names(): { [key: string]: string } {
@@ -862,9 +1203,31 @@ export class AssignTicketHeaders extends $tea.Model {
 
 export class AssignTicketRequest extends $tea.Model {
   notify?: AssignTicketRequestNotify;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eKWh3GBwsKEiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hNiPO2OVktNMiE
+   */
   openTicketId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processorUnionIds?: string[];
   ticketMemo?: AssignTicketRequestTicketMemo;
   static names(): { [key: string]: string } {
@@ -939,7 +1302,18 @@ export class BatchBindingGroupBizIdsHeaders extends $tea.Model {
 }
 
 export class BatchBindingGroupBizIdsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bindingGroupBizIds?: BatchBindingGroupBizIdsRequestBindingGroupBizIds[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Jciwnfw
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -961,6 +1335,10 @@ export class BatchBindingGroupBizIdsRequest extends $tea.Model {
 }
 
 export class BatchBindingGroupBizIdsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1027,8 +1405,20 @@ export class BatchGetGroupSetConfigHeaders extends $tea.Model {
 }
 
 export class BatchGetGroupSetConfigRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   configKeys?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openGroupSetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1118,13 +1508,44 @@ export class BatchQueryCustomerSendTaskHeaders extends $tea.Model {
 }
 
 export class BatchQueryCustomerSendTaskRequest extends $tea.Model {
+  /**
+   * @example
+   * 2023-06-02 00:00:00
+   */
   gmtCreateEnd?: string;
+  /**
+   * @example
+   * 2023-06-01 00:00:00
+   */
   gmtCreateStart?: string;
+  /**
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   needRichStatistics?: boolean;
+  /**
+   * @example
+   * 1
+   */
   nextToken?: string;
   openBatchTaskIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 哈哈哈
+   */
   taskName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1158,9 +1579,30 @@ export class BatchQueryCustomerSendTaskRequest extends $tea.Model {
 }
 
 export class BatchQueryCustomerSendTaskResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8888
+   */
   nextToken?: string;
   records?: BatchQueryCustomerSendTaskResponseBodyRecords[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1233,9 +1675,31 @@ export class BatchQueryGroupMemberHeaders extends $tea.Model {
 }
 
 export class BatchQueryGroupMemberRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @example
+   * ***
+   */
   nextToken?: string;
+  /**
+   * @example
+   * cid***
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 888
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1336,13 +1800,48 @@ export class BatchQuerySendMessageTaskHeaders extends $tea.Model {
 }
 
 export class BatchQuerySendMessageTaskRequest extends $tea.Model {
+  /**
+   * @example
+   * false
+   */
   getReadCount?: boolean;
+  /**
+   * @example
+   * 2022-04-02 00:00:00
+   */
   gmtCreateEnd?: string;
+  /**
+   * @example
+   * 2022-04-01 00:00:00
+   */
   gmtCreateStart?: string;
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 首页传递空
+   */
   nextToken?: string;
+  /**
+   * @example
+   * fwPuycdHiiI
+   */
   openGroupSetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Jciwnfw
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 群发任务双11
+   */
   taskName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1451,11 +1950,40 @@ export class BoundTemplateToTeamHeaders extends $tea.Model {
 }
 
 export class BoundTemplateToTeamRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * btkoYsadwyQiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * [{"robotCode":"123ITJovyMHtmi216233798228941001","robotName":"服务小钉"}]
+   */
   robotConfig?: string;
   templateDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0普通群模板，1内部群模板
+   */
   templateType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1552,8 +2080,26 @@ export class CancelTicketHeaders extends $tea.Model {
 
 export class CancelTicketRequest extends $tea.Model {
   notify?: CancelTicketRequestNotify;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eKWh3GBwsKEiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a8iS4X94TgtgiE
+   */
   openTicketId?: string;
+  /**
+   * @example
+   * Dq9hP8Sk2v6vQ6l05nCe5wiEiE
+   */
   operatorUnionId?: string;
   ticketMemo?: CancelTicketRequestTicketMemo;
   static names(): { [key: string]: string } {
@@ -1626,8 +2172,29 @@ export class CategoryStatisticsHeaders extends $tea.Model {
 }
 
 export class CategoryStatisticsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   maxDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   minDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * KxisoOk
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1651,7 +2218,15 @@ export class CategoryStatisticsRequest extends $tea.Model {
 }
 
 export class CategoryStatisticsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   categoryStatisticsRecords?: CategoryStatisticsResponseBodyCategoryStatisticsRecords[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   categoryTrend?: CategoryStatisticsResponseBodyCategoryTrend[];
   static names(): { [key: string]: string } {
     return {
@@ -1829,7 +2404,15 @@ export class CloseHumanSessionHeaders extends $tea.Model {
 }
 
 export class CloseHumanSessionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1851,6 +2434,10 @@ export class CloseHumanSessionRequest extends $tea.Model {
 }
 
 export class CloseHumanSessionResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sessionId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1920,9 +2507,17 @@ export class ConversationCreatedNotifyRequest extends $tea.Model {
   alipayUserId?: string;
   conversationId?: string;
   nickName?: string;
+  /**
+   * @example
+   * eWaJSqDcLsoiE
+   */
   openTeamId?: string;
   serverName?: string;
   serverTips?: string;
+  /**
+   * @example
+   * 对应外部渠道的会话ID
+   */
   serviceToken?: string;
   timeoutRemindTips?: string;
   userId?: string;
@@ -1965,7 +2560,15 @@ export class ConversationCreatedNotifyRequest extends $tea.Model {
 export class ConversationCreatedNotifyResponseBody extends $tea.Model {
   dingOpenErrcode?: number;
   errorMsg?: string;
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2259,12 +2862,44 @@ export class CreateGroupHeaders extends $tea.Model {
 }
 
 export class CreateGroupRequest extends $tea.Model {
+  /**
+   * @example
+   * PID123cjj2
+   */
   groupBizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试服务群
+   */
   groupName?: string;
   groupTagNames?: string[];
   memberStaffIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Jciwnfw
+   */
   openGroupSetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Jciwnfw
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager123
+   */
   ownerStaffId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2296,7 +2931,21 @@ export class CreateGroupRequest extends $tea.Model {
 }
 
 export class CreateGroupResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * http://qr.dingtalk.com/xxxxx
+   */
   groupUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidxxxxxx==
+   */
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2365,14 +3014,38 @@ export class CreateGroupConversationHeaders extends $tea.Model {
 }
 
 export class CreateGroupConversationRequest extends $tea.Model {
+  /**
+   * @example
+   * dingadc88253b4d581bd35c2f4657eb6378f
+   */
   corpId?: string;
+  /**
+   * @example
+   * fsfsfadfasfdasdfsaf
+   */
   dingGroupId?: string;
   dingSuiteKey?: string;
   dingTokenGrantType?: number;
+  /**
+   * @example
+   * 57675657
+   */
   dingUserId?: string;
+  /**
+   * @example
+   * 张三
+   */
   dingUserName?: string;
+  /**
+   * @example
+   * {"isServerInitiative":"true"}
+   */
   extValues?: string;
   openTeamId?: string;
+  /**
+   * @example
+   * 3434
+   */
   serverGroupId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2408,9 +3081,25 @@ export class CreateGroupConversationRequest extends $tea.Model {
 }
 
 export class CreateGroupConversationResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 500
+   */
   dingOpenErrcode?: number;
+  /**
+   * @example
+   * SYSTEM_ERROR
+   */
   errorMsg?: string;
+  /**
+   * @example
+   * true
+   */
   result?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2483,8 +3172,20 @@ export class CreateGroupSetHeaders extends $tea.Model {
 }
 
 export class CreateGroupSetRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   groupSetName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   groupTemplateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2574,12 +3275,49 @@ export class CreateInstanceHeaders extends $tea.Model {
 }
 
 export class CreateInstanceRequest extends $tea.Model {
+  /**
+   * @example
+   * DOU_YIN
+   */
   channel?: string;
+  /**
+   * @example
+   * 888888
+   */
   externalBizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * DING_CUSTOMER
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"node_1111":"hahha"}
+   */
   formDataList?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 88444***
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 88855
+   */
   operatorUnionId?: string;
+  /**
+   * @example
+   * 88855
+   */
   ownerUnionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2611,6 +3349,10 @@ export class CreateInstanceRequest extends $tea.Model {
 }
 
 export class CreateInstanceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 8888***
+   */
   openDataInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2677,7 +3419,15 @@ export class CreateTeamHeaders extends $tea.Model {
 }
 
 export class CreateTeamRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   creatorDingUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   teamName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2765,14 +3515,57 @@ export class CreateTicketHeaders extends $tea.Model {
 }
 
 export class CreateTicketRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Dq9hP8Sk2v6vQ6l05nCe5wiEiE
+   */
   creatorUnionId?: string;
+  /**
+   * @example
+   * [{\"identifier\":\"input1\",\"value\":\"123\"}]
+   */
   customFields?: string;
   notify?: CreateTicketRequestNotify;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eKWh3GBwsKEiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * bLkvfXKiSngQiE
+   */
   openTemplateBizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processorUnionIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SG
+   */
   scene?: string;
   sceneContext?: CreateTicketRequestSceneContext;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 工单标题
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2874,10 +3667,28 @@ export class CustomerSendMsgTaskHeaders extends $tea.Model {
 }
 
 export class CustomerSendMsgTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   messageContent?: CustomerSendMsgTaskRequestMessageContent;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8888
+   */
   openTeamId?: string;
   queryCustomer?: CustomerSendMsgTaskRequestQueryCustomer;
   sendConfig?: CustomerSendMsgTaskRequestSendConfig;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 任务名称
+   */
   taskName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2905,6 +3716,10 @@ export class CustomerSendMsgTaskRequest extends $tea.Model {
 }
 
 export class CustomerSendMsgTaskResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 88888
+   */
   openBatchTaskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2971,10 +3786,39 @@ export class DeleteGroupMembersFromGroupHeaders extends $tea.Model {
 }
 
 export class DeleteGroupMembersFromGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * GROUP：从群中删除；GROUP_SET：从群组中删除
+   */
   deleteGroupType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8888
+   */
   memberUnionId?: string;
+  /**
+   * @example
+   * cid**
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * 8888
+   */
   openGroupSetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8888
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3068,9 +3912,34 @@ export class DeleteInstanceHeaders extends $tea.Model {
 }
 
 export class DeleteInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * DING_CUSTOMER
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 888***
+   */
   openDataInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 888**
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 8889999
+   */
   operatorUnionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3162,9 +4031,25 @@ export class DeleteKnowledgeHeaders extends $tea.Model {
 }
 
 export class DeleteKnowledgeRequest extends $tea.Model {
+  /**
+   * @example
+   * xuvw1245
+   */
   libraryKey?: string;
+  /**
+   * @example
+   * Js1i0w3k
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * CCM
+   */
   source?: string;
+  /**
+   * @example
+   * CCM-123
+   */
   sourcePrimaryKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3256,12 +4141,49 @@ export class EmotionStatisticsHeaders extends $tea.Model {
 }
 
 export class EmotionStatisticsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   maxDt?: string;
+  /**
+   * @example
+   * 0.8
+   */
   maxEmotion?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   minDt?: string;
+  /**
+   * @example
+   * 0
+   */
   minEmotion?: number;
+  /**
+   * @example
+   * cidXX,cidYY
+   */
   openConversationIds?: string;
+  /**
+   * @example
+   * ksdfosd
+   */
   openGroupSetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * KxisoOk
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3293,6 +4215,10 @@ export class EmotionStatisticsRequest extends $tea.Model {
 }
 
 export class EmotionStatisticsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   emotionStatisticsRecords?: EmotionStatisticsResponseBodyEmotionStatisticsRecords[];
   static names(): { [key: string]: string } {
     return {
@@ -3360,9 +4286,34 @@ export class FinishTicketHeaders extends $tea.Model {
 
 export class FinishTicketRequest extends $tea.Model {
   notify?: FinishTicketRequestNotify;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eKWh3GBwsKEiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a8iS4X94TgtgiE
+   */
   openTicketId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Dq9hP8Sk2v6vQ6l05nCe5wiEiE
+   */
   processorUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   ticketMemo?: FinishTicketRequestTicketMemo;
   static names(): { [key: string]: string } {
     return {
@@ -3540,8 +4491,26 @@ export class GetInstancesByIdsHeaders extends $tea.Model {
 }
 
 export class GetInstancesByIdsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * DING_CUSTOMER
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openDataInstanceIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 888***
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3631,6 +4600,13 @@ export class GetNegativeWordCloudHeaders extends $tea.Model {
 }
 
 export class GetNegativeWordCloudRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * KxisoOk
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3650,6 +4626,10 @@ export class GetNegativeWordCloudRequest extends $tea.Model {
 }
 
 export class GetNegativeWordCloudResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   words?: GetNegativeWordCloudResponseBodyWords[];
   static names(): { [key: string]: string } {
     return {
@@ -3716,9 +4696,25 @@ export class GetOssTempUrlHeaders extends $tea.Model {
 }
 
 export class GetOssTempUrlRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fetchMode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   key?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3810,9 +4806,34 @@ export class GetStoragePolicyHeaders extends $tea.Model {
 }
 
 export class GetStoragePolicyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TICKET_IMAGE
+   */
   bizType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * wahah.txt
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10000
+   */
   fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3916,7 +4937,15 @@ export class GetTicketHeaders extends $tea.Model {
 }
 
 export class GetTicketRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTicketId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4040,6 +5069,13 @@ export class GetWordCloudHeaders extends $tea.Model {
 }
 
 export class GetWordCloudRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * KxisoOk
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4059,6 +5095,10 @@ export class GetWordCloudRequest extends $tea.Model {
 }
 
 export class GetWordCloudResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   words?: GetWordCloudResponseBodyWords[];
   static names(): { [key: string]: string } {
     return {
@@ -4125,8 +5165,29 @@ export class GroupStatisticsHeaders extends $tea.Model {
 }
 
 export class GroupStatisticsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   maxDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   minDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * KxisoOk
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4150,9 +5211,34 @@ export class GroupStatisticsRequest extends $tea.Model {
 }
 
 export class GroupStatisticsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   groupCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   groupTrend?: GroupStatisticsResponseBodyGroupTrend[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   increaseGroupCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0.1
+   */
   increaseRate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4225,8 +5311,29 @@ export class IntentionCategoryStatisticsHeaders extends $tea.Model {
 }
 
 export class IntentionCategoryStatisticsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   maxDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   minDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * KxisoOk
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4250,6 +5357,10 @@ export class IntentionCategoryStatisticsRequest extends $tea.Model {
 }
 
 export class IntentionCategoryStatisticsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   intentionCategoryRecords?: IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords[];
   static names(): { [key: string]: string } {
     return {
@@ -4316,8 +5427,29 @@ export class IntentionStatisticsHeaders extends $tea.Model {
 }
 
 export class IntentionStatisticsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   maxDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   minDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * KxisoOk
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4341,7 +5473,15 @@ export class IntentionStatisticsRequest extends $tea.Model {
 }
 
 export class IntentionStatisticsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   intentionStatisticsRecords?: IntentionStatisticsResponseBodyIntentionStatisticsRecords[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   intentionTrend?: IntentionStatisticsResponseBodyIntentionTrend[];
   static names(): { [key: string]: string } {
     return {
@@ -4410,7 +5550,15 @@ export class ListTicketOperateRecordHeaders extends $tea.Model {
 }
 
 export class ListTicketOperateRecordRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTicketId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4564,8 +5712,26 @@ export class QueryActiveUsersHeaders extends $tea.Model {
 }
 
 export class QueryActiveUsersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidxxxxxx==
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * KxisoOk
+   * 
+   * **if can be null:**
+   * true
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 5
+   */
   topN?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4589,6 +5755,10 @@ export class QueryActiveUsersRequest extends $tea.Model {
 }
 
 export class QueryActiveUsersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   activeUserInfos?: QueryActiveUsersResponseBodyActiveUserInfos[];
   static names(): { [key: string]: string } {
     return {
@@ -4655,10 +5825,39 @@ export class QueryCrmGroupContactHeaders extends $tea.Model {
 }
 
 export class QueryCrmGroupContactRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   minResult?: number;
+  /**
+   * @example
+   * 8888
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cid888
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 888
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchFields?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4686,7 +5885,15 @@ export class QueryCrmGroupContactRequest extends $tea.Model {
 }
 
 export class QueryCrmGroupContactResponseBody extends $tea.Model {
+  /**
+   * @example
+   * token****
+   */
   nextToken?: string;
+  /**
+   * @example
+   * cid****
+   */
   openConversationId?: string;
   records?: QueryCrmGroupContactResponseBodyRecords[];
   static names(): { [key: string]: string } {
@@ -4855,9 +6062,31 @@ export class QueryCustomerTaskUserDetailHeaders extends $tea.Model {
 }
 
 export class QueryCustomerTaskUserDetailRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 8888
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8888
+   */
   openBatchTaskId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8888
+   */
   openTeamId?: string;
   receiverUnionIds?: string[];
   static names(): { [key: string]: string } {
@@ -4886,7 +6115,15 @@ export class QueryCustomerTaskUserDetailRequest extends $tea.Model {
 }
 
 export class QueryCustomerTaskUserDetailResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: string;
   records?: QueryCustomerTaskUserDetailResponseBodyRecords[];
   totalCount?: number;
@@ -4961,8 +6198,20 @@ export class QueryGroupHeaders extends $tea.Model {
 }
 
 export class QueryGroupRequest extends $tea.Model {
+  /**
+   * @example
+   * 101813123123
+   */
   bizId?: string;
+  /**
+   * @example
+   * cidxxxxxx==
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * KxisoOk
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4986,13 +6235,69 @@ export class QueryGroupRequest extends $tea.Model {
 }
 
 export class QueryGroupResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 234
+   */
   bizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 钉钉专属服务群
+   */
   groupName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://qr.dingtalk.com/xxxxxxx
+   */
   groupUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidxxxxx==
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xjfjdsiw
+   */
   openGroupSetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xkjhfker
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * jikwrjcowa
+   */
   robotCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 服务小钉
+   */
   robotName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5073,8 +6378,20 @@ export class QueryGroupMemberHeaders extends $tea.Model {
 }
 
 export class QueryGroupMemberRequest extends $tea.Model {
+  /**
+   * @example
+   * cidxxxxxx==
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * KxisoOk
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5167,6 +6484,10 @@ export class QueryGroupSetHeaders extends $tea.Model {
 }
 
 export class QueryGroupSetRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5186,6 +6507,10 @@ export class QueryGroupSetRequest extends $tea.Model {
 }
 
 export class QueryGroupSetResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   records?: QueryGroupSetResponseBodyRecords[];
   static names(): { [key: string]: string } {
     return {
@@ -5252,10 +6577,36 @@ export class QueryInstancesByMultiConditionsHeaders extends $tea.Model {
 }
 
 export class QueryInstancesByMultiConditionsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * DING_CUSTOMER
+   */
   formCode?: string;
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 0
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 888**
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * [     {         "fieldCode":"contact_name",         "fieldOperatorType":"like",         "value":"测试api"     } ]
+   */
   searchFields?: string;
   sortFields?: QueryInstancesByMultiConditionsRequestSortFields[];
   static names(): { [key: string]: string } {
@@ -5286,9 +6637,17 @@ export class QueryInstancesByMultiConditionsRequest extends $tea.Model {
 }
 
 export class QueryInstancesByMultiConditionsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
   nextToken?: string;
   records?: QueryInstancesByMultiConditionsResponseBodyRecords[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5361,9 +6720,31 @@ export class QuerySendMsgTaskStatisticsHeaders extends $tea.Model {
 }
 
 export class QuerySendMsgTaskStatisticsRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 1
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Jci333
+   */
   openBatchTaskId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Jciwnfw
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5464,10 +6845,39 @@ export class QuerySendMsgTaskStatisticsDetailHeaders extends $tea.Model {
 }
 
 export class QuerySendMsgTaskStatisticsDetailRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 1
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * J22222
+   */
   openBatchTaskId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cid1111
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Jciwnfw
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5570,10 +6980,39 @@ export class QueryServiceGroupMessageReadStatusHeaders extends $tea.Model {
 }
 
 export class QueryServiceGroupMessageReadStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * CXiw
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidxxxxxx==
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * msgxxxxxx==
+   */
   openMsgTaskId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EifWwis
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5602,6 +7041,10 @@ export class QueryServiceGroupMessageReadStatusRequest extends $tea.Model {
 
 export class QueryServiceGroupMessageReadStatusResponseBody extends $tea.Model {
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: string;
   records?: QueryServiceGroupMessageReadStatusResponseBodyRecords[];
   totalCount?: number;
@@ -5676,12 +7119,40 @@ export class QueueNotifyHeaders extends $tea.Model {
 }
 
 export class QueueNotifyRequest extends $tea.Model {
+  /**
+   * @example
+   * 5
+   */
   estimateWaitMin?: number;
+  /**
+   * @example
+   * eWaJSqDcLsoiE
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 11
+   */
   queuePlace?: number;
+  /**
+   * @example
+   * 3333333333
+   */
   serviceToken?: string;
+  /**
+   * @example
+   * SourceTypeEnum
+   */
   targetChannel?: string;
+  /**
+   * @example
+   * 你好，欢迎来到这里
+   */
   tips?: string;
+  /**
+   * @example
+   * eeeeeeeeerrrrr
+   */
   visitorToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5715,7 +7186,15 @@ export class QueueNotifyRequest extends $tea.Model {
 export class QueueNotifyResponseBody extends $tea.Model {
   dingOpenErrcode?: number;
   errorMsg?: string;
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -5788,7 +7267,21 @@ export class RemoveContactFromOrgHeaders extends $tea.Model {
 }
 
 export class RemoveContactFromOrgRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 88888
+   */
   contactUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8888
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5876,13 +7369,63 @@ export class ReportCustomerDetailHeaders extends $tea.Model {
 }
 
 export class ReportCustomerDetailRequest extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasLogin?: boolean;
+  /**
+   * @example
+   * true
+   */
   hasOpenConv?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220102
+   */
   maxDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   minDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidXXX
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * iSoqrhLQDtK
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5916,9 +7459,34 @@ export class ReportCustomerDetailRequest extends $tea.Model {
 }
 
 export class ReportCustomerDetailResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   currentPage?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   records?: ReportCustomerDetailResponseBodyRecords[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5991,14 +7559,65 @@ export class ReportCustomerStatisticsHeaders extends $tea.Model {
 }
 
 export class ReportCustomerStatisticsRequest extends $tea.Model {
+  /**
+   * **if can be null:**
+   * true
+   */
   groupOwnerUserIds?: string[];
+  /**
+   * **if can be null:**
+   * true
+   */
   groupTags?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220102
+   */
   maxDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   minDt?: string;
+  /**
+   * **if can be null:**
+   * true
+   */
   openConversationIds?: string[];
+  /**
+   * @example
+   * iFoqrhLQDtK
+   */
   openGroupSetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * iSoqrhLQDtK
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6034,9 +7653,34 @@ export class ReportCustomerStatisticsRequest extends $tea.Model {
 }
 
 export class ReportCustomerStatisticsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   currentPage?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   records?: ReportCustomerStatisticsResponseBodyRecords[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6109,16 +7753,66 @@ export class ResubmitTicketHeaders extends $tea.Model {
 }
 
 export class ResubmitTicketRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Dq9hP8Sk2v6vQ6l05nCe5wiEiE
+   */
   creatorUnionId?: string;
+  /**
+   * @example
+   * [{\"identifier\":\"input1\",\"value\":\"123\"}]
+   */
   customFields?: string;
   notify?: ResubmitTicketRequestNotify;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eKWh3GBwsKEiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * bLkvfXKiSngQiE
+   */
   openTemplateBizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * iPbrfXjdNjRoiE
+   */
   openTicketId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processorUnionIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SG
+   */
   scene?: string;
   sceneContext?: ResubmitTicketRequestSceneContext;
   ticketMemo?: ResubmitTicketRequestTicketMemo;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 工单标题
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6203,7 +7897,21 @@ export class RetractTicketHeaders extends $tea.Model {
 
 export class RetractTicketRequest extends $tea.Model {
   notify?: RetractTicketRequestNotify;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eKWh3GBwsKEiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a8iS4X94TgtgiE
+   */
   openTicketId?: string;
   operatorUnionId?: string;
   ticketMemo?: RetractTicketRequestTicketMemo;
@@ -6277,8 +7985,29 @@ export class RobotMessageRecallHeaders extends $tea.Model {
 }
 
 export class RobotMessageRecallRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidXXX
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * msgU87r5gnMP43JTDAZg/ETyQ==
+   */
   openMsgId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * iSoqrhLQDtK
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6368,9 +8097,31 @@ export class SaveFormInstanceHeaders extends $tea.Model {
 }
 
 export class SaveFormInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {}
+   */
   formDataList?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8888
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 88888
+   */
   operatorUnionId?: string;
+  /**
+   * @example
+   * 8888
+   */
   ownerUnionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6396,7 +8147,15 @@ export class SaveFormInstanceRequest extends $tea.Model {
 }
 
 export class SaveFormInstanceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 99999
+   */
   openContactId?: string;
+  /**
+   * @example
+   * 88888
+   */
   openCustomerId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6465,12 +8224,40 @@ export class SearchGroupHeaders extends $tea.Model {
 }
 
 export class SearchGroupRequest extends $tea.Model {
+  /**
+   * @example
+   * 钉钉专属服务群
+   */
   groupName?: string;
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * CXiw
+   */
   nextToken?: string;
+  /**
+   * @example
+   * cidxxxx==
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * sjfuwid
+   */
   openGroupSetId?: string;
+  /**
+   * @example
+   * jfuwida
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 目前支持PAGE 和 SCROLL，默认PAGE类型
+   */
   searchType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6503,6 +8290,10 @@ export class SearchGroupRequest extends $tea.Model {
 
 export class SearchGroupResponseBody extends $tea.Model {
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: string;
   records?: SearchGroupResponseBodyRecords[];
   totalCount?: number;
@@ -6577,10 +8368,30 @@ export class SendMsgByTaskHeaders extends $tea.Model {
 }
 
 export class SendMsgByTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   messageContent?: SendMsgByTaskRequestMessageContent;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   queryGroup?: SendMsgByTaskRequestQueryGroup;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sendConfig?: SendMsgByTaskRequestSendConfig;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   taskName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6674,11 +8485,47 @@ export class SendMsgByTaskSupportInviteJoinOrgHeaders extends $tea.Model {
 }
 
 export class SendMsgByTaskSupportInviteJoinOrgRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   messageContent?: SendMsgByTaskSupportInviteJoinOrgRequestMessageContent;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mobilePhones?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   needUrlTrack?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 88888
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 发送渠道      * 工作通知：WORK_NOTICE      * 机器人：SINGLE_ROBOT
+   */
   sendChannel?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 群发任务
+   */
   taskName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6777,16 +8624,56 @@ export class SendServiceGroupMessageRequest extends $tea.Model {
   atDingtalkIds?: string[];
   atMobiles?: string[];
   atUnionIds?: string[];
+  /**
+   * @example
+   * 0
+   */
   btnOrientation?: string;
   btns?: SendServiceGroupMessageRequestBtns[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 你有新的任务待审批
+   */
   content?: string;
+  /**
+   * @example
+   * false
+   */
   hasContentLinks?: boolean;
+  /**
+   * @example
+   * false
+   */
   isAtAll?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * MARKDOWN
+   */
   messageType?: string;
   receiverDingtalkIds?: string[];
   receiverMobiles?: string[];
   receiverUnionIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidxxxxx==
+   */
   targetOpenConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 服务提醒
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6832,6 +8719,13 @@ export class SendServiceGroupMessageRequest extends $tea.Model {
 }
 
 export class SendServiceGroupMessageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * msgxxxxxx==
+   */
   openMsgTaskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6904,6 +8798,10 @@ export class SetRobotConfigRequest extends $tea.Model {
   dingTokenGrantType?: number;
   openGroupSetId?: string;
   openTeamId?: string;
+  /**
+   * @example
+   * 0
+   */
   status?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7001,8 +8899,29 @@ export class TakeTicketHeaders extends $tea.Model {
 }
 
 export class TakeTicketRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eKWh3GBwsKEiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a8iS4X94TgtgiE
+   */
   openTicketId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Dq9hP8Sk2v6vQ6l05nCe5wiEiE
+   */
   takerUnionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7070,10 +8989,39 @@ export class TopicStatisticsHeaders extends $tea.Model {
 }
 
 export class TopicStatisticsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   maxDt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   minDt?: string;
+  /**
+   * @example
+   * cidXX,cidYY
+   */
   openConversationIds?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * KxisoOk
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 工单
+   */
   searchContent?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7101,6 +9049,10 @@ export class TopicStatisticsRequest extends $tea.Model {
 }
 
 export class TopicStatisticsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   topicStatisticsRecords?: TopicStatisticsResponseBodyTopicStatisticsRecords[];
   static names(): { [key: string]: string } {
     return {
@@ -7168,9 +9120,34 @@ export class TransferTicketHeaders extends $tea.Model {
 
 export class TransferTicketRequest extends $tea.Model {
   notify?: TransferTicketRequestNotify;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eKWh3GBwsKEiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * iPFWCyMGWPiiIiE
+   */
   openTicketId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Dq9hP8Sk2v6vQ6l05nCe5wiEiE
+   */
   processorUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processorUnionIds?: string[];
   ticketMemo?: TransferTicketRequestTicketMemo;
   static names(): { [key: string]: string } {
@@ -7245,8 +9222,20 @@ export class UpdateGroupSetHeaders extends $tea.Model {
 }
 
 export class UpdateGroupSetRequest extends $tea.Model {
+  /**
+   * @example
+   * cidkeQXxEC9VaGQ2M6nTlhNWQ==
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * iPnLAZk8oV4AiE
+   */
   openGroupSetId?: string;
+  /**
+   * @example
+   * u9iSGISL3bqIiE
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7336,8 +9325,16 @@ export class UpdateGroupTagHeaders extends $tea.Model {
 }
 
 export class UpdateGroupTagRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openConversationIds?: string[];
   tagNames?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   updateType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7405,12 +9402,52 @@ export class UpdateInstanceHeaders extends $tea.Model {
 }
 
 export class UpdateInstanceRequest extends $tea.Model {
+  /**
+   * @example
+   * hhdhg
+   */
   externalBizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * DING_CUSTOMER
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"node_888":"hhhh"}
+   */
   formDataList?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 888555
+   */
   openDataInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 888***
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 8888
+   */
   operatorUnionId?: string;
+  /**
+   * @example
+   * 88888
+   */
   ownerUnionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7508,10 +9545,39 @@ export class UpdateTicketHeaders extends $tea.Model {
 }
 
 export class UpdateTicketRequest extends $tea.Model {
+  /**
+   * @example
+   * [{\"identifier\":\"input1\",\"value\":\"openAPI更新了值\"}]
+   */
   customFields?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eKWh3GBwsKEiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * iPFWCyMGWPiiIiE
+   */
   openTicketId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * p8VdSjm884SvQ6l05nCe5wiEiE
+   */
   processorUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   ticketMemo?: UpdateTicketRequestTicketMemo;
   static names(): { [key: string]: string } {
     return {
@@ -7583,9 +9649,31 @@ export class UpgradeCloudGroupHeaders extends $tea.Model {
 }
 
 export class UpgradeCloudGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sdfdfser
+   */
   ccsInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidrQnTVXH/X+ERaVqGaH+asw==
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * oPnDlfVYYIUia
+   */
   openGroupSetId?: string;
+  /**
+   * @example
+   * btkoYsadwyQiE
+   */
   openTeamId?: string;
   templateId?: string;
   static names(): { [key: string]: string } {
@@ -7658,6 +9746,10 @@ export class UpgradeNormalGroupHeaders extends $tea.Model {
 }
 
 export class UpgradeNormalGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openConversationId?: string;
   openGroupSetId?: string;
   openTeamId?: string;
@@ -7730,9 +9822,34 @@ export class UrgeTicketHeaders extends $tea.Model {
 }
 
 export class UrgeTicketRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * bLkvfXKiSngQiE
+   */
   openTeamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * iPbrfXjdNjRoiE
+   */
   openTicketId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Dq9hP8Sk2v6vQ6l05nCe5wiEiE
+   */
   operatorUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   ticketMemo?: UrgeTicketRequestTicketMemo;
   static names(): { [key: string]: string } {
     return {
@@ -7780,10 +9897,26 @@ export class UrgeTicketResponse extends $tea.Model {
 }
 
 export class AddKnowledgeRequestAttachmentList extends $tea.Model {
+  /**
+   * @example
+   * doc
+   */
   mimeType?: string;
   path?: string;
+  /**
+   * @example
+   * 655
+   */
   size?: number;
+  /**
+   * @example
+   * pdf
+   */
   suffix?: string;
+  /**
+   * @example
+   * 测试附件
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7811,8 +9944,20 @@ export class AddKnowledgeRequestAttachmentList extends $tea.Model {
 }
 
 export class AddOpenCategoryResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 111
+   */
   id?: number;
+  /**
+   * @example
+   * title不能为空
+   */
   message?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -7836,10 +9981,30 @@ export class AddOpenCategoryResponseBodyResult extends $tea.Model {
 }
 
 export class AddOpenKnowledgeRequestAttachments extends $tea.Model {
+  /**
+   * @example
+   * PDF
+   */
   mimeType?: string;
+  /**
+   * @example
+   * https://dtapp-pub.dingtalk.com/dingtalkdesktop/test.pdf
+   */
   path?: string;
+  /**
+   * @example
+   * 444556
+   */
   size?: number;
+  /**
+   * @example
+   * pdf
+   */
   suffix?: string;
+  /**
+   * @example
+   * 这是一个附件文档
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7867,8 +10032,23 @@ export class AddOpenKnowledgeRequestAttachments extends $tea.Model {
 }
 
 export class AddOpenKnowledgeResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 111
+   */
   id?: number;
+  /**
+   * @example
+   * 知识标问不能为空
+   */
   message?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -7892,8 +10072,22 @@ export class AddOpenKnowledgeResponseBodyResult extends $tea.Model {
 }
 
 export class AddOpenLibraryResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 22
+   */
   id?: number;
   message?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -7917,7 +10111,15 @@ export class AddOpenLibraryResponseBodyResult extends $tea.Model {
 }
 
 export class AddTicketMemoRequestTicketMemoAttachments extends $tea.Model {
+  /**
+   * @example
+   * ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt
+   */
   fileName?: string;
+  /**
+   * @example
+   * wahaha.txt
+   */
   key?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7940,6 +10142,13 @@ export class AddTicketMemoRequestTicketMemoAttachments extends $tea.Model {
 
 export class AddTicketMemoRequestTicketMemo extends $tea.Model {
   attachments?: AddTicketMemoRequestTicketMemoAttachments[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 备注
+   */
   memo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7962,6 +10171,10 @@ export class AddTicketMemoRequestTicketMemo extends $tea.Model {
 
 export class AssignTicketRequestNotify extends $tea.Model {
   groupNoticeReceiverUnionIds?: string[];
+  /**
+   * @example
+   * true
+   */
   noticeAllGroupMember?: boolean;
   workNoticeReceiverUnionIds?: string[];
   static names(): { [key: string]: string } {
@@ -7986,7 +10199,15 @@ export class AssignTicketRequestNotify extends $tea.Model {
 }
 
 export class AssignTicketRequestTicketMemoAttachments extends $tea.Model {
+  /**
+   * @example
+   * ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt
+   */
   fileName?: string;
+  /**
+   * @example
+   * wahaha.txt
+   */
   key?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8009,6 +10230,13 @@ export class AssignTicketRequestTicketMemoAttachments extends $tea.Model {
 
 export class AssignTicketRequestTicketMemo extends $tea.Model {
   attachments?: AssignTicketRequestTicketMemoAttachments[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 备注
+   */
   memo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8030,7 +10258,21 @@ export class AssignTicketRequestTicketMemo extends $tea.Model {
 }
 
 export class BatchBindingGroupBizIdsRequestBindingGroupBizIds extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hghhghghhg
+   */
   bizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cid123
+   */
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8052,7 +10294,21 @@ export class BatchBindingGroupBizIdsRequestBindingGroupBizIds extends $tea.Model
 }
 
 export class BatchGetGroupSetConfigResponseBodyGroupSetConfigs extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ROBOT_SWITCH
+   */
   configKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   configValue?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8074,16 +10330,60 @@ export class BatchGetGroupSetConfigResponseBodyGroupSetConfigs extends $tea.Mode
 }
 
 export class BatchQueryCustomerSendTaskResponseBodyRecords extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   createName?: string;
+  /**
+   * @example
+   * 2023-07-14 10:00:00
+   */
   createTimeStr?: string;
+  /**
+   * @example
+   * 88888
+   */
   createUnionId?: string;
+  /**
+   * @example
+   * 88888
+   */
   openBatchTaskId?: string;
+  /**
+   * @example
+   * 90
+   */
   readCustomerInc?: number;
+  /**
+   * @example
+   * 100
+   */
   readUserInc?: number;
+  /**
+   * @example
+   * 100
+   */
   sendCustomerInc?: number;
+  /**
+   * @example
+   * UNFINISH 未完成 FINISHED 已发送 CANCELED 已取消 CREATE_TASK_FAILED 创建任务失败  SENDING 发送中
+   */
   sendMessageStatus?: string;
+  /**
+   * @example
+   * 2023-07-14 11:00:00
+   */
   sendTaskTimeStr?: string;
+  /**
+   * @example
+   * 200
+   */
   sendUserInc?: number;
+  /**
+   * @example
+   * 任务名称
+   */
   taskName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8161,6 +10461,10 @@ export class BatchQuerySendMessageTaskResponseBodyRecords extends $tea.Model {
   readGroupInc?: number;
   sendGroupInc?: number;
   sendMessageStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sendTaskTimeStr?: string;
   taskName?: string;
   static names(): { [key: string]: string } {
@@ -8198,6 +10502,10 @@ export class BatchQuerySendMessageTaskResponseBodyRecords extends $tea.Model {
 
 export class CancelTicketRequestNotify extends $tea.Model {
   groupNoticeReceiverUnionIds?: string[];
+  /**
+   * @example
+   * true
+   */
   noticeAllGroupMember?: boolean;
   workNoticeReceiverUnionIds?: string[];
   static names(): { [key: string]: string } {
@@ -8222,7 +10530,15 @@ export class CancelTicketRequestNotify extends $tea.Model {
 }
 
 export class CancelTicketRequestTicketMemoAttachments extends $tea.Model {
+  /**
+   * @example
+   * wahaha.txt
+   */
   fileName?: string;
+  /**
+   * @example
+   * ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt
+   */
   key?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8245,6 +10561,10 @@ export class CancelTicketRequestTicketMemoAttachments extends $tea.Model {
 
 export class CancelTicketRequestTicketMemo extends $tea.Model {
   attachments?: CancelTicketRequestTicketMemoAttachments[];
+  /**
+   * @example
+   * 备注
+   */
   memo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8266,8 +10586,29 @@ export class CancelTicketRequestTicketMemo extends $tea.Model {
 }
 
 export class CategoryStatisticsResponseBodyCategoryStatisticsRecords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   count?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 9
+   */
   lastCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 工单类
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8291,8 +10632,29 @@ export class CategoryStatisticsResponseBodyCategoryStatisticsRecords extends $te
 }
 
 export class CategoryStatisticsResponseBodyCategoryTrend extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   count?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   dt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 工单类
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8317,6 +10679,10 @@ export class CategoryStatisticsResponseBodyCategoryTrend extends $tea.Model {
 
 export class CreateTicketRequestNotify extends $tea.Model {
   groupNoticeReceiverUnionIds?: string[];
+  /**
+   * @example
+   * true
+   */
   noticeAllGroupMember?: boolean;
   workNoticeReceiverUnionIds?: string[];
   static names(): { [key: string]: string } {
@@ -8341,7 +10707,15 @@ export class CreateTicketRequestNotify extends $tea.Model {
 }
 
 export class CreateTicketRequestSceneContextGroupMsgs extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   anchor?: boolean;
+  /**
+   * @example
+   * msgsbY4BzTCNX0/ClUwoTTs7w==
+   */
   openMsgId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8364,8 +10738,16 @@ export class CreateTicketRequestSceneContextGroupMsgs extends $tea.Model {
 
 export class CreateTicketRequestSceneContext extends $tea.Model {
   groupMsgs?: CreateTicketRequestSceneContextGroupMsgs[];
+  /**
+   * @example
+   * cidZBSNlUi/Jq9x76PAXUCrAA==
+   */
   openConversationId?: string;
   relevantorUnionIds?: string[];
+  /**
+   * @example
+   * a0ba57d5d29a48b51d0eca48da6b1d09
+   */
   topicId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8391,7 +10773,15 @@ export class CreateTicketRequestSceneContext extends $tea.Model {
 }
 
 export class CustomerSendMsgTaskRequestMessageContentBtns extends $tea.Model {
+  /**
+   * @example
+   * http://www.baidu.com
+   */
   actionURL?: string;
+  /**
+   * @example
+   * 百度
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8414,8 +10804,29 @@ export class CustomerSendMsgTaskRequestMessageContentBtns extends $tea.Model {
 
 export class CustomerSendMsgTaskRequestMessageContent extends $tea.Model {
   btns?: CustomerSendMsgTaskRequestMessageContentBtns[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 内容
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ACTIONCAR：卡片消息
+   */
   messageType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 标题
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8442,8 +10853,20 @@ export class CustomerSendMsgTaskRequestMessageContent extends $tea.Model {
 
 export class CustomerSendMsgTaskRequestQueryCustomer extends $tea.Model {
   openContactIds?: string[];
+  /**
+   * @example
+   * AIMED
+   */
   queryType?: string;
+  /**
+   * @example
+   * {}
+   */
   searchContactConditions?: string;
+  /**
+   * @example
+   * {}
+   */
   searchCustomerConditions?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8469,8 +10892,20 @@ export class CustomerSendMsgTaskRequestQueryCustomer extends $tea.Model {
 }
 
 export class CustomerSendMsgTaskRequestSendConfigUrlTrackConfig extends $tea.Model {
+  /**
+   * @example
+   * 百度
+   */
   title?: string;
+  /**
+   * @example
+   * 88888
+   */
   trackId?: string;
+  /**
+   * @example
+   * http://www.baidu.com
+   */
   trackUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8494,8 +10929,26 @@ export class CustomerSendMsgTaskRequestSendConfigUrlTrackConfig extends $tea.Mod
 }
 
 export class CustomerSendMsgTaskRequestSendConfig extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   needUrlTrack?: boolean;
+  /**
+   * @example
+   * 2023-06-01 00:00:00
+   */
   sendTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INSTANT
+   */
   sendType?: string;
   urlTrackConfig?: CustomerSendMsgTaskRequestSendConfigUrlTrackConfig[];
   static names(): { [key: string]: string } {
@@ -8522,8 +10975,29 @@ export class CustomerSendMsgTaskRequestSendConfig extends $tea.Model {
 }
 
 export class EmotionStatisticsResponseBodyEmotionStatisticsRecords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   count?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   dt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0.3
+   */
   emotionScore?: number;
   static names(): { [key: string]: string } {
     return {
@@ -8548,6 +11022,10 @@ export class EmotionStatisticsResponseBodyEmotionStatisticsRecords extends $tea.
 
 export class FinishTicketRequestNotify extends $tea.Model {
   groupNoticeReceiverUnionIds?: string[];
+  /**
+   * @example
+   * true
+   */
   noticeAllGroupMember?: boolean;
   workNoticeReceiverUnionIds?: string[];
   static names(): { [key: string]: string } {
@@ -8572,7 +11050,15 @@ export class FinishTicketRequestNotify extends $tea.Model {
 }
 
 export class FinishTicketRequestTicketMemoAttachments extends $tea.Model {
+  /**
+   * @example
+   * wahaha.txt
+   */
   fileName?: string;
+  /**
+   * @example
+   * ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt
+   */
   key?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8595,6 +11081,13 @@ export class FinishTicketRequestTicketMemoAttachments extends $tea.Model {
 
 export class FinishTicketRequestTicketMemo extends $tea.Model {
   attachments?: FinishTicketRequestTicketMemoAttachments[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 备注
+   */
   memo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8649,11 +11142,27 @@ export class GetAuthTokenResponseBodyResult extends $tea.Model {
 export class GetInstancesByIdsResponseBodyCustomFormInstanceResponseList extends $tea.Model {
   creatorUnionId?: string;
   fields?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtModified?: string;
   modifiedUnionId?: string;
   openDataInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
   ownerUnionId?: string;
   static names(): { [key: string]: string } {
@@ -8690,7 +11199,21 @@ export class GetInstancesByIdsResponseBodyCustomFormInstanceResponseList extends
 }
 
 export class GetNegativeWordCloudResponseBodyWords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   count?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 销售
+   */
   word?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8803,7 +11326,21 @@ export class GetTicketResponseBodyTemplate extends $tea.Model {
 }
 
 export class GetWordCloudResponseBodyWords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   count?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 销售
+   */
   word?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8825,7 +11362,21 @@ export class GetWordCloudResponseBodyWords extends $tea.Model {
 }
 
 export class GroupStatisticsResponseBodyGroupTrend extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   count?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   dt?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8847,11 +11398,53 @@ export class GroupStatisticsResponseBodyGroupTrend extends $tea.Model {
 }
 
 export class IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   askCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 工单类
+   */
   categoryName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   dissatisfiedCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   errorCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   praiseCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   suggestCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -8881,8 +11474,29 @@ export class IntentionCategoryStatisticsResponseBodyIntentionCategoryRecords ext
 }
 
 export class IntentionStatisticsResponseBodyIntentionStatisticsRecords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   count?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 产品异常类
+   */
   intention?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 9
+   */
   lastCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -8906,8 +11520,29 @@ export class IntentionStatisticsResponseBodyIntentionStatisticsRecords extends $
 }
 
 export class IntentionStatisticsResponseBodyIntentionTrend extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   count?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   dt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 产品异常类
+   */
   intention?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9034,7 +11669,15 @@ export class ListTicketOperateRecordResponseBodyRecords extends $tea.Model {
 }
 
 export class ListUserTeamsResponseBodyTeams extends $tea.Model {
+  /**
+   * @example
+   * Jxi12wo3qxoa
+   */
   openTeamId?: string;
+  /**
+   * @example
+   * 测试团队
+   */
   teamName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9056,12 +11699,40 @@ export class ListUserTeamsResponseBodyTeams extends $tea.Model {
 }
 
 export class QueryActiveUsersResponseBodyActiveUserInfos extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   actionIndexL14d?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   actionIndexL30d?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   actionIndexL7d?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   activeScore?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nickName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   ranking?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9093,9 +11764,25 @@ export class QueryActiveUsersResponseBodyActiveUserInfos extends $tea.Model {
 }
 
 export class QueryCrmGroupContactResponseBodyRecords extends $tea.Model {
+  /**
+   * @example
+   * {} ,具体字段取决于客户管理-字段管理-联系人字段设置
+   */
   contactData?: string;
+  /**
+   * @example
+   * ahghgg
+   */
   memberUnionId?: string;
+  /**
+   * @example
+   * 张三
+   */
   nickName?: string;
+  /**
+   * @example
+   * 88888
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9121,9 +11808,25 @@ export class QueryCrmGroupContactResponseBodyRecords extends $tea.Model {
 }
 
 export class QueryCustomerTaskUserDetailResponseBodyRecordsEventTrackResponses extends $tea.Model {
+  /**
+   * @example
+   * 2023-07-14 00:00:00
+   */
   clickTime?: string;
+  /**
+   * @example
+   * 88888
+   */
   eventTrackId?: string;
+  /**
+   * @example
+   * true
+   */
   onClick?: boolean;
+  /**
+   * @example
+   * 标题名称
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9149,16 +11852,56 @@ export class QueryCustomerTaskUserDetailResponseBodyRecordsEventTrackResponses e
 }
 
 export class QueryCustomerTaskUserDetailResponseBodyRecords extends $tea.Model {
+  /**
+   * @example
+   * 客户名称
+   */
   customerNames?: string;
+  /**
+   * @example
+   * 11111
+   */
   errorCode?: string;
+  /**
+   * @example
+   * 错误信息
+   */
   errorDetail?: string;
   eventTrackResponses?: QueryCustomerTaskUserDetailResponseBodyRecordsEventTrackResponses[];
+  /**
+   * @example
+   * 8888
+   */
   openBatchTaskId?: string;
+  /**
+   * @example
+   * 1
+   */
   readStatus?: number;
+  /**
+   * @example
+   * 2023-07-14 00:00:00
+   */
   readTime?: string;
+  /**
+   * @example
+   * 接收人姓名
+   */
   receiverName?: string;
+  /**
+   * @example
+   * 接收人ID
+   */
   receiverUnionId?: string;
+  /**
+   * @example
+   * 2023-07-14 00:00:00
+   */
   sendTime?: string;
+  /**
+   * @example
+   * UNSEND未发；SEND_SUCCESS成功；SEND_FAILED失败；EXCEED_LIMIT被限流
+   */
   status?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9254,10 +11997,30 @@ export class QueryGroupMemberResponseBodyResult extends $tea.Model {
 }
 
 export class QueryGroupSetResponseBodyRecords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtModified?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   groupSetName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openGroupSetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9285,7 +12048,15 @@ export class QueryGroupSetResponseBodyRecords extends $tea.Model {
 }
 
 export class QueryInstancesByMultiConditionsRequestSortFields extends $tea.Model {
+  /**
+   * @example
+   * gmt_create
+   */
   fieldCode?: string;
+  /**
+   * @example
+   * asc升序；desc降序
+   */
   sortBy?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9309,11 +12080,31 @@ export class QueryInstancesByMultiConditionsRequestSortFields extends $tea.Model
 export class QueryInstancesByMultiConditionsResponseBodyRecords extends $tea.Model {
   creatorUnionId?: string;
   fields?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtModified?: string;
   modifiedUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openDataInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openTeamId?: string;
   ownerUnionId?: string;
   static names(): { [key: string]: string } {
@@ -9480,12 +12271,40 @@ export class QuerySendMsgTaskStatisticsDetailResponseBodyRecords extends $tea.Mo
 }
 
 export class QueryServiceGroupMessageReadStatusResponseBodyRecords extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   readStatus?: number;
+  /**
+   * @example
+   * 2021-09-01 00:00:00
+   */
   readTimeStr?: string;
+  /**
+   * @example
+   * $:LWCP_v1:xxxx==
+   */
   receiverDingTalkId?: string;
+  /**
+   * @example
+   * 张三
+   */
   receiverName?: string;
+  /**
+   * @example
+   * Kxiwk2
+   */
   receiverUnionId?: string;
+  /**
+   * @example
+   * manager123
+   */
   receiverUserId?: string;
+  /**
+   * @example
+   * 2021-09-01 00:00:00
+   */
   sendTimeStr?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9517,13 +12336,69 @@ export class QueryServiceGroupMessageReadStatusResponseBodyRecords extends $tea.
 }
 
 export class ReportCustomerDetailResponseBodyRecords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   atRobotCnt?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
   customerName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试群
+   */
   groupName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasLogin?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasOpenConv?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2
+   */
   sendMsgCnt?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xcjlsdf
+   */
   unionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 56789
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9557,16 +12432,90 @@ export class ReportCustomerDetailResponseBodyRecords extends $tea.Model {
 }
 
 export class ReportCustomerStatisticsResponseBodyRecords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   atRobotCnt?: number;
+  /**
+   * @example
+   * bizXX
+   */
   bizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   customerCnt?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试群
+   */
   groupName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试群分组
+   */
   groupSetName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2
+   */
   loginCnt?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   openConvCnt?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidXXX
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * iSoqrhLQDtK
+   */
   openGroupSetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2
+   */
   sendMsgCnt?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2
+   */
   senderCnt?: number;
   static names(): { [key: string]: string } {
     return {
@@ -9607,6 +12556,10 @@ export class ReportCustomerStatisticsResponseBodyRecords extends $tea.Model {
 
 export class ResubmitTicketRequestNotify extends $tea.Model {
   groupNoticeReceiverUnionIds?: string[];
+  /**
+   * @example
+   * true
+   */
   noticeAllGroupMember?: boolean;
   workNoticeReceiverUnionIds?: string[];
   static names(): { [key: string]: string } {
@@ -9632,6 +12585,10 @@ export class ResubmitTicketRequestNotify extends $tea.Model {
 
 export class ResubmitTicketRequestSceneContextGroupMsgs extends $tea.Model {
   anchor?: boolean;
+  /**
+   * @example
+   * msgsbY4BzTCNX0/ClUwoTTs7w==
+   */
   openMsgId?: string;
   topicId?: string;
   static names(): { [key: string]: string } {
@@ -9657,6 +12614,10 @@ export class ResubmitTicketRequestSceneContextGroupMsgs extends $tea.Model {
 
 export class ResubmitTicketRequestSceneContext extends $tea.Model {
   groupMsgs?: ResubmitTicketRequestSceneContextGroupMsgs[];
+  /**
+   * @example
+   * cidZBSNlUi/Jq9x76PAXUCrAA==
+   */
   openConversationId?: string;
   relevantorUnionIds?: string[];
   static names(): { [key: string]: string } {
@@ -9681,7 +12642,15 @@ export class ResubmitTicketRequestSceneContext extends $tea.Model {
 }
 
 export class ResubmitTicketRequestTicketMemoAttachments extends $tea.Model {
+  /**
+   * @example
+   * wahaha.txt
+   */
   fileName?: string;
+  /**
+   * @example
+   * ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt
+   */
   key?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9704,6 +12673,10 @@ export class ResubmitTicketRequestTicketMemoAttachments extends $tea.Model {
 
 export class ResubmitTicketRequestTicketMemo extends $tea.Model {
   attachments?: ResubmitTicketRequestTicketMemoAttachments[];
+  /**
+   * @example
+   * 备注
+   */
   memo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9726,6 +12699,10 @@ export class ResubmitTicketRequestTicketMemo extends $tea.Model {
 
 export class RetractTicketRequestNotify extends $tea.Model {
   groupNoticeReceiverUnionIds?: string[];
+  /**
+   * @example
+   * true
+   */
   noticeAllGroupMember?: boolean;
   workNoticeReceiverUnionIds?: string[];
   static names(): { [key: string]: string } {
@@ -9773,6 +12750,10 @@ export class RetractTicketRequestTicketMemoAttachments extends $tea.Model {
 
 export class RetractTicketRequestTicketMemo extends $tea.Model {
   attachments?: RetractTicketRequestTicketMemoAttachments[];
+  /**
+   * @example
+   * 备注
+   */
   memo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9794,10 +12775,45 @@ export class RetractTicketRequestTicketMemo extends $tea.Model {
 }
 
 export class SearchGroupResponseBodyRecords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 钉钉专属服务群
+   */
   groupName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingtalk:xxx
+   */
   groupUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidxxxxx==
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xjfjdsiw
+   */
   openGroupSetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xkjhfker
+   */
   openTeamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9853,6 +12869,10 @@ export class SendMsgByTaskRequestMessageContent extends $tea.Model {
   btns?: SendMsgByTaskRequestMessageContentBtns[];
   content?: string;
   images?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   messageType?: string;
   remind?: boolean;
   title?: string;
@@ -9899,6 +12919,10 @@ export class SendMsgByTaskRequestQueryGroup extends $tea.Model {
   lastActiveTimeStart?: string;
   openConversationIds?: string[];
   openGroupSetId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   queryType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9957,6 +12981,10 @@ export class SendMsgByTaskRequestSendConfigUrlTrackConfig extends $tea.Model {
 export class SendMsgByTaskRequestSendConfig extends $tea.Model {
   needUrlTrack?: boolean;
   sendTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sendType?: string;
   urlTrackConfig?: SendMsgByTaskRequestSendConfigUrlTrackConfig[];
   static names(): { [key: string]: string } {
@@ -9983,7 +13011,15 @@ export class SendMsgByTaskRequestSendConfig extends $tea.Model {
 }
 
 export class SendMsgByTaskSupportInviteJoinOrgRequestMessageContentBtns extends $tea.Model {
+  /**
+   * @example
+   * http://www.baidu.com
+   */
   actionURL?: string;
+  /**
+   * @example
+   * 按钮标题
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10006,8 +13042,29 @@ export class SendMsgByTaskSupportInviteJoinOrgRequestMessageContentBtns extends 
 
 export class SendMsgByTaskSupportInviteJoinOrgRequestMessageContent extends $tea.Model {
   btns?: SendMsgByTaskSupportInviteJoinOrgRequestMessageContentBtns[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 内容
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ACTIONCARD：卡片消息
+   */
   messageType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 标题内容
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10033,7 +13090,15 @@ export class SendMsgByTaskSupportInviteJoinOrgRequestMessageContent extends $tea
 }
 
 export class SendServiceGroupMessageRequestBtns extends $tea.Model {
+  /**
+   * @example
+   * http://www.dingtalk.com
+   */
   actionURL?: string;
+  /**
+   * @example
+   * 测试按钮
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10077,9 +13142,37 @@ export class SetRobotConfigResponseBodyResult extends $tea.Model {
 }
 
 export class TopicStatisticsResponseBodyTopicStatisticsRecords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220101
+   */
   dt?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   msgCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   participantsNum?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   topicNum?: number;
   static names(): { [key: string]: string } {
     return {
@@ -10106,6 +13199,10 @@ export class TopicStatisticsResponseBodyTopicStatisticsRecords extends $tea.Mode
 
 export class TransferTicketRequestNotify extends $tea.Model {
   groupNoticeReceiverUnionIds?: string[];
+  /**
+   * @example
+   * true
+   */
   noticeAllGroupMember?: boolean;
   workNoticeReceiverUnionIds?: string[];
   static names(): { [key: string]: string } {
@@ -10130,7 +13227,15 @@ export class TransferTicketRequestNotify extends $tea.Model {
 }
 
 export class TransferTicketRequestTicketMemoAttachments extends $tea.Model {
+  /**
+   * @example
+   * wahaha.txt
+   */
   fileName?: string;
+  /**
+   * @example
+   * ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt
+   */
   key?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10153,6 +13258,10 @@ export class TransferTicketRequestTicketMemoAttachments extends $tea.Model {
 
 export class TransferTicketRequestTicketMemo extends $tea.Model {
   attachments?: TransferTicketRequestTicketMemoAttachments[];
+  /**
+   * @example
+   * 备注
+   */
   memo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10174,7 +13283,15 @@ export class TransferTicketRequestTicketMemo extends $tea.Model {
 }
 
 export class UpdateTicketRequestTicketMemoAttachments extends $tea.Model {
+  /**
+   * @example
+   * wahaha.txt
+   */
   fileName?: string;
+  /**
+   * @example
+   * ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt
+   */
   key?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10197,6 +13314,13 @@ export class UpdateTicketRequestTicketMemoAttachments extends $tea.Model {
 
 export class UpdateTicketRequestTicketMemo extends $tea.Model {
   attachments?: UpdateTicketRequestTicketMemoAttachments[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 备注
+   */
   memo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10218,7 +13342,15 @@ export class UpdateTicketRequestTicketMemo extends $tea.Model {
 }
 
 export class UrgeTicketRequestTicketMemoAttachments extends $tea.Model {
+  /**
+   * @example
+   * wahaha.txt
+   */
   fileName?: string;
+  /**
+   * @example
+   * ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt
+   */
   key?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10241,6 +13373,13 @@ export class UrgeTicketRequestTicketMemoAttachments extends $tea.Model {
 
 export class UrgeTicketRequestTicketMemo extends $tea.Model {
   attachments?: UrgeTicketRequestTicketMemoAttachments[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 备注
+   */
   memo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10263,12 +13402,11 @@ export class UrgeTicketRequestTicketMemo extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -10278,12 +13416,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 添加联系人到群里
-   *
-   * @param request AddContactMemberToGroupRequest
-   * @param headers AddContactMemberToGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddContactMemberToGroupResponse
+   * 添加联系人到群里
+   * 
+   * @param request - AddContactMemberToGroupRequest
+   * @param headers - AddContactMemberToGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddContactMemberToGroupResponse
    */
   async addContactMemberToGroupWithOptions(request: AddContactMemberToGroupRequest, headers: AddContactMemberToGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddContactMemberToGroupResponse> {
     Util.validateModel(request);
@@ -10336,10 +13474,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加联系人到群里
-   *
-   * @param request AddContactMemberToGroupRequest
-   * @return AddContactMemberToGroupResponse
+   * 添加联系人到群里
+   * 
+   * @param request - AddContactMemberToGroupRequest
+   * @returns AddContactMemberToGroupResponse
    */
   async addContactMemberToGroup(request: AddContactMemberToGroupRequest): Promise<AddContactMemberToGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10348,12 +13486,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加知识点
-   *
-   * @param request AddKnowledgeRequest
-   * @param headers AddKnowledgeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddKnowledgeResponse
+   * 添加知识点
+   * 
+   * @param request - AddKnowledgeRequest
+   * @param headers - AddKnowledgeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddKnowledgeResponse
    */
   async addKnowledgeWithOptions(request: AddKnowledgeRequest, headers: AddKnowledgeHeaders, runtime: $Util.RuntimeOptions): Promise<AddKnowledgeResponse> {
     Util.validateModel(request);
@@ -10446,10 +13584,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加知识点
-   *
-   * @param request AddKnowledgeRequest
-   * @return AddKnowledgeResponse
+   * 添加知识点
+   * 
+   * @param request - AddKnowledgeRequest
+   * @returns AddKnowledgeResponse
    */
   async addKnowledge(request: AddKnowledgeRequest): Promise<AddKnowledgeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10458,12 +13596,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加服务群知识库
-   *
-   * @param request AddLibraryRequest
-   * @param headers AddLibraryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddLibraryResponse
+   * 添加服务群知识库
+   * 
+   * @param request - AddLibraryRequest
+   * @param headers - AddLibraryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddLibraryResponse
    */
   async addLibraryWithOptions(request: AddLibraryRequest, headers: AddLibraryHeaders, runtime: $Util.RuntimeOptions): Promise<AddLibraryResponse> {
     Util.validateModel(request);
@@ -10524,10 +13662,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加服务群知识库
-   *
-   * @param request AddLibraryRequest
-   * @return AddLibraryResponse
+   * 添加服务群知识库
+   * 
+   * @param request - AddLibraryRequest
+   * @returns AddLibraryResponse
    */
   async addLibrary(request: AddLibraryRequest): Promise<AddLibraryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10536,12 +13674,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加服务群群成员
-   *
-   * @param request AddMemberToServiceGroupRequest
-   * @param headers AddMemberToServiceGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddMemberToServiceGroupResponse
+   * 添加服务群群成员
+   * 
+   * @param request - AddMemberToServiceGroupRequest
+   * @param headers - AddMemberToServiceGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddMemberToServiceGroupResponse
    */
   async addMemberToServiceGroupWithOptions(request: AddMemberToServiceGroupRequest, headers: AddMemberToServiceGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddMemberToServiceGroupResponse> {
     Util.validateModel(request);
@@ -10586,10 +13724,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加服务群群成员
-   *
-   * @param request AddMemberToServiceGroupRequest
-   * @return AddMemberToServiceGroupResponse
+   * 添加服务群群成员
+   * 
+   * @param request - AddMemberToServiceGroupRequest
+   * @returns AddMemberToServiceGroupResponse
    */
   async addMemberToServiceGroup(request: AddMemberToServiceGroupRequest): Promise<AddMemberToServiceGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10598,12 +13736,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary OpenApi添加知识点类目
-   *
-   * @param request AddOpenCategoryRequest
-   * @param headers AddOpenCategoryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddOpenCategoryResponse
+   * OpenApi添加知识点类目
+   * 
+   * @param request - AddOpenCategoryRequest
+   * @param headers - AddOpenCategoryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddOpenCategoryResponse
    */
   async addOpenCategoryWithOptions(request: AddOpenCategoryRequest, headers: AddOpenCategoryHeaders, runtime: $Util.RuntimeOptions): Promise<AddOpenCategoryResponse> {
     Util.validateModel(request);
@@ -10660,10 +13798,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary OpenApi添加知识点类目
-   *
-   * @param request AddOpenCategoryRequest
-   * @return AddOpenCategoryResponse
+   * OpenApi添加知识点类目
+   * 
+   * @param request - AddOpenCategoryRequest
+   * @returns AddOpenCategoryResponse
    */
   async addOpenCategory(request: AddOpenCategoryRequest): Promise<AddOpenCategoryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10672,12 +13810,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary OpenApi添加知识入库
-   *
-   * @param request AddOpenKnowledgeRequest
-   * @param headers AddOpenKnowledgeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddOpenKnowledgeResponse
+   * OpenApi添加知识入库
+   * 
+   * @param request - AddOpenKnowledgeRequest
+   * @param headers - AddOpenKnowledgeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddOpenKnowledgeResponse
    */
   async addOpenKnowledgeWithOptions(request: AddOpenKnowledgeRequest, headers: AddOpenKnowledgeHeaders, runtime: $Util.RuntimeOptions): Promise<AddOpenKnowledgeResponse> {
     Util.validateModel(request);
@@ -10770,10 +13908,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary OpenApi添加知识入库
-   *
-   * @param request AddOpenKnowledgeRequest
-   * @return AddOpenKnowledgeResponse
+   * OpenApi添加知识入库
+   * 
+   * @param request - AddOpenKnowledgeRequest
+   * @returns AddOpenKnowledgeResponse
    */
   async addOpenKnowledge(request: AddOpenKnowledgeRequest): Promise<AddOpenKnowledgeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10782,12 +13920,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能服务群知识库创建
-   *
-   * @param request AddOpenLibraryRequest
-   * @param headers AddOpenLibraryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddOpenLibraryResponse
+   * 智能服务群知识库创建
+   * 
+   * @param request - AddOpenLibraryRequest
+   * @param headers - AddOpenLibraryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddOpenLibraryResponse
    */
   async addOpenLibraryWithOptions(request: AddOpenLibraryRequest, headers: AddOpenLibraryHeaders, runtime: $Util.RuntimeOptions): Promise<AddOpenLibraryResponse> {
     Util.validateModel(request);
@@ -10848,10 +13986,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能服务群知识库创建
-   *
-   * @param request AddOpenLibraryRequest
-   * @return AddOpenLibraryResponse
+   * 智能服务群知识库创建
+   * 
+   * @param request - AddOpenLibraryRequest
+   * @returns AddOpenLibraryResponse
    */
   async addOpenLibrary(request: AddOpenLibraryRequest): Promise<AddOpenLibraryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10860,12 +13998,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加工单备注
-   *
-   * @param request AddTicketMemoRequest
-   * @param headers AddTicketMemoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddTicketMemoResponse
+   * 添加工单备注
+   * 
+   * @param request - AddTicketMemoRequest
+   * @param headers - AddTicketMemoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddTicketMemoResponse
    */
   async addTicketMemoWithOptions(request: AddTicketMemoRequest, headers: AddTicketMemoHeaders, runtime: $Util.RuntimeOptions): Promise<AddTicketMemoResponse> {
     Util.validateModel(request);
@@ -10914,10 +14052,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加工单备注
-   *
-   * @param request AddTicketMemoRequest
-   * @return AddTicketMemoResponse
+   * 添加工单备注
+   * 
+   * @param request - AddTicketMemoRequest
+   * @returns AddTicketMemoResponse
    */
   async addTicketMemo(request: AddTicketMemoRequest): Promise<AddTicketMemoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10926,12 +14064,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工单指派
-   *
-   * @param request AssignTicketRequest
-   * @param headers AssignTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AssignTicketResponse
+   * 工单指派
+   * 
+   * @param request - AssignTicketRequest
+   * @param headers - AssignTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AssignTicketResponse
    */
   async assignTicketWithOptions(request: AssignTicketRequest, headers: AssignTicketHeaders, runtime: $Util.RuntimeOptions): Promise<AssignTicketResponse> {
     Util.validateModel(request);
@@ -10988,10 +14126,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工单指派
-   *
-   * @param request AssignTicketRequest
-   * @return AssignTicketResponse
+   * 工单指派
+   * 
+   * @param request - AssignTicketRequest
+   * @returns AssignTicketResponse
    */
   async assignTicket(request: AssignTicketRequest): Promise<AssignTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11000,12 +14138,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量绑定服务群业务ID
-   *
-   * @param request BatchBindingGroupBizIdsRequest
-   * @param headers BatchBindingGroupBizIdsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchBindingGroupBizIdsResponse
+   * 批量绑定服务群业务ID
+   * 
+   * @param request - BatchBindingGroupBizIdsRequest
+   * @param headers - BatchBindingGroupBizIdsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchBindingGroupBizIdsResponse
    */
   async batchBindingGroupBizIdsWithOptions(request: BatchBindingGroupBizIdsRequest, headers: BatchBindingGroupBizIdsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchBindingGroupBizIdsResponse> {
     Util.validateModel(request);
@@ -11046,10 +14184,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量绑定服务群业务ID
-   *
-   * @param request BatchBindingGroupBizIdsRequest
-   * @return BatchBindingGroupBizIdsResponse
+   * 批量绑定服务群业务ID
+   * 
+   * @param request - BatchBindingGroupBizIdsRequest
+   * @returns BatchBindingGroupBizIdsResponse
    */
   async batchBindingGroupBizIds(request: BatchBindingGroupBizIdsRequest): Promise<BatchBindingGroupBizIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11058,12 +14196,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询群组配置
-   *
-   * @param request BatchGetGroupSetConfigRequest
-   * @param headers BatchGetGroupSetConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchGetGroupSetConfigResponse
+   * 批量查询群组配置
+   * 
+   * @param request - BatchGetGroupSetConfigRequest
+   * @param headers - BatchGetGroupSetConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchGetGroupSetConfigResponse
    */
   async batchGetGroupSetConfigWithOptions(request: BatchGetGroupSetConfigRequest, headers: BatchGetGroupSetConfigHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetGroupSetConfigResponse> {
     Util.validateModel(request);
@@ -11108,10 +14246,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询群组配置
-   *
-   * @param request BatchGetGroupSetConfigRequest
-   * @return BatchGetGroupSetConfigResponse
+   * 批量查询群组配置
+   * 
+   * @param request - BatchGetGroupSetConfigRequest
+   * @returns BatchGetGroupSetConfigResponse
    */
   async batchGetGroupSetConfig(request: BatchGetGroupSetConfigRequest): Promise<BatchGetGroupSetConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11120,12 +14258,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询客户群发任务
-   *
-   * @param request BatchQueryCustomerSendTaskRequest
-   * @param headers BatchQueryCustomerSendTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchQueryCustomerSendTaskResponse
+   * 批量查询客户群发任务
+   * 
+   * @param request - BatchQueryCustomerSendTaskRequest
+   * @param headers - BatchQueryCustomerSendTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchQueryCustomerSendTaskResponse
    */
   async batchQueryCustomerSendTaskWithOptions(request: BatchQueryCustomerSendTaskRequest, headers: BatchQueryCustomerSendTaskHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryCustomerSendTaskResponse> {
     Util.validateModel(request);
@@ -11190,10 +14328,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询客户群发任务
-   *
-   * @param request BatchQueryCustomerSendTaskRequest
-   * @return BatchQueryCustomerSendTaskResponse
+   * 批量查询客户群发任务
+   * 
+   * @param request - BatchQueryCustomerSendTaskRequest
+   * @returns BatchQueryCustomerSendTaskResponse
    */
   async batchQueryCustomerSendTask(request: BatchQueryCustomerSendTaskRequest): Promise<BatchQueryCustomerSendTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11202,12 +14340,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询群成员
-   *
-   * @param request BatchQueryGroupMemberRequest
-   * @param headers BatchQueryGroupMemberHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchQueryGroupMemberResponse
+   * 批量查询群成员
+   * 
+   * @param request - BatchQueryGroupMemberRequest
+   * @param headers - BatchQueryGroupMemberHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchQueryGroupMemberResponse
    */
   async batchQueryGroupMemberWithOptions(request: BatchQueryGroupMemberRequest, headers: BatchQueryGroupMemberHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryGroupMemberResponse> {
     Util.validateModel(request);
@@ -11256,10 +14394,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询群成员
-   *
-   * @param request BatchQueryGroupMemberRequest
-   * @return BatchQueryGroupMemberResponse
+   * 批量查询群成员
+   * 
+   * @param request - BatchQueryGroupMemberRequest
+   * @returns BatchQueryGroupMemberResponse
    */
   async batchQueryGroupMember(request: BatchQueryGroupMemberRequest): Promise<BatchQueryGroupMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11268,12 +14406,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 群发任务批量查询
-   *
-   * @param request BatchQuerySendMessageTaskRequest
-   * @param headers BatchQuerySendMessageTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchQuerySendMessageTaskResponse
+   * 群发任务批量查询
+   * 
+   * @param request - BatchQuerySendMessageTaskRequest
+   * @param headers - BatchQuerySendMessageTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchQuerySendMessageTaskResponse
    */
   async batchQuerySendMessageTaskWithOptions(request: BatchQuerySendMessageTaskRequest, headers: BatchQuerySendMessageTaskHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQuerySendMessageTaskResponse> {
     Util.validateModel(request);
@@ -11338,10 +14476,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 群发任务批量查询
-   *
-   * @param request BatchQuerySendMessageTaskRequest
-   * @return BatchQuerySendMessageTaskResponse
+   * 群发任务批量查询
+   * 
+   * @param request - BatchQuerySendMessageTaskRequest
+   * @returns BatchQuerySendMessageTaskResponse
    */
   async batchQuerySendMessageTask(request: BatchQuerySendMessageTaskRequest): Promise<BatchQuerySendMessageTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11350,12 +14488,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 绑定服务群模板到团队
-   *
-   * @param request BoundTemplateToTeamRequest
-   * @param headers BoundTemplateToTeamHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BoundTemplateToTeamResponse
+   * 绑定服务群模板到团队
+   * 
+   * @param request - BoundTemplateToTeamRequest
+   * @param headers - BoundTemplateToTeamHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BoundTemplateToTeamResponse
    */
   async boundTemplateToTeamWithOptions(request: BoundTemplateToTeamRequest, headers: BoundTemplateToTeamHeaders, runtime: $Util.RuntimeOptions): Promise<BoundTemplateToTeamResponse> {
     Util.validateModel(request);
@@ -11412,10 +14550,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 绑定服务群模板到团队
-   *
-   * @param request BoundTemplateToTeamRequest
-   * @return BoundTemplateToTeamResponse
+   * 绑定服务群模板到团队
+   * 
+   * @param request - BoundTemplateToTeamRequest
+   * @returns BoundTemplateToTeamResponse
    */
   async boundTemplateToTeam(request: BoundTemplateToTeamRequest): Promise<BoundTemplateToTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11424,12 +14562,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤销工单
-   *
-   * @param request CancelTicketRequest
-   * @param headers CancelTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CancelTicketResponse
+   * 撤销工单
+   * 
+   * @param request - CancelTicketRequest
+   * @param headers - CancelTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CancelTicketResponse
    */
   async cancelTicketWithOptions(request: CancelTicketRequest, headers: CancelTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CancelTicketResponse> {
     Util.validateModel(request);
@@ -11482,10 +14620,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤销工单
-   *
-   * @param request CancelTicketRequest
-   * @return CancelTicketResponse
+   * 撤销工单
+   * 
+   * @param request - CancelTicketRequest
+   * @returns CancelTicketResponse
    */
   async cancelTicket(request: CancelTicketRequest): Promise<CancelTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11494,12 +14632,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 心声总览自定义分类统计
-   *
-   * @param request CategoryStatisticsRequest
-   * @param headers CategoryStatisticsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CategoryStatisticsResponse
+   * 心声总览自定义分类统计
+   * 
+   * @param request - CategoryStatisticsRequest
+   * @param headers - CategoryStatisticsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CategoryStatisticsResponse
    */
   async categoryStatisticsWithOptions(request: CategoryStatisticsRequest, headers: CategoryStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<CategoryStatisticsResponse> {
     Util.validateModel(request);
@@ -11544,10 +14682,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 心声总览自定义分类统计
-   *
-   * @param request CategoryStatisticsRequest
-   * @return CategoryStatisticsResponse
+   * 心声总览自定义分类统计
+   * 
+   * @param request - CategoryStatisticsRequest
+   * @returns CategoryStatisticsResponse
    */
   async categoryStatistics(request: CategoryStatisticsRequest): Promise<CategoryStatisticsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11556,12 +14694,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关闭会话回调
-   *
-   * @param request CloseConversationRequest
-   * @param headers CloseConversationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CloseConversationResponse
+   * 关闭会话回调
+   * 
+   * @param request - CloseConversationRequest
+   * @param headers - CloseConversationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CloseConversationResponse
    */
   async closeConversationWithOptions(request: CloseConversationRequest, headers: CloseConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CloseConversationResponse> {
     Util.validateModel(request);
@@ -11618,10 +14756,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关闭会话回调
-   *
-   * @param request CloseConversationRequest
-   * @return CloseConversationResponse
+   * 关闭会话回调
+   * 
+   * @param request - CloseConversationRequest
+   * @returns CloseConversationResponse
    */
   async closeConversation(request: CloseConversationRequest): Promise<CloseConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11630,12 +14768,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关闭人工会话
-   *
-   * @param request CloseHumanSessionRequest
-   * @param headers CloseHumanSessionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CloseHumanSessionResponse
+   * 关闭人工会话
+   * 
+   * @param request - CloseHumanSessionRequest
+   * @param headers - CloseHumanSessionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CloseHumanSessionResponse
    */
   async closeHumanSessionWithOptions(request: CloseHumanSessionRequest, headers: CloseHumanSessionHeaders, runtime: $Util.RuntimeOptions): Promise<CloseHumanSessionResponse> {
     Util.validateModel(request);
@@ -11676,10 +14814,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关闭人工会话
-   *
-   * @param request CloseHumanSessionRequest
-   * @return CloseHumanSessionResponse
+   * 关闭人工会话
+   * 
+   * @param request - CloseHumanSessionRequest
+   * @returns CloseHumanSessionResponse
    */
   async closeHumanSession(request: CloseHumanSessionRequest): Promise<CloseHumanSessionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11688,12 +14826,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 客服分配成功通知回调
-   *
-   * @param request ConversationCreatedNotifyRequest
-   * @param headers ConversationCreatedNotifyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ConversationCreatedNotifyResponse
+   * 客服分配成功通知回调
+   * 
+   * @param request - ConversationCreatedNotifyRequest
+   * @param headers - ConversationCreatedNotifyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ConversationCreatedNotifyResponse
    */
   async conversationCreatedNotifyWithOptions(request: ConversationCreatedNotifyRequest, headers: ConversationCreatedNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<ConversationCreatedNotifyResponse> {
     Util.validateModel(request);
@@ -11766,10 +14904,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 客服分配成功通知回调
-   *
-   * @param request ConversationCreatedNotifyRequest
-   * @return ConversationCreatedNotifyResponse
+   * 客服分配成功通知回调
+   * 
+   * @param request - ConversationCreatedNotifyRequest
+   * @returns ConversationCreatedNotifyResponse
    */
   async conversationCreatedNotify(request: ConversationCreatedNotifyRequest): Promise<ConversationCreatedNotifyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11778,12 +14916,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会话转接开始通知回调
-   *
-   * @param request ConversationTransferBeginNotifyRequest
-   * @param headers ConversationTransferBeginNotifyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ConversationTransferBeginNotifyResponse
+   * 会话转接开始通知回调
+   * 
+   * @param request - ConversationTransferBeginNotifyRequest
+   * @param headers - ConversationTransferBeginNotifyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ConversationTransferBeginNotifyResponse
    */
   async conversationTransferBeginNotifyWithOptions(request: ConversationTransferBeginNotifyRequest, headers: ConversationTransferBeginNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<ConversationTransferBeginNotifyResponse> {
     Util.validateModel(request);
@@ -11840,10 +14978,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会话转接开始通知回调
-   *
-   * @param request ConversationTransferBeginNotifyRequest
-   * @return ConversationTransferBeginNotifyResponse
+   * 会话转接开始通知回调
+   * 
+   * @param request - ConversationTransferBeginNotifyRequest
+   * @returns ConversationTransferBeginNotifyResponse
    */
   async conversationTransferBeginNotify(request: ConversationTransferBeginNotifyRequest): Promise<ConversationTransferBeginNotifyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11852,12 +14990,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会话转接完成通知回调
-   *
-   * @param request ConversationTransferCompleteNotifyRequest
-   * @param headers ConversationTransferCompleteNotifyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ConversationTransferCompleteNotifyResponse
+   * 会话转接完成通知回调
+   * 
+   * @param request - ConversationTransferCompleteNotifyRequest
+   * @param headers - ConversationTransferCompleteNotifyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ConversationTransferCompleteNotifyResponse
    */
   async conversationTransferCompleteNotifyWithOptions(request: ConversationTransferCompleteNotifyRequest, headers: ConversationTransferCompleteNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<ConversationTransferCompleteNotifyResponse> {
     Util.validateModel(request);
@@ -11918,10 +15056,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会话转接完成通知回调
-   *
-   * @param request ConversationTransferCompleteNotifyRequest
-   * @return ConversationTransferCompleteNotifyResponse
+   * 会话转接完成通知回调
+   * 
+   * @param request - ConversationTransferCompleteNotifyRequest
+   * @returns ConversationTransferCompleteNotifyResponse
    */
   async conversationTransferCompleteNotify(request: ConversationTransferCompleteNotifyRequest): Promise<ConversationTransferCompleteNotifyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11930,12 +15068,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建服务群
-   *
-   * @param request CreateGroupRequest
-   * @param headers CreateGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateGroupResponse
+   * 创建服务群
+   * 
+   * @param request - CreateGroupRequest
+   * @param headers - CreateGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateGroupResponse
    */
   async createGroupWithOptions(request: CreateGroupRequest, headers: CreateGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupResponse> {
     Util.validateModel(request);
@@ -11996,10 +15134,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建服务群
-   *
-   * @param request CreateGroupRequest
-   * @return CreateGroupResponse
+   * 创建服务群
+   * 
+   * @param request - CreateGroupRequest
+   * @returns CreateGroupResponse
    */
   async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12008,12 +15146,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建主动会话接口
-   *
-   * @param request CreateGroupConversationRequest
-   * @param headers CreateGroupConversationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateGroupConversationResponse
+   * 创建主动会话接口
+   * 
+   * @param request - CreateGroupConversationRequest
+   * @param headers - CreateGroupConversationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateGroupConversationResponse
    */
   async createGroupConversationWithOptions(request: CreateGroupConversationRequest, headers: CreateGroupConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupConversationResponse> {
     Util.validateModel(request);
@@ -12082,10 +15220,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建主动会话接口
-   *
-   * @param request CreateGroupConversationRequest
-   * @return CreateGroupConversationResponse
+   * 创建主动会话接口
+   * 
+   * @param request - CreateGroupConversationRequest
+   * @returns CreateGroupConversationResponse
    */
   async createGroupConversation(request: CreateGroupConversationRequest): Promise<CreateGroupConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12094,12 +15232,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建服务群群分组
-   *
-   * @param request CreateGroupSetRequest
-   * @param headers CreateGroupSetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateGroupSetResponse
+   * 创建服务群群分组
+   * 
+   * @param request - CreateGroupSetRequest
+   * @param headers - CreateGroupSetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateGroupSetResponse
    */
   async createGroupSetWithOptions(request: CreateGroupSetRequest, headers: CreateGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupSetResponse> {
     Util.validateModel(request);
@@ -12144,10 +15282,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建服务群群分组
-   *
-   * @param request CreateGroupSetRequest
-   * @return CreateGroupSetResponse
+   * 创建服务群群分组
+   * 
+   * @param request - CreateGroupSetRequest
+   * @returns CreateGroupSetResponse
    */
   async createGroupSet(request: CreateGroupSetRequest): Promise<CreateGroupSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12156,12 +15294,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群新增表单实例
-   *
-   * @param request CreateInstanceRequest
-   * @param headers CreateInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateInstanceResponse
+   * 服务群新增表单实例
+   * 
+   * @param request - CreateInstanceRequest
+   * @param headers - CreateInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateInstanceResponse
    */
   async createInstanceWithOptions(request: CreateInstanceRequest, headers: CreateInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateInstanceResponse> {
     Util.validateModel(request);
@@ -12222,10 +15360,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群新增表单实例
-   *
-   * @param request CreateInstanceRequest
-   * @return CreateInstanceResponse
+   * 服务群新增表单实例
+   * 
+   * @param request - CreateInstanceRequest
+   * @returns CreateInstanceResponse
    */
   async createInstance(request: CreateInstanceRequest): Promise<CreateInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12234,12 +15372,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建服务群团队
-   *
-   * @param request CreateTeamRequest
-   * @param headers CreateTeamHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateTeamResponse
+   * 创建服务群团队
+   * 
+   * @param request - CreateTeamRequest
+   * @param headers - CreateTeamHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateTeamResponse
    */
   async createTeamWithOptions(request: CreateTeamRequest, headers: CreateTeamHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTeamResponse> {
     Util.validateModel(request);
@@ -12280,10 +15418,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建服务群团队
-   *
-   * @param request CreateTeamRequest
-   * @return CreateTeamResponse
+   * 创建服务群团队
+   * 
+   * @param request - CreateTeamRequest
+   * @returns CreateTeamResponse
    */
   async createTeam(request: CreateTeamRequest): Promise<CreateTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12292,12 +15430,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建工单
-   *
-   * @param request CreateTicketRequest
-   * @param headers CreateTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateTicketResponse
+   * 创建工单
+   * 
+   * @param request - CreateTicketRequest
+   * @param headers - CreateTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateTicketResponse
    */
   async createTicketWithOptions(request: CreateTicketRequest, headers: CreateTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTicketResponse> {
     Util.validateModel(request);
@@ -12366,10 +15504,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建工单
-   *
-   * @param request CreateTicketRequest
-   * @return CreateTicketResponse
+   * 创建工单
+   * 
+   * @param request - CreateTicketRequest
+   * @returns CreateTicketResponse
    */
   async createTicket(request: CreateTicketRequest): Promise<CreateTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12378,12 +15516,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 客户群发任务
-   *
-   * @param request CustomerSendMsgTaskRequest
-   * @param headers CustomerSendMsgTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CustomerSendMsgTaskResponse
+   * 客户群发任务
+   * 
+   * @param request - CustomerSendMsgTaskRequest
+   * @param headers - CustomerSendMsgTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CustomerSendMsgTaskResponse
    */
   async customerSendMsgTaskWithOptions(request: CustomerSendMsgTaskRequest, headers: CustomerSendMsgTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CustomerSendMsgTaskResponse> {
     Util.validateModel(request);
@@ -12436,10 +15574,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 客户群发任务
-   *
-   * @param request CustomerSendMsgTaskRequest
-   * @return CustomerSendMsgTaskResponse
+   * 客户群发任务
+   * 
+   * @param request - CustomerSendMsgTaskRequest
+   * @returns CustomerSendMsgTaskResponse
    */
   async customerSendMsgTask(request: CustomerSendMsgTaskRequest): Promise<CustomerSendMsgTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12448,12 +15586,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 从群或者群组剔除成员
-   *
-   * @param request DeleteGroupMembersFromGroupRequest
-   * @param headers DeleteGroupMembersFromGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteGroupMembersFromGroupResponse
+   * 从群或者群组剔除成员
+   * 
+   * @param request - DeleteGroupMembersFromGroupRequest
+   * @param headers - DeleteGroupMembersFromGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteGroupMembersFromGroupResponse
    */
   async deleteGroupMembersFromGroupWithOptions(request: DeleteGroupMembersFromGroupRequest, headers: DeleteGroupMembersFromGroupHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteGroupMembersFromGroupResponse> {
     Util.validateModel(request);
@@ -12506,10 +15644,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 从群或者群组剔除成员
-   *
-   * @param request DeleteGroupMembersFromGroupRequest
-   * @return DeleteGroupMembersFromGroupResponse
+   * 从群或者群组剔除成员
+   * 
+   * @param request - DeleteGroupMembersFromGroupRequest
+   * @returns DeleteGroupMembersFromGroupResponse
    */
   async deleteGroupMembersFromGroup(request: DeleteGroupMembersFromGroupRequest): Promise<DeleteGroupMembersFromGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12518,12 +15656,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群删除表单实例
-   *
-   * @param request DeleteInstanceRequest
-   * @param headers DeleteInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteInstanceResponse
+   * 服务群删除表单实例
+   * 
+   * @param request - DeleteInstanceRequest
+   * @param headers - DeleteInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteInstanceResponse
    */
   async deleteInstanceWithOptions(request: DeleteInstanceRequest, headers: DeleteInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteInstanceResponse> {
     Util.validateModel(request);
@@ -12572,10 +15710,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群删除表单实例
-   *
-   * @param request DeleteInstanceRequest
-   * @return DeleteInstanceResponse
+   * 服务群删除表单实例
+   * 
+   * @param request - DeleteInstanceRequest
+   * @returns DeleteInstanceResponse
    */
   async deleteInstance(request: DeleteInstanceRequest): Promise<DeleteInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12584,12 +15722,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群删除知识点
-   *
-   * @param request DeleteKnowledgeRequest
-   * @param headers DeleteKnowledgeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteKnowledgeResponse
+   * 服务群删除知识点
+   * 
+   * @param request - DeleteKnowledgeRequest
+   * @param headers - DeleteKnowledgeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteKnowledgeResponse
    */
   async deleteKnowledgeWithOptions(request: DeleteKnowledgeRequest, headers: DeleteKnowledgeHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteKnowledgeResponse> {
     Util.validateModel(request);
@@ -12638,10 +15776,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群删除知识点
-   *
-   * @param request DeleteKnowledgeRequest
-   * @return DeleteKnowledgeResponse
+   * 服务群删除知识点
+   * 
+   * @param request - DeleteKnowledgeRequest
+   * @returns DeleteKnowledgeResponse
    */
   async deleteKnowledge(request: DeleteKnowledgeRequest): Promise<DeleteKnowledgeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12650,12 +15788,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 客户心声负面情绪统计
-   *
-   * @param request EmotionStatisticsRequest
-   * @param headers EmotionStatisticsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EmotionStatisticsResponse
+   * 客户心声负面情绪统计
+   * 
+   * @param request - EmotionStatisticsRequest
+   * @param headers - EmotionStatisticsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EmotionStatisticsResponse
    */
   async emotionStatisticsWithOptions(request: EmotionStatisticsRequest, headers: EmotionStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<EmotionStatisticsResponse> {
     Util.validateModel(request);
@@ -12716,10 +15854,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 客户心声负面情绪统计
-   *
-   * @param request EmotionStatisticsRequest
-   * @return EmotionStatisticsResponse
+   * 客户心声负面情绪统计
+   * 
+   * @param request - EmotionStatisticsRequest
+   * @returns EmotionStatisticsResponse
    */
   async emotionStatistics(request: EmotionStatisticsRequest): Promise<EmotionStatisticsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12728,12 +15866,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 结单
-   *
-   * @param request FinishTicketRequest
-   * @param headers FinishTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return FinishTicketResponse
+   * 结单
+   * 
+   * @param request - FinishTicketRequest
+   * @param headers - FinishTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns FinishTicketResponse
    */
   async finishTicketWithOptions(request: FinishTicketRequest, headers: FinishTicketHeaders, runtime: $Util.RuntimeOptions): Promise<FinishTicketResponse> {
     Util.validateModel(request);
@@ -12786,10 +15924,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 结单
-   *
-   * @param request FinishTicketRequest
-   * @return FinishTicketResponse
+   * 结单
+   * 
+   * @param request - FinishTicketRequest
+   * @returns FinishTicketResponse
    */
   async finishTicket(request: FinishTicketRequest): Promise<FinishTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12798,12 +15936,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取签权Token
-   *
-   * @param request GetAuthTokenRequest
-   * @param headers GetAuthTokenHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAuthTokenResponse
+   * 获取签权Token
+   * 
+   * @param request - GetAuthTokenRequest
+   * @param headers - GetAuthTokenHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAuthTokenResponse
    */
   async getAuthTokenWithOptions(request: GetAuthTokenRequest, headers: GetAuthTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetAuthTokenResponse> {
     Util.validateModel(request);
@@ -12856,10 +15994,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取签权Token
-   *
-   * @param request GetAuthTokenRequest
-   * @return GetAuthTokenResponse
+   * 获取签权Token
+   * 
+   * @param request - GetAuthTokenRequest
+   * @returns GetAuthTokenResponse
    */
   async getAuthToken(request: GetAuthTokenRequest): Promise<GetAuthTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12868,12 +16006,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群通过实例ID集合批量查询表单实例数据
-   *
-   * @param request GetInstancesByIdsRequest
-   * @param headers GetInstancesByIdsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetInstancesByIdsResponse
+   * 服务群通过实例ID集合批量查询表单实例数据
+   * 
+   * @param request - GetInstancesByIdsRequest
+   * @param headers - GetInstancesByIdsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetInstancesByIdsResponse
    */
   async getInstancesByIdsWithOptions(request: GetInstancesByIdsRequest, headers: GetInstancesByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<GetInstancesByIdsResponse> {
     Util.validateModel(request);
@@ -12918,10 +16056,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群通过实例ID集合批量查询表单实例数据
-   *
-   * @param request GetInstancesByIdsRequest
-   * @return GetInstancesByIdsResponse
+   * 服务群通过实例ID集合批量查询表单实例数据
+   * 
+   * @param request - GetInstancesByIdsRequest
+   * @returns GetInstancesByIdsResponse
    */
   async getInstancesByIds(request: GetInstancesByIdsRequest): Promise<GetInstancesByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12930,12 +16068,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取负面心声词云
-   *
-   * @param request GetNegativeWordCloudRequest
-   * @param headers GetNegativeWordCloudHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetNegativeWordCloudResponse
+   * 获取负面心声词云
+   * 
+   * @param request - GetNegativeWordCloudRequest
+   * @param headers - GetNegativeWordCloudHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetNegativeWordCloudResponse
    */
   async getNegativeWordCloudWithOptions(request: GetNegativeWordCloudRequest, headers: GetNegativeWordCloudHeaders, runtime: $Util.RuntimeOptions): Promise<GetNegativeWordCloudResponse> {
     Util.validateModel(request);
@@ -12972,10 +16110,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取负面心声词云
-   *
-   * @param request GetNegativeWordCloudRequest
-   * @return GetNegativeWordCloudResponse
+   * 获取负面心声词云
+   * 
+   * @param request - GetNegativeWordCloudRequest
+   * @returns GetNegativeWordCloudResponse
    */
   async getNegativeWordCloud(request: GetNegativeWordCloudRequest): Promise<GetNegativeWordCloudResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12984,12 +16122,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取临时访问链接
-   *
-   * @param request GetOssTempUrlRequest
-   * @param headers GetOssTempUrlHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetOssTempUrlResponse
+   * 获取临时访问链接
+   * 
+   * @param request - GetOssTempUrlRequest
+   * @param headers - GetOssTempUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOssTempUrlResponse
    */
   async getOssTempUrlWithOptions(request: GetOssTempUrlRequest, headers: GetOssTempUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetOssTempUrlResponse> {
     Util.validateModel(request);
@@ -13038,10 +16176,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取临时访问链接
-   *
-   * @param request GetOssTempUrlRequest
-   * @return GetOssTempUrlResponse
+   * 获取临时访问链接
+   * 
+   * @param request - GetOssTempUrlRequest
+   * @returns GetOssTempUrlResponse
    */
   async getOssTempUrl(request: GetOssTempUrlRequest): Promise<GetOssTempUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13050,12 +16188,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取表单上传凭证
-   *
-   * @param request GetStoragePolicyRequest
-   * @param headers GetStoragePolicyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetStoragePolicyResponse
+   * 获取表单上传凭证
+   * 
+   * @param request - GetStoragePolicyRequest
+   * @param headers - GetStoragePolicyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetStoragePolicyResponse
    */
   async getStoragePolicyWithOptions(request: GetStoragePolicyRequest, headers: GetStoragePolicyHeaders, runtime: $Util.RuntimeOptions): Promise<GetStoragePolicyResponse> {
     Util.validateModel(request);
@@ -13104,10 +16242,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取表单上传凭证
-   *
-   * @param request GetStoragePolicyRequest
-   * @return GetStoragePolicyResponse
+   * 获取表单上传凭证
+   * 
+   * @param request - GetStoragePolicyRequest
+   * @returns GetStoragePolicyResponse
    */
   async getStoragePolicy(request: GetStoragePolicyRequest): Promise<GetStoragePolicyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13116,12 +16254,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询工单详情
-   *
-   * @param request GetTicketRequest
-   * @param headers GetTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTicketResponse
+   * 查询工单详情
+   * 
+   * @param request - GetTicketRequest
+   * @param headers - GetTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTicketResponse
    */
   async getTicketWithOptions(request: GetTicketRequest, headers: GetTicketHeaders, runtime: $Util.RuntimeOptions): Promise<GetTicketResponse> {
     Util.validateModel(request);
@@ -13162,10 +16300,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询工单详情
-   *
-   * @param request GetTicketRequest
-   * @return GetTicketResponse
+   * 查询工单详情
+   * 
+   * @param request - GetTicketRequest
+   * @returns GetTicketResponse
    */
   async getTicket(request: GetTicketRequest): Promise<GetTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13174,12 +16312,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取心声词云
-   *
-   * @param request GetWordCloudRequest
-   * @param headers GetWordCloudHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetWordCloudResponse
+   * 获取心声词云
+   * 
+   * @param request - GetWordCloudRequest
+   * @param headers - GetWordCloudHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetWordCloudResponse
    */
   async getWordCloudWithOptions(request: GetWordCloudRequest, headers: GetWordCloudHeaders, runtime: $Util.RuntimeOptions): Promise<GetWordCloudResponse> {
     Util.validateModel(request);
@@ -13216,10 +16354,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取心声词云
-   *
-   * @param request GetWordCloudRequest
-   * @return GetWordCloudResponse
+   * 获取心声词云
+   * 
+   * @param request - GetWordCloudRequest
+   * @returns GetWordCloudResponse
    */
   async getWordCloud(request: GetWordCloudRequest): Promise<GetWordCloudResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13228,12 +16366,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 心声总览群统计
-   *
-   * @param request GroupStatisticsRequest
-   * @param headers GroupStatisticsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GroupStatisticsResponse
+   * 心声总览群统计
+   * 
+   * @param request - GroupStatisticsRequest
+   * @param headers - GroupStatisticsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GroupStatisticsResponse
    */
   async groupStatisticsWithOptions(request: GroupStatisticsRequest, headers: GroupStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<GroupStatisticsResponse> {
     Util.validateModel(request);
@@ -13278,10 +16416,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 心声总览群统计
-   *
-   * @param request GroupStatisticsRequest
-   * @return GroupStatisticsResponse
+   * 心声总览群统计
+   * 
+   * @param request - GroupStatisticsRequest
+   * @returns GroupStatisticsResponse
    */
   async groupStatistics(request: GroupStatisticsRequest): Promise<GroupStatisticsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13290,12 +16428,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 心声总览意图&自定义分类统计
-   *
-   * @param request IntentionCategoryStatisticsRequest
-   * @param headers IntentionCategoryStatisticsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return IntentionCategoryStatisticsResponse
+   * 心声总览意图&自定义分类统计
+   * 
+   * @param request - IntentionCategoryStatisticsRequest
+   * @param headers - IntentionCategoryStatisticsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns IntentionCategoryStatisticsResponse
    */
   async intentionCategoryStatisticsWithOptions(request: IntentionCategoryStatisticsRequest, headers: IntentionCategoryStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<IntentionCategoryStatisticsResponse> {
     Util.validateModel(request);
@@ -13340,10 +16478,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 心声总览意图&自定义分类统计
-   *
-   * @param request IntentionCategoryStatisticsRequest
-   * @return IntentionCategoryStatisticsResponse
+   * 心声总览意图&自定义分类统计
+   * 
+   * @param request - IntentionCategoryStatisticsRequest
+   * @returns IntentionCategoryStatisticsResponse
    */
   async intentionCategoryStatistics(request: IntentionCategoryStatisticsRequest): Promise<IntentionCategoryStatisticsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13352,12 +16490,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 心声总览意图统计
-   *
-   * @param request IntentionStatisticsRequest
-   * @param headers IntentionStatisticsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return IntentionStatisticsResponse
+   * 心声总览意图统计
+   * 
+   * @param request - IntentionStatisticsRequest
+   * @param headers - IntentionStatisticsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns IntentionStatisticsResponse
    */
   async intentionStatisticsWithOptions(request: IntentionStatisticsRequest, headers: IntentionStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<IntentionStatisticsResponse> {
     Util.validateModel(request);
@@ -13402,10 +16540,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 心声总览意图统计
-   *
-   * @param request IntentionStatisticsRequest
-   * @return IntentionStatisticsResponse
+   * 心声总览意图统计
+   * 
+   * @param request - IntentionStatisticsRequest
+   * @returns IntentionStatisticsResponse
    */
   async intentionStatistics(request: IntentionStatisticsRequest): Promise<IntentionStatisticsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13414,12 +16552,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询工单操作记录
-   *
-   * @param request ListTicketOperateRecordRequest
-   * @param headers ListTicketOperateRecordHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListTicketOperateRecordResponse
+   * 查询工单操作记录
+   * 
+   * @param request - ListTicketOperateRecordRequest
+   * @param headers - ListTicketOperateRecordHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListTicketOperateRecordResponse
    */
   async listTicketOperateRecordWithOptions(request: ListTicketOperateRecordRequest, headers: ListTicketOperateRecordHeaders, runtime: $Util.RuntimeOptions): Promise<ListTicketOperateRecordResponse> {
     Util.validateModel(request);
@@ -13460,10 +16598,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询工单操作记录
-   *
-   * @param request ListTicketOperateRecordRequest
-   * @return ListTicketOperateRecordResponse
+   * 查询工单操作记录
+   * 
+   * @param request - ListTicketOperateRecordRequest
+   * @returns ListTicketOperateRecordResponse
    */
   async listTicketOperateRecord(request: ListTicketOperateRecordRequest): Promise<ListTicketOperateRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13472,11 +16610,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户所在团队
-   *
-   * @param headers ListUserTeamsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListUserTeamsResponse
+   * 查询用户所在团队
+   * 
+   * @param headers - ListUserTeamsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListUserTeamsResponse
    */
   async listUserTeamsWithOptions(userId: string, headers: ListUserTeamsHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserTeamsResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -13506,9 +16644,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户所在团队
-   *
-   * @return ListUserTeamsResponse
+   * 查询用户所在团队
+   * @returns ListUserTeamsResponse
    */
   async listUserTeams(userId: string): Promise<ListUserTeamsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13517,12 +16654,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询服务群活跃成员
-   *
-   * @param request QueryActiveUsersRequest
-   * @param headers QueryActiveUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryActiveUsersResponse
+   * 查询服务群活跃成员
+   * 
+   * @param request - QueryActiveUsersRequest
+   * @param headers - QueryActiveUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryActiveUsersResponse
    */
   async queryActiveUsersWithOptions(request: QueryActiveUsersRequest, headers: QueryActiveUsersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryActiveUsersResponse> {
     Util.validateModel(request);
@@ -13567,10 +16704,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询服务群活跃成员
-   *
-   * @param request QueryActiveUsersRequest
-   * @return QueryActiveUsersResponse
+   * 查询服务群活跃成员
+   * 
+   * @param request - QueryActiveUsersRequest
+   * @returns QueryActiveUsersResponse
    */
   async queryActiveUsers(request: QueryActiveUsersRequest): Promise<QueryActiveUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13579,12 +16716,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 群联系人画像检索
-   *
-   * @param request QueryCrmGroupContactRequest
-   * @param headers QueryCrmGroupContactHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCrmGroupContactResponse
+   * 群联系人画像检索
+   * 
+   * @param request - QueryCrmGroupContactRequest
+   * @param headers - QueryCrmGroupContactHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCrmGroupContactResponse
    */
   async queryCrmGroupContactWithOptions(request: QueryCrmGroupContactRequest, headers: QueryCrmGroupContactHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCrmGroupContactResponse> {
     Util.validateModel(request);
@@ -13637,10 +16774,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 群联系人画像检索
-   *
-   * @param request QueryCrmGroupContactRequest
-   * @return QueryCrmGroupContactResponse
+   * 群联系人画像检索
+   * 
+   * @param request - QueryCrmGroupContactRequest
+   * @returns QueryCrmGroupContactResponse
    */
   async queryCrmGroupContact(request: QueryCrmGroupContactRequest): Promise<QueryCrmGroupContactResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13649,12 +16786,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询客户信息
-   *
-   * @param request QueryCustomerCardRequest
-   * @param headers QueryCustomerCardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCustomerCardResponse
+   * 查询客户信息
+   * 
+   * @param request - QueryCustomerCardRequest
+   * @param headers - QueryCustomerCardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCustomerCardResponse
    */
   async queryCustomerCardWithOptions(request: QueryCustomerCardRequest, headers: QueryCustomerCardHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerCardResponse> {
     Util.validateModel(request);
@@ -13695,10 +16832,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询客户信息
-   *
-   * @param request QueryCustomerCardRequest
-   * @return QueryCustomerCardResponse
+   * 查询客户信息
+   * 
+   * @param request - QueryCustomerCardRequest
+   * @returns QueryCustomerCardResponse
    */
   async queryCustomerCard(request: QueryCustomerCardRequest): Promise<QueryCustomerCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13707,12 +16844,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询客户群发任务客户触达详情
-   *
-   * @param request QueryCustomerTaskUserDetailRequest
-   * @param headers QueryCustomerTaskUserDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCustomerTaskUserDetailResponse
+   * 查询客户群发任务客户触达详情
+   * 
+   * @param request - QueryCustomerTaskUserDetailRequest
+   * @param headers - QueryCustomerTaskUserDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCustomerTaskUserDetailResponse
    */
   async queryCustomerTaskUserDetailWithOptions(request: QueryCustomerTaskUserDetailRequest, headers: QueryCustomerTaskUserDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerTaskUserDetailResponse> {
     Util.validateModel(request);
@@ -13765,10 +16902,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询客户群发任务客户触达详情
-   *
-   * @param request QueryCustomerTaskUserDetailRequest
-   * @return QueryCustomerTaskUserDetailResponse
+   * 查询客户群发任务客户触达详情
+   * 
+   * @param request - QueryCustomerTaskUserDetailRequest
+   * @returns QueryCustomerTaskUserDetailResponse
    */
   async queryCustomerTaskUserDetail(request: QueryCustomerTaskUserDetailRequest): Promise<QueryCustomerTaskUserDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13777,12 +16914,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询单个服务群信息
-   *
-   * @param request QueryGroupRequest
-   * @param headers QueryGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryGroupResponse
+   * 查询单个服务群信息
+   * 
+   * @param request - QueryGroupRequest
+   * @param headers - QueryGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryGroupResponse
    */
   async queryGroupWithOptions(request: QueryGroupRequest, headers: QueryGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupResponse> {
     Util.validateModel(request);
@@ -13827,10 +16964,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询单个服务群信息
-   *
-   * @param request QueryGroupRequest
-   * @return QueryGroupResponse
+   * 查询单个服务群信息
+   * 
+   * @param request - QueryGroupRequest
+   * @returns QueryGroupResponse
    */
   async queryGroup(request: QueryGroupRequest): Promise<QueryGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13839,12 +16976,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询指定群成员
-   *
-   * @param request QueryGroupMemberRequest
-   * @param headers QueryGroupMemberHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryGroupMemberResponse
+   * 查询指定群成员
+   * 
+   * @param request - QueryGroupMemberRequest
+   * @param headers - QueryGroupMemberHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryGroupMemberResponse
    */
   async queryGroupMemberWithOptions(request: QueryGroupMemberRequest, headers: QueryGroupMemberHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupMemberResponse> {
     Util.validateModel(request);
@@ -13889,10 +17026,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询指定群成员
-   *
-   * @param request QueryGroupMemberRequest
-   * @return QueryGroupMemberResponse
+   * 查询指定群成员
+   * 
+   * @param request - QueryGroupMemberRequest
+   * @returns QueryGroupMemberResponse
    */
   async queryGroupMember(request: QueryGroupMemberRequest): Promise<QueryGroupMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13901,12 +17038,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询服务群群组信息
-   *
-   * @param request QueryGroupSetRequest
-   * @param headers QueryGroupSetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryGroupSetResponse
+   * 查询服务群群组信息
+   * 
+   * @param request - QueryGroupSetRequest
+   * @param headers - QueryGroupSetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryGroupSetResponse
    */
   async queryGroupSetWithOptions(request: QueryGroupSetRequest, headers: QueryGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupSetResponse> {
     Util.validateModel(request);
@@ -13943,10 +17080,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询服务群群组信息
-   *
-   * @param request QueryGroupSetRequest
-   * @return QueryGroupSetResponse
+   * 查询服务群群组信息
+   * 
+   * @param request - QueryGroupSetRequest
+   * @returns QueryGroupSetResponse
    */
   async queryGroupSet(request: QueryGroupSetRequest): Promise<QueryGroupSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13955,12 +17092,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群通过多添件进行组合检索表单数据实例集合
-   *
-   * @param request QueryInstancesByMultiConditionsRequest
-   * @param headers QueryInstancesByMultiConditionsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryInstancesByMultiConditionsResponse
+   * 服务群通过多添件进行组合检索表单数据实例集合
+   * 
+   * @param request - QueryInstancesByMultiConditionsRequest
+   * @param headers - QueryInstancesByMultiConditionsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryInstancesByMultiConditionsResponse
    */
   async queryInstancesByMultiConditionsWithOptions(request: QueryInstancesByMultiConditionsRequest, headers: QueryInstancesByMultiConditionsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryInstancesByMultiConditionsResponse> {
     Util.validateModel(request);
@@ -14017,10 +17154,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群通过多添件进行组合检索表单数据实例集合
-   *
-   * @param request QueryInstancesByMultiConditionsRequest
-   * @return QueryInstancesByMultiConditionsResponse
+   * 服务群通过多添件进行组合检索表单数据实例集合
+   * 
+   * @param request - QueryInstancesByMultiConditionsRequest
+   * @returns QueryInstancesByMultiConditionsResponse
    */
   async queryInstancesByMultiConditions(request: QueryInstancesByMultiConditionsRequest): Promise<QueryInstancesByMultiConditionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14029,12 +17166,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 群发任务统计查询
-   *
-   * @param request QuerySendMsgTaskStatisticsRequest
-   * @param headers QuerySendMsgTaskStatisticsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QuerySendMsgTaskStatisticsResponse
+   * 群发任务统计查询
+   * 
+   * @param request - QuerySendMsgTaskStatisticsRequest
+   * @param headers - QuerySendMsgTaskStatisticsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QuerySendMsgTaskStatisticsResponse
    */
   async querySendMsgTaskStatisticsWithOptions(request: QuerySendMsgTaskStatisticsRequest, headers: QuerySendMsgTaskStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySendMsgTaskStatisticsResponse> {
     Util.validateModel(request);
@@ -14083,10 +17220,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 群发任务统计查询
-   *
-   * @param request QuerySendMsgTaskStatisticsRequest
-   * @return QuerySendMsgTaskStatisticsResponse
+   * 群发任务统计查询
+   * 
+   * @param request - QuerySendMsgTaskStatisticsRequest
+   * @returns QuerySendMsgTaskStatisticsResponse
    */
   async querySendMsgTaskStatistics(request: QuerySendMsgTaskStatisticsRequest): Promise<QuerySendMsgTaskStatisticsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14095,12 +17232,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 群发任务群维度的统计数据
-   *
-   * @param request QuerySendMsgTaskStatisticsDetailRequest
-   * @param headers QuerySendMsgTaskStatisticsDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QuerySendMsgTaskStatisticsDetailResponse
+   * 群发任务群维度的统计数据
+   * 
+   * @param request - QuerySendMsgTaskStatisticsDetailRequest
+   * @param headers - QuerySendMsgTaskStatisticsDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QuerySendMsgTaskStatisticsDetailResponse
    */
   async querySendMsgTaskStatisticsDetailWithOptions(request: QuerySendMsgTaskStatisticsDetailRequest, headers: QuerySendMsgTaskStatisticsDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySendMsgTaskStatisticsDetailResponse> {
     Util.validateModel(request);
@@ -14153,10 +17290,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 群发任务群维度的统计数据
-   *
-   * @param request QuerySendMsgTaskStatisticsDetailRequest
-   * @return QuerySendMsgTaskStatisticsDetailResponse
+   * 群发任务群维度的统计数据
+   * 
+   * @param request - QuerySendMsgTaskStatisticsDetailRequest
+   * @returns QuerySendMsgTaskStatisticsDetailResponse
    */
   async querySendMsgTaskStatisticsDetail(request: QuerySendMsgTaskStatisticsDetailRequest): Promise<QuerySendMsgTaskStatisticsDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14165,12 +17302,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查消息的已读/未读列表
-   *
-   * @param request QueryServiceGroupMessageReadStatusRequest
-   * @param headers QueryServiceGroupMessageReadStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryServiceGroupMessageReadStatusResponse
+   * 查消息的已读/未读列表
+   * 
+   * @param request - QueryServiceGroupMessageReadStatusRequest
+   * @param headers - QueryServiceGroupMessageReadStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryServiceGroupMessageReadStatusResponse
    */
   async queryServiceGroupMessageReadStatusWithOptions(request: QueryServiceGroupMessageReadStatusRequest, headers: QueryServiceGroupMessageReadStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QueryServiceGroupMessageReadStatusResponse> {
     Util.validateModel(request);
@@ -14223,10 +17360,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查消息的已读/未读列表
-   *
-   * @param request QueryServiceGroupMessageReadStatusRequest
-   * @return QueryServiceGroupMessageReadStatusResponse
+   * 查消息的已读/未读列表
+   * 
+   * @param request - QueryServiceGroupMessageReadStatusRequest
+   * @returns QueryServiceGroupMessageReadStatusResponse
    */
   async queryServiceGroupMessageReadStatus(request: QueryServiceGroupMessageReadStatusRequest): Promise<QueryServiceGroupMessageReadStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14235,12 +17372,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 外部DT工作台排队通知回调
-   *
-   * @param request QueueNotifyRequest
-   * @param headers QueueNotifyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueueNotifyResponse
+   * 外部DT工作台排队通知回调
+   * 
+   * @param request - QueueNotifyRequest
+   * @param headers - QueueNotifyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueueNotifyResponse
    */
   async queueNotifyWithOptions(request: QueueNotifyRequest, headers: QueueNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<QueueNotifyResponse> {
     Util.validateModel(request);
@@ -14301,10 +17438,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 外部DT工作台排队通知回调
-   *
-   * @param request QueueNotifyRequest
-   * @return QueueNotifyResponse
+   * 外部DT工作台排队通知回调
+   * 
+   * @param request - QueueNotifyRequest
+   * @returns QueueNotifyResponse
    */
   async queueNotify(request: QueueNotifyRequest): Promise<QueueNotifyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14313,12 +17450,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 组织剔除联系人
-   *
-   * @param request RemoveContactFromOrgRequest
-   * @param headers RemoveContactFromOrgHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RemoveContactFromOrgResponse
+   * 组织剔除联系人
+   * 
+   * @param request - RemoveContactFromOrgRequest
+   * @param headers - RemoveContactFromOrgHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RemoveContactFromOrgResponse
    */
   async removeContactFromOrgWithOptions(request: RemoveContactFromOrgRequest, headers: RemoveContactFromOrgHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveContactFromOrgResponse> {
     Util.validateModel(request);
@@ -14359,10 +17496,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 组织剔除联系人
-   *
-   * @param request RemoveContactFromOrgRequest
-   * @return RemoveContactFromOrgResponse
+   * 组织剔除联系人
+   * 
+   * @param request - RemoveContactFromOrgRequest
+   * @returns RemoveContactFromOrgResponse
    */
   async removeContactFromOrg(request: RemoveContactFromOrgRequest): Promise<RemoveContactFromOrgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14371,12 +17508,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 指定群的客户活跃明细查询
-   *
-   * @param request ReportCustomerDetailRequest
-   * @param headers ReportCustomerDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ReportCustomerDetailResponse
+   * 指定群的客户活跃明细查询
+   * 
+   * @param request - ReportCustomerDetailRequest
+   * @param headers - ReportCustomerDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ReportCustomerDetailResponse
    */
   async reportCustomerDetailWithOptions(request: ReportCustomerDetailRequest, headers: ReportCustomerDetailHeaders, runtime: $Util.RuntimeOptions): Promise<ReportCustomerDetailResponse> {
     Util.validateModel(request);
@@ -14441,10 +17578,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 指定群的客户活跃明细查询
-   *
-   * @param request ReportCustomerDetailRequest
-   * @return ReportCustomerDetailResponse
+   * 指定群的客户活跃明细查询
+   * 
+   * @param request - ReportCustomerDetailRequest
+   * @returns ReportCustomerDetailResponse
    */
   async reportCustomerDetail(request: ReportCustomerDetailRequest): Promise<ReportCustomerDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14453,12 +17590,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 客户活跃明细指标查询
-   *
-   * @param request ReportCustomerStatisticsRequest
-   * @param headers ReportCustomerStatisticsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ReportCustomerStatisticsResponse
+   * 客户活跃明细指标查询
+   * 
+   * @param request - ReportCustomerStatisticsRequest
+   * @param headers - ReportCustomerStatisticsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ReportCustomerStatisticsResponse
    */
   async reportCustomerStatisticsWithOptions(request: ReportCustomerStatisticsRequest, headers: ReportCustomerStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<ReportCustomerStatisticsResponse> {
     Util.validateModel(request);
@@ -14527,10 +17664,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 客户活跃明细指标查询
-   *
-   * @param request ReportCustomerStatisticsRequest
-   * @return ReportCustomerStatisticsResponse
+   * 客户活跃明细指标查询
+   * 
+   * @param request - ReportCustomerStatisticsRequest
+   * @returns ReportCustomerStatisticsResponse
    */
   async reportCustomerStatistics(request: ReportCustomerStatisticsRequest): Promise<ReportCustomerStatisticsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14539,12 +17676,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 重新提交工单
-   *
-   * @param request ResubmitTicketRequest
-   * @param headers ResubmitTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ResubmitTicketResponse
+   * 重新提交工单
+   * 
+   * @param request - ResubmitTicketRequest
+   * @param headers - ResubmitTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ResubmitTicketResponse
    */
   async resubmitTicketWithOptions(request: ResubmitTicketRequest, headers: ResubmitTicketHeaders, runtime: $Util.RuntimeOptions): Promise<ResubmitTicketResponse> {
     Util.validateModel(request);
@@ -14621,10 +17758,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 重新提交工单
-   *
-   * @param request ResubmitTicketRequest
-   * @return ResubmitTicketResponse
+   * 重新提交工单
+   * 
+   * @param request - ResubmitTicketRequest
+   * @returns ResubmitTicketResponse
    */
   async resubmitTicket(request: ResubmitTicketRequest): Promise<ResubmitTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14633,12 +17770,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤回工单
-   *
-   * @param request RetractTicketRequest
-   * @param headers RetractTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RetractTicketResponse
+   * 撤回工单
+   * 
+   * @param request - RetractTicketRequest
+   * @param headers - RetractTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RetractTicketResponse
    */
   async retractTicketWithOptions(request: RetractTicketRequest, headers: RetractTicketHeaders, runtime: $Util.RuntimeOptions): Promise<RetractTicketResponse> {
     Util.validateModel(request);
@@ -14691,10 +17828,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤回工单
-   *
-   * @param request RetractTicketRequest
-   * @return RetractTicketResponse
+   * 撤回工单
+   * 
+   * @param request - RetractTicketRequest
+   * @returns RetractTicketResponse
    */
   async retractTicket(request: RetractTicketRequest): Promise<RetractTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14703,12 +17840,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 指定群的机器人消息撤回
-   *
-   * @param request RobotMessageRecallRequest
-   * @param headers RobotMessageRecallHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RobotMessageRecallResponse
+   * 指定群的机器人消息撤回
+   * 
+   * @param request - RobotMessageRecallRequest
+   * @param headers - RobotMessageRecallHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RobotMessageRecallResponse
    */
   async robotMessageRecallWithOptions(request: RobotMessageRecallRequest, headers: RobotMessageRecallHeaders, runtime: $Util.RuntimeOptions): Promise<RobotMessageRecallResponse> {
     Util.validateModel(request);
@@ -14753,10 +17890,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 指定群的机器人消息撤回
-   *
-   * @param request RobotMessageRecallRequest
-   * @return RobotMessageRecallResponse
+   * 指定群的机器人消息撤回
+   * 
+   * @param request - RobotMessageRecallRequest
+   * @returns RobotMessageRecallResponse
    */
   async robotMessageRecall(request: RobotMessageRecallRequest): Promise<RobotMessageRecallResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14765,12 +17902,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群新增表单实例
-   *
-   * @param request SaveFormInstanceRequest
-   * @param headers SaveFormInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SaveFormInstanceResponse
+   * 服务群新增表单实例
+   * 
+   * @param request - SaveFormInstanceRequest
+   * @param headers - SaveFormInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SaveFormInstanceResponse
    */
   async saveFormInstanceWithOptions(request: SaveFormInstanceRequest, headers: SaveFormInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<SaveFormInstanceResponse> {
     Util.validateModel(request);
@@ -14819,10 +17956,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群新增表单实例
-   *
-   * @param request SaveFormInstanceRequest
-   * @return SaveFormInstanceResponse
+   * 服务群新增表单实例
+   * 
+   * @param request - SaveFormInstanceRequest
+   * @returns SaveFormInstanceResponse
    */
   async saveFormInstance(request: SaveFormInstanceRequest): Promise<SaveFormInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14831,12 +17968,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索服务群
-   *
-   * @param request SearchGroupRequest
-   * @param headers SearchGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchGroupResponse
+   * 搜索服务群
+   * 
+   * @param request - SearchGroupRequest
+   * @param headers - SearchGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchGroupResponse
    */
   async searchGroupWithOptions(request: SearchGroupRequest, headers: SearchGroupHeaders, runtime: $Util.RuntimeOptions): Promise<SearchGroupResponse> {
     Util.validateModel(request);
@@ -14897,10 +18034,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索服务群
-   *
-   * @param request SearchGroupRequest
-   * @return SearchGroupResponse
+   * 搜索服务群
+   * 
+   * @param request - SearchGroupRequest
+   * @returns SearchGroupResponse
    */
   async searchGroup(request: SearchGroupRequest): Promise<SearchGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14909,12 +18046,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群发任务
-   *
-   * @param request SendMsgByTaskRequest
-   * @param headers SendMsgByTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendMsgByTaskResponse
+   * 服务群发任务
+   * 
+   * @param request - SendMsgByTaskRequest
+   * @param headers - SendMsgByTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendMsgByTaskResponse
    */
   async sendMsgByTaskWithOptions(request: SendMsgByTaskRequest, headers: SendMsgByTaskHeaders, runtime: $Util.RuntimeOptions): Promise<SendMsgByTaskResponse> {
     Util.validateModel(request);
@@ -14967,10 +18104,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群发任务
-   *
-   * @param request SendMsgByTaskRequest
-   * @return SendMsgByTaskResponse
+   * 服务群发任务
+   * 
+   * @param request - SendMsgByTaskRequest
+   * @returns SendMsgByTaskResponse
    */
   async sendMsgByTask(request: SendMsgByTaskRequest): Promise<SendMsgByTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14979,12 +18116,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 增强版客户群发
-   *
-   * @param request SendMsgByTaskSupportInviteJoinOrgRequest
-   * @param headers SendMsgByTaskSupportInviteJoinOrgHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendMsgByTaskSupportInviteJoinOrgResponse
+   * 增强版客户群发
+   * 
+   * @param request - SendMsgByTaskSupportInviteJoinOrgRequest
+   * @param headers - SendMsgByTaskSupportInviteJoinOrgHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendMsgByTaskSupportInviteJoinOrgResponse
    */
   async sendMsgByTaskSupportInviteJoinOrgWithOptions(request: SendMsgByTaskSupportInviteJoinOrgRequest, headers: SendMsgByTaskSupportInviteJoinOrgHeaders, runtime: $Util.RuntimeOptions): Promise<SendMsgByTaskSupportInviteJoinOrgResponse> {
     Util.validateModel(request);
@@ -15041,10 +18178,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 增强版客户群发
-   *
-   * @param request SendMsgByTaskSupportInviteJoinOrgRequest
-   * @return SendMsgByTaskSupportInviteJoinOrgResponse
+   * 增强版客户群发
+   * 
+   * @param request - SendMsgByTaskSupportInviteJoinOrgRequest
+   * @returns SendMsgByTaskSupportInviteJoinOrgResponse
    */
   async sendMsgByTaskSupportInviteJoinOrg(request: SendMsgByTaskSupportInviteJoinOrgRequest): Promise<SendMsgByTaskSupportInviteJoinOrgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15053,12 +18190,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群发消息
-   *
-   * @param request SendServiceGroupMessageRequest
-   * @param headers SendServiceGroupMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendServiceGroupMessageResponse
+   * 服务群发消息
+   * 
+   * @param request - SendServiceGroupMessageRequest
+   * @param headers - SendServiceGroupMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendServiceGroupMessageResponse
    */
   async sendServiceGroupMessageWithOptions(request: SendServiceGroupMessageRequest, headers: SendServiceGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendServiceGroupMessageResponse> {
     Util.validateModel(request);
@@ -15147,10 +18284,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群发消息
-   *
-   * @param request SendServiceGroupMessageRequest
-   * @return SendServiceGroupMessageResponse
+   * 服务群发消息
+   * 
+   * @param request - SendServiceGroupMessageRequest
+   * @returns SendServiceGroupMessageResponse
    */
   async sendServiceGroupMessage(request: SendServiceGroupMessageRequest): Promise<SendServiceGroupMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15159,12 +18296,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行阿里内部用户群组机器人服务开关
-   *
-   * @param request SetRobotConfigRequest
-   * @param headers SetRobotConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SetRobotConfigResponse
+   * 执行阿里内部用户群组机器人服务开关
+   * 
+   * @param request - SetRobotConfigRequest
+   * @param headers - SetRobotConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SetRobotConfigResponse
    */
   async setRobotConfigWithOptions(request: SetRobotConfigRequest, headers: SetRobotConfigHeaders, runtime: $Util.RuntimeOptions): Promise<SetRobotConfigResponse> {
     Util.validateModel(request);
@@ -15225,10 +18362,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行阿里内部用户群组机器人服务开关
-   *
-   * @param request SetRobotConfigRequest
-   * @return SetRobotConfigResponse
+   * 执行阿里内部用户群组机器人服务开关
+   * 
+   * @param request - SetRobotConfigRequest
+   * @returns SetRobotConfigResponse
    */
   async setRobotConfig(request: SetRobotConfigRequest): Promise<SetRobotConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15237,12 +18374,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 申领工单
-   *
-   * @param request TakeTicketRequest
-   * @param headers TakeTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return TakeTicketResponse
+   * 申领工单
+   * 
+   * @param request - TakeTicketRequest
+   * @param headers - TakeTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TakeTicketResponse
    */
   async takeTicketWithOptions(request: TakeTicketRequest, headers: TakeTicketHeaders, runtime: $Util.RuntimeOptions): Promise<TakeTicketResponse> {
     Util.validateModel(request);
@@ -15287,10 +18424,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 申领工单
-   *
-   * @param request TakeTicketRequest
-   * @return TakeTicketResponse
+   * 申领工单
+   * 
+   * @param request - TakeTicketRequest
+   * @returns TakeTicketResponse
    */
   async takeTicket(request: TakeTicketRequest): Promise<TakeTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15299,12 +18436,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 客户心声热门话题统计
-   *
-   * @param request TopicStatisticsRequest
-   * @param headers TopicStatisticsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return TopicStatisticsResponse
+   * 客户心声热门话题统计
+   * 
+   * @param request - TopicStatisticsRequest
+   * @param headers - TopicStatisticsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TopicStatisticsResponse
    */
   async topicStatisticsWithOptions(request: TopicStatisticsRequest, headers: TopicStatisticsHeaders, runtime: $Util.RuntimeOptions): Promise<TopicStatisticsResponse> {
     Util.validateModel(request);
@@ -15357,10 +18494,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 客户心声热门话题统计
-   *
-   * @param request TopicStatisticsRequest
-   * @return TopicStatisticsResponse
+   * 客户心声热门话题统计
+   * 
+   * @param request - TopicStatisticsRequest
+   * @returns TopicStatisticsResponse
    */
   async topicStatistics(request: TopicStatisticsRequest): Promise<TopicStatisticsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15369,12 +18506,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转交工单
-   *
-   * @param request TransferTicketRequest
-   * @param headers TransferTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return TransferTicketResponse
+   * 转交工单
+   * 
+   * @param request - TransferTicketRequest
+   * @param headers - TransferTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TransferTicketResponse
    */
   async transferTicketWithOptions(request: TransferTicketRequest, headers: TransferTicketHeaders, runtime: $Util.RuntimeOptions): Promise<TransferTicketResponse> {
     Util.validateModel(request);
@@ -15431,10 +18568,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转交工单
-   *
-   * @param request TransferTicketRequest
-   * @return TransferTicketResponse
+   * 转交工单
+   * 
+   * @param request - TransferTicketRequest
+   * @returns TransferTicketResponse
    */
   async transferTicket(request: TransferTicketRequest): Promise<TransferTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15443,12 +18580,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 变更群的群组配置信息
-   *
-   * @param request UpdateGroupSetRequest
-   * @param headers UpdateGroupSetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateGroupSetResponse
+   * 变更群的群组配置信息
+   * 
+   * @param request - UpdateGroupSetRequest
+   * @param headers - UpdateGroupSetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateGroupSetResponse
    */
   async updateGroupSetWithOptions(request: UpdateGroupSetRequest, headers: UpdateGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupSetResponse> {
     Util.validateModel(request);
@@ -15493,10 +18630,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 变更群的群组配置信息
-   *
-   * @param request UpdateGroupSetRequest
-   * @return UpdateGroupSetResponse
+   * 变更群的群组配置信息
+   * 
+   * @param request - UpdateGroupSetRequest
+   * @returns UpdateGroupSetResponse
    */
   async updateGroupSet(request: UpdateGroupSetRequest): Promise<UpdateGroupSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15505,12 +18642,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新服务群标签
-   *
-   * @param request UpdateGroupTagRequest
-   * @param headers UpdateGroupTagHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateGroupTagResponse
+   * 更新服务群标签
+   * 
+   * @param request - UpdateGroupTagRequest
+   * @param headers - UpdateGroupTagHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateGroupTagResponse
    */
   async updateGroupTagWithOptions(request: UpdateGroupTagRequest, headers: UpdateGroupTagHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupTagResponse> {
     Util.validateModel(request);
@@ -15555,10 +18692,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新服务群标签
-   *
-   * @param request UpdateGroupTagRequest
-   * @return UpdateGroupTagResponse
+   * 更新服务群标签
+   * 
+   * @param request - UpdateGroupTagRequest
+   * @returns UpdateGroupTagResponse
    */
   async updateGroupTag(request: UpdateGroupTagRequest): Promise<UpdateGroupTagResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15567,12 +18704,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群更新表单实例
-   *
-   * @param request UpdateInstanceRequest
-   * @param headers UpdateInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInstanceResponse
+   * 服务群更新表单实例
+   * 
+   * @param request - UpdateInstanceRequest
+   * @param headers - UpdateInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInstanceResponse
    */
   async updateInstanceWithOptions(request: UpdateInstanceRequest, headers: UpdateInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInstanceResponse> {
     Util.validateModel(request);
@@ -15633,10 +18770,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务群更新表单实例
-   *
-   * @param request UpdateInstanceRequest
-   * @return UpdateInstanceResponse
+   * 服务群更新表单实例
+   * 
+   * @param request - UpdateInstanceRequest
+   * @returns UpdateInstanceResponse
    */
   async updateInstance(request: UpdateInstanceRequest): Promise<UpdateInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15645,12 +18782,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新工单自定义字段
-   *
-   * @param request UpdateTicketRequest
-   * @param headers UpdateTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTicketResponse
+   * 更新工单自定义字段
+   * 
+   * @param request - UpdateTicketRequest
+   * @param headers - UpdateTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTicketResponse
    */
   async updateTicketWithOptions(request: UpdateTicketRequest, headers: UpdateTicketHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTicketResponse> {
     Util.validateModel(request);
@@ -15703,10 +18840,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新工单自定义字段
-   *
-   * @param request UpdateTicketRequest
-   * @return UpdateTicketResponse
+   * 更新工单自定义字段
+   * 
+   * @param request - UpdateTicketRequest
+   * @returns UpdateTicketResponse
    */
   async updateTicket(request: UpdateTicketRequest): Promise<UpdateTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15715,12 +18852,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 将智能云客服下的旧版服务群升级为钉钉智能服务群
-   *
-   * @param request UpgradeCloudGroupRequest
-   * @param headers UpgradeCloudGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpgradeCloudGroupResponse
+   * 将智能云客服下的旧版服务群升级为钉钉智能服务群
+   * 
+   * @param request - UpgradeCloudGroupRequest
+   * @param headers - UpgradeCloudGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpgradeCloudGroupResponse
    */
   async upgradeCloudGroupWithOptions(request: UpgradeCloudGroupRequest, headers: UpgradeCloudGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpgradeCloudGroupResponse> {
     Util.validateModel(request);
@@ -15773,10 +18910,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 将智能云客服下的旧版服务群升级为钉钉智能服务群
-   *
-   * @param request UpgradeCloudGroupRequest
-   * @return UpgradeCloudGroupResponse
+   * 将智能云客服下的旧版服务群升级为钉钉智能服务群
+   * 
+   * @param request - UpgradeCloudGroupRequest
+   * @returns UpgradeCloudGroupResponse
    */
   async upgradeCloudGroup(request: UpgradeCloudGroupRequest): Promise<UpgradeCloudGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15785,12 +18922,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 将常规钉群升级为钉钉智能服务群
-   *
-   * @param request UpgradeNormalGroupRequest
-   * @param headers UpgradeNormalGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpgradeNormalGroupResponse
+   * 将常规钉群升级为钉钉智能服务群
+   * 
+   * @param request - UpgradeNormalGroupRequest
+   * @param headers - UpgradeNormalGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpgradeNormalGroupResponse
    */
   async upgradeNormalGroupWithOptions(request: UpgradeNormalGroupRequest, headers: UpgradeNormalGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpgradeNormalGroupResponse> {
     Util.validateModel(request);
@@ -15839,10 +18976,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 将常规钉群升级为钉钉智能服务群
-   *
-   * @param request UpgradeNormalGroupRequest
-   * @return UpgradeNormalGroupResponse
+   * 将常规钉群升级为钉钉智能服务群
+   * 
+   * @param request - UpgradeNormalGroupRequest
+   * @returns UpgradeNormalGroupResponse
    */
   async upgradeNormalGroup(request: UpgradeNormalGroupRequest): Promise<UpgradeNormalGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15851,12 +18988,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工单催办
-   *
-   * @param request UrgeTicketRequest
-   * @param headers UrgeTicketHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UrgeTicketResponse
+   * 工单催办
+   * 
+   * @param request - UrgeTicketRequest
+   * @param headers - UrgeTicketHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UrgeTicketResponse
    */
   async urgeTicketWithOptions(request: UrgeTicketRequest, headers: UrgeTicketHeaders, runtime: $Util.RuntimeOptions): Promise<UrgeTicketResponse> {
     Util.validateModel(request);
@@ -15905,10 +19042,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工单催办
-   *
-   * @param request UrgeTicketRequest
-   * @return UrgeTicketResponse
+   * 工单催办
+   * 
+   * @param request - UrgeTicketRequest
+   * @returns UrgeTicketResponse
    */
   async urgeTicket(request: UrgeTicketRequest): Promise<UrgeTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });

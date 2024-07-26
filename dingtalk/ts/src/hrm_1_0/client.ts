@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,11 +30,23 @@ export class AddHrmLegalEntityHeaders extends $tea.Model {
 }
 
 export class AddHrmLegalEntityRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   createUserId?: string;
   ext?: AddHrmLegalEntityRequestExt;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   legalEntityName?: string;
   legalEntityShortName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   legalEntityStatus?: number;
   legalPersonName?: string;
   dingTenantId?: number;
@@ -143,7 +153,15 @@ export class AddHrmPreentryHeaders extends $tea.Model {
 export class AddHrmPreentryRequest extends $tea.Model {
   agentId?: number;
   groups?: AddHrmPreentryRequestGroups[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mobile?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   needSendPreEntryMsg?: boolean;
   preEntryTime?: number;
@@ -175,6 +193,10 @@ export class AddHrmPreentryRequest extends $tea.Model {
 }
 
 export class AddHrmPreentryResponseBody extends $tea.Model {
+  /**
+   * @example
+   * manager123
+   */
   tmpUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -329,6 +351,13 @@ export class ECertQueryHeaders extends $tea.Model {
 }
 
 export class ECertQueryRequest extends $tea.Model {
+  /**
+   * @example
+   * manager231
+   * 
+   * **if can be null:**
+   * false
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -348,18 +377,73 @@ export class ECertQueryRequest extends $tea.Model {
 }
 
 export class ECertQueryResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 3300111192912113
+   */
   certNO?: string;
+  /**
+   * @example
+   * 1123124124124
+   */
   employJobId?: string;
+  /**
+   * @example
+   * 职务
+   */
   employJobIdLabel?: string;
+  /**
+   * @example
+   * 1231231232313123
+   */
   employPositionId?: string;
+  /**
+   * @example
+   * 职位
+   */
   employPositionIdLabel?: string;
+  /**
+   * @example
+   * 498192313
+   */
   employPositionRankId?: string;
+  /**
+   * @example
+   * 职级
+   */
   employPositionRankIdLabel?: string;
+  /**
+   * @example
+   * 2020-03-14
+   */
   hiredDate?: string;
+  /**
+   * @example
+   * 2021-03-14
+   */
   lastWorkDay?: string;
+  /**
+   * @example
+   * -1
+   */
   mainDeptId?: number;
+  /**
+   * @example
+   * 测试部门
+   */
   mainDeptName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 李四
+   */
   name?: string;
+  /**
+   * @example
+   * 张三
+   */
   realName?: string;
   terminationReasonPassive?: string[];
   terminationReasonVoluntary?: string[];
@@ -456,10 +540,36 @@ export class EmployeeAttachmentUpdateHeaders extends $tea.Model {
 }
 
 export class EmployeeAttachmentUpdateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appAgentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fieldCode?: string;
+  /**
+   * @example
+   * .png
+   */
   fileSuffix?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * "$iAEKAqNwbmcDBgTNAk"
+   */
   mediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * admin123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -556,6 +666,10 @@ export class EsignRollbackHeaders extends $tea.Model {
 }
 
 export class EsignRollbackRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   optUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -575,6 +689,10 @@ export class EsignRollbackRequest extends $tea.Model {
 }
 
 export class EsignRollbackResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -641,9 +759,20 @@ export class GetEmployeeRosterByFieldHeaders extends $tea.Model {
 }
 
 export class GetEmployeeRosterByFieldRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   appAgentId?: number;
   fieldFilterList?: string[];
   text2SelectConvert?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIdList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -735,7 +864,18 @@ export class HrmAuthResourcesQueryHeaders extends $tea.Model {
 }
 
 export class HrmAuthResourcesQueryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   authResourceIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1231
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -823,6 +963,10 @@ export class HrmBenefitQueryHeaders extends $tea.Model {
 }
 
 export class HrmBenefitQueryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   benefitCodes?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -908,7 +1052,15 @@ export class HrmMailSendHeaders extends $tea.Model {
 }
 
 export class HrmMailSendRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mail?: HrmMailSendRequestMail;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operator?: HrmMailSendRequestOperator;
   static names(): { [key: string]: string } {
     return {
@@ -996,7 +1148,21 @@ export class HrmMokaEventHeaders extends $tea.Model {
 }
 
 export class HrmMokaEventRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * /user/role/get
+   */
   bizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"a":"b"}
+   */
   content?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1084,6 +1250,13 @@ export class HrmMokaOapiHeaders extends $tea.Model {
 }
 
 export class HrmMokaOapiRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * /user/role/get
+   */
   apiCode?: string;
   params?: any;
   static names(): { [key: string]: string } {
@@ -1181,9 +1354,34 @@ export class HrmProcessRegularHeaders extends $tea.Model {
 }
 
 export class HrmProcessRegularRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 16690147049882572
+   */
   operationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1672542359000
+   */
   regularDate?: number;
+  /**
+   * @example
+   * 同意转正
+   */
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 16690147049882572
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1209,6 +1407,10 @@ export class HrmProcessRegularRequest extends $tea.Model {
 }
 
 export class HrmProcessRegularResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1275,15 +1477,70 @@ export class HrmProcessTerminationAndHandoverHeaders extends $tea.Model {
 }
 
 export class HrmProcessTerminationAndHandoverRequest extends $tea.Model {
+  /**
+   * @example
+   * user123
+   */
   aflowHandOverUserId?: string;
+  /**
+   * @example
+   * user123
+   */
   dingPanHandoverUserId?: string;
+  /**
+   * @example
+   * user123
+   */
   directSubordinatesHandoverUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * aefadfadaewedad
+   */
   dismissionMemo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   dismissionReason?: number;
+  /**
+   * @example
+   * user123
+   */
   docNoteHandoverUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1704074400000
+   */
   lastWorkDate?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 经理
+   */
   optUserId?: string;
+  /**
+   * @example
+   * user123
+   */
   permissionHandoverUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2332
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1321,6 +1578,10 @@ export class HrmProcessTerminationAndHandoverRequest extends $tea.Model {
 }
 
 export class HrmProcessTerminationAndHandoverResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1388,13 +1649,48 @@ export class HrmProcessTransferHeaders extends $tea.Model {
 
 export class HrmProcessTransferRequest extends $tea.Model {
   deptIdsAfterTransfer?: number[];
+  /**
+   * @example
+   * aefadfadaewedad
+   */
   jobIdAfterTransfer?: string;
+  /**
+   * @example
+   * 123L
+   */
   mainDeptIdAfterTransfer?: number;
+  /**
+   * @example
+   * 232312312
+   */
   operateUserId?: string;
+  /**
+   * @example
+   * fasdfaddsadfa
+   */
   positionIdAfterTransfer?: string;
+  /**
+   * @example
+   * L1
+   */
   positionLevelAfterTransfer?: string;
+  /**
+   * @example
+   * 经理
+   */
   positionNameAfterTransfer?: string;
+  /**
+   * @example
+   * fasdfaddsadfa
+   */
   rankIdAfterTransfer?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2332
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1430,6 +1726,10 @@ export class HrmProcessTransferRequest extends $tea.Model {
 }
 
 export class HrmProcessTransferResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1496,8 +1796,29 @@ export class HrmProcessUpdateTerminationInfoHeaders extends $tea.Model {
 }
 
 export class HrmProcessUpdateTerminationInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 因个人原因离职
+   */
   dismissionMemo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1672502400000
+   */
   lastWorkDate?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * admin123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1521,6 +1842,10 @@ export class HrmProcessUpdateTerminationInfoRequest extends $tea.Model {
 }
 
 export class HrmProcessUpdateTerminationInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1587,10 +1912,35 @@ export class HrmPtsServiceHeaders extends $tea.Model {
 }
 
 export class HrmPtsServiceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dev  or online
+   */
   env?: string;
+  /**
+   * @example
+   * GET/POST
+   */
   method?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abd123213
+   */
   outerId?: string;
   params?: any;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * /user/role/get
+   */
   path?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1693,7 +2043,18 @@ export class MasterDataDeleteHeaders extends $tea.Model {
 }
 
 export class MasterDataDeleteRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: MasterDataDeleteRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   tenantId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1715,6 +2076,10 @@ export class MasterDataDeleteRequest extends $tea.Model {
 }
 
 export class MasterDataDeleteResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   allSuccess?: boolean;
   failResult?: MasterDataDeleteResponseBodyFailResult[];
   static names(): { [key: string]: string } {
@@ -1784,14 +2149,61 @@ export class MasterDataQueryHeaders extends $tea.Model {
 }
 
 export class MasterDataQueryRequest extends $tea.Model {
+  /**
+   * @example
+   * uk_12123
+   */
   bizUK?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @example
+   * admin1234
+   */
   optUserId?: string;
   queryParams?: MasterDataQueryRequestQueryParams[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   relationIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PERFORMANCE
+   */
   scopeCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   tenantId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * base
+   */
   viewEntityCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1827,10 +2239,33 @@ export class MasterDataQueryRequest extends $tea.Model {
 }
 
 export class MasterDataQueryResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: MasterDataQueryResponseBodyResult[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
+  /**
+   * @example
+   * 100
+   */
   total?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1905,7 +2340,18 @@ export class MasterDataSaveHeaders extends $tea.Model {
 }
 
 export class MasterDataSaveRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   body?: MasterDataSaveRequestBody[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   tenantId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1927,6 +2373,13 @@ export class MasterDataSaveRequest extends $tea.Model {
 }
 
 export class MasterDataSaveResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   allSuccess?: boolean;
   failResult?: MasterDataSaveResponseBodyFailResult[];
   static names(): { [key: string]: string } {
@@ -1996,7 +2449,15 @@ export class MasterDataTenantQueyHeaders extends $tea.Model {
 }
 
 export class MasterDataTenantQueyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   entityCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   scopeCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2018,6 +2479,10 @@ export class MasterDataTenantQueyRequest extends $tea.Model {
 }
 
 export class MasterDataTenantQueyResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: MasterDataTenantQueyResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
@@ -2084,13 +2549,56 @@ export class MasterDatasQueryHeaders extends $tea.Model {
 }
 
 export class MasterDatasQueryRequest extends $tea.Model {
+  /**
+   * @example
+   * uk_12123
+   */
   bizUK?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
   queryParams?: MasterDatasQueryRequestQueryParams[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   relationIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PERFORMANCE
+   */
   scopeCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   tenantId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * base
+   */
   viewEntityCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2125,9 +2633,21 @@ export class MasterDatasQueryRequest extends $tea.Model {
 
 export class MasterDatasQueryResponseBody extends $tea.Model {
   hasMore?: boolean;
+  /**
+   * @example
+   * 0
+   */
   nextToken?: number;
   result?: MasterDatasQueryResponseBodyResult[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
+  /**
+   * @example
+   * 100
+   */
   total?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2202,7 +2722,15 @@ export class QueryCustomEntryProcessesHeaders extends $tea.Model {
 }
 
 export class QueryCustomEntryProcessesRequest extends $tea.Model {
+  /**
+   * @example
+   * 20，最大为100，不填默认为100
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 默认为0
+   */
   nextToken?: number;
   operateUserId?: string;
   static names(): { [key: string]: string } {
@@ -2299,7 +2827,15 @@ export class QueryDismissionStaffIdListHeaders extends $tea.Model {
 }
 
 export class QueryDismissionStaffIdListRequest extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 0
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2393,6 +2929,10 @@ export class QueryHrmEmployeeDismissionInfoHeaders extends $tea.Model {
 }
 
 export class QueryHrmEmployeeDismissionInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIdList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -2412,6 +2952,10 @@ export class QueryHrmEmployeeDismissionInfoRequest extends $tea.Model {
 }
 
 export class QueryHrmEmployeeDismissionInfoShrinkRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIdListShrink?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2497,7 +3041,15 @@ export class QueryJobRanksHeaders extends $tea.Model {
 }
 
 export class QueryJobRanksRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: number;
   rankCategoryId?: string;
   rankCode?: string;
@@ -2600,8 +3152,26 @@ export class QueryJobsHeaders extends $tea.Model {
 }
 
 export class QueryJobsRequest extends $tea.Model {
+  /**
+   * @example
+   * 工程师
+   */
   jobName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20，最大为100
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2697,11 +3267,27 @@ export class QueryPositionsHeaders extends $tea.Model {
 }
 
 export class QueryPositionsRequest extends $tea.Model {
+  /**
+   * @example
+   * 部门id
+   */
   deptId?: number;
   inCategoryIds?: string[];
   inPositionIds?: string[];
+  /**
+   * @example
+   * 职位名称
+   */
   positionName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2803,6 +3389,13 @@ export class RosterMetaAvailableFieldListHeaders extends $tea.Model {
 }
 
 export class RosterMetaAvailableFieldListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1231
+   */
   appAgentId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2889,9 +3482,34 @@ export class RosterMetaFieldOptionsUpdateHeaders extends $tea.Model {
 
 export class RosterMetaFieldOptionsUpdateRequest extends $tea.Model {
   appAgentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sys05-contractType
+   */
   fieldCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sys05
+   */
   groupId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   labels?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OPTIONS_ADD
+   */
   modifyType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2985,12 +3603,49 @@ export class SendIsvCardMessageHeaders extends $tea.Model {
 }
 
 export class SendIsvCardMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   agentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   messageType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receiverUserIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 16690147049882572
+   */
   sceneType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 同意转正
+   */
   scope?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 16690147049882572
+   */
   senderUserId?: string;
   valueMap?: { [key: string]: string };
   static names(): { [key: string]: string } {
@@ -3103,14 +3758,68 @@ export class SolutionTaskInitHeaders extends $tea.Model {
 }
 
 export class SolutionTaskInitRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * training
+   */
   category?: string;
+  /**
+   * @example
+   * 时间戳
+   */
   claimTime?: number;
+  /**
+   * @example
+   * 这是一个新人培训任务
+   */
   description?: string;
+  /**
+   * @example
+   * 时间戳
+   */
   finishTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * fdagshfjhajl
+   */
   outerId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * running
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 新人学习任务
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * onboarding
+   */
   solutionType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3146,6 +3855,10 @@ export class SolutionTaskInitRequest extends $tea.Model {
 }
 
 export class SolutionTaskInitResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -3212,17 +3925,82 @@ export class SolutionTaskSaveHeaders extends $tea.Model {
 }
 
 export class SolutionTaskSaveRequest extends $tea.Model {
+  /**
+   * @example
+   * 时间戳
+   */
   claimTime?: number;
+  /**
+   * @example
+   * 这是一个新人培训任务
+   */
   description?: string;
+  /**
+   * @example
+   * 时间戳
+   */
   finishTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * fdagshfjhajl
+   */
   outerId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * qweqweqwe
+   */
   solutionInstanceId?: string;
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * running
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PERFORMANCE_TASK、TRAIN_TASK
+   */
   taskType?: string;
+  /**
+   * @example
+   * sdfasd2323sdaf
+   */
   templateOuterId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 新人学习任务
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * onboarding
+   */
   solutionType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3264,6 +4042,10 @@ export class SolutionTaskSaveRequest extends $tea.Model {
 }
 
 export class SolutionTaskSaveResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -3330,14 +4112,61 @@ export class SyncTaskTemplateHeaders extends $tea.Model {
 }
 
 export class SyncTaskTemplateRequest extends $tea.Model {
+  /**
+   * **if can be null:**
+   * false
+   */
   delete?: boolean;
+  /**
+   * @example
+   * 培训、薪酬任务模版
+   */
   des?: string;
+  /**
+   * @example
+   * {\"key\":value}
+   */
   ext?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 培训模版
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 23234
+   */
   optUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 232332
+   */
   outerId?: string;
   taskScopeVO?: SyncTaskTemplateRequestTaskScopeVO;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PERFORMANCE_TASK、TRAIN_TASK
+   */
   taskType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * onboarding
+   */
   solutionType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3439,8 +4268,26 @@ export class UpdateHrmLegalEntityNameHeaders extends $tea.Model {
 }
 
 export class UpdateHrmLegalEntityNameRequest extends $tea.Model {
+  /**
+   * @example
+   * 57
+   */
   dingTenantId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 公司2
+   */
   legalEntityName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 公司1
+   */
   originLegalEntityName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3533,13 +4380,47 @@ export class UpdateHrmLegalEntityWithoutNameHeaders extends $tea.Model {
 }
 
 export class UpdateHrmLegalEntityWithoutNameRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
+  /**
+   * @example
+   * 123
+   */
   createUserId?: string;
   ext?: UpdateHrmLegalEntityWithoutNameRequestExt;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 公司1
+   */
   legalEntityName?: string;
+  /**
+   * @example
+   * 公1
+   */
   legalEntityShortName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   legalEntityStatus?: number;
+  /**
+   * @example
+   * 法人
+   */
   legalPersonName?: string;
+  /**
+   * @example
+   * 57
+   */
   dingTenantId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3643,10 +4524,36 @@ export class UpdateIsvCardMessageHeaders extends $tea.Model {
 
 export class UpdateIsvCardMessageRequest extends $tea.Model {
   agentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   messageType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 16690147049882572
+   */
   sceneType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 同意转正
+   */
   scope?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   valueMap?: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
@@ -3729,15 +4636,55 @@ export class UpdateIsvCardMessageResponse extends $tea.Model {
 }
 
 export class AddHrmLegalEntityRequestExtManageAddress extends $tea.Model {
+  /**
+   * @example
+   * 110101
+   */
   areaCode?: string;
+  /**
+   * @example
+   * 东城区
+   */
   areaName?: string;
+  /**
+   * @example
+   * 123
+   */
   cityCode?: string;
+  /**
+   * @example
+   * 广州市
+   */
   cityName?: string;
+  /**
+   * @example
+   * 123
+   */
   countryCode?: string;
+  /**
+   * @example
+   * China
+   */
   countryName?: string;
+  /**
+   * @example
+   * 北京市东城区xx街道xx小区xx楼
+   */
   detailAddress?: string;
+  /**
+   * @example
+   * 1
+   */
   globalAreaType?: string;
+  /**
+   * @example
+   * 123
+   */
   provinceCode?: string;
+  /**
+   * @example
+   * 广东省
+   */
   provinceName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3775,15 +4722,55 @@ export class AddHrmLegalEntityRequestExtManageAddress extends $tea.Model {
 }
 
 export class AddHrmLegalEntityRequestExtRegistrationAddress extends $tea.Model {
+  /**
+   * @example
+   * 110101
+   */
   areaCode?: string;
+  /**
+   * @example
+   * 东城区
+   */
   areaName?: string;
+  /**
+   * @example
+   * 123
+   */
   cityCode?: string;
+  /**
+   * @example
+   * 广州市
+   */
   cityName?: string;
+  /**
+   * @example
+   * 123
+   */
   countryCode?: string;
+  /**
+   * @example
+   * China
+   */
   countryName?: string;
+  /**
+   * @example
+   * 北京市东城区xx街道xx小区xx楼
+   */
   detailAddress?: string;
+  /**
+   * @example
+   * 1
+   */
   globalAreaType?: string;
+  /**
+   * @example
+   * 123
+   */
   provinceCode?: string;
+  /**
+   * @example
+   * 广东省
+   */
   provinceName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3828,6 +4815,10 @@ export class AddHrmLegalEntityRequestExt extends $tea.Model {
   registrationAddress?: AddHrmLegalEntityRequestExtRegistrationAddress;
   registrationDate?: number;
   unifiedSocialCreditCode?: string;
+  /**
+   * @example
+   * 515200
+   */
   zipCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3861,13 +4852,45 @@ export class AddHrmLegalEntityRequestExt extends $tea.Model {
 }
 
 export class AddHrmLegalEntityResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * ding123
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2023-01-01
+   */
   gmtCreate?: number;
+  /**
+   * @example
+   * 2023-01-01
+   */
   gmtModified?: number;
+  /**
+   * @example
+   * 1234567
+   */
   legalEntityId?: string;
+  /**
+   * @example
+   * 公司1
+   */
   legalEntityName?: string;
+  /**
+   * @example
+   * 公1
+   */
   legalEntityShortName?: string;
+  /**
+   * @example
+   * 1
+   */
   legalEntityStatus?: number;
+  /**
+   * @example
+   * 法人
+   */
   legalPersonName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3901,7 +4924,15 @@ export class AddHrmLegalEntityResponseBodyResult extends $tea.Model {
 }
 
 export class AddHrmPreentryRequestGroupsSectionsEmpFieldVOList extends $tea.Model {
+  /**
+   * @example
+   * sys01-birthTime
+   */
   fieldCode?: string;
+  /**
+   * @example
+   * 2020-10-10
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3924,6 +4955,10 @@ export class AddHrmPreentryRequestGroupsSectionsEmpFieldVOList extends $tea.Mode
 
 export class AddHrmPreentryRequestGroupsSections extends $tea.Model {
   empFieldVOList?: AddHrmPreentryRequestGroupsSectionsEmpFieldVOList[];
+  /**
+   * @example
+   * 0
+   */
   oldIndex?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3945,6 +4980,10 @@ export class AddHrmPreentryRequestGroupsSections extends $tea.Model {
 }
 
 export class AddHrmPreentryRequestGroups extends $tea.Model {
+  /**
+   * @example
+   * sys01
+   */
   groupId?: string;
   sections?: AddHrmPreentryRequestGroupsSections[];
   static names(): { [key: string]: string } {
@@ -3967,8 +5006,20 @@ export class AddHrmPreentryRequestGroups extends $tea.Model {
 }
 
 export class GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueList extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   itemIndex?: number;
+  /**
+   * @example
+   * 正式
+   */
   label?: string;
+  /**
+   * @example
+   * 3
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3992,9 +5043,21 @@ export class GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueLi
 }
 
 export class GetEmployeeRosterByFieldResponseBodyResultFieldDataList extends $tea.Model {
+  /**
+   * @example
+   * sys01-employeeStatus
+   */
   fieldCode?: string;
+  /**
+   * @example
+   * 员工状态
+   */
   fieldName?: string;
   fieldValueList?: GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueList[];
+  /**
+   * @example
+   * sys01
+   */
   groupId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4020,9 +5083,17 @@ export class GetEmployeeRosterByFieldResponseBodyResultFieldDataList extends $te
 }
 
 export class GetEmployeeRosterByFieldResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * ding20a11xxx
+   */
   corpId?: string;
   fieldDataList?: GetEmployeeRosterByFieldResponseBodyResultFieldDataList[];
   unionId?: string;
+  /**
+   * @example
+   * 042519
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4049,6 +5120,10 @@ export class GetEmployeeRosterByFieldResponseBodyResult extends $tea.Model {
 
 export class HrmAuthResourcesQueryResponseBodyResult extends $tea.Model {
   authorized?: boolean;
+  /**
+   * @example
+   * /signSetting/manage/*
+   */
   resourceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4070,8 +5145,29 @@ export class HrmAuthResourcesQueryResponseBodyResult extends $tea.Model {
 }
 
 export class HrmMailSendRequestMailAttachments extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试.pdf
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * @asdc12312
+   */
   path?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * media
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4095,8 +5191,26 @@ export class HrmMailSendRequestMailAttachments extends $tea.Model {
 }
 
 export class HrmMailSendRequestMailMeetingAlarm extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 还有10分钟开始
+   */
   alarmDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   alarmMinutes?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   alarmSummary?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4120,7 +5234,21 @@ export class HrmMailSendRequestMailMeetingAlarm extends $tea.Model {
 }
 
 export class HrmMailSendRequestMailMeetingAttendees extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abc@aaa.com
+   */
   address?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 参会人1
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4142,7 +5270,21 @@ export class HrmMailSendRequestMailMeetingAttendees extends $tea.Model {
 }
 
 export class HrmMailSendRequestMailMeetingOrganizer extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abc@aaa.com
+   */
   address?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 系统
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4166,14 +5308,61 @@ export class HrmMailSendRequestMailMeetingOrganizer extends $tea.Model {
 export class HrmMailSendRequestMailMeeting extends $tea.Model {
   alarm?: HrmMailSendRequestMailMeetingAlarm;
   attendees?: HrmMailSendRequestMailMeetingAttendees[];
+  /**
+   * @example
+   * 会议描述
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1701692590881
+   */
   endTime?: number;
+  /**
+   * @example
+   * 会议室
+   */
   location?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * REQUEST
+   */
   method?: string;
   organizer?: HrmMailSendRequestMailMeetingOrganizer;
+  /**
+   * @example
+   * 1
+   */
   sequence?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1701692590881
+   */
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试会议
+   */
   summary?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * uuidssssss
+   */
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4214,12 +5403,48 @@ export class HrmMailSendRequestMailMeeting extends $tea.Model {
 
 export class HrmMailSendRequestMail extends $tea.Model {
   attachments?: HrmMailSendRequestMailAttachments[];
+  /**
+   * @example
+   * abd@aaa.com,bcd@aaa.com,
+   */
   bccAddress?: string;
+  /**
+   * @example
+   * abd@aaa.com,bcd@aaa.com,
+   */
   ccAddress?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 请及时填写请填写入职登记表
+   */
   content?: string;
   meeting?: HrmMailSendRequestMailMeeting;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abd@aaa.com,bcd@aaa.com,
+   */
   receiverAddress?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 智能人事入职
+   */
   senderAlias?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 请填写入职登记表
+   */
   subject?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4253,8 +5478,29 @@ export class HrmMailSendRequestMail extends $tea.Model {
 }
 
 export class HrmMailSendRequestOperator extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * biz222ddd
+   */
   bizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hrm
+   */
   mailAccountType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * tokenabcd
+   */
   token?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4278,7 +5524,15 @@ export class HrmMailSendRequestOperator extends $tea.Model {
 }
 
 export class MasterDataDeleteRequestBodyFieldList extends $tea.Model {
+  /**
+   * @example
+   * name
+   */
   name?: string;
+  /**
+   * @example
+   * 123
+   */
   valueStr?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4300,7 +5554,18 @@ export class MasterDataDeleteRequestBodyFieldList extends $tea.Model {
 }
 
 export class MasterDataDeleteRequestBodyScope extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * performance
+   */
   scopeCode?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4322,10 +5587,32 @@ export class MasterDataDeleteRequestBodyScope extends $tea.Model {
 }
 
 export class MasterDataDeleteRequestBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12312
+   */
   bizTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * uk123
+   */
   bizUk?: string;
+  /**
+   * @example
+   * base
+   */
   entityCode?: string;
   fieldList?: MasterDataDeleteRequestBodyFieldList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   scope?: MasterDataDeleteRequestBodyScope;
   static names(): { [key: string]: string } {
     return {
@@ -4353,8 +5640,20 @@ export class MasterDataDeleteRequestBody extends $tea.Model {
 }
 
 export class MasterDataDeleteResponseBodyFailResult extends $tea.Model {
+  /**
+   * @example
+   * uk123
+   */
   bizUK?: string;
+  /**
+   * @example
+   * S0005
+   */
   errorCode?: string;
+  /**
+   * @example
+   * 主键冲突
+   */
   errorMsg?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
@@ -4381,6 +5680,10 @@ export class MasterDataDeleteResponseBodyFailResult extends $tea.Model {
 }
 
 export class MasterDataQueryRequestQueryParamsConditionList extends $tea.Model {
+  /**
+   * @example
+   * EQUAL
+   */
   operate?: string;
   value?: string;
   static names(): { [key: string]: string } {
@@ -4404,7 +5707,15 @@ export class MasterDataQueryRequestQueryParamsConditionList extends $tea.Model {
 
 export class MasterDataQueryRequestQueryParams extends $tea.Model {
   conditionList?: MasterDataQueryRequestQueryParamsConditionList[];
+  /**
+   * @example
+   * performance_code
+   */
   fieldCode?: string;
+  /**
+   * @example
+   * AND
+   */
   joinType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4428,7 +5739,15 @@ export class MasterDataQueryRequestQueryParams extends $tea.Model {
 }
 
 export class MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
   key?: string;
+  /**
+   * @example
+   * 100
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4450,9 +5769,21 @@ export class MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO e
 }
 
 export class MasterDataQueryResponseBodyResultViewEntityFieldVOList extends $tea.Model {
+  /**
+   * @example
+   * performanceValue
+   */
   fieldCode?: string;
   fieldDataVO?: MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO;
+  /**
+   * @example
+   * 绩效等级
+   */
   fieldName?: string;
+  /**
+   * @example
+   * 1
+   */
   fieldType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4478,9 +5809,34 @@ export class MasterDataQueryResponseBodyResultViewEntityFieldVOList extends $tea
 }
 
 export class MasterDataQueryResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * uk123123
+   */
   outerId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * admind123
+   */
   relationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PERFORMANCE
+   */
   scopeCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * base
+   */
   viewEntityCode?: string;
   viewEntityFieldVOList?: MasterDataQueryResponseBodyResultViewEntityFieldVOList[];
   static names(): { [key: string]: string } {
@@ -4509,7 +5865,21 @@ export class MasterDataQueryResponseBodyResult extends $tea.Model {
 }
 
 export class MasterDataSaveRequestBodyFieldList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * name
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   valueStr?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4531,7 +5901,18 @@ export class MasterDataSaveRequestBodyFieldList extends $tea.Model {
 }
 
 export class MasterDataSaveRequestBodyScope extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * performance
+   */
   scopeCode?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4553,11 +5934,44 @@ export class MasterDataSaveRequestBodyScope extends $tea.Model {
 }
 
 export class MasterDataSaveRequestBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12312
+   */
   bizTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * uk123
+   */
   bizUk?: string;
+  /**
+   * @example
+   * base
+   */
   entityCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fieldList?: MasterDataSaveRequestBodyFieldList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   scope?: MasterDataSaveRequestBodyScope;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4587,9 +6001,25 @@ export class MasterDataSaveRequestBody extends $tea.Model {
 }
 
 export class MasterDataSaveResponseBodyFailResult extends $tea.Model {
+  /**
+   * @example
+   * uk123
+   */
   bizUk?: string;
+  /**
+   * @example
+   * S0005
+   */
   errorCode?: string;
+  /**
+   * @example
+   * 主键冲突
+   */
   errorMsg?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4615,11 +6045,44 @@ export class MasterDataSaveResponseBodyFailResult extends $tea.Model {
 }
 
 export class MasterDataTenantQueyResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasData?: boolean;
+  /**
+   * @example
+   * true
+   */
   integrateDataAuth?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * "智能绩效"
+   */
   name?: string;
+  /**
+   * @example
+   * true
+   */
   readAuth?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 4
+   */
   tenantId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4649,6 +6112,10 @@ export class MasterDataTenantQueyResponseBodyResult extends $tea.Model {
 }
 
 export class MasterDatasQueryRequestQueryParamsConditionList extends $tea.Model {
+  /**
+   * @example
+   * EQUAL
+   */
   operate?: string;
   value?: string;
   static names(): { [key: string]: string } {
@@ -4672,7 +6139,15 @@ export class MasterDatasQueryRequestQueryParamsConditionList extends $tea.Model 
 
 export class MasterDatasQueryRequestQueryParams extends $tea.Model {
   conditionList?: MasterDatasQueryRequestQueryParamsConditionList[];
+  /**
+   * @example
+   * performance_code
+   */
   fieldCode?: string;
+  /**
+   * @example
+   * AND
+   */
   joinType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4696,7 +6171,15 @@ export class MasterDatasQueryRequestQueryParams extends $tea.Model {
 }
 
 export class MasterDatasQueryResponseBodyResultViewEntityFieldVOListFieldDataVO extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
   key?: string;
+  /**
+   * @example
+   * 100
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4718,9 +6201,21 @@ export class MasterDatasQueryResponseBodyResultViewEntityFieldVOListFieldDataVO 
 }
 
 export class MasterDatasQueryResponseBodyResultViewEntityFieldVOList extends $tea.Model {
+  /**
+   * @example
+   * performanceValue
+   */
   fieldCode?: string;
   fieldDataVO?: MasterDatasQueryResponseBodyResultViewEntityFieldVOListFieldDataVO;
+  /**
+   * @example
+   * 绩效等级
+   */
   fieldName?: string;
+  /**
+   * @example
+   * 1
+   */
   fieldType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4746,9 +6241,28 @@ export class MasterDatasQueryResponseBodyResultViewEntityFieldVOList extends $te
 }
 
 export class MasterDatasQueryResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * uk123123
+   */
   objId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * admind123
+   */
   relationId?: string;
+  /**
+   * @example
+   * PERFORMANCE
+   */
   scopeCode?: string;
+  /**
+   * @example
+   * base
+   */
   viewEntityCode?: string;
   viewEntityFieldVOList?: MasterDatasQueryResponseBodyResultViewEntityFieldVOList[];
   static names(): { [key: string]: string } {
@@ -4879,7 +6393,15 @@ export class QueryHrmEmployeeDismissionInfoResponseBodyResult extends $tea.Model
 }
 
 export class QueryJobRanksResponseBodyList extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxJobGrade?: number;
+  /**
+   * @example
+   * 1
+   */
   minJobGrade?: number;
   rankCategoryId?: string;
   rankCode?: string;
@@ -4916,8 +6438,20 @@ export class QueryJobRanksResponseBodyList extends $tea.Model {
 }
 
 export class QueryJobsResponseBodyList extends $tea.Model {
+  /**
+   * @example
+   * 职务描述
+   */
   jobDescription?: string;
+  /**
+   * @example
+   * ac67286db74c48e28d787173ccc1a111
+   */
   jobId?: string;
+  /**
+   * @example
+   * 总裁
+   */
   jobName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4944,6 +6478,10 @@ export class QueryPositionsResponseBodyList extends $tea.Model {
   jobId?: string;
   positionCategoryId?: string;
   positionDes?: string;
+  /**
+   * @example
+   * ac67286db74c48e28d787173ccc1a111
+   */
   positionId?: string;
   positionName?: string;
   rankIdList?: string[];
@@ -4978,9 +6516,25 @@ export class QueryPositionsResponseBodyList extends $tea.Model {
 }
 
 export class RosterMetaAvailableFieldListResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * sys01-employeeType
+   */
   fieldCode?: string;
+  /**
+   * @example
+   * 员工类型
+   */
   fieldName?: string;
+  /**
+   * @example
+   * DDSelectField
+   */
   fieldType?: string;
+  /**
+   * @example
+   * [{"value":"1","label":"男"},{"value":"2","label":"女"}]
+   */
   optionText?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5059,13 +6613,45 @@ export class SyncTaskTemplateRequestTaskScopeVO extends $tea.Model {
 }
 
 export class UpdateHrmLegalEntityNameResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * ding123
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2023-08-08
+   */
   gmtCreate?: number;
+  /**
+   * @example
+   * 2023-08-08
+   */
   gmtModified?: number;
+  /**
+   * @example
+   * 111233
+   */
   legalEntityId?: string;
+  /**
+   * @example
+   * 公司2
+   */
   legalEntityName?: string;
+  /**
+   * @example
+   * 公2
+   */
   legalEntityShortName?: string;
+  /**
+   * @example
+   * 1
+   */
   legalEntityStatus?: number;
+  /**
+   * @example
+   * 法人1
+   */
   legalPersonName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5099,15 +6685,55 @@ export class UpdateHrmLegalEntityNameResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateHrmLegalEntityWithoutNameRequestExtManageAddress extends $tea.Model {
+  /**
+   * @example
+   * 110101
+   */
   areaCode?: string;
+  /**
+   * @example
+   * 东城区
+   */
   areaName?: string;
+  /**
+   * @example
+   * 1234
+   */
   cityCode?: string;
+  /**
+   * @example
+   * 广州
+   */
   cityName?: string;
+  /**
+   * @example
+   * 123
+   */
   countryCode?: string;
+  /**
+   * @example
+   * China
+   */
   countryName?: string;
+  /**
+   * @example
+   * 北京市东城区xx街道xx小区xx楼
+   */
   detailAddress?: string;
+  /**
+   * @example
+   * 1
+   */
   globalAreaType?: string;
+  /**
+   * @example
+   * 123
+   */
   provinceCode?: string;
+  /**
+   * @example
+   * 广东
+   */
   provinceName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5145,15 +6771,55 @@ export class UpdateHrmLegalEntityWithoutNameRequestExtManageAddress extends $tea
 }
 
 export class UpdateHrmLegalEntityWithoutNameRequestExtRegistrationAddress extends $tea.Model {
+  /**
+   * @example
+   * 110101
+   */
   areaCode?: string;
+  /**
+   * @example
+   * 东城区
+   */
   areaName?: string;
+  /**
+   * @example
+   * 1234
+   */
   cityCode?: string;
+  /**
+   * @example
+   * 广州
+   */
   cityName?: string;
+  /**
+   * @example
+   * 123
+   */
   countryCode?: string;
+  /**
+   * @example
+   * China
+   */
   countryName?: string;
+  /**
+   * @example
+   * 北京市东城区xx街道xx小区xx楼
+   */
   detailAddress?: string;
+  /**
+   * @example
+   * 1
+   */
   globalAreaType?: string;
+  /**
+   * @example
+   * 123
+   */
   provinceCode?: string;
+  /**
+   * @example
+   * 广东
+   */
   provinceName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5191,13 +6857,37 @@ export class UpdateHrmLegalEntityWithoutNameRequestExtRegistrationAddress extend
 }
 
 export class UpdateHrmLegalEntityWithoutNameRequestExt extends $tea.Model {
+  /**
+   * @example
+   * company
+   */
   legalEntityEnName?: string;
+  /**
+   * @example
+   * com
+   */
   legalEntityEnShortName?: string;
+  /**
+   * @example
+   * whollyOwned
+   */
   legalEntityType?: string;
   manageAddress?: UpdateHrmLegalEntityWithoutNameRequestExtManageAddress;
   registrationAddress?: UpdateHrmLegalEntityWithoutNameRequestExtRegistrationAddress;
+  /**
+   * @example
+   * 2023-01-01
+   */
   registrationDate?: number;
+  /**
+   * @example
+   * 123456
+   */
   unifiedSocialCreditCode?: string;
+  /**
+   * @example
+   * 515200
+   */
   zipCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5231,13 +6921,45 @@ export class UpdateHrmLegalEntityWithoutNameRequestExt extends $tea.Model {
 }
 
 export class UpdateHrmLegalEntityWithoutNameResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * ding123
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2023-01-01
+   */
   gmtCreate?: number;
+  /**
+   * @example
+   * 2023-01-01
+   */
   gmtModified?: number;
+  /**
+   * @example
+   * 123456
+   */
   legalEntityId?: string;
+  /**
+   * @example
+   * 公司1
+   */
   legalEntityName?: string;
+  /**
+   * @example
+   * 公1
+   */
   legalEntityShortName?: string;
+  /**
+   * @example
+   * 1
+   */
   legalEntityStatus?: number;
+  /**
+   * @example
+   * 法人
+   */
   legalPersonName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5272,12 +6994,11 @@ export class UpdateHrmLegalEntityWithoutNameResponseBodyResult extends $tea.Mode
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
@@ -5288,12 +7009,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 新增法人公司
-   *
-   * @param request AddHrmLegalEntityRequest
-   * @param headers AddHrmLegalEntityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddHrmLegalEntityResponse
+   * 新增法人公司
+   * 
+   * @param request - AddHrmLegalEntityRequest
+   * @param headers - AddHrmLegalEntityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddHrmLegalEntityResponse
    */
   async addHrmLegalEntityWithOptions(request: AddHrmLegalEntityRequest, headers: AddHrmLegalEntityHeaders, runtime: $Util.RuntimeOptions): Promise<AddHrmLegalEntityResponse> {
     Util.validateModel(request);
@@ -5360,10 +7081,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增法人公司
-   *
-   * @param request AddHrmLegalEntityRequest
-   * @return AddHrmLegalEntityResponse
+   * 新增法人公司
+   * 
+   * @param request - AddHrmLegalEntityRequest
+   * @returns AddHrmLegalEntityResponse
    */
   async addHrmLegalEntity(request: AddHrmLegalEntityRequest): Promise<AddHrmLegalEntityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5372,12 +7093,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
-   *
-   * @param request AddHrmPreentryRequest
-   * @param headers AddHrmPreentryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddHrmPreentryResponse
+   * 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
+   * 
+   * @param request - AddHrmPreentryRequest
+   * @param headers - AddHrmPreentryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddHrmPreentryResponse
    */
   async addHrmPreentryWithOptions(request: AddHrmPreentryRequest, headers: AddHrmPreentryHeaders, runtime: $Util.RuntimeOptions): Promise<AddHrmPreentryResponse> {
     Util.validateModel(request);
@@ -5434,10 +7155,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
-   *
-   * @param request AddHrmPreentryRequest
-   * @return AddHrmPreentryResponse
+   * 智能人事添加待入职员工信息(支持花名册数据和分组明细更新)
+   * 
+   * @param request - AddHrmPreentryRequest
+   * @returns AddHrmPreentryResponse
    */
   async addHrmPreentry(request: AddHrmPreentryRequest): Promise<AddHrmPreentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5446,11 +7167,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事设备市场管理
-   *
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeviceMarketManagerResponse
+   * 智能人事设备市场管理
+   * 
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeviceMarketManagerResponse
    */
   async deviceMarketManagerWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DeviceMarketManagerResponse> {
     let req = new $OpenApi.OpenApiRequest({
@@ -5471,9 +7192,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事设备市场管理
-   *
-   * @return DeviceMarketManagerResponse
+   * 智能人事设备市场管理
+   * @returns DeviceMarketManagerResponse
    */
   async deviceMarketManager(): Promise<DeviceMarketManagerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5482,11 +7202,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事设备定向管理接口
-   *
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeviceMarketOrderManagerResponse
+   * 智能人事设备定向管理接口
+   * 
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeviceMarketOrderManagerResponse
    */
   async deviceMarketOrderManagerWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DeviceMarketOrderManagerResponse> {
     let req = new $OpenApi.OpenApiRequest({
@@ -5507,9 +7227,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事设备定向管理接口
-   *
-   * @return DeviceMarketOrderManagerResponse
+   * 智能人事设备定向管理接口
+   * @returns DeviceMarketOrderManagerResponse
    */
   async deviceMarketOrderManager(): Promise<DeviceMarketOrderManagerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5518,12 +7237,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary e签宝专有查询证件接口
-   *
-   * @param request ECertQueryRequest
-   * @param headers ECertQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ECertQueryResponse
+   * e签宝专有查询证件接口
+   * 
+   * @param request - ECertQueryRequest
+   * @param headers - ECertQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ECertQueryResponse
    */
   async eCertQueryWithOptions(request: ECertQueryRequest, headers: ECertQueryHeaders, runtime: $Util.RuntimeOptions): Promise<ECertQueryResponse> {
     Util.validateModel(request);
@@ -5560,10 +7279,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary e签宝专有查询证件接口
-   *
-   * @param request ECertQueryRequest
-   * @return ECertQueryResponse
+   * e签宝专有查询证件接口
+   * 
+   * @param request - ECertQueryRequest
+   * @returns ECertQueryResponse
    */
   async eCertQuery(request: ECertQueryRequest): Promise<ECertQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5572,12 +7291,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事员工档案附件更新
-   *
-   * @param request EmployeeAttachmentUpdateRequest
-   * @param headers EmployeeAttachmentUpdateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EmployeeAttachmentUpdateResponse
+   * 智能人事员工档案附件更新
+   * 
+   * @param request - EmployeeAttachmentUpdateRequest
+   * @param headers - EmployeeAttachmentUpdateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EmployeeAttachmentUpdateResponse
    */
   async employeeAttachmentUpdateWithOptions(request: EmployeeAttachmentUpdateRequest, headers: EmployeeAttachmentUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<EmployeeAttachmentUpdateResponse> {
     Util.validateModel(request);
@@ -5632,10 +7351,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事员工档案附件更新
-   *
-   * @param request EmployeeAttachmentUpdateRequest
-   * @return EmployeeAttachmentUpdateResponse
+   * 智能人事员工档案附件更新
+   * 
+   * @param request - EmployeeAttachmentUpdateRequest
+   * @returns EmployeeAttachmentUpdateResponse
    */
   async employeeAttachmentUpdate(request: EmployeeAttachmentUpdateRequest): Promise<EmployeeAttachmentUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5644,12 +7363,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人事高级合同管理回退
-   *
-   * @param request EsignRollbackRequest
-   * @param headers EsignRollbackHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EsignRollbackResponse
+   * 人事高级合同管理回退
+   * 
+   * @param request - EsignRollbackRequest
+   * @param headers - EsignRollbackHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EsignRollbackResponse
    */
   async esignRollbackWithOptions(request: EsignRollbackRequest, headers: EsignRollbackHeaders, runtime: $Util.RuntimeOptions): Promise<EsignRollbackResponse> {
     Util.validateModel(request);
@@ -5686,10 +7405,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人事高级合同管理回退
-   *
-   * @param request EsignRollbackRequest
-   * @return EsignRollbackResponse
+   * 人事高级合同管理回退
+   * 
+   * @param request - EsignRollbackRequest
+   * @returns EsignRollbackResponse
    */
   async esignRollback(request: EsignRollbackRequest): Promise<EsignRollbackResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5698,12 +7417,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取员工花名册指定字段的信息，支持明细分组字段
-   *
-   * @param request GetEmployeeRosterByFieldRequest
-   * @param headers GetEmployeeRosterByFieldHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetEmployeeRosterByFieldResponse
+   * 获取员工花名册指定字段的信息，支持明细分组字段
+   * 
+   * @param request - GetEmployeeRosterByFieldRequest
+   * @param headers - GetEmployeeRosterByFieldHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetEmployeeRosterByFieldResponse
    */
   async getEmployeeRosterByFieldWithOptions(request: GetEmployeeRosterByFieldRequest, headers: GetEmployeeRosterByFieldHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmployeeRosterByFieldResponse> {
     Util.validateModel(request);
@@ -5752,10 +7471,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取员工花名册指定字段的信息，支持明细分组字段
-   *
-   * @param request GetEmployeeRosterByFieldRequest
-   * @return GetEmployeeRosterByFieldResponse
+   * 获取员工花名册指定字段的信息，支持明细分组字段
+   * 
+   * @param request - GetEmployeeRosterByFieldRequest
+   * @returns GetEmployeeRosterByFieldResponse
    */
   async getEmployeeRosterByField(request: GetEmployeeRosterByFieldRequest): Promise<GetEmployeeRosterByFieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5764,12 +7483,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事权限查询
-   *
-   * @param request HrmAuthResourcesQueryRequest
-   * @param headers HrmAuthResourcesQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrmAuthResourcesQueryResponse
+   * 智能人事权限查询
+   * 
+   * @param request - HrmAuthResourcesQueryRequest
+   * @param headers - HrmAuthResourcesQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrmAuthResourcesQueryResponse
    */
   async hrmAuthResourcesQueryWithOptions(request: HrmAuthResourcesQueryRequest, headers: HrmAuthResourcesQueryHeaders, runtime: $Util.RuntimeOptions): Promise<HrmAuthResourcesQueryResponse> {
     Util.validateModel(request);
@@ -5810,10 +7529,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事权限查询
-   *
-   * @param request HrmAuthResourcesQueryRequest
-   * @return HrmAuthResourcesQueryResponse
+   * 智能人事权限查询
+   * 
+   * @param request - HrmAuthResourcesQueryRequest
+   * @returns HrmAuthResourcesQueryResponse
    */
   async hrmAuthResourcesQuery(request: HrmAuthResourcesQueryRequest): Promise<HrmAuthResourcesQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5822,12 +7541,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事权益查询
-   *
-   * @param request HrmBenefitQueryRequest
-   * @param headers HrmBenefitQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrmBenefitQueryResponse
+   * 智能人事权益查询
+   * 
+   * @param request - HrmBenefitQueryRequest
+   * @param headers - HrmBenefitQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrmBenefitQueryResponse
    */
   async hrmBenefitQueryWithOptions(request: HrmBenefitQueryRequest, headers: HrmBenefitQueryHeaders, runtime: $Util.RuntimeOptions): Promise<HrmBenefitQueryResponse> {
     Util.validateModel(request);
@@ -5864,10 +7583,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事权益查询
-   *
-   * @param request HrmBenefitQueryRequest
-   * @return HrmBenefitQueryResponse
+   * 智能人事权益查询
+   * 
+   * @param request - HrmBenefitQueryRequest
+   * @returns HrmBenefitQueryResponse
    */
   async hrmBenefitQuery(request: HrmBenefitQueryRequest): Promise<HrmBenefitQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5876,12 +7595,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事邮件发送
-   *
-   * @param request HrmMailSendRequest
-   * @param headers HrmMailSendHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrmMailSendResponse
+   * 智能人事邮件发送
+   * 
+   * @param request - HrmMailSendRequest
+   * @param headers - HrmMailSendHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrmMailSendResponse
    */
   async hrmMailSendWithOptions(request: HrmMailSendRequest, headers: HrmMailSendHeaders, runtime: $Util.RuntimeOptions): Promise<HrmMailSendResponse> {
     Util.validateModel(request);
@@ -5922,10 +7641,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事邮件发送
-   *
-   * @param request HrmMailSendRequest
-   * @return HrmMailSendResponse
+   * 智能人事邮件发送
+   * 
+   * @param request - HrmMailSendRequest
+   * @returns HrmMailSendResponse
    */
   async hrmMailSend(request: HrmMailSendRequest): Promise<HrmMailSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5934,12 +7653,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人事2.0支持Moka事件转发
-   *
-   * @param request HrmMokaEventRequest
-   * @param headers HrmMokaEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrmMokaEventResponse
+   * 人事2.0支持Moka事件转发
+   * 
+   * @param request - HrmMokaEventRequest
+   * @param headers - HrmMokaEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrmMokaEventResponse
    */
   async hrmMokaEventWithOptions(request: HrmMokaEventRequest, headers: HrmMokaEventHeaders, runtime: $Util.RuntimeOptions): Promise<HrmMokaEventResponse> {
     Util.validateModel(request);
@@ -5980,10 +7699,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人事2.0支持Moka事件转发
-   *
-   * @param request HrmMokaEventRequest
-   * @return HrmMokaEventResponse
+   * 人事2.0支持Moka事件转发
+   * 
+   * @param request - HrmMokaEventRequest
+   * @returns HrmMokaEventResponse
    */
   async hrmMokaEvent(request: HrmMokaEventRequest): Promise<HrmMokaEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5992,12 +7711,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人事2.0支持Moka接口转发
-   *
-   * @param request HrmMokaOapiRequest
-   * @param headers HrmMokaOapiHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrmMokaOapiResponse
+   * 人事2.0支持Moka接口转发
+   * 
+   * @param request - HrmMokaOapiRequest
+   * @param headers - HrmMokaOapiHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrmMokaOapiResponse
    */
   async hrmMokaOapiWithOptions(request: HrmMokaOapiRequest, headers: HrmMokaOapiHeaders, runtime: $Util.RuntimeOptions): Promise<HrmMokaOapiResponse> {
     Util.validateModel(request);
@@ -6038,10 +7757,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人事2.0支持Moka接口转发
-   *
-   * @param request HrmMokaOapiRequest
-   * @return HrmMokaOapiResponse
+   * 人事2.0支持Moka接口转发
+   * 
+   * @param request - HrmMokaOapiRequest
+   * @returns HrmMokaOapiResponse
    */
   async hrmMokaOapi(request: HrmMokaOapiRequest): Promise<HrmMokaOapiResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6050,12 +7769,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事转正接口
-   *
-   * @param request HrmProcessRegularRequest
-   * @param headers HrmProcessRegularHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrmProcessRegularResponse
+   * 智能人事转正接口
+   * 
+   * @param request - HrmProcessRegularRequest
+   * @param headers - HrmProcessRegularHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrmProcessRegularResponse
    */
   async hrmProcessRegularWithOptions(request: HrmProcessRegularRequest, headers: HrmProcessRegularHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessRegularResponse> {
     Util.validateModel(request);
@@ -6104,10 +7823,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事转正接口
-   *
-   * @param request HrmProcessRegularRequest
-   * @return HrmProcessRegularResponse
+   * 智能人事转正接口
+   * 
+   * @param request - HrmProcessRegularRequest
+   * @returns HrmProcessRegularResponse
    */
   async hrmProcessRegular(request: HrmProcessRegularRequest): Promise<HrmProcessRegularResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6116,12 +7835,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事离职和交接接口
-   *
-   * @param request HrmProcessTerminationAndHandoverRequest
-   * @param headers HrmProcessTerminationAndHandoverHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrmProcessTerminationAndHandoverResponse
+   * 智能人事离职和交接接口
+   * 
+   * @param request - HrmProcessTerminationAndHandoverRequest
+   * @param headers - HrmProcessTerminationAndHandoverHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrmProcessTerminationAndHandoverResponse
    */
   async hrmProcessTerminationAndHandoverWithOptions(request: HrmProcessTerminationAndHandoverRequest, headers: HrmProcessTerminationAndHandoverHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessTerminationAndHandoverResponse> {
     Util.validateModel(request);
@@ -6194,10 +7913,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事离职和交接接口
-   *
-   * @param request HrmProcessTerminationAndHandoverRequest
-   * @return HrmProcessTerminationAndHandoverResponse
+   * 智能人事离职和交接接口
+   * 
+   * @param request - HrmProcessTerminationAndHandoverRequest
+   * @returns HrmProcessTerminationAndHandoverResponse
    */
   async hrmProcessTerminationAndHandover(request: HrmProcessTerminationAndHandoverRequest): Promise<HrmProcessTerminationAndHandoverResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6206,12 +7925,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事调岗接口
-   *
-   * @param request HrmProcessTransferRequest
-   * @param headers HrmProcessTransferHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrmProcessTransferResponse
+   * 智能人事调岗接口
+   * 
+   * @param request - HrmProcessTransferRequest
+   * @param headers - HrmProcessTransferHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrmProcessTransferResponse
    */
   async hrmProcessTransferWithOptions(request: HrmProcessTransferRequest, headers: HrmProcessTransferHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessTransferResponse> {
     Util.validateModel(request);
@@ -6280,10 +7999,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事调岗接口
-   *
-   * @param request HrmProcessTransferRequest
-   * @return HrmProcessTransferResponse
+   * 智能人事调岗接口
+   * 
+   * @param request - HrmProcessTransferRequest
+   * @returns HrmProcessTransferResponse
    */
   async hrmProcessTransfer(request: HrmProcessTransferRequest): Promise<HrmProcessTransferResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6292,12 +8011,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改员工最后一次离职信息
-   *
-   * @param request HrmProcessUpdateTerminationInfoRequest
-   * @param headers HrmProcessUpdateTerminationInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrmProcessUpdateTerminationInfoResponse
+   * 修改员工最后一次离职信息
+   * 
+   * @param request - HrmProcessUpdateTerminationInfoRequest
+   * @param headers - HrmProcessUpdateTerminationInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrmProcessUpdateTerminationInfoResponse
    */
   async hrmProcessUpdateTerminationInfoWithOptions(request: HrmProcessUpdateTerminationInfoRequest, headers: HrmProcessUpdateTerminationInfoHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessUpdateTerminationInfoResponse> {
     Util.validateModel(request);
@@ -6342,10 +8061,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改员工最后一次离职信息
-   *
-   * @param request HrmProcessUpdateTerminationInfoRequest
-   * @return HrmProcessUpdateTerminationInfoResponse
+   * 修改员工最后一次离职信息
+   * 
+   * @param request - HrmProcessUpdateTerminationInfoRequest
+   * @returns HrmProcessUpdateTerminationInfoResponse
    */
   async hrmProcessUpdateTerminationInfo(request: HrmProcessUpdateTerminationInfoRequest): Promise<HrmProcessUpdateTerminationInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6354,12 +8073,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事pts能力调用
-   *
-   * @param request HrmPtsServiceRequest
-   * @param headers HrmPtsServiceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HrmPtsServiceResponse
+   * 智能人事pts能力调用
+   * 
+   * @param request - HrmPtsServiceRequest
+   * @param headers - HrmPtsServiceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HrmPtsServiceResponse
    */
   async hrmPtsServiceWithOptions(request: HrmPtsServiceRequest, headers: HrmPtsServiceHeaders, runtime: $Util.RuntimeOptions): Promise<HrmPtsServiceResponse> {
     Util.validateModel(request);
@@ -6412,10 +8131,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事pts能力调用
-   *
-   * @param request HrmPtsServiceRequest
-   * @return HrmPtsServiceResponse
+   * 智能人事pts能力调用
+   * 
+   * @param request - HrmPtsServiceRequest
+   * @returns HrmPtsServiceResponse
    */
   async hrmPtsService(request: HrmPtsServiceRequest): Promise<HrmPtsServiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6424,12 +8143,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事主数据删除服务
-   *
-   * @param request MasterDataDeleteRequest
-   * @param headers MasterDataDeleteHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MasterDataDeleteResponse
+   * 智能人事主数据删除服务
+   * 
+   * @param request - MasterDataDeleteRequest
+   * @param headers - MasterDataDeleteHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MasterDataDeleteResponse
    */
   async masterDataDeleteWithOptions(request: MasterDataDeleteRequest, headers: MasterDataDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataDeleteResponse> {
     Util.validateModel(request);
@@ -6467,10 +8186,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事主数据删除服务
-   *
-   * @param request MasterDataDeleteRequest
-   * @return MasterDataDeleteResponse
+   * 智能人事主数据删除服务
+   * 
+   * @param request - MasterDataDeleteRequest
+   * @returns MasterDataDeleteResponse
    */
   async masterDataDelete(request: MasterDataDeleteRequest): Promise<MasterDataDeleteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6479,12 +8198,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事主数据查询服务
-   *
-   * @param request MasterDataQueryRequest
-   * @param headers MasterDataQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MasterDataQueryResponse
+   * 智能人事主数据查询服务
+   * 
+   * @param request - MasterDataQueryRequest
+   * @param headers - MasterDataQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MasterDataQueryResponse
    */
   async masterDataQueryWithOptions(request: MasterDataQueryRequest, headers: MasterDataQueryHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataQueryResponse> {
     Util.validateModel(request);
@@ -6553,10 +8272,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事主数据查询服务
-   *
-   * @param request MasterDataQueryRequest
-   * @return MasterDataQueryResponse
+   * 智能人事主数据查询服务
+   * 
+   * @param request - MasterDataQueryRequest
+   * @returns MasterDataQueryResponse
    */
   async masterDataQuery(request: MasterDataQueryRequest): Promise<MasterDataQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6565,12 +8284,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事主数据保存服务
-   *
-   * @param request MasterDataSaveRequest
-   * @param headers MasterDataSaveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MasterDataSaveResponse
+   * 智能人事主数据保存服务
+   * 
+   * @param request - MasterDataSaveRequest
+   * @param headers - MasterDataSaveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MasterDataSaveResponse
    */
   async masterDataSaveWithOptions(request: MasterDataSaveRequest, headers: MasterDataSaveHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataSaveResponse> {
     Util.validateModel(request);
@@ -6608,10 +8327,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事主数据保存服务
-   *
-   * @param request MasterDataSaveRequest
-   * @return MasterDataSaveResponse
+   * 智能人事主数据保存服务
+   * 
+   * @param request - MasterDataSaveRequest
+   * @returns MasterDataSaveResponse
    */
   async masterDataSave(request: MasterDataSaveRequest): Promise<MasterDataSaveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6620,12 +8339,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 主数据中拥有某个领域数据的租户信息查询
-   *
-   * @param request MasterDataTenantQueyRequest
-   * @param headers MasterDataTenantQueyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MasterDataTenantQueyResponse
+   * 主数据中拥有某个领域数据的租户信息查询
+   * 
+   * @param request - MasterDataTenantQueyRequest
+   * @param headers - MasterDataTenantQueyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MasterDataTenantQueyResponse
    */
   async masterDataTenantQueyWithOptions(request: MasterDataTenantQueyRequest, headers: MasterDataTenantQueyHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataTenantQueyResponse> {
     Util.validateModel(request);
@@ -6666,10 +8385,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 主数据中拥有某个领域数据的租户信息查询
-   *
-   * @param request MasterDataTenantQueyRequest
-   * @return MasterDataTenantQueyResponse
+   * 主数据中拥有某个领域数据的租户信息查询
+   * 
+   * @param request - MasterDataTenantQueyRequest
+   * @returns MasterDataTenantQueyResponse
    */
   async masterDataTenantQuey(request: MasterDataTenantQueyRequest): Promise<MasterDataTenantQueyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6678,12 +8397,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事主数据查询服务
-   *
-   * @param request MasterDatasQueryRequest
-   * @param headers MasterDatasQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MasterDatasQueryResponse
+   * 智能人事主数据查询服务
+   * 
+   * @param request - MasterDatasQueryRequest
+   * @param headers - MasterDatasQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MasterDatasQueryResponse
    */
   async masterDatasQueryWithOptions(request: MasterDatasQueryRequest, headers: MasterDatasQueryHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDatasQueryResponse> {
     Util.validateModel(request);
@@ -6748,10 +8467,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事主数据查询服务
-   *
-   * @param request MasterDatasQueryRequest
-   * @return MasterDatasQueryResponse
+   * 智能人事主数据查询服务
+   * 
+   * @param request - MasterDatasQueryRequest
+   * @returns MasterDatasQueryResponse
    */
   async masterDatasQuery(request: MasterDatasQueryRequest): Promise<MasterDatasQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6760,12 +8479,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 自定义入职流程数据查询
-   *
-   * @param request QueryCustomEntryProcessesRequest
-   * @param headers QueryCustomEntryProcessesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCustomEntryProcessesResponse
+   * 自定义入职流程数据查询
+   * 
+   * @param request - QueryCustomEntryProcessesRequest
+   * @param headers - QueryCustomEntryProcessesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCustomEntryProcessesResponse
    */
   async queryCustomEntryProcessesWithOptions(request: QueryCustomEntryProcessesRequest, headers: QueryCustomEntryProcessesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomEntryProcessesResponse> {
     Util.validateModel(request);
@@ -6810,10 +8529,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 自定义入职流程数据查询
-   *
-   * @param request QueryCustomEntryProcessesRequest
-   * @return QueryCustomEntryProcessesResponse
+   * 自定义入职流程数据查询
+   * 
+   * @param request - QueryCustomEntryProcessesRequest
+   * @returns QueryCustomEntryProcessesResponse
    */
   async queryCustomEntryProcesses(request: QueryCustomEntryProcessesRequest): Promise<QueryCustomEntryProcessesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6822,12 +8541,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询企业已离职员工列表
-   *
-   * @param request QueryDismissionStaffIdListRequest
-   * @param headers QueryDismissionStaffIdListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDismissionStaffIdListResponse
+   * 查询企业已离职员工列表
+   * 
+   * @param request - QueryDismissionStaffIdListRequest
+   * @param headers - QueryDismissionStaffIdListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDismissionStaffIdListResponse
    */
   async queryDismissionStaffIdListWithOptions(request: QueryDismissionStaffIdListRequest, headers: QueryDismissionStaffIdListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDismissionStaffIdListResponse> {
     Util.validateModel(request);
@@ -6868,10 +8587,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询企业已离职员工列表
-   *
-   * @param request QueryDismissionStaffIdListRequest
-   * @return QueryDismissionStaffIdListResponse
+   * 查询企业已离职员工列表
+   * 
+   * @param request - QueryDismissionStaffIdListRequest
+   * @returns QueryDismissionStaffIdListResponse
    */
   async queryDismissionStaffIdList(request: QueryDismissionStaffIdListRequest): Promise<QueryDismissionStaffIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6880,12 +8599,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据传入的staffId列表，批量查询员工的离职信息
-   *
-   * @param tmpReq QueryHrmEmployeeDismissionInfoRequest
-   * @param headers QueryHrmEmployeeDismissionInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryHrmEmployeeDismissionInfoResponse
+   * 根据传入的staffId列表，批量查询员工的离职信息
+   * 
+   * @param tmpReq - QueryHrmEmployeeDismissionInfoRequest
+   * @param headers - QueryHrmEmployeeDismissionInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryHrmEmployeeDismissionInfoResponse
    */
   async queryHrmEmployeeDismissionInfoWithOptions(tmpReq: QueryHrmEmployeeDismissionInfoRequest, headers: QueryHrmEmployeeDismissionInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHrmEmployeeDismissionInfoResponse> {
     Util.validateModel(tmpReq);
@@ -6928,10 +8647,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据传入的staffId列表，批量查询员工的离职信息
-   *
-   * @param request QueryHrmEmployeeDismissionInfoRequest
-   * @return QueryHrmEmployeeDismissionInfoResponse
+   * 根据传入的staffId列表，批量查询员工的离职信息
+   * 
+   * @param request - QueryHrmEmployeeDismissionInfoRequest
+   * @returns QueryHrmEmployeeDismissionInfoResponse
    */
   async queryHrmEmployeeDismissionInfo(request: QueryHrmEmployeeDismissionInfoRequest): Promise<QueryHrmEmployeeDismissionInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6940,12 +8659,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询企业的职级信息
-   *
-   * @param request QueryJobRanksRequest
-   * @param headers QueryJobRanksHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryJobRanksResponse
+   * 分页查询企业的职级信息
+   * 
+   * @param request - QueryJobRanksRequest
+   * @param headers - QueryJobRanksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryJobRanksResponse
    */
   async queryJobRanksWithOptions(request: QueryJobRanksRequest, headers: QueryJobRanksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobRanksResponse> {
     Util.validateModel(request);
@@ -6998,10 +8717,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询企业的职级信息
-   *
-   * @param request QueryJobRanksRequest
-   * @return QueryJobRanksResponse
+   * 分页查询企业的职级信息
+   * 
+   * @param request - QueryJobRanksRequest
+   * @returns QueryJobRanksResponse
    */
   async queryJobRanks(request: QueryJobRanksRequest): Promise<QueryJobRanksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7010,12 +8729,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询企业职务信息
-   *
-   * @param request QueryJobsRequest
-   * @param headers QueryJobsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryJobsResponse
+   * 分页查询企业职务信息
+   * 
+   * @param request - QueryJobsRequest
+   * @param headers - QueryJobsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryJobsResponse
    */
   async queryJobsWithOptions(request: QueryJobsRequest, headers: QueryJobsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobsResponse> {
     Util.validateModel(request);
@@ -7060,10 +8779,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询企业职务信息
-   *
-   * @param request QueryJobsRequest
-   * @return QueryJobsResponse
+   * 分页查询企业职务信息
+   * 
+   * @param request - QueryJobsRequest
+   * @returns QueryJobsResponse
    */
   async queryJobs(request: QueryJobsRequest): Promise<QueryJobsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7072,12 +8791,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询企业职位信息
-   *
-   * @param request QueryPositionsRequest
-   * @param headers QueryPositionsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryPositionsResponse
+   * 分页查询企业职位信息
+   * 
+   * @param request - QueryPositionsRequest
+   * @param headers - QueryPositionsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryPositionsResponse
    */
   async queryPositionsWithOptions(request: QueryPositionsRequest, headers: QueryPositionsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPositionsResponse> {
     Util.validateModel(request);
@@ -7136,10 +8855,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询企业职位信息
-   *
-   * @param request QueryPositionsRequest
-   * @return QueryPositionsResponse
+   * 分页查询企业职位信息
+   * 
+   * @param request - QueryPositionsRequest
+   * @returns QueryPositionsResponse
    */
   async queryPositions(request: QueryPositionsRequest): Promise<QueryPositionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7148,12 +8867,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询花名册中有权限的字段列表
-   *
-   * @param request RosterMetaAvailableFieldListRequest
-   * @param headers RosterMetaAvailableFieldListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RosterMetaAvailableFieldListResponse
+   * 查询花名册中有权限的字段列表
+   * 
+   * @param request - RosterMetaAvailableFieldListRequest
+   * @param headers - RosterMetaAvailableFieldListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RosterMetaAvailableFieldListResponse
    */
   async rosterMetaAvailableFieldListWithOptions(request: RosterMetaAvailableFieldListRequest, headers: RosterMetaAvailableFieldListHeaders, runtime: $Util.RuntimeOptions): Promise<RosterMetaAvailableFieldListResponse> {
     Util.validateModel(request);
@@ -7190,10 +8909,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询花名册中有权限的字段列表
-   *
-   * @param request RosterMetaAvailableFieldListRequest
-   * @return RosterMetaAvailableFieldListResponse
+   * 查询花名册中有权限的字段列表
+   * 
+   * @param request - RosterMetaAvailableFieldListRequest
+   * @returns RosterMetaAvailableFieldListResponse
    */
   async rosterMetaAvailableFieldList(request: RosterMetaAvailableFieldListRequest): Promise<RosterMetaAvailableFieldListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7202,12 +8921,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事花名册字段选项修改
-   *
-   * @param request RosterMetaFieldOptionsUpdateRequest
-   * @param headers RosterMetaFieldOptionsUpdateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RosterMetaFieldOptionsUpdateResponse
+   * 智能人事花名册字段选项修改
+   * 
+   * @param request - RosterMetaFieldOptionsUpdateRequest
+   * @param headers - RosterMetaFieldOptionsUpdateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RosterMetaFieldOptionsUpdateResponse
    */
   async rosterMetaFieldOptionsUpdateWithOptions(request: RosterMetaFieldOptionsUpdateRequest, headers: RosterMetaFieldOptionsUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<RosterMetaFieldOptionsUpdateResponse> {
     Util.validateModel(request);
@@ -7262,10 +8981,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能人事花名册字段选项修改
-   *
-   * @param request RosterMetaFieldOptionsUpdateRequest
-   * @return RosterMetaFieldOptionsUpdateResponse
+   * 智能人事花名册字段选项修改
+   * 
+   * @param request - RosterMetaFieldOptionsUpdateRequest
+   * @returns RosterMetaFieldOptionsUpdateResponse
    */
   async rosterMetaFieldOptionsUpdate(request: RosterMetaFieldOptionsUpdateRequest): Promise<RosterMetaFieldOptionsUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7274,12 +8993,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV发送卡片消息
-   *
-   * @param request SendIsvCardMessageRequest
-   * @param headers SendIsvCardMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendIsvCardMessageResponse
+   * ISV发送卡片消息
+   * 
+   * @param request - SendIsvCardMessageRequest
+   * @param headers - SendIsvCardMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendIsvCardMessageResponse
    */
   async sendIsvCardMessageWithOptions(request: SendIsvCardMessageRequest, headers: SendIsvCardMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendIsvCardMessageResponse> {
     Util.validateModel(request);
@@ -7346,10 +9065,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV发送卡片消息
-   *
-   * @param request SendIsvCardMessageRequest
-   * @return SendIsvCardMessageResponse
+   * ISV发送卡片消息
+   * 
+   * @param request - SendIsvCardMessageRequest
+   * @returns SendIsvCardMessageResponse
    */
   async sendIsvCardMessage(request: SendIsvCardMessageRequest): Promise<SendIsvCardMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7358,12 +9077,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 初始化解决方案任务
-   *
-   * @param request SolutionTaskInitRequest
-   * @param headers SolutionTaskInitHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SolutionTaskInitResponse
+   * 初始化解决方案任务
+   * 
+   * @param request - SolutionTaskInitRequest
+   * @param headers - SolutionTaskInitHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SolutionTaskInitResponse
    */
   async solutionTaskInitWithOptions(request: SolutionTaskInitRequest, headers: SolutionTaskInitHeaders, runtime: $Util.RuntimeOptions): Promise<SolutionTaskInitResponse> {
     Util.validateModel(request);
@@ -7434,10 +9153,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 初始化解决方案任务
-   *
-   * @param request SolutionTaskInitRequest
-   * @return SolutionTaskInitResponse
+   * 初始化解决方案任务
+   * 
+   * @param request - SolutionTaskInitRequest
+   * @returns SolutionTaskInitResponse
    */
   async solutionTaskInit(request: SolutionTaskInitRequest): Promise<SolutionTaskInitResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7446,12 +9165,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 保存解决方案任务
-   *
-   * @param request SolutionTaskSaveRequest
-   * @param headers SolutionTaskSaveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SolutionTaskSaveResponse
+   * 保存解决方案任务
+   * 
+   * @param request - SolutionTaskSaveRequest
+   * @param headers - SolutionTaskSaveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SolutionTaskSaveResponse
    */
   async solutionTaskSaveWithOptions(request: SolutionTaskSaveRequest, headers: SolutionTaskSaveHeaders, runtime: $Util.RuntimeOptions): Promise<SolutionTaskSaveResponse> {
     Util.validateModel(request);
@@ -7534,10 +9253,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 保存解决方案任务
-   *
-   * @param request SolutionTaskSaveRequest
-   * @return SolutionTaskSaveResponse
+   * 保存解决方案任务
+   * 
+   * @param request - SolutionTaskSaveRequest
+   * @returns SolutionTaskSaveResponse
    */
   async solutionTaskSave(request: SolutionTaskSaveRequest): Promise<SolutionTaskSaveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7546,12 +9265,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步解决方案任务模版
-   *
-   * @param request SyncTaskTemplateRequest
-   * @param headers SyncTaskTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncTaskTemplateResponse
+   * 同步解决方案任务模版
+   * 
+   * @param request - SyncTaskTemplateRequest
+   * @param headers - SyncTaskTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncTaskTemplateResponse
    */
   async syncTaskTemplateWithOptions(request: SyncTaskTemplateRequest, headers: SyncTaskTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTaskTemplateResponse> {
     Util.validateModel(request);
@@ -7622,10 +9341,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步解决方案任务模版
-   *
-   * @param request SyncTaskTemplateRequest
-   * @return SyncTaskTemplateResponse
+   * 同步解决方案任务模版
+   * 
+   * @param request - SyncTaskTemplateRequest
+   * @returns SyncTaskTemplateResponse
    */
   async syncTaskTemplate(request: SyncTaskTemplateRequest): Promise<SyncTaskTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7634,12 +9353,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新法人公司名称
-   *
-   * @param request UpdateHrmLegalEntityNameRequest
-   * @param headers UpdateHrmLegalEntityNameHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateHrmLegalEntityNameResponse
+   * 更新法人公司名称
+   * 
+   * @param request - UpdateHrmLegalEntityNameRequest
+   * @param headers - UpdateHrmLegalEntityNameHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateHrmLegalEntityNameResponse
    */
   async updateHrmLegalEntityNameWithOptions(request: UpdateHrmLegalEntityNameRequest, headers: UpdateHrmLegalEntityNameHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateHrmLegalEntityNameResponse> {
     Util.validateModel(request);
@@ -7684,10 +9403,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新法人公司名称
-   *
-   * @param request UpdateHrmLegalEntityNameRequest
-   * @return UpdateHrmLegalEntityNameResponse
+   * 更新法人公司名称
+   * 
+   * @param request - UpdateHrmLegalEntityNameRequest
+   * @returns UpdateHrmLegalEntityNameResponse
    */
   async updateHrmLegalEntityName(request: UpdateHrmLegalEntityNameRequest): Promise<UpdateHrmLegalEntityNameResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7696,12 +9415,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新法人公司
-   *
-   * @param request UpdateHrmLegalEntityWithoutNameRequest
-   * @param headers UpdateHrmLegalEntityWithoutNameHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateHrmLegalEntityWithoutNameResponse
+   * 更新法人公司
+   * 
+   * @param request - UpdateHrmLegalEntityWithoutNameRequest
+   * @param headers - UpdateHrmLegalEntityWithoutNameHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateHrmLegalEntityWithoutNameResponse
    */
   async updateHrmLegalEntityWithoutNameWithOptions(request: UpdateHrmLegalEntityWithoutNameRequest, headers: UpdateHrmLegalEntityWithoutNameHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateHrmLegalEntityWithoutNameResponse> {
     Util.validateModel(request);
@@ -7768,10 +9487,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新法人公司
-   *
-   * @param request UpdateHrmLegalEntityWithoutNameRequest
-   * @return UpdateHrmLegalEntityWithoutNameResponse
+   * 更新法人公司
+   * 
+   * @param request - UpdateHrmLegalEntityWithoutNameRequest
+   * @returns UpdateHrmLegalEntityWithoutNameResponse
    */
   async updateHrmLegalEntityWithoutName(request: UpdateHrmLegalEntityWithoutNameRequest): Promise<UpdateHrmLegalEntityWithoutNameResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7780,12 +9499,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV更新卡片消息
-   *
-   * @param request UpdateIsvCardMessageRequest
-   * @param headers UpdateIsvCardMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateIsvCardMessageResponse
+   * ISV更新卡片消息
+   * 
+   * @param request - UpdateIsvCardMessageRequest
+   * @param headers - UpdateIsvCardMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateIsvCardMessageResponse
    */
   async updateIsvCardMessageWithOptions(request: UpdateIsvCardMessageRequest, headers: UpdateIsvCardMessageHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateIsvCardMessageResponse> {
     Util.validateModel(request);
@@ -7844,10 +9563,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV更新卡片消息
-   *
-   * @param request UpdateIsvCardMessageRequest
-   * @return UpdateIsvCardMessageResponse
+   * ISV更新卡片消息
+   * 
+   * @param request - UpdateIsvCardMessageRequest
+   * @returns UpdateIsvCardMessageResponse
    */
   async updateIsvCardMessage(request: UpdateIsvCardMessageRequest): Promise<UpdateIsvCardMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });

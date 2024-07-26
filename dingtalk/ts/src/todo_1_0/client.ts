@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -63,6 +61,10 @@ export class CountTodoTasksRequest extends $tea.Model {
 }
 
 export class CountTodoTasksResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 99
+   */
   result?: number;
   static names(): { [key: string]: string } {
     return {
@@ -131,10 +133,18 @@ export class CreatePersonalTodoTaskHeaders extends $tea.Model {
 export class CreatePersonalTodoTaskRequest extends $tea.Model {
   description?: string;
   dueTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   executorIds?: string[];
   notifyConfigs?: CreatePersonalTodoTaskRequestNotifyConfigs;
   participantIds?: string[];
   reminderTimeStamp?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subject?: string;
   static names(): { [key: string]: string } {
     return {
@@ -248,6 +258,10 @@ export class CreateTodoTaskRequest extends $tea.Model {
   participantIds?: string[];
   priority?: number;
   sourceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subject?: string;
   operatorId?: string;
   static names(): { [key: string]: string } {
@@ -298,7 +312,15 @@ export class CreateTodoTaskRequest extends $tea.Model {
 export class CreateTodoTaskResponseBody extends $tea.Model {
   bizTag?: string;
   contentFieldList?: CreateTodoTaskResponseBodyContentFieldList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   createdTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   creatorId?: string;
   description?: string;
   detailUrl?: CreateTodoTaskResponseBodyDetailUrl;
@@ -306,6 +328,10 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
   dueTime?: number;
   executorIds?: string[];
   finishTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
   isOnlyShowExecutor?: boolean;
   modifiedTime?: number;
@@ -317,6 +343,10 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
   source?: string;
   sourceId?: string;
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subject?: string;
   static names(): { [key: string]: string } {
     return {
@@ -426,10 +456,22 @@ export class CreateTodoTypeConfigHeaders extends $tea.Model {
 
 export class CreateTodoTypeConfigRequest extends $tea.Model {
   actionList?: CreateTodoTypeConfigRequestActionList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cardType?: number;
   contentFieldList?: CreateTodoTypeConfigRequestContentFieldList[];
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pcDetailUrlOpenMode?: string;
   operatorId?: string;
   static names(): { [key: string]: string } {
@@ -466,12 +508,32 @@ export class CreateTodoTypeConfigResponseBody extends $tea.Model {
   bizTag?: string;
   cardType?: number;
   contentFieldList?: CreateTodoTypeConfigResponseBodyContentFieldList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   createdTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   creatorId?: string;
   description?: string;
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   modifiedTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   modifierId?: string;
   pcDetailUrlOpenMode?: string;
   requestId?: string;
@@ -1058,12 +1120,32 @@ export class GetTodoTypeConfigResponseBody extends $tea.Model {
   bizTag?: string;
   cardType?: number;
   contentFieldList?: GetTodoTypeConfigResponseBodyContentFieldList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   createdTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   creatorId?: string;
   description?: string;
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   modifiedTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   modifierId?: string;
   pcDetailUrlOpenMode?: string;
   requestId?: string;
@@ -1199,6 +1281,10 @@ export class QueryOrgTodoByUserRequest extends $tea.Model {
 }
 
 export class QueryOrgTodoByUserResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
   nextToken?: string;
   todoCards?: QueryOrgTodoByUserResponseBodyTodoCards[];
@@ -1514,6 +1600,10 @@ export class UpdateTodoTaskRequest extends $tea.Model {
 }
 
 export class UpdateTodoTaskResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1602,6 +1692,10 @@ export class UpdateTodoTaskExecutorStatusRequest extends $tea.Model {
 }
 
 export class UpdateTodoTaskExecutorStatusResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1705,6 +1799,10 @@ export class UpdateTodoTypeConfigRequest extends $tea.Model {
 }
 
 export class UpdateTodoTypeConfigResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2012,6 +2110,10 @@ export class CreateTodoTypeConfigResponseBodyActionList extends $tea.Model {
   actionKey?: string;
   actionType?: number;
   buttonStyleType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nameI18n?: { [key: string]: any };
   url?: string;
   static names(): { [key: string]: string } {
@@ -2198,7 +2300,15 @@ export class GetTodoTaskDetailResponseBodyTodoCardViewTodoCardContentList extend
 
 export class GetTodoTaskDetailResponseBodyTodoCardView extends $tea.Model {
   actionType?: string;
+  /**
+   * @example
+   * standard , nonStandard, 标准卡片和非标准卡片，非标准卡片由第三方接入方自定义
+   */
   cardType?: string;
+  /**
+   * @example
+   * 是 icon, 或者checkbox 类型的
+   */
   circleELType?: string;
   contentType?: string;
   icon?: string;
@@ -2237,6 +2347,10 @@ export class GetTodoTypeConfigResponseBodyActionList extends $tea.Model {
   actionKey?: string;
   actionType?: number;
   buttonStyleType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nameI18n?: { [key: string]: any };
   url?: string;
   static names(): { [key: string]: string } {
@@ -2320,6 +2434,10 @@ export class QueryOrgTodoByUserResponseBodyTodoCards extends $tea.Model {
   isDone?: boolean;
   modifiedTime?: number;
   priority?: number;
+  /**
+   * @example
+   * 一个业务自解释的json格式的字符串
+   */
   sourceExt?: string;
   sourceId?: string;
   subject?: string;
@@ -2521,7 +2639,15 @@ export class QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList 
 
 export class QueryTodoTasksResponseBodyTodoCardsTodoCardView extends $tea.Model {
   actionType?: string;
+  /**
+   * @example
+   * standard , nonStandard, 标准卡片和非标准卡片，非标准卡片由第三方接入方自定义
+   */
   cardType?: string;
+  /**
+   * @example
+   * 是 icon, 或者checkbox 类型的
+   */
   circleELType?: string;
   contentType?: string;
   icon?: string;
@@ -2700,12 +2826,11 @@ export class UpdateTodoTypeConfigRequestContentFieldList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2715,12 +2840,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 查询用户待办计数
-   *
-   * @param request CountTodoTasksRequest
-   * @param headers CountTodoTasksHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CountTodoTasksResponse
+   * 查询用户待办计数
+   * 
+   * @param request - CountTodoTasksRequest
+   * @param headers - CountTodoTasksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CountTodoTasksResponse
    */
   async countTodoTasksWithOptions(unionId: string, request: CountTodoTasksRequest, headers: CountTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<CountTodoTasksResponse> {
     Util.validateModel(request);
@@ -2773,10 +2898,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户待办计数
-   *
-   * @param request CountTodoTasksRequest
-   * @return CountTodoTasksResponse
+   * 查询用户待办计数
+   * 
+   * @param request - CountTodoTasksRequest
+   * @returns CountTodoTasksResponse
    */
   async countTodoTasks(unionId: string, request: CountTodoTasksRequest): Promise<CountTodoTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2785,12 +2910,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 以用户个人身份创建个人待办
-   *
-   * @param request CreatePersonalTodoTaskRequest
-   * @param headers CreatePersonalTodoTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreatePersonalTodoTaskResponse
+   * 以用户个人身份创建个人待办
+   * 
+   * @param request - CreatePersonalTodoTaskRequest
+   * @param headers - CreatePersonalTodoTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreatePersonalTodoTaskResponse
    */
   async createPersonalTodoTaskWithOptions(request: CreatePersonalTodoTaskRequest, headers: CreatePersonalTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreatePersonalTodoTaskResponse> {
     Util.validateModel(request);
@@ -2851,10 +2976,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 以用户个人身份创建个人待办
-   *
-   * @param request CreatePersonalTodoTaskRequest
-   * @return CreatePersonalTodoTaskResponse
+   * 以用户个人身份创建个人待办
+   * 
+   * @param request - CreatePersonalTodoTaskRequest
+   * @returns CreatePersonalTodoTaskResponse
    */
   async createPersonalTodoTask(request: CreatePersonalTodoTaskRequest): Promise<CreatePersonalTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2863,12 +2988,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建待办
-   *
-   * @param request CreateTodoTaskRequest
-   * @param headers CreateTodoTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateTodoTaskResponse
+   * 创建待办
+   * 
+   * @param request - CreateTodoTaskRequest
+   * @param headers - CreateTodoTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateTodoTaskResponse
    */
   async createTodoTaskWithOptions(unionId: string, request: CreateTodoTaskRequest, headers: CreateTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTodoTaskResponse> {
     Util.validateModel(request);
@@ -2963,10 +3088,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建待办
-   *
-   * @param request CreateTodoTaskRequest
-   * @return CreateTodoTaskResponse
+   * 创建待办
+   * 
+   * @param request - CreateTodoTaskRequest
+   * @returns CreateTodoTaskResponse
    */
   async createTodoTask(unionId: string, request: CreateTodoTaskRequest): Promise<CreateTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2975,12 +3100,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建待办卡片类型配置
-   *
-   * @param request CreateTodoTypeConfigRequest
-   * @param headers CreateTodoTypeConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateTodoTypeConfigResponse
+   * 创建待办卡片类型配置
+   * 
+   * @param request - CreateTodoTypeConfigRequest
+   * @param headers - CreateTodoTypeConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateTodoTypeConfigResponse
    */
   async createTodoTypeConfigWithOptions(unionId: string, request: CreateTodoTypeConfigRequest, headers: CreateTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTodoTypeConfigResponse> {
     Util.validateModel(request);
@@ -3043,10 +3168,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建待办卡片类型配置
-   *
-   * @param request CreateTodoTypeConfigRequest
-   * @return CreateTodoTypeConfigResponse
+   * 创建待办卡片类型配置
+   * 
+   * @param request - CreateTodoTypeConfigRequest
+   * @returns CreateTodoTypeConfigResponse
    */
   async createTodoTypeConfig(unionId: string, request: CreateTodoTypeConfigRequest): Promise<CreateTodoTypeConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3055,12 +3180,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除待办
-   *
-   * @param request DeleteTodoTaskRequest
-   * @param headers DeleteTodoTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteTodoTaskResponse
+   * 删除待办
+   * 
+   * @param request - DeleteTodoTaskRequest
+   * @param headers - DeleteTodoTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteTodoTaskResponse
    */
   async deleteTodoTaskWithOptions(unionId: string, taskId: string, request: DeleteTodoTaskRequest, headers: DeleteTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTodoTaskResponse> {
     Util.validateModel(request);
@@ -3097,10 +3222,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除待办
-   *
-   * @param request DeleteTodoTaskRequest
-   * @return DeleteTodoTaskResponse
+   * 删除待办
+   * 
+   * @param request - DeleteTodoTaskRequest
+   * @returns DeleteTodoTaskResponse
    */
   async deleteTodoTask(unionId: string, taskId: string, request: DeleteTodoTaskRequest): Promise<DeleteTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3109,11 +3234,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询待办
-   *
-   * @param headers GetTodoTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTodoTaskResponse
+   * 查询待办
+   * 
+   * @param headers - GetTodoTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTodoTaskResponse
    */
   async getTodoTaskWithOptions(unionId: string, taskId: string, headers: GetTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -3143,9 +3268,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询待办
-   *
-   * @return GetTodoTaskResponse
+   * 查询待办
+   * @returns GetTodoTaskResponse
    */
   async getTodoTask(unionId: string, taskId: string): Promise<GetTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3154,11 +3278,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据sourceId查询待办详情
-   *
-   * @param headers GetTodoTaskBySourceIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTodoTaskBySourceIdResponse
+   * 根据sourceId查询待办详情
+   * 
+   * @param headers - GetTodoTaskBySourceIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTodoTaskBySourceIdResponse
    */
   async getTodoTaskBySourceIdWithOptions(unionId: string, sourceId: string, headers: GetTodoTaskBySourceIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskBySourceIdResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -3188,9 +3312,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据sourceId查询待办详情
-   *
-   * @return GetTodoTaskBySourceIdResponse
+   * 根据sourceId查询待办详情
+   * @returns GetTodoTaskBySourceIdResponse
    */
   async getTodoTaskBySourceId(unionId: string, sourceId: string): Promise<GetTodoTaskBySourceIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3199,11 +3322,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 专属钉根据待办ID查询待办详情
-   *
-   * @param headers GetTodoTaskDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTodoTaskDetailResponse
+   * 专属钉根据待办ID查询待办详情
+   * 
+   * @param headers - GetTodoTaskDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTodoTaskDetailResponse
    */
   async getTodoTaskDetailWithOptions(taskId: string, unionId: string, headers: GetTodoTaskDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskDetailResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -3233,9 +3356,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 专属钉根据待办ID查询待办详情
-   *
-   * @return GetTodoTaskDetailResponse
+   * 专属钉根据待办ID查询待办详情
+   * @returns GetTodoTaskDetailResponse
    */
   async getTodoTaskDetail(taskId: string, unionId: string): Promise<GetTodoTaskDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3244,11 +3366,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据id获取待办卡片类型配置
-   *
-   * @param headers GetTodoTypeConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTodoTypeConfigResponse
+   * 根据id获取待办卡片类型配置
+   * 
+   * @param headers - GetTodoTypeConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTodoTypeConfigResponse
    */
   async getTodoTypeConfigWithOptions(unionId: string, cardTypeId: string, headers: GetTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTypeConfigResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -3278,9 +3400,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据id获取待办卡片类型配置
-   *
-   * @return GetTodoTypeConfigResponse
+   * 根据id获取待办卡片类型配置
+   * @returns GetTodoTypeConfigResponse
    */
   async getTodoTypeConfig(unionId: string, cardTypeId: string): Promise<GetTodoTypeConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3289,12 +3410,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
-   *
-   * @param request QueryOrgTodoByUserRequest
-   * @param headers QueryOrgTodoByUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryOrgTodoByUserResponse
+   * 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
+   * 
+   * @param request - QueryOrgTodoByUserRequest
+   * @param headers - QueryOrgTodoByUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryOrgTodoByUserResponse
    */
   async queryOrgTodoByUserWithOptions(unionId: string, request: QueryOrgTodoByUserRequest, headers: QueryOrgTodoByUserHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgTodoByUserResponse> {
     Util.validateModel(request);
@@ -3363,10 +3484,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
-   *
-   * @param request QueryOrgTodoByUserRequest
-   * @return QueryOrgTodoByUserResponse
+   * 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
+   * 
+   * @param request - QueryOrgTodoByUserRequest
+   * @returns QueryOrgTodoByUserResponse
    */
   async queryOrgTodoByUser(unionId: string, request: QueryOrgTodoByUserRequest): Promise<QueryOrgTodoByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3375,12 +3496,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询企业下用户待办列表
-   *
-   * @param request QueryOrgTodoTasksRequest
-   * @param headers QueryOrgTodoTasksHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryOrgTodoTasksResponse
+   * 查询企业下用户待办列表
+   * 
+   * @param request - QueryOrgTodoTasksRequest
+   * @param headers - QueryOrgTodoTasksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryOrgTodoTasksResponse
    */
   async queryOrgTodoTasksWithOptions(unionId: string, request: QueryOrgTodoTasksRequest, headers: QueryOrgTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgTodoTasksResponse> {
     Util.validateModel(request);
@@ -3421,10 +3542,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询企业下用户待办列表
-   *
-   * @param request QueryOrgTodoTasksRequest
-   * @return QueryOrgTodoTasksResponse
+   * 查询企业下用户待办列表
+   * 
+   * @param request - QueryOrgTodoTasksRequest
+   * @returns QueryOrgTodoTasksResponse
    */
   async queryOrgTodoTasks(unionId: string, request: QueryOrgTodoTasksRequest): Promise<QueryOrgTodoTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3433,12 +3554,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户待办列表
-   *
-   * @param request QueryTodoTasksRequest
-   * @param headers QueryTodoTasksHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryTodoTasksResponse
+   * 查询用户待办列表
+   * 
+   * @param request - QueryTodoTasksRequest
+   * @param headers - QueryTodoTasksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryTodoTasksResponse
    */
   async queryTodoTasksWithOptions(unionId: string, request: QueryTodoTasksRequest, headers: QueryTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTodoTasksResponse> {
     Util.validateModel(request);
@@ -3507,10 +3628,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户待办列表
-   *
-   * @param request QueryTodoTasksRequest
-   * @return QueryTodoTasksResponse
+   * 查询用户待办列表
+   * 
+   * @param request - QueryTodoTasksRequest
+   * @returns QueryTodoTasksResponse
    */
   async queryTodoTasks(unionId: string, request: QueryTodoTasksRequest): Promise<QueryTodoTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3519,12 +3640,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新待办
-   *
-   * @param request UpdateTodoTaskRequest
-   * @param headers UpdateTodoTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTodoTaskResponse
+   * 更新待办
+   * 
+   * @param request - UpdateTodoTaskRequest
+   * @param headers - UpdateTodoTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTodoTaskResponse
    */
   async updateTodoTaskWithOptions(unionId: string, taskId: string, request: UpdateTodoTaskRequest, headers: UpdateTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTaskResponse> {
     Util.validateModel(request);
@@ -3587,10 +3708,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新待办
-   *
-   * @param request UpdateTodoTaskRequest
-   * @return UpdateTodoTaskResponse
+   * 更新待办
+   * 
+   * @param request - UpdateTodoTaskRequest
+   * @returns UpdateTodoTaskResponse
    */
   async updateTodoTask(unionId: string, taskId: string, request: UpdateTodoTaskRequest): Promise<UpdateTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3599,12 +3720,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新待办执行者状态
-   *
-   * @param request UpdateTodoTaskExecutorStatusRequest
-   * @param headers UpdateTodoTaskExecutorStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTodoTaskExecutorStatusResponse
+   * 更新待办执行者状态
+   * 
+   * @param request - UpdateTodoTaskExecutorStatusRequest
+   * @param headers - UpdateTodoTaskExecutorStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTodoTaskExecutorStatusResponse
    */
   async updateTodoTaskExecutorStatusWithOptions(unionId: string, taskId: string, request: UpdateTodoTaskExecutorStatusRequest, headers: UpdateTodoTaskExecutorStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTaskExecutorStatusResponse> {
     Util.validateModel(request);
@@ -3647,10 +3768,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新待办执行者状态
-   *
-   * @param request UpdateTodoTaskExecutorStatusRequest
-   * @return UpdateTodoTaskExecutorStatusResponse
+   * 更新待办执行者状态
+   * 
+   * @param request - UpdateTodoTaskExecutorStatusRequest
+   * @returns UpdateTodoTaskExecutorStatusResponse
    */
   async updateTodoTaskExecutorStatus(unionId: string, taskId: string, request: UpdateTodoTaskExecutorStatusRequest): Promise<UpdateTodoTaskExecutorStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3659,12 +3780,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新待办卡片类型配置
-   *
-   * @param request UpdateTodoTypeConfigRequest
-   * @param headers UpdateTodoTypeConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTodoTypeConfigResponse
+   * 更新待办卡片类型配置
+   * 
+   * @param request - UpdateTodoTypeConfigRequest
+   * @param headers - UpdateTodoTypeConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTodoTypeConfigResponse
    */
   async updateTodoTypeConfigWithOptions(unionId: string, cardTypeId: string, request: UpdateTodoTypeConfigRequest, headers: UpdateTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTypeConfigResponse> {
     Util.validateModel(request);
@@ -3727,10 +3848,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新待办卡片类型配置
-   *
-   * @param request UpdateTodoTypeConfigRequest
-   * @return UpdateTodoTypeConfigResponse
+   * 更新待办卡片类型配置
+   * 
+   * @param request - UpdateTodoTypeConfigRequest
+   * @returns UpdateTodoTypeConfigResponse
    */
   async updateTodoTypeConfig(unionId: string, cardTypeId: string, request: UpdateTodoTypeConfigRequest): Promise<UpdateTodoTypeConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });

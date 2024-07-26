@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -55,8 +53,26 @@ export class ApplyFollowerAuthInfoHeaders extends $tea.Model {
 
 export class ApplyFollowerAuthInfoRequest extends $tea.Model {
   appAuthKey?: string;
+  /**
+   * @example
+   * Contact.User.mobile
+   */
   fieldScope?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sid22b31b4bf59ef2c783f7
+   */
   sessionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * idzb26bxl64vqx2keyi
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -82,6 +98,10 @@ export class ApplyFollowerAuthInfoRequest extends $tea.Model {
 }
 
 export class ApplyFollowerAuthInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: ApplyFollowerAuthInfoResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -148,9 +168,37 @@ export class CallbackRegiesterHeaders extends $tea.Model {
 }
 
 export class CallbackRegiesterRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3b89df4dfaaccd5b8e1f9a2
+   */
   apiSecret?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abc-123
+   */
   callbackKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://www.your.com/callback
+   */
   callbackUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * shortcut
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -176,6 +224,10 @@ export class CallbackRegiesterRequest extends $tea.Model {
 }
 
 export class CallbackRegiesterResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: CallbackRegiesterResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -242,6 +294,10 @@ export class CloseTopBoxInteractiveOTOMessageHeaders extends $tea.Model {
 }
 
 export class CloseTopBoxInteractiveOTOMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   detail?: CloseTopBoxInteractiveOTOMessageRequestDetail;
   static names(): { [key: string]: string } {
     return {
@@ -330,7 +386,18 @@ export class GetFollowerAuthInfoHeaders extends $tea.Model {
 }
 
 export class GetFollowerAuthInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * ding1234
+   */
   accountId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Rp3Rqcts7BE08y49Jr6iu6xW4iQ
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -352,6 +419,10 @@ export class GetFollowerAuthInfoRequest extends $tea.Model {
 }
 
 export class GetFollowerAuthInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: GetFollowerAuthInfoResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -418,8 +489,20 @@ export class GetFollowerInfoHeaders extends $tea.Model {
 }
 
 export class GetFollowerInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * ding1234
+   */
   accountId?: string;
+  /**
+   * @example
+   * UgIzXXo+Rp3Rqcts7BE08y49Jr6iu6xW4iQ
+   */
   unionId?: string;
+  /**
+   * @example
+   * Rp3Rqcts7BE08y49Jr6iu6xW4iQ
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -444,6 +527,10 @@ export class GetFollowerInfoRequest extends $tea.Model {
 
 export class GetFollowerInfoResponseBody extends $tea.Model {
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: GetFollowerInfoResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -512,7 +599,21 @@ export class GetPictureDownloadUrlHeaders extends $tea.Model {
 }
 
 export class GetPictureDownloadUrlRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * UgIzXXo+Rp3Rqcts7BE08y49Jr6iu6xW4iQ
+   */
   downloadCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sid001234
+   */
   sessionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -535,6 +636,10 @@ export class GetPictureDownloadUrlRequest extends $tea.Model {
 
 export class GetPictureDownloadUrlResponseBody extends $tea.Model {
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: GetPictureDownloadUrlResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -603,8 +708,20 @@ export class GetUserFollowStatusHeaders extends $tea.Model {
 }
 
 export class GetUserFollowStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * ding1234
+   */
   accountId?: string;
+  /**
+   * @example
+   * UgIzXXo+Rp3Rqcts7BE08y49Jr6iu6xW4iQ
+   */
   unionId?: string;
+  /**
+   * @example
+   * Rp3Rqcts7BE08y49Jr6iu6xW4iQ
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -628,6 +745,10 @@ export class GetUserFollowStatusRequest extends $tea.Model {
 }
 
 export class GetUserFollowStatusResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: GetUserFollowStatusResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -826,8 +947,20 @@ export class ListFollowerHeaders extends $tea.Model {
 }
 
 export class ListFollowerRequest extends $tea.Model {
+  /**
+   * @example
+   * ding1234
+   */
   accountId?: string;
+  /**
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @example
+   * Rp3Rqcts7BE08y49Jr6iu6xW4iQ
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -852,6 +985,10 @@ export class ListFollowerRequest extends $tea.Model {
 
 export class ListFollowerResponseBody extends $tea.Model {
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: ListFollowerResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -920,7 +1057,18 @@ export class QueryUserFollowStatusHeaders extends $tea.Model {
 }
 
 export class QueryUserFollowStatusRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding1234
+   */
   accountId?: string;
+  /**
+   * @example
+   * UgIzXXo+Rp3Rqcts7BE08y49Jr6iu6xW4iQ
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -942,6 +1090,10 @@ export class QueryUserFollowStatusRequest extends $tea.Model {
 }
 
 export class QueryUserFollowStatusResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: QueryUserFollowStatusResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -1008,6 +1160,10 @@ export class SendAgentOTOMessageHeaders extends $tea.Model {
 }
 
 export class SendAgentOTOMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   detail?: SendAgentOTOMessageRequestDetail;
   static names(): { [key: string]: string } {
     return {
@@ -1028,6 +1184,10 @@ export class SendAgentOTOMessageRequest extends $tea.Model {
 
 export class SendAgentOTOMessageResponseBody extends $tea.Model {
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: SendAgentOTOMessageResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -1096,6 +1256,10 @@ export class SendInteractiveOTOMessageHeaders extends $tea.Model {
 }
 
 export class SendInteractiveOTOMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   detail?: SendInteractiveOTOMessageRequestDetail;
   static names(): { [key: string]: string } {
     return {
@@ -1116,6 +1280,10 @@ export class SendInteractiveOTOMessageRequest extends $tea.Model {
 
 export class SendInteractiveOTOMessageResponseBody extends $tea.Model {
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: SendInteractiveOTOMessageResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -1184,6 +1352,10 @@ export class SendTopBoxInteractiveOTOMessageHeaders extends $tea.Model {
 }
 
 export class SendTopBoxInteractiveOTOMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   detail?: SendTopBoxInteractiveOTOMessageRequestDetail;
   static names(): { [key: string]: string } {
     return {
@@ -1272,6 +1444,10 @@ export class UpdateInteractiveOTOMessageHeaders extends $tea.Model {
 }
 
 export class UpdateInteractiveOTOMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   detail?: UpdateInteractiveOTOMessageRequestDetail;
   static names(): { [key: string]: string } {
     return {
@@ -1292,6 +1468,10 @@ export class UpdateInteractiveOTOMessageRequest extends $tea.Model {
 
 export class UpdateInteractiveOTOMessageResponseBody extends $tea.Model {
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: UpdateInteractiveOTOMessageResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -1361,7 +1541,21 @@ export class UpdateShortcutsHeaders extends $tea.Model {
 
 export class UpdateShortcutsRequest extends $tea.Model {
   details?: UpdateShortcutsRequestDetails[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sid001234
+   */
   sessionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * idzb26bxl64vqx2keyi
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1429,6 +1623,10 @@ export class UpdateShortcutsResponse extends $tea.Model {
 }
 
 export class ApplyFollowerAuthInfoResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openApplyId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1449,6 +1647,10 @@ export class ApplyFollowerAuthInfoResponseBodyResult extends $tea.Model {
 
 export class CallbackRegiesterResponseBodyResult extends $tea.Model {
   apiSecret?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   callbackUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1470,8 +1672,29 @@ export class CallbackRegiesterResponseBodyResult extends $tea.Model {
 }
 
 export class CloseTopBoxInteractiveOTOMessageRequestDetail extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * service-card-20220824-001
+   */
   cardBizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3erkfi-42b0-4c83-bc56-ffhssde43
+   */
   cardTemplateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user001
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1583,8 +1806,20 @@ export class GetFollowerAuthInfoResponseBodyResult extends $tea.Model {
 }
 
 export class GetFollowerInfoResponseBodyResultUser extends $tea.Model {
+  /**
+   * @example
+   * 小钉
+   */
   name?: string;
+  /**
+   * @example
+   * 1661918406748
+   */
   timestamp?: string;
+  /**
+   * @example
+   * userId
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1627,6 +1862,13 @@ export class GetFollowerInfoResponseBodyResult extends $tea.Model {
 }
 
 export class GetPictureDownloadUrlResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FOLLOWED
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1775,7 +2017,15 @@ export class QueryUserFollowStatusResponseBodyResult extends $tea.Model {
 }
 
 export class SendAgentOTOMessageRequestDetailMessageBodyActionCardButtonList extends $tea.Model {
+  /**
+   * @example
+   * https://www.dingtalk.com/
+   */
   actionUrl?: string;
+  /**
+   * @example
+   * 查看详情
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1798,10 +2048,30 @@ export class SendAgentOTOMessageRequestDetailMessageBodyActionCardButtonList ext
 
 export class SendAgentOTOMessageRequestDetailMessageBodyActionCard extends $tea.Model {
   buttonList?: SendAgentOTOMessageRequestDetailMessageBodyActionCardButtonList[];
+  /**
+   * @example
+   * 1
+   */
   buttonOrientation?: string;
+  /**
+   * @example
+   * **提示信息**
+   */
   markdown?: string;
+  /**
+   * @example
+   * 查看详情
+   */
   singleTitle?: string;
+  /**
+   * @example
+   * https://www.yourdomain.com
+   */
   singleUrl?: string;
+  /**
+   * @example
+   * 欢迎使用
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1878,9 +2148,25 @@ export class SendAgentOTOMessageRequestDetailMessageBodyInteractiveMessage exten
 }
 
 export class SendAgentOTOMessageRequestDetailMessageBodyLink extends $tea.Model {
+  /**
+   * @example
+   * https://www.yourdomain.com
+   */
   messageUrl?: string;
+  /**
+   * @example
+   * @1234-456
+   */
   picUrl?: string;
+  /**
+   * @example
+   * 欢迎使用
+   */
   text?: string;
+  /**
+   * @example
+   * 点击查看
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1906,7 +2192,15 @@ export class SendAgentOTOMessageRequestDetailMessageBodyLink extends $tea.Model 
 }
 
 export class SendAgentOTOMessageRequestDetailMessageBodyMarkdown extends $tea.Model {
+  /**
+   * @example
+   * 欢迎使用。
+   */
   text?: string;
+  /**
+   * @example
+   * 欢迎使用。
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1928,6 +2222,10 @@ export class SendAgentOTOMessageRequestDetailMessageBodyMarkdown extends $tea.Mo
 }
 
 export class SendAgentOTOMessageRequestDetailMessageBodyText extends $tea.Model {
+  /**
+   * @example
+   * 你好，欢迎使用服务窗。
+   */
   content?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1981,10 +2279,42 @@ export class SendAgentOTOMessageRequestDetailMessageBody extends $tea.Model {
 }
 
 export class SendAgentOTOMessageRequestDetail extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   messageBody?: SendAgentOTOMessageRequestDetailMessageBody;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * text
+   */
   msgType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sid002b6dbb4f963e93e0
+   */
   sessionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user0001
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234-5678-000
+   */
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2012,6 +2342,10 @@ export class SendAgentOTOMessageRequestDetail extends $tea.Model {
 }
 
 export class SendAgentOTOMessageResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openPushId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2031,11 +2365,44 @@ export class SendAgentOTOMessageResponseBodyResult extends $tea.Model {
 }
 
 export class SendInteractiveOTOMessageRequestDetail extends $tea.Model {
+  /**
+   * @example
+   * https://www.youurl.com/callback/card
+   */
   callbackUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * service-card-20220824-001
+   */
   cardBizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cardData?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3erkfi-42b0-4c83-bc56-ffhssde43
+   */
   cardTemplateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user0001
+   */
   userId?: string;
+  /**
+   * @example
+   * {"user001":""}
+   */
   userIdPrivateDataMap?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2065,6 +2432,10 @@ export class SendInteractiveOTOMessageRequestDetail extends $tea.Model {
 }
 
 export class SendInteractiveOTOMessageResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openPushId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2106,11 +2477,44 @@ export class SendTopBoxInteractiveOTOMessageRequestDetailCardData extends $tea.M
 }
 
 export class SendTopBoxInteractiveOTOMessageRequestDetail extends $tea.Model {
+  /**
+   * @example
+   * https://www.youurl.com/callback/card
+   */
   callbackUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * service-card-20220824-001
+   */
   cardBizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cardData?: SendTopBoxInteractiveOTOMessageRequestDetailCardData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3erkfi-42b0-4c83-bc56-ffhssde43
+   */
   cardTemplateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   expiredTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user001
+   */
   userId?: string;
   userIdPrivateDataMap?: { [key: string]: DetailUserIdPrivateDataMapValue };
   static names(): { [key: string]: string } {
@@ -2165,9 +2569,24 @@ export class UpdateInteractiveOTOMessageRequestDetailUpdateOptions extends $tea.
 }
 
 export class UpdateInteractiveOTOMessageRequestDetail extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * service-card-202208240001
+   */
   cardBizId?: string;
+  /**
+   * @example
+   * {"like":1}
+   */
   cardData?: string;
   updateOptions?: UpdateInteractiveOTOMessageRequestDetailUpdateOptions;
+  /**
+   * @example
+   * {"userI":""}
+   */
   userIdPrivateDataMap?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2193,6 +2612,10 @@ export class UpdateInteractiveOTOMessageRequestDetail extends $tea.Model {
 }
 
 export class UpdateInteractiveOTOMessageResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   openPushId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2212,12 +2635,49 @@ export class UpdateInteractiveOTOMessageResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateShortcutsRequestDetails extends $tea.Model {
+  /**
+   * @example
+   * https://dingtalk.com
+   */
   actionUrl?: string;
+  /**
+   * @example
+   * 033bd94b1168d7e4f0d644c3c95e35bf
+   */
   callbackKey?: string;
+  /**
+   * @example
+   * e73e
+   */
   iconFont?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * @lADPDg7mWPzw0i_NArzNArw
+   */
   iconMediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * test123456
+   */
   shortcutId?: string;
+  /**
+   * @example
+   * @lADPDg7mWPzw0i_NArzNArw
+   */
   slideIconMediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2250,12 +2710,11 @@ export class UpdateShortcutsRequestDetails extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2265,12 +2724,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 发送用户授权信息申请
-   *
-   * @param request ApplyFollowerAuthInfoRequest
-   * @param headers ApplyFollowerAuthInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ApplyFollowerAuthInfoResponse
+   * 发送用户授权信息申请
+   * 
+   * @param request - ApplyFollowerAuthInfoRequest
+   * @param headers - ApplyFollowerAuthInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ApplyFollowerAuthInfoResponse
    */
   async applyFollowerAuthInfoWithOptions(request: ApplyFollowerAuthInfoRequest, headers: ApplyFollowerAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<ApplyFollowerAuthInfoResponse> {
     Util.validateModel(request);
@@ -2319,10 +2778,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送用户授权信息申请
-   *
-   * @param request ApplyFollowerAuthInfoRequest
-   * @return ApplyFollowerAuthInfoResponse
+   * 发送用户授权信息申请
+   * 
+   * @param request - ApplyFollowerAuthInfoRequest
+   * @returns ApplyFollowerAuthInfoResponse
    */
   async applyFollowerAuthInfo(request: ApplyFollowerAuthInfoRequest): Promise<ApplyFollowerAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2331,12 +2790,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 注册服务窗消息回调服务
-   *
-   * @param request CallbackRegiesterRequest
-   * @param headers CallbackRegiesterHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CallbackRegiesterResponse
+   * 注册服务窗消息回调服务
+   * 
+   * @param request - CallbackRegiesterRequest
+   * @param headers - CallbackRegiesterHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CallbackRegiesterResponse
    */
   async callbackRegiesterWithOptions(request: CallbackRegiesterRequest, headers: CallbackRegiesterHeaders, runtime: $Util.RuntimeOptions): Promise<CallbackRegiesterResponse> {
     Util.validateModel(request);
@@ -2385,10 +2844,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 注册服务窗消息回调服务
-   *
-   * @param request CallbackRegiesterRequest
-   * @return CallbackRegiesterResponse
+   * 注册服务窗消息回调服务
+   * 
+   * @param request - CallbackRegiesterRequest
+   * @returns CallbackRegiesterResponse
    */
   async callbackRegiester(request: CallbackRegiesterRequest): Promise<CallbackRegiesterResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2397,12 +2856,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗吊顶卡片关闭接口
-   *
-   * @param request CloseTopBoxInteractiveOTOMessageRequest
-   * @param headers CloseTopBoxInteractiveOTOMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CloseTopBoxInteractiveOTOMessageResponse
+   * 服务窗吊顶卡片关闭接口
+   * 
+   * @param request - CloseTopBoxInteractiveOTOMessageRequest
+   * @param headers - CloseTopBoxInteractiveOTOMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CloseTopBoxInteractiveOTOMessageResponse
    */
   async closeTopBoxInteractiveOTOMessageWithOptions(request: CloseTopBoxInteractiveOTOMessageRequest, headers: CloseTopBoxInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<CloseTopBoxInteractiveOTOMessageResponse> {
     Util.validateModel(request);
@@ -2439,10 +2898,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗吊顶卡片关闭接口
-   *
-   * @param request CloseTopBoxInteractiveOTOMessageRequest
-   * @return CloseTopBoxInteractiveOTOMessageResponse
+   * 服务窗吊顶卡片关闭接口
+   * 
+   * @param request - CloseTopBoxInteractiveOTOMessageRequest
+   * @returns CloseTopBoxInteractiveOTOMessageResponse
    */
   async closeTopBoxInteractiveOTOMessage(request: CloseTopBoxInteractiveOTOMessageRequest): Promise<CloseTopBoxInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2451,12 +2910,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户授权信息
-   *
-   * @param request GetFollowerAuthInfoRequest
-   * @param headers GetFollowerAuthInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFollowerAuthInfoResponse
+   * 获取用户授权信息
+   * 
+   * @param request - GetFollowerAuthInfoRequest
+   * @param headers - GetFollowerAuthInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFollowerAuthInfoResponse
    */
   async getFollowerAuthInfoWithOptions(request: GetFollowerAuthInfoRequest, headers: GetFollowerAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFollowerAuthInfoResponse> {
     Util.validateModel(request);
@@ -2497,10 +2956,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户授权信息
-   *
-   * @param request GetFollowerAuthInfoRequest
-   * @return GetFollowerAuthInfoResponse
+   * 获取用户授权信息
+   * 
+   * @param request - GetFollowerAuthInfoRequest
+   * @returns GetFollowerAuthInfoResponse
    */
   async getFollowerAuthInfo(request: GetFollowerAuthInfoRequest): Promise<GetFollowerAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2509,12 +2968,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取服务窗关注人信息
-   *
-   * @param request GetFollowerInfoRequest
-   * @param headers GetFollowerInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFollowerInfoResponse
+   * 获取服务窗关注人信息
+   * 
+   * @param request - GetFollowerInfoRequest
+   * @param headers - GetFollowerInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFollowerInfoResponse
    */
   async getFollowerInfoWithOptions(request: GetFollowerInfoRequest, headers: GetFollowerInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFollowerInfoResponse> {
     Util.validateModel(request);
@@ -2559,10 +3018,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取服务窗关注人信息
-   *
-   * @param request GetFollowerInfoRequest
-   * @return GetFollowerInfoResponse
+   * 获取服务窗关注人信息
+   * 
+   * @param request - GetFollowerInfoRequest
+   * @returns GetFollowerInfoResponse
    */
   async getFollowerInfo(request: GetFollowerInfoRequest): Promise<GetFollowerInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2571,12 +3030,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗图片消息下载地址获取接口
-   *
-   * @param request GetPictureDownloadUrlRequest
-   * @param headers GetPictureDownloadUrlHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPictureDownloadUrlResponse
+   * 服务窗图片消息下载地址获取接口
+   * 
+   * @param request - GetPictureDownloadUrlRequest
+   * @param headers - GetPictureDownloadUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPictureDownloadUrlResponse
    */
   async getPictureDownloadUrlWithOptions(request: GetPictureDownloadUrlRequest, headers: GetPictureDownloadUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetPictureDownloadUrlResponse> {
     Util.validateModel(request);
@@ -2617,10 +3076,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗图片消息下载地址获取接口
-   *
-   * @param request GetPictureDownloadUrlRequest
-   * @return GetPictureDownloadUrlResponse
+   * 服务窗图片消息下载地址获取接口
+   * 
+   * @param request - GetPictureDownloadUrlRequest
+   * @returns GetPictureDownloadUrlResponse
    */
   async getPictureDownloadUrl(request: GetPictureDownloadUrlRequest): Promise<GetPictureDownloadUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2629,12 +3088,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户关注状态
-   *
-   * @param request GetUserFollowStatusRequest
-   * @param headers GetUserFollowStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserFollowStatusResponse
+   * 获取用户关注状态
+   * 
+   * @param request - GetUserFollowStatusRequest
+   * @param headers - GetUserFollowStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserFollowStatusResponse
    */
   async getUserFollowStatusWithOptions(request: GetUserFollowStatusRequest, headers: GetUserFollowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserFollowStatusResponse> {
     Util.validateModel(request);
@@ -2679,10 +3138,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户关注状态
-   *
-   * @param request GetUserFollowStatusRequest
-   * @return GetUserFollowStatusResponse
+   * 获取用户关注状态
+   * 
+   * @param request - GetUserFollowStatusRequest
+   * @returns GetUserFollowStatusResponse
    */
   async getUserFollowStatus(request: GetUserFollowStatusRequest): Promise<GetUserFollowStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2691,11 +3150,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业下服务窗帐号列表
-   *
-   * @param headers ListAccountHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListAccountResponse
+   * 获取企业下服务窗帐号列表
+   * 
+   * @param headers - ListAccountHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListAccountResponse
    */
   async listAccountWithOptions(headers: ListAccountHeaders, runtime: $Util.RuntimeOptions): Promise<ListAccountResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -2725,9 +3184,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业下服务窗帐号列表
-   *
-   * @return ListAccountResponse
+   * 获取企业下服务窗帐号列表
+   * @returns ListAccountResponse
    */
   async listAccount(): Promise<ListAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2736,11 +3194,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 第三方企业应用查询服务窗帐号列表
-   *
-   * @param headers ListAccountInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListAccountInfoResponse
+   * 第三方企业应用查询服务窗帐号列表
+   * 
+   * @param headers - ListAccountInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListAccountInfoResponse
    */
   async listAccountInfoWithOptions(headers: ListAccountInfoHeaders, runtime: $Util.RuntimeOptions): Promise<ListAccountInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -2770,9 +3228,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 第三方企业应用查询服务窗帐号列表
-   *
-   * @return ListAccountInfoResponse
+   * 第三方企业应用查询服务窗帐号列表
+   * @returns ListAccountInfoResponse
    */
   async listAccountInfo(): Promise<ListAccountInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2781,12 +3238,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取服务窗关注人列表
-   *
-   * @param request ListFollowerRequest
-   * @param headers ListFollowerHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListFollowerResponse
+   * 批量获取服务窗关注人列表
+   * 
+   * @param request - ListFollowerRequest
+   * @param headers - ListFollowerHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListFollowerResponse
    */
   async listFollowerWithOptions(request: ListFollowerRequest, headers: ListFollowerHeaders, runtime: $Util.RuntimeOptions): Promise<ListFollowerResponse> {
     Util.validateModel(request);
@@ -2831,10 +3288,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取服务窗关注人列表
-   *
-   * @param request ListFollowerRequest
-   * @return ListFollowerResponse
+   * 批量获取服务窗关注人列表
+   * 
+   * @param request - ListFollowerRequest
+   * @returns ListFollowerResponse
    */
   async listFollower(request: ListFollowerRequest): Promise<ListFollowerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2843,12 +3300,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 第三方企业应用查询用户是否关注服务窗
-   *
-   * @param request QueryUserFollowStatusRequest
-   * @param headers QueryUserFollowStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryUserFollowStatusResponse
+   * 第三方企业应用查询用户是否关注服务窗
+   * 
+   * @param request - QueryUserFollowStatusRequest
+   * @param headers - QueryUserFollowStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryUserFollowStatusResponse
    */
   async queryUserFollowStatusWithOptions(request: QueryUserFollowStatusRequest, headers: QueryUserFollowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserFollowStatusResponse> {
     Util.validateModel(request);
@@ -2889,10 +3346,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 第三方企业应用查询用户是否关注服务窗
-   *
-   * @param request QueryUserFollowStatusRequest
-   * @return QueryUserFollowStatusResponse
+   * 第三方企业应用查询用户是否关注服务窗
+   * 
+   * @param request - QueryUserFollowStatusRequest
+   * @returns QueryUserFollowStatusResponse
    */
   async queryUserFollowStatus(request: QueryUserFollowStatusRequest): Promise<QueryUserFollowStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2901,12 +3358,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送服务窗客服消息
-   *
-   * @param request SendAgentOTOMessageRequest
-   * @param headers SendAgentOTOMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendAgentOTOMessageResponse
+   * 发送服务窗客服消息
+   * 
+   * @param request - SendAgentOTOMessageRequest
+   * @param headers - SendAgentOTOMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendAgentOTOMessageResponse
    */
   async sendAgentOTOMessageWithOptions(request: SendAgentOTOMessageRequest, headers: SendAgentOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendAgentOTOMessageResponse> {
     Util.validateModel(request);
@@ -2943,10 +3400,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送服务窗客服消息
-   *
-   * @param request SendAgentOTOMessageRequest
-   * @return SendAgentOTOMessageResponse
+   * 发送服务窗客服消息
+   * 
+   * @param request - SendAgentOTOMessageRequest
+   * @returns SendAgentOTOMessageResponse
    */
   async sendAgentOTOMessage(request: SendAgentOTOMessageRequest): Promise<SendAgentOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2955,12 +3412,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗互动卡片单发接口
-   *
-   * @param request SendInteractiveOTOMessageRequest
-   * @param headers SendInteractiveOTOMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendInteractiveOTOMessageResponse
+   * 服务窗互动卡片单发接口
+   * 
+   * @param request - SendInteractiveOTOMessageRequest
+   * @param headers - SendInteractiveOTOMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendInteractiveOTOMessageResponse
    */
   async sendInteractiveOTOMessageWithOptions(request: SendInteractiveOTOMessageRequest, headers: SendInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendInteractiveOTOMessageResponse> {
     Util.validateModel(request);
@@ -2997,10 +3454,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗互动卡片单发接口
-   *
-   * @param request SendInteractiveOTOMessageRequest
-   * @return SendInteractiveOTOMessageResponse
+   * 服务窗互动卡片单发接口
+   * 
+   * @param request - SendInteractiveOTOMessageRequest
+   * @returns SendInteractiveOTOMessageResponse
    */
   async sendInteractiveOTOMessage(request: SendInteractiveOTOMessageRequest): Promise<SendInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3009,12 +3466,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗吊顶卡片发送接口
-   *
-   * @param request SendTopBoxInteractiveOTOMessageRequest
-   * @param headers SendTopBoxInteractiveOTOMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendTopBoxInteractiveOTOMessageResponse
+   * 服务窗吊顶卡片发送接口
+   * 
+   * @param request - SendTopBoxInteractiveOTOMessageRequest
+   * @param headers - SendTopBoxInteractiveOTOMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendTopBoxInteractiveOTOMessageResponse
    */
   async sendTopBoxInteractiveOTOMessageWithOptions(request: SendTopBoxInteractiveOTOMessageRequest, headers: SendTopBoxInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendTopBoxInteractiveOTOMessageResponse> {
     Util.validateModel(request);
@@ -3051,10 +3508,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗吊顶卡片发送接口
-   *
-   * @param request SendTopBoxInteractiveOTOMessageRequest
-   * @return SendTopBoxInteractiveOTOMessageResponse
+   * 服务窗吊顶卡片发送接口
+   * 
+   * @param request - SendTopBoxInteractiveOTOMessageRequest
+   * @returns SendTopBoxInteractiveOTOMessageResponse
    */
   async sendTopBoxInteractiveOTOMessage(request: SendTopBoxInteractiveOTOMessageRequest): Promise<SendTopBoxInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3063,12 +3520,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗互动卡片修改接口
-   *
-   * @param request UpdateInteractiveOTOMessageRequest
-   * @param headers UpdateInteractiveOTOMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInteractiveOTOMessageResponse
+   * 服务窗互动卡片修改接口
+   * 
+   * @param request - UpdateInteractiveOTOMessageRequest
+   * @param headers - UpdateInteractiveOTOMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInteractiveOTOMessageResponse
    */
   async updateInteractiveOTOMessageWithOptions(request: UpdateInteractiveOTOMessageRequest, headers: UpdateInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInteractiveOTOMessageResponse> {
     Util.validateModel(request);
@@ -3105,10 +3562,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗互动卡片修改接口
-   *
-   * @param request UpdateInteractiveOTOMessageRequest
-   * @return UpdateInteractiveOTOMessageResponse
+   * 服务窗互动卡片修改接口
+   * 
+   * @param request - UpdateInteractiveOTOMessageRequest
+   * @returns UpdateInteractiveOTOMessageResponse
    */
   async updateInteractiveOTOMessage(request: UpdateInteractiveOTOMessageRequest): Promise<UpdateInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3117,12 +3574,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗会话窗口快捷栏配置接口
-   *
-   * @param request UpdateShortcutsRequest
-   * @param headers UpdateShortcutsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateShortcutsResponse
+   * 服务窗会话窗口快捷栏配置接口
+   * 
+   * @param request - UpdateShortcutsRequest
+   * @param headers - UpdateShortcutsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateShortcutsResponse
    */
   async updateShortcutsWithOptions(request: UpdateShortcutsRequest, headers: UpdateShortcutsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateShortcutsResponse> {
     Util.validateModel(request);
@@ -3167,10 +3624,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 服务窗会话窗口快捷栏配置接口
-   *
-   * @param request UpdateShortcutsRequest
-   * @return UpdateShortcutsResponse
+   * 服务窗会话窗口快捷栏配置接口
+   * 
+   * @param request - UpdateShortcutsRequest
+   * @returns UpdateShortcutsResponse
    */
   async updateShortcuts(request: UpdateShortcutsRequest): Promise<UpdateShortcutsResponse> {
     let runtime = new $Util.RuntimeOptions({ });

@@ -1,17 +1,27 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class ResultItemsDentryAppPropertiesValue extends $tea.Model {
+  /**
+   * @example
+   * property_name
+   */
   name?: string;
+  /**
+   * @example
+   * property_value
+   */
   value?: string;
+  /**
+   * @example
+   * PRIVATE
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -35,8 +45,20 @@ export class ResultItemsDentryAppPropertiesValue extends $tea.Model {
 }
 
 export class DentryAppPropertiesValue extends $tea.Model {
+  /**
+   * @example
+   * property_name
+   */
   name?: string;
+  /**
+   * @example
+   * property_value
+   */
   value?: string;
+  /**
+   * @example
+   * PRIVATE
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -60,8 +82,20 @@ export class DentryAppPropertiesValue extends $tea.Model {
 }
 
 export class DentriesAppPropertiesValue extends $tea.Model {
+  /**
+   * @example
+   * property_name
+   */
   name?: string;
+  /**
+   * @example
+   * property_value
+   */
   value?: string;
+  /**
+   * @example
+   * PRIVATE
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -107,8 +141,19 @@ export class GetDentriesHeaders extends $tea.Model {
 }
 
 export class GetDentriesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dentryIds?: string[];
   option?: GetDentriesRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -199,6 +244,13 @@ export class GetDentryHeaders extends $tea.Model {
 
 export class GetDentryRequest extends $tea.Model {
   option?: GetDentryRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -286,7 +338,18 @@ export class GetDentryThumbnailsHeaders extends $tea.Model {
 }
 
 export class GetDentryThumbnailsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dentryIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -375,6 +438,13 @@ export class GetFileDownloadInfoHeaders extends $tea.Model {
 
 export class GetFileDownloadInfoRequest extends $tea.Model {
   option?: GetFileDownloadInfoRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -397,6 +467,10 @@ export class GetFileDownloadInfoRequest extends $tea.Model {
 
 export class GetFileDownloadInfoResponseBody extends $tea.Model {
   headerSignatureInfo?: GetFileDownloadInfoResponseBodyHeaderSignatureInfo;
+  /**
+   * @example
+   * HEADER_SIGNATURE
+   */
   protocol?: string;
   static names(): { [key: string]: string } {
     return {
@@ -465,7 +539,21 @@ export class GetSpaceHeaders extends $tea.Model {
 }
 
 export class GetSpaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * open_conversation_id
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -554,6 +642,13 @@ export class ListAllDentriesHeaders extends $tea.Model {
 
 export class ListAllDentriesRequest extends $tea.Model {
   option?: ListAllDentriesRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -576,6 +671,10 @@ export class ListAllDentriesRequest extends $tea.Model {
 
 export class ListAllDentriesResponseBody extends $tea.Model {
   dentries?: ListAllDentriesResponseBodyDentries[];
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -644,12 +743,46 @@ export class ListDentriesHeaders extends $tea.Model {
 }
 
 export class ListDentriesRequest extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
+  /**
+   * @example
+   * DESC
+   */
   order?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   orderBy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
+  /**
+   * @example
+   * true
+   */
   withThumbnail?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -682,6 +815,10 @@ export class ListDentriesRequest extends $tea.Model {
 
 export class ListDentriesResponseBody extends $tea.Model {
   dentries?: ListDentriesResponseBodyDentries[];
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -750,8 +887,22 @@ export class ListExpiredHeaders extends $tea.Model {
 }
 
 export class ListExpiredRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * open_conversation_id
+   */
   openConversationId?: string;
   option?: ListExpiredRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -776,6 +927,10 @@ export class ListExpiredRequest extends $tea.Model {
 
 export class ListExpiredResponseBody extends $tea.Model {
   files?: ListExpiredResponseBodyFiles[];
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -844,8 +999,29 @@ export class SubscribeEventHeaders extends $tea.Model {
 }
 
 export class SubscribeEventRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SPACE
+   */
   scope?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * scope_id
+   */
   scopeId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -869,6 +1045,10 @@ export class SubscribeEventRequest extends $tea.Model {
 }
 
 export class SubscribeEventResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -935,8 +1115,29 @@ export class UnsubscribeEventHeaders extends $tea.Model {
 }
 
 export class UnsubscribeEventRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SPACE
+   */
   scope?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * scope_id
+   */
   scopeId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -960,6 +1161,10 @@ export class UnsubscribeEventRequest extends $tea.Model {
 }
 
 export class UnsubscribeEventResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1023,6 +1228,10 @@ export class GetDentriesRequestOption extends $tea.Model {
 }
 
 export class GetDentriesResponseBodyResultItemsDentryProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1042,8 +1251,20 @@ export class GetDentriesResponseBodyResultItemsDentryProperties extends $tea.Mod
 }
 
 export class GetDentriesResponseBodyResultItemsDentryThumbnail extends $tea.Model {
+  /**
+   * @example
+   * 64
+   */
   height?: number;
+  /**
+   * @example
+   * url
+   */
   url?: string;
+  /**
+   * @example
+   * 64
+   */
   width?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1068,24 +1289,92 @@ export class GetDentriesResponseBodyResultItemsDentryThumbnail extends $tea.Mode
 
 export class GetDentriesResponseBodyResultItemsDentry extends $tea.Model {
   appProperties?: { [key: string]: ResultItemsDentryAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: GetDentriesResponseBodyResultItemsDentryProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
   thumbnail?: GetDentriesResponseBodyResultItemsDentryThumbnail;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1144,9 +1433,25 @@ export class GetDentriesResponseBodyResultItemsDentry extends $tea.Model {
 
 export class GetDentriesResponseBodyResultItems extends $tea.Model {
   dentry?: GetDentriesResponseBodyResultItemsDentry;
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * permissionDenied
+   */
   errorCode?: string;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1175,6 +1480,10 @@ export class GetDentriesResponseBodyResultItems extends $tea.Model {
 
 export class GetDentryRequestOption extends $tea.Model {
   appIdsForAppProperties?: string[];
+  /**
+   * @example
+   * true
+   */
   withThumbnail?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1196,6 +1505,10 @@ export class GetDentryRequestOption extends $tea.Model {
 }
 
 export class GetDentryResponseBodyDentryProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1215,8 +1528,20 @@ export class GetDentryResponseBodyDentryProperties extends $tea.Model {
 }
 
 export class GetDentryResponseBodyDentryThumbnail extends $tea.Model {
+  /**
+   * @example
+   * 64
+   */
   height?: number;
+  /**
+   * @example
+   * url
+   */
   url?: string;
+  /**
+   * @example
+   * 64
+   */
   width?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1241,24 +1566,92 @@ export class GetDentryResponseBodyDentryThumbnail extends $tea.Model {
 
 export class GetDentryResponseBodyDentry extends $tea.Model {
   appProperties?: { [key: string]: DentryAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: GetDentryResponseBodyDentryProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
   thumbnail?: GetDentryResponseBodyDentryThumbnail;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1316,8 +1709,20 @@ export class GetDentryResponseBodyDentry extends $tea.Model {
 }
 
 export class GetDentryThumbnailsResponseBodyResultItemsThumbnail extends $tea.Model {
+  /**
+   * @example
+   * 64
+   */
   height?: number;
+  /**
+   * @example
+   * url
+   */
   url?: string;
+  /**
+   * @example
+   * 64
+   */
   width?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1341,9 +1746,25 @@ export class GetDentryThumbnailsResponseBodyResultItemsThumbnail extends $tea.Mo
 }
 
 export class GetDentryThumbnailsResponseBodyResultItems extends $tea.Model {
+  /**
+   * @example
+   * dentry_id
+   */
   dentryId?: string;
+  /**
+   * @example
+   * permissionDenied
+   */
   errorCode?: string;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   thumbnail?: GetDentryThumbnailsResponseBodyResultItemsThumbnail;
   static names(): { [key: string]: string } {
@@ -1372,7 +1793,15 @@ export class GetDentryThumbnailsResponseBodyResultItems extends $tea.Model {
 }
 
 export class GetFileDownloadInfoRequestOption extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   preferIntranet?: boolean;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1394,9 +1823,17 @@ export class GetFileDownloadInfoRequestOption extends $tea.Model {
 }
 
 export class GetFileDownloadInfoResponseBodyHeaderSignatureInfo extends $tea.Model {
+  /**
+   * @example
+   * 900
+   */
   expirationSeconds?: number;
   headers?: { [key: string]: string };
   internalResourceUrls?: string[];
+  /**
+   * @example
+   * ZHANGJIAKOU
+   */
   region?: string;
   resourceUrls?: string[];
   static names(): { [key: string]: string } {
@@ -1425,8 +1862,20 @@ export class GetFileDownloadInfoResponseBodyHeaderSignatureInfo extends $tea.Mod
 }
 
 export class GetSpaceResponseBodySpace extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
   spaceId?: string;
   static names(): { [key: string]: string } {
@@ -1453,9 +1902,25 @@ export class GetSpaceResponseBodySpace extends $tea.Model {
 }
 
 export class ListAllDentriesRequestOption extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
+  /**
+   * @example
+   * DESC
+   */
   order?: string;
+  /**
+   * @example
+   * true
+   */
   withThumbnail?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1481,6 +1946,10 @@ export class ListAllDentriesRequestOption extends $tea.Model {
 }
 
 export class ListAllDentriesResponseBodyDentriesProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1500,8 +1969,20 @@ export class ListAllDentriesResponseBodyDentriesProperties extends $tea.Model {
 }
 
 export class ListAllDentriesResponseBodyDentriesThumbnail extends $tea.Model {
+  /**
+   * @example
+   * 64
+   */
   height?: number;
+  /**
+   * @example
+   * url
+   */
   url?: string;
+  /**
+   * @example
+   * 64
+   */
   width?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1526,24 +2007,92 @@ export class ListAllDentriesResponseBodyDentriesThumbnail extends $tea.Model {
 
 export class ListAllDentriesResponseBodyDentries extends $tea.Model {
   appProperties?: { [key: string]: DentriesAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: ListAllDentriesResponseBodyDentriesProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
   thumbnail?: ListAllDentriesResponseBodyDentriesThumbnail;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1601,6 +2150,10 @@ export class ListAllDentriesResponseBodyDentries extends $tea.Model {
 }
 
 export class ListDentriesResponseBodyDentriesProperties extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   readOnly?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1620,8 +2173,20 @@ export class ListDentriesResponseBodyDentriesProperties extends $tea.Model {
 }
 
 export class ListDentriesResponseBodyDentriesThumbnail extends $tea.Model {
+  /**
+   * @example
+   * 64
+   */
   height?: number;
+  /**
+   * @example
+   * url
+   */
   url?: string;
+  /**
+   * @example
+   * 64
+   */
   width?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1646,24 +2211,92 @@ export class ListDentriesResponseBodyDentriesThumbnail extends $tea.Model {
 
 export class ListDentriesResponseBodyDentries extends $tea.Model {
   appProperties?: { [key: string]: DentriesAppPropertiesValue[] };
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * dentry_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * dentry_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * PUBLIC_OSS_PARTITION
+   */
   partitionType?: string;
+  /**
+   * @example
+   * dentry_path
+   */
   path?: string;
   properties?: ListDentriesResponseBodyDentriesProperties;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * DINGTALK
+   */
   storageDriver?: string;
   thumbnail?: ListDentriesResponseBodyDentriesThumbnail;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1721,7 +2354,15 @@ export class ListDentriesResponseBodyDentries extends $tea.Model {
 }
 
 export class ListExpiredRequestOption extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1743,21 +2384,85 @@ export class ListExpiredRequestOption extends $tea.Model {
 }
 
 export class ListExpiredResponseBodyFiles extends $tea.Model {
+  /**
+   * @example
+   * open_conversation_id
+   */
   conversationId?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * txt
+   */
   extension?: string;
+  /**
+   * @example
+   * file_id
+   */
   id?: string;
+  /**
+   * @example
+   * 2022-01-01T10:00:00Z
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * modified_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * file_name
+   */
   name?: string;
+  /**
+   * @example
+   * parent_id
+   */
   parentId?: string;
+  /**
+   * @example
+   * file_path
+   */
   path?: string;
+  /**
+   * @example
+   * 256
+   */
   size?: number;
+  /**
+   * @example
+   * space_id
+   */
   spaceId?: string;
+  /**
+   * @example
+   * NORMAL
+   */
   status?: string;
+  /**
+   * @example
+   * file
+   */
   type?: string;
+  /**
+   * @example
+   * uuid
+   */
   uuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1808,12 +2513,11 @@ export class ListExpiredResponseBodyFiles extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1823,12 +2527,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 三方个人应用批量获取文件或文件夹信息
-   *
-   * @param request GetDentriesRequest
-   * @param headers GetDentriesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDentriesResponse
+   * 三方个人应用批量获取文件或文件夹信息
+   * 
+   * @param request - GetDentriesRequest
+   * @param headers - GetDentriesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDentriesResponse
    */
   async getDentriesWithOptions(spaceId: string, request: GetDentriesRequest, headers: GetDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentriesResponse> {
     Util.validateModel(request);
@@ -1875,10 +2579,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用批量获取文件或文件夹信息
-   *
-   * @param request GetDentriesRequest
-   * @return GetDentriesResponse
+   * 三方个人应用批量获取文件或文件夹信息
+   * 
+   * @param request - GetDentriesRequest
+   * @returns GetDentriesResponse
    */
   async getDentries(spaceId: string, request: GetDentriesRequest): Promise<GetDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1887,12 +2591,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用获取文件(夹)信息
-   *
-   * @param request GetDentryRequest
-   * @param headers GetDentryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDentryResponse
+   * 三方个人应用获取文件(夹)信息
+   * 
+   * @param request - GetDentryRequest
+   * @param headers - GetDentryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDentryResponse
    */
   async getDentryWithOptions(spaceId: string, dentryId: string, request: GetDentryRequest, headers: GetDentryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryResponse> {
     Util.validateModel(request);
@@ -1935,10 +2639,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用获取文件(夹)信息
-   *
-   * @param request GetDentryRequest
-   * @return GetDentryResponse
+   * 三方个人应用获取文件(夹)信息
+   * 
+   * @param request - GetDentryRequest
+   * @returns GetDentryResponse
    */
   async getDentry(spaceId: string, dentryId: string, request: GetDentryRequest): Promise<GetDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1947,12 +2651,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用批量获取文件缩略图
-   *
-   * @param request GetDentryThumbnailsRequest
-   * @param headers GetDentryThumbnailsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDentryThumbnailsResponse
+   * 三方个人应用批量获取文件缩略图
+   * 
+   * @param request - GetDentryThumbnailsRequest
+   * @param headers - GetDentryThumbnailsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDentryThumbnailsResponse
    */
   async getDentryThumbnailsWithOptions(spaceId: string, request: GetDentryThumbnailsRequest, headers: GetDentryThumbnailsHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryThumbnailsResponse> {
     Util.validateModel(request);
@@ -1995,10 +2699,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用批量获取文件缩略图
-   *
-   * @param request GetDentryThumbnailsRequest
-   * @return GetDentryThumbnailsResponse
+   * 三方个人应用批量获取文件缩略图
+   * 
+   * @param request - GetDentryThumbnailsRequest
+   * @returns GetDentryThumbnailsResponse
    */
   async getDentryThumbnails(spaceId: string, request: GetDentryThumbnailsRequest): Promise<GetDentryThumbnailsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2007,12 +2711,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用获取文件下载信息
-   *
-   * @param request GetFileDownloadInfoRequest
-   * @param headers GetFileDownloadInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFileDownloadInfoResponse
+   * 三方个人应用获取文件下载信息
+   * 
+   * @param request - GetFileDownloadInfoRequest
+   * @param headers - GetFileDownloadInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFileDownloadInfoResponse
    */
   async getFileDownloadInfoWithOptions(spaceId: string, dentryId: string, request: GetFileDownloadInfoRequest, headers: GetFileDownloadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileDownloadInfoResponse> {
     Util.validateModel(request);
@@ -2055,10 +2759,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用获取文件下载信息
-   *
-   * @param request GetFileDownloadInfoRequest
-   * @return GetFileDownloadInfoResponse
+   * 三方个人应用获取文件下载信息
+   * 
+   * @param request - GetFileDownloadInfoRequest
+   * @returns GetFileDownloadInfoResponse
    */
   async getFileDownloadInfo(spaceId: string, dentryId: string, request: GetFileDownloadInfoRequest): Promise<GetFileDownloadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2067,12 +2771,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用获取IM会话存储空间信息
-   *
-   * @param request GetSpaceRequest
-   * @param headers GetSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSpaceResponse
+   * 三方个人应用获取IM会话存储空间信息
+   * 
+   * @param request - GetSpaceRequest
+   * @param headers - GetSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSpaceResponse
    */
   async getSpaceWithOptions(request: GetSpaceRequest, headers: GetSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceResponse> {
     Util.validateModel(request);
@@ -2115,10 +2819,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用获取IM会话存储空间信息
-   *
-   * @param request GetSpaceRequest
-   * @return GetSpaceResponse
+   * 三方个人应用获取IM会话存储空间信息
+   * 
+   * @param request - GetSpaceRequest
+   * @returns GetSpaceResponse
    */
   async getSpace(request: GetSpaceRequest): Promise<GetSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2127,12 +2831,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用获取全部文件或文件夹列表
-   *
-   * @param request ListAllDentriesRequest
-   * @param headers ListAllDentriesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListAllDentriesResponse
+   * 三方个人应用获取全部文件或文件夹列表
+   * 
+   * @param request - ListAllDentriesRequest
+   * @param headers - ListAllDentriesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListAllDentriesResponse
    */
   async listAllDentriesWithOptions(spaceId: string, request: ListAllDentriesRequest, headers: ListAllDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<ListAllDentriesResponse> {
     Util.validateModel(request);
@@ -2175,10 +2879,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用获取全部文件或文件夹列表
-   *
-   * @param request ListAllDentriesRequest
-   * @return ListAllDentriesResponse
+   * 三方个人应用获取全部文件或文件夹列表
+   * 
+   * @param request - ListAllDentriesRequest
+   * @returns ListAllDentriesResponse
    */
   async listAllDentries(spaceId: string, request: ListAllDentriesRequest): Promise<ListAllDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2187,12 +2891,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用获取文件列表
-   *
-   * @param request ListDentriesRequest
-   * @param headers ListDentriesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListDentriesResponse
+   * 三方个人应用获取文件列表
+   * 
+   * @param request - ListDentriesRequest
+   * @param headers - ListDentriesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListDentriesResponse
    */
   async listDentriesWithOptions(spaceId: string, request: ListDentriesRequest, headers: ListDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<ListDentriesResponse> {
     Util.validateModel(request);
@@ -2253,10 +2957,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用获取文件列表
-   *
-   * @param request ListDentriesRequest
-   * @return ListDentriesResponse
+   * 三方个人应用获取文件列表
+   * 
+   * @param request - ListDentriesRequest
+   * @returns ListDentriesResponse
    */
   async listDentries(spaceId: string, request: ListDentriesRequest): Promise<ListDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2265,12 +2969,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取会话过期文件列表
-   *
-   * @param request ListExpiredRequest
-   * @param headers ListExpiredHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListExpiredResponse
+   * 获取会话过期文件列表
+   * 
+   * @param request - ListExpiredRequest
+   * @param headers - ListExpiredHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListExpiredResponse
    */
   async listExpiredWithOptions(request: ListExpiredRequest, headers: ListExpiredHeaders, runtime: $Util.RuntimeOptions): Promise<ListExpiredResponse> {
     Util.validateModel(request);
@@ -2317,10 +3021,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取会话过期文件列表
-   *
-   * @param request ListExpiredRequest
-   * @return ListExpiredResponse
+   * 获取会话过期文件列表
+   * 
+   * @param request - ListExpiredRequest
+   * @returns ListExpiredResponse
    */
   async listExpired(request: ListExpiredRequest): Promise<ListExpiredResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2329,12 +3033,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用订阅文件变更事件
-   *
-   * @param request SubscribeEventRequest
-   * @param headers SubscribeEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SubscribeEventResponse
+   * 三方个人应用订阅文件变更事件
+   * 
+   * @param request - SubscribeEventRequest
+   * @param headers - SubscribeEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SubscribeEventResponse
    */
   async subscribeEventWithOptions(request: SubscribeEventRequest, headers: SubscribeEventHeaders, runtime: $Util.RuntimeOptions): Promise<SubscribeEventResponse> {
     Util.validateModel(request);
@@ -2381,10 +3085,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用订阅文件变更事件
-   *
-   * @param request SubscribeEventRequest
-   * @return SubscribeEventResponse
+   * 三方个人应用订阅文件变更事件
+   * 
+   * @param request - SubscribeEventRequest
+   * @returns SubscribeEventResponse
    */
   async subscribeEvent(request: SubscribeEventRequest): Promise<SubscribeEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2393,12 +3097,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用取消订阅文件变更事件
-   *
-   * @param request UnsubscribeEventRequest
-   * @param headers UnsubscribeEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UnsubscribeEventResponse
+   * 三方个人应用取消订阅文件变更事件
+   * 
+   * @param request - UnsubscribeEventRequest
+   * @param headers - UnsubscribeEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UnsubscribeEventResponse
    */
   async unsubscribeEventWithOptions(request: UnsubscribeEventRequest, headers: UnsubscribeEventHeaders, runtime: $Util.RuntimeOptions): Promise<UnsubscribeEventResponse> {
     Util.validateModel(request);
@@ -2445,10 +3149,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方个人应用取消订阅文件变更事件
-   *
-   * @param request UnsubscribeEventRequest
-   * @return UnsubscribeEventResponse
+   * 三方个人应用取消订阅文件变更事件
+   * 
+   * @param request - UnsubscribeEventRequest
+   * @returns UnsubscribeEventResponse
    */
   async unsubscribeEvent(request: UnsubscribeEventRequest): Promise<UnsubscribeEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });

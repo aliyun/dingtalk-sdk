@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -70,13 +68,51 @@ export class CloseTopboxHeaders extends $tea.Model {
 }
 
 export class CloseTopboxRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   conversationType?: number;
+  /**
+   * @example
+   * COOLAPP-x-xxx
+   */
   coolAppCode?: string;
+  /**
+   * @example
+   * 6dx-xxx-xxx
+   */
   groupTemplateId?: string;
+  /**
+   * @example
+   * cidxxxxx==
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123xxx
+   */
   outTrackId?: string;
+  /**
+   * @example
+   * dingxxx
+   */
   robotCode?: string;
+  /**
+   * @example
+   * jHsR7xxx
+   */
   unoinId?: string;
+  /**
+   * @example
+   * 011xxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -176,7 +212,18 @@ export class CreateCoupleGroupHeaders extends $tea.Model {
 }
 
 export class CreateCoupleGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8d42****nkld
+   */
   groupTemplateId?: string;
+  /**
+   * @example
+   * 1745****8777
+   */
   operatorId?: string;
   users?: CreateCoupleGroupRequestUsers[];
   static names(): { [key: string]: string } {
@@ -202,7 +249,15 @@ export class CreateCoupleGroupRequest extends $tea.Model {
 
 export class CreateCoupleGroupResponseBody extends $tea.Model {
   appUserIds?: string[];
+  /**
+   * @example
+   * cidX********xaw==
+   */
   conversationId?: string;
+  /**
+   * @example
+   * 14da****2760
+   */
   openConversationId?: string;
   userIds?: string[];
   static names(): { [key: string]: string } {
@@ -276,10 +331,36 @@ export class CreateGroupHeaders extends $tea.Model {
 }
 
 export class CreateGroupRequest extends $tea.Model {
+  /**
+   * @example
+   * http://***.png
+   */
   groupAvatar?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 客户群
+   */
   groupName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8d42****nkld
+   */
   groupTemplateId?: string;
+  /**
+   * @example
+   * 1745****8777
+   */
   operatorId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   users?: CreateGroupRequestUsers[];
   static names(): { [key: string]: string } {
     return {
@@ -308,7 +389,15 @@ export class CreateGroupRequest extends $tea.Model {
 
 export class CreateGroupResponseBody extends $tea.Model {
   appUserIds?: string[];
+  /**
+   * @example
+   * cidX********xaw==
+   */
   conversationId?: string;
+  /**
+   * @example
+   * 14da****2760
+   */
   openConversationId?: string;
   userIds?: string[];
   static names(): { [key: string]: string } {
@@ -382,22 +471,83 @@ export class CreateTopboxHeaders extends $tea.Model {
 }
 
 export class CreateTopboxRequest extends $tea.Model {
+  /**
+   * @example
+   * abcxxx
+   */
   callbackRouteKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cardData?: CreateTopboxRequestCardData;
   cardSettings?: CreateTopboxRequestCardSettings;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 56xxx-xxx
+   */
   cardTemplateId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   conversationType?: number;
+  /**
+   * @example
+   * COOLAPP-x-xxx
+   */
   coolAppCode?: string;
+  /**
+   * @example
+   * 1850042969000
+   */
   expiredTime?: number;
+  /**
+   * @example
+   * xxx-xxx-xxx
+   */
   groupTemplateId?: string;
+  /**
+   * @example
+   * cidxxxxx==
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123xxx
+   */
   outTrackId?: string;
+  /**
+   * @example
+   * ios|win
+   */
   platforms?: string;
   receiverUnionIdList?: string[];
   receiverUserIdList?: string[];
+  /**
+   * @example
+   * dingxxx
+   */
   robotCode?: string;
   unionIdPrivateDataMap?: { [key: string]: UnionIdPrivateDataMapValue };
+  /**
+   * @example
+   * jHsR7xxx
+   */
   unoinId?: string;
+  /**
+   * @example
+   * 011xxx
+   */
   userId?: string;
   userIdPrivateDataMap?: { [key: string]: UserIdPrivateDataMapValue };
   static names(): { [key: string]: string } {
@@ -540,8 +690,20 @@ export class GroupManagerDeviceMarketResponse extends $tea.Model {
 }
 
 export class CreateCoupleGroupRequestUsers extends $tea.Model {
+  /**
+   * @example
+   * 1107****2120
+   */
   appUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   groupOwner?: boolean;
+  /**
+   * @example
+   * 1745****8778
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -565,8 +727,20 @@ export class CreateCoupleGroupRequestUsers extends $tea.Model {
 }
 
 export class CreateGroupRequestUsers extends $tea.Model {
+  /**
+   * @example
+   * 1107****2120
+   */
   appUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   groupOwner?: boolean;
+  /**
+   * @example
+   * 1745****8778
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -629,12 +803,11 @@ export class CreateTopboxRequestCardSettings extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
@@ -645,12 +818,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 关闭互动卡片吊顶
-   *
-   * @param request CloseTopboxRequest
-   * @param headers CloseTopboxHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CloseTopboxResponse
+   * 关闭互动卡片吊顶
+   * 
+   * @param request - CloseTopboxRequest
+   * @param headers - CloseTopboxHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CloseTopboxResponse
    */
   async closeTopboxWithOptions(request: CloseTopboxRequest, headers: CloseTopboxHeaders, runtime: $Util.RuntimeOptions): Promise<CloseTopboxResponse> {
     Util.validateModel(request);
@@ -715,10 +888,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关闭互动卡片吊顶
-   *
-   * @param request CloseTopboxRequest
-   * @return CloseTopboxResponse
+   * 关闭互动卡片吊顶
+   * 
+   * @param request - CloseTopboxRequest
+   * @returns CloseTopboxResponse
    */
   async closeTopbox(request: CloseTopboxRequest): Promise<CloseTopboxResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -727,12 +900,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建两人群
-   *
-   * @param request CreateCoupleGroupRequest
-   * @param headers CreateCoupleGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateCoupleGroupResponse
+   * 创建两人群
+   * 
+   * @param request - CreateCoupleGroupRequest
+   * @param headers - CreateCoupleGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateCoupleGroupResponse
    */
   async createCoupleGroupWithOptions(request: CreateCoupleGroupRequest, headers: CreateCoupleGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCoupleGroupResponse> {
     Util.validateModel(request);
@@ -777,10 +950,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建两人群
-   *
-   * @param request CreateCoupleGroupRequest
-   * @return CreateCoupleGroupResponse
+   * 创建两人群
+   * 
+   * @param request - CreateCoupleGroupRequest
+   * @returns CreateCoupleGroupResponse
    */
   async createCoupleGroup(request: CreateCoupleGroupRequest): Promise<CreateCoupleGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -789,12 +962,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建普通群
-   *
-   * @param request CreateGroupRequest
-   * @param headers CreateGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateGroupResponse
+   * 创建普通群
+   * 
+   * @param request - CreateGroupRequest
+   * @param headers - CreateGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateGroupResponse
    */
   async createGroupWithOptions(request: CreateGroupRequest, headers: CreateGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupResponse> {
     Util.validateModel(request);
@@ -847,10 +1020,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建普通群
-   *
-   * @param request CreateGroupRequest
-   * @return CreateGroupResponse
+   * 创建普通群
+   * 
+   * @param request - CreateGroupRequest
+   * @returns CreateGroupResponse
    */
   async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -859,12 +1032,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建并开启互动卡片吊顶
-   *
-   * @param request CreateTopboxRequest
-   * @param headers CreateTopboxHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateTopboxResponse
+   * 创建并开启互动卡片吊顶
+   * 
+   * @param request - CreateTopboxRequest
+   * @param headers - CreateTopboxHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateTopboxResponse
    */
   async createTopboxWithOptions(request: CreateTopboxRequest, headers: CreateTopboxHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTopboxResponse> {
     Util.validateModel(request);
@@ -969,10 +1142,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建并开启互动卡片吊顶
-   *
-   * @param request CreateTopboxRequest
-   * @return CreateTopboxResponse
+   * 创建并开启互动卡片吊顶
+   * 
+   * @param request - CreateTopboxRequest
+   * @returns CreateTopboxResponse
    */
   async createTopbox(request: CreateTopboxRequest): Promise<CreateTopboxResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -981,11 +1154,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 群设备市场管理
-   *
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GroupManagerDeviceMarketResponse
+   * 群设备市场管理
+   * 
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GroupManagerDeviceMarketResponse
    */
   async groupManagerDeviceMarketWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GroupManagerDeviceMarketResponse> {
     let req = new $OpenApi.OpenApiRequest({
@@ -1006,9 +1179,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 群设备市场管理
-   *
-   * @return GroupManagerDeviceMarketResponse
+   * 群设备市场管理
+   * @returns GroupManagerDeviceMarketResponse
    */
   async groupManagerDeviceMarket(): Promise<GroupManagerDeviceMarketResponse> {
     let runtime = new $Util.RuntimeOptions({ });

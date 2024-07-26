@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,10 +30,26 @@ export class CheckOpportunityResultHeaders extends $tea.Model {
 }
 
 export class CheckOpportunityResultRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   belongToPhoneNum?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   contactPhoneNum?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   deptId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   marketCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -63,6 +77,10 @@ export class CheckOpportunityResultRequest extends $tea.Model {
 }
 
 export class CheckOpportunityResultResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   bizSuccess?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -130,10 +148,29 @@ export class CreateNoteForIsvHeaders extends $tea.Model {
 
 export class CreateNoteForIsvRequest extends $tea.Model {
   contactName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   contactPhoneNum?: string;
   contactTitle?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * **if can be null:**
+   * false
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   inputPhoneNum?: string;
   static names(): { [key: string]: string } {
     return {
@@ -229,10 +266,26 @@ export class CreateOpportunityHeaders extends $tea.Model {
 }
 
 export class CreateOpportunityRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   belongToPhoneNum?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   contactPhoneNum?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
   deptId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   marketCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -326,20 +379,64 @@ export class QueryTradeOrderRequest extends $tea.Model {
 }
 
 export class QueryTradeOrderResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   articleCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   articleItemCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   articleItemName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   articleName?: string;
   closeTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fee?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isvCropId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   orderId?: number;
   outerOrderId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   payFee?: number;
   payTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   quantity?: number;
   refundTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   status?: number;
   static names(): { [key: string]: string } {
     return {
@@ -413,12 +510,11 @@ export class QueryTradeOrderResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -428,12 +524,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary isv检查商机创建是否符合预期
-   *
-   * @param request CheckOpportunityResultRequest
-   * @param headers CheckOpportunityResultHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CheckOpportunityResultResponse
+   * isv检查商机创建是否符合预期
+   * 
+   * @param request - CheckOpportunityResultRequest
+   * @param headers - CheckOpportunityResultHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CheckOpportunityResultResponse
    */
   async checkOpportunityResultWithOptions(request: CheckOpportunityResultRequest, headers: CheckOpportunityResultHeaders, runtime: $Util.RuntimeOptions): Promise<CheckOpportunityResultResponse> {
     Util.validateModel(request);
@@ -486,10 +582,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary isv检查商机创建是否符合预期
-   *
-   * @param request CheckOpportunityResultRequest
-   * @return CheckOpportunityResultResponse
+   * isv检查商机创建是否符合预期
+   * 
+   * @param request - CheckOpportunityResultRequest
+   * @returns CheckOpportunityResultResponse
    */
   async checkOpportunityResult(request: CheckOpportunityResultRequest): Promise<CheckOpportunityResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -498,12 +594,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建小记
-   *
-   * @param request CreateNoteForIsvRequest
-   * @param headers CreateNoteForIsvHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateNoteForIsvResponse
+   * 创建小记
+   * 
+   * @param request - CreateNoteForIsvRequest
+   * @param headers - CreateNoteForIsvHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateNoteForIsvResponse
    */
   async createNoteForIsvWithOptions(request: CreateNoteForIsvRequest, headers: CreateNoteForIsvHeaders, runtime: $Util.RuntimeOptions): Promise<CreateNoteForIsvResponse> {
     Util.validateModel(request);
@@ -560,10 +656,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建小记
-   *
-   * @param request CreateNoteForIsvRequest
-   * @return CreateNoteForIsvResponse
+   * 创建小记
+   * 
+   * @param request - CreateNoteForIsvRequest
+   * @returns CreateNoteForIsvResponse
    */
   async createNoteForIsv(request: CreateNoteForIsvRequest): Promise<CreateNoteForIsvResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -572,12 +668,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary isv创建商机
-   *
-   * @param request CreateOpportunityRequest
-   * @param headers CreateOpportunityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateOpportunityResponse
+   * isv创建商机
+   * 
+   * @param request - CreateOpportunityRequest
+   * @param headers - CreateOpportunityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateOpportunityResponse
    */
   async createOpportunityWithOptions(request: CreateOpportunityRequest, headers: CreateOpportunityHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOpportunityResponse> {
     Util.validateModel(request);
@@ -630,10 +726,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary isv创建商机
-   *
-   * @param request CreateOpportunityRequest
-   * @return CreateOpportunityResponse
+   * isv创建商机
+   * 
+   * @param request - CreateOpportunityRequest
+   * @returns CreateOpportunityResponse
    */
   async createOpportunity(request: CreateOpportunityRequest): Promise<CreateOpportunityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -642,12 +738,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询订单信息
-   *
-   * @param request QueryTradeOrderRequest
-   * @param headers QueryTradeOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryTradeOrderResponse
+   * 查询订单信息
+   * 
+   * @param request - QueryTradeOrderRequest
+   * @param headers - QueryTradeOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryTradeOrderResponse
    */
   async queryTradeOrderWithOptions(request: QueryTradeOrderRequest, headers: QueryTradeOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTradeOrderResponse> {
     Util.validateModel(request);
@@ -688,10 +784,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询订单信息
-   *
-   * @param request QueryTradeOrderRequest
-   * @return QueryTradeOrderResponse
+   * 查询订单信息
+   * 
+   * @param request - QueryTradeOrderRequest
+   * @returns QueryTradeOrderResponse
    */
   async queryTradeOrder(request: QueryTradeOrderRequest): Promise<QueryTradeOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });

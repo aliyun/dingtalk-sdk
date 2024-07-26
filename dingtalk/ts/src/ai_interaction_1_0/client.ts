@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,6 +30,10 @@ export class FinishHeaders extends $tea.Model {
 }
 
 export class FinishRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conversationToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -118,6 +120,10 @@ export class PrepareHeaders extends $tea.Model {
 
 export class PrepareRequest extends $tea.Model {
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   contentType?: string;
   openConversationId?: string;
   unionId?: string;
@@ -212,7 +218,15 @@ export class ReplyHeaders extends $tea.Model {
 
 export class ReplyRequest extends $tea.Model {
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   contentType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conversationToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -303,6 +317,10 @@ export class SendHeaders extends $tea.Model {
 
 export class SendRequest extends $tea.Model {
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   contentType?: string;
   openConversationId?: string;
   unionId?: string;
@@ -396,8 +414,20 @@ export class UpdateHeaders extends $tea.Model {
 }
 
 export class UpdateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   contentType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conversationToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -561,12 +591,11 @@ export class UpdateResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -576,12 +605,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 在主动模式下完结会话框
-   *
-   * @param request FinishRequest
-   * @param headers FinishHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return FinishResponse
+   * 在主动模式下完结会话框
+   * 
+   * @param request - FinishRequest
+   * @param headers - FinishHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns FinishResponse
    */
   async finishWithOptions(request: FinishRequest, headers: FinishHeaders, runtime: $Util.RuntimeOptions): Promise<FinishResponse> {
     Util.validateModel(request);
@@ -618,10 +647,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在主动模式下完结会话框
-   *
-   * @param request FinishRequest
-   * @return FinishResponse
+   * 在主动模式下完结会话框
+   * 
+   * @param request - FinishRequest
+   * @returns FinishResponse
    */
   async finish(request: FinishRequest): Promise<FinishResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -630,12 +659,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在主动模式下准备会话框
-   *
-   * @param request PrepareRequest
-   * @param headers PrepareHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PrepareResponse
+   * 在主动模式下准备会话框
+   * 
+   * @param request - PrepareRequest
+   * @param headers - PrepareHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PrepareResponse
    */
   async prepareWithOptions(request: PrepareRequest, headers: PrepareHeaders, runtime: $Util.RuntimeOptions): Promise<PrepareResponse> {
     Util.validateModel(request);
@@ -684,10 +713,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在主动模式下准备会话框
-   *
-   * @param request PrepareRequest
-   * @return PrepareResponse
+   * 在主动模式下准备会话框
+   * 
+   * @param request - PrepareRequest
+   * @returns PrepareResponse
    */
   async prepare(request: PrepareRequest): Promise<PrepareResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -696,12 +725,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在回复模式下更新会话框
-   *
-   * @param request ReplyRequest
-   * @param headers ReplyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ReplyResponse
+   * 在回复模式下更新会话框
+   * 
+   * @param request - ReplyRequest
+   * @param headers - ReplyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ReplyResponse
    */
   async replyWithOptions(request: ReplyRequest, headers: ReplyHeaders, runtime: $Util.RuntimeOptions): Promise<ReplyResponse> {
     Util.validateModel(request);
@@ -746,10 +775,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在回复模式下更新会话框
-   *
-   * @param request ReplyRequest
-   * @return ReplyResponse
+   * 在回复模式下更新会话框
+   * 
+   * @param request - ReplyRequest
+   * @returns ReplyResponse
    */
   async reply(request: ReplyRequest): Promise<ReplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -758,12 +787,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 直接发送消息
-   *
-   * @param request SendRequest
-   * @param headers SendHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendResponse
+   * 直接发送消息
+   * 
+   * @param request - SendRequest
+   * @param headers - SendHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendResponse
    */
   async sendWithOptions(request: SendRequest, headers: SendHeaders, runtime: $Util.RuntimeOptions): Promise<SendResponse> {
     Util.validateModel(request);
@@ -812,10 +841,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 直接发送消息
-   *
-   * @param request SendRequest
-   * @return SendResponse
+   * 直接发送消息
+   * 
+   * @param request - SendRequest
+   * @returns SendResponse
    */
   async send(request: SendRequest): Promise<SendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -824,12 +853,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在主动模式下更新会话框
-   *
-   * @param request UpdateRequest
-   * @param headers UpdateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateResponse
+   * 在主动模式下更新会话框
+   * 
+   * @param request - UpdateRequest
+   * @param headers - UpdateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateResponse
    */
   async updateWithOptions(request: UpdateRequest, headers: UpdateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResponse> {
     Util.validateModel(request);
@@ -874,10 +903,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在主动模式下更新会话框
-   *
-   * @param request UpdateRequest
-   * @return UpdateResponse
+   * 在主动模式下更新会话框
+   * 
+   * @param request - UpdateRequest
+   * @returns UpdateResponse
    */
   async update(request: UpdateRequest): Promise<UpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });

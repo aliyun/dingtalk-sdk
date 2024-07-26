@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,15 @@ export class CloseDataDeliverHeaders extends $tea.Model {
 }
 
 export class CloseDataDeliverRequest extends $tea.Model {
+  /**
+   * @example
+   * DELIVER-3e1a2d2f-fa76-45e8-XXXX-7fd29307c859
+   */
   deliverId?: string;
+  /**
+   * @example
+   * RT
+   */
   dispatchingItemType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -226,8 +232,20 @@ export class GetAbnormalOperationHeaders extends $tea.Model {
 }
 
 export class GetAbnormalOperationRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -251,6 +269,10 @@ export class GetAbnormalOperationRequest extends $tea.Model {
 }
 
 export class GetAbnormalOperationResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "DEPARTMENT": "xx",       "IN_REASON": "xx",       "OUT_DATE": "2006-12-07",       "OUT_DEPARTMENT": "xx",       "IN_DATE": "2006-12-07",       "OUT_REASON": "xx"     }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -320,8 +342,20 @@ export class GetAdministrativeLicensingHeaders extends $tea.Model {
 }
 
 export class GetAdministrativeLicensingRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -345,6 +379,10 @@ export class GetAdministrativeLicensingRequest extends $tea.Model {
 }
 
 export class GetAdministrativeLicensingResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "LicenseNo": "梯4403331978",       "StartDate": "2022-05-10",       "Department": "深圳市市场监督管理局",       "Content": "注册代码:7;设备种类:电梯",       "LicenseName": "特种设备使用登记",       "EndDate": "2099-12-31"     },     {       "LicenseNo": "东水务审﹝2021﹞8267号",       "StartDate": "2021-06-11",       "Department": "东莞市水务局",       "Content": "水土保持方案审批准予行政许可决定",       "LicenseName": "",       "EndDate": "2026-12-31"     } ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -414,8 +452,20 @@ export class GetAdministrativePenaltiesHeaders extends $tea.Model {
 }
 
 export class GetAdministrativePenaltiesRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -439,6 +489,10 @@ export class GetAdministrativePenaltiesRequest extends $tea.Model {
 }
 
 export class GetAdministrativePenaltiesResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "DATE_COL": "xx",       "NUMBER": "xx",       "ILLEGAL_TYPE": "xx",       "DEPARTMENT": "xx",       "PUBLIC_DATE": "xx",       "CONTENT": "xx",       "BASED_ON":"xx",       "DESCRIPTION":"xx"      }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -508,8 +562,20 @@ export class GetBasicInfoHeaders extends $tea.Model {
 }
 
 export class GetBasicInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -533,6 +599,10 @@ export class GetBasicInfoRequest extends $tea.Model {
 }
 
 export class GetBasicInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "ENT_NAME": "xx",       "LEGAL_NAME": "xx",       "ES_DATE": "2006-12-07",       "ENT_STATUS": "在营",       "REG_CAP": "1000万人民币",       "REC_CAP": "1000万人民币",       "SOCIAL_CREDIT_CODE": "91330108793696828A",       "LICENSE_NUMBER": "330108000000965",       "ORG_NO": "793696828",       "TAX_NUM": "91330108793696828A",       "ENT_TYPE": "有限责任公司(非自然人投资或控股的法人独资)",       "INDUSTRY_NAME_LV1": "租赁和商务服务业",       "INDUSTRY_NAME_LV2": "商务服务业",       "OP_FROM": "2006-12-07",       "OP_TO": "2036-12-06",       "COLLEGUES_NUM": "6",       "ENT_NAME_ENG": "Hangzhou Ali Baba Advertising Co.,Ltd.",       "FORMER_NAMES": "xx",       "REG_ORG": "xx",       "REG_ORG_PROVINCE": "浙江省",       "REG_ORG_CITY": "杭州市",       "REG_ORG_DISTRICT": "滨江区",       "STD_REG_CAP": 10000000     }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -602,8 +672,20 @@ export class GetBiddingInfoHeaders extends $tea.Model {
 }
 
 export class GetBiddingInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -627,6 +709,10 @@ export class GetBiddingInfoRequest extends $tea.Model {
 }
 
 export class GetBiddingInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [{ "EntName":"企业名称", "BidTitle":"标文标题", "BidType":"招标方式", "RegionName":"地区", "BidIndustry":"标的所属行业", "PublicDate":"发布时间", "ProjectNum":"项目编号", "ProjectName":"项目名称", "ProjectAmount":"项目金额", "TenderEntName":"招标企业", "AgentEntName":"代理企业", "WinnerEntName":"中标企业", "Content":"正文", "InfoType":"标文类型", "SubType":"子类型", "OpeningTime":"开标时间" }]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -696,8 +782,20 @@ export class GetBranchInfoHeaders extends $tea.Model {
 }
 
 export class GetBranchInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -721,6 +819,10 @@ export class GetBranchInfoRequest extends $tea.Model {
 }
 
 export class GetBranchInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "OperName": "李柯",       "EntStatus": "",       "EntName": "华为技术有限公司驻广州办事处",       "EsDate": ""     },     {       "OperName": "李实",       "EntStatus": "",       "EntName": "华为技术有限公司重庆分公司",       "EsDate": ""     } ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -790,8 +892,20 @@ export class GetChangeRecordHeaders extends $tea.Model {
 }
 
 export class GetChangeRecordRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -815,6 +929,10 @@ export class GetChangeRecordRequest extends $tea.Model {
 }
 
 export class GetChangeRecordResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [         {             "Type":"投资人变更(包括出资额、出资方式、出资日期、投资人名称等)",             "ChangeDate":"2014-12-23",             "AfterContent":"股东名称:华为投资控股有限公司、出资额:3990813.182000、出资比例:100.000000;",             "BeforeContent":"股东名称:华为投资控股有限公司、出资额:3960813.182000、出资比例:100.000000;"         },         {             "Type":"期限变更(经营期限、营业期限、驻在期限、合伙期限等变更)",             "ChangeDate":"1997-12-04",             "AfterContent":"1987-09-15,2040-04-09",             "BeforeContent":"1987-09-15,1998-12-31"         } ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -884,7 +1002,15 @@ export class GetDataDeliverHeaders extends $tea.Model {
 }
 
 export class GetDataDeliverRequest extends $tea.Model {
+  /**
+   * @example
+   * DELIVER-3e1a2d2f-fa76-45e8-XXXX-7fd29307c859
+   */
   deliverId?: string;
+  /**
+   * @example
+   * RT
+   */
   dispatchingItemType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -975,8 +1101,20 @@ export class GetDomainInfoHeaders extends $tea.Model {
 }
 
 export class GetDomainInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1000,6 +1138,10 @@ export class GetDomainInfoRequest extends $tea.Model {
 }
 
 export class GetDomainInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [{ "EntName":"企业名称" "Number":"备案号" "Domain":"域名" "SiteName":"网站名称" "HomeUrl":"网站首页链接" "CheckDate":"备案日期" }]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -1069,8 +1211,20 @@ export class GetDoubleRandomHeaders extends $tea.Model {
 }
 
 export class GetDoubleRandomRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1094,6 +1248,10 @@ export class GetDoubleRandomRequest extends $tea.Model {
 }
 
 export class GetDoubleRandomResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "InspectPlanId": "44030020191021",       "InspectTypeName": "定向",       "InspectPlanName": "2019能效标识生产企业计量监督抽查1",       "InspectItem": "",       "InspectResult": "",       "InspectDepartment": "深圳市市场监督管理局龙岗局",       "InspectDate": "2019-10-14",       "InspectTaskId": "44030020191021",       "InspectTaskName": "2019能效标识生产企业计量监督抽查1"     }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -1163,8 +1321,20 @@ export class GetEnvironmentalPenaltiesHeaders extends $tea.Model {
 }
 
 export class GetEnvironmentalPenaltiesRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1188,6 +1358,10 @@ export class GetEnvironmentalPenaltiesRequest extends $tea.Model {
 }
 
 export class GetEnvironmentalPenaltiesResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "DEPARTMENT": "xx",       "ENT_NAME": "xx",       "EXEC_STATUS": "xx",       "PUNISH_BASIS": "xx",       "PUNISH_CONTENT": "xx",       "PUNISH_LAW": "xx",       "PUNISH_NUM": "xx",       "PUNISH_RES": "xx",       "PUNISH_DATE": "xx"      }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -1258,6 +1432,13 @@ export class GetEventDataHeaders extends $tea.Model {
 
 export class GetEventDataRequest extends $tea.Model {
   bizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 819e50d7c32e9096
+   */
   eventUid?: string;
   subId?: string;
   static names(): { [key: string]: string } {
@@ -1351,8 +1532,20 @@ export class GetHolderInfoHeaders extends $tea.Model {
 }
 
 export class GetHolderInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1376,6 +1569,10 @@ export class GetHolderInfoRequest extends $tea.Model {
 }
 
 export class GetHolderInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "STOCK_TYPE": "企业法人",       "STOCK_NAME": "xxx",       "STOCK_PERCENT": "100.00%",       "SHOULD_CAPI": "1000.0",       "SHOULD_CAPI_TIME": "2007-09-28"     }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -1445,8 +1642,20 @@ export class GetIntellectualPropertyHeaders extends $tea.Model {
 }
 
 export class GetIntellectualPropertyRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1470,6 +1679,10 @@ export class GetIntellectualPropertyRequest extends $tea.Model {
 }
 
 export class GetIntellectualPropertyResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "Status": "有效",       "Type": "专利",       "Pledgor": "齐风莲",       "Number": "91611024MA70X17M7E",       "Period": "2015年06月11日至2015年06月11日",       "PublicDate": "2015-06-18 00:00:00",       "Pawnee": "齐风莲",       "entName": "东兰县鸿发摩托车安全技术检验有限公司"     }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -1539,8 +1752,20 @@ export class GetInvestmentAbroadHeaders extends $tea.Model {
 }
 
 export class GetInvestmentAbroadRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1564,6 +1789,10 @@ export class GetInvestmentAbroadRequest extends $tea.Model {
 }
 
 export class GetInvestmentAbroadResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "InvestLicenseNo": "440301104818958",       "InvestStatus": "在营",       "InvestEsDate": "1998-11-25",       "InvestCreditCode": "914403007084643962",       "ShouldCap": "2000.0万人民币",       "EntName": "华为技术有限公司",       "InvestLegalName": "汤启兵",       "StockPercentage": "100.0%",       "InvestName": "深圳市华为技术服务有限公司",       "InvestRegCap": "2000.0万人民币"     }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -1633,8 +1862,20 @@ export class GetJobInfoHeaders extends $tea.Model {
 }
 
 export class GetJobInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1658,6 +1899,10 @@ export class GetJobInfoRequest extends $tea.Model {
 }
 
 export class GetJobInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "DEPARTMENT": "xx",       "IN_REASON": "xx",       "OUT_DATE": "2006-12-07",       "OUT_DEPARTMENT": "xx",       "IN_DATE": "2006-12-07",       "OUT_REASON": "xx"     }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -1727,8 +1972,20 @@ export class GetPatentInfoHeaders extends $tea.Model {
 }
 
 export class GetPatentInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1752,6 +2009,10 @@ export class GetPatentInfoRequest extends $tea.Model {
 }
 
 export class GetPatentInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [{"EntName":"企业名称", "PatentType":"专利类型", "PatentName":"专利名", "PatentStatus":"专利状态", "RequestNum":"申请号", "RequestDate":"申请日", "PublicNum":"公开(公告)号", "PublicDate":"公开(公告)日", "InventorList":"发明人", "PatenteeList":"专利权人", "CateNum":"分类号", "PrioNum":"优先权号", "PrioDate":"优先权日", "Agency":"专利代理机构", "Agent":"代理人", "Brief":"简要说明", "MainClaim":"主权项"}]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -1821,8 +2082,20 @@ export class GetPrincipalEmployeeHeaders extends $tea.Model {
 }
 
 export class GetPrincipalEmployeeRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1846,6 +2119,10 @@ export class GetPrincipalEmployeeRequest extends $tea.Model {
 }
 
 export class GetPrincipalEmployeeResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "JobTitle": "董事长",       "Name": "梁华"     },     {       "JobTitle": "副董事长",       "Name": "孟晚舟"     },     {       "JobTitle": "副董事长",       "Name": "徐直军"     }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -1915,8 +2192,20 @@ export class GetQeneralTaxpayerInfoHeaders extends $tea.Model {
 }
 
 export class GetQeneralTaxpayerInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1940,6 +2229,10 @@ export class GetQeneralTaxpayerInfoRequest extends $tea.Model {
 }
 
 export class GetQeneralTaxpayerInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "DEPARTMENT":"xx"       "END_DATE":"2017-01-04"       "ENT_NAME":"xx"       "QUALIFICATION"       "START_DATE":"2017-01-04"       "TAXPAYER_NUM":"11"       "JUDGE_DATE":"2017-05-04"      }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -2009,8 +2302,20 @@ export class GetQualificationCertHeaders extends $tea.Model {
 }
 
 export class GetQualificationCertRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2034,6 +2339,10 @@ export class GetQualificationCertRequest extends $tea.Model {
 }
 
 export class GetQualificationCertResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [{"EntName":"企业名称", "CertType":"证书类型", "CertNum":"证书认证编号", "ValidStartDate":"有效期开始日期", "ValidEndDate":"有效期截止日期", "AuthorizeDate":"授权日期", "AuthorizeDepartment":"授权部门", "PubDate":"公示日期", "Province":"省份", "CertScope":"认证范围"} ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -2103,8 +2412,20 @@ export class GetSeriousViolationHeaders extends $tea.Model {
 }
 
 export class GetSeriousViolationRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2128,6 +2449,10 @@ export class GetSeriousViolationRequest extends $tea.Model {
 }
 
 export class GetSeriousViolationResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "IN_DATE": "xx",       "IN_DEPARTMENT": "xx",       "IN_REASON": "xx"      }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -2197,8 +2522,20 @@ export class GetSoftwareCopyrightHeaders extends $tea.Model {
 }
 
 export class GetSoftwareCopyrightRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2222,6 +2559,10 @@ export class GetSoftwareCopyrightRequest extends $tea.Model {
 }
 
 export class GetSoftwareCopyrightResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [{ "EntName:企业名称", "CopyNum:登记号", "TypeNum:分类号", "ShortName:作品简称", "CopyName:作品全称", "Version:版本号", "SuccessDate:创作完成日期", "FirstDate:首次发表日期", "ApprovalDate:登记批准日期" }]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -2291,8 +2632,20 @@ export class GetTrademarkInfoHeaders extends $tea.Model {
 }
 
 export class GetTrademarkInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2316,6 +2669,10 @@ export class GetTrademarkInfoRequest extends $tea.Model {
 }
 
 export class GetTrademarkInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [{ "entName:企业名称", "trademarkName:商标名称", "regNum:商标注册号", "trademarkType:商标类型", "trademarkForm:商标形式", "trademarkStatus:商标状态", "applyDate:申请日期", "imageUrl:图片链接", "typeName:商标类型名", "period:专用权期限", "agent:代理人名称", "regPubNo:注册公告号", "regPubDate:注册公告日期", "firstPubNo:初审公告号", "firstPubDate:初审公告日期"}]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -2385,8 +2742,20 @@ export class GetWorkCopyrightHeaders extends $tea.Model {
 }
 
 export class GetWorkCopyrightRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2410,6 +2779,10 @@ export class GetWorkCopyrightRequest extends $tea.Model {
 }
 
 export class GetWorkCopyrightResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [{ "EntName":"企业名称", "CopyName":"作品全称", "TypeName":"作品类别", "CopyNum":"登记号", "SuccessDate":"创作完成日期", "FirstDate":"首次发表日期", "ApprovalDate":"登记批准日期" }]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -2479,6 +2852,10 @@ export class ListDataDeliversHeaders extends $tea.Model {
 }
 
 export class ListDataDeliversRequest extends $tea.Model {
+  /**
+   * @example
+   * RT
+   */
   dispatchingItemType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2567,10 +2944,38 @@ export class OperateChartConfigHeaders extends $tea.Model {
 }
 
 export class OperateChartConfigRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   apiKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   corpId?: string;
   param?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8ABvoWxoelSxcxZBsF3MeWBDe5oi8jmFtU790jhpRoLrfJDWO8UDHbUqvTb3pQA5
+   */
   ticket?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2733,6 +3138,10 @@ export class QueryActiveUserStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryActiveUserStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2823,6 +3232,10 @@ export class QueryAnhmdStatisticalDataHeaders extends $tea.Model {
 export class QueryAnhmdStatisticalDataRequest extends $tea.Model {
   pageNumber?: number;
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2915,6 +3328,10 @@ export class QueryApprovalStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryApprovalStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3003,6 +3420,10 @@ export class QueryAttendanceStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryAttendanceStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3091,6 +3512,10 @@ export class QueryBlackboardStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryBlackboardStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3179,6 +3604,10 @@ export class QueryCalendarStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryCalendarStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3267,7 +3696,21 @@ export class QueryChartDataHeaders extends $tea.Model {
 }
 
 export class QueryChartDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ABC
+   */
   ticket?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3358,6 +3801,10 @@ export class QueryCheckinStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryCheckinStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3446,6 +3893,10 @@ export class QueryCircleStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryCircleStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3534,8 +3985,20 @@ export class QueryCompanyBasicInfoHeaders extends $tea.Model {
 }
 
 export class QueryCompanyBasicInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   keyword?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3637,7 +4100,15 @@ export class QueryDigitalDistrictOrgInfoHeaders extends $tea.Model {
 }
 
 export class QueryDigitalDistrictOrgInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDates?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -3728,6 +4199,10 @@ export class QueryDingReciveStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryDingReciveStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3816,6 +4291,10 @@ export class QueryDingSendStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryDingSendStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3904,6 +4383,10 @@ export class QueryDocumentStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryDocumentStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3992,6 +4475,10 @@ export class QueryDriveStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryDriveStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4080,6 +4567,10 @@ export class QueryEmployeeTypeStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryEmployeeTypeStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4168,12 +4659,52 @@ export class QueryGeneralDataServiceHeaders extends $tea.Model {
 }
 
 export class QueryGeneralDataServiceRequest extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   deptId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220803
+   */
   endDate?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * API-7fa754fd-f53e-46ee-9b77-898aa6eb590c
+   */
   serviceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220801
+   */
   startDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0234412313
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4275,10 +4806,30 @@ export class QueryGeneralDataServiceBatchHeaders extends $tea.Model {
 
 export class QueryGeneralDataServiceBatchRequest extends $tea.Model {
   deptIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   serviceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startDate?: string;
   userId?: string;
   userIds?: string[];
@@ -4383,6 +4934,10 @@ export class QueryGeneralDataUpdateDateHeaders extends $tea.Model {
 }
 
 export class QueryGeneralDataUpdateDateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   serviceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4471,6 +5026,10 @@ export class QueryGroupLiveStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryGroupLiveStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4559,6 +5118,10 @@ export class QueryGroupMessageStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryGroupMessageStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4647,6 +5210,10 @@ export class QueryHealthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryHealthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4735,6 +5302,10 @@ export class QueryMailStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryMailStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4914,7 +5485,15 @@ export class QueryOfficialDatasetFieldsHeaders extends $tea.Model {
 }
 
 export class QueryOfficialDatasetFieldsRequest extends $tea.Model {
+  /**
+   * @example
+   * ding3xxx__-PROC-42FF6625-9692-4003-B13C-307CAACEC354
+   */
   dsId?: string;
+  /**
+   * @example
+   * 12345
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5006,7 +5585,15 @@ export class QueryOfficialDatasetListHeaders extends $tea.Model {
 
 export class QueryOfficialDatasetListRequest extends $tea.Model {
   keyword?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5281,6 +5868,10 @@ export class QueryOnlineUserStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryOnlineUserStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5369,6 +5960,10 @@ export class QueryRedEnvelopeReciveStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryRedEnvelopeReciveStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5457,6 +6052,10 @@ export class QueryRedEnvelopeSendStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryRedEnvelopeSendStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5545,6 +6144,10 @@ export class QueryReportStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryReportStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5633,6 +6236,10 @@ export class QuerySingleMessageStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QuerySingleMessageStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5721,6 +6328,10 @@ export class QueryTelMeetingStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryTelMeetingStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5809,6 +6420,10 @@ export class QueryTodoStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryTodoStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5898,11 +6513,27 @@ export class QueryTotalDataCountServiceHeaders extends $tea.Model {
 
 export class QueryTotalDataCountServiceRequest extends $tea.Model {
   deptIds?: string[];
+  /**
+   * @example
+   * 20240611
+   */
   endDate?: string;
   pageNumber?: number;
   pageSize?: number;
+  /**
+   * @example
+   * API-xxxx
+   */
   serviceId?: string;
+  /**
+   * @example
+   * 20240611
+   */
   startDate?: string;
+  /**
+   * @example
+   * 222
+   */
   userId?: string;
   userIds?: string[];
   static names(): { [key: string]: string } {
@@ -6006,6 +6637,10 @@ export class QueryVedioMeetingStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryVedioMeetingStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6094,6 +6729,10 @@ export class QueryYydActiveDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydActiveDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6182,6 +6821,10 @@ export class QueryYydActiveMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydActiveMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6270,6 +6913,10 @@ export class QueryYydActiveWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydActiveWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6358,6 +7005,10 @@ export class QueryYydAppDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydAppDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6446,6 +7097,10 @@ export class QueryYydAppMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydAppMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6534,6 +7189,10 @@ export class QueryYydAppStdStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydAppStdStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6622,6 +7281,10 @@ export class QueryYydAppWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydAppWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6710,6 +7373,10 @@ export class QueryYydCalendarDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydCalendarDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6798,6 +7465,10 @@ export class QueryYydCalendarMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydCalendarMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6886,6 +7557,10 @@ export class QueryYydCalendarWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydCalendarWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6974,6 +7649,10 @@ export class QueryYydDingMsgDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydDingMsgDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7062,6 +7741,10 @@ export class QueryYydDingMsgMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydDingMsgMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7150,6 +7833,10 @@ export class QueryYydDingMsgWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydDingMsgWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7238,6 +7925,10 @@ export class QueryYydGroupMsgDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydGroupMsgDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7326,6 +8017,10 @@ export class QueryYydGroupMsgMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydGroupMsgMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7414,6 +8109,10 @@ export class QueryYydGroupMsgWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydGroupMsgWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7502,6 +8201,10 @@ export class QueryYydLogDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydLogDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7590,6 +8293,10 @@ export class QueryYydLogMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydLogMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7678,6 +8385,10 @@ export class QueryYydLogWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydLogWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7766,6 +8477,10 @@ export class QueryYydMeetingDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydMeetingDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7854,6 +8569,10 @@ export class QueryYydMeetingMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydMeetingMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7942,6 +8661,10 @@ export class QueryYydMeetingWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydMeetingWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8030,6 +8753,10 @@ export class QueryYydNoticeDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydNoticeDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8118,6 +8845,10 @@ export class QueryYydNoticeMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydNoticeMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8206,6 +8937,10 @@ export class QueryYydNoticeWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydNoticeWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8294,6 +9029,10 @@ export class QueryYydSingleMsgDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydSingleMsgDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8382,6 +9121,10 @@ export class QueryYydSingleMsgMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydSingleMsgMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8470,6 +9213,10 @@ export class QueryYydSingleMsgWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydSingleMsgWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8558,6 +9305,10 @@ export class QueryYydToatlMsgDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydToatlMsgDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8646,6 +9397,10 @@ export class QueryYydToatlMsgMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydToatlMsgMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8734,6 +9489,10 @@ export class QueryYydToatlMsgWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydToatlMsgWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8822,6 +9581,10 @@ export class QueryYydTodoDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydTodoDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8910,6 +9673,10 @@ export class QueryYydTodoMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydTodoMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8998,6 +9765,10 @@ export class QueryYydTodoWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydTodoWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9086,6 +9857,10 @@ export class QueryYydTotalDayStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydTotalDayStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9174,6 +9949,10 @@ export class QueryYydTotalMonthStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydTotalMonthStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9262,6 +10041,10 @@ export class QueryYydTotalStdStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydTotalStdStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9350,6 +10133,10 @@ export class QueryYydTotalWeekStatisticalDataHeaders extends $tea.Model {
 }
 
 export class QueryYydTotalWeekStatisticalDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9438,8 +10225,20 @@ export class SearchCompanyHeaders extends $tea.Model {
 }
 
 export class SearchCompanyRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9463,6 +10262,10 @@ export class SearchCompanyRequest extends $tea.Model {
 }
 
 export class SearchCompanyResponseBody extends $tea.Model {
+  /**
+   * @example
+   * [     {       "ENT_NAME": "xx",       "SOCIAL_CREDIT_CODE": "xx",       "LICENSE_NUMBER": "xx",       "REG_CAP": "10000000.0",       "ES_DATE": "2006-12-07",       "LEGAL_NAME": "xx",       "ORG_NO": "xx",       "TAX_NUM": "xx",       "ENT_STATUS": "在营"     }   ]
+   */
   data?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -9532,7 +10335,21 @@ export class SyncDataScreenHeaders extends $tea.Model {
 }
 
 export class SyncDataScreenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   screenId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ABC
+   */
   ticket?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9601,10 +10418,30 @@ export class SyncDataScreenResponse extends $tea.Model {
 }
 
 export class QueryActiveUserStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9632,10 +10469,30 @@ export class QueryActiveUserStatisticalDataResponseBodyMetaList extends $tea.Mod
 }
 
 export class QueryAnhmdStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9663,10 +10520,30 @@ export class QueryAnhmdStatisticalDataResponseBodyMetaList extends $tea.Model {
 }
 
 export class QueryApprovalStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9694,10 +10571,30 @@ export class QueryApprovalStatisticalDataResponseBodyMetaList extends $tea.Model
 }
 
 export class QueryAttendanceStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9725,10 +10622,30 @@ export class QueryAttendanceStatisticalDataResponseBodyMetaList extends $tea.Mod
 }
 
 export class QueryBlackboardStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9756,10 +10673,30 @@ export class QueryBlackboardStatisticalDataResponseBodyMetaList extends $tea.Mod
 }
 
 export class QueryCalendarStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9787,10 +10724,30 @@ export class QueryCalendarStatisticalDataResponseBodyMetaList extends $tea.Model
 }
 
 export class QueryCheckinStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9818,10 +10775,30 @@ export class QueryCheckinStatisticalDataResponseBodyMetaList extends $tea.Model 
 }
 
 export class QueryCircleStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9849,10 +10826,30 @@ export class QueryCircleStatisticalDataResponseBodyMetaList extends $tea.Model {
 }
 
 export class QueryDingReciveStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9880,10 +10877,30 @@ export class QueryDingReciveStatisticalDataResponseBodyMetaList extends $tea.Mod
 }
 
 export class QueryDingSendStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9911,10 +10928,30 @@ export class QueryDingSendStatisticalDataResponseBodyMetaList extends $tea.Model
 }
 
 export class QueryDocumentStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9942,10 +10979,30 @@ export class QueryDocumentStatisticalDataResponseBodyMetaList extends $tea.Model
 }
 
 export class QueryDriveStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9973,10 +11030,30 @@ export class QueryDriveStatisticalDataResponseBodyMetaList extends $tea.Model {
 }
 
 export class QueryEmployeeTypeStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10004,9 +11081,25 @@ export class QueryEmployeeTypeStatisticalDataResponseBodyMetaList extends $tea.M
 }
 
 export class QueryGeneralDataServiceResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fieldDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fieldId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fieldName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fieldType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10032,9 +11125,25 @@ export class QueryGeneralDataServiceResponseBodyMetaList extends $tea.Model {
 }
 
 export class QueryGeneralDataServiceBatchResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fieldDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fieldId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fieldName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fieldType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10060,10 +11169,30 @@ export class QueryGeneralDataServiceBatchResponseBodyMetaList extends $tea.Model
 }
 
 export class QueryGroupLiveStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10091,10 +11220,30 @@ export class QueryGroupLiveStatisticalDataResponseBodyMetaList extends $tea.Mode
 }
 
 export class QueryGroupMessageStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10122,10 +11271,30 @@ export class QueryGroupMessageStatisticalDataResponseBodyMetaList extends $tea.M
 }
 
 export class QueryHealthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10153,10 +11322,30 @@ export class QueryHealthStatisticalDataResponseBodyMetaList extends $tea.Model {
 }
 
 export class QueryMailStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10278,10 +11467,30 @@ export class QueryOfficialDatasetListResponseBodyResult extends $tea.Model {
 }
 
 export class QueryOnlineUserStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10309,10 +11518,30 @@ export class QueryOnlineUserStatisticalDataResponseBodyMetaList extends $tea.Mod
 }
 
 export class QueryRedEnvelopeReciveStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10340,10 +11569,30 @@ export class QueryRedEnvelopeReciveStatisticalDataResponseBodyMetaList extends $
 }
 
 export class QueryRedEnvelopeSendStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10371,10 +11620,30 @@ export class QueryRedEnvelopeSendStatisticalDataResponseBodyMetaList extends $te
 }
 
 export class QueryReportStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10402,10 +11671,30 @@ export class QueryReportStatisticalDataResponseBodyMetaList extends $tea.Model {
 }
 
 export class QuerySingleMessageStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10433,10 +11722,30 @@ export class QuerySingleMessageStatisticalDataResponseBodyMetaList extends $tea.
 }
 
 export class QueryTelMeetingStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10464,10 +11773,30 @@ export class QueryTelMeetingStatisticalDataResponseBodyMetaList extends $tea.Mod
 }
 
 export class QueryTodoStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10495,10 +11824,30 @@ export class QueryTodoStatisticalDataResponseBodyMetaList extends $tea.Model {
 }
 
 export class QueryVedioMeetingStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10526,10 +11875,30 @@ export class QueryVedioMeetingStatisticalDataResponseBodyMetaList extends $tea.M
 }
 
 export class QueryYydActiveDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10557,10 +11926,30 @@ export class QueryYydActiveDayStatisticalDataResponseBodyMetaList extends $tea.M
 }
 
 export class QueryYydActiveMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10588,10 +11977,30 @@ export class QueryYydActiveMonthStatisticalDataResponseBodyMetaList extends $tea
 }
 
 export class QueryYydActiveWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10619,10 +12028,30 @@ export class QueryYydActiveWeekStatisticalDataResponseBodyMetaList extends $tea.
 }
 
 export class QueryYydAppDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10650,10 +12079,30 @@ export class QueryYydAppDayStatisticalDataResponseBodyMetaList extends $tea.Mode
 }
 
 export class QueryYydAppMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10681,10 +12130,30 @@ export class QueryYydAppMonthStatisticalDataResponseBodyMetaList extends $tea.Mo
 }
 
 export class QueryYydAppStdStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10712,10 +12181,30 @@ export class QueryYydAppStdStatisticalDataResponseBodyMetaList extends $tea.Mode
 }
 
 export class QueryYydAppWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10743,10 +12232,30 @@ export class QueryYydAppWeekStatisticalDataResponseBodyMetaList extends $tea.Mod
 }
 
 export class QueryYydCalendarDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10774,10 +12283,30 @@ export class QueryYydCalendarDayStatisticalDataResponseBodyMetaList extends $tea
 }
 
 export class QueryYydCalendarMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10805,10 +12334,30 @@ export class QueryYydCalendarMonthStatisticalDataResponseBodyMetaList extends $t
 }
 
 export class QueryYydCalendarWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10836,10 +12385,30 @@ export class QueryYydCalendarWeekStatisticalDataResponseBodyMetaList extends $te
 }
 
 export class QueryYydDingMsgDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10867,10 +12436,30 @@ export class QueryYydDingMsgDayStatisticalDataResponseBodyMetaList extends $tea.
 }
 
 export class QueryYydDingMsgMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10898,10 +12487,30 @@ export class QueryYydDingMsgMonthStatisticalDataResponseBodyMetaList extends $te
 }
 
 export class QueryYydDingMsgWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10929,10 +12538,30 @@ export class QueryYydDingMsgWeekStatisticalDataResponseBodyMetaList extends $tea
 }
 
 export class QueryYydGroupMsgDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10960,10 +12589,30 @@ export class QueryYydGroupMsgDayStatisticalDataResponseBodyMetaList extends $tea
 }
 
 export class QueryYydGroupMsgMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10991,10 +12640,30 @@ export class QueryYydGroupMsgMonthStatisticalDataResponseBodyMetaList extends $t
 }
 
 export class QueryYydGroupMsgWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11022,10 +12691,30 @@ export class QueryYydGroupMsgWeekStatisticalDataResponseBodyMetaList extends $te
 }
 
 export class QueryYydLogDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11053,10 +12742,30 @@ export class QueryYydLogDayStatisticalDataResponseBodyMetaList extends $tea.Mode
 }
 
 export class QueryYydLogMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11084,10 +12793,30 @@ export class QueryYydLogMonthStatisticalDataResponseBodyMetaList extends $tea.Mo
 }
 
 export class QueryYydLogWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11115,10 +12844,30 @@ export class QueryYydLogWeekStatisticalDataResponseBodyMetaList extends $tea.Mod
 }
 
 export class QueryYydMeetingDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11146,10 +12895,30 @@ export class QueryYydMeetingDayStatisticalDataResponseBodyMetaList extends $tea.
 }
 
 export class QueryYydMeetingMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11177,10 +12946,30 @@ export class QueryYydMeetingMonthStatisticalDataResponseBodyMetaList extends $te
 }
 
 export class QueryYydMeetingWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11208,10 +12997,30 @@ export class QueryYydMeetingWeekStatisticalDataResponseBodyMetaList extends $tea
 }
 
 export class QueryYydNoticeDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11239,10 +13048,30 @@ export class QueryYydNoticeDayStatisticalDataResponseBodyMetaList extends $tea.M
 }
 
 export class QueryYydNoticeMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11270,10 +13099,30 @@ export class QueryYydNoticeMonthStatisticalDataResponseBodyMetaList extends $tea
 }
 
 export class QueryYydNoticeWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11301,10 +13150,30 @@ export class QueryYydNoticeWeekStatisticalDataResponseBodyMetaList extends $tea.
 }
 
 export class QueryYydSingleMsgDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11332,10 +13201,30 @@ export class QueryYydSingleMsgDayStatisticalDataResponseBodyMetaList extends $te
 }
 
 export class QueryYydSingleMsgMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11363,10 +13252,30 @@ export class QueryYydSingleMsgMonthStatisticalDataResponseBodyMetaList extends $
 }
 
 export class QueryYydSingleMsgWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11394,10 +13303,30 @@ export class QueryYydSingleMsgWeekStatisticalDataResponseBodyMetaList extends $t
 }
 
 export class QueryYydToatlMsgDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11425,10 +13354,30 @@ export class QueryYydToatlMsgDayStatisticalDataResponseBodyMetaList extends $tea
 }
 
 export class QueryYydToatlMsgMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11456,10 +13405,30 @@ export class QueryYydToatlMsgMonthStatisticalDataResponseBodyMetaList extends $t
 }
 
 export class QueryYydToatlMsgWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11487,10 +13456,30 @@ export class QueryYydToatlMsgWeekStatisticalDataResponseBodyMetaList extends $te
 }
 
 export class QueryYydTodoDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11518,10 +13507,30 @@ export class QueryYydTodoDayStatisticalDataResponseBodyMetaList extends $tea.Mod
 }
 
 export class QueryYydTodoMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11549,10 +13558,30 @@ export class QueryYydTodoMonthStatisticalDataResponseBodyMetaList extends $tea.M
 }
 
 export class QueryYydTodoWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11580,10 +13609,30 @@ export class QueryYydTodoWeekStatisticalDataResponseBodyMetaList extends $tea.Mo
 }
 
 export class QueryYydTotalDayStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11611,10 +13660,30 @@ export class QueryYydTotalDayStatisticalDataResponseBodyMetaList extends $tea.Mo
 }
 
 export class QueryYydTotalMonthStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11642,10 +13711,30 @@ export class QueryYydTotalMonthStatisticalDataResponseBodyMetaList extends $tea.
 }
 
 export class QueryYydTotalStdStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11673,10 +13762,30 @@ export class QueryYydTotalStdStatisticalDataResponseBodyMetaList extends $tea.Mo
 }
 
 export class QueryYydTotalWeekStatisticalDataResponseBodyMetaList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiCaliber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   kpiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11705,12 +13814,11 @@ export class QueryYydTotalWeekStatisticalDataResponseBodyMetaList extends $tea.M
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -11720,12 +13828,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 关闭数据投递任务
-   *
-   * @param request CloseDataDeliverRequest
-   * @param headers CloseDataDeliverHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CloseDataDeliverResponse
+   * 关闭数据投递任务
+   * 
+   * @param request - CloseDataDeliverRequest
+   * @param headers - CloseDataDeliverHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CloseDataDeliverResponse
    */
   async closeDataDeliverWithOptions(request: CloseDataDeliverRequest, headers: CloseDataDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<CloseDataDeliverResponse> {
     Util.validateModel(request);
@@ -11766,10 +13874,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关闭数据投递任务
-   *
-   * @param request CloseDataDeliverRequest
-   * @return CloseDataDeliverResponse
+   * 关闭数据投递任务
+   * 
+   * @param request - CloseDataDeliverRequest
+   * @returns CloseDataDeliverResponse
    */
   async closeDataDeliver(request: CloseDataDeliverRequest): Promise<CloseDataDeliverResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11778,12 +13886,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建数据投递
-   *
-   * @param request CreateDataDeliverRequest
-   * @param headers CreateDataDeliverHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateDataDeliverResponse
+   * 创建数据投递
+   * 
+   * @param request - CreateDataDeliverRequest
+   * @param headers - CreateDataDeliverHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateDataDeliverResponse
    */
   async createDataDeliverWithOptions(request: CreateDataDeliverRequest, headers: CreateDataDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDataDeliverResponse> {
     Util.validateModel(request);
@@ -11842,10 +13950,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建数据投递
-   *
-   * @param request CreateDataDeliverRequest
-   * @return CreateDataDeliverResponse
+   * 创建数据投递
+   * 
+   * @param request - CreateDataDeliverRequest
+   * @returns CreateDataDeliverResponse
    */
   async createDataDeliver(request: CreateDataDeliverRequest): Promise<CreateDataDeliverResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11854,12 +13962,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工商-经营异常
-   *
-   * @param request GetAbnormalOperationRequest
-   * @param headers GetAbnormalOperationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAbnormalOperationResponse
+   * 工商-经营异常
+   * 
+   * @param request - GetAbnormalOperationRequest
+   * @param headers - GetAbnormalOperationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAbnormalOperationResponse
    */
   async getAbnormalOperationWithOptions(request: GetAbnormalOperationRequest, headers: GetAbnormalOperationHeaders, runtime: $Util.RuntimeOptions): Promise<GetAbnormalOperationResponse> {
     Util.validateModel(request);
@@ -11904,10 +14012,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工商-经营异常
-   *
-   * @param request GetAbnormalOperationRequest
-   * @return GetAbnormalOperationResponse
+   * 工商-经营异常
+   * 
+   * @param request - GetAbnormalOperationRequest
+   * @returns GetAbnormalOperationResponse
    */
   async getAbnormalOperation(request: GetAbnormalOperationRequest): Promise<GetAbnormalOperationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11916,12 +14024,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-行政许可
-   *
-   * @param request GetAdministrativeLicensingRequest
-   * @param headers GetAdministrativeLicensingHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAdministrativeLicensingResponse
+   * 获取工商-行政许可
+   * 
+   * @param request - GetAdministrativeLicensingRequest
+   * @param headers - GetAdministrativeLicensingHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAdministrativeLicensingResponse
    */
   async getAdministrativeLicensingWithOptions(request: GetAdministrativeLicensingRequest, headers: GetAdministrativeLicensingHeaders, runtime: $Util.RuntimeOptions): Promise<GetAdministrativeLicensingResponse> {
     Util.validateModel(request);
@@ -11966,10 +14074,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-行政许可
-   *
-   * @param request GetAdministrativeLicensingRequest
-   * @return GetAdministrativeLicensingResponse
+   * 获取工商-行政许可
+   * 
+   * @param request - GetAdministrativeLicensingRequest
+   * @returns GetAdministrativeLicensingResponse
    */
   async getAdministrativeLicensing(request: GetAdministrativeLicensingRequest): Promise<GetAdministrativeLicensingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11978,12 +14086,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 负面-行政处罚
-   *
-   * @param request GetAdministrativePenaltiesRequest
-   * @param headers GetAdministrativePenaltiesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAdministrativePenaltiesResponse
+   * 负面-行政处罚
+   * 
+   * @param request - GetAdministrativePenaltiesRequest
+   * @param headers - GetAdministrativePenaltiesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAdministrativePenaltiesResponse
    */
   async getAdministrativePenaltiesWithOptions(request: GetAdministrativePenaltiesRequest, headers: GetAdministrativePenaltiesHeaders, runtime: $Util.RuntimeOptions): Promise<GetAdministrativePenaltiesResponse> {
     Util.validateModel(request);
@@ -12028,10 +14136,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 负面-行政处罚
-   *
-   * @param request GetAdministrativePenaltiesRequest
-   * @return GetAdministrativePenaltiesResponse
+   * 负面-行政处罚
+   * 
+   * @param request - GetAdministrativePenaltiesRequest
+   * @returns GetAdministrativePenaltiesResponse
    */
   async getAdministrativePenalties(request: GetAdministrativePenaltiesRequest): Promise<GetAdministrativePenaltiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12040,12 +14148,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工商-基础信息
-   *
-   * @param request GetBasicInfoRequest
-   * @param headers GetBasicInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetBasicInfoResponse
+   * 工商-基础信息
+   * 
+   * @param request - GetBasicInfoRequest
+   * @param headers - GetBasicInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetBasicInfoResponse
    */
   async getBasicInfoWithOptions(request: GetBasicInfoRequest, headers: GetBasicInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetBasicInfoResponse> {
     Util.validateModel(request);
@@ -12090,10 +14198,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工商-基础信息
-   *
-   * @param request GetBasicInfoRequest
-   * @return GetBasicInfoResponse
+   * 工商-基础信息
+   * 
+   * @param request - GetBasicInfoRequest
+   * @returns GetBasicInfoResponse
    */
   async getBasicInfo(request: GetBasicInfoRequest): Promise<GetBasicInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12102,12 +14210,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取经营-招投标信息
-   *
-   * @param request GetBiddingInfoRequest
-   * @param headers GetBiddingInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetBiddingInfoResponse
+   * 获取经营-招投标信息
+   * 
+   * @param request - GetBiddingInfoRequest
+   * @param headers - GetBiddingInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetBiddingInfoResponse
    */
   async getBiddingInfoWithOptions(request: GetBiddingInfoRequest, headers: GetBiddingInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetBiddingInfoResponse> {
     Util.validateModel(request);
@@ -12152,10 +14260,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取经营-招投标信息
-   *
-   * @param request GetBiddingInfoRequest
-   * @return GetBiddingInfoResponse
+   * 获取经营-招投标信息
+   * 
+   * @param request - GetBiddingInfoRequest
+   * @returns GetBiddingInfoResponse
    */
   async getBiddingInfo(request: GetBiddingInfoRequest): Promise<GetBiddingInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12164,12 +14272,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-分支机构
-   *
-   * @param request GetBranchInfoRequest
-   * @param headers GetBranchInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetBranchInfoResponse
+   * 获取工商-分支机构
+   * 
+   * @param request - GetBranchInfoRequest
+   * @param headers - GetBranchInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetBranchInfoResponse
    */
   async getBranchInfoWithOptions(request: GetBranchInfoRequest, headers: GetBranchInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetBranchInfoResponse> {
     Util.validateModel(request);
@@ -12214,10 +14322,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-分支机构
-   *
-   * @param request GetBranchInfoRequest
-   * @return GetBranchInfoResponse
+   * 获取工商-分支机构
+   * 
+   * @param request - GetBranchInfoRequest
+   * @returns GetBranchInfoResponse
    */
   async getBranchInfo(request: GetBranchInfoRequest): Promise<GetBranchInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12226,12 +14334,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-变更记录
-   *
-   * @param request GetChangeRecordRequest
-   * @param headers GetChangeRecordHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetChangeRecordResponse
+   * 获取工商-变更记录
+   * 
+   * @param request - GetChangeRecordRequest
+   * @param headers - GetChangeRecordHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetChangeRecordResponse
    */
   async getChangeRecordWithOptions(request: GetChangeRecordRequest, headers: GetChangeRecordHeaders, runtime: $Util.RuntimeOptions): Promise<GetChangeRecordResponse> {
     Util.validateModel(request);
@@ -12276,10 +14384,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-变更记录
-   *
-   * @param request GetChangeRecordRequest
-   * @return GetChangeRecordResponse
+   * 获取工商-变更记录
+   * 
+   * @param request - GetChangeRecordRequest
+   * @returns GetChangeRecordResponse
    */
   async getChangeRecord(request: GetChangeRecordRequest): Promise<GetChangeRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12288,12 +14396,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取投递任务信息
-   *
-   * @param request GetDataDeliverRequest
-   * @param headers GetDataDeliverHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDataDeliverResponse
+   * 获取投递任务信息
+   * 
+   * @param request - GetDataDeliverRequest
+   * @param headers - GetDataDeliverHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDataDeliverResponse
    */
   async getDataDeliverWithOptions(request: GetDataDeliverRequest, headers: GetDataDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<GetDataDeliverResponse> {
     Util.validateModel(request);
@@ -12334,10 +14442,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取投递任务信息
-   *
-   * @param request GetDataDeliverRequest
-   * @return GetDataDeliverResponse
+   * 获取投递任务信息
+   * 
+   * @param request - GetDataDeliverRequest
+   * @returns GetDataDeliverResponse
    */
   async getDataDeliver(request: GetDataDeliverRequest): Promise<GetDataDeliverResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12346,12 +14454,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-域名信息
-   *
-   * @param request GetDomainInfoRequest
-   * @param headers GetDomainInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDomainInfoResponse
+   * 获取知识产权-域名信息
+   * 
+   * @param request - GetDomainInfoRequest
+   * @param headers - GetDomainInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDomainInfoResponse
    */
   async getDomainInfoWithOptions(request: GetDomainInfoRequest, headers: GetDomainInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDomainInfoResponse> {
     Util.validateModel(request);
@@ -12396,10 +14504,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-域名信息
-   *
-   * @param request GetDomainInfoRequest
-   * @return GetDomainInfoResponse
+   * 获取知识产权-域名信息
+   * 
+   * @param request - GetDomainInfoRequest
+   * @returns GetDomainInfoResponse
    */
   async getDomainInfo(request: GetDomainInfoRequest): Promise<GetDomainInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12408,12 +14516,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-双随机抽查结果
-   *
-   * @param request GetDoubleRandomRequest
-   * @param headers GetDoubleRandomHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDoubleRandomResponse
+   * 获取工商-双随机抽查结果
+   * 
+   * @param request - GetDoubleRandomRequest
+   * @param headers - GetDoubleRandomHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDoubleRandomResponse
    */
   async getDoubleRandomWithOptions(request: GetDoubleRandomRequest, headers: GetDoubleRandomHeaders, runtime: $Util.RuntimeOptions): Promise<GetDoubleRandomResponse> {
     Util.validateModel(request);
@@ -12458,10 +14566,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-双随机抽查结果
-   *
-   * @param request GetDoubleRandomRequest
-   * @return GetDoubleRandomResponse
+   * 获取工商-双随机抽查结果
+   * 
+   * @param request - GetDoubleRandomRequest
+   * @returns GetDoubleRandomResponse
    */
   async getDoubleRandom(request: GetDoubleRandomRequest): Promise<GetDoubleRandomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12470,12 +14578,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 负面-环保处罚
-   *
-   * @param request GetEnvironmentalPenaltiesRequest
-   * @param headers GetEnvironmentalPenaltiesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetEnvironmentalPenaltiesResponse
+   * 负面-环保处罚
+   * 
+   * @param request - GetEnvironmentalPenaltiesRequest
+   * @param headers - GetEnvironmentalPenaltiesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetEnvironmentalPenaltiesResponse
    */
   async getEnvironmentalPenaltiesWithOptions(request: GetEnvironmentalPenaltiesRequest, headers: GetEnvironmentalPenaltiesHeaders, runtime: $Util.RuntimeOptions): Promise<GetEnvironmentalPenaltiesResponse> {
     Util.validateModel(request);
@@ -12520,10 +14628,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 负面-环保处罚
-   *
-   * @param request GetEnvironmentalPenaltiesRequest
-   * @return GetEnvironmentalPenaltiesResponse
+   * 负面-环保处罚
+   * 
+   * @param request - GetEnvironmentalPenaltiesRequest
+   * @returns GetEnvironmentalPenaltiesResponse
    */
   async getEnvironmentalPenalties(request: GetEnvironmentalPenaltiesRequest): Promise<GetEnvironmentalPenaltiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12532,12 +14640,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取事件订阅的数据
-   *
-   * @param request GetEventDataRequest
-   * @param headers GetEventDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetEventDataResponse
+   * 获取事件订阅的数据
+   * 
+   * @param request - GetEventDataRequest
+   * @param headers - GetEventDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetEventDataResponse
    */
   async getEventDataWithOptions(request: GetEventDataRequest, headers: GetEventDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetEventDataResponse> {
     Util.validateModel(request);
@@ -12582,10 +14690,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取事件订阅的数据
-   *
-   * @param request GetEventDataRequest
-   * @return GetEventDataResponse
+   * 获取事件订阅的数据
+   * 
+   * @param request - GetEventDataRequest
+   * @returns GetEventDataResponse
    */
   async getEventData(request: GetEventDataRequest): Promise<GetEventDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12594,12 +14702,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工商-股东信息
-   *
-   * @param request GetHolderInfoRequest
-   * @param headers GetHolderInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetHolderInfoResponse
+   * 工商-股东信息
+   * 
+   * @param request - GetHolderInfoRequest
+   * @param headers - GetHolderInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetHolderInfoResponse
    */
   async getHolderInfoWithOptions(request: GetHolderInfoRequest, headers: GetHolderInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetHolderInfoResponse> {
     Util.validateModel(request);
@@ -12644,10 +14752,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工商-股东信息
-   *
-   * @param request GetHolderInfoRequest
-   * @return GetHolderInfoResponse
+   * 工商-股东信息
+   * 
+   * @param request - GetHolderInfoRequest
+   * @returns GetHolderInfoResponse
    */
   async getHolderInfo(request: GetHolderInfoRequest): Promise<GetHolderInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12656,12 +14764,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-知识产权出质
-   *
-   * @param request GetIntellectualPropertyRequest
-   * @param headers GetIntellectualPropertyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetIntellectualPropertyResponse
+   * 获取工商-知识产权出质
+   * 
+   * @param request - GetIntellectualPropertyRequest
+   * @param headers - GetIntellectualPropertyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetIntellectualPropertyResponse
    */
   async getIntellectualPropertyWithOptions(request: GetIntellectualPropertyRequest, headers: GetIntellectualPropertyHeaders, runtime: $Util.RuntimeOptions): Promise<GetIntellectualPropertyResponse> {
     Util.validateModel(request);
@@ -12706,10 +14814,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-知识产权出质
-   *
-   * @param request GetIntellectualPropertyRequest
-   * @return GetIntellectualPropertyResponse
+   * 获取工商-知识产权出质
+   * 
+   * @param request - GetIntellectualPropertyRequest
+   * @returns GetIntellectualPropertyResponse
    */
   async getIntellectualProperty(request: GetIntellectualPropertyRequest): Promise<GetIntellectualPropertyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12718,12 +14826,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-对外投资
-   *
-   * @param request GetInvestmentAbroadRequest
-   * @param headers GetInvestmentAbroadHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetInvestmentAbroadResponse
+   * 获取工商-对外投资
+   * 
+   * @param request - GetInvestmentAbroadRequest
+   * @param headers - GetInvestmentAbroadHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetInvestmentAbroadResponse
    */
   async getInvestmentAbroadWithOptions(request: GetInvestmentAbroadRequest, headers: GetInvestmentAbroadHeaders, runtime: $Util.RuntimeOptions): Promise<GetInvestmentAbroadResponse> {
     Util.validateModel(request);
@@ -12768,10 +14876,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-对外投资
-   *
-   * @param request GetInvestmentAbroadRequest
-   * @return GetInvestmentAbroadResponse
+   * 获取工商-对外投资
+   * 
+   * @param request - GetInvestmentAbroadRequest
+   * @returns GetInvestmentAbroadResponse
    */
   async getInvestmentAbroad(request: GetInvestmentAbroadRequest): Promise<GetInvestmentAbroadResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12780,12 +14888,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取经营-招聘信息
-   *
-   * @param request GetJobInfoRequest
-   * @param headers GetJobInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetJobInfoResponse
+   * 获取经营-招聘信息
+   * 
+   * @param request - GetJobInfoRequest
+   * @param headers - GetJobInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetJobInfoResponse
    */
   async getJobInfoWithOptions(request: GetJobInfoRequest, headers: GetJobInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobInfoResponse> {
     Util.validateModel(request);
@@ -12830,10 +14938,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取经营-招聘信息
-   *
-   * @param request GetJobInfoRequest
-   * @return GetJobInfoResponse
+   * 获取经营-招聘信息
+   * 
+   * @param request - GetJobInfoRequest
+   * @returns GetJobInfoResponse
    */
   async getJobInfo(request: GetJobInfoRequest): Promise<GetJobInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12842,12 +14950,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-专利信息
-   *
-   * @param request GetPatentInfoRequest
-   * @param headers GetPatentInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPatentInfoResponse
+   * 获取知识产权-专利信息
+   * 
+   * @param request - GetPatentInfoRequest
+   * @param headers - GetPatentInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPatentInfoResponse
    */
   async getPatentInfoWithOptions(request: GetPatentInfoRequest, headers: GetPatentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPatentInfoResponse> {
     Util.validateModel(request);
@@ -12892,10 +15000,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-专利信息
-   *
-   * @param request GetPatentInfoRequest
-   * @return GetPatentInfoResponse
+   * 获取知识产权-专利信息
+   * 
+   * @param request - GetPatentInfoRequest
+   * @returns GetPatentInfoResponse
    */
   async getPatentInfo(request: GetPatentInfoRequest): Promise<GetPatentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12904,12 +15012,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-主要人员
-   *
-   * @param request GetPrincipalEmployeeRequest
-   * @param headers GetPrincipalEmployeeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPrincipalEmployeeResponse
+   * 获取工商-主要人员
+   * 
+   * @param request - GetPrincipalEmployeeRequest
+   * @param headers - GetPrincipalEmployeeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPrincipalEmployeeResponse
    */
   async getPrincipalEmployeeWithOptions(request: GetPrincipalEmployeeRequest, headers: GetPrincipalEmployeeHeaders, runtime: $Util.RuntimeOptions): Promise<GetPrincipalEmployeeResponse> {
     Util.validateModel(request);
@@ -12954,10 +15062,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工商-主要人员
-   *
-   * @param request GetPrincipalEmployeeRequest
-   * @return GetPrincipalEmployeeResponse
+   * 获取工商-主要人员
+   * 
+   * @param request - GetPrincipalEmployeeRequest
+   * @returns GetPrincipalEmployeeResponse
    */
   async getPrincipalEmployee(request: GetPrincipalEmployeeRequest): Promise<GetPrincipalEmployeeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12966,12 +15074,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 经营-一般纳税人
-   *
-   * @param request GetQeneralTaxpayerInfoRequest
-   * @param headers GetQeneralTaxpayerInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetQeneralTaxpayerInfoResponse
+   * 经营-一般纳税人
+   * 
+   * @param request - GetQeneralTaxpayerInfoRequest
+   * @param headers - GetQeneralTaxpayerInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetQeneralTaxpayerInfoResponse
    */
   async getQeneralTaxpayerInfoWithOptions(request: GetQeneralTaxpayerInfoRequest, headers: GetQeneralTaxpayerInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetQeneralTaxpayerInfoResponse> {
     Util.validateModel(request);
@@ -13016,10 +15124,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 经营-一般纳税人
-   *
-   * @param request GetQeneralTaxpayerInfoRequest
-   * @return GetQeneralTaxpayerInfoResponse
+   * 经营-一般纳税人
+   * 
+   * @param request - GetQeneralTaxpayerInfoRequest
+   * @returns GetQeneralTaxpayerInfoResponse
    */
   async getQeneralTaxpayerInfo(request: GetQeneralTaxpayerInfoRequest): Promise<GetQeneralTaxpayerInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13028,12 +15136,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-资质证书
-   *
-   * @param request GetQualificationCertRequest
-   * @param headers GetQualificationCertHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetQualificationCertResponse
+   * 获取知识产权-资质证书
+   * 
+   * @param request - GetQualificationCertRequest
+   * @param headers - GetQualificationCertHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetQualificationCertResponse
    */
   async getQualificationCertWithOptions(request: GetQualificationCertRequest, headers: GetQualificationCertHeaders, runtime: $Util.RuntimeOptions): Promise<GetQualificationCertResponse> {
     Util.validateModel(request);
@@ -13078,10 +15186,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-资质证书
-   *
-   * @param request GetQualificationCertRequest
-   * @return GetQualificationCertResponse
+   * 获取知识产权-资质证书
+   * 
+   * @param request - GetQualificationCertRequest
+   * @returns GetQualificationCertResponse
    */
   async getQualificationCert(request: GetQualificationCertRequest): Promise<GetQualificationCertResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13090,12 +15198,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 负面-严重违法
-   *
-   * @param request GetSeriousViolationRequest
-   * @param headers GetSeriousViolationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSeriousViolationResponse
+   * 负面-严重违法
+   * 
+   * @param request - GetSeriousViolationRequest
+   * @param headers - GetSeriousViolationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSeriousViolationResponse
    */
   async getSeriousViolationWithOptions(request: GetSeriousViolationRequest, headers: GetSeriousViolationHeaders, runtime: $Util.RuntimeOptions): Promise<GetSeriousViolationResponse> {
     Util.validateModel(request);
@@ -13140,10 +15248,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 负面-严重违法
-   *
-   * @param request GetSeriousViolationRequest
-   * @return GetSeriousViolationResponse
+   * 负面-严重违法
+   * 
+   * @param request - GetSeriousViolationRequest
+   * @returns GetSeriousViolationResponse
    */
   async getSeriousViolation(request: GetSeriousViolationRequest): Promise<GetSeriousViolationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13152,12 +15260,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-软件著作权
-   *
-   * @param request GetSoftwareCopyrightRequest
-   * @param headers GetSoftwareCopyrightHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSoftwareCopyrightResponse
+   * 获取知识产权-软件著作权
+   * 
+   * @param request - GetSoftwareCopyrightRequest
+   * @param headers - GetSoftwareCopyrightHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSoftwareCopyrightResponse
    */
   async getSoftwareCopyrightWithOptions(request: GetSoftwareCopyrightRequest, headers: GetSoftwareCopyrightHeaders, runtime: $Util.RuntimeOptions): Promise<GetSoftwareCopyrightResponse> {
     Util.validateModel(request);
@@ -13202,10 +15310,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-软件著作权
-   *
-   * @param request GetSoftwareCopyrightRequest
-   * @return GetSoftwareCopyrightResponse
+   * 获取知识产权-软件著作权
+   * 
+   * @param request - GetSoftwareCopyrightRequest
+   * @returns GetSoftwareCopyrightResponse
    */
   async getSoftwareCopyright(request: GetSoftwareCopyrightRequest): Promise<GetSoftwareCopyrightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13214,12 +15322,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-商标信息
-   *
-   * @param request GetTrademarkInfoRequest
-   * @param headers GetTrademarkInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTrademarkInfoResponse
+   * 获取知识产权-商标信息
+   * 
+   * @param request - GetTrademarkInfoRequest
+   * @param headers - GetTrademarkInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTrademarkInfoResponse
    */
   async getTrademarkInfoWithOptions(request: GetTrademarkInfoRequest, headers: GetTrademarkInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetTrademarkInfoResponse> {
     Util.validateModel(request);
@@ -13264,10 +15372,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-商标信息
-   *
-   * @param request GetTrademarkInfoRequest
-   * @return GetTrademarkInfoResponse
+   * 获取知识产权-商标信息
+   * 
+   * @param request - GetTrademarkInfoRequest
+   * @returns GetTrademarkInfoResponse
    */
   async getTrademarkInfo(request: GetTrademarkInfoRequest): Promise<GetTrademarkInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13276,12 +15384,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-作品著作权
-   *
-   * @param request GetWorkCopyrightRequest
-   * @param headers GetWorkCopyrightHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetWorkCopyrightResponse
+   * 获取知识产权-作品著作权
+   * 
+   * @param request - GetWorkCopyrightRequest
+   * @param headers - GetWorkCopyrightHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetWorkCopyrightResponse
    */
   async getWorkCopyrightWithOptions(request: GetWorkCopyrightRequest, headers: GetWorkCopyrightHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkCopyrightResponse> {
     Util.validateModel(request);
@@ -13326,10 +15434,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识产权-作品著作权
-   *
-   * @param request GetWorkCopyrightRequest
-   * @return GetWorkCopyrightResponse
+   * 获取知识产权-作品著作权
+   * 
+   * @param request - GetWorkCopyrightRequest
+   * @returns GetWorkCopyrightResponse
    */
   async getWorkCopyright(request: GetWorkCopyrightRequest): Promise<GetWorkCopyrightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13338,12 +15446,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 数据投递列表
-   *
-   * @param request ListDataDeliversRequest
-   * @param headers ListDataDeliversHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListDataDeliversResponse
+   * 数据投递列表
+   * 
+   * @param request - ListDataDeliversRequest
+   * @param headers - ListDataDeliversHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListDataDeliversResponse
    */
   async listDataDeliversWithOptions(request: ListDataDeliversRequest, headers: ListDataDeliversHeaders, runtime: $Util.RuntimeOptions): Promise<ListDataDeliversResponse> {
     Util.validateModel(request);
@@ -13380,10 +15488,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 数据投递列表
-   *
-   * @param request ListDataDeliversRequest
-   * @return ListDataDeliversResponse
+   * 数据投递列表
+   * 
+   * @param request - ListDataDeliversRequest
+   * @returns ListDataDeliversResponse
    */
   async listDataDelivers(request: ListDataDeliversRequest): Promise<ListDataDeliversResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13392,12 +15500,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 操作表格配置
-   *
-   * @param request OperateChartConfigRequest
-   * @param headers OperateChartConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return OperateChartConfigResponse
+   * 操作表格配置
+   * 
+   * @param request - OperateChartConfigRequest
+   * @param headers - OperateChartConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OperateChartConfigResponse
    */
   async operateChartConfigWithOptions(request: OperateChartConfigRequest, headers: OperateChartConfigHeaders, runtime: $Util.RuntimeOptions): Promise<OperateChartConfigResponse> {
     Util.validateModel(request);
@@ -13450,10 +15558,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 操作表格配置
-   *
-   * @param request OperateChartConfigRequest
-   * @return OperateChartConfigResponse
+   * 操作表格配置
+   * 
+   * @param request - OperateChartConfigRequest
+   * @returns OperateChartConfigResponse
    */
   async operateChartConfig(request: OperateChartConfigRequest): Promise<OperateChartConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13462,11 +15570,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 企业授权信息
-   *
-   * @param headers PostCorpAuthInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PostCorpAuthInfoResponse
+   * 企业授权信息
+   * 
+   * @param headers - PostCorpAuthInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PostCorpAuthInfoResponse
    */
   async postCorpAuthInfoWithOptions(headers: PostCorpAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<PostCorpAuthInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -13496,9 +15604,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 企业授权信息
-   *
-   * @return PostCorpAuthInfoResponse
+   * 企业授权信息
+   * @returns PostCorpAuthInfoResponse
    */
   async postCorpAuthInfo(): Promise<PostCorpAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13507,12 +15614,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业用户激活状态统计数据
-   *
-   * @param request QueryActiveUserStatisticalDataRequest
-   * @param headers QueryActiveUserStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryActiveUserStatisticalDataResponse
+   * 获取企业用户激活状态统计数据
+   * 
+   * @param request - QueryActiveUserStatisticalDataRequest
+   * @param headers - QueryActiveUserStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryActiveUserStatisticalDataResponse
    */
   async queryActiveUserStatisticalDataWithOptions(request: QueryActiveUserStatisticalDataRequest, headers: QueryActiveUserStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryActiveUserStatisticalDataResponse> {
     Util.validateModel(request);
@@ -13549,10 +15656,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业用户激活状态统计数据
-   *
-   * @param request QueryActiveUserStatisticalDataRequest
-   * @return QueryActiveUserStatisticalDataResponse
+   * 获取企业用户激活状态统计数据
+   * 
+   * @param request - QueryActiveUserStatisticalDataRequest
+   * @returns QueryActiveUserStatisticalDataResponse
    */
   async queryActiveUserStatisticalData(request: QueryActiveUserStatisticalDataRequest): Promise<QueryActiveUserStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13561,12 +15668,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取安恒密盾统计数据
-   *
-   * @param request QueryAnhmdStatisticalDataRequest
-   * @param headers QueryAnhmdStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryAnhmdStatisticalDataResponse
+   * 获取安恒密盾统计数据
+   * 
+   * @param request - QueryAnhmdStatisticalDataRequest
+   * @param headers - QueryAnhmdStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryAnhmdStatisticalDataResponse
    */
   async queryAnhmdStatisticalDataWithOptions(request: QueryAnhmdStatisticalDataRequest, headers: QueryAnhmdStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAnhmdStatisticalDataResponse> {
     Util.validateModel(request);
@@ -13611,10 +15718,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取安恒密盾统计数据
-   *
-   * @param request QueryAnhmdStatisticalDataRequest
-   * @return QueryAnhmdStatisticalDataResponse
+   * 获取安恒密盾统计数据
+   * 
+   * @param request - QueryAnhmdStatisticalDataRequest
+   * @returns QueryAnhmdStatisticalDataResponse
    */
   async queryAnhmdStatisticalData(request: QueryAnhmdStatisticalDataRequest): Promise<QueryAnhmdStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13623,12 +15730,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业审批统计数据
-   *
-   * @param request QueryApprovalStatisticalDataRequest
-   * @param headers QueryApprovalStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryApprovalStatisticalDataResponse
+   * 获取企业审批统计数据
+   * 
+   * @param request - QueryApprovalStatisticalDataRequest
+   * @param headers - QueryApprovalStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryApprovalStatisticalDataResponse
    */
   async queryApprovalStatisticalDataWithOptions(request: QueryApprovalStatisticalDataRequest, headers: QueryApprovalStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryApprovalStatisticalDataResponse> {
     Util.validateModel(request);
@@ -13665,10 +15772,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业审批统计数据
-   *
-   * @param request QueryApprovalStatisticalDataRequest
-   * @return QueryApprovalStatisticalDataResponse
+   * 获取企业审批统计数据
+   * 
+   * @param request - QueryApprovalStatisticalDataRequest
+   * @returns QueryApprovalStatisticalDataResponse
    */
   async queryApprovalStatisticalData(request: QueryApprovalStatisticalDataRequest): Promise<QueryApprovalStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13677,12 +15784,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业考勤统计数据
-   *
-   * @param request QueryAttendanceStatisticalDataRequest
-   * @param headers QueryAttendanceStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryAttendanceStatisticalDataResponse
+   * 获取企业考勤统计数据
+   * 
+   * @param request - QueryAttendanceStatisticalDataRequest
+   * @param headers - QueryAttendanceStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryAttendanceStatisticalDataResponse
    */
   async queryAttendanceStatisticalDataWithOptions(request: QueryAttendanceStatisticalDataRequest, headers: QueryAttendanceStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAttendanceStatisticalDataResponse> {
     Util.validateModel(request);
@@ -13719,10 +15826,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业考勤统计数据
-   *
-   * @param request QueryAttendanceStatisticalDataRequest
-   * @return QueryAttendanceStatisticalDataResponse
+   * 获取企业考勤统计数据
+   * 
+   * @param request - QueryAttendanceStatisticalDataRequest
+   * @returns QueryAttendanceStatisticalDataResponse
    */
   async queryAttendanceStatisticalData(request: QueryAttendanceStatisticalDataRequest): Promise<QueryAttendanceStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13731,12 +15838,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业公告统计数据
-   *
-   * @param request QueryBlackboardStatisticalDataRequest
-   * @param headers QueryBlackboardStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryBlackboardStatisticalDataResponse
+   * 获取企业公告统计数据
+   * 
+   * @param request - QueryBlackboardStatisticalDataRequest
+   * @param headers - QueryBlackboardStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryBlackboardStatisticalDataResponse
    */
   async queryBlackboardStatisticalDataWithOptions(request: QueryBlackboardStatisticalDataRequest, headers: QueryBlackboardStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBlackboardStatisticalDataResponse> {
     Util.validateModel(request);
@@ -13773,10 +15880,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业公告统计数据
-   *
-   * @param request QueryBlackboardStatisticalDataRequest
-   * @return QueryBlackboardStatisticalDataResponse
+   * 获取企业公告统计数据
+   * 
+   * @param request - QueryBlackboardStatisticalDataRequest
+   * @returns QueryBlackboardStatisticalDataResponse
    */
   async queryBlackboardStatisticalData(request: QueryBlackboardStatisticalDataRequest): Promise<QueryBlackboardStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13785,12 +15892,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业日程统计数据
-   *
-   * @param request QueryCalendarStatisticalDataRequest
-   * @param headers QueryCalendarStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCalendarStatisticalDataResponse
+   * 获取企业日程统计数据
+   * 
+   * @param request - QueryCalendarStatisticalDataRequest
+   * @param headers - QueryCalendarStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCalendarStatisticalDataResponse
    */
   async queryCalendarStatisticalDataWithOptions(request: QueryCalendarStatisticalDataRequest, headers: QueryCalendarStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCalendarStatisticalDataResponse> {
     Util.validateModel(request);
@@ -13827,10 +15934,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业日程统计数据
-   *
-   * @param request QueryCalendarStatisticalDataRequest
-   * @return QueryCalendarStatisticalDataResponse
+   * 获取企业日程统计数据
+   * 
+   * @param request - QueryCalendarStatisticalDataRequest
+   * @returns QueryCalendarStatisticalDataResponse
    */
   async queryCalendarStatisticalData(request: QueryCalendarStatisticalDataRequest): Promise<QueryCalendarStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13839,12 +15946,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取图表数据
-   *
-   * @param request QueryChartDataRequest
-   * @param headers QueryChartDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryChartDataResponse
+   * 获取图表数据
+   * 
+   * @param request - QueryChartDataRequest
+   * @param headers - QueryChartDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryChartDataResponse
    */
   async queryChartDataWithOptions(request: QueryChartDataRequest, headers: QueryChartDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryChartDataResponse> {
     Util.validateModel(request);
@@ -13885,10 +15992,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取图表数据
-   *
-   * @param request QueryChartDataRequest
-   * @return QueryChartDataResponse
+   * 获取图表数据
+   * 
+   * @param request - QueryChartDataRequest
+   * @returns QueryChartDataResponse
    */
   async queryChartData(request: QueryChartDataRequest): Promise<QueryChartDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13897,12 +16004,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业签到统计数据
-   *
-   * @param request QueryCheckinStatisticalDataRequest
-   * @param headers QueryCheckinStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCheckinStatisticalDataResponse
+   * 获取企业签到统计数据
+   * 
+   * @param request - QueryCheckinStatisticalDataRequest
+   * @param headers - QueryCheckinStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCheckinStatisticalDataResponse
    */
   async queryCheckinStatisticalDataWithOptions(request: QueryCheckinStatisticalDataRequest, headers: QueryCheckinStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCheckinStatisticalDataResponse> {
     Util.validateModel(request);
@@ -13939,10 +16046,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业签到统计数据
-   *
-   * @param request QueryCheckinStatisticalDataRequest
-   * @return QueryCheckinStatisticalDataResponse
+   * 获取企业签到统计数据
+   * 
+   * @param request - QueryCheckinStatisticalDataRequest
+   * @returns QueryCheckinStatisticalDataResponse
    */
   async queryCheckinStatisticalData(request: QueryCheckinStatisticalDataRequest): Promise<QueryCheckinStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13951,12 +16058,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业全员圈统计数据
-   *
-   * @param request QueryCircleStatisticalDataRequest
-   * @param headers QueryCircleStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCircleStatisticalDataResponse
+   * 获取企业全员圈统计数据
+   * 
+   * @param request - QueryCircleStatisticalDataRequest
+   * @param headers - QueryCircleStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCircleStatisticalDataResponse
    */
   async queryCircleStatisticalDataWithOptions(request: QueryCircleStatisticalDataRequest, headers: QueryCircleStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCircleStatisticalDataResponse> {
     Util.validateModel(request);
@@ -13993,10 +16100,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业全员圈统计数据
-   *
-   * @param request QueryCircleStatisticalDataRequest
-   * @return QueryCircleStatisticalDataResponse
+   * 获取企业全员圈统计数据
+   * 
+   * @param request - QueryCircleStatisticalDataRequest
+   * @returns QueryCircleStatisticalDataResponse
    */
   async queryCircleStatisticalData(request: QueryCircleStatisticalDataRequest): Promise<QueryCircleStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14005,12 +16112,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。
-   *
-   * @param request QueryCompanyBasicInfoRequest
-   * @param headers QueryCompanyBasicInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCompanyBasicInfoResponse
+   * 通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。
+   * 
+   * @param request - QueryCompanyBasicInfoRequest
+   * @param headers - QueryCompanyBasicInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCompanyBasicInfoResponse
    */
   async queryCompanyBasicInfoWithOptions(request: QueryCompanyBasicInfoRequest, headers: QueryCompanyBasicInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCompanyBasicInfoResponse> {
     Util.validateModel(request);
@@ -14055,10 +16162,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。
-   *
-   * @param request QueryCompanyBasicInfoRequest
-   * @return QueryCompanyBasicInfoResponse
+   * 通过企业名称/社会统一信用代码/工商注册号，查询企业的基本画像信息。
+   * 
+   * @param request - QueryCompanyBasicInfoRequest
+   * @returns QueryCompanyBasicInfoResponse
    */
   async queryCompanyBasicInfo(request: QueryCompanyBasicInfoRequest): Promise<QueryCompanyBasicInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14067,12 +16174,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取数字区县组织信息
-   *
-   * @param request QueryDigitalDistrictOrgInfoRequest
-   * @param headers QueryDigitalDistrictOrgInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDigitalDistrictOrgInfoResponse
+   * 获取数字区县组织信息
+   * 
+   * @param request - QueryDigitalDistrictOrgInfoRequest
+   * @param headers - QueryDigitalDistrictOrgInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDigitalDistrictOrgInfoResponse
    */
   async queryDigitalDistrictOrgInfoWithOptions(request: QueryDigitalDistrictOrgInfoRequest, headers: QueryDigitalDistrictOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDigitalDistrictOrgInfoResponse> {
     Util.validateModel(request);
@@ -14113,10 +16220,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取数字区县组织信息
-   *
-   * @param request QueryDigitalDistrictOrgInfoRequest
-   * @return QueryDigitalDistrictOrgInfoResponse
+   * 获取数字区县组织信息
+   * 
+   * @param request - QueryDigitalDistrictOrgInfoRequest
+   * @returns QueryDigitalDistrictOrgInfoResponse
    */
   async queryDigitalDistrictOrgInfo(request: QueryDigitalDistrictOrgInfoRequest): Promise<QueryDigitalDistrictOrgInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14125,12 +16232,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业DING接收及评论统计数据
-   *
-   * @param request QueryDingReciveStatisticalDataRequest
-   * @param headers QueryDingReciveStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDingReciveStatisticalDataResponse
+   * 获取企业DING接收及评论统计数据
+   * 
+   * @param request - QueryDingReciveStatisticalDataRequest
+   * @param headers - QueryDingReciveStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDingReciveStatisticalDataResponse
    */
   async queryDingReciveStatisticalDataWithOptions(request: QueryDingReciveStatisticalDataRequest, headers: QueryDingReciveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDingReciveStatisticalDataResponse> {
     Util.validateModel(request);
@@ -14167,10 +16274,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业DING接收及评论统计数据
-   *
-   * @param request QueryDingReciveStatisticalDataRequest
-   * @return QueryDingReciveStatisticalDataResponse
+   * 获取企业DING接收及评论统计数据
+   * 
+   * @param request - QueryDingReciveStatisticalDataRequest
+   * @returns QueryDingReciveStatisticalDataResponse
    */
   async queryDingReciveStatisticalData(request: QueryDingReciveStatisticalDataRequest): Promise<QueryDingReciveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14179,12 +16286,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业DING发送统计数据
-   *
-   * @param request QueryDingSendStatisticalDataRequest
-   * @param headers QueryDingSendStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDingSendStatisticalDataResponse
+   * 获取企业DING发送统计数据
+   * 
+   * @param request - QueryDingSendStatisticalDataRequest
+   * @param headers - QueryDingSendStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDingSendStatisticalDataResponse
    */
   async queryDingSendStatisticalDataWithOptions(request: QueryDingSendStatisticalDataRequest, headers: QueryDingSendStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDingSendStatisticalDataResponse> {
     Util.validateModel(request);
@@ -14221,10 +16328,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业DING发送统计数据
-   *
-   * @param request QueryDingSendStatisticalDataRequest
-   * @return QueryDingSendStatisticalDataResponse
+   * 获取企业DING发送统计数据
+   * 
+   * @param request - QueryDingSendStatisticalDataRequest
+   * @returns QueryDingSendStatisticalDataResponse
    */
   async queryDingSendStatisticalData(request: QueryDingSendStatisticalDataRequest): Promise<QueryDingSendStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14233,12 +16340,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业文档统计数据
-   *
-   * @param request QueryDocumentStatisticalDataRequest
-   * @param headers QueryDocumentStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDocumentStatisticalDataResponse
+   * 获取企业文档统计数据
+   * 
+   * @param request - QueryDocumentStatisticalDataRequest
+   * @param headers - QueryDocumentStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDocumentStatisticalDataResponse
    */
   async queryDocumentStatisticalDataWithOptions(request: QueryDocumentStatisticalDataRequest, headers: QueryDocumentStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDocumentStatisticalDataResponse> {
     Util.validateModel(request);
@@ -14275,10 +16382,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业文档统计数据
-   *
-   * @param request QueryDocumentStatisticalDataRequest
-   * @return QueryDocumentStatisticalDataResponse
+   * 获取企业文档统计数据
+   * 
+   * @param request - QueryDocumentStatisticalDataRequest
+   * @returns QueryDocumentStatisticalDataResponse
    */
   async queryDocumentStatisticalData(request: QueryDocumentStatisticalDataRequest): Promise<QueryDocumentStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14287,12 +16394,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业钉盘统计数据
-   *
-   * @param request QueryDriveStatisticalDataRequest
-   * @param headers QueryDriveStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDriveStatisticalDataResponse
+   * 获取企业钉盘统计数据
+   * 
+   * @param request - QueryDriveStatisticalDataRequest
+   * @param headers - QueryDriveStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDriveStatisticalDataResponse
    */
   async queryDriveStatisticalDataWithOptions(request: QueryDriveStatisticalDataRequest, headers: QueryDriveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDriveStatisticalDataResponse> {
     Util.validateModel(request);
@@ -14329,10 +16436,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业钉盘统计数据
-   *
-   * @param request QueryDriveStatisticalDataRequest
-   * @return QueryDriveStatisticalDataResponse
+   * 获取企业钉盘统计数据
+   * 
+   * @param request - QueryDriveStatisticalDataRequest
+   * @returns QueryDriveStatisticalDataResponse
    */
   async queryDriveStatisticalData(request: QueryDriveStatisticalDataRequest): Promise<QueryDriveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14341,12 +16448,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业员工类型统计数据
-   *
-   * @param request QueryEmployeeTypeStatisticalDataRequest
-   * @param headers QueryEmployeeTypeStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryEmployeeTypeStatisticalDataResponse
+   * 获取企业员工类型统计数据
+   * 
+   * @param request - QueryEmployeeTypeStatisticalDataRequest
+   * @param headers - QueryEmployeeTypeStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryEmployeeTypeStatisticalDataResponse
    */
   async queryEmployeeTypeStatisticalDataWithOptions(request: QueryEmployeeTypeStatisticalDataRequest, headers: QueryEmployeeTypeStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEmployeeTypeStatisticalDataResponse> {
     Util.validateModel(request);
@@ -14383,10 +16490,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业员工类型统计数据
-   *
-   * @param request QueryEmployeeTypeStatisticalDataRequest
-   * @return QueryEmployeeTypeStatisticalDataResponse
+   * 获取企业员工类型统计数据
+   * 
+   * @param request - QueryEmployeeTypeStatisticalDataRequest
+   * @returns QueryEmployeeTypeStatisticalDataResponse
    */
   async queryEmployeeTypeStatisticalData(request: QueryEmployeeTypeStatisticalDataRequest): Promise<QueryEmployeeTypeStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14395,12 +16502,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 数据资产平台数据服务接口
-   *
-   * @param request QueryGeneralDataServiceRequest
-   * @param headers QueryGeneralDataServiceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryGeneralDataServiceResponse
+   * 数据资产平台数据服务接口
+   * 
+   * @param request - QueryGeneralDataServiceRequest
+   * @param headers - QueryGeneralDataServiceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryGeneralDataServiceResponse
    */
   async queryGeneralDataServiceWithOptions(request: QueryGeneralDataServiceRequest, headers: QueryGeneralDataServiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGeneralDataServiceResponse> {
     Util.validateModel(request);
@@ -14461,10 +16568,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 数据资产平台数据服务接口
-   *
-   * @param request QueryGeneralDataServiceRequest
-   * @return QueryGeneralDataServiceResponse
+   * 数据资产平台数据服务接口
+   * 
+   * @param request - QueryGeneralDataServiceRequest
+   * @returns QueryGeneralDataServiceResponse
    */
   async queryGeneralDataService(request: QueryGeneralDataServiceRequest): Promise<QueryGeneralDataServiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14473,12 +16580,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
-   *
-   * @param request QueryGeneralDataServiceBatchRequest
-   * @param headers QueryGeneralDataServiceBatchHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryGeneralDataServiceBatchResponse
+   * 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+   * 
+   * @param request - QueryGeneralDataServiceBatchRequest
+   * @param headers - QueryGeneralDataServiceBatchHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryGeneralDataServiceBatchResponse
    */
   async queryGeneralDataServiceBatchWithOptions(request: QueryGeneralDataServiceBatchRequest, headers: QueryGeneralDataServiceBatchHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGeneralDataServiceBatchResponse> {
     Util.validateModel(request);
@@ -14543,10 +16650,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
-   *
-   * @param request QueryGeneralDataServiceBatchRequest
-   * @return QueryGeneralDataServiceBatchResponse
+   * 数据资产平台数据服务接口(支持部门、员工维度批量拉取)
+   * 
+   * @param request - QueryGeneralDataServiceBatchRequest
+   * @returns QueryGeneralDataServiceBatchResponse
    */
   async queryGeneralDataServiceBatch(request: QueryGeneralDataServiceBatchRequest): Promise<QueryGeneralDataServiceBatchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14555,12 +16662,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 数据资产平台数据服务接口(查询数据更新日期)
-   *
-   * @param request QueryGeneralDataUpdateDateRequest
-   * @param headers QueryGeneralDataUpdateDateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryGeneralDataUpdateDateResponse
+   * 数据资产平台数据服务接口(查询数据更新日期)
+   * 
+   * @param request - QueryGeneralDataUpdateDateRequest
+   * @param headers - QueryGeneralDataUpdateDateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryGeneralDataUpdateDateResponse
    */
   async queryGeneralDataUpdateDateWithOptions(request: QueryGeneralDataUpdateDateRequest, headers: QueryGeneralDataUpdateDateHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGeneralDataUpdateDateResponse> {
     Util.validateModel(request);
@@ -14597,10 +16704,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 数据资产平台数据服务接口(查询数据更新日期)
-   *
-   * @param request QueryGeneralDataUpdateDateRequest
-   * @return QueryGeneralDataUpdateDateResponse
+   * 数据资产平台数据服务接口(查询数据更新日期)
+   * 
+   * @param request - QueryGeneralDataUpdateDateRequest
+   * @returns QueryGeneralDataUpdateDateResponse
    */
   async queryGeneralDataUpdateDate(request: QueryGeneralDataUpdateDateRequest): Promise<QueryGeneralDataUpdateDateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14609,12 +16716,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业群直播统计数据
-   *
-   * @param request QueryGroupLiveStatisticalDataRequest
-   * @param headers QueryGroupLiveStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryGroupLiveStatisticalDataResponse
+   * 获取企业群直播统计数据
+   * 
+   * @param request - QueryGroupLiveStatisticalDataRequest
+   * @param headers - QueryGroupLiveStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryGroupLiveStatisticalDataResponse
    */
   async queryGroupLiveStatisticalDataWithOptions(request: QueryGroupLiveStatisticalDataRequest, headers: QueryGroupLiveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupLiveStatisticalDataResponse> {
     Util.validateModel(request);
@@ -14651,10 +16758,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业群直播统计数据
-   *
-   * @param request QueryGroupLiveStatisticalDataRequest
-   * @return QueryGroupLiveStatisticalDataResponse
+   * 获取企业群直播统计数据
+   * 
+   * @param request - QueryGroupLiveStatisticalDataRequest
+   * @returns QueryGroupLiveStatisticalDataResponse
    */
   async queryGroupLiveStatisticalData(request: QueryGroupLiveStatisticalDataRequest): Promise<QueryGroupLiveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14663,12 +16770,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业群聊统计数据
-   *
-   * @param request QueryGroupMessageStatisticalDataRequest
-   * @param headers QueryGroupMessageStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryGroupMessageStatisticalDataResponse
+   * 获取企业群聊统计数据
+   * 
+   * @param request - QueryGroupMessageStatisticalDataRequest
+   * @param headers - QueryGroupMessageStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryGroupMessageStatisticalDataResponse
    */
   async queryGroupMessageStatisticalDataWithOptions(request: QueryGroupMessageStatisticalDataRequest, headers: QueryGroupMessageStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupMessageStatisticalDataResponse> {
     Util.validateModel(request);
@@ -14705,10 +16812,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业群聊统计数据
-   *
-   * @param request QueryGroupMessageStatisticalDataRequest
-   * @return QueryGroupMessageStatisticalDataResponse
+   * 获取企业群聊统计数据
+   * 
+   * @param request - QueryGroupMessageStatisticalDataRequest
+   * @returns QueryGroupMessageStatisticalDataResponse
    */
   async queryGroupMessageStatisticalData(request: QueryGroupMessageStatisticalDataRequest): Promise<QueryGroupMessageStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14717,12 +16824,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业钉钉运动统计数据
-   *
-   * @param request QueryHealthStatisticalDataRequest
-   * @param headers QueryHealthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryHealthStatisticalDataResponse
+   * 获取企业钉钉运动统计数据
+   * 
+   * @param request - QueryHealthStatisticalDataRequest
+   * @param headers - QueryHealthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryHealthStatisticalDataResponse
    */
   async queryHealthStatisticalDataWithOptions(request: QueryHealthStatisticalDataRequest, headers: QueryHealthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHealthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -14759,10 +16866,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业钉钉运动统计数据
-   *
-   * @param request QueryHealthStatisticalDataRequest
-   * @return QueryHealthStatisticalDataResponse
+   * 获取企业钉钉运动统计数据
+   * 
+   * @param request - QueryHealthStatisticalDataRequest
+   * @returns QueryHealthStatisticalDataResponse
    */
   async queryHealthStatisticalData(request: QueryHealthStatisticalDataRequest): Promise<QueryHealthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14771,12 +16878,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业邮箱统计数据
-   *
-   * @param request QueryMailStatisticalDataRequest
-   * @param headers QueryMailStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMailStatisticalDataResponse
+   * 获取企业邮箱统计数据
+   * 
+   * @param request - QueryMailStatisticalDataRequest
+   * @param headers - QueryMailStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMailStatisticalDataResponse
    */
   async queryMailStatisticalDataWithOptions(request: QueryMailStatisticalDataRequest, headers: QueryMailStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMailStatisticalDataResponse> {
     Util.validateModel(request);
@@ -14813,10 +16920,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业邮箱统计数据
-   *
-   * @param request QueryMailStatisticalDataRequest
-   * @return QueryMailStatisticalDataResponse
+   * 获取企业邮箱统计数据
+   * 
+   * @param request - QueryMailStatisticalDataRequest
+   * @returns QueryMailStatisticalDataResponse
    */
   async queryMailStatisticalData(request: QueryMailStatisticalDataRequest): Promise<QueryMailStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14825,12 +16932,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取官方数据集数据
-   *
-   * @param request QueryOfficialDataRequest
-   * @param headers QueryOfficialDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryOfficialDataResponse
+   * 获取官方数据集数据
+   * 
+   * @param request - QueryOfficialDataRequest
+   * @param headers - QueryOfficialDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryOfficialDataResponse
    */
   async queryOfficialDataWithOptions(request: QueryOfficialDataRequest, headers: QueryOfficialDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialDataResponse> {
     Util.validateModel(request);
@@ -14871,10 +16978,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取官方数据集数据
-   *
-   * @param request QueryOfficialDataRequest
-   * @return QueryOfficialDataResponse
+   * 获取官方数据集数据
+   * 
+   * @param request - QueryOfficialDataRequest
+   * @returns QueryOfficialDataResponse
    */
   async queryOfficialData(request: QueryOfficialDataRequest): Promise<QueryOfficialDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14883,12 +16990,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV获取官方数据集字段信息
-   *
-   * @param request QueryOfficialDatasetFieldsRequest
-   * @param headers QueryOfficialDatasetFieldsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryOfficialDatasetFieldsResponse
+   * ISV获取官方数据集字段信息
+   * 
+   * @param request - QueryOfficialDatasetFieldsRequest
+   * @param headers - QueryOfficialDatasetFieldsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryOfficialDatasetFieldsResponse
    */
   async queryOfficialDatasetFieldsWithOptions(request: QueryOfficialDatasetFieldsRequest, headers: QueryOfficialDatasetFieldsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialDatasetFieldsResponse> {
     Util.validateModel(request);
@@ -14929,10 +17036,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV获取官方数据集字段信息
-   *
-   * @param request QueryOfficialDatasetFieldsRequest
-   * @return QueryOfficialDatasetFieldsResponse
+   * ISV获取官方数据集字段信息
+   * 
+   * @param request - QueryOfficialDatasetFieldsRequest
+   * @returns QueryOfficialDatasetFieldsResponse
    */
   async queryOfficialDatasetFields(request: QueryOfficialDatasetFieldsRequest): Promise<QueryOfficialDatasetFieldsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14941,12 +17048,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV获取官方数据集列表
-   *
-   * @param request QueryOfficialDatasetListRequest
-   * @param headers QueryOfficialDatasetListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryOfficialDatasetListResponse
+   * ISV获取官方数据集列表
+   * 
+   * @param request - QueryOfficialDatasetListRequest
+   * @param headers - QueryOfficialDatasetListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryOfficialDatasetListResponse
    */
   async queryOfficialDatasetListWithOptions(request: QueryOfficialDatasetListRequest, headers: QueryOfficialDatasetListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialDatasetListResponse> {
     Util.validateModel(request);
@@ -14991,10 +17098,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV获取官方数据集列表
-   *
-   * @param request QueryOfficialDatasetListRequest
-   * @return QueryOfficialDatasetListResponse
+   * ISV获取官方数据集列表
+   * 
+   * @param request - QueryOfficialDatasetListRequest
+   * @returns QueryOfficialDatasetListResponse
    */
   async queryOfficialDatasetList(request: QueryOfficialDatasetListRequest): Promise<QueryOfficialDatasetListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15003,12 +17110,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取官方数据集数据
-   *
-   * @param request QueryOfficialFormDataRequest
-   * @param headers QueryOfficialFormDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryOfficialFormDataResponse
+   * 获取官方数据集数据
+   * 
+   * @param request - QueryOfficialFormDataRequest
+   * @param headers - QueryOfficialFormDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryOfficialFormDataResponse
    */
   async queryOfficialFormDataWithOptions(request: QueryOfficialFormDataRequest, headers: QueryOfficialFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialFormDataResponse> {
     Util.validateModel(request);
@@ -15049,10 +17156,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取官方数据集数据
-   *
-   * @param request QueryOfficialFormDataRequest
-   * @return QueryOfficialFormDataResponse
+   * 获取官方数据集数据
+   * 
+   * @param request - QueryOfficialFormDataRequest
+   * @returns QueryOfficialFormDataResponse
    */
   async queryOfficialFormData(request: QueryOfficialFormDataRequest): Promise<QueryOfficialFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15061,12 +17168,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取HOLO中官方OA表单数据集数据
-   *
-   * @param request QueryOfficialFormDataDirectHoloRequest
-   * @param headers QueryOfficialFormDataDirectHoloHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryOfficialFormDataDirectHoloResponse
+   * 获取HOLO中官方OA表单数据集数据
+   * 
+   * @param request - QueryOfficialFormDataDirectHoloRequest
+   * @param headers - QueryOfficialFormDataDirectHoloHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryOfficialFormDataDirectHoloResponse
    */
   async queryOfficialFormDataDirectHoloWithOptions(request: QueryOfficialFormDataDirectHoloRequest, headers: QueryOfficialFormDataDirectHoloHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialFormDataDirectHoloResponse> {
     Util.validateModel(request);
@@ -15107,10 +17214,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取HOLO中官方OA表单数据集数据
-   *
-   * @param request QueryOfficialFormDataDirectHoloRequest
-   * @return QueryOfficialFormDataDirectHoloResponse
+   * 获取HOLO中官方OA表单数据集数据
+   * 
+   * @param request - QueryOfficialFormDataDirectHoloRequest
+   * @returns QueryOfficialFormDataDirectHoloResponse
    */
   async queryOfficialFormDataDirectHolo(request: QueryOfficialFormDataDirectHoloRequest): Promise<QueryOfficialFormDataDirectHoloResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15119,12 +17226,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业用户在线统计数据
-   *
-   * @param request QueryOnlineUserStatisticalDataRequest
-   * @param headers QueryOnlineUserStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryOnlineUserStatisticalDataResponse
+   * 获取企业用户在线统计数据
+   * 
+   * @param request - QueryOnlineUserStatisticalDataRequest
+   * @param headers - QueryOnlineUserStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryOnlineUserStatisticalDataResponse
    */
   async queryOnlineUserStatisticalDataWithOptions(request: QueryOnlineUserStatisticalDataRequest, headers: QueryOnlineUserStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOnlineUserStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15161,10 +17268,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业用户在线统计数据
-   *
-   * @param request QueryOnlineUserStatisticalDataRequest
-   * @return QueryOnlineUserStatisticalDataResponse
+   * 获取企业用户在线统计数据
+   * 
+   * @param request - QueryOnlineUserStatisticalDataRequest
+   * @returns QueryOnlineUserStatisticalDataResponse
    */
   async queryOnlineUserStatisticalData(request: QueryOnlineUserStatisticalDataRequest): Promise<QueryOnlineUserStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15173,12 +17280,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业接收红包统计数据
-   *
-   * @param request QueryRedEnvelopeReciveStatisticalDataRequest
-   * @param headers QueryRedEnvelopeReciveStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryRedEnvelopeReciveStatisticalDataResponse
+   * 获取企业接收红包统计数据
+   * 
+   * @param request - QueryRedEnvelopeReciveStatisticalDataRequest
+   * @param headers - QueryRedEnvelopeReciveStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryRedEnvelopeReciveStatisticalDataResponse
    */
   async queryRedEnvelopeReciveStatisticalDataWithOptions(request: QueryRedEnvelopeReciveStatisticalDataRequest, headers: QueryRedEnvelopeReciveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRedEnvelopeReciveStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15215,10 +17322,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业接收红包统计数据
-   *
-   * @param request QueryRedEnvelopeReciveStatisticalDataRequest
-   * @return QueryRedEnvelopeReciveStatisticalDataResponse
+   * 获取企业接收红包统计数据
+   * 
+   * @param request - QueryRedEnvelopeReciveStatisticalDataRequest
+   * @returns QueryRedEnvelopeReciveStatisticalDataResponse
    */
   async queryRedEnvelopeReciveStatisticalData(request: QueryRedEnvelopeReciveStatisticalDataRequest): Promise<QueryRedEnvelopeReciveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15227,12 +17334,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业发送红包统计数据
-   *
-   * @param request QueryRedEnvelopeSendStatisticalDataRequest
-   * @param headers QueryRedEnvelopeSendStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryRedEnvelopeSendStatisticalDataResponse
+   * 获取企业发送红包统计数据
+   * 
+   * @param request - QueryRedEnvelopeSendStatisticalDataRequest
+   * @param headers - QueryRedEnvelopeSendStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryRedEnvelopeSendStatisticalDataResponse
    */
   async queryRedEnvelopeSendStatisticalDataWithOptions(request: QueryRedEnvelopeSendStatisticalDataRequest, headers: QueryRedEnvelopeSendStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRedEnvelopeSendStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15269,10 +17376,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业发送红包统计数据
-   *
-   * @param request QueryRedEnvelopeSendStatisticalDataRequest
-   * @return QueryRedEnvelopeSendStatisticalDataResponse
+   * 获取企业发送红包统计数据
+   * 
+   * @param request - QueryRedEnvelopeSendStatisticalDataRequest
+   * @returns QueryRedEnvelopeSendStatisticalDataResponse
    */
   async queryRedEnvelopeSendStatisticalData(request: QueryRedEnvelopeSendStatisticalDataRequest): Promise<QueryRedEnvelopeSendStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15281,12 +17388,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业日志统计数据
-   *
-   * @param request QueryReportStatisticalDataRequest
-   * @param headers QueryReportStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryReportStatisticalDataResponse
+   * 获取企业日志统计数据
+   * 
+   * @param request - QueryReportStatisticalDataRequest
+   * @param headers - QueryReportStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryReportStatisticalDataResponse
    */
   async queryReportStatisticalDataWithOptions(request: QueryReportStatisticalDataRequest, headers: QueryReportStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReportStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15323,10 +17430,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业日志统计数据
-   *
-   * @param request QueryReportStatisticalDataRequest
-   * @return QueryReportStatisticalDataResponse
+   * 获取企业日志统计数据
+   * 
+   * @param request - QueryReportStatisticalDataRequest
+   * @returns QueryReportStatisticalDataResponse
    */
   async queryReportStatisticalData(request: QueryReportStatisticalDataRequest): Promise<QueryReportStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15335,12 +17442,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业单聊统计数据
-   *
-   * @param request QuerySingleMessageStatisticalDataRequest
-   * @param headers QuerySingleMessageStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QuerySingleMessageStatisticalDataResponse
+   * 获取企业单聊统计数据
+   * 
+   * @param request - QuerySingleMessageStatisticalDataRequest
+   * @param headers - QuerySingleMessageStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QuerySingleMessageStatisticalDataResponse
    */
   async querySingleMessageStatisticalDataWithOptions(request: QuerySingleMessageStatisticalDataRequest, headers: QuerySingleMessageStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySingleMessageStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15377,10 +17484,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业单聊统计数据
-   *
-   * @param request QuerySingleMessageStatisticalDataRequest
-   * @return QuerySingleMessageStatisticalDataResponse
+   * 获取企业单聊统计数据
+   * 
+   * @param request - QuerySingleMessageStatisticalDataRequest
+   * @returns QuerySingleMessageStatisticalDataResponse
    */
   async querySingleMessageStatisticalData(request: QuerySingleMessageStatisticalDataRequest): Promise<QuerySingleMessageStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15389,12 +17496,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业电话会议统计数据
-   *
-   * @param request QueryTelMeetingStatisticalDataRequest
-   * @param headers QueryTelMeetingStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryTelMeetingStatisticalDataResponse
+   * 获取企业电话会议统计数据
+   * 
+   * @param request - QueryTelMeetingStatisticalDataRequest
+   * @param headers - QueryTelMeetingStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryTelMeetingStatisticalDataResponse
    */
   async queryTelMeetingStatisticalDataWithOptions(request: QueryTelMeetingStatisticalDataRequest, headers: QueryTelMeetingStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTelMeetingStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15431,10 +17538,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业电话会议统计数据
-   *
-   * @param request QueryTelMeetingStatisticalDataRequest
-   * @return QueryTelMeetingStatisticalDataResponse
+   * 获取企业电话会议统计数据
+   * 
+   * @param request - QueryTelMeetingStatisticalDataRequest
+   * @returns QueryTelMeetingStatisticalDataResponse
    */
   async queryTelMeetingStatisticalData(request: QueryTelMeetingStatisticalDataRequest): Promise<QueryTelMeetingStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15443,12 +17550,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业待办统计数据
-   *
-   * @param request QueryTodoStatisticalDataRequest
-   * @param headers QueryTodoStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryTodoStatisticalDataResponse
+   * 获取企业待办统计数据
+   * 
+   * @param request - QueryTodoStatisticalDataRequest
+   * @param headers - QueryTodoStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryTodoStatisticalDataResponse
    */
   async queryTodoStatisticalDataWithOptions(request: QueryTodoStatisticalDataRequest, headers: QueryTodoStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTodoStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15485,10 +17592,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业待办统计数据
-   *
-   * @param request QueryTodoStatisticalDataRequest
-   * @return QueryTodoStatisticalDataResponse
+   * 获取企业待办统计数据
+   * 
+   * @param request - QueryTodoStatisticalDataRequest
+   * @returns QueryTodoStatisticalDataResponse
    */
   async queryTodoStatisticalData(request: QueryTodoStatisticalDataRequest): Promise<QueryTodoStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15497,12 +17604,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 数据资产平台查询数据记录数
-   *
-   * @param request QueryTotalDataCountServiceRequest
-   * @param headers QueryTotalDataCountServiceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryTotalDataCountServiceResponse
+   * 数据资产平台查询数据记录数
+   * 
+   * @param request - QueryTotalDataCountServiceRequest
+   * @param headers - QueryTotalDataCountServiceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryTotalDataCountServiceResponse
    */
   async queryTotalDataCountServiceWithOptions(request: QueryTotalDataCountServiceRequest, headers: QueryTotalDataCountServiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTotalDataCountServiceResponse> {
     Util.validateModel(request);
@@ -15567,10 +17674,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 数据资产平台查询数据记录数
-   *
-   * @param request QueryTotalDataCountServiceRequest
-   * @return QueryTotalDataCountServiceResponse
+   * 数据资产平台查询数据记录数
+   * 
+   * @param request - QueryTotalDataCountServiceRequest
+   * @returns QueryTotalDataCountServiceResponse
    */
   async queryTotalDataCountService(request: QueryTotalDataCountServiceRequest): Promise<QueryTotalDataCountServiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15579,12 +17686,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业视频会议统计数据
-   *
-   * @param request QueryVedioMeetingStatisticalDataRequest
-   * @param headers QueryVedioMeetingStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryVedioMeetingStatisticalDataResponse
+   * 获取企业视频会议统计数据
+   * 
+   * @param request - QueryVedioMeetingStatisticalDataRequest
+   * @param headers - QueryVedioMeetingStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryVedioMeetingStatisticalDataResponse
    */
   async queryVedioMeetingStatisticalDataWithOptions(request: QueryVedioMeetingStatisticalDataRequest, headers: QueryVedioMeetingStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryVedioMeetingStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15621,10 +17728,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业视频会议统计数据
-   *
-   * @param request QueryVedioMeetingStatisticalDataRequest
-   * @return QueryVedioMeetingStatisticalDataResponse
+   * 获取企业视频会议统计数据
+   * 
+   * @param request - QueryVedioMeetingStatisticalDataRequest
+   * @returns QueryVedioMeetingStatisticalDataResponse
    */
   async queryVedioMeetingStatisticalData(request: QueryVedioMeetingStatisticalDataRequest): Promise<QueryVedioMeetingStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15633,12 +17740,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋活跃分析（按日统计）指标接口
-   *
-   * @param request QueryYydActiveDayStatisticalDataRequest
-   * @param headers QueryYydActiveDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydActiveDayStatisticalDataResponse
+   * 亚运钉参谋活跃分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydActiveDayStatisticalDataRequest
+   * @param headers - QueryYydActiveDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydActiveDayStatisticalDataResponse
    */
   async queryYydActiveDayStatisticalDataWithOptions(request: QueryYydActiveDayStatisticalDataRequest, headers: QueryYydActiveDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydActiveDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15675,10 +17782,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋活跃分析（按日统计）指标接口
-   *
-   * @param request QueryYydActiveDayStatisticalDataRequest
-   * @return QueryYydActiveDayStatisticalDataResponse
+   * 亚运钉参谋活跃分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydActiveDayStatisticalDataRequest
+   * @returns QueryYydActiveDayStatisticalDataResponse
    */
   async queryYydActiveDayStatisticalData(request: QueryYydActiveDayStatisticalDataRequest): Promise<QueryYydActiveDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15687,12 +17794,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋活跃分析（按月统计）指标接口
-   *
-   * @param request QueryYydActiveMonthStatisticalDataRequest
-   * @param headers QueryYydActiveMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydActiveMonthStatisticalDataResponse
+   * 亚运钉参谋活跃分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydActiveMonthStatisticalDataRequest
+   * @param headers - QueryYydActiveMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydActiveMonthStatisticalDataResponse
    */
   async queryYydActiveMonthStatisticalDataWithOptions(request: QueryYydActiveMonthStatisticalDataRequest, headers: QueryYydActiveMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydActiveMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15729,10 +17836,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋活跃分析（按月统计）指标接口
-   *
-   * @param request QueryYydActiveMonthStatisticalDataRequest
-   * @return QueryYydActiveMonthStatisticalDataResponse
+   * 亚运钉参谋活跃分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydActiveMonthStatisticalDataRequest
+   * @returns QueryYydActiveMonthStatisticalDataResponse
    */
   async queryYydActiveMonthStatisticalData(request: QueryYydActiveMonthStatisticalDataRequest): Promise<QueryYydActiveMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15741,12 +17848,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋活跃分析（按周统计）指标接口
-   *
-   * @param request QueryYydActiveWeekStatisticalDataRequest
-   * @param headers QueryYydActiveWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydActiveWeekStatisticalDataResponse
+   * 亚运钉参谋活跃分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydActiveWeekStatisticalDataRequest
+   * @param headers - QueryYydActiveWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydActiveWeekStatisticalDataResponse
    */
   async queryYydActiveWeekStatisticalDataWithOptions(request: QueryYydActiveWeekStatisticalDataRequest, headers: QueryYydActiveWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydActiveWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15783,10 +17890,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋活跃分析（按周统计）指标接口
-   *
-   * @param request QueryYydActiveWeekStatisticalDataRequest
-   * @return QueryYydActiveWeekStatisticalDataResponse
+   * 亚运钉参谋活跃分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydActiveWeekStatisticalDataRequest
+   * @returns QueryYydActiveWeekStatisticalDataResponse
    */
   async queryYydActiveWeekStatisticalData(request: QueryYydActiveWeekStatisticalDataRequest): Promise<QueryYydActiveWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15795,12 +17902,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋应用概况（按日统计）指标接口
-   *
-   * @param request QueryYydAppDayStatisticalDataRequest
-   * @param headers QueryYydAppDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydAppDayStatisticalDataResponse
+   * 亚运钉数字参谋应用概况（按日统计）指标接口
+   * 
+   * @param request - QueryYydAppDayStatisticalDataRequest
+   * @param headers - QueryYydAppDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydAppDayStatisticalDataResponse
    */
   async queryYydAppDayStatisticalDataWithOptions(request: QueryYydAppDayStatisticalDataRequest, headers: QueryYydAppDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15837,10 +17944,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋应用概况（按日统计）指标接口
-   *
-   * @param request QueryYydAppDayStatisticalDataRequest
-   * @return QueryYydAppDayStatisticalDataResponse
+   * 亚运钉数字参谋应用概况（按日统计）指标接口
+   * 
+   * @param request - QueryYydAppDayStatisticalDataRequest
+   * @returns QueryYydAppDayStatisticalDataResponse
    */
   async queryYydAppDayStatisticalData(request: QueryYydAppDayStatisticalDataRequest): Promise<QueryYydAppDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15849,12 +17956,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋应用概况（按月统计）指标接口
-   *
-   * @param request QueryYydAppMonthStatisticalDataRequest
-   * @param headers QueryYydAppMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydAppMonthStatisticalDataResponse
+   * 亚运钉数字参谋应用概况（按月统计）指标接口
+   * 
+   * @param request - QueryYydAppMonthStatisticalDataRequest
+   * @param headers - QueryYydAppMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydAppMonthStatisticalDataResponse
    */
   async queryYydAppMonthStatisticalDataWithOptions(request: QueryYydAppMonthStatisticalDataRequest, headers: QueryYydAppMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15891,10 +17998,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋应用概况（按月统计）指标接口
-   *
-   * @param request QueryYydAppMonthStatisticalDataRequest
-   * @return QueryYydAppMonthStatisticalDataResponse
+   * 亚运钉数字参谋应用概况（按月统计）指标接口
+   * 
+   * @param request - QueryYydAppMonthStatisticalDataRequest
+   * @returns QueryYydAppMonthStatisticalDataResponse
    */
   async queryYydAppMonthStatisticalData(request: QueryYydAppMonthStatisticalDataRequest): Promise<QueryYydAppMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15903,12 +18010,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋应用概况（累计）指标接口
-   *
-   * @param request QueryYydAppStdStatisticalDataRequest
-   * @param headers QueryYydAppStdStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydAppStdStatisticalDataResponse
+   * 亚运钉数字参谋应用概况（累计）指标接口
+   * 
+   * @param request - QueryYydAppStdStatisticalDataRequest
+   * @param headers - QueryYydAppStdStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydAppStdStatisticalDataResponse
    */
   async queryYydAppStdStatisticalDataWithOptions(request: QueryYydAppStdStatisticalDataRequest, headers: QueryYydAppStdStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppStdStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15945,10 +18052,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋应用概况（累计）指标接口
-   *
-   * @param request QueryYydAppStdStatisticalDataRequest
-   * @return QueryYydAppStdStatisticalDataResponse
+   * 亚运钉数字参谋应用概况（累计）指标接口
+   * 
+   * @param request - QueryYydAppStdStatisticalDataRequest
+   * @returns QueryYydAppStdStatisticalDataResponse
    */
   async queryYydAppStdStatisticalData(request: QueryYydAppStdStatisticalDataRequest): Promise<QueryYydAppStdStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15957,12 +18064,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋应用概况（按周统计）指标接口
-   *
-   * @param request QueryYydAppWeekStatisticalDataRequest
-   * @param headers QueryYydAppWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydAppWeekStatisticalDataResponse
+   * 亚运钉数字参谋应用概况（按周统计）指标接口
+   * 
+   * @param request - QueryYydAppWeekStatisticalDataRequest
+   * @param headers - QueryYydAppWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydAppWeekStatisticalDataResponse
    */
   async queryYydAppWeekStatisticalDataWithOptions(request: QueryYydAppWeekStatisticalDataRequest, headers: QueryYydAppWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -15999,10 +18106,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋应用概况（按周统计）指标接口
-   *
-   * @param request QueryYydAppWeekStatisticalDataRequest
-   * @return QueryYydAppWeekStatisticalDataResponse
+   * 亚运钉数字参谋应用概况（按周统计）指标接口
+   * 
+   * @param request - QueryYydAppWeekStatisticalDataRequest
+   * @returns QueryYydAppWeekStatisticalDataResponse
    */
   async queryYydAppWeekStatisticalData(request: QueryYydAppWeekStatisticalDataRequest): Promise<QueryYydAppWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16011,12 +18118,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋会议日程分析（按日统计）指标接口
-   *
-   * @param request QueryYydCalendarDayStatisticalDataRequest
-   * @param headers QueryYydCalendarDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydCalendarDayStatisticalDataResponse
+   * 亚运钉数字参谋会议日程分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydCalendarDayStatisticalDataRequest
+   * @param headers - QueryYydCalendarDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydCalendarDayStatisticalDataResponse
    */
   async queryYydCalendarDayStatisticalDataWithOptions(request: QueryYydCalendarDayStatisticalDataRequest, headers: QueryYydCalendarDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydCalendarDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16053,10 +18160,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋会议日程分析（按日统计）指标接口
-   *
-   * @param request QueryYydCalendarDayStatisticalDataRequest
-   * @return QueryYydCalendarDayStatisticalDataResponse
+   * 亚运钉数字参谋会议日程分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydCalendarDayStatisticalDataRequest
+   * @returns QueryYydCalendarDayStatisticalDataResponse
    */
   async queryYydCalendarDayStatisticalData(request: QueryYydCalendarDayStatisticalDataRequest): Promise<QueryYydCalendarDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16065,12 +18172,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋会议日程分析（按月统计）指标接口
-   *
-   * @param request QueryYydCalendarMonthStatisticalDataRequest
-   * @param headers QueryYydCalendarMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydCalendarMonthStatisticalDataResponse
+   * 亚运钉数字参谋会议日程分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydCalendarMonthStatisticalDataRequest
+   * @param headers - QueryYydCalendarMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydCalendarMonthStatisticalDataResponse
    */
   async queryYydCalendarMonthStatisticalDataWithOptions(request: QueryYydCalendarMonthStatisticalDataRequest, headers: QueryYydCalendarMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydCalendarMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16107,10 +18214,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋会议日程分析（按月统计）指标接口
-   *
-   * @param request QueryYydCalendarMonthStatisticalDataRequest
-   * @return QueryYydCalendarMonthStatisticalDataResponse
+   * 亚运钉数字参谋会议日程分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydCalendarMonthStatisticalDataRequest
+   * @returns QueryYydCalendarMonthStatisticalDataResponse
    */
   async queryYydCalendarMonthStatisticalData(request: QueryYydCalendarMonthStatisticalDataRequest): Promise<QueryYydCalendarMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16119,12 +18226,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋会议日程分析（按周统计）指标接口
-   *
-   * @param request QueryYydCalendarWeekStatisticalDataRequest
-   * @param headers QueryYydCalendarWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydCalendarWeekStatisticalDataResponse
+   * 亚运钉数字参谋会议日程分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydCalendarWeekStatisticalDataRequest
+   * @param headers - QueryYydCalendarWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydCalendarWeekStatisticalDataResponse
    */
   async queryYydCalendarWeekStatisticalDataWithOptions(request: QueryYydCalendarWeekStatisticalDataRequest, headers: QueryYydCalendarWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydCalendarWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16161,10 +18268,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋会议日程分析（按周统计）指标接口
-   *
-   * @param request QueryYydCalendarWeekStatisticalDataRequest
-   * @return QueryYydCalendarWeekStatisticalDataResponse
+   * 亚运钉数字参谋会议日程分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydCalendarWeekStatisticalDataRequest
+   * @returns QueryYydCalendarWeekStatisticalDataResponse
    */
   async queryYydCalendarWeekStatisticalData(request: QueryYydCalendarWeekStatisticalDataRequest): Promise<QueryYydCalendarWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16173,12 +18280,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉消息分析（按日统计）指标接口
-   *
-   * @param request QueryYydDingMsgDayStatisticalDataRequest
-   * @param headers QueryYydDingMsgDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydDingMsgDayStatisticalDataResponse
+   * 亚运钉数字参谋钉消息分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydDingMsgDayStatisticalDataRequest
+   * @param headers - QueryYydDingMsgDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydDingMsgDayStatisticalDataResponse
    */
   async queryYydDingMsgDayStatisticalDataWithOptions(request: QueryYydDingMsgDayStatisticalDataRequest, headers: QueryYydDingMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydDingMsgDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16215,10 +18322,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉消息分析（按日统计）指标接口
-   *
-   * @param request QueryYydDingMsgDayStatisticalDataRequest
-   * @return QueryYydDingMsgDayStatisticalDataResponse
+   * 亚运钉数字参谋钉消息分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydDingMsgDayStatisticalDataRequest
+   * @returns QueryYydDingMsgDayStatisticalDataResponse
    */
   async queryYydDingMsgDayStatisticalData(request: QueryYydDingMsgDayStatisticalDataRequest): Promise<QueryYydDingMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16227,12 +18334,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉消息分析（按月统计）指标接口
-   *
-   * @param request QueryYydDingMsgMonthStatisticalDataRequest
-   * @param headers QueryYydDingMsgMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydDingMsgMonthStatisticalDataResponse
+   * 亚运钉数字参谋钉消息分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydDingMsgMonthStatisticalDataRequest
+   * @param headers - QueryYydDingMsgMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydDingMsgMonthStatisticalDataResponse
    */
   async queryYydDingMsgMonthStatisticalDataWithOptions(request: QueryYydDingMsgMonthStatisticalDataRequest, headers: QueryYydDingMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydDingMsgMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16269,10 +18376,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉消息分析（按月统计）指标接口
-   *
-   * @param request QueryYydDingMsgMonthStatisticalDataRequest
-   * @return QueryYydDingMsgMonthStatisticalDataResponse
+   * 亚运钉数字参谋钉消息分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydDingMsgMonthStatisticalDataRequest
+   * @returns QueryYydDingMsgMonthStatisticalDataResponse
    */
   async queryYydDingMsgMonthStatisticalData(request: QueryYydDingMsgMonthStatisticalDataRequest): Promise<QueryYydDingMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16281,12 +18388,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉消息分析（按周统计）指标接口
-   *
-   * @param request QueryYydDingMsgWeekStatisticalDataRequest
-   * @param headers QueryYydDingMsgWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydDingMsgWeekStatisticalDataResponse
+   * 亚运钉数字参谋钉消息分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydDingMsgWeekStatisticalDataRequest
+   * @param headers - QueryYydDingMsgWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydDingMsgWeekStatisticalDataResponse
    */
   async queryYydDingMsgWeekStatisticalDataWithOptions(request: QueryYydDingMsgWeekStatisticalDataRequest, headers: QueryYydDingMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydDingMsgWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16323,10 +18430,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉消息分析（按周统计）指标接口
-   *
-   * @param request QueryYydDingMsgWeekStatisticalDataRequest
-   * @return QueryYydDingMsgWeekStatisticalDataResponse
+   * 亚运钉数字参谋钉消息分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydDingMsgWeekStatisticalDataRequest
+   * @returns QueryYydDingMsgWeekStatisticalDataResponse
    */
   async queryYydDingMsgWeekStatisticalData(request: QueryYydDingMsgWeekStatisticalDataRequest): Promise<QueryYydDingMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16335,12 +18442,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋群聊分析（按日统计）指标接口
-   *
-   * @param request QueryYydGroupMsgDayStatisticalDataRequest
-   * @param headers QueryYydGroupMsgDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydGroupMsgDayStatisticalDataResponse
+   * 亚运钉数字参谋群聊分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydGroupMsgDayStatisticalDataRequest
+   * @param headers - QueryYydGroupMsgDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydGroupMsgDayStatisticalDataResponse
    */
   async queryYydGroupMsgDayStatisticalDataWithOptions(request: QueryYydGroupMsgDayStatisticalDataRequest, headers: QueryYydGroupMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydGroupMsgDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16377,10 +18484,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋群聊分析（按日统计）指标接口
-   *
-   * @param request QueryYydGroupMsgDayStatisticalDataRequest
-   * @return QueryYydGroupMsgDayStatisticalDataResponse
+   * 亚运钉数字参谋群聊分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydGroupMsgDayStatisticalDataRequest
+   * @returns QueryYydGroupMsgDayStatisticalDataResponse
    */
   async queryYydGroupMsgDayStatisticalData(request: QueryYydGroupMsgDayStatisticalDataRequest): Promise<QueryYydGroupMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16389,12 +18496,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋群聊分析（按月统计）指标接口
-   *
-   * @param request QueryYydGroupMsgMonthStatisticalDataRequest
-   * @param headers QueryYydGroupMsgMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydGroupMsgMonthStatisticalDataResponse
+   * 亚运钉数字参谋群聊分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydGroupMsgMonthStatisticalDataRequest
+   * @param headers - QueryYydGroupMsgMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydGroupMsgMonthStatisticalDataResponse
    */
   async queryYydGroupMsgMonthStatisticalDataWithOptions(request: QueryYydGroupMsgMonthStatisticalDataRequest, headers: QueryYydGroupMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydGroupMsgMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16431,10 +18538,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋群聊分析（按月统计）指标接口
-   *
-   * @param request QueryYydGroupMsgMonthStatisticalDataRequest
-   * @return QueryYydGroupMsgMonthStatisticalDataResponse
+   * 亚运钉数字参谋群聊分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydGroupMsgMonthStatisticalDataRequest
+   * @returns QueryYydGroupMsgMonthStatisticalDataResponse
    */
   async queryYydGroupMsgMonthStatisticalData(request: QueryYydGroupMsgMonthStatisticalDataRequest): Promise<QueryYydGroupMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16443,12 +18550,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋群聊分析（按周统计）指标接口
-   *
-   * @param request QueryYydGroupMsgWeekStatisticalDataRequest
-   * @param headers QueryYydGroupMsgWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydGroupMsgWeekStatisticalDataResponse
+   * 亚运钉数字参谋群聊分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydGroupMsgWeekStatisticalDataRequest
+   * @param headers - QueryYydGroupMsgWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydGroupMsgWeekStatisticalDataResponse
    */
   async queryYydGroupMsgWeekStatisticalDataWithOptions(request: QueryYydGroupMsgWeekStatisticalDataRequest, headers: QueryYydGroupMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydGroupMsgWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16485,10 +18592,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋群聊分析（按周统计）指标接口
-   *
-   * @param request QueryYydGroupMsgWeekStatisticalDataRequest
-   * @return QueryYydGroupMsgWeekStatisticalDataResponse
+   * 亚运钉数字参谋群聊分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydGroupMsgWeekStatisticalDataRequest
+   * @returns QueryYydGroupMsgWeekStatisticalDataResponse
    */
   async queryYydGroupMsgWeekStatisticalData(request: QueryYydGroupMsgWeekStatisticalDataRequest): Promise<QueryYydGroupMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16497,12 +18604,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋日志分析（按日统计）指标接口
-   *
-   * @param request QueryYydLogDayStatisticalDataRequest
-   * @param headers QueryYydLogDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydLogDayStatisticalDataResponse
+   * 亚运钉数字参谋日志分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydLogDayStatisticalDataRequest
+   * @param headers - QueryYydLogDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydLogDayStatisticalDataResponse
    */
   async queryYydLogDayStatisticalDataWithOptions(request: QueryYydLogDayStatisticalDataRequest, headers: QueryYydLogDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydLogDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16539,10 +18646,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋日志分析（按日统计）指标接口
-   *
-   * @param request QueryYydLogDayStatisticalDataRequest
-   * @return QueryYydLogDayStatisticalDataResponse
+   * 亚运钉数字参谋日志分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydLogDayStatisticalDataRequest
+   * @returns QueryYydLogDayStatisticalDataResponse
    */
   async queryYydLogDayStatisticalData(request: QueryYydLogDayStatisticalDataRequest): Promise<QueryYydLogDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16551,12 +18658,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋日志分析（按月统计）指标接口
-   *
-   * @param request QueryYydLogMonthStatisticalDataRequest
-   * @param headers QueryYydLogMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydLogMonthStatisticalDataResponse
+   * 亚运钉数字参谋日志分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydLogMonthStatisticalDataRequest
+   * @param headers - QueryYydLogMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydLogMonthStatisticalDataResponse
    */
   async queryYydLogMonthStatisticalDataWithOptions(request: QueryYydLogMonthStatisticalDataRequest, headers: QueryYydLogMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydLogMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16593,10 +18700,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋日志分析（按月统计）指标接口
-   *
-   * @param request QueryYydLogMonthStatisticalDataRequest
-   * @return QueryYydLogMonthStatisticalDataResponse
+   * 亚运钉数字参谋日志分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydLogMonthStatisticalDataRequest
+   * @returns QueryYydLogMonthStatisticalDataResponse
    */
   async queryYydLogMonthStatisticalData(request: QueryYydLogMonthStatisticalDataRequest): Promise<QueryYydLogMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16605,12 +18712,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋日志分析（按周统计）指标接口
-   *
-   * @param request QueryYydLogWeekStatisticalDataRequest
-   * @param headers QueryYydLogWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydLogWeekStatisticalDataResponse
+   * 亚运钉数字参谋日志分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydLogWeekStatisticalDataRequest
+   * @param headers - QueryYydLogWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydLogWeekStatisticalDataResponse
    */
   async queryYydLogWeekStatisticalDataWithOptions(request: QueryYydLogWeekStatisticalDataRequest, headers: QueryYydLogWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydLogWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16647,10 +18754,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋日志分析（按周统计）指标接口
-   *
-   * @param request QueryYydLogWeekStatisticalDataRequest
-   * @return QueryYydLogWeekStatisticalDataResponse
+   * 亚运钉数字参谋日志分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydLogWeekStatisticalDataRequest
+   * @returns QueryYydLogWeekStatisticalDataResponse
    */
   async queryYydLogWeekStatisticalData(request: QueryYydLogWeekStatisticalDataRequest): Promise<QueryYydLogWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16659,12 +18766,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉会议分析（按日统计）指标接口
-   *
-   * @param request QueryYydMeetingDayStatisticalDataRequest
-   * @param headers QueryYydMeetingDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydMeetingDayStatisticalDataResponse
+   * 亚运钉数字参谋钉会议分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydMeetingDayStatisticalDataRequest
+   * @param headers - QueryYydMeetingDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydMeetingDayStatisticalDataResponse
    */
   async queryYydMeetingDayStatisticalDataWithOptions(request: QueryYydMeetingDayStatisticalDataRequest, headers: QueryYydMeetingDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydMeetingDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16701,10 +18808,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉会议分析（按日统计）指标接口
-   *
-   * @param request QueryYydMeetingDayStatisticalDataRequest
-   * @return QueryYydMeetingDayStatisticalDataResponse
+   * 亚运钉数字参谋钉会议分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydMeetingDayStatisticalDataRequest
+   * @returns QueryYydMeetingDayStatisticalDataResponse
    */
   async queryYydMeetingDayStatisticalData(request: QueryYydMeetingDayStatisticalDataRequest): Promise<QueryYydMeetingDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16713,12 +18820,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉会议分析（按月统计）指标接口
-   *
-   * @param request QueryYydMeetingMonthStatisticalDataRequest
-   * @param headers QueryYydMeetingMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydMeetingMonthStatisticalDataResponse
+   * 亚运钉数字参谋钉会议分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydMeetingMonthStatisticalDataRequest
+   * @param headers - QueryYydMeetingMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydMeetingMonthStatisticalDataResponse
    */
   async queryYydMeetingMonthStatisticalDataWithOptions(request: QueryYydMeetingMonthStatisticalDataRequest, headers: QueryYydMeetingMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydMeetingMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16755,10 +18862,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉会议分析（按月统计）指标接口
-   *
-   * @param request QueryYydMeetingMonthStatisticalDataRequest
-   * @return QueryYydMeetingMonthStatisticalDataResponse
+   * 亚运钉数字参谋钉会议分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydMeetingMonthStatisticalDataRequest
+   * @returns QueryYydMeetingMonthStatisticalDataResponse
    */
   async queryYydMeetingMonthStatisticalData(request: QueryYydMeetingMonthStatisticalDataRequest): Promise<QueryYydMeetingMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16767,12 +18874,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉会议分析（按周统计）指标接口
-   *
-   * @param request QueryYydMeetingWeekStatisticalDataRequest
-   * @param headers QueryYydMeetingWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydMeetingWeekStatisticalDataResponse
+   * 亚运钉数字参谋钉会议分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydMeetingWeekStatisticalDataRequest
+   * @param headers - QueryYydMeetingWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydMeetingWeekStatisticalDataResponse
    */
   async queryYydMeetingWeekStatisticalDataWithOptions(request: QueryYydMeetingWeekStatisticalDataRequest, headers: QueryYydMeetingWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydMeetingWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16809,10 +18916,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋钉会议分析（按周统计）指标接口
-   *
-   * @param request QueryYydMeetingWeekStatisticalDataRequest
-   * @return QueryYydMeetingWeekStatisticalDataResponse
+   * 亚运钉数字参谋钉会议分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydMeetingWeekStatisticalDataRequest
+   * @returns QueryYydMeetingWeekStatisticalDataResponse
    */
   async queryYydMeetingWeekStatisticalData(request: QueryYydMeetingWeekStatisticalDataRequest): Promise<QueryYydMeetingWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16821,12 +18928,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋通知分析（按日统计）指标接口
-   *
-   * @param request QueryYydNoticeDayStatisticalDataRequest
-   * @param headers QueryYydNoticeDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydNoticeDayStatisticalDataResponse
+   * 亚运钉数字参谋通知分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydNoticeDayStatisticalDataRequest
+   * @param headers - QueryYydNoticeDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydNoticeDayStatisticalDataResponse
    */
   async queryYydNoticeDayStatisticalDataWithOptions(request: QueryYydNoticeDayStatisticalDataRequest, headers: QueryYydNoticeDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydNoticeDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16863,10 +18970,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋通知分析（按日统计）指标接口
-   *
-   * @param request QueryYydNoticeDayStatisticalDataRequest
-   * @return QueryYydNoticeDayStatisticalDataResponse
+   * 亚运钉数字参谋通知分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydNoticeDayStatisticalDataRequest
+   * @returns QueryYydNoticeDayStatisticalDataResponse
    */
   async queryYydNoticeDayStatisticalData(request: QueryYydNoticeDayStatisticalDataRequest): Promise<QueryYydNoticeDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16875,12 +18982,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋通知分析（按月统计）指标接口
-   *
-   * @param request QueryYydNoticeMonthStatisticalDataRequest
-   * @param headers QueryYydNoticeMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydNoticeMonthStatisticalDataResponse
+   * 亚运钉数字参谋通知分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydNoticeMonthStatisticalDataRequest
+   * @param headers - QueryYydNoticeMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydNoticeMonthStatisticalDataResponse
    */
   async queryYydNoticeMonthStatisticalDataWithOptions(request: QueryYydNoticeMonthStatisticalDataRequest, headers: QueryYydNoticeMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydNoticeMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16917,10 +19024,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋通知分析（按月统计）指标接口
-   *
-   * @param request QueryYydNoticeMonthStatisticalDataRequest
-   * @return QueryYydNoticeMonthStatisticalDataResponse
+   * 亚运钉数字参谋通知分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydNoticeMonthStatisticalDataRequest
+   * @returns QueryYydNoticeMonthStatisticalDataResponse
    */
   async queryYydNoticeMonthStatisticalData(request: QueryYydNoticeMonthStatisticalDataRequest): Promise<QueryYydNoticeMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16929,12 +19036,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋通知分析（按周统计）指标接口
-   *
-   * @param request QueryYydNoticeWeekStatisticalDataRequest
-   * @param headers QueryYydNoticeWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydNoticeWeekStatisticalDataResponse
+   * 亚运钉数字参谋通知分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydNoticeWeekStatisticalDataRequest
+   * @param headers - QueryYydNoticeWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydNoticeWeekStatisticalDataResponse
    */
   async queryYydNoticeWeekStatisticalDataWithOptions(request: QueryYydNoticeWeekStatisticalDataRequest, headers: QueryYydNoticeWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydNoticeWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -16971,10 +19078,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋通知分析（按周统计）指标接口
-   *
-   * @param request QueryYydNoticeWeekStatisticalDataRequest
-   * @return QueryYydNoticeWeekStatisticalDataResponse
+   * 亚运钉数字参谋通知分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydNoticeWeekStatisticalDataRequest
+   * @returns QueryYydNoticeWeekStatisticalDataResponse
    */
   async queryYydNoticeWeekStatisticalData(request: QueryYydNoticeWeekStatisticalDataRequest): Promise<QueryYydNoticeWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16983,12 +19090,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋单聊分析（按日统计）指标接口
-   *
-   * @param request QueryYydSingleMsgDayStatisticalDataRequest
-   * @param headers QueryYydSingleMsgDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydSingleMsgDayStatisticalDataResponse
+   * 亚运钉数字参谋单聊分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydSingleMsgDayStatisticalDataRequest
+   * @param headers - QueryYydSingleMsgDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydSingleMsgDayStatisticalDataResponse
    */
   async queryYydSingleMsgDayStatisticalDataWithOptions(request: QueryYydSingleMsgDayStatisticalDataRequest, headers: QueryYydSingleMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydSingleMsgDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17025,10 +19132,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋单聊分析（按日统计）指标接口
-   *
-   * @param request QueryYydSingleMsgDayStatisticalDataRequest
-   * @return QueryYydSingleMsgDayStatisticalDataResponse
+   * 亚运钉数字参谋单聊分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydSingleMsgDayStatisticalDataRequest
+   * @returns QueryYydSingleMsgDayStatisticalDataResponse
    */
   async queryYydSingleMsgDayStatisticalData(request: QueryYydSingleMsgDayStatisticalDataRequest): Promise<QueryYydSingleMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17037,12 +19144,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋单聊分析（按月统计）指标接口
-   *
-   * @param request QueryYydSingleMsgMonthStatisticalDataRequest
-   * @param headers QueryYydSingleMsgMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydSingleMsgMonthStatisticalDataResponse
+   * 亚运钉数字参谋单聊分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydSingleMsgMonthStatisticalDataRequest
+   * @param headers - QueryYydSingleMsgMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydSingleMsgMonthStatisticalDataResponse
    */
   async queryYydSingleMsgMonthStatisticalDataWithOptions(request: QueryYydSingleMsgMonthStatisticalDataRequest, headers: QueryYydSingleMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydSingleMsgMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17079,10 +19186,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋单聊分析（按月统计）指标接口
-   *
-   * @param request QueryYydSingleMsgMonthStatisticalDataRequest
-   * @return QueryYydSingleMsgMonthStatisticalDataResponse
+   * 亚运钉数字参谋单聊分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydSingleMsgMonthStatisticalDataRequest
+   * @returns QueryYydSingleMsgMonthStatisticalDataResponse
    */
   async queryYydSingleMsgMonthStatisticalData(request: QueryYydSingleMsgMonthStatisticalDataRequest): Promise<QueryYydSingleMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17091,12 +19198,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋单聊分析（按周统计）指标接口
-   *
-   * @param request QueryYydSingleMsgWeekStatisticalDataRequest
-   * @param headers QueryYydSingleMsgWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydSingleMsgWeekStatisticalDataResponse
+   * 亚运钉数字参谋单聊分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydSingleMsgWeekStatisticalDataRequest
+   * @param headers - QueryYydSingleMsgWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydSingleMsgWeekStatisticalDataResponse
    */
   async queryYydSingleMsgWeekStatisticalDataWithOptions(request: QueryYydSingleMsgWeekStatisticalDataRequest, headers: QueryYydSingleMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydSingleMsgWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17133,10 +19240,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋单聊分析（按周统计）指标接口
-   *
-   * @param request QueryYydSingleMsgWeekStatisticalDataRequest
-   * @return QueryYydSingleMsgWeekStatisticalDataResponse
+   * 亚运钉数字参谋单聊分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydSingleMsgWeekStatisticalDataRequest
+   * @returns QueryYydSingleMsgWeekStatisticalDataResponse
    */
   async queryYydSingleMsgWeekStatisticalData(request: QueryYydSingleMsgWeekStatisticalDataRequest): Promise<QueryYydSingleMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17145,12 +19252,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋消息概览（按日统计）指标接口
-   *
-   * @param request QueryYydToatlMsgDayStatisticalDataRequest
-   * @param headers QueryYydToatlMsgDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydToatlMsgDayStatisticalDataResponse
+   * 亚运钉数字参谋消息概览（按日统计）指标接口
+   * 
+   * @param request - QueryYydToatlMsgDayStatisticalDataRequest
+   * @param headers - QueryYydToatlMsgDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydToatlMsgDayStatisticalDataResponse
    */
   async queryYydToatlMsgDayStatisticalDataWithOptions(request: QueryYydToatlMsgDayStatisticalDataRequest, headers: QueryYydToatlMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydToatlMsgDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17187,10 +19294,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋消息概览（按日统计）指标接口
-   *
-   * @param request QueryYydToatlMsgDayStatisticalDataRequest
-   * @return QueryYydToatlMsgDayStatisticalDataResponse
+   * 亚运钉数字参谋消息概览（按日统计）指标接口
+   * 
+   * @param request - QueryYydToatlMsgDayStatisticalDataRequest
+   * @returns QueryYydToatlMsgDayStatisticalDataResponse
    */
   async queryYydToatlMsgDayStatisticalData(request: QueryYydToatlMsgDayStatisticalDataRequest): Promise<QueryYydToatlMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17199,12 +19306,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋消息概览（按月统计）指标接口
-   *
-   * @param request QueryYydToatlMsgMonthStatisticalDataRequest
-   * @param headers QueryYydToatlMsgMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydToatlMsgMonthStatisticalDataResponse
+   * 亚运钉数字参谋消息概览（按月统计）指标接口
+   * 
+   * @param request - QueryYydToatlMsgMonthStatisticalDataRequest
+   * @param headers - QueryYydToatlMsgMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydToatlMsgMonthStatisticalDataResponse
    */
   async queryYydToatlMsgMonthStatisticalDataWithOptions(request: QueryYydToatlMsgMonthStatisticalDataRequest, headers: QueryYydToatlMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydToatlMsgMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17241,10 +19348,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋消息概览（按月统计）指标接口
-   *
-   * @param request QueryYydToatlMsgMonthStatisticalDataRequest
-   * @return QueryYydToatlMsgMonthStatisticalDataResponse
+   * 亚运钉数字参谋消息概览（按月统计）指标接口
+   * 
+   * @param request - QueryYydToatlMsgMonthStatisticalDataRequest
+   * @returns QueryYydToatlMsgMonthStatisticalDataResponse
    */
   async queryYydToatlMsgMonthStatisticalData(request: QueryYydToatlMsgMonthStatisticalDataRequest): Promise<QueryYydToatlMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17253,12 +19360,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋消息概览（按周统计）指标接口
-   *
-   * @param request QueryYydToatlMsgWeekStatisticalDataRequest
-   * @param headers QueryYydToatlMsgWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydToatlMsgWeekStatisticalDataResponse
+   * 亚运钉数字参谋消息概览（按周统计）指标接口
+   * 
+   * @param request - QueryYydToatlMsgWeekStatisticalDataRequest
+   * @param headers - QueryYydToatlMsgWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydToatlMsgWeekStatisticalDataResponse
    */
   async queryYydToatlMsgWeekStatisticalDataWithOptions(request: QueryYydToatlMsgWeekStatisticalDataRequest, headers: QueryYydToatlMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydToatlMsgWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17295,10 +19402,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋消息概览（按周统计）指标接口
-   *
-   * @param request QueryYydToatlMsgWeekStatisticalDataRequest
-   * @return QueryYydToatlMsgWeekStatisticalDataResponse
+   * 亚运钉数字参谋消息概览（按周统计）指标接口
+   * 
+   * @param request - QueryYydToatlMsgWeekStatisticalDataRequest
+   * @returns QueryYydToatlMsgWeekStatisticalDataResponse
    */
   async queryYydToatlMsgWeekStatisticalData(request: QueryYydToatlMsgWeekStatisticalDataRequest): Promise<QueryYydToatlMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17307,12 +19414,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋待办分析（按日统计）指标接口
-   *
-   * @param request QueryYydTodoDayStatisticalDataRequest
-   * @param headers QueryYydTodoDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydTodoDayStatisticalDataResponse
+   * 亚运钉数字参谋待办分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydTodoDayStatisticalDataRequest
+   * @param headers - QueryYydTodoDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydTodoDayStatisticalDataResponse
    */
   async queryYydTodoDayStatisticalDataWithOptions(request: QueryYydTodoDayStatisticalDataRequest, headers: QueryYydTodoDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTodoDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17349,10 +19456,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋待办分析（按日统计）指标接口
-   *
-   * @param request QueryYydTodoDayStatisticalDataRequest
-   * @return QueryYydTodoDayStatisticalDataResponse
+   * 亚运钉数字参谋待办分析（按日统计）指标接口
+   * 
+   * @param request - QueryYydTodoDayStatisticalDataRequest
+   * @returns QueryYydTodoDayStatisticalDataResponse
    */
   async queryYydTodoDayStatisticalData(request: QueryYydTodoDayStatisticalDataRequest): Promise<QueryYydTodoDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17361,12 +19468,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋待办分析（按月统计）指标接口
-   *
-   * @param request QueryYydTodoMonthStatisticalDataRequest
-   * @param headers QueryYydTodoMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydTodoMonthStatisticalDataResponse
+   * 亚运钉数字参谋待办分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydTodoMonthStatisticalDataRequest
+   * @param headers - QueryYydTodoMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydTodoMonthStatisticalDataResponse
    */
   async queryYydTodoMonthStatisticalDataWithOptions(request: QueryYydTodoMonthStatisticalDataRequest, headers: QueryYydTodoMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTodoMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17403,10 +19510,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋待办分析（按月统计）指标接口
-   *
-   * @param request QueryYydTodoMonthStatisticalDataRequest
-   * @return QueryYydTodoMonthStatisticalDataResponse
+   * 亚运钉数字参谋待办分析（按月统计）指标接口
+   * 
+   * @param request - QueryYydTodoMonthStatisticalDataRequest
+   * @returns QueryYydTodoMonthStatisticalDataResponse
    */
   async queryYydTodoMonthStatisticalData(request: QueryYydTodoMonthStatisticalDataRequest): Promise<QueryYydTodoMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17415,12 +19522,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋待办分析（按周统计）指标接口
-   *
-   * @param request QueryYydTodoWeekStatisticalDataRequest
-   * @param headers QueryYydTodoWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydTodoWeekStatisticalDataResponse
+   * 亚运钉数字参谋待办分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydTodoWeekStatisticalDataRequest
+   * @param headers - QueryYydTodoWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydTodoWeekStatisticalDataResponse
    */
   async queryYydTodoWeekStatisticalDataWithOptions(request: QueryYydTodoWeekStatisticalDataRequest, headers: QueryYydTodoWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTodoWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17457,10 +19564,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉数字参谋待办分析（按周统计）指标接口
-   *
-   * @param request QueryYydTodoWeekStatisticalDataRequest
-   * @return QueryYydTodoWeekStatisticalDataResponse
+   * 亚运钉数字参谋待办分析（按周统计）指标接口
+   * 
+   * @param request - QueryYydTodoWeekStatisticalDataRequest
+   * @returns QueryYydTodoWeekStatisticalDataResponse
    */
   async queryYydTodoWeekStatisticalData(request: QueryYydTodoWeekStatisticalDataRequest): Promise<QueryYydTodoWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17469,12 +19576,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋全局概览（按日统计）指标接口
-   *
-   * @param request QueryYydTotalDayStatisticalDataRequest
-   * @param headers QueryYydTotalDayStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydTotalDayStatisticalDataResponse
+   * 亚运钉参谋全局概览（按日统计）指标接口
+   * 
+   * @param request - QueryYydTotalDayStatisticalDataRequest
+   * @param headers - QueryYydTotalDayStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydTotalDayStatisticalDataResponse
    */
   async queryYydTotalDayStatisticalDataWithOptions(request: QueryYydTotalDayStatisticalDataRequest, headers: QueryYydTotalDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalDayStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17511,10 +19618,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋全局概览（按日统计）指标接口
-   *
-   * @param request QueryYydTotalDayStatisticalDataRequest
-   * @return QueryYydTotalDayStatisticalDataResponse
+   * 亚运钉参谋全局概览（按日统计）指标接口
+   * 
+   * @param request - QueryYydTotalDayStatisticalDataRequest
+   * @returns QueryYydTotalDayStatisticalDataResponse
    */
   async queryYydTotalDayStatisticalData(request: QueryYydTotalDayStatisticalDataRequest): Promise<QueryYydTotalDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17523,12 +19630,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋全局概览（按月统计）指标接口
-   *
-   * @param request QueryYydTotalMonthStatisticalDataRequest
-   * @param headers QueryYydTotalMonthStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydTotalMonthStatisticalDataResponse
+   * 亚运钉参谋全局概览（按月统计）指标接口
+   * 
+   * @param request - QueryYydTotalMonthStatisticalDataRequest
+   * @param headers - QueryYydTotalMonthStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydTotalMonthStatisticalDataResponse
    */
   async queryYydTotalMonthStatisticalDataWithOptions(request: QueryYydTotalMonthStatisticalDataRequest, headers: QueryYydTotalMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalMonthStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17565,10 +19672,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋全局概览（按月统计）指标接口
-   *
-   * @param request QueryYydTotalMonthStatisticalDataRequest
-   * @return QueryYydTotalMonthStatisticalDataResponse
+   * 亚运钉参谋全局概览（按月统计）指标接口
+   * 
+   * @param request - QueryYydTotalMonthStatisticalDataRequest
+   * @returns QueryYydTotalMonthStatisticalDataResponse
    */
   async queryYydTotalMonthStatisticalData(request: QueryYydTotalMonthStatisticalDataRequest): Promise<QueryYydTotalMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17577,12 +19684,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋全局概览（累计）指标接口
-   *
-   * @param request QueryYydTotalStdStatisticalDataRequest
-   * @param headers QueryYydTotalStdStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydTotalStdStatisticalDataResponse
+   * 亚运钉参谋全局概览（累计）指标接口
+   * 
+   * @param request - QueryYydTotalStdStatisticalDataRequest
+   * @param headers - QueryYydTotalStdStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydTotalStdStatisticalDataResponse
    */
   async queryYydTotalStdStatisticalDataWithOptions(request: QueryYydTotalStdStatisticalDataRequest, headers: QueryYydTotalStdStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalStdStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17619,10 +19726,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋全局概览（累计）指标接口
-   *
-   * @param request QueryYydTotalStdStatisticalDataRequest
-   * @return QueryYydTotalStdStatisticalDataResponse
+   * 亚运钉参谋全局概览（累计）指标接口
+   * 
+   * @param request - QueryYydTotalStdStatisticalDataRequest
+   * @returns QueryYydTotalStdStatisticalDataResponse
    */
   async queryYydTotalStdStatisticalData(request: QueryYydTotalStdStatisticalDataRequest): Promise<QueryYydTotalStdStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17631,12 +19738,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋全局概览（按周统计）指标接口
-   *
-   * @param request QueryYydTotalWeekStatisticalDataRequest
-   * @param headers QueryYydTotalWeekStatisticalDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryYydTotalWeekStatisticalDataResponse
+   * 亚运钉参谋全局概览（按周统计）指标接口
+   * 
+   * @param request - QueryYydTotalWeekStatisticalDataRequest
+   * @param headers - QueryYydTotalWeekStatisticalDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryYydTotalWeekStatisticalDataResponse
    */
   async queryYydTotalWeekStatisticalDataWithOptions(request: QueryYydTotalWeekStatisticalDataRequest, headers: QueryYydTotalWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalWeekStatisticalDataResponse> {
     Util.validateModel(request);
@@ -17673,10 +19780,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 亚运钉参谋全局概览（按周统计）指标接口
-   *
-   * @param request QueryYydTotalWeekStatisticalDataRequest
-   * @return QueryYydTotalWeekStatisticalDataResponse
+   * 亚运钉参谋全局概览（按周统计）指标接口
+   * 
+   * @param request - QueryYydTotalWeekStatisticalDataRequest
+   * @returns QueryYydTotalWeekStatisticalDataResponse
    */
   async queryYydTotalWeekStatisticalData(request: QueryYydTotalWeekStatisticalDataRequest): Promise<QueryYydTotalWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17685,12 +19792,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过关键词搜索企业
-   *
-   * @param request SearchCompanyRequest
-   * @param headers SearchCompanyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchCompanyResponse
+   * 通过关键词搜索企业
+   * 
+   * @param request - SearchCompanyRequest
+   * @param headers - SearchCompanyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchCompanyResponse
    */
   async searchCompanyWithOptions(request: SearchCompanyRequest, headers: SearchCompanyHeaders, runtime: $Util.RuntimeOptions): Promise<SearchCompanyResponse> {
     Util.validateModel(request);
@@ -17735,10 +19842,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过关键词搜索企业
-   *
-   * @param request SearchCompanyRequest
-   * @return SearchCompanyResponse
+   * 通过关键词搜索企业
+   * 
+   * @param request - SearchCompanyRequest
+   * @returns SearchCompanyResponse
    */
   async searchCompany(request: SearchCompanyRequest): Promise<SearchCompanyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17747,12 +19854,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步数据大屏
-   *
-   * @param request SyncDataScreenRequest
-   * @param headers SyncDataScreenHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncDataScreenResponse
+   * 同步数据大屏
+   * 
+   * @param request - SyncDataScreenRequest
+   * @param headers - SyncDataScreenHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncDataScreenResponse
    */
   async syncDataScreenWithOptions(request: SyncDataScreenRequest, headers: SyncDataScreenHeaders, runtime: $Util.RuntimeOptions): Promise<SyncDataScreenResponse> {
     Util.validateModel(request);
@@ -17793,10 +19900,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步数据大屏
-   *
-   * @param request SyncDataScreenRequest
-   * @return SyncDataScreenResponse
+   * 同步数据大屏
+   * 
+   * @param request - SyncDataScreenRequest
+   * @returns SyncDataScreenResponse
    */
   async syncDataScreen(request: SyncDataScreenRequest): Promise<SyncDataScreenResponse> {
     let runtime = new $Util.RuntimeOptions({ });

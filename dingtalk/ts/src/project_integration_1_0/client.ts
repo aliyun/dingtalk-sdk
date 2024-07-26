@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import * as $tea from '@alicloud/tea-typescript';
@@ -245,12 +243,11 @@ export class UpdateInteractiveCardResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -260,11 +257,11 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 在项目事件会话中加人
-   *
-   * @param headers AddAttendeeToEventGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddAttendeeToEventGroupResponse
+   * 在项目事件会话中加人
+   * 
+   * @param headers - AddAttendeeToEventGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddAttendeeToEventGroupResponse
    */
   async addAttendeeToEventGroupWithOptions(userId: string, groupId: string, headers: AddAttendeeToEventGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddAttendeeToEventGroupResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -294,9 +291,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在项目事件会话中加人
-   *
-   * @return AddAttendeeToEventGroupResponse
+   * 在项目事件会话中加人
+   * @returns AddAttendeeToEventGroupResponse
    */
   async addAttendeeToEventGroup(userId: string, groupId: string): Promise<AddAttendeeToEventGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -305,11 +301,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建项目事件会话
-   *
-   * @param headers CreateEventGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateEventGroupResponse
+   * 创建项目事件会话
+   * 
+   * @param headers - CreateEventGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateEventGroupResponse
    */
   async createEventGroupWithOptions(userId: string, headers: CreateEventGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateEventGroupResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -339,9 +335,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建项目事件会话
-   *
-   * @return CreateEventGroupResponse
+   * 创建项目事件会话
+   * @returns CreateEventGroupResponse
    */
   async createEventGroup(userId: string): Promise<CreateEventGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -350,11 +345,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在群会话发送项目卡片消息
-   *
-   * @param headers SendInteractiveCardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendInteractiveCardResponse
+   * 在群会话发送项目卡片消息
+   * 
+   * @param headers - SendInteractiveCardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendInteractiveCardResponse
    */
   async sendInteractiveCardWithOptions(userId: string, headers: SendInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendInteractiveCardResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -384,9 +379,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在群会话发送项目卡片消息
-   *
-   * @return SendInteractiveCardResponse
+   * 在群会话发送项目卡片消息
+   * @returns SendInteractiveCardResponse
    */
   async sendInteractiveCard(userId: string): Promise<SendInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -395,11 +389,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 单聊会话发送项目卡片消息
-   *
-   * @param headers SendSingleInteractiveCardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SendSingleInteractiveCardResponse
+   * 单聊会话发送项目卡片消息
+   * 
+   * @param headers - SendSingleInteractiveCardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendSingleInteractiveCardResponse
    */
   async sendSingleInteractiveCardWithOptions(userId: string, headers: SendSingleInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendSingleInteractiveCardResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -429,9 +423,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 单聊会话发送项目卡片消息
-   *
-   * @return SendSingleInteractiveCardResponse
+   * 单聊会话发送项目卡片消息
+   * @returns SendSingleInteractiveCardResponse
    */
   async sendSingleInteractiveCard(userId: string): Promise<SendSingleInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -440,11 +433,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新项目卡片消息
-   *
-   * @param headers UpdateInteractiveCardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInteractiveCardResponse
+   * 更新项目卡片消息
+   * 
+   * @param headers - UpdateInteractiveCardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInteractiveCardResponse
    */
   async updateInteractiveCardWithOptions(userId: string, headers: UpdateInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInteractiveCardResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -474,9 +467,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新项目卡片消息
-   *
-   * @return UpdateInteractiveCardResponse
+   * 更新项目卡片消息
+   * @returns UpdateInteractiveCardResponse
    */
   async updateInteractiveCard(userId: string): Promise<UpdateInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });

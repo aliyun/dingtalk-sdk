@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -54,6 +52,13 @@ export class AppendSpaceRequest extends $tea.Model {
   coFeedOpenSpaceModel?: AppendSpaceRequestCoFeedOpenSpaceModel;
   imGroupOpenSpaceModel?: AppendSpaceRequestImGroupOpenSpaceModel;
   imRobotOpenSpaceModel?: AppendSpaceRequestImRobotOpenSpaceModel;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx_yyyy_123456
+   */
   outTrackId?: string;
   topOpenSpaceModel?: AppendSpaceRequestTopOpenSpaceModel;
   static names(): { [key: string]: string } {
@@ -154,6 +159,13 @@ export class AppendSpaceWithDelegateRequest extends $tea.Model {
   coFeedOpenSpaceModel?: AppendSpaceWithDelegateRequestCoFeedOpenSpaceModel;
   imGroupOpenSpaceModel?: AppendSpaceWithDelegateRequestImGroupOpenSpaceModel;
   imRobotOpenSpaceModel?: AppendSpaceWithDelegateRequestImRobotOpenSpaceModel;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx_yyyy_123456
+   */
   outTrackId?: string;
   topOpenSpaceModel?: AppendSpaceWithDelegateRequestTopOpenSpaceModel;
   static names(): { [key: string]: string } {
@@ -252,8 +264,20 @@ export class CreateAndDeliverHeaders extends $tea.Model {
 
 export class CreateAndDeliverRequest extends $tea.Model {
   callbackRouteKey?: string;
+  /**
+   * @example
+   * STREAM
+   */
   callbackType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cardData?: CreateAndDeliverRequestCardData;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cardTemplateId?: string;
   coFeedOpenDeliverModel?: CreateAndDeliverRequestCoFeedOpenDeliverModel;
   coFeedOpenSpaceModel?: CreateAndDeliverRequestCoFeedOpenSpaceModel;
@@ -265,7 +289,18 @@ export class CreateAndDeliverRequest extends $tea.Model {
   imSingleOpenDeliverModel?: CreateAndDeliverRequestImSingleOpenDeliverModel;
   imSingleOpenSpaceModel?: CreateAndDeliverRequestImSingleOpenSpaceModel;
   openDynamicDataConfig?: CreateAndDeliverRequestOpenDynamicDataConfig;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dtv1.card//im_group.cidp4Gh*******VCQ==;im_robot.manager****67;im_robot.staff****89;co_feed.manager****67;one_box.cidp4Gh*******VCQ==;
+   */
   openSpaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   outTrackId?: string;
   privateData?: { [key: string]: PrivateDataValue };
   topOpenDeliverModel?: CreateAndDeliverRequestTopOpenDeliverModel;
@@ -400,8 +435,20 @@ export class CreateAndDeliverWithDelegateHeaders extends $tea.Model {
 
 export class CreateAndDeliverWithDelegateRequest extends $tea.Model {
   callbackRouteKey?: string;
+  /**
+   * @example
+   * STREAM
+   */
   callbackType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cardData?: CreateAndDeliverWithDelegateRequestCardData;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cardTemplateId?: string;
   coFeedOpenDeliverModel?: CreateAndDeliverWithDelegateRequestCoFeedOpenDeliverModel;
   coFeedOpenSpaceModel?: CreateAndDeliverWithDelegateRequestCoFeedOpenSpaceModel;
@@ -413,7 +460,18 @@ export class CreateAndDeliverWithDelegateRequest extends $tea.Model {
   imSingleOpenDeliverModel?: CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel;
   imSingleOpenSpaceModel?: CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModel;
   openDynamicDataConfig?: CreateAndDeliverWithDelegateRequestOpenDynamicDataConfig;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dtv1.card//im_group.cidp4Gh*******VCQ==;im_robot.manager****67;im_robot.staff****89;co_feed.manager****67;one_box.cidp4Gh*******VCQ==;
+   */
   openSpaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   outTrackId?: string;
   privateData?: { [key: string]: PrivateDataValue };
   topOpenDeliverModel?: CreateAndDeliverWithDelegateRequestTopOpenDeliverModel;
@@ -547,18 +605,48 @@ export class CreateCardHeaders extends $tea.Model {
 }
 
 export class CreateCardRequest extends $tea.Model {
+  /**
+   * @example
+   * routekey-7931
+   */
   callbackRouteKey?: string;
+  /**
+   * @example
+   * STREAM
+   */
   callbackType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cardData?: CreateCardRequestCardData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * b0aa776f-79ac-4e13-f838-749aae913bc7
+   */
   cardTemplateId?: string;
   coFeedOpenSpaceModel?: CreateCardRequestCoFeedOpenSpaceModel;
   imGroupOpenSpaceModel?: CreateCardRequestImGroupOpenSpaceModel;
   imRobotOpenSpaceModel?: CreateCardRequestImRobotOpenSpaceModel;
   imSingleOpenSpaceModel?: CreateCardRequestImSingleOpenSpaceModel;
   openDynamicDataConfig?: CreateCardRequestOpenDynamicDataConfig;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * mycard-07921
+   */
   outTrackId?: string;
   privateData?: { [key: string]: PrivateDataValue };
   topOpenSpaceModel?: CreateCardRequestTopOpenSpaceModel;
+  /**
+   * @example
+   * manager1234
+   */
   userId?: string;
   userIdType?: number;
   static names(): { [key: string]: string } {
@@ -674,18 +762,48 @@ export class CreateCardWithDelegateHeaders extends $tea.Model {
 }
 
 export class CreateCardWithDelegateRequest extends $tea.Model {
+  /**
+   * @example
+   * routekey-7931
+   */
   callbackRouteKey?: string;
+  /**
+   * @example
+   * STREAM
+   */
   callbackType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cardData?: CreateCardWithDelegateRequestCardData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * b0aa776f-79ac-4e13-f838-749aae913bc7
+   */
   cardTemplateId?: string;
   coFeedOpenSpaceModel?: CreateCardWithDelegateRequestCoFeedOpenSpaceModel;
   imGroupOpenSpaceModel?: CreateCardWithDelegateRequestImGroupOpenSpaceModel;
   imRobotOpenSpaceModel?: CreateCardWithDelegateRequestImRobotOpenSpaceModel;
   imSingleOpenSpaceModel?: CreateCardWithDelegateRequestImSingleOpenSpaceModel;
   openDynamicDataConfig?: CreateCardWithDelegateRequestOpenDynamicDataConfig;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * mycard-07921
+   */
   outTrackId?: string;
   privateData?: { [key: string]: PrivateDataValue };
   topOpenSpaceModel?: CreateCardWithDelegateRequestTopOpenSpaceModel;
+  /**
+   * @example
+   * manager1234
+   */
   userId?: string;
   userIdType?: number;
   static names(): { [key: string]: string } {
@@ -806,9 +924,27 @@ export class DeliverCardRequest extends $tea.Model {
   imGroupOpenDeliverModel?: DeliverCardRequestImGroupOpenDeliverModel;
   imRobotOpenDeliverModel?: DeliverCardRequestImRobotOpenDeliverModel;
   imSingleOpenDeliverModel?: DeliverCardRequestImSingleOpenDeliverModel;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dtv1.card//im_group.cidp4Gh*******VCQ==;im_robot.manager****67;co_feed.manager****67;one_box.cidp4Gh*******VCQ==
+   */
   openSpaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * out_track_id_123456
+   */
   outTrackId?: string;
   topOpenDeliverModel?: DeliverCardRequestTopOpenDeliverModel;
+  /**
+   * @example
+   * 1
+   */
   userIdType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -918,9 +1054,27 @@ export class DeliverCardWithDelegateRequest extends $tea.Model {
   imGroupOpenDeliverModel?: DeliverCardWithDelegateRequestImGroupOpenDeliverModel;
   imRobotOpenDeliverModel?: DeliverCardWithDelegateRequestImRobotOpenDeliverModel;
   imSingleOpenDeliverModel?: DeliverCardWithDelegateRequestImSingleOpenDeliverModel;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dtv1.card//im_group.cidp4Gh*******VCQ==;im_robot.manager****67;co_feed.manager****67;one_box.cidp4Gh*******VCQ==
+   */
   openSpaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * out_track_id_123456
+   */
   outTrackId?: string;
   topOpenDeliverModel?: DeliverCardWithDelegateRequestTopOpenDeliverModel;
+  /**
+   * @example
+   * 1
+   */
   userIdType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1025,8 +1179,26 @@ export class RegisterCallbackHeaders extends $tea.Model {
 }
 
 export class RegisterCallbackRequest extends $tea.Model {
+  /**
+   * @example
+   * mySecret
+   */
   apiSecret?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * routeKey-12
+   */
   callbackRouteKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://www.myurl/callback
+   */
   callbackUrl?: string;
   forceUpdate?: boolean;
   static names(): { [key: string]: string } {
@@ -1122,8 +1294,26 @@ export class RegisterCallbackWithDelegateHeaders extends $tea.Model {
 }
 
 export class RegisterCallbackWithDelegateRequest extends $tea.Model {
+  /**
+   * @example
+   * mySecret
+   */
   apiSecret?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * routeKey-12
+   */
   callbackRouteKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://www.myurl/callback
+   */
   callbackUrl?: string;
   forceUpdate?: boolean;
   static names(): { [key: string]: string } {
@@ -1219,12 +1409,28 @@ export class StreamingUpdateHeaders extends $tea.Model {
 }
 
 export class StreamingUpdateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   guid?: string;
   isError?: boolean;
   isFinalize?: boolean;
   isFull?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   key?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   outTrackId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1327,6 +1533,13 @@ export class UpdateCardHeaders extends $tea.Model {
 export class UpdateCardRequest extends $tea.Model {
   cardData?: UpdateCardRequestCardData;
   cardUpdateOptions?: UpdateCardRequestCardUpdateOptions;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   outTrackId?: string;
   privateData?: { [key: string]: PrivateDataValue };
   userIdType?: number;
@@ -1427,6 +1640,13 @@ export class UpdateCardWithDelegateHeaders extends $tea.Model {
 export class UpdateCardWithDelegateRequest extends $tea.Model {
   cardData?: UpdateCardWithDelegateRequestCardData;
   cardUpdateOptions?: UpdateCardWithDelegateRequestCardUpdateOptions;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   outTrackId?: string;
   privateData?: { [key: string]: PrivateDataValue };
   userIdType?: number;
@@ -1503,6 +1723,10 @@ export class UpdateCardWithDelegateResponse extends $tea.Model {
 }
 
 export class AppendSpaceRequestCoFeedOpenSpaceModel extends $tea.Model {
+  /**
+   * @example
+   * xxxx卡片
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1522,6 +1746,10 @@ export class AppendSpaceRequestCoFeedOpenSpaceModel extends $tea.Model {
 }
 
 export class AppendSpaceRequestImGroupOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到了一个卡片消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -1544,8 +1772,20 @@ export class AppendSpaceRequestImGroupOpenSpaceModelNotification extends $tea.Mo
 }
 
 export class AppendSpaceRequestImGroupOpenSpaceModelSearchSupport extends $tea.Model {
+  /**
+   * @example
+   * 卡片的具体描述
+   */
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1597,6 +1837,10 @@ export class AppendSpaceRequestImGroupOpenSpaceModel extends $tea.Model {
 }
 
 export class AppendSpaceRequestImRobotOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到了一个卡片消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -1619,8 +1863,20 @@ export class AppendSpaceRequestImRobotOpenSpaceModelNotification extends $tea.Mo
 }
 
 export class AppendSpaceRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
+  /**
+   * @example
+   * 卡片的具体描述
+   */
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1672,6 +1928,10 @@ export class AppendSpaceRequestImRobotOpenSpaceModel extends $tea.Model {
 }
 
 export class AppendSpaceRequestTopOpenSpaceModel extends $tea.Model {
+  /**
+   * @example
+   * ONE_BOX
+   */
   spaceType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1691,6 +1951,10 @@ export class AppendSpaceRequestTopOpenSpaceModel extends $tea.Model {
 }
 
 export class AppendSpaceWithDelegateRequestCoFeedOpenSpaceModel extends $tea.Model {
+  /**
+   * @example
+   * xxxx卡片
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1710,6 +1974,10 @@ export class AppendSpaceWithDelegateRequestCoFeedOpenSpaceModel extends $tea.Mod
 }
 
 export class AppendSpaceWithDelegateRequestImGroupOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到了一个卡片消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -1732,8 +2000,20 @@ export class AppendSpaceWithDelegateRequestImGroupOpenSpaceModelNotification ext
 }
 
 export class AppendSpaceWithDelegateRequestImGroupOpenSpaceModelSearchSupport extends $tea.Model {
+  /**
+   * @example
+   * 卡片的具体描述
+   */
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1785,6 +2065,10 @@ export class AppendSpaceWithDelegateRequestImGroupOpenSpaceModel extends $tea.Mo
 }
 
 export class AppendSpaceWithDelegateRequestImRobotOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到了一个卡片消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -1807,8 +2091,20 @@ export class AppendSpaceWithDelegateRequestImRobotOpenSpaceModelNotification ext
 }
 
 export class AppendSpaceWithDelegateRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
+  /**
+   * @example
+   * 卡片的具体描述
+   */
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1860,6 +2156,10 @@ export class AppendSpaceWithDelegateRequestImRobotOpenSpaceModel extends $tea.Mo
 }
 
 export class AppendSpaceWithDelegateRequestTopOpenSpaceModel extends $tea.Model {
+  /**
+   * @example
+   * ONE_BOX
+   */
   spaceType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1898,7 +2198,15 @@ export class CreateAndDeliverRequestCardData extends $tea.Model {
 }
 
 export class CreateAndDeliverRequestCoFeedOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * xxx_biz_tag
+   */
   bizTag?: string;
+  /**
+   * @example
+   * 1665473229000
+   */
   gmtTimeLine?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1920,7 +2228,15 @@ export class CreateAndDeliverRequestCoFeedOpenDeliverModel extends $tea.Model {
 }
 
 export class CreateAndDeliverRequestCoFeedOpenSpaceModel extends $tea.Model {
+  /**
+   * @example
+   * coolAppCode123
+   */
   coolAppCode?: string;
+  /**
+   * @example
+   * xxxx卡片
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1942,6 +2258,10 @@ export class CreateAndDeliverRequestCoFeedOpenSpaceModel extends $tea.Model {
 }
 
 export class CreateAndDeliverRequestDocOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * xxx_biz_tag
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1964,6 +2284,10 @@ export class CreateAndDeliverRequestImGroupOpenDeliverModel extends $tea.Model {
   atUserIds?: { [key: string]: string };
   extension?: { [key: string]: string };
   recipients?: string[];
+  /**
+   * @example
+   * dingg3xmqdkpaojuakm8
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1989,6 +2313,10 @@ export class CreateAndDeliverRequestImGroupOpenDeliverModel extends $tea.Model {
 }
 
 export class CreateAndDeliverRequestImGroupOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到了一个卡片消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -2011,8 +2339,20 @@ export class CreateAndDeliverRequestImGroupOpenSpaceModelNotification extends $t
 }
 
 export class CreateAndDeliverRequestImGroupOpenSpaceModelSearchSupport extends $tea.Model {
+  /**
+   * @example
+   * 卡片的具体描述
+   */
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2065,6 +2405,10 @@ export class CreateAndDeliverRequestImGroupOpenSpaceModel extends $tea.Model {
 
 export class CreateAndDeliverRequestImRobotOpenDeliverModel extends $tea.Model {
   extension?: { [key: string]: string };
+  /**
+   * @example
+   * dingg3xmqdkpaojuakm8
+   */
   robotCode?: string;
   spaceType?: string;
   static names(): { [key: string]: string } {
@@ -2089,6 +2433,10 @@ export class CreateAndDeliverRequestImRobotOpenDeliverModel extends $tea.Model {
 }
 
 export class CreateAndDeliverRequestImRobotOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到了一个卡片消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -2111,8 +2459,20 @@ export class CreateAndDeliverRequestImRobotOpenSpaceModelNotification extends $t
 }
 
 export class CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
+  /**
+   * @example
+   * 卡片的具体描述
+   */
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2186,6 +2546,10 @@ export class CreateAndDeliverRequestImSingleOpenDeliverModel extends $tea.Model 
 }
 
 export class CreateAndDeliverRequestImSingleOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到了一个卡片消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -2208,8 +2572,20 @@ export class CreateAndDeliverRequestImSingleOpenSpaceModelNotification extends $
 }
 
 export class CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport extends $tea.Model {
+  /**
+   * @example
+   * 卡片的具体描述
+   */
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2330,6 +2706,10 @@ export class CreateAndDeliverRequestOpenDynamicDataConfig extends $tea.Model {
 }
 
 export class CreateAndDeliverRequestTopOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * 1665473229000
+   */
   expiredTimeMillis?: number;
   platforms?: string[];
   userIds?: string[];
@@ -2355,6 +2735,10 @@ export class CreateAndDeliverRequestTopOpenDeliverModel extends $tea.Model {
 }
 
 export class CreateAndDeliverRequestTopOpenSpaceModel extends $tea.Model {
+  /**
+   * @example
+   * ONE_BOX
+   */
   spaceType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2374,9 +2758,25 @@ export class CreateAndDeliverRequestTopOpenSpaceModel extends $tea.Model {
 }
 
 export class CreateAndDeliverResponseBodyResultDeliverResults extends $tea.Model {
+  /**
+   * @example
+   * 4v+AzUEDuC0dKuO*********J0w8=
+   */
   carrierId?: string;
+  /**
+   * @example
+   * system error
+   */
   errorMsg?: string;
+  /**
+   * @example
+   * cid1234abcd
+   */
   spaceId?: string;
+  /**
+   * @example
+   * IM_GROUP
+   */
   spaceType?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
@@ -2406,6 +2806,10 @@ export class CreateAndDeliverResponseBodyResultDeliverResults extends $tea.Model
 
 export class CreateAndDeliverResponseBodyResult extends $tea.Model {
   deliverResults?: CreateAndDeliverResponseBodyResultDeliverResults[];
+  /**
+   * @example
+   * out_track_id_xxx
+   */
   outTrackId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2446,7 +2850,15 @@ export class CreateAndDeliverWithDelegateRequestCardData extends $tea.Model {
 }
 
 export class CreateAndDeliverWithDelegateRequestCoFeedOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * xxx_biz_tag
+   */
   bizTag?: string;
+  /**
+   * @example
+   * 1665473229000
+   */
   gmtTimeLine?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2468,7 +2880,15 @@ export class CreateAndDeliverWithDelegateRequestCoFeedOpenDeliverModel extends $
 }
 
 export class CreateAndDeliverWithDelegateRequestCoFeedOpenSpaceModel extends $tea.Model {
+  /**
+   * @example
+   * coolAppCode123
+   */
   coolAppCode?: string;
+  /**
+   * @example
+   * xxxx卡片
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2490,6 +2910,10 @@ export class CreateAndDeliverWithDelegateRequestCoFeedOpenSpaceModel extends $te
 }
 
 export class CreateAndDeliverWithDelegateRequestDocOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * xxx_biz_tag
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2512,6 +2936,10 @@ export class CreateAndDeliverWithDelegateRequestImGroupOpenDeliverModel extends 
   atUserIds?: { [key: string]: string };
   extension?: { [key: string]: string };
   recipients?: string[];
+  /**
+   * @example
+   * dingg3xmqdkpaojuakm8
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2537,6 +2965,10 @@ export class CreateAndDeliverWithDelegateRequestImGroupOpenDeliverModel extends 
 }
 
 export class CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到了一个卡片消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -2559,8 +2991,20 @@ export class CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModelNotificatio
 }
 
 export class CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModelSearchSupport extends $tea.Model {
+  /**
+   * @example
+   * 卡片的具体描述
+   */
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2613,6 +3057,10 @@ export class CreateAndDeliverWithDelegateRequestImGroupOpenSpaceModel extends $t
 
 export class CreateAndDeliverWithDelegateRequestImRobotOpenDeliverModel extends $tea.Model {
   extension?: { [key: string]: string };
+  /**
+   * @example
+   * dingg3xmqdkpaojuakm8
+   */
   robotCode?: string;
   spaceType?: string;
   static names(): { [key: string]: string } {
@@ -2637,6 +3085,10 @@ export class CreateAndDeliverWithDelegateRequestImRobotOpenDeliverModel extends 
 }
 
 export class CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到了一个卡片消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -2659,8 +3111,20 @@ export class CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModelNotificatio
 }
 
 export class CreateAndDeliverWithDelegateRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
+  /**
+   * @example
+   * 卡片的具体描述
+   */
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2734,6 +3198,10 @@ export class CreateAndDeliverWithDelegateRequestImSingleOpenDeliverModel extends
 }
 
 export class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到了一个卡片消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -2756,8 +3224,20 @@ export class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelNotificati
 }
 
 export class CreateAndDeliverWithDelegateRequestImSingleOpenSpaceModelSearchSupport extends $tea.Model {
+  /**
+   * @example
+   * 卡片的具体描述
+   */
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2878,6 +3358,10 @@ export class CreateAndDeliverWithDelegateRequestOpenDynamicDataConfig extends $t
 }
 
 export class CreateAndDeliverWithDelegateRequestTopOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * 1665473229000
+   */
   expiredTimeMillis?: number;
   platforms?: string[];
   userIds?: string[];
@@ -2903,6 +3387,10 @@ export class CreateAndDeliverWithDelegateRequestTopOpenDeliverModel extends $tea
 }
 
 export class CreateAndDeliverWithDelegateRequestTopOpenSpaceModel extends $tea.Model {
+  /**
+   * @example
+   * ONE_BOX
+   */
   spaceType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2922,9 +3410,25 @@ export class CreateAndDeliverWithDelegateRequestTopOpenSpaceModel extends $tea.M
 }
 
 export class CreateAndDeliverWithDelegateResponseBodyResultDeliverResults extends $tea.Model {
+  /**
+   * @example
+   * 4v+AzUEDuC0dKuO*********J0w8=
+   */
   carrierId?: string;
+  /**
+   * @example
+   * system error
+   */
   errorMsg?: string;
+  /**
+   * @example
+   * cid1234abcd
+   */
   spaceId?: string;
+  /**
+   * @example
+   * IM_GROUP
+   */
   spaceType?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
@@ -2954,6 +3458,10 @@ export class CreateAndDeliverWithDelegateResponseBodyResultDeliverResults extend
 
 export class CreateAndDeliverWithDelegateResponseBodyResult extends $tea.Model {
   deliverResults?: CreateAndDeliverWithDelegateResponseBodyResultDeliverResults[];
+  /**
+   * @example
+   * out_track_id_xxx
+   */
   outTrackId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3013,6 +3521,10 @@ export class CreateCardRequestCoFeedOpenSpaceModel extends $tea.Model {
 }
 
 export class CreateCardRequestImGroupOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到1条新消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -3036,7 +3548,15 @@ export class CreateCardRequestImGroupOpenSpaceModelNotification extends $tea.Mod
 
 export class CreateCardRequestImGroupOpenSpaceModelSearchSupport extends $tea.Model {
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3111,7 +3631,15 @@ export class CreateCardRequestImRobotOpenSpaceModelNotification extends $tea.Mod
 
 export class CreateCardRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3186,7 +3714,15 @@ export class CreateCardRequestImSingleOpenSpaceModelNotification extends $tea.Mo
 
 export class CreateCardRequestImSingleOpenSpaceModelSearchSupport extends $tea.Model {
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3239,7 +3775,15 @@ export class CreateCardRequestImSingleOpenSpaceModel extends $tea.Model {
 
 export class CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig extends $tea.Model {
   interval?: number;
+  /**
+   * @example
+   * INTERVAL
+   */
   pullStrategy?: string;
+  /**
+   * @example
+   * SECONDS
+   */
   timeUnit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3264,6 +3808,10 @@ export class CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullC
 
 export class CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigs extends $tea.Model {
   constParams?: { [key: string]: string };
+  /**
+   * @example
+   * ds-01
+   */
   dynamicDataSourceId?: string;
   pullConfig?: CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig;
   static names(): { [key: string]: string } {
@@ -3364,6 +3912,10 @@ export class CreateCardWithDelegateRequestCoFeedOpenSpaceModel extends $tea.Mode
 }
 
 export class CreateCardWithDelegateRequestImGroupOpenSpaceModelNotification extends $tea.Model {
+  /**
+   * @example
+   * 你收到1条新消息
+   */
   alertContent?: string;
   notificationOff?: boolean;
   static names(): { [key: string]: string } {
@@ -3387,7 +3939,15 @@ export class CreateCardWithDelegateRequestImGroupOpenSpaceModelNotification exte
 
 export class CreateCardWithDelegateRequestImGroupOpenSpaceModelSearchSupport extends $tea.Model {
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3462,7 +4022,15 @@ export class CreateCardWithDelegateRequestImRobotOpenSpaceModelNotification exte
 
 export class CreateCardWithDelegateRequestImRobotOpenSpaceModelSearchSupport extends $tea.Model {
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3537,7 +4105,15 @@ export class CreateCardWithDelegateRequestImSingleOpenSpaceModelNotification ext
 
 export class CreateCardWithDelegateRequestImSingleOpenSpaceModelSearchSupport extends $tea.Model {
   searchDesc?: string;
+  /**
+   * @example
+   * @lALPDgQ9q8hFhlHNAXzNAqI
+   */
   searchIcon?: string;
+  /**
+   * @example
+   * {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
+   */
   searchTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3590,7 +4166,15 @@ export class CreateCardWithDelegateRequestImSingleOpenSpaceModel extends $tea.Mo
 
 export class CreateCardWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig extends $tea.Model {
   interval?: number;
+  /**
+   * @example
+   * INTERVAL
+   */
   pullStrategy?: string;
+  /**
+   * @example
+   * SECONDS
+   */
   timeUnit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3615,6 +4199,10 @@ export class CreateCardWithDelegateRequestOpenDynamicDataConfigDynamicDataSource
 
 export class CreateCardWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigs extends $tea.Model {
   constParams?: { [key: string]: string };
+  /**
+   * @example
+   * ds-01
+   */
   dynamicDataSourceId?: string;
   pullConfig?: CreateCardWithDelegateRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig;
   static names(): { [key: string]: string } {
@@ -3677,7 +4265,15 @@ export class CreateCardWithDelegateRequestTopOpenSpaceModel extends $tea.Model {
 }
 
 export class DeliverCardRequestCoFeedOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * xxx_biz_tag
+   */
   bizTag?: string;
+  /**
+   * @example
+   * 1665473229000
+   */
   gmtTimeLine?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3699,6 +4295,10 @@ export class DeliverCardRequestCoFeedOpenDeliverModel extends $tea.Model {
 }
 
 export class DeliverCardRequestDocOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * xxx_biz_tag
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3721,6 +4321,10 @@ export class DeliverCardRequestImGroupOpenDeliverModel extends $tea.Model {
   atUserIds?: { [key: string]: string };
   extension?: { [key: string]: string };
   recipients?: string[];
+  /**
+   * @example
+   * dingg3xmqdkpaojuakm8
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3747,7 +4351,15 @@ export class DeliverCardRequestImGroupOpenDeliverModel extends $tea.Model {
 
 export class DeliverCardRequestImRobotOpenDeliverModel extends $tea.Model {
   extension?: { [key: string]: string };
+  /**
+   * @example
+   * dingg3xmqdkpaojuakm8
+   */
   robotCode?: string;
+  /**
+   * @example
+   * IM_ROBOT
+   */
   spaceType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3793,6 +4405,10 @@ export class DeliverCardRequestImSingleOpenDeliverModel extends $tea.Model {
 }
 
 export class DeliverCardRequestTopOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * 1665473229000
+   */
   expiredTimeMillis?: number;
   platforms?: string[];
   userIds?: string[];
@@ -3818,9 +4434,25 @@ export class DeliverCardRequestTopOpenDeliverModel extends $tea.Model {
 }
 
 export class DeliverCardResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 4v+AzUEDuC0dKuO*********J0w8=
+   */
   carrierId?: string;
+  /**
+   * @example
+   * system error
+   */
   errorMsg?: string;
+  /**
+   * @example
+   * cid1234abcd
+   */
   spaceId?: string;
+  /**
+   * @example
+   * IM_GROUP
+   */
   spaceType?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
@@ -3849,7 +4481,15 @@ export class DeliverCardResponseBodyResult extends $tea.Model {
 }
 
 export class DeliverCardWithDelegateRequestCoFeedOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * xxx_biz_tag
+   */
   bizTag?: string;
+  /**
+   * @example
+   * 1665473229000
+   */
   gmtTimeLine?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3871,6 +4511,10 @@ export class DeliverCardWithDelegateRequestCoFeedOpenDeliverModel extends $tea.M
 }
 
 export class DeliverCardWithDelegateRequestDocOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * xxx_biz_tag
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3893,6 +4537,10 @@ export class DeliverCardWithDelegateRequestImGroupOpenDeliverModel extends $tea.
   atUserIds?: { [key: string]: string };
   extension?: { [key: string]: string };
   recipients?: string[];
+  /**
+   * @example
+   * dingg3xmqdkpaojuakm8
+   */
   robotCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3919,7 +4567,15 @@ export class DeliverCardWithDelegateRequestImGroupOpenDeliverModel extends $tea.
 
 export class DeliverCardWithDelegateRequestImRobotOpenDeliverModel extends $tea.Model {
   extension?: { [key: string]: string };
+  /**
+   * @example
+   * dingg3xmqdkpaojuakm8
+   */
   robotCode?: string;
+  /**
+   * @example
+   * IM_ROBOT
+   */
   spaceType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3965,6 +4621,10 @@ export class DeliverCardWithDelegateRequestImSingleOpenDeliverModel extends $tea
 }
 
 export class DeliverCardWithDelegateRequestTopOpenDeliverModel extends $tea.Model {
+  /**
+   * @example
+   * 1665473229000
+   */
   expiredTimeMillis?: number;
   platforms?: string[];
   userIds?: string[];
@@ -3990,9 +4650,25 @@ export class DeliverCardWithDelegateRequestTopOpenDeliverModel extends $tea.Mode
 }
 
 export class DeliverCardWithDelegateResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 4v+AzUEDuC0dKuO*********J0w8=
+   */
   carrierId?: string;
+  /**
+   * @example
+   * system error
+   */
   errorMsg?: string;
+  /**
+   * @example
+   * cid1234abcd
+   */
   spaceId?: string;
+  /**
+   * @example
+   * IM_GROUP
+   */
   spaceType?: string;
   success?: boolean;
   static names(): { [key: string]: string } {
@@ -4148,12 +4824,11 @@ export class UpdateCardWithDelegateRequestCardUpdateOptions extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -4163,12 +4838,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 新增或更新卡片的场域信息
-   *
-   * @param request AppendSpaceRequest
-   * @param headers AppendSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AppendSpaceResponse
+   * 新增或更新卡片的场域信息
+   * 
+   * @param request - AppendSpaceRequest
+   * @param headers - AppendSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AppendSpaceResponse
    */
   async appendSpaceWithOptions(request: AppendSpaceRequest, headers: AppendSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<AppendSpaceResponse> {
     Util.validateModel(request);
@@ -4221,10 +4896,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增或更新卡片的场域信息
-   *
-   * @param request AppendSpaceRequest
-   * @return AppendSpaceResponse
+   * 新增或更新卡片的场域信息
+   * 
+   * @param request - AppendSpaceRequest
+   * @returns AppendSpaceResponse
    */
   async appendSpace(request: AppendSpaceRequest): Promise<AppendSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4233,12 +4908,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增或更新卡片的场域信息
-   *
-   * @param request AppendSpaceWithDelegateRequest
-   * @param headers AppendSpaceWithDelegateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AppendSpaceWithDelegateResponse
+   * 新增或更新卡片的场域信息
+   * 
+   * @param request - AppendSpaceWithDelegateRequest
+   * @param headers - AppendSpaceWithDelegateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AppendSpaceWithDelegateResponse
    */
   async appendSpaceWithDelegateWithOptions(request: AppendSpaceWithDelegateRequest, headers: AppendSpaceWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<AppendSpaceWithDelegateResponse> {
     Util.validateModel(request);
@@ -4291,10 +4966,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增或更新卡片的场域信息
-   *
-   * @param request AppendSpaceWithDelegateRequest
-   * @return AppendSpaceWithDelegateResponse
+   * 新增或更新卡片的场域信息
+   * 
+   * @param request - AppendSpaceWithDelegateRequest
+   * @returns AppendSpaceWithDelegateResponse
    */
   async appendSpaceWithDelegate(request: AppendSpaceWithDelegateRequest): Promise<AppendSpaceWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4303,12 +4978,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建并投放卡片
-   *
-   * @param request CreateAndDeliverRequest
-   * @param headers CreateAndDeliverHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateAndDeliverResponse
+   * 创建并投放卡片
+   * 
+   * @param request - CreateAndDeliverRequest
+   * @param headers - CreateAndDeliverHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateAndDeliverResponse
    */
   async createAndDeliverWithOptions(request: CreateAndDeliverRequest, headers: CreateAndDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAndDeliverResponse> {
     Util.validateModel(request);
@@ -4425,10 +5100,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建并投放卡片
-   *
-   * @param request CreateAndDeliverRequest
-   * @return CreateAndDeliverResponse
+   * 创建并投放卡片
+   * 
+   * @param request - CreateAndDeliverRequest
+   * @returns CreateAndDeliverResponse
    */
   async createAndDeliver(request: CreateAndDeliverRequest): Promise<CreateAndDeliverResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4437,12 +5112,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建并投放卡片
-   *
-   * @param request CreateAndDeliverWithDelegateRequest
-   * @param headers CreateAndDeliverWithDelegateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateAndDeliverWithDelegateResponse
+   * 创建并投放卡片
+   * 
+   * @param request - CreateAndDeliverWithDelegateRequest
+   * @param headers - CreateAndDeliverWithDelegateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateAndDeliverWithDelegateResponse
    */
   async createAndDeliverWithDelegateWithOptions(request: CreateAndDeliverWithDelegateRequest, headers: CreateAndDeliverWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAndDeliverWithDelegateResponse> {
     Util.validateModel(request);
@@ -4559,10 +5234,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建并投放卡片
-   *
-   * @param request CreateAndDeliverWithDelegateRequest
-   * @return CreateAndDeliverWithDelegateResponse
+   * 创建并投放卡片
+   * 
+   * @param request - CreateAndDeliverWithDelegateRequest
+   * @returns CreateAndDeliverWithDelegateResponse
    */
   async createAndDeliverWithDelegate(request: CreateAndDeliverWithDelegateRequest): Promise<CreateAndDeliverWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4571,12 +5246,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建卡片
-   *
-   * @param request CreateCardRequest
-   * @param headers CreateCardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateCardResponse
+   * 创建卡片
+   * 
+   * @param request - CreateCardRequest
+   * @param headers - CreateCardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateCardResponse
    */
   async createCardWithOptions(request: CreateCardRequest, headers: CreateCardHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCardResponse> {
     Util.validateModel(request);
@@ -4665,10 +5340,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建卡片
-   *
-   * @param request CreateCardRequest
-   * @return CreateCardResponse
+   * 创建卡片
+   * 
+   * @param request - CreateCardRequest
+   * @returns CreateCardResponse
    */
   async createCard(request: CreateCardRequest): Promise<CreateCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4677,12 +5352,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建卡片
-   *
-   * @param request CreateCardWithDelegateRequest
-   * @param headers CreateCardWithDelegateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateCardWithDelegateResponse
+   * 创建卡片
+   * 
+   * @param request - CreateCardWithDelegateRequest
+   * @param headers - CreateCardWithDelegateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateCardWithDelegateResponse
    */
   async createCardWithDelegateWithOptions(request: CreateCardWithDelegateRequest, headers: CreateCardWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCardWithDelegateResponse> {
     Util.validateModel(request);
@@ -4771,10 +5446,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建卡片
-   *
-   * @param request CreateCardWithDelegateRequest
-   * @return CreateCardWithDelegateResponse
+   * 创建卡片
+   * 
+   * @param request - CreateCardWithDelegateRequest
+   * @returns CreateCardWithDelegateResponse
    */
   async createCardWithDelegate(request: CreateCardWithDelegateRequest): Promise<CreateCardWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4783,12 +5458,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 投放卡片
-   *
-   * @param request DeliverCardRequest
-   * @param headers DeliverCardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeliverCardResponse
+   * 投放卡片
+   * 
+   * @param request - DeliverCardRequest
+   * @param headers - DeliverCardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeliverCardResponse
    */
   async deliverCardWithOptions(request: DeliverCardRequest, headers: DeliverCardHeaders, runtime: $Util.RuntimeOptions): Promise<DeliverCardResponse> {
     Util.validateModel(request);
@@ -4857,10 +5532,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 投放卡片
-   *
-   * @param request DeliverCardRequest
-   * @return DeliverCardResponse
+   * 投放卡片
+   * 
+   * @param request - DeliverCardRequest
+   * @returns DeliverCardResponse
    */
   async deliverCard(request: DeliverCardRequest): Promise<DeliverCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4869,12 +5544,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 投放卡片
-   *
-   * @param request DeliverCardWithDelegateRequest
-   * @param headers DeliverCardWithDelegateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeliverCardWithDelegateResponse
+   * 投放卡片
+   * 
+   * @param request - DeliverCardWithDelegateRequest
+   * @param headers - DeliverCardWithDelegateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeliverCardWithDelegateResponse
    */
   async deliverCardWithDelegateWithOptions(request: DeliverCardWithDelegateRequest, headers: DeliverCardWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<DeliverCardWithDelegateResponse> {
     Util.validateModel(request);
@@ -4943,10 +5618,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 投放卡片
-   *
-   * @param request DeliverCardWithDelegateRequest
-   * @return DeliverCardWithDelegateResponse
+   * 投放卡片
+   * 
+   * @param request - DeliverCardWithDelegateRequest
+   * @returns DeliverCardWithDelegateResponse
    */
   async deliverCardWithDelegate(request: DeliverCardWithDelegateRequest): Promise<DeliverCardWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4955,12 +5630,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 注册卡片回调地址
-   *
-   * @param request RegisterCallbackRequest
-   * @param headers RegisterCallbackHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RegisterCallbackResponse
+   * 注册卡片回调地址
+   * 
+   * @param request - RegisterCallbackRequest
+   * @param headers - RegisterCallbackHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RegisterCallbackResponse
    */
   async registerCallbackWithOptions(request: RegisterCallbackRequest, headers: RegisterCallbackHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterCallbackResponse> {
     Util.validateModel(request);
@@ -5009,10 +5684,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 注册卡片回调地址
-   *
-   * @param request RegisterCallbackRequest
-   * @return RegisterCallbackResponse
+   * 注册卡片回调地址
+   * 
+   * @param request - RegisterCallbackRequest
+   * @returns RegisterCallbackResponse
    */
   async registerCallback(request: RegisterCallbackRequest): Promise<RegisterCallbackResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5021,12 +5696,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 注册卡片回调地址
-   *
-   * @param request RegisterCallbackWithDelegateRequest
-   * @param headers RegisterCallbackWithDelegateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RegisterCallbackWithDelegateResponse
+   * 注册卡片回调地址
+   * 
+   * @param request - RegisterCallbackWithDelegateRequest
+   * @param headers - RegisterCallbackWithDelegateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RegisterCallbackWithDelegateResponse
    */
   async registerCallbackWithDelegateWithOptions(request: RegisterCallbackWithDelegateRequest, headers: RegisterCallbackWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterCallbackWithDelegateResponse> {
     Util.validateModel(request);
@@ -5075,10 +5750,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 注册卡片回调地址
-   *
-   * @param request RegisterCallbackWithDelegateRequest
-   * @return RegisterCallbackWithDelegateResponse
+   * 注册卡片回调地址
+   * 
+   * @param request - RegisterCallbackWithDelegateRequest
+   * @returns RegisterCallbackWithDelegateResponse
    */
   async registerCallbackWithDelegate(request: RegisterCallbackWithDelegateRequest): Promise<RegisterCallbackWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5087,12 +5762,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary AI互动卡片流式更新
-   *
-   * @param request StreamingUpdateRequest
-   * @param headers StreamingUpdateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return StreamingUpdateResponse
+   * AI互动卡片流式更新
+   * 
+   * @param request - StreamingUpdateRequest
+   * @param headers - StreamingUpdateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns StreamingUpdateResponse
    */
   async streamingUpdateWithOptions(request: StreamingUpdateRequest, headers: StreamingUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<StreamingUpdateResponse> {
     Util.validateModel(request);
@@ -5153,10 +5828,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary AI互动卡片流式更新
-   *
-   * @param request StreamingUpdateRequest
-   * @return StreamingUpdateResponse
+   * AI互动卡片流式更新
+   * 
+   * @param request - StreamingUpdateRequest
+   * @returns StreamingUpdateResponse
    */
   async streamingUpdate(request: StreamingUpdateRequest): Promise<StreamingUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5165,12 +5840,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新卡片
-   *
-   * @param request UpdateCardRequest
-   * @param headers UpdateCardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateCardResponse
+   * 更新卡片
+   * 
+   * @param request - UpdateCardRequest
+   * @param headers - UpdateCardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateCardResponse
    */
   async updateCardWithOptions(request: UpdateCardRequest, headers: UpdateCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCardResponse> {
     Util.validateModel(request);
@@ -5223,10 +5898,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新卡片
-   *
-   * @param request UpdateCardRequest
-   * @return UpdateCardResponse
+   * 更新卡片
+   * 
+   * @param request - UpdateCardRequest
+   * @returns UpdateCardResponse
    */
   async updateCard(request: UpdateCardRequest): Promise<UpdateCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5235,12 +5910,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新卡片
-   *
-   * @param request UpdateCardWithDelegateRequest
-   * @param headers UpdateCardWithDelegateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateCardWithDelegateResponse
+   * 更新卡片
+   * 
+   * @param request - UpdateCardWithDelegateRequest
+   * @param headers - UpdateCardWithDelegateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateCardWithDelegateResponse
    */
   async updateCardWithDelegateWithOptions(request: UpdateCardWithDelegateRequest, headers: UpdateCardWithDelegateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCardWithDelegateResponse> {
     Util.validateModel(request);
@@ -5293,10 +5968,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新卡片
-   *
-   * @param request UpdateCardWithDelegateRequest
-   * @return UpdateCardWithDelegateResponse
+   * 更新卡片
+   * 
+   * @param request - UpdateCardWithDelegateRequest
+   * @returns UpdateCardWithDelegateResponse
    */
   async updateCardWithDelegate(request: UpdateCardWithDelegateRequest): Promise<UpdateCardWithDelegateResponse> {
     let runtime = new $Util.RuntimeOptions({ });

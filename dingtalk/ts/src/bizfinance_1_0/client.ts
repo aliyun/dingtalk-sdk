@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -12,6 +10,10 @@ import * as $tea from '@alicloud/tea-typescript';
 export class RoleMemberMapValue extends $tea.Model {
   roleCode?: string;
   memberList?: RoleMemberMapValueMemberList[];
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -58,6 +60,10 @@ export class AppendRolePermissionHeaders extends $tea.Model {
 
 export class AppendRolePermissionRequest extends $tea.Model {
   rolePermissionItemList?: AppendRolePermissionRequestRolePermissionItemList[];
+  /**
+   * @example
+   * 5041234
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -80,6 +86,10 @@ export class AppendRolePermissionRequest extends $tea.Model {
 
 export class AppendRolePermissionShrinkRequest extends $tea.Model {
   rolePermissionItemListShrink?: string;
+  /**
+   * @example
+   * 5041234
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -167,9 +177,21 @@ export class BatchAddInvoiceHeaders extends $tea.Model {
 }
 
 export class BatchAddInvoiceRequest extends $tea.Model {
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
   generalInvoiceVOList?: BatchAddInvoiceRequestGeneralInvoiceVOList[];
+  /**
+   * @example
+   * abc
+   */
   operator?: string;
+  /**
+   * @example
+   * APPROVAL
+   */
   source?: string;
   static names(): { [key: string]: string } {
     return {
@@ -265,6 +287,13 @@ export class BatchCreateCustomerHeaders extends $tea.Model {
 
 export class BatchCreateCustomerRequest extends $tea.Model {
   createCustomerRequestList?: BatchCreateCustomerRequestCreateCustomerRequestList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 55001121
+   */
   operator?: string;
   static names(): { [key: string]: string } {
     return {
@@ -355,7 +384,15 @@ export class BeginConsumeHeaders extends $tea.Model {
 }
 
 export class BeginConsumeRequest extends $tea.Model {
+  /**
+   * @example
+   * B_SF2_INVOICE_OCR
+   */
   benefitCode?: string;
+  /**
+   * @example
+   * XXX
+   */
   bizRequestId?: string;
   quota?: number;
   userId?: string;
@@ -449,7 +486,18 @@ export class BindCompanyAccountantBookHeaders extends $tea.Model {
 }
 
 export class BindCompanyAccountantBookRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abc
+   */
   accountantBookId?: string;
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -537,8 +585,20 @@ export class CancelConsumeHeaders extends $tea.Model {
 }
 
 export class CancelConsumeRequest extends $tea.Model {
+  /**
+   * @example
+   * B_SF2_INVOICE_OCR
+   */
   benefitCode?: string;
+  /**
+   * @example
+   * XXX
+   */
   bizRequestId?: string;
+  /**
+   * @example
+   * 1
+   */
   quota?: number;
   userId?: string;
   static names(): { [key: string]: string } {
@@ -631,15 +691,55 @@ export class CheckVoucherStatusHeaders extends $tea.Model {
 }
 
 export class CheckVoucherStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * COM_DEFUALT
+   */
   companyCode?: string;
+  /**
+   * @example
+   * 1631526550994
+   */
   endTime?: number;
+  /**
+   * @example
+   * VAT_IN
+   */
   financeType?: string;
+  /**
+   * @example
+   * 3121234560
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * 1234567890
+   */
   invoiceNo?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 1631526550994
+   */
   startTime?: number;
+  /**
+   * @example
+   * 12345678901
+   */
   taxNo?: string;
+  /**
+   * @example
+   * VERIFIED
+   */
   verifyStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -746,8 +846,16 @@ export class CommitConsumeHeaders extends $tea.Model {
 }
 
 export class CommitConsumeRequest extends $tea.Model {
+  /**
+   * @example
+   * B_SF2_INVOICE_OCR
+   */
   benefitCode?: string;
   bizRequestId?: string;
+  /**
+   * @example
+   * 1
+   */
   quota?: number;
   userId?: string;
   static names(): { [key: string]: string } {
@@ -840,16 +948,66 @@ export class CreateCustomerHeaders extends $tea.Model {
 }
 
 export class CreateCustomerRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 55001121
+   */
   creator?: string;
+  /**
+   * @example
+   * abc
+   */
   description?: string;
+  /**
+   * @example
+   * www.abc.com
+   */
   drawerEmail?: string;
+  /**
+   * @example
+   * 12345678901
+   */
   drawerTelephone?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @example
+   * abc
+   */
   purchaserAccount?: string;
+  /**
+   * @example
+   * 杭州市
+   */
   purchaserAddress?: string;
+  /**
+   * @example
+   * 建行
+   */
   purchaserBankName?: string;
+  /**
+   * @example
+   * 李四
+   */
   purchaserName?: string;
+  /**
+   * @example
+   * 1333
+   */
   purchaserTaxNo?: string;
+  /**
+   * @example
+   * 13333333333
+   */
   purchaserTel?: string;
   static names(): { [key: string]: string } {
     return {
@@ -889,6 +1047,10 @@ export class CreateCustomerRequest extends $tea.Model {
 }
 
 export class CreateCustomerResponseBody extends $tea.Model {
+  /**
+   * @example
+   * CUS_xxxxxx
+   */
   customerCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -955,6 +1117,10 @@ export class CreateReceiptHeaders extends $tea.Model {
 }
 
 export class CreateReceiptRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receipts?: CreateReceiptRequestReceipts[];
   static names(): { [key: string]: string } {
     return {
@@ -974,6 +1140,10 @@ export class CreateReceiptRequest extends $tea.Model {
 }
 
 export class CreateReceiptResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   results?: CreateReceiptResponseBodyResults[];
   static names(): { [key: string]: string } {
     return {
@@ -1040,6 +1210,10 @@ export class DeleteReceiptHeaders extends $tea.Model {
 }
 
 export class DeleteReceiptRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receipts?: DeleteReceiptRequestReceipts[];
   static names(): { [key: string]: string } {
     return {
@@ -1059,6 +1233,10 @@ export class DeleteReceiptRequest extends $tea.Model {
 }
 
 export class DeleteReceiptResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   results?: DeleteReceiptResponseBodyResults[];
   static names(): { [key: string]: string } {
     return {
@@ -1125,6 +1303,10 @@ export class GetBookkeepingUserListHeaders extends $tea.Model {
 }
 
 export class GetBookkeepingUserListResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1191,6 +1373,13 @@ export class GetCategoryHeaders extends $tea.Model {
 }
 
 export class GetCategoryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INCOME_XXX
+   */
   code?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1211,11 +1400,51 @@ export class GetCategoryRequest extends $tea.Model {
 
 export class GetCategoryResponseBody extends $tea.Model {
   accountantBookIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INCOME_XXX
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * false
+   */
   isDir?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 汽车
+   */
   name?: string;
+  /**
+   * @example
+   * DIR_XXX
+   */
   parentCode?: string;
+  remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * income
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1224,6 +1453,7 @@ export class GetCategoryResponseBody extends $tea.Model {
       isDir: 'isDir',
       name: 'name',
       parentCode: 'parentCode',
+      remark: 'remark',
       status: 'status',
       type: 'type',
     };
@@ -1236,6 +1466,7 @@ export class GetCategoryResponseBody extends $tea.Model {
       isDir: 'boolean',
       name: 'string',
       parentCode: 'string',
+      remark: 'string',
       status: 'string',
       type: 'string',
     };
@@ -1294,6 +1525,13 @@ export class GetCustomerHeaders extends $tea.Model {
 }
 
 export class GetCustomerRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * CUS_XXXX
+   */
   code?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1314,10 +1552,45 @@ export class GetCustomerRequest extends $tea.Model {
 
 export class GetCustomerResponseBody extends $tea.Model {
   accountantBookIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * CUS_XXXX
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1634786828686
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 重要客户
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XX有限公司
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -1397,6 +1670,10 @@ export class GetFinanceAccountHeaders extends $tea.Model {
 }
 
 export class GetFinanceAccountRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   accountCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1416,16 +1693,59 @@ export class GetFinanceAccountRequest extends $tea.Model {
 }
 
 export class GetFinanceAccountResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   accountCode?: string;
+  /**
+   * @example
+   * test@alipay.com
+   */
   accountId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试
+   */
   accountName?: string;
   accountRemark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ALIPAY
+   */
   accountType?: string;
   accountantBookIdList?: string[];
+  /**
+   * @example
+   * 50000.55
+   */
   amount?: string;
   bankCode?: string;
   bankName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1631526550994
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcdef
+   */
   creator?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1512,6 +1832,10 @@ export class GetFormTemplateInfoHeaders extends $tea.Model {
 }
 
 export class GetFormTemplateInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receiptFormTemplateInfoList?: GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList[];
   static names(): { [key: string]: string } {
     return {
@@ -1761,11 +2085,35 @@ export class GetMultiCompanyInfoByCodeHeaders extends $tea.Model {
 
 export class GetMultiCompanyInfoByCodeResponseBody extends $tea.Model {
   advancedSettingList?: GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList[];
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @example
+   * 钉钉
+   */
   companyName?: string;
+  /**
+   * @example
+   * 备注
+   */
   remark?: string;
+  /**
+   * @example
+   * valid
+   */
   status?: string;
+  /**
+   * @example
+   * generalTaxpayer
+   */
   taxNature?: string;
+  /**
+   * @example
+   * 123456789012345
+   */
   taxNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1844,6 +2192,13 @@ export class GetProductHeaders extends $tea.Model {
 }
 
 export class GetProductRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROD-xxx
+   */
   code?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1864,12 +2219,41 @@ export class GetProductRequest extends $tea.Model {
 
 export class GetProductResponseBody extends $tea.Model {
   accountantBookIdList?: string[];
+  /**
+   * @example
+   * PROD-xxx
+   */
   code?: string;
+  /**
+   * @example
+   * 1634786828686
+   */
   createTime?: number;
+  /**
+   * @example
+   * 和外部合作
+   */
   description?: string;
+  information?: string;
+  /**
+   * @example
+   * 外包商品
+   */
   name?: string;
+  /**
+   * @example
+   * 规格型号
+   */
   specification?: string;
+  /**
+   * @example
+   * valid
+   */
   status?: string;
+  /**
+   * @example
+   * 个
+   */
   unit?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -1878,6 +2262,7 @@ export class GetProductResponseBody extends $tea.Model {
       code: 'code',
       createTime: 'createTime',
       description: 'description',
+      information: 'information',
       name: 'name',
       specification: 'specification',
       status: 'status',
@@ -1892,6 +2277,7 @@ export class GetProductResponseBody extends $tea.Model {
       code: 'string',
       createTime: 'number',
       description: 'string',
+      information: 'string',
       name: 'string',
       specification: 'string',
       status: 'string',
@@ -1953,6 +2339,13 @@ export class GetProjectHeaders extends $tea.Model {
 }
 
 export class GetProjectRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROJ-xxx
+   */
   code?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1974,12 +2367,54 @@ export class GetProjectRequest extends $tea.Model {
 export class GetProjectResponseBody extends $tea.Model {
   accountantBookIdList?: string[];
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1631526550994
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * aaa
+   */
   creator?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 和外部合作
+   */
   description?: string;
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROJ-XXX
+   */
   projectCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 外包项目
+   */
   projectName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -2065,7 +2500,21 @@ export class GetReceiptHeaders extends $tea.Model {
 }
 
 export class GetReceiptRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 19b98a1c-5a31-4d78-9da7-0e347593820a
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EM-1017F28E03350B1738B3000X
+   */
   modelId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2087,9 +2536,37 @@ export class GetReceiptRequest extends $tea.Model {
 }
 
 export class GetReceiptResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234
+   */
   appId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"operatorUserId":"015865244722391178","data":{"amount":{"amountStr":"566"},"code":"d0d54815-32c5-4b18-8391-e79713bba95e","payeeAt":1637251200000,"departmentCode":"-1","project":{"projectCode":"PROJ_101761F3FF6B21362ECA000N","projectName":"客户合作项目"},"principalId":"015865244722391178","enterpriseAccount":{},"approvedAt":1637305373000,"title":"地狱猫提交的智能财务-收款","createAt":1637305353000,"paymentAt":1637251200000,"supplier":{},"operateUserId":"015865244722391178","applicantEmployeeId":"015865244722391178","comment":"ffff","category":{"categoryCode":"INC_1016D6CB3C181E28F0120009","categoryName":"销售收入"},"customer":{"customerCode":"CUS_10178592ECEC2133C893000F","customerName":"钉钉"},"status":"agree"}}
+   */
   data?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EM-1017F28E03350B1738B3000X
+   */
   modelId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * approval
+   */
   source?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2162,6 +2639,13 @@ export class GetSupplierHeaders extends $tea.Model {
 }
 
 export class GetSupplierRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SUP_XXX
+   */
   code?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2182,10 +2666,45 @@ export class GetSupplierRequest extends $tea.Model {
 
 export class GetSupplierResponseBody extends $tea.Model {
   accountantBookIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SUP_XXX
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1634786828686
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 原材料供应商
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XX公司
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -2265,6 +2784,13 @@ export class GetYongYouOpenApiTokenHeaders extends $tea.Model {
 }
 
 export class GetYongYouOpenApiTokenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 50411123322
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2284,14 +2810,50 @@ export class GetYongYouOpenApiTokenRequest extends $tea.Model {
 }
 
 export class GetYongYouOpenApiTokenResponseBody extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accessToken?: string;
+  /**
+   * @example
+   * accounting
+   */
   appName?: string;
+  /**
+   * @example
+   * 518400
+   */
   expiresIn?: string;
+  /**
+   * @example
+   * 2512799
+   */
   refreshExpiresIn?: string;
+  /**
+   * @example
+   * abc
+   */
   refreshToken?: string;
+  /**
+   * @example
+   * auth_all
+   */
   scope?: string;
+  /**
+   * @example
+   * abc
+   */
   sid?: string;
+  /**
+   * @example
+   * 123615862385832922
+   */
   yongyouOrgId?: string;
+  /**
+   * @example
+   * 391733693750254232
+   */
   yongyouUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2374,9 +2936,25 @@ export class GetYongYouOrgRelationHeaders extends $tea.Model {
 }
 
 export class GetYongYouOrgRelationResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 20230731
+   */
   chanjetCorpId?: string;
+  /**
+   * @example
+   * 01162352501424064728
+   */
   chanjetUserId?: string;
+  /**
+   * @example
+   * ding9f50b15bccd16741
+   */
   corpId?: string;
+  /**
+   * @example
+   * 01162352501424064728
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2449,7 +3027,15 @@ export class ProfessionBenefitConsumeHeaders extends $tea.Model {
 }
 
 export class ProfessionBenefitConsumeRequest extends $tea.Model {
+  /**
+   * @example
+   * SF_INVOICE
+   */
   benefitCode?: string;
+  /**
+   * @example
+   * 1234567890
+   */
   bizRequestId?: string;
   quota?: number;
   static names(): { [key: string]: string } {
@@ -2540,10 +3126,22 @@ export class PushHistoricalReceiptsHeaders extends $tea.Model {
 }
 
 export class PushHistoricalReceiptsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizId?: string;
   endTime?: number;
   forcedIgnoreDup?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formCodeList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2637,6 +3235,10 @@ export class QueryBenefitHeaders extends $tea.Model {
 }
 
 export class QueryBenefitRequest extends $tea.Model {
+  /**
+   * @example
+   * B_SF2_INVOICE_CHECK_V2
+   */
   benefitCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2722,8 +3324,29 @@ export class QueryCategoryByPageHeaders extends $tea.Model {
 }
 
 export class QueryCategoryByPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2747,7 +3370,18 @@ export class QueryCategoryByPageRequest extends $tea.Model {
 }
 
 export class QueryCategoryByPageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryCategoryByPageResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -2816,6 +3450,10 @@ export class QueryCompanyInvoiceRelationCountHeaders extends $tea.Model {
 }
 
 export class QueryCompanyInvoiceRelationCountRequest extends $tea.Model {
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2901,7 +3539,21 @@ export class QueryCustomerByPageHeaders extends $tea.Model {
 }
 
 export class QueryCustomerByPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2923,7 +3575,18 @@ export class QueryCustomerByPageRequest extends $tea.Model {
 }
 
 export class QueryCustomerByPageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryCustomerByPageResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -2993,7 +3656,15 @@ export class QueryCustomerInfoHeaders extends $tea.Model {
 
 export class QueryCustomerInfoRequest extends $tea.Model {
   keyword?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 20
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3017,8 +3688,16 @@ export class QueryCustomerInfoRequest extends $tea.Model {
 }
 
 export class QueryCustomerInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
   list?: QueryCustomerInfoResponseBodyList[];
+  /**
+   * @example
+   * 500
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3089,7 +3768,21 @@ export class QueryEnterpriseAccountByPageHeaders extends $tea.Model {
 }
 
 export class QueryEnterpriseAccountByPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3111,7 +3804,18 @@ export class QueryEnterpriseAccountByPageRequest extends $tea.Model {
 }
 
 export class QueryEnterpriseAccountByPageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryEnterpriseAccountByPageResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -3384,7 +4088,15 @@ export class QueryPermissionByUserIdHeaders extends $tea.Model {
 }
 
 export class QueryPermissionByUserIdRequest extends $tea.Model {
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3408,6 +4120,10 @@ export class QueryPermissionByUserIdRequest extends $tea.Model {
 export class QueryPermissionByUserIdResponseBody extends $tea.Model {
   companyCode?: string;
   permissionDTOList?: QueryPermissionByUserIdResponseBodyPermissionDTOList[];
+  /**
+   * @example
+   * 123456789
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3478,7 +4194,15 @@ export class QueryPermissionRoleMemberHeaders extends $tea.Model {
 }
 
 export class QueryPermissionRoleMemberRequest extends $tea.Model {
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleCodeList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -3566,7 +4290,21 @@ export class QueryProductByPageHeaders extends $tea.Model {
 }
 
 export class QueryProductByPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3657,7 +4395,21 @@ export class QueryProjectByPageHeaders extends $tea.Model {
 }
 
 export class QueryProjectByPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3679,7 +4431,18 @@ export class QueryProjectByPageRequest extends $tea.Model {
 }
 
 export class QueryProjectByPageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryProjectByPageResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -3748,6 +4511,10 @@ export class QueryReceiptDetailForInvoiceHeaders extends $tea.Model {
 }
 
 export class QueryReceiptDetailForInvoiceRequest extends $tea.Model {
+  /**
+   * @example
+   * abcdefghijklmnopq
+   */
   instanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3833,9 +4600,17 @@ export class QueryReceiptForInvoiceHeaders extends $tea.Model {
 }
 
 export class QueryReceiptForInvoiceRequest extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountantBookId?: string;
   applyStatusList?: string[];
   bizStatusList?: string[];
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
   endTime?: number;
   pageNumber?: number;
@@ -3882,8 +4657,16 @@ export class QueryReceiptForInvoiceRequest extends $tea.Model {
 }
 
 export class QueryReceiptForInvoiceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: string;
   list?: QueryReceiptForInvoiceResponseBodyList[];
+  /**
+   * @example
+   * 500
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3954,15 +4737,43 @@ export class QueryReceiptsBaseInfoHeaders extends $tea.Model {
 }
 
 export class QueryReceiptsBaseInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountantBookId?: string;
   amountEnd?: number;
   amountStart?: number;
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @example
+   * 16000000
+   */
   endTime?: number;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 20
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 16000000
+   */
   startTime?: number;
   timeFilterField?: string;
+  /**
+   * @example
+   * 收款单
+   */
   title?: string;
   voucherStatus?: string;
   static names(): { [key: string]: string } {
@@ -4003,8 +4814,16 @@ export class QueryReceiptsBaseInfoRequest extends $tea.Model {
 }
 
 export class QueryReceiptsBaseInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: string;
   list?: QueryReceiptsBaseInfoResponseBodyList[];
+  /**
+   * @example
+   * 500
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4075,11 +4894,50 @@ export class QueryReceiptsByPageHeaders extends $tea.Model {
 }
 
 export class QueryReceiptsByPageRequest extends $tea.Model {
+  /**
+   * @example
+   * 1637658261363
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EM-1017F28E03350B1738B3000X
+   */
   modelId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1637658261363
+   */
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * gmt_create
+   */
   timeFilterField?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4109,7 +4967,18 @@ export class QueryReceiptsByPageRequest extends $tea.Model {
 }
 
 export class QueryReceiptsByPageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * false
+   */
   hasMore?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryReceiptsByPageResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -4178,9 +5047,25 @@ export class QueryRoleMemberByPageHeaders extends $tea.Model {
 }
 
 export class QueryRoleMemberByPageRequest extends $tea.Model {
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @example
+   * 20
+   */
   maxResults?: string;
+  /**
+   * @example
+   * 0
+   */
   nextToken?: string;
+  /**
+   * @example
+   * financeManager
+   */
   roleCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4281,7 +5166,21 @@ export class QuerySupplierByPageHeaders extends $tea.Model {
 }
 
 export class QuerySupplierByPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4303,7 +5202,18 @@ export class QuerySupplierByPageRequest extends $tea.Model {
 }
 
 export class QuerySupplierByPageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QuerySupplierByPageResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -4372,6 +5282,10 @@ export class QueryUserRoleListHeaders extends $tea.Model {
 }
 
 export class QueryUserRoleListRequest extends $tea.Model {
+  /**
+   * @example
+   * 12312231231
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4460,6 +5374,10 @@ export class UnbindApplyReceiptAndInvoiceRelatedHeaders extends $tea.Model {
 }
 
 export class UnbindApplyReceiptAndInvoiceRelatedRequest extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   instanceId?: string;
   invoiceKeyVOList?: UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList[];
   operator?: string;
@@ -4558,6 +5476,10 @@ export class UpdateApplyReceiptAndInvoiceRelatedHeaders extends $tea.Model {
 
 export class UpdateApplyReceiptAndInvoiceRelatedRequest extends $tea.Model {
   generalInvoiceVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList[];
+  /**
+   * @example
+   * abc
+   */
   instanceId?: string;
   operator?: string;
   static names(): { [key: string]: string } {
@@ -4656,7 +5578,15 @@ export class UpdateDigitalInvoiceOrgInfoHeaders extends $tea.Model {
 export class UpdateDigitalInvoiceOrgInfoRequest extends $tea.Model {
   digitalInvoiceType?: string[];
   isDigitalOrg?: boolean;
+  /**
+   * @example
+   * zhejiang
+   */
   location?: string;
+  /**
+   * @example
+   * 1234567
+   */
   operator?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4845,11 +5775,37 @@ export class UpdateFinanceMultiCompanyInfoHeaders extends $tea.Model {
 }
 
 export class UpdateFinanceMultiCompanyInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 钉钉
+   */
   companyName?: string;
+  /**
+   * @example
+   * generalTaxpayer
+   */
   taxNature?: string;
+  /**
+   * @example
+   * 123456789012345
+   */
   taxNo?: string;
   taxOrInvoiceHasInit?: boolean;
+  /**
+   * @example
+   * 123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4949,12 +5905,32 @@ export class UpdateInvoiceAbandonStatusRequest extends $tea.Model {
   blueInvoiceCode?: string;
   blueInvoiceNo?: string;
   blueInvoiceStatus?: string;
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @example
+   * abc
+   */
   operator?: string;
   redGeneralInvoiceVO?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO;
   redInvoiceCode?: string;
+  /**
+   * @example
+   * abc
+   */
   redInvoiceNo?: string;
+  /**
+   * @example
+   * abc
+   */
   redInvoiceStatus?: string;
+  /**
+   * @example
+   * abc
+   */
   targetInvoice?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5060,10 +6036,22 @@ export class UpdateInvoiceAccountPeriodHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceAccountPeriodRequest extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountPeriod?: string;
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
   generalInvoiceVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList[];
   invoiceKeyVOList?: UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList[];
+  /**
+   * @example
+   * abc
+   */
   operator?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5160,8 +6148,16 @@ export class UpdateInvoiceAccountingPeriodDateHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceAccountingPeriodDateRequest extends $tea.Model {
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
   invoiceFinanceInfoVOList?: UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList[];
+  /**
+   * @example
+   * 1234567
+   */
   operator?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5251,8 +6247,16 @@ export class UpdateInvoiceAccountingStatusHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceAccountingStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
   invoiceFinanceInfoVOList?: UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList[];
+  /**
+   * @example
+   * 1234567
+   */
   operator?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5343,9 +6347,25 @@ export class UpdateInvoiceAndReceiptRelatedHeaders extends $tea.Model {
 
 export class UpdateInvoiceAndReceiptRelatedRequest extends $tea.Model {
   generalInvoiceVO?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO;
+  /**
+   * @example
+   * code
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * 155
+   */
   invoiceNo?: string;
+  /**
+   * @example
+   * abc
+   */
   operator?: string;
+  /**
+   * @example
+   * abc
+   */
   receiptCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5439,8 +6459,20 @@ export class UpdateInvoiceIgnoreStatusHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceIgnoreStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   instanceId?: string;
+  /**
+   * @example
+   * abc
+   */
   operator?: string;
+  /**
+   * @example
+   * IGNORE
+   */
   status?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5530,11 +6562,27 @@ export class UpdateInvoiceVerifyStatusHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceVerifyStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @example
+   * DEDUCTED
+   */
   deductStatus?: string;
   generalInvoiceVOList?: UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList[];
   invoiceKeyVOList?: UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList[];
+  /**
+   * @example
+   * abc
+   */
   operator?: string;
+  /**
+   * @example
+   * abc
+   */
   verifyStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5630,11 +6678,35 @@ export class UpdateInvoiceVoucherStatusHeaders extends $tea.Model {
 }
 
 export class UpdateInvoiceVoucherStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   accountantBookId?: string;
+  /**
+   * @example
+   * ADD/DELETE
+   */
   actionType?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceNo?: string;
+  /**
+   * @example
+   * 11011023488
+   */
   operator?: string;
+  /**
+   * @example
+   * abc
+   */
   voucherId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5733,6 +6805,10 @@ export class UpdateReceiptHeaders extends $tea.Model {
 }
 
 export class UpdateReceiptRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   receipts?: UpdateReceiptRequestReceipts[];
   static names(): { [key: string]: string } {
     return {
@@ -5818,12 +6894,40 @@ export class UpdateReceiptVoucherStatusHeaders extends $tea.Model {
 }
 
 export class UpdateReceiptVoucherStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountPeriod?: string;
+  /**
+   * @example
+   * add
+   */
   actionType?: string;
+  /**
+   * @example
+   * 0021241
+   */
   operatorId?: string;
+  /**
+   * @example
+   * abc
+   */
   receiptId?: string;
+  /**
+   * @example
+   * abc
+   */
   voucherCode?: string;
+  /**
+   * @example
+   * abc
+   */
   voucherId?: string;
+  /**
+   * @example
+   * 记-001
+   */
   voucherNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5899,8 +7003,20 @@ export class UpdateReceiptVoucherStatusResponse extends $tea.Model {
 }
 
 export class RoleMemberMapValueMemberList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   userId?: string;
+  /**
+   * @example
+   * 小明
+   */
   nick?: string;
+  /**
+   * @example
+   * https://xxxxxxx
+   */
   avatarUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5925,6 +7041,10 @@ export class RoleMemberMapValueMemberList extends $tea.Model {
 
 export class AppendRolePermissionRequestRolePermissionItemListPermissionList extends $tea.Model {
   actionIdList?: string[];
+  /**
+   * @example
+   * /invoice
+   */
   resourceIdentity?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5947,6 +7067,10 @@ export class AppendRolePermissionRequestRolePermissionItemListPermissionList ext
 
 export class AppendRolePermissionRequestRolePermissionItemList extends $tea.Model {
   permissionList?: AppendRolePermissionRequestRolePermissionItemListPermissionList[];
+  /**
+   * @example
+   * financeManager
+   */
   roleCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6191,53 +7315,197 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList e
 }
 
 export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountPeriod?: string;
+  /**
+   * @example
+   * 100
+   */
   amount?: string;
+  /**
+   * @example
+   * 120
+   */
   amountWithTax?: string;
+  /**
+   * @example
+   * 1111
+   */
   checkCode?: string;
+  /**
+   * @example
+   * 2010-12-12
+   */
   checkTime?: string;
+  /**
+   * @example
+   * 张三
+   */
   drawerName?: string;
+  /**
+   * @example
+   * 2022-12-10
+   */
   drewDate?: string;
+  /**
+   * @example
+   * abc
+   */
   electronicUrl?: string;
   fileId?: string;
+  /**
+   * @example
+   * INPUT_VAT
+   */
   financeType?: string;
+  /**
+   * @example
+   * RED
+   */
   fundType?: string;
   generalInvoiceDetailVOList?: BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
+  /**
+   * @example
+   * http://XXX.jpg
+   */
   imageUrl?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceNo?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceStatus?: string;
+  /**
+   * @example
+   * INTPUT_VAT
+   */
   invoiceType?: string;
+  /**
+   * @example
+   * 1111
+   */
   machineCode?: string;
+  /**
+   * @example
+   * abc
+   */
   oilFlag?: string;
+  /**
+   * @example
+   * abc
+   */
   payee?: string;
+  /**
+   * @example
+   * abc
+   */
   processInstCode?: string;
+  /**
+   * @example
+   * abc
+   */
   processInstType?: string;
+  /**
+   * @example
+   * 杭州市
+   */
   purchaserAddress?: string;
   purchaserBankAccount?: string;
+  /**
+   * @example
+   * 建行
+   */
   purchaserBankNameAccount?: string;
+  /**
+   * @example
+   * 张三
+   */
   purchaserName?: string;
+  /**
+   * @example
+   * 155655
+   */
   purchaserTaxNo?: string;
+  /**
+   * @example
+   * 1333333333
+   */
   purchaserTel?: string;
   receiverEmail?: string;
   receiverName?: string;
   receiverTel?: string;
+  /**
+   * @example
+   * abc
+   */
   remark?: string;
   reviewer?: string;
   secondHandCarInvoiceDetailList?: BatchAddInvoiceRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList[];
+  /**
+   * @example
+   * 8852
+   */
   sellerAddress?: string;
   sellerBankAccount?: string;
+  /**
+   * @example
+   * 招商银行
+   */
   sellerBankNameAccount?: string;
+  /**
+   * @example
+   * 李四
+   */
   sellerName?: string;
+  /**
+   * @example
+   * 2202
+   */
   sellerTaxNo?: string;
+  /**
+   * @example
+   * 13355222222
+   */
   sellerTel?: string;
   spaceId?: string;
+  /**
+   * @example
+   * abc
+   */
   supplySign?: string;
+  /**
+   * @example
+   * 20
+   */
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: BatchAddInvoiceRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
   vehicleSaleDetailVOList?: BatchAddInvoiceRequestGeneralInvoiceVOListVehicleSaleDetailVOList[];
+  /**
+   * @example
+   * abc
+   */
   verifyStatus?: string;
+  /**
+   * @example
+   * abc
+   */
   voucherCode?: string;
+  /**
+   * @example
+   * abc
+   */
   voucherStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6351,7 +7619,15 @@ export class BatchAddInvoiceRequestGeneralInvoiceVOList extends $tea.Model {
 }
 
 export class BatchAddInvoiceResponseBodyErrorResult extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   errorKey?: string;
+  /**
+   * @example
+   * abc
+   */
   errorMsg?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6395,15 +7671,58 @@ export class BatchAddInvoiceResponseBodySuccessResult extends $tea.Model {
 }
 
 export class BatchCreateCustomerRequestCreateCustomerRequestList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   description?: string;
+  /**
+   * @example
+   * www.abc.com
+   */
   drawerEmail?: string;
+  /**
+   * @example
+   * 1234567890
+   */
   drawerTelephone?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @example
+   * abc
+   */
   purchaserAccount?: string;
+  /**
+   * @example
+   * 杭州市
+   */
   purchaserAddress?: string;
+  /**
+   * @example
+   * 建行
+   */
   purchaserBankName?: string;
+  /**
+   * @example
+   * 李四
+   */
   purchaserName?: string;
+  /**
+   * @example
+   * 1333
+   */
   purchaserTaxNo?: string;
+  /**
+   * @example
+   * 13333333333
+   */
   purchaserTel?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6520,19 +7839,90 @@ export class CommitConsumeResponseBodyResult extends $tea.Model {
 }
 
 export class CreateReceiptRequestReceipts extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 4.44
+   */
   amount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INC_XXX
+   */
   categoryCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcd_efgh
+   */
   code?: string;
+  /**
+   * @example
+   * 1636445218000
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * emp_xxx
+   */
   createUserId?: string;
+  /**
+   * @example
+   * CUS_XXX
+   */
   customerCode?: string;
+  /**
+   * @example
+   * ACC_XXX
+   */
   enterpriseAcountCode?: string;
+  /**
+   * @example
+   * 1636445218000
+   */
   occurDate?: number;
+  /**
+   * @example
+   * emp_xxx
+   */
   principalId?: string;
+  /**
+   * @example
+   * PROJ_XXX
+   */
   projectCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   receiptType?: number;
+  /**
+   * @example
+   * 测试
+   */
   remark?: string;
+  /**
+   * @example
+   * SUP_XXX
+   */
   supplierCode?: string;
+  /**
+   * @example
+   * 收款单
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6578,9 +7968,31 @@ export class CreateReceiptRequestReceipts extends $tea.Model {
 }
 
 export class CreateReceiptResponseBodyResults extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcef-efgh-123
+   */
   code?: string;
+  /**
+   * @example
+   * success
+   */
   errorCode?: string;
+  /**
+   * @example
+   * 成功
+   */
   errorMsg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6606,8 +8018,29 @@ export class CreateReceiptResponseBodyResults extends $tea.Model {
 }
 
 export class DeleteReceiptRequestReceipts extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcd_efgh
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * emp_xxx
+   */
   deleteUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   receiptType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6631,9 +8064,31 @@ export class DeleteReceiptRequestReceipts extends $tea.Model {
 }
 
 export class DeleteReceiptResponseBodyResults extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcd_efgh
+   */
   code?: string;
+  /**
+   * @example
+   * success
+   */
   errorCode?: string;
+  /**
+   * @example
+   * 成功
+   */
   errorMsg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6659,8 +8114,20 @@ export class DeleteReceiptResponseBodyResults extends $tea.Model {
 }
 
 export class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList extends $tea.Model {
+  /**
+   * @example
+   * "报销套件"
+   */
   name?: string;
+  /**
+   * @example
+   * "PROC-EB81447A-B0E3-4A2F-A719-0A85EFD09184"
+   */
   processCode?: string;
+  /**
+   * @example
+   * "invalid"
+   */
   status?: string;
   suiteId?: string;
   static names(): { [key: string]: string } {
@@ -6687,14 +8154,50 @@ export class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList extends 
 }
 
 export class GetInvoiceByPageRequestRequest extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountantBookId?: string;
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @example
+   * abc
+   */
   endTime?: number;
+  /**
+   * @example
+   * abc
+   */
   financeType?: string;
+  /**
+   * @example
+   * 2
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 1
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 2022-07-11
+   */
   startTime?: number;
+  /**
+   * @example
+   * 1111111111
+   */
   taxNo?: string;
+  /**
+   * @example
+   * ABC
+   */
   verifyStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6960,6 +8463,10 @@ export class GetInvoiceByPageResponseBodyResultList extends $tea.Model {
   imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceStatus?: string;
   invoiceType?: string;
   machineCode?: string;
@@ -7111,8 +8618,20 @@ export class GetInvoiceByPageResponseBodyResult extends $tea.Model {
 }
 
 export class GetMultiCompanyInfoByCodeResponseBodyAdvancedSettingList extends $tea.Model {
+  /**
+   * @example
+   * relateedInvoice
+   */
   advancedSettingKey?: string;
+  /**
+   * @example
+   * 关联发票
+   */
   advancedSettingName?: string;
+  /**
+   * @example
+   * 123456789
+   */
   endDate?: number;
   value?: boolean;
   static names(): { [key: string]: string } {
@@ -7161,11 +8680,51 @@ export class QueryBenefitResponseBodyResult extends $tea.Model {
 }
 
 export class QueryCategoryByPageResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INCOME_XXX
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * false
+   */
   isDir?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 汽车
+   */
   name?: string;
+  /**
+   * @example
+   * INCOM_XXX
+   */
   parentCode?: string;
+  remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * income
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7173,6 +8732,7 @@ export class QueryCategoryByPageResponseBodyList extends $tea.Model {
       isDir: 'isDir',
       name: 'name',
       parentCode: 'parentCode',
+      remark: 'remark',
       status: 'status',
       type: 'type',
     };
@@ -7184,6 +8744,7 @@ export class QueryCategoryByPageResponseBodyList extends $tea.Model {
       isDir: 'boolean',
       name: 'string',
       parentCode: 'string',
+      remark: 'string',
       status: 'string',
       type: 'string',
     };
@@ -7195,10 +8756,45 @@ export class QueryCategoryByPageResponseBodyList extends $tea.Model {
 }
 
 export class QueryCustomerByPageResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * CUS_XXX
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1634786828686
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 重要客户
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XX有限公司
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -7229,23 +8825,75 @@ export class QueryCustomerByPageResponseBodyList extends $tea.Model {
 }
 
 export class QueryCustomerInfoResponseBodyList extends $tea.Model {
+  /**
+   * @example
+   * CUS_xxxxxxxx
+   */
   code?: string;
   contactAddress?: string;
   contactCompanyTelephone?: string;
   contactEmail?: string;
   contactName?: string;
   contactTelephone?: string;
+  /**
+   * @example
+   * abc
+   */
   description?: string;
+  /**
+   * @example
+   * www.abc.com
+   */
   drawerEmail?: string;
+  /**
+   * @example
+   * 12345678901
+   */
   drawerTelephone?: string;
+  /**
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @example
+   * abc
+   */
   purchaserAccount?: string;
+  /**
+   * @example
+   * 杭州市
+   */
   purchaserAddress?: string;
+  /**
+   * @example
+   * abc
+   */
   purchaserName?: string;
+  /**
+   * @example
+   * 123
+   */
   purchaserTaxNo?: string;
+  /**
+   * @example
+   * 13333333333
+   */
   purchaserTel?: string;
+  /**
+   * @example
+   * 建行
+   */
   purchaserrBankName?: string;
+  /**
+   * @example
+   * valid
+   */
   status?: string;
+  /**
+   * @example
+   * 199200
+   */
   userDefineCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7299,15 +8947,62 @@ export class QueryCustomerInfoResponseBodyList extends $tea.Model {
 }
 
 export class QueryEnterpriseAccountByPageResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   accountCode?: string;
+  /**
+   * @example
+   * test@alipay.com
+   */
   accountId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 网商银行
+   */
   accountName?: string;
+  /**
+   * @example
+   * test
+   */
   accountRemark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ALIPAY
+   */
   accountType?: string;
+  /**
+   * @example
+   * 10000.33
+   */
   amount?: string;
   bankCode?: string;
   bankName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1631526550994
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * aaa
+   */
   creator?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7345,8 +9040,20 @@ export class QueryEnterpriseAccountByPageResponseBodyList extends $tea.Model {
 }
 
 export class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList extends $tea.Model {
+  /**
+   * @example
+   * relatedInvoice
+   */
   advancedSettingKey?: string;
+  /**
+   * @example
+   * 关联发票
+   */
   advancedSettingName?: string;
+  /**
+   * @example
+   * 123456789
+   */
   endDate?: number;
   valid?: boolean;
   value?: boolean;
@@ -7377,12 +9084,40 @@ export class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList extends $t
 
 export class QueryMultiCompanyInfoResponseBodyList extends $tea.Model {
   advancedSettingList?: QueryMultiCompanyInfoResponseBodyListAdvancedSettingList[];
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @example
+   * 钉钉
+   */
   companyName?: string;
+  /**
+   * @example
+   * 123456789
+   */
   createTime?: string;
+  /**
+   * @example
+   * 备注
+   */
   remark?: string;
+  /**
+   * @example
+   * valid
+   */
   status?: string;
+  /**
+   * @example
+   * generalTaxpayer
+   */
   taxNature?: string;
+  /**
+   * @example
+   * 123456789012345
+   */
   taxNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7441,6 +9176,7 @@ export class QueryProductByPageResponseBodyList extends $tea.Model {
   code?: string;
   createTime?: number;
   description?: string;
+  information?: string;
   name?: string;
   specification?: string;
   status?: string;
@@ -7451,6 +9187,7 @@ export class QueryProductByPageResponseBodyList extends $tea.Model {
       code: 'code',
       createTime: 'createTime',
       description: 'description',
+      information: 'information',
       name: 'name',
       specification: 'specification',
       status: 'status',
@@ -7464,6 +9201,7 @@ export class QueryProductByPageResponseBodyList extends $tea.Model {
       code: 'string',
       createTime: 'number',
       description: 'string',
+      information: 'string',
       name: 'string',
       specification: 'string',
       status: 'string',
@@ -7480,12 +9218,51 @@ export class QueryProductByPageResponseBodyList extends $tea.Model {
 export class QueryProjectByPageResponseBodyList extends $tea.Model {
   caode?: string;
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1631524595555
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * aaaa
+   */
   creator?: string;
+  /**
+   * @example
+   * 外派项目
+   */
   description?: string;
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROJ-xxx
+   */
   projectCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 外派项目
+   */
   projectName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -7524,8 +9301,20 @@ export class QueryProjectByPageResponseBodyList extends $tea.Model {
 }
 
 export class QueryReceiptDetailForInvoiceResponseBodyResultCreator extends $tea.Model {
+  /**
+   * @example
+   * https://xxxx
+   */
   avatarUrl?: string;
+  /**
+   * @example
+   * 测试名字
+   */
   nick?: string;
+  /**
+   * @example
+   * 1231
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7549,7 +9338,15 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultCreator extends $tea.
 }
 
 export class QueryReceiptDetailForInvoiceResponseBodyResultCustomer extends $tea.Model {
+  /**
+   * @example
+   * CUS_xxxxx
+   */
   code?: string;
+  /**
+   * @example
+   * 李四
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7571,16 +9368,60 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultCustomer extends $tea
 }
 
 export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList extends $tea.Model {
+  /**
+   * @example
+   * 12.3
+   */
   amountWithTax?: string;
+  /**
+   * @example
+   * 100
+   */
   amountWithoutTax?: string;
+  /**
+   * @example
+   * 10
+   */
   discountAmount?: string;
+  /**
+   * @example
+   * 鱼
+   */
   name?: string;
+  /**
+   * @example
+   * 2
+   */
   quantity?: string;
+  /**
+   * @example
+   * 大型
+   */
   specification?: string;
+  /**
+   * @example
+   * XXX
+   */
   taxClassificationCode?: string;
+  /**
+   * @example
+   * 0.3
+   */
   taxRate?: string;
+  /**
+   * @example
+   * 千克
+   */
   unit?: string;
+  /**
+   * @example
+   * 12.3
+   */
   unitPriceWithTax?: string;
+  /**
+   * @example
+   * 100
+   */
   unitPriceWithoutTax?: string;
   withTax?: boolean;
   static names(): { [key: string]: string } {
@@ -7623,31 +9464,123 @@ export class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList exten
 }
 
 export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountantBookId?: string;
+  /**
+   * @example
+   * 4000
+   */
   amount?: string;
+  /**
+   * @example
+   * applied
+   */
   applyStatus?: string;
+  /**
+   * @example
+   * invoicing
+   */
   bizStatus?: string;
+  /**
+   * @example
+   * 123
+   */
   businessId?: string;
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @example
+   * 123000
+   */
   createTime?: string;
   creator?: QueryReceiptDetailForInvoiceResponseBodyResultCreator;
   customer?: QueryReceiptDetailForInvoiceResponseBodyResultCustomer;
+  /**
+   * @example
+   * www.abc.com
+   */
   drawerEmail?: string;
+  /**
+   * @example
+   * 12345678901
+   */
   drawerTelephone?: string;
+  /**
+   * @example
+   * VAT_NORMAL_E
+   */
   invoiceType?: string;
+  /**
+   * @example
+   * EM-xxxxx
+   */
   modelId?: string;
   productInfoList?: QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList[];
+  /**
+   * @example
+   * 32131131231
+   */
   purchaserAccount?: string;
+  /**
+   * @example
+   * 杭州市
+   */
   purchaserAddress?: string;
+  /**
+   * @example
+   * 工商银行XX支行
+   */
   purchaserBankName?: string;
+  /**
+   * @example
+   * 钉有限公司
+   */
   purchaserName?: string;
+  /**
+   * @example
+   * 123456
+   */
   purchaserTaxNo?: string;
+  /**
+   * @example
+   * 12345678901
+   */
   purchaserTel?: string;
+  /**
+   * @example
+   * abc
+   */
   receiptId?: string;
+  /**
+   * @example
+   * 16000000
+   */
   recordTime?: string;
+  /**
+   * @example
+   * 备注信息
+   */
   remark?: string;
+  /**
+   * @example
+   * approval
+   */
   source?: string;
+  /**
+   * @example
+   * agree
+   */
   status?: string;
+  /**
+   * @example
+   * 张三提交的开票申请单
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7717,8 +9650,20 @@ export class QueryReceiptDetailForInvoiceResponseBodyResult extends $tea.Model {
 }
 
 export class QueryReceiptForInvoiceResponseBodyListCreator extends $tea.Model {
+  /**
+   * @example
+   * https://xxxx
+   */
   avatarUrl?: string;
+  /**
+   * @example
+   * 测试名字
+   */
   nick?: string;
+  /**
+   * @example
+   * 1231
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7742,7 +9687,15 @@ export class QueryReceiptForInvoiceResponseBodyListCreator extends $tea.Model {
 }
 
 export class QueryReceiptForInvoiceResponseBodyListCustomer extends $tea.Model {
+  /**
+   * @example
+   * CUS_xxxxx
+   */
   code?: string;
+  /**
+   * @example
+   * 李四
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7764,16 +9717,60 @@ export class QueryReceiptForInvoiceResponseBodyListCustomer extends $tea.Model {
 }
 
 export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.Model {
+  /**
+   * @example
+   * 12.3
+   */
   amountWithTax?: string;
+  /**
+   * @example
+   * 100
+   */
   amountWithoutTax?: string;
+  /**
+   * @example
+   * 10
+   */
   discountAmount?: string;
+  /**
+   * @example
+   * 鱼
+   */
   name?: string;
+  /**
+   * @example
+   * 2
+   */
   quantity?: string;
+  /**
+   * @example
+   * 大型
+   */
   specification?: string;
+  /**
+   * @example
+   * XXX
+   */
   taxClassificationCode?: string;
+  /**
+   * @example
+   * 0.3
+   */
   taxRate?: string;
+  /**
+   * @example
+   * 千克
+   */
   unit?: string;
+  /**
+   * @example
+   * 12.3
+   */
   unitPriceWithTax?: string;
+  /**
+   * @example
+   * 100
+   */
   unitPriceWithoutTax?: string;
   withTax?: boolean;
   static names(): { [key: string]: string } {
@@ -7816,31 +9813,119 @@ export class QueryReceiptForInvoiceResponseBodyListProductInfoList extends $tea.
 }
 
 export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountantBookId?: string;
+  /**
+   * @example
+   * 5000
+   */
   amount?: string;
+  /**
+   * @example
+   * applied
+   */
   applyStatus?: string;
+  /**
+   * @example
+   * invoicing
+   */
   bizStatus?: string;
+  /**
+   * @example
+   * 123
+   */
   businessId?: string;
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
   createTime?: string;
   creator?: QueryReceiptForInvoiceResponseBodyListCreator;
   customer?: QueryReceiptForInvoiceResponseBodyListCustomer;
+  /**
+   * @example
+   * www.abc.com
+   */
   drawerEmail?: string;
+  /**
+   * @example
+   * 12345678901
+   */
   drawerTelephone?: string;
+  /**
+   * @example
+   * 增值税发票
+   */
   invoiceType?: string;
+  /**
+   * @example
+   * EM-xxxxx
+   */
   modelId?: string;
   productInfoList?: QueryReceiptForInvoiceResponseBodyListProductInfoList[];
+  /**
+   * @example
+   * abc
+   */
   purchaserAccount?: string;
+  /**
+   * @example
+   * 杭州市
+   */
   purchaserAddress?: string;
+  /**
+   * @example
+   * 建设银行
+   */
   purchaserBankName?: string;
+  /**
+   * @example
+   * 钉有限公司
+   */
   purchaserName?: string;
+  /**
+   * @example
+   * 123456
+   */
   purchaserTaxNo?: string;
+  /**
+   * @example
+   * 13333333333
+   */
   purchaserTel?: string;
+  /**
+   * @example
+   * abc
+   */
   receiptId?: string;
+  /**
+   * @example
+   * 16000000
+   */
   recordTime?: string;
+  /**
+   * @example
+   * 备注信息
+   */
   remark?: string;
+  /**
+   * @example
+   * approval
+   */
   source?: string;
+  /**
+   * @example
+   * agree
+   */
   status?: string;
+  /**
+   * @example
+   * 张三提交的开票申请单
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7910,8 +9995,20 @@ export class QueryReceiptForInvoiceResponseBodyList extends $tea.Model {
 }
 
 export class QueryReceiptsBaseInfoResponseBodyListCreator extends $tea.Model {
+  /**
+   * @example
+   * https://xxxx
+   */
   avatarUrl?: string;
+  /**
+   * @example
+   * 测试名字
+   */
   nick?: string;
+  /**
+   * @example
+   * 1231
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7935,7 +10032,15 @@ export class QueryReceiptsBaseInfoResponseBodyListCreator extends $tea.Model {
 }
 
 export class QueryReceiptsBaseInfoResponseBodyListCustomer extends $tea.Model {
+  /**
+   * @example
+   * CUS_xxxxx
+   */
   code?: string;
+  /**
+   * @example
+   * 李四
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8026,24 +10131,80 @@ export class QueryReceiptsBaseInfoResponseBodyListSupplier extends $tea.Model {
 }
 
 export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountantBookId?: string;
+  /**
+   * @example
+   * 5000
+   */
   amount?: string;
+  /**
+   * @example
+   * 1714973165000
+   */
   approvedAt?: string;
+  /**
+   * @example
+   * 123
+   */
   businessId?: string;
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @example
+   * 1714973165000
+   */
   createTime?: string;
   creator?: QueryReceiptsBaseInfoResponseBodyListCreator;
   customer?: QueryReceiptsBaseInfoResponseBodyListCustomer;
+  /**
+   * @example
+   * https://abc.com
+   */
   instanceJumpUrl?: string;
+  /**
+   * @example
+   * EM-xxxxx
+   */
   modelId?: string;
   principal?: QueryReceiptsBaseInfoResponseBodyListPrincipal;
   project?: QueryReceiptsBaseInfoResponseBodyListProject;
+  /**
+   * @example
+   * abc
+   */
   receiptId?: string;
+  /**
+   * @example
+   * 16000000
+   */
   recordTime?: string;
+  /**
+   * @example
+   * 备注信息
+   */
   remark?: string;
+  /**
+   * @example
+   * approval
+   */
   source?: string;
+  /**
+   * @example
+   * agree
+   */
   status?: string;
   supplier?: QueryReceiptsBaseInfoResponseBodyListSupplier;
+  /**
+   * @example
+   * 张三提交的开票申请单
+   */
   title?: string;
   voucherStatus?: string;
   static names(): { [key: string]: string } {
@@ -8102,9 +10263,37 @@ export class QueryReceiptsBaseInfoResponseBodyList extends $tea.Model {
 }
 
 export class QueryReceiptsByPageResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234
+   */
   appId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"operatorUserId":"015865244722391178","data":{"amount":{"amountStr":"566"},"code":"d0d54815-32c5-4b18-8391-e79713bba95e","payeeAt":1637251200000,"departmentCode":"-1","project":{"projectCode":"PROJ_101761F3FF6B21362ECA000N","projectName":"客户合作项目"},"principalId":"015865244722391178","enterpriseAccount":{},"approvedAt":1637305373000,"title":"地狱猫提交的智能财务-收款","createAt":1637305353000,"paymentAt":1637251200000,"supplier":{},"operateUserId":"015865244722391178","applicantEmployeeId":"015865244722391178","comment":"ffff","category":{"categoryCode":"INC_1016D6CB3C181E28F0120009","categoryName":"销售收入"},"customer":{"customerCode":"CUS_10178592ECEC2133C893000F","customerName":"钉钉"},"status":"agree"}}
+   */
   data?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EM-1017F28E03350B1738B3000X
+   */
   modelId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * approval
+   */
   source?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8155,10 +10344,45 @@ export class QueryRoleMemberByPageResponseBodyList extends $tea.Model {
 }
 
 export class QuerySupplierByPageResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SUP_XXX
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1634786828686
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 原材料供应商
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XX供应商
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -8217,7 +10441,15 @@ export class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList extends $tea.Mo
 }
 
 export class QueryUserRoleListResponseBodyRoleVOList extends $tea.Model {
+  /**
+   * @example
+   * applicationManager
+   */
   roleCode?: string;
+  /**
+   * @example
+   * 应用管理员
+   */
   roleName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8239,7 +10471,15 @@ export class QueryUserRoleListResponseBodyRoleVOList extends $tea.Model {
 }
 
 export class UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8261,7 +10501,15 @@ export class UnbindApplyReceiptAndInvoiceRelatedRequestInvoiceKeyVOList extends 
 }
 
 export class UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8547,50 +10795,194 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListVehic
 }
 
 export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountPeriod?: string;
+  /**
+   * @example
+   * 100
+   */
   amount?: string;
+  /**
+   * @example
+   * 120
+   */
   amountWithTax?: string;
+  /**
+   * @example
+   * 1111
+   */
   checkCode?: string;
+  /**
+   * @example
+   * 2010-12-12
+   */
   checkTime?: string;
+  /**
+   * @example
+   * 张三
+   */
   drawerName?: string;
+  /**
+   * @example
+   * 2022-12-10
+   */
   drewDate?: string;
+  /**
+   * @example
+   * abc
+   */
   electronicUrl?: string;
+  /**
+   * @example
+   * INPUT_VAT
+   */
   financeType?: string;
+  /**
+   * @example
+   * RED
+   */
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
+  /**
+   * @example
+   * http://XXX.jpg
+   */
   imageUrl?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceNo?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceStatus?: string;
+  /**
+   * @example
+   * INTPUT_VAT
+   */
   invoiceType?: string;
+  /**
+   * @example
+   * 1111
+   */
   machineCode?: string;
+  /**
+   * @example
+   * abc
+   */
   oilFlag?: string;
+  /**
+   * @example
+   * abc
+   */
   payee?: string;
+  /**
+   * @example
+   * abc
+   */
   processInstCode?: string;
+  /**
+   * @example
+   * abc
+   */
   processInstType?: string;
+  /**
+   * @example
+   * 杭州市
+   */
   purchaserAddress?: string;
   purchaserBankAccount?: string;
+  /**
+   * @example
+   * 建行
+   */
   purchaserBankNameAccount?: string;
+  /**
+   * @example
+   * 张三
+   */
   purchaserName?: string;
+  /**
+   * @example
+   * 155655
+   */
   purchaserTaxNo?: string;
+  /**
+   * @example
+   * 1333333333
+   */
   purchaserTel?: string;
   receiverEmail?: string;
   receiverName?: string;
   receiverTel?: string;
+  /**
+   * @example
+   * abc
+   */
   remark?: string;
   secondHandCarInvoiceDetailList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList[];
+  /**
+   * @example
+   * 8852
+   */
   sellerAddress?: string;
   sellerBankAccount?: string;
+  /**
+   * @example
+   * 招商银行
+   */
   sellerBankNameAccount?: string;
+  /**
+   * @example
+   * 李四
+   */
   sellerName?: string;
+  /**
+   * @example
+   * 2202
+   */
   sellerTaxNo?: string;
+  /**
+   * @example
+   * 13355222222
+   */
   sellerTel?: string;
+  /**
+   * @example
+   * abc
+   */
   supplySign?: string;
+  /**
+   * @example
+   * 20
+   */
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
   vehicleSaleDetailVOList?: UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOListVehicleSaleDetailVOList[];
+  /**
+   * @example
+   * abc
+   */
   verifyStatus?: string;
+  /**
+   * @example
+   * abc
+   */
   voucherCode?: string;
+  /**
+   * @example
+   * abc
+   */
   voucherStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8698,7 +11090,15 @@ export class UpdateApplyReceiptAndInvoiceRelatedRequestGeneralInvoiceVOList exte
 }
 
 export class UpdateApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8769,6 +11169,10 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoice
   specification?: string;
   taxAmount?: string;
   taxPre?: string;
+  /**
+   * @example
+   * 1
+   */
   taxPreType?: string;
   taxRate?: string;
   unit?: string;
@@ -8928,6 +11332,10 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOVehicleSaleDet
   engineNo?: string;
   idCardNo?: string;
   importCertificateNo?: string;
+  /**
+   * @example
+   * 111
+   */
   inspectionListNo?: string;
   maxPassengers?: string;
   originPlace?: string;
@@ -8989,12 +11397,20 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
   amountWithTax?: string;
   checkCode?: string;
   checkTime?: string;
+  /**
+   * @example
+   * 张三
+   */
   drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOGeneralInvoiceDetailVOList[];
+  /**
+   * @example
+   * http://XXX.jpg
+   */
   imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
@@ -9006,7 +11422,15 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
   processInstCode?: string;
   processInstType?: string;
   purchaserAddress?: string;
+  /**
+   * @example
+   * 111
+   */
   purchaserBankAccount?: string;
+  /**
+   * @example
+   * 111
+   */
   purchaserBankNameAccount?: string;
   purchaserName?: string;
   purchaserTaxNo?: string;
@@ -9014,6 +11438,10 @@ export class UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVO extends $tea.
   remark?: string;
   secondHandCarInvoiceDetailList?: UpdateInvoiceAbandonStatusRequestBlueGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
+  /**
+   * @example
+   * 111
+   */
   sellerBankAccount?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
@@ -9134,6 +11562,10 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceD
   specification?: string;
   taxAmount?: string;
   taxPre?: string;
+  /**
+   * @example
+   * 111
+   */
   taxPreType?: string;
   taxRate?: string;
   unit?: string;
@@ -9293,6 +11725,10 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOVehicleSaleDeta
   engineNo?: string;
   idCardNo?: string;
   importCertificateNo?: string;
+  /**
+   * @example
+   * 111
+   */
   inspectionListNo?: string;
   maxPassengers?: string;
   originPlace?: string;
@@ -9354,12 +11790,20 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   amountWithTax?: string;
   checkCode?: string;
   checkTime?: string;
+  /**
+   * @example
+   * 张三
+   */
   drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
   financeType?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOGeneralInvoiceDetailVOList[];
+  /**
+   * @example
+   * http://XXX.jpg
+   */
   imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
@@ -9371,6 +11815,10 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   processInstCode?: string;
   processInstType?: string;
   purchaserAddress?: string;
+  /**
+   * @example
+   * aaa
+   */
   purchaserBankAccount?: string;
   purchaserBankNameAccount?: string;
   purchaserName?: string;
@@ -9379,6 +11827,10 @@ export class UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVO extends $tea.M
   remark?: string;
   secondHandCarInvoiceDetailList?: UpdateInvoiceAbandonStatusRequestRedGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
+  /**
+   * @example
+   * 111
+   */
   sellerBankAccount?: string;
   sellerBankNameAccount?: string;
   sellerName?: string;
@@ -9714,47 +12166,191 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListVehicleSaleDet
 }
 
 export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountPeriod?: string;
+  /**
+   * @example
+   * 100
+   */
   amount?: string;
+  /**
+   * @example
+   * 120
+   */
   amountWithTax?: string;
+  /**
+   * @example
+   * 1111
+   */
   checkCode?: string;
+  /**
+   * @example
+   * 2010-12-12
+   */
   checkTime?: string;
+  /**
+   * @example
+   * 张三
+   */
   drawerName?: string;
+  /**
+   * @example
+   * 2022-12-10
+   */
   drewDate?: string;
+  /**
+   * @example
+   * abc
+   */
   electronicUrl?: string;
+  /**
+   * @example
+   * INPUT_VAT
+   */
   financeType?: string;
+  /**
+   * @example
+   * RED
+   */
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
+  /**
+   * @example
+   * http://XXX.jpg
+   */
   imageUrl?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceNo?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceStatus?: string;
+  /**
+   * @example
+   * INTPUT_VAT
+   */
   invoiceType?: string;
+  /**
+   * @example
+   * 1111
+   */
   machineCode?: string;
+  /**
+   * @example
+   * abc
+   */
   oilFlag?: string;
+  /**
+   * @example
+   * abc
+   */
   payee?: string;
+  /**
+   * @example
+   * abc
+   */
   processInstCode?: string;
+  /**
+   * @example
+   * abc
+   */
   processInstType?: string;
+  /**
+   * @example
+   * 杭州市
+   */
   purchaserAddress?: string;
   purchaserBankAccount?: string;
+  /**
+   * @example
+   * 建行
+   */
   purchaserBankNameAccount?: string;
+  /**
+   * @example
+   * 张三
+   */
   purchaserName?: string;
+  /**
+   * @example
+   * 155655
+   */
   purchaserTaxNo?: string;
+  /**
+   * @example
+   * 1333333333
+   */
   purchaserTel?: string;
+  /**
+   * @example
+   * abc
+   */
   remark?: string;
   secondHandCarInvoiceDetailList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList[];
+  /**
+   * @example
+   * 8852
+   */
   sellerAddress?: string;
   sellerBankAccount?: string;
+  /**
+   * @example
+   * 招商银行
+   */
   sellerBankNameAccount?: string;
+  /**
+   * @example
+   * 李四
+   */
   sellerName?: string;
+  /**
+   * @example
+   * 2202
+   */
   sellerTaxNo?: string;
+  /**
+   * @example
+   * 13355222222
+   */
   sellerTel?: string;
+  /**
+   * @example
+   * abc
+   */
   supplySign?: string;
+  /**
+   * @example
+   * 20
+   */
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
   vehicleSaleDetailVOList?: UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOListVehicleSaleDetailVOList[];
+  /**
+   * @example
+   * abc
+   */
   verifyStatus?: string;
+  /**
+   * @example
+   * abc
+   */
   voucherCode?: string;
+  /**
+   * @example
+   * abc
+   */
   voucherStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9856,7 +12452,15 @@ export class UpdateInvoiceAccountPeriodRequestGeneralInvoiceVOList extends $tea.
 }
 
 export class UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList extends $tea.Model {
+  /**
+   * @example
+   * 1001
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * 2202
+   */
   invoiceNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9878,7 +12482,15 @@ export class UpdateInvoiceAccountPeriodRequestInvoiceKeyVOList extends $tea.Mode
 }
 
 export class UpdateInvoiceAccountPeriodResponseBodyErrorResult extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   errorKey?: string;
+  /**
+   * @example
+   * abc
+   */
   errorMsg?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9922,9 +12534,25 @@ export class UpdateInvoiceAccountPeriodResponseBodySuccessResult extends $tea.Mo
 }
 
 export class UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList extends $tea.Model {
+  /**
+   * @example
+   * 2022-02-03
+   */
   accountingPeriodData?: string;
+  /**
+   * @example
+   * 2202020
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * 220200200
+   */
   invoiceNo?: string;
+  /**
+   * @example
+   * VAT_DIGITAL_NORMAL
+   */
   invoiceType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9950,9 +12578,25 @@ export class UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList ex
 }
 
 export class UpdateInvoiceAccountingPeriodDateResponseBodyResultFailInvoices extends $tea.Model {
+  /**
+   * @example
+   * 50001
+   */
   errorCode?: string;
+  /**
+   * @example
+   * invoice not exist
+   */
   errorMsg?: string;
+  /**
+   * @example
+   * 1231231231
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * 1231231231
+   */
   invoiceNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9978,6 +12622,10 @@ export class UpdateInvoiceAccountingPeriodDateResponseBodyResultFailInvoices ext
 }
 
 export class UpdateInvoiceAccountingPeriodDateResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
   failCount?: number;
   failInvoices?: UpdateInvoiceAccountingPeriodDateResponseBodyResultFailInvoices[];
   success?: boolean;
@@ -10003,9 +12651,25 @@ export class UpdateInvoiceAccountingPeriodDateResponseBodyResult extends $tea.Mo
 }
 
 export class UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList extends $tea.Model {
+  /**
+   * @example
+   * in_account
+   */
   accountingStatus?: string;
+  /**
+   * @example
+   * 2022002022
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * 20022
+   */
   invoiceNo?: string;
+  /**
+   * @example
+   * VAT_DIGITAL_NORMAL
+   */
   invoiceType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10031,9 +12695,25 @@ export class UpdateInvoiceAccountingStatusRequestInvoiceFinanceInfoVOList extend
 }
 
 export class UpdateInvoiceAccountingStatusResponseBodyResultFailInvoices extends $tea.Model {
+  /**
+   * @example
+   * 50001
+   */
   errorCode?: string;
+  /**
+   * @example
+   * invoice not exist
+   */
   errorMsg?: string;
+  /**
+   * @example
+   * 123123123
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * 123123123123
+   */
   invoiceNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10059,6 +12739,10 @@ export class UpdateInvoiceAccountingStatusResponseBodyResultFailInvoices extends
 }
 
 export class UpdateInvoiceAccountingStatusResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
   failCount?: number;
   failInvoices?: UpdateInvoiceAccountingStatusResponseBodyResultFailInvoices[];
   success?: boolean;
@@ -10084,12 +12768,40 @@ export class UpdateInvoiceAccountingStatusResponseBodyResult extends $tea.Model 
 }
 
 export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails extends $tea.Model {
+  /**
+   * @example
+   * 北京国际机场
+   */
   carrier?: string;
+  /**
+   * @example
+   * AA1234
+   */
   flightNumber?: string;
+  /**
+   * @example
+   * 2023-05-11
+   */
   flyDate?: string;
+  /**
+   * @example
+   * 杭州
+   */
   flyFrom?: string;
+  /**
+   * @example
+   * 16:00
+   */
   flyTime?: string;
+  /**
+   * @example
+   * 北京
+   */
   flyTo?: string;
+  /**
+   * @example
+   * 头等舱
+   */
   seat?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10129,6 +12841,10 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoice
   specification?: string;
   taxAmount?: string;
   taxPre?: string;
+  /**
+   * @example
+   * 1
+   */
   taxPreType?: string;
   taxRate?: string;
   unit?: string;
@@ -10288,6 +13004,10 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDet
   engineNo?: string;
   idCardNo?: string;
   importCertificateNo?: string;
+  /**
+   * @example
+   * 123
+   */
   inspectionListNo?: string;
   maxPassengers?: string;
   originPlace?: string;
@@ -10345,66 +13065,186 @@ export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDet
 
 export class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVO extends $tea.Model {
   accountPeriod?: string;
+  /**
+   * @example
+   * ABC
+   */
   agentCode?: string;
   amount?: string;
   amountWithTax?: string;
+  /**
+   * @example
+   * 123
+   */
   caacDevelopmentFund?: string;
   checkCode?: string;
   checkTime?: string;
+  /**
+   * @example
+   * 杭州
+   */
   city?: string;
+  /**
+   * @example
+   * 北京
+   */
   destination?: string;
+  /**
+   * @example
+   * 123KM
+   */
   distance?: string;
+  /**
+   * @example
+   * 张三
+   */
   drawerName?: string;
   drewDate?: string;
   electronicUrl?: string;
+  /**
+   * @example
+   * 杭州北
+   */
   entrance?: string;
+  /**
+   * @example
+   * 杭州北
+   */
   exit?: string;
   financeType?: string;
   flightItineraryDetails?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails[];
+  /**
+   * @example
+   * 123
+   */
   fuelSurcharge?: string;
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOGeneralInvoiceDetailVOList[];
+  /**
+   * @example
+   * 18:00
+   */
   getOffTime?: string;
+  /**
+   * @example
+   * 17:00
+   */
   getOnTime?: string;
+  /**
+   * @example
+   * http://XXX.jpg
+   */
   imageUrl?: string;
   invoiceCode?: string;
   invoiceNo?: string;
   invoiceStatus?: string;
   invoiceType?: string;
+  /**
+   * @example
+   * ABCD
+   */
   issueBy?: string;
   machineCode?: string;
   oilFlag?: string;
+  /**
+   * @example
+   * 杭州
+   */
   origin?: string;
+  /**
+   * @example
+   * 张三
+   */
   passenger?: string;
+  /**
+   * @example
+   * 330781****1234
+   */
   passengerUserId?: string;
   payee?: string;
+  /**
+   * @example
+   * 123
+   */
   printSerialNumber?: string;
   processInstCode?: string;
   processInstType?: string;
   purchaserAddress?: string;
+  /**
+   * @example
+   * abc
+   */
   purchaserBankAccount?: string;
+  /**
+   * @example
+   * abc
+   */
   purchaserBankNameAccount?: string;
   purchaserName?: string;
   purchaserTaxNo?: string;
   purchaserTel?: string;
+  /**
+   * @example
+   * abc@test.com
+   */
   receiverEmail?: string;
+  /**
+   * @example
+   * 张三
+   */
   receiverName?: string;
+  /**
+   * @example
+   * 1234567809
+   */
   receiverTel?: string;
   remark?: string;
+  /**
+   * @example
+   * 2023-09-01
+   */
   seatClass?: string;
   secondHandCarInvoiceDetailList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOSecondHandCarInvoiceDetailList[];
   sellerAddress?: string;
+  /**
+   * @example
+   * abc
+   */
   sellerBankAccount?: string;
+  /**
+   * @example
+   * abc
+   */
   sellerBankNameAccount?: string;
   sellerName?: string;
   sellerTaxNo?: string;
   sellerTel?: string;
+  /**
+   * @example
+   * 杭州
+   */
   serialNo?: string;
+  /**
+   * @example
+   * 杭州
+   */
   startTime?: string;
   supplySign?: string;
+  /**
+   * @example
+   * 123
+   */
   surcharge?: string;
   taxAmount?: string;
+  /**
+   * @example
+   * G1234
+   */
   trainNo?: string;
+  /**
+   * @example
+   * 2023-09-01
+   */
   travelDate?: string;
   usedVehicleSaleDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOUsedVehicleSaleDetailVOList[];
   vehicleSaleDetailVOList?: UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOVehicleSaleDetailVOList[];
@@ -10784,47 +13624,191 @@ export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListVehicleSaleDeta
 }
 
 export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   accountPeriod?: string;
+  /**
+   * @example
+   * 100
+   */
   amount?: string;
+  /**
+   * @example
+   * 120
+   */
   amountWithTax?: string;
+  /**
+   * @example
+   * 1111
+   */
   checkCode?: string;
+  /**
+   * @example
+   * 2010-12-12
+   */
   checkTime?: string;
+  /**
+   * @example
+   * 张三
+   */
   drawerName?: string;
+  /**
+   * @example
+   * 2022-12-10
+   */
   drewDate?: string;
+  /**
+   * @example
+   * abc
+   */
   electronicUrl?: string;
+  /**
+   * @example
+   * INPUT_VAT
+   */
   financeType?: string;
+  /**
+   * @example
+   * RED
+   */
   fundType?: string;
   generalInvoiceDetailVOList?: UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList[];
+  /**
+   * @example
+   * http://XXX.jpg
+   */
   imageUrl?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceNo?: string;
+  /**
+   * @example
+   * abc
+   */
   invoiceStatus?: string;
+  /**
+   * @example
+   * INTPUT_VAT
+   */
   invoiceType?: string;
+  /**
+   * @example
+   * 1111
+   */
   machineCode?: string;
+  /**
+   * @example
+   * abc
+   */
   oilFlag?: string;
+  /**
+   * @example
+   * abc
+   */
   payee?: string;
+  /**
+   * @example
+   * abc
+   */
   processInstCode?: string;
+  /**
+   * @example
+   * abc
+   */
   processInstType?: string;
+  /**
+   * @example
+   * 杭州市
+   */
   purchaserAddress?: string;
   purchaserBankAccount?: string;
+  /**
+   * @example
+   * 建行
+   */
   purchaserBankNameAccount?: string;
+  /**
+   * @example
+   * 张三
+   */
   purchaserName?: string;
+  /**
+   * @example
+   * 155655
+   */
   purchaserTaxNo?: string;
+  /**
+   * @example
+   * 1333333333
+   */
   purchaserTel?: string;
+  /**
+   * @example
+   * abc
+   */
   remark?: string;
   secondHandCarInvoiceDetailList?: UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListSecondHandCarInvoiceDetailList[];
+  /**
+   * @example
+   * 8852
+   */
   sellerAddress?: string;
   sellerBankAccount?: string;
+  /**
+   * @example
+   * 招商银行
+   */
   sellerBankNameAccount?: string;
+  /**
+   * @example
+   * 李四
+   */
   sellerName?: string;
+  /**
+   * @example
+   * 2202
+   */
   sellerTaxNo?: string;
+  /**
+   * @example
+   * 13355222222
+   */
   sellerTel?: string;
+  /**
+   * @example
+   * abc
+   */
   supplySign?: string;
+  /**
+   * @example
+   * 20
+   */
   taxAmount?: string;
   usedVehicleSaleDetailVOList?: UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListUsedVehicleSaleDetailVOList[];
   vehicleSaleDetailVOList?: UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOListVehicleSaleDetailVOList[];
+  /**
+   * @example
+   * abc
+   */
   verifyStatus?: string;
+  /**
+   * @example
+   * abc
+   */
   voucherCode?: string;
+  /**
+   * @example
+   * abc
+   */
   voucherStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10926,7 +13910,15 @@ export class UpdateInvoiceVerifyStatusRequestGeneralInvoiceVOList extends $tea.M
 }
 
 export class UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList extends $tea.Model {
+  /**
+   * @example
+   * 1001
+   */
   invoiceCode?: string;
+  /**
+   * @example
+   * 2202
+   */
   invoiceNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10948,19 +13940,87 @@ export class UpdateInvoiceVerifyStatusRequestInvoiceKeyVOList extends $tea.Model
 }
 
 export class UpdateReceiptRequestReceipts extends $tea.Model {
+  /**
+   * @example
+   * 2.44
+   */
   amount?: string;
+  /**
+   * @example
+   * INC_XXX
+   */
   categoryCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcd_efgh
+   */
   code?: string;
+  /**
+   * @example
+   * CUS_XXX
+   */
   customerCode?: string;
+  /**
+   * @example
+   * ACC_XXX
+   */
   enterpriseAcountCode?: string;
+  /**
+   * @example
+   * 1636445218000
+   */
   occurDate?: number;
+  /**
+   * @example
+   * emp_xxx
+   */
   principalId?: string;
+  /**
+   * @example
+   * PROJ_XXX
+   */
   projectCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   receiptType?: number;
+  /**
+   * @example
+   * 测试单据
+   */
   remark?: string;
+  /**
+   * @example
+   * SUP_XXX
+   */
   supplierCode?: string;
+  /**
+   * @example
+   * 付款单
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1636445218000
+   */
   updateTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * emp_xxx
+   */
   updateUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11006,9 +14066,31 @@ export class UpdateReceiptRequestReceipts extends $tea.Model {
 }
 
 export class UpdateReceiptResponseBodyResults extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcd_efgh_1234
+   */
   code?: string;
+  /**
+   * @example
+   * success
+   */
   errorCode?: string;
+  /**
+   * @example
+   * 成功
+   */
   errorMsg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -11035,12 +14117,11 @@ export class UpdateReceiptResponseBodyResults extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -11050,12 +14131,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 追加角色权限点
-   *
-   * @param tmpReq AppendRolePermissionRequest
-   * @param headers AppendRolePermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AppendRolePermissionResponse
+   * 追加角色权限点
+   * 
+   * @param tmpReq - AppendRolePermissionRequest
+   * @param headers - AppendRolePermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AppendRolePermissionResponse
    */
   async appendRolePermissionWithOptions(tmpReq: AppendRolePermissionRequest, headers: AppendRolePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<AppendRolePermissionResponse> {
     Util.validateModel(tmpReq);
@@ -11102,10 +14183,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 追加角色权限点
-   *
-   * @param request AppendRolePermissionRequest
-   * @return AppendRolePermissionResponse
+   * 追加角色权限点
+   * 
+   * @param request - AppendRolePermissionRequest
+   * @returns AppendRolePermissionResponse
    */
   async appendRolePermission(request: AppendRolePermissionRequest): Promise<AppendRolePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11114,12 +14195,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发票数据批量写入
-   *
-   * @param request BatchAddInvoiceRequest
-   * @param headers BatchAddInvoiceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchAddInvoiceResponse
+   * 发票数据批量写入
+   * 
+   * @param request - BatchAddInvoiceRequest
+   * @param headers - BatchAddInvoiceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchAddInvoiceResponse
    */
   async batchAddInvoiceWithOptions(request: BatchAddInvoiceRequest, headers: BatchAddInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddInvoiceResponse> {
     Util.validateModel(request);
@@ -11168,10 +14249,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发票数据批量写入
-   *
-   * @param request BatchAddInvoiceRequest
-   * @return BatchAddInvoiceResponse
+   * 发票数据批量写入
+   * 
+   * @param request - BatchAddInvoiceRequest
+   * @returns BatchAddInvoiceResponse
    */
   async batchAddInvoice(request: BatchAddInvoiceRequest): Promise<BatchAddInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11180,12 +14261,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量增加用户信息
-   *
-   * @param request BatchCreateCustomerRequest
-   * @param headers BatchCreateCustomerHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchCreateCustomerResponse
+   * 批量增加用户信息
+   * 
+   * @param request - BatchCreateCustomerRequest
+   * @param headers - BatchCreateCustomerHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchCreateCustomerResponse
    */
   async batchCreateCustomerWithOptions(request: BatchCreateCustomerRequest, headers: BatchCreateCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<BatchCreateCustomerResponse> {
     Util.validateModel(request);
@@ -11226,10 +14307,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量增加用户信息
-   *
-   * @param request BatchCreateCustomerRequest
-   * @return BatchCreateCustomerResponse
+   * 批量增加用户信息
+   * 
+   * @param request - BatchCreateCustomerRequest
+   * @returns BatchCreateCustomerResponse
    */
   async batchCreateCustomer(request: BatchCreateCustomerRequest): Promise<BatchCreateCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11238,12 +14319,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 预核销智能财务的权益
-   *
-   * @param request BeginConsumeRequest
-   * @param headers BeginConsumeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BeginConsumeResponse
+   * 预核销智能财务的权益
+   * 
+   * @param request - BeginConsumeRequest
+   * @param headers - BeginConsumeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BeginConsumeResponse
    */
   async beginConsumeWithOptions(request: BeginConsumeRequest, headers: BeginConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<BeginConsumeResponse> {
     Util.validateModel(request);
@@ -11292,10 +14373,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 预核销智能财务的权益
-   *
-   * @param request BeginConsumeRequest
-   * @return BeginConsumeResponse
+   * 预核销智能财务的权益
+   * 
+   * @param request - BeginConsumeRequest
+   * @returns BeginConsumeResponse
    */
   async beginConsume(request: BeginConsumeRequest): Promise<BeginConsumeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11304,12 +14385,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 绑定钉钉智能财务企业主体的账套信息
-   *
-   * @param request BindCompanyAccountantBookRequest
-   * @param headers BindCompanyAccountantBookHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BindCompanyAccountantBookResponse
+   * 绑定钉钉智能财务企业主体的账套信息
+   * 
+   * @param request - BindCompanyAccountantBookRequest
+   * @param headers - BindCompanyAccountantBookHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BindCompanyAccountantBookResponse
    */
   async bindCompanyAccountantBookWithOptions(request: BindCompanyAccountantBookRequest, headers: BindCompanyAccountantBookHeaders, runtime: $Util.RuntimeOptions): Promise<BindCompanyAccountantBookResponse> {
     Util.validateModel(request);
@@ -11350,10 +14431,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 绑定钉钉智能财务企业主体的账套信息
-   *
-   * @param request BindCompanyAccountantBookRequest
-   * @return BindCompanyAccountantBookResponse
+   * 绑定钉钉智能财务企业主体的账套信息
+   * 
+   * @param request - BindCompanyAccountantBookRequest
+   * @returns BindCompanyAccountantBookResponse
    */
   async bindCompanyAccountantBook(request: BindCompanyAccountantBookRequest): Promise<BindCompanyAccountantBookResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11362,12 +14443,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消核销智能财务的权益
-   *
-   * @param request CancelConsumeRequest
-   * @param headers CancelConsumeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CancelConsumeResponse
+   * 取消核销智能财务的权益
+   * 
+   * @param request - CancelConsumeRequest
+   * @param headers - CancelConsumeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CancelConsumeResponse
    */
   async cancelConsumeWithOptions(request: CancelConsumeRequest, headers: CancelConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<CancelConsumeResponse> {
     Util.validateModel(request);
@@ -11416,10 +14497,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消核销智能财务的权益
-   *
-   * @param request CancelConsumeRequest
-   * @return CancelConsumeResponse
+   * 取消核销智能财务的权益
+   * 
+   * @param request - CancelConsumeRequest
+   * @returns CancelConsumeResponse
    */
   async cancelConsume(request: CancelConsumeRequest): Promise<CancelConsumeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11428,12 +14509,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查验发票是否生成凭证
-   *
-   * @param request CheckVoucherStatusRequest
-   * @param headers CheckVoucherStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CheckVoucherStatusResponse
+   * 查验发票是否生成凭证
+   * 
+   * @param request - CheckVoucherStatusRequest
+   * @param headers - CheckVoucherStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CheckVoucherStatusResponse
    */
   async checkVoucherStatusWithOptions(request: CheckVoucherStatusRequest, headers: CheckVoucherStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckVoucherStatusResponse> {
     Util.validateModel(request);
@@ -11506,10 +14587,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查验发票是否生成凭证
-   *
-   * @param request CheckVoucherStatusRequest
-   * @return CheckVoucherStatusResponse
+   * 查验发票是否生成凭证
+   * 
+   * @param request - CheckVoucherStatusRequest
+   * @returns CheckVoucherStatusResponse
    */
   async checkVoucherStatus(request: CheckVoucherStatusRequest): Promise<CheckVoucherStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11518,12 +14599,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 确认核销智能财务的权益
-   *
-   * @param request CommitConsumeRequest
-   * @param headers CommitConsumeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CommitConsumeResponse
+   * 确认核销智能财务的权益
+   * 
+   * @param request - CommitConsumeRequest
+   * @param headers - CommitConsumeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CommitConsumeResponse
    */
   async commitConsumeWithOptions(request: CommitConsumeRequest, headers: CommitConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<CommitConsumeResponse> {
     Util.validateModel(request);
@@ -11572,10 +14653,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 确认核销智能财务的权益
-   *
-   * @param request CommitConsumeRequest
-   * @return CommitConsumeResponse
+   * 确认核销智能财务的权益
+   * 
+   * @param request - CommitConsumeRequest
+   * @returns CommitConsumeResponse
    */
   async commitConsume(request: CommitConsumeRequest): Promise<CommitConsumeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11584,12 +14665,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建智能财务的客户信息
-   *
-   * @param request CreateCustomerRequest
-   * @param headers CreateCustomerHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateCustomerResponse
+   * 创建智能财务的客户信息
+   * 
+   * @param request - CreateCustomerRequest
+   * @param headers - CreateCustomerHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateCustomerResponse
    */
   async createCustomerWithOptions(request: CreateCustomerRequest, headers: CreateCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCustomerResponse> {
     Util.validateModel(request);
@@ -11666,10 +14747,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建智能财务的客户信息
-   *
-   * @param request CreateCustomerRequest
-   * @return CreateCustomerResponse
+   * 创建智能财务的客户信息
+   * 
+   * @param request - CreateCustomerRequest
+   * @returns CreateCustomerResponse
    */
   async createCustomer(request: CreateCustomerRequest): Promise<CreateCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11678,12 +14759,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建智能财务单据
-   *
-   * @param request CreateReceiptRequest
-   * @param headers CreateReceiptHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateReceiptResponse
+   * 创建智能财务单据
+   * 
+   * @param request - CreateReceiptRequest
+   * @param headers - CreateReceiptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateReceiptResponse
    */
   async createReceiptWithOptions(request: CreateReceiptRequest, headers: CreateReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<CreateReceiptResponse> {
     Util.validateModel(request);
@@ -11720,10 +14801,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建智能财务单据
-   *
-   * @param request CreateReceiptRequest
-   * @return CreateReceiptResponse
+   * 创建智能财务单据
+   * 
+   * @param request - CreateReceiptRequest
+   * @returns CreateReceiptResponse
    */
   async createReceipt(request: CreateReceiptRequest): Promise<CreateReceiptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11732,12 +14813,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除智能财务单据
-   *
-   * @param request DeleteReceiptRequest
-   * @param headers DeleteReceiptHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteReceiptResponse
+   * 删除智能财务单据
+   * 
+   * @param request - DeleteReceiptRequest
+   * @param headers - DeleteReceiptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteReceiptResponse
    */
   async deleteReceiptWithOptions(request: DeleteReceiptRequest, headers: DeleteReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteReceiptResponse> {
     Util.validateModel(request);
@@ -11774,10 +14855,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除智能财务单据
-   *
-   * @param request DeleteReceiptRequest
-   * @return DeleteReceiptResponse
+   * 删除智能财务单据
+   * 
+   * @param request - DeleteReceiptRequest
+   * @returns DeleteReceiptResponse
    */
   async deleteReceipt(request: DeleteReceiptRequest): Promise<DeleteReceiptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11786,11 +14867,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取可以查看账本的用户列表
-   *
-   * @param headers GetBookkeepingUserListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetBookkeepingUserListResponse
+   * 获取可以查看账本的用户列表
+   * 
+   * @param headers - GetBookkeepingUserListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetBookkeepingUserListResponse
    */
   async getBookkeepingUserListWithOptions(headers: GetBookkeepingUserListHeaders, runtime: $Util.RuntimeOptions): Promise<GetBookkeepingUserListResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -11820,9 +14901,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取可以查看账本的用户列表
-   *
-   * @return GetBookkeepingUserListResponse
+   * 获取可以查看账本的用户列表
+   * @returns GetBookkeepingUserListResponse
    */
   async getBookkeepingUserList(): Promise<GetBookkeepingUserListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11831,12 +14911,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取费用类别
-   *
-   * @param request GetCategoryRequest
-   * @param headers GetCategoryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCategoryResponse
+   * 获取费用类别
+   * 
+   * @param request - GetCategoryRequest
+   * @param headers - GetCategoryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCategoryResponse
    */
   async getCategoryWithOptions(request: GetCategoryRequest, headers: GetCategoryHeaders, runtime: $Util.RuntimeOptions): Promise<GetCategoryResponse> {
     Util.validateModel(request);
@@ -11873,10 +14953,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取费用类别
-   *
-   * @param request GetCategoryRequest
-   * @return GetCategoryResponse
+   * 获取费用类别
+   * 
+   * @param request - GetCategoryRequest
+   * @returns GetCategoryResponse
    */
   async getCategory(request: GetCategoryRequest): Promise<GetCategoryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11885,12 +14965,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务应用内维护的客户信息
-   *
-   * @param request GetCustomerRequest
-   * @param headers GetCustomerHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCustomerResponse
+   * 获取智能财务应用内维护的客户信息
+   * 
+   * @param request - GetCustomerRequest
+   * @param headers - GetCustomerHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCustomerResponse
    */
   async getCustomerWithOptions(request: GetCustomerRequest, headers: GetCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<GetCustomerResponse> {
     Util.validateModel(request);
@@ -11927,10 +15007,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务应用内维护的客户信息
-   *
-   * @param request GetCustomerRequest
-   * @return GetCustomerResponse
+   * 获取智能财务应用内维护的客户信息
+   * 
+   * @param request - GetCustomerRequest
+   * @returns GetCustomerResponse
    */
   async getCustomer(request: GetCustomerRequest): Promise<GetCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11939,12 +15019,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业账户
-   *
-   * @param request GetFinanceAccountRequest
-   * @param headers GetFinanceAccountHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFinanceAccountResponse
+   * 获取企业账户
+   * 
+   * @param request - GetFinanceAccountRequest
+   * @param headers - GetFinanceAccountHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFinanceAccountResponse
    */
   async getFinanceAccountWithOptions(request: GetFinanceAccountRequest, headers: GetFinanceAccountHeaders, runtime: $Util.RuntimeOptions): Promise<GetFinanceAccountResponse> {
     Util.validateModel(request);
@@ -11981,10 +15061,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业账户
-   *
-   * @param request GetFinanceAccountRequest
-   * @return GetFinanceAccountResponse
+   * 获取企业账户
+   * 
+   * @param request - GetFinanceAccountRequest
+   * @returns GetFinanceAccountResponse
    */
   async getFinanceAccount(request: GetFinanceAccountRequest): Promise<GetFinanceAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11993,11 +15073,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务套件模版信息
-   *
-   * @param headers GetFormTemplateInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFormTemplateInfoResponse
+   * 获取智能财务套件模版信息
+   * 
+   * @param headers - GetFormTemplateInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFormTemplateInfoResponse
    */
   async getFormTemplateInfoWithOptions(headers: GetFormTemplateInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormTemplateInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -12027,9 +15107,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务套件模版信息
-   *
-   * @return GetFormTemplateInfoResponse
+   * 获取智能财务套件模版信息
+   * @returns GetFormTemplateInfoResponse
    */
   async getFormTemplateInfo(): Promise<GetFormTemplateInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12038,12 +15117,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发票分页查询接口
-   *
-   * @param tmpReq GetInvoiceByPageRequest
-   * @param headers GetInvoiceByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetInvoiceByPageResponse
+   * 发票分页查询接口
+   * 
+   * @param tmpReq - GetInvoiceByPageRequest
+   * @param headers - GetInvoiceByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetInvoiceByPageResponse
    */
   async getInvoiceByPageWithOptions(tmpReq: GetInvoiceByPageRequest, headers: GetInvoiceByPageHeaders, runtime: $Util.RuntimeOptions): Promise<GetInvoiceByPageResponse> {
     Util.validateModel(tmpReq);
@@ -12086,10 +15165,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发票分页查询接口
-   *
-   * @param request GetInvoiceByPageRequest
-   * @return GetInvoiceByPageResponse
+   * 发票分页查询接口
+   * 
+   * @param request - GetInvoiceByPageRequest
+   * @returns GetInvoiceByPageResponse
    */
   async getInvoiceByPage(request: GetInvoiceByPageRequest): Promise<GetInvoiceByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12098,11 +15177,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 用来给isv提供是否使用智能账本的判断接口
-   *
-   * @param headers GetIsNewVersionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetIsNewVersionResponse
+   * 用来给isv提供是否使用智能账本的判断接口
+   * 
+   * @param headers - GetIsNewVersionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetIsNewVersionResponse
    */
   async getIsNewVersionWithOptions(headers: GetIsNewVersionHeaders, runtime: $Util.RuntimeOptions): Promise<GetIsNewVersionResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -12132,9 +15211,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 用来给isv提供是否使用智能账本的判断接口
-   *
-   * @return GetIsNewVersionResponse
+   * 用来给isv提供是否使用智能账本的判断接口
+   * @returns GetIsNewVersionResponse
    */
   async getIsNewVersion(): Promise<GetIsNewVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12143,11 +15221,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据comanyCode查询钉钉智能财务多主体信息
-   *
-   * @param headers GetMultiCompanyInfoByCodeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMultiCompanyInfoByCodeResponse
+   * 根据comanyCode查询钉钉智能财务多主体信息
+   * 
+   * @param headers - GetMultiCompanyInfoByCodeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMultiCompanyInfoByCodeResponse
    */
   async getMultiCompanyInfoByCodeWithOptions(companyCode: string, headers: GetMultiCompanyInfoByCodeHeaders, runtime: $Util.RuntimeOptions): Promise<GetMultiCompanyInfoByCodeResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -12177,9 +15255,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据comanyCode查询钉钉智能财务多主体信息
-   *
-   * @return GetMultiCompanyInfoByCodeResponse
+   * 根据comanyCode查询钉钉智能财务多主体信息
+   * @returns GetMultiCompanyInfoByCodeResponse
    */
   async getMultiCompanyInfoByCode(companyCode: string): Promise<GetMultiCompanyInfoByCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12188,12 +15265,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取商品信息
-   *
-   * @param request GetProductRequest
-   * @param headers GetProductHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetProductResponse
+   * 获取商品信息
+   * 
+   * @param request - GetProductRequest
+   * @param headers - GetProductHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProductResponse
    */
   async getProductWithOptions(request: GetProductRequest, headers: GetProductHeaders, runtime: $Util.RuntimeOptions): Promise<GetProductResponse> {
     Util.validateModel(request);
@@ -12230,10 +15307,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取商品信息
-   *
-   * @param request GetProductRequest
-   * @return GetProductResponse
+   * 获取商品信息
+   * 
+   * @param request - GetProductRequest
+   * @returns GetProductResponse
    */
   async getProduct(request: GetProductRequest): Promise<GetProductResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12242,12 +15319,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取单条项目
-   *
-   * @param request GetProjectRequest
-   * @param headers GetProjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetProjectResponse
+   * 获取单条项目
+   * 
+   * @param request - GetProjectRequest
+   * @param headers - GetProjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProjectResponse
    */
   async getProjectWithOptions(request: GetProjectRequest, headers: GetProjectHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectResponse> {
     Util.validateModel(request);
@@ -12284,10 +15361,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取单条项目
-   *
-   * @param request GetProjectRequest
-   * @return GetProjectResponse
+   * 获取单条项目
+   * 
+   * @param request - GetProjectRequest
+   * @returns GetProjectResponse
    */
   async getProject(request: GetProjectRequest): Promise<GetProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12296,12 +15373,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务单据详情
-   *
-   * @param request GetReceiptRequest
-   * @param headers GetReceiptHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetReceiptResponse
+   * 获取智能财务单据详情
+   * 
+   * @param request - GetReceiptRequest
+   * @param headers - GetReceiptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetReceiptResponse
    */
   async getReceiptWithOptions(request: GetReceiptRequest, headers: GetReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<GetReceiptResponse> {
     Util.validateModel(request);
@@ -12342,10 +15419,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务单据详情
-   *
-   * @param request GetReceiptRequest
-   * @return GetReceiptResponse
+   * 获取智能财务单据详情
+   * 
+   * @param request - GetReceiptRequest
+   * @returns GetReceiptResponse
    */
   async getReceipt(request: GetReceiptRequest): Promise<GetReceiptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12354,12 +15431,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务应用内维护的供应商信息
-   *
-   * @param request GetSupplierRequest
-   * @param headers GetSupplierHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSupplierResponse
+   * 获取智能财务应用内维护的供应商信息
+   * 
+   * @param request - GetSupplierRequest
+   * @param headers - GetSupplierHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSupplierResponse
    */
   async getSupplierWithOptions(request: GetSupplierRequest, headers: GetSupplierHeaders, runtime: $Util.RuntimeOptions): Promise<GetSupplierResponse> {
     Util.validateModel(request);
@@ -12396,10 +15473,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务应用内维护的供应商信息
-   *
-   * @param request GetSupplierRequest
-   * @return GetSupplierResponse
+   * 获取智能财务应用内维护的供应商信息
+   * 
+   * @param request - GetSupplierRequest
+   * @returns GetSupplierResponse
    */
   async getSupplier(request: GetSupplierRequest): Promise<GetSupplierResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12408,12 +15485,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用友开放平台接口鉴权信息
-   *
-   * @param request GetYongYouOpenApiTokenRequest
-   * @param headers GetYongYouOpenApiTokenHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetYongYouOpenApiTokenResponse
+   * 获取用友开放平台接口鉴权信息
+   * 
+   * @param request - GetYongYouOpenApiTokenRequest
+   * @param headers - GetYongYouOpenApiTokenHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetYongYouOpenApiTokenResponse
    */
   async getYongYouOpenApiTokenWithOptions(request: GetYongYouOpenApiTokenRequest, headers: GetYongYouOpenApiTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetYongYouOpenApiTokenResponse> {
     Util.validateModel(request);
@@ -12450,10 +15527,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用友开放平台接口鉴权信息
-   *
-   * @param request GetYongYouOpenApiTokenRequest
-   * @return GetYongYouOpenApiTokenResponse
+   * 获取用友开放平台接口鉴权信息
+   * 
+   * @param request - GetYongYouOpenApiTokenRequest
+   * @returns GetYongYouOpenApiTokenResponse
    */
   async getYongYouOpenApiToken(request: GetYongYouOpenApiTokenRequest): Promise<GetYongYouOpenApiTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12462,11 +15539,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询钉钉组织绑定的畅捷通组织
-   *
-   * @param headers GetYongYouOrgRelationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetYongYouOrgRelationResponse
+   * 查询钉钉组织绑定的畅捷通组织
+   * 
+   * @param headers - GetYongYouOrgRelationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetYongYouOrgRelationResponse
    */
   async getYongYouOrgRelationWithOptions(headers: GetYongYouOrgRelationHeaders, runtime: $Util.RuntimeOptions): Promise<GetYongYouOrgRelationResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -12496,9 +15573,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询钉钉组织绑定的畅捷通组织
-   *
-   * @return GetYongYouOrgRelationResponse
+   * 查询钉钉组织绑定的畅捷通组织
+   * @returns GetYongYouOrgRelationResponse
    */
   async getYongYouOrgRelation(): Promise<GetYongYouOrgRelationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12507,12 +15583,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 权益核销
-   *
-   * @param request ProfessionBenefitConsumeRequest
-   * @param headers ProfessionBenefitConsumeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ProfessionBenefitConsumeResponse
+   * 权益核销
+   * 
+   * @param request - ProfessionBenefitConsumeRequest
+   * @param headers - ProfessionBenefitConsumeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ProfessionBenefitConsumeResponse
    */
   async professionBenefitConsumeWithOptions(request: ProfessionBenefitConsumeRequest, headers: ProfessionBenefitConsumeHeaders, runtime: $Util.RuntimeOptions): Promise<ProfessionBenefitConsumeResponse> {
     Util.validateModel(request);
@@ -12557,10 +15633,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 权益核销
-   *
-   * @param request ProfessionBenefitConsumeRequest
-   * @return ProfessionBenefitConsumeResponse
+   * 权益核销
+   * 
+   * @param request - ProfessionBenefitConsumeRequest
+   * @returns ProfessionBenefitConsumeResponse
    */
   async professionBenefitConsume(request: ProfessionBenefitConsumeRequest): Promise<ProfessionBenefitConsumeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12569,12 +15645,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 触发单据同步给有成
-   *
-   * @param request PushHistoricalReceiptsRequest
-   * @param headers PushHistoricalReceiptsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PushHistoricalReceiptsResponse
+   * 触发单据同步给有成
+   * 
+   * @param request - PushHistoricalReceiptsRequest
+   * @param headers - PushHistoricalReceiptsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PushHistoricalReceiptsResponse
    */
   async pushHistoricalReceiptsWithOptions(request: PushHistoricalReceiptsRequest, headers: PushHistoricalReceiptsHeaders, runtime: $Util.RuntimeOptions): Promise<PushHistoricalReceiptsResponse> {
     Util.validateModel(request);
@@ -12627,10 +15703,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 触发单据同步给有成
-   *
-   * @param request PushHistoricalReceiptsRequest
-   * @return PushHistoricalReceiptsResponse
+   * 触发单据同步给有成
+   * 
+   * @param request - PushHistoricalReceiptsRequest
+   * @returns PushHistoricalReceiptsResponse
    */
   async pushHistoricalReceipts(request: PushHistoricalReceiptsRequest): Promise<PushHistoricalReceiptsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12639,12 +15715,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询智能财务计量型权益
-   *
-   * @param request QueryBenefitRequest
-   * @param headers QueryBenefitHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryBenefitResponse
+   * 查询智能财务计量型权益
+   * 
+   * @param request - QueryBenefitRequest
+   * @param headers - QueryBenefitHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryBenefitResponse
    */
   async queryBenefitWithOptions(request: QueryBenefitRequest, headers: QueryBenefitHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBenefitResponse> {
     Util.validateModel(request);
@@ -12681,10 +15757,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询智能财务计量型权益
-   *
-   * @param request QueryBenefitRequest
-   * @return QueryBenefitResponse
+   * 查询智能财务计量型权益
+   * 
+   * @param request - QueryBenefitRequest
+   * @returns QueryBenefitResponse
    */
   async queryBenefit(request: QueryBenefitRequest): Promise<QueryBenefitResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12693,12 +15769,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取费用类别
-   *
-   * @param request QueryCategoryByPageRequest
-   * @param headers QueryCategoryByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCategoryByPageResponse
+   * 批量获取费用类别
+   * 
+   * @param request - QueryCategoryByPageRequest
+   * @param headers - QueryCategoryByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCategoryByPageResponse
    */
   async queryCategoryByPageWithOptions(request: QueryCategoryByPageRequest, headers: QueryCategoryByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCategoryByPageResponse> {
     Util.validateModel(request);
@@ -12736,17 +15812,17 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<QueryCategoryByPageResponse>(await this.execute(params, req, runtime), new QueryCategoryByPageResponse({}));
   }
 
   /**
-   * @summary 批量获取费用类别
-   *
-   * @param request QueryCategoryByPageRequest
-   * @return QueryCategoryByPageResponse
+   * 批量获取费用类别
+   * 
+   * @param request - QueryCategoryByPageRequest
+   * @returns QueryCategoryByPageResponse
    */
   async queryCategoryByPage(request: QueryCategoryByPageRequest): Promise<QueryCategoryByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12755,12 +15831,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询某个主体的开票申请单的提单数量
-   *
-   * @param request QueryCompanyInvoiceRelationCountRequest
-   * @param headers QueryCompanyInvoiceRelationCountHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCompanyInvoiceRelationCountResponse
+   * 查询某个主体的开票申请单的提单数量
+   * 
+   * @param request - QueryCompanyInvoiceRelationCountRequest
+   * @param headers - QueryCompanyInvoiceRelationCountHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCompanyInvoiceRelationCountResponse
    */
   async queryCompanyInvoiceRelationCountWithOptions(request: QueryCompanyInvoiceRelationCountRequest, headers: QueryCompanyInvoiceRelationCountHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCompanyInvoiceRelationCountResponse> {
     Util.validateModel(request);
@@ -12797,10 +15873,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询某个主体的开票申请单的提单数量
-   *
-   * @param request QueryCompanyInvoiceRelationCountRequest
-   * @return QueryCompanyInvoiceRelationCountResponse
+   * 查询某个主体的开票申请单的提单数量
+   * 
+   * @param request - QueryCompanyInvoiceRelationCountRequest
+   * @returns QueryCompanyInvoiceRelationCountResponse
    */
   async queryCompanyInvoiceRelationCount(request: QueryCompanyInvoiceRelationCountRequest): Promise<QueryCompanyInvoiceRelationCountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12809,12 +15885,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页批量获取智能财务应用内维护的客户信息
-   *
-   * @param request QueryCustomerByPageRequest
-   * @param headers QueryCustomerByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCustomerByPageResponse
+   * 分页批量获取智能财务应用内维护的客户信息
+   * 
+   * @param request - QueryCustomerByPageRequest
+   * @param headers - QueryCustomerByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCustomerByPageResponse
    */
   async queryCustomerByPageWithOptions(request: QueryCustomerByPageRequest, headers: QueryCustomerByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerByPageResponse> {
     Util.validateModel(request);
@@ -12855,10 +15931,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页批量获取智能财务应用内维护的客户信息
-   *
-   * @param request QueryCustomerByPageRequest
-   * @return QueryCustomerByPageResponse
+   * 分页批量获取智能财务应用内维护的客户信息
+   * 
+   * @param request - QueryCustomerByPageRequest
+   * @returns QueryCustomerByPageResponse
    */
   async queryCustomerByPage(request: QueryCustomerByPageRequest): Promise<QueryCustomerByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12867,12 +15943,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 提供给合作伙伴，查询智能财务的客户配置信息
-   *
-   * @param request QueryCustomerInfoRequest
-   * @param headers QueryCustomerInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCustomerInfoResponse
+   * 提供给合作伙伴，查询智能财务的客户配置信息
+   * 
+   * @param request - QueryCustomerInfoRequest
+   * @param headers - QueryCustomerInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCustomerInfoResponse
    */
   async queryCustomerInfoWithOptions(request: QueryCustomerInfoRequest, headers: QueryCustomerInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerInfoResponse> {
     Util.validateModel(request);
@@ -12917,10 +15993,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 提供给合作伙伴，查询智能财务的客户配置信息
-   *
-   * @param request QueryCustomerInfoRequest
-   * @return QueryCustomerInfoResponse
+   * 提供给合作伙伴，查询智能财务的客户配置信息
+   * 
+   * @param request - QueryCustomerInfoRequest
+   * @returns QueryCustomerInfoResponse
    */
   async queryCustomerInfo(request: QueryCustomerInfoRequest): Promise<QueryCustomerInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12929,12 +16005,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取企业账户
-   *
-   * @param request QueryEnterpriseAccountByPageRequest
-   * @param headers QueryEnterpriseAccountByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryEnterpriseAccountByPageResponse
+   * 批量获取企业账户
+   * 
+   * @param request - QueryEnterpriseAccountByPageRequest
+   * @param headers - QueryEnterpriseAccountByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryEnterpriseAccountByPageResponse
    */
   async queryEnterpriseAccountByPageWithOptions(request: QueryEnterpriseAccountByPageRequest, headers: QueryEnterpriseAccountByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEnterpriseAccountByPageResponse> {
     Util.validateModel(request);
@@ -12975,10 +16051,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取企业账户
-   *
-   * @param request QueryEnterpriseAccountByPageRequest
-   * @return QueryEnterpriseAccountByPageResponse
+   * 批量获取企业账户
+   * 
+   * @param request - QueryEnterpriseAccountByPageRequest
+   * @returns QueryEnterpriseAccountByPageResponse
    */
   async queryEnterpriseAccountByPage(request: QueryEnterpriseAccountByPageRequest): Promise<QueryEnterpriseAccountByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -12987,11 +16063,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询智能财务配置的企业信息
-   *
-   * @param headers QueryFinanceCompanyInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryFinanceCompanyInfoResponse
+   * 查询智能财务配置的企业信息
+   * 
+   * @param headers - QueryFinanceCompanyInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryFinanceCompanyInfoResponse
    */
   async queryFinanceCompanyInfoWithOptions(headers: QueryFinanceCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFinanceCompanyInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -13021,9 +16097,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询智能财务配置的企业信息
-   *
-   * @return QueryFinanceCompanyInfoResponse
+   * 查询智能财务配置的企业信息
+   * @returns QueryFinanceCompanyInfoResponse
    */
   async queryFinanceCompanyInfo(): Promise<QueryFinanceCompanyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13032,11 +16107,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询开票申请单的提单数量
-   *
-   * @param headers QueryInvoiceRelationCountHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryInvoiceRelationCountResponse
+   * 查询开票申请单的提单数量
+   * 
+   * @param headers - QueryInvoiceRelationCountHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryInvoiceRelationCountResponse
    */
   async queryInvoiceRelationCountWithOptions(headers: QueryInvoiceRelationCountHeaders, runtime: $Util.RuntimeOptions): Promise<QueryInvoiceRelationCountResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -13066,9 +16141,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询开票申请单的提单数量
-   *
-   * @return QueryInvoiceRelationCountResponse
+   * 查询开票申请单的提单数量
+   * @returns QueryInvoiceRelationCountResponse
    */
   async queryInvoiceRelationCount(): Promise<QueryInvoiceRelationCountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13077,11 +16151,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询钉钉智能财务多主体信息
-   *
-   * @param headers QueryMultiCompanyInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMultiCompanyInfoResponse
+   * 查询钉钉智能财务多主体信息
+   * 
+   * @param headers - QueryMultiCompanyInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMultiCompanyInfoResponse
    */
   async queryMultiCompanyInfoWithOptions(headers: QueryMultiCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMultiCompanyInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -13111,9 +16185,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询钉钉智能财务多主体信息
-   *
-   * @return QueryMultiCompanyInfoResponse
+   * 查询钉钉智能财务多主体信息
+   * @returns QueryMultiCompanyInfoResponse
    */
   async queryMultiCompanyInfo(): Promise<QueryMultiCompanyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13122,12 +16195,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
-   *
-   * @param request QueryPermissionByUserIdRequest
-   * @param headers QueryPermissionByUserIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryPermissionByUserIdResponse
+   * 提供给小望，查询当前用户所具有的的小望权限点信息
+   * 
+   * @param request - QueryPermissionByUserIdRequest
+   * @param headers - QueryPermissionByUserIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryPermissionByUserIdResponse
    */
   async queryPermissionByUserIdWithOptions(request: QueryPermissionByUserIdRequest, headers: QueryPermissionByUserIdHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPermissionByUserIdResponse> {
     Util.validateModel(request);
@@ -13168,10 +16241,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
-   *
-   * @param request QueryPermissionByUserIdRequest
-   * @return QueryPermissionByUserIdResponse
+   * 提供给小望，查询当前用户所具有的的小望权限点信息
+   * 
+   * @param request - QueryPermissionByUserIdRequest
+   * @returns QueryPermissionByUserIdResponse
    */
   async queryPermissionByUserId(request: QueryPermissionByUserIdRequest): Promise<QueryPermissionByUserIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13180,12 +16253,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询智能财务角色下的成员信息
-   *
-   * @param request QueryPermissionRoleMemberRequest
-   * @param headers QueryPermissionRoleMemberHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryPermissionRoleMemberResponse
+   * 查询智能财务角色下的成员信息
+   * 
+   * @param request - QueryPermissionRoleMemberRequest
+   * @param headers - QueryPermissionRoleMemberHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryPermissionRoleMemberResponse
    */
   async queryPermissionRoleMemberWithOptions(request: QueryPermissionRoleMemberRequest, headers: QueryPermissionRoleMemberHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPermissionRoleMemberResponse> {
     Util.validateModel(request);
@@ -13226,10 +16299,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询智能财务角色下的成员信息
-   *
-   * @param request QueryPermissionRoleMemberRequest
-   * @return QueryPermissionRoleMemberResponse
+   * 查询智能财务角色下的成员信息
+   * 
+   * @param request - QueryPermissionRoleMemberRequest
+   * @returns QueryPermissionRoleMemberResponse
    */
   async queryPermissionRoleMember(request: QueryPermissionRoleMemberRequest): Promise<QueryPermissionRoleMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13238,12 +16311,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取商品信息
-   *
-   * @param request QueryProductByPageRequest
-   * @param headers QueryProductByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryProductByPageResponse
+   * 批量获取商品信息
+   * 
+   * @param request - QueryProductByPageRequest
+   * @param headers - QueryProductByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryProductByPageResponse
    */
   async queryProductByPageWithOptions(request: QueryProductByPageRequest, headers: QueryProductByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProductByPageResponse> {
     Util.validateModel(request);
@@ -13284,10 +16357,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取商品信息
-   *
-   * @param request QueryProductByPageRequest
-   * @return QueryProductByPageResponse
+   * 批量获取商品信息
+   * 
+   * @param request - QueryProductByPageRequest
+   * @returns QueryProductByPageResponse
    */
   async queryProductByPage(request: QueryProductByPageRequest): Promise<QueryProductByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13296,12 +16369,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取项目信息
-   *
-   * @param request QueryProjectByPageRequest
-   * @param headers QueryProjectByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryProjectByPageResponse
+   * 批量获取项目信息
+   * 
+   * @param request - QueryProjectByPageRequest
+   * @param headers - QueryProjectByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryProjectByPageResponse
    */
   async queryProjectByPageWithOptions(request: QueryProjectByPageRequest, headers: QueryProjectByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProjectByPageResponse> {
     Util.validateModel(request);
@@ -13342,10 +16415,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取项目信息
-   *
-   * @param request QueryProjectByPageRequest
-   * @return QueryProjectByPageResponse
+   * 批量获取项目信息
+   * 
+   * @param request - QueryProjectByPageRequest
+   * @returns QueryProjectByPageResponse
    */
   async queryProjectByPage(request: QueryProjectByPageRequest): Promise<QueryProjectByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13354,12 +16427,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询开票申请单详情
-   *
-   * @param request QueryReceiptDetailForInvoiceRequest
-   * @param headers QueryReceiptDetailForInvoiceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryReceiptDetailForInvoiceResponse
+   * 查询开票申请单详情
+   * 
+   * @param request - QueryReceiptDetailForInvoiceRequest
+   * @param headers - QueryReceiptDetailForInvoiceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryReceiptDetailForInvoiceResponse
    */
   async queryReceiptDetailForInvoiceWithOptions(request: QueryReceiptDetailForInvoiceRequest, headers: QueryReceiptDetailForInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptDetailForInvoiceResponse> {
     Util.validateModel(request);
@@ -13396,10 +16469,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询开票申请单详情
-   *
-   * @param request QueryReceiptDetailForInvoiceRequest
-   * @return QueryReceiptDetailForInvoiceResponse
+   * 查询开票申请单详情
+   * 
+   * @param request - QueryReceiptDetailForInvoiceRequest
+   * @returns QueryReceiptDetailForInvoiceResponse
    */
   async queryReceiptDetailForInvoice(request: QueryReceiptDetailForInvoiceRequest): Promise<QueryReceiptDetailForInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13408,12 +16481,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询智能财务单据主数据信息
-   *
-   * @param request QueryReceiptForInvoiceRequest
-   * @param headers QueryReceiptForInvoiceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryReceiptForInvoiceResponse
+   * 批量查询智能财务单据主数据信息
+   * 
+   * @param request - QueryReceiptForInvoiceRequest
+   * @param headers - QueryReceiptForInvoiceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryReceiptForInvoiceResponse
    */
   async queryReceiptForInvoiceWithOptions(request: QueryReceiptForInvoiceRequest, headers: QueryReceiptForInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptForInvoiceResponse> {
     Util.validateModel(request);
@@ -13490,10 +16563,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询智能财务单据主数据信息
-   *
-   * @param request QueryReceiptForInvoiceRequest
-   * @return QueryReceiptForInvoiceResponse
+   * 批量查询智能财务单据主数据信息
+   * 
+   * @param request - QueryReceiptForInvoiceRequest
+   * @returns QueryReceiptForInvoiceResponse
    */
   async queryReceiptForInvoice(request: QueryReceiptForInvoiceRequest): Promise<QueryReceiptForInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13502,12 +16575,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询智能财务的单据主数据基本信息
-   *
-   * @param request QueryReceiptsBaseInfoRequest
-   * @param headers QueryReceiptsBaseInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryReceiptsBaseInfoResponse
+   * 批量查询智能财务的单据主数据基本信息
+   * 
+   * @param request - QueryReceiptsBaseInfoRequest
+   * @param headers - QueryReceiptsBaseInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryReceiptsBaseInfoResponse
    */
   async queryReceiptsBaseInfoWithOptions(request: QueryReceiptsBaseInfoRequest, headers: QueryReceiptsBaseInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptsBaseInfoResponse> {
     Util.validateModel(request);
@@ -13584,10 +16657,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询智能财务的单据主数据基本信息
-   *
-   * @param request QueryReceiptsBaseInfoRequest
-   * @return QueryReceiptsBaseInfoResponse
+   * 批量查询智能财务的单据主数据基本信息
+   * 
+   * @param request - QueryReceiptsBaseInfoRequest
+   * @returns QueryReceiptsBaseInfoResponse
    */
   async queryReceiptsBaseInfo(request: QueryReceiptsBaseInfoRequest): Promise<QueryReceiptsBaseInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13596,12 +16669,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取智能财务单据详情列表
-   *
-   * @param request QueryReceiptsByPageRequest
-   * @param headers QueryReceiptsByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryReceiptsByPageResponse
+   * 分页获取智能财务单据详情列表
+   * 
+   * @param request - QueryReceiptsByPageRequest
+   * @param headers - QueryReceiptsByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryReceiptsByPageResponse
    */
   async queryReceiptsByPageWithOptions(request: QueryReceiptsByPageRequest, headers: QueryReceiptsByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReceiptsByPageResponse> {
     Util.validateModel(request);
@@ -13658,10 +16731,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取智能财务单据详情列表
-   *
-   * @param request QueryReceiptsByPageRequest
-   * @return QueryReceiptsByPageResponse
+   * 分页获取智能财务单据详情列表
+   * 
+   * @param request - QueryReceiptsByPageRequest
+   * @returns QueryReceiptsByPageResponse
    */
   async queryReceiptsByPage(request: QueryReceiptsByPageRequest): Promise<QueryReceiptsByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13670,12 +16743,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询智能财务角色下的成员信息
-   *
-   * @param request QueryRoleMemberByPageRequest
-   * @param headers QueryRoleMemberByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryRoleMemberByPageResponse
+   * 分页查询智能财务角色下的成员信息
+   * 
+   * @param request - QueryRoleMemberByPageRequest
+   * @param headers - QueryRoleMemberByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryRoleMemberByPageResponse
    */
   async queryRoleMemberByPageWithOptions(request: QueryRoleMemberByPageRequest, headers: QueryRoleMemberByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRoleMemberByPageResponse> {
     Util.validateModel(request);
@@ -13724,10 +16797,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询智能财务角色下的成员信息
-   *
-   * @param request QueryRoleMemberByPageRequest
-   * @return QueryRoleMemberByPageResponse
+   * 分页查询智能财务角色下的成员信息
+   * 
+   * @param request - QueryRoleMemberByPageRequest
+   * @returns QueryRoleMemberByPageResponse
    */
   async queryRoleMemberByPage(request: QueryRoleMemberByPageRequest): Promise<QueryRoleMemberByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13736,12 +16809,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页批量获取智能财务应用内维护的供应商信息
-   *
-   * @param request QuerySupplierByPageRequest
-   * @param headers QuerySupplierByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QuerySupplierByPageResponse
+   * 分页批量获取智能财务应用内维护的供应商信息
+   * 
+   * @param request - QuerySupplierByPageRequest
+   * @param headers - QuerySupplierByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QuerySupplierByPageResponse
    */
   async querySupplierByPageWithOptions(request: QuerySupplierByPageRequest, headers: QuerySupplierByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySupplierByPageResponse> {
     Util.validateModel(request);
@@ -13782,10 +16855,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页批量获取智能财务应用内维护的供应商信息
-   *
-   * @param request QuerySupplierByPageRequest
-   * @return QuerySupplierByPageResponse
+   * 分页批量获取智能财务应用内维护的供应商信息
+   * 
+   * @param request - QuerySupplierByPageRequest
+   * @returns QuerySupplierByPageResponse
    */
   async querySupplierByPage(request: QuerySupplierByPageRequest): Promise<QuerySupplierByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13794,12 +16867,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户角色
-   *
-   * @param request QueryUserRoleListRequest
-   * @param headers QueryUserRoleListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryUserRoleListResponse
+   * 查询用户角色
+   * 
+   * @param request - QueryUserRoleListRequest
+   * @param headers - QueryUserRoleListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryUserRoleListResponse
    */
   async queryUserRoleListWithOptions(request: QueryUserRoleListRequest, headers: QueryUserRoleListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserRoleListResponse> {
     Util.validateModel(request);
@@ -13836,10 +16909,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户角色
-   *
-   * @param request QueryUserRoleListRequest
-   * @return QueryUserRoleListResponse
+   * 查询用户角色
+   * 
+   * @param request - QueryUserRoleListRequest
+   * @returns QueryUserRoleListResponse
    */
   async queryUserRoleList(request: QueryUserRoleListRequest): Promise<QueryUserRoleListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13848,12 +16921,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 解绑开票申请单关联的发票
-   *
-   * @param request UnbindApplyReceiptAndInvoiceRelatedRequest
-   * @param headers UnbindApplyReceiptAndInvoiceRelatedHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UnbindApplyReceiptAndInvoiceRelatedResponse
+   * 解绑开票申请单关联的发票
+   * 
+   * @param request - UnbindApplyReceiptAndInvoiceRelatedRequest
+   * @param headers - UnbindApplyReceiptAndInvoiceRelatedHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UnbindApplyReceiptAndInvoiceRelatedResponse
    */
   async unbindApplyReceiptAndInvoiceRelatedWithOptions(request: UnbindApplyReceiptAndInvoiceRelatedRequest, headers: UnbindApplyReceiptAndInvoiceRelatedHeaders, runtime: $Util.RuntimeOptions): Promise<UnbindApplyReceiptAndInvoiceRelatedResponse> {
     Util.validateModel(request);
@@ -13898,10 +16971,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 解绑开票申请单关联的发票
-   *
-   * @param request UnbindApplyReceiptAndInvoiceRelatedRequest
-   * @return UnbindApplyReceiptAndInvoiceRelatedResponse
+   * 解绑开票申请单关联的发票
+   * 
+   * @param request - UnbindApplyReceiptAndInvoiceRelatedRequest
+   * @returns UnbindApplyReceiptAndInvoiceRelatedResponse
    */
   async unbindApplyReceiptAndInvoiceRelated(request: UnbindApplyReceiptAndInvoiceRelatedRequest): Promise<UnbindApplyReceiptAndInvoiceRelatedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13910,12 +16983,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 开票申请单关联发票
-   *
-   * @param request UpdateApplyReceiptAndInvoiceRelatedRequest
-   * @param headers UpdateApplyReceiptAndInvoiceRelatedHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateApplyReceiptAndInvoiceRelatedResponse
+   * 开票申请单关联发票
+   * 
+   * @param request - UpdateApplyReceiptAndInvoiceRelatedRequest
+   * @param headers - UpdateApplyReceiptAndInvoiceRelatedHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateApplyReceiptAndInvoiceRelatedResponse
    */
   async updateApplyReceiptAndInvoiceRelatedWithOptions(request: UpdateApplyReceiptAndInvoiceRelatedRequest, headers: UpdateApplyReceiptAndInvoiceRelatedHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateApplyReceiptAndInvoiceRelatedResponse> {
     Util.validateModel(request);
@@ -13960,10 +17033,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 开票申请单关联发票
-   *
-   * @param request UpdateApplyReceiptAndInvoiceRelatedRequest
-   * @return UpdateApplyReceiptAndInvoiceRelatedResponse
+   * 开票申请单关联发票
+   * 
+   * @param request - UpdateApplyReceiptAndInvoiceRelatedRequest
+   * @returns UpdateApplyReceiptAndInvoiceRelatedResponse
    */
   async updateApplyReceiptAndInvoiceRelated(request: UpdateApplyReceiptAndInvoiceRelatedRequest): Promise<UpdateApplyReceiptAndInvoiceRelatedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13972,12 +17045,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新全电发票企业信息
-   *
-   * @param request UpdateDigitalInvoiceOrgInfoRequest
-   * @param headers UpdateDigitalInvoiceOrgInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateDigitalInvoiceOrgInfoResponse
+   * 更新全电发票企业信息
+   * 
+   * @param request - UpdateDigitalInvoiceOrgInfoRequest
+   * @param headers - UpdateDigitalInvoiceOrgInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateDigitalInvoiceOrgInfoResponse
    */
   async updateDigitalInvoiceOrgInfoWithOptions(request: UpdateDigitalInvoiceOrgInfoRequest, headers: UpdateDigitalInvoiceOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDigitalInvoiceOrgInfoResponse> {
     Util.validateModel(request);
@@ -14026,10 +17099,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新全电发票企业信息
-   *
-   * @param request UpdateDigitalInvoiceOrgInfoRequest
-   * @return UpdateDigitalInvoiceOrgInfoResponse
+   * 更新全电发票企业信息
+   * 
+   * @param request - UpdateDigitalInvoiceOrgInfoRequest
+   * @returns UpdateDigitalInvoiceOrgInfoResponse
    */
   async updateDigitalInvoiceOrgInfo(request: UpdateDigitalInvoiceOrgInfoRequest): Promise<UpdateDigitalInvoiceOrgInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14038,12 +17111,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新智能财务配置的企业信息
-   *
-   * @param request UpdateFinanceCompanyInfoRequest
-   * @param headers UpdateFinanceCompanyInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateFinanceCompanyInfoResponse
+   * 更新智能财务配置的企业信息
+   * 
+   * @param request - UpdateFinanceCompanyInfoRequest
+   * @param headers - UpdateFinanceCompanyInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateFinanceCompanyInfoResponse
    */
   async updateFinanceCompanyInfoWithOptions(request: UpdateFinanceCompanyInfoRequest, headers: UpdateFinanceCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateFinanceCompanyInfoResponse> {
     Util.validateModel(request);
@@ -14096,10 +17169,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新智能财务配置的企业信息
-   *
-   * @param request UpdateFinanceCompanyInfoRequest
-   * @return UpdateFinanceCompanyInfoResponse
+   * 更新智能财务配置的企业信息
+   * 
+   * @param request - UpdateFinanceCompanyInfoRequest
+   * @returns UpdateFinanceCompanyInfoResponse
    */
   async updateFinanceCompanyInfo(request: UpdateFinanceCompanyInfoRequest): Promise<UpdateFinanceCompanyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14108,12 +17181,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新钉钉智能财务多主体信息
-   *
-   * @param request UpdateFinanceMultiCompanyInfoRequest
-   * @param headers UpdateFinanceMultiCompanyInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateFinanceMultiCompanyInfoResponse
+   * 更新钉钉智能财务多主体信息
+   * 
+   * @param request - UpdateFinanceMultiCompanyInfoRequest
+   * @param headers - UpdateFinanceMultiCompanyInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateFinanceMultiCompanyInfoResponse
    */
   async updateFinanceMultiCompanyInfoWithOptions(request: UpdateFinanceMultiCompanyInfoRequest, headers: UpdateFinanceMultiCompanyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateFinanceMultiCompanyInfoResponse> {
     Util.validateModel(request);
@@ -14170,10 +17243,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新钉钉智能财务多主体信息
-   *
-   * @param request UpdateFinanceMultiCompanyInfoRequest
-   * @return UpdateFinanceMultiCompanyInfoResponse
+   * 更新钉钉智能财务多主体信息
+   * 
+   * @param request - UpdateFinanceMultiCompanyInfoRequest
+   * @returns UpdateFinanceMultiCompanyInfoResponse
    */
   async updateFinanceMultiCompanyInfo(request: UpdateFinanceMultiCompanyInfoRequest): Promise<UpdateFinanceMultiCompanyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14182,12 +17255,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发票红冲/废弃状态变更接口
-   *
-   * @param request UpdateInvoiceAbandonStatusRequest
-   * @param headers UpdateInvoiceAbandonStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInvoiceAbandonStatusResponse
+   * 发票红冲/废弃状态变更接口
+   * 
+   * @param request - UpdateInvoiceAbandonStatusRequest
+   * @param headers - UpdateInvoiceAbandonStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInvoiceAbandonStatusResponse
    */
   async updateInvoiceAbandonStatusWithOptions(request: UpdateInvoiceAbandonStatusRequest, headers: UpdateInvoiceAbandonStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAbandonStatusResponse> {
     Util.validateModel(request);
@@ -14264,10 +17337,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发票红冲/废弃状态变更接口
-   *
-   * @param request UpdateInvoiceAbandonStatusRequest
-   * @return UpdateInvoiceAbandonStatusResponse
+   * 发票红冲/废弃状态变更接口
+   * 
+   * @param request - UpdateInvoiceAbandonStatusRequest
+   * @returns UpdateInvoiceAbandonStatusResponse
    */
   async updateInvoiceAbandonStatus(request: UpdateInvoiceAbandonStatusRequest): Promise<UpdateInvoiceAbandonStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14276,12 +17349,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新发票账期状态
-   *
-   * @param request UpdateInvoiceAccountPeriodRequest
-   * @param headers UpdateInvoiceAccountPeriodHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInvoiceAccountPeriodResponse
+   * 更新发票账期状态
+   * 
+   * @param request - UpdateInvoiceAccountPeriodRequest
+   * @param headers - UpdateInvoiceAccountPeriodHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInvoiceAccountPeriodResponse
    */
   async updateInvoiceAccountPeriodWithOptions(request: UpdateInvoiceAccountPeriodRequest, headers: UpdateInvoiceAccountPeriodHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAccountPeriodResponse> {
     Util.validateModel(request);
@@ -14334,10 +17407,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新发票账期状态
-   *
-   * @param request UpdateInvoiceAccountPeriodRequest
-   * @return UpdateInvoiceAccountPeriodResponse
+   * 更新发票账期状态
+   * 
+   * @param request - UpdateInvoiceAccountPeriodRequest
+   * @returns UpdateInvoiceAccountPeriodResponse
    */
   async updateInvoiceAccountPeriod(request: UpdateInvoiceAccountPeriodRequest): Promise<UpdateInvoiceAccountPeriodResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14346,12 +17419,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新全电企业入账时间
-   *
-   * @param request UpdateInvoiceAccountingPeriodDateRequest
-   * @param headers UpdateInvoiceAccountingPeriodDateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInvoiceAccountingPeriodDateResponse
+   * 更新全电企业入账时间
+   * 
+   * @param request - UpdateInvoiceAccountingPeriodDateRequest
+   * @param headers - UpdateInvoiceAccountingPeriodDateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInvoiceAccountingPeriodDateResponse
    */
   async updateInvoiceAccountingPeriodDateWithOptions(request: UpdateInvoiceAccountingPeriodDateRequest, headers: UpdateInvoiceAccountingPeriodDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAccountingPeriodDateResponse> {
     Util.validateModel(request);
@@ -14396,10 +17469,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新全电企业入账时间
-   *
-   * @param request UpdateInvoiceAccountingPeriodDateRequest
-   * @return UpdateInvoiceAccountingPeriodDateResponse
+   * 更新全电企业入账时间
+   * 
+   * @param request - UpdateInvoiceAccountingPeriodDateRequest
+   * @returns UpdateInvoiceAccountingPeriodDateResponse
    */
   async updateInvoiceAccountingPeriodDate(request: UpdateInvoiceAccountingPeriodDateRequest): Promise<UpdateInvoiceAccountingPeriodDateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14408,12 +17481,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新全电企业入账状态
-   *
-   * @param request UpdateInvoiceAccountingStatusRequest
-   * @param headers UpdateInvoiceAccountingStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInvoiceAccountingStatusResponse
+   * 更新全电企业入账状态
+   * 
+   * @param request - UpdateInvoiceAccountingStatusRequest
+   * @param headers - UpdateInvoiceAccountingStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInvoiceAccountingStatusResponse
    */
   async updateInvoiceAccountingStatusWithOptions(request: UpdateInvoiceAccountingStatusRequest, headers: UpdateInvoiceAccountingStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAccountingStatusResponse> {
     Util.validateModel(request);
@@ -14458,10 +17531,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新全电企业入账状态
-   *
-   * @param request UpdateInvoiceAccountingStatusRequest
-   * @return UpdateInvoiceAccountingStatusResponse
+   * 更新全电企业入账状态
+   * 
+   * @param request - UpdateInvoiceAccountingStatusRequest
+   * @returns UpdateInvoiceAccountingStatusResponse
    */
   async updateInvoiceAccountingStatus(request: UpdateInvoiceAccountingStatusRequest): Promise<UpdateInvoiceAccountingStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14470,12 +17543,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新发票关联审批单
-   *
-   * @param request UpdateInvoiceAndReceiptRelatedRequest
-   * @param headers UpdateInvoiceAndReceiptRelatedHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInvoiceAndReceiptRelatedResponse
+   * 更新发票关联审批单
+   * 
+   * @param request - UpdateInvoiceAndReceiptRelatedRequest
+   * @param headers - UpdateInvoiceAndReceiptRelatedHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInvoiceAndReceiptRelatedResponse
    */
   async updateInvoiceAndReceiptRelatedWithOptions(request: UpdateInvoiceAndReceiptRelatedRequest, headers: UpdateInvoiceAndReceiptRelatedHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceAndReceiptRelatedResponse> {
     Util.validateModel(request);
@@ -14528,10 +17601,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新发票关联审批单
-   *
-   * @param request UpdateInvoiceAndReceiptRelatedRequest
-   * @return UpdateInvoiceAndReceiptRelatedResponse
+   * 更新发票关联审批单
+   * 
+   * @param request - UpdateInvoiceAndReceiptRelatedRequest
+   * @returns UpdateInvoiceAndReceiptRelatedResponse
    */
   async updateInvoiceAndReceiptRelated(request: UpdateInvoiceAndReceiptRelatedRequest): Promise<UpdateInvoiceAndReceiptRelatedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14540,12 +17613,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新发票忽略状态
-   *
-   * @param request UpdateInvoiceIgnoreStatusRequest
-   * @param headers UpdateInvoiceIgnoreStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInvoiceIgnoreStatusResponse
+   * 更新发票忽略状态
+   * 
+   * @param request - UpdateInvoiceIgnoreStatusRequest
+   * @param headers - UpdateInvoiceIgnoreStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInvoiceIgnoreStatusResponse
    */
   async updateInvoiceIgnoreStatusWithOptions(request: UpdateInvoiceIgnoreStatusRequest, headers: UpdateInvoiceIgnoreStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceIgnoreStatusResponse> {
     Util.validateModel(request);
@@ -14590,10 +17663,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新发票忽略状态
-   *
-   * @param request UpdateInvoiceIgnoreStatusRequest
-   * @return UpdateInvoiceIgnoreStatusResponse
+   * 更新发票忽略状态
+   * 
+   * @param request - UpdateInvoiceIgnoreStatusRequest
+   * @returns UpdateInvoiceIgnoreStatusResponse
    */
   async updateInvoiceIgnoreStatus(request: UpdateInvoiceIgnoreStatusRequest): Promise<UpdateInvoiceIgnoreStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14602,12 +17675,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发票认证状态变更接口
-   *
-   * @param request UpdateInvoiceVerifyStatusRequest
-   * @param headers UpdateInvoiceVerifyStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInvoiceVerifyStatusResponse
+   * 发票认证状态变更接口
+   * 
+   * @param request - UpdateInvoiceVerifyStatusRequest
+   * @param headers - UpdateInvoiceVerifyStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInvoiceVerifyStatusResponse
    */
   async updateInvoiceVerifyStatusWithOptions(request: UpdateInvoiceVerifyStatusRequest, headers: UpdateInvoiceVerifyStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceVerifyStatusResponse> {
     Util.validateModel(request);
@@ -14664,10 +17737,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发票认证状态变更接口
-   *
-   * @param request UpdateInvoiceVerifyStatusRequest
-   * @return UpdateInvoiceVerifyStatusResponse
+   * 发票认证状态变更接口
+   * 
+   * @param request - UpdateInvoiceVerifyStatusRequest
+   * @returns UpdateInvoiceVerifyStatusResponse
    */
   async updateInvoiceVerifyStatus(request: UpdateInvoiceVerifyStatusRequest): Promise<UpdateInvoiceVerifyStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14676,12 +17749,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新发票生成凭证状态
-   *
-   * @param request UpdateInvoiceVoucherStatusRequest
-   * @param headers UpdateInvoiceVoucherStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInvoiceVoucherStatusResponse
+   * 更新发票生成凭证状态
+   * 
+   * @param request - UpdateInvoiceVoucherStatusRequest
+   * @param headers - UpdateInvoiceVoucherStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInvoiceVoucherStatusResponse
    */
   async updateInvoiceVoucherStatusWithOptions(request: UpdateInvoiceVoucherStatusRequest, headers: UpdateInvoiceVoucherStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceVoucherStatusResponse> {
     Util.validateModel(request);
@@ -14738,10 +17811,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新发票生成凭证状态
-   *
-   * @param request UpdateInvoiceVoucherStatusRequest
-   * @return UpdateInvoiceVoucherStatusResponse
+   * 更新发票生成凭证状态
+   * 
+   * @param request - UpdateInvoiceVoucherStatusRequest
+   * @returns UpdateInvoiceVoucherStatusResponse
    */
   async updateInvoiceVoucherStatus(request: UpdateInvoiceVoucherStatusRequest): Promise<UpdateInvoiceVoucherStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14750,12 +17823,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新智能财务单据
-   *
-   * @param request UpdateReceiptRequest
-   * @param headers UpdateReceiptHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateReceiptResponse
+   * 更新智能财务单据
+   * 
+   * @param request - UpdateReceiptRequest
+   * @param headers - UpdateReceiptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateReceiptResponse
    */
   async updateReceiptWithOptions(request: UpdateReceiptRequest, headers: UpdateReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateReceiptResponse> {
     Util.validateModel(request);
@@ -14792,10 +17865,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新智能财务单据
-   *
-   * @param request UpdateReceiptRequest
-   * @return UpdateReceiptResponse
+   * 更新智能财务单据
+   * 
+   * @param request - UpdateReceiptRequest
+   * @returns UpdateReceiptResponse
    */
   async updateReceipt(request: UpdateReceiptRequest): Promise<UpdateReceiptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14804,12 +17877,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新智能财务审批单的凭证状态
-   *
-   * @param request UpdateReceiptVoucherStatusRequest
-   * @param headers UpdateReceiptVoucherStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateReceiptVoucherStatusResponse
+   * 更新智能财务审批单的凭证状态
+   * 
+   * @param request - UpdateReceiptVoucherStatusRequest
+   * @param headers - UpdateReceiptVoucherStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateReceiptVoucherStatusResponse
    */
   async updateReceiptVoucherStatusWithOptions(request: UpdateReceiptVoucherStatusRequest, headers: UpdateReceiptVoucherStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateReceiptVoucherStatusResponse> {
     Util.validateModel(request);
@@ -14870,10 +17943,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新智能财务审批单的凭证状态
-   *
-   * @param request UpdateReceiptVoucherStatusRequest
-   * @return UpdateReceiptVoucherStatusResponse
+   * 更新智能财务审批单的凭证状态
+   * 
+   * @param request - UpdateReceiptVoucherStatusRequest
+   * @returns UpdateReceiptVoucherStatusResponse
    */
   async updateReceiptVoucherStatus(request: UpdateReceiptVoucherStatusRequest): Promise<UpdateReceiptVoucherStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });

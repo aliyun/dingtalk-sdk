@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -37,9 +35,30 @@ export class PediaWordsAddRequest extends $tea.Model {
   picList?: PediaWordsAddRequestPicList[];
   relatedDoc?: PediaWordsAddRequestRelatedDoc[];
   relatedLink?: PediaWordsAddRequestRelatedLink[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 23231231123
+   */
   userId?: string;
   wordAlias?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 词条名称
+   */
   wordName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 释义
+   */
   wordParaphrase?: string;
   static names(): { [key: string]: string } {
     return {
@@ -76,6 +95,10 @@ export class PediaWordsAddRequest extends $tea.Model {
 
 export class PediaWordsAddResponseBody extends $tea.Model {
   success?: boolean;
+  /**
+   * @example
+   * 232432
+   */
   uuid?: number;
   static names(): { [key: string]: string } {
     return {
@@ -144,11 +167,44 @@ export class PediaWordsApproveHeaders extends $tea.Model {
 }
 
 export class PediaWordsApproveRequest extends $tea.Model {
+  /**
+   * @example
+   * 拒绝
+   */
   approveReason?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   approveStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   imHighLight?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   simHighLight?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 232432
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1213132
+   */
   uuid?: number;
   static names(): { [key: string]: string } {
     return {
@@ -244,7 +300,21 @@ export class PediaWordsDeleteHeaders extends $tea.Model {
 }
 
 export class PediaWordsDeleteRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2123132
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 212112
+   */
   uuid?: number;
   static names(): { [key: string]: string } {
     return {
@@ -267,6 +337,10 @@ export class PediaWordsDeleteRequest extends $tea.Model {
 
 export class PediaWordsDeleteResponseBody extends $tea.Model {
   success?: boolean;
+  /**
+   * @example
+   * 123456789
+   */
   uuid?: number;
   static names(): { [key: string]: string } {
     return {
@@ -335,7 +409,21 @@ export class PediaWordsQueryHeaders extends $tea.Model {
 }
 
 export class PediaWordsQueryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 212121
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 211121
+   */
   uuid?: number;
   static names(): { [key: string]: string } {
     return {
@@ -426,10 +514,45 @@ export class PediaWordsSearchHeaders extends $tea.Model {
 }
 
 export class PediaWordsSearchRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 121213213
+   */
   userId?: string;
+  /**
+   * @example
+   * 企业百科
+   * 
+   * **if can be null:**
+   * false
+   */
   wordName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -532,10 +655,35 @@ export class PediaWordsUpdateRequest extends $tea.Model {
   picList?: PediaWordsUpdateRequestPicList[];
   relatedDoc?: PediaWordsUpdateRequestRelatedDoc[];
   relatedLink?: PediaWordsUpdateRequestRelatedLink[];
+  /**
+   * @example
+   * 312123213
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2131321
+   */
   uuid?: number;
   wordAlias?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 词条名称
+   */
   wordName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 释义
+   */
   wordParaphrase?: string;
   static names(): { [key: string]: string } {
     return {
@@ -576,6 +724,10 @@ export class PediaWordsUpdateRequest extends $tea.Model {
 
 export class PediaWordsUpdateResponseBody extends $tea.Model {
   success?: boolean;
+  /**
+   * @example
+   * 3213213213
+   */
   uuid?: number;
   static names(): { [key: string]: string } {
     return {
@@ -622,8 +774,20 @@ export class PediaWordsUpdateResponse extends $tea.Model {
 }
 
 export class PediaWordsAddRequestContactList extends $tea.Model {
+  /**
+   * @example
+   * @123243
+   */
   avatarMediaId?: string;
+  /**
+   * @example
+   * 名称
+   */
   nickName?: string;
+  /**
+   * @example
+   * 1231243213
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -647,6 +811,10 @@ export class PediaWordsAddRequestContactList extends $tea.Model {
 }
 
 export class PediaWordsAddRequestPicList extends $tea.Model {
+  /**
+   * @example
+   * https://23987874.com
+   */
   mediaIdUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -666,8 +834,20 @@ export class PediaWordsAddRequestPicList extends $tea.Model {
 }
 
 export class PediaWordsAddRequestRelatedDoc extends $tea.Model {
+  /**
+   * @example
+   * https://123456.com
+   */
   link?: string;
+  /**
+   * @example
+   * 相关文档
+   */
   name?: string;
+  /**
+   * @example
+   * adoc
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -691,7 +871,15 @@ export class PediaWordsAddRequestRelatedDoc extends $tea.Model {
 }
 
 export class PediaWordsAddRequestRelatedLink extends $tea.Model {
+  /**
+   * @example
+   * http://1233435.com
+   */
   link?: string;
+  /**
+   * @example
+   * 相关链接
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -713,9 +901,25 @@ export class PediaWordsAddRequestRelatedLink extends $tea.Model {
 }
 
 export class PediaWordsQueryResponseBodyDataAppLink extends $tea.Model {
+  /**
+   * @example
+   * 相关应用
+   */
   appName?: string;
+  /**
+   * @example
+   * htttps://1234567
+   */
   iconLink?: string;
+  /**
+   * @example
+   * http://123344.com
+   */
   pcLink?: string;
+  /**
+   * @example
+   * https://12334.com
+   */
   phoneLink?: string;
   static names(): { [key: string]: string } {
     return {
@@ -741,8 +945,20 @@ export class PediaWordsQueryResponseBodyDataAppLink extends $tea.Model {
 }
 
 export class PediaWordsQueryResponseBodyDataContactList extends $tea.Model {
+  /**
+   * @example
+   * @dasdasd
+   */
   avatarMediaId?: string;
+  /**
+   * @example
+   * 相关联系人
+   */
   nickName?: string;
+  /**
+   * @example
+   * 12321231
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -766,6 +982,10 @@ export class PediaWordsQueryResponseBodyDataContactList extends $tea.Model {
 }
 
 export class PediaWordsQueryResponseBodyDataPicList extends $tea.Model {
+  /**
+   * @example
+   * http://123455.com
+   */
   mediaIdUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -785,8 +1005,20 @@ export class PediaWordsQueryResponseBodyDataPicList extends $tea.Model {
 }
 
 export class PediaWordsQueryResponseBodyDataRelatedDoc extends $tea.Model {
+  /**
+   * @example
+   * http://123456.com
+   */
   link?: string;
+  /**
+   * @example
+   * 相关文档
+   */
   name?: string;
+  /**
+   * @example
+   * adoc
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -810,7 +1042,15 @@ export class PediaWordsQueryResponseBodyDataRelatedDoc extends $tea.Model {
 }
 
 export class PediaWordsQueryResponseBodyDataRelatedLink extends $tea.Model {
+  /**
+   * @example
+   * http://123343.com
+   */
   link?: string;
+  /**
+   * @example
+   * 相关链接
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -833,26 +1073,70 @@ export class PediaWordsQueryResponseBodyDataRelatedLink extends $tea.Model {
 
 export class PediaWordsQueryResponseBodyData extends $tea.Model {
   appLink?: PediaWordsQueryResponseBodyDataAppLink[];
+  /**
+   * @example
+   * 审核者
+   */
   approveName?: string;
   contactList?: PediaWordsQueryResponseBodyDataContactList[];
   contacts?: string[];
+  /**
+   * @example
+   * 创建者
+   */
   creatorName?: string;
+  /**
+   * @example
+   * 31312312
+   */
   gmtCreate?: number;
+  /**
+   * @example
+   * 321312312
+   */
   gmtModify?: number;
   highLightWordAlias?: string[];
   imHighLight?: boolean;
+  /**
+   * @example
+   * 12345678
+   */
   parentUuid?: number;
   picList?: PediaWordsQueryResponseBodyDataPicList[];
   relatedDoc?: PediaWordsQueryResponseBodyDataRelatedDoc[];
   relatedLink?: PediaWordsQueryResponseBodyDataRelatedLink[];
   simHighLight?: boolean;
+  /**
+   * @example
+   * 剔除富文本释义
+   */
   simpleWordParaphrase?: string;
   tagsList?: string[];
+  /**
+   * @example
+   * 更新者
+   */
   updaterName?: string;
+  /**
+   * @example
+   * 213123123
+   */
   userId?: string;
+  /**
+   * @example
+   * 123123121
+   */
   uuid?: number;
   wordAlias?: string[];
+  /**
+   * @example
+   * 词条名称
+   */
   wordName?: string;
+  /**
+   * @example
+   * 释义
+   */
   wordParaphrase?: string;
   static names(): { [key: string]: string } {
     return {
@@ -914,9 +1198,25 @@ export class PediaWordsQueryResponseBodyData extends $tea.Model {
 }
 
 export class PediaWordsSearchResponseBodyDataAppLink extends $tea.Model {
+  /**
+   * @example
+   * 应用名
+   */
   appName?: string;
+  /**
+   * @example
+   * https://123434.com
+   */
   iconLink?: string;
+  /**
+   * @example
+   * http://123.com
+   */
   pcLink?: string;
+  /**
+   * @example
+   * http://1244.com
+   */
   phoneLink?: string;
   static names(): { [key: string]: string } {
     return {
@@ -942,8 +1242,20 @@ export class PediaWordsSearchResponseBodyDataAppLink extends $tea.Model {
 }
 
 export class PediaWordsSearchResponseBodyDataContactList extends $tea.Model {
+  /**
+   * @example
+   * @12321312ds
+   */
   avatarMediaId?: string;
+  /**
+   * @example
+   * 员工名称
+   */
   nickName?: string;
+  /**
+   * @example
+   * 1232343
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -967,6 +1279,10 @@ export class PediaWordsSearchResponseBodyDataContactList extends $tea.Model {
 }
 
 export class PediaWordsSearchResponseBodyDataPicList extends $tea.Model {
+  /**
+   * @example
+   * https://1234.com
+   */
   mediaIdUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -986,8 +1302,20 @@ export class PediaWordsSearchResponseBodyDataPicList extends $tea.Model {
 }
 
 export class PediaWordsSearchResponseBodyDataRelatedDoc extends $tea.Model {
+  /**
+   * @example
+   * https://12324.com
+   */
   link?: string;
+  /**
+   * @example
+   * 文档名
+   */
   name?: string;
+  /**
+   * @example
+   * adoc
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1011,8 +1339,20 @@ export class PediaWordsSearchResponseBodyDataRelatedDoc extends $tea.Model {
 }
 
 export class PediaWordsSearchResponseBodyDataRelatedLink extends $tea.Model {
+  /**
+   * @example
+   * https://123112.com
+   */
   link?: string;
+  /**
+   * @example
+   * 文档名字
+   */
   name?: string;
+  /**
+   * @example
+   * 空值
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1037,9 +1377,17 @@ export class PediaWordsSearchResponseBodyDataRelatedLink extends $tea.Model {
 
 export class PediaWordsSearchResponseBodyData extends $tea.Model {
   appLink?: PediaWordsSearchResponseBodyDataAppLink[];
+  /**
+   * @example
+   * 审核人钉钉名称
+   */
   approveName?: string;
   contactList?: PediaWordsSearchResponseBodyDataContactList[];
   contacts?: string[];
+  /**
+   * @example
+   * 创建者
+   */
   creatorName?: string;
   gmtCreate?: number;
   gmtModify?: number;
@@ -1050,13 +1398,33 @@ export class PediaWordsSearchResponseBodyData extends $tea.Model {
   relatedDoc?: PediaWordsSearchResponseBodyDataRelatedDoc[];
   relatedLink?: PediaWordsSearchResponseBodyDataRelatedLink[];
   simHighLight?: boolean;
+  /**
+   * @example
+   * 剔除了富文本格式后的释义信息
+   */
   simpleWordParaphrase?: string;
   tagsList?: string[];
+  /**
+   * @example
+   * 修改人钉钉名称
+   */
   updaterName?: string;
+  /**
+   * @example
+   * 312312312
+   */
   userId?: string;
   uuid?: number;
   wordAlias?: string[];
+  /**
+   * @example
+   * 测试词条
+   */
   wordName?: string;
+  /**
+   * @example
+   * 释义信息
+   */
   wordParaphrase?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1118,9 +1486,25 @@ export class PediaWordsSearchResponseBodyData extends $tea.Model {
 }
 
 export class PediaWordsUpdateRequestAppLink extends $tea.Model {
+  /**
+   * @example
+   * 应用名称
+   */
   appName?: string;
+  /**
+   * @example
+   * https://123243435.com
+   */
   iconLink?: string;
+  /**
+   * @example
+   * http://213435.com
+   */
   pcLink?: string;
+  /**
+   * @example
+   * htttps://12345.com
+   */
   phoneLink?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1146,8 +1530,20 @@ export class PediaWordsUpdateRequestAppLink extends $tea.Model {
 }
 
 export class PediaWordsUpdateRequestContactList extends $tea.Model {
+  /**
+   * @example
+   * @12312312
+   */
   avatarMediaId?: string;
+  /**
+   * @example
+   * 名称
+   */
   nickName?: string;
+  /**
+   * @example
+   * 12131312
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1171,6 +1567,10 @@ export class PediaWordsUpdateRequestContactList extends $tea.Model {
 }
 
 export class PediaWordsUpdateRequestPicList extends $tea.Model {
+  /**
+   * @example
+   * https://1234554.com
+   */
   mediaIdUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1190,8 +1590,20 @@ export class PediaWordsUpdateRequestPicList extends $tea.Model {
 }
 
 export class PediaWordsUpdateRequestRelatedDoc extends $tea.Model {
+  /**
+   * @example
+   * https://213567.com
+   */
   link?: string;
+  /**
+   * @example
+   * 相关文档
+   */
   name?: string;
+  /**
+   * @example
+   * adoc
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1215,7 +1627,15 @@ export class PediaWordsUpdateRequestRelatedDoc extends $tea.Model {
 }
 
 export class PediaWordsUpdateRequestRelatedLink extends $tea.Model {
+  /**
+   * @example
+   * https://123466.com
+   */
   link?: string;
+  /**
+   * @example
+   * 相关链接
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1238,12 +1658,11 @@ export class PediaWordsUpdateRequestRelatedLink extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1253,12 +1672,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 企业百科增加当前企业词条信息
-   *
-   * @param request PediaWordsAddRequest
-   * @param headers PediaWordsAddHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PediaWordsAddResponse
+   * 企业百科增加当前企业词条信息
+   * 
+   * @param request - PediaWordsAddRequest
+   * @param headers - PediaWordsAddHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PediaWordsAddResponse
    */
   async pediaWordsAddWithOptions(request: PediaWordsAddRequest, headers: PediaWordsAddHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsAddResponse> {
     Util.validateModel(request);
@@ -1327,10 +1746,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 企业百科增加当前企业词条信息
-   *
-   * @param request PediaWordsAddRequest
-   * @return PediaWordsAddResponse
+   * 企业百科增加当前企业词条信息
+   * 
+   * @param request - PediaWordsAddRequest
+   * @returns PediaWordsAddResponse
    */
   async pediaWordsAdd(request: PediaWordsAddRequest): Promise<PediaWordsAddResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1339,12 +1758,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 企业百科针对待审核词条进行审核
-   *
-   * @param request PediaWordsApproveRequest
-   * @param headers PediaWordsApproveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PediaWordsApproveResponse
+   * 企业百科针对待审核词条进行审核
+   * 
+   * @param request - PediaWordsApproveRequest
+   * @param headers - PediaWordsApproveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PediaWordsApproveResponse
    */
   async pediaWordsApproveWithOptions(request: PediaWordsApproveRequest, headers: PediaWordsApproveHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsApproveResponse> {
     Util.validateModel(request);
@@ -1401,10 +1820,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 企业百科针对待审核词条进行审核
-   *
-   * @param request PediaWordsApproveRequest
-   * @return PediaWordsApproveResponse
+   * 企业百科针对待审核词条进行审核
+   * 
+   * @param request - PediaWordsApproveRequest
+   * @returns PediaWordsApproveResponse
    */
   async pediaWordsApprove(request: PediaWordsApproveRequest): Promise<PediaWordsApproveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1413,12 +1832,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 企业百科针对uuid删除当前词条
-   *
-   * @param request PediaWordsDeleteRequest
-   * @param headers PediaWordsDeleteHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PediaWordsDeleteResponse
+   * 企业百科针对uuid删除当前词条
+   * 
+   * @param request - PediaWordsDeleteRequest
+   * @param headers - PediaWordsDeleteHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PediaWordsDeleteResponse
    */
   async pediaWordsDeleteWithOptions(request: PediaWordsDeleteRequest, headers: PediaWordsDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsDeleteResponse> {
     Util.validateModel(request);
@@ -1459,10 +1878,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 企业百科针对uuid删除当前词条
-   *
-   * @param request PediaWordsDeleteRequest
-   * @return PediaWordsDeleteResponse
+   * 企业百科针对uuid删除当前词条
+   * 
+   * @param request - PediaWordsDeleteRequest
+   * @returns PediaWordsDeleteResponse
    */
   async pediaWordsDelete(request: PediaWordsDeleteRequest): Promise<PediaWordsDeleteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1471,12 +1890,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据词条主键ID查询当前词条详情
-   *
-   * @param request PediaWordsQueryRequest
-   * @param headers PediaWordsQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PediaWordsQueryResponse
+   * 根据词条主键ID查询当前词条详情
+   * 
+   * @param request - PediaWordsQueryRequest
+   * @param headers - PediaWordsQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PediaWordsQueryResponse
    */
   async pediaWordsQueryWithOptions(request: PediaWordsQueryRequest, headers: PediaWordsQueryHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsQueryResponse> {
     Util.validateModel(request);
@@ -1517,10 +1936,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据词条主键ID查询当前词条详情
-   *
-   * @param request PediaWordsQueryRequest
-   * @return PediaWordsQueryResponse
+   * 根据词条主键ID查询当前词条详情
+   * 
+   * @param request - PediaWordsQueryRequest
+   * @returns PediaWordsQueryResponse
    */
   async pediaWordsQuery(request: PediaWordsQueryRequest): Promise<PediaWordsQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1529,12 +1948,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取企业词条信息
-   *
-   * @param request PediaWordsSearchRequest
-   * @param headers PediaWordsSearchHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PediaWordsSearchResponse
+   * 分页获取企业词条信息
+   * 
+   * @param request - PediaWordsSearchRequest
+   * @param headers - PediaWordsSearchHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PediaWordsSearchResponse
    */
   async pediaWordsSearchWithOptions(request: PediaWordsSearchRequest, headers: PediaWordsSearchHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsSearchResponse> {
     Util.validateModel(request);
@@ -1587,10 +2006,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取企业词条信息
-   *
-   * @param request PediaWordsSearchRequest
-   * @return PediaWordsSearchResponse
+   * 分页获取企业词条信息
+   * 
+   * @param request - PediaWordsSearchRequest
+   * @returns PediaWordsSearchResponse
    */
   async pediaWordsSearch(request: PediaWordsSearchRequest): Promise<PediaWordsSearchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1599,12 +2018,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 企业百科对当前已经生效词条进行编辑
-   *
-   * @param request PediaWordsUpdateRequest
-   * @param headers PediaWordsUpdateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PediaWordsUpdateResponse
+   * 企业百科对当前已经生效词条进行编辑
+   * 
+   * @param request - PediaWordsUpdateRequest
+   * @param headers - PediaWordsUpdateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PediaWordsUpdateResponse
    */
   async pediaWordsUpdateWithOptions(request: PediaWordsUpdateRequest, headers: PediaWordsUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsUpdateResponse> {
     Util.validateModel(request);
@@ -1681,10 +2100,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 企业百科对当前已经生效词条进行编辑
-   *
-   * @param request PediaWordsUpdateRequest
-   * @return PediaWordsUpdateResponse
+   * 企业百科对当前已经生效词条进行编辑
+   * 
+   * @param request - PediaWordsUpdateRequest
+   * @returns PediaWordsUpdateResponse
    */
   async pediaWordsUpdate(request: PediaWordsUpdateRequest): Promise<PediaWordsUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });

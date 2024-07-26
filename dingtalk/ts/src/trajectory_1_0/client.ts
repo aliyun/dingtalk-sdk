@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,8 +30,29 @@ export class QueryAppActiveUsersHeaders extends $tea.Model {
 }
 
 export class QueryAppActiveUsersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   needPositionInfo?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -57,9 +76,31 @@ export class QueryAppActiveUsersRequest extends $tea.Model {
 }
 
 export class QueryAppActiveUsersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryAppActiveUsersResponseBodyList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 23153
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -132,6 +173,10 @@ export class QueryCollectingTraceTaskHeaders extends $tea.Model {
 }
 
 export class QueryCollectingTraceTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -151,6 +196,10 @@ export class QueryCollectingTraceTaskRequest extends $tea.Model {
 }
 
 export class QueryCollectingTraceTaskResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryCollectingTraceTaskResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -218,8 +267,23 @@ export class QueryPageTraceDataHeaders extends $tea.Model {
 
 export class QueryPageTraceDataRequest extends $tea.Model {
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   staffId?: string;
   startTime?: number;
   traceId?: string;
@@ -251,8 +315,26 @@ export class QueryPageTraceDataRequest extends $tea.Model {
 }
 
 export class QueryPageTraceDataResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryPageTraceDataResponseBodyList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -301,11 +383,53 @@ export class QueryPageTraceDataResponse extends $tea.Model {
 }
 
 export class QueryAppActiveUsersResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * kxm9dhfs01jd98cuv
+   */
   appTraceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123.123
+   */
   latitude?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123.123
+   */
   longitude?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1619341954123
+   */
   reportTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1619341754123
+   */
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * I0912384771
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -335,12 +459,46 @@ export class QueryAppActiveUsersResponseBodyList extends $tea.Model {
 }
 
 export class QueryCollectingTraceTaskResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ffsfsdf
+   */
   appTraceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   geoCollectPeriod?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   geoReportPeriod?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   geoReportStatus?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   reportEndTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   reportStartTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * I01231231ads1
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -372,7 +530,15 @@ export class QueryCollectingTraceTaskResponseBodyList extends $tea.Model {
 }
 
 export class QueryPageTraceDataResponseBodyListCoordinates extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   latitude?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   longitude?: number;
   static names(): { [key: string]: string } {
     return {
@@ -394,8 +560,20 @@ export class QueryPageTraceDataResponseBodyListCoordinates extends $tea.Model {
 }
 
 export class QueryPageTraceDataResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   coordinates?: QueryPageTraceDataResponseBodyListCoordinates;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtLocation?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtUpload?: number;
   static names(): { [key: string]: string } {
     return {
@@ -420,12 +598,11 @@ export class QueryPageTraceDataResponseBodyList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -435,12 +612,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 查询APP当前开启轨迹采集的用户
-   *
-   * @param request QueryAppActiveUsersRequest
-   * @param headers QueryAppActiveUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryAppActiveUsersResponse
+   * 查询APP当前开启轨迹采集的用户
+   * 
+   * @param request - QueryAppActiveUsersRequest
+   * @param headers - QueryAppActiveUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryAppActiveUsersResponse
    */
   async queryAppActiveUsersWithOptions(request: QueryAppActiveUsersRequest, headers: QueryAppActiveUsersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAppActiveUsersResponse> {
     Util.validateModel(request);
@@ -485,10 +662,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询APP当前开启轨迹采集的用户
-   *
-   * @param request QueryAppActiveUsersRequest
-   * @return QueryAppActiveUsersResponse
+   * 查询APP当前开启轨迹采集的用户
+   * 
+   * @param request - QueryAppActiveUsersRequest
+   * @returns QueryAppActiveUsersResponse
    */
   async queryAppActiveUsers(request: QueryAppActiveUsersRequest): Promise<QueryAppActiveUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -497,12 +674,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询应用采集中的轨迹任务
-   *
-   * @param request QueryCollectingTraceTaskRequest
-   * @param headers QueryCollectingTraceTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCollectingTraceTaskResponse
+   * 查询应用采集中的轨迹任务
+   * 
+   * @param request - QueryCollectingTraceTaskRequest
+   * @param headers - QueryCollectingTraceTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCollectingTraceTaskResponse
    */
   async queryCollectingTraceTaskWithOptions(request: QueryCollectingTraceTaskRequest, headers: QueryCollectingTraceTaskHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCollectingTraceTaskResponse> {
     Util.validateModel(request);
@@ -539,10 +716,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询应用采集中的轨迹任务
-   *
-   * @param request QueryCollectingTraceTaskRequest
-   * @return QueryCollectingTraceTaskResponse
+   * 查询应用采集中的轨迹任务
+   * 
+   * @param request - QueryCollectingTraceTaskRequest
+   * @returns QueryCollectingTraceTaskResponse
    */
   async queryCollectingTraceTask(request: QueryCollectingTraceTaskRequest): Promise<QueryCollectingTraceTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -551,12 +728,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询轨迹数据
-   *
-   * @param request QueryPageTraceDataRequest
-   * @param headers QueryPageTraceDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryPageTraceDataResponse
+   * 查询轨迹数据
+   * 
+   * @param request - QueryPageTraceDataRequest
+   * @param headers - QueryPageTraceDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryPageTraceDataResponse
    */
   async queryPageTraceDataWithOptions(request: QueryPageTraceDataRequest, headers: QueryPageTraceDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPageTraceDataResponse> {
     Util.validateModel(request);
@@ -613,10 +790,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询轨迹数据
-   *
-   * @param request QueryPageTraceDataRequest
-   * @return QueryPageTraceDataResponse
+   * 查询轨迹数据
+   * 
+   * @param request - QueryPageTraceDataRequest
+   * @returns QueryPageTraceDataResponse
    */
   async queryPageTraceData(request: QueryPageTraceDataRequest): Promise<QueryPageTraceDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });

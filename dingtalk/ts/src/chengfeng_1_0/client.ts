@@ -1,28 +1,124 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class CfEmploymentRecordResp extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 666
+   */
   deptCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 开发部
+   */
   deptName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   employeeStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1652198400000
+   */
   endDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   isLatestRecord?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * P1
+   */
   jobLevelName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 23
+   */
   jobPositionCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Java开发工程师
+   */
   jobPositionName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 343
+   */
   jobPostCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 技术岗位
+   */
   jobPostName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   serviceStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 5
+   */
   serviceType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1638892800000
+   */
   startDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   workNumbers?: string;
   static names(): { [key: string]: string } {
     return {
@@ -68,9 +164,37 @@ export class CfEmploymentRecordResp extends $tea.Model {
 }
 
 export class CfJobLevelResp extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   level?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * P1
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1639065600000
+   */
   startDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1652198400000
+   */
   stopDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -96,7 +220,21 @@ export class CfJobLevelResp extends $tea.Model {
 }
 
 export class CfJobPositionResp extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   jobPositionCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Java开发
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -118,7 +256,21 @@ export class CfJobPositionResp extends $tea.Model {
 }
 
 export class CfJobPostResp extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234
+   */
   jobPostCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 技术岗
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -140,11 +292,53 @@ export class CfJobPostResp extends $tea.Model {
 }
 
 export class CfOrgResp extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 01
+   */
   deptCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 一级部门
+   */
   deptName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   level?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1/01
+   */
   organizationCodePath?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 公司/一级部门
+   */
   organizationPath?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   parentDeptCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -174,12 +368,61 @@ export class CfOrgResp extends $tea.Model {
 }
 
 export class CfStaffResp extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   deptCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 开发部
+   */
   deptName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 17*******@qq.com
+   */
   email?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 151********
+   */
   mobile?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 松柏
+   */
   nickName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   workNumbers?: string;
   static names(): { [key: string]: string } {
     return {
@@ -211,17 +454,101 @@ export class CfStaffResp extends $tea.Model {
 }
 
 export class OpenAnalyzeDataDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   deptCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 22
+   */
   noAlignObjectiveCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33
+   */
   noKeyActionCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33.2
+   */
   objectiveAlignRate?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   objectiveNoSetCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 11
+   */
   objectiveRiskCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33.3
+   */
   objectiveSetRate?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 44
+   */
   onlyOneKeyResultCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33
+   */
   onlyOneObjectiveCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 22.3
+   */
   progressUpdateRateLast15Days?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33.11
+   */
   progressUpdateRateLast30Days?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33.4
+   */
   progressUpdateRateLast7Days?: number;
   static names(): { [key: string]: string } {
     return {
@@ -263,11 +590,50 @@ export class OpenAnalyzeDataDTO extends $tea.Model {
 }
 
 export class OpenKeyResultDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33
+   */
   progress?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 完成数据迁移
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   titleMentions?: TitleMention[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -297,13 +663,48 @@ export class OpenKeyResultDTO extends $tea.Model {
 }
 
 export class OpenObjectiveDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   executor?: OpenUserDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   keyResults?: OpenKeyResultDTO[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   period?: OpenPeriodDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   progress?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   teams?: OpenTeamDTO[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 提升系统性能
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -337,10 +738,45 @@ export class OpenObjectiveDTO extends $tea.Model {
 }
 
 export class OpenPeriodDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 311212121
+   */
   endDate?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2023
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FY_S1
+   */
   periodBizType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 8383838383
+   */
   startDate?: number;
   static names(): { [key: string]: string } {
     return {
@@ -368,11 +804,47 @@ export class OpenPeriodDTO extends $tea.Model {
 }
 
 export class OpenProgressDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 48383883
+   */
   created?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   creator?: OpenUserDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 我的目标
+   */
   htmlContent?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 11
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   modifier?: OpenUserDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 48383883
+   */
   updated?: number;
   static names(): { [key: string]: string } {
     return {
@@ -402,8 +874,29 @@ export class OpenProgressDTO extends $tea.Model {
 }
 
 export class OpenTeamDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 销售部
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 30211
+   */
   openId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -427,8 +920,29 @@ export class OpenTeamDTO extends $tea.Model {
 }
 
 export class OpenUserDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 王五
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 015310183065939140
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -452,14 +966,77 @@ export class OpenUserDTO extends $tea.Model {
 }
 
 export class SlsLogResp extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 新增
+   */
   action?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * HolidayChangeRecord
+   */
   entity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0ba35cd517156543461401313d12b4|null
+   */
   header?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 提交申请
+   */
   info?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 维同
+   */
   operator?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 橙奕科技
+   */
   tenant?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2
+   */
   tenantId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1638892800000
+   */
   time?: number;
   static names(): { [key: string]: string } {
     return {
@@ -495,8 +1072,26 @@ export class SlsLogResp extends $tea.Model {
 }
 
 export class TitleMention extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 22
+   */
   length?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   offset?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   user?: OpenUserDTO;
   static names(): { [key: string]: string } {
     return {
@@ -543,6 +1138,10 @@ export class GetAllJobLevelHeaders extends $tea.Model {
 
 export class GetAllJobLevelResponseBody extends $tea.Model {
   content?: CfJobLevelResp[];
+  /**
+   * @example
+   * 请求ID
+   */
   requestId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -612,6 +1211,10 @@ export class GetAllJobPositionHeaders extends $tea.Model {
 
 export class GetAllJobPositionResponseBody extends $tea.Model {
   content?: CfJobPositionResp[];
+  /**
+   * @example
+   * 123
+   */
   requestId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -680,7 +1283,15 @@ export class GetAllJobPostHeaders extends $tea.Model {
 }
 
 export class GetAllJobPostResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: CfJobPostResp[];
+  /**
+   * @example
+   * 1
+   */
   requestId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -750,6 +1361,13 @@ export class GetAnalyzeDataHeaders extends $tea.Model {
 
 export class GetAnalyzeDataRequest extends $tea.Model {
   periodIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 32222
+   */
   deptId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -843,6 +1461,16 @@ export class GetChildOrgListHeaders extends $tea.Model {
 }
 
 export class GetChildOrgListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   * 
+   * **if can be null:**
+   * false
+   */
   deptCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -931,6 +1559,10 @@ export class GetEmployeeInfoByWorkNoHeaders extends $tea.Model {
 }
 
 export class GetEmployeeInfoByWorkNoRequest extends $tea.Model {
+  /**
+   * @example
+   * 305932
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -951,6 +1583,13 @@ export class GetEmployeeInfoByWorkNoRequest extends $tea.Model {
 
 export class GetEmployeeInfoByWorkNoResponseBody extends $tea.Model {
   content?: GetEmployeeInfoByWorkNoResponseBodyContent;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1088,6 +1727,13 @@ export class GetJobPositionHeaders extends $tea.Model {
 }
 
 export class GetJobPositionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   jobPositionCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1176,6 +1822,13 @@ export class GetJobPostHeaders extends $tea.Model {
 }
 
 export class GetJobPostRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234
+   */
   jobPostCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1264,6 +1917,13 @@ export class GetOrgInfoHeaders extends $tea.Model {
 }
 
 export class GetOrgInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   deptCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1352,6 +2012,13 @@ export class GetStaffInfoByWorkNoHeaders extends $tea.Model {
 }
 
 export class GetStaffInfoByWorkNoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   workNumbers?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1440,10 +2107,36 @@ export class GetStaffPageQueryHeaders extends $tea.Model {
 }
 
 export class GetStaffPageQueryRequest extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   deptCode?: string;
+  /**
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 123456
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1540,7 +2233,15 @@ export class GetUserHeaders extends $tea.Model {
 }
 
 export class GetUserRequest extends $tea.Model {
+  /**
+   * @example
+   * 3adeaddeddddd
+   */
   okrUserId?: string;
+  /**
+   * @example
+   * 0344333
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1706,6 +2407,10 @@ export class ListObjectiveByIdsHeaders extends $tea.Model {
 }
 
 export class ListObjectiveByIdsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   objectiveIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1726,7 +2431,15 @@ export class ListObjectiveByIdsRequest extends $tea.Model {
 
 export class ListObjectiveByIdsResponseBody extends $tea.Model {
   content?: OpenObjectiveDTO[];
+  /**
+   * @example
+   * 1
+   */
   requestId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1799,6 +2512,10 @@ export class ListObjectiveByUserHeaders extends $tea.Model {
 export class ListObjectiveByUserRequest extends $tea.Model {
   pageNumber?: number;
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1824,6 +2541,10 @@ export class ListObjectiveByUserRequest extends $tea.Model {
 export class ListObjectiveByUserResponseBody extends $tea.Model {
   content?: ListObjectiveByUserResponseBodyContent;
   requestId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1894,6 +2615,10 @@ export class ListProgressByIdsHeaders extends $tea.Model {
 }
 
 export class ListProgressByIdsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   progressIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1985,9 +2710,30 @@ export class ListSlsLogHeaders extends $tea.Model {
 }
 
 export class ListSlsLogRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * it-hr
+   */
   appCode?: string;
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   startTime?: number;
   static names(): { [key: string]: string } {
@@ -2085,8 +2831,23 @@ export class PageListObjectiveProgressHeaders extends $tea.Model {
 }
 
 export class PageListObjectiveProgressRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   objectiveId?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2182,7 +2943,15 @@ export class TransferUserObjectiveHeaders extends $tea.Model {
 }
 
 export class TransferUserObjectiveRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   objectiveId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2204,8 +2973,20 @@ export class TransferUserObjectiveRequest extends $tea.Model {
 }
 
 export class TransferUserObjectiveResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   content?: boolean;
+  /**
+   * @example
+   * 1111
+   */
   requestId?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2254,7 +3035,15 @@ export class TransferUserObjectiveResponse extends $tea.Model {
 }
 
 export class GetEmployeeInfoByWorkNoResponseBodyContent extends $tea.Model {
+  /**
+   * @example
+   * 姜小白
+   */
   name?: string;
+  /**
+   * @example
+   * 305932
+   */
   workNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2276,12 +3065,46 @@ export class GetEmployeeInfoByWorkNoResponseBodyContent extends $tea.Model {
 }
 
 export class GetJobPositionResponseBodyContent extends $tea.Model {
+  /**
+   * @example
+   * 1678886770065
+   */
   description?: string;
+  /**
+   * @example
+   * 1678886770065
+   */
   establishDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   jobCode?: string;
+  /**
+   * @example
+   * 有良好的技术素养
+   */
   jobRequirements?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 技术开发
+   */
   name?: string;
+  /**
+   * @example
+   * 1678886770065
+   */
   startDate?: string;
+  /**
+   * @example
+   * 1678886770065
+   */
   stopDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2313,10 +3136,30 @@ export class GetJobPositionResponseBodyContent extends $tea.Model {
 }
 
 export class GetJobPostResponseBodyContent extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   establishDate?: string;
+  /**
+   * @example
+   * 测试
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   stopDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2344,15 +3187,55 @@ export class GetJobPostResponseBodyContent extends $tea.Model {
 }
 
 export class GetOrgInfoResponseBodyContent extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   deptCode?: string;
+  /**
+   * @example
+   * 开发技术部
+   */
   deptName?: string;
+  /**
+   * @example
+   * 10
+   */
   deptNum?: string;
+  /**
+   * @example
+   * 1
+   */
   level?: string;
+  /**
+   * @example
+   * /1/123
+   */
   organizationCodePath?: string;
+  /**
+   * @example
+   * /开发技术部
+   */
   organizationPath?: string;
+  /**
+   * @example
+   * 1
+   */
   parentDeptCode?: string;
+  /**
+   * @example
+   * 开发部
+   */
   shortName?: string;
+  /**
+   * @example
+   * 1678886770065
+   */
   startDate?: string;
+  /**
+   * @example
+   * 1678886770065
+   */
   stopDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2390,19 +3273,105 @@ export class GetOrgInfoResponseBodyContent extends $tea.Model {
 }
 
 export class GetStaffInfoByWorkNoResponseBodyContent extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   deptCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 开发部
+   */
   deptName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 17********@qq.com
+   */
   email?: string;
+  /**
+   * @example
+   * 1
+   */
   employType?: string;
+  /**
+   * @example
+   * 1
+   */
   employeeStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   jobLevelName?: string;
+  /**
+   * @example
+   * 1
+   */
   jobPositionCode?: string;
+  /**
+   * @example
+   * Java开发
+   */
   jobPositionName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   jobPostCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 技术开发
+   */
   jobPostName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 151********
+   */
   mobile?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 花名
+   */
   nickName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   workNumbers?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2449,8 +3418,20 @@ export class GetStaffInfoByWorkNoResponseBodyContent extends $tea.Model {
 
 export class GetStaffPageQueryResponseBodyContent extends $tea.Model {
   data?: CfStaffResp[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2476,6 +3457,10 @@ export class GetStaffPageQueryResponseBodyContent extends $tea.Model {
 }
 
 export class ListObjectiveByUserResponseBodyContent extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   count?: number;
   objectives?: OpenObjectiveDTO[];
   static names(): { [key: string]: string } {
@@ -2555,12 +3540,11 @@ export class PageListObjectiveProgressResponseBodyContent extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2570,11 +3554,11 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 获取组织下的全部职级
-   *
-   * @param headers GetAllJobLevelHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAllJobLevelResponse
+   * 获取组织下的全部职级
+   * 
+   * @param headers - GetAllJobLevelHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAllJobLevelResponse
    */
   async getAllJobLevelWithOptions(headers: GetAllJobLevelHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobLevelResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -2604,9 +3588,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织下的全部职级
-   *
-   * @return GetAllJobLevelResponse
+   * 获取组织下的全部职级
+   * @returns GetAllJobLevelResponse
    */
   async getAllJobLevel(): Promise<GetAllJobLevelResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2615,11 +3598,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取公司全部职位
-   *
-   * @param headers GetAllJobPositionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAllJobPositionResponse
+   * 获取公司全部职位
+   * 
+   * @param headers - GetAllJobPositionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAllJobPositionResponse
    */
   async getAllJobPositionWithOptions(headers: GetAllJobPositionHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobPositionResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -2649,9 +3632,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取公司全部职位
-   *
-   * @return GetAllJobPositionResponse
+   * 获取公司全部职位
+   * @returns GetAllJobPositionResponse
    */
   async getAllJobPosition(): Promise<GetAllJobPositionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2660,11 +3642,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织下的所有职务
-   *
-   * @param headers GetAllJobPostHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAllJobPostResponse
+   * 获取组织下的所有职务
+   * 
+   * @param headers - GetAllJobPostHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAllJobPostResponse
    */
   async getAllJobPostWithOptions(headers: GetAllJobPostHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobPostResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -2694,9 +3676,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织下的所有职务
-   *
-   * @return GetAllJobPostResponse
+   * 获取组织下的所有职务
+   * @returns GetAllJobPostResponse
    */
   async getAllJobPost(): Promise<GetAllJobPostResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2705,12 +3686,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取分析运营数据
-   *
-   * @param request GetAnalyzeDataRequest
-   * @param headers GetAnalyzeDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAnalyzeDataResponse
+   * 获取分析运营数据
+   * 
+   * @param request - GetAnalyzeDataRequest
+   * @param headers - GetAnalyzeDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAnalyzeDataResponse
    */
   async getAnalyzeDataWithOptions(request: GetAnalyzeDataRequest, headers: GetAnalyzeDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetAnalyzeDataResponse> {
     Util.validateModel(request);
@@ -2753,10 +3734,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取分析运营数据
-   *
-   * @param request GetAnalyzeDataRequest
-   * @return GetAnalyzeDataResponse
+   * 获取分析运营数据
+   * 
+   * @param request - GetAnalyzeDataRequest
+   * @returns GetAnalyzeDataResponse
    */
   async getAnalyzeData(request: GetAnalyzeDataRequest): Promise<GetAnalyzeDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2765,12 +3746,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据部门编码查询下组织列表
-   *
-   * @param request GetChildOrgListRequest
-   * @param headers GetChildOrgListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetChildOrgListResponse
+   * 根据部门编码查询下组织列表
+   * 
+   * @param request - GetChildOrgListRequest
+   * @param headers - GetChildOrgListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetChildOrgListResponse
    */
   async getChildOrgListWithOptions(request: GetChildOrgListRequest, headers: GetChildOrgListHeaders, runtime: $Util.RuntimeOptions): Promise<GetChildOrgListResponse> {
     Util.validateModel(request);
@@ -2807,10 +3788,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据部门编码查询下组织列表
-   *
-   * @param request GetChildOrgListRequest
-   * @return GetChildOrgListResponse
+   * 根据部门编码查询下组织列表
+   * 
+   * @param request - GetChildOrgListRequest
+   * @returns GetChildOrgListResponse
    */
   async getChildOrgList(request: GetChildOrgListRequest): Promise<GetChildOrgListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2819,12 +3800,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据工号查询员工基础信息
-   *
-   * @param request GetEmployeeInfoByWorkNoRequest
-   * @param headers GetEmployeeInfoByWorkNoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetEmployeeInfoByWorkNoResponse
+   * 根据工号查询员工基础信息
+   * 
+   * @param request - GetEmployeeInfoByWorkNoRequest
+   * @param headers - GetEmployeeInfoByWorkNoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetEmployeeInfoByWorkNoResponse
    */
   async getEmployeeInfoByWorkNoWithOptions(request: GetEmployeeInfoByWorkNoRequest, headers: GetEmployeeInfoByWorkNoHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmployeeInfoByWorkNoResponse> {
     Util.validateModel(request);
@@ -2861,10 +3842,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据工号查询员工基础信息
-   *
-   * @param request GetEmployeeInfoByWorkNoRequest
-   * @return GetEmployeeInfoByWorkNoResponse
+   * 根据工号查询员工基础信息
+   * 
+   * @param request - GetEmployeeInfoByWorkNoRequest
+   * @returns GetEmployeeInfoByWorkNoResponse
    */
   async getEmployeeInfoByWorkNo(request: GetEmployeeInfoByWorkNoRequest): Promise<GetEmployeeInfoByWorkNoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2873,11 +3854,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据人员工号查询人员任职记录
-   *
-   * @param headers GetEmploymentRecordByWorkNoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetEmploymentRecordByWorkNoResponse
+   * 根据人员工号查询人员任职记录
+   * 
+   * @param headers - GetEmploymentRecordByWorkNoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetEmploymentRecordByWorkNoResponse
    */
   async getEmploymentRecordByWorkNoWithOptions(workNumbers: string, headers: GetEmploymentRecordByWorkNoHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmploymentRecordByWorkNoResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -2907,9 +3888,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据人员工号查询人员任职记录
-   *
-   * @return GetEmploymentRecordByWorkNoResponse
+   * 根据人员工号查询人员任职记录
+   * @returns GetEmploymentRecordByWorkNoResponse
    */
   async getEmploymentRecordByWorkNo(workNumbers: string): Promise<GetEmploymentRecordByWorkNoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2918,12 +3898,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取职位详情
-   *
-   * @param request GetJobPositionRequest
-   * @param headers GetJobPositionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetJobPositionResponse
+   * 获取职位详情
+   * 
+   * @param request - GetJobPositionRequest
+   * @param headers - GetJobPositionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetJobPositionResponse
    */
   async getJobPositionWithOptions(request: GetJobPositionRequest, headers: GetJobPositionHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobPositionResponse> {
     Util.validateModel(request);
@@ -2960,10 +3940,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取职位详情
-   *
-   * @param request GetJobPositionRequest
-   * @return GetJobPositionResponse
+   * 获取职位详情
+   * 
+   * @param request - GetJobPositionRequest
+   * @returns GetJobPositionResponse
    */
   async getJobPosition(request: GetJobPositionRequest): Promise<GetJobPositionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2972,12 +3952,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据编码获取职位详情
-   *
-   * @param request GetJobPostRequest
-   * @param headers GetJobPostHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetJobPostResponse
+   * 根据编码获取职位详情
+   * 
+   * @param request - GetJobPostRequest
+   * @param headers - GetJobPostHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetJobPostResponse
    */
   async getJobPostWithOptions(request: GetJobPostRequest, headers: GetJobPostHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobPostResponse> {
     Util.validateModel(request);
@@ -3014,10 +3994,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据编码获取职位详情
-   *
-   * @param request GetJobPostRequest
-   * @return GetJobPostResponse
+   * 根据编码获取职位详情
+   * 
+   * @param request - GetJobPostRequest
+   * @returns GetJobPostResponse
    */
   async getJobPost(request: GetJobPostRequest): Promise<GetJobPostResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3026,12 +4006,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织详情
-   *
-   * @param request GetOrgInfoRequest
-   * @param headers GetOrgInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetOrgInfoResponse
+   * 获取组织详情
+   * 
+   * @param request - GetOrgInfoRequest
+   * @param headers - GetOrgInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOrgInfoResponse
    */
   async getOrgInfoWithOptions(request: GetOrgInfoRequest, headers: GetOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrgInfoResponse> {
     Util.validateModel(request);
@@ -3068,10 +4048,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织详情
-   *
-   * @param request GetOrgInfoRequest
-   * @return GetOrgInfoResponse
+   * 获取组织详情
+   * 
+   * @param request - GetOrgInfoRequest
+   * @returns GetOrgInfoResponse
    */
   async getOrgInfo(request: GetOrgInfoRequest): Promise<GetOrgInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3080,12 +4060,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据员工工号获取员工的基本信息
-   *
-   * @param request GetStaffInfoByWorkNoRequest
-   * @param headers GetStaffInfoByWorkNoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetStaffInfoByWorkNoResponse
+   * 根据员工工号获取员工的基本信息
+   * 
+   * @param request - GetStaffInfoByWorkNoRequest
+   * @param headers - GetStaffInfoByWorkNoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetStaffInfoByWorkNoResponse
    */
   async getStaffInfoByWorkNoWithOptions(request: GetStaffInfoByWorkNoRequest, headers: GetStaffInfoByWorkNoHeaders, runtime: $Util.RuntimeOptions): Promise<GetStaffInfoByWorkNoResponse> {
     Util.validateModel(request);
@@ -3122,10 +4102,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据员工工号获取员工的基本信息
-   *
-   * @param request GetStaffInfoByWorkNoRequest
-   * @return GetStaffInfoByWorkNoResponse
+   * 根据员工工号获取员工的基本信息
+   * 
+   * @param request - GetStaffInfoByWorkNoRequest
+   * @returns GetStaffInfoByWorkNoResponse
    */
   async getStaffInfoByWorkNo(request: GetStaffInfoByWorkNoRequest): Promise<GetStaffInfoByWorkNoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3134,12 +4114,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询员工信息
-   *
-   * @param request GetStaffPageQueryRequest
-   * @param headers GetStaffPageQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetStaffPageQueryResponse
+   * 分页查询员工信息
+   * 
+   * @param request - GetStaffPageQueryRequest
+   * @param headers - GetStaffPageQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetStaffPageQueryResponse
    */
   async getStaffPageQueryWithOptions(request: GetStaffPageQueryRequest, headers: GetStaffPageQueryHeaders, runtime: $Util.RuntimeOptions): Promise<GetStaffPageQueryResponse> {
     Util.validateModel(request);
@@ -3192,10 +4172,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询员工信息
-   *
-   * @param request GetStaffPageQueryRequest
-   * @return GetStaffPageQueryResponse
+   * 分页查询员工信息
+   * 
+   * @param request - GetStaffPageQueryRequest
+   * @returns GetStaffPageQueryResponse
    */
   async getStaffPageQuery(request: GetStaffPageQueryRequest): Promise<GetStaffPageQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3204,12 +4184,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户信息
-   *
-   * @param request GetUserRequest
-   * @param headers GetUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserResponse
+   * 获取用户信息
+   * 
+   * @param request - GetUserRequest
+   * @param headers - GetUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserResponse
    */
   async getUserWithOptions(request: GetUserRequest, headers: GetUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserResponse> {
     Util.validateModel(request);
@@ -3250,10 +4230,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户信息
-   *
-   * @param request GetUserRequest
-   * @return GetUserResponse
+   * 获取用户信息
+   * 
+   * @param request - GetUserRequest
+   * @returns GetUserResponse
    */
   async getUser(request: GetUserRequest): Promise<GetUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3262,11 +4242,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 运营数据分析下的周期列表
-   *
-   * @param headers ListAnalyzePeriodsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListAnalyzePeriodsResponse
+   * 运营数据分析下的周期列表
+   * 
+   * @param headers - ListAnalyzePeriodsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListAnalyzePeriodsResponse
    */
   async listAnalyzePeriodsWithOptions(headers: ListAnalyzePeriodsHeaders, runtime: $Util.RuntimeOptions): Promise<ListAnalyzePeriodsResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -3296,9 +4276,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 运营数据分析下的周期列表
-   *
-   * @return ListAnalyzePeriodsResponse
+   * 运营数据分析下的周期列表
+   * @returns ListAnalyzePeriodsResponse
    */
   async listAnalyzePeriods(): Promise<ListAnalyzePeriodsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3307,12 +4286,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据目标id批量获取目标列表
-   *
-   * @param request ListObjectiveByIdsRequest
-   * @param headers ListObjectiveByIdsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListObjectiveByIdsResponse
+   * 根据目标id批量获取目标列表
+   * 
+   * @param request - ListObjectiveByIdsRequest
+   * @param headers - ListObjectiveByIdsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListObjectiveByIdsResponse
    */
   async listObjectiveByIdsWithOptions(request: ListObjectiveByIdsRequest, headers: ListObjectiveByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListObjectiveByIdsResponse> {
     Util.validateModel(request);
@@ -3349,10 +4328,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据目标id批量获取目标列表
-   *
-   * @param request ListObjectiveByIdsRequest
-   * @return ListObjectiveByIdsResponse
+   * 根据目标id批量获取目标列表
+   * 
+   * @param request - ListObjectiveByIdsRequest
+   * @returns ListObjectiveByIdsResponse
    */
   async listObjectiveByIds(request: ListObjectiveByIdsRequest): Promise<ListObjectiveByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3361,12 +4340,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户的 OKR 列表
-   *
-   * @param request ListObjectiveByUserRequest
-   * @param headers ListObjectiveByUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListObjectiveByUserResponse
+   * 获取用户的 OKR 列表
+   * 
+   * @param request - ListObjectiveByUserRequest
+   * @param headers - ListObjectiveByUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListObjectiveByUserResponse
    */
   async listObjectiveByUserWithOptions(request: ListObjectiveByUserRequest, headers: ListObjectiveByUserHeaders, runtime: $Util.RuntimeOptions): Promise<ListObjectiveByUserResponse> {
     Util.validateModel(request);
@@ -3411,10 +4390,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户的 OKR 列表
-   *
-   * @param request ListObjectiveByUserRequest
-   * @return ListObjectiveByUserResponse
+   * 获取用户的 OKR 列表
+   * 
+   * @param request - ListObjectiveByUserRequest
+   * @returns ListObjectiveByUserResponse
    */
   async listObjectiveByUser(request: ListObjectiveByUserRequest): Promise<ListObjectiveByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3423,12 +4402,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据进展id获取进展列表
-   *
-   * @param request ListProgressByIdsRequest
-   * @param headers ListProgressByIdsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListProgressByIdsResponse
+   * 根据进展id获取进展列表
+   * 
+   * @param request - ListProgressByIdsRequest
+   * @param headers - ListProgressByIdsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListProgressByIdsResponse
    */
   async listProgressByIdsWithOptions(request: ListProgressByIdsRequest, headers: ListProgressByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListProgressByIdsResponse> {
     Util.validateModel(request);
@@ -3465,10 +4444,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据进展id获取进展列表
-   *
-   * @param request ListProgressByIdsRequest
-   * @return ListProgressByIdsResponse
+   * 根据进展id获取进展列表
+   * 
+   * @param request - ListProgressByIdsRequest
+   * @returns ListProgressByIdsResponse
    */
   async listProgressByIds(request: ListProgressByIdsRequest): Promise<ListProgressByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3477,12 +4456,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织下的日志数据
-   *
-   * @param request ListSlsLogRequest
-   * @param headers ListSlsLogHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListSlsLogResponse
+   * 获取组织下的日志数据
+   * 
+   * @param request - ListSlsLogRequest
+   * @param headers - ListSlsLogHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListSlsLogResponse
    */
   async listSlsLogWithOptions(request: ListSlsLogRequest, headers: ListSlsLogHeaders, runtime: $Util.RuntimeOptions): Promise<ListSlsLogResponse> {
     Util.validateModel(request);
@@ -3535,10 +4514,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织下的日志数据
-   *
-   * @param request ListSlsLogRequest
-   * @return ListSlsLogResponse
+   * 获取组织下的日志数据
+   * 
+   * @param request - ListSlsLogRequest
+   * @returns ListSlsLogResponse
    */
   async listSlsLog(request: ListSlsLogRequest): Promise<ListSlsLogResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3547,12 +4526,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取目标进展记录
-   *
-   * @param request PageListObjectiveProgressRequest
-   * @param headers PageListObjectiveProgressHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PageListObjectiveProgressResponse
+   * 分页获取目标进展记录
+   * 
+   * @param request - PageListObjectiveProgressRequest
+   * @param headers - PageListObjectiveProgressHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PageListObjectiveProgressResponse
    */
   async pageListObjectiveProgressWithOptions(request: PageListObjectiveProgressRequest, headers: PageListObjectiveProgressHeaders, runtime: $Util.RuntimeOptions): Promise<PageListObjectiveProgressResponse> {
     Util.validateModel(request);
@@ -3597,10 +4576,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取目标进展记录
-   *
-   * @param request PageListObjectiveProgressRequest
-   * @return PageListObjectiveProgressResponse
+   * 分页获取目标进展记录
+   * 
+   * @param request - PageListObjectiveProgressRequest
+   * @returns PageListObjectiveProgressResponse
    */
   async pageListObjectiveProgress(request: PageListObjectiveProgressRequest): Promise<PageListObjectiveProgressResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3609,12 +4588,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转交目标OKR
-   *
-   * @param request TransferUserObjectiveRequest
-   * @param headers TransferUserObjectiveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return TransferUserObjectiveResponse
+   * 转交目标OKR
+   * 
+   * @param request - TransferUserObjectiveRequest
+   * @param headers - TransferUserObjectiveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TransferUserObjectiveResponse
    */
   async transferUserObjectiveWithOptions(request: TransferUserObjectiveRequest, headers: TransferUserObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<TransferUserObjectiveResponse> {
     Util.validateModel(request);
@@ -3655,10 +4634,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转交目标OKR
-   *
-   * @param request TransferUserObjectiveRequest
-   * @return TransferUserObjectiveResponse
+   * 转交目标OKR
+   * 
+   * @param request - TransferUserObjectiveRequest
+   * @returns TransferUserObjectiveResponse
    */
   async transferUserObjective(request: TransferUserObjectiveRequest): Promise<TransferUserObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });

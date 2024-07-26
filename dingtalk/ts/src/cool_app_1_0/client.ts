@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,8 +30,16 @@ export class InstallCoolAppOrderToGroupHeaders extends $tea.Model {
 }
 
 export class InstallCoolAppOrderToGroupRequest extends $tea.Model {
+  /**
+   * @example
+   * cidxxx
+   */
   conversationId?: string;
   sortedPluginIdList?: number[];
+  /**
+   * @example
+   * template-id-xxx
+   */
   templateId?: string;
   unsortedPluginIdList?: number[];
   static names(): { [key: string]: string } {
@@ -129,9 +135,25 @@ export class InstallCoolAppToGroupHeaders extends $tea.Model {
 }
 
 export class InstallCoolAppToGroupRequest extends $tea.Model {
+  /**
+   * @example
+   * cidxxxx
+   */
   conversationId?: string;
+  /**
+   * @example
+   * CoolApp-xxx
+   */
   operateCoolAppCode?: string;
+  /**
+   * @example
+   * staffid12
+   */
   operatorId?: string;
+  /**
+   * @example
+   * template-id-xxx
+   */
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -226,8 +248,20 @@ export class QueryCoolAppShortcutOrderHeaders extends $tea.Model {
 }
 
 export class QueryCoolAppShortcutOrderRequest extends $tea.Model {
+  /**
+   * @example
+   * cidxxx
+   */
   conversationId?: string;
+  /**
+   * @example
+   * staff1
+   */
   operatorId?: string;
+  /**
+   * @example
+   * templateId1
+   */
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -320,9 +354,25 @@ export class UninstallCoolAppFromGroupHeaders extends $tea.Model {
 }
 
 export class UninstallCoolAppFromGroupRequest extends $tea.Model {
+  /**
+   * @example
+   * cidxxx
+   */
   conversationId?: string;
+  /**
+   * @example
+   * CoolApp-xxx
+   */
   operateCoolAppCode?: string;
+  /**
+   * @example
+   * staffid111
+   */
   operatorId?: string;
+  /**
+   * @example
+   * template-id-xxx
+   */
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -514,12 +564,11 @@ export class QueryCoolAppShortcutOrderResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -529,12 +578,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 群酷应用排序
-   *
-   * @param request InstallCoolAppOrderToGroupRequest
-   * @param headers InstallCoolAppOrderToGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InstallCoolAppOrderToGroupResponse
+   * 群酷应用排序
+   * 
+   * @param request - InstallCoolAppOrderToGroupRequest
+   * @param headers - InstallCoolAppOrderToGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InstallCoolAppOrderToGroupResponse
    */
   async installCoolAppOrderToGroupWithOptions(request: InstallCoolAppOrderToGroupRequest, headers: InstallCoolAppOrderToGroupHeaders, runtime: $Util.RuntimeOptions): Promise<InstallCoolAppOrderToGroupResponse> {
     Util.validateModel(request);
@@ -583,10 +632,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 群酷应用排序
-   *
-   * @param request InstallCoolAppOrderToGroupRequest
-   * @return InstallCoolAppOrderToGroupResponse
+   * 群酷应用排序
+   * 
+   * @param request - InstallCoolAppOrderToGroupRequest
+   * @returns InstallCoolAppOrderToGroupResponse
    */
   async installCoolAppOrderToGroup(request: InstallCoolAppOrderToGroupRequest): Promise<InstallCoolAppOrderToGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -595,12 +644,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 安装酷应用到群
-   *
-   * @param request InstallCoolAppToGroupRequest
-   * @param headers InstallCoolAppToGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InstallCoolAppToGroupResponse
+   * 安装酷应用到群
+   * 
+   * @param request - InstallCoolAppToGroupRequest
+   * @param headers - InstallCoolAppToGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InstallCoolAppToGroupResponse
    */
   async installCoolAppToGroupWithOptions(request: InstallCoolAppToGroupRequest, headers: InstallCoolAppToGroupHeaders, runtime: $Util.RuntimeOptions): Promise<InstallCoolAppToGroupResponse> {
     Util.validateModel(request);
@@ -649,10 +698,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 安装酷应用到群
-   *
-   * @param request InstallCoolAppToGroupRequest
-   * @return InstallCoolAppToGroupResponse
+   * 安装酷应用到群
+   * 
+   * @param request - InstallCoolAppToGroupRequest
+   * @returns InstallCoolAppToGroupResponse
    */
   async installCoolAppToGroup(request: InstallCoolAppToGroupRequest): Promise<InstallCoolAppToGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -661,12 +710,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询群插件栏
-   *
-   * @param request QueryCoolAppShortcutOrderRequest
-   * @param headers QueryCoolAppShortcutOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCoolAppShortcutOrderResponse
+   * 查询群插件栏
+   * 
+   * @param request - QueryCoolAppShortcutOrderRequest
+   * @param headers - QueryCoolAppShortcutOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCoolAppShortcutOrderResponse
    */
   async queryCoolAppShortcutOrderWithOptions(request: QueryCoolAppShortcutOrderRequest, headers: QueryCoolAppShortcutOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCoolAppShortcutOrderResponse> {
     Util.validateModel(request);
@@ -711,10 +760,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询群插件栏
-   *
-   * @param request QueryCoolAppShortcutOrderRequest
-   * @return QueryCoolAppShortcutOrderResponse
+   * 查询群插件栏
+   * 
+   * @param request - QueryCoolAppShortcutOrderRequest
+   * @returns QueryCoolAppShortcutOrderResponse
    */
   async queryCoolAppShortcutOrder(request: QueryCoolAppShortcutOrderRequest): Promise<QueryCoolAppShortcutOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -723,12 +772,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 从群内卸载酷应用
-   *
-   * @param request UninstallCoolAppFromGroupRequest
-   * @param headers UninstallCoolAppFromGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UninstallCoolAppFromGroupResponse
+   * 从群内卸载酷应用
+   * 
+   * @param request - UninstallCoolAppFromGroupRequest
+   * @param headers - UninstallCoolAppFromGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UninstallCoolAppFromGroupResponse
    */
   async uninstallCoolAppFromGroupWithOptions(request: UninstallCoolAppFromGroupRequest, headers: UninstallCoolAppFromGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UninstallCoolAppFromGroupResponse> {
     Util.validateModel(request);
@@ -777,10 +826,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 从群内卸载酷应用
-   *
-   * @param request UninstallCoolAppFromGroupRequest
-   * @return UninstallCoolAppFromGroupResponse
+   * 从群内卸载酷应用
+   * 
+   * @param request - UninstallCoolAppFromGroupRequest
+   * @returns UninstallCoolAppFromGroupResponse
    */
   async uninstallCoolAppFromGroup(request: UninstallCoolAppFromGroupRequest): Promise<UninstallCoolAppFromGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });

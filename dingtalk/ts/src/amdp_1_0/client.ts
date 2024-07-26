@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -520,12 +518,11 @@ export class AmdpOrganizationDataPushRequestParam extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -535,12 +532,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 人员角色数据推送
-   *
-   * @param request AmdpEmpRoleDataPushRequest
-   * @param headers AmdpEmpRoleDataPushHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AmdpEmpRoleDataPushResponse
+   * 人员角色数据推送
+   * 
+   * @param request - AmdpEmpRoleDataPushRequest
+   * @param headers - AmdpEmpRoleDataPushHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AmdpEmpRoleDataPushResponse
    */
   async amdpEmpRoleDataPushWithOptions(request: AmdpEmpRoleDataPushRequest, headers: AmdpEmpRoleDataPushHeaders, runtime: $Util.RuntimeOptions): Promise<AmdpEmpRoleDataPushResponse> {
     Util.validateModel(request);
@@ -577,10 +574,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人员角色数据推送
-   *
-   * @param request AmdpEmpRoleDataPushRequest
-   * @return AmdpEmpRoleDataPushResponse
+   * 人员角色数据推送
+   * 
+   * @param request - AmdpEmpRoleDataPushRequest
+   * @returns AmdpEmpRoleDataPushResponse
    */
   async amdpEmpRoleDataPush(request: AmdpEmpRoleDataPushRequest): Promise<AmdpEmpRoleDataPushResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -589,12 +586,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人员数据推送
-   *
-   * @param request AmdpEmployeeDataPushRequest
-   * @param headers AmdpEmployeeDataPushHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AmdpEmployeeDataPushResponse
+   * 人员数据推送
+   * 
+   * @param request - AmdpEmployeeDataPushRequest
+   * @param headers - AmdpEmployeeDataPushHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AmdpEmployeeDataPushResponse
    */
   async amdpEmployeeDataPushWithOptions(request: AmdpEmployeeDataPushRequest, headers: AmdpEmployeeDataPushHeaders, runtime: $Util.RuntimeOptions): Promise<AmdpEmployeeDataPushResponse> {
     Util.validateModel(request);
@@ -631,10 +628,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 人员数据推送
-   *
-   * @param request AmdpEmployeeDataPushRequest
-   * @return AmdpEmployeeDataPushResponse
+   * 人员数据推送
+   * 
+   * @param request - AmdpEmployeeDataPushRequest
+   * @returns AmdpEmployeeDataPushResponse
    */
   async amdpEmployeeDataPush(request: AmdpEmployeeDataPushRequest): Promise<AmdpEmployeeDataPushResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -643,12 +640,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 任职数据推送
-   *
-   * @param request AmdpJobPositionDataPushRequest
-   * @param headers AmdpJobPositionDataPushHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AmdpJobPositionDataPushResponse
+   * 任职数据推送
+   * 
+   * @param request - AmdpJobPositionDataPushRequest
+   * @param headers - AmdpJobPositionDataPushHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AmdpJobPositionDataPushResponse
    */
   async amdpJobPositionDataPushWithOptions(request: AmdpJobPositionDataPushRequest, headers: AmdpJobPositionDataPushHeaders, runtime: $Util.RuntimeOptions): Promise<AmdpJobPositionDataPushResponse> {
     Util.validateModel(request);
@@ -685,10 +682,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 任职数据推送
-   *
-   * @param request AmdpJobPositionDataPushRequest
-   * @return AmdpJobPositionDataPushResponse
+   * 任职数据推送
+   * 
+   * @param request - AmdpJobPositionDataPushRequest
+   * @returns AmdpJobPositionDataPushResponse
    */
   async amdpJobPositionDataPush(request: AmdpJobPositionDataPushRequest): Promise<AmdpJobPositionDataPushResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -697,12 +694,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 组织部门数据推送
-   *
-   * @param request AmdpOrganizationDataPushRequest
-   * @param headers AmdpOrganizationDataPushHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AmdpOrganizationDataPushResponse
+   * 组织部门数据推送
+   * 
+   * @param request - AmdpOrganizationDataPushRequest
+   * @param headers - AmdpOrganizationDataPushHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AmdpOrganizationDataPushResponse
    */
   async amdpOrganizationDataPushWithOptions(request: AmdpOrganizationDataPushRequest, headers: AmdpOrganizationDataPushHeaders, runtime: $Util.RuntimeOptions): Promise<AmdpOrganizationDataPushResponse> {
     Util.validateModel(request);
@@ -739,10 +736,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 组织部门数据推送
-   *
-   * @param request AmdpOrganizationDataPushRequest
-   * @return AmdpOrganizationDataPushResponse
+   * 组织部门数据推送
+   * 
+   * @param request - AmdpOrganizationDataPushRequest
+   * @returns AmdpOrganizationDataPushResponse
    */
   async amdpOrganizationDataPush(request: AmdpOrganizationDataPushRequest): Promise<AmdpOrganizationDataPushResponse> {
     let runtime = new $Util.RuntimeOptions({ });

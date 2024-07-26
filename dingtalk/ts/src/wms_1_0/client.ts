@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,9 +30,25 @@ export class QueryGoodsListHeaders extends $tea.Model {
 }
 
 export class QueryGoodsListRequest extends $tea.Model {
+  /**
+   * @example
+   * 1631289600000
+   */
   endTimeInMills?: number;
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 1
+   */
   nextToken?: number;
+  /**
+   * @example
+   * 1631289600000
+   */
   startTimeInMills?: number;
   static names(): { [key: string]: string } {
     return {
@@ -107,10 +121,45 @@ export class QueryGoodsListResponse extends $tea.Model {
 }
 
 export class QueryGoodsListResponseBodyResultList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 衣服
+   */
   goodsName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0001
+   */
   goodsNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcdse-dse-example
+   */
   instanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XXL
+   */
   productSpecs?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 件
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -138,9 +187,30 @@ export class QueryGoodsListResponseBodyResultList extends $tea.Model {
 }
 
 export class QueryGoodsListResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
   list?: QueryGoodsListResponseBodyResultList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -167,12 +237,11 @@ export class QueryGoodsListResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -182,12 +251,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 获取物料列表
-   *
-   * @param request QueryGoodsListRequest
-   * @param headers QueryGoodsListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryGoodsListResponse
+   * 获取物料列表
+   * 
+   * @param request - QueryGoodsListRequest
+   * @param headers - QueryGoodsListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryGoodsListResponse
    */
   async queryGoodsListWithOptions(request: QueryGoodsListRequest, headers: QueryGoodsListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGoodsListResponse> {
     Util.validateModel(request);
@@ -236,10 +305,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取物料列表
-   *
-   * @param request QueryGoodsListRequest
-   * @return QueryGoodsListResponse
+   * 获取物料列表
+   * 
+   * @param request - QueryGoodsListRequest
+   * @returns QueryGoodsListResponse
    */
   async queryGoodsList(request: QueryGoodsListRequest): Promise<QueryGoodsListResponse> {
     let runtime = new $Util.RuntimeOptions({ });

@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -35,6 +33,10 @@ export class AddAttendeeHeaders extends $tea.Model {
 }
 
 export class AddAttendeeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   attendeesToAdd?: AddAttendeeRequestAttendeesToAdd[];
   chatNotification?: boolean;
   pushNotification?: boolean;
@@ -107,6 +109,10 @@ export class AddMeetingRoomsHeaders extends $tea.Model {
 }
 
 export class AddMeetingRoomsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   meetingRoomsToAdd?: AddMeetingRoomsRequestMeetingRoomsToAdd[];
   static names(): { [key: string]: string } {
     return {
@@ -258,6 +264,10 @@ export class ConvertLegacyEventIdHeaders extends $tea.Model {
 }
 
 export class ConvertLegacyEventIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   legacyEventIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -343,8 +353,20 @@ export class CreateAclsHeaders extends $tea.Model {
 }
 
 export class CreateAclsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   privilege?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   scope?: CreateAclsRequestScope;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sendMsg?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -454,7 +476,15 @@ export class CreateEventRequest extends $tea.Model {
   recurrence?: CreateEventRequestRecurrence;
   reminders?: CreateEventRequestReminders[];
   richTextDescription?: CreateEventRequestRichTextDescription;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   start?: CreateEventRequestStart;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   summary?: string;
   uiConfigs?: CreateEventRequestUiConfigs[];
   static names(): { [key: string]: string } {
@@ -503,6 +533,10 @@ export class CreateEventRequest extends $tea.Model {
 export class CreateEventResponseBody extends $tea.Model {
   attendees?: CreateEventResponseBodyAttendees[];
   cardInstances?: CreateEventResponseBodyCardInstances[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   description?: string;
   end?: CreateEventResponseBodyEnd;
@@ -514,9 +548,17 @@ export class CreateEventResponseBody extends $tea.Model {
   recurrence?: CreateEventResponseBodyRecurrence;
   reminders?: CreateEventResponseBodyReminders[];
   richTextDescription?: CreateEventResponseBodyRichTextDescription;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   start?: CreateEventResponseBodyStart;
   summary?: string;
   uiConfigs?: CreateEventResponseBodyUiConfigs[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -628,7 +670,15 @@ export class CreateEventByMeRequest extends $tea.Model {
   recurrence?: CreateEventByMeRequestRecurrence;
   reminders?: CreateEventByMeRequestReminders[];
   richTextDescription?: CreateEventByMeRequestRichTextDescription;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   start?: CreateEventByMeRequestStart;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   summary?: string;
   uiConfigs?: CreateEventByMeRequestUiConfigs[];
   static names(): { [key: string]: string } {
@@ -674,6 +724,10 @@ export class CreateEventByMeRequest extends $tea.Model {
 
 export class CreateEventByMeResponseBody extends $tea.Model {
   attendees?: CreateEventByMeResponseBodyAttendees[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   description?: string;
   end?: CreateEventByMeResponseBodyEnd;
@@ -685,9 +739,17 @@ export class CreateEventByMeResponseBody extends $tea.Model {
   recurrence?: CreateEventByMeResponseBodyRecurrence;
   reminders?: CreateEventByMeResponseBodyReminders[];
   richTextDescription?: CreateEventByMeResponseBodyRichTextDescription;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   start?: CreateEventByMeResponseBodyStart;
   summary?: string;
   uiConfigs?: CreateEventByMeResponseBodyUiConfigs[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -786,7 +848,15 @@ export class CreateSubscribedCalendarHeaders extends $tea.Model {
 export class CreateSubscribedCalendarRequest extends $tea.Model {
   description?: string;
   managers?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subscribeScope?: CreateSubscribedCalendarRequestSubscribeScope;
   static names(): { [key: string]: string } {
     return {
@@ -1057,6 +1127,10 @@ export class GenerateCaldavAccountHeaders extends $tea.Model {
 }
 
 export class GenerateCaldavAccountRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   device?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1170,6 +1244,10 @@ export class GetEventResponseBody extends $tea.Model {
   attendees?: GetEventResponseBodyAttendees[];
   cardInstances?: GetEventResponseBodyCardInstances[];
   categories?: GetEventResponseBodyCategories[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   description?: string;
   end?: GetEventResponseBodyEnd;
@@ -1186,9 +1264,20 @@ export class GetEventResponseBody extends $tea.Model {
   richTextDescription?: GetEventResponseBodyRichTextDescription;
   seriesMasterId?: string;
   start?: GetEventResponseBodyStart;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 已取消、删除的日程是cancelled
+   */
   status?: string;
   summary?: string;
   uiConfigs?: GetEventResponseBodyUiConfigs[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1299,8 +1388,24 @@ export class GetMeetingRoomsScheduleHeaders extends $tea.Model {
 }
 
 export class GetMeetingRoomsScheduleRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roomIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   startTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1390,8 +1495,24 @@ export class GetScheduleHeaders extends $tea.Model {
 }
 
 export class GetScheduleRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   startTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1484,8 +1605,20 @@ export class GetScheduleByMeHeaders extends $tea.Model {
 }
 
 export class GetScheduleByMeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1641,8 +1774,19 @@ export class GetSignInListHeaders extends $tea.Model {
 }
 
 export class GetSignInListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * check_in
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1801,8 +1945,19 @@ export class GetSignOutListHeaders extends $tea.Model {
 }
 
 export class GetSignOutListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sign_out
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2199,13 +2354,25 @@ export class ListEventsHeaders extends $tea.Model {
 }
 
 export class ListEventsRequest extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
   maxAttendees?: number;
   maxResults?: number;
   nextToken?: string;
   seriesMasterId?: string;
   showDeleted?: boolean;
   syncToken?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   timeMax?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   timeMin?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2311,8 +2478,23 @@ export class ListEventsInstancesHeaders extends $tea.Model {
 }
 
 export class ListEventsInstancesRequest extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
   maxAttendees?: number;
+  /**
+   * @example
+   * 100
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cnNTbW1YbxxxxdEgvdlQrQT09
+   */
   seriesMasterId?: string;
   startRecurrenceId?: string;
   static names(): { [key: string]: string } {
@@ -2408,7 +2590,15 @@ export class ListEventsViewRequest extends $tea.Model {
   maxAttendees?: number;
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   timeMax?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   timeMin?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2511,7 +2701,15 @@ export class ListEventsViewByMeRequest extends $tea.Model {
   maxAttendees?: number;
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   timeMax?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   timeMin?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2608,10 +2806,22 @@ export class ListInstancesHeaders extends $tea.Model {
 }
 
 export class ListInstancesRequest extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
   maxAttendees?: number;
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   timeMax?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   timeMin?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2807,6 +3017,10 @@ export class PatchEventRequest extends $tea.Model {
   description?: string;
   end?: PatchEventRequestEnd;
   extra?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
   isAllDay?: boolean;
   location?: PatchEventRequestLocation;
@@ -2865,6 +3079,10 @@ export class PatchEventRequest extends $tea.Model {
 export class PatchEventResponseBody extends $tea.Model {
   attendees?: PatchEventResponseBodyAttendees[];
   cardInstances?: PatchEventResponseBodyCardInstances[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   description?: string;
   end?: PatchEventResponseBodyEnd;
@@ -2876,9 +3094,17 @@ export class PatchEventResponseBody extends $tea.Model {
   recurrence?: PatchEventResponseBodyRecurrence;
   reminders?: PatchEventResponseBodyReminders[];
   richTextDescription?: PatchEventResponseBodyRichTextDescription;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   start?: PatchEventResponseBodyStart;
   summary?: string;
   uiConfigs?: PatchEventResponseBodyUiConfigs[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3134,6 +3360,10 @@ export class RespondEventHeaders extends $tea.Model {
 }
 
 export class RespondEventRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   responseStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3378,6 +3608,10 @@ export class TransferEventHeaders extends $tea.Model {
 export class TransferEventRequest extends $tea.Model {
   isExitCalendar?: boolean;
   needNotifyViaO2O?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   newOrganizerId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3646,7 +3880,15 @@ export class AddMeetingRoomsRequestMeetingRoomsToAdd extends $tea.Model {
 }
 
 export class CreateAclsRequestScope extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   scopeType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3734,8 +3976,20 @@ export class CreateEventRequestCardInstances extends $tea.Model {
 }
 
 export class CreateEventRequestEnd extends $tea.Model {
+  /**
+   * @example
+   * 2020-01-01
+   */
   date?: string;
+  /**
+   * @example
+   * 2020-01-01T10:15:30+08:00
+   */
   dateTime?: string;
+  /**
+   * @example
+   * Asia/Shanghai
+   */
   timeZone?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3831,6 +4085,10 @@ export class CreateEventRequestRecurrencePattern extends $tea.Model {
 }
 
 export class CreateEventRequestRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endDate?: string;
   numberOfOccurrences?: number;
   type?: string;
@@ -3919,8 +4177,20 @@ export class CreateEventRequestRichTextDescription extends $tea.Model {
 }
 
 export class CreateEventRequestStart extends $tea.Model {
+  /**
+   * @example
+   * 2020-01-01
+   */
   date?: string;
+  /**
+   * @example
+   * 2020-01-01T10:15:30+08:00
+   */
   dateTime?: string;
+  /**
+   * @example
+   * Asia/Shanghai
+   */
   timeZone?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4153,6 +4423,10 @@ export class CreateEventResponseBodyRecurrencePattern extends $tea.Model {
 }
 
 export class CreateEventResponseBodyRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endDate?: string;
   numberOfOccurrences?: number;
   type?: string;
@@ -4310,8 +4584,20 @@ export class CreateEventByMeRequestAttendees extends $tea.Model {
 }
 
 export class CreateEventByMeRequestEnd extends $tea.Model {
+  /**
+   * @example
+   * 2020-01-01
+   */
   date?: string;
+  /**
+   * @example
+   * 2020-01-01T10:15:30+08:00
+   */
   dateTime?: string;
+  /**
+   * @example
+   * Asia/Shanghai
+   */
   timeZone?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4407,6 +4693,10 @@ export class CreateEventByMeRequestRecurrencePattern extends $tea.Model {
 }
 
 export class CreateEventByMeRequestRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endDate?: string;
   numberOfOccurrences?: number;
   type?: string;
@@ -4495,8 +4785,20 @@ export class CreateEventByMeRequestRichTextDescription extends $tea.Model {
 }
 
 export class CreateEventByMeRequestStart extends $tea.Model {
+  /**
+   * @example
+   * 2020-01-01
+   */
   date?: string;
+  /**
+   * @example
+   * 2020-01-01T10:15:30+08:00
+   */
   dateTime?: string;
+  /**
+   * @example
+   * Asia/Shanghai
+   */
   timeZone?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4707,6 +5009,10 @@ export class CreateEventByMeResponseBodyRecurrencePattern extends $tea.Model {
 }
 
 export class CreateEventByMeResponseBodyRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endDate?: string;
   numberOfOccurrences?: number;
   type?: string;
@@ -5161,6 +5467,10 @@ export class GetEventResponseBodyRecurrencePattern extends $tea.Model {
 }
 
 export class GetEventResponseBodyRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endDate?: string;
   numberOfOccurrences?: number;
   type?: string;
@@ -5363,6 +5673,10 @@ export class GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItems
   eventId?: string;
   organizer?: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsOrganizer;
   start?: GetMeetingRoomsScheduleResponseBodyScheduleInformationScheduleItemsStart;
+  /**
+   * @example
+   * BUSY
+   */
   status?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5467,6 +5781,10 @@ export class GetScheduleResponseBodyScheduleInformationScheduleItemsStart extend
 export class GetScheduleResponseBodyScheduleInformationScheduleItems extends $tea.Model {
   end?: GetScheduleResponseBodyScheduleInformationScheduleItemsEnd;
   start?: GetScheduleResponseBodyScheduleInformationScheduleItemsStart;
+  /**
+   * @example
+   * BUSY
+   */
   status?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5567,6 +5885,10 @@ export class GetScheduleByMeResponseBodyScheduleInformationScheduleItemsStart ex
 export class GetScheduleByMeResponseBodyScheduleInformationScheduleItems extends $tea.Model {
   end?: GetScheduleByMeResponseBodyScheduleInformationScheduleItemsEnd;
   start?: GetScheduleByMeResponseBodyScheduleInformationScheduleItemsStart;
+  /**
+   * @example
+   * BUSY
+   */
   status?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5769,11 +6091,31 @@ export class ListAttendeesResponseBodyAttendees extends $tea.Model {
 
 export class ListCalendarsResponseBodyResponseCalendars extends $tea.Model {
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   eTag?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   privilege?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   summary?: string;
   timeZone?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5805,6 +6147,10 @@ export class ListCalendarsResponseBodyResponseCalendars extends $tea.Model {
 }
 
 export class ListCalendarsResponseBodyResponse extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   calendars?: ListCalendarsResponseBodyResponseCalendars[];
   static names(): { [key: string]: string } {
     return {
@@ -6096,6 +6442,10 @@ export class ListEventsResponseBodyEventsRecurrencePattern extends $tea.Model {
 }
 
 export class ListEventsResponseBodyEventsRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endDate?: string;
   numberOfOccurrences?: number;
   type?: string;
@@ -6211,6 +6561,10 @@ export class ListEventsResponseBodyEventsStart extends $tea.Model {
 export class ListEventsResponseBodyEvents extends $tea.Model {
   attendees?: ListEventsResponseBodyEventsAttendees[];
   categories?: ListEventsResponseBodyEventsCategories[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   description?: string;
   end?: ListEventsResponseBodyEventsEnd;
@@ -6229,6 +6583,10 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
   start?: ListEventsResponseBodyEventsStart;
   status?: string;
   summary?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6288,10 +6646,26 @@ export class ListEventsResponseBodyEvents extends $tea.Model {
 }
 
 export class ListEventsInstancesResponseBodyEventsAttendees extends $tea.Model {
+  /**
+   * @example
+   * jack
+   */
   displayName?: string;
+  /**
+   * @example
+   * iiiP35sJaxxxxRKgiEiF
+   */
   id?: string;
   isOptional?: boolean;
+  /**
+   * @example
+   * accepted
+   */
   responseStatus?: string;
+  /**
+   * @example
+   * false
+   */
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6319,8 +6693,20 @@ export class ListEventsInstancesResponseBodyEventsAttendees extends $tea.Model {
 }
 
 export class ListEventsInstancesResponseBodyEventsEnd extends $tea.Model {
+  /**
+   * @example
+   * 2020-01-01
+   */
   date?: string;
+  /**
+   * @example
+   * 2020-01-01T11:15:30+08:00
+   */
   dateTime?: string;
+  /**
+   * @example
+   * Asia/Shanghai
+   */
   timeZone?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6382,6 +6768,10 @@ export class ListEventsInstancesResponseBodyEventsExtendedProperties extends $te
 }
 
 export class ListEventsInstancesResponseBodyEventsLocation extends $tea.Model {
+  /**
+   * @example
+   * room 1-2-3
+   */
   displayName?: string;
   meetingRooms?: string[];
   static names(): { [key: string]: string } {
@@ -6404,8 +6794,20 @@ export class ListEventsInstancesResponseBodyEventsLocation extends $tea.Model {
 }
 
 export class ListEventsInstancesResponseBodyEventsOnlineMeetingInfo extends $tea.Model {
+  /**
+   * @example
+   * 5c4df21dxxxx-a6db402b9f3a"
+   */
   conferenceId?: string;
+  /**
+   * @example
+   * dingtalk
+   */
   type?: string;
+  /**
+   * @example
+   * dingtalk://dingtalkclient/page/videoCoxxxxndar?confId=5c4df21dxxxx2b9f3a&calendarId=92xxxx36
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6429,9 +6831,25 @@ export class ListEventsInstancesResponseBodyEventsOnlineMeetingInfo extends $tea
 }
 
 export class ListEventsInstancesResponseBodyEventsOrganizer extends $tea.Model {
+  /**
+   * @example
+   * tony
+   */
   displayName?: string;
+  /**
+   * @example
+   * iiiP35sJaxxxxRKgiEiF
+   */
   id?: string;
+  /**
+   * @example
+   * accepted
+   */
   responseStatus?: string;
+  /**
+   * @example
+   * true
+   */
   self?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6457,10 +6875,30 @@ export class ListEventsInstancesResponseBodyEventsOrganizer extends $tea.Model {
 }
 
 export class ListEventsInstancesResponseBodyEventsRecurrencePattern extends $tea.Model {
+  /**
+   * @example
+   * 14
+   */
   dayOfMonth?: number;
+  /**
+   * @example
+   * sunday
+   */
   daysOfWeek?: string;
+  /**
+   * @example
+   * first
+   */
   index?: string;
+  /**
+   * @example
+   * 1
+   */
   interval?: number;
+  /**
+   * @example
+   * daily
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6488,8 +6926,23 @@ export class ListEventsInstancesResponseBodyEventsRecurrencePattern extends $tea
 }
 
 export class ListEventsInstancesResponseBodyEventsRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2020-01-01T10:15:30+08:00
+   */
   endDate?: string;
+  /**
+   * @example
+   * 5
+   */
   numberOfOccurrences?: number;
+  /**
+   * @example
+   * noEnd
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6535,7 +6988,15 @@ export class ListEventsInstancesResponseBodyEventsRecurrence extends $tea.Model 
 }
 
 export class ListEventsInstancesResponseBodyEventsReminders extends $tea.Model {
+  /**
+   * @example
+   * dingtalk
+   */
   method?: string;
+  /**
+   * @example
+   * 0
+   */
   minutes?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6557,8 +7018,20 @@ export class ListEventsInstancesResponseBodyEventsReminders extends $tea.Model {
 }
 
 export class ListEventsInstancesResponseBodyEventsStart extends $tea.Model {
+  /**
+   * @example
+   * 2020-01-01
+   */
   date?: string;
+  /**
+   * @example
+   * 2020-01-01T10:15:30+08:00
+   */
   dateTime?: string;
+  /**
+   * @example
+   * Asia/Shanghai
+   */
   timeZone?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6583,21 +7056,59 @@ export class ListEventsInstancesResponseBodyEventsStart extends $tea.Model {
 
 export class ListEventsInstancesResponseBodyEvents extends $tea.Model {
   attendees?: ListEventsInstancesResponseBodyEventsAttendees[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2020-01-01T10:15:30+08:00
+   */
   createTime?: string;
+  /**
+   * @example
+   * something about this event
+   */
   description?: string;
   end?: ListEventsInstancesResponseBodyEventsEnd;
   extendedProperties?: ListEventsInstancesResponseBodyEventsExtendedProperties;
+  /**
+   * @example
+   * cnNTbW1YbxxxxdEgvdlQrQT09
+   */
   id?: string;
+  /**
+   * @example
+   * false
+   */
   isAllDay?: boolean;
   location?: ListEventsInstancesResponseBodyEventsLocation;
   onlineMeetingInfo?: ListEventsInstancesResponseBodyEventsOnlineMeetingInfo;
   organizer?: ListEventsInstancesResponseBodyEventsOrganizer;
   recurrence?: ListEventsInstancesResponseBodyEventsRecurrence;
   reminders?: ListEventsInstancesResponseBodyEventsReminders[];
+  /**
+   * @example
+   * cnNTbWxxxxaFJZdEgvdlQrQT09
+   */
   seriesMasterId?: string;
   start?: ListEventsInstancesResponseBodyEventsStart;
+  /**
+   * @example
+   * confirmed
+   */
   status?: string;
+  /**
+   * @example
+   * test event
+   */
   summary?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2020-01-01T10:15:30+08:00
+   */
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6921,6 +7432,10 @@ export class ListEventsViewResponseBodyEventsRecurrencePattern extends $tea.Mode
 }
 
 export class ListEventsViewResponseBodyEventsRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endDate?: string;
   numberOfOccurrences?: number;
   type?: string;
@@ -7014,6 +7529,10 @@ export class ListEventsViewResponseBodyEventsStart extends $tea.Model {
 export class ListEventsViewResponseBodyEvents extends $tea.Model {
   attendees?: ListEventsViewResponseBodyEventsAttendees[];
   categories?: ListEventsViewResponseBodyEventsCategories[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   description?: string;
   end?: ListEventsViewResponseBodyEventsEnd;
@@ -7031,6 +7550,10 @@ export class ListEventsViewResponseBodyEvents extends $tea.Model {
   start?: ListEventsViewResponseBodyEventsStart;
   status?: string;
   summary?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7360,6 +7883,10 @@ export class ListEventsViewByMeResponseBodyEventsRecurrencePattern extends $tea.
 }
 
 export class ListEventsViewByMeResponseBodyEventsRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endDate?: string;
   numberOfOccurrences?: number;
   type?: string;
@@ -7453,6 +7980,10 @@ export class ListEventsViewByMeResponseBodyEventsStart extends $tea.Model {
 export class ListEventsViewByMeResponseBodyEvents extends $tea.Model {
   attendees?: ListEventsViewByMeResponseBodyEventsAttendees[];
   categories?: ListEventsViewByMeResponseBodyEventsCategories[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   description?: string;
   end?: ListEventsViewByMeResponseBodyEventsEnd;
@@ -7470,6 +8001,10 @@ export class ListEventsViewByMeResponseBodyEvents extends $tea.Model {
   start?: ListEventsViewByMeResponseBodyEventsStart;
   status?: string;
   summary?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7755,6 +8290,10 @@ export class ListInstancesResponseBodyEventsRecurrencePattern extends $tea.Model
 }
 
 export class ListInstancesResponseBodyEventsRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endDate?: string;
   numberOfOccurrences?: number;
   type?: string;
@@ -7850,6 +8389,10 @@ export class ListInstancesResponseBodyEventsStart extends $tea.Model {
 
 export class ListInstancesResponseBodyEvents extends $tea.Model {
   attendees?: ListInstancesResponseBodyEventsAttendees[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   description?: string;
   end?: ListInstancesResponseBodyEventsEnd;
@@ -7866,6 +8409,10 @@ export class ListInstancesResponseBodyEvents extends $tea.Model {
   start?: ListInstancesResponseBodyEventsStart;
   status?: string;
   summary?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8063,6 +8610,10 @@ export class PatchEventRequestRecurrencePattern extends $tea.Model {
 }
 
 export class PatchEventRequestRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endDate?: string;
   numberOfOccurrences?: number;
   type?: string;
@@ -8176,7 +8727,15 @@ export class PatchEventRequestStart extends $tea.Model {
 }
 
 export class PatchEventRequestUiConfigs extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   uiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   uiStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8385,6 +8944,10 @@ export class PatchEventResponseBodyRecurrencePattern extends $tea.Model {
 }
 
 export class PatchEventResponseBodyRecurrenceRange extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endDate?: string;
   numberOfOccurrences?: number;
   type?: string;
@@ -8498,7 +9061,15 @@ export class PatchEventResponseBodyStart extends $tea.Model {
 }
 
 export class PatchEventResponseBodyUiConfigs extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   uiName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   uiStatus?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8584,12 +9155,11 @@ export class UpdateSubscribedCalendarsRequestSubscribeScope extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -8599,12 +9169,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 新增日程参与人
-   *
-   * @param request AddAttendeeRequest
-   * @param headers AddAttendeeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddAttendeeResponse
+   * 新增日程参与人
+   * 
+   * @param request - AddAttendeeRequest
+   * @param headers - AddAttendeeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddAttendeeResponse
    */
   async addAttendeeWithOptions(userId: string, calendarId: string, eventId: string, request: AddAttendeeRequest, headers: AddAttendeeHeaders, runtime: $Util.RuntimeOptions): Promise<AddAttendeeResponse> {
     Util.validateModel(request);
@@ -8653,10 +9223,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增日程参与人
-   *
-   * @param request AddAttendeeRequest
-   * @return AddAttendeeResponse
+   * 新增日程参与人
+   * 
+   * @param request - AddAttendeeRequest
+   * @returns AddAttendeeResponse
    */
   async addAttendee(userId: string, calendarId: string, eventId: string, request: AddAttendeeRequest): Promise<AddAttendeeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8665,12 +9235,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加会议室
-   *
-   * @param request AddMeetingRoomsRequest
-   * @param headers AddMeetingRoomsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddMeetingRoomsResponse
+   * 添加会议室
+   * 
+   * @param request - AddMeetingRoomsRequest
+   * @param headers - AddMeetingRoomsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddMeetingRoomsResponse
    */
   async addMeetingRoomsWithOptions(userId: string, calendarId: string, eventId: string, request: AddMeetingRoomsRequest, headers: AddMeetingRoomsHeaders, runtime: $Util.RuntimeOptions): Promise<AddMeetingRoomsResponse> {
     Util.validateModel(request);
@@ -8711,10 +9281,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加会议室
-   *
-   * @param request AddMeetingRoomsRequest
-   * @return AddMeetingRoomsResponse
+   * 添加会议室
+   * 
+   * @param request - AddMeetingRoomsRequest
+   * @returns AddMeetingRoomsResponse
    */
   async addMeetingRooms(userId: string, calendarId: string, eventId: string, request: AddMeetingRoomsRequest): Promise<AddMeetingRoomsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8723,11 +9293,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 签到
-   *
-   * @param headers CheckInHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CheckInResponse
+   * 签到
+   * 
+   * @param headers - CheckInHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CheckInResponse
    */
   async checkInWithOptions(userId: string, calendarId: string, eventId: string, headers: CheckInHeaders, runtime: $Util.RuntimeOptions): Promise<CheckInResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -8757,9 +9327,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 签到
-   *
-   * @return CheckInResponse
+   * 签到
+   * @returns CheckInResponse
    */
   async checkIn(userId: string, calendarId: string, eventId: string): Promise<CheckInResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8768,12 +9337,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转换老版本的eventId
-   *
-   * @param request ConvertLegacyEventIdRequest
-   * @param headers ConvertLegacyEventIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ConvertLegacyEventIdResponse
+   * 转换老版本的eventId
+   * 
+   * @param request - ConvertLegacyEventIdRequest
+   * @param headers - ConvertLegacyEventIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ConvertLegacyEventIdResponse
    */
   async convertLegacyEventIdWithOptions(userId: string, request: ConvertLegacyEventIdRequest, headers: ConvertLegacyEventIdHeaders, runtime: $Util.RuntimeOptions): Promise<ConvertLegacyEventIdResponse> {
     Util.validateModel(request);
@@ -8810,10 +9379,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转换老版本的eventId
-   *
-   * @param request ConvertLegacyEventIdRequest
-   * @return ConvertLegacyEventIdResponse
+   * 转换老版本的eventId
+   * 
+   * @param request - ConvertLegacyEventIdRequest
+   * @returns ConvertLegacyEventIdResponse
    */
   async convertLegacyEventId(userId: string, request: ConvertLegacyEventIdRequest): Promise<ConvertLegacyEventIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8822,12 +9391,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建访问控制
-   *
-   * @param request CreateAclsRequest
-   * @param headers CreateAclsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateAclsResponse
+   * 创建访问控制
+   * 
+   * @param request - CreateAclsRequest
+   * @param headers - CreateAclsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateAclsResponse
    */
   async createAclsWithOptions(userId: string, calendarId: string, request: CreateAclsRequest, headers: CreateAclsHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAclsResponse> {
     Util.validateModel(request);
@@ -8872,10 +9441,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建访问控制
-   *
-   * @param request CreateAclsRequest
-   * @return CreateAclsResponse
+   * 创建访问控制
+   * 
+   * @param request - CreateAclsRequest
+   * @returns CreateAclsResponse
    */
   async createAcls(userId: string, calendarId: string, request: CreateAclsRequest): Promise<CreateAclsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8884,12 +9453,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建日程
-   *
-   * @param request CreateEventRequest
-   * @param headers CreateEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateEventResponse
+   * 创建日程
+   * 
+   * @param request - CreateEventRequest
+   * @param headers - CreateEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateEventResponse
    */
   async createEventWithOptions(userId: string, calendarId: string, request: CreateEventRequest, headers: CreateEventHeaders, runtime: $Util.RuntimeOptions): Promise<CreateEventResponse> {
     Util.validateModel(request);
@@ -8982,10 +9551,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建日程
-   *
-   * @param request CreateEventRequest
-   * @return CreateEventResponse
+   * 创建日程
+   * 
+   * @param request - CreateEventRequest
+   * @returns CreateEventResponse
    */
   async createEvent(userId: string, calendarId: string, request: CreateEventRequest): Promise<CreateEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8994,12 +9563,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建日程(me接口)
-   *
-   * @param request CreateEventByMeRequest
-   * @param headers CreateEventByMeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateEventByMeResponse
+   * 创建日程(me接口)
+   * 
+   * @param request - CreateEventByMeRequest
+   * @param headers - CreateEventByMeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateEventByMeResponse
    */
   async createEventByMeWithOptions(calendarId: string, request: CreateEventByMeRequest, headers: CreateEventByMeHeaders, runtime: $Util.RuntimeOptions): Promise<CreateEventByMeResponse> {
     Util.validateModel(request);
@@ -9088,10 +9657,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建日程(me接口)
-   *
-   * @param request CreateEventByMeRequest
-   * @return CreateEventByMeResponse
+   * 创建日程(me接口)
+   * 
+   * @param request - CreateEventByMeRequest
+   * @returns CreateEventByMeResponse
    */
   async createEventByMe(calendarId: string, request: CreateEventByMeRequest): Promise<CreateEventByMeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9100,12 +9669,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 快速创建订阅日历
-   *
-   * @param request CreateSubscribedCalendarRequest
-   * @param headers CreateSubscribedCalendarHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateSubscribedCalendarResponse
+   * 快速创建订阅日历
+   * 
+   * @param request - CreateSubscribedCalendarRequest
+   * @param headers - CreateSubscribedCalendarHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateSubscribedCalendarResponse
    */
   async createSubscribedCalendarWithOptions(userId: string, request: CreateSubscribedCalendarRequest, headers: CreateSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSubscribedCalendarResponse> {
     Util.validateModel(request);
@@ -9154,10 +9723,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 快速创建订阅日历
-   *
-   * @param request CreateSubscribedCalendarRequest
-   * @return CreateSubscribedCalendarResponse
+   * 快速创建订阅日历
+   * 
+   * @param request - CreateSubscribedCalendarRequest
+   * @returns CreateSubscribedCalendarResponse
    */
   async createSubscribedCalendar(userId: string, request: CreateSubscribedCalendarRequest): Promise<CreateSubscribedCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9166,11 +9735,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除访问控制
-   *
-   * @param headers DeleteAclHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteAclResponse
+   * 删除访问控制
+   * 
+   * @param headers - DeleteAclHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteAclResponse
    */
   async deleteAclWithOptions(userId: string, calendarId: string, aclId: string, headers: DeleteAclHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteAclResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9200,9 +9769,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除访问控制
-   *
-   * @return DeleteAclResponse
+   * 删除访问控制
+   * @returns DeleteAclResponse
    */
   async deleteAcl(userId: string, calendarId: string, aclId: string): Promise<DeleteAclResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9211,12 +9779,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除指定日程
-   *
-   * @param request DeleteEventRequest
-   * @param headers DeleteEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteEventResponse
+   * 删除指定日程
+   * 
+   * @param request - DeleteEventRequest
+   * @param headers - DeleteEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteEventResponse
    */
   async deleteEventWithOptions(userId: string, calendarId: string, eventId: string, request: DeleteEventRequest, headers: DeleteEventHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteEventResponse> {
     Util.validateModel(request);
@@ -9257,10 +9825,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除指定日程
-   *
-   * @param request DeleteEventRequest
-   * @return DeleteEventResponse
+   * 删除指定日程
+   * 
+   * @param request - DeleteEventRequest
+   * @returns DeleteEventResponse
    */
   async deleteEvent(userId: string, calendarId: string, eventId: string, request: DeleteEventRequest): Promise<DeleteEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9269,11 +9837,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除指定订阅日历
-   *
-   * @param headers DeleteSubscribedCalendarHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteSubscribedCalendarResponse
+   * 删除指定订阅日历
+   * 
+   * @param headers - DeleteSubscribedCalendarHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteSubscribedCalendarResponse
    */
   async deleteSubscribedCalendarWithOptions(userId: string, calendarId: string, headers: DeleteSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSubscribedCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9303,9 +9871,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除指定订阅日历
-   *
-   * @return DeleteSubscribedCalendarResponse
+   * 删除指定订阅日历
+   * @returns DeleteSubscribedCalendarResponse
    */
   async deleteSubscribedCalendar(userId: string, calendarId: string): Promise<DeleteSubscribedCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9314,12 +9881,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生成caldav账户
-   *
-   * @param request GenerateCaldavAccountRequest
-   * @param headers GenerateCaldavAccountHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GenerateCaldavAccountResponse
+   * 生成caldav账户
+   * 
+   * @param request - GenerateCaldavAccountRequest
+   * @param headers - GenerateCaldavAccountHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GenerateCaldavAccountResponse
    */
   async generateCaldavAccountWithOptions(userId: string, request: GenerateCaldavAccountRequest, headers: GenerateCaldavAccountHeaders, runtime: $Util.RuntimeOptions): Promise<GenerateCaldavAccountResponse> {
     Util.validateModel(request);
@@ -9360,10 +9927,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生成caldav账户
-   *
-   * @param request GenerateCaldavAccountRequest
-   * @return GenerateCaldavAccountResponse
+   * 生成caldav账户
+   * 
+   * @param request - GenerateCaldavAccountRequest
+   * @returns GenerateCaldavAccountResponse
    */
   async generateCaldavAccount(userId: string, request: GenerateCaldavAccountRequest): Promise<GenerateCaldavAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9372,12 +9939,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询日程列表
-   *
-   * @param request GetEventRequest
-   * @param headers GetEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetEventResponse
+   * 查询日程列表
+   * 
+   * @param request - GetEventRequest
+   * @param headers - GetEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetEventResponse
    */
   async getEventWithOptions(userId: string, calendarId: string, eventId: string, request: GetEventRequest, headers: GetEventHeaders, runtime: $Util.RuntimeOptions): Promise<GetEventResponse> {
     Util.validateModel(request);
@@ -9414,10 +9981,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询日程列表
-   *
-   * @param request GetEventRequest
-   * @return GetEventResponse
+   * 查询日程列表
+   * 
+   * @param request - GetEventRequest
+   * @returns GetEventResponse
    */
   async getEvent(userId: string, calendarId: string, eventId: string, request: GetEventRequest): Promise<GetEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9426,12 +9993,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议室忙闲
-   *
-   * @param request GetMeetingRoomsScheduleRequest
-   * @param headers GetMeetingRoomsScheduleHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMeetingRoomsScheduleResponse
+   * 查询会议室忙闲
+   * 
+   * @param request - GetMeetingRoomsScheduleRequest
+   * @param headers - GetMeetingRoomsScheduleHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMeetingRoomsScheduleResponse
    */
   async getMeetingRoomsScheduleWithOptions(userId: string, request: GetMeetingRoomsScheduleRequest, headers: GetMeetingRoomsScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<GetMeetingRoomsScheduleResponse> {
     Util.validateModel(request);
@@ -9476,10 +10043,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议室忙闲
-   *
-   * @param request GetMeetingRoomsScheduleRequest
-   * @return GetMeetingRoomsScheduleResponse
+   * 查询会议室忙闲
+   * 
+   * @param request - GetMeetingRoomsScheduleRequest
+   * @returns GetMeetingRoomsScheduleResponse
    */
   async getMeetingRoomsSchedule(userId: string, request: GetMeetingRoomsScheduleRequest): Promise<GetMeetingRoomsScheduleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9488,12 +10055,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询闲忙
-   *
-   * @param request GetScheduleRequest
-   * @param headers GetScheduleHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetScheduleResponse
+   * 查询闲忙
+   * 
+   * @param request - GetScheduleRequest
+   * @param headers - GetScheduleHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetScheduleResponse
    */
   async getScheduleWithOptions(userId: string, request: GetScheduleRequest, headers: GetScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<GetScheduleResponse> {
     Util.validateModel(request);
@@ -9538,10 +10105,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询闲忙
-   *
-   * @param request GetScheduleRequest
-   * @return GetScheduleResponse
+   * 查询闲忙
+   * 
+   * @param request - GetScheduleRequest
+   * @returns GetScheduleResponse
    */
   async getSchedule(userId: string, request: GetScheduleRequest): Promise<GetScheduleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9550,12 +10117,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询闲忙(me接口）
-   *
-   * @param request GetScheduleByMeRequest
-   * @param headers GetScheduleByMeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetScheduleByMeResponse
+   * 查询闲忙(me接口）
+   * 
+   * @param request - GetScheduleByMeRequest
+   * @param headers - GetScheduleByMeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetScheduleByMeResponse
    */
   async getScheduleByMeWithOptions(request: GetScheduleByMeRequest, headers: GetScheduleByMeHeaders, runtime: $Util.RuntimeOptions): Promise<GetScheduleByMeResponse> {
     Util.validateModel(request);
@@ -9604,10 +10171,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询闲忙(me接口）
-   *
-   * @param request GetScheduleByMeRequest
-   * @return GetScheduleByMeResponse
+   * 查询闲忙(me接口）
+   * 
+   * @param request - GetScheduleByMeRequest
+   * @returns GetScheduleByMeResponse
    */
   async getScheduleByMe(request: GetScheduleByMeRequest): Promise<GetScheduleByMeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9616,11 +10183,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取签到链接
-   *
-   * @param headers GetSignInLinkHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSignInLinkResponse
+   * 获取签到链接
+   * 
+   * @param headers - GetSignInLinkHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSignInLinkResponse
    */
   async getSignInLinkWithOptions(calendarId: string, userId: string, eventId: string, headers: GetSignInLinkHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignInLinkResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9650,9 +10217,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取签到链接
-   *
-   * @return GetSignInLinkResponse
+   * 获取签到链接
+   * @returns GetSignInLinkResponse
    */
   async getSignInLink(calendarId: string, userId: string, eventId: string): Promise<GetSignInLinkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9661,12 +10227,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取签到信息详情
-   *
-   * @param request GetSignInListRequest
-   * @param headers GetSignInListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSignInListResponse
+   * 获取签到信息详情
+   * 
+   * @param request - GetSignInListRequest
+   * @param headers - GetSignInListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSignInListResponse
    */
   async getSignInListWithOptions(userId: string, calendarId: string, eventId: string, request: GetSignInListRequest, headers: GetSignInListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignInListResponse> {
     Util.validateModel(request);
@@ -9711,10 +10277,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取签到信息详情
-   *
-   * @param request GetSignInListRequest
-   * @return GetSignInListResponse
+   * 获取签到信息详情
+   * 
+   * @param request - GetSignInListRequest
+   * @returns GetSignInListResponse
    */
   async getSignInList(userId: string, calendarId: string, eventId: string, request: GetSignInListRequest): Promise<GetSignInListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9723,11 +10289,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取签退链接
-   *
-   * @param headers GetSignOutLinkHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSignOutLinkResponse
+   * 获取签退链接
+   * 
+   * @param headers - GetSignOutLinkHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSignOutLinkResponse
    */
   async getSignOutLinkWithOptions(calendarId: string, userId: string, eventId: string, headers: GetSignOutLinkHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignOutLinkResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9757,9 +10323,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取签退链接
-   *
-   * @return GetSignOutLinkResponse
+   * 获取签退链接
+   * @returns GetSignOutLinkResponse
    */
   async getSignOutLink(calendarId: string, userId: string, eventId: string): Promise<GetSignOutLinkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9768,12 +10333,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取签退信息详情
-   *
-   * @param request GetSignOutListRequest
-   * @param headers GetSignOutListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSignOutListResponse
+   * 获取签退信息详情
+   * 
+   * @param request - GetSignOutListRequest
+   * @param headers - GetSignOutListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSignOutListResponse
    */
   async getSignOutListWithOptions(userId: string, calendarId: string, eventId: string, request: GetSignOutListRequest, headers: GetSignOutListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignOutListResponse> {
     Util.validateModel(request);
@@ -9818,10 +10383,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取签退信息详情
-   *
-   * @param request GetSignOutListRequest
-   * @return GetSignOutListResponse
+   * 获取签退信息详情
+   * 
+   * @param request - GetSignOutListRequest
+   * @returns GetSignOutListResponse
    */
   async getSignOutList(userId: string, calendarId: string, eventId: string, request: GetSignOutListRequest): Promise<GetSignOutListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9830,11 +10395,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定订阅日历详情
-   *
-   * @param headers GetSubscribedCalendarHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSubscribedCalendarResponse
+   * 获取指定订阅日历详情
+   * 
+   * @param headers - GetSubscribedCalendarHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSubscribedCalendarResponse
    */
   async getSubscribedCalendarWithOptions(userId: string, calendarId: string, headers: GetSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<GetSubscribedCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9864,9 +10429,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定订阅日历详情
-   *
-   * @return GetSubscribedCalendarResponse
+   * 获取指定订阅日历详情
+   * @returns GetSubscribedCalendarResponse
    */
   async getSubscribedCalendar(userId: string, calendarId: string): Promise<GetSubscribedCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9875,11 +10439,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取访问控制列表
-   *
-   * @param headers ListAclsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListAclsResponse
+   * 获取访问控制列表
+   * 
+   * @param headers - ListAclsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListAclsResponse
    */
   async listAclsWithOptions(userId: string, calendarId: string, headers: ListAclsHeaders, runtime: $Util.RuntimeOptions): Promise<ListAclsResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9909,9 +10473,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取访问控制列表
-   *
-   * @return ListAclsResponse
+   * 获取访问控制列表
+   * @returns ListAclsResponse
    */
   async listAcls(userId: string, calendarId: string): Promise<ListAclsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9920,12 +10483,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取参与人列表
-   *
-   * @param request ListAttendeesRequest
-   * @param headers ListAttendeesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListAttendeesResponse
+   * 分页获取参与人列表
+   * 
+   * @param request - ListAttendeesRequest
+   * @param headers - ListAttendeesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListAttendeesResponse
    */
   async listAttendeesWithOptions(userId: string, calendarId: string, eventId: string, request: ListAttendeesRequest, headers: ListAttendeesHeaders, runtime: $Util.RuntimeOptions): Promise<ListAttendeesResponse> {
     Util.validateModel(request);
@@ -9966,10 +10529,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取参与人列表
-   *
-   * @param request ListAttendeesRequest
-   * @return ListAttendeesResponse
+   * 分页获取参与人列表
+   * 
+   * @param request - ListAttendeesRequest
+   * @returns ListAttendeesResponse
    */
   async listAttendees(userId: string, calendarId: string, eventId: string, request: ListAttendeesRequest): Promise<ListAttendeesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9978,11 +10541,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 日历本查询
-   *
-   * @param headers ListCalendarsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListCalendarsResponse
+   * 日历本查询
+   * 
+   * @param headers - ListCalendarsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListCalendarsResponse
    */
   async listCalendarsWithOptions(userId: string, headers: ListCalendarsHeaders, runtime: $Util.RuntimeOptions): Promise<ListCalendarsResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -10012,9 +10575,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 日历本查询
-   *
-   * @return ListCalendarsResponse
+   * 日历本查询
+   * @returns ListCalendarsResponse
    */
   async listCalendars(userId: string): Promise<ListCalendarsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10023,12 +10585,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询日程列表
-   *
-   * @param request ListEventsRequest
-   * @param headers ListEventsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListEventsResponse
+   * 查询日程列表
+   * 
+   * @param request - ListEventsRequest
+   * @param headers - ListEventsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListEventsResponse
    */
   async listEventsWithOptions(userId: string, calendarId: string, request: ListEventsRequest, headers: ListEventsHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsResponse> {
     Util.validateModel(request);
@@ -10093,10 +10655,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询日程列表
-   *
-   * @param request ListEventsRequest
-   * @return ListEventsResponse
+   * 查询日程列表
+   * 
+   * @param request - ListEventsRequest
+   * @returns ListEventsResponse
    */
   async listEvents(userId: string, calendarId: string, request: ListEventsRequest): Promise<ListEventsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10105,12 +10667,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询同一个循环日程序列下已生成的实例
-   *
-   * @param request ListEventsInstancesRequest
-   * @param headers ListEventsInstancesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListEventsInstancesResponse
+   * 查询同一个循环日程序列下已生成的实例
+   * 
+   * @param request - ListEventsInstancesRequest
+   * @param headers - ListEventsInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListEventsInstancesResponse
    */
   async listEventsInstancesWithOptions(userId: string, calendarId: string, request: ListEventsInstancesRequest, headers: ListEventsInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsInstancesResponse> {
     Util.validateModel(request);
@@ -10159,10 +10721,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询同一个循环日程序列下已生成的实例
-   *
-   * @param request ListEventsInstancesRequest
-   * @return ListEventsInstancesResponse
+   * 查询同一个循环日程序列下已生成的实例
+   * 
+   * @param request - ListEventsInstancesRequest
+   * @returns ListEventsInstancesResponse
    */
   async listEventsInstances(userId: string, calendarId: string, request: ListEventsInstancesRequest): Promise<ListEventsInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10171,12 +10733,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询日程视图列表以查看闲忙，展开循环日程
-   *
-   * @param request ListEventsViewRequest
-   * @param headers ListEventsViewHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListEventsViewResponse
+   * 查询日程视图列表以查看闲忙，展开循环日程
+   * 
+   * @param request - ListEventsViewRequest
+   * @param headers - ListEventsViewHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListEventsViewResponse
    */
   async listEventsViewWithOptions(userId: string, calendarId: string, request: ListEventsViewRequest, headers: ListEventsViewHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsViewResponse> {
     Util.validateModel(request);
@@ -10229,10 +10791,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询日程视图列表以查看闲忙，展开循环日程
-   *
-   * @param request ListEventsViewRequest
-   * @return ListEventsViewResponse
+   * 查询日程视图列表以查看闲忙，展开循环日程
+   * 
+   * @param request - ListEventsViewRequest
+   * @returns ListEventsViewResponse
    */
   async listEventsView(userId: string, calendarId: string, request: ListEventsViewRequest): Promise<ListEventsViewResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10241,12 +10803,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
-   *
-   * @param request ListEventsViewByMeRequest
-   * @param headers ListEventsViewByMeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListEventsViewByMeResponse
+   * 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+   * 
+   * @param request - ListEventsViewByMeRequest
+   * @param headers - ListEventsViewByMeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListEventsViewByMeResponse
    */
   async listEventsViewByMeWithOptions(calendarId: string, request: ListEventsViewByMeRequest, headers: ListEventsViewByMeHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsViewByMeResponse> {
     Util.validateModel(request);
@@ -10303,10 +10865,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询日程视图列表以查看闲忙，展开循环日程(me接口）
-   *
-   * @param request ListEventsViewByMeRequest
-   * @return ListEventsViewByMeResponse
+   * 查询日程视图列表以查看闲忙，展开循环日程(me接口）
+   * 
+   * @param request - ListEventsViewByMeRequest
+   * @returns ListEventsViewByMeResponse
    */
   async listEventsViewByMe(calendarId: string, request: ListEventsViewByMeRequest): Promise<ListEventsViewByMeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10315,12 +10877,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询循环日程实例列表
-   *
-   * @param request ListInstancesRequest
-   * @param headers ListInstancesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListInstancesResponse
+   * 查询循环日程实例列表
+   * 
+   * @param request - ListInstancesRequest
+   * @param headers - ListInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListInstancesResponse
    */
   async listInstancesWithOptions(userId: string, calendarId: string, eventId: string, request: ListInstancesRequest, headers: ListInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<ListInstancesResponse> {
     Util.validateModel(request);
@@ -10373,10 +10935,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询循环日程实例列表
-   *
-   * @param request ListInstancesRequest
-   * @return ListInstancesResponse
+   * 查询循环日程实例列表
+   * 
+   * @param request - ListInstancesRequest
+   * @returns ListInstancesResponse
    */
   async listInstances(userId: string, calendarId: string, eventId: string, request: ListInstancesRequest): Promise<ListInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10385,12 +10947,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置会议室在日程中的响应状态
-   *
-   * @param request MeetingRoomRespondRequest
-   * @param headers MeetingRoomRespondHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MeetingRoomRespondResponse
+   * 设置会议室在日程中的响应状态
+   * 
+   * @param request - MeetingRoomRespondRequest
+   * @param headers - MeetingRoomRespondHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MeetingRoomRespondResponse
    */
   async meetingRoomRespondWithOptions(calendarId: string, userId: string, eventId: string, roomId: string, request: MeetingRoomRespondRequest, headers: MeetingRoomRespondHeaders, runtime: $Util.RuntimeOptions): Promise<MeetingRoomRespondResponse> {
     Util.validateModel(request);
@@ -10435,10 +10997,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置会议室在日程中的响应状态
-   *
-   * @param request MeetingRoomRespondRequest
-   * @return MeetingRoomRespondResponse
+   * 设置会议室在日程中的响应状态
+   * 
+   * @param request - MeetingRoomRespondRequest
+   * @returns MeetingRoomRespondResponse
    */
   async meetingRoomRespond(calendarId: string, userId: string, eventId: string, roomId: string, request: MeetingRoomRespondRequest): Promise<MeetingRoomRespondResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10447,12 +11009,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改日程
-   *
-   * @param request PatchEventRequest
-   * @param headers PatchEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PatchEventResponse
+   * 修改日程
+   * 
+   * @param request - PatchEventRequest
+   * @param headers - PatchEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PatchEventResponse
    */
   async patchEventWithOptions(userId: string, calendarId: string, eventId: string, request: PatchEventRequest, headers: PatchEventHeaders, runtime: $Util.RuntimeOptions): Promise<PatchEventResponse> {
     Util.validateModel(request);
@@ -10549,10 +11111,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改日程
-   *
-   * @param request PatchEventRequest
-   * @return PatchEventResponse
+   * 修改日程
+   * 
+   * @param request - PatchEventRequest
+   * @returns PatchEventResponse
    */
   async patchEvent(userId: string, calendarId: string, eventId: string, request: PatchEventRequest): Promise<PatchEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10561,12 +11123,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除日程参与人
-   *
-   * @param request RemoveAttendeeRequest
-   * @param headers RemoveAttendeeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RemoveAttendeeResponse
+   * 删除日程参与人
+   * 
+   * @param request - RemoveAttendeeRequest
+   * @param headers - RemoveAttendeeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RemoveAttendeeResponse
    */
   async removeAttendeeWithOptions(userId: string, calendarId: string, eventId: string, request: RemoveAttendeeRequest, headers: RemoveAttendeeHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveAttendeeResponse> {
     Util.validateModel(request);
@@ -10607,10 +11169,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除日程参与人
-   *
-   * @param request RemoveAttendeeRequest
-   * @return RemoveAttendeeResponse
+   * 删除日程参与人
+   * 
+   * @param request - RemoveAttendeeRequest
+   * @returns RemoveAttendeeResponse
    */
   async removeAttendee(userId: string, calendarId: string, eventId: string, request: RemoveAttendeeRequest): Promise<RemoveAttendeeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10619,12 +11181,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除会议室
-   *
-   * @param request RemoveMeetingRoomsRequest
-   * @param headers RemoveMeetingRoomsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RemoveMeetingRoomsResponse
+   * 删除会议室
+   * 
+   * @param request - RemoveMeetingRoomsRequest
+   * @param headers - RemoveMeetingRoomsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RemoveMeetingRoomsResponse
    */
   async removeMeetingRoomsWithOptions(userId: string, calendarId: string, eventId: string, request: RemoveMeetingRoomsRequest, headers: RemoveMeetingRoomsHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveMeetingRoomsResponse> {
     Util.validateModel(request);
@@ -10665,10 +11227,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除会议室
-   *
-   * @param request RemoveMeetingRoomsRequest
-   * @return RemoveMeetingRoomsResponse
+   * 删除会议室
+   * 
+   * @param request - RemoveMeetingRoomsRequest
+   * @returns RemoveMeetingRoomsResponse
    */
   async removeMeetingRooms(userId: string, calendarId: string, eventId: string, request: RemoveMeetingRoomsRequest): Promise<RemoveMeetingRoomsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10677,12 +11239,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 回复日程邀请
-   *
-   * @param request RespondEventRequest
-   * @param headers RespondEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RespondEventResponse
+   * 回复日程邀请
+   * 
+   * @param request - RespondEventRequest
+   * @param headers - RespondEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RespondEventResponse
    */
   async respondEventWithOptions(userId: string, calendarId: string, eventId: string, request: RespondEventRequest, headers: RespondEventHeaders, runtime: $Util.RuntimeOptions): Promise<RespondEventResponse> {
     Util.validateModel(request);
@@ -10723,10 +11285,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 回复日程邀请
-   *
-   * @param request RespondEventRequest
-   * @return RespondEventResponse
+   * 回复日程邀请
+   * 
+   * @param request - RespondEventRequest
+   * @returns RespondEventResponse
    */
   async respondEvent(userId: string, calendarId: string, eventId: string, request: RespondEventRequest): Promise<RespondEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10735,11 +11297,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 签到
-   *
-   * @param headers SignInHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SignInResponse
+   * 签到
+   * 
+   * @param headers - SignInHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SignInResponse
    */
   async signInWithOptions(userId: string, calendarId: string, eventId: string, headers: SignInHeaders, runtime: $Util.RuntimeOptions): Promise<SignInResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -10769,9 +11331,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 签到
-   *
-   * @return SignInResponse
+   * 签到
+   * @returns SignInResponse
    */
   async signIn(userId: string, calendarId: string, eventId: string): Promise<SignInResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10780,11 +11341,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 签退
-   *
-   * @param headers SignOutHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SignOutResponse
+   * 签退
+   * 
+   * @param headers - SignOutHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SignOutResponse
    */
   async signOutWithOptions(userId: string, calendarId: string, eventId: string, headers: SignOutHeaders, runtime: $Util.RuntimeOptions): Promise<SignOutResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -10814,9 +11375,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 签退
-   *
-   * @return SignOutResponse
+   * 签退
+   * @returns SignOutResponse
    */
   async signOut(userId: string, calendarId: string, eventId: string): Promise<SignOutResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10825,11 +11385,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 订阅公共日历
-   *
-   * @param headers SubscribeCalendarHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SubscribeCalendarResponse
+   * 订阅公共日历
+   * 
+   * @param headers - SubscribeCalendarHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SubscribeCalendarResponse
    */
   async subscribeCalendarWithOptions(userId: string, calendarId: string, headers: SubscribeCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<SubscribeCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -10859,9 +11419,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 订阅公共日历
-   *
-   * @return SubscribeCalendarResponse
+   * 订阅公共日历
+   * @returns SubscribeCalendarResponse
    */
   async subscribeCalendar(userId: string, calendarId: string): Promise<SubscribeCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10870,12 +11429,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 日程转让
-   *
-   * @param request TransferEventRequest
-   * @param headers TransferEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return TransferEventResponse
+   * 日程转让
+   * 
+   * @param request - TransferEventRequest
+   * @param headers - TransferEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TransferEventResponse
    */
   async transferEventWithOptions(calendarId: string, userId: string, eventId: string, request: TransferEventRequest, headers: TransferEventHeaders, runtime: $Util.RuntimeOptions): Promise<TransferEventResponse> {
     Util.validateModel(request);
@@ -10924,10 +11483,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 日程转让
-   *
-   * @param request TransferEventRequest
-   * @return TransferEventResponse
+   * 日程转让
+   * 
+   * @param request - TransferEventRequest
+   * @returns TransferEventResponse
    */
   async transferEvent(calendarId: string, userId: string, eventId: string, request: TransferEventRequest): Promise<TransferEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10936,11 +11495,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消订阅公共日历
-   *
-   * @param headers UnsubscribeCalendarHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UnsubscribeCalendarResponse
+   * 取消订阅公共日历
+   * 
+   * @param headers - UnsubscribeCalendarHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UnsubscribeCalendarResponse
    */
   async unsubscribeCalendarWithOptions(userId: string, calendarId: string, headers: UnsubscribeCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<UnsubscribeCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -10970,9 +11529,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消订阅公共日历
-   *
-   * @return UnsubscribeCalendarResponse
+   * 取消订阅公共日历
+   * @returns UnsubscribeCalendarResponse
    */
   async unsubscribeCalendar(userId: string, calendarId: string): Promise<UnsubscribeCalendarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10981,12 +11539,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新指定订阅日历
-   *
-   * @param request UpdateSubscribedCalendarsRequest
-   * @param headers UpdateSubscribedCalendarsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateSubscribedCalendarsResponse
+   * 更新指定订阅日历
+   * 
+   * @param request - UpdateSubscribedCalendarsRequest
+   * @param headers - UpdateSubscribedCalendarsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateSubscribedCalendarsResponse
    */
   async updateSubscribedCalendarsWithOptions(calendarId: string, userId: string, request: UpdateSubscribedCalendarsRequest, headers: UpdateSubscribedCalendarsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSubscribedCalendarsResponse> {
     Util.validateModel(request);
@@ -11035,10 +11593,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新指定订阅日历
-   *
-   * @param request UpdateSubscribedCalendarsRequest
-   * @return UpdateSubscribedCalendarsResponse
+   * 更新指定订阅日历
+   * 
+   * @param request - UpdateSubscribedCalendarsRequest
+   * @returns UpdateSubscribedCalendarsResponse
    */
   async updateSubscribedCalendars(calendarId: string, userId: string, request: UpdateSubscribedCalendarsRequest): Promise<UpdateSubscribedCalendarsResponse> {
     let runtime = new $Util.RuntimeOptions({ });

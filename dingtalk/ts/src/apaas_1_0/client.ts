@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,6 +30,10 @@ export class BatchCreateTemplateHeaders extends $tea.Model {
 }
 
 export class BatchCreateTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateList?: BatchCreateTemplateRequestTemplateList[];
   static names(): { [key: string]: string } {
     return {
@@ -51,6 +53,10 @@ export class BatchCreateTemplateRequest extends $tea.Model {
 }
 
 export class BatchCreateTemplateResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   createResultList?: BatchCreateTemplateResponseBodyCreateResultList[];
   static names(): { [key: string]: string } {
     return {
@@ -117,6 +123,10 @@ export class BatchQueryByTemplateKeyHeaders extends $tea.Model {
 }
 
 export class BatchQueryByTemplateKeyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateKeys?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -136,6 +146,10 @@ export class BatchQueryByTemplateKeyRequest extends $tea.Model {
 }
 
 export class BatchQueryByTemplateKeyResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateList?: BatchQueryByTemplateKeyResponseBodyTemplateList[];
   static names(): { [key: string]: string } {
     return {
@@ -202,6 +216,10 @@ export class BatchUpdateTemplateHeaders extends $tea.Model {
 }
 
 export class BatchUpdateTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateList?: BatchUpdateTemplateRequestTemplateList[];
   static names(): { [key: string]: string } {
     return {
@@ -221,6 +239,10 @@ export class BatchUpdateTemplateRequest extends $tea.Model {
 }
 
 export class BatchUpdateTemplateResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   updateResultList?: BatchUpdateTemplateResponseBodyUpdateResultList[];
   static names(): { [key: string]: string } {
     return {
@@ -287,6 +309,10 @@ export class QueryIndustryTagListHeaders extends $tea.Model {
 }
 
 export class QueryIndustryTagListResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   industryList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -353,6 +379,10 @@ export class QueryRoleTagListHeaders extends $tea.Model {
 }
 
 export class QueryRoleTagListResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -419,7 +449,15 @@ export class QueryTemplateCategorysHeaders extends $tea.Model {
 }
 
 export class QueryTemplateCategorysResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   categoryList?: QueryTemplateCategorysResponseBodyCategoryList[];
+  /**
+   * @example
+   * 3
+   */
   total?: string;
   static names(): { [key: string]: string } {
     return {
@@ -488,6 +526,10 @@ export class RecallAuditTemplateHeaders extends $tea.Model {
 }
 
 export class RecallAuditTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateKeys?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -507,6 +549,10 @@ export class RecallAuditTemplateRequest extends $tea.Model {
 }
 
 export class RecallAuditTemplateResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recallResult?: RecallAuditTemplateResponseBodyRecallResult[];
   static names(): { [key: string]: string } {
     return {
@@ -551,21 +597,94 @@ export class RecallAuditTemplateResponse extends $tea.Model {
 }
 
 export class BatchCreateTemplateRequestTemplateList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   adaptEnv?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 描述
+   */
   appDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * @lALPDe7s2JOuoyjNBaDNCgA
+   */
   appIcon?: string;
   caseVideoList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * template_category
+   */
   categoryCode?: string;
   coverImgList?: string[];
+  /**
+   * @example
+   * https://www.baidu.com/
+   */
   expUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   industryLabelList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   installTimes?: number;
   mobilePreviewMediaList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试模板
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   previewMediaList?: string[];
+  /**
+   * @example
+   * 小张
+   */
   providerName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleLabelList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 描述
+   */
   simpleDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * template_key_1
+   */
   templateKey?: string;
   useCasesMediaList?: string[];
   static names(): { [key: string]: string } {
@@ -618,7 +737,15 @@ export class BatchCreateTemplateRequestTemplateList extends $tea.Model {
 }
 
 export class BatchCreateTemplateResponseBodyCreateResultList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -640,22 +767,117 @@ export class BatchCreateTemplateResponseBodyCreateResultList extends $tea.Model 
 }
 
 export class BatchQueryByTemplateKeyResponseBodyTemplateList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   adaptEnv?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试用
+   */
   appDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * @lALPDe7s2JOuoyjNBaDNCgA
+   */
   appIcon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   caseVideoList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * template_category
+   */
   category?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   coverImgList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * http://www.baidu.com
+   */
   expUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   industryLabelList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   installTimes?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mobilePreviewMediaList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试用
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   previewMediaList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 小明
+   */
   providerName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleLabelList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试用
+   */
   simpleDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * template_key
+   */
   templateKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   useCasesMediaList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -707,20 +929,86 @@ export class BatchQueryByTemplateKeyResponseBodyTemplateList extends $tea.Model 
 }
 
 export class BatchUpdateTemplateRequestTemplateList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   adaptEnv?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 这是测试
+   */
   appDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * @lALPDe7s2JOuoyjNBaDNCgA
+   */
   appIcon?: string;
   caseVideoList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * template_category
+   */
   categoryCode?: string;
   coverImgList?: string[];
+  /**
+   * @example
+   * https://www.baidu.com/
+   */
   expUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   industryLabelList?: string[];
   mobilePreviewMediaList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 这是测试
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   previewMediaList?: string[];
+  /**
+   * @example
+   * 小红
+   */
   providerName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleLabelList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 这是一个描述
+   */
   simpleDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * template_key_1
+   */
   templateKey?: string;
   useCasesMediaList?: string[];
   static names(): { [key: string]: string } {
@@ -771,7 +1059,15 @@ export class BatchUpdateTemplateRequestTemplateList extends $tea.Model {
 }
 
 export class BatchUpdateTemplateResponseBodyUpdateResultList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -793,7 +1089,21 @@ export class BatchUpdateTemplateResponseBodyUpdateResultList extends $tea.Model 
 }
 
 export class QueryTemplateCategorysResponseBodyCategoryList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * template_category
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 模板分类
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -815,7 +1125,21 @@ export class QueryTemplateCategorysResponseBodyCategoryList extends $tea.Model {
 }
 
 export class RecallAuditTemplateResponseBodyRecallResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * template_key_1
+   */
   templateKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * recall_success
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -838,12 +1162,11 @@ export class RecallAuditTemplateResponseBodyRecallResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -853,12 +1176,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 批量创建模板
-   *
-   * @param request BatchCreateTemplateRequest
-   * @param headers BatchCreateTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchCreateTemplateResponse
+   * 批量创建模板
+   * 
+   * @param request - BatchCreateTemplateRequest
+   * @param headers - BatchCreateTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchCreateTemplateResponse
    */
   async batchCreateTemplateWithOptions(request: BatchCreateTemplateRequest, headers: BatchCreateTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<BatchCreateTemplateResponse> {
     Util.validateModel(request);
@@ -895,10 +1218,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量创建模板
-   *
-   * @param request BatchCreateTemplateRequest
-   * @return BatchCreateTemplateResponse
+   * 批量创建模板
+   * 
+   * @param request - BatchCreateTemplateRequest
+   * @returns BatchCreateTemplateResponse
    */
   async batchCreateTemplate(request: BatchCreateTemplateRequest): Promise<BatchCreateTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -907,12 +1230,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询模板
-   *
-   * @param request BatchQueryByTemplateKeyRequest
-   * @param headers BatchQueryByTemplateKeyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchQueryByTemplateKeyResponse
+   * 批量查询模板
+   * 
+   * @param request - BatchQueryByTemplateKeyRequest
+   * @param headers - BatchQueryByTemplateKeyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchQueryByTemplateKeyResponse
    */
   async batchQueryByTemplateKeyWithOptions(request: BatchQueryByTemplateKeyRequest, headers: BatchQueryByTemplateKeyHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryByTemplateKeyResponse> {
     Util.validateModel(request);
@@ -949,10 +1272,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询模板
-   *
-   * @param request BatchQueryByTemplateKeyRequest
-   * @return BatchQueryByTemplateKeyResponse
+   * 批量查询模板
+   * 
+   * @param request - BatchQueryByTemplateKeyRequest
+   * @returns BatchQueryByTemplateKeyResponse
    */
   async batchQueryByTemplateKey(request: BatchQueryByTemplateKeyRequest): Promise<BatchQueryByTemplateKeyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -961,12 +1284,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量修改模板
-   *
-   * @param request BatchUpdateTemplateRequest
-   * @param headers BatchUpdateTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchUpdateTemplateResponse
+   * 批量修改模板
+   * 
+   * @param request - BatchUpdateTemplateRequest
+   * @param headers - BatchUpdateTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchUpdateTemplateResponse
    */
   async batchUpdateTemplateWithOptions(request: BatchUpdateTemplateRequest, headers: BatchUpdateTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateTemplateResponse> {
     Util.validateModel(request);
@@ -1003,10 +1326,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量修改模板
-   *
-   * @param request BatchUpdateTemplateRequest
-   * @return BatchUpdateTemplateResponse
+   * 批量修改模板
+   * 
+   * @param request - BatchUpdateTemplateRequest
+   * @returns BatchUpdateTemplateResponse
    */
   async batchUpdateTemplate(request: BatchUpdateTemplateRequest): Promise<BatchUpdateTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1015,11 +1338,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询行业标签
-   *
-   * @param headers QueryIndustryTagListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryIndustryTagListResponse
+   * 查询行业标签
+   * 
+   * @param headers - QueryIndustryTagListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryIndustryTagListResponse
    */
   async queryIndustryTagListWithOptions(headers: QueryIndustryTagListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryIndustryTagListResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1049,9 +1372,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询行业标签
-   *
-   * @return QueryIndustryTagListResponse
+   * 查询行业标签
+   * @returns QueryIndustryTagListResponse
    */
   async queryIndustryTagList(): Promise<QueryIndustryTagListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1060,11 +1382,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询角色
-   *
-   * @param headers QueryRoleTagListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryRoleTagListResponse
+   * 查询角色
+   * 
+   * @param headers - QueryRoleTagListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryRoleTagListResponse
    */
   async queryRoleTagListWithOptions(headers: QueryRoleTagListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRoleTagListResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1094,9 +1416,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询角色
-   *
-   * @return QueryRoleTagListResponse
+   * 查询角色
+   * @returns QueryRoleTagListResponse
    */
   async queryRoleTagList(): Promise<QueryRoleTagListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1105,11 +1426,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询模板分类
-   *
-   * @param headers QueryTemplateCategorysHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryTemplateCategorysResponse
+   * 查询模板分类
+   * 
+   * @param headers - QueryTemplateCategorysHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryTemplateCategorysResponse
    */
   async queryTemplateCategorysWithOptions(headers: QueryTemplateCategorysHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTemplateCategorysResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1139,9 +1460,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询模板分类
-   *
-   * @return QueryTemplateCategorysResponse
+   * 查询模板分类
+   * @returns QueryTemplateCategorysResponse
    */
   async queryTemplateCategorys(): Promise<QueryTemplateCategorysResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1150,12 +1470,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤回模板审核
-   *
-   * @param request RecallAuditTemplateRequest
-   * @param headers RecallAuditTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RecallAuditTemplateResponse
+   * 撤回模板审核
+   * 
+   * @param request - RecallAuditTemplateRequest
+   * @param headers - RecallAuditTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RecallAuditTemplateResponse
    */
   async recallAuditTemplateWithOptions(request: RecallAuditTemplateRequest, headers: RecallAuditTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<RecallAuditTemplateResponse> {
     Util.validateModel(request);
@@ -1192,10 +1512,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤回模板审核
-   *
-   * @param request RecallAuditTemplateRequest
-   * @return RecallAuditTemplateResponse
+   * 撤回模板审核
+   * 
+   * @param request - RecallAuditTemplateRequest
+   * @returns RecallAuditTemplateResponse
    */
   async recallAuditTemplate(request: RecallAuditTemplateRequest): Promise<RecallAuditTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });

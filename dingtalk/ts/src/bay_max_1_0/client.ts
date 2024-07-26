@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -33,6 +31,13 @@ export class QueryBaymaxSkillLogHeaders extends $tea.Model {
 
 export class QueryBaymaxSkillLogRequest extends $tea.Model {
   from?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 14da****2760
+   */
   skillExecuteId?: string;
   to?: number;
   static names(): { [key: string]: string } {
@@ -57,6 +62,13 @@ export class QueryBaymaxSkillLogRequest extends $tea.Model {
 }
 
 export class QueryBaymaxSkillLogResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 14da****2760
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -102,12 +114,11 @@ export class QueryBaymaxSkillLogResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -117,12 +128,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary Baymax技能执行日志
-   *
-   * @param request QueryBaymaxSkillLogRequest
-   * @param headers QueryBaymaxSkillLogHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryBaymaxSkillLogResponse
+   * Baymax技能执行日志
+   * 
+   * @param request - QueryBaymaxSkillLogRequest
+   * @param headers - QueryBaymaxSkillLogHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryBaymaxSkillLogResponse
    */
   async queryBaymaxSkillLogWithOptions(request: QueryBaymaxSkillLogRequest, headers: QueryBaymaxSkillLogHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBaymaxSkillLogResponse> {
     Util.validateModel(request);
@@ -167,10 +178,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary Baymax技能执行日志
-   *
-   * @param request QueryBaymaxSkillLogRequest
-   * @return QueryBaymaxSkillLogResponse
+   * Baymax技能执行日志
+   * 
+   * @param request - QueryBaymaxSkillLogRequest
+   * @returns QueryBaymaxSkillLogResponse
    */
   async queryBaymaxSkillLog(request: QueryBaymaxSkillLogRequest): Promise<QueryBaymaxSkillLogResponse> {
     let runtime = new $Util.RuntimeOptions({ });

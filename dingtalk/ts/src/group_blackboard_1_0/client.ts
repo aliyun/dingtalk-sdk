@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,11 +30,47 @@ export class CreateGroupBlackboardHeaders extends $tea.Model {
 }
 
 export class CreateGroupBlackboardRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 这是一条群公告
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cid123456
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * false
+   */
   sendDing?: boolean;
+  /**
+   * @example
+   * false
+   */
   sticky?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   uniqueId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 001
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -66,7 +100,18 @@ export class CreateGroupBlackboardRequest extends $tea.Model {
 }
 
 export class CreateGroupBlackboardResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
   dataId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -135,8 +180,29 @@ export class DeleteGroupBlackboardHeaders extends $tea.Model {
 }
 
 export class DeleteGroupBlackboardRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * e3b4f5
+   */
   dataId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cid123456
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 001
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -160,7 +226,18 @@ export class DeleteGroupBlackboardRequest extends $tea.Model {
 }
 
 export class DeleteGroupBlackboardResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   isDeleted?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -208,12 +285,11 @@ export class DeleteGroupBlackboardResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -223,12 +299,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 创建群公告
-   *
-   * @param request CreateGroupBlackboardRequest
-   * @param headers CreateGroupBlackboardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateGroupBlackboardResponse
+   * 创建群公告
+   * 
+   * @param request - CreateGroupBlackboardRequest
+   * @param headers - CreateGroupBlackboardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateGroupBlackboardResponse
    */
   async createGroupBlackboardWithOptions(request: CreateGroupBlackboardRequest, headers: CreateGroupBlackboardHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupBlackboardResponse> {
     Util.validateModel(request);
@@ -285,10 +361,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建群公告
-   *
-   * @param request CreateGroupBlackboardRequest
-   * @return CreateGroupBlackboardResponse
+   * 创建群公告
+   * 
+   * @param request - CreateGroupBlackboardRequest
+   * @returns CreateGroupBlackboardResponse
    */
   async createGroupBlackboard(request: CreateGroupBlackboardRequest): Promise<CreateGroupBlackboardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -297,12 +373,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除群公告
-   *
-   * @param request DeleteGroupBlackboardRequest
-   * @param headers DeleteGroupBlackboardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteGroupBlackboardResponse
+   * 删除群公告
+   * 
+   * @param request - DeleteGroupBlackboardRequest
+   * @param headers - DeleteGroupBlackboardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteGroupBlackboardResponse
    */
   async deleteGroupBlackboardWithOptions(request: DeleteGroupBlackboardRequest, headers: DeleteGroupBlackboardHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteGroupBlackboardResponse> {
     Util.validateModel(request);
@@ -347,10 +423,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除群公告
-   *
-   * @param request DeleteGroupBlackboardRequest
-   * @return DeleteGroupBlackboardResponse
+   * 删除群公告
+   * 
+   * @param request - DeleteGroupBlackboardRequest
+   * @returns DeleteGroupBlackboardResponse
    */
   async deleteGroupBlackboard(request: DeleteGroupBlackboardRequest): Promise<DeleteGroupBlackboardResponse> {
     let runtime = new $Util.RuntimeOptions({ });

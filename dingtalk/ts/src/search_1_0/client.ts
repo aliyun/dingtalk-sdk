@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,6 +30,10 @@ export class BatchInsertSearchItemHeaders extends $tea.Model {
 }
 
 export class BatchInsertSearchItemRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchItemModels?: BatchInsertSearchItemRequestSearchItemModels[];
   static names(): { [key: string]: string } {
     return {
@@ -96,10 +98,35 @@ export class CreateSearchTabHeaders extends $tea.Model {
 
 export class CreateSearchTabRequest extends $tea.Model {
   darkIcon?: string;
+  /**
+   * **if can be null:**
+   * false
+   */
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 书籍
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   priority?: number;
   source?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   status?: number;
   static names(): { [key: string]: string } {
     return {
@@ -129,6 +156,13 @@ export class CreateSearchTabRequest extends $tea.Model {
 }
 
 export class CreateSearchTabResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3333
+   */
   tabId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -283,16 +317,90 @@ export class GetSearchItemHeaders extends $tea.Model {
 }
 
 export class GetSearchItemResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 四大名著
+   */
   footer?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-09-17T19:43Z
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-09-17T19:43Z
+   */
   gmtModified?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1111
+   */
   itemId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * www.baidu.com
+   */
   mobileUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * www.baidu.com
+   */
   pcUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 中国古代章回体长篇小说
+   */
   summary?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3333
+   */
   tabId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 红楼梦
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * www.baidu.com
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -379,8 +487,29 @@ export class GetSearchItemsByKeyWordHeaders extends $tea.Model {
 }
 
 export class GetSearchItemsByKeyWordRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 诺贝尔奖
+   */
   keyWord?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -404,8 +533,23 @@ export class GetSearchItemsByKeyWordRequest extends $tea.Model {
 }
 
 export class GetSearchItemsByKeyWordResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   totalCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   value?: GetSearchItemsByKeyWordResponseBodyValue[];
   static names(): { [key: string]: string } {
     return {
@@ -477,13 +621,55 @@ export class GetSearchTabHeaders extends $tea.Model {
 
 export class GetSearchTabResponseBody extends $tea.Model {
   darkIcon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-09-17T19:43Z
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-09-17T19:43Z
+   */
   gmtModified?: string;
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 专辑
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   priority?: number;
   source?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3333
+   */
   tabId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -566,13 +752,47 @@ export class InsertSearchItemHeaders extends $tea.Model {
 }
 
 export class InsertSearchItemRequest extends $tea.Model {
+  /**
+   * @example
+   * 四大名著
+   */
   footer?: string;
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1111
+   */
   itemId?: string;
+  /**
+   * @example
+   * www.baidu.com
+   */
   mobileUrl?: string;
+  /**
+   * @example
+   * www.baidu.com
+   */
   pcUrl?: string;
+  /**
+   * @example
+   * 中国古代章回体长篇小说
+   */
   summary?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 红楼梦
+   */
   title?: string;
+  /**
+   * @example
+   * www.baidu.com
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -650,6 +870,10 @@ export class ListSearchTabsByOrgIdHeaders extends $tea.Model {
 }
 
 export class ListSearchTabsByOrgIdResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchTabResult?: ListSearchTabsByOrgIdResponseBodySearchTabResult[];
   static names(): { [key: string]: string } {
     return {
@@ -717,10 +941,35 @@ export class UpdateSearchTabHeaders extends $tea.Model {
 
 export class UpdateSearchTabRequest extends $tea.Model {
   darkIcon?: string;
+  /**
+   * **if can be null:**
+   * false
+   */
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 专辑
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   priority?: number;
   source?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   status?: number;
   static names(): { [key: string]: string } {
     return {
@@ -772,13 +1021,47 @@ export class UpdateSearchTabResponse extends $tea.Model {
 }
 
 export class BatchInsertSearchItemRequestSearchItemModels extends $tea.Model {
+  /**
+   * @example
+   * 四大名著
+   */
   footer?: string;
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1111
+   */
   itemId?: string;
+  /**
+   * @example
+   * www.baidu.com
+   */
   mobileUrl?: string;
+  /**
+   * @example
+   * www.baidu.com
+   */
   pcUrl?: string;
+  /**
+   * @example
+   * 中国古代章回体长篇小说
+   */
   summary?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 红楼梦
+   */
   title?: string;
+  /**
+   * @example
+   * www.baidu.com
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -812,16 +1095,90 @@ export class BatchInsertSearchItemRequestSearchItemModels extends $tea.Model {
 }
 
 export class GetSearchItemsByKeyWordResponseBodyValue extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 四大名著
+   */
   footer?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-09-17T19:43Z
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-09-17T19:43Z
+   */
   gmtModified?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1111
+   */
   itemId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * www.baidu.com
+   */
   mobileUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * www.baidu.com
+   */
   pcUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 中国古代章回体长篇小说
+   */
   summary?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3333
+   */
   tabId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 红楼梦
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * www.baidu.com
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -862,13 +1219,55 @@ export class GetSearchItemsByKeyWordResponseBodyValue extends $tea.Model {
 
 export class ListSearchTabsByOrgIdResponseBodySearchTabResult extends $tea.Model {
   darkIcon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-09-17T19:43Z
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-09-17T19:43Z
+   */
   gmtModified?: string;
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 专辑
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   priority?: number;
   source?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3333
+   */
   tabId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -905,12 +1304,11 @@ export class ListSearchTabsByOrgIdResponseBodySearchTabResult extends $tea.Model
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -920,12 +1318,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 为指定的数据源批量添加数据项
-   *
-   * @param request BatchInsertSearchItemRequest
-   * @param headers BatchInsertSearchItemHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchInsertSearchItemResponse
+   * 为指定的数据源批量添加数据项
+   * 
+   * @param request - BatchInsertSearchItemRequest
+   * @param headers - BatchInsertSearchItemHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchInsertSearchItemResponse
    */
   async batchInsertSearchItemWithOptions(tabId: string, request: BatchInsertSearchItemRequest, headers: BatchInsertSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<BatchInsertSearchItemResponse> {
     Util.validateModel(request);
@@ -962,10 +1360,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 为指定的数据源批量添加数据项
-   *
-   * @param request BatchInsertSearchItemRequest
-   * @return BatchInsertSearchItemResponse
+   * 为指定的数据源批量添加数据项
+   * 
+   * @param request - BatchInsertSearchItemRequest
+   * @returns BatchInsertSearchItemResponse
    */
   async batchInsertSearchItem(tabId: string, request: BatchInsertSearchItemRequest): Promise<BatchInsertSearchItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -974,12 +1372,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建搜索数据源
-   *
-   * @param request CreateSearchTabRequest
-   * @param headers CreateSearchTabHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateSearchTabResponse
+   * 创建搜索数据源
+   * 
+   * @param request - CreateSearchTabRequest
+   * @param headers - CreateSearchTabHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateSearchTabResponse
    */
   async createSearchTabWithOptions(request: CreateSearchTabRequest, headers: CreateSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSearchTabResponse> {
     Util.validateModel(request);
@@ -1036,10 +1434,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建搜索数据源
-   *
-   * @param request CreateSearchTabRequest
-   * @return CreateSearchTabResponse
+   * 创建搜索数据源
+   * 
+   * @param request - CreateSearchTabRequest
+   * @returns CreateSearchTabResponse
    */
   async createSearchTab(request: CreateSearchTabRequest): Promise<CreateSearchTabResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1048,11 +1446,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 从指定的数据源中删除一条数据项
-   *
-   * @param headers DeleteSearchItemHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteSearchItemResponse
+   * 从指定的数据源中删除一条数据项
+   * 
+   * @param headers - DeleteSearchItemHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteSearchItemResponse
    */
   async deleteSearchItemWithOptions(tabId: string, itemId: string, headers: DeleteSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSearchItemResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1082,9 +1480,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 从指定的数据源中删除一条数据项
-   *
-   * @return DeleteSearchItemResponse
+   * 从指定的数据源中删除一条数据项
+   * @returns DeleteSearchItemResponse
    */
   async deleteSearchItem(tabId: string, itemId: string): Promise<DeleteSearchItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1093,11 +1490,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除搜索数据源
-   *
-   * @param headers DeleteSearchTabHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteSearchTabResponse
+   * 删除搜索数据源
+   * 
+   * @param headers - DeleteSearchTabHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteSearchTabResponse
    */
   async deleteSearchTabWithOptions(tabId: string, headers: DeleteSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSearchTabResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1127,9 +1524,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除搜索数据源
-   *
-   * @return DeleteSearchTabResponse
+   * 删除搜索数据源
+   * @returns DeleteSearchTabResponse
    */
   async deleteSearchTab(tabId: string): Promise<DeleteSearchTabResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1138,11 +1534,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定数据源中的一条数据项
-   *
-   * @param headers GetSearchItemHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSearchItemResponse
+   * 获取指定数据源中的一条数据项
+   * 
+   * @param headers - GetSearchItemHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSearchItemResponse
    */
   async getSearchItemWithOptions(tabId: string, itemId: string, headers: GetSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<GetSearchItemResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1172,9 +1568,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定数据源中的一条数据项
-   *
-   * @return GetSearchItemResponse
+   * 获取指定数据源中的一条数据项
+   * @returns GetSearchItemResponse
    */
   async getSearchItem(tabId: string, itemId: string): Promise<GetSearchItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1183,12 +1578,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据搜索关键词获取相关数据项
-   *
-   * @param request GetSearchItemsByKeyWordRequest
-   * @param headers GetSearchItemsByKeyWordHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSearchItemsByKeyWordResponse
+   * 根据搜索关键词获取相关数据项
+   * 
+   * @param request - GetSearchItemsByKeyWordRequest
+   * @param headers - GetSearchItemsByKeyWordHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSearchItemsByKeyWordResponse
    */
   async getSearchItemsByKeyWordWithOptions(tabId: string, request: GetSearchItemsByKeyWordRequest, headers: GetSearchItemsByKeyWordHeaders, runtime: $Util.RuntimeOptions): Promise<GetSearchItemsByKeyWordResponse> {
     Util.validateModel(request);
@@ -1233,10 +1628,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据搜索关键词获取相关数据项
-   *
-   * @param request GetSearchItemsByKeyWordRequest
-   * @return GetSearchItemsByKeyWordResponse
+   * 根据搜索关键词获取相关数据项
+   * 
+   * @param request - GetSearchItemsByKeyWordRequest
+   * @returns GetSearchItemsByKeyWordResponse
    */
   async getSearchItemsByKeyWord(tabId: string, request: GetSearchItemsByKeyWordRequest): Promise<GetSearchItemsByKeyWordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1245,11 +1640,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取搜索数据源
-   *
-   * @param headers GetSearchTabHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSearchTabResponse
+   * 获取搜索数据源
+   * 
+   * @param headers - GetSearchTabHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSearchTabResponse
    */
   async getSearchTabWithOptions(tabId: string, headers: GetSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<GetSearchTabResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1279,9 +1674,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取搜索数据源
-   *
-   * @return GetSearchTabResponse
+   * 获取搜索数据源
+   * @returns GetSearchTabResponse
    */
   async getSearchTab(tabId: string): Promise<GetSearchTabResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1290,12 +1684,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 为指定的数据源添加一条数据项
-   *
-   * @param request InsertSearchItemRequest
-   * @param headers InsertSearchItemHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InsertSearchItemResponse
+   * 为指定的数据源添加一条数据项
+   * 
+   * @param request - InsertSearchItemRequest
+   * @param headers - InsertSearchItemHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InsertSearchItemResponse
    */
   async insertSearchItemWithOptions(tabId: string, request: InsertSearchItemRequest, headers: InsertSearchItemHeaders, runtime: $Util.RuntimeOptions): Promise<InsertSearchItemResponse> {
     Util.validateModel(request);
@@ -1360,10 +1754,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 为指定的数据源添加一条数据项
-   *
-   * @param request InsertSearchItemRequest
-   * @return InsertSearchItemResponse
+   * 为指定的数据源添加一条数据项
+   * 
+   * @param request - InsertSearchItemRequest
+   * @returns InsertSearchItemResponse
    */
   async insertSearchItem(tabId: string, request: InsertSearchItemRequest): Promise<InsertSearchItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1372,11 +1766,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 列出企业所有的搜索数据源
-   *
-   * @param headers ListSearchTabsByOrgIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListSearchTabsByOrgIdResponse
+   * 列出企业所有的搜索数据源
+   * 
+   * @param headers - ListSearchTabsByOrgIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListSearchTabsByOrgIdResponse
    */
   async listSearchTabsByOrgIdWithOptions(headers: ListSearchTabsByOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<ListSearchTabsByOrgIdResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1406,9 +1800,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 列出企业所有的搜索数据源
-   *
-   * @return ListSearchTabsByOrgIdResponse
+   * 列出企业所有的搜索数据源
+   * @returns ListSearchTabsByOrgIdResponse
    */
   async listSearchTabsByOrgId(): Promise<ListSearchTabsByOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1417,12 +1810,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新搜索数据源
-   *
-   * @param request UpdateSearchTabRequest
-   * @param headers UpdateSearchTabHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateSearchTabResponse
+   * 更新搜索数据源
+   * 
+   * @param request - UpdateSearchTabRequest
+   * @param headers - UpdateSearchTabHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateSearchTabResponse
    */
   async updateSearchTabWithOptions(tabId: string, request: UpdateSearchTabRequest, headers: UpdateSearchTabHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSearchTabResponse> {
     Util.validateModel(request);
@@ -1479,10 +1872,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新搜索数据源
-   *
-   * @param request UpdateSearchTabRequest
-   * @return UpdateSearchTabResponse
+   * 更新搜索数据源
+   * 
+   * @param request - UpdateSearchTabRequest
+   * @returns UpdateSearchTabResponse
    */
   async updateSearchTab(tabId: string, request: UpdateSearchTabRequest): Promise<UpdateSearchTabResponse> {
     let runtime = new $Util.RuntimeOptions({ });

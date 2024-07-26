@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,21 @@ export class AddRobotInstanceToGroupHeaders extends $tea.Model {
 }
 
 export class AddRobotInstanceToGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcd123
+   */
   chatbotId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidxxxx
+   */
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -54,6 +66,10 @@ export class AddRobotInstanceToGroupRequest extends $tea.Model {
 }
 
 export class AddRobotInstanceToGroupResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -121,8 +137,26 @@ export class AskRobotHeaders extends $tea.Model {
 
 export class AskRobotRequest extends $tea.Model {
   dingUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 小蜜机器人能做什么
+   */
   question?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcd1234
+   */
   robotAppKey?: string;
+  /**
+   * @example
+   * 1234
+   */
   sessionUuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -148,6 +182,10 @@ export class AskRobotRequest extends $tea.Model {
 }
 
 export class AskRobotResponseBody extends $tea.Model {
+  /**
+   * @example
+   * {\"sessionUuid\":\"op_2c35e603af6c4e62bcf5xxxx\",\"answerType\":\"recommendAnswer\",\"recommendAnswerContent\":[\"通讯录上人员可以排序吗？\"]}
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -214,9 +252,37 @@ export class GetDingMeBaseDataHeaders extends $tea.Model {
 }
 
 export class GetDingMeBaseDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dsfsfr434
+   */
   appKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   byDay?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20210506
+   */
   endDay?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20210405
+   */
   startDay?: string;
   static names(): { [key: string]: string } {
     return {
@@ -242,9 +308,25 @@ export class GetDingMeBaseDataRequest extends $tea.Model {
 }
 
 export class GetDingMeBaseDataResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fromCache?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   rawset?: { [key: string]: string }[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   runtime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tips?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
@@ -317,6 +399,13 @@ export class GetIntelligentRobotInfoHeaders extends $tea.Model {
 }
 
 export class GetIntelligentRobotInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcd1234
+   */
   robotAppKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -336,6 +425,10 @@ export class GetIntelligentRobotInfoRequest extends $tea.Model {
 }
 
 export class GetIntelligentRobotInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * abcd1234
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -402,6 +495,13 @@ export class GetOfficialAccountRobotInfoHeaders extends $tea.Model {
 }
 
 export class GetOfficialAccountRobotInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 机器人类型参数，服务窗机器人：1，客户群内机器人：2
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -421,11 +521,53 @@ export class GetOfficialAccountRobotInfoRequest extends $tea.Model {
 }
 
 export class GetOfficialAccountRobotInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   appId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 小蜜客服机器人
+   */
   brief?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 小蜜客服机器人是7*24小时智能问答机器人
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxx
+   */
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 小蜜机器人
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxx
+   */
   previewMediaUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -502,8 +644,29 @@ export class GetWebChannelUserTokenHeaders extends $tea.Model {
 }
 
 export class GetWebChannelUserTokenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123abc
+   */
   foreignId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 客户abc
+   */
   nick?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   source?: number;
   static names(): { [key: string]: string } {
     return {
@@ -593,8 +756,29 @@ export class PushCustomerGroupMessageHeaders extends $tea.Model {
 }
 
 export class PushCustomerGroupMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidxxxx
+   */
   conversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sampleText
+   */
   msgKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eyJjb250ZW50IjogIua1i+ivleWGheWuuSJ9(即{"content": "测试内容"}的base64编码值)
+   */
   msgParam?: string;
   static names(): { [key: string]: string } {
     return {
@@ -618,6 +802,13 @@ export class PushCustomerGroupMessageRequest extends $tea.Model {
 }
 
 export class PushCustomerGroupMessageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234abcd
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -684,9 +875,37 @@ export class PushIntelligentRobotGroupMessageHeaders extends $tea.Model {
 }
 
 export class PushIntelligentRobotGroupMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcd1234
+   */
   chatbotId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sampleText
+   */
   msgKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eyJjb250ZW50IjogIua1i+ivleWGheWuuSJ9(即{"content": "测试内容"}的base64编码值)
+   */
   msgParam?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidxxxx
+   */
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -712,6 +931,10 @@ export class PushIntelligentRobotGroupMessageRequest extends $tea.Model {
 }
 
 export class PushIntelligentRobotGroupMessageResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 1234
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -778,9 +1001,37 @@ export class PushIntelligentRobotMessageHeaders extends $tea.Model {
 }
 
 export class PushIntelligentRobotMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcd123
+   */
   chatbotId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sampleText
+   */
   msgKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eyJjb250ZW50IjogIua1i+ivleWGheWuuSJ9(即{"content": "测试内容"}的base64编码值)
+   */
   msgParam?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456abc
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -806,6 +1057,10 @@ export class PushIntelligentRobotMessageRequest extends $tea.Model {
 }
 
 export class PushIntelligentRobotMessageResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 1234
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -872,8 +1127,29 @@ export class PushOfficialAccountMessageHeaders extends $tea.Model {
 }
 
 export class PushOfficialAccountMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sampleText
+   */
   msgKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eyJjb250ZW50IjogIua1i+ivleWGheWuuSJ9(即{"content": "测试内容"}的base64编码值)
+   */
   msgParam?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456abc
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -897,6 +1173,13 @@ export class PushOfficialAccountMessageRequest extends $tea.Model {
 }
 
 export class PushOfficialAccountMessageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234abcd
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -963,9 +1246,37 @@ export class PushRobotMessageHeaders extends $tea.Model {
 }
 
 export class PushRobotMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234
+   */
   chatbotId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sampleText
+   */
   msgKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * eyJjb250ZW50IjogIua1i+ivleWGheWuuSJ9(即{"content": "测试内容"}的base64编码值)
+   */
   msgParam?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456abc
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -991,6 +1302,10 @@ export class PushRobotMessageRequest extends $tea.Model {
 }
 
 export class PushRobotMessageResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 12345
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1057,6 +1372,13 @@ export class ReplyRobotHeaders extends $tea.Model {
 }
 
 export class ReplyRobotRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"bizParamMap":{"proxySessionId":"DINGTALK_RYnVfayNAe_4000006001201145"},"msgType":"text","text":"测试回复机器人消息"}
+   */
   proxyMessageStr?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1076,6 +1398,10 @@ export class ReplyRobotRequest extends $tea.Model {
 }
 
 export class ReplyRobotResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1142,11 +1468,53 @@ export class UpdateOfficialAccountRobotInfoHeaders extends $tea.Model {
 }
 
 export class UpdateOfficialAccountRobotInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxx
+   */
   avatar?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 小蜜客服机器人
+   */
   brief?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 小蜜客服机器人是7*24小时智能问答机器人
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 小蜜机器人
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxx
+   */
   previewMediaUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 机器人类型参数，服务窗机器人：1，客户群内机器人：2
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1176,6 +1544,13 @@ export class UpdateOfficialAccountRobotInfoRequest extends $tea.Model {
 }
 
 export class UpdateOfficialAccountRobotInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1221,12 +1596,11 @@ export class UpdateOfficialAccountRobotInfoResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1236,12 +1610,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 添加智能客服机器人到钉钉群
-   *
-   * @param request AddRobotInstanceToGroupRequest
-   * @param headers AddRobotInstanceToGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddRobotInstanceToGroupResponse
+   * 添加智能客服机器人到钉钉群
+   * 
+   * @param request - AddRobotInstanceToGroupRequest
+   * @param headers - AddRobotInstanceToGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddRobotInstanceToGroupResponse
    */
   async addRobotInstanceToGroupWithOptions(request: AddRobotInstanceToGroupRequest, headers: AddRobotInstanceToGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddRobotInstanceToGroupResponse> {
     Util.validateModel(request);
@@ -1282,10 +1656,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加智能客服机器人到钉钉群
-   *
-   * @param request AddRobotInstanceToGroupRequest
-   * @return AddRobotInstanceToGroupResponse
+   * 添加智能客服机器人到钉钉群
+   * 
+   * @param request - AddRobotInstanceToGroupRequest
+   * @returns AddRobotInstanceToGroupResponse
    */
   async addRobotInstanceToGroup(request: AddRobotInstanceToGroupRequest): Promise<AddRobotInstanceToGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1294,12 +1668,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 调用小蜜机器人的问答能力
-   *
-   * @param request AskRobotRequest
-   * @param headers AskRobotHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AskRobotResponse
+   * 调用小蜜机器人的问答能力
+   * 
+   * @param request - AskRobotRequest
+   * @param headers - AskRobotHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AskRobotResponse
    */
   async askRobotWithOptions(request: AskRobotRequest, headers: AskRobotHeaders, runtime: $Util.RuntimeOptions): Promise<AskRobotResponse> {
     Util.validateModel(request);
@@ -1348,10 +1722,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 调用小蜜机器人的问答能力
-   *
-   * @param request AskRobotRequest
-   * @return AskRobotResponse
+   * 调用小蜜机器人的问答能力
+   * 
+   * @param request - AskRobotRequest
+   * @returns AskRobotResponse
    */
   async askRobot(request: AskRobotRequest): Promise<AskRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1360,12 +1734,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 小蜜机器人数据统计指标
-   *
-   * @param request GetDingMeBaseDataRequest
-   * @param headers GetDingMeBaseDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDingMeBaseDataResponse
+   * 小蜜机器人数据统计指标
+   * 
+   * @param request - GetDingMeBaseDataRequest
+   * @param headers - GetDingMeBaseDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDingMeBaseDataResponse
    */
   async getDingMeBaseDataWithOptions(request: GetDingMeBaseDataRequest, headers: GetDingMeBaseDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingMeBaseDataResponse> {
     Util.validateModel(request);
@@ -1414,10 +1788,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 小蜜机器人数据统计指标
-   *
-   * @param request GetDingMeBaseDataRequest
-   * @return GetDingMeBaseDataResponse
+   * 小蜜机器人数据统计指标
+   * 
+   * @param request - GetDingMeBaseDataRequest
+   * @returns GetDingMeBaseDataResponse
    */
   async getDingMeBaseData(request: GetDingMeBaseDataRequest): Promise<GetDingMeBaseDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1426,12 +1800,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能客服机器人信息
-   *
-   * @param request GetIntelligentRobotInfoRequest
-   * @param headers GetIntelligentRobotInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetIntelligentRobotInfoResponse
+   * 获取智能客服机器人信息
+   * 
+   * @param request - GetIntelligentRobotInfoRequest
+   * @param headers - GetIntelligentRobotInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetIntelligentRobotInfoResponse
    */
   async getIntelligentRobotInfoWithOptions(request: GetIntelligentRobotInfoRequest, headers: GetIntelligentRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetIntelligentRobotInfoResponse> {
     Util.validateModel(request);
@@ -1468,10 +1842,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能客服机器人信息
-   *
-   * @param request GetIntelligentRobotInfoRequest
-   * @return GetIntelligentRobotInfoResponse
+   * 获取智能客服机器人信息
+   * 
+   * @param request - GetIntelligentRobotInfoRequest
+   * @returns GetIntelligentRobotInfoResponse
    */
   async getIntelligentRobotInfo(request: GetIntelligentRobotInfoRequest): Promise<GetIntelligentRobotInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1480,12 +1854,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取服务窗机器人信息
-   *
-   * @param request GetOfficialAccountRobotInfoRequest
-   * @param headers GetOfficialAccountRobotInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetOfficialAccountRobotInfoResponse
+   * 获取服务窗机器人信息
+   * 
+   * @param request - GetOfficialAccountRobotInfoRequest
+   * @param headers - GetOfficialAccountRobotInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOfficialAccountRobotInfoResponse
    */
   async getOfficialAccountRobotInfoWithOptions(request: GetOfficialAccountRobotInfoRequest, headers: GetOfficialAccountRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountRobotInfoResponse> {
     Util.validateModel(request);
@@ -1522,10 +1896,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取服务窗机器人信息
-   *
-   * @param request GetOfficialAccountRobotInfoRequest
-   * @return GetOfficialAccountRobotInfoResponse
+   * 获取服务窗机器人信息
+   * 
+   * @param request - GetOfficialAccountRobotInfoRequest
+   * @returns GetOfficialAccountRobotInfoResponse
    */
   async getOfficialAccountRobotInfo(request: GetOfficialAccountRobotInfoRequest): Promise<GetOfficialAccountRobotInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1534,12 +1908,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 小蜜客服网页渠道获取三方用户token
-   *
-   * @param request GetWebChannelUserTokenRequest
-   * @param headers GetWebChannelUserTokenHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetWebChannelUserTokenResponse
+   * 小蜜客服网页渠道获取三方用户token
+   * 
+   * @param request - GetWebChannelUserTokenRequest
+   * @param headers - GetWebChannelUserTokenHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetWebChannelUserTokenResponse
    */
   async getWebChannelUserTokenWithOptions(request: GetWebChannelUserTokenRequest, headers: GetWebChannelUserTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetWebChannelUserTokenResponse> {
     Util.validateModel(request);
@@ -1584,10 +1958,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 小蜜客服网页渠道获取三方用户token
-   *
-   * @param request GetWebChannelUserTokenRequest
-   * @return GetWebChannelUserTokenResponse
+   * 小蜜客服网页渠道获取三方用户token
+   * 
+   * @param request - GetWebChannelUserTokenRequest
+   * @returns GetWebChannelUserTokenResponse
    */
   async getWebChannelUserToken(request: GetWebChannelUserTokenRequest): Promise<GetWebChannelUserTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1596,12 +1970,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过小蜜机器人在客户群内推送消息
-   *
-   * @param request PushCustomerGroupMessageRequest
-   * @param headers PushCustomerGroupMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PushCustomerGroupMessageResponse
+   * 通过小蜜机器人在客户群内推送消息
+   * 
+   * @param request - PushCustomerGroupMessageRequest
+   * @param headers - PushCustomerGroupMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PushCustomerGroupMessageResponse
    */
   async pushCustomerGroupMessageWithOptions(request: PushCustomerGroupMessageRequest, headers: PushCustomerGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushCustomerGroupMessageResponse> {
     Util.validateModel(request);
@@ -1646,10 +2020,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过小蜜机器人在客户群内推送消息
-   *
-   * @param request PushCustomerGroupMessageRequest
-   * @return PushCustomerGroupMessageResponse
+   * 通过小蜜机器人在客户群内推送消息
+   * 
+   * @param request - PushCustomerGroupMessageRequest
+   * @returns PushCustomerGroupMessageResponse
    */
   async pushCustomerGroupMessage(request: PushCustomerGroupMessageRequest): Promise<PushCustomerGroupMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1658,12 +2032,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 推送智能客服机器人钉钉群聊消息
-   *
-   * @param request PushIntelligentRobotGroupMessageRequest
-   * @param headers PushIntelligentRobotGroupMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PushIntelligentRobotGroupMessageResponse
+   * 推送智能客服机器人钉钉群聊消息
+   * 
+   * @param request - PushIntelligentRobotGroupMessageRequest
+   * @param headers - PushIntelligentRobotGroupMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PushIntelligentRobotGroupMessageResponse
    */
   async pushIntelligentRobotGroupMessageWithOptions(request: PushIntelligentRobotGroupMessageRequest, headers: PushIntelligentRobotGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushIntelligentRobotGroupMessageResponse> {
     Util.validateModel(request);
@@ -1712,10 +2086,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 推送智能客服机器人钉钉群聊消息
-   *
-   * @param request PushIntelligentRobotGroupMessageRequest
-   * @return PushIntelligentRobotGroupMessageResponse
+   * 推送智能客服机器人钉钉群聊消息
+   * 
+   * @param request - PushIntelligentRobotGroupMessageRequest
+   * @returns PushIntelligentRobotGroupMessageResponse
    */
   async pushIntelligentRobotGroupMessage(request: PushIntelligentRobotGroupMessageRequest): Promise<PushIntelligentRobotGroupMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1724,12 +2098,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能客服机器人推送消息
-   *
-   * @param request PushIntelligentRobotMessageRequest
-   * @param headers PushIntelligentRobotMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PushIntelligentRobotMessageResponse
+   * 智能客服机器人推送消息
+   * 
+   * @param request - PushIntelligentRobotMessageRequest
+   * @param headers - PushIntelligentRobotMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PushIntelligentRobotMessageResponse
    */
   async pushIntelligentRobotMessageWithOptions(request: PushIntelligentRobotMessageRequest, headers: PushIntelligentRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushIntelligentRobotMessageResponse> {
     Util.validateModel(request);
@@ -1778,10 +2152,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 智能客服机器人推送消息
-   *
-   * @param request PushIntelligentRobotMessageRequest
-   * @return PushIntelligentRobotMessageResponse
+   * 智能客服机器人推送消息
+   * 
+   * @param request - PushIntelligentRobotMessageRequest
+   * @returns PushIntelligentRobotMessageResponse
    */
   async pushIntelligentRobotMessage(request: PushIntelligentRobotMessageRequest): Promise<PushIntelligentRobotMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1790,12 +2164,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过服务窗机器人推送单聊消息
-   *
-   * @param request PushOfficialAccountMessageRequest
-   * @param headers PushOfficialAccountMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PushOfficialAccountMessageResponse
+   * 通过服务窗机器人推送单聊消息
+   * 
+   * @param request - PushOfficialAccountMessageRequest
+   * @param headers - PushOfficialAccountMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PushOfficialAccountMessageResponse
    */
   async pushOfficialAccountMessageWithOptions(request: PushOfficialAccountMessageRequest, headers: PushOfficialAccountMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushOfficialAccountMessageResponse> {
     Util.validateModel(request);
@@ -1840,10 +2214,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过服务窗机器人推送单聊消息
-   *
-   * @param request PushOfficialAccountMessageRequest
-   * @return PushOfficialAccountMessageResponse
+   * 通过服务窗机器人推送单聊消息
+   * 
+   * @param request - PushOfficialAccountMessageRequest
+   * @returns PushOfficialAccountMessageResponse
    */
   async pushOfficialAccountMessage(request: PushOfficialAccountMessageRequest): Promise<PushOfficialAccountMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1852,12 +2226,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过小蜜客服机器人推送单聊消息
-   *
-   * @param request PushRobotMessageRequest
-   * @param headers PushRobotMessageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PushRobotMessageResponse
+   * 通过小蜜客服机器人推送单聊消息
+   * 
+   * @param request - PushRobotMessageRequest
+   * @param headers - PushRobotMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PushRobotMessageResponse
    */
   async pushRobotMessageWithOptions(request: PushRobotMessageRequest, headers: PushRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushRobotMessageResponse> {
     Util.validateModel(request);
@@ -1906,10 +2280,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过小蜜客服机器人推送单聊消息
-   *
-   * @param request PushRobotMessageRequest
-   * @return PushRobotMessageResponse
+   * 通过小蜜客服机器人推送单聊消息
+   * 
+   * @param request - PushRobotMessageRequest
+   * @returns PushRobotMessageResponse
    */
   async pushRobotMessage(request: PushRobotMessageRequest): Promise<PushRobotMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1918,12 +2292,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 异步回复机器人消息
-   *
-   * @param request ReplyRobotRequest
-   * @param headers ReplyRobotHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ReplyRobotResponse
+   * 异步回复机器人消息
+   * 
+   * @param request - ReplyRobotRequest
+   * @param headers - ReplyRobotHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ReplyRobotResponse
    */
   async replyRobotWithOptions(request: ReplyRobotRequest, headers: ReplyRobotHeaders, runtime: $Util.RuntimeOptions): Promise<ReplyRobotResponse> {
     Util.validateModel(request);
@@ -1960,10 +2334,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 异步回复机器人消息
-   *
-   * @param request ReplyRobotRequest
-   * @return ReplyRobotResponse
+   * 异步回复机器人消息
+   * 
+   * @param request - ReplyRobotRequest
+   * @returns ReplyRobotResponse
    */
   async replyRobot(request: ReplyRobotRequest): Promise<ReplyRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1972,12 +2346,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新服务窗机器人信息
-   *
-   * @param request UpdateOfficialAccountRobotInfoRequest
-   * @param headers UpdateOfficialAccountRobotInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateOfficialAccountRobotInfoResponse
+   * 更新服务窗机器人信息
+   * 
+   * @param request - UpdateOfficialAccountRobotInfoRequest
+   * @param headers - UpdateOfficialAccountRobotInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateOfficialAccountRobotInfoResponse
    */
   async updateOfficialAccountRobotInfoWithOptions(request: UpdateOfficialAccountRobotInfoRequest, headers: UpdateOfficialAccountRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOfficialAccountRobotInfoResponse> {
     Util.validateModel(request);
@@ -2036,10 +2410,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新服务窗机器人信息
-   *
-   * @param request UpdateOfficialAccountRobotInfoRequest
-   * @return UpdateOfficialAccountRobotInfoResponse
+   * 更新服务窗机器人信息
+   * 
+   * @param request - UpdateOfficialAccountRobotInfoRequest
+   * @returns UpdateOfficialAccountRobotInfoResponse
    */
   async updateOfficialAccountRobotInfo(request: UpdateOfficialAccountRobotInfoRequest): Promise<UpdateOfficialAccountRobotInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });

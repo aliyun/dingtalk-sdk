@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,21 +30,124 @@ export class AddCityCarApplyHeaders extends $tea.Model {
 }
 
 export class AddCityCarApplyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 杭州出差
+   */
   cause?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 杭州
+   */
   city?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * corpx
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-03-18 20:26:56
+   */
   date?: string;
+  /**
+   * @example
+   * 2021-03-30 20:26:56
+   */
   finishedDate?: string;
+  /**
+   * @example
+   * projectx
+   */
   projectCode?: string;
+  /**
+   * @example
+   * 项目x
+   */
   projectName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * apply1
+   */
   thirdPartApplyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * costcenter1
+   */
   thirdPartCostCenterId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * invoice1
+   */
   thirdPartInvoiceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   timesTotal?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   timesType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   timesUsed?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 杭州出差
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user1
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -96,6 +197,10 @@ export class AddCityCarApplyRequest extends $tea.Model {
 }
 
 export class AddCityCarApplyResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   applyId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -162,11 +267,47 @@ export class ApproveCityCarApplyHeaders extends $tea.Model {
 }
 
 export class ApproveCityCarApplyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * corpx
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2021-03-18 20:26:56
+   */
   operateTime?: string;
+  /**
+   * @example
+   * 同意
+   */
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * apply1
+   */
   thirdPartApplyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user1
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -196,6 +337,10 @@ export class ApproveCityCarApplyRequest extends $tea.Model {
 }
 
 export class ApproveCityCarApplyResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   approveResult?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -480,11 +625,35 @@ export class BillSettementFlightHeaders extends $tea.Model {
 }
 
 export class BillSettementFlightRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   category?: number;
+  /**
+   * @example
+   * corpx
+   */
   corpId?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 2021-10-01
+   */
   periodEnd?: string;
+  /**
+   * @example
+   * 2021-10-01
+   */
   periodStart?: string;
   static names(): { [key: string]: string } {
     return {
@@ -589,11 +758,35 @@ export class BillSettementHotelHeaders extends $tea.Model {
 }
 
 export class BillSettementHotelRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   category?: number;
+  /**
+   * @example
+   * corpx
+   */
   corpId?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 2021-10-01
+   */
   periodEnd?: string;
+  /**
+   * @example
+   * 2021-10-01
+   */
   periodStart?: string;
   static names(): { [key: string]: string } {
     return {
@@ -698,7 +891,21 @@ export class GetFlightExceedApplyHeaders extends $tea.Model {
 }
 
 export class GetFlightExceedApplyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234
+   */
   applyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding1234
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -720,16 +927,90 @@ export class GetFlightExceedApplyRequest extends $tea.Model {
 }
 
 export class GetFlightExceedApplyResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234
+   */
   applyId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   applyIntentionInfoDO?: GetFlightExceedApplyResponseBodyApplyIntentionInfoDO;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 出差
+   */
   btripCause?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding1234
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 出差
+   */
   exceedReason?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   exceedType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 经济舱（2折及以下）
+   */
   originStandard?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-07-08 15:23:56
+   */
   submitTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0001A1100000007EX08O
+   */
   thirdpartApplyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * weifeng
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -816,7 +1097,21 @@ export class GetHotelExceedApplyHeaders extends $tea.Model {
 }
 
 export class GetHotelExceedApplyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   applyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding1234
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -838,16 +1133,90 @@ export class GetHotelExceedApplyRequest extends $tea.Model {
 }
 
 export class GetHotelExceedApplyResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   applyId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   applyIntentionInfoDO?: GetHotelExceedApplyResponseBodyApplyIntentionInfoDO;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 出差
+   */
   btripCause?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding12345
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 出差
+   */
   exceedReason?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 16
+   */
   exceedType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 210000
+   */
   originStandard?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-07-08 15:23:56
+   */
   submitTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0001A1100000007EX08O
+   */
   thirdpartApplyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * weifeng
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -934,7 +1303,21 @@ export class GetTrainExceedApplyHeaders extends $tea.Model {
 }
 
 export class GetTrainExceedApplyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   applyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding1234
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -956,16 +1339,90 @@ export class GetTrainExceedApplyRequest extends $tea.Model {
 }
 
 export class GetTrainExceedApplyResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234567
+   */
   applyId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   applyIntentionInfoDO?: GetTrainExceedApplyResponseBodyApplyIntentionInfoDO;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 出差
+   */
   btripCause?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding12345
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 出差
+   */
   exceedReason?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 32
+   */
   exceedType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 二等座
+   */
   originStandard?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-07-08 15:23:56
+   */
   submitTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0001A1100000007EX08O
+   */
   thirdpartApplyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * weifeng
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1052,12 +1509,43 @@ export class QueryCityCarApplyHeaders extends $tea.Model {
 }
 
 export class QueryCityCarApplyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * corpx
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2021-03-18 20:26:56
+   */
   createdEndAt?: string;
+  /**
+   * @example
+   * 2021-03-18 20:26:56
+   */
   createdStartAt?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 20
+   */
   pageSize?: number;
+  /**
+   * @example
+   * apply1
+   */
   thirdPartApplyId?: string;
+  /**
+   * @example
+   * user1
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1090,6 +1578,10 @@ export class QueryCityCarApplyRequest extends $tea.Model {
 
 export class QueryCityCarApplyResponseBody extends $tea.Model {
   applyList?: QueryCityCarApplyResponseBodyApplyList[];
+  /**
+   * @example
+   * 10
+   */
   total?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1158,8 +1650,23 @@ export class QueryUnionOrderHeaders extends $tea.Model {
 }
 
 export class QueryUnionOrderRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * tenant1231
+   */
   corpId?: string;
+  /**
+   * @example
+   * 第三方审批单号，关联单号和申请单号必选其一
+   */
   thirdPartApplyId?: string;
+  /**
+   * @example
+   * 关联单号，关联单号和申请单号必选其一
+   */
   unionNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1183,6 +1690,10 @@ export class QueryUnionOrderRequest extends $tea.Model {
 }
 
 export class QueryUnionOrderResponseBody extends $tea.Model {
+  /**
+   * @example
+   * tanant1231
+   */
   corpId?: string;
   flightList?: QueryUnionOrderResponseBodyFlightList[];
   hotelList?: QueryUnionOrderResponseBodyHotelList[];
@@ -1261,11 +1772,53 @@ export class SyncExceedApplyHeaders extends $tea.Model {
 }
 
 export class SyncExceedApplyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   applyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding12345
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 同意
+   */
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * asdfg
+   */
   thirdpartyFlowId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * asdfgh
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1295,6 +1848,13 @@ export class SyncExceedApplyRequest extends $tea.Model {
 }
 
 export class SyncExceedApplyResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   module?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2235,18 +2795,109 @@ export class BillSettementHotelResponseBodyModule extends $tea.Model {
 }
 
 export class GetFlightExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * HGH
+   */
   arrCity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 杭州
+   */
   arrCityName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-07-08 15:23:56
+   */
   arrTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * F
+   */
   cabin?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   cabinClass?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 经济舱
+   */
   cabinClassStr?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SHA
+   */
   depCity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 上海
+   */
   depCityName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-07-08 15:23:56
+   */
   depTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 4.1
+   */
   discount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * MU2759
+   */
   flightNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1000
+   */
   price?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2290,12 +2941,61 @@ export class GetFlightExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.M
 }
 
 export class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-07-08
+   */
   checkIn?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-07-08
+   */
   checkOut?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SHA
+   */
   cityCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 上海
+   */
   cityName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10000
+   */
   price?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   together?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 16
+   */
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2327,17 +3027,101 @@ export class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Mo
 }
 
 export class GetTrainExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * BJS
+   */
   arrCity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 北京
+   */
   arrCityName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 上海南
+   */
   arrStation?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-07-13 15:06:13
+   */
   arrTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SHA
+   */
   depCity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 上海
+   */
   depCityName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 北京南
+   */
   depStation?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-07-13 15:06:13
+   */
   depTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1000
+   */
   price?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 一等座
+   */
   seatName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * G39
+   */
   trainNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 高铁
+   */
   trainTypeDesc?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2379,12 +3163,40 @@ export class GetTrainExceedApplyResponseBodyApplyIntentionInfoDO extends $tea.Mo
 }
 
 export class QueryCityCarApplyResponseBodyApplyListApproverList extends $tea.Model {
+  /**
+   * @example
+   * 同意
+   */
   note?: string;
+  /**
+   * @example
+   * 2021-03-18 20:26:56
+   */
   operateTime?: string;
+  /**
+   * @example
+   * 1
+   */
   order?: number;
+  /**
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @example
+   * 同意
+   */
   statusDesc?: string;
+  /**
+   * @example
+   * user1
+   */
   userId?: string;
+  /**
+   * @example
+   * 员工1
+   */
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2416,19 +3228,75 @@ export class QueryCityCarApplyResponseBodyApplyListApproverList extends $tea.Mod
 }
 
 export class QueryCityCarApplyResponseBodyApplyListItineraryList extends $tea.Model {
+  /**
+   * @example
+   * 杭州
+   */
   arrCity?: string;
+  /**
+   * @example
+   * HGH
+   */
   arrCityCode?: string;
+  /**
+   * @example
+   * 2021-03-18 20:26:56
+   */
   arrDate?: string;
+  /**
+   * @example
+   * 1
+   */
   costCenterId?: number;
+  /**
+   * @example
+   * 成本中心1
+   */
   costCenterName?: string;
+  /**
+   * @example
+   * 杭州
+   */
   depCity?: string;
+  /**
+   * @example
+   * HGH
+   */
   depCityCode?: string;
+  /**
+   * @example
+   * 2021-03-18 20:26:56
+   */
   depDate?: string;
+  /**
+   * @example
+   * 1
+   */
   invoiceId?: number;
+  /**
+   * @example
+   * 发票抬头1
+   */
   invoiceName?: string;
+  /**
+   * @example
+   * 1
+   */
   itineraryId?: string;
+  /**
+   * @example
+   * projectx
+   */
   projectCode?: string;
+  /**
+   * @example
+   * 项目x
+   */
   projectTitle?: string;
+  /**
+   * @example
+   * 4
+   */
   trafficType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2475,17 +3343,61 @@ export class QueryCityCarApplyResponseBodyApplyListItineraryList extends $tea.Mo
 
 export class QueryCityCarApplyResponseBodyApplyList extends $tea.Model {
   approverList?: QueryCityCarApplyResponseBodyApplyListApproverList[];
+  /**
+   * @example
+   * 1
+   */
   departId?: string;
+  /**
+   * @example
+   * 部门1
+   */
   departName?: string;
+  /**
+   * @example
+   * 2021-03-18 20:26:56
+   */
   gmtCreate?: string;
+  /**
+   * @example
+   * 2021-03-18 20:26:56
+   */
   gmtModified?: string;
   itineraryList?: QueryCityCarApplyResponseBodyApplyListItineraryList[];
+  /**
+   * @example
+   * 申请
+   */
   status?: number;
+  /**
+   * @example
+   * 0
+   */
   statusDesc?: string;
+  /**
+   * @example
+   * apply1
+   */
   thirdPartApplyId?: string;
+  /**
+   * @example
+   * 杭州出差
+   */
   tripCause?: string;
+  /**
+   * @example
+   * 杭州出差
+   */
   tripTitle?: string;
+  /**
+   * @example
+   * user1
+   */
   userId?: string;
+  /**
+   * @example
+   * 员工1
+   */
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2529,7 +3441,15 @@ export class QueryCityCarApplyResponseBodyApplyList extends $tea.Model {
 }
 
 export class QueryUnionOrderResponseBodyFlightList extends $tea.Model {
+  /**
+   * @example
+   * 1231
+   */
   flightOrderId?: number;
+  /**
+   * @example
+   * 1
+   */
   flightOrderStatus?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2551,7 +3471,15 @@ export class QueryUnionOrderResponseBodyFlightList extends $tea.Model {
 }
 
 export class QueryUnionOrderResponseBodyHotelList extends $tea.Model {
+  /**
+   * @example
+   * 12312
+   */
   hotelOrderId?: number;
+  /**
+   * @example
+   * 1
+   */
   hotelOrderStatus?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2573,7 +3501,15 @@ export class QueryUnionOrderResponseBodyHotelList extends $tea.Model {
 }
 
 export class QueryUnionOrderResponseBodyTrainList extends $tea.Model {
+  /**
+   * @example
+   * 231231
+   */
   trainOrderId?: number;
+  /**
+   * @example
+   * 1
+   */
   trainOrderstatus?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2595,7 +3531,15 @@ export class QueryUnionOrderResponseBodyTrainList extends $tea.Model {
 }
 
 export class QueryUnionOrderResponseBodyVehicleList extends $tea.Model {
+  /**
+   * @example
+   * 1231
+   */
   vehicleOrderId?: number;
+  /**
+   * @example
+   * 1
+   */
   vehicleOrderStatus?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2618,12 +3562,11 @@ export class QueryUnionOrderResponseBodyVehicleList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2633,12 +3576,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 同步第三方市内用车申请单
-   *
-   * @param request AddCityCarApplyRequest
-   * @param headers AddCityCarApplyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddCityCarApplyResponse
+   * 同步第三方市内用车申请单
+   * 
+   * @param request - AddCityCarApplyRequest
+   * @param headers - AddCityCarApplyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddCityCarApplyResponse
    */
   async addCityCarApplyWithOptions(request: AddCityCarApplyRequest, headers: AddCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<AddCityCarApplyResponse> {
     Util.validateModel(request);
@@ -2735,10 +3678,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步第三方市内用车申请单
-   *
-   * @param request AddCityCarApplyRequest
-   * @return AddCityCarApplyResponse
+   * 同步第三方市内用车申请单
+   * 
+   * @param request - AddCityCarApplyRequest
+   * @returns AddCityCarApplyResponse
    */
   async addCityCarApply(request: AddCityCarApplyRequest): Promise<AddCityCarApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2747,12 +3690,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方市内用车申请单审批
-   *
-   * @param request ApproveCityCarApplyRequest
-   * @param headers ApproveCityCarApplyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ApproveCityCarApplyResponse
+   * 三方市内用车申请单审批
+   * 
+   * @param request - ApproveCityCarApplyRequest
+   * @param headers - ApproveCityCarApplyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ApproveCityCarApplyResponse
    */
   async approveCityCarApplyWithOptions(request: ApproveCityCarApplyRequest, headers: ApproveCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<ApproveCityCarApplyResponse> {
     Util.validateModel(request);
@@ -2809,10 +3752,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方市内用车申请单审批
-   *
-   * @param request ApproveCityCarApplyRequest
-   * @return ApproveCityCarApplyResponse
+   * 三方市内用车申请单审批
+   * 
+   * @param request - ApproveCityCarApplyRequest
+   * @returns ApproveCityCarApplyResponse
    */
   async approveCityCarApply(request: ApproveCityCarApplyRequest): Promise<ApproveCityCarApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2821,12 +3764,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 商旅火车票结算记账查询接口
-   *
-   * @param request BillSettementBtripTrainRequest
-   * @param headers BillSettementBtripTrainHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BillSettementBtripTrainResponse
+   * 商旅火车票结算记账查询接口
+   * 
+   * @param request - BillSettementBtripTrainRequest
+   * @param headers - BillSettementBtripTrainHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BillSettementBtripTrainResponse
    */
   async billSettementBtripTrainWithOptions(request: BillSettementBtripTrainRequest, headers: BillSettementBtripTrainHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementBtripTrainResponse> {
     Util.validateModel(request);
@@ -2883,10 +3826,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 商旅火车票结算记账查询接口
-   *
-   * @param request BillSettementBtripTrainRequest
-   * @return BillSettementBtripTrainResponse
+   * 商旅火车票结算记账查询接口
+   * 
+   * @param request - BillSettementBtripTrainRequest
+   * @returns BillSettementBtripTrainResponse
    */
   async billSettementBtripTrain(request: BillSettementBtripTrainRequest): Promise<BillSettementBtripTrainResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2895,12 +3838,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 用车结算记账查询接口
-   *
-   * @param request BillSettementCarRequest
-   * @param headers BillSettementCarHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BillSettementCarResponse
+   * 用车结算记账查询接口
+   * 
+   * @param request - BillSettementCarRequest
+   * @param headers - BillSettementCarHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BillSettementCarResponse
    */
   async billSettementCarWithOptions(request: BillSettementCarRequest, headers: BillSettementCarHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementCarResponse> {
     Util.validateModel(request);
@@ -2957,10 +3900,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 用车结算记账查询接口
-   *
-   * @param request BillSettementCarRequest
-   * @return BillSettementCarResponse
+   * 用车结算记账查询接口
+   * 
+   * @param request - BillSettementCarRequest
+   * @returns BillSettementCarResponse
    */
   async billSettementCar(request: BillSettementCarRequest): Promise<BillSettementCarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2969,12 +3912,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 机票结算记账查询接口
-   *
-   * @param request BillSettementFlightRequest
-   * @param headers BillSettementFlightHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BillSettementFlightResponse
+   * 机票结算记账查询接口
+   * 
+   * @param request - BillSettementFlightRequest
+   * @param headers - BillSettementFlightHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BillSettementFlightResponse
    */
   async billSettementFlightWithOptions(request: BillSettementFlightRequest, headers: BillSettementFlightHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementFlightResponse> {
     Util.validateModel(request);
@@ -3031,10 +3974,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 机票结算记账查询接口
-   *
-   * @param request BillSettementFlightRequest
-   * @return BillSettementFlightResponse
+   * 机票结算记账查询接口
+   * 
+   * @param request - BillSettementFlightRequest
+   * @returns BillSettementFlightResponse
    */
   async billSettementFlight(request: BillSettementFlightRequest): Promise<BillSettementFlightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3043,12 +3986,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 酒店结算记账查询接口
-   *
-   * @param request BillSettementHotelRequest
-   * @param headers BillSettementHotelHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BillSettementHotelResponse
+   * 酒店结算记账查询接口
+   * 
+   * @param request - BillSettementHotelRequest
+   * @param headers - BillSettementHotelHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BillSettementHotelResponse
    */
   async billSettementHotelWithOptions(request: BillSettementHotelRequest, headers: BillSettementHotelHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementHotelResponse> {
     Util.validateModel(request);
@@ -3105,10 +4048,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 酒店结算记账查询接口
-   *
-   * @param request BillSettementHotelRequest
-   * @return BillSettementHotelResponse
+   * 酒店结算记账查询接口
+   * 
+   * @param request - BillSettementHotelRequest
+   * @returns BillSettementHotelResponse
    */
   async billSettementHotel(request: BillSettementHotelRequest): Promise<BillSettementHotelResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3117,12 +4060,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 商旅机票第三方超标审批单搜索接口
-   *
-   * @param request GetFlightExceedApplyRequest
-   * @param headers GetFlightExceedApplyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFlightExceedApplyResponse
+   * 商旅机票第三方超标审批单搜索接口
+   * 
+   * @param request - GetFlightExceedApplyRequest
+   * @param headers - GetFlightExceedApplyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFlightExceedApplyResponse
    */
   async getFlightExceedApplyWithOptions(request: GetFlightExceedApplyRequest, headers: GetFlightExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlightExceedApplyResponse> {
     Util.validateModel(request);
@@ -3163,10 +4106,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 商旅机票第三方超标审批单搜索接口
-   *
-   * @param request GetFlightExceedApplyRequest
-   * @return GetFlightExceedApplyResponse
+   * 商旅机票第三方超标审批单搜索接口
+   * 
+   * @param request - GetFlightExceedApplyRequest
+   * @returns GetFlightExceedApplyResponse
    */
   async getFlightExceedApply(request: GetFlightExceedApplyRequest): Promise<GetFlightExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3175,12 +4118,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索酒店超标审批单
-   *
-   * @param request GetHotelExceedApplyRequest
-   * @param headers GetHotelExceedApplyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetHotelExceedApplyResponse
+   * 搜索酒店超标审批单
+   * 
+   * @param request - GetHotelExceedApplyRequest
+   * @param headers - GetHotelExceedApplyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetHotelExceedApplyResponse
    */
   async getHotelExceedApplyWithOptions(request: GetHotelExceedApplyRequest, headers: GetHotelExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetHotelExceedApplyResponse> {
     Util.validateModel(request);
@@ -3221,10 +4164,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索酒店超标审批单
-   *
-   * @param request GetHotelExceedApplyRequest
-   * @return GetHotelExceedApplyResponse
+   * 搜索酒店超标审批单
+   * 
+   * @param request - GetHotelExceedApplyRequest
+   * @returns GetHotelExceedApplyResponse
    */
   async getHotelExceedApply(request: GetHotelExceedApplyRequest): Promise<GetHotelExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3233,12 +4176,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 商旅火车票第三方超标审批单搜索接口
-   *
-   * @param request GetTrainExceedApplyRequest
-   * @param headers GetTrainExceedApplyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTrainExceedApplyResponse
+   * 商旅火车票第三方超标审批单搜索接口
+   * 
+   * @param request - GetTrainExceedApplyRequest
+   * @param headers - GetTrainExceedApplyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTrainExceedApplyResponse
    */
   async getTrainExceedApplyWithOptions(request: GetTrainExceedApplyRequest, headers: GetTrainExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetTrainExceedApplyResponse> {
     Util.validateModel(request);
@@ -3279,10 +4222,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 商旅火车票第三方超标审批单搜索接口
-   *
-   * @param request GetTrainExceedApplyRequest
-   * @return GetTrainExceedApplyResponse
+   * 商旅火车票第三方超标审批单搜索接口
+   * 
+   * @param request - GetTrainExceedApplyRequest
+   * @returns GetTrainExceedApplyResponse
    */
   async getTrainExceedApply(request: GetTrainExceedApplyRequest): Promise<GetTrainExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3291,12 +4234,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方市内用车申请单查询
-   *
-   * @param request QueryCityCarApplyRequest
-   * @param headers QueryCityCarApplyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCityCarApplyResponse
+   * 三方市内用车申请单查询
+   * 
+   * @param request - QueryCityCarApplyRequest
+   * @param headers - QueryCityCarApplyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCityCarApplyResponse
    */
   async queryCityCarApplyWithOptions(request: QueryCityCarApplyRequest, headers: QueryCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCityCarApplyResponse> {
     Util.validateModel(request);
@@ -3357,10 +4300,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 三方市内用车申请单查询
-   *
-   * @param request QueryCityCarApplyRequest
-   * @return QueryCityCarApplyResponse
+   * 三方市内用车申请单查询
+   * 
+   * @param request - QueryCityCarApplyRequest
+   * @returns QueryCityCarApplyResponse
    */
   async queryCityCarApply(request: QueryCityCarApplyRequest): Promise<QueryCityCarApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3369,12 +4312,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 申请单关联单号查询相关订单信息
-   *
-   * @param request QueryUnionOrderRequest
-   * @param headers QueryUnionOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryUnionOrderResponse
+   * 申请单关联单号查询相关订单信息
+   * 
+   * @param request - QueryUnionOrderRequest
+   * @param headers - QueryUnionOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryUnionOrderResponse
    */
   async queryUnionOrderWithOptions(request: QueryUnionOrderRequest, headers: QueryUnionOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUnionOrderResponse> {
     Util.validateModel(request);
@@ -3419,10 +4362,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 申请单关联单号查询相关订单信息
-   *
-   * @param request QueryUnionOrderRequest
-   * @return QueryUnionOrderResponse
+   * 申请单关联单号查询相关订单信息
+   * 
+   * @param request - QueryUnionOrderRequest
+   * @returns QueryUnionOrderResponse
    */
   async queryUnionOrder(request: QueryUnionOrderRequest): Promise<QueryUnionOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3431,12 +4374,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步超标审批结果
-   *
-   * @param request SyncExceedApplyRequest
-   * @param headers SyncExceedApplyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncExceedApplyResponse
+   * 同步超标审批结果
+   * 
+   * @param request - SyncExceedApplyRequest
+   * @param headers - SyncExceedApplyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncExceedApplyResponse
    */
   async syncExceedApplyWithOptions(request: SyncExceedApplyRequest, headers: SyncExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<SyncExceedApplyResponse> {
     Util.validateModel(request);
@@ -3493,10 +4436,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步超标审批结果
-   *
-   * @param request SyncExceedApplyRequest
-   * @return SyncExceedApplyResponse
+   * 同步超标审批结果
+   * 
+   * @param request - SyncExceedApplyRequest
+   * @returns SyncExceedApplyResponse
    */
   async syncExceedApply(request: SyncExceedApplyRequest): Promise<SyncExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });

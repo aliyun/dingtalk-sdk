@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,9 +30,25 @@ export class CreatePackageHeaders extends $tea.Model {
 }
 
 export class CreatePackageRequest extends $tea.Model {
+  /**
+   * @example
+   * 1234
+   */
   agentId?: number;
+  /**
+   * @example
+   * 1234
+   */
   appId?: number;
+  /**
+   * @example
+   * https://example.com/myapp/index.html
+   */
   homeUrl?: string;
+  /**
+   * @example
+   * aaaaaa/bbbbbb
+   */
   ossObjectKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -60,6 +74,10 @@ export class CreatePackageRequest extends $tea.Model {
 }
 
 export class CreatePackageResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 1663748308644pjpF
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -148,13 +166,45 @@ export class GetAccessTokenRequest extends $tea.Model {
 }
 
 export class GetAccessTokenResponseBody extends $tea.Model {
+  /**
+   * @example
+   * STS.NUPjgnMhCVWvo1HSxfftf
+   */
   accessKeyId?: string;
+  /**
+   * @example
+   * ASviryNDy9tTuS5KiYMA6fCYf81vHg4KdoX7CVHz4CSx
+   */
   accessKeySecret?: string;
+  /**
+   * @example
+   * dingtalk-bucket
+   */
   bucket?: string;
+  /**
+   * @example
+   * oss-cn-shanghai.aliyuncs.com
+   */
   endpoint?: string;
+  /**
+   * @example
+   * 2022-09-21T09:32:16Z
+   */
   expiration?: string;
+  /**
+   * @example
+   * 5000000002761167/1663751835956
+   */
   name?: string;
+  /**
+   * @example
+   * oss-cn-shanghai
+   */
   region?: string;
+  /**
+   * @example
+   * CAIS0QJ1q6Ft5B2yfSjIr5blId3aoLdi4ZWdbRf5t3gzavt...
+   */
   stsToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -235,6 +285,13 @@ export class GetCreateStatusHeaders extends $tea.Model {
 }
 
 export class GetCreateStatusRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1663748308644pjpF
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -254,11 +311,31 @@ export class GetCreateStatusRequest extends $tea.Model {
 }
 
 export class GetCreateStatusResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 1663743241146
+   */
   buildTime?: number;
   finished?: boolean;
+  /**
+   * @example
+   * 0
+   */
   packageSize?: number;
+  /**
+   * @example
+   * 2
+   */
   status?: string;
+  /**
+   * @example
+   * 1663748308644pjpF
+   */
   taskId?: string;
+  /**
+   * @example
+   * 0.0.1
+   */
   version?: string;
   static names(): { [key: string]: string } {
     return {
@@ -335,8 +412,23 @@ export class PublishPackageHeaders extends $tea.Model {
 }
 
 export class PublishPackageRequest extends $tea.Model {
+  /**
+   * @example
+   * 1234
+   */
   agentId?: number;
+  /**
+   * @example
+   * 1234
+   */
   appId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0.0.1
+   */
   version?: string;
   static names(): { [key: string]: string } {
     return {
@@ -405,12 +497,11 @@ export class PublishPackageResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -420,12 +511,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 上传H5离线包
-   *
-   * @param request CreatePackageRequest
-   * @param headers CreatePackageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreatePackageResponse
+   * 上传H5离线包
+   * 
+   * @param request - CreatePackageRequest
+   * @param headers - CreatePackageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreatePackageResponse
    */
   async createPackageWithOptions(request: CreatePackageRequest, headers: CreatePackageHeaders, runtime: $Util.RuntimeOptions): Promise<CreatePackageResponse> {
     Util.validateModel(request);
@@ -474,10 +565,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 上传H5离线包
-   *
-   * @param request CreatePackageRequest
-   * @return CreatePackageResponse
+   * 上传H5离线包
+   * 
+   * @param request - CreatePackageRequest
+   * @returns CreatePackageResponse
    */
   async createPackage(request: CreatePackageRequest): Promise<CreatePackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -486,12 +577,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取包上传一次性AccessToken
-   *
-   * @param request GetAccessTokenRequest
-   * @param headers GetAccessTokenHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAccessTokenResponse
+   * 获取包上传一次性AccessToken
+   * 
+   * @param request - GetAccessTokenRequest
+   * @param headers - GetAccessTokenHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAccessTokenResponse
    */
   async getAccessTokenWithOptions(request: GetAccessTokenRequest, headers: GetAccessTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetAccessTokenResponse> {
     Util.validateModel(request);
@@ -532,10 +623,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取包上传一次性AccessToken
-   *
-   * @param request GetAccessTokenRequest
-   * @return GetAccessTokenResponse
+   * 获取包上传一次性AccessToken
+   * 
+   * @param request - GetAccessTokenRequest
+   * @returns GetAccessTokenResponse
    */
   async getAccessToken(request: GetAccessTokenRequest): Promise<GetAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -544,12 +635,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取H5离线包版本创建状态
-   *
-   * @param request GetCreateStatusRequest
-   * @param headers GetCreateStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCreateStatusResponse
+   * 获取H5离线包版本创建状态
+   * 
+   * @param request - GetCreateStatusRequest
+   * @param headers - GetCreateStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCreateStatusResponse
    */
   async getCreateStatusWithOptions(request: GetCreateStatusRequest, headers: GetCreateStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetCreateStatusResponse> {
     Util.validateModel(request);
@@ -586,10 +677,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取H5离线包版本创建状态
-   *
-   * @param request GetCreateStatusRequest
-   * @return GetCreateStatusResponse
+   * 获取H5离线包版本创建状态
+   * 
+   * @param request - GetCreateStatusRequest
+   * @returns GetCreateStatusResponse
    */
   async getCreateStatus(request: GetCreateStatusRequest): Promise<GetCreateStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -598,12 +689,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发布离线包
-   *
-   * @param request PublishPackageRequest
-   * @param headers PublishPackageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PublishPackageResponse
+   * 发布离线包
+   * 
+   * @param request - PublishPackageRequest
+   * @param headers - PublishPackageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PublishPackageResponse
    */
   async publishPackageWithOptions(request: PublishPackageRequest, headers: PublishPackageHeaders, runtime: $Util.RuntimeOptions): Promise<PublishPackageResponse> {
     Util.validateModel(request);
@@ -648,10 +739,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发布离线包
-   *
-   * @param request PublishPackageRequest
-   * @return PublishPackageResponse
+   * 发布离线包
+   * 
+   * @param request - PublishPackageRequest
+   * @returns PublishPackageResponse
    */
   async publishPackage(request: PublishPackageRequest): Promise<PublishPackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });

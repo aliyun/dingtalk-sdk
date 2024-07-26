@@ -1,37 +1,127 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class MetricMapValue extends $tea.Model {
+  /**
+   * @example
+   * 1682562120000
+   */
   timestamp?: number;
+  /**
+   * @example
+   * 1145172
+   */
   sendBitRate?: string;
+  /**
+   * @example
+   * 111
+   */
   recvBitRate?: string;
+  /**
+   * @example
+   * 0
+   */
   lostRate?: string;
+  /**
+   * @example
+   * 20
+   */
   roundTripTime?: string;
+  /**
+   * @example
+   * 59103
+   */
   audioSendBitRate?: string;
+  /**
+   * @example
+   * 52939
+   */
   audioRecvBitRate?: string;
+  /**
+   * @example
+   * 25
+   */
   audioRecLevel?: string;
+  /**
+   * @example
+   * 27
+   */
   audioPlayLevel?: string;
+  /**
+   * @example
+   * 1145172
+   */
   cameraSendBitRate?: string;
+  /**
+   * @example
+   * 66160
+   */
   cameraRecvBitRate?: string;
+  /**
+   * @example
+   * 1920*1080
+   */
   cameraSendResolutionActual?: string;
+  /**
+   * @example
+   * 1920*1080
+   */
   cameraRecvResolutionActual?: string;
+  /**
+   * @example
+   * 20
+   */
   cameraSendFrame?: string;
+  /**
+   * @example
+   * 15701
+   */
   screenSendBitRate?: string;
+  /**
+   * @example
+   * 20
+   */
   cameraRecvFrame?: string;
+  /**
+   * @example
+   * 0
+   */
   screenRecvBitRate?: string;
+  /**
+   * @example
+   * 1920*1080
+   */
   screenSendResolutionActual?: string;
+  /**
+   * @example
+   * 1920*1080
+   */
   screenRecvResolutionActual?: string;
+  /**
+   * @example
+   * 14
+   */
   screenSendFrame?: string;
+  /**
+   * @example
+   * 0
+   */
   screenRecvFrame?: string;
+  /**
+   * @example
+   * 0
+   */
   audioJitterMax?: string;
+  /**
+   * @example
+   * 0
+   */
   audioJitterAvg?: string;
   static names(): { [key: string]: string } {
     return {
@@ -95,17 +185,65 @@ export class MetricMapValue extends $tea.Model {
 }
 
 export class MemberModelMapValue extends $tea.Model {
+  /**
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
+  /**
+   * @example
+   * 654058f2411fe90147e68780
+   */
   conferenceId?: string;
+  /**
+   * @example
+   * 测试昵称
+   */
   userNick?: string;
+  /**
+   * @example
+   * 1699347295876
+   */
   joinTime?: number;
+  /**
+   * @example
+   * 1699347395876
+   */
   leaveTime?: number;
+  /**
+   * @example
+   * 100000
+   */
   duration?: number;
+  /**
+   * @example
+   * 1：初始化  2：呼叫中  3：活跃（在会）  4：入会失败（拒接等）  5：被踢  6：离会
+   */
   attendStatus?: number;
+  /**
+   * @example
+   * true：是  false：否
+   */
   host?: boolean;
+  /**
+   * @example
+   * true：是  false：否
+   */
   coHost?: boolean;
+  /**
+   * @example
+   * true：是  false：否
+   */
   outerOrgMember?: boolean;
+  /**
+   * @example
+   * true：是  false：否
+   */
   pstnJoin?: boolean;
+  /**
+   * @example
+   * Win Mac iOS Android
+   */
   deviceType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -169,7 +307,21 @@ export class CancelScheduleConferenceHeaders extends $tea.Model {
 }
 
 export class CancelScheduleConferenceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * qzR1iSMDvzR9iP7Pxxxxxxxxxxxx
+   */
   creatorUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2a489xxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+   */
   scheduleConferenceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -257,6 +409,13 @@ export class CloseVideoConferenceHeaders extends $tea.Model {
 }
 
 export class CloseVideoConferenceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 27SaQ3iiHLN0uwqcPisedfreNwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -277,6 +436,10 @@ export class CloseVideoConferenceRequest extends $tea.Model {
 
 export class CloseVideoConferenceResponseBody extends $tea.Model {
   cause?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   code?: number;
   static names(): { [key: string]: string } {
     return {
@@ -345,7 +508,18 @@ export class CohostsHeaders extends $tea.Model {
 }
 
 export class CohostsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * add
+   */
   action?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userList?: CohostsRequestUserList[];
   static names(): { [key: string]: string } {
     return {
@@ -433,10 +607,39 @@ export class CreateCustomShortLinkHeaders extends $tea.Model {
 }
 
 export class CreateCustomShortLinkRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * COOLAPP-0-1026633886192127xxxB000W
+   */
   coolAppCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   creatorUnionId?: string;
+  /**
+   * @example
+   * bizData
+   */
   extensionAppBizData?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * f6fb627e-a7e8-403e-b1f8-26e85450f4a9
+   */
   scheduleConferenceId?: string;
+  /**
+   * @example
+   * true：使用 false：不使用
+   */
   useExtensionApp?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -530,9 +733,37 @@ export class CreateScheduleConferenceHeaders extends $tea.Model {
 }
 
 export class CreateScheduleConferenceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * qzR1iSMDvzR9iP7Pxxxxxxxxxxxx
+   */
   creatorUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1687928400000
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1687924800000
+   */
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 预约会议标题
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -560,8 +791,20 @@ export class CreateScheduleConferenceRequest extends $tea.Model {
 export class CreateScheduleConferenceResponseBody extends $tea.Model {
   phones?: string[];
   requestId?: string;
+  /**
+   * @example
+   * 838 722 xxxxx
+   */
   roomCode?: string;
+  /**
+   * @example
+   * 2a489c68-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+   */
   scheduleConferenceId?: string;
+  /**
+   * @example
+   * https://meeting.dingtalk.com/j/Bsbp3ixxxxxUyJJ9
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -636,9 +879,34 @@ export class CreateVideoConferenceHeaders extends $tea.Model {
 }
 
 export class CreateVideoConferenceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XXX的视频会议
+   */
   confTitle?: string;
+  /**
+   * @example
+   * false
+   * 
+   * **if can be null:**
+   * true
+   */
   inviteCaller?: boolean;
+  /**
+   * **if can be null:**
+   * true
+   */
   inviteUserIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 27SaQ3iiHLN0uwqcPisedfreNwiEiE
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -664,6 +932,10 @@ export class CreateVideoConferenceRequest extends $tea.Model {
 }
 
 export class CreateVideoConferenceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conferenceId?: string;
   conferencePassword?: string;
   externalLinkUrl?: string;
@@ -745,7 +1017,15 @@ export class FocusHeaders extends $tea.Model {
 }
 
 export class FocusRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   action?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -833,6 +1113,10 @@ export class GetConfDataByConferenceIdHeaders extends $tea.Model {
 }
 
 export class GetConfDataByConferenceIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   realData?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -852,16 +1136,60 @@ export class GetConfDataByConferenceIdRequest extends $tea.Model {
 }
 
 export class GetConfDataByConferenceIdResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 6449d8a6414xxxxxxxx01464af9f0
+   */
   conferenceId?: string;
+  /**
+   * @example
+   * njMTqKo9xxxxEiE
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 张三
+   */
   creatorNick?: string;
+  /**
+   * @example
+   * xxxx
+   */
   deptName?: string;
+  /**
+   * @example
+   * 1682561790000
+   */
   endTime?: number;
+  /**
+   * @example
+   * 0
+   */
   freeType?: string;
+  /**
+   * @example
+   * ding_talk
+   */
   scene?: string;
+  /**
+   * @example
+   * 1682561190000
+   */
   startTime?: number;
+  /**
+   * @example
+   * 600000
+   */
   timeLength?: number;
+  /**
+   * @example
+   * xxxxx测试会议
+   */
   title?: string;
+  /**
+   * @example
+   * 2
+   */
   userCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -948,8 +1276,20 @@ export class GetConfDetailDataHeaders extends $tea.Model {
 }
 
 export class GetConfDetailDataRequest extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
   maxResults?: number;
+  /**
+   * @example
+   * xxx9uZ0bVGoqjxxxxxxxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 张三
+   */
   nick?: string;
   static names(): { [key: string]: string } {
     return {
@@ -974,6 +1314,10 @@ export class GetConfDetailDataRequest extends $tea.Model {
 
 export class GetConfDetailDataResponseBody extends $tea.Model {
   list?: GetConfDetailDataResponseBodyList[];
+  /**
+   * @example
+   * xxxxZ0bVGoqxxBGQbxdxxxx
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1042,14 +1386,56 @@ export class GetHistoryConfDataListHeaders extends $tea.Model {
 }
 
 export class GetHistoryConfDataListRequest extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   creatorNike?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1682611199000
+   */
   endTime?: number;
+  /**
+   * @example
+   * 0
+   */
   freeType?: string;
+  /**
+   * @example
+   * 100
+   */
   maxResults?: number;
+  /**
+   * @example
+   * xxx9uZ0bVGoqjxxxxxxxx
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   realData?: boolean;
+  /**
+   * @example
+   * ding_talk
+   */
   scene?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1682524800000
+   */
   startTime?: number;
+  /**
+   * @example
+   * xxxxx视频会议
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1086,6 +1472,10 @@ export class GetHistoryConfDataListRequest extends $tea.Model {
 
 export class GetHistoryConfDataListResponseBody extends $tea.Model {
   list?: GetHistoryConfDataListResponseBodyList[];
+  /**
+   * @example
+   * xxx9uZ0bVGoqjxxxxxxxx
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1154,6 +1544,10 @@ export class GetUserLastMetricHeaders extends $tea.Model {
 }
 
 export class GetUserLastMetricRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionIdList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1239,8 +1633,29 @@ export class GetUserMetricDataHeaders extends $tea.Model {
 }
 
 export class GetUserMetricDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1682524800000
+   */
   beginTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1682611199000
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * njMTqKo9iiyxxxxxxxxiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1332,6 +1747,10 @@ export class InviteUsersHeaders extends $tea.Model {
 export class InviteUsersRequest extends $tea.Model {
   inviteeList?: InviteUsersRequestInviteeList[];
   phoneInviteeList?: InviteUsersRequestPhoneInviteeList[];
+  /**
+   * @example
+   * qzR1iSMDvzR9iPXXXXXXXXXXXXXX
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1422,6 +1841,10 @@ export class KickMembersHeaders extends $tea.Model {
 
 export class KickMembersRequest extends $tea.Model {
   forbiddenRejoin?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userList?: KickMembersRequestUserList[];
   static names(): { [key: string]: string } {
     return {
@@ -1509,6 +1932,13 @@ export class LockConferenceHeaders extends $tea.Model {
 }
 
 export class LockConferenceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * lock
+   */
   action?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1594,6 +2024,13 @@ export class MuteAllHeaders extends $tea.Model {
 }
 
 export class MuteAllRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * mute
+   */
   action?: string;
   forceMute?: boolean;
   static names(): { [key: string]: string } {
@@ -1682,7 +2119,18 @@ export class MuteMembersHeaders extends $tea.Model {
 }
 
 export class MuteMembersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * mute
+   */
   action?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userList?: MuteMembersRequestUserList[];
   static names(): { [key: string]: string } {
     return {
@@ -1770,6 +2218,10 @@ export class QueryCloudRecordTextHeaders extends $tea.Model {
 }
 
 export class QueryCloudRecordTextRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   direction?: string;
   maxResults?: number;
   nextToken?: number;
@@ -1801,6 +2253,10 @@ export class QueryCloudRecordTextRequest extends $tea.Model {
 }
 
 export class QueryCloudRecordTextResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
   paragraphList?: QueryCloudRecordTextResponseBodyParagraphList[];
   static names(): { [key: string]: string } {
@@ -1870,6 +2326,10 @@ export class QueryCloudRecordVideoHeaders extends $tea.Model {
 }
 
 export class QueryCloudRecordVideoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1955,8 +2415,20 @@ export class QueryCloudRecordVideoPlayInfoHeaders extends $tea.Model {
 }
 
 export class QueryCloudRecordVideoPlayInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   regionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1980,9 +2452,25 @@ export class QueryCloudRecordVideoPlayInfoRequest extends $tea.Model {
 }
 
 export class QueryCloudRecordVideoPlayInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 59886
+   */
   duration?: number;
+  /**
+   * @example
+   * 1127942
+   */
   fileSize?: number;
+  /**
+   * @example
+   * https://vod.mcs.dingtalk.com/faa1566c5bc24f21821ae2394f82db2e/8bbd1612e686462ab4717919f67bb721-b8531e0d534b2f9747a9fdfxxxxxxxxc-sd.mp4
+   */
   mp4FileUrl?: string;
+  /**
+   * @example
+   * https://vod.mcs.dingtalk.com/faa1566c5bc24f21821ae2394f82db2e/8bbd1612e686462ab4717919f67bb721-ab85cc044a163568c9485xxxxxxxx76d-sd.m3u8
+   */
   playUrl?: string;
   status?: number;
   static names(): { [key: string]: string } {
@@ -2124,6 +2612,10 @@ export class QueryConferenceInfoBatchHeaders extends $tea.Model {
 }
 
 export class QueryConferenceInfoBatchRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   conferenceIdList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -2209,7 +2701,15 @@ export class QueryConferenceMembersHeaders extends $tea.Model {
 }
 
 export class QueryConferenceMembersRequest extends $tea.Model {
+  /**
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 0
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2232,7 +2732,15 @@ export class QueryConferenceMembersRequest extends $tea.Model {
 
 export class QueryConferenceMembersResponseBody extends $tea.Model {
   memberModels?: QueryConferenceMembersResponseBodyMemberModels[];
+  /**
+   * @example
+   * 123000000
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 20
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2303,6 +2811,10 @@ export class QueryMinutesAudioHeaders extends $tea.Model {
 }
 
 export class QueryMinutesAudioRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2389,6 +2901,13 @@ export class QueryMinutesSummaryHeaders extends $tea.Model {
 
 export class QueryMinutesSummaryRequest extends $tea.Model {
   summaryTypeList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 27SaQ3iiHLN0uwqcPisedfreNwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2476,6 +2995,13 @@ export class QueryMinutesTextHeaders extends $tea.Model {
 }
 
 export class QueryMinutesTextRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   direction?: string;
   maxResults?: number;
   nextToken?: string;
@@ -2504,7 +3030,15 @@ export class QueryMinutesTextRequest extends $tea.Model {
 }
 
 export class QueryMinutesTextResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @example
+   * 1631172045153000||7940
+   */
   nextToken?: string;
   paragraphList?: QueryMinutesTextResponseBodyParagraphList[];
   static names(): { [key: string]: string } {
@@ -2576,6 +3110,10 @@ export class QueryScheduleConfSettingsHeaders extends $tea.Model {
 }
 
 export class QueryScheduleConfSettingsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   scheduleConferenceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2661,6 +3199,13 @@ export class QueryScheduleConferenceHeaders extends $tea.Model {
 }
 
 export class QueryScheduleConferenceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * qzR1iSMDvzR9iP7Pxxxxxxxxxxxx
+   */
   requestUnionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2680,13 +3225,41 @@ export class QueryScheduleConferenceRequest extends $tea.Model {
 }
 
 export class QueryScheduleConferenceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 1687928400000
+   */
   endTime?: number;
   phones?: string[];
+  /**
+   * @example
+   * xxxxx
+   */
   requestId?: string;
+  /**
+   * @example
+   * 838 722 xxxxx
+   */
   roomCode?: string;
+  /**
+   * @example
+   * 2a489c68-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+   */
   scheduleConferenceId?: string;
+  /**
+   * @example
+   * 1687924800000
+   */
   startTime?: number;
+  /**
+   * @example
+   * 预约会议标题
+   */
   title?: string;
+  /**
+   * @example
+   * https://meeting.dingtalk.com/j/Bsbp3ixxxxxUyJJ9
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2767,7 +3340,18 @@ export class QueryScheduleConferenceInfoHeaders extends $tea.Model {
 }
 
 export class QueryScheduleConferenceInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 0
+   * 
+   * **if can be null:**
+   * true
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2790,6 +3374,10 @@ export class QueryScheduleConferenceInfoRequest extends $tea.Model {
 
 export class QueryScheduleConferenceInfoResponseBody extends $tea.Model {
   conferenceList?: QueryScheduleConferenceInfoResponseBodyConferenceList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: string;
   totalCount?: number;
   static names(): { [key: string]: string } {
@@ -2861,6 +3449,13 @@ export class QueryUserOnGoingConferenceHeaders extends $tea.Model {
 }
 
 export class QueryUserOnGoingConferenceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2949,8 +3544,23 @@ export class StartCloudRecordHeaders extends $tea.Model {
 }
 
 export class StartCloudRecordRequest extends $tea.Model {
+  /**
+   * @example
+   * 演讲
+   */
   mode?: string;
+  /**
+   * @example
+   * 左上
+   */
   smallWindowPosition?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 27SaQ3iiHLN0uwqcPisedfreNwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3040,8 +3650,20 @@ export class StartMinutesHeaders extends $tea.Model {
 }
 
 export class StartMinutesRequest extends $tea.Model {
+  /**
+   * @example
+   * 左上
+   */
   ownerUnionId?: string;
+  /**
+   * @example
+   * true
+   */
   recordAudio?: boolean;
+  /**
+   * @example
+   * 27SaQ3iiHLN0uwqcPisedfreNwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3131,11 +3753,47 @@ export class StartStreamOutHeaders extends $tea.Model {
 }
 
 export class StartStreamOutRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * grip
+   */
   mode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   needHostJoin?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   smallWindowPosition?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 推流名称
+   */
   streamName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   streamUrlList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 27SaQ3iiHLN0uwqcPisedfreNwiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3234,6 +3892,10 @@ export class StopCloudRecordHeaders extends $tea.Model {
 }
 
 export class StopCloudRecordRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3319,6 +3981,10 @@ export class StopMinutesHeaders extends $tea.Model {
 }
 
 export class StopMinutesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3404,8 +4070,26 @@ export class StopStreamOutHeaders extends $tea.Model {
 }
 
 export class StopStreamOutRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   stopAllStream?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 27SaQ3iiHLN0uwqcPisedfreNwiEiE
+   */
   streamId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3429,6 +4113,10 @@ export class StopStreamOutRequest extends $tea.Model {
 }
 
 export class StopStreamOutResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   code?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3495,8 +4183,16 @@ export class UpdateScheduleConfSettingsHeaders extends $tea.Model {
 }
 
 export class UpdateScheduleConfSettingsRequest extends $tea.Model {
+  /**
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   creatorUnionId?: string;
   scheduleConfSettingModel?: UpdateScheduleConfSettingsRequestScheduleConfSettingModel;
+  /**
+   * @example
+   * f6fb627e-a7e8-403e-b1f8-26e85450f4a9
+   */
   scheduleConferenceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3586,10 +4282,45 @@ export class UpdateScheduleConferenceHeaders extends $tea.Model {
 }
 
 export class UpdateScheduleConferenceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * qzR1iSMDvzR9iP7Pxxxxxxxxxxxx
+   */
   creatorUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1687928400000
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2a489xxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+   */
   scheduleConferenceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1687924800000
+   */
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 预约会议标题
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3833,6 +4564,13 @@ export class UpdateVideoConferenceSettingResponse extends $tea.Model {
 }
 
 export class CohostsRequestUserList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * qzR1iSMDvzR9iP7Pxxxxxxxxxxxxxxx
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3871,18 +4609,70 @@ export class CreateCustomShortLinkResponseBodyResult extends $tea.Model {
 }
 
 export class GetConfDetailDataResponseBodyList extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   belongOrg?: string;
+  /**
+   * @example
+   * 6449d8a6414xxxxxxxx01464af9f0
+   */
   conferenceId?: string;
+  /**
+   * @example
+   * Mac
+   */
   deviceType?: string;
+  /**
+   * @example
+   * 974000
+   */
   duration?: number;
+  /**
+   * @example
+   * 1682561199000
+   */
   joinTime?: number;
+  /**
+   * @example
+   * 1682562173000
+   */
   leaveTime?: number;
+  /**
+   * @example
+   * -1
+   */
   networkQuality?: string;
+  /**
+   * @example
+   * 张三
+   */
   nick?: string;
+  /**
+   * @example
+   * 参会人
+   */
   role?: string;
+  /**
+   * @example
+   * xxxx
+   */
   sessionId?: string;
+  /**
+   * @example
+   * 已离开
+   */
   status?: string;
+  /**
+   * @example
+   * njMTqKo9xxxxEiE
+   */
   unionId?: string;
+  /**
+   * @example
+   * 6.1.1
+   */
   version?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3926,16 +4716,60 @@ export class GetConfDetailDataResponseBodyList extends $tea.Model {
 }
 
 export class GetHistoryConfDataListResponseBodyList extends $tea.Model {
+  /**
+   * @example
+   * 6449d8a6414xxxxxxxx01464af9f0
+   */
   conferenceId?: string;
+  /**
+   * @example
+   * njMTqKo9xxxxEiE
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 张三
+   */
   creatorNick?: string;
+  /**
+   * @example
+   * xxxxx
+   */
   deptName?: string;
+  /**
+   * @example
+   * 1682561790000
+   */
   endTime?: number;
+  /**
+   * @example
+   * 0
+   */
   freeType?: string;
+  /**
+   * @example
+   * ding_talk
+   */
   scene?: string;
+  /**
+   * @example
+   * 1682561190000
+   */
   startTime?: number;
+  /**
+   * @example
+   * 600000
+   */
   timeLength?: number;
+  /**
+   * @example
+   * xxxxx视频会议
+   */
   title?: string;
+  /**
+   * @example
+   * 2
+   */
   userCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3975,26 +4809,110 @@ export class GetHistoryConfDataListResponseBodyList extends $tea.Model {
 }
 
 export class GetUserMetricDataResponseBodyMetricDataList extends $tea.Model {
+  /**
+   * @example
+   * 27
+   */
   audioPlayLevel?: string;
+  /**
+   * @example
+   * 25
+   */
   audioRecLevel?: string;
+  /**
+   * @example
+   * 52939
+   */
   audioRecvBitRate?: string;
+  /**
+   * @example
+   * 59103
+   */
   audioSendBitRate?: string;
+  /**
+   * @example
+   * 66160
+   */
   cameraRecvBitRate?: string;
+  /**
+   * @example
+   * 20
+   */
   cameraRecvFrame?: string;
+  /**
+   * @example
+   * 1920*1080
+   */
   cameraRecvResolutionActual?: string;
+  /**
+   * @example
+   * 1145172
+   */
   cameraSendBitRate?: string;
+  /**
+   * @example
+   * 20
+   */
   cameraSendFrame?: string;
+  /**
+   * @example
+   * 1920*1080
+   */
   cameraSendResolutionActual?: string;
+  /**
+   * @example
+   * 0
+   */
   lostRate?: string;
+  /**
+   * @example
+   * 66160
+   */
   recvBitRate?: string;
+  /**
+   * @example
+   * 20
+   */
   roundTripTime?: string;
+  /**
+   * @example
+   * 0
+   */
   screenRecvBitRate?: string;
+  /**
+   * @example
+   * 0
+   */
   screenRecvFrame?: string;
+  /**
+   * @example
+   * 1920*1080
+   */
   screenRecvResolutionActual?: string;
+  /**
+   * @example
+   * 15701
+   */
   screenSendBitRate?: string;
+  /**
+   * @example
+   * 14
+   */
   screenSendFrame?: string;
+  /**
+   * @example
+   * 1920*1080
+   */
   screenSendResolutionActual?: string;
+  /**
+   * @example
+   * 1145172
+   */
   sendBitRate?: string;
+  /**
+   * @example
+   * 1682562120000
+   */
   timestamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4054,7 +4972,18 @@ export class GetUserMetricDataResponseBodyMetricDataList extends $tea.Model {
 }
 
 export class InviteUsersRequestInviteeList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试用户
+   */
   nick?: string;
+  /**
+   * @example
+   * qzR1iSMDvzR9kXXXXXXXx
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4076,7 +5005,15 @@ export class InviteUsersRequestInviteeList extends $tea.Model {
 }
 
 export class InviteUsersRequestPhoneInviteeList extends $tea.Model {
+  /**
+   * @example
+   * 测试电话用户
+   */
   nick?: string;
+  /**
+   * @example
+   * 1xxxxxxxxxx9
+   */
   phoneNumber?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4098,7 +5035,18 @@ export class InviteUsersRequestPhoneInviteeList extends $tea.Model {
 }
 
 export class KickMembersRequestUserList extends $tea.Model {
+  /**
+   * @example
+   * 644272f14ba3311xxxxxxxxx
+   */
   participantId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * qzR1iSMDvzR9iP7Pxxxxxxxxxxxxxxx
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4120,7 +5068,18 @@ export class KickMembersRequestUserList extends $tea.Model {
 }
 
 export class MuteMembersRequestUserList extends $tea.Model {
+  /**
+   * @example
+   * 644272f14ba3311xxxxxxxxx
+   */
   participantId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * qzR1iSMDvzR9iP7Pxxxxxxxxxxxxxxx
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4142,9 +5101,25 @@ export class MuteMembersRequestUserList extends $tea.Model {
 }
 
 export class QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList extends $tea.Model {
+  /**
+   * @example
+   * 7940
+   */
   endTime?: number;
+  /**
+   * @example
+   * 7940
+   */
   startTime?: number;
+  /**
+   * @example
+   * 这里
+   */
   word?: string;
+  /**
+   * @example
+   * 1631172050535000#0
+   */
   wordId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4170,9 +5145,25 @@ export class QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList e
 }
 
 export class QueryCloudRecordTextResponseBodyParagraphListSentenceList extends $tea.Model {
+  /**
+   * @example
+   * 7940
+   */
   endTime?: number;
+  /**
+   * @example
+   * 这里是小钉
+   */
   sentence?: string;
+  /**
+   * @example
+   * 7940
+   */
   startTime?: number;
+  /**
+   * @example
+   * WFBkgJvt0xxxxSaA1jK4sgiEiE
+   */
   unionId?: string;
   wordList?: QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList[];
   static names(): { [key: string]: string } {
@@ -4201,14 +5192,46 @@ export class QueryCloudRecordTextResponseBodyParagraphListSentenceList extends $
 }
 
 export class QueryCloudRecordTextResponseBodyParagraphList extends $tea.Model {
+  /**
+   * @example
+   * 7940
+   */
   endTime?: number;
+  /**
+   * @example
+   * 1631172045153000
+   */
   nextTtoken?: number;
+  /**
+   * @example
+   * 小钉
+   */
   nickName?: string;
+  /**
+   * @example
+   * 嘿！你好，这里是小钉
+   */
   paragraph?: string;
+  /**
+   * @example
+   * 44444
+   */
   recordId?: number;
   sentenceList?: QueryCloudRecordTextResponseBodyParagraphListSentenceList[];
+  /**
+   * @example
+   * 7940
+   */
   startTime?: number;
+  /**
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @example
+   * WFBkgJvt0xxxxSaA1jK4sgiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4244,14 +5267,50 @@ export class QueryCloudRecordTextResponseBodyParagraphList extends $tea.Model {
 }
 
 export class QueryCloudRecordVideoResponseBodyVideoList extends $tea.Model {
+  /**
+   * @example
+   * 59886
+   */
   duration?: number;
+  /**
+   * @example
+   * 1631172094000
+   */
   endTime?: number;
+  /**
+   * @example
+   * 1127942
+   */
   fileSize?: number;
+  /**
+   * @example
+   * faa1566c5bc24f21821ae2394f82db2e
+   */
   mediaId?: string;
+  /**
+   * @example
+   * 290882268xxx1172033231
+   */
   recordId?: string;
+  /**
+   * @example
+   * 0
+   */
   recordType?: number;
+  /**
+   * @example
+   * cn-shenzhen
+   */
   regionId?: string;
+  /**
+   * @example
+   * 1631172094000
+   */
   startTime?: number;
+  /**
+   * @example
+   * WFBkgJvtxxxxtSaA1jK4sgiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4287,18 +5346,66 @@ export class QueryCloudRecordVideoResponseBodyVideoList extends $tea.Model {
 }
 
 export class QueryConferenceInfoResponseBodyConfInfo extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   activeNum?: number;
+  /**
+   * @example
+   * 15
+   */
   attendNum?: number;
+  /**
+   * @example
+   * 1000000
+   */
   confDuration?: number;
+  /**
+   * @example
+   * 6323d7568777190142ab9d10
+   */
   conferenceId?: string;
+  /**
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 昵称
+   */
   creatorNick?: string;
   endTime?: number;
+  /**
+   * @example
+   * https://meeting.dingtalk.com/app?roomCode=42726033559&token=1_7ac974ac-6e4f-47c3-b82b-bfb32fd94d2c
+   */
   externalLinkUrl?: string;
+  /**
+   * @example
+   * 20
+   */
   invitedNum?: number;
+  /**
+   * @example
+   * 42726033559
+   */
   roomCode?: string;
+  /**
+   * @example
+   * 1663293270000
+   */
   startTime?: number;
+  /**
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @example
+   * 标题
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4342,10 +5449,26 @@ export class QueryConferenceInfoResponseBodyConfInfo extends $tea.Model {
 }
 
 export class QueryConferenceInfoBatchResponseBodyInfosUserList extends $tea.Model {
+  /**
+   * @example
+   * 0-未定义,1-初始化,2-加入中,3-在会,4-加入失败,5,被踢出,6-离开
+   */
   attendStatus?: number;
+  /**
+   * @example
+   * 0-初始化，1-关闭，2-打开
+   */
   cameraStatus?: number;
+  /**
+   * @example
+   * 0-初始化，1-关闭，2-打开
+   */
   micStatus?: number;
   nick?: string;
+  /**
+   * @example
+   * 抱歉，正在开会
+   */
   rejectDescription?: string;
   userId?: string;
   static names(): { [key: string]: string } {
@@ -4377,8 +5500,16 @@ export class QueryConferenceInfoBatchResponseBodyInfosUserList extends $tea.Mode
 
 export class QueryConferenceInfoBatchResponseBodyInfos extends $tea.Model {
   conferenceId?: string;
+  /**
+   * @example
+   * 0-正常，1-麦克风静音，2-摄像头关闭，4-强制全员静音
+   */
   mediaStatus?: number;
   startTime?: number;
+  /**
+   * @example
+   * 0-初始化，1-会议结束，2-会议开始
+   */
   status?: number;
   title?: string;
   userList?: QueryConferenceInfoBatchResponseBodyInfosUserList[];
@@ -4410,8 +5541,16 @@ export class QueryConferenceInfoBatchResponseBodyInfos extends $tea.Model {
 }
 
 export class QueryConferenceMembersResponseBodyMemberModels extends $tea.Model {
+  /**
+   * @example
+   * 6
+   */
   attendStatus?: number;
   coHost?: boolean;
+  /**
+   * @example
+   * 6323d7562b18000142ab9d10
+   */
   conferenceId?: string;
   duration?: number;
   host?: boolean;
@@ -4419,7 +5558,15 @@ export class QueryConferenceMembersResponseBodyMemberModels extends $tea.Model {
   leaveTime?: number;
   outerOrgMember?: boolean;
   pstnJoin?: boolean;
+  /**
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   unionId?: string;
+  /**
+   * @example
+   * 昵称
+   */
   userNick?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4459,12 +5606,40 @@ export class QueryConferenceMembersResponseBodyMemberModels extends $tea.Model {
 }
 
 export class QueryMinutesAudioResponseBodyAudioList extends $tea.Model {
+  /**
+   * @example
+   * 59886
+   */
   duration?: number;
+  /**
+   * @example
+   * 1631172094000
+   */
   endTime?: number;
+  /**
+   * @example
+   * 1127942
+   */
   fileSize?: number;
+  /**
+   * @example
+   * https://xxx-hangzhou.oss-cn-hangzhou.aliyuncs.com/record_xxxx.mp3?Expires=1718045081&OSSAccessKeyId=TMP.3KdwHtvZxopmwacMZEdyb4WHLVmbArrNRB9CTKnR1MaJgmRjdmZczs6Rip66cgKgk2HhQon1yygvBnbY3uqEaZNeHBLcBa&Signature=OFWyAIY%2FdlzfwM9wIfEaKoAudkxxxxx
+   */
   playUrl?: string;
+  /**
+   * @example
+   * 290882268xxx1172033231
+   */
   recordId?: string;
+  /**
+   * @example
+   * 1631172094000
+   */
   startTime?: number;
+  /**
+   * @example
+   * WFBkgJvtxxxxtSaA1jK4sgiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4679,9 +5854,25 @@ export class QueryMinutesSummaryResponseBodySummary extends $tea.Model {
 }
 
 export class QueryMinutesTextResponseBodyParagraphListSentenceListWordList extends $tea.Model {
+  /**
+   * @example
+   * 7940
+   */
   endTime?: number;
+  /**
+   * @example
+   * 7940
+   */
   startTime?: number;
+  /**
+   * @example
+   * 这里
+   */
   word?: string;
+  /**
+   * @example
+   * 1631172050535000#0
+   */
   wordId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4707,9 +5898,25 @@ export class QueryMinutesTextResponseBodyParagraphListSentenceListWordList exten
 }
 
 export class QueryMinutesTextResponseBodyParagraphListSentenceList extends $tea.Model {
+  /**
+   * @example
+   * 7940
+   */
   endTime?: number;
+  /**
+   * @example
+   * 这里是小钉
+   */
   sentence?: string;
+  /**
+   * @example
+   * 7940
+   */
   startTime?: number;
+  /**
+   * @example
+   * WFBkgJvt0xxxxSaA1jK4sgiEiE
+   */
   unionId?: string;
   wordList?: QueryMinutesTextResponseBodyParagraphListSentenceListWordList[];
   static names(): { [key: string]: string } {
@@ -4738,13 +5945,37 @@ export class QueryMinutesTextResponseBodyParagraphListSentenceList extends $tea.
 }
 
 export class QueryMinutesTextResponseBodyParagraphList extends $tea.Model {
+  /**
+   * @example
+   * 7940
+   */
   endTime?: number;
+  /**
+   * @example
+   * 小钉
+   */
   nickName?: string;
+  /**
+   * @example
+   * 嘿！你好，这里是小钉
+   */
   paragraph?: string;
   paragraphId?: number;
+  /**
+   * @example
+   * 44444
+   */
   recordId?: number;
   sentenceList?: QueryMinutesTextResponseBodyParagraphListSentenceList[];
+  /**
+   * @example
+   * 7940
+   */
   startTime?: number;
+  /**
+   * @example
+   * WFBkgJvt0xxxxSaA1jK4sgiEiE
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4914,8 +6145,20 @@ export class QueryScheduleConferenceInfoResponseBodyConferenceList extends $tea.
 }
 
 export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings extends $tea.Model {
+  /**
+   * @example
+   * 0：不自动打开 1：仅主持人/联席主持人自动打开 2：全员自动打开
+   */
   autoOpenMode?: number;
+  /**
+   * @example
+   * COOLAPP-0-1026633886192127xxxB000W
+   */
   coolAppCode?: string;
+  /**
+   * @example
+   * bizData
+   */
   extensionAppBizData?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4939,17 +6182,49 @@ export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVi
 }
 
 export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting extends $tea.Model {
+  /**
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   cloudRecordOwnerUnionId?: string;
+  /**
+   * @example
+   * 0：未开启 1：开启
+   */
   enableChat?: number;
+  /**
+   * @example
+   * true：允许匿名登录入会 false：不允许匿名登录入会
+   */
   enableWebAnonymousJoin?: boolean;
+  /**
+   * @example
+   * 0：未开启 1：开启
+   */
   joinBeforeHost?: number;
+  /**
+   * @example
+   * 0：未开启 1：开启
+   */
   lockMediaStatusMicMute?: number;
+  /**
+   * @example
+   * 0：未开启 1：开启
+   */
   lockNick?: number;
+  /**
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   minutesOwnerUnionId?: string;
   moziConfExtensionAppSettings?: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings[];
   pushAllMeetingRecords?: boolean;
   pushCloudRecordCard?: boolean;
   pushMinutesCard?: boolean;
+  /**
+   * @example
+   * 0：未开启 1：开启
+   */
   waitingRoom?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4992,11 +6267,31 @@ export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVi
 
 export class UpdateScheduleConfSettingsRequestScheduleConfSettingModel extends $tea.Model {
   cohostUnionIds?: string[];
+  /**
+   * @example
+   * dingc02f685fa06381c44ac5d6980864d335
+   */
   confAllowedCorpId?: string;
+  /**
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
   hostUnionId?: string;
+  /**
+   * @example
+   * 0：取消锁定 1：锁定
+   */
   lockRoom?: number;
   moziConfVirtualExtraSetting?: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting;
+  /**
+   * @example
+   * -1：未开启 1：开启 6：超过6人自动开启静音
+   */
   muteOnJoin?: number;
+  /**
+   * @example
+   * 0：允许共享 1：禁止共享
+   */
   screenShareForbidden?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5029,12 +6324,11 @@ export class UpdateScheduleConfSettingsRequestScheduleConfSettingModel extends $
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -5044,12 +6338,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 取消预约会议
-   *
-   * @param request CancelScheduleConferenceRequest
-   * @param headers CancelScheduleConferenceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CancelScheduleConferenceResponse
+   * 取消预约会议
+   * 
+   * @param request - CancelScheduleConferenceRequest
+   * @param headers - CancelScheduleConferenceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CancelScheduleConferenceResponse
    */
   async cancelScheduleConferenceWithOptions(request: CancelScheduleConferenceRequest, headers: CancelScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CancelScheduleConferenceResponse> {
     Util.validateModel(request);
@@ -5090,10 +6384,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消预约会议
-   *
-   * @param request CancelScheduleConferenceRequest
-   * @return CancelScheduleConferenceResponse
+   * 取消预约会议
+   * 
+   * @param request - CancelScheduleConferenceRequest
+   * @returns CancelScheduleConferenceResponse
    */
   async cancelScheduleConference(request: CancelScheduleConferenceRequest): Promise<CancelScheduleConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5102,12 +6396,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关闭视频会议
-   *
-   * @param request CloseVideoConferenceRequest
-   * @param headers CloseVideoConferenceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CloseVideoConferenceResponse
+   * 关闭视频会议
+   * 
+   * @param request - CloseVideoConferenceRequest
+   * @param headers - CloseVideoConferenceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CloseVideoConferenceResponse
    */
   async closeVideoConferenceWithOptions(conferenceId: string, request: CloseVideoConferenceRequest, headers: CloseVideoConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CloseVideoConferenceResponse> {
     Util.validateModel(request);
@@ -5144,10 +6438,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关闭视频会议
-   *
-   * @param request CloseVideoConferenceRequest
-   * @return CloseVideoConferenceResponse
+   * 关闭视频会议
+   * 
+   * @param request - CloseVideoConferenceRequest
+   * @returns CloseVideoConferenceResponse
    */
   async closeVideoConference(conferenceId: string, request: CloseVideoConferenceRequest): Promise<CloseVideoConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5156,12 +6450,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置联席主持人
-   *
-   * @param request CohostsRequest
-   * @param headers CohostsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CohostsResponse
+   * 设置联席主持人
+   * 
+   * @param request - CohostsRequest
+   * @param headers - CohostsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CohostsResponse
    */
   async cohostsWithOptions(conferenceId: string, request: CohostsRequest, headers: CohostsHeaders, runtime: $Util.RuntimeOptions): Promise<CohostsResponse> {
     Util.validateModel(request);
@@ -5202,10 +6496,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置联席主持人
-   *
-   * @param request CohostsRequest
-   * @return CohostsResponse
+   * 设置联席主持人
+   * 
+   * @param request - CohostsRequest
+   * @returns CohostsResponse
    */
   async cohosts(conferenceId: string, request: CohostsRequest): Promise<CohostsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5214,12 +6508,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建专属短链
-   *
-   * @param request CreateCustomShortLinkRequest
-   * @param headers CreateCustomShortLinkHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateCustomShortLinkResponse
+   * 创建专属短链
+   * 
+   * @param request - CreateCustomShortLinkRequest
+   * @param headers - CreateCustomShortLinkHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateCustomShortLinkResponse
    */
   async createCustomShortLinkWithOptions(request: CreateCustomShortLinkRequest, headers: CreateCustomShortLinkHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCustomShortLinkResponse> {
     Util.validateModel(request);
@@ -5272,10 +6566,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建专属短链
-   *
-   * @param request CreateCustomShortLinkRequest
-   * @return CreateCustomShortLinkResponse
+   * 创建专属短链
+   * 
+   * @param request - CreateCustomShortLinkRequest
+   * @returns CreateCustomShortLinkResponse
    */
   async createCustomShortLink(request: CreateCustomShortLinkRequest): Promise<CreateCustomShortLinkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5284,12 +6578,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建预约会议
-   *
-   * @param request CreateScheduleConferenceRequest
-   * @param headers CreateScheduleConferenceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateScheduleConferenceResponse
+   * 创建预约会议
+   * 
+   * @param request - CreateScheduleConferenceRequest
+   * @param headers - CreateScheduleConferenceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateScheduleConferenceResponse
    */
   async createScheduleConferenceWithOptions(request: CreateScheduleConferenceRequest, headers: CreateScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateScheduleConferenceResponse> {
     Util.validateModel(request);
@@ -5338,10 +6632,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建预约会议
-   *
-   * @param request CreateScheduleConferenceRequest
-   * @return CreateScheduleConferenceResponse
+   * 创建预约会议
+   * 
+   * @param request - CreateScheduleConferenceRequest
+   * @returns CreateScheduleConferenceResponse
    */
   async createScheduleConference(request: CreateScheduleConferenceRequest): Promise<CreateScheduleConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5350,12 +6644,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建视频会议
-   *
-   * @param request CreateVideoConferenceRequest
-   * @param headers CreateVideoConferenceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateVideoConferenceResponse
+   * 创建视频会议
+   * 
+   * @param request - CreateVideoConferenceRequest
+   * @param headers - CreateVideoConferenceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateVideoConferenceResponse
    */
   async createVideoConferenceWithOptions(request: CreateVideoConferenceRequest, headers: CreateVideoConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateVideoConferenceResponse> {
     Util.validateModel(request);
@@ -5404,10 +6698,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建视频会议
-   *
-   * @param request CreateVideoConferenceRequest
-   * @return CreateVideoConferenceResponse
+   * 创建视频会议
+   * 
+   * @param request - CreateVideoConferenceRequest
+   * @returns CreateVideoConferenceResponse
    */
   async createVideoConference(request: CreateVideoConferenceRequest): Promise<CreateVideoConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5416,12 +6710,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置全员看他
-   *
-   * @param request FocusRequest
-   * @param headers FocusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return FocusResponse
+   * 设置全员看他
+   * 
+   * @param request - FocusRequest
+   * @param headers - FocusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns FocusResponse
    */
   async focusWithOptions(conferenceId: string, request: FocusRequest, headers: FocusHeaders, runtime: $Util.RuntimeOptions): Promise<FocusResponse> {
     Util.validateModel(request);
@@ -5462,10 +6756,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置全员看他
-   *
-   * @param request FocusRequest
-   * @return FocusResponse
+   * 设置全员看他
+   * 
+   * @param request - FocusRequest
+   * @returns FocusResponse
    */
   async focus(conferenceId: string, request: FocusRequest): Promise<FocusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5474,12 +6768,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过conferenceId获取指定音视频会议信息
-   *
-   * @param request GetConfDataByConferenceIdRequest
-   * @param headers GetConfDataByConferenceIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetConfDataByConferenceIdResponse
+   * 通过conferenceId获取指定音视频会议信息
+   * 
+   * @param request - GetConfDataByConferenceIdRequest
+   * @param headers - GetConfDataByConferenceIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetConfDataByConferenceIdResponse
    */
   async getConfDataByConferenceIdWithOptions(conferenceId: string, request: GetConfDataByConferenceIdRequest, headers: GetConfDataByConferenceIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetConfDataByConferenceIdResponse> {
     Util.validateModel(request);
@@ -5516,10 +6810,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过conferenceId获取指定音视频会议信息
-   *
-   * @param request GetConfDataByConferenceIdRequest
-   * @return GetConfDataByConferenceIdResponse
+   * 通过conferenceId获取指定音视频会议信息
+   * 
+   * @param request - GetConfDataByConferenceIdRequest
+   * @returns GetConfDataByConferenceIdResponse
    */
   async getConfDataByConferenceId(conferenceId: string, request: GetConfDataByConferenceIdRequest): Promise<GetConfDataByConferenceIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5528,12 +6822,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过conferenceId获取指定音视频会议成员信息
-   *
-   * @param request GetConfDetailDataRequest
-   * @param headers GetConfDetailDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetConfDetailDataResponse
+   * 通过conferenceId获取指定音视频会议成员信息
+   * 
+   * @param request - GetConfDetailDataRequest
+   * @param headers - GetConfDetailDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetConfDetailDataResponse
    */
   async getConfDetailDataWithOptions(conferenceId: string, request: GetConfDetailDataRequest, headers: GetConfDetailDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetConfDetailDataResponse> {
     Util.validateModel(request);
@@ -5578,10 +6872,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过conferenceId获取指定音视频会议成员信息
-   *
-   * @param request GetConfDetailDataRequest
-   * @return GetConfDetailDataResponse
+   * 通过conferenceId获取指定音视频会议成员信息
+   * 
+   * @param request - GetConfDetailDataRequest
+   * @returns GetConfDetailDataResponse
    */
   async getConfDetailData(conferenceId: string, request: GetConfDetailDataRequest): Promise<GetConfDetailDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5590,12 +6884,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取音视频会议列表数据
-   *
-   * @param request GetHistoryConfDataListRequest
-   * @param headers GetHistoryConfDataListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetHistoryConfDataListResponse
+   * 获取音视频会议列表数据
+   * 
+   * @param request - GetHistoryConfDataListRequest
+   * @param headers - GetHistoryConfDataListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetHistoryConfDataListResponse
    */
   async getHistoryConfDataListWithOptions(request: GetHistoryConfDataListRequest, headers: GetHistoryConfDataListHeaders, runtime: $Util.RuntimeOptions): Promise<GetHistoryConfDataListResponse> {
     Util.validateModel(request);
@@ -5664,10 +6958,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取音视频会议列表数据
-   *
-   * @param request GetHistoryConfDataListRequest
-   * @return GetHistoryConfDataListResponse
+   * 获取音视频会议列表数据
+   * 
+   * @param request - GetHistoryConfDataListRequest
+   * @returns GetHistoryConfDataListResponse
    */
   async getHistoryConfDataList(request: GetHistoryConfDataListRequest): Promise<GetHistoryConfDataListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5676,12 +6970,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过conferenceId和unionId获取最新会议质量数据
-   *
-   * @param request GetUserLastMetricRequest
-   * @param headers GetUserLastMetricHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserLastMetricResponse
+   * 通过conferenceId和unionId获取最新会议质量数据
+   * 
+   * @param request - GetUserLastMetricRequest
+   * @param headers - GetUserLastMetricHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserLastMetricResponse
    */
   async getUserLastMetricWithOptions(conferenceId: string, request: GetUserLastMetricRequest, headers: GetUserLastMetricHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserLastMetricResponse> {
     Util.validateModel(request);
@@ -5718,10 +7012,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过conferenceId和unionId获取最新会议质量数据
-   *
-   * @param request GetUserLastMetricRequest
-   * @return GetUserLastMetricResponse
+   * 通过conferenceId和unionId获取最新会议质量数据
+   * 
+   * @param request - GetUserLastMetricRequest
+   * @returns GetUserLastMetricResponse
    */
   async getUserLastMetric(conferenceId: string, request: GetUserLastMetricRequest): Promise<GetUserLastMetricResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5730,12 +7024,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
-   *
-   * @param request GetUserMetricDataRequest
-   * @param headers GetUserMetricDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserMetricDataResponse
+   * 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+   * 
+   * @param request - GetUserMetricDataRequest
+   * @param headers - GetUserMetricDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserMetricDataResponse
    */
   async getUserMetricDataWithOptions(conferenceId: string, request: GetUserMetricDataRequest, headers: GetUserMetricDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserMetricDataResponse> {
     Util.validateModel(request);
@@ -5780,10 +7074,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
-   *
-   * @param request GetUserMetricDataRequest
-   * @return GetUserMetricDataResponse
+   * 通过conferenceId和unionId获取指定音视频会议人员的会议质量数据
+   * 
+   * @param request - GetUserMetricDataRequest
+   * @returns GetUserMetricDataResponse
    */
   async getUserMetricData(conferenceId: string, request: GetUserMetricDataRequest): Promise<GetUserMetricDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5792,12 +7086,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 邀请其他人员
-   *
-   * @param request InviteUsersRequest
-   * @param headers InviteUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InviteUsersResponse
+   * 邀请其他人员
+   * 
+   * @param request - InviteUsersRequest
+   * @param headers - InviteUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InviteUsersResponse
    */
   async inviteUsersWithOptions(conferenceId: string, request: InviteUsersRequest, headers: InviteUsersHeaders, runtime: $Util.RuntimeOptions): Promise<InviteUsersResponse> {
     Util.validateModel(request);
@@ -5842,10 +7136,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 邀请其他人员
-   *
-   * @param request InviteUsersRequest
-   * @return InviteUsersResponse
+   * 邀请其他人员
+   * 
+   * @param request - InviteUsersRequest
+   * @returns InviteUsersResponse
    */
   async inviteUsers(conferenceId: string, request: InviteUsersRequest): Promise<InviteUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5854,12 +7148,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会议踢出成员
-   *
-   * @param request KickMembersRequest
-   * @param headers KickMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return KickMembersResponse
+   * 会议踢出成员
+   * 
+   * @param request - KickMembersRequest
+   * @param headers - KickMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns KickMembersResponse
    */
   async kickMembersWithOptions(conferenceId: string, request: KickMembersRequest, headers: KickMembersHeaders, runtime: $Util.RuntimeOptions): Promise<KickMembersResponse> {
     Util.validateModel(request);
@@ -5900,10 +7194,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会议踢出成员
-   *
-   * @param request KickMembersRequest
-   * @return KickMembersResponse
+   * 会议踢出成员
+   * 
+   * @param request - KickMembersRequest
+   * @returns KickMembersResponse
    */
   async kickMembers(conferenceId: string, request: KickMembersRequest): Promise<KickMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5912,12 +7206,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 锁定会议
-   *
-   * @param request LockConferenceRequest
-   * @param headers LockConferenceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return LockConferenceResponse
+   * 锁定会议
+   * 
+   * @param request - LockConferenceRequest
+   * @param headers - LockConferenceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns LockConferenceResponse
    */
   async lockConferenceWithOptions(conferenceId: string, request: LockConferenceRequest, headers: LockConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<LockConferenceResponse> {
     Util.validateModel(request);
@@ -5954,10 +7248,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 锁定会议
-   *
-   * @param request LockConferenceRequest
-   * @return LockConferenceResponse
+   * 锁定会议
+   * 
+   * @param request - LockConferenceRequest
+   * @returns LockConferenceResponse
    */
   async lockConference(conferenceId: string, request: LockConferenceRequest): Promise<LockConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5966,12 +7260,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会议全员静音或解除静音
-   *
-   * @param request MuteAllRequest
-   * @param headers MuteAllHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MuteAllResponse
+   * 会议全员静音或解除静音
+   * 
+   * @param request - MuteAllRequest
+   * @param headers - MuteAllHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MuteAllResponse
    */
   async muteAllWithOptions(conferenceId: string, request: MuteAllRequest, headers: MuteAllHeaders, runtime: $Util.RuntimeOptions): Promise<MuteAllResponse> {
     Util.validateModel(request);
@@ -6012,10 +7306,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会议全员静音或解除静音
-   *
-   * @param request MuteAllRequest
-   * @return MuteAllResponse
+   * 会议全员静音或解除静音
+   * 
+   * @param request - MuteAllRequest
+   * @returns MuteAllResponse
    */
   async muteAll(conferenceId: string, request: MuteAllRequest): Promise<MuteAllResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6024,12 +7318,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 指定人员静音或取消静音
-   *
-   * @param request MuteMembersRequest
-   * @param headers MuteMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MuteMembersResponse
+   * 指定人员静音或取消静音
+   * 
+   * @param request - MuteMembersRequest
+   * @param headers - MuteMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MuteMembersResponse
    */
   async muteMembersWithOptions(conferenceId: string, request: MuteMembersRequest, headers: MuteMembersHeaders, runtime: $Util.RuntimeOptions): Promise<MuteMembersResponse> {
     Util.validateModel(request);
@@ -6070,10 +7364,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 指定人员静音或取消静音
-   *
-   * @param request MuteMembersRequest
-   * @return MuteMembersResponse
+   * 指定人员静音或取消静音
+   * 
+   * @param request - MuteMembersRequest
+   * @returns MuteMembersResponse
    */
   async muteMembers(conferenceId: string, request: MuteMembersRequest): Promise<MuteMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6082,12 +7376,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询云录制文本信息
-   *
-   * @param request QueryCloudRecordTextRequest
-   * @param headers QueryCloudRecordTextHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCloudRecordTextResponse
+   * 查询云录制文本信息
+   * 
+   * @param request - QueryCloudRecordTextRequest
+   * @param headers - QueryCloudRecordTextHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCloudRecordTextResponse
    */
   async queryCloudRecordTextWithOptions(conferenceId: string, request: QueryCloudRecordTextRequest, headers: QueryCloudRecordTextHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCloudRecordTextResponse> {
     Util.validateModel(request);
@@ -6140,10 +7434,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询云录制文本信息
-   *
-   * @param request QueryCloudRecordTextRequest
-   * @return QueryCloudRecordTextResponse
+   * 查询云录制文本信息
+   * 
+   * @param request - QueryCloudRecordTextRequest
+   * @returns QueryCloudRecordTextResponse
    */
   async queryCloudRecordText(conferenceId: string, request: QueryCloudRecordTextRequest): Promise<QueryCloudRecordTextResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6152,12 +7446,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询云录制视频
-   *
-   * @param request QueryCloudRecordVideoRequest
-   * @param headers QueryCloudRecordVideoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCloudRecordVideoResponse
+   * 查询云录制视频
+   * 
+   * @param request - QueryCloudRecordVideoRequest
+   * @param headers - QueryCloudRecordVideoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCloudRecordVideoResponse
    */
   async queryCloudRecordVideoWithOptions(conferenceId: string, request: QueryCloudRecordVideoRequest, headers: QueryCloudRecordVideoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCloudRecordVideoResponse> {
     Util.validateModel(request);
@@ -6194,10 +7488,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询云录制视频
-   *
-   * @param request QueryCloudRecordVideoRequest
-   * @return QueryCloudRecordVideoResponse
+   * 查询云录制视频
+   * 
+   * @param request - QueryCloudRecordVideoRequest
+   * @returns QueryCloudRecordVideoResponse
    */
   async queryCloudRecordVideo(conferenceId: string, request: QueryCloudRecordVideoRequest): Promise<QueryCloudRecordVideoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6206,12 +7500,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询云录制视频播放信息
-   *
-   * @param request QueryCloudRecordVideoPlayInfoRequest
-   * @param headers QueryCloudRecordVideoPlayInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCloudRecordVideoPlayInfoResponse
+   * 查询云录制视频播放信息
+   * 
+   * @param request - QueryCloudRecordVideoPlayInfoRequest
+   * @param headers - QueryCloudRecordVideoPlayInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCloudRecordVideoPlayInfoResponse
    */
   async queryCloudRecordVideoPlayInfoWithOptions(conferenceId: string, request: QueryCloudRecordVideoPlayInfoRequest, headers: QueryCloudRecordVideoPlayInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCloudRecordVideoPlayInfoResponse> {
     Util.validateModel(request);
@@ -6256,10 +7550,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询云录制视频播放信息
-   *
-   * @param request QueryCloudRecordVideoPlayInfoRequest
-   * @return QueryCloudRecordVideoPlayInfoResponse
+   * 查询云录制视频播放信息
+   * 
+   * @param request - QueryCloudRecordVideoPlayInfoRequest
+   * @returns QueryCloudRecordVideoPlayInfoResponse
    */
   async queryCloudRecordVideoPlayInfo(conferenceId: string, request: QueryCloudRecordVideoPlayInfoRequest): Promise<QueryCloudRecordVideoPlayInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6268,11 +7562,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询视频会议信息
-   *
-   * @param headers QueryConferenceInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryConferenceInfoResponse
+   * 查询视频会议信息
+   * 
+   * @param headers - QueryConferenceInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryConferenceInfoResponse
    */
   async queryConferenceInfoWithOptions(conferenceId: string, headers: QueryConferenceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryConferenceInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -6302,9 +7596,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询视频会议信息
-   *
-   * @return QueryConferenceInfoResponse
+   * 查询视频会议信息
+   * @returns QueryConferenceInfoResponse
    */
   async queryConferenceInfo(conferenceId: string): Promise<QueryConferenceInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6313,12 +7606,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询视频会议信息
-   *
-   * @param request QueryConferenceInfoBatchRequest
-   * @param headers QueryConferenceInfoBatchHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryConferenceInfoBatchResponse
+   * 批量查询视频会议信息
+   * 
+   * @param request - QueryConferenceInfoBatchRequest
+   * @param headers - QueryConferenceInfoBatchHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryConferenceInfoBatchResponse
    */
   async queryConferenceInfoBatchWithOptions(request: QueryConferenceInfoBatchRequest, headers: QueryConferenceInfoBatchHeaders, runtime: $Util.RuntimeOptions): Promise<QueryConferenceInfoBatchResponse> {
     Util.validateModel(request);
@@ -6355,10 +7648,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询视频会议信息
-   *
-   * @param request QueryConferenceInfoBatchRequest
-   * @return QueryConferenceInfoBatchResponse
+   * 批量查询视频会议信息
+   * 
+   * @param request - QueryConferenceInfoBatchRequest
+   * @returns QueryConferenceInfoBatchResponse
    */
   async queryConferenceInfoBatch(request: QueryConferenceInfoBatchRequest): Promise<QueryConferenceInfoBatchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6367,12 +7660,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询视频会议成员
-   *
-   * @param request QueryConferenceMembersRequest
-   * @param headers QueryConferenceMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryConferenceMembersResponse
+   * 查询视频会议成员
+   * 
+   * @param request - QueryConferenceMembersRequest
+   * @param headers - QueryConferenceMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryConferenceMembersResponse
    */
   async queryConferenceMembersWithOptions(conferenceId: string, request: QueryConferenceMembersRequest, headers: QueryConferenceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryConferenceMembersResponse> {
     Util.validateModel(request);
@@ -6413,10 +7706,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询视频会议成员
-   *
-   * @param request QueryConferenceMembersRequest
-   * @return QueryConferenceMembersResponse
+   * 查询视频会议成员
+   * 
+   * @param request - QueryConferenceMembersRequest
+   * @returns QueryConferenceMembersResponse
    */
   async queryConferenceMembers(conferenceId: string, request: QueryConferenceMembersRequest): Promise<QueryConferenceMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6425,12 +7718,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议闪记的音频信息
-   *
-   * @param request QueryMinutesAudioRequest
-   * @param headers QueryMinutesAudioHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMinutesAudioResponse
+   * 查询会议闪记的音频信息
+   * 
+   * @param request - QueryMinutesAudioRequest
+   * @param headers - QueryMinutesAudioHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMinutesAudioResponse
    */
   async queryMinutesAudioWithOptions(conferenceId: string, request: QueryMinutesAudioRequest, headers: QueryMinutesAudioHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMinutesAudioResponse> {
     Util.validateModel(request);
@@ -6467,10 +7760,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议闪记的音频信息
-   *
-   * @param request QueryMinutesAudioRequest
-   * @return QueryMinutesAudioResponse
+   * 查询会议闪记的音频信息
+   * 
+   * @param request - QueryMinutesAudioRequest
+   * @returns QueryMinutesAudioResponse
    */
   async queryMinutesAudio(conferenceId: string, request: QueryMinutesAudioRequest): Promise<QueryMinutesAudioResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6479,12 +7772,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议闪记智能纪要
-   *
-   * @param request QueryMinutesSummaryRequest
-   * @param headers QueryMinutesSummaryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMinutesSummaryResponse
+   * 查询会议闪记智能纪要
+   * 
+   * @param request - QueryMinutesSummaryRequest
+   * @param headers - QueryMinutesSummaryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMinutesSummaryResponse
    */
   async queryMinutesSummaryWithOptions(conferenceId: string, request: QueryMinutesSummaryRequest, headers: QueryMinutesSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMinutesSummaryResponse> {
     Util.validateModel(request);
@@ -6525,10 +7818,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议闪记智能纪要
-   *
-   * @param request QueryMinutesSummaryRequest
-   * @return QueryMinutesSummaryResponse
+   * 查询会议闪记智能纪要
+   * 
+   * @param request - QueryMinutesSummaryRequest
+   * @returns QueryMinutesSummaryResponse
    */
   async queryMinutesSummary(conferenceId: string, request: QueryMinutesSummaryRequest): Promise<QueryMinutesSummaryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6537,12 +7830,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议闪记文本信息
-   *
-   * @param request QueryMinutesTextRequest
-   * @param headers QueryMinutesTextHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryMinutesTextResponse
+   * 查询会议闪记文本信息
+   * 
+   * @param request - QueryMinutesTextRequest
+   * @param headers - QueryMinutesTextHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMinutesTextResponse
    */
   async queryMinutesTextWithOptions(conferenceId: string, request: QueryMinutesTextRequest, headers: QueryMinutesTextHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMinutesTextResponse> {
     Util.validateModel(request);
@@ -6591,10 +7884,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询会议闪记文本信息
-   *
-   * @param request QueryMinutesTextRequest
-   * @return QueryMinutesTextResponse
+   * 查询会议闪记文本信息
+   * 
+   * @param request - QueryMinutesTextRequest
+   * @returns QueryMinutesTextResponse
    */
   async queryMinutesText(conferenceId: string, request: QueryMinutesTextRequest): Promise<QueryMinutesTextResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6603,12 +7896,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询预约会议设置
-   *
-   * @param request QueryScheduleConfSettingsRequest
-   * @param headers QueryScheduleConfSettingsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryScheduleConfSettingsResponse
+   * 查询预约会议设置
+   * 
+   * @param request - QueryScheduleConfSettingsRequest
+   * @param headers - QueryScheduleConfSettingsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryScheduleConfSettingsResponse
    */
   async queryScheduleConfSettingsWithOptions(request: QueryScheduleConfSettingsRequest, headers: QueryScheduleConfSettingsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScheduleConfSettingsResponse> {
     Util.validateModel(request);
@@ -6645,10 +7938,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询预约会议设置
-   *
-   * @param request QueryScheduleConfSettingsRequest
-   * @return QueryScheduleConfSettingsResponse
+   * 查询预约会议设置
+   * 
+   * @param request - QueryScheduleConfSettingsRequest
+   * @returns QueryScheduleConfSettingsResponse
    */
   async queryScheduleConfSettings(request: QueryScheduleConfSettingsRequest): Promise<QueryScheduleConfSettingsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6657,12 +7950,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询预约会议信息
-   *
-   * @param request QueryScheduleConferenceRequest
-   * @param headers QueryScheduleConferenceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryScheduleConferenceResponse
+   * 查询预约会议信息
+   * 
+   * @param request - QueryScheduleConferenceRequest
+   * @param headers - QueryScheduleConferenceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryScheduleConferenceResponse
    */
   async queryScheduleConferenceWithOptions(scheduleConferenceId: string, request: QueryScheduleConferenceRequest, headers: QueryScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScheduleConferenceResponse> {
     Util.validateModel(request);
@@ -6699,10 +7992,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询预约会议信息
-   *
-   * @param request QueryScheduleConferenceRequest
-   * @return QueryScheduleConferenceResponse
+   * 查询预约会议信息
+   * 
+   * @param request - QueryScheduleConferenceRequest
+   * @returns QueryScheduleConferenceResponse
    */
   async queryScheduleConference(scheduleConferenceId: string, request: QueryScheduleConferenceRequest): Promise<QueryScheduleConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6711,12 +8004,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
-   *
-   * @param request QueryScheduleConferenceInfoRequest
-   * @param headers QueryScheduleConferenceInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryScheduleConferenceInfoResponse
+   * 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+   * 
+   * @param request - QueryScheduleConferenceInfoRequest
+   * @param headers - QueryScheduleConferenceInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryScheduleConferenceInfoResponse
    */
   async queryScheduleConferenceInfoWithOptions(scheduleConferenceId: string, request: QueryScheduleConferenceInfoRequest, headers: QueryScheduleConferenceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScheduleConferenceInfoResponse> {
     Util.validateModel(request);
@@ -6757,10 +8050,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
-   *
-   * @param request QueryScheduleConferenceInfoRequest
-   * @return QueryScheduleConferenceInfoResponse
+   * 分页获取预约会议历史会议信息，当前仅返回最后一次的会议信息
+   * 
+   * @param request - QueryScheduleConferenceInfoRequest
+   * @returns QueryScheduleConferenceInfoResponse
    */
   async queryScheduleConferenceInfo(scheduleConferenceId: string, request: QueryScheduleConferenceInfoRequest): Promise<QueryScheduleConferenceInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6769,12 +8062,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户进行中会议
-   *
-   * @param request QueryUserOnGoingConferenceRequest
-   * @param headers QueryUserOnGoingConferenceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryUserOnGoingConferenceResponse
+   * 查询用户进行中会议
+   * 
+   * @param request - QueryUserOnGoingConferenceRequest
+   * @param headers - QueryUserOnGoingConferenceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryUserOnGoingConferenceResponse
    */
   async queryUserOnGoingConferenceWithOptions(request: QueryUserOnGoingConferenceRequest, headers: QueryUserOnGoingConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserOnGoingConferenceResponse> {
     Util.validateModel(request);
@@ -6811,10 +8104,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户进行中会议
-   *
-   * @param request QueryUserOnGoingConferenceRequest
-   * @return QueryUserOnGoingConferenceResponse
+   * 查询用户进行中会议
+   * 
+   * @param request - QueryUserOnGoingConferenceRequest
+   * @returns QueryUserOnGoingConferenceResponse
    */
   async queryUserOnGoingConference(request: QueryUserOnGoingConferenceRequest): Promise<QueryUserOnGoingConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6823,12 +8116,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 开启云录制
-   *
-   * @param request StartCloudRecordRequest
-   * @param headers StartCloudRecordHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return StartCloudRecordResponse
+   * 开启云录制
+   * 
+   * @param request - StartCloudRecordRequest
+   * @param headers - StartCloudRecordHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns StartCloudRecordResponse
    */
   async startCloudRecordWithOptions(conferenceId: string, request: StartCloudRecordRequest, headers: StartCloudRecordHeaders, runtime: $Util.RuntimeOptions): Promise<StartCloudRecordResponse> {
     Util.validateModel(request);
@@ -6873,10 +8166,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 开启云录制
-   *
-   * @param request StartCloudRecordRequest
-   * @return StartCloudRecordResponse
+   * 开启云录制
+   * 
+   * @param request - StartCloudRecordRequest
+   * @returns StartCloudRecordResponse
    */
   async startCloudRecord(conferenceId: string, request: StartCloudRecordRequest): Promise<StartCloudRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6885,12 +8178,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 开启会议闪记
-   *
-   * @param request StartMinutesRequest
-   * @param headers StartMinutesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return StartMinutesResponse
+   * 开启会议闪记
+   * 
+   * @param request - StartMinutesRequest
+   * @param headers - StartMinutesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns StartMinutesResponse
    */
   async startMinutesWithOptions(conferenceId: string, request: StartMinutesRequest, headers: StartMinutesHeaders, runtime: $Util.RuntimeOptions): Promise<StartMinutesResponse> {
     Util.validateModel(request);
@@ -6935,10 +8228,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 开启会议闪记
-   *
-   * @param request StartMinutesRequest
-   * @return StartMinutesResponse
+   * 开启会议闪记
+   * 
+   * @param request - StartMinutesRequest
+   * @returns StartMinutesResponse
    */
   async startMinutes(conferenceId: string, request: StartMinutesRequest): Promise<StartMinutesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6947,12 +8240,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会议开始直播推流
-   *
-   * @param request StartStreamOutRequest
-   * @param headers StartStreamOutHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return StartStreamOutResponse
+   * 会议开始直播推流
+   * 
+   * @param request - StartStreamOutRequest
+   * @param headers - StartStreamOutHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns StartStreamOutResponse
    */
   async startStreamOutWithOptions(conferenceId: string, request: StartStreamOutRequest, headers: StartStreamOutHeaders, runtime: $Util.RuntimeOptions): Promise<StartStreamOutResponse> {
     Util.validateModel(request);
@@ -7009,10 +8302,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会议开始直播推流
-   *
-   * @param request StartStreamOutRequest
-   * @return StartStreamOutResponse
+   * 会议开始直播推流
+   * 
+   * @param request - StartStreamOutRequest
+   * @returns StartStreamOutResponse
    */
   async startStreamOut(conferenceId: string, request: StartStreamOutRequest): Promise<StartStreamOutResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7021,12 +8314,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关闭云录制
-   *
-   * @param request StopCloudRecordRequest
-   * @param headers StopCloudRecordHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return StopCloudRecordResponse
+   * 关闭云录制
+   * 
+   * @param request - StopCloudRecordRequest
+   * @param headers - StopCloudRecordHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns StopCloudRecordResponse
    */
   async stopCloudRecordWithOptions(conferenceId: string, request: StopCloudRecordRequest, headers: StopCloudRecordHeaders, runtime: $Util.RuntimeOptions): Promise<StopCloudRecordResponse> {
     Util.validateModel(request);
@@ -7063,10 +8356,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关闭云录制
-   *
-   * @param request StopCloudRecordRequest
-   * @return StopCloudRecordResponse
+   * 关闭云录制
+   * 
+   * @param request - StopCloudRecordRequest
+   * @returns StopCloudRecordResponse
    */
   async stopCloudRecord(conferenceId: string, request: StopCloudRecordRequest): Promise<StopCloudRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7075,12 +8368,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 暂停会议闪记
-   *
-   * @param request StopMinutesRequest
-   * @param headers StopMinutesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return StopMinutesResponse
+   * 暂停会议闪记
+   * 
+   * @param request - StopMinutesRequest
+   * @param headers - StopMinutesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns StopMinutesResponse
    */
   async stopMinutesWithOptions(conferenceId: string, request: StopMinutesRequest, headers: StopMinutesHeaders, runtime: $Util.RuntimeOptions): Promise<StopMinutesResponse> {
     Util.validateModel(request);
@@ -7117,10 +8410,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 暂停会议闪记
-   *
-   * @param request StopMinutesRequest
-   * @return StopMinutesResponse
+   * 暂停会议闪记
+   * 
+   * @param request - StopMinutesRequest
+   * @returns StopMinutesResponse
    */
   async stopMinutes(conferenceId: string, request: StopMinutesRequest): Promise<StopMinutesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7129,12 +8422,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会议停止直播推流
-   *
-   * @param request StopStreamOutRequest
-   * @param headers StopStreamOutHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return StopStreamOutResponse
+   * 会议停止直播推流
+   * 
+   * @param request - StopStreamOutRequest
+   * @param headers - StopStreamOutHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns StopStreamOutResponse
    */
   async stopStreamOutWithOptions(conferenceId: string, request: StopStreamOutRequest, headers: StopStreamOutHeaders, runtime: $Util.RuntimeOptions): Promise<StopStreamOutResponse> {
     Util.validateModel(request);
@@ -7179,10 +8472,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 会议停止直播推流
-   *
-   * @param request StopStreamOutRequest
-   * @return StopStreamOutResponse
+   * 会议停止直播推流
+   * 
+   * @param request - StopStreamOutRequest
+   * @returns StopStreamOutResponse
    */
   async stopStreamOut(conferenceId: string, request: StopStreamOutRequest): Promise<StopStreamOutResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7191,12 +8484,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新预约会议设置
-   *
-   * @param request UpdateScheduleConfSettingsRequest
-   * @param headers UpdateScheduleConfSettingsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateScheduleConfSettingsResponse
+   * 更新预约会议设置
+   * 
+   * @param request - UpdateScheduleConfSettingsRequest
+   * @param headers - UpdateScheduleConfSettingsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateScheduleConfSettingsResponse
    */
   async updateScheduleConfSettingsWithOptions(request: UpdateScheduleConfSettingsRequest, headers: UpdateScheduleConfSettingsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateScheduleConfSettingsResponse> {
     Util.validateModel(request);
@@ -7241,10 +8534,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新预约会议设置
-   *
-   * @param request UpdateScheduleConfSettingsRequest
-   * @return UpdateScheduleConfSettingsResponse
+   * 更新预约会议设置
+   * 
+   * @param request - UpdateScheduleConfSettingsRequest
+   * @returns UpdateScheduleConfSettingsResponse
    */
   async updateScheduleConfSettings(request: UpdateScheduleConfSettingsRequest): Promise<UpdateScheduleConfSettingsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7253,12 +8546,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新预约会议
-   *
-   * @param request UpdateScheduleConferenceRequest
-   * @param headers UpdateScheduleConferenceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateScheduleConferenceResponse
+   * 更新预约会议
+   * 
+   * @param request - UpdateScheduleConferenceRequest
+   * @param headers - UpdateScheduleConferenceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateScheduleConferenceResponse
    */
   async updateScheduleConferenceWithOptions(request: UpdateScheduleConferenceRequest, headers: UpdateScheduleConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateScheduleConferenceResponse> {
     Util.validateModel(request);
@@ -7311,10 +8604,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新预约会议
-   *
-   * @param request UpdateScheduleConferenceRequest
-   * @return UpdateScheduleConferenceResponse
+   * 更新预约会议
+   * 
+   * @param request - UpdateScheduleConferenceRequest
+   * @returns UpdateScheduleConferenceResponse
    */
   async updateScheduleConference(request: UpdateScheduleConferenceRequest): Promise<UpdateScheduleConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7323,11 +8616,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新会议额外信息
-   *
-   * @param headers UpdateVideoConferenceExtInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateVideoConferenceExtInfoResponse
+   * 更新会议额外信息
+   * 
+   * @param headers - UpdateVideoConferenceExtInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateVideoConferenceExtInfoResponse
    */
   async updateVideoConferenceExtInfoWithOptions(conferenceId: string, headers: UpdateVideoConferenceExtInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateVideoConferenceExtInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -7357,9 +8650,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新会议额外信息
-   *
-   * @return UpdateVideoConferenceExtInfoResponse
+   * 更新会议额外信息
+   * @returns UpdateVideoConferenceExtInfoResponse
    */
   async updateVideoConferenceExtInfo(conferenceId: string): Promise<UpdateVideoConferenceExtInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7368,12 +8660,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置会议中的会议属性
-   *
-   * @param request UpdateVideoConferenceSettingRequest
-   * @param headers UpdateVideoConferenceSettingHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateVideoConferenceSettingResponse
+   * 设置会议中的会议属性
+   * 
+   * @param request - UpdateVideoConferenceSettingRequest
+   * @param headers - UpdateVideoConferenceSettingHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateVideoConferenceSettingResponse
    */
   async updateVideoConferenceSettingWithOptions(conferenceId: string, request: UpdateVideoConferenceSettingRequest, headers: UpdateVideoConferenceSettingHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateVideoConferenceSettingResponse> {
     Util.validateModel(request);
@@ -7430,10 +8722,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置会议中的会议属性
-   *
-   * @param request UpdateVideoConferenceSettingRequest
-   * @return UpdateVideoConferenceSettingResponse
+   * 设置会议中的会议属性
+   * 
+   * @param request - UpdateVideoConferenceSettingRequest
+   * @returns UpdateVideoConferenceSettingResponse
    */
   async updateVideoConferenceSetting(conferenceId: string, request: UpdateVideoConferenceSettingRequest): Promise<UpdateVideoConferenceSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });

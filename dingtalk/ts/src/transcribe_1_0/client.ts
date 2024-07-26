@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -104,7 +102,15 @@ export class RemovePermissionHeaders extends $tea.Model {
 }
 
 export class RemovePermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: RemovePermissionRequestMembers[];
   taskCreator?: number;
   taskId?: number;
@@ -204,8 +210,26 @@ export class UpdatePermissionForUsersHeaders extends $tea.Model {
 }
 
 export class UpdatePermissionForUsersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   bizType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: UpdatePermissionForUsersRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 533xxxxxx
+   */
   taskCreator?: number;
   operatorUid?: number;
   static names(): { [key: string]: string } {
@@ -295,8 +319,26 @@ export class GetTranscribeBriefResponseBodyData extends $tea.Model {
 }
 
 export class RemovePermissionRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 533xxxxxx
+   */
   memberId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EDITOR
+   */
   memberType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   policyType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -339,8 +381,23 @@ export class RemovePermissionResponseBodyData extends $tea.Model {
 }
 
 export class UpdatePermissionForUsersRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EDITOR
+   */
   policyType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -365,12 +422,11 @@ export class UpdatePermissionForUsersRequestMembers extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -380,11 +436,11 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 获取闪记任务的概要信息
-   *
-   * @param headers GetTranscribeBriefHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTranscribeBriefResponse
+   * 获取闪记任务的概要信息
+   * 
+   * @param headers - GetTranscribeBriefHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTranscribeBriefResponse
    */
   async getTranscribeBriefWithOptions(taskUuid: string, headers: GetTranscribeBriefHeaders, runtime: $Util.RuntimeOptions): Promise<GetTranscribeBriefResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -414,9 +470,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取闪记任务的概要信息
-   *
-   * @return GetTranscribeBriefResponse
+   * 获取闪记任务的概要信息
+   * @returns GetTranscribeBriefResponse
    */
   async getTranscribeBrief(taskUuid: string): Promise<GetTranscribeBriefResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -425,12 +480,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 移除指定用户对闪记任务的权限
-   *
-   * @param request RemovePermissionRequest
-   * @param headers RemovePermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RemovePermissionResponse
+   * 移除指定用户对闪记任务的权限
+   * 
+   * @param request - RemovePermissionRequest
+   * @param headers - RemovePermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RemovePermissionResponse
    */
   async removePermissionWithOptions(taskUuid: string, request: RemovePermissionRequest, headers: RemovePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<RemovePermissionResponse> {
     Util.validateModel(request);
@@ -479,10 +534,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 移除指定用户对闪记任务的权限
-   *
-   * @param request RemovePermissionRequest
-   * @return RemovePermissionResponse
+   * 移除指定用户对闪记任务的权限
+   * 
+   * @param request - RemovePermissionRequest
+   * @returns RemovePermissionResponse
    */
   async removePermission(taskUuid: string, request: RemovePermissionRequest): Promise<RemovePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -491,12 +546,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 针对指定的闪记，修改或者授予指定用户权限
-   *
-   * @param request UpdatePermissionForUsersRequest
-   * @param headers UpdatePermissionForUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdatePermissionForUsersResponse
+   * 针对指定的闪记，修改或者授予指定用户权限
+   * 
+   * @param request - UpdatePermissionForUsersRequest
+   * @param headers - UpdatePermissionForUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdatePermissionForUsersResponse
    */
   async updatePermissionForUsersWithOptions(taskUuid: string, request: UpdatePermissionForUsersRequest, headers: UpdatePermissionForUsersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePermissionForUsersResponse> {
     Util.validateModel(request);
@@ -547,10 +602,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 针对指定的闪记，修改或者授予指定用户权限
-   *
-   * @param request UpdatePermissionForUsersRequest
-   * @return UpdatePermissionForUsersResponse
+   * 针对指定的闪记，修改或者授予指定用户权限
+   * 
+   * @param request - UpdatePermissionForUsersRequest
+   * @returns UpdatePermissionForUsersResponse
    */
   async updatePermissionForUsers(taskUuid: string, request: UpdatePermissionForUsersRequest): Promise<UpdatePermissionForUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });

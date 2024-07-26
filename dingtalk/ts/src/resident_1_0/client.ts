@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,12 +30,55 @@ export class AddPointHeaders extends $tea.Model {
 }
 
 export class AddPointRequest extends $tea.Model {
+  /**
+   * @example
+   * 1634630147
+   */
   actionTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * false
+   */
   isCircle?: boolean;
+  /**
+   * @example
+   * rule_1
+   */
   ruleCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 发动态
+   */
   ruleName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   score?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 7645
+   */
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -113,8 +154,26 @@ export class AddResidentDepartmentHeaders extends $tea.Model {
 }
 
 export class AddResidentDepartmentRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 第一网格组
+   */
   departmentName?: string;
+  /**
+   * @example
+   * true
+   */
   isResidenceGroup?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   parentDepartmentId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -138,6 +197,13 @@ export class AddResidentDepartmentRequest extends $tea.Model {
 }
 
 export class AddResidentDepartmentResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   result?: number;
   static names(): { [key: string]: string } {
     return {
@@ -204,6 +270,13 @@ export class AddResidentMemberHeaders extends $tea.Model {
 }
 
 export class AddResidentMemberRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * A栋
+   */
   residentAddInfo?: AddResidentMemberRequestResidentAddInfo;
   static names(): { [key: string]: string } {
     return {
@@ -224,6 +297,10 @@ export class AddResidentMemberRequest extends $tea.Model {
 
 export class AddResidentMemberResponseBody extends $tea.Model {
   status?: number;
+  /**
+   * @example
+   * 10005
+   */
   unionId?: string;
   userId?: string;
   static names(): { [key: string]: string } {
@@ -295,12 +372,45 @@ export class AddResidentUsersHeaders extends $tea.Model {
 }
 
 export class AddResidentUsersRequest extends $tea.Model {
+  /**
+   * @example
+   * 美好社区创景街道万通公寓
+   */
   address?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   departmentId?: number;
   extField?: AddResidentUsersRequestExtField[];
+  /**
+   * @example
+   * false
+   */
   isLeaseholder?: boolean;
+  /**
+   * @example
+   * 15612345678
+   */
   mobile?: string;
+  /**
+   * @example
+   * SELF
+   * 
+   * **if can be null:**
+   * true
+   */
   relateType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 王建国
+   */
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -332,6 +442,13 @@ export class AddResidentUsersRequest extends $tea.Model {
 }
 
 export class AddResidentUsersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -398,9 +515,17 @@ export class CreateResidentBlackBoardHeaders extends $tea.Model {
 }
 
 export class CreateResidentBlackBoardRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   context?: string;
   mediaId?: string;
   sendTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -496,9 +621,34 @@ export class CreateSpaceRequest extends $tea.Model {
   buildingArea?: number;
   floor?: string;
   houseState?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * A栋
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * -7
+   */
   parentDeptId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * House
+   */
   tagCode?: string;
+  /**
+   * @example
+   * 2
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -532,6 +682,10 @@ export class CreateSpaceRequest extends $tea.Model {
 }
 
 export class CreateSpaceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 10005
+   */
   deptId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -598,6 +752,10 @@ export class DeleteResidentBlackBoardHeaders extends $tea.Model {
 }
 
 export class DeleteResidentBlackBoardRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   blackboardId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -683,6 +841,13 @@ export class DeleteResidentDepartmentHeaders extends $tea.Model {
 }
 
 export class DeleteResidentDepartmentRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   departmentId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -702,6 +867,13 @@ export class DeleteResidentDepartmentRequest extends $tea.Model {
 }
 
 export class DeleteResidentDepartmentResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -768,6 +940,10 @@ export class DeleteSpaceHeaders extends $tea.Model {
 }
 
 export class DeleteSpaceRequest extends $tea.Model {
+  /**
+   * @example
+   * 忘川路1号
+   */
   deptIds?: number[];
   static names(): { [key: string]: string } {
     return {
@@ -787,7 +963,18 @@ export class DeleteSpaceRequest extends $tea.Model {
 }
 
 export class DeleteSpaceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   delFailedDept?: DeleteSpaceResponseBodyDelFailedDept[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   delSuccessCount?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -856,6 +1043,13 @@ export class GetConversationIdHeaders extends $tea.Model {
 }
 
 export class GetConversationIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * chatd575783672bb40c005ba4e8b2*****ab
+   */
   chatId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -875,6 +1069,10 @@ export class GetConversationIdRequest extends $tea.Model {
 }
 
 export class GetConversationIdResponseBody extends $tea.Model {
+  /**
+   * @example
+   * cidAX+2NwjqR3Y81Sxic5jtag==
+   */
   openConversationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -941,6 +1139,13 @@ export class GetIndustryTypeHeaders extends $tea.Model {
 }
 
 export class GetIndustryTypeResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * RESIDENCE
+   */
   industryType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1124,7 +1329,15 @@ export class GetResidentInfoRequest extends $tea.Model {
 
 export class GetResidentInfoResponseBody extends $tea.Model {
   address?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   allUserGroupOpenConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   allUserGroupOwnerUserId?: string;
   buildingArea?: number;
   cityId?: number;
@@ -1134,7 +1347,15 @@ export class GetResidentInfoResponseBody extends $tea.Model {
   location?: string;
   name?: string;
   projectManager?: GetResidentInfoResponseBodyProjectManager;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   propertyDeptGroupOpenConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   propertyDeptGroupOwnerUserId?: string;
   provId?: number;
   scopeEast?: string;
@@ -1249,7 +1470,15 @@ export class GetResidentMembersInfoHeaders extends $tea.Model {
 }
 
 export class GetResidentMembersInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   residentCropId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIdList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1337,6 +1566,13 @@ export class GetSpaceIdByTypeHeaders extends $tea.Model {
 }
 
 export class GetSpaceIdByTypeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROPERTY_STAFF_DEPT
+   */
   departmentType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1356,6 +1592,13 @@ export class GetSpaceIdByTypeRequest extends $tea.Model {
 }
 
 export class GetSpaceIdByTypeResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12343
+   */
   referId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1422,7 +1665,15 @@ export class GetSpacesInfoHeaders extends $tea.Model {
 }
 
 export class GetSpacesInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   referIds?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   residentCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1510,6 +1761,13 @@ export class ListIndustryRoleUsersHeaders extends $tea.Model {
 }
 
 export class ListIndustryRoleUsersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SecurityManager
+   */
   tagCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1595,6 +1853,13 @@ export class ListPointRulesHeaders extends $tea.Model {
 }
 
 export class ListPointRulesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * false
+   */
   isCircle?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1614,6 +1879,13 @@ export class ListPointRulesRequest extends $tea.Model {
 }
 
 export class ListPointRulesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   pointRuleList?: ListPointRulesResponseBodyPointRuleList[];
   static names(): { [key: string]: string } {
     return {
@@ -1768,9 +2040,25 @@ export class ListUncheckUsersHeaders extends $tea.Model {
 }
 
 export class ListUncheckUsersRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @example
+   * 1652698991669
+   */
   startTime?: number;
+  /**
+   * @example
+   * 1
+   */
   status?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1796,7 +2084,21 @@ export class ListUncheckUsersRequest extends $tea.Model {
 }
 
 export class ListUncheckUsersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   nextToken?: number;
   values?: ListUncheckUsersResponseBodyValues[];
   static names(): { [key: string]: string } {
@@ -1868,6 +2170,13 @@ export class ListUserIndustryRolesHeaders extends $tea.Model {
 }
 
 export class ListUserIndustryRolesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1953,11 +2262,47 @@ export class PagePointHistoryHeaders extends $tea.Model {
 }
 
 export class PagePointHistoryRequest extends $tea.Model {
+  /**
+   * @example
+   * 1631260866105
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * false
+   */
   isCircle?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 15
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @example
+   * 1630345050858
+   */
   startTime?: number;
+  /**
+   * @example
+   * 123
+   * 
+   * **if can be null:**
+   * true
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1987,9 +2332,37 @@ export class PagePointHistoryRequest extends $tea.Model {
 }
 
 export class PagePointHistoryResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3276
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   pointRecordList?: PagePointHistoryResponseBodyPointRecordList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * -1
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2062,8 +2435,23 @@ export class RemoveResidentMemberHeaders extends $tea.Model {
 }
 
 export class RemoveResidentMemberRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   deptId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
+  /**
+   * @example
+   * 111112***
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2087,6 +2475,10 @@ export class RemoveResidentMemberRequest extends $tea.Model {
 }
 
 export class RemoveResidentMemberResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2153,7 +2545,21 @@ export class RemoveResidentUserHeaders extends $tea.Model {
 }
 
 export class RemoveResidentUserRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   departmentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2175,6 +2581,13 @@ export class RemoveResidentUserRequest extends $tea.Model {
 }
 
 export class RemoveResidentUserResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2241,7 +2654,15 @@ export class SearchResidentHeaders extends $tea.Model {
 }
 
 export class SearchResidentRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   residentCropId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   searchWord?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2329,8 +2750,26 @@ export class UpdateResideceGroupHeaders extends $tea.Model {
 }
 
 export class UpdateResideceGroupRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   departmentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 第一网格组
+   */
   departmentName?: string;
+  /**
+   * @example
+   * 1234
+   */
   managerUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2354,6 +2793,13 @@ export class UpdateResideceGroupRequest extends $tea.Model {
 }
 
 export class UpdateResideceGroupResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2420,12 +2866,49 @@ export class UpdateResidenceHeaders extends $tea.Model {
 }
 
 export class UpdateResidenceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   departmentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 101户
+   */
   departmentName?: string;
+  /**
+   * @example
+   * false
+   */
   destitute?: boolean;
+  /**
+   * @example
+   * 第1网格
+   */
   grid?: string;
+  /**
+   * @example
+   * 16612345678
+   */
   homeTel?: string;
+  /**
+   * @example
+   * 1234
+   */
   managerUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   parentDepartmentId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2457,6 +2940,13 @@ export class UpdateResidenceRequest extends $tea.Model {
 }
 
 export class UpdateResidenceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2524,8 +3014,16 @@ export class UpdateResidentBlackBoardHeaders extends $tea.Model {
 
 export class UpdateResidentBlackBoardRequest extends $tea.Model {
   blackboardId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   context?: string;
   mediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2551,6 +3049,10 @@ export class UpdateResidentBlackBoardRequest extends $tea.Model {
 }
 
 export class UpdateResidentBlackBoardResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2623,8 +3125,22 @@ export class UpdateResidentInfoRequest extends $tea.Model {
   communityType?: number;
   countyName?: string;
   location?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试小区1
+   */
   name?: string;
   provName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   state?: number;
   telephone?: string;
   static names(): { [key: string]: string } {
@@ -2663,6 +3179,10 @@ export class UpdateResidentInfoRequest extends $tea.Model {
 }
 
 export class UpdateResidentInfoResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2729,7 +3249,21 @@ export class UpdateResidentMemberHeaders extends $tea.Model {
 }
 
 export class UpdateResidentMemberRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试小区1
+   */
   residentUpdateInfo?: UpdateResidentMemberRequestResidentUpdateInfo;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1212
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2751,6 +3285,10 @@ export class UpdateResidentMemberRequest extends $tea.Model {
 }
 
 export class UpdateResidentMemberResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2817,14 +3355,61 @@ export class UpdateResidentUserHeaders extends $tea.Model {
 }
 
 export class UpdateResidentUserRequest extends $tea.Model {
+  /**
+   * @example
+   * 美好社区创景街道万通公寓
+   */
   address?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   departmentId?: number;
   extField?: UpdateResidentUserRequestExtField[];
+  /**
+   * @example
+   * false
+   */
   isRetainOldDept?: boolean;
+  /**
+   * @example
+   * 15612345678
+   */
   mobile?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   oldDepartmentId?: number;
+  /**
+   * @example
+   * SELF
+   * 
+   * **if can be null:**
+   * true
+   */
   relateType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 王建国
+   */
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2860,6 +3445,13 @@ export class UpdateResidentUserRequest extends $tea.Model {
 }
 
 export class UpdateResidentUserResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2926,6 +3518,13 @@ export class UpdateSpaceHeaders extends $tea.Model {
 }
 
 export class UpdateSpaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * A栋
+   */
   spaceInfoVOList?: UpdateSpaceRequestSpaceInfoVOList[];
   static names(): { [key: string]: string } {
     return {
@@ -2945,6 +3544,10 @@ export class UpdateSpaceRequest extends $tea.Model {
 }
 
 export class UpdateSpaceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2989,11 +3592,44 @@ export class UpdateSpaceResponse extends $tea.Model {
 }
 
 export class AddResidentMemberRequestResidentAddInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 11112
+   */
   deptId?: number;
+  /**
+   * @example
+   * true
+   */
   isPropertyOwner?: boolean;
+  /**
+   * @example
+   * {"startTime":1652358627106,"endTime":1652445027106}
+   */
   memberDeptExtension?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 148********
+   */
   mobile?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @example
+   * 1
+   */
   relateType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3023,7 +3659,15 @@ export class AddResidentMemberRequestResidentAddInfo extends $tea.Model {
 }
 
 export class AddResidentUsersRequestExtField extends $tea.Model {
+  /**
+   * @example
+   * 性别
+   */
   itemName?: string;
+  /**
+   * @example
+   * 女
+   */
   itemValue?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3045,6 +3689,13 @@ export class AddResidentUsersRequestExtField extends $tea.Model {
 }
 
 export class DeleteSpaceResponseBodyDelFailedDept extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 122222
+   */
   deptId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3166,13 +3817,66 @@ export class GetSpacesInfoResponseBodySpaceList extends $tea.Model {
 }
 
 export class ListPointRulesResponseBodyPointRuleList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 50
+   */
   dayLimitTimes?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * text
+   */
   extension?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   groupId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 排序Id
+   */
   orderId?: number;
+  /**
+   * @example
+   * rule_1
+   */
   ruleCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 发动态
+   */
   ruleName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   score?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   status?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3252,13 +3956,45 @@ export class ListSubSpaceResponseBodySpaceList extends $tea.Model {
 }
 
 export class ListUncheckUsersResponseBodyValues extends $tea.Model {
+  /**
+   * @example
+   * 5345345
+   */
   deptId?: number;
+  /**
+   * @example
+   * "{\"startTime\":\"1654746593623\",\"endTime\":\"1656042593623\"}"
+   */
   extension?: string;
+  /**
+   * @example
+   * 1652683318162
+   */
   gmtCreate?: number;
+  /**
+   * @example
+   * 1652683318162
+   */
   gmtModified?: number;
+  /**
+   * @example
+   * true
+   */
   isPropertyOwner?: boolean;
+  /**
+   * @example
+   * 张工
+   */
   name?: string;
+  /**
+   * @example
+   * 1
+   */
   status?: number;
+  /**
+   * @example
+   * 312423423
+   */
   unionId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3292,8 +4028,20 @@ export class ListUncheckUsersResponseBodyValues extends $tea.Model {
 }
 
 export class ListUserIndustryRolesResponseBodyRoleList extends $tea.Model {
+  /**
+   * @example
+   * 312423423
+   */
   roleId?: number;
+  /**
+   * @example
+   * 安保部经理
+   */
   roleName?: string;
+  /**
+   * @example
+   * SecurityManager
+   */
   tagCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3317,11 +4065,50 @@ export class ListUserIndustryRolesResponseBodyRoleList extends $tea.Model {
 }
 
 export class PagePointHistoryResponseBodyPointRecordList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1634630147
+   */
   createAt?: number;
+  /**
+   * @example
+   * rule_1
+   */
   ruleCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 发动态
+   */
   ruleName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   score?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 7653
+   */
   uuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3382,12 +4169,49 @@ export class SearchResidentResponseBodyResidenceList extends $tea.Model {
 }
 
 export class UpdateResidentMemberRequestResidentUpdateInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 11112
+   */
   deptId?: number;
+  /**
+   * @example
+   * true
+   */
   isPropertyOwner?: boolean;
+  /**
+   * @example
+   * {"startTime":1652358627106,"endTime":1652445027106}
+   */
   memberDeptExtension?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 11123
+   */
   oldDeptId?: number;
+  /**
+   * @example
+   * 1
+   */
   relateType?: string;
+  /**
+   * @example
+   * 11123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3419,7 +4243,15 @@ export class UpdateResidentMemberRequestResidentUpdateInfo extends $tea.Model {
 }
 
 export class UpdateResidentUserRequestExtField extends $tea.Model {
+  /**
+   * @example
+   * 性别
+   */
   itemName?: string;
+  /**
+   * @example
+   * 女
+   */
   itemValue?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3441,15 +4273,57 @@ export class UpdateResidentUserRequestExtField extends $tea.Model {
 }
 
 export class UpdateSpaceRequestSpaceInfoVOList extends $tea.Model {
+  /**
+   * @example
+   * 123.4
+   */
   billingArea?: number;
+  /**
+   * @example
+   * 123.4
+   */
   buildingArea?: number;
+  /**
+   * @example
+   * 当tagcode为Building的时候必填
+   */
   buildingType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10005
+   */
   deptId?: number;
+  /**
+   * @example
+   * 12
+   */
   floor?: string;
+  /**
+   * @example
+   * 1
+   */
   houseState?: number;
+  /**
+   * @example
+   * 1
+   */
   houseType?: number;
+  /**
+   * @example
+   * 二单元
+   */
   name?: string;
   parentDeptId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 空间类型标签code，House/Unit/Building/Partition
+   */
   tagCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3488,12 +4362,11 @@ export class UpdateSpaceRequestSpaceInfoVOList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -3503,12 +4376,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 增加积分
-   *
-   * @param request AddPointRequest
-   * @param headers AddPointHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddPointResponse
+   * 增加积分
+   * 
+   * @param request - AddPointRequest
+   * @param headers - AddPointHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddPointResponse
    */
   async addPointWithOptions(request: AddPointRequest, headers: AddPointHeaders, runtime: $Util.RuntimeOptions): Promise<AddPointResponse> {
     Util.validateModel(request);
@@ -3569,10 +4442,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 增加积分
-   *
-   * @param request AddPointRequest
-   * @return AddPointResponse
+   * 增加积分
+   * 
+   * @param request - AddPointRequest
+   * @returns AddPointResponse
    */
   async addPoint(request: AddPointRequest): Promise<AddPointResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3581,12 +4454,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 增加组户
-   *
-   * @param request AddResidentDepartmentRequest
-   * @param headers AddResidentDepartmentHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddResidentDepartmentResponse
+   * 增加组户
+   * 
+   * @param request - AddResidentDepartmentRequest
+   * @param headers - AddResidentDepartmentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddResidentDepartmentResponse
    */
   async addResidentDepartmentWithOptions(request: AddResidentDepartmentRequest, headers: AddResidentDepartmentHeaders, runtime: $Util.RuntimeOptions): Promise<AddResidentDepartmentResponse> {
     Util.validateModel(request);
@@ -3631,10 +4504,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 增加组户
-   *
-   * @param request AddResidentDepartmentRequest
-   * @return AddResidentDepartmentResponse
+   * 增加组户
+   * 
+   * @param request - AddResidentDepartmentRequest
+   * @returns AddResidentDepartmentResponse
    */
   async addResidentDepartment(request: AddResidentDepartmentRequest): Promise<AddResidentDepartmentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3643,12 +4516,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加小区成员
-   *
-   * @param request AddResidentMemberRequest
-   * @param headers AddResidentMemberHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddResidentMemberResponse
+   * 添加小区成员
+   * 
+   * @param request - AddResidentMemberRequest
+   * @param headers - AddResidentMemberHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddResidentMemberResponse
    */
   async addResidentMemberWithOptions(request: AddResidentMemberRequest, headers: AddResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddResidentMemberResponse> {
     Util.validateModel(request);
@@ -3685,10 +4558,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加小区成员
-   *
-   * @param request AddResidentMemberRequest
-   * @return AddResidentMemberResponse
+   * 添加小区成员
+   * 
+   * @param request - AddResidentMemberRequest
+   * @returns AddResidentMemberResponse
    */
   async addResidentMember(request: AddResidentMemberRequest): Promise<AddResidentMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3697,12 +4570,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增居民
-   *
-   * @param request AddResidentUsersRequest
-   * @param headers AddResidentUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddResidentUsersResponse
+   * 新增居民
+   * 
+   * @param request - AddResidentUsersRequest
+   * @param headers - AddResidentUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddResidentUsersResponse
    */
   async addResidentUsersWithOptions(request: AddResidentUsersRequest, headers: AddResidentUsersHeaders, runtime: $Util.RuntimeOptions): Promise<AddResidentUsersResponse> {
     Util.validateModel(request);
@@ -3763,10 +4636,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增居民
-   *
-   * @param request AddResidentUsersRequest
-   * @return AddResidentUsersResponse
+   * 新增居民
+   * 
+   * @param request - AddResidentUsersRequest
+   * @returns AddResidentUsersResponse
    */
   async addResidentUsers(request: AddResidentUsersRequest): Promise<AddResidentUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3775,12 +4648,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建小区公告
-   *
-   * @param request CreateResidentBlackBoardRequest
-   * @param headers CreateResidentBlackBoardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateResidentBlackBoardResponse
+   * 创建小区公告
+   * 
+   * @param request - CreateResidentBlackBoardRequest
+   * @param headers - CreateResidentBlackBoardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateResidentBlackBoardResponse
    */
   async createResidentBlackBoardWithOptions(request: CreateResidentBlackBoardRequest, headers: CreateResidentBlackBoardHeaders, runtime: $Util.RuntimeOptions): Promise<CreateResidentBlackBoardResponse> {
     Util.validateModel(request);
@@ -3829,10 +4702,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建小区公告
-   *
-   * @param request CreateResidentBlackBoardRequest
-   * @return CreateResidentBlackBoardResponse
+   * 创建小区公告
+   * 
+   * @param request - CreateResidentBlackBoardRequest
+   * @returns CreateResidentBlackBoardResponse
    */
   async createResidentBlackBoard(request: CreateResidentBlackBoardRequest): Promise<CreateResidentBlackBoardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3841,12 +4714,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建小区空间，含分区，楼栋，单元，房屋等
-   *
-   * @param request CreateSpaceRequest
-   * @param headers CreateSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateSpaceResponse
+   * 创建小区空间，含分区，楼栋，单元，房屋等
+   * 
+   * @param request - CreateSpaceRequest
+   * @param headers - CreateSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateSpaceResponse
    */
   async createSpaceWithOptions(request: CreateSpaceRequest, headers: CreateSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSpaceResponse> {
     Util.validateModel(request);
@@ -3911,10 +4784,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建小区空间，含分区，楼栋，单元，房屋等
-   *
-   * @param request CreateSpaceRequest
-   * @return CreateSpaceResponse
+   * 创建小区空间，含分区，楼栋，单元，房屋等
+   * 
+   * @param request - CreateSpaceRequest
+   * @returns CreateSpaceResponse
    */
   async createSpace(request: CreateSpaceRequest): Promise<CreateSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3923,12 +4796,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除小区公告
-   *
-   * @param request DeleteResidentBlackBoardRequest
-   * @param headers DeleteResidentBlackBoardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteResidentBlackBoardResponse
+   * 删除小区公告
+   * 
+   * @param request - DeleteResidentBlackBoardRequest
+   * @param headers - DeleteResidentBlackBoardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteResidentBlackBoardResponse
    */
   async deleteResidentBlackBoardWithOptions(request: DeleteResidentBlackBoardRequest, headers: DeleteResidentBlackBoardHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteResidentBlackBoardResponse> {
     Util.validateModel(request);
@@ -3965,10 +4838,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除小区公告
-   *
-   * @param request DeleteResidentBlackBoardRequest
-   * @return DeleteResidentBlackBoardResponse
+   * 删除小区公告
+   * 
+   * @param request - DeleteResidentBlackBoardRequest
+   * @returns DeleteResidentBlackBoardResponse
    */
   async deleteResidentBlackBoard(request: DeleteResidentBlackBoardRequest): Promise<DeleteResidentBlackBoardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3977,12 +4850,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除组户信息
-   *
-   * @param request DeleteResidentDepartmentRequest
-   * @param headers DeleteResidentDepartmentHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteResidentDepartmentResponse
+   * 删除组户信息
+   * 
+   * @param request - DeleteResidentDepartmentRequest
+   * @param headers - DeleteResidentDepartmentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteResidentDepartmentResponse
    */
   async deleteResidentDepartmentWithOptions(request: DeleteResidentDepartmentRequest, headers: DeleteResidentDepartmentHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteResidentDepartmentResponse> {
     Util.validateModel(request);
@@ -4019,10 +4892,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除组户信息
-   *
-   * @param request DeleteResidentDepartmentRequest
-   * @return DeleteResidentDepartmentResponse
+   * 删除组户信息
+   * 
+   * @param request - DeleteResidentDepartmentRequest
+   * @returns DeleteResidentDepartmentResponse
    */
   async deleteResidentDepartment(request: DeleteResidentDepartmentRequest): Promise<DeleteResidentDepartmentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4031,12 +4904,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除小区空间，含分区，楼栋，单元，房屋
-   *
-   * @param request DeleteSpaceRequest
-   * @param headers DeleteSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteSpaceResponse
+   * 删除小区空间，含分区，楼栋，单元，房屋
+   * 
+   * @param request - DeleteSpaceRequest
+   * @param headers - DeleteSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteSpaceResponse
    */
   async deleteSpaceWithOptions(request: DeleteSpaceRequest, headers: DeleteSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSpaceResponse> {
     Util.validateModel(request);
@@ -4073,10 +4946,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除小区空间，含分区，楼栋，单元，房屋
-   *
-   * @param request DeleteSpaceRequest
-   * @return DeleteSpaceResponse
+   * 删除小区空间，含分区，楼栋，单元，房屋
+   * 
+   * @param request - DeleteSpaceRequest
+   * @returns DeleteSpaceResponse
    */
   async deleteSpace(request: DeleteSpaceRequest): Promise<DeleteSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4085,12 +4958,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定群的openConversationId
-   *
-   * @param request GetConversationIdRequest
-   * @param headers GetConversationIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetConversationIdResponse
+   * 获取指定群的openConversationId
+   * 
+   * @param request - GetConversationIdRequest
+   * @param headers - GetConversationIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetConversationIdResponse
    */
   async getConversationIdWithOptions(request: GetConversationIdRequest, headers: GetConversationIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetConversationIdResponse> {
     Util.validateModel(request);
@@ -4127,10 +5000,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定群的openConversationId
-   *
-   * @param request GetConversationIdRequest
-   * @return GetConversationIdResponse
+   * 获取指定群的openConversationId
+   * 
+   * @param request - GetConversationIdRequest
+   * @returns GetConversationIdResponse
    */
   async getConversationId(request: GetConversationIdRequest): Promise<GetConversationIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4139,11 +5012,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织的行业类型
-   *
-   * @param headers GetIndustryTypeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetIndustryTypeResponse
+   * 获取组织的行业类型
+   * 
+   * @param headers - GetIndustryTypeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetIndustryTypeResponse
    */
   async getIndustryTypeWithOptions(headers: GetIndustryTypeHeaders, runtime: $Util.RuntimeOptions): Promise<GetIndustryTypeResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -4173,9 +5046,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织的行业类型
-   *
-   * @return GetIndustryTypeResponse
+   * 获取组织的行业类型
+   * @returns GetIndustryTypeResponse
    */
   async getIndustryType(): Promise<GetIndustryTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4184,12 +5056,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取物业公司信息
-   *
-   * @param request GetPropertyInfoRequest
-   * @param headers GetPropertyInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPropertyInfoResponse
+   * 获取物业公司信息
+   * 
+   * @param request - GetPropertyInfoRequest
+   * @param headers - GetPropertyInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPropertyInfoResponse
    */
   async getPropertyInfoWithOptions(request: GetPropertyInfoRequest, headers: GetPropertyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPropertyInfoResponse> {
     Util.validateModel(request);
@@ -4226,10 +5098,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取物业公司信息
-   *
-   * @param request GetPropertyInfoRequest
-   * @return GetPropertyInfoResponse
+   * 获取物业公司信息
+   * 
+   * @param request - GetPropertyInfoRequest
+   * @returns GetPropertyInfoResponse
    */
   async getPropertyInfo(request: GetPropertyInfoRequest): Promise<GetPropertyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4238,12 +5110,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取小区信息
-   *
-   * @param request GetResidentInfoRequest
-   * @param headers GetResidentInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetResidentInfoResponse
+   * 获取小区信息
+   * 
+   * @param request - GetResidentInfoRequest
+   * @param headers - GetResidentInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetResidentInfoResponse
    */
   async getResidentInfoWithOptions(request: GetResidentInfoRequest, headers: GetResidentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentInfoResponse> {
     Util.validateModel(request);
@@ -4280,10 +5152,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取小区信息
-   *
-   * @param request GetResidentInfoRequest
-   * @return GetResidentInfoResponse
+   * 获取小区信息
+   * 
+   * @param request - GetResidentInfoRequest
+   * @returns GetResidentInfoResponse
    */
   async getResidentInfo(request: GetResidentInfoRequest): Promise<GetResidentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4292,12 +5164,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取小区人员信息，包括居民和物业人员
-   *
-   * @param request GetResidentMembersInfoRequest
-   * @param headers GetResidentMembersInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetResidentMembersInfoResponse
+   * 获取小区人员信息，包括居民和物业人员
+   * 
+   * @param request - GetResidentMembersInfoRequest
+   * @param headers - GetResidentMembersInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetResidentMembersInfoResponse
    */
   async getResidentMembersInfoWithOptions(request: GetResidentMembersInfoRequest, headers: GetResidentMembersInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentMembersInfoResponse> {
     Util.validateModel(request);
@@ -4338,10 +5210,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取小区人员信息，包括居民和物业人员
-   *
-   * @param request GetResidentMembersInfoRequest
-   * @return GetResidentMembersInfoResponse
+   * 获取小区人员信息，包括居民和物业人员
+   * 
+   * @param request - GetResidentMembersInfoRequest
+   * @returns GetResidentMembersInfoResponse
    */
   async getResidentMembersInfo(request: GetResidentMembersInfoRequest): Promise<GetResidentMembersInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4350,12 +5222,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据类型获取部门id
-   *
-   * @param request GetSpaceIdByTypeRequest
-   * @param headers GetSpaceIdByTypeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSpaceIdByTypeResponse
+   * 根据类型获取部门id
+   * 
+   * @param request - GetSpaceIdByTypeRequest
+   * @param headers - GetSpaceIdByTypeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSpaceIdByTypeResponse
    */
   async getSpaceIdByTypeWithOptions(request: GetSpaceIdByTypeRequest, headers: GetSpaceIdByTypeHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceIdByTypeResponse> {
     Util.validateModel(request);
@@ -4392,10 +5264,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据类型获取部门id
-   *
-   * @param request GetSpaceIdByTypeRequest
-   * @return GetSpaceIdByTypeResponse
+   * 根据类型获取部门id
+   * 
+   * @param request - GetSpaceIdByTypeRequest
+   * @returns GetSpaceIdByTypeResponse
    */
   async getSpaceIdByType(request: GetSpaceIdByTypeRequest): Promise<GetSpaceIdByTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4404,12 +5276,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取空间信息
-   *
-   * @param request GetSpacesInfoRequest
-   * @param headers GetSpacesInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSpacesInfoResponse
+   * 获取空间信息
+   * 
+   * @param request - GetSpacesInfoRequest
+   * @param headers - GetSpacesInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSpacesInfoResponse
    */
   async getSpacesInfoWithOptions(request: GetSpacesInfoRequest, headers: GetSpacesInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpacesInfoResponse> {
     Util.validateModel(request);
@@ -4450,10 +5322,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取空间信息
-   *
-   * @param request GetSpacesInfoRequest
-   * @return GetSpacesInfoResponse
+   * 获取空间信息
+   * 
+   * @param request - GetSpacesInfoRequest
+   * @returns GetSpacesInfoResponse
    */
   async getSpacesInfo(request: GetSpacesInfoRequest): Promise<GetSpacesInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4462,12 +5334,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取行业角色下的用户列表
-   *
-   * @param request ListIndustryRoleUsersRequest
-   * @param headers ListIndustryRoleUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListIndustryRoleUsersResponse
+   * 获取行业角色下的用户列表
+   * 
+   * @param request - ListIndustryRoleUsersRequest
+   * @param headers - ListIndustryRoleUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListIndustryRoleUsersResponse
    */
   async listIndustryRoleUsersWithOptions(request: ListIndustryRoleUsersRequest, headers: ListIndustryRoleUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListIndustryRoleUsersResponse> {
     Util.validateModel(request);
@@ -4504,10 +5376,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取行业角色下的用户列表
-   *
-   * @param request ListIndustryRoleUsersRequest
-   * @return ListIndustryRoleUsersResponse
+   * 获取行业角色下的用户列表
+   * 
+   * @param request - ListIndustryRoleUsersRequest
+   * @returns ListIndustryRoleUsersResponse
    */
   async listIndustryRoleUsers(request: ListIndustryRoleUsersRequest): Promise<ListIndustryRoleUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4516,12 +5388,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询组织维度配置的的积分规则
-   *
-   * @param request ListPointRulesRequest
-   * @param headers ListPointRulesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListPointRulesResponse
+   * 查询组织维度配置的的积分规则
+   * 
+   * @param request - ListPointRulesRequest
+   * @param headers - ListPointRulesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListPointRulesResponse
    */
   async listPointRulesWithOptions(request: ListPointRulesRequest, headers: ListPointRulesHeaders, runtime: $Util.RuntimeOptions): Promise<ListPointRulesResponse> {
     Util.validateModel(request);
@@ -4558,10 +5430,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询组织维度配置的的积分规则
-   *
-   * @param request ListPointRulesRequest
-   * @return ListPointRulesResponse
+   * 查询组织维度配置的的积分规则
+   * 
+   * @param request - ListPointRulesRequest
+   * @returns ListPointRulesResponse
    */
   async listPointRules(request: ListPointRulesRequest): Promise<ListPointRulesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4570,12 +5442,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取子空间信息
-   *
-   * @param request ListSubSpaceRequest
-   * @param headers ListSubSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListSubSpaceResponse
+   * 获取子空间信息
+   * 
+   * @param request - ListSubSpaceRequest
+   * @param headers - ListSubSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListSubSpaceResponse
    */
   async listSubSpaceWithOptions(request: ListSubSpaceRequest, headers: ListSubSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubSpaceResponse> {
     Util.validateModel(request);
@@ -4616,10 +5488,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取子空间信息
-   *
-   * @param request ListSubSpaceRequest
-   * @return ListSubSpaceResponse
+   * 获取子空间信息
+   * 
+   * @param request - ListSubSpaceRequest
+   * @returns ListSubSpaceResponse
    */
   async listSubSpace(request: ListSubSpaceRequest): Promise<ListSubSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4628,12 +5500,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取未确认加入组织的用户
-   *
-   * @param request ListUncheckUsersRequest
-   * @param headers ListUncheckUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListUncheckUsersResponse
+   * 获取未确认加入组织的用户
+   * 
+   * @param request - ListUncheckUsersRequest
+   * @param headers - ListUncheckUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListUncheckUsersResponse
    */
   async listUncheckUsersWithOptions(request: ListUncheckUsersRequest, headers: ListUncheckUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListUncheckUsersResponse> {
     Util.validateModel(request);
@@ -4682,10 +5554,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取未确认加入组织的用户
-   *
-   * @param request ListUncheckUsersRequest
-   * @return ListUncheckUsersResponse
+   * 获取未确认加入组织的用户
+   * 
+   * @param request - ListUncheckUsersRequest
+   * @returns ListUncheckUsersResponse
    */
   async listUncheckUsers(request: ListUncheckUsersRequest): Promise<ListUncheckUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4694,12 +5566,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户行业化角色
-   *
-   * @param request ListUserIndustryRolesRequest
-   * @param headers ListUserIndustryRolesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListUserIndustryRolesResponse
+   * 获取用户行业化角色
+   * 
+   * @param request - ListUserIndustryRolesRequest
+   * @param headers - ListUserIndustryRolesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListUserIndustryRolesResponse
    */
   async listUserIndustryRolesWithOptions(request: ListUserIndustryRolesRequest, headers: ListUserIndustryRolesHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserIndustryRolesResponse> {
     Util.validateModel(request);
@@ -4736,10 +5608,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户行业化角色
-   *
-   * @param request ListUserIndustryRolesRequest
-   * @return ListUserIndustryRolesResponse
+   * 获取用户行业化角色
+   * 
+   * @param request - ListUserIndustryRolesRequest
+   * @returns ListUserIndustryRolesResponse
    */
   async listUserIndustryRoles(request: ListUserIndustryRolesRequest): Promise<ListUserIndustryRolesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4748,12 +5620,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询数字区县居民积分流水
-   *
-   * @param request PagePointHistoryRequest
-   * @param headers PagePointHistoryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PagePointHistoryResponse
+   * 查询数字区县居民积分流水
+   * 
+   * @param request - PagePointHistoryRequest
+   * @param headers - PagePointHistoryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PagePointHistoryResponse
    */
   async pagePointHistoryWithOptions(request: PagePointHistoryRequest, headers: PagePointHistoryHeaders, runtime: $Util.RuntimeOptions): Promise<PagePointHistoryResponse> {
     Util.validateModel(request);
@@ -4810,10 +5682,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询数字区县居民积分流水
-   *
-   * @param request PagePointHistoryRequest
-   * @return PagePointHistoryResponse
+   * 查询数字区县居民积分流水
+   * 
+   * @param request - PagePointHistoryRequest
+   * @returns PagePointHistoryResponse
    */
   async pagePointHistory(request: PagePointHistoryRequest): Promise<PagePointHistoryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4822,12 +5694,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 从空间中删除人员
-   *
-   * @param request RemoveResidentMemberRequest
-   * @param headers RemoveResidentMemberHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RemoveResidentMemberResponse
+   * 从空间中删除人员
+   * 
+   * @param request - RemoveResidentMemberRequest
+   * @param headers - RemoveResidentMemberHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RemoveResidentMemberResponse
    */
   async removeResidentMemberWithOptions(request: RemoveResidentMemberRequest, headers: RemoveResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveResidentMemberResponse> {
     Util.validateModel(request);
@@ -4872,10 +5744,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 从空间中删除人员
-   *
-   * @param request RemoveResidentMemberRequest
-   * @return RemoveResidentMemberResponse
+   * 从空间中删除人员
+   * 
+   * @param request - RemoveResidentMemberRequest
+   * @returns RemoveResidentMemberResponse
    */
   async removeResidentMember(request: RemoveResidentMemberRequest): Promise<RemoveResidentMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4884,12 +5756,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 从户内移除居民
-   *
-   * @param request RemoveResidentUserRequest
-   * @param headers RemoveResidentUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RemoveResidentUserResponse
+   * 从户内移除居民
+   * 
+   * @param request - RemoveResidentUserRequest
+   * @param headers - RemoveResidentUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RemoveResidentUserResponse
    */
   async removeResidentUserWithOptions(request: RemoveResidentUserRequest, headers: RemoveResidentUserHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveResidentUserResponse> {
     Util.validateModel(request);
@@ -4930,10 +5802,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 从户内移除居民
-   *
-   * @param request RemoveResidentUserRequest
-   * @return RemoveResidentUserResponse
+   * 从户内移除居民
+   * 
+   * @param request - RemoveResidentUserRequest
+   * @returns RemoveResidentUserResponse
    */
   async removeResidentUser(request: RemoveResidentUserRequest): Promise<RemoveResidentUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4942,12 +5814,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索指定人员
-   *
-   * @param request SearchResidentRequest
-   * @param headers SearchResidentHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchResidentResponse
+   * 搜索指定人员
+   * 
+   * @param request - SearchResidentRequest
+   * @param headers - SearchResidentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchResidentResponse
    */
   async searchResidentWithOptions(request: SearchResidentRequest, headers: SearchResidentHeaders, runtime: $Util.RuntimeOptions): Promise<SearchResidentResponse> {
     Util.validateModel(request);
@@ -4988,10 +5860,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索指定人员
-   *
-   * @param request SearchResidentRequest
-   * @return SearchResidentResponse
+   * 搜索指定人员
+   * 
+   * @param request - SearchResidentRequest
+   * @returns SearchResidentResponse
    */
   async searchResident(request: SearchResidentRequest): Promise<SearchResidentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5000,12 +5872,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新组信息
-   *
-   * @param request UpdateResideceGroupRequest
-   * @param headers UpdateResideceGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateResideceGroupResponse
+   * 更新组信息
+   * 
+   * @param request - UpdateResideceGroupRequest
+   * @param headers - UpdateResideceGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateResideceGroupResponse
    */
   async updateResideceGroupWithOptions(request: UpdateResideceGroupRequest, headers: UpdateResideceGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResideceGroupResponse> {
     Util.validateModel(request);
@@ -5050,10 +5922,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新组信息
-   *
-   * @param request UpdateResideceGroupRequest
-   * @return UpdateResideceGroupResponse
+   * 更新组信息
+   * 
+   * @param request - UpdateResideceGroupRequest
+   * @returns UpdateResideceGroupResponse
    */
   async updateResideceGroup(request: UpdateResideceGroupRequest): Promise<UpdateResideceGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5062,12 +5934,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新户信息
-   *
-   * @param request UpdateResidenceRequest
-   * @param headers UpdateResidenceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateResidenceResponse
+   * 更新户信息
+   * 
+   * @param request - UpdateResidenceRequest
+   * @param headers - UpdateResidenceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateResidenceResponse
    */
   async updateResidenceWithOptions(request: UpdateResidenceRequest, headers: UpdateResidenceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidenceResponse> {
     Util.validateModel(request);
@@ -5128,10 +6000,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新户信息
-   *
-   * @param request UpdateResidenceRequest
-   * @return UpdateResidenceResponse
+   * 更新户信息
+   * 
+   * @param request - UpdateResidenceRequest
+   * @returns UpdateResidenceResponse
    */
   async updateResidence(request: UpdateResidenceRequest): Promise<UpdateResidenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5140,12 +6012,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新小区公告
-   *
-   * @param request UpdateResidentBlackBoardRequest
-   * @param headers UpdateResidentBlackBoardHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateResidentBlackBoardResponse
+   * 更新小区公告
+   * 
+   * @param request - UpdateResidentBlackBoardRequest
+   * @param headers - UpdateResidentBlackBoardHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateResidentBlackBoardResponse
    */
   async updateResidentBlackBoardWithOptions(request: UpdateResidentBlackBoardRequest, headers: UpdateResidentBlackBoardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentBlackBoardResponse> {
     Util.validateModel(request);
@@ -5194,10 +6066,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新小区公告
-   *
-   * @param request UpdateResidentBlackBoardRequest
-   * @return UpdateResidentBlackBoardResponse
+   * 更新小区公告
+   * 
+   * @param request - UpdateResidentBlackBoardRequest
+   * @returns UpdateResidentBlackBoardResponse
    */
   async updateResidentBlackBoard(request: UpdateResidentBlackBoardRequest): Promise<UpdateResidentBlackBoardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5206,12 +6078,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新小区信息
-   *
-   * @param request UpdateResidentInfoRequest
-   * @param headers UpdateResidentInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateResidentInfoResponse
+   * 更新小区信息
+   * 
+   * @param request - UpdateResidentInfoRequest
+   * @param headers - UpdateResidentInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateResidentInfoResponse
    */
   async updateResidentInfoWithOptions(request: UpdateResidentInfoRequest, headers: UpdateResidentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentInfoResponse> {
     Util.validateModel(request);
@@ -5284,10 +6156,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新小区信息
-   *
-   * @param request UpdateResidentInfoRequest
-   * @return UpdateResidentInfoResponse
+   * 更新小区信息
+   * 
+   * @param request - UpdateResidentInfoRequest
+   * @returns UpdateResidentInfoResponse
    */
   async updateResidentInfo(request: UpdateResidentInfoRequest): Promise<UpdateResidentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5296,12 +6168,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新小区成员
-   *
-   * @param request UpdateResidentMemberRequest
-   * @param headers UpdateResidentMemberHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateResidentMemberResponse
+   * 更新小区成员
+   * 
+   * @param request - UpdateResidentMemberRequest
+   * @param headers - UpdateResidentMemberHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateResidentMemberResponse
    */
   async updateResidentMemberWithOptions(request: UpdateResidentMemberRequest, headers: UpdateResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentMemberResponse> {
     Util.validateModel(request);
@@ -5342,10 +6214,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新小区成员
-   *
-   * @param request UpdateResidentMemberRequest
-   * @return UpdateResidentMemberResponse
+   * 更新小区成员
+   * 
+   * @param request - UpdateResidentMemberRequest
+   * @returns UpdateResidentMemberResponse
    */
   async updateResidentMember(request: UpdateResidentMemberRequest): Promise<UpdateResidentMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5354,12 +6226,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新居民信息
-   *
-   * @param request UpdateResidentUserRequest
-   * @param headers UpdateResidentUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateResidentUserResponse
+   * 更新居民信息
+   * 
+   * @param request - UpdateResidentUserRequest
+   * @param headers - UpdateResidentUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateResidentUserResponse
    */
   async updateResidentUserWithOptions(request: UpdateResidentUserRequest, headers: UpdateResidentUserHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentUserResponse> {
     Util.validateModel(request);
@@ -5428,10 +6300,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新居民信息
-   *
-   * @param request UpdateResidentUserRequest
-   * @return UpdateResidentUserResponse
+   * 更新居民信息
+   * 
+   * @param request - UpdateResidentUserRequest
+   * @returns UpdateResidentUserResponse
    */
   async updateResidentUser(request: UpdateResidentUserRequest): Promise<UpdateResidentUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5440,12 +6312,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
-   *
-   * @param request UpdateSpaceRequest
-   * @param headers UpdateSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateSpaceResponse
+   * 更新小区空间，含分区，楼栋，单元，房屋等信息
+   * 
+   * @param request - UpdateSpaceRequest
+   * @param headers - UpdateSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateSpaceResponse
    */
   async updateSpaceWithOptions(request: UpdateSpaceRequest, headers: UpdateSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSpaceResponse> {
     Util.validateModel(request);
@@ -5482,10 +6354,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新小区空间，含分区，楼栋，单元，房屋等信息
-   *
-   * @param request UpdateSpaceRequest
-   * @return UpdateSpaceResponse
+   * 更新小区空间，含分区，楼栋，单元，房屋等信息
+   * 
+   * @param request - UpdateSpaceRequest
+   * @returns UpdateSpaceResponse
    */
   async updateSpace(request: UpdateSpaceRequest): Promise<UpdateSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });

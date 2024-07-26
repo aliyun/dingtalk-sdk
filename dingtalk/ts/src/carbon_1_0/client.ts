@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,21 @@ export class GetPersonalCarbonInfoHeaders extends $tea.Model {
 }
 
 export class GetPersonalCarbonInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * salary
+   */
   actionType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 23121
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -55,6 +67,13 @@ export class GetPersonalCarbonInfoRequest extends $tea.Model {
 
 export class GetPersonalCarbonInfoResponseBody extends $tea.Model {
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3.25
+   */
   personalCarbonAmount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -123,6 +142,10 @@ export class WriteAlibabaOrgCarbonHeaders extends $tea.Model {
 }
 
 export class WriteAlibabaOrgCarbonRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   orgDetailsList?: WriteAlibabaOrgCarbonRequestOrgDetailsList[];
   static names(): { [key: string]: string } {
     return {
@@ -142,7 +165,15 @@ export class WriteAlibabaOrgCarbonRequest extends $tea.Model {
 }
 
 export class WriteAlibabaOrgCarbonResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -211,6 +242,10 @@ export class WriteAlibabaUserCarbonHeaders extends $tea.Model {
 }
 
 export class WriteAlibabaUserCarbonRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userDetailsList?: WriteAlibabaUserCarbonRequestUserDetailsList[];
   static names(): { [key: string]: string } {
     return {
@@ -230,7 +265,15 @@ export class WriteAlibabaUserCarbonRequest extends $tea.Model {
 }
 
 export class WriteAlibabaUserCarbonResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -299,7 +342,21 @@ export class WriteIsvStateHeaders extends $tea.Model {
 }
 
 export class WriteIsvStateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ISV
+   */
   isvName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20220328
+   */
   statDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -321,6 +378,10 @@ export class WriteIsvStateRequest extends $tea.Model {
 }
 
 export class WriteIsvStateResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   result?: number;
   static names(): { [key: string]: string } {
     return {
@@ -387,6 +448,10 @@ export class WriteOrgCarbonHeaders extends $tea.Model {
 }
 
 export class WriteOrgCarbonRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   orgDetailsList?: WriteOrgCarbonRequestOrgDetailsList[];
   static names(): { [key: string]: string } {
     return {
@@ -406,7 +471,15 @@ export class WriteOrgCarbonRequest extends $tea.Model {
 }
 
 export class WriteOrgCarbonResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -475,6 +548,10 @@ export class WriteUserCarbonHeaders extends $tea.Model {
 }
 
 export class WriteUserCarbonRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userDetailsList?: WriteUserCarbonRequestUserDetailsList[];
   static names(): { [key: string]: string } {
     return {
@@ -494,7 +571,15 @@ export class WriteUserCarbonRequest extends $tea.Model {
 }
 
 export class WriteUserCarbonResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -629,12 +714,61 @@ export class WriteUserCarbonEnergyResponse extends $tea.Model {
 }
 
 export class WriteAlibabaOrgCarbonRequestOrgDetailsList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12320211126
+   */
   actionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-11-26 10:09:37
+   */
   actionTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * VIDEO
+   */
   actionType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3.21
+   */
   carbonAmount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding12344
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   deptId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -666,14 +800,77 @@ export class WriteAlibabaOrgCarbonRequestOrgDetailsList extends $tea.Model {
 }
 
 export class WriteAlibabaUserCarbonRequestUserDetailsList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-11-26 10:09:37
+   */
   actionEndTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12320211126
+   */
   actionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-11-26 10:09:37
+   */
   actionStartTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * VIDEO
+   */
   actionType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3.21
+   */
   carbonAmount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding12344
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   deptId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -709,12 +906,61 @@ export class WriteAlibabaUserCarbonRequestUserDetailsList extends $tea.Model {
 }
 
 export class WriteOrgCarbonRequestOrgDetailsList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12320211126
+   */
   actionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-11-26 10:09:37
+   */
   actionTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * VIDEO
+   */
   actionType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3.21
+   */
   carbonAmount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding12344
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   deptId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -746,14 +992,77 @@ export class WriteOrgCarbonRequestOrgDetailsList extends $tea.Model {
 }
 
 export class WriteUserCarbonRequestUserDetailsList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-11-26 10:09:37
+   */
   actionEndTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12320211126
+   */
   actionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-11-26 10:09:37
+   */
   actionStartTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * VIDEO
+   */
   actionType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3.21
+   */
   carbonAmount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding12344
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   deptId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -789,14 +1098,50 @@ export class WriteUserCarbonRequestUserDetailsList extends $tea.Model {
 }
 
 export class WriteUserCarbonEnergyRequestUserDetailsList extends $tea.Model {
+  /**
+   * @example
+   * 2021-11-26 10:09:37
+   */
   actionEndTime?: string;
+  /**
+   * @example
+   * 12320211126
+   */
   actionId?: string;
+  /**
+   * @example
+   * 2021-11-26 10:09:37
+   */
   actionStartTime?: string;
+  /**
+   * @example
+   * VIDEO
+   */
   actionType?: string;
+  /**
+   * @example
+   * 3.21
+   */
   carbonAmount?: string;
+  /**
+   * @example
+   * ding12344
+   */
   corpId?: string;
+  /**
+   * @example
+   * 111
+   */
   deptId?: number;
+  /**
+   * @example
+   * 123
+   */
   userId?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -833,12 +1178,11 @@ export class WriteUserCarbonEnergyRequestUserDetailsList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -848,12 +1192,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 获取用户的减碳明细
-   *
-   * @param request GetPersonalCarbonInfoRequest
-   * @param headers GetPersonalCarbonInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPersonalCarbonInfoResponse
+   * 获取用户的减碳明细
+   * 
+   * @param request - GetPersonalCarbonInfoRequest
+   * @param headers - GetPersonalCarbonInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPersonalCarbonInfoResponse
    */
   async getPersonalCarbonInfoWithOptions(request: GetPersonalCarbonInfoRequest, headers: GetPersonalCarbonInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPersonalCarbonInfoResponse> {
     Util.validateModel(request);
@@ -894,10 +1238,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户的减碳明细
-   *
-   * @param request GetPersonalCarbonInfoRequest
-   * @return GetPersonalCarbonInfoResponse
+   * 获取用户的减碳明细
+   * 
+   * @param request - GetPersonalCarbonInfoRequest
+   * @returns GetPersonalCarbonInfoResponse
    */
   async getPersonalCarbonInfo(request: GetPersonalCarbonInfoRequest): Promise<GetPersonalCarbonInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -906,12 +1250,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 写入阿里巴巴每日组织明细碳能量数据
-   *
-   * @param request WriteAlibabaOrgCarbonRequest
-   * @param headers WriteAlibabaOrgCarbonHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return WriteAlibabaOrgCarbonResponse
+   * 写入阿里巴巴每日组织明细碳能量数据
+   * 
+   * @param request - WriteAlibabaOrgCarbonRequest
+   * @param headers - WriteAlibabaOrgCarbonHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns WriteAlibabaOrgCarbonResponse
    */
   async writeAlibabaOrgCarbonWithOptions(request: WriteAlibabaOrgCarbonRequest, headers: WriteAlibabaOrgCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteAlibabaOrgCarbonResponse> {
     Util.validateModel(request);
@@ -948,10 +1292,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 写入阿里巴巴每日组织明细碳能量数据
-   *
-   * @param request WriteAlibabaOrgCarbonRequest
-   * @return WriteAlibabaOrgCarbonResponse
+   * 写入阿里巴巴每日组织明细碳能量数据
+   * 
+   * @param request - WriteAlibabaOrgCarbonRequest
+   * @returns WriteAlibabaOrgCarbonResponse
    */
   async writeAlibabaOrgCarbon(request: WriteAlibabaOrgCarbonRequest): Promise<WriteAlibabaOrgCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -960,12 +1304,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 写入阿里巴巴每日用户碳能量数据
-   *
-   * @param request WriteAlibabaUserCarbonRequest
-   * @param headers WriteAlibabaUserCarbonHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return WriteAlibabaUserCarbonResponse
+   * 写入阿里巴巴每日用户碳能量数据
+   * 
+   * @param request - WriteAlibabaUserCarbonRequest
+   * @param headers - WriteAlibabaUserCarbonHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns WriteAlibabaUserCarbonResponse
    */
   async writeAlibabaUserCarbonWithOptions(request: WriteAlibabaUserCarbonRequest, headers: WriteAlibabaUserCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteAlibabaUserCarbonResponse> {
     Util.validateModel(request);
@@ -1002,10 +1346,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 写入阿里巴巴每日用户碳能量数据
-   *
-   * @param request WriteAlibabaUserCarbonRequest
-   * @return WriteAlibabaUserCarbonResponse
+   * 写入阿里巴巴每日用户碳能量数据
+   * 
+   * @param request - WriteAlibabaUserCarbonRequest
+   * @returns WriteAlibabaUserCarbonResponse
    */
   async writeAlibabaUserCarbon(request: WriteAlibabaUserCarbonRequest): Promise<WriteAlibabaUserCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1014,12 +1358,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV记录数据传输当前状态
-   *
-   * @param request WriteIsvStateRequest
-   * @param headers WriteIsvStateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return WriteIsvStateResponse
+   * ISV记录数据传输当前状态
+   * 
+   * @param request - WriteIsvStateRequest
+   * @param headers - WriteIsvStateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns WriteIsvStateResponse
    */
   async writeIsvStateWithOptions(request: WriteIsvStateRequest, headers: WriteIsvStateHeaders, runtime: $Util.RuntimeOptions): Promise<WriteIsvStateResponse> {
     Util.validateModel(request);
@@ -1060,10 +1404,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary ISV记录数据传输当前状态
-   *
-   * @param request WriteIsvStateRequest
-   * @return WriteIsvStateResponse
+   * ISV记录数据传输当前状态
+   * 
+   * @param request - WriteIsvStateRequest
+   * @returns WriteIsvStateResponse
    */
   async writeIsvState(request: WriteIsvStateRequest): Promise<WriteIsvStateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1072,12 +1416,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 写入isv每日组织明细碳能量数据
-   *
-   * @param request WriteOrgCarbonRequest
-   * @param headers WriteOrgCarbonHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return WriteOrgCarbonResponse
+   * 写入isv每日组织明细碳能量数据
+   * 
+   * @param request - WriteOrgCarbonRequest
+   * @param headers - WriteOrgCarbonHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns WriteOrgCarbonResponse
    */
   async writeOrgCarbonWithOptions(request: WriteOrgCarbonRequest, headers: WriteOrgCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteOrgCarbonResponse> {
     Util.validateModel(request);
@@ -1114,10 +1458,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 写入isv每日组织明细碳能量数据
-   *
-   * @param request WriteOrgCarbonRequest
-   * @return WriteOrgCarbonResponse
+   * 写入isv每日组织明细碳能量数据
+   * 
+   * @param request - WriteOrgCarbonRequest
+   * @returns WriteOrgCarbonResponse
    */
   async writeOrgCarbon(request: WriteOrgCarbonRequest): Promise<WriteOrgCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1126,12 +1470,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 写入isv每日用户明细碳能量数据
-   *
-   * @param request WriteUserCarbonRequest
-   * @param headers WriteUserCarbonHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return WriteUserCarbonResponse
+   * 写入isv每日用户明细碳能量数据
+   * 
+   * @param request - WriteUserCarbonRequest
+   * @param headers - WriteUserCarbonHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns WriteUserCarbonResponse
    */
   async writeUserCarbonWithOptions(request: WriteUserCarbonRequest, headers: WriteUserCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteUserCarbonResponse> {
     Util.validateModel(request);
@@ -1168,10 +1512,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 写入isv每日用户明细碳能量数据
-   *
-   * @param request WriteUserCarbonRequest
-   * @return WriteUserCarbonResponse
+   * 写入isv每日用户明细碳能量数据
+   * 
+   * @param request - WriteUserCarbonRequest
+   * @returns WriteUserCarbonResponse
    */
   async writeUserCarbon(request: WriteUserCarbonRequest): Promise<WriteUserCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1180,12 +1524,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 写入isv能耗每日用户明细碳能量数据
-   *
-   * @param request WriteUserCarbonEnergyRequest
-   * @param headers WriteUserCarbonEnergyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return WriteUserCarbonEnergyResponse
+   * 写入isv能耗每日用户明细碳能量数据
+   * 
+   * @param request - WriteUserCarbonEnergyRequest
+   * @param headers - WriteUserCarbonEnergyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns WriteUserCarbonEnergyResponse
    */
   async writeUserCarbonEnergyWithOptions(request: WriteUserCarbonEnergyRequest, headers: WriteUserCarbonEnergyHeaders, runtime: $Util.RuntimeOptions): Promise<WriteUserCarbonEnergyResponse> {
     Util.validateModel(request);
@@ -1222,10 +1566,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 写入isv能耗每日用户明细碳能量数据
-   *
-   * @param request WriteUserCarbonEnergyRequest
-   * @return WriteUserCarbonEnergyResponse
+   * 写入isv能耗每日用户明细碳能量数据
+   * 
+   * @param request - WriteUserCarbonEnergyRequest
+   * @returns WriteUserCarbonEnergyResponse
    */
   async writeUserCarbonEnergy(request: WriteUserCarbonEnergyRequest): Promise<WriteUserCarbonEnergyResponse> {
     let runtime = new $Util.RuntimeOptions({ });

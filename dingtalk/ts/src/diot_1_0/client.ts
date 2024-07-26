@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -95,7 +93,15 @@ export class BatchDeleteDeviceHeaders extends $tea.Model {
 }
 
 export class BatchDeleteDeviceRequest extends $tea.Model {
+  /**
+   * @example
+   * ding12345
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deviceIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -183,7 +189,15 @@ export class BatchRegisterDeviceHeaders extends $tea.Model {
 }
 
 export class BatchRegisterDeviceRequest extends $tea.Model {
+  /**
+   * @example
+   * ding123
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   devices?: BatchRegisterDeviceRequestDevices[];
   static names(): { [key: string]: string } {
     return {
@@ -205,6 +219,10 @@ export class BatchRegisterDeviceRequest extends $tea.Model {
 }
 
 export class BatchRegisterDeviceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deviceIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -271,7 +289,15 @@ export class BatchRegisterEventTypeHeaders extends $tea.Model {
 }
 
 export class BatchRegisterEventTypeRequest extends $tea.Model {
+  /**
+   * @example
+   * ding12345
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   eventTypes?: BatchRegisterEventTypeRequestEventTypes[];
   static names(): { [key: string]: string } {
     return {
@@ -359,7 +385,15 @@ export class BatchUpdateDeviceHeaders extends $tea.Model {
 }
 
 export class BatchUpdateDeviceRequest extends $tea.Model {
+  /**
+   * @example
+   * ding123
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   devices?: BatchUpdateDeviceRequestDevices[];
   static names(): { [key: string]: string } {
     return {
@@ -381,6 +415,10 @@ export class BatchUpdateDeviceRequest extends $tea.Model {
 }
 
 export class BatchUpdateDeviceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deviceIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -447,9 +485,34 @@ export class BindSystemHeaders extends $tea.Model {
 }
 
 export class BindSystemRequest extends $tea.Model {
+  /**
+   * @example
+   * abcde12345
+   */
   authCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * d12345
+   */
   clientId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xx社区。
+   */
   clientName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding12345
+   */
   corpId?: string;
   extraData?: { [key: string]: any };
   static names(): { [key: string]: string } {
@@ -478,7 +541,21 @@ export class BindSystemRequest extends $tea.Model {
 }
 
 export class BindSystemResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * d12345
+   */
   clientId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding12345
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -547,9 +624,28 @@ export class DeviceConferenceHeaders extends $tea.Model {
 }
 
 export class DeviceConferenceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 设备的应急会议
+   */
   confTitle?: string;
+  /**
+   * @example
+   * 12345678
+   */
   conferenceId?: string;
+  /**
+   * @example
+   * 123456
+   */
   conferencePassword?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deviceIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -575,6 +671,10 @@ export class DeviceConferenceRequest extends $tea.Model {
 }
 
 export class DeviceConferenceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 123456789
+   */
   conferenceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -817,14 +917,58 @@ export class PushEventHeaders extends $tea.Model {
 }
 
 export class PushEventRequest extends $tea.Model {
+  /**
+   * @example
+   * ding123456
+   */
   corpId?: string;
+  /**
+   * @example
+   * 002
+   */
   deviceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sj123456
+   */
   eventId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 火焰告警
+   */
   eventName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * fireDetect
+   */
   eventType?: string;
   extraData?: { [key: string]: any };
+  /**
+   * @example
+   * 社区南门
+   */
   location?: string;
+  /**
+   * @example
+   * 社区南门发生火焰告警
+   */
   msg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1638250958570
+   */
   occurrenceTime?: number;
   picUrls?: string[];
   static names(): { [key: string]: string } {
@@ -929,8 +1073,20 @@ export class QueryDeviceHeaders extends $tea.Model {
 }
 
 export class QueryDeviceRequest extends $tea.Model {
+  /**
+   * @example
+   * ding123
+   */
   corpId?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -954,9 +1110,25 @@ export class QueryDeviceRequest extends $tea.Model {
 }
 
 export class QueryDeviceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: QueryDeviceResponseBodyData[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 40
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1232,16 +1404,74 @@ export class RegisterDeviceHeaders extends $tea.Model {
 }
 
 export class RegisterDeviceRequest extends $tea.Model {
+  /**
+   * @example
+   * ding123
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 摄像头1
+   */
   deviceName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   deviceStatus?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Camera
+   */
   deviceType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 摄像头
+   */
   deviceTypeName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 002
+   */
   id?: string;
   liveUrls?: RegisterDeviceRequestLiveUrls;
+  /**
+   * @example
+   * 东南门
+   */
   location?: string;
+  /**
+   * @example
+   * 摄像头1
+   */
   nickName?: string;
+  /**
+   * @example
+   * 001
+   */
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * CAMERA
+   */
   productType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1281,6 +1511,13 @@ export class RegisterDeviceRequest extends $tea.Model {
 }
 
 export class RegisterDeviceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   deviceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1413,8 +1650,20 @@ export class WorkbenchTransformInfoResponse extends $tea.Model {
 }
 
 export class BatchRegisterDeviceRequestDevicesLiveUrls extends $tea.Model {
+  /**
+   * @example
+   * https://abc.stream.flv
+   */
   flv?: string;
+  /**
+   * @example
+   * https://abc.stream.m3u8
+   */
   hls?: string;
+  /**
+   * @example
+   * rtmp://abc.stream
+   */
   rtmp?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1438,15 +1687,65 @@ export class BatchRegisterDeviceRequestDevicesLiveUrls extends $tea.Model {
 }
 
 export class BatchRegisterDeviceRequestDevices extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 002
+   */
   deviceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 摄像头002
+   */
   deviceName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   deviceStatus?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Camera
+   */
   deviceType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 摄像头
+   */
   deviceTypeName?: string;
   extraData?: { [key: string]: any };
   liveUrls?: BatchRegisterDeviceRequestDevicesLiveUrls;
+  /**
+   * @example
+   * 社区南门
+   */
   location?: string;
+  /**
+   * @example
+   * 001
+   */
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * CAMERA
+   */
   productType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1484,7 +1783,21 @@ export class BatchRegisterDeviceRequestDevices extends $tea.Model {
 }
 
 export class BatchRegisterEventTypeRequestEventTypes extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * fireDetect
+   */
   eventType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 火焰告警
+   */
   eventTypeName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1506,8 +1819,20 @@ export class BatchRegisterEventTypeRequestEventTypes extends $tea.Model {
 }
 
 export class BatchUpdateDeviceRequestDevicesLiveUrls extends $tea.Model {
+  /**
+   * @example
+   * https://abc.stream.flv
+   */
   flv?: string;
+  /**
+   * @example
+   * https://abc.stream.m3u8
+   */
   hls?: string;
+  /**
+   * @example
+   * rtmp://abc.stream
+   */
   rtmp?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1531,11 +1856,30 @@ export class BatchUpdateDeviceRequestDevicesLiveUrls extends $tea.Model {
 }
 
 export class BatchUpdateDeviceRequestDevices extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 002
+   */
   deviceId?: string;
+  /**
+   * @example
+   * 摄像头002
+   */
   deviceName?: string;
+  /**
+   * @example
+   * 0
+   */
   deviceStatus?: number;
   extraData?: { [key: string]: any };
   liveUrls?: BatchUpdateDeviceRequestDevicesLiveUrls;
+  /**
+   * @example
+   * 社区南门
+   */
   location?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1565,8 +1909,20 @@ export class BatchUpdateDeviceRequestDevices extends $tea.Model {
 }
 
 export class QueryDeviceResponseBodyDataLiveUrls extends $tea.Model {
+  /**
+   * @example
+   * https://abc.stream.flv
+   */
   flv?: string;
+  /**
+   * @example
+   * https://abc.stream.m3u8
+   */
   hls?: string;
+  /**
+   * @example
+   * rtmp://abc.stream
+   */
   rtmp?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1590,14 +1946,49 @@ export class QueryDeviceResponseBodyDataLiveUrls extends $tea.Model {
 }
 
 export class QueryDeviceResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   deviceId?: string;
+  /**
+   * @example
+   * XX摄像头
+   */
   deviceName?: string;
+  /**
+   * @example
+   * 0
+   */
   deviceStatus?: number;
+  /**
+   * @example
+   * CAMERA
+   */
   deviceType?: string;
+  /**
+   * @example
+   * 摄像头
+   */
   deviceTypeName?: string;
   liveUrls?: QueryDeviceResponseBodyDataLiveUrls;
+  /**
+   * @example
+   * XX地址
+   */
   location?: string;
+  /**
+   * @example
+   * 123
+   */
   parentId?: string;
+  /**
+   * @example
+   * CAMERA
+   */
   productType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1670,8 +2061,20 @@ export class QueryEventResponseBodyData extends $tea.Model {
 }
 
 export class RegisterDeviceRequestLiveUrls extends $tea.Model {
+  /**
+   * @example
+   * https://abc.stream.flv
+   */
   flv?: string;
+  /**
+   * @example
+   * https://abc.stream.m3u8
+   */
   hls?: string;
+  /**
+   * @example
+   * rtmp://abc.stream
+   */
   rtmp?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1696,12 +2099,11 @@ export class RegisterDeviceRequestLiveUrls extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
@@ -1712,12 +2114,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary openAPI录入上线前的测试2
-   *
-   * @param request AyunOnlienTestRequest
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AyunOnlienTestResponse
+   * openAPI录入上线前的测试2
+   * 
+   * @param request - AyunOnlienTestRequest
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AyunOnlienTestResponse
    */
   async ayunOnlienTestWithOptions(request: AyunOnlienTestRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<AyunOnlienTestResponse> {
     Util.validateModel(request);
@@ -1745,10 +2147,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary openAPI录入上线前的测试2
-   *
-   * @param request AyunOnlienTestRequest
-   * @return AyunOnlienTestResponse
+   * openAPI录入上线前的测试2
+   * 
+   * @param request - AyunOnlienTestRequest
+   * @returns AyunOnlienTestResponse
    */
   async ayunOnlienTest(request: AyunOnlienTestRequest): Promise<AyunOnlienTestResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1757,12 +2159,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除设备
-   *
-   * @param request BatchDeleteDeviceRequest
-   * @param headers BatchDeleteDeviceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchDeleteDeviceResponse
+   * 删除设备
+   * 
+   * @param request - BatchDeleteDeviceRequest
+   * @param headers - BatchDeleteDeviceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchDeleteDeviceResponse
    */
   async batchDeleteDeviceWithOptions(request: BatchDeleteDeviceRequest, headers: BatchDeleteDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchDeleteDeviceResponse> {
     Util.validateModel(request);
@@ -1803,10 +2205,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除设备
-   *
-   * @param request BatchDeleteDeviceRequest
-   * @return BatchDeleteDeviceResponse
+   * 删除设备
+   * 
+   * @param request - BatchDeleteDeviceRequest
+   * @returns BatchDeleteDeviceResponse
    */
   async batchDeleteDevice(request: BatchDeleteDeviceRequest): Promise<BatchDeleteDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1815,12 +2217,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量注册设备
-   *
-   * @param request BatchRegisterDeviceRequest
-   * @param headers BatchRegisterDeviceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchRegisterDeviceResponse
+   * 批量注册设备
+   * 
+   * @param request - BatchRegisterDeviceRequest
+   * @param headers - BatchRegisterDeviceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchRegisterDeviceResponse
    */
   async batchRegisterDeviceWithOptions(request: BatchRegisterDeviceRequest, headers: BatchRegisterDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRegisterDeviceResponse> {
     Util.validateModel(request);
@@ -1861,10 +2263,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量注册设备
-   *
-   * @param request BatchRegisterDeviceRequest
-   * @return BatchRegisterDeviceResponse
+   * 批量注册设备
+   * 
+   * @param request - BatchRegisterDeviceRequest
+   * @returns BatchRegisterDeviceResponse
    */
   async batchRegisterDevice(request: BatchRegisterDeviceRequest): Promise<BatchRegisterDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1873,12 +2275,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量注册事件类型
-   *
-   * @param request BatchRegisterEventTypeRequest
-   * @param headers BatchRegisterEventTypeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchRegisterEventTypeResponse
+   * 批量注册事件类型
+   * 
+   * @param request - BatchRegisterEventTypeRequest
+   * @param headers - BatchRegisterEventTypeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchRegisterEventTypeResponse
    */
   async batchRegisterEventTypeWithOptions(request: BatchRegisterEventTypeRequest, headers: BatchRegisterEventTypeHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRegisterEventTypeResponse> {
     Util.validateModel(request);
@@ -1919,10 +2321,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量注册事件类型
-   *
-   * @param request BatchRegisterEventTypeRequest
-   * @return BatchRegisterEventTypeResponse
+   * 批量注册事件类型
+   * 
+   * @param request - BatchRegisterEventTypeRequest
+   * @returns BatchRegisterEventTypeResponse
    */
   async batchRegisterEventType(request: BatchRegisterEventTypeRequest): Promise<BatchRegisterEventTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1931,12 +2333,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量修改设备
-   *
-   * @param request BatchUpdateDeviceRequest
-   * @param headers BatchUpdateDeviceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchUpdateDeviceResponse
+   * 批量修改设备
+   * 
+   * @param request - BatchUpdateDeviceRequest
+   * @param headers - BatchUpdateDeviceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchUpdateDeviceResponse
    */
   async batchUpdateDeviceWithOptions(request: BatchUpdateDeviceRequest, headers: BatchUpdateDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateDeviceResponse> {
     Util.validateModel(request);
@@ -1977,10 +2379,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量修改设备
-   *
-   * @param request BatchUpdateDeviceRequest
-   * @return BatchUpdateDeviceResponse
+   * 批量修改设备
+   * 
+   * @param request - BatchUpdateDeviceRequest
+   * @returns BatchUpdateDeviceResponse
    */
   async batchUpdateDevice(request: BatchUpdateDeviceRequest): Promise<BatchUpdateDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1989,12 +2391,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 系统绑定
-   *
-   * @param request BindSystemRequest
-   * @param headers BindSystemHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BindSystemResponse
+   * 系统绑定
+   * 
+   * @param request - BindSystemRequest
+   * @param headers - BindSystemHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BindSystemResponse
    */
   async bindSystemWithOptions(request: BindSystemRequest, headers: BindSystemHeaders, runtime: $Util.RuntimeOptions): Promise<BindSystemResponse> {
     Util.validateModel(request);
@@ -2047,10 +2449,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 系统绑定
-   *
-   * @param request BindSystemRequest
-   * @return BindSystemResponse
+   * 系统绑定
+   * 
+   * @param request - BindSystemRequest
+   * @returns BindSystemResponse
    */
   async bindSystem(request: BindSystemRequest): Promise<BindSystemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2059,12 +2461,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发起设备会议
-   *
-   * @param request DeviceConferenceRequest
-   * @param headers DeviceConferenceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeviceConferenceResponse
+   * 发起设备会议
+   * 
+   * @param request - DeviceConferenceRequest
+   * @param headers - DeviceConferenceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeviceConferenceResponse
    */
   async deviceConferenceWithOptions(request: DeviceConferenceRequest, headers: DeviceConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<DeviceConferenceResponse> {
     Util.validateModel(request);
@@ -2113,10 +2515,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发起设备会议
-   *
-   * @param request DeviceConferenceRequest
-   * @return DeviceConferenceResponse
+   * 发起设备会议
+   * 
+   * @param request - DeviceConferenceRequest
+   * @returns DeviceConferenceResponse
    */
   async deviceConference(request: DeviceConferenceRequest): Promise<DeviceConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2125,11 +2527,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 钉钉物联Mama接口
-   *
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DiotMamaResponse
+   * 钉钉物联Mama接口
+   * 
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DiotMamaResponse
    */
   async diotMamaWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotMamaResponse> {
     let req = new $OpenApi.OpenApiRequest({
@@ -2150,9 +2552,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 钉钉物联Mama接口
-   *
-   * @return DiotMamaResponse
+   * 钉钉物联Mama接口
+   * @returns DiotMamaResponse
    */
   async diotMama(): Promise<DiotMamaResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2161,11 +2562,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary diot官方市场处理
-   *
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DiotMarketManagerTestResponse
+   * diot官方市场处理
+   * 
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DiotMarketManagerTestResponse
    */
   async diotMarketManagerTestWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotMarketManagerTestResponse> {
     let req = new $OpenApi.OpenApiRequest({
@@ -2186,9 +2587,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary diot官方市场处理
-   *
-   * @return DiotMarketManagerTestResponse
+   * diot官方市场处理
+   * @returns DiotMarketManagerTestResponse
    */
   async diotMarketManagerTest(): Promise<DiotMarketManagerTestResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2197,11 +2597,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 钉钉物联系统测试
-   *
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DiotSystemMarkTestResponse
+   * 钉钉物联系统测试
+   * 
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DiotSystemMarkTestResponse
    */
   async diotSystemMarkTestWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotSystemMarkTestResponse> {
     let req = new $OpenApi.OpenApiRequest({
@@ -2222,9 +2622,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 钉钉物联系统测试
-   *
-   * @return DiotSystemMarkTestResponse
+   * 钉钉物联系统测试
+   * @returns DiotSystemMarkTestResponse
    */
   async diotSystemMarkTest(): Promise<DiotSystemMarkTestResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2233,11 +2632,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 钉钉物联市场管理
-   *
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DiotMarketManagerResponse
+   * 钉钉物联市场管理
+   * 
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DiotMarketManagerResponse
    */
   async diot_Market_ManagerWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<DiotMarketManagerResponse> {
     let req = new $OpenApi.OpenApiRequest({
@@ -2258,9 +2657,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 钉钉物联市场管理
-   *
-   * @return DiotMarketManagerResponse
+   * 钉钉物联市场管理
+   * @returns DiotMarketManagerResponse
    */
   async diot_Market_Manager(): Promise<DiotMarketManagerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2269,12 +2667,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 推送事件
-   *
-   * @param request PushEventRequest
-   * @param headers PushEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PushEventResponse
+   * 推送事件
+   * 
+   * @param request - PushEventRequest
+   * @param headers - PushEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PushEventResponse
    */
   async pushEventWithOptions(request: PushEventRequest, headers: PushEventHeaders, runtime: $Util.RuntimeOptions): Promise<PushEventResponse> {
     Util.validateModel(request);
@@ -2347,10 +2745,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 推送事件
-   *
-   * @param request PushEventRequest
-   * @return PushEventResponse
+   * 推送事件
+   * 
+   * @param request - PushEventRequest
+   * @returns PushEventResponse
    */
   async pushEvent(request: PushEventRequest): Promise<PushEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2359,12 +2757,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询设备
-   *
-   * @param request QueryDeviceRequest
-   * @param headers QueryDeviceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDeviceResponse
+   * 查询设备
+   * 
+   * @param request - QueryDeviceRequest
+   * @param headers - QueryDeviceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDeviceResponse
    */
   async queryDeviceWithOptions(request: QueryDeviceRequest, headers: QueryDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceResponse> {
     Util.validateModel(request);
@@ -2409,10 +2807,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询设备
-   *
-   * @param request QueryDeviceRequest
-   * @return QueryDeviceResponse
+   * 查询设备
+   * 
+   * @param request - QueryDeviceRequest
+   * @returns QueryDeviceResponse
    */
   async queryDevice(request: QueryDeviceRequest): Promise<QueryDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2421,12 +2819,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询硬件设备的PK值信息
-   *
-   * @param request QueryDevicePkRequest
-   * @param headers QueryDevicePkHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryDevicePkResponse
+   * 查询硬件设备的PK值信息
+   * 
+   * @param request - QueryDevicePkRequest
+   * @param headers - QueryDevicePkHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryDevicePkResponse
    */
   async queryDevicePkWithOptions(request: QueryDevicePkRequest, headers: QueryDevicePkHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDevicePkResponse> {
     Util.validateModel(request);
@@ -2463,10 +2861,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询硬件设备的PK值信息
-   *
-   * @param request QueryDevicePkRequest
-   * @return QueryDevicePkResponse
+   * 查询硬件设备的PK值信息
+   * 
+   * @param request - QueryDevicePkRequest
+   * @returns QueryDevicePkResponse
    */
   async queryDevicePk(request: QueryDevicePkRequest): Promise<QueryDevicePkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2475,12 +2873,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询事件
-   *
-   * @param request QueryEventRequest
-   * @param headers QueryEventHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryEventResponse
+   * 查询事件
+   * 
+   * @param request - QueryEventRequest
+   * @param headers - QueryEventHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryEventResponse
    */
   async queryEventWithOptions(request: QueryEventRequest, headers: QueryEventHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEventResponse> {
     Util.validateModel(request);
@@ -2549,10 +2947,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询事件
-   *
-   * @param request QueryEventRequest
-   * @return QueryEventResponse
+   * 查询事件
+   * 
+   * @param request - QueryEventRequest
+   * @returns QueryEventResponse
    */
   async queryEvent(request: QueryEventRequest): Promise<QueryEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2561,12 +2959,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 注册设备
-   *
-   * @param request RegisterDeviceRequest
-   * @param headers RegisterDeviceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RegisterDeviceResponse
+   * 注册设备
+   * 
+   * @param request - RegisterDeviceRequest
+   * @param headers - RegisterDeviceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RegisterDeviceResponse
    */
   async registerDeviceWithOptions(request: RegisterDeviceRequest, headers: RegisterDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterDeviceResponse> {
     Util.validateModel(request);
@@ -2643,10 +3041,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 注册设备
-   *
-   * @param request RegisterDeviceRequest
-   * @return RegisterDeviceResponse
+   * 注册设备
+   * 
+   * @param request - RegisterDeviceRequest
+   * @returns RegisterDeviceResponse
    */
   async registerDevice(request: RegisterDeviceRequest): Promise<RegisterDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2655,11 +3053,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 升级设备
-   *
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpgradeDeviceResponse
+   * 升级设备
+   * 
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpgradeDeviceResponse
    */
   async upgradeDeviceWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<UpgradeDeviceResponse> {
     let req = new $OpenApi.OpenApiRequest({
@@ -2680,9 +3078,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 升级设备
-   *
-   * @return UpgradeDeviceResponse
+   * 升级设备
+   * @returns UpgradeDeviceResponse
    */
   async upgradeDevice(): Promise<UpgradeDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2691,11 +3088,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工作台流转物联信息
-   *
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return WorkbenchTransformInfoResponse
+   * 获取工作台流转物联信息
+   * 
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns WorkbenchTransformInfoResponse
    */
   async workbenchTransformInfoWithOptions(headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<WorkbenchTransformInfoResponse> {
     let req = new $OpenApi.OpenApiRequest({
@@ -2716,9 +3113,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工作台流转物联信息
-   *
-   * @return WorkbenchTransformInfoResponse
+   * 获取工作台流转物联信息
+   * @returns WorkbenchTransformInfoResponse
    */
   async workbenchTransformInfo(): Promise<WorkbenchTransformInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });

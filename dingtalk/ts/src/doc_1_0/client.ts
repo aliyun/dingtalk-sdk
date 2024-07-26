@@ -1,17 +1,33 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class AttachmentsMapValue extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * upload_key
+   */
   uploadKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * name
+   */
   name?: string;
+  /**
+   * @example
+   * media_type
+   */
   mediaType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -57,9 +73,24 @@ export class AddCommentHeaders extends $tea.Model {
 }
 
 export class AddCommentRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   commentContent?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   commentType?: string;
   option?: AddCommentRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -151,7 +182,15 @@ export class AddWorkspaceDocMembersHeaders extends $tea.Model {
 }
 
 export class AddWorkspaceDocMembersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: AddWorkspaceDocMembersRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -217,7 +256,15 @@ export class AddWorkspaceMembersHeaders extends $tea.Model {
 }
 
 export class AddWorkspaceMembersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: AddWorkspaceMembersRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -239,6 +286,10 @@ export class AddWorkspaceMembersRequest extends $tea.Model {
 }
 
 export class AddWorkspaceMembersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   notInOrgList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -305,7 +356,18 @@ export class AppendRowsHeaders extends $tea.Model {
 }
 
 export class AppendRowsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   values?: string[][];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -371,7 +433,18 @@ export class BatchHeaders extends $tea.Model {
 }
 
 export class BatchRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   requests?: BatchRequestRequests[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ppgAQuHxxxxx
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -459,7 +532,15 @@ export class BatchGetWorkspaceDocsHeaders extends $tea.Model {
 }
 
 export class BatchGetWorkspaceDocsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nodeIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -481,6 +562,10 @@ export class BatchGetWorkspaceDocsRequest extends $tea.Model {
 }
 
 export class BatchGetWorkspaceDocsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: BatchGetWorkspaceDocsResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
@@ -548,7 +633,15 @@ export class BatchGetWorkspacesHeaders extends $tea.Model {
 
 export class BatchGetWorkspacesRequest extends $tea.Model {
   includeRecent?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -638,7 +731,18 @@ export class BindCoolAppToSheetHeaders extends $tea.Model {
 }
 
 export class BindCoolAppToSheetRequest extends $tea.Model {
+  /**
+   * @example
+   * cool_app_code
+   */
   coolAppCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -660,6 +764,10 @@ export class BindCoolAppToSheetRequest extends $tea.Model {
 }
 
 export class BindCoolAppToSheetResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -726,6 +834,13 @@ export class ClearHeaders extends $tea.Model {
 }
 
 export class ClearRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -745,6 +860,10 @@ export class ClearRequest extends $tea.Model {
 }
 
 export class ClearResponseBody extends $tea.Model {
+  /**
+   * @example
+   * a1_notation
+   */
   a1Notation?: string;
   static names(): { [key: string]: string } {
     return {
@@ -811,6 +930,13 @@ export class ClearDataHeaders extends $tea.Model {
 }
 
 export class ClearDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -830,6 +956,10 @@ export class ClearDataRequest extends $tea.Model {
 }
 
 export class ClearDataResponseBody extends $tea.Model {
+  /**
+   * @example
+   * a1_notation
+   */
   a1Notation?: string;
   static names(): { [key: string]: string } {
     return {
@@ -898,7 +1028,18 @@ export class CreateConditionalFormattingRuleHeaders extends $tea.Model {
 export class CreateConditionalFormattingRuleRequest extends $tea.Model {
   cellStyle?: CreateConditionalFormattingRuleRequestCellStyle;
   duplicateCondition?: CreateConditionalFormattingRuleRequestDuplicateCondition;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   ranges?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ppgAQuHfOoNVpJiStDwWCEgiEiE
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -993,6 +1134,13 @@ export class CreateDeveloperMetadataRequest extends $tea.Model {
   associatedColumn?: CreateDeveloperMetadataRequestAssociatedColumn;
   associatedRow?: CreateDeveloperMetadataRequestAssociatedRow;
   value?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ppgAQuHfOoNVpJiStDwWCEgiEiE
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1085,7 +1233,18 @@ export class CreateRangeProtectionHeaders extends $tea.Model {
 
 export class CreateRangeProtectionRequest extends $tea.Model {
   editableSetting?: CreateRangeProtectionRequestEditableSetting;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   otherUserPermission?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ppgAQuHfOoNVpJiStDwWCEgiEiE
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1109,6 +1268,10 @@ export class CreateRangeProtectionRequest extends $tea.Model {
 }
 
 export class CreateRangeProtectionResponseBody extends $tea.Model {
+  /**
+   * @example
+   * lkxxxx
+   */
   id?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1175,7 +1338,21 @@ export class CreateSheetHeaders extends $tea.Model {
 }
 
 export class CreateSheetRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sheet_name
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1197,8 +1374,20 @@ export class CreateSheetRequest extends $tea.Model {
 }
 
 export class CreateSheetResponseBody extends $tea.Model {
+  /**
+   * @example
+   * sheet_id
+   */
   id?: string;
+  /**
+   * @example
+   * sheet_name
+   */
   name?: string;
+  /**
+   * @example
+   * visible
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1270,7 +1459,15 @@ export class CreateWorkspaceHeaders extends $tea.Model {
 
 export class CreateWorkspaceRequest extends $tea.Model {
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1295,8 +1492,20 @@ export class CreateWorkspaceRequest extends $tea.Model {
 
 export class CreateWorkspaceResponseBody extends $tea.Model {
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   url?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1369,11 +1578,27 @@ export class CreateWorkspaceDocHeaders extends $tea.Model {
 }
 
 export class CreateWorkspaceDocRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   docType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   parentNodeId?: string;
   templateId?: string;
+  /**
+   * **if can be null:**
+   * true
+   */
   templateType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1404,9 +1629,25 @@ export class CreateWorkspaceDocRequest extends $tea.Model {
 
 export class CreateWorkspaceDocResponseBody extends $tea.Model {
   dentryUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   docKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nodeId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   url?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1481,8 +1722,29 @@ export class DeleteColumnsHeaders extends $tea.Model {
 }
 
 export class DeleteColumnsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * column
+   */
   column?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * column_count
+   */
   columnCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1506,6 +1768,10 @@ export class DeleteColumnsRequest extends $tea.Model {
 }
 
 export class DeleteColumnsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * sheet_id
+   */
   id?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1572,6 +1838,13 @@ export class DeleteDropdownListsHeaders extends $tea.Model {
 }
 
 export class DeleteDropdownListsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ppgAQuHfOoNVpJiStDwWCEgiEiE
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1657,6 +1930,10 @@ export class DeleteRangeProtectionHeaders extends $tea.Model {
 }
 
 export class DeleteRangeProtectionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1676,6 +1953,10 @@ export class DeleteRangeProtectionRequest extends $tea.Model {
 }
 
 export class DeleteRangeProtectionResponseBody extends $tea.Model {
+  /**
+   * @example
+   * A1
+   */
   a1Notation?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1742,8 +2023,29 @@ export class DeleteRowsHeaders extends $tea.Model {
 }
 
 export class DeleteRowsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * row
+   */
   row?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * row_count
+   */
   rowCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1767,6 +2069,10 @@ export class DeleteRowsRequest extends $tea.Model {
 }
 
 export class DeleteRowsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * sheet_id
+   */
   id?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1833,6 +2139,13 @@ export class DeleteSheetHeaders extends $tea.Model {
 }
 
 export class DeleteSheetRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1852,6 +2165,10 @@ export class DeleteSheetRequest extends $tea.Model {
 }
 
 export class DeleteSheetResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1918,6 +2235,10 @@ export class DeleteWorkspaceDocHeaders extends $tea.Model {
 }
 
 export class DeleteWorkspaceDocRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1981,7 +2302,15 @@ export class DeleteWorkspaceDocMembersHeaders extends $tea.Model {
 }
 
 export class DeleteWorkspaceDocMembersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: DeleteWorkspaceDocMembersRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2047,7 +2376,15 @@ export class DeleteWorkspaceMembersHeaders extends $tea.Model {
 }
 
 export class DeleteWorkspaceMembersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: DeleteWorkspaceMembersRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2113,8 +2450,29 @@ export class DocAppendParagraphHeaders extends $tea.Model {
 }
 
 export class DocAppendParagraphRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * element_type
+   */
   elementType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * properties
+   */
   properties?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2207,7 +2565,21 @@ export class DocAppendTextHeaders extends $tea.Model {
 }
 
 export class DocAppendTextRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * text
+   */
   text?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2298,9 +2670,28 @@ export class DocBlocksQueryHeaders extends $tea.Model {
 }
 
 export class DocBlocksQueryRequest extends $tea.Model {
+  /**
+   * @example
+   * block_type
+   */
   blockType?: string;
+  /**
+   * @example
+   * end_index
+   */
   endIndex?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
+  /**
+   * @example
+   * start_index
+   */
   startIndex?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2395,6 +2786,13 @@ export class DocDeleteBlockHeaders extends $tea.Model {
 }
 
 export class DocDeleteBlockRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2483,10 +2881,36 @@ export class DocInsertBlocksHeaders extends $tea.Model {
 }
 
 export class DocInsertBlocksRequest extends $tea.Model {
+  /**
+   * @example
+   * block_id
+   */
   blockId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * element
+   */
   element?: { [key: string]: any };
+  /**
+   * @example
+   * index
+   */
   index?: number;
+  /**
+   * @example
+   * where
+   */
   where?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2583,8 +3007,26 @@ export class DocUpdateContentHeaders extends $tea.Model {
 }
 
 export class DocUpdateContentRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * content
+   */
   content?: string;
+  /**
+   * @example
+   * data_type
+   */
   dataType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2674,6 +3116,13 @@ export class GetAllSheetsHeaders extends $tea.Model {
 }
 
 export class GetAllSheetsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2759,6 +3208,10 @@ export class GetDeveloperMetadataHeaders extends $tea.Model {
 }
 
 export class GetDeveloperMetadataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2850,7 +3303,18 @@ export class GetRangeHeaders extends $tea.Model {
 }
 
 export class GetRangeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
+  /**
+   * @example
+   * select
+   */
   select?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2959,8 +3423,16 @@ export class GetRecentEditDocsHeaders extends $tea.Model {
 }
 
 export class GetRecentEditDocsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3053,8 +3525,16 @@ export class GetRecentOpenDocsHeaders extends $tea.Model {
 }
 
 export class GetRecentOpenDocsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3148,6 +3628,10 @@ export class GetRelatedWorkspacesHeaders extends $tea.Model {
 
 export class GetRelatedWorkspacesRequest extends $tea.Model {
   includeRecent?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3169,6 +3653,10 @@ export class GetRelatedWorkspacesRequest extends $tea.Model {
 }
 
 export class GetRelatedWorkspacesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaces?: GetRelatedWorkspacesResponseBodyWorkspaces[];
   static names(): { [key: string]: string } {
     return {
@@ -3235,6 +3723,13 @@ export class GetSheetHeaders extends $tea.Model {
 }
 
 export class GetSheetRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3254,12 +3749,40 @@ export class GetSheetRequest extends $tea.Model {
 }
 
 export class GetSheetResponseBody extends $tea.Model {
+  /**
+   * @example
+   * column_count
+   */
   columnCount?: number;
+  /**
+   * @example
+   * sheet_id
+   */
   id?: string;
+  /**
+   * @example
+   * last_non_empty_column
+   */
   lastNonEmptyColumn?: number;
+  /**
+   * @example
+   * last_non_empty_row
+   */
   lastNonEmptyRow?: number;
+  /**
+   * @example
+   * sheet_name
+   */
   name?: string;
+  /**
+   * @example
+   * row_count
+   */
   rowCount?: number;
+  /**
+   * @example
+   * visible
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3338,7 +3861,15 @@ export class GetTemplateByIdHeaders extends $tea.Model {
 }
 
 export class GetTemplateByIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   belong?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3447,9 +3978,21 @@ export class GetWorkspaceHeaders extends $tea.Model {
 }
 
 export class GetWorkspaceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isDeleted?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   owner?: string;
   rootDentryUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3522,6 +4065,10 @@ export class GetWorkspaceNodeHeaders extends $tea.Model {
 }
 
 export class GetWorkspaceNodeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3541,6 +4088,10 @@ export class GetWorkspaceNodeRequest extends $tea.Model {
 }
 
 export class GetWorkspaceNodeResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasPermission?: boolean;
   nodeBO?: GetWorkspaceNodeResponseBodyNodeBO;
   workspaceBO?: GetWorkspaceNodeResponseBodyWorkspaceBO;
@@ -3613,9 +4164,31 @@ export class InitDocumentHeaders extends $tea.Model {
 }
 
 export class InitDocumentRequest extends $tea.Model {
+  /**
+   * @example
+   * attachments_map
+   */
   attachmentsMap?: { [key: string]: AttachmentsMapValue };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * import_type
+   */
   importType?: number;
+  /**
+   * @example
+   * links_key
+   */
   linksKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3707,8 +4280,16 @@ export class InsertBlocksHeaders extends $tea.Model {
 }
 
 export class InsertBlocksRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   blocks?: InsertBlocksRequestBlocks[];
   location?: InsertBlocksRequestLocation;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3776,8 +4357,29 @@ export class InsertColumnsBeforeHeaders extends $tea.Model {
 }
 
 export class InsertColumnsBeforeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * column
+   */
   column?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * column_count
+   */
   columnCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3801,6 +4403,10 @@ export class InsertColumnsBeforeRequest extends $tea.Model {
 }
 
 export class InsertColumnsBeforeResponseBody extends $tea.Model {
+  /**
+   * @example
+   * sheet_id
+   */
   id?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3867,7 +4473,18 @@ export class InsertDropdownListsHeaders extends $tea.Model {
 }
 
 export class InsertDropdownListsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   options?: InsertDropdownListsRequestOptions[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ppgAQuHfOoNVpJiStDwWCEgiEiE
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3955,8 +4572,29 @@ export class InsertRowsBeforeHeaders extends $tea.Model {
 }
 
 export class InsertRowsBeforeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * row
+   */
   row?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * row_count
+   */
   rowCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3980,6 +4618,10 @@ export class InsertRowsBeforeRequest extends $tea.Model {
 }
 
 export class InsertRowsBeforeResponseBody extends $tea.Model {
+  /**
+   * @example
+   * sheet_id
+   */
   id?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4046,9 +4688,21 @@ export class ListTemplateHeaders extends $tea.Model {
 }
 
 export class ListTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateType?: string;
   workspaceId?: string;
   static names(): { [key: string]: string } {
@@ -4077,8 +4731,16 @@ export class ListTemplateRequest extends $tea.Model {
 }
 
 export class ListTemplateResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasMore?: boolean;
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateList?: ListTemplateResponseBodyTemplateList[];
   static names(): { [key: string]: string } {
     return {
@@ -4149,6 +4811,13 @@ export class MergeRangeHeaders extends $tea.Model {
 }
 
 export class MergeRangeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ppgAQuHfOoNVpJiStDwWCEgiEiE
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4235,7 +4904,18 @@ export class RangeFindNextHeaders extends $tea.Model {
 
 export class RangeFindNextRequest extends $tea.Model {
   findOptions?: RangeFindNextRequestFindOptions;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * DingTalk
+   */
   text?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4259,6 +4939,13 @@ export class RangeFindNextRequest extends $tea.Model {
 }
 
 export class RangeFindNextResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * A2
+   */
   a1Notation?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4325,9 +5012,21 @@ export class SearchWorkspaceDocsHeaders extends $tea.Model {
 }
 
 export class SearchWorkspaceDocsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   keyword?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   workspaceId?: string;
   static names(): { [key: string]: string } {
@@ -4357,6 +5056,10 @@ export class SearchWorkspaceDocsRequest extends $tea.Model {
 
 export class SearchWorkspaceDocsResponseBody extends $tea.Model {
   docs?: SearchWorkspaceDocsResponseBodyDocs[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasMore?: boolean;
   nextToken?: string;
   static names(): { [key: string]: string } {
@@ -4428,8 +5131,23 @@ export class SetColumnWidthHeaders extends $tea.Model {
 }
 
 export class SetColumnWidthRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   column?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   width?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ppgAQuHfOoNVpJiStDwWCEgiEiE
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4522,9 +5240,37 @@ export class SetColumnsVisibilityHeaders extends $tea.Model {
 }
 
 export class SetColumnsVisibilityRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * column
+   */
   column?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * column_count
+   */
   columnCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * visible
+   */
   visibility?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4550,6 +5296,10 @@ export class SetColumnsVisibilityRequest extends $tea.Model {
 }
 
 export class SetColumnsVisibilityResponseBody extends $tea.Model {
+  /**
+   * @example
+   * sheet_id
+   */
   id?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4618,6 +5368,13 @@ export class SetRowHeightHeaders extends $tea.Model {
 export class SetRowHeightRequest extends $tea.Model {
   height?: number;
   row?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ppgAQuHfOoNVpJiStDwWCEgiEiE
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4710,9 +5467,37 @@ export class SetRowsVisibilityHeaders extends $tea.Model {
 }
 
 export class SetRowsVisibilityRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * row
+   */
   row?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * row_count
+   */
   rowCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * visible
+   */
   visibility?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4738,6 +5523,10 @@ export class SetRowsVisibilityRequest extends $tea.Model {
 }
 
 export class SetRowsVisibilityResponseBody extends $tea.Model {
+  /**
+   * @example
+   * sheet_id
+   */
   id?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4804,9 +5593,31 @@ export class SheetAutofitRowsHeaders extends $tea.Model {
 }
 
 export class SheetAutofitRowsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fontWidth?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   row?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   rowCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4832,6 +5643,13 @@ export class SheetAutofitRowsRequest extends $tea.Model {
 }
 
 export class SheetAutofitRowsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * stxxxx
+   */
   id?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4898,8 +5716,23 @@ export class SheetFindAllHeaders extends $tea.Model {
 }
 
 export class SheetFindAllRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   findOptions?: SheetFindAllRequestFindOptions;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * DingTalk
+   */
   text?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   select?: string;
   static names(): { [key: string]: string } {
@@ -4992,7 +5825,18 @@ export class UnbindCoolAppToSheetHeaders extends $tea.Model {
 }
 
 export class UnbindCoolAppToSheetRequest extends $tea.Model {
+  /**
+   * @example
+   * cool_app_code
+   */
   coolAppCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5014,6 +5858,10 @@ export class UnbindCoolAppToSheetRequest extends $tea.Model {
 }
 
 export class UnbindCoolAppToSheetResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -5085,9 +5933,20 @@ export class UpdateRangeRequest extends $tea.Model {
   fontWeights?: string[][];
   horizontalAlignments?: string[][];
   hyperlinks?: UpdateRangeRequestHyperlinks[][];
+  /**
+   * @example
+   * number_format
+   */
   numberFormat?: string;
   values?: string[][];
   verticalAlignments?: string[][];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5123,6 +5982,10 @@ export class UpdateRangeRequest extends $tea.Model {
 }
 
 export class UpdateRangeResponseBody extends $tea.Model {
+  /**
+   * @example
+   * a1_notation
+   */
   a1Notation?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5189,8 +6052,23 @@ export class UpdateSheetHeaders extends $tea.Model {
 }
 
 export class UpdateSheetRequest extends $tea.Model {
+  /**
+   * @example
+   * sheet_name
+   */
   name?: string;
+  /**
+   * @example
+   * visible
+   */
   visibility?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5258,7 +6136,15 @@ export class UpdateWorkspaceDocMembersHeaders extends $tea.Model {
 }
 
 export class UpdateWorkspaceDocMembersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: UpdateWorkspaceDocMembersRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5324,7 +6210,15 @@ export class UpdateWorkspaceMembersHeaders extends $tea.Model {
 }
 
 export class UpdateWorkspaceMembersRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: UpdateWorkspaceMembersRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5368,6 +6262,10 @@ export class UpdateWorkspaceMembersResponse extends $tea.Model {
 }
 
 export class AddCommentRequestOption extends $tea.Model {
+  /**
+   * @example
+   * create_time
+   */
   createTime?: string;
   extra?: { [key: string]: string };
   static names(): { [key: string]: string } {
@@ -5390,8 +6288,20 @@ export class AddCommentRequestOption extends $tea.Model {
 }
 
 export class AddWorkspaceDocMembersRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5415,8 +6325,20 @@ export class AddWorkspaceDocMembersRequestMembers extends $tea.Model {
 }
 
 export class AddWorkspaceMembersRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5440,8 +6362,26 @@ export class AddWorkspaceMembersRequestMembers extends $tea.Model {
 }
 
 export class BatchRequestRequests extends $tea.Model {
+  /**
+   * **if can be null:**
+   * true
+   */
   body?: any;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * get
+   */
   method?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * sheets
+   */
   path?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5521,6 +6461,10 @@ export class BatchGetWorkspaceDocsResponseBodyResultWorkspaceBO extends $tea.Mod
 }
 
 export class BatchGetWorkspaceDocsResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasPermission?: boolean;
   nodeBO?: BatchGetWorkspaceDocsResponseBodyResultNodeBO;
   workspaceBO?: BatchGetWorkspaceDocsResponseBodyResultWorkspaceBO;
@@ -5608,6 +6552,10 @@ export class BatchGetWorkspacesResponseBodyWorkspacesWorkspace extends $tea.Mode
 }
 
 export class BatchGetWorkspacesResponseBodyWorkspaces extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasPermission?: boolean;
   workspace?: BatchGetWorkspacesResponseBodyWorkspacesWorkspace;
   static names(): { [key: string]: string } {
@@ -5668,7 +6616,15 @@ export class CreateConditionalFormattingRuleRequestDuplicateCondition extends $t
 }
 
 export class CreateDeveloperMetadataRequestAssociatedColumn extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   column?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sheet?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5690,7 +6646,15 @@ export class CreateDeveloperMetadataRequestAssociatedColumn extends $tea.Model {
 }
 
 export class CreateDeveloperMetadataRequestAssociatedRow extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   row?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sheet?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5752,7 +6716,15 @@ export class CreateRangeProtectionRequestEditableSetting extends $tea.Model {
 }
 
 export class DeleteWorkspaceDocMembersRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5774,7 +6746,15 @@ export class DeleteWorkspaceDocMembersRequestMembers extends $tea.Model {
 }
 
 export class DeleteWorkspaceMembersRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5891,7 +6871,15 @@ export class DocInsertBlocksResponseBodyResult extends $tea.Model {
 }
 
 export class GetAllSheetsResponseBodyValue extends $tea.Model {
+  /**
+   * @example
+   * sheet_id
+   */
   id?: string;
+  /**
+   * @example
+   * sheet_name
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5913,7 +6901,15 @@ export class GetAllSheetsResponseBodyValue extends $tea.Model {
 }
 
 export class GetDeveloperMetadataResponseBodyAssociatedColumn extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   column?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sheetId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5935,7 +6931,15 @@ export class GetDeveloperMetadataResponseBodyAssociatedColumn extends $tea.Model
 }
 
 export class GetDeveloperMetadataResponseBodyAssociatedRow extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   row?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sheetId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5957,9 +6961,25 @@ export class GetDeveloperMetadataResponseBodyAssociatedRow extends $tea.Model {
 }
 
 export class GetRangeResponseBodyBackgroundColors extends $tea.Model {
+  /**
+   * @example
+   * red_value
+   */
   red?: number;
+  /**
+   * @example
+   * green_value
+   */
   green?: number;
+  /**
+   * @example
+   * blue_value
+   */
   blue?: number;
+  /**
+   * @example
+   * hex_string_value
+   */
   hexString?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5988,10 +7008,26 @@ export class GetRecentEditDocsResponseBodyRecentListNodeBO extends $tea.Model {
   createTime?: number;
   docType?: string;
   isDeleted?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   lastEditTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nodeId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nodeName?: string;
   updateTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6026,7 +7062,15 @@ export class GetRecentEditDocsResponseBodyRecentListNodeBO extends $tea.Model {
 
 export class GetRecentEditDocsResponseBodyRecentListWorkspaceBO extends $tea.Model {
   url?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6050,7 +7094,15 @@ export class GetRecentEditDocsResponseBodyRecentListWorkspaceBO extends $tea.Mod
 }
 
 export class GetRecentEditDocsResponseBodyRecentList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nodeBO?: GetRecentEditDocsResponseBodyRecentListNodeBO;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceBO?: GetRecentEditDocsResponseBodyRecentListWorkspaceBO;
   static names(): { [key: string]: string } {
     return {
@@ -6075,10 +7127,26 @@ export class GetRecentOpenDocsResponseBodyRecentListNodeBO extends $tea.Model {
   createTime?: number;
   docType?: string;
   isDeleted?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   lastOpenTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nodeId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nodeName?: string;
   updateTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6113,7 +7181,15 @@ export class GetRecentOpenDocsResponseBodyRecentListNodeBO extends $tea.Model {
 
 export class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO extends $tea.Model {
   url?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6137,7 +7213,15 @@ export class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO extends $tea.Mod
 }
 
 export class GetRecentOpenDocsResponseBodyRecentList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nodeBO?: GetRecentOpenDocsResponseBodyRecentListNodeBO;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceBO?: GetRecentOpenDocsResponseBodyRecentListWorkspaceBO;
   static names(): { [key: string]: string } {
     return {
@@ -6160,8 +7244,20 @@ export class GetRecentOpenDocsResponseBodyRecentList extends $tea.Model {
 
 export class GetRelatedWorkspacesResponseBodyWorkspacesRecentList extends $tea.Model {
   lastEditTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nodeId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6188,12 +7284,32 @@ export class GetRelatedWorkspacesResponseBodyWorkspacesRecentList extends $tea.M
 
 export class GetRelatedWorkspacesResponseBodyWorkspaces extends $tea.Model {
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deleted?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   owner?: string;
   recentList?: GetRelatedWorkspacesResponseBodyWorkspacesRecentList[];
+  /**
+   * @example
+   * OWNER：所有者；MANAGER：管理者；EDITOR：可编辑；VIEWER：可查询\下载；ONLY_VIEWER：尽可查看
+   */
   role?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   url?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6281,6 +7397,10 @@ export class GetWorkspaceNodeResponseBodyWorkspaceBO extends $tea.Model {
 
 export class InsertBlocksRequestBlocksParagraphChildrenTextTextStyle extends $tea.Model {
   bold?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dataType?: string;
   fontSize?: number;
   sizeUnit?: string;
@@ -6308,6 +7428,10 @@ export class InsertBlocksRequestBlocksParagraphChildrenTextTextStyle extends $te
 }
 
 export class InsertBlocksRequestBlocksParagraphChildrenText extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: string;
   textStyle?: InsertBlocksRequestBlocksParagraphChildrenTextTextStyle;
   static names(): { [key: string]: string } {
@@ -6330,6 +7454,10 @@ export class InsertBlocksRequestBlocksParagraphChildrenText extends $tea.Model {
 }
 
 export class InsertBlocksRequestBlocksParagraphChildren extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   elementType?: string;
   text?: InsertBlocksRequestBlocksParagraphChildrenText;
   static names(): { [key: string]: string } {
@@ -6393,6 +7521,10 @@ export class InsertBlocksRequestBlocksParagraph extends $tea.Model {
 }
 
 export class InsertBlocksRequestBlocks extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   blockType?: string;
   paragraph?: InsertBlocksRequestBlocksParagraph;
   static names(): { [key: string]: string } {
@@ -6435,6 +7567,10 @@ export class InsertBlocksRequestLocation extends $tea.Model {
 
 export class InsertDropdownListsRequestOptions extends $tea.Model {
   color?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6456,11 +7592,31 @@ export class InsertDropdownListsRequestOptions extends $tea.Model {
 }
 
 export class ListTemplateResponseBodyTemplateList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   coverUrl?: string;
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   docType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   templateType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   title?: string;
   updateTime?: number;
   workspaceId?: string;
@@ -6497,10 +7653,26 @@ export class ListTemplateResponseBodyTemplateList extends $tea.Model {
 
 export class RangeFindNextRequestFindOptions extends $tea.Model {
   includeHidden?: boolean;
+  /**
+   * @example
+   * true
+   */
   matchCase?: boolean;
+  /**
+   * @example
+   * true
+   */
   matchEntireCell?: boolean;
+  /**
+   * @example
+   * true
+   */
   matchFormulaText?: boolean;
   scope?: string;
+  /**
+   * @example
+   * true
+   */
   useRegExp?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6532,9 +7704,25 @@ export class RangeFindNextRequestFindOptions extends $tea.Model {
 export class SearchWorkspaceDocsResponseBodyDocsNodeBO extends $tea.Model {
   docType?: string;
   lastEditTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nodeId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   originName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6565,6 +7753,10 @@ export class SearchWorkspaceDocsResponseBodyDocsNodeBO extends $tea.Model {
 
 export class SearchWorkspaceDocsResponseBodyDocsWorkspaceBO extends $tea.Model {
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6609,11 +7801,31 @@ export class SearchWorkspaceDocsResponseBodyDocs extends $tea.Model {
 
 export class SheetFindAllRequestFindOptions extends $tea.Model {
   includeHidden?: boolean;
+  /**
+   * @example
+   * true
+   */
   matchCase?: boolean;
+  /**
+   * @example
+   * true
+   */
   matchEntireCell?: boolean;
+  /**
+   * @example
+   * true
+   */
   matchFormulaText?: boolean;
   scope?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionCells?: boolean;
+  /**
+   * @example
+   * true
+   */
   useRegExp?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6667,8 +7879,20 @@ export class SheetFindAllResponseBodyValue extends $tea.Model {
 }
 
 export class UpdateRangeRequestHyperlinks extends $tea.Model {
+  /**
+   * @example
+   * hyperlink_type
+   */
   type?: string;
+  /**
+   * @example
+   * hyperlink_link
+   */
   link?: string;
+  /**
+   * @example
+   * hyperlink_text
+   */
   text?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6692,8 +7916,20 @@ export class UpdateRangeRequestHyperlinks extends $tea.Model {
 }
 
 export class UpdateWorkspaceDocMembersRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6717,8 +7953,20 @@ export class UpdateWorkspaceDocMembersRequestMembers extends $tea.Model {
 }
 
 export class UpdateWorkspaceMembersRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6743,12 +7991,11 @@ export class UpdateWorkspaceMembersRequestMembers extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -6758,12 +8005,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 添加评论
-   *
-   * @param request AddCommentRequest
-   * @param headers AddCommentHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddCommentResponse
+   * 添加评论
+   * 
+   * @param request - AddCommentRequest
+   * @param headers - AddCommentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddCommentResponse
    */
   async addCommentWithOptions(docId: string, request: AddCommentRequest, headers: AddCommentHeaders, runtime: $Util.RuntimeOptions): Promise<AddCommentResponse> {
     Util.validateModel(request);
@@ -6814,10 +8061,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加评论
-   *
-   * @param request AddCommentRequest
-   * @return AddCommentResponse
+   * 添加评论
+   * 
+   * @param request - AddCommentRequest
+   * @returns AddCommentResponse
    */
   async addComment(docId: string, request: AddCommentRequest): Promise<AddCommentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6826,12 +8073,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加知识库文档成员
-   *
-   * @param request AddWorkspaceDocMembersRequest
-   * @param headers AddWorkspaceDocMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddWorkspaceDocMembersResponse
+   * 添加知识库文档成员
+   * 
+   * @param request - AddWorkspaceDocMembersRequest
+   * @param headers - AddWorkspaceDocMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddWorkspaceDocMembersResponse
    */
   async addWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: AddWorkspaceDocMembersRequest, headers: AddWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceDocMembersResponse> {
     Util.validateModel(request);
@@ -6872,10 +8119,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加知识库文档成员
-   *
-   * @param request AddWorkspaceDocMembersRequest
-   * @return AddWorkspaceDocMembersResponse
+   * 添加知识库文档成员
+   * 
+   * @param request - AddWorkspaceDocMembersRequest
+   * @returns AddWorkspaceDocMembersResponse
    */
   async addWorkspaceDocMembers(workspaceId: string, nodeId: string, request: AddWorkspaceDocMembersRequest): Promise<AddWorkspaceDocMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6884,12 +8131,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加知识库成员
-   *
-   * @param request AddWorkspaceMembersRequest
-   * @param headers AddWorkspaceMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddWorkspaceMembersResponse
+   * 添加知识库成员
+   * 
+   * @param request - AddWorkspaceMembersRequest
+   * @param headers - AddWorkspaceMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddWorkspaceMembersResponse
    */
   async addWorkspaceMembersWithOptions(workspaceId: string, request: AddWorkspaceMembersRequest, headers: AddWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceMembersResponse> {
     Util.validateModel(request);
@@ -6930,10 +8177,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加知识库成员
-   *
-   * @param request AddWorkspaceMembersRequest
-   * @return AddWorkspaceMembersResponse
+   * 添加知识库成员
+   * 
+   * @param request - AddWorkspaceMembersRequest
+   * @returns AddWorkspaceMembersResponse
    */
   async addWorkspaceMembers(workspaceId: string, request: AddWorkspaceMembersRequest): Promise<AddWorkspaceMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -6942,12 +8189,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 追加行
-   *
-   * @param request AppendRowsRequest
-   * @param headers AppendRowsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AppendRowsResponse
+   * 追加行
+   * 
+   * @param request - AppendRowsRequest
+   * @param headers - AppendRowsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AppendRowsResponse
    */
   async appendRowsWithOptions(workbookId: string, sheetId: string, request: AppendRowsRequest, headers: AppendRowsHeaders, runtime: $Util.RuntimeOptions): Promise<AppendRowsResponse> {
     Util.validateModel(request);
@@ -6990,10 +8237,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 追加行
-   *
-   * @param request AppendRowsRequest
-   * @return AppendRowsResponse
+   * 追加行
+   * 
+   * @param request - AppendRowsRequest
+   * @returns AppendRowsResponse
    */
   async appendRows(workbookId: string, sheetId: string, request: AppendRowsRequest): Promise<AppendRowsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7002,12 +8249,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量执行表格操作
-   *
-   * @param request BatchRequest
-   * @param headers BatchHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchResponse
+   * 批量执行表格操作
+   * 
+   * @param request - BatchRequest
+   * @param headers - BatchHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchResponse
    */
   async batchWithOptions(workbookId: string, request: BatchRequest, headers: BatchHeaders, runtime: $Util.RuntimeOptions): Promise<BatchResponse> {
     Util.validateModel(request);
@@ -7050,10 +8297,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量执行表格操作
-   *
-   * @param request BatchRequest
-   * @return BatchResponse
+   * 批量执行表格操作
+   * 
+   * @param request - BatchRequest
+   * @returns BatchResponse
    */
   async batch(workbookId: string, request: BatchRequest): Promise<BatchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7062,12 +8309,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询知识库文档
-   *
-   * @param request BatchGetWorkspaceDocsRequest
-   * @param headers BatchGetWorkspaceDocsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchGetWorkspaceDocsResponse
+   * 批量查询知识库文档
+   * 
+   * @param request - BatchGetWorkspaceDocsRequest
+   * @param headers - BatchGetWorkspaceDocsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchGetWorkspaceDocsResponse
    */
   async batchGetWorkspaceDocsWithOptions(request: BatchGetWorkspaceDocsRequest, headers: BatchGetWorkspaceDocsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetWorkspaceDocsResponse> {
     Util.validateModel(request);
@@ -7108,10 +8355,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询知识库文档
-   *
-   * @param request BatchGetWorkspaceDocsRequest
-   * @return BatchGetWorkspaceDocsResponse
+   * 批量查询知识库文档
+   * 
+   * @param request - BatchGetWorkspaceDocsRequest
+   * @returns BatchGetWorkspaceDocsResponse
    */
   async batchGetWorkspaceDocs(request: BatchGetWorkspaceDocsRequest): Promise<BatchGetWorkspaceDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7120,12 +8367,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 知识库批量查询
-   *
-   * @param request BatchGetWorkspacesRequest
-   * @param headers BatchGetWorkspacesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchGetWorkspacesResponse
+   * 知识库批量查询
+   * 
+   * @param request - BatchGetWorkspacesRequest
+   * @param headers - BatchGetWorkspacesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchGetWorkspacesResponse
    */
   async batchGetWorkspacesWithOptions(request: BatchGetWorkspacesRequest, headers: BatchGetWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetWorkspacesResponse> {
     Util.validateModel(request);
@@ -7170,10 +8417,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 知识库批量查询
-   *
-   * @param request BatchGetWorkspacesRequest
-   * @return BatchGetWorkspacesResponse
+   * 知识库批量查询
+   * 
+   * @param request - BatchGetWorkspacesRequest
+   * @returns BatchGetWorkspacesResponse
    */
   async batchGetWorkspaces(request: BatchGetWorkspacesRequest): Promise<BatchGetWorkspacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7182,12 +8429,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关联文档酷应用到表格
-   *
-   * @param request BindCoolAppToSheetRequest
-   * @param headers BindCoolAppToSheetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BindCoolAppToSheetResponse
+   * 关联文档酷应用到表格
+   * 
+   * @param request - BindCoolAppToSheetRequest
+   * @param headers - BindCoolAppToSheetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BindCoolAppToSheetResponse
    */
   async bindCoolAppToSheetWithOptions(workbookId: string, request: BindCoolAppToSheetRequest, headers: BindCoolAppToSheetHeaders, runtime: $Util.RuntimeOptions): Promise<BindCoolAppToSheetResponse> {
     Util.validateModel(request);
@@ -7230,10 +8477,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 关联文档酷应用到表格
-   *
-   * @param request BindCoolAppToSheetRequest
-   * @return BindCoolAppToSheetResponse
+   * 关联文档酷应用到表格
+   * 
+   * @param request - BindCoolAppToSheetRequest
+   * @returns BindCoolAppToSheetResponse
    */
   async bindCoolAppToSheet(workbookId: string, request: BindCoolAppToSheetRequest): Promise<BindCoolAppToSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7242,12 +8489,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清除单元格区域内所有内容
-   *
-   * @param request ClearRequest
-   * @param headers ClearHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ClearResponse
+   * 清除单元格区域内所有内容
+   * 
+   * @param request - ClearRequest
+   * @param headers - ClearHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ClearResponse
    */
   async clearWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: ClearRequest, headers: ClearHeaders, runtime: $Util.RuntimeOptions): Promise<ClearResponse> {
     Util.validateModel(request);
@@ -7284,10 +8531,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清除单元格区域内所有内容
-   *
-   * @param request ClearRequest
-   * @return ClearResponse
+   * 清除单元格区域内所有内容
+   * 
+   * @param request - ClearRequest
+   * @returns ClearResponse
    */
   async clear(workbookId: string, sheetId: string, rangeAddress: string, request: ClearRequest): Promise<ClearResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7296,12 +8543,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清除单元格区域内数据
-   *
-   * @param request ClearDataRequest
-   * @param headers ClearDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ClearDataResponse
+   * 清除单元格区域内数据
+   * 
+   * @param request - ClearDataRequest
+   * @param headers - ClearDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ClearDataResponse
    */
   async clearDataWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: ClearDataRequest, headers: ClearDataHeaders, runtime: $Util.RuntimeOptions): Promise<ClearDataResponse> {
     Util.validateModel(request);
@@ -7338,10 +8585,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清除单元格区域内数据
-   *
-   * @param request ClearDataRequest
-   * @return ClearDataResponse
+   * 清除单元格区域内数据
+   * 
+   * @param request - ClearDataRequest
+   * @returns ClearDataResponse
    */
   async clearData(workbookId: string, sheetId: string, rangeAddress: string, request: ClearDataRequest): Promise<ClearDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7350,12 +8597,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建条件格式
-   *
-   * @param request CreateConditionalFormattingRuleRequest
-   * @param headers CreateConditionalFormattingRuleHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateConditionalFormattingRuleResponse
+   * 创建条件格式
+   * 
+   * @param request - CreateConditionalFormattingRuleRequest
+   * @param headers - CreateConditionalFormattingRuleHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateConditionalFormattingRuleResponse
    */
   async createConditionalFormattingRuleWithOptions(workbookId: string, sheetId: string, request: CreateConditionalFormattingRuleRequest, headers: CreateConditionalFormattingRuleHeaders, runtime: $Util.RuntimeOptions): Promise<CreateConditionalFormattingRuleResponse> {
     Util.validateModel(request);
@@ -7406,10 +8653,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建条件格式
-   *
-   * @param request CreateConditionalFormattingRuleRequest
-   * @return CreateConditionalFormattingRuleResponse
+   * 创建条件格式
+   * 
+   * @param request - CreateConditionalFormattingRuleRequest
+   * @returns CreateConditionalFormattingRuleResponse
    */
   async createConditionalFormattingRule(workbookId: string, sheetId: string, request: CreateConditionalFormattingRuleRequest): Promise<CreateConditionalFormattingRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7418,12 +8665,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建开发者元数据
-   *
-   * @param request CreateDeveloperMetadataRequest
-   * @param headers CreateDeveloperMetadataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateDeveloperMetadataResponse
+   * 创建开发者元数据
+   * 
+   * @param request - CreateDeveloperMetadataRequest
+   * @param headers - CreateDeveloperMetadataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateDeveloperMetadataResponse
    */
   async createDeveloperMetadataWithOptions(workbookId: string, request: CreateDeveloperMetadataRequest, headers: CreateDeveloperMetadataHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeveloperMetadataResponse> {
     Util.validateModel(request);
@@ -7474,10 +8721,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建开发者元数据
-   *
-   * @param request CreateDeveloperMetadataRequest
-   * @return CreateDeveloperMetadataResponse
+   * 创建开发者元数据
+   * 
+   * @param request - CreateDeveloperMetadataRequest
+   * @returns CreateDeveloperMetadataResponse
    */
   async createDeveloperMetadata(workbookId: string, request: CreateDeveloperMetadataRequest): Promise<CreateDeveloperMetadataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7486,12 +8733,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建单元格锁定
-   *
-   * @param request CreateRangeProtectionRequest
-   * @param headers CreateRangeProtectionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateRangeProtectionResponse
+   * 创建单元格锁定
+   * 
+   * @param request - CreateRangeProtectionRequest
+   * @param headers - CreateRangeProtectionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateRangeProtectionResponse
    */
   async createRangeProtectionWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: CreateRangeProtectionRequest, headers: CreateRangeProtectionHeaders, runtime: $Util.RuntimeOptions): Promise<CreateRangeProtectionResponse> {
     Util.validateModel(request);
@@ -7538,10 +8785,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建单元格锁定
-   *
-   * @param request CreateRangeProtectionRequest
-   * @return CreateRangeProtectionResponse
+   * 创建单元格锁定
+   * 
+   * @param request - CreateRangeProtectionRequest
+   * @returns CreateRangeProtectionResponse
    */
   async createRangeProtection(workbookId: string, sheetId: string, rangeAddress: string, request: CreateRangeProtectionRequest): Promise<CreateRangeProtectionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7550,12 +8797,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建工作表
-   *
-   * @param request CreateSheetRequest
-   * @param headers CreateSheetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateSheetResponse
+   * 创建工作表
+   * 
+   * @param request - CreateSheetRequest
+   * @param headers - CreateSheetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateSheetResponse
    */
   async createSheetWithOptions(workbookId: string, request: CreateSheetRequest, headers: CreateSheetHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSheetResponse> {
     Util.validateModel(request);
@@ -7598,10 +8845,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建工作表
-   *
-   * @param request CreateSheetRequest
-   * @return CreateSheetResponse
+   * 创建工作表
+   * 
+   * @param request - CreateSheetRequest
+   * @returns CreateSheetResponse
    */
   async createSheet(workbookId: string, request: CreateSheetRequest): Promise<CreateSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7610,12 +8857,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新建知识库
-   *
-   * @param request CreateWorkspaceRequest
-   * @param headers CreateWorkspaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateWorkspaceResponse
+   * 新建知识库
+   * 
+   * @param request - CreateWorkspaceRequest
+   * @param headers - CreateWorkspaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateWorkspaceResponse
    */
   async createWorkspaceWithOptions(request: CreateWorkspaceRequest, headers: CreateWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkspaceResponse> {
     Util.validateModel(request);
@@ -7660,10 +8907,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新建知识库
-   *
-   * @param request CreateWorkspaceRequest
-   * @return CreateWorkspaceResponse
+   * 新建知识库
+   * 
+   * @param request - CreateWorkspaceRequest
+   * @returns CreateWorkspaceResponse
    */
   async createWorkspace(request: CreateWorkspaceRequest): Promise<CreateWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7672,12 +8919,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建知识库文档
-   *
-   * @param request CreateWorkspaceDocRequest
-   * @param headers CreateWorkspaceDocHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateWorkspaceDocResponse
+   * 创建知识库文档
+   * 
+   * @param request - CreateWorkspaceDocRequest
+   * @param headers - CreateWorkspaceDocHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateWorkspaceDocResponse
    */
   async createWorkspaceDocWithOptions(workspaceId: string, request: CreateWorkspaceDocRequest, headers: CreateWorkspaceDocHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkspaceDocResponse> {
     Util.validateModel(request);
@@ -7734,10 +8981,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建知识库文档
-   *
-   * @param request CreateWorkspaceDocRequest
-   * @return CreateWorkspaceDocResponse
+   * 创建知识库文档
+   * 
+   * @param request - CreateWorkspaceDocRequest
+   * @returns CreateWorkspaceDocResponse
    */
   async createWorkspaceDoc(workspaceId: string, request: CreateWorkspaceDocRequest): Promise<CreateWorkspaceDocResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7746,12 +8993,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除列
-   *
-   * @param request DeleteColumnsRequest
-   * @param headers DeleteColumnsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteColumnsResponse
+   * 删除列
+   * 
+   * @param request - DeleteColumnsRequest
+   * @param headers - DeleteColumnsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteColumnsResponse
    */
   async deleteColumnsWithOptions(workbookId: string, sheetId: string, request: DeleteColumnsRequest, headers: DeleteColumnsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteColumnsResponse> {
     Util.validateModel(request);
@@ -7798,10 +9045,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除列
-   *
-   * @param request DeleteColumnsRequest
-   * @return DeleteColumnsResponse
+   * 删除列
+   * 
+   * @param request - DeleteColumnsRequest
+   * @returns DeleteColumnsResponse
    */
   async deleteColumns(workbookId: string, sheetId: string, request: DeleteColumnsRequest): Promise<DeleteColumnsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7810,12 +9057,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除下拉列表
-   *
-   * @param request DeleteDropdownListsRequest
-   * @param headers DeleteDropdownListsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteDropdownListsResponse
+   * 删除下拉列表
+   * 
+   * @param request - DeleteDropdownListsRequest
+   * @param headers - DeleteDropdownListsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteDropdownListsResponse
    */
   async deleteDropdownListsWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: DeleteDropdownListsRequest, headers: DeleteDropdownListsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDropdownListsResponse> {
     Util.validateModel(request);
@@ -7852,10 +9099,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除下拉列表
-   *
-   * @param request DeleteDropdownListsRequest
-   * @return DeleteDropdownListsResponse
+   * 删除下拉列表
+   * 
+   * @param request - DeleteDropdownListsRequest
+   * @returns DeleteDropdownListsResponse
    */
   async deleteDropdownLists(workbookId: string, sheetId: string, rangeAddress: string, request: DeleteDropdownListsRequest): Promise<DeleteDropdownListsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7864,12 +9111,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除单元格锁定
-   *
-   * @param request DeleteRangeProtectionRequest
-   * @param headers DeleteRangeProtectionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteRangeProtectionResponse
+   * 删除单元格锁定
+   * 
+   * @param request - DeleteRangeProtectionRequest
+   * @param headers - DeleteRangeProtectionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteRangeProtectionResponse
    */
   async deleteRangeProtectionWithOptions(workbookId: string, sheetId: string, rangeAddress: string, protectionId: string, request: DeleteRangeProtectionRequest, headers: DeleteRangeProtectionHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRangeProtectionResponse> {
     Util.validateModel(request);
@@ -7906,10 +9153,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除单元格锁定
-   *
-   * @param request DeleteRangeProtectionRequest
-   * @return DeleteRangeProtectionResponse
+   * 删除单元格锁定
+   * 
+   * @param request - DeleteRangeProtectionRequest
+   * @returns DeleteRangeProtectionResponse
    */
   async deleteRangeProtection(workbookId: string, sheetId: string, rangeAddress: string, protectionId: string, request: DeleteRangeProtectionRequest): Promise<DeleteRangeProtectionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7918,12 +9165,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除行
-   *
-   * @param request DeleteRowsRequest
-   * @param headers DeleteRowsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteRowsResponse
+   * 删除行
+   * 
+   * @param request - DeleteRowsRequest
+   * @param headers - DeleteRowsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteRowsResponse
    */
   async deleteRowsWithOptions(workbookId: string, sheetId: string, request: DeleteRowsRequest, headers: DeleteRowsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRowsResponse> {
     Util.validateModel(request);
@@ -7970,10 +9217,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除行
-   *
-   * @param request DeleteRowsRequest
-   * @return DeleteRowsResponse
+   * 删除行
+   * 
+   * @param request - DeleteRowsRequest
+   * @returns DeleteRowsResponse
    */
   async deleteRows(workbookId: string, sheetId: string, request: DeleteRowsRequest): Promise<DeleteRowsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7982,12 +9229,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除工作表
-   *
-   * @param request DeleteSheetRequest
-   * @param headers DeleteSheetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteSheetResponse
+   * 删除工作表
+   * 
+   * @param request - DeleteSheetRequest
+   * @param headers - DeleteSheetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteSheetResponse
    */
   async deleteSheetWithOptions(workbookId: string, sheetId: string, request: DeleteSheetRequest, headers: DeleteSheetHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSheetResponse> {
     Util.validateModel(request);
@@ -8024,10 +9271,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除工作表
-   *
-   * @param request DeleteSheetRequest
-   * @return DeleteSheetResponse
+   * 删除工作表
+   * 
+   * @param request - DeleteSheetRequest
+   * @returns DeleteSheetResponse
    */
   async deleteSheet(workbookId: string, sheetId: string, request: DeleteSheetRequest): Promise<DeleteSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8036,12 +9283,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除知识库文档
-   *
-   * @param request DeleteWorkspaceDocRequest
-   * @param headers DeleteWorkspaceDocHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteWorkspaceDocResponse
+   * 删除知识库文档
+   * 
+   * @param request - DeleteWorkspaceDocRequest
+   * @param headers - DeleteWorkspaceDocHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteWorkspaceDocResponse
    */
   async deleteWorkspaceDocWithOptions(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocRequest, headers: DeleteWorkspaceDocHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceDocResponse> {
     Util.validateModel(request);
@@ -8078,10 +9325,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除知识库文档
-   *
-   * @param request DeleteWorkspaceDocRequest
-   * @return DeleteWorkspaceDocResponse
+   * 删除知识库文档
+   * 
+   * @param request - DeleteWorkspaceDocRequest
+   * @returns DeleteWorkspaceDocResponse
    */
   async deleteWorkspaceDoc(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocRequest): Promise<DeleteWorkspaceDocResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8090,12 +9337,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除知识库文档成员
-   *
-   * @param request DeleteWorkspaceDocMembersRequest
-   * @param headers DeleteWorkspaceDocMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteWorkspaceDocMembersResponse
+   * 删除知识库文档成员
+   * 
+   * @param request - DeleteWorkspaceDocMembersRequest
+   * @param headers - DeleteWorkspaceDocMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteWorkspaceDocMembersResponse
    */
   async deleteWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocMembersRequest, headers: DeleteWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceDocMembersResponse> {
     Util.validateModel(request);
@@ -8136,10 +9383,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除知识库文档成员
-   *
-   * @param request DeleteWorkspaceDocMembersRequest
-   * @return DeleteWorkspaceDocMembersResponse
+   * 删除知识库文档成员
+   * 
+   * @param request - DeleteWorkspaceDocMembersRequest
+   * @returns DeleteWorkspaceDocMembersResponse
    */
   async deleteWorkspaceDocMembers(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocMembersRequest): Promise<DeleteWorkspaceDocMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8148,12 +9395,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除知识库成员
-   *
-   * @param request DeleteWorkspaceMembersRequest
-   * @param headers DeleteWorkspaceMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteWorkspaceMembersResponse
+   * 删除知识库成员
+   * 
+   * @param request - DeleteWorkspaceMembersRequest
+   * @param headers - DeleteWorkspaceMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteWorkspaceMembersResponse
    */
   async deleteWorkspaceMembersWithOptions(workspaceId: string, request: DeleteWorkspaceMembersRequest, headers: DeleteWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceMembersResponse> {
     Util.validateModel(request);
@@ -8194,10 +9441,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除知识库成员
-   *
-   * @param request DeleteWorkspaceMembersRequest
-   * @return DeleteWorkspaceMembersResponse
+   * 删除知识库成员
+   * 
+   * @param request - DeleteWorkspaceMembersRequest
+   * @returns DeleteWorkspaceMembersResponse
    */
   async deleteWorkspaceMembers(workspaceId: string, request: DeleteWorkspaceMembersRequest): Promise<DeleteWorkspaceMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8206,12 +9453,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 追加指定段落元素
-   *
-   * @param request DocAppendParagraphRequest
-   * @param headers DocAppendParagraphHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DocAppendParagraphResponse
+   * 追加指定段落元素
+   * 
+   * @param request - DocAppendParagraphRequest
+   * @param headers - DocAppendParagraphHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DocAppendParagraphResponse
    */
   async docAppendParagraphWithOptions(docKey: string, blockId: string, request: DocAppendParagraphRequest, headers: DocAppendParagraphHeaders, runtime: $Util.RuntimeOptions): Promise<DocAppendParagraphResponse> {
     Util.validateModel(request);
@@ -8258,10 +9505,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 追加指定段落元素
-   *
-   * @param request DocAppendParagraphRequest
-   * @return DocAppendParagraphResponse
+   * 追加指定段落元素
+   * 
+   * @param request - DocAppendParagraphRequest
+   * @returns DocAppendParagraphResponse
    */
   async docAppendParagraph(docKey: string, blockId: string, request: DocAppendParagraphRequest): Promise<DocAppendParagraphResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8270,12 +9517,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在段落后追加文本
-   *
-   * @param request DocAppendTextRequest
-   * @param headers DocAppendTextHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DocAppendTextResponse
+   * 在段落后追加文本
+   * 
+   * @param request - DocAppendTextRequest
+   * @param headers - DocAppendTextHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DocAppendTextResponse
    */
   async docAppendTextWithOptions(docKey: string, blockId: string, request: DocAppendTextRequest, headers: DocAppendTextHeaders, runtime: $Util.RuntimeOptions): Promise<DocAppendTextResponse> {
     Util.validateModel(request);
@@ -8318,10 +9565,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 在段落后追加文本
-   *
-   * @param request DocAppendTextRequest
-   * @return DocAppendTextResponse
+   * 在段落后追加文本
+   * 
+   * @param request - DocAppendTextRequest
+   * @returns DocAppendTextResponse
    */
   async docAppendText(docKey: string, blockId: string, request: DocAppendTextRequest): Promise<DocAppendTextResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8330,12 +9577,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询指定Block元素
-   *
-   * @param request DocBlocksQueryRequest
-   * @param headers DocBlocksQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DocBlocksQueryResponse
+   * 查询指定Block元素
+   * 
+   * @param request - DocBlocksQueryRequest
+   * @param headers - DocBlocksQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DocBlocksQueryResponse
    */
   async docBlocksQueryWithOptions(docKey: string, request: DocBlocksQueryRequest, headers: DocBlocksQueryHeaders, runtime: $Util.RuntimeOptions): Promise<DocBlocksQueryResponse> {
     Util.validateModel(request);
@@ -8384,10 +9631,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询指定Block元素
-   *
-   * @param request DocBlocksQueryRequest
-   * @return DocBlocksQueryResponse
+   * 查询指定Block元素
+   * 
+   * @param request - DocBlocksQueryRequest
+   * @returns DocBlocksQueryResponse
    */
   async docBlocksQuery(docKey: string, request: DocBlocksQueryRequest): Promise<DocBlocksQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8396,12 +9643,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除指定位置的 Block
-   *
-   * @param request DocDeleteBlockRequest
-   * @param headers DocDeleteBlockHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DocDeleteBlockResponse
+   * 删除指定位置的 Block
+   * 
+   * @param request - DocDeleteBlockRequest
+   * @param headers - DocDeleteBlockHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DocDeleteBlockResponse
    */
   async docDeleteBlockWithOptions(docKey: string, blockId: string, request: DocDeleteBlockRequest, headers: DocDeleteBlockHeaders, runtime: $Util.RuntimeOptions): Promise<DocDeleteBlockResponse> {
     Util.validateModel(request);
@@ -8438,10 +9685,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除指定位置的 Block
-   *
-   * @param request DocDeleteBlockRequest
-   * @return DocDeleteBlockResponse
+   * 删除指定位置的 Block
+   * 
+   * @param request - DocDeleteBlockRequest
+   * @returns DocDeleteBlockResponse
    */
   async docDeleteBlock(docKey: string, blockId: string, request: DocDeleteBlockRequest): Promise<DocDeleteBlockResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8450,12 +9697,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 插入指定Block元素
-   *
-   * @param request DocInsertBlocksRequest
-   * @param headers DocInsertBlocksHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DocInsertBlocksResponse
+   * 插入指定Block元素
+   * 
+   * @param request - DocInsertBlocksRequest
+   * @param headers - DocInsertBlocksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DocInsertBlocksResponse
    */
   async docInsertBlocksWithOptions(docKey: string, request: DocInsertBlocksRequest, headers: DocInsertBlocksHeaders, runtime: $Util.RuntimeOptions): Promise<DocInsertBlocksResponse> {
     Util.validateModel(request);
@@ -8510,10 +9757,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 插入指定Block元素
-   *
-   * @param request DocInsertBlocksRequest
-   * @return DocInsertBlocksResponse
+   * 插入指定Block元素
+   * 
+   * @param request - DocInsertBlocksRequest
+   * @returns DocInsertBlocksResponse
    */
   async docInsertBlocks(docKey: string, request: DocInsertBlocksRequest): Promise<DocInsertBlocksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8522,12 +9769,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 覆写全文
-   *
-   * @param request DocUpdateContentRequest
-   * @param headers DocUpdateContentHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DocUpdateContentResponse
+   * 覆写全文
+   * 
+   * @param request - DocUpdateContentRequest
+   * @param headers - DocUpdateContentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DocUpdateContentResponse
    */
   async docUpdateContentWithOptions(docKey: string, request: DocUpdateContentRequest, headers: DocUpdateContentHeaders, runtime: $Util.RuntimeOptions): Promise<DocUpdateContentResponse> {
     Util.validateModel(request);
@@ -8574,10 +9821,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 覆写全文
-   *
-   * @param request DocUpdateContentRequest
-   * @return DocUpdateContentResponse
+   * 覆写全文
+   * 
+   * @param request - DocUpdateContentRequest
+   * @returns DocUpdateContentResponse
    */
   async docUpdateContent(docKey: string, request: DocUpdateContentRequest): Promise<DocUpdateContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8586,12 +9833,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取所有工作表
-   *
-   * @param request GetAllSheetsRequest
-   * @param headers GetAllSheetsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAllSheetsResponse
+   * 获取所有工作表
+   * 
+   * @param request - GetAllSheetsRequest
+   * @param headers - GetAllSheetsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAllSheetsResponse
    */
   async getAllSheetsWithOptions(workbookId: string, request: GetAllSheetsRequest, headers: GetAllSheetsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllSheetsResponse> {
     Util.validateModel(request);
@@ -8628,10 +9875,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取所有工作表
-   *
-   * @param request GetAllSheetsRequest
-   * @return GetAllSheetsResponse
+   * 获取所有工作表
+   * 
+   * @param request - GetAllSheetsRequest
+   * @returns GetAllSheetsResponse
    */
   async getAllSheets(workbookId: string, request: GetAllSheetsRequest): Promise<GetAllSheetsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8640,12 +9887,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取开发者元数据
-   *
-   * @param request GetDeveloperMetadataRequest
-   * @param headers GetDeveloperMetadataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDeveloperMetadataResponse
+   * 获取开发者元数据
+   * 
+   * @param request - GetDeveloperMetadataRequest
+   * @param headers - GetDeveloperMetadataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDeveloperMetadataResponse
    */
   async getDeveloperMetadataWithOptions(workbookId: string, developerMetadataId: string, request: GetDeveloperMetadataRequest, headers: GetDeveloperMetadataHeaders, runtime: $Util.RuntimeOptions): Promise<GetDeveloperMetadataResponse> {
     Util.validateModel(request);
@@ -8682,10 +9929,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取开发者元数据
-   *
-   * @param request GetDeveloperMetadataRequest
-   * @return GetDeveloperMetadataResponse
+   * 获取开发者元数据
+   * 
+   * @param request - GetDeveloperMetadataRequest
+   * @returns GetDeveloperMetadataResponse
    */
   async getDeveloperMetadata(workbookId: string, developerMetadataId: string, request: GetDeveloperMetadataRequest): Promise<GetDeveloperMetadataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8694,12 +9941,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取单元格区域
-   *
-   * @param request GetRangeRequest
-   * @param headers GetRangeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRangeResponse
+   * 获取单元格区域
+   * 
+   * @param request - GetRangeRequest
+   * @param headers - GetRangeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRangeResponse
    */
   async getRangeWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: GetRangeRequest, headers: GetRangeHeaders, runtime: $Util.RuntimeOptions): Promise<GetRangeResponse> {
     Util.validateModel(request);
@@ -8740,10 +9987,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取单元格区域
-   *
-   * @param request GetRangeRequest
-   * @return GetRangeResponse
+   * 获取单元格区域
+   * 
+   * @param request - GetRangeRequest
+   * @returns GetRangeResponse
    */
   async getRange(workbookId: string, sheetId: string, rangeAddress: string, request: GetRangeRequest): Promise<GetRangeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8752,12 +9999,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取最近编辑文档
-   *
-   * @param request GetRecentEditDocsRequest
-   * @param headers GetRecentEditDocsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRecentEditDocsResponse
+   * 获取最近编辑文档
+   * 
+   * @param request - GetRecentEditDocsRequest
+   * @param headers - GetRecentEditDocsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRecentEditDocsResponse
    */
   async getRecentEditDocsWithOptions(request: GetRecentEditDocsRequest, headers: GetRecentEditDocsHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecentEditDocsResponse> {
     Util.validateModel(request);
@@ -8802,10 +10049,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取最近编辑文档
-   *
-   * @param request GetRecentEditDocsRequest
-   * @return GetRecentEditDocsResponse
+   * 获取最近编辑文档
+   * 
+   * @param request - GetRecentEditDocsRequest
+   * @returns GetRecentEditDocsResponse
    */
   async getRecentEditDocs(request: GetRecentEditDocsRequest): Promise<GetRecentEditDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8814,12 +10061,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取最近打开文档
-   *
-   * @param request GetRecentOpenDocsRequest
-   * @param headers GetRecentOpenDocsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRecentOpenDocsResponse
+   * 获取最近打开文档
+   * 
+   * @param request - GetRecentOpenDocsRequest
+   * @param headers - GetRecentOpenDocsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRecentOpenDocsResponse
    */
   async getRecentOpenDocsWithOptions(request: GetRecentOpenDocsRequest, headers: GetRecentOpenDocsHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecentOpenDocsResponse> {
     Util.validateModel(request);
@@ -8864,10 +10111,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取最近打开文档
-   *
-   * @param request GetRecentOpenDocsRequest
-   * @return GetRecentOpenDocsResponse
+   * 获取最近打开文档
+   * 
+   * @param request - GetRecentOpenDocsRequest
+   * @returns GetRecentOpenDocsResponse
    */
   async getRecentOpenDocs(request: GetRecentOpenDocsRequest): Promise<GetRecentOpenDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8876,12 +10123,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户有权限的知识库
-   *
-   * @param request GetRelatedWorkspacesRequest
-   * @param headers GetRelatedWorkspacesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRelatedWorkspacesResponse
+   * 查询用户有权限的知识库
+   * 
+   * @param request - GetRelatedWorkspacesRequest
+   * @param headers - GetRelatedWorkspacesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRelatedWorkspacesResponse
    */
   async getRelatedWorkspacesWithOptions(request: GetRelatedWorkspacesRequest, headers: GetRelatedWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<GetRelatedWorkspacesResponse> {
     Util.validateModel(request);
@@ -8922,10 +10169,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户有权限的知识库
-   *
-   * @param request GetRelatedWorkspacesRequest
-   * @return GetRelatedWorkspacesResponse
+   * 查询用户有权限的知识库
+   * 
+   * @param request - GetRelatedWorkspacesRequest
+   * @returns GetRelatedWorkspacesResponse
    */
   async getRelatedWorkspaces(request: GetRelatedWorkspacesRequest): Promise<GetRelatedWorkspacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8934,12 +10181,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工作表
-   *
-   * @param request GetSheetRequest
-   * @param headers GetSheetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSheetResponse
+   * 获取工作表
+   * 
+   * @param request - GetSheetRequest
+   * @param headers - GetSheetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSheetResponse
    */
   async getSheetWithOptions(workbookId: string, sheetId: string, request: GetSheetRequest, headers: GetSheetHeaders, runtime: $Util.RuntimeOptions): Promise<GetSheetResponse> {
     Util.validateModel(request);
@@ -8976,10 +10223,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工作表
-   *
-   * @param request GetSheetRequest
-   * @return GetSheetResponse
+   * 获取工作表
+   * 
+   * @param request - GetSheetRequest
+   * @returns GetSheetResponse
    */
   async getSheet(workbookId: string, sheetId: string, request: GetSheetRequest): Promise<GetSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8988,12 +10235,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询文档模版
-   *
-   * @param request GetTemplateByIdRequest
-   * @param headers GetTemplateByIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTemplateByIdResponse
+   * 查询文档模版
+   * 
+   * @param request - GetTemplateByIdRequest
+   * @param headers - GetTemplateByIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTemplateByIdResponse
    */
   async getTemplateByIdWithOptions(templateId: string, request: GetTemplateByIdRequest, headers: GetTemplateByIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTemplateByIdResponse> {
     Util.validateModel(request);
@@ -9034,10 +10281,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询文档模版
-   *
-   * @param request GetTemplateByIdRequest
-   * @return GetTemplateByIdResponse
+   * 查询文档模版
+   * 
+   * @param request - GetTemplateByIdRequest
+   * @returns GetTemplateByIdResponse
    */
   async getTemplateById(templateId: string, request: GetTemplateByIdRequest): Promise<GetTemplateByIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9046,11 +10293,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询知识库信息
-   *
-   * @param headers GetWorkspaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetWorkspaceResponse
+   * 查询知识库信息
+   * 
+   * @param headers - GetWorkspaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetWorkspaceResponse
    */
   async getWorkspaceWithOptions(workspaceId: string, headers: GetWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkspaceResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9080,9 +10327,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询知识库信息
-   *
-   * @return GetWorkspaceResponse
+   * 查询知识库信息
+   * @returns GetWorkspaceResponse
    */
   async getWorkspace(workspaceId: string): Promise<GetWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9091,12 +10337,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询知识库文档
-   *
-   * @param request GetWorkspaceNodeRequest
-   * @param headers GetWorkspaceNodeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetWorkspaceNodeResponse
+   * 查询知识库文档
+   * 
+   * @param request - GetWorkspaceNodeRequest
+   * @param headers - GetWorkspaceNodeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetWorkspaceNodeResponse
    */
   async getWorkspaceNodeWithOptions(workspaceId: string, nodeId: string, request: GetWorkspaceNodeRequest, headers: GetWorkspaceNodeHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkspaceNodeResponse> {
     Util.validateModel(request);
@@ -9133,10 +10379,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询知识库文档
-   *
-   * @param request GetWorkspaceNodeRequest
-   * @return GetWorkspaceNodeResponse
+   * 查询知识库文档
+   * 
+   * @param request - GetWorkspaceNodeRequest
+   * @returns GetWorkspaceNodeResponse
    */
   async getWorkspaceNode(workspaceId: string, nodeId: string, request: GetWorkspaceNodeRequest): Promise<GetWorkspaceNodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9145,12 +10391,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 文档初始化
-   *
-   * @param request InitDocumentRequest
-   * @param headers InitDocumentHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InitDocumentResponse
+   * 文档初始化
+   * 
+   * @param request - InitDocumentRequest
+   * @param headers - InitDocumentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InitDocumentResponse
    */
   async initDocumentWithOptions(docId: string, request: InitDocumentRequest, headers: InitDocumentHeaders, runtime: $Util.RuntimeOptions): Promise<InitDocumentResponse> {
     Util.validateModel(request);
@@ -9201,10 +10447,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 文档初始化
-   *
-   * @param request InitDocumentRequest
-   * @return InitDocumentResponse
+   * 文档初始化
+   * 
+   * @param request - InitDocumentRequest
+   * @returns InitDocumentResponse
    */
   async initDocument(docId: string, request: InitDocumentRequest): Promise<InitDocumentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9213,12 +10459,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 向文档内插入块级元素
-   *
-   * @param request InsertBlocksRequest
-   * @param headers InsertBlocksHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InsertBlocksResponse
+   * 向文档内插入块级元素
+   * 
+   * @param request - InsertBlocksRequest
+   * @param headers - InsertBlocksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InsertBlocksResponse
    */
   async insertBlocksWithOptions(documentId: string, request: InsertBlocksRequest, headers: InsertBlocksHeaders, runtime: $Util.RuntimeOptions): Promise<InsertBlocksResponse> {
     Util.validateModel(request);
@@ -9263,10 +10509,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 向文档内插入块级元素
-   *
-   * @param request InsertBlocksRequest
-   * @return InsertBlocksResponse
+   * 向文档内插入块级元素
+   * 
+   * @param request - InsertBlocksRequest
+   * @returns InsertBlocksResponse
    */
   async insertBlocks(documentId: string, request: InsertBlocksRequest): Promise<InsertBlocksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9275,12 +10521,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 指定列左侧插入若干列
-   *
-   * @param request InsertColumnsBeforeRequest
-   * @param headers InsertColumnsBeforeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InsertColumnsBeforeResponse
+   * 指定列左侧插入若干列
+   * 
+   * @param request - InsertColumnsBeforeRequest
+   * @param headers - InsertColumnsBeforeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InsertColumnsBeforeResponse
    */
   async insertColumnsBeforeWithOptions(workbookId: string, sheetId: string, request: InsertColumnsBeforeRequest, headers: InsertColumnsBeforeHeaders, runtime: $Util.RuntimeOptions): Promise<InsertColumnsBeforeResponse> {
     Util.validateModel(request);
@@ -9327,10 +10573,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 指定列左侧插入若干列
-   *
-   * @param request InsertColumnsBeforeRequest
-   * @return InsertColumnsBeforeResponse
+   * 指定列左侧插入若干列
+   * 
+   * @param request - InsertColumnsBeforeRequest
+   * @returns InsertColumnsBeforeResponse
    */
   async insertColumnsBefore(workbookId: string, sheetId: string, request: InsertColumnsBeforeRequest): Promise<InsertColumnsBeforeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9339,12 +10585,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 插入下拉列表
-   *
-   * @param request InsertDropdownListsRequest
-   * @param headers InsertDropdownListsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InsertDropdownListsResponse
+   * 插入下拉列表
+   * 
+   * @param request - InsertDropdownListsRequest
+   * @param headers - InsertDropdownListsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InsertDropdownListsResponse
    */
   async insertDropdownListsWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: InsertDropdownListsRequest, headers: InsertDropdownListsHeaders, runtime: $Util.RuntimeOptions): Promise<InsertDropdownListsResponse> {
     Util.validateModel(request);
@@ -9387,10 +10633,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 插入下拉列表
-   *
-   * @param request InsertDropdownListsRequest
-   * @return InsertDropdownListsResponse
+   * 插入下拉列表
+   * 
+   * @param request - InsertDropdownListsRequest
+   * @returns InsertDropdownListsResponse
    */
   async insertDropdownLists(workbookId: string, sheetId: string, rangeAddress: string, request: InsertDropdownListsRequest): Promise<InsertDropdownListsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9399,12 +10645,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 指定行上方插入若干行
-   *
-   * @param request InsertRowsBeforeRequest
-   * @param headers InsertRowsBeforeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InsertRowsBeforeResponse
+   * 指定行上方插入若干行
+   * 
+   * @param request - InsertRowsBeforeRequest
+   * @param headers - InsertRowsBeforeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InsertRowsBeforeResponse
    */
   async insertRowsBeforeWithOptions(workbookId: string, sheetId: string, request: InsertRowsBeforeRequest, headers: InsertRowsBeforeHeaders, runtime: $Util.RuntimeOptions): Promise<InsertRowsBeforeResponse> {
     Util.validateModel(request);
@@ -9451,10 +10697,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 指定行上方插入若干行
-   *
-   * @param request InsertRowsBeforeRequest
-   * @return InsertRowsBeforeResponse
+   * 指定行上方插入若干行
+   * 
+   * @param request - InsertRowsBeforeRequest
+   * @returns InsertRowsBeforeResponse
    */
   async insertRowsBefore(workbookId: string, sheetId: string, request: InsertRowsBeforeRequest): Promise<InsertRowsBeforeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9463,12 +10709,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询文档模版
-   *
-   * @param request ListTemplateRequest
-   * @param headers ListTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListTemplateResponse
+   * 查询文档模版
+   * 
+   * @param request - ListTemplateRequest
+   * @param headers - ListTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListTemplateResponse
    */
   async listTemplateWithOptions(request: ListTemplateRequest, headers: ListTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<ListTemplateResponse> {
     Util.validateModel(request);
@@ -9521,10 +10767,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询文档模版
-   *
-   * @param request ListTemplateRequest
-   * @return ListTemplateResponse
+   * 查询文档模版
+   * 
+   * @param request - ListTemplateRequest
+   * @returns ListTemplateResponse
    */
   async listTemplate(request: ListTemplateRequest): Promise<ListTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9533,12 +10779,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 合并单元格
-   *
-   * @param request MergeRangeRequest
-   * @param headers MergeRangeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MergeRangeResponse
+   * 合并单元格
+   * 
+   * @param request - MergeRangeRequest
+   * @param headers - MergeRangeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MergeRangeResponse
    */
   async mergeRangeWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: MergeRangeRequest, headers: MergeRangeHeaders, runtime: $Util.RuntimeOptions): Promise<MergeRangeResponse> {
     Util.validateModel(request);
@@ -9575,10 +10821,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 合并单元格
-   *
-   * @param request MergeRangeRequest
-   * @return MergeRangeResponse
+   * 合并单元格
+   * 
+   * @param request - MergeRangeRequest
+   * @returns MergeRangeResponse
    */
   async mergeRange(workbookId: string, sheetId: string, rangeAddress: string, request: MergeRangeRequest): Promise<MergeRangeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9587,12 +10833,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查找下一个符合条件的单元格
-   *
-   * @param request RangeFindNextRequest
-   * @param headers RangeFindNextHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RangeFindNextResponse
+   * 查找下一个符合条件的单元格
+   * 
+   * @param request - RangeFindNextRequest
+   * @param headers - RangeFindNextHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RangeFindNextResponse
    */
   async rangeFindNextWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: RangeFindNextRequest, headers: RangeFindNextHeaders, runtime: $Util.RuntimeOptions): Promise<RangeFindNextResponse> {
     Util.validateModel(request);
@@ -9639,10 +10885,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查找下一个符合条件的单元格
-   *
-   * @param request RangeFindNextRequest
-   * @return RangeFindNextResponse
+   * 查找下一个符合条件的单元格
+   * 
+   * @param request - RangeFindNextRequest
+   * @returns RangeFindNextResponse
    */
   async rangeFindNext(workbookId: string, sheetId: string, rangeAddress: string, request: RangeFindNextRequest): Promise<RangeFindNextResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9651,12 +10897,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索用户有权限的知识库文档
-   *
-   * @param request SearchWorkspaceDocsRequest
-   * @param headers SearchWorkspaceDocsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchWorkspaceDocsResponse
+   * 搜索用户有权限的知识库文档
+   * 
+   * @param request - SearchWorkspaceDocsRequest
+   * @param headers - SearchWorkspaceDocsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchWorkspaceDocsResponse
    */
   async searchWorkspaceDocsWithOptions(request: SearchWorkspaceDocsRequest, headers: SearchWorkspaceDocsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchWorkspaceDocsResponse> {
     Util.validateModel(request);
@@ -9709,10 +10955,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索用户有权限的知识库文档
-   *
-   * @param request SearchWorkspaceDocsRequest
-   * @return SearchWorkspaceDocsResponse
+   * 搜索用户有权限的知识库文档
+   * 
+   * @param request - SearchWorkspaceDocsRequest
+   * @returns SearchWorkspaceDocsResponse
    */
   async searchWorkspaceDocs(request: SearchWorkspaceDocsRequest): Promise<SearchWorkspaceDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9721,12 +10967,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置列宽
-   *
-   * @param request SetColumnWidthRequest
-   * @param headers SetColumnWidthHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SetColumnWidthResponse
+   * 设置列宽
+   * 
+   * @param request - SetColumnWidthRequest
+   * @param headers - SetColumnWidthHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SetColumnWidthResponse
    */
   async setColumnWidthWithOptions(workbookId: string, sheetId: string, request: SetColumnWidthRequest, headers: SetColumnWidthHeaders, runtime: $Util.RuntimeOptions): Promise<SetColumnWidthResponse> {
     Util.validateModel(request);
@@ -9773,10 +11019,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置列宽
-   *
-   * @param request SetColumnWidthRequest
-   * @return SetColumnWidthResponse
+   * 设置列宽
+   * 
+   * @param request - SetColumnWidthRequest
+   * @returns SetColumnWidthResponse
    */
   async setColumnWidth(workbookId: string, sheetId: string, request: SetColumnWidthRequest): Promise<SetColumnWidthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9785,12 +11031,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置列隐藏或显示
-   *
-   * @param request SetColumnsVisibilityRequest
-   * @param headers SetColumnsVisibilityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SetColumnsVisibilityResponse
+   * 设置列隐藏或显示
+   * 
+   * @param request - SetColumnsVisibilityRequest
+   * @param headers - SetColumnsVisibilityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SetColumnsVisibilityResponse
    */
   async setColumnsVisibilityWithOptions(workbookId: string, sheetId: string, request: SetColumnsVisibilityRequest, headers: SetColumnsVisibilityHeaders, runtime: $Util.RuntimeOptions): Promise<SetColumnsVisibilityResponse> {
     Util.validateModel(request);
@@ -9841,10 +11087,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置列隐藏或显示
-   *
-   * @param request SetColumnsVisibilityRequest
-   * @return SetColumnsVisibilityResponse
+   * 设置列隐藏或显示
+   * 
+   * @param request - SetColumnsVisibilityRequest
+   * @returns SetColumnsVisibilityResponse
    */
   async setColumnsVisibility(workbookId: string, sheetId: string, request: SetColumnsVisibilityRequest): Promise<SetColumnsVisibilityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9853,12 +11099,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置行高
-   *
-   * @param request SetRowHeightRequest
-   * @param headers SetRowHeightHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SetRowHeightResponse
+   * 设置行高
+   * 
+   * @param request - SetRowHeightRequest
+   * @param headers - SetRowHeightHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SetRowHeightResponse
    */
   async setRowHeightWithOptions(workbookId: string, sheetId: string, request: SetRowHeightRequest, headers: SetRowHeightHeaders, runtime: $Util.RuntimeOptions): Promise<SetRowHeightResponse> {
     Util.validateModel(request);
@@ -9905,10 +11151,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置行高
-   *
-   * @param request SetRowHeightRequest
-   * @return SetRowHeightResponse
+   * 设置行高
+   * 
+   * @param request - SetRowHeightRequest
+   * @returns SetRowHeightResponse
    */
   async setRowHeight(workbookId: string, sheetId: string, request: SetRowHeightRequest): Promise<SetRowHeightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9917,12 +11163,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置行隐藏或显示
-   *
-   * @param request SetRowsVisibilityRequest
-   * @param headers SetRowsVisibilityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SetRowsVisibilityResponse
+   * 设置行隐藏或显示
+   * 
+   * @param request - SetRowsVisibilityRequest
+   * @param headers - SetRowsVisibilityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SetRowsVisibilityResponse
    */
   async setRowsVisibilityWithOptions(workbookId: string, sheetId: string, request: SetRowsVisibilityRequest, headers: SetRowsVisibilityHeaders, runtime: $Util.RuntimeOptions): Promise<SetRowsVisibilityResponse> {
     Util.validateModel(request);
@@ -9973,10 +11219,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置行隐藏或显示
-   *
-   * @param request SetRowsVisibilityRequest
-   * @return SetRowsVisibilityResponse
+   * 设置行隐藏或显示
+   * 
+   * @param request - SetRowsVisibilityRequest
+   * @returns SetRowsVisibilityResponse
    */
   async setRowsVisibility(workbookId: string, sheetId: string, request: SetRowsVisibilityRequest): Promise<SetRowsVisibilityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9985,12 +11231,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary SheetAutofitRows
-   *
-   * @param request SheetAutofitRowsRequest
-   * @param headers SheetAutofitRowsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SheetAutofitRowsResponse
+   * SheetAutofitRows
+   * 
+   * @param request - SheetAutofitRowsRequest
+   * @param headers - SheetAutofitRowsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SheetAutofitRowsResponse
    */
   async sheetAutofitRowsWithOptions(workbookId: string, sheetId: string, request: SheetAutofitRowsRequest, headers: SheetAutofitRowsHeaders, runtime: $Util.RuntimeOptions): Promise<SheetAutofitRowsResponse> {
     Util.validateModel(request);
@@ -10041,10 +11287,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary SheetAutofitRows
-   *
-   * @param request SheetAutofitRowsRequest
-   * @return SheetAutofitRowsResponse
+   * SheetAutofitRows
+   * 
+   * @param request - SheetAutofitRowsRequest
+   * @returns SheetAutofitRowsResponse
    */
   async sheetAutofitRows(workbookId: string, sheetId: string, request: SheetAutofitRowsRequest): Promise<SheetAutofitRowsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10053,12 +11299,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工作表上查找所有符合条件的单元格
-   *
-   * @param request SheetFindAllRequest
-   * @param headers SheetFindAllHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SheetFindAllResponse
+   * 工作表上查找所有符合条件的单元格
+   * 
+   * @param request - SheetFindAllRequest
+   * @param headers - SheetFindAllHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SheetFindAllResponse
    */
   async sheetFindAllWithOptions(workbookId: string, sheetId: string, request: SheetFindAllRequest, headers: SheetFindAllHeaders, runtime: $Util.RuntimeOptions): Promise<SheetFindAllResponse> {
     Util.validateModel(request);
@@ -10109,10 +11355,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工作表上查找所有符合条件的单元格
-   *
-   * @param request SheetFindAllRequest
-   * @return SheetFindAllResponse
+   * 工作表上查找所有符合条件的单元格
+   * 
+   * @param request - SheetFindAllRequest
+   * @returns SheetFindAllResponse
    */
   async sheetFindAll(workbookId: string, sheetId: string, request: SheetFindAllRequest): Promise<SheetFindAllResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10121,12 +11367,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消文档酷应用和表格的关联
-   *
-   * @param request UnbindCoolAppToSheetRequest
-   * @param headers UnbindCoolAppToSheetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UnbindCoolAppToSheetResponse
+   * 取消文档酷应用和表格的关联
+   * 
+   * @param request - UnbindCoolAppToSheetRequest
+   * @param headers - UnbindCoolAppToSheetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UnbindCoolAppToSheetResponse
    */
   async unbindCoolAppToSheetWithOptions(workbookId: string, request: UnbindCoolAppToSheetRequest, headers: UnbindCoolAppToSheetHeaders, runtime: $Util.RuntimeOptions): Promise<UnbindCoolAppToSheetResponse> {
     Util.validateModel(request);
@@ -10167,10 +11413,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 取消文档酷应用和表格的关联
-   *
-   * @param request UnbindCoolAppToSheetRequest
-   * @return UnbindCoolAppToSheetResponse
+   * 取消文档酷应用和表格的关联
+   * 
+   * @param request - UnbindCoolAppToSheetRequest
+   * @returns UnbindCoolAppToSheetResponse
    */
   async unbindCoolAppToSheet(workbookId: string, request: UnbindCoolAppToSheetRequest): Promise<UnbindCoolAppToSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10179,12 +11425,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新单元格区域
-   *
-   * @param request UpdateRangeRequest
-   * @param headers UpdateRangeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateRangeResponse
+   * 更新单元格区域
+   * 
+   * @param request - UpdateRangeRequest
+   * @param headers - UpdateRangeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateRangeResponse
    */
   async updateRangeWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: UpdateRangeRequest, headers: UpdateRangeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRangeResponse> {
     Util.validateModel(request);
@@ -10255,10 +11501,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新单元格区域
-   *
-   * @param request UpdateRangeRequest
-   * @return UpdateRangeResponse
+   * 更新单元格区域
+   * 
+   * @param request - UpdateRangeRequest
+   * @returns UpdateRangeResponse
    */
   async updateRange(workbookId: string, sheetId: string, rangeAddress: string, request: UpdateRangeRequest): Promise<UpdateRangeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10267,12 +11513,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新工作表
-   *
-   * @param request UpdateSheetRequest
-   * @param headers UpdateSheetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateSheetResponse
+   * 更新工作表
+   * 
+   * @param request - UpdateSheetRequest
+   * @param headers - UpdateSheetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateSheetResponse
    */
   async updateSheetWithOptions(workbookId: string, sheetId: string, request: UpdateSheetRequest, headers: UpdateSheetHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSheetResponse> {
     Util.validateModel(request);
@@ -10319,10 +11565,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新工作表
-   *
-   * @param request UpdateSheetRequest
-   * @return UpdateSheetResponse
+   * 更新工作表
+   * 
+   * @param request - UpdateSheetRequest
+   * @returns UpdateSheetResponse
    */
   async updateSheet(workbookId: string, sheetId: string, request: UpdateSheetRequest): Promise<UpdateSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10331,12 +11577,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改知识库文档成员
-   *
-   * @param request UpdateWorkspaceDocMembersRequest
-   * @param headers UpdateWorkspaceDocMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateWorkspaceDocMembersResponse
+   * 修改知识库文档成员
+   * 
+   * @param request - UpdateWorkspaceDocMembersRequest
+   * @param headers - UpdateWorkspaceDocMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateWorkspaceDocMembersResponse
    */
   async updateWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: UpdateWorkspaceDocMembersRequest, headers: UpdateWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkspaceDocMembersResponse> {
     Util.validateModel(request);
@@ -10377,10 +11623,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改知识库文档成员
-   *
-   * @param request UpdateWorkspaceDocMembersRequest
-   * @return UpdateWorkspaceDocMembersResponse
+   * 修改知识库文档成员
+   * 
+   * @param request - UpdateWorkspaceDocMembersRequest
+   * @returns UpdateWorkspaceDocMembersResponse
    */
   async updateWorkspaceDocMembers(workspaceId: string, nodeId: string, request: UpdateWorkspaceDocMembersRequest): Promise<UpdateWorkspaceDocMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10389,12 +11635,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新知识库成员
-   *
-   * @param request UpdateWorkspaceMembersRequest
-   * @param headers UpdateWorkspaceMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateWorkspaceMembersResponse
+   * 更新知识库成员
+   * 
+   * @param request - UpdateWorkspaceMembersRequest
+   * @param headers - UpdateWorkspaceMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateWorkspaceMembersResponse
    */
   async updateWorkspaceMembersWithOptions(workspaceId: string, request: UpdateWorkspaceMembersRequest, headers: UpdateWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkspaceMembersResponse> {
     Util.validateModel(request);
@@ -10435,10 +11681,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新知识库成员
-   *
-   * @param request UpdateWorkspaceMembersRequest
-   * @return UpdateWorkspaceMembersResponse
+   * 更新知识库成员
+   * 
+   * @param request - UpdateWorkspaceMembersRequest
+   * @returns UpdateWorkspaceMembersResponse
    */
   async updateWorkspaceMembers(workspaceId: string, request: UpdateWorkspaceMembersRequest): Promise<UpdateWorkspaceMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });

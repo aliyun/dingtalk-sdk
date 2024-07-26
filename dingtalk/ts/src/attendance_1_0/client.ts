@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -84,23 +82,101 @@ export class AddLeaveTypeHeaders extends $tea.Model {
 }
 
 export class AddLeaveTypeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * general_leave
+   */
   bizType?: string;
+  /**
+   * @example
+   * {"validity_type":"absolute_time","validity_value":"12-31"}
+   */
   extras?: string;
+  /**
+   * @example
+   * false
+   */
   freedomLeave?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1000
+   */
   hoursInPerDay?: number;
   leaveCertificate?: AddLeaveTypeRequestLeaveCertificate;
+  /**
+   * @example
+   * up
+   */
   leaveHourCeil?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 年假
+   */
   leaveName?: string;
+  /**
+   * @example
+   * false
+   */
   leaveTimeCeil?: boolean;
+  /**
+   * @example
+   * hour
+   */
   leaveTimeCeilMinUnit?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * day
+   */
   leaveViewUnit?: string;
+  /**
+   * @example
+   * 1
+   */
   maxLeaveTime?: number;
+  /**
+   * @example
+   * 2
+   */
   minLeaveHour?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   naturalDayLeave?: boolean;
+  /**
+   * @example
+   * false
+   */
   paidLeave?: boolean;
   submitTimeRule?: AddLeaveTypeRequestSubmitTimeRule;
   visibilityRules?: AddLeaveTypeRequestVisibilityRules[];
+  /**
+   * @example
+   * entry
+   */
   whenCanLeave?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user01
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -154,6 +230,10 @@ export class AddLeaveTypeRequest extends $tea.Model {
 }
 
 export class AddLeaveTypeResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: AddLeaveTypeResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -220,8 +300,23 @@ export class AttendanceBleDevicesAddHeaders extends $tea.Model {
 }
 
 export class AttendanceBleDevicesAddRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deviceIdList?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 62001E1C5B9362D369D316DED25F3656
+   */
   groupKey?: string;
+  /**
+   * @example
+   * userId001
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -314,7 +409,18 @@ export class AttendanceBleDevicesQueryHeaders extends $tea.Model {
 }
 
 export class AttendanceBleDevicesQueryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 62001E1C5B9XXXX369D316DED25FXXXX
+   */
   groupKey?: string;
+  /**
+   * @example
+   * userId001
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -402,8 +508,23 @@ export class AttendanceBleDevicesRemoveHeaders extends $tea.Model {
 }
 
 export class AttendanceBleDevicesRemoveRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deviceIdList?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 62001E1C5B9362D369D316DED25F3656
+   */
   groupKey?: string;
+  /**
+   * @example
+   * userId001
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -497,6 +618,10 @@ export class BatchBossCheckHeaders extends $tea.Model {
 
 export class BatchBossCheckRequest extends $tea.Model {
   models?: BatchBossCheckRequestModels[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -518,6 +643,13 @@ export class BatchBossCheckRequest extends $tea.Model {
 }
 
 export class BatchBossCheckResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -584,12 +716,40 @@ export class CalculateDurationHeaders extends $tea.Model {
 }
 
 export class CalculateDurationRequest extends $tea.Model {
+  /**
+   * @example
+   * 3
+   */
   bizType?: number;
+  /**
+   * @example
+   * 1
+   */
   calculateModel?: number;
+  /**
+   * @example
+   * day
+   */
   durationUnit?: string;
+  /**
+   * @example
+   * 2019-08-15
+   */
   fromTime?: string;
+  /**
+   * @example
+   * e2dsad-34dfa-2vas23da
+   */
   leaveCode?: string;
+  /**
+   * @example
+   * 2019-08-15
+   */
   toTime?: string;
+  /**
+   * @example
+   * manager123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -690,8 +850,20 @@ export class CheckClosingAccountHeaders extends $tea.Model {
 }
 
 export class CheckClosingAccountRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userTimeRange?: CheckClosingAccountRequestUserTimeRange[];
   static names(): { [key: string]: string } {
     return {
@@ -715,8 +887,20 @@ export class CheckClosingAccountRequest extends $tea.Model {
 }
 
 export class CheckClosingAccountResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mesage?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pass?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -787,9 +971,34 @@ export class CheckWritePermissionHeaders extends $tea.Model {
 }
 
 export class CheckWritePermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * GROUP
+   */
   category?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   entityIds?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 050728xxx921
+   */
   opUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SCHEDULE
+   */
   resourceKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -815,6 +1024,10 @@ export class CheckWritePermissionRequest extends $tea.Model {
 }
 
 export class CheckWritePermissionResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   entityPermissionMap?: { [key: string]: boolean };
   static names(): { [key: string]: string } {
     return {
@@ -881,11 +1094,34 @@ export class CreateApproveHeaders extends $tea.Model {
 }
 
 export class CreateApproveRequest extends $tea.Model {
+  /**
+   * @example
+   * 341lkfjdkf
+   */
   approveId?: string;
+  /**
+   * @example
+   * 4243235dfd
+   */
   opUserid?: string;
   punchParam?: CreateApproveRequestPunchParam;
+  /**
+   * @example
+   * 年假
+   */
   subType?: string;
+  /**
+   * @example
+   * 请假
+   */
   tagName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * fdfi3435
+   */
   userid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -981,6 +1217,13 @@ export class DeleteLeaveRequestHeaders extends $tea.Model {
 }
 
 export class DeleteLeaveRequestRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * zxfgsdfsdfvsd
+   */
   outerId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1069,10 +1312,39 @@ export class DeleteWaterMarkTemplateHeaders extends $tea.Model {
 }
 
 export class DeleteWaterMarkTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-292988B1-5064-4A42-9389-A76B97xxxxx
+   */
   formCode?: string;
+  /**
+   * @example
+   * {     \"items\":[         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"enableModifyPlace\",                 \"id\":\"enableModifyPlace-undefined\",                 \"value\":\"true\"             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"modifyPlaceDistance\",                 \"id\":\"modifyPlaceDistance-undefined\",                 \"value\":200             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"title\",                 \"id\":\"title-undefined\",                 \"value\":\"wofu1\"             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"titleBgColor\",                 \"id\":\"titleBgColor-undefined\",                 \"value\":\"#0089FF\"             }         }     ] }
+   */
   formContent?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234567
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   systemTemplate?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manage123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1100,6 +1372,10 @@ export class DeleteWaterMarkTemplateRequest extends $tea.Model {
 }
 
 export class DeleteWaterMarkTemplateResponseBody extends $tea.Model {
+  /**
+   * @example
+   * PROC-292988B1-5064-4A42-9389-A76B97xxxxx
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1166,10 +1442,45 @@ export class DingTalkSecurityCheckHeaders extends $tea.Model {
 }
 
 export class DingTalkSecurityCheckRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 6.3.30
+   */
   clientVer?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * iOS
+   */
   platform?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 15
+   */
   platformVer?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"lbsWuaToken": "lbsWua","ddSec":"ddSec"}
+   */
   sec?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user01
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1197,6 +1508,10 @@ export class DingTalkSecurityCheckRequest extends $tea.Model {
 }
 
 export class DingTalkSecurityCheckResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: DingTalkSecurityCheckResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -1263,8 +1578,29 @@ export class GetATManageScopeHeaders extends $tea.Model {
 }
 
 export class GetATManageScopeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 50
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user01
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1354,7 +1690,21 @@ export class GetAdjustmentsHeaders extends $tea.Model {
 }
 
 export class GetAdjustmentsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1442,9 +1792,34 @@ export class GetCheckInSchemaTemplateHeaders extends $tea.Model {
 }
 
 export class GetCheckInSchemaTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * water_mark_checkin
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234567
+   */
   openConversationId?: string;
+  /**
+   * @example
+   * water_mark_checkin
+   */
   sceneCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manage123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1536,11 +1911,35 @@ export class GetCheckinRecordByUserHeaders extends $tea.Model {
 }
 
 export class GetCheckinRecordByUserRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIdList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1702,6 +2101,10 @@ export class GetClosingAccountsHeaders extends $tea.Model {
 }
 
 export class GetClosingAccountsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1721,6 +2124,10 @@ export class GetClosingAccountsRequest extends $tea.Model {
 }
 
 export class GetClosingAccountsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: GetClosingAccountsResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
@@ -1787,9 +2194,31 @@ export class GetColumnvalsHeaders extends $tea.Model {
 }
 
 export class GetColumnvalsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   columnIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1709222400000
+   */
   fromDate?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1711728000000
+   */
   toDate?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1881,10 +2310,42 @@ export class GetLeaveRecordsHeaders extends $tea.Model {
 }
 
 export class GetLeaveRecordsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * f84a2dxxxx
+   */
   leaveCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user01
+   */
   opUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1981,7 +2442,18 @@ export class GetLeaveTypeHeaders extends $tea.Model {
 }
 
 export class GetLeaveTypeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user01
+   */
   opUserId?: string;
+  /**
+   * @example
+   * all
+   */
   vacationSource?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2003,6 +2475,10 @@ export class GetLeaveTypeRequest extends $tea.Model {
 }
 
 export class GetLeaveTypeResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: GetLeaveTypeResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
@@ -2069,6 +2545,10 @@ export class GetMachineHeaders extends $tea.Model {
 }
 
 export class GetMachineResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: GetMachineResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -2135,7 +2615,15 @@ export class GetMachineUserHeaders extends $tea.Model {
 }
 
 export class GetMachineUserRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2157,6 +2645,10 @@ export class GetMachineUserRequest extends $tea.Model {
 }
 
 export class GetMachineUserResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: GetMachineUserResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -2242,6 +2734,10 @@ export class GetOvertimeSettingRequest extends $tea.Model {
 }
 
 export class GetOvertimeSettingResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: GetOvertimeSettingResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
@@ -2309,6 +2805,13 @@ export class GetShiftHeaders extends $tea.Model {
 
 export class GetShiftRequest extends $tea.Model {
   opUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   shiftId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2396,7 +2899,21 @@ export class GetSimpleGroupsHeaders extends $tea.Model {
 }
 
 export class GetSimpleGroupsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2484,7 +3001,21 @@ export class GetSimpleOvertimeSettingHeaders extends $tea.Model {
 }
 
 export class GetSimpleOvertimeSettingRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2572,8 +3103,20 @@ export class GetUserHolidaysHeaders extends $tea.Model {
 }
 
 export class GetUserHolidaysRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workDateFrom?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workDateTo?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2663,49 +3206,190 @@ export class GroupAddHeaders extends $tea.Model {
 }
 
 export class GroupAddRequest extends $tea.Model {
+  /**
+   * @example
+   * 123L
+   */
   adjustmentSettingId?: number;
   bleDeviceList?: GroupAddRequestBleDeviceList[];
+  /**
+   * @example
+   * true
+   */
   checkNeedHealthyCode?: boolean;
+  /**
+   * @example
+   * 1234
+   */
   defaultClassId?: number;
+  /**
+   * @example
+   * true
+   */
   disableCheckWhenRest?: boolean;
+  /**
+   * @example
+   * true
+   */
   disableCheckWithoutSchedule?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableCameraCheck?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableEmpSelectClass?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableFaceCheck?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableFaceStrictMode?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableNextDay?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableOutSideUpdateNormalCheck?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableOutsideApply?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableOutsideCameraCheck?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableOutsideCheck?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableOutsideRemark?: boolean;
+  /**
+   * @example
+   * true
+   */
   enablePositionBle?: boolean;
   enableTrimDistance?: boolean;
+  /**
+   * @example
+   * true
+   */
   forbidHideOutSideAddress?: boolean;
   freeCheckSetting?: GroupAddRequestFreeCheckSetting;
+  /**
+   * @example
+   * 0
+   */
   freeCheckTypeId?: number;
+  /**
+   * @example
+   * 240
+   */
   freecheckDayStartMinOffset?: number;
   freecheckWorkDays?: number[];
+  /**
+   * @example
+   * 123
+   */
   groupId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 白班考勤
+   */
   groupName?: string;
   managerList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: GroupAddRequestMembers[];
+  /**
+   * @example
+   * true
+   */
   modifyMember?: boolean;
+  /**
+   * @example
+   * 500
+   */
   offset?: number;
   openCameraCheck?: boolean;
+  /**
+   * @example
+   * true
+   */
   openFaceCheck?: boolean;
+  /**
+   * @example
+   * -1
+   */
   outsideCheckApproveModeId?: number;
+  /**
+   * @example
+   * 123L
+   */
   overtimeSettingId?: number;
+  /**
+   * @example
+   * 123dfdf
+   */
   owner?: string;
   positions?: GroupAddRequestPositions[];
   resourcePermissionMap?: { [key: string]: any };
   shiftVOList?: GroupAddRequestShiftVOList[];
+  /**
+   * @example
+   * true
+   */
   skipHolidays?: boolean;
+  /**
+   * @example
+   * {"onDuty":{1400000:123,1400001:123},"offDuty":[1400000,1400001]}
+   */
   specialDays?: string;
+  /**
+   * @example
+   * 100
+   */
   trimDistance?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TURN
+   */
   type?: string;
   wifis?: GroupAddRequestWifis[];
   workdayClassList?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123dfd
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2880,37 +3564,136 @@ export class GroupUpdateHeaders extends $tea.Model {
 }
 
 export class GroupUpdateRequest extends $tea.Model {
+  /**
+   * @example
+   * 123L
+   */
   adjustmentSettingId?: number;
+  /**
+   * @example
+   * true
+   */
   disableCheckWhenRest?: boolean;
+  /**
+   * @example
+   * true
+   */
   disableCheckWithoutSchedule?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableCameraCheck?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableEmpSelectClass?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableFaceCheck?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableFaceStrictMode?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableOutSideUpdateNormalCheck?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableOutsideApply?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableOutsideCheck?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableOutsideRemark?: boolean;
+  /**
+   * @example
+   * true
+   */
   enableTrimDistance?: boolean;
+  /**
+   * @example
+   * true
+   */
   forbidHideOutSideAddress?: boolean;
   freeCheckSetting?: GroupUpdateRequestFreeCheckSetting;
+  /**
+   * @example
+   * 0
+   */
   freeCheckTypeId?: number;
   freecheckDayStartMinOffset?: number;
+  /**
+   * @example
+   * 123
+   */
   groupId?: number;
+  /**
+   * @example
+   * 白班考勤
+   */
   groupName?: string;
   managerList?: string[];
+  /**
+   * @example
+   * 500
+   */
   offset?: number;
   openCameraCheck?: boolean;
+  /**
+   * @example
+   * true
+   */
   openFaceCheck?: boolean;
+  /**
+   * @example
+   * -1
+   */
   outsideCheckApproveModeId?: number;
+  /**
+   * @example
+   * 123L
+   */
   overtimeSettingId?: number;
+  /**
+   * @example
+   * 123dfdf
+   */
   owner?: string;
   positions?: GroupUpdateRequestPositions[];
   resourcePermissionMap?: { [key: string]: any };
   shiftVOList?: GroupUpdateRequestShiftVOList[];
+  /**
+   * @example
+   * true
+   */
   skipHolidays?: boolean;
+  /**
+   * @example
+   * 100
+   */
   trimDistance?: number;
   workdayClassList?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123dfd
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3061,8 +3844,26 @@ export class InitAndGetLeaveALlocationQuotasHeaders extends $tea.Model {
 }
 
 export class InitAndGetLeaveALlocationQuotasRequest extends $tea.Model {
+  /**
+   * @example
+   * f84a2829-xxxx0653
+   */
   leaveCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager1
+   */
   opUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager211
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3153,8 +3954,20 @@ export class ListApproveByUsersHeaders extends $tea.Model {
 
 export class ListApproveByUsersRequest extends $tea.Model {
   bizTypes?: number[];
+  /**
+   * @example
+   * 1678636800000
+   */
   fromDateTime?: number;
+  /**
+   * @example
+   * 1678636800000
+   */
   toDateTime?: number;
+  /**
+   * @example
+   * user1,user2
+   */
   userIds?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3246,13 +4059,57 @@ export class ModifyWaterMarkTemplateHeaders extends $tea.Model {
 }
 
 export class ModifyWaterMarkTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-292988B1-5064-4A42-9389-A76B97xxxxx
+   */
   formCode?: string;
+  /**
+   * @example
+   * https://xx.xx.png
+   */
   icon?: string;
+  /**
+   * @example
+   * industry_dx_xx
+   */
   layoutDesignId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * { \"items\":[ { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"enableModifyPlace\", \"id\":\"enableModifyPlace-undefined\", \"value\":\"true\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"modifyPlaceDistance\", \"id\":\"modifyPlaceDistance-undefined\", \"value\":200 } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"title\", \"id\":\"title-undefined\", \"value\":\"wofu1\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"titleBgColor\", \"id\":\"titleBgColor-undefined\", \"value\":\"#0089FF\" } } ] }
+   */
   schemaContent?: string;
+  /**
+   * @example
+   * 标题
+   */
   title?: string;
+  /**
+   * @example
+   * PROC-292988B1-5064-4A42-9389-A76B97xxxxx
+   */
   waterMarkId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234567
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manage123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3286,6 +4143,10 @@ export class ModifyWaterMarkTemplateRequest extends $tea.Model {
 }
 
 export class ModifyWaterMarkTemplateResponseBody extends $tea.Model {
+  /**
+   * @example
+   * PROC-292988B1-5064-4A42-9389-A76B97xxxxx
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3352,11 +4213,50 @@ export class ProcessApproveCreateHeaders extends $tea.Model {
 }
 
 export class ProcessApproveCreateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 25c4c49f-cf3a-4ba1-b321-7defd93b7f89
+   */
   approveId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user02
+   */
   opUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   punchParam?: ProcessApproveCreateRequestPunchParam;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * shiftGroup
+   */
   subType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 请假
+   */
   tagName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user01
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3452,13 +4352,41 @@ export class ProcessApproveFinishHeaders extends $tea.Model {
 }
 
 export class ProcessApproveFinishRequest extends $tea.Model {
+  /**
+   * @example
+   * 1234abcd
+   */
   approveId?: string;
+  /**
+   * @example
+   * https://open.dingtalk.com/
+   */
   jumpUrl?: string;
+  /**
+   * @example
+   * 1
+   */
   overTimeToMore?: number;
+  /**
+   * @example
+   * 1.07
+   */
   overtimeDuration?: string;
+  /**
+   * @example
+   * 年假
+   */
   subType?: string;
+  /**
+   * @example
+   * 请假
+   */
   tagName?: string;
   topCalculateApproveDurationParam?: ProcessApproveFinishRequestTopCalculateApproveDurationParam;
+  /**
+   * @example
+   * manager123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3561,11 +4489,44 @@ export class ReduceQuotaWithLeaveRecordHeaders extends $tea.Model {
 }
 
 export class ReduceQuotaWithLeaveRecordRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * asdfaad-asdfadfa-asdfa
+   */
   leaveCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123342345
+   */
   outerId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   quotaNum?: number;
+  /**
+   * @example
+   * 家中有事请假1天
+   */
   reason?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3665,7 +4626,18 @@ export class RetainLeaveTypesHeaders extends $tea.Model {
 
 export class RetainLeaveTypesRequest extends $tea.Model {
   leaveCodes?: string[];
+  /**
+   * @example
+   * manager233
+   */
   opUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   source?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3755,7 +4727,15 @@ export class ReverseTrialAdvancedLeaveHeaders extends $tea.Model {
 }
 
 export class ReverseTrialAdvancedLeaveRequest extends $tea.Model {
+  /**
+   * @example
+   * manager234
+   */
   opUserId?: string;
+  /**
+   * @example
+   * 1
+   */
   servCode?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3846,13 +4826,69 @@ export class SaveCustomWaterMarkTemplateHeaders extends $tea.Model {
 }
 
 export class SaveCustomWaterMarkTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * water_mark_checkin
+   */
   bizCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://xx.xx.png
+   */
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * industry_dx_xx
+   */
   layoutDesignId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * water_mark_checkin_open
+   */
   sceneCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * { \"items\":[ { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"enableModifyPlace\", \"id\":\"enableModifyPlace-undefined\", \"value\":\"true\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"modifyPlaceDistance\", \"id\":\"modifyPlaceDistance-undefined\", \"value\":200 } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"title\", \"id\":\"title-undefined\", \"value\":\"wofu1\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"titleBgColor\", \"id\":\"titleBgColor-undefined\", \"value\":\"#0089FF\" } } ] }
+   */
   schemaContent?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 标题
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234567
+   */
   openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manage123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3952,12 +4988,42 @@ export class ShiftAddHeaders extends $tea.Model {
 }
 
 export class ShiftAddRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 白班
+   */
   name?: string;
+  /**
+   * @example
+   * user01
+   */
   owner?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sections?: ShiftAddRequestSections[];
+  /**
+   * @example
+   * 123
+   */
   serviceId?: number;
   setting?: ShiftAddRequestSetting;
+  /**
+   * @example
+   * 1234
+   */
   shiftId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user01
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4058,7 +5124,15 @@ export class SyncScheduleInfoHeaders extends $tea.Model {
 }
 
 export class SyncScheduleInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   opUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   scheduleInfos?: SyncScheduleInfoRequestScheduleInfos[];
   static names(): { [key: string]: string } {
     return {
@@ -4124,16 +5198,60 @@ export class UpdateLeaveTypeHeaders extends $tea.Model {
 }
 
 export class UpdateLeaveTypeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * general_leave
+   */
   bizType?: string;
+  /**
+   * @example
+   * {"validity_type":"absolute_time","validity_value":"12-31"}
+   */
   extras?: string;
+  /**
+   * @example
+   * 1000
+   */
   hoursInPerDay?: number;
   leaveCertificate?: UpdateLeaveTypeRequestLeaveCertificate;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 047477ae-1009-4632-b8e9-e919ae5e7973
+   */
   leaveCode?: string;
+  /**
+   * @example
+   * 年假
+   */
   leaveName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * day
+   */
   leaveViewUnit?: string;
+  /**
+   * @example
+   * true
+   */
   naturalDayLeave?: boolean;
   submitTimeRule?: UpdateLeaveTypeRequestSubmitTimeRule;
   visibilityRules?: UpdateLeaveTypeRequestVisibilityRules[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user01
+   */
   opUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4173,6 +5291,10 @@ export class UpdateLeaveTypeRequest extends $tea.Model {
 }
 
 export class UpdateLeaveTypeResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: UpdateLeaveTypeResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -4264,9 +5386,25 @@ export class ResultDurationSettingsValueSkipTimeByDurations extends $tea.Model {
 }
 
 export class AddLeaveTypeRequestLeaveCertificate extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   duration?: number;
+  /**
+   * @example
+   * false
+   */
   enable?: boolean;
+  /**
+   * @example
+   * 请假文案
+   */
   promptInformation?: string;
+  /**
+   * @example
+   * hour
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4292,9 +5430,25 @@ export class AddLeaveTypeRequestLeaveCertificate extends $tea.Model {
 }
 
 export class AddLeaveTypeRequestSubmitTimeRule extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   enableTimeLimit?: boolean;
+  /**
+   * @example
+   * before
+   */
   timeType?: string;
+  /**
+   * @example
+   * day
+   */
   timeUnit?: string;
+  /**
+   * @example
+   * 2
+   */
   timeValue?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4320,6 +5474,10 @@ export class AddLeaveTypeRequestSubmitTimeRule extends $tea.Model {
 }
 
 export class AddLeaveTypeRequestVisibilityRules extends $tea.Model {
+  /**
+   * @example
+   * staff
+   */
   type?: string;
   visible?: string[];
   static names(): { [key: string]: string } {
@@ -4342,9 +5500,25 @@ export class AddLeaveTypeRequestVisibilityRules extends $tea.Model {
 }
 
 export class AddLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   duration?: number;
+  /**
+   * @example
+   * false
+   */
   enable?: boolean;
+  /**
+   * @example
+   * 请假文案
+   */
   promptInformation?: string;
+  /**
+   * @example
+   * hour
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4370,9 +5544,25 @@ export class AddLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Model {
 }
 
 export class AddLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model {
+  /**
+   * @example
+   * false
+   */
   enableTimeLimit?: boolean;
+  /**
+   * @example
+   * before
+   */
   timeType?: string;
+  /**
+   * @example
+   * day
+   */
   timeUnit?: string;
+  /**
+   * @example
+   * 1
+   */
   timeValue?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4398,6 +5588,10 @@ export class AddLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model {
 }
 
 export class AddLeaveTypeResponseBodyResultVisibilityRules extends $tea.Model {
+  /**
+   * @example
+   * staff
+   */
   type?: string;
   visible?: string[];
   static names(): { [key: string]: string } {
@@ -4420,12 +5614,36 @@ export class AddLeaveTypeResponseBodyResultVisibilityRules extends $tea.Model {
 }
 
 export class AddLeaveTypeResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * general_leave
+   */
   bizType?: string;
+  /**
+   * @example
+   * 1000
+   */
   hoursInPerDay?: number;
   leaveCertificate?: AddLeaveTypeResponseBodyResultLeaveCertificate;
+  /**
+   * @example
+   * 037477ae-1009-4632-b8e9-e919ae5e7973
+   */
   leaveCode?: string;
+  /**
+   * @example
+   * 年假
+   */
   leaveName?: string;
+  /**
+   * @example
+   * day
+   */
   leaveViewUnit?: string;
+  /**
+   * @example
+   * true
+   */
   naturalDayLeave?: boolean;
   submitTimeRule?: AddLeaveTypeResponseBodyResultSubmitTimeRule;
   visibilityRules?: AddLeaveTypeResponseBodyResultVisibilityRules[];
@@ -4463,8 +5681,20 @@ export class AddLeaveTypeResponseBodyResult extends $tea.Model {
 }
 
 export class AttendanceBleDevicesAddResponseBodyErrorListFailureList extends $tea.Model {
+  /**
+   * @example
+   * 3244523553
+   */
   deviceId?: number;
+  /**
+   * @example
+   * 蓝牙设备1
+   */
   deviceName?: string;
+  /**
+   * @example
+   * dfsgdsdgd
+   */
   sn?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4488,8 +5718,16 @@ export class AttendanceBleDevicesAddResponseBodyErrorListFailureList extends $te
 }
 
 export class AttendanceBleDevicesAddResponseBodyErrorList extends $tea.Model {
+  /**
+   * @example
+   * 400001
+   */
   code?: string;
   failureList?: AttendanceBleDevicesAddResponseBodyErrorListFailureList[];
+  /**
+   * @example
+   * error
+   */
   msg?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4513,8 +5751,20 @@ export class AttendanceBleDevicesAddResponseBodyErrorList extends $tea.Model {
 }
 
 export class AttendanceBleDevicesAddResponseBodySuccessList extends $tea.Model {
+  /**
+   * @example
+   * 6567575
+   */
   deviceId?: number;
+  /**
+   * @example
+   * 蓝牙设备2
+   */
   deviceName?: string;
+  /**
+   * @example
+   * xfdfsdfgsdgfs
+   */
   sn?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4538,8 +5788,20 @@ export class AttendanceBleDevicesAddResponseBodySuccessList extends $tea.Model {
 }
 
 export class AttendanceBleDevicesQueryResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 34666777
+   */
   deviceId?: number;
+  /**
+   * @example
+   * 蓝牙设备
+   */
   deviceName?: string;
+  /**
+   * @example
+   * 12321kllksdf
+   */
   sn?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4563,8 +5825,16 @@ export class AttendanceBleDevicesQueryResponseBodyResult extends $tea.Model {
 }
 
 export class AttendanceBleDevicesRemoveResponseBodyErrorList extends $tea.Model {
+  /**
+   * @example
+   * 400001
+   */
   code?: string;
   failureList?: number[];
+  /**
+   * @example
+   * error
+   */
   msg?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4588,9 +5858,27 @@ export class AttendanceBleDevicesRemoveResponseBodyErrorList extends $tea.Model 
 }
 
 export class BatchBossCheckRequestModels extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   absentMin?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123
+   */
   planId?: number;
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Normal
+   */
   timeResult?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4616,7 +5904,15 @@ export class BatchBossCheckRequestModels extends $tea.Model {
 }
 
 export class CalculateDurationResponseBodyResultDurationDetail extends $tea.Model {
+  /**
+   * @example
+   * 2019-08-15
+   */
   date?: string;
+  /**
+   * @example
+   * 1.0
+   */
   duration?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4638,6 +5934,10 @@ export class CalculateDurationResponseBodyResultDurationDetail extends $tea.Mode
 }
 
 export class CalculateDurationResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2.0
+   */
   duration?: number;
   durationDetail?: CalculateDurationResponseBodyResultDurationDetail[];
   static names(): { [key: string]: string } {
@@ -4660,7 +5960,15 @@ export class CalculateDurationResponseBodyResult extends $tea.Model {
 }
 
 export class CheckClosingAccountRequestUserTimeRange extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4682,9 +5990,25 @@ export class CheckClosingAccountRequestUserTimeRange extends $tea.Model {
 }
 
 export class CreateApproveRequestPunchParam extends $tea.Model {
+  /**
+   * @example
+   * 120.023425_30.291465
+   */
   positionId?: string;
+  /**
+   * @example
+   * 余杭区五常街道
+   */
   positionName?: string;
+  /**
+   * @example
+   * gps
+   */
   positionType?: string;
+  /**
+   * @example
+   * 1614222064000
+   */
   punchTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4710,7 +6034,15 @@ export class CreateApproveRequestPunchParam extends $tea.Model {
 }
 
 export class DingTalkSecurityCheckResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasRisk?: boolean;
+  /**
+   * @example
+   * {"riskTypeMinor":"bbbb""riskTypeMajor":"aaaa""riskTypeMsg":"ccc"}
+   */
   riskInfo?: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
@@ -4732,7 +6064,21 @@ export class DingTalkSecurityCheckResponseBodyResult extends $tea.Model {
 }
 
 export class GetATManageScopeResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * false
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * partial
+   */
   manageScope?: string;
   userIds?: string[];
   static names(): { [key: string]: string } {
@@ -4757,8 +6103,16 @@ export class GetATManageScopeResponseBodyResult extends $tea.Model {
 }
 
 export class GetAdjustmentsResponseBodyResultItems extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   id?: number;
   name?: string;
+  /**
+   * @example
+   * 1
+   */
   settingId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4783,7 +6137,15 @@ export class GetAdjustmentsResponseBodyResultItems extends $tea.Model {
 
 export class GetAdjustmentsResponseBodyResult extends $tea.Model {
   items?: GetAdjustmentsResponseBodyResultItems[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 1
+   */
   totalPage?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4808,14 +6170,46 @@ export class GetAdjustmentsResponseBodyResult extends $tea.Model {
 
 export class GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels extends $tea.Model {
   canModify?: boolean;
+  /**
+   * @example
+   * PROC-292988B1-5064-4A42-9389-xxxxx
+   */
   formCode?: string;
+  /**
+   * @example
+   * https://xx.xx.png
+   */
   icon?: string;
+  /**
+   * @example
+   * {     \"widgetName\":\"dd_watermark_xxx_xxx\",     \"miniAppId\":\"50000xxx\",     \"templateRule\":{         \"maxItems\":6,         \"canEditColor\":true,         \"canEditTitle\":true,         \"items\":[          ]     },     \"layoutDesignId\":\"industry_xx_xx\",     \"width\":\"111\" }
+   */
   layoutDesign?: string;
+  /**
+   * @example
+   * water_mark_checkin_open
+   */
   sceneCode?: string;
+  /**
+   * @example
+   * {     \"items\":[         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"enableModifyPlace\",                 \"id\":\"enableModifyPlace-undefined\",                 \"value\":\"true\"             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"modifyPlaceDistance\",                 \"id\":\"modifyPlaceDistance-undefined\",                 \"value\":200             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"title\",                 \"id\":\"title-undefined\",                 \"value\":\"wofu1\"             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"titleBgColor\",                 \"id\":\"titleBgColor-undefined\",                 \"value\":\"#0089FF\"             }         }     ] }
+   */
   schemaContent?: string;
+  /**
+   * @example
+   * suiteKey
+   */
   suiteKey?: string;
   systemTemplate?: boolean;
+  /**
+   * @example
+   * 标题
+   */
   title?: string;
+  /**
+   * @example
+   * PROC-292988B1-5064-4A42-9389-xxxxx
+   */
   waterMarkId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4853,10 +6247,18 @@ export class GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels e
 }
 
 export class GetCheckInSchemaTemplateResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * water_mark_checkin
+   */
   bizCode?: string;
   canModifyAndAddTemplate?: boolean;
   conversationAdmin?: boolean;
   customTemplateMaxSize?: number;
+  /**
+   * @example
+   * 1234567
+   */
   openConversationId?: string;
   showStat?: boolean;
   templateDegrade?: boolean;
@@ -4986,7 +6388,15 @@ export class GetCheckinRecordByUserResponseBodyResult extends $tea.Model {
 }
 
 export class GetClassWithDeletedResponseBodyResultClassSettingRestTimeListBegin extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   across?: number;
+  /**
+   * @example
+   * 1970-01-01T12:00Z
+   */
   checkTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5008,7 +6418,15 @@ export class GetClassWithDeletedResponseBodyResultClassSettingRestTimeListBegin 
 }
 
 export class GetClassWithDeletedResponseBodyResultClassSettingRestTimeListEnd extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   across?: number;
+  /**
+   * @example
+   * 1970-01-01T13:00Z
+   */
   checkTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5052,6 +6470,10 @@ export class GetClassWithDeletedResponseBodyResultClassSettingRestTimeList exten
 }
 
 export class GetClassWithDeletedResponseBodyResultClassSetting extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   classSettingId?: number;
   restTimeList?: GetClassWithDeletedResponseBodyResultClassSettingRestTimeList[];
   static names(): { [key: string]: string } {
@@ -5074,10 +6496,30 @@ export class GetClassWithDeletedResponseBodyResultClassSetting extends $tea.Mode
 }
 
 export class GetClassWithDeletedResponseBodyResultSectionsTimes extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   across?: number;
+  /**
+   * @example
+   * 10
+   */
   beginMin?: number;
+  /**
+   * @example
+   * 1970-01-01T09:00Z
+   */
   checkTime?: string;
+  /**
+   * @example
+   * OnDuty
+   */
   checkType?: string;
+  /**
+   * @example
+   * 10
+   */
   endMin?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5124,9 +6566,21 @@ export class GetClassWithDeletedResponseBodyResultSections extends $tea.Model {
 }
 
 export class GetClassWithDeletedResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   classId?: number;
   classSetting?: GetClassWithDeletedResponseBodyResultClassSetting;
+  /**
+   * @example
+   * ding1234
+   */
   corpId?: string;
+  /**
+   * @example
+   * 夜班
+   */
   name?: string;
   sections?: GetClassWithDeletedResponseBodyResultSections[];
   workDays?: number[];
@@ -5158,11 +6612,35 @@ export class GetClassWithDeletedResponseBodyResult extends $tea.Model {
 }
 
 export class GetClosingAccountsResponseBodyResultClosingAccountModel extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   closingDay?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   closingHourMinutes?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endDay?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endMonth?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startDay?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startMonth?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5192,6 +6670,10 @@ export class GetClosingAccountsResponseBodyResultClosingAccountModel extends $te
 }
 
 export class GetClosingAccountsResponseBodyResultUnsealClosingAccountModel extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   invalidTimeStamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5211,9 +6693,25 @@ export class GetClosingAccountsResponseBodyResultUnsealClosingAccountModel exten
 }
 
 export class GetClosingAccountsResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   closingAccountModel?: GetClosingAccountsResponseBodyResultClosingAccountModel;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   switchOn?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unsealClosingAccountModel?: GetClosingAccountsResponseBodyResultUnsealClosingAccountModel;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5239,6 +6737,10 @@ export class GetClosingAccountsResponseBodyResult extends $tea.Model {
 }
 
 export class GetColumnvalsResponseBodyResultColumnDataColumnValues extends $tea.Model {
+  /**
+   * @example
+   * 1709222400000
+   */
   date?: number;
   value?: string;
   static names(): { [key: string]: string } {
@@ -5262,7 +6764,15 @@ export class GetColumnvalsResponseBodyResultColumnDataColumnValues extends $tea.
 
 export class GetColumnvalsResponseBodyResultColumnData extends $tea.Model {
   columnValues?: GetColumnvalsResponseBodyResultColumnDataColumnValues[];
+  /**
+   * @example
+   * 0
+   */
   fixedValue?: string;
+  /**
+   * @example
+   * 129339038
+   */
   id?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5287,6 +6797,10 @@ export class GetColumnvalsResponseBodyResultColumnData extends $tea.Model {
 
 export class GetColumnvalsResponseBodyResult extends $tea.Model {
   columnData?: GetColumnvalsResponseBodyResultColumnData[];
+  /**
+   * @example
+   * manager123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5308,21 +6822,85 @@ export class GetColumnvalsResponseBodyResult extends $tea.Model {
 }
 
 export class GetLeaveRecordsResponseBodyResultLeaveRecords extends $tea.Model {
+  /**
+   * @example
+   * add
+   */
   calType?: string;
+  /**
+   * @example
+   * 1753851001000
+   */
   endTime?: number;
+  /**
+   * @example
+   * 1653851001000
+   */
   gmtCreate?: number;
+  /**
+   * @example
+   * 1753851001000
+   */
   gmtModified?: number;
+  /**
+   * @example
+   * f84a2dxxxx
+   */
   leaveCode?: string;
+  /**
+   * @example
+   * 管理员导入
+   */
   leaveReason?: string;
+  /**
+   * @example
+   * update
+   */
   leaveRecordType?: string;
+  /**
+   * @example
+   * init
+   */
   leaveStatus?: string;
+  /**
+   * @example
+   * day
+   */
   leaveViewUnit?: string;
+  /**
+   * @example
+   * manage223
+   */
   opUserId?: string;
+  /**
+   * @example
+   * db1d74xxxxbaa
+   */
   quotaId?: string;
+  /**
+   * @example
+   * db1d74xxxxbaa
+   */
   recordId?: string;
+  /**
+   * @example
+   * 100
+   */
   recordNumPerDay?: number;
+  /**
+   * @example
+   * 100
+   */
   recordNumPerHour?: number;
+  /**
+   * @example
+   * 1653851001000
+   */
   startTime?: number;
+  /**
+   * @example
+   * user1
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5394,9 +6972,25 @@ export class GetLeaveRecordsResponseBodyResult extends $tea.Model {
 }
 
 export class GetLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   duration?: number;
+  /**
+   * @example
+   * false
+   */
   enable?: boolean;
+  /**
+   * @example
+   * 请假文案
+   */
   promptInformation?: string;
+  /**
+   * @example
+   * hour
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5422,9 +7016,25 @@ export class GetLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Model {
 }
 
 export class GetLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model {
+  /**
+   * @example
+   * false
+   */
   enableTimeLimit?: boolean;
+  /**
+   * @example
+   * before
+   */
   timeType?: string;
+  /**
+   * @example
+   * day
+   */
   timeUnit?: string;
+  /**
+   * @example
+   * 1
+   */
   timeValue?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5450,6 +7060,10 @@ export class GetLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model {
 }
 
 export class GetLeaveTypeResponseBodyResultVisibilityRules extends $tea.Model {
+  /**
+   * @example
+   * staff
+   */
   type?: string;
   visible?: string[];
   static names(): { [key: string]: string } {
@@ -5472,16 +7086,52 @@ export class GetLeaveTypeResponseBodyResultVisibilityRules extends $tea.Model {
 }
 
 export class GetLeaveTypeResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * general_leave
+   */
   bizType?: string;
+  /**
+   * @example
+   * 1000
+   */
   hoursInPerDay?: number;
   leaveCertificate?: GetLeaveTypeResponseBodyResultLeaveCertificate;
+  /**
+   * @example
+   * 037477ae-1009-4632-b8e9-e919ae5e7973
+   */
   leaveCode?: string;
+  /**
+   * @example
+   * 年假
+   */
   leaveName?: string;
+  /**
+   * @example
+   * day
+   */
   leaveViewUnit?: string;
+  /**
+   * @example
+   * true
+   */
   naturalDayLeave?: boolean;
+  /**
+   * @example
+   * external
+   */
   source?: string;
   submitTimeRule?: GetLeaveTypeResponseBodyResultSubmitTimeRule;
+  /**
+   * @example
+   * absolute_time
+   */
   validityType?: string;
+  /**
+   * @example
+   * 12-31
+   */
   validityValue?: string;
   visibilityRules?: GetLeaveTypeResponseBodyResultVisibilityRules[];
   static names(): { [key: string]: string } {
@@ -5524,15 +7174,85 @@ export class GetLeaveTypeResponseBodyResult extends $tea.Model {
 }
 
 export class GetMachineResponseBodyResultMachineBluetoothVO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 绿城-未来park
+   */
   address?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   bluetoothCheckWithFace?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * default
+   */
   bluetoothDistanceMode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 默认 (最远5-10米)
+   */
   bluetoothDistanceModeDesc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   bluetoothValue?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 30.285871310763888
+   */
   latitude?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   limitUserDeviceCount?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 120.01757758246528
+   */
   longitude?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   monitorLocationAbnormal?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   userDeviceCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5570,16 +7290,87 @@ export class GetMachineResponseBodyResultMachineBluetoothVO extends $tea.Model {
 }
 
 export class GetMachineResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   atmManagerList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1406333705
+   */
   devId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2078053438
+   */
   deviceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 泱云❄️的体00056
+   */
   deviceName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0601IFW201001N000056
+   */
   deviceSn?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   machineBluetoothVO?: GetMachineResponseBodyResultMachineBluetoothVO;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10000
+   */
   maxFace?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 4
+   */
   netStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * M1F
+   */
   productName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1.0.1-R-20200326.1543
+   */
   productVersion?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2
+   */
   voiceMode?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5619,8 +7410,20 @@ export class GetMachineResponseBodyResult extends $tea.Model {
 }
 
 export class GetMachineUserResponseBodyResultUserList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasFace?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5644,8 +7447,20 @@ export class GetMachineUserResponseBodyResultUserList extends $tea.Model {
 }
 
 export class GetMachineUserResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userList?: GetMachineUserResponseBodyResultUserList[];
   static names(): { [key: string]: string } {
     return {
@@ -5721,6 +7536,10 @@ export class GetOvertimeSettingResponseBodyResultWarningSettings extends $tea.Mo
 export class GetOvertimeSettingResponseBodyResult extends $tea.Model {
   default?: boolean;
   durationSettings?: { [key: string]: ResultDurationSettingsValue };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: number;
   name?: string;
   overtimeDivisions?: GetOvertimeSettingResponseBodyResultOvertimeDivisions[];
@@ -5807,15 +7626,42 @@ export class GetShiftResponseBodyResultSectionsPunchesLateBackSetting extends $t
 
 export class GetShiftResponseBodyResultSectionsPunches extends $tea.Model {
   absenteeismLateMinutes?: number;
+  /**
+   * @example
+   * 0
+   */
   across?: number;
   beginMin?: number;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 1970-01-01 19:00:00
+   */
   checkTime?: string;
+  /**
+   * @example
+   * OnDuty
+   */
   checkType?: string;
+  /**
+   * @example
+   * -1
+   */
   endMin?: number;
   flexMinutes?: number[];
   freeCheck?: boolean;
   lateBackSetting?: GetShiftResponseBodyResultSectionsPunchesLateBackSetting;
+  /**
+   * @example
+   * 0
+   */
   permitMinutes?: number;
+  /**
+   * @example
+   * 33928201
+   */
   puncheId?: number;
   seriousLateMinutes?: number;
   static names(): { [key: string]: string } {
@@ -5859,6 +7705,10 @@ export class GetShiftResponseBodyResultSectionsPunches extends $tea.Model {
 
 export class GetShiftResponseBodyResultSectionsRests extends $tea.Model {
   across?: number;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   checkTime?: string;
   checkType?: string;
   restId?: number;
@@ -5911,12 +7761,46 @@ export class GetShiftResponseBodyResultSections extends $tea.Model {
 }
 
 export class GetShiftResponseBodyResultShiftSetting extends $tea.Model {
+  /**
+   * @example
+   * 12
+   */
   attendDays?: string;
+  /**
+   * @example
+   * dinge87f1xxxx
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2020-09-06 15:49:27
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2020-09-06 15:49:27
+   */
   gmtModified?: string;
+  /**
+   * @example
+   * 678215070
+   */
   shiftId?: number;
+  /**
+   * @example
+   * 233840112
+   */
   shiftSettingId?: number;
+  /**
+   * @example
+   * 600
+   */
   workTimeMinutes?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5948,12 +7832,32 @@ export class GetShiftResponseBodyResultShiftSetting extends $tea.Model {
 }
 
 export class GetShiftResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * dinge87f1xxxx
+   */
   corpId?: string;
+  /**
+   * @example
+   * 678215070
+   */
   id?: number;
+  /**
+   * @example
+   * B
+   */
   name?: string;
+  /**
+   * @example
+   * user123
+   */
   owner?: string;
   sections?: GetShiftResponseBodyResultSections[];
   shiftGroupId?: number;
+  /**
+   * @example
+   * 考勤班
+   */
   shiftGroupName?: string;
   shiftSetting?: GetShiftResponseBodyResultShiftSetting;
   static names(): { [key: string]: string } {
@@ -5988,8 +7892,20 @@ export class GetShiftResponseBodyResult extends $tea.Model {
 }
 
 export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSectionsTimes extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   across?: number;
+  /**
+   * @example
+   * 1970-01-01T09:00Z
+   */
   checkTime?: string;
+  /**
+   * @example
+   * OnDuty
+   */
   checkType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6032,7 +7948,15 @@ export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSections extend
 }
 
 export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListBegin extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   across?: number;
+  /**
+   * @example
+   * 1970-01-01T12:00Z
+   */
   checkTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6054,7 +7978,15 @@ export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTime
 }
 
 export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeListEnd extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   across?: number;
+  /**
+   * @example
+   * 1970-01-01T13:00Z
+   */
   checkTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6098,12 +8030,36 @@ export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTime
 }
 
 export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSetting extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   absenteeismLateMinutes?: number;
+  /**
+   * @example
+   * 1
+   */
   classSettingId?: number;
+  /**
+   * @example
+   * Y
+   */
   isOffDutyFreeCheck?: string;
+  /**
+   * @example
+   * 10
+   */
   permitLateMinutes?: number;
   restTimeList?: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSettingRestTimeList[];
+  /**
+   * @example
+   * 20
+   */
   seriousLateMinutes?: number;
+  /**
+   * @example
+   * -1
+   */
   workTimeMinutes?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6135,7 +8091,15 @@ export class GetSimpleGroupsResponseBodyResultGroupsSelectedClassSetting extends
 }
 
 export class GetSimpleGroupsResponseBodyResultGroupsSelectedClass extends $tea.Model {
+  /**
+   * @example
+   * 20008010
+   */
   classId?: number;
+  /**
+   * @example
+   * 早班
+   */
   className?: string;
   sections?: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSections[];
   setting?: GetSimpleGroupsResponseBodyResultGroupsSelectedClassSetting;
@@ -6164,21 +8128,69 @@ export class GetSimpleGroupsResponseBodyResultGroupsSelectedClass extends $tea.M
 
 export class GetSimpleGroupsResponseBodyResultGroups extends $tea.Model {
   classesList?: string[];
+  /**
+   * @example
+   * 111
+   */
   defaultClassId?: number;
   deptIds?: number[];
   deptNameList?: string[];
+  /**
+   * @example
+   * false
+   */
   disableCheckWhenRest?: boolean;
+  /**
+   * @example
+   * false
+   */
   disableCheckWithoutSchedule?: boolean;
+  /**
+   * @example
+   * false
+   */
   enableEmpSelectClass?: boolean;
+  /**
+   * @example
+   * 240
+   */
   freeCheckDayStartMinOffset?: number;
   freecheckWorkDays?: number[];
+  /**
+   * @example
+   * 20015047
+   */
   groupId?: number;
+  /**
+   * @example
+   * 固定排班
+   */
   groupName?: string;
+  /**
+   * @example
+   * false
+   */
   isDefault?: boolean;
+  /**
+   * @example
+   * 1,2
+   */
   managerList?: string[];
+  /**
+   * @example
+   * 1
+   */
   memberCount?: number;
+  /**
+   * @example
+   * 123
+   */
   ownerUserId?: string;
   selectedClass?: GetSimpleGroupsResponseBodyResultGroupsSelectedClass[];
+  /**
+   * @example
+   * FIXED
+   */
   type?: string;
   userIds?: string[];
   workDayList?: string[];
@@ -6236,7 +8248,15 @@ export class GetSimpleGroupsResponseBodyResultGroups extends $tea.Model {
 }
 
 export class GetSimpleGroupsResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * []
+   */
   groups?: GetSimpleGroupsResponseBodyResultGroups[];
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6258,8 +8278,16 @@ export class GetSimpleGroupsResponseBodyResult extends $tea.Model {
 }
 
 export class GetSimpleOvertimeSettingResponseBodyResultItems extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   id?: number;
   name?: string;
+  /**
+   * @example
+   * 1
+   */
   settingId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6284,7 +8312,15 @@ export class GetSimpleOvertimeSettingResponseBodyResultItems extends $tea.Model 
 
 export class GetSimpleOvertimeSettingResponseBodyResult extends $tea.Model {
   items?: GetSimpleOvertimeSettingResponseBodyResultItems[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 1
+   */
   totalPage?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6358,6 +8394,10 @@ export class GetUserHolidaysResponseBodyResult extends $tea.Model {
 }
 
 export class GroupAddRequestBleDeviceList extends $tea.Model {
+  /**
+   * @example
+   * 1311089987
+   */
   deviceId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6377,7 +8417,15 @@ export class GroupAddRequestBleDeviceList extends $tea.Model {
 }
 
 export class GroupAddRequestFreeCheckSettingFreeCheckGap extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   offOnCheckGapMinutes?: number;
+  /**
+   * @example
+   * 0
+   */
   onOffCheckGapMinutes?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6421,8 +8469,29 @@ export class GroupAddRequestFreeCheckSetting extends $tea.Model {
 }
 
 export class GroupAddRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * Attendance
+   */
   role?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * StaffMember
+   */
   type?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1212jfkd
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6446,10 +8515,30 @@ export class GroupAddRequestMembers extends $tea.Model {
 }
 
 export class GroupAddRequestPositions extends $tea.Model {
+  /**
+   * @example
+   * 生物科技产业园区经二路21号
+   */
   address?: string;
+  /**
+   * @example
+   * 36.687495
+   */
   latitude?: string;
+  /**
+   * @example
+   * 101.750329
+   */
   longitude?: string;
+  /**
+   * @example
+   * 500
+   */
   offset?: number;
+  /**
+   * @example
+   * 青藏高原自然博物馆
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6477,6 +8566,10 @@ export class GroupAddRequestPositions extends $tea.Model {
 }
 
 export class GroupAddRequestShiftVOList extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   shiftId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6496,7 +8589,15 @@ export class GroupAddRequestShiftVOList extends $tea.Model {
 }
 
 export class GroupAddRequestWifis extends $tea.Model {
+  /**
+   * @example
+   * C0:E0:D0:E0:C0:0F
+   */
   macAddr?: string;
+  /**
+   * @example
+   * OFFICE-WiFi
+   */
   ssid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6540,7 +8641,15 @@ export class GroupAddResponseBodyResult extends $tea.Model {
 }
 
 export class GroupUpdateRequestFreeCheckSettingFreeCheckGap extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   offOnCheckGapMinutes?: number;
+  /**
+   * @example
+   * 0
+   */
   onOffCheckGapMinutes?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6584,10 +8693,30 @@ export class GroupUpdateRequestFreeCheckSetting extends $tea.Model {
 }
 
 export class GroupUpdateRequestPositions extends $tea.Model {
+  /**
+   * @example
+   * 生物科技产业园区经二路21号
+   */
   address?: string;
+  /**
+   * @example
+   * 36.687495
+   */
   latitude?: string;
+  /**
+   * @example
+   * 101.750329
+   */
   longitude?: string;
+  /**
+   * @example
+   * 500
+   */
   offset?: number;
+  /**
+   * @example
+   * 青藏高原自然博物馆
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6615,6 +8744,10 @@ export class GroupUpdateRequestPositions extends $tea.Model {
 }
 
 export class GroupUpdateRequestShiftVOList extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   shiftId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6656,15 +8789,55 @@ export class GroupUpdateResponseBodyResult extends $tea.Model {
 }
 
 export class InitAndGetLeaveALlocationQuotasResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 1753851001000
+   */
   endTime?: number;
+  /**
+   * @example
+   * c00ced14-xxxxxd438748
+   */
   leaveCode?: string;
+  /**
+   * @example
+   * 2022
+   */
   quotaCycle?: string;
+  /**
+   * @example
+   * b13cc5b0--xxxx5b0
+   */
   quotaId?: string;
+  /**
+   * @example
+   * 700
+   */
   quotaNumPerDay?: number;
+  /**
+   * @example
+   * 800
+   */
   quotaNumPerHour?: number;
+  /**
+   * @example
+   * 1653851001000
+   */
   startTime?: number;
+  /**
+   * @example
+   * 200
+   */
   usedNumPerDay?: number;
+  /**
+   * @example
+   * 100
+   */
   usedNumPerHour?: number;
+  /**
+   * @example
+   * user1
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6702,14 +8875,50 @@ export class InitAndGetLeaveALlocationQuotasResponseBodyResult extends $tea.Mode
 }
 
 export class ListApproveByUsersResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 4850378c0ee83
+   */
   approveId?: string;
+  /**
+   * @example
+   * 2023-03-15 AM
+   */
   beginTime?: string;
+  /**
+   * @example
+   * 1
+   */
   bizType?: number;
+  /**
+   * @example
+   * 1
+   */
   calculateModel?: number;
+  /**
+   * @example
+   * hour
+   */
   durationUnit?: string;
+  /**
+   * @example
+   * 2023-03-15 AM
+   */
   endTime?: string;
+  /**
+   * @example
+   * 年假
+   */
   subType?: string;
+  /**
+   * @example
+   * 请假
+   */
   tagName?: string;
+  /**
+   * @example
+   * user1
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6745,9 +8954,28 @@ export class ListApproveByUsersResponseBodyResult extends $tea.Model {
 }
 
 export class ProcessApproveCreateRequestPunchParam extends $tea.Model {
+  /**
+   * @example
+   * longitude_latitude
+   */
   positionId?: string;
+  /**
+   * @example
+   * 未来park
+   */
   positionName?: string;
+  /**
+   * @example
+   * gps
+   */
   positionType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1650511474978
+   */
   punchTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6773,6 +9001,13 @@ export class ProcessApproveCreateRequestPunchParam extends $tea.Model {
 }
 
 export class ProcessApproveCreateResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3534654765756234
+   */
   dingtalkApproveId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6792,11 +9027,35 @@ export class ProcessApproveCreateResponseBodyResult extends $tea.Model {
 }
 
 export class ProcessApproveFinishRequestTopCalculateApproveDurationParam extends $tea.Model {
+  /**
+   * @example
+   * 3
+   */
   bizType?: number;
+  /**
+   * @example
+   * 1
+   */
   calculateModel?: number;
+  /**
+   * @example
+   * day
+   */
   durationUnit?: string;
+  /**
+   * @example
+   * 2019-08-15
+   */
   fromTime?: string;
+  /**
+   * @example
+   * 3afdsf-143dsadw3-ad23
+   */
   leaveCode?: string;
+  /**
+   * @example
+   * 2019-08-15
+   */
   toTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6826,7 +9085,15 @@ export class ProcessApproveFinishRequestTopCalculateApproveDurationParam extends
 }
 
 export class ProcessApproveFinishResponseBodyResultDurationDetail extends $tea.Model {
+  /**
+   * @example
+   * 2019-08-15
+   */
   date?: string;
+  /**
+   * @example
+   * 1.0
+   */
   duration?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6848,6 +9115,10 @@ export class ProcessApproveFinishResponseBodyResultDurationDetail extends $tea.M
 }
 
 export class ProcessApproveFinishResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2.0
+   */
   duration?: number;
   durationDetail?: ProcessApproveFinishResponseBodyResultDurationDetail[];
   static names(): { [key: string]: string } {
@@ -6870,9 +9141,21 @@ export class ProcessApproveFinishResponseBodyResult extends $tea.Model {
 }
 
 export class RetainLeaveTypesResponseBodyResultLeaveCertificate extends $tea.Model {
+  /**
+   * @example
+   * 2
+   */
   duration?: number;
   enable?: boolean;
+  /**
+   * @example
+   * leaveCertificate
+   */
   promptInformation?: string;
+  /**
+   * @example
+   * hour
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6899,8 +9182,20 @@ export class RetainLeaveTypesResponseBodyResultLeaveCertificate extends $tea.Mod
 
 export class RetainLeaveTypesResponseBodyResultSubmitTimeRule extends $tea.Model {
   enableTimeLimit?: boolean;
+  /**
+   * @example
+   * after
+   */
   timeType?: string;
+  /**
+   * @example
+   * hour
+   */
   timeUnit?: string;
+  /**
+   * @example
+   * 10
+   */
   timeValue?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6926,6 +9221,10 @@ export class RetainLeaveTypesResponseBodyResultSubmitTimeRule extends $tea.Model
 }
 
 export class RetainLeaveTypesResponseBodyResultVisibilityRules extends $tea.Model {
+  /**
+   * @example
+   * dept
+   */
   type?: string;
   visible?: string[];
   static names(): { [key: string]: string } {
@@ -6948,23 +9247,71 @@ export class RetainLeaveTypesResponseBodyResultVisibilityRules extends $tea.Mode
 }
 
 export class RetainLeaveTypesResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * lieu_leave
+   */
   bizType?: string;
+  /**
+   * @example
+   * 8
+   */
   hoursInPerDay?: number;
   leaveCertificate?: RetainLeaveTypesResponseBodyResultLeaveCertificate;
+  /**
+   * @example
+   * 2e8b764e-7989-4b5d-ac64-xxxxx
+   */
   leaveCode?: string;
+  /**
+   * @example
+   * ""
+   */
   leaveHourCeil?: string;
+  /**
+   * @example
+   * 高级测试假期
+   */
   leaveName?: string;
   leaveTimeCeil?: boolean;
+  /**
+   * @example
+   * hour
+   */
   leaveTimeCeilMinUnit?: string;
+  /**
+   * @example
+   * hour
+   */
   leaveViewUnit?: string;
+  /**
+   * @example
+   * 30
+   */
   lieuDelayNum?: number;
+  /**
+   * @example
+   * day
+   */
   lieuDelayUnit?: string;
+  /**
+   * @example
+   * 24
+   */
   maxLeaveTime?: number;
+  /**
+   * @example
+   * 0.5
+   */
   minLeaveHour?: number;
   naturalDayLeave?: boolean;
   paidLeave?: boolean;
   submitTimeRule?: RetainLeaveTypesResponseBodyResultSubmitTimeRule;
   visibilityRules?: RetainLeaveTypesResponseBodyResultVisibilityRules[];
+  /**
+   * @example
+   * formal
+   */
   whenCanLeave?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7018,7 +9365,15 @@ export class RetainLeaveTypesResponseBodyResult extends $tea.Model {
 }
 
 export class SaveCustomWaterMarkTemplateResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * PROC-292988B1-5064-4A42-9389-A76B97xxxxx
+   */
   formCode?: string;
+  /**
+   * @example
+   * PROC-292988B1-5064-4A42-9389-A76B97xxxxx
+   */
   waterMarkId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7040,10 +9395,39 @@ export class SaveCustomWaterMarkTemplateResponseBodyResult extends $tea.Model {
 }
 
 export class ShiftAddRequestSectionsTimes extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   across?: number;
+  /**
+   * @example
+   * 30
+   */
   beginMin?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1714298274613
+   */
   checkTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OnDuty
+   */
   checkType?: string;
+  /**
+   * @example
+   * -1
+   */
   endMin?: number;
   flexMinutes?: number[];
   freeCheck?: boolean;
@@ -7077,6 +9461,10 @@ export class ShiftAddRequestSectionsTimes extends $tea.Model {
 }
 
 export class ShiftAddRequestSections extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   times?: ShiftAddRequestSectionsTimes[];
   static names(): { [key: string]: string } {
     return {
@@ -7096,12 +9484,26 @@ export class ShiftAddRequestSections extends $tea.Model {
 }
 
 export class ShiftAddRequestSettingTopRestTimeList extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   across?: number;
+  /**
+   * @example
+   * 1714298002940
+   */
   checkTime?: number;
+  /**
+   * @example
+   * OnDuty
+   */
+  checkType?: string;
   static names(): { [key: string]: string } {
     return {
       across: 'across',
       checkTime: 'checkTime',
+      checkType: 'checkType',
     };
   }
 
@@ -7109,6 +9511,7 @@ export class ShiftAddRequestSettingTopRestTimeList extends $tea.Model {
     return {
       across: 'number',
       checkTime: 'number',
+      checkType: 'string',
     };
   }
 
@@ -7118,11 +9521,27 @@ export class ShiftAddRequestSettingTopRestTimeList extends $tea.Model {
 }
 
 export class ShiftAddRequestSetting extends $tea.Model {
+  /**
+   * @example
+   * 60
+   */
   absenteeismLateMinutes?: number;
+  /**
+   * @example
+   * 0.8
+   */
   attendDays?: number;
   extras?: { [key: string]: any };
   isFlexible?: boolean;
+  /**
+   * @example
+   * 31
+   */
   seriousLateMinutes?: number;
+  /**
+   * @example
+   * temp:schedule:isv
+   */
   tags?: string;
   topRestTimeList?: ShiftAddRequestSettingTopRestTimeList[];
   static names(): { [key: string]: string } {
@@ -7155,7 +9574,15 @@ export class ShiftAddRequestSetting extends $tea.Model {
 }
 
 export class ShiftAddResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 白班
+   */
   name?: string;
+  /**
+   * @example
+   * 1111
+   */
   shiftId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -7177,6 +9604,10 @@ export class ShiftAddResponseBodyResult extends $tea.Model {
 }
 
 export class SyncScheduleInfoRequestScheduleInfos extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   planId?: number;
   positionKeys?: string[];
   retainAttendanceCheck?: boolean;
@@ -7205,9 +9636,25 @@ export class SyncScheduleInfoRequestScheduleInfos extends $tea.Model {
 }
 
 export class UpdateLeaveTypeRequestLeaveCertificate extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   duration?: number;
+  /**
+   * @example
+   * false
+   */
   enable?: boolean;
+  /**
+   * @example
+   * 请假文案
+   */
   promptInformation?: string;
+  /**
+   * @example
+   * hour
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7233,9 +9680,25 @@ export class UpdateLeaveTypeRequestLeaveCertificate extends $tea.Model {
 }
 
 export class UpdateLeaveTypeRequestSubmitTimeRule extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   enableTimeLimit?: boolean;
+  /**
+   * @example
+   * before
+   */
   timeType?: string;
+  /**
+   * @example
+   * day
+   */
   timeUnit?: string;
+  /**
+   * @example
+   * 2
+   */
   timeValue?: number;
   static names(): { [key: string]: string } {
     return {
@@ -7261,6 +9724,10 @@ export class UpdateLeaveTypeRequestSubmitTimeRule extends $tea.Model {
 }
 
 export class UpdateLeaveTypeRequestVisibilityRules extends $tea.Model {
+  /**
+   * @example
+   * staff
+   */
   type?: string;
   visible?: string[];
   static names(): { [key: string]: string } {
@@ -7283,9 +9750,25 @@ export class UpdateLeaveTypeRequestVisibilityRules extends $tea.Model {
 }
 
 export class UpdateLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   duration?: number;
+  /**
+   * @example
+   * false
+   */
   enable?: boolean;
+  /**
+   * @example
+   * 请假文案
+   */
   promptInformation?: string;
+  /**
+   * @example
+   * hour
+   */
   unit?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7311,9 +9794,25 @@ export class UpdateLeaveTypeResponseBodyResultLeaveCertificate extends $tea.Mode
 }
 
 export class UpdateLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model {
+  /**
+   * @example
+   * false
+   */
   enableTimeLimit?: boolean;
+  /**
+   * @example
+   * before
+   */
   timeType?: string;
+  /**
+   * @example
+   * day
+   */
   timeUnit?: string;
+  /**
+   * @example
+   * 1
+   */
   timeValue?: number;
   static names(): { [key: string]: string } {
     return {
@@ -7339,6 +9838,10 @@ export class UpdateLeaveTypeResponseBodyResultSubmitTimeRule extends $tea.Model 
 }
 
 export class UpdateLeaveTypeResponseBodyResultVisibilityRules extends $tea.Model {
+  /**
+   * @example
+   * staff
+   */
   type?: string;
   visible?: string[];
   static names(): { [key: string]: string } {
@@ -7361,12 +9864,36 @@ export class UpdateLeaveTypeResponseBodyResultVisibilityRules extends $tea.Model
 }
 
 export class UpdateLeaveTypeResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * general_leave
+   */
   bizType?: string;
+  /**
+   * @example
+   * 1000
+   */
   hoursInPerDay?: number;
   leaveCertificate?: UpdateLeaveTypeResponseBodyResultLeaveCertificate;
+  /**
+   * @example
+   * 037477ae-1009-4632-b8e9-e919ae5e7973
+   */
   leaveCode?: string;
+  /**
+   * @example
+   * 年假
+   */
   leaveName?: string;
+  /**
+   * @example
+   * day
+   */
   leaveViewUnit?: string;
+  /**
+   * @example
+   * true
+   */
   naturalDayLeave?: boolean;
   submitTimeRule?: UpdateLeaveTypeResponseBodyResultSubmitTimeRule;
   visibilityRules?: UpdateLeaveTypeResponseBodyResultVisibilityRules[];
@@ -7405,12 +9932,11 @@ export class UpdateLeaveTypeResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -7420,12 +9946,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 添加假期规则
-   *
-   * @param request AddLeaveTypeRequest
-   * @param headers AddLeaveTypeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddLeaveTypeResponse
+   * 添加假期规则
+   * 
+   * @param request - AddLeaveTypeRequest
+   * @param headers - AddLeaveTypeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddLeaveTypeResponse
    */
   async addLeaveTypeWithOptions(request: AddLeaveTypeRequest, headers: AddLeaveTypeHeaders, runtime: $Util.RuntimeOptions): Promise<AddLeaveTypeResponse> {
     Util.validateModel(request);
@@ -7532,10 +10058,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加假期规则
-   *
-   * @param request AddLeaveTypeRequest
-   * @return AddLeaveTypeResponse
+   * 添加假期规则
+   * 
+   * @param request - AddLeaveTypeRequest
+   * @returns AddLeaveTypeResponse
    */
   async addLeaveType(request: AddLeaveTypeRequest): Promise<AddLeaveTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7544,12 +10070,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量给考勤组添加蓝牙设备
-   *
-   * @param request AttendanceBleDevicesAddRequest
-   * @param headers AttendanceBleDevicesAddHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AttendanceBleDevicesAddResponse
+   * 批量给考勤组添加蓝牙设备
+   * 
+   * @param request - AttendanceBleDevicesAddRequest
+   * @param headers - AttendanceBleDevicesAddHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AttendanceBleDevicesAddResponse
    */
   async attendanceBleDevicesAddWithOptions(request: AttendanceBleDevicesAddRequest, headers: AttendanceBleDevicesAddHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesAddResponse> {
     Util.validateModel(request);
@@ -7594,10 +10120,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量给考勤组添加蓝牙设备
-   *
-   * @param request AttendanceBleDevicesAddRequest
-   * @return AttendanceBleDevicesAddResponse
+   * 批量给考勤组添加蓝牙设备
+   * 
+   * @param request - AttendanceBleDevicesAddRequest
+   * @returns AttendanceBleDevicesAddResponse
    */
   async attendanceBleDevicesAdd(request: AttendanceBleDevicesAddRequest): Promise<AttendanceBleDevicesAddResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7606,12 +10132,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询蓝牙设备
-   *
-   * @param request AttendanceBleDevicesQueryRequest
-   * @param headers AttendanceBleDevicesQueryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AttendanceBleDevicesQueryResponse
+   * 批量查询蓝牙设备
+   * 
+   * @param request - AttendanceBleDevicesQueryRequest
+   * @param headers - AttendanceBleDevicesQueryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AttendanceBleDevicesQueryResponse
    */
   async attendanceBleDevicesQueryWithOptions(request: AttendanceBleDevicesQueryRequest, headers: AttendanceBleDevicesQueryHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesQueryResponse> {
     Util.validateModel(request);
@@ -7652,10 +10178,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询蓝牙设备
-   *
-   * @param request AttendanceBleDevicesQueryRequest
-   * @return AttendanceBleDevicesQueryResponse
+   * 批量查询蓝牙设备
+   * 
+   * @param request - AttendanceBleDevicesQueryRequest
+   * @returns AttendanceBleDevicesQueryResponse
    */
   async attendanceBleDevicesQuery(request: AttendanceBleDevicesQueryRequest): Promise<AttendanceBleDevicesQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7664,12 +10190,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除考勤组的蓝牙设备
-   *
-   * @param request AttendanceBleDevicesRemoveRequest
-   * @param headers AttendanceBleDevicesRemoveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AttendanceBleDevicesRemoveResponse
+   * 批量删除考勤组的蓝牙设备
+   * 
+   * @param request - AttendanceBleDevicesRemoveRequest
+   * @param headers - AttendanceBleDevicesRemoveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AttendanceBleDevicesRemoveResponse
    */
   async attendanceBleDevicesRemoveWithOptions(request: AttendanceBleDevicesRemoveRequest, headers: AttendanceBleDevicesRemoveHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesRemoveResponse> {
     Util.validateModel(request);
@@ -7714,10 +10240,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除考勤组的蓝牙设备
-   *
-   * @param request AttendanceBleDevicesRemoveRequest
-   * @return AttendanceBleDevicesRemoveResponse
+   * 批量删除考勤组的蓝牙设备
+   * 
+   * @param request - AttendanceBleDevicesRemoveRequest
+   * @returns AttendanceBleDevicesRemoveResponse
    */
   async attendanceBleDevicesRemove(request: AttendanceBleDevicesRemoveRequest): Promise<AttendanceBleDevicesRemoveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7726,12 +10252,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量修改考勤结果
-   *
-   * @param request BatchBossCheckRequest
-   * @param headers BatchBossCheckHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchBossCheckResponse
+   * 批量修改考勤结果
+   * 
+   * @param request - BatchBossCheckRequest
+   * @param headers - BatchBossCheckHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchBossCheckResponse
    */
   async batchBossCheckWithOptions(request: BatchBossCheckRequest, headers: BatchBossCheckHeaders, runtime: $Util.RuntimeOptions): Promise<BatchBossCheckResponse> {
     Util.validateModel(request);
@@ -7774,10 +10300,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量修改考勤结果
-   *
-   * @param request BatchBossCheckRequest
-   * @return BatchBossCheckResponse
+   * 批量修改考勤结果
+   * 
+   * @param request - BatchBossCheckRequest
+   * @returns BatchBossCheckResponse
    */
   async batchBossCheck(request: BatchBossCheckRequest): Promise<BatchBossCheckResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7786,12 +10312,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 预计算时长
-   *
-   * @param request CalculateDurationRequest
-   * @param headers CalculateDurationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CalculateDurationResponse
+   * 预计算时长
+   * 
+   * @param request - CalculateDurationRequest
+   * @param headers - CalculateDurationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CalculateDurationResponse
    */
   async calculateDurationWithOptions(request: CalculateDurationRequest, headers: CalculateDurationHeaders, runtime: $Util.RuntimeOptions): Promise<CalculateDurationResponse> {
     Util.validateModel(request);
@@ -7854,10 +10380,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 预计算时长
-   *
-   * @param request CalculateDurationRequest
-   * @return CalculateDurationResponse
+   * 预计算时长
+   * 
+   * @param request - CalculateDurationRequest
+   * @returns CalculateDurationResponse
    */
   async calculateDuration(request: CalculateDurationRequest): Promise<CalculateDurationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7866,12 +10392,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 针对某些员工某段时间内封账状态的查询
-   *
-   * @param request CheckClosingAccountRequest
-   * @param headers CheckClosingAccountHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CheckClosingAccountResponse
+   * 针对某些员工某段时间内封账状态的查询
+   * 
+   * @param request - CheckClosingAccountRequest
+   * @param headers - CheckClosingAccountHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CheckClosingAccountResponse
    */
   async checkClosingAccountWithOptions(request: CheckClosingAccountRequest, headers: CheckClosingAccountHeaders, runtime: $Util.RuntimeOptions): Promise<CheckClosingAccountResponse> {
     Util.validateModel(request);
@@ -7916,10 +10442,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 针对某些员工某段时间内封账状态的查询
-   *
-   * @param request CheckClosingAccountRequest
-   * @return CheckClosingAccountResponse
+   * 针对某些员工某段时间内封账状态的查询
+   * 
+   * @param request - CheckClosingAccountRequest
+   * @returns CheckClosingAccountResponse
    */
   async checkClosingAccount(request: CheckClosingAccountRequest): Promise<CheckClosingAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7928,12 +10454,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 考勤资源的写权限查询
-   *
-   * @param request CheckWritePermissionRequest
-   * @param headers CheckWritePermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CheckWritePermissionResponse
+   * 考勤资源的写权限查询
+   * 
+   * @param request - CheckWritePermissionRequest
+   * @param headers - CheckWritePermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CheckWritePermissionResponse
    */
   async checkWritePermissionWithOptions(request: CheckWritePermissionRequest, headers: CheckWritePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<CheckWritePermissionResponse> {
     Util.validateModel(request);
@@ -7982,10 +10508,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 考勤资源的写权限查询
-   *
-   * @param request CheckWritePermissionRequest
-   * @return CheckWritePermissionResponse
+   * 考勤资源的写权限查询
+   * 
+   * @param request - CheckWritePermissionRequest
+   * @returns CheckWritePermissionResponse
    */
   async checkWritePermission(request: CheckWritePermissionRequest): Promise<CheckWritePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -7994,12 +10520,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建考勤打卡审批单
-   *
-   * @param request CreateApproveRequest
-   * @param headers CreateApproveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateApproveResponse
+   * 创建考勤打卡审批单
+   * 
+   * @param request - CreateApproveRequest
+   * @param headers - CreateApproveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateApproveResponse
    */
   async createApproveWithOptions(request: CreateApproveRequest, headers: CreateApproveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateApproveResponse> {
     Util.validateModel(request);
@@ -8056,10 +10582,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建考勤打卡审批单
-   *
-   * @param request CreateApproveRequest
-   * @return CreateApproveResponse
+   * 创建考勤打卡审批单
+   * 
+   * @param request - CreateApproveRequest
+   * @returns CreateApproveResponse
    */
   async createApprove(request: CreateApproveRequest): Promise<CreateApproveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8068,12 +10594,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤销请假
-   *
-   * @param request DeleteLeaveRequestRequest
-   * @param headers DeleteLeaveRequestHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteLeaveRequestResponse
+   * 撤销请假
+   * 
+   * @param request - DeleteLeaveRequestRequest
+   * @param headers - DeleteLeaveRequestHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteLeaveRequestResponse
    */
   async deleteLeaveRequestWithOptions(unionId: string, request: DeleteLeaveRequestRequest, headers: DeleteLeaveRequestHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteLeaveRequestResponse> {
     Util.validateModel(request);
@@ -8110,10 +10636,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤销请假
-   *
-   * @param request DeleteLeaveRequestRequest
-   * @return DeleteLeaveRequestResponse
+   * 撤销请假
+   * 
+   * @param request - DeleteLeaveRequestRequest
+   * @returns DeleteLeaveRequestResponse
    */
   async deleteLeaveRequest(unionId: string, request: DeleteLeaveRequestRequest): Promise<DeleteLeaveRequestResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8122,12 +10648,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除水印模板
-   *
-   * @param request DeleteWaterMarkTemplateRequest
-   * @param headers DeleteWaterMarkTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteWaterMarkTemplateResponse
+   * 删除水印模板
+   * 
+   * @param request - DeleteWaterMarkTemplateRequest
+   * @param headers - DeleteWaterMarkTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteWaterMarkTemplateResponse
    */
   async deleteWaterMarkTemplateWithOptions(request: DeleteWaterMarkTemplateRequest, headers: DeleteWaterMarkTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWaterMarkTemplateResponse> {
     Util.validateModel(request);
@@ -8180,10 +10706,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除水印模板
-   *
-   * @param request DeleteWaterMarkTemplateRequest
-   * @return DeleteWaterMarkTemplateResponse
+   * 删除水印模板
+   * 
+   * @param request - DeleteWaterMarkTemplateRequest
+   * @returns DeleteWaterMarkTemplateResponse
    */
   async deleteWaterMarkTemplate(request: DeleteWaterMarkTemplateRequest): Promise<DeleteWaterMarkTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8192,12 +10718,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 钉钉安全检查
-   *
-   * @param request DingTalkSecurityCheckRequest
-   * @param headers DingTalkSecurityCheckHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DingTalkSecurityCheckResponse
+   * 钉钉安全检查
+   * 
+   * @param request - DingTalkSecurityCheckRequest
+   * @param headers - DingTalkSecurityCheckHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DingTalkSecurityCheckResponse
    */
   async dingTalkSecurityCheckWithOptions(request: DingTalkSecurityCheckRequest, headers: DingTalkSecurityCheckHeaders, runtime: $Util.RuntimeOptions): Promise<DingTalkSecurityCheckResponse> {
     Util.validateModel(request);
@@ -8250,10 +10776,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 钉钉安全检查
-   *
-   * @param request DingTalkSecurityCheckRequest
-   * @return DingTalkSecurityCheckResponse
+   * 钉钉安全检查
+   * 
+   * @param request - DingTalkSecurityCheckRequest
+   * @returns DingTalkSecurityCheckResponse
    */
   async dingTalkSecurityCheck(request: DingTalkSecurityCheckRequest): Promise<DingTalkSecurityCheckResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8262,12 +10788,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询管理员管理范围下的userid
-   *
-   * @param request GetATManageScopeRequest
-   * @param headers GetATManageScopeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetATManageScopeResponse
+   * 查询管理员管理范围下的userid
+   * 
+   * @param request - GetATManageScopeRequest
+   * @param headers - GetATManageScopeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetATManageScopeResponse
    */
   async getATManageScopeWithOptions(request: GetATManageScopeRequest, headers: GetATManageScopeHeaders, runtime: $Util.RuntimeOptions): Promise<GetATManageScopeResponse> {
     Util.validateModel(request);
@@ -8312,10 +10838,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询管理员管理范围下的userid
-   *
-   * @param request GetATManageScopeRequest
-   * @return GetATManageScopeResponse
+   * 查询管理员管理范围下的userid
+   * 
+   * @param request - GetATManageScopeRequest
+   * @returns GetATManageScopeResponse
    */
   async getATManageScope(request: GetATManageScopeRequest): Promise<GetATManageScopeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8324,12 +10850,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取补卡规则列表
-   *
-   * @param request GetAdjustmentsRequest
-   * @param headers GetAdjustmentsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAdjustmentsResponse
+   * 获取补卡规则列表
+   * 
+   * @param request - GetAdjustmentsRequest
+   * @param headers - GetAdjustmentsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAdjustmentsResponse
    */
   async getAdjustmentsWithOptions(request: GetAdjustmentsRequest, headers: GetAdjustmentsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAdjustmentsResponse> {
     Util.validateModel(request);
@@ -8370,10 +10896,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取补卡规则列表
-   *
-   * @param request GetAdjustmentsRequest
-   * @return GetAdjustmentsResponse
+   * 获取补卡规则列表
+   * 
+   * @param request - GetAdjustmentsRequest
+   * @returns GetAdjustmentsResponse
    */
   async getAdjustments(request: GetAdjustmentsRequest): Promise<GetAdjustmentsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8382,12 +10908,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取水印打卡模板
-   *
-   * @param request GetCheckInSchemaTemplateRequest
-   * @param headers GetCheckInSchemaTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCheckInSchemaTemplateResponse
+   * 获取水印打卡模板
+   * 
+   * @param request - GetCheckInSchemaTemplateRequest
+   * @param headers - GetCheckInSchemaTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCheckInSchemaTemplateResponse
    */
   async getCheckInSchemaTemplateWithOptions(request: GetCheckInSchemaTemplateRequest, headers: GetCheckInSchemaTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<GetCheckInSchemaTemplateResponse> {
     Util.validateModel(request);
@@ -8436,10 +10962,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取水印打卡模板
-   *
-   * @param request GetCheckInSchemaTemplateRequest
-   * @return GetCheckInSchemaTemplateResponse
+   * 获取水印打卡模板
+   * 
+   * @param request - GetCheckInSchemaTemplateRequest
+   * @returns GetCheckInSchemaTemplateResponse
    */
   async getCheckInSchemaTemplate(request: GetCheckInSchemaTemplateRequest): Promise<GetCheckInSchemaTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8448,12 +10974,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 调用本接口，获取用户签到记录。
-   *
-   * @param request GetCheckinRecordByUserRequest
-   * @param headers GetCheckinRecordByUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCheckinRecordByUserResponse
+   * 调用本接口，获取用户签到记录。
+   * 
+   * @param request - GetCheckinRecordByUserRequest
+   * @param headers - GetCheckinRecordByUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCheckinRecordByUserResponse
    */
   async getCheckinRecordByUserWithOptions(request: GetCheckinRecordByUserRequest, headers: GetCheckinRecordByUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetCheckinRecordByUserResponse> {
     Util.validateModel(request);
@@ -8510,10 +11036,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 调用本接口，获取用户签到记录。
-   *
-   * @param request GetCheckinRecordByUserRequest
-   * @return GetCheckinRecordByUserResponse
+   * 调用本接口，获取用户签到记录。
+   * 
+   * @param request - GetCheckinRecordByUserRequest
+   * @returns GetCheckinRecordByUserResponse
    */
   async getCheckinRecordByUser(request: GetCheckinRecordByUserRequest): Promise<GetCheckinRecordByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8522,11 +11048,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 班次查询（包含已删除班次）
-   *
-   * @param headers GetClassWithDeletedHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetClassWithDeletedResponse
+   * 班次查询（包含已删除班次）
+   * 
+   * @param headers - GetClassWithDeletedHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetClassWithDeletedResponse
    */
   async getClassWithDeletedWithOptions(classId: string, headers: GetClassWithDeletedHeaders, runtime: $Util.RuntimeOptions): Promise<GetClassWithDeletedResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -8556,9 +11082,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 班次查询（包含已删除班次）
-   *
-   * @return GetClassWithDeletedResponse
+   * 班次查询（包含已删除班次）
+   * @returns GetClassWithDeletedResponse
    */
   async getClassWithDeleted(classId: string): Promise<GetClassWithDeletedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8567,12 +11092,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询指定用户的封账规则
-   *
-   * @param request GetClosingAccountsRequest
-   * @param headers GetClosingAccountsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetClosingAccountsResponse
+   * 查询指定用户的封账规则
+   * 
+   * @param request - GetClosingAccountsRequest
+   * @param headers - GetClosingAccountsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetClosingAccountsResponse
    */
   async getClosingAccountsWithOptions(request: GetClosingAccountsRequest, headers: GetClosingAccountsHeaders, runtime: $Util.RuntimeOptions): Promise<GetClosingAccountsResponse> {
     Util.validateModel(request);
@@ -8609,10 +11134,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询指定用户的封账规则
-   *
-   * @param request GetClosingAccountsRequest
-   * @return GetClosingAccountsResponse
+   * 查询指定用户的封账规则
+   * 
+   * @param request - GetClosingAccountsRequest
+   * @returns GetClosingAccountsResponse
    */
   async getClosingAccounts(request: GetClosingAccountsRequest): Promise<GetClosingAccountsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8621,12 +11146,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取多个用户的智能考勤报表的列值
-   *
-   * @param request GetColumnvalsRequest
-   * @param headers GetColumnvalsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetColumnvalsResponse
+   * 获取多个用户的智能考勤报表的列值
+   * 
+   * @param request - GetColumnvalsRequest
+   * @param headers - GetColumnvalsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetColumnvalsResponse
    */
   async getColumnvalsWithOptions(request: GetColumnvalsRequest, headers: GetColumnvalsHeaders, runtime: $Util.RuntimeOptions): Promise<GetColumnvalsResponse> {
     Util.validateModel(request);
@@ -8675,10 +11200,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取多个用户的智能考勤报表的列值
-   *
-   * @param request GetColumnvalsRequest
-   * @return GetColumnvalsResponse
+   * 获取多个用户的智能考勤报表的列值
+   * 
+   * @param request - GetColumnvalsRequest
+   * @returns GetColumnvalsResponse
    */
   async getColumnvals(request: GetColumnvalsRequest): Promise<GetColumnvalsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8687,12 +11212,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询员工假期余额变更记录
-   *
-   * @param request GetLeaveRecordsRequest
-   * @param headers GetLeaveRecordsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetLeaveRecordsResponse
+   * 批量查询员工假期余额变更记录
+   * 
+   * @param request - GetLeaveRecordsRequest
+   * @param headers - GetLeaveRecordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetLeaveRecordsResponse
    */
   async getLeaveRecordsWithOptions(request: GetLeaveRecordsRequest, headers: GetLeaveRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<GetLeaveRecordsResponse> {
     Util.validateModel(request);
@@ -8745,10 +11270,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询员工假期余额变更记录
-   *
-   * @param request GetLeaveRecordsRequest
-   * @return GetLeaveRecordsResponse
+   * 批量查询员工假期余额变更记录
+   * 
+   * @param request - GetLeaveRecordsRequest
+   * @returns GetLeaveRecordsResponse
    */
   async getLeaveRecords(request: GetLeaveRecordsRequest): Promise<GetLeaveRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8757,12 +11282,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询假期规则列表
-   *
-   * @param request GetLeaveTypeRequest
-   * @param headers GetLeaveTypeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetLeaveTypeResponse
+   * 查询假期规则列表
+   * 
+   * @param request - GetLeaveTypeRequest
+   * @param headers - GetLeaveTypeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetLeaveTypeResponse
    */
   async getLeaveTypeWithOptions(request: GetLeaveTypeRequest, headers: GetLeaveTypeHeaders, runtime: $Util.RuntimeOptions): Promise<GetLeaveTypeResponse> {
     Util.validateModel(request);
@@ -8803,10 +11328,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询假期规则列表
-   *
-   * @param request GetLeaveTypeRequest
-   * @return GetLeaveTypeResponse
+   * 查询假期规则列表
+   * 
+   * @param request - GetLeaveTypeRequest
+   * @returns GetLeaveTypeResponse
    */
   async getLeaveType(request: GetLeaveTypeRequest): Promise<GetLeaveTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8815,11 +11340,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据设备id获取考勤机信息
-   *
-   * @param headers GetMachineHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMachineResponse
+   * 根据设备id获取考勤机信息
+   * 
+   * @param headers - GetMachineHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMachineResponse
    */
   async getMachineWithOptions(devId: string, headers: GetMachineHeaders, runtime: $Util.RuntimeOptions): Promise<GetMachineResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -8849,9 +11374,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据设备id获取考勤机信息
-   *
-   * @return GetMachineResponse
+   * 根据设备id获取考勤机信息
+   * @returns GetMachineResponse
    */
   async getMachine(devId: string): Promise<GetMachineResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8860,12 +11384,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据设备id获取员工信息
-   *
-   * @param request GetMachineUserRequest
-   * @param headers GetMachineUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMachineUserResponse
+   * 根据设备id获取员工信息
+   * 
+   * @param request - GetMachineUserRequest
+   * @param headers - GetMachineUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMachineUserResponse
    */
   async getMachineUserWithOptions(devId: string, request: GetMachineUserRequest, headers: GetMachineUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetMachineUserResponse> {
     Util.validateModel(request);
@@ -8906,10 +11430,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据设备id获取员工信息
-   *
-   * @param request GetMachineUserRequest
-   * @return GetMachineUserResponse
+   * 根据设备id获取员工信息
+   * 
+   * @param request - GetMachineUserRequest
+   * @returns GetMachineUserResponse
    */
   async getMachineUser(devId: string, request: GetMachineUserRequest): Promise<GetMachineUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8918,12 +11442,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取加班规则设置
-   *
-   * @param request GetOvertimeSettingRequest
-   * @param headers GetOvertimeSettingHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetOvertimeSettingResponse
+   * 批量获取加班规则设置
+   * 
+   * @param request - GetOvertimeSettingRequest
+   * @param headers - GetOvertimeSettingHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOvertimeSettingResponse
    */
   async getOvertimeSettingWithOptions(request: GetOvertimeSettingRequest, headers: GetOvertimeSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetOvertimeSettingResponse> {
     Util.validateModel(request);
@@ -8960,10 +11484,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取加班规则设置
-   *
-   * @param request GetOvertimeSettingRequest
-   * @return GetOvertimeSettingResponse
+   * 批量获取加班规则设置
+   * 
+   * @param request - GetOvertimeSettingRequest
+   * @returns GetOvertimeSettingResponse
    */
   async getOvertimeSetting(request: GetOvertimeSettingRequest): Promise<GetOvertimeSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8972,12 +11496,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 班次详情
-   *
-   * @param request GetShiftRequest
-   * @param headers GetShiftHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetShiftResponse
+   * 班次详情
+   * 
+   * @param request - GetShiftRequest
+   * @param headers - GetShiftHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetShiftResponse
    */
   async getShiftWithOptions(request: GetShiftRequest, headers: GetShiftHeaders, runtime: $Util.RuntimeOptions): Promise<GetShiftResponse> {
     Util.validateModel(request);
@@ -9018,10 +11542,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 班次详情
-   *
-   * @param request GetShiftRequest
-   * @return GetShiftResponse
+   * 班次详情
+   * 
+   * @param request - GetShiftRequest
+   * @returns GetShiftResponse
    */
   async getShift(request: GetShiftRequest): Promise<GetShiftResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9030,12 +11554,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取考勤组列表详情
-   *
-   * @param request GetSimpleGroupsRequest
-   * @param headers GetSimpleGroupsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSimpleGroupsResponse
+   * 获取考勤组列表详情
+   * 
+   * @param request - GetSimpleGroupsRequest
+   * @param headers - GetSimpleGroupsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSimpleGroupsResponse
    */
   async getSimpleGroupsWithOptions(request: GetSimpleGroupsRequest, headers: GetSimpleGroupsHeaders, runtime: $Util.RuntimeOptions): Promise<GetSimpleGroupsResponse> {
     Util.validateModel(request);
@@ -9076,10 +11600,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取考勤组列表详情
-   *
-   * @param request GetSimpleGroupsRequest
-   * @return GetSimpleGroupsResponse
+   * 获取考勤组列表详情
+   * 
+   * @param request - GetSimpleGroupsRequest
+   * @returns GetSimpleGroupsResponse
    */
   async getSimpleGroups(request: GetSimpleGroupsRequest): Promise<GetSimpleGroupsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9088,12 +11612,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 加班规则列表
-   *
-   * @param request GetSimpleOvertimeSettingRequest
-   * @param headers GetSimpleOvertimeSettingHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSimpleOvertimeSettingResponse
+   * 加班规则列表
+   * 
+   * @param request - GetSimpleOvertimeSettingRequest
+   * @param headers - GetSimpleOvertimeSettingHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSimpleOvertimeSettingResponse
    */
   async getSimpleOvertimeSettingWithOptions(request: GetSimpleOvertimeSettingRequest, headers: GetSimpleOvertimeSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetSimpleOvertimeSettingResponse> {
     Util.validateModel(request);
@@ -9134,10 +11658,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 加班规则列表
-   *
-   * @param request GetSimpleOvertimeSettingRequest
-   * @return GetSimpleOvertimeSettingResponse
+   * 加班规则列表
+   * 
+   * @param request - GetSimpleOvertimeSettingRequest
+   * @returns GetSimpleOvertimeSettingResponse
    */
   async getSimpleOvertimeSetting(request: GetSimpleOvertimeSettingRequest): Promise<GetSimpleOvertimeSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9146,12 +11670,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询员工某段时间的假期
-   *
-   * @param request GetUserHolidaysRequest
-   * @param headers GetUserHolidaysHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserHolidaysResponse
+   * 查询员工某段时间的假期
+   * 
+   * @param request - GetUserHolidaysRequest
+   * @param headers - GetUserHolidaysHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserHolidaysResponse
    */
   async getUserHolidaysWithOptions(request: GetUserHolidaysRequest, headers: GetUserHolidaysHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserHolidaysResponse> {
     Util.validateModel(request);
@@ -9196,10 +11720,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询员工某段时间的假期
-   *
-   * @param request GetUserHolidaysRequest
-   * @return GetUserHolidaysResponse
+   * 查询员工某段时间的假期
+   * 
+   * @param request - GetUserHolidaysRequest
+   * @returns GetUserHolidaysResponse
    */
   async getUserHolidays(request: GetUserHolidaysRequest): Promise<GetUserHolidaysResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9208,12 +11732,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建考勤组
-   *
-   * @param request GroupAddRequest
-   * @param headers GroupAddHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GroupAddResponse
+   * 创建考勤组
+   * 
+   * @param request - GroupAddRequest
+   * @param headers - GroupAddHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GroupAddResponse
    */
   async groupAddWithOptions(request: GroupAddRequest, headers: GroupAddHeaders, runtime: $Util.RuntimeOptions): Promise<GroupAddResponse> {
     Util.validateModel(request);
@@ -9424,10 +11948,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建考勤组
-   *
-   * @param request GroupAddRequest
-   * @return GroupAddResponse
+   * 创建考勤组
+   * 
+   * @param request - GroupAddRequest
+   * @returns GroupAddResponse
    */
   async groupAdd(request: GroupAddRequest): Promise<GroupAddResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9436,12 +11960,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改考勤组
-   *
-   * @param request GroupUpdateRequest
-   * @param headers GroupUpdateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GroupUpdateResponse
+   * 修改考勤组
+   * 
+   * @param request - GroupUpdateRequest
+   * @param headers - GroupUpdateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GroupUpdateResponse
    */
   async groupUpdateWithOptions(request: GroupUpdateRequest, headers: GroupUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<GroupUpdateResponse> {
     Util.validateModel(request);
@@ -9604,10 +12128,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改考勤组
-   *
-   * @param request GroupUpdateRequest
-   * @return GroupUpdateResponse
+   * 修改考勤组
+   * 
+   * @param request - GroupUpdateRequest
+   * @returns GroupUpdateResponse
    */
   async groupUpdate(request: GroupUpdateRequest): Promise<GroupUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9616,12 +12140,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生态系统假期初始化查询余额接口
-   *
-   * @param request InitAndGetLeaveALlocationQuotasRequest
-   * @param headers InitAndGetLeaveALlocationQuotasHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InitAndGetLeaveALlocationQuotasResponse
+   * 生态系统假期初始化查询余额接口
+   * 
+   * @param request - InitAndGetLeaveALlocationQuotasRequest
+   * @param headers - InitAndGetLeaveALlocationQuotasHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InitAndGetLeaveALlocationQuotasResponse
    */
   async initAndGetLeaveALlocationQuotasWithOptions(request: InitAndGetLeaveALlocationQuotasRequest, headers: InitAndGetLeaveALlocationQuotasHeaders, runtime: $Util.RuntimeOptions): Promise<InitAndGetLeaveALlocationQuotasResponse> {
     Util.validateModel(request);
@@ -9666,10 +12190,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生态系统假期初始化查询余额接口
-   *
-   * @param request InitAndGetLeaveALlocationQuotasRequest
-   * @return InitAndGetLeaveALlocationQuotasResponse
+   * 生态系统假期初始化查询余额接口
+   * 
+   * @param request - InitAndGetLeaveALlocationQuotasRequest
+   * @returns InitAndGetLeaveALlocationQuotasResponse
    */
   async initAndGetLeaveALlocationQuotas(request: InitAndGetLeaveALlocationQuotasRequest): Promise<InitAndGetLeaveALlocationQuotasResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9678,12 +12202,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户某段时间内同步到考勤的审批单信息
-   *
-   * @param request ListApproveByUsersRequest
-   * @param headers ListApproveByUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListApproveByUsersResponse
+   * 获取用户某段时间内同步到考勤的审批单信息
+   * 
+   * @param request - ListApproveByUsersRequest
+   * @param headers - ListApproveByUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListApproveByUsersResponse
    */
   async listApproveByUsersWithOptions(request: ListApproveByUsersRequest, headers: ListApproveByUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListApproveByUsersResponse> {
     Util.validateModel(request);
@@ -9732,10 +12256,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户某段时间内同步到考勤的审批单信息
-   *
-   * @param request ListApproveByUsersRequest
-   * @return ListApproveByUsersResponse
+   * 获取用户某段时间内同步到考勤的审批单信息
+   * 
+   * @param request - ListApproveByUsersRequest
+   * @returns ListApproveByUsersResponse
    */
   async listApproveByUsers(request: ListApproveByUsersRequest): Promise<ListApproveByUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9744,12 +12268,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改水印模板
-   *
-   * @param request ModifyWaterMarkTemplateRequest
-   * @param headers ModifyWaterMarkTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ModifyWaterMarkTemplateResponse
+   * 修改水印模板
+   * 
+   * @param request - ModifyWaterMarkTemplateRequest
+   * @param headers - ModifyWaterMarkTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ModifyWaterMarkTemplateResponse
    */
   async modifyWaterMarkTemplateWithOptions(request: ModifyWaterMarkTemplateRequest, headers: ModifyWaterMarkTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyWaterMarkTemplateResponse> {
     Util.validateModel(request);
@@ -9816,10 +12340,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改水印模板
-   *
-   * @param request ModifyWaterMarkTemplateRequest
-   * @return ModifyWaterMarkTemplateResponse
+   * 修改水印模板
+   * 
+   * @param request - ModifyWaterMarkTemplateRequest
+   * @returns ModifyWaterMarkTemplateResponse
    */
   async modifyWaterMarkTemplate(request: ModifyWaterMarkTemplateRequest): Promise<ModifyWaterMarkTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9828,12 +12352,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建考勤打卡审批单
-   *
-   * @param request ProcessApproveCreateRequest
-   * @param headers ProcessApproveCreateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ProcessApproveCreateResponse
+   * 创建考勤打卡审批单
+   * 
+   * @param request - ProcessApproveCreateRequest
+   * @param headers - ProcessApproveCreateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ProcessApproveCreateResponse
    */
   async processApproveCreateWithOptions(request: ProcessApproveCreateRequest, headers: ProcessApproveCreateHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessApproveCreateResponse> {
     Util.validateModel(request);
@@ -9890,10 +12414,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建考勤打卡审批单
-   *
-   * @param request ProcessApproveCreateRequest
-   * @return ProcessApproveCreateResponse
+   * 创建考勤打卡审批单
+   * 
+   * @param request - ProcessApproveCreateRequest
+   * @returns ProcessApproveCreateResponse
    */
   async processApproveCreate(request: ProcessApproveCreateRequest): Promise<ProcessApproveCreateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9902,12 +12426,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通知审批通过
-   *
-   * @param request ProcessApproveFinishRequest
-   * @param headers ProcessApproveFinishHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ProcessApproveFinishResponse
+   * 通知审批通过
+   * 
+   * @param request - ProcessApproveFinishRequest
+   * @param headers - ProcessApproveFinishHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ProcessApproveFinishResponse
    */
   async processApproveFinishWithOptions(request: ProcessApproveFinishRequest, headers: ProcessApproveFinishHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessApproveFinishResponse> {
     Util.validateModel(request);
@@ -9974,10 +12498,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通知审批通过
-   *
-   * @param request ProcessApproveFinishRequest
-   * @return ProcessApproveFinishResponse
+   * 通知审批通过
+   * 
+   * @param request - ProcessApproveFinishRequest
+   * @returns ProcessApproveFinishResponse
    */
   async processApproveFinish(request: ProcessApproveFinishRequest): Promise<ProcessApproveFinishResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9986,12 +12510,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 扣减员工假期余额
-   *
-   * @param request ReduceQuotaWithLeaveRecordRequest
-   * @param headers ReduceQuotaWithLeaveRecordHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ReduceQuotaWithLeaveRecordResponse
+   * 扣减员工假期余额
+   * 
+   * @param request - ReduceQuotaWithLeaveRecordRequest
+   * @param headers - ReduceQuotaWithLeaveRecordHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ReduceQuotaWithLeaveRecordResponse
    */
   async reduceQuotaWithLeaveRecordWithOptions(unionId: string, request: ReduceQuotaWithLeaveRecordRequest, headers: ReduceQuotaWithLeaveRecordHeaders, runtime: $Util.RuntimeOptions): Promise<ReduceQuotaWithLeaveRecordResponse> {
     Util.validateModel(request);
@@ -10048,10 +12572,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 扣减员工假期余额
-   *
-   * @param request ReduceQuotaWithLeaveRecordRequest
-   * @return ReduceQuotaWithLeaveRecordResponse
+   * 扣减员工假期余额
+   * 
+   * @param request - ReduceQuotaWithLeaveRecordRequest
+   * @returns ReduceQuotaWithLeaveRecordResponse
    */
   async reduceQuotaWithLeaveRecord(unionId: string, request: ReduceQuotaWithLeaveRecordRequest): Promise<ReduceQuotaWithLeaveRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10060,12 +12584,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改假期规则来源
-   *
-   * @param request RetainLeaveTypesRequest
-   * @param headers RetainLeaveTypesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RetainLeaveTypesResponse
+   * 修改假期规则来源
+   * 
+   * @param request - RetainLeaveTypesRequest
+   * @param headers - RetainLeaveTypesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RetainLeaveTypesResponse
    */
   async retainLeaveTypesWithOptions(request: RetainLeaveTypesRequest, headers: RetainLeaveTypesHeaders, runtime: $Util.RuntimeOptions): Promise<RetainLeaveTypesResponse> {
     Util.validateModel(request);
@@ -10110,10 +12634,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改假期规则来源
-   *
-   * @param request RetainLeaveTypesRequest
-   * @return RetainLeaveTypesResponse
+   * 修改假期规则来源
+   * 
+   * @param request - RetainLeaveTypesRequest
+   * @returns RetainLeaveTypesResponse
    */
   async retainLeaveTypes(request: RetainLeaveTypesRequest): Promise<RetainLeaveTypesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10122,12 +12646,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 提供给高级假期的试用订单回退
-   *
-   * @param request ReverseTrialAdvancedLeaveRequest
-   * @param headers ReverseTrialAdvancedLeaveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ReverseTrialAdvancedLeaveResponse
+   * 提供给高级假期的试用订单回退
+   * 
+   * @param request - ReverseTrialAdvancedLeaveRequest
+   * @param headers - ReverseTrialAdvancedLeaveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ReverseTrialAdvancedLeaveResponse
    */
   async reverseTrialAdvancedLeaveWithOptions(request: ReverseTrialAdvancedLeaveRequest, headers: ReverseTrialAdvancedLeaveHeaders, runtime: $Util.RuntimeOptions): Promise<ReverseTrialAdvancedLeaveResponse> {
     Util.validateModel(request);
@@ -10168,10 +12692,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 提供给高级假期的试用订单回退
-   *
-   * @param request ReverseTrialAdvancedLeaveRequest
-   * @return ReverseTrialAdvancedLeaveResponse
+   * 提供给高级假期的试用订单回退
+   * 
+   * @param request - ReverseTrialAdvancedLeaveRequest
+   * @returns ReverseTrialAdvancedLeaveResponse
    */
   async reverseTrialAdvancedLeave(request: ReverseTrialAdvancedLeaveRequest): Promise<ReverseTrialAdvancedLeaveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10180,12 +12704,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增水印签到模板
-   *
-   * @param request SaveCustomWaterMarkTemplateRequest
-   * @param headers SaveCustomWaterMarkTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SaveCustomWaterMarkTemplateResponse
+   * 新增水印签到模板
+   * 
+   * @param request - SaveCustomWaterMarkTemplateRequest
+   * @param headers - SaveCustomWaterMarkTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SaveCustomWaterMarkTemplateResponse
    */
   async saveCustomWaterMarkTemplateWithOptions(request: SaveCustomWaterMarkTemplateRequest, headers: SaveCustomWaterMarkTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SaveCustomWaterMarkTemplateResponse> {
     Util.validateModel(request);
@@ -10252,10 +12776,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增水印签到模板
-   *
-   * @param request SaveCustomWaterMarkTemplateRequest
-   * @return SaveCustomWaterMarkTemplateResponse
+   * 新增水印签到模板
+   * 
+   * @param request - SaveCustomWaterMarkTemplateRequest
+   * @returns SaveCustomWaterMarkTemplateResponse
    */
   async saveCustomWaterMarkTemplate(request: SaveCustomWaterMarkTemplateRequest): Promise<SaveCustomWaterMarkTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10264,12 +12788,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建班次
-   *
-   * @param request ShiftAddRequest
-   * @param headers ShiftAddHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ShiftAddResponse
+   * 创建班次
+   * 
+   * @param request - ShiftAddRequest
+   * @param headers - ShiftAddHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ShiftAddResponse
    */
   async shiftAddWithOptions(request: ShiftAddRequest, headers: ShiftAddHeaders, runtime: $Util.RuntimeOptions): Promise<ShiftAddResponse> {
     Util.validateModel(request);
@@ -10332,10 +12856,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建班次
-   *
-   * @param request ShiftAddRequest
-   * @return ShiftAddResponse
+   * 创建班次
+   * 
+   * @param request - ShiftAddRequest
+   * @returns ShiftAddResponse
    */
   async shiftAdd(request: ShiftAddRequest): Promise<ShiftAddResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10344,12 +12868,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 用于考勤排班附加信息，例如打卡位置，打卡wifi等
-   *
-   * @param request SyncScheduleInfoRequest
-   * @param headers SyncScheduleInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncScheduleInfoResponse
+   * 用于考勤排班附加信息，例如打卡位置，打卡wifi等
+   * 
+   * @param request - SyncScheduleInfoRequest
+   * @param headers - SyncScheduleInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncScheduleInfoResponse
    */
   async syncScheduleInfoWithOptions(request: SyncScheduleInfoRequest, headers: SyncScheduleInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SyncScheduleInfoResponse> {
     Util.validateModel(request);
@@ -10390,10 +12914,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 用于考勤排班附加信息，例如打卡位置，打卡wifi等
-   *
-   * @param request SyncScheduleInfoRequest
-   * @return SyncScheduleInfoResponse
+   * 用于考勤排班附加信息，例如打卡位置，打卡wifi等
+   * 
+   * @param request - SyncScheduleInfoRequest
+   * @returns SyncScheduleInfoResponse
    */
   async syncScheduleInfo(request: SyncScheduleInfoRequest): Promise<SyncScheduleInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10402,12 +12926,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新假期规则
-   *
-   * @param request UpdateLeaveTypeRequest
-   * @param headers UpdateLeaveTypeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateLeaveTypeResponse
+   * 更新假期规则
+   * 
+   * @param request - UpdateLeaveTypeRequest
+   * @param headers - UpdateLeaveTypeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateLeaveTypeResponse
    */
   async updateLeaveTypeWithOptions(request: UpdateLeaveTypeRequest, headers: UpdateLeaveTypeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateLeaveTypeResponse> {
     Util.validateModel(request);
@@ -10486,10 +13010,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新假期规则
-   *
-   * @param request UpdateLeaveTypeRequest
-   * @return UpdateLeaveTypeResponse
+   * 更新假期规则
+   * 
+   * @param request - UpdateLeaveTypeRequest
+   * @returns UpdateLeaveTypeResponse
    */
   async updateLeaveType(request: UpdateLeaveTypeRequest): Promise<UpdateLeaveTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });

@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,6 +30,10 @@ export class CheckUserTaskStatusHeaders extends $tea.Model {
 }
 
 export class CheckUserTaskStatusRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   provinceCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -117,6 +119,10 @@ export class CheckUserTasksStatusHeaders extends $tea.Model {
 }
 
 export class CheckUserTasksStatusRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   provinceCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -181,12 +187,11 @@ export class CheckUserTasksStatusResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -196,12 +201,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 检查用户任务状态
-   *
-   * @param request CheckUserTaskStatusRequest
-   * @param headers CheckUserTaskStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CheckUserTaskStatusResponse
+   * 检查用户任务状态
+   * 
+   * @param request - CheckUserTaskStatusRequest
+   * @param headers - CheckUserTaskStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CheckUserTaskStatusResponse
    */
   async checkUserTaskStatusWithOptions(request: CheckUserTaskStatusRequest, headers: CheckUserTaskStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckUserTaskStatusResponse> {
     Util.validateModel(request);
@@ -238,10 +243,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 检查用户任务状态
-   *
-   * @param request CheckUserTaskStatusRequest
-   * @return CheckUserTaskStatusResponse
+   * 检查用户任务状态
+   * 
+   * @param request - CheckUserTaskStatusRequest
+   * @returns CheckUserTaskStatusResponse
    */
   async checkUserTaskStatus(request: CheckUserTaskStatusRequest): Promise<CheckUserTaskStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -250,12 +255,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 检查用户任务状态
-   *
-   * @param request CheckUserTasksStatusRequest
-   * @param headers CheckUserTasksStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CheckUserTasksStatusResponse
+   * 检查用户任务状态
+   * 
+   * @param request - CheckUserTasksStatusRequest
+   * @param headers - CheckUserTasksStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CheckUserTasksStatusResponse
    */
   async checkUserTasksStatusWithOptions(request: CheckUserTasksStatusRequest, headers: CheckUserTasksStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckUserTasksStatusResponse> {
     Util.validateModel(request);
@@ -292,10 +297,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 检查用户任务状态
-   *
-   * @param request CheckUserTasksStatusRequest
-   * @return CheckUserTasksStatusResponse
+   * 检查用户任务状态
+   * 
+   * @param request - CheckUserTasksStatusRequest
+   * @returns CheckUserTasksStatusResponse
    */
   async checkUserTasksStatus(request: CheckUserTasksStatusRequest): Promise<CheckUserTasksStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });

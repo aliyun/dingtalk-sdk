@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -33,8 +31,26 @@ export class EditContactHeaders extends $tea.Model {
 
 export class EditContactRequest extends $tea.Model {
   data?: EditContactRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 197
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -60,7 +76,15 @@ export class EditContactRequest extends $tea.Model {
 }
 
 export class EditContactResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -130,8 +154,26 @@ export class EditCustomerHeaders extends $tea.Model {
 
 export class EditCustomerRequest extends $tea.Model {
   data?: EditCustomerRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 148
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -157,7 +199,15 @@ export class EditCustomerRequest extends $tea.Model {
 }
 
 export class EditCustomerResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -227,8 +277,26 @@ export class EditCustomerPoolHeaders extends $tea.Model {
 
 export class EditCustomerPoolRequest extends $tea.Model {
   data?: EditCustomerPoolRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 238
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -254,7 +322,15 @@ export class EditCustomerPoolRequest extends $tea.Model {
 }
 
 export class EditCustomerPoolResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -324,8 +400,26 @@ export class EditExchangeHeaders extends $tea.Model {
 
 export class EditExchangeRequest extends $tea.Model {
   data?: EditExchangeRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 228
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -351,7 +445,15 @@ export class EditExchangeRequest extends $tea.Model {
 }
 
 export class EditExchangeResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -421,8 +523,26 @@ export class EditGoodsHeaders extends $tea.Model {
 
 export class EditGoodsRequest extends $tea.Model {
   data?: EditGoodsRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 154
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -448,7 +568,15 @@ export class EditGoodsRequest extends $tea.Model {
 }
 
 export class EditGoodsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -518,8 +646,26 @@ export class EditIntostockHeaders extends $tea.Model {
 
 export class EditIntostockRequest extends $tea.Model {
   data?: EditIntostockRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 189
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -545,7 +691,15 @@ export class EditIntostockRequest extends $tea.Model {
 }
 
 export class EditIntostockResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -615,8 +769,26 @@ export class EditInvoiceHeaders extends $tea.Model {
 
 export class EditInvoiceRequest extends $tea.Model {
   data?: EditInvoiceRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 169
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -642,7 +814,15 @@ export class EditInvoiceRequest extends $tea.Model {
 }
 
 export class EditInvoiceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -712,8 +892,26 @@ export class EditOrderHeaders extends $tea.Model {
 
 export class EditOrderRequest extends $tea.Model {
   data?: EditOrderRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 150
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -739,7 +937,15 @@ export class EditOrderRequest extends $tea.Model {
 }
 
 export class EditOrderResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -809,8 +1015,26 @@ export class EditOutstockHeaders extends $tea.Model {
 
 export class EditOutstockRequest extends $tea.Model {
   data?: EditOutstockRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 191
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -836,7 +1060,15 @@ export class EditOutstockRequest extends $tea.Model {
 }
 
 export class EditOutstockResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -906,8 +1138,26 @@ export class EditProductionHeaders extends $tea.Model {
 
 export class EditProductionRequest extends $tea.Model {
   data?: EditProductionRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 156
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -933,7 +1183,15 @@ export class EditProductionRequest extends $tea.Model {
 }
 
 export class EditProductionResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1003,8 +1261,26 @@ export class EditPurchaseHeaders extends $tea.Model {
 
 export class EditPurchaseRequest extends $tea.Model {
   data?: EditPurchaseRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 153
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1030,7 +1306,15 @@ export class EditPurchaseRequest extends $tea.Model {
 }
 
 export class EditPurchaseResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1100,8 +1384,26 @@ export class EditQuotationRecordHeaders extends $tea.Model {
 
 export class EditQuotationRecordRequest extends $tea.Model {
   data?: EditQuotationRecordRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 161
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1127,7 +1429,15 @@ export class EditQuotationRecordRequest extends $tea.Model {
 }
 
 export class EditQuotationRecordResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1197,8 +1507,26 @@ export class EditSalesHeaders extends $tea.Model {
 
 export class EditSalesRequest extends $tea.Model {
   data?: EditSalesRequestData;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 158
+   */
   datatype?: number;
+  /**
+   * @example
+   * 1
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1621822122
+   */
   stamp?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1224,7 +1552,15 @@ export class EditSalesRequest extends $tea.Model {
 }
 
 export class EditSalesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgid?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1293,8 +1629,29 @@ export class GetDataListHeaders extends $tea.Model {
 }
 
 export class GetDataListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 150
+   */
   datatype?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   page?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pagesize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1318,11 +1675,35 @@ export class GetDataListRequest extends $tea.Model {
 }
 
 export class GetDataListResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: GetDataListResponseBodyData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dataname?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   page?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1399,7 +1780,21 @@ export class GetDataViewHeaders extends $tea.Model {
 }
 
 export class GetDataViewRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 150
+   */
   datatype?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   msgid?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1421,8 +1816,20 @@ export class GetDataViewRequest extends $tea.Model {
 }
 
 export class GetDataViewResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: GetDataViewResponseBodyData;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   dataname?: { [key: string]: {[key: string]: any} };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   time?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1471,12 +1878,26 @@ export class GetDataViewResponse extends $tea.Model {
 }
 
 export class EditContactRequestData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
   lxrAddress?: string;
   lxrBirthday?: string;
   lxrChengwei?: string;
   lxrCtnumber?: string;
   lxrCttype?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   lxrCustomerid?: string;
   lxrDepartment?: string;
   lxrDingtalk?: string;
@@ -1486,6 +1907,10 @@ export class EditContactRequestData extends $tea.Model {
   lxrHandset?: string;
   lxrHeadship?: string;
   lxrLike?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   lxrName?: string;
   lxrPhoto?: string;
   lxrPreside?: string;
@@ -1571,12 +1996,26 @@ export class EditContactRequestData extends $tea.Model {
 }
 
 export class EditCustomerRequestData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
   khAddress?: string;
   khAppellation?: string;
   khBefontof?: string;
   khBillinfo?: string;
   khCity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   khClass?: string;
   khCoaddress?: string;
   khContype?: string;
@@ -1599,6 +2038,10 @@ export class EditCustomerRequestData extends $tea.Model {
   khIndustry?: string;
   khInfo?: string;
   khJibie?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   khName?: string;
   khPkhid?: string;
   khPreside?: string;
@@ -1731,12 +2174,26 @@ export class EditCustomerRequestData extends $tea.Model {
 }
 
 export class EditCustomerPoolRequestData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
   khAddress?: string;
   khAppellation?: string;
   khBefontof?: string;
   khBillinfo?: string;
   khCity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   khClass?: string;
   khCoaddress?: string;
   khContype?: string;
@@ -1760,6 +2217,10 @@ export class EditCustomerPoolRequestData extends $tea.Model {
   khIndustry?: string;
   khInfo?: string;
   khJibie?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   khName?: string;
   khPkhid?: string;
   khPreside?: string;
@@ -1894,20 +2355,50 @@ export class EditCustomerPoolRequestData extends $tea.Model {
 }
 
 export class EditExchangeRequestData extends $tea.Model {
+  /**
+   * @example
+   * "child_mx":[{"产品ID":"1","数量":"10","明细备注":"包含的测试产品","序列号-换入":"• in1001• in1002...无则不传递","批次号-换入":"• in2001 (10)• in2002 (20)...无则不传递","序列号-换出":"• out1001• out1002...无则不传递","批次号-换出":"• out2001 (10)• out2002 (20)...无则不传递"}]
+   */
   childMx?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
   hhCustomerid?: string;
   hhDate?: string;
   hhInempid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hhInlibid?: string;
   hhIntime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hhNumber?: string;
   hhOrderid?: string;
   hhOutempid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hhOutlibid?: string;
   hhOuttime?: string;
   hhRemark?: string;
   hhState?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hhTitle?: string;
   hhType?: string;
   static names(): { [key: string]: string } {
@@ -1967,12 +2458,30 @@ export class EditGoodsRequestData extends $tea.Model {
   cpcontent?: string;
   cpguige?: string;
   cpimg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cpname?: string;
   cpno?: string;
   cpremark?: string;
   cptype?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cpunit?: string;
   cpweight?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
   gysid?: string;
   ispicimanage?: string;
@@ -1986,6 +2495,10 @@ export class EditGoodsRequestData extends $tea.Model {
   stockdown?: string;
   stockup?: string;
   typeid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unitrate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2063,17 +2576,54 @@ export class EditGoodsRequestData extends $tea.Model {
 export class EditIntostockRequestData extends $tea.Model {
   askempid?: string;
   auditreson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   billno?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
+   */
   childMx?: string;
   customerid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   empid?: string;
   inorout?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   libiodate?: string;
   libioname?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   libiostate?: string;
   orderid?: string;
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   stocklibid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2119,10 +2669,32 @@ export class EditIntostockRequestData extends $tea.Model {
 }
 
 export class EditInvoiceRequestData extends $tea.Model {
+  /**
+   * @example
+   * "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
+   */
   childMx?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
   fhAddress?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fhCustomerid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fhDate?: string;
   fhEmail?: string;
   fhHandset?: string;
@@ -2131,8 +2703,16 @@ export class EditInvoiceRequestData extends $tea.Model {
   fhKg?: string;
   fhLinkman?: string;
   fhLxrid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fhMode?: string;
   fhMsn?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fhNumber?: string;
   fhPost?: string;
   fhPreside?: string;
@@ -2204,13 +2784,35 @@ export class EditInvoiceRequestData extends $tea.Model {
 }
 
 export class EditOrderRequestData extends $tea.Model {
+  /**
+   * @example
+   * "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
+   */
   childMx?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
   fahuoaddressid?: string;
   htBegindate?: string;
   htContract?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   htCustomerid?: string;
   htCusub?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   htDate?: string;
   htDeliplace?: string;
   htEnddate?: string;
@@ -2221,12 +2823,28 @@ export class EditOrderRequestData extends $tea.Model {
   htLxrinfo?: string;
   htMoneyzhekou?: string;
   htNumber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   htOrder?: string;
   htPaymode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   htPreside?: string;
   htRemark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   htState?: string;
   htSummemo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   htSummoney?: string;
   htTitle?: string;
   htType?: string;
@@ -2312,17 +2930,54 @@ export class EditOrderRequestData extends $tea.Model {
 export class EditOutstockRequestData extends $tea.Model {
   askempid?: string;
   auditreson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   billno?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
+   */
   childMx?: string;
   customerid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   empid?: string;
   inorout?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   libiodate?: string;
   libioname?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   libiostate?: string;
   orderid?: string;
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   stocklibid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2368,18 +3023,44 @@ export class EditOutstockRequestData extends $tea.Model {
 }
 
 export class EditProductionRequestData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
   schCustomerid?: string;
   schEndtime?: string;
   schFinished?: string;
   schHtid?: string;
   schMakeemp?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   schNumber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   schPlanendtime?: string;
   schPrincipal?: string;
   schRemark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   schStarttime?: string;
   schStatesstr?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   schTitle?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2427,21 +3108,55 @@ export class EditPurchaseRequestData extends $tea.Model {
   cgFjmoneylx?: string;
   cgKjmoney?: string;
   cgMoneyzhekou?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cgZxstate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cgdate?: string;
   cgname?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   cgno?: string;
   cgremark?: string;
   cgtype?: string;
+  /**
+   * @example
+   * "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
+   */
   childMx?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
   empid?: string;
   gysLxrid?: string;
   gysLxrinfo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gysid?: string;
   gysjingban?: string;
   orderHtid?: string;
   orderKhid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   summoney?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2499,9 +3214,21 @@ export class EditPurchaseRequestData extends $tea.Model {
 }
 
 export class EditQuotationRecordRequestData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bjBjren?: string;
   bjBzremark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bjCustomerid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bjDate?: string;
   bjFjmoney?: string;
   bjFjmoneylx?: string;
@@ -2512,12 +3239,30 @@ export class EditQuotationRecordRequestData extends $tea.Model {
   bjLianxi?: string;
   bjMoneyzhekou?: string;
   bjNumber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bjPrice?: string;
   bjRemark?: string;
   bjState?: string;
   bjTitle?: string;
   bjXshid?: string;
+  /**
+   * @example
+   * "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
+   */
   childMx?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2575,8 +3320,26 @@ export class EditQuotationRecordRequestData extends $tea.Model {
 }
 
 export class EditSalesRequestData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   * 
+   * **if can be null:**
+   * false
+   */
   dataUserid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   xshCustomerid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   xshDate?: string;
   xshExpdate?: string;
   xshExpmoney?: string;
@@ -2592,6 +3355,10 @@ export class EditSalesRequestData extends $tea.Model {
   xshProvider?: string;
   xshRequire?: string;
   xshState?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   xshTitle?: string;
   xshType?: string;
   static names(): { [key: string]: string } {
@@ -2648,6 +3415,10 @@ export class EditSalesRequestData extends $tea.Model {
 }
 
 export class GetDataListResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   detail?: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
@@ -2667,6 +3438,10 @@ export class GetDataListResponseBodyData extends $tea.Model {
 }
 
 export class GetDataViewResponseBodyData extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   detail?: { [key: string]: string };
   static names(): { [key: string]: string } {
     return {
@@ -2687,12 +3462,11 @@ export class GetDataViewResponseBodyData extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2702,12 +3476,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 编辑联系人数据
-   *
-   * @param request EditContactRequest
-   * @param headers EditContactHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditContactResponse
+   * 编辑联系人数据
+   * 
+   * @param request - EditContactRequest
+   * @param headers - EditContactHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditContactResponse
    */
   async editContactWithOptions(request: EditContactRequest, headers: EditContactHeaders, runtime: $Util.RuntimeOptions): Promise<EditContactResponse> {
     Util.validateModel(request);
@@ -2756,10 +3530,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑联系人数据
-   *
-   * @param request EditContactRequest
-   * @return EditContactResponse
+   * 编辑联系人数据
+   * 
+   * @param request - EditContactRequest
+   * @returns EditContactResponse
    */
   async editContact(request: EditContactRequest): Promise<EditContactResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2768,12 +3542,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑客户数据
-   *
-   * @param request EditCustomerRequest
-   * @param headers EditCustomerHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditCustomerResponse
+   * 编辑客户数据
+   * 
+   * @param request - EditCustomerRequest
+   * @param headers - EditCustomerHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditCustomerResponse
    */
   async editCustomerWithOptions(request: EditCustomerRequest, headers: EditCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<EditCustomerResponse> {
     Util.validateModel(request);
@@ -2822,10 +3596,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑客户数据
-   *
-   * @param request EditCustomerRequest
-   * @return EditCustomerResponse
+   * 编辑客户数据
+   * 
+   * @param request - EditCustomerRequest
+   * @returns EditCustomerResponse
    */
   async editCustomer(request: EditCustomerRequest): Promise<EditCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2834,12 +3608,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑客户公共池数据
-   *
-   * @param request EditCustomerPoolRequest
-   * @param headers EditCustomerPoolHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditCustomerPoolResponse
+   * 编辑客户公共池数据
+   * 
+   * @param request - EditCustomerPoolRequest
+   * @param headers - EditCustomerPoolHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditCustomerPoolResponse
    */
   async editCustomerPoolWithOptions(request: EditCustomerPoolRequest, headers: EditCustomerPoolHeaders, runtime: $Util.RuntimeOptions): Promise<EditCustomerPoolResponse> {
     Util.validateModel(request);
@@ -2888,10 +3662,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑客户公共池数据
-   *
-   * @param request EditCustomerPoolRequest
-   * @return EditCustomerPoolResponse
+   * 编辑客户公共池数据
+   * 
+   * @param request - EditCustomerPoolRequest
+   * @returns EditCustomerPoolResponse
    */
   async editCustomerPool(request: EditCustomerPoolRequest): Promise<EditCustomerPoolResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2900,12 +3674,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑销售换货单数据
-   *
-   * @param request EditExchangeRequest
-   * @param headers EditExchangeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditExchangeResponse
+   * 编辑销售换货单数据
+   * 
+   * @param request - EditExchangeRequest
+   * @param headers - EditExchangeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditExchangeResponse
    */
   async editExchangeWithOptions(request: EditExchangeRequest, headers: EditExchangeHeaders, runtime: $Util.RuntimeOptions): Promise<EditExchangeResponse> {
     Util.validateModel(request);
@@ -2954,10 +3728,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑销售换货单数据
-   *
-   * @param request EditExchangeRequest
-   * @return EditExchangeResponse
+   * 编辑销售换货单数据
+   * 
+   * @param request - EditExchangeRequest
+   * @returns EditExchangeResponse
    */
   async editExchange(request: EditExchangeRequest): Promise<EditExchangeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2966,12 +3740,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑产品数据
-   *
-   * @param request EditGoodsRequest
-   * @param headers EditGoodsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditGoodsResponse
+   * 编辑产品数据
+   * 
+   * @param request - EditGoodsRequest
+   * @param headers - EditGoodsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditGoodsResponse
    */
   async editGoodsWithOptions(request: EditGoodsRequest, headers: EditGoodsHeaders, runtime: $Util.RuntimeOptions): Promise<EditGoodsResponse> {
     Util.validateModel(request);
@@ -3020,10 +3794,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑产品数据
-   *
-   * @param request EditGoodsRequest
-   * @return EditGoodsResponse
+   * 编辑产品数据
+   * 
+   * @param request - EditGoodsRequest
+   * @returns EditGoodsResponse
    */
   async editGoods(request: EditGoodsRequest): Promise<EditGoodsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3032,12 +3806,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑入库单数据
-   *
-   * @param request EditIntostockRequest
-   * @param headers EditIntostockHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditIntostockResponse
+   * 编辑入库单数据
+   * 
+   * @param request - EditIntostockRequest
+   * @param headers - EditIntostockHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditIntostockResponse
    */
   async editIntostockWithOptions(request: EditIntostockRequest, headers: EditIntostockHeaders, runtime: $Util.RuntimeOptions): Promise<EditIntostockResponse> {
     Util.validateModel(request);
@@ -3086,10 +3860,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑入库单数据
-   *
-   * @param request EditIntostockRequest
-   * @return EditIntostockResponse
+   * 编辑入库单数据
+   * 
+   * @param request - EditIntostockRequest
+   * @returns EditIntostockResponse
    */
   async editIntostock(request: EditIntostockRequest): Promise<EditIntostockResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3098,12 +3872,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑发货单数据
-   *
-   * @param request EditInvoiceRequest
-   * @param headers EditInvoiceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditInvoiceResponse
+   * 编辑发货单数据
+   * 
+   * @param request - EditInvoiceRequest
+   * @param headers - EditInvoiceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditInvoiceResponse
    */
   async editInvoiceWithOptions(request: EditInvoiceRequest, headers: EditInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<EditInvoiceResponse> {
     Util.validateModel(request);
@@ -3152,10 +3926,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑发货单数据
-   *
-   * @param request EditInvoiceRequest
-   * @return EditInvoiceResponse
+   * 编辑发货单数据
+   * 
+   * @param request - EditInvoiceRequest
+   * @returns EditInvoiceResponse
    */
   async editInvoice(request: EditInvoiceRequest): Promise<EditInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3164,12 +3938,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑合同订单数据
-   *
-   * @param request EditOrderRequest
-   * @param headers EditOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditOrderResponse
+   * 编辑合同订单数据
+   * 
+   * @param request - EditOrderRequest
+   * @param headers - EditOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditOrderResponse
    */
   async editOrderWithOptions(request: EditOrderRequest, headers: EditOrderHeaders, runtime: $Util.RuntimeOptions): Promise<EditOrderResponse> {
     Util.validateModel(request);
@@ -3218,10 +3992,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑合同订单数据
-   *
-   * @param request EditOrderRequest
-   * @return EditOrderResponse
+   * 编辑合同订单数据
+   * 
+   * @param request - EditOrderRequest
+   * @returns EditOrderResponse
    */
   async editOrder(request: EditOrderRequest): Promise<EditOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3230,12 +4004,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑出库单信息
-   *
-   * @param request EditOutstockRequest
-   * @param headers EditOutstockHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditOutstockResponse
+   * 编辑出库单信息
+   * 
+   * @param request - EditOutstockRequest
+   * @param headers - EditOutstockHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditOutstockResponse
    */
   async editOutstockWithOptions(request: EditOutstockRequest, headers: EditOutstockHeaders, runtime: $Util.RuntimeOptions): Promise<EditOutstockResponse> {
     Util.validateModel(request);
@@ -3284,10 +4058,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑出库单信息
-   *
-   * @param request EditOutstockRequest
-   * @return EditOutstockResponse
+   * 编辑出库单信息
+   * 
+   * @param request - EditOutstockRequest
+   * @returns EditOutstockResponse
    */
   async editOutstock(request: EditOutstockRequest): Promise<EditOutstockResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3296,12 +4070,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑生产单数据
-   *
-   * @param request EditProductionRequest
-   * @param headers EditProductionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditProductionResponse
+   * 编辑生产单数据
+   * 
+   * @param request - EditProductionRequest
+   * @param headers - EditProductionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditProductionResponse
    */
   async editProductionWithOptions(request: EditProductionRequest, headers: EditProductionHeaders, runtime: $Util.RuntimeOptions): Promise<EditProductionResponse> {
     Util.validateModel(request);
@@ -3350,10 +4124,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑生产单数据
-   *
-   * @param request EditProductionRequest
-   * @return EditProductionResponse
+   * 编辑生产单数据
+   * 
+   * @param request - EditProductionRequest
+   * @returns EditProductionResponse
    */
   async editProduction(request: EditProductionRequest): Promise<EditProductionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3362,12 +4136,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑采购单数据
-   *
-   * @param request EditPurchaseRequest
-   * @param headers EditPurchaseHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditPurchaseResponse
+   * 编辑采购单数据
+   * 
+   * @param request - EditPurchaseRequest
+   * @param headers - EditPurchaseHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditPurchaseResponse
    */
   async editPurchaseWithOptions(request: EditPurchaseRequest, headers: EditPurchaseHeaders, runtime: $Util.RuntimeOptions): Promise<EditPurchaseResponse> {
     Util.validateModel(request);
@@ -3416,10 +4190,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑采购单数据
-   *
-   * @param request EditPurchaseRequest
-   * @return EditPurchaseResponse
+   * 编辑采购单数据
+   * 
+   * @param request - EditPurchaseRequest
+   * @returns EditPurchaseResponse
    */
   async editPurchase(request: EditPurchaseRequest): Promise<EditPurchaseResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3428,12 +4202,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑报价记录数据
-   *
-   * @param request EditQuotationRecordRequest
-   * @param headers EditQuotationRecordHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditQuotationRecordResponse
+   * 编辑报价记录数据
+   * 
+   * @param request - EditQuotationRecordRequest
+   * @param headers - EditQuotationRecordHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditQuotationRecordResponse
    */
   async editQuotationRecordWithOptions(request: EditQuotationRecordRequest, headers: EditQuotationRecordHeaders, runtime: $Util.RuntimeOptions): Promise<EditQuotationRecordResponse> {
     Util.validateModel(request);
@@ -3482,10 +4256,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑报价记录数据
-   *
-   * @param request EditQuotationRecordRequest
-   * @return EditQuotationRecordResponse
+   * 编辑报价记录数据
+   * 
+   * @param request - EditQuotationRecordRequest
+   * @returns EditQuotationRecordResponse
    */
   async editQuotationRecord(request: EditQuotationRecordRequest): Promise<EditQuotationRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3494,12 +4268,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑销售机会数据
-   *
-   * @param request EditSalesRequest
-   * @param headers EditSalesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return EditSalesResponse
+   * 编辑销售机会数据
+   * 
+   * @param request - EditSalesRequest
+   * @param headers - EditSalesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns EditSalesResponse
    */
   async editSalesWithOptions(request: EditSalesRequest, headers: EditSalesHeaders, runtime: $Util.RuntimeOptions): Promise<EditSalesResponse> {
     Util.validateModel(request);
@@ -3548,10 +4322,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 编辑销售机会数据
-   *
-   * @param request EditSalesRequest
-   * @return EditSalesResponse
+   * 编辑销售机会数据
+   * 
+   * @param request - EditSalesRequest
+   * @returns EditSalesResponse
    */
   async editSales(request: EditSalesRequest): Promise<EditSalesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3560,12 +4334,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取数据列表
-   *
-   * @param request GetDataListRequest
-   * @param headers GetDataListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDataListResponse
+   * 获取数据列表
+   * 
+   * @param request - GetDataListRequest
+   * @param headers - GetDataListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDataListResponse
    */
   async getDataListWithOptions(request: GetDataListRequest, headers: GetDataListHeaders, runtime: $Util.RuntimeOptions): Promise<GetDataListResponse> {
     Util.validateModel(request);
@@ -3610,10 +4384,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取数据列表
-   *
-   * @param request GetDataListRequest
-   * @return GetDataListResponse
+   * 获取数据列表
+   * 
+   * @param request - GetDataListRequest
+   * @returns GetDataListResponse
    */
   async getDataList(request: GetDataListRequest): Promise<GetDataListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3622,12 +4396,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取数据详情
-   *
-   * @param request GetDataViewRequest
-   * @param headers GetDataViewHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDataViewResponse
+   * 获取数据详情
+   * 
+   * @param request - GetDataViewRequest
+   * @param headers - GetDataViewHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDataViewResponse
    */
   async getDataViewWithOptions(request: GetDataViewRequest, headers: GetDataViewHeaders, runtime: $Util.RuntimeOptions): Promise<GetDataViewResponse> {
     Util.validateModel(request);
@@ -3668,10 +4442,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取数据详情
-   *
-   * @param request GetDataViewRequest
-   * @return GetDataViewResponse
+   * 获取数据详情
+   * 
+   * @param request - GetDataViewRequest
+   * @returns GetDataViewResponse
    */
   async getDataView(request: GetDataViewRequest): Promise<GetDataViewResponse> {
     let runtime = new $Util.RuntimeOptions({ });

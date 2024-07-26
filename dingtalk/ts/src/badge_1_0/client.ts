@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,16 +30,77 @@ export class CreateBadgeCodeUserInstanceHeaders extends $tea.Model {
 }
 
 export class CreateBadgeCodeUserInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   availableTimes?: CreateBadgeCodeUserInstanceRequestAvailableTimes[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TEST
+   */
   codeIdentity?: string;
   codeValue?: string;
+  /**
+   * @example
+   * DING_STATIC
+   */
   codeValueType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * corpid1234
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   extInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * yyyy-MM-dd HH:mm:ss
+   */
   gmtExpired?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 202102021212
+   */
   requestId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OPEN
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INTERNAL_STAFF
+   */
   userCorpRelationType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 86-xxxxxx
+   */
   userIdentity?: string;
   static names(): { [key: string]: string } {
     return {
@@ -82,6 +141,13 @@ export class CreateBadgeCodeUserInstanceRequest extends $tea.Model {
 
 export class CreateBadgeCodeUserInstanceResponseBody extends $tea.Model {
   codeDetailUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * codexxxxxx
+   */
   codeId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -150,9 +216,25 @@ export class CreateBadgeNotifyHeaders extends $tea.Model {
 }
 
 export class CreateBadgeNotifyRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   msgType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -178,6 +260,13 @@ export class CreateBadgeNotifyRequest extends $tea.Model {
 }
 
 export class CreateBadgeNotifyResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SUCCESS
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -244,7 +333,15 @@ export class DecodeBadgeCodeHeaders extends $tea.Model {
 }
 
 export class DecodeBadgeCodeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   payCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   requestId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -266,14 +363,62 @@ export class DecodeBadgeCodeRequest extends $tea.Model {
 }
 
 export class DecodeBadgeCodeResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2512345678
+   */
   alipayCode?: string;
+  /**
+   * @example
+   * codeIdxxxxx
+   */
   codeId?: string;
+  /**
+   * @example
+   * DT_VISITOR
+   */
   codeIdentity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PURE_IDENTIFY_CODE
+   */
   codeType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding1234
+   */
   corpId?: string;
+  /**
+   * @example
+   * {"authRules":{}}
+   */
   extInfo?: string;
+  /**
+   * @example
+   * xxxx
+   */
   outBizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INTERNAL_STAFF
+   */
   userCorpRelationType?: string;
+  /**
+   * @example
+   * staffId
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -356,22 +501,129 @@ export class NotifyBadgeCodePayResultHeaders extends $tea.Model {
 }
 
 export class NotifyBadgeCodePayResultRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234.56
+   */
   amount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1.00, 没有传0.00
+   */
   chargeAmount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding1234
+   */
   corpId?: string;
+  /**
+   * @example
+   * { "akey": "avalue“}
+   */
   extInfo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-01-01 11:11:11
+   */
   gmtTradeCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-01-01 11:11:11
+   */
   gmtTradeFinish?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XX公司食堂
+   */
   merchantName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   payChannelDetailList?: NotifyBadgeCodePayResultRequestPayChannelDetailList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 261234567890
+   */
   payCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1.23，没有传0.00
+   */
   promotionAmount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 备注
+   */
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 晚餐100.0元
+   */
   title?: string;
+  /**
+   * @example
+   * BALANCE_NOT_ENOUGH
+   */
   tradeErrorCode?: string;
+  /**
+   * @example
+   * 余额不足，请充值
+   */
   tradeErrorMsg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 202101012345678
+   */
   tradeNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SUCCESS/FAIL
+   */
   tradeStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * userId1234
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -423,6 +675,13 @@ export class NotifyBadgeCodePayResultRequest extends $tea.Model {
 }
 
 export class NotifyBadgeCodePayResultResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SUCCESS
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -489,15 +748,82 @@ export class NotifyBadgeCodeRefundResultHeaders extends $tea.Model {
 }
 
 export class NotifyBadgeCodeRefundResultRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding1234
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-11-11 11:11:11
+   */
   gmtRefund?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   payChannelDetailList?: NotifyBadgeCodeRefundResultRequestPayChannelDetailList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * payCode
+   */
   payCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1.00
+   */
   refundAmount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * refundOrderNo
+   */
   refundOrderNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0.00
+   */
   refundPromotionAmount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 晚餐退款
+   */
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * tradeNo
+   */
   tradeNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * userId
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -535,6 +861,13 @@ export class NotifyBadgeCodeRefundResultRequest extends $tea.Model {
 }
 
 export class NotifyBadgeCodeRefundResultResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SUCCESS
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -601,15 +934,69 @@ export class NotifyBadgeCodeVerifyResultHeaders extends $tea.Model {
 }
 
 export class NotifyBadgeCodeVerifyResultRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * corpxxxx
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 261234567890
+   */
   payCode?: string;
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INTERNAL_STAFF
+   */
   userCorpRelationType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxxxx
+   */
   userIdentity?: string;
+  /**
+   * @example
+   * 门禁验证
+   */
   verifyEvent?: string;
+  /**
+   * @example
+   * 1号食堂
+   */
   verifyLocation?: string;
+  /**
+   * @example
+   * 202112120003232
+   */
   verifyNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   verifyResult?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-01-01 12:12:12
+   */
   verifyTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -647,6 +1034,13 @@ export class NotifyBadgeCodeVerifyResultRequest extends $tea.Model {
 }
 
 export class NotifyBadgeCodeVerifyResultResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SUCCESS
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -713,9 +1107,30 @@ export class SaveBadgeCodeCorpInstanceHeaders extends $tea.Model {
 }
 
 export class SaveBadgeCodeCorpInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * H_FISH_CANTEEN
+   */
   codeIdentity?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingxxxx
+   */
   corpId?: string;
   extInfo?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * OPEN
+   */
   status?: string;
   static names(): { [key: string]: string } {
     return {
@@ -816,15 +1231,66 @@ export class UpdateBadgeCodeUserInstanceHeaders extends $tea.Model {
 }
 
 export class UpdateBadgeCodeUserInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   availableTimes?: UpdateBadgeCodeUserInstanceRequestAvailableTimes[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ccodexxxxx
+   */
   codeId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TEST
+   */
   codeIdentity?: string;
   codeValue?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * corpIdxxxx
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   extInfo?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   gmtExpired?: string;
+  /**
+   * @example
+   * OPEN
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INTERNAL_STAFF
+   */
   userCorpRelationType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 86-xxxxxx
+   */
   userIdentity?: string;
   static names(): { [key: string]: string } {
     return {
@@ -862,6 +1328,10 @@ export class UpdateBadgeCodeUserInstanceRequest extends $tea.Model {
 }
 
 export class UpdateBadgeCodeUserInstanceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * codexxxxxx
+   */
   codeId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -906,7 +1376,21 @@ export class UpdateBadgeCodeUserInstanceResponse extends $tea.Model {
 }
 
 export class CreateBadgeCodeUserInstanceRequestAvailableTimes extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * yyyy-MM-dd HH:mm:ss
+   */
   gmtEnd?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * yyyy-MM-dd HH:mm:ss
+   */
   gmtStart?: string;
   static names(): { [key: string]: string } {
     return {
@@ -928,11 +1412,50 @@ export class CreateBadgeCodeUserInstanceRequestAvailableTimes extends $tea.Model
 }
 
 export class NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 金额
+   */
   amount?: string;
+  /**
+   * @example
+   * {"key":"value"}
+   */
   extInfo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 优惠券
+   */
   fundToolName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-01-01
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-01-01 11:11:11
+   */
   gmtFinish?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   promotionFundTool?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -962,13 +1485,60 @@ export class NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailLi
 }
 
 export class NotifyBadgeCodePayResultRequestPayChannelDetailList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1.23
+   */
   amount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fundToolDetailList?: NotifyBadgeCodePayResultRequestPayChannelDetailListFundToolDetailList[];
+  /**
+   * @example
+   * 2021-01-01 11:11:11
+   */
   gmtCreate?: string;
+  /**
+   * @example
+   * 2021-01-01 11:11:11
+   */
   gmtFinish?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 卡余额
+   */
   payChannelName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20211234
+   */
   payChannelOrderNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ALIPAY|BALANCE
+   */
   payChannelType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0.00
+   */
   promotionAmount?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1002,11 +1572,46 @@ export class NotifyBadgeCodePayResultRequestPayChannelDetailList extends $tea.Mo
 }
 
 export class NotifyBadgeCodeRefundResultRequestPayChannelDetailListFundToolDetailList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1.00
+   */
   amount?: string;
   extInfo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 余额
+   */
   fundToolName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-05-31 11:11:11
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-05-31 11:11:11
+   */
   gmtFinish?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   promotionFundTool?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1036,12 +1641,58 @@ export class NotifyBadgeCodeRefundResultRequestPayChannelDetailListFundToolDetai
 }
 
 export class NotifyBadgeCodeRefundResultRequestPayChannelDetailList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1.00
+   */
   amount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fundToolDetailList?: NotifyBadgeCodeRefundResultRequestPayChannelDetailListFundToolDetailList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ALIPAY
+   */
   payChannelName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20210531123456
+   */
   payChannelOrderNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021053112345678
+   */
   payChannelRefundOrderNo?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ALIPAY
+   */
   payChannelType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0.00
+   */
   promotionAmount?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1073,7 +1724,21 @@ export class NotifyBadgeCodeRefundResultRequestPayChannelDetailList extends $tea
 }
 
 export class UpdateBadgeCodeUserInstanceRequestAvailableTimes extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * yyyy-MM-dd HH:mm:ss
+   */
   gmtEnd?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * yyyy-MM-dd HH:mm:ss
+   */
   gmtStart?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1096,12 +1761,11 @@ export class UpdateBadgeCodeUserInstanceRequestAvailableTimes extends $tea.Model
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1111,12 +1775,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 创建钉工牌码用户实例
-   *
-   * @param request CreateBadgeCodeUserInstanceRequest
-   * @param headers CreateBadgeCodeUserInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateBadgeCodeUserInstanceResponse
+   * 创建钉工牌码用户实例
+   * 
+   * @param request - CreateBadgeCodeUserInstanceRequest
+   * @param headers - CreateBadgeCodeUserInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateBadgeCodeUserInstanceResponse
    */
   async createBadgeCodeUserInstanceWithOptions(request: CreateBadgeCodeUserInstanceRequest, headers: CreateBadgeCodeUserInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBadgeCodeUserInstanceResponse> {
     Util.validateModel(request);
@@ -1193,10 +1857,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建钉工牌码用户实例
-   *
-   * @param request CreateBadgeCodeUserInstanceRequest
-   * @return CreateBadgeCodeUserInstanceResponse
+   * 创建钉工牌码用户实例
+   * 
+   * @param request - CreateBadgeCodeUserInstanceRequest
+   * @returns CreateBadgeCodeUserInstanceResponse
    */
   async createBadgeCodeUserInstance(request: CreateBadgeCodeUserInstanceRequest): Promise<CreateBadgeCodeUserInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1205,12 +1869,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建钉工牌通知消息
-   *
-   * @param request CreateBadgeNotifyRequest
-   * @param headers CreateBadgeNotifyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateBadgeNotifyResponse
+   * 创建钉工牌通知消息
+   * 
+   * @param request - CreateBadgeNotifyRequest
+   * @param headers - CreateBadgeNotifyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateBadgeNotifyResponse
    */
   async createBadgeNotifyWithOptions(request: CreateBadgeNotifyRequest, headers: CreateBadgeNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBadgeNotifyResponse> {
     Util.validateModel(request);
@@ -1259,10 +1923,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建钉工牌通知消息
-   *
-   * @param request CreateBadgeNotifyRequest
-   * @return CreateBadgeNotifyResponse
+   * 创建钉工牌通知消息
+   * 
+   * @param request - CreateBadgeNotifyRequest
+   * @returns CreateBadgeNotifyResponse
    */
   async createBadgeNotify(request: CreateBadgeNotifyRequest): Promise<CreateBadgeNotifyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1271,12 +1935,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 钉工牌解码
-   *
-   * @param request DecodeBadgeCodeRequest
-   * @param headers DecodeBadgeCodeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DecodeBadgeCodeResponse
+   * 钉工牌解码
+   * 
+   * @param request - DecodeBadgeCodeRequest
+   * @param headers - DecodeBadgeCodeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DecodeBadgeCodeResponse
    */
   async decodeBadgeCodeWithOptions(request: DecodeBadgeCodeRequest, headers: DecodeBadgeCodeHeaders, runtime: $Util.RuntimeOptions): Promise<DecodeBadgeCodeResponse> {
     Util.validateModel(request);
@@ -1317,10 +1981,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 钉工牌解码
-   *
-   * @param request DecodeBadgeCodeRequest
-   * @return DecodeBadgeCodeResponse
+   * 钉工牌解码
+   * 
+   * @param request - DecodeBadgeCodeRequest
+   * @returns DecodeBadgeCodeResponse
    */
   async decodeBadgeCode(request: DecodeBadgeCodeRequest): Promise<DecodeBadgeCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1329,12 +1993,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通知钉工牌码付款结果
-   *
-   * @param request NotifyBadgeCodePayResultRequest
-   * @param headers NotifyBadgeCodePayResultHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return NotifyBadgeCodePayResultResponse
+   * 通知钉工牌码付款结果
+   * 
+   * @param request - NotifyBadgeCodePayResultRequest
+   * @param headers - NotifyBadgeCodePayResultHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns NotifyBadgeCodePayResultResponse
    */
   async notifyBadgeCodePayResultWithOptions(request: NotifyBadgeCodePayResultRequest, headers: NotifyBadgeCodePayResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyBadgeCodePayResultResponse> {
     Util.validateModel(request);
@@ -1435,10 +2099,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通知钉工牌码付款结果
-   *
-   * @param request NotifyBadgeCodePayResultRequest
-   * @return NotifyBadgeCodePayResultResponse
+   * 通知钉工牌码付款结果
+   * 
+   * @param request - NotifyBadgeCodePayResultRequest
+   * @returns NotifyBadgeCodePayResultResponse
    */
   async notifyBadgeCodePayResult(request: NotifyBadgeCodePayResultRequest): Promise<NotifyBadgeCodePayResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1447,12 +2111,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通知钉工牌码退款结果
-   *
-   * @param request NotifyBadgeCodeRefundResultRequest
-   * @param headers NotifyBadgeCodeRefundResultHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return NotifyBadgeCodeRefundResultResponse
+   * 通知钉工牌码退款结果
+   * 
+   * @param request - NotifyBadgeCodeRefundResultRequest
+   * @param headers - NotifyBadgeCodeRefundResultHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns NotifyBadgeCodeRefundResultResponse
    */
   async notifyBadgeCodeRefundResultWithOptions(request: NotifyBadgeCodeRefundResultRequest, headers: NotifyBadgeCodeRefundResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyBadgeCodeRefundResultResponse> {
     Util.validateModel(request);
@@ -1525,10 +2189,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通知钉工牌码退款结果
-   *
-   * @param request NotifyBadgeCodeRefundResultRequest
-   * @return NotifyBadgeCodeRefundResultResponse
+   * 通知钉工牌码退款结果
+   * 
+   * @param request - NotifyBadgeCodeRefundResultRequest
+   * @returns NotifyBadgeCodeRefundResultResponse
    */
   async notifyBadgeCodeRefundResult(request: NotifyBadgeCodeRefundResultRequest): Promise<NotifyBadgeCodeRefundResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1537,12 +2201,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通知钉工牌码验证结果
-   *
-   * @param request NotifyBadgeCodeVerifyResultRequest
-   * @param headers NotifyBadgeCodeVerifyResultHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return NotifyBadgeCodeVerifyResultResponse
+   * 通知钉工牌码验证结果
+   * 
+   * @param request - NotifyBadgeCodeVerifyResultRequest
+   * @param headers - NotifyBadgeCodeVerifyResultHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns NotifyBadgeCodeVerifyResultResponse
    */
   async notifyBadgeCodeVerifyResultWithOptions(request: NotifyBadgeCodeVerifyResultRequest, headers: NotifyBadgeCodeVerifyResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyBadgeCodeVerifyResultResponse> {
     Util.validateModel(request);
@@ -1615,10 +2279,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通知钉工牌码验证结果
-   *
-   * @param request NotifyBadgeCodeVerifyResultRequest
-   * @return NotifyBadgeCodeVerifyResultResponse
+   * 通知钉工牌码验证结果
+   * 
+   * @param request - NotifyBadgeCodeVerifyResultRequest
+   * @returns NotifyBadgeCodeVerifyResultResponse
    */
   async notifyBadgeCodeVerifyResult(request: NotifyBadgeCodeVerifyResultRequest): Promise<NotifyBadgeCodeVerifyResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1627,12 +2291,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 保存钉工牌企业实例
-   *
-   * @param request SaveBadgeCodeCorpInstanceRequest
-   * @param headers SaveBadgeCodeCorpInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SaveBadgeCodeCorpInstanceResponse
+   * 保存钉工牌企业实例
+   * 
+   * @param request - SaveBadgeCodeCorpInstanceRequest
+   * @param headers - SaveBadgeCodeCorpInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SaveBadgeCodeCorpInstanceResponse
    */
   async saveBadgeCodeCorpInstanceWithOptions(request: SaveBadgeCodeCorpInstanceRequest, headers: SaveBadgeCodeCorpInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<SaveBadgeCodeCorpInstanceResponse> {
     Util.validateModel(request);
@@ -1681,10 +2345,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 保存钉工牌企业实例
-   *
-   * @param request SaveBadgeCodeCorpInstanceRequest
-   * @return SaveBadgeCodeCorpInstanceResponse
+   * 保存钉工牌企业实例
+   * 
+   * @param request - SaveBadgeCodeCorpInstanceRequest
+   * @returns SaveBadgeCodeCorpInstanceResponse
    */
   async saveBadgeCodeCorpInstance(request: SaveBadgeCodeCorpInstanceRequest): Promise<SaveBadgeCodeCorpInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1693,12 +2357,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新钉工牌码用户实例
-   *
-   * @param request UpdateBadgeCodeUserInstanceRequest
-   * @param headers UpdateBadgeCodeUserInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateBadgeCodeUserInstanceResponse
+   * 更新钉工牌码用户实例
+   * 
+   * @param request - UpdateBadgeCodeUserInstanceRequest
+   * @param headers - UpdateBadgeCodeUserInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateBadgeCodeUserInstanceResponse
    */
   async updateBadgeCodeUserInstanceWithOptions(request: UpdateBadgeCodeUserInstanceRequest, headers: UpdateBadgeCodeUserInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateBadgeCodeUserInstanceResponse> {
     Util.validateModel(request);
@@ -1771,10 +2435,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新钉工牌码用户实例
-   *
-   * @param request UpdateBadgeCodeUserInstanceRequest
-   * @return UpdateBadgeCodeUserInstanceResponse
+   * 更新钉工牌码用户实例
+   * 
+   * @param request - UpdateBadgeCodeUserInstanceRequest
+   * @returns UpdateBadgeCodeUserInstanceResponse
    */
   async updateBadgeCodeUserInstance(request: UpdateBadgeCodeUserInstanceRequest): Promise<UpdateBadgeCodeUserInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });

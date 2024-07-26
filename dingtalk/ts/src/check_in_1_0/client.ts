@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,11 +30,35 @@ export class GetCheckinRecordByUserHeaders extends $tea.Model {
 }
 
 export class GetCheckinRecordByUserRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   operatorUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIdList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -198,12 +220,11 @@ export class GetCheckinRecordByUserResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -213,12 +234,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 调用本接口，获取用户签到记录
-   *
-   * @param request GetCheckinRecordByUserRequest
-   * @param headers GetCheckinRecordByUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCheckinRecordByUserResponse
+   * 调用本接口，获取用户签到记录
+   * 
+   * @param request - GetCheckinRecordByUserRequest
+   * @param headers - GetCheckinRecordByUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCheckinRecordByUserResponse
    */
   async getCheckinRecordByUserWithOptions(request: GetCheckinRecordByUserRequest, headers: GetCheckinRecordByUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetCheckinRecordByUserResponse> {
     Util.validateModel(request);
@@ -275,10 +296,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 调用本接口，获取用户签到记录
-   *
-   * @param request GetCheckinRecordByUserRequest
-   * @return GetCheckinRecordByUserResponse
+   * 调用本接口，获取用户签到记录
+   * 
+   * @param request - GetCheckinRecordByUserRequest
+   * @returns GetCheckinRecordByUserResponse
    */
   async getCheckinRecordByUser(request: GetCheckinRecordByUserRequest): Promise<GetCheckinRecordByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });

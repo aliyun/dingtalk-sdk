@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,9 +30,25 @@ export class AddCustomSpaceHeaders extends $tea.Model {
 }
 
 export class AddCustomSpaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   identifier?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   permissionMode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -60,13 +74,33 @@ export class AddCustomSpaceRequest extends $tea.Model {
 }
 
 export class AddCustomSpaceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   permissionMode?: string;
   quota?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
   spaceName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   usedQuota?: number;
   static names(): { [key: string]: string } {
     return {
@@ -148,10 +182,22 @@ export class AddFileHeaders extends $tea.Model {
 
 export class AddFileRequest extends $tea.Model {
   addConflictPolicy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileType?: string;
   mediaId?: string;
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -182,17 +228,49 @@ export class AddFileRequest extends $tea.Model {
 
 export class AddFileResponseBody extends $tea.Model {
   contentType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   creator?: string;
   fileExtension?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   filePath?: string;
   fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileType?: string;
   modifier?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -283,8 +361,20 @@ export class AddPermissionHeaders extends $tea.Model {
 }
 
 export class AddPermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: AddPermissionRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   role?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -352,7 +442,15 @@ export class AddSpaceHeaders extends $tea.Model {
 }
 
 export class AddSpaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -374,13 +472,33 @@ export class AddSpaceRequest extends $tea.Model {
 }
 
 export class AddSpaceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   permissionMode?: string;
   quota?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
   spaceName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   usedQuota?: number;
   static names(): { [key: string]: string } {
     return {
@@ -461,7 +579,15 @@ export class ClearRecycleFilesHeaders extends $tea.Model {
 }
 
 export class ClearRecycleFilesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recycleType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -529,7 +655,15 @@ export class CopyFileHeaders extends $tea.Model {
 export class CopyFileRequest extends $tea.Model {
   addConflictPolicy?: string;
   targetParentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetSpaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -624,7 +758,15 @@ export class DeleteFileHeaders extends $tea.Model {
 }
 
 export class DeleteFileRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deletePolicy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -646,6 +788,10 @@ export class DeleteFileRequest extends $tea.Model {
 }
 
 export class DeleteFileResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -712,8 +858,20 @@ export class DeleteFilesHeaders extends $tea.Model {
 }
 
 export class DeleteFilesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deletePolicy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -737,6 +895,10 @@ export class DeleteFilesRequest extends $tea.Model {
 }
 
 export class DeleteFilesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: boolean;
   taskId?: string;
   static names(): { [key: string]: string } {
@@ -806,8 +968,20 @@ export class DeletePermissionHeaders extends $tea.Model {
 }
 
 export class DeletePermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: DeletePermissionRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   role?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -875,8 +1049,20 @@ export class DeleteRecycleFilesHeaders extends $tea.Model {
 }
 
 export class DeleteRecycleFilesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recycleItemIdList?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recycleType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -944,6 +1130,10 @@ export class DeleteSpaceHeaders extends $tea.Model {
 }
 
 export class DeleteSpaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1007,6 +1197,10 @@ export class GetAsyncTaskInfoHeaders extends $tea.Model {
 }
 
 export class GetAsyncTaskInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1026,11 +1220,39 @@ export class GetAsyncTaskInfoRequest extends $tea.Model {
 }
 
 export class GetAsyncTaskInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   beginTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   endTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   failed?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   success?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   taskId?: string;
   total?: number;
   static names(): { [key: string]: string } {
@@ -1110,6 +1332,10 @@ export class GetDownloadInfoHeaders extends $tea.Model {
 }
 
 export class GetDownloadInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   withInternalResourceUrl?: boolean;
   withRegion?: boolean;
@@ -1204,6 +1430,10 @@ export class GetFileInfoHeaders extends $tea.Model {
 }
 
 export class GetFileInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1224,17 +1454,49 @@ export class GetFileInfoRequest extends $tea.Model {
 
 export class GetFileInfoResponseBody extends $tea.Model {
   contentType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   creator?: string;
   fileExtension?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   filePath?: string;
   fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileType?: string;
   modifier?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1325,6 +1587,10 @@ export class GetMySpaceInfoHeaders extends $tea.Model {
 }
 
 export class GetMySpaceInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1344,13 +1610,45 @@ export class GetMySpaceInfoRequest extends $tea.Model {
 }
 
 export class GetMySpaceInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   permissionMode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   quota?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   usedQuota?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1431,6 +1729,10 @@ export class GetPreviewInfoHeaders extends $tea.Model {
 }
 
 export class GetPreviewInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   version?: number;
   watermark?: boolean;
@@ -1456,6 +1758,10 @@ export class GetPreviewInfoRequest extends $tea.Model {
 }
 
 export class GetPreviewInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   info?: GetPreviewInfoResponseBodyInfo;
   static names(): { [key: string]: string } {
     return {
@@ -1522,6 +1828,10 @@ export class GetPrivilegeInfoHeaders extends $tea.Model {
 }
 
 export class GetPrivilegeInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1541,6 +1851,10 @@ export class GetPrivilegeInfoRequest extends $tea.Model {
 }
 
 export class GetPrivilegeInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   types?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1607,8 +1921,20 @@ export class GetQuotaInfosHeaders extends $tea.Model {
 }
 
 export class GetQuotaInfosRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   identifiers?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1632,6 +1958,10 @@ export class GetQuotaInfosRequest extends $tea.Model {
 }
 
 export class GetQuotaInfosResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   quotas?: GetQuotaInfosResponseBodyQuotas[];
   static names(): { [key: string]: string } {
     return {
@@ -1700,10 +2030,26 @@ export class GetUploadInfoHeaders extends $tea.Model {
 export class GetUploadInfoRequest extends $tea.Model {
   addConflictPolicy?: string;
   callerRegion?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   md5?: string;
   mediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   withInternalEndPoint?: boolean;
   withRegion?: boolean;
@@ -1813,10 +2159,30 @@ export class GrantPrivilegeOfCustomSpaceHeaders extends $tea.Model {
 }
 
 export class GrantPrivilegeOfCustomSpaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   duration?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1888,6 +2254,10 @@ export class InfoSpaceHeaders extends $tea.Model {
 }
 
 export class InfoSpaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1907,13 +2277,45 @@ export class InfoSpaceRequest extends $tea.Model {
 }
 
 export class InfoSpaceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   permissionMode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   quota?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   usedQuota?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1994,10 +2396,18 @@ export class ListFilesHeaders extends $tea.Model {
 }
 
 export class ListFilesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
   nextToken?: string;
   orderType?: string;
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   withIcon?: boolean;
   static names(): { [key: string]: string } {
@@ -2028,7 +2438,15 @@ export class ListFilesRequest extends $tea.Model {
 }
 
 export class ListFilesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   files?: ListFilesResponseBodyFiles[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2097,6 +2515,10 @@ export class ListPermissionsHeaders extends $tea.Model {
 }
 
 export class ListPermissionsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2116,7 +2538,15 @@ export class ListPermissionsRequest extends $tea.Model {
 }
 
 export class ListPermissionsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: ListPermissionsResponseBodyMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   outMembers?: ListPermissionsResponseBodyOutMembers[];
   static names(): { [key: string]: string } {
     return {
@@ -2185,10 +2615,22 @@ export class ListRecycleFilesHeaders extends $tea.Model {
 }
 
 export class ListRecycleFilesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
   nextToken?: string;
   orderType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recycleType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2216,7 +2658,15 @@ export class ListRecycleFilesRequest extends $tea.Model {
 }
 
 export class ListRecycleFilesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recycleItems?: ListRecycleFilesResponseBodyRecycleItems[];
   static names(): { [key: string]: string } {
     return {
@@ -2285,9 +2735,21 @@ export class ListSpacesHeaders extends $tea.Model {
 }
 
 export class ListSpacesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2314,6 +2776,10 @@ export class ListSpacesRequest extends $tea.Model {
 
 export class ListSpacesResponseBody extends $tea.Model {
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaces?: ListSpacesResponseBodySpaces[];
   static names(): { [key: string]: string } {
     return {
@@ -2382,8 +2848,20 @@ export class ManagementBuyQuotaHeaders extends $tea.Model {
 }
 
 export class ManagementBuyQuotaRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   order?: ManagementBuyQuotaRequestOrder;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   token?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2451,7 +2929,15 @@ export class ManagementListSpacesHeaders extends $tea.Model {
 }
 
 export class ManagementListSpacesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2473,6 +2959,10 @@ export class ManagementListSpacesRequest extends $tea.Model {
 }
 
 export class ManagementListSpacesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaces?: ManagementListSpacesResponseBodySpaces[];
   static names(): { [key: string]: string } {
     return {
@@ -2539,8 +3029,20 @@ export class ManagementModifySpaceHeaders extends $tea.Model {
 }
 
 export class ManagementModifySpaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   quota?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2564,6 +3066,10 @@ export class ManagementModifySpaceRequest extends $tea.Model {
 }
 
 export class ManagementModifySpaceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaces?: ManagementModifySpaceResponseBodySpaces[];
   static names(): { [key: string]: string } {
     return {
@@ -2630,8 +3136,20 @@ export class ModifyPermissionHeaders extends $tea.Model {
 }
 
 export class ModifyPermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   members?: ModifyPermissionRequestMembers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   role?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2701,7 +3219,15 @@ export class MoveFileHeaders extends $tea.Model {
 export class MoveFileRequest extends $tea.Model {
   addConflictPolicy?: string;
   targetParentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetSpaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2728,17 +3254,49 @@ export class MoveFileRequest extends $tea.Model {
 
 export class MoveFileResponseBody extends $tea.Model {
   contentType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   creator?: string;
   fileExtension?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   filePath?: string;
   fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileType?: string;
   modifier?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2830,9 +3388,21 @@ export class MoveFilesHeaders extends $tea.Model {
 
 export class MoveFilesRequest extends $tea.Model {
   addConflictPolicy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileIds?: string[];
   targetParentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetSpaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2860,6 +3430,10 @@ export class MoveFilesRequest extends $tea.Model {
 }
 
 export class MoveFilesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   files?: MoveFilesResponseBodyFiles[];
   taskId?: string;
   static names(): { [key: string]: string } {
@@ -2929,8 +3503,20 @@ export class RecoverRecycleFilesHeaders extends $tea.Model {
 }
 
 export class RecoverRecycleFilesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recycleItemIdList?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recycleType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2998,7 +3584,15 @@ export class RenameFileHeaders extends $tea.Model {
 }
 
 export class RenameFileRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   newFileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3021,17 +3615,49 @@ export class RenameFileRequest extends $tea.Model {
 
 export class RenameFileResponseBody extends $tea.Model {
   contentType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   creator?: string;
   fileExtension?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   filePath?: string;
   fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileType?: string;
   modifier?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3100,8 +3726,20 @@ export class RenameFileResponse extends $tea.Model {
 }
 
 export class AddPermissionRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3126,6 +3764,10 @@ export class AddPermissionRequestMembers extends $tea.Model {
 
 export class CopyFileResponseBodyFile extends $tea.Model {
   contentType?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   creator?: string;
   fileExtension?: string;
@@ -3135,6 +3777,10 @@ export class CopyFileResponseBodyFile extends $tea.Model {
   fileSize?: number;
   fileType?: string;
   modifier?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   parentId?: string;
   spaceId?: string;
@@ -3180,8 +3826,20 @@ export class CopyFileResponseBodyFile extends $tea.Model {
 }
 
 export class DeletePermissionRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3205,9 +3863,21 @@ export class DeletePermissionRequestMembers extends $tea.Model {
 }
 
 export class GetDownloadInfoResponseBodyDownloadInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   expirationSeconds?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   headers?: { [key: string]: any };
   internalResourceUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   resourceUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3233,6 +3903,10 @@ export class GetDownloadInfoResponseBodyDownloadInfo extends $tea.Model {
 }
 
 export class GetPreviewInfoResponseBodyInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3280,10 +3954,26 @@ export class GetQuotaInfosResponseBodyQuotas extends $tea.Model {
 }
 
 export class GetUploadInfoResponseBodyHeaderSignatureUploadInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   expirationSeconds?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   headers?: { [key: string]: any };
   internalResourceUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   resourceUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3311,13 +4001,41 @@ export class GetUploadInfoResponseBodyHeaderSignatureUploadInfo extends $tea.Mod
 }
 
 export class GetUploadInfoResponseBodyStsUploadInfo extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   accessKeyId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   accessKeySecret?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   accessToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   accessTokenExpirationMillis?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bucket?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   endPoint?: string;
   internalEndPoint?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   mediaId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3352,18 +4070,50 @@ export class GetUploadInfoResponseBodyStsUploadInfo extends $tea.Model {
 
 export class ListFilesResponseBodyFiles extends $tea.Model {
   contentType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   creator?: string;
   fileExtension?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   filePath?: string;
   fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileType?: string;
   icon?: string;
   modifier?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
   thumbnail?: string;
   static names(): { [key: string]: string } {
@@ -3415,6 +4165,10 @@ export class ListPermissionsResponseBodyMembersMember extends $tea.Model {
   corpId?: string;
   memberId?: string;
   memberName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3440,8 +4194,20 @@ export class ListPermissionsResponseBodyMembersMember extends $tea.Model {
 }
 
 export class ListPermissionsResponseBodyMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   extend?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   member?: ListPermissionsResponseBodyMembersMember;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   role?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3468,6 +4234,10 @@ export class ListPermissionsResponseBodyOutMembersMember extends $tea.Model {
   corpId?: string;
   memberId?: string;
   memberName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3493,8 +4263,20 @@ export class ListPermissionsResponseBodyOutMembersMember extends $tea.Model {
 }
 
 export class ListPermissionsResponseBodyOutMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   extend?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   member?: ListPermissionsResponseBodyOutMembersMember;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   role?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3519,12 +4301,42 @@ export class ListPermissionsResponseBodyOutMembers extends $tea.Model {
 
 export class ListRecycleFilesResponseBodyRecycleItems extends $tea.Model {
   contentType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deleteStaffId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   deleteTime?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   filePath?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recycleItemId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3558,13 +4370,33 @@ export class ListRecycleFilesResponseBodyRecycleItems extends $tea.Model {
 }
 
 export class ListSpacesResponseBodySpaces extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   permissionMode?: string;
   quota?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
   spaceName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   usedQuota?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3598,11 +4430,35 @@ export class ListSpacesResponseBodySpaces extends $tea.Model {
 }
 
 export class ManagementBuyQuotaRequestOrder extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   capacity?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   capacityType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   day?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   money?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   orderId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3632,13 +4488,33 @@ export class ManagementBuyQuotaRequestOrder extends $tea.Model {
 }
 
 export class ManagementListSpacesResponseBodySpaces extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   permissionMode?: string;
   quota?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
   spaceName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   usedQuota?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3672,13 +4548,33 @@ export class ManagementListSpacesResponseBodySpaces extends $tea.Model {
 }
 
 export class ManagementModifySpaceResponseBodySpaces extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   permissionMode?: string;
   quota?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
   spaceName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   usedQuota?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3712,8 +4608,20 @@ export class ManagementModifySpaceResponseBodySpaces extends $tea.Model {
 }
 
 export class ModifyPermissionRequestMembers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   memberType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3738,17 +4646,49 @@ export class ModifyPermissionRequestMembers extends $tea.Model {
 
 export class MoveFilesResponseBodyFiles extends $tea.Model {
   contentType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   createTime?: string;
   creator?: string;
   fileExtension?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   filePath?: string;
   fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileType?: string;
   modifier?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
   modifyTime?: string;
   parentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   spaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3793,12 +4733,11 @@ export class MoveFilesResponseBodyFiles extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -3808,12 +4747,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 新建自定义空间
-   *
-   * @param request AddCustomSpaceRequest
-   * @param headers AddCustomSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddCustomSpaceResponse
+   * 新建自定义空间
+   * 
+   * @param request - AddCustomSpaceRequest
+   * @param headers - AddCustomSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddCustomSpaceResponse
    */
   async addCustomSpaceWithOptions(request: AddCustomSpaceRequest, headers: AddCustomSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<AddCustomSpaceResponse> {
     Util.validateModel(request);
@@ -3862,10 +4801,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新建自定义空间
-   *
-   * @param request AddCustomSpaceRequest
-   * @return AddCustomSpaceResponse
+   * 新建自定义空间
+   * 
+   * @param request - AddCustomSpaceRequest
+   * @returns AddCustomSpaceResponse
    */
   async addCustomSpace(request: AddCustomSpaceRequest): Promise<AddCustomSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3874,12 +4813,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加文件
-   *
-   * @param request AddFileRequest
-   * @param headers AddFileHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddFileResponse
+   * 添加文件
+   * 
+   * @param request - AddFileRequest
+   * @param headers - AddFileHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddFileResponse
    */
   async addFileWithOptions(spaceId: string, request: AddFileRequest, headers: AddFileHeaders, runtime: $Util.RuntimeOptions): Promise<AddFileResponse> {
     Util.validateModel(request);
@@ -3936,10 +4875,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加文件
-   *
-   * @param request AddFileRequest
-   * @return AddFileResponse
+   * 添加文件
+   * 
+   * @param request - AddFileRequest
+   * @returns AddFileResponse
    */
   async addFile(spaceId: string, request: AddFileRequest): Promise<AddFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3948,12 +4887,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加权限
-   *
-   * @param request AddPermissionRequest
-   * @param headers AddPermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddPermissionResponse
+   * 添加权限
+   * 
+   * @param request - AddPermissionRequest
+   * @param headers - AddPermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddPermissionResponse
    */
   async addPermissionWithOptions(spaceId: string, fileId: string, request: AddPermissionRequest, headers: AddPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<AddPermissionResponse> {
     Util.validateModel(request);
@@ -3998,10 +4937,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加权限
-   *
-   * @param request AddPermissionRequest
-   * @return AddPermissionResponse
+   * 添加权限
+   * 
+   * @param request - AddPermissionRequest
+   * @returns AddPermissionResponse
    */
   async addPermission(spaceId: string, fileId: string, request: AddPermissionRequest): Promise<AddPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4010,12 +4949,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新建空间
-   *
-   * @param request AddSpaceRequest
-   * @param headers AddSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddSpaceResponse
+   * 新建空间
+   * 
+   * @param request - AddSpaceRequest
+   * @param headers - AddSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddSpaceResponse
    */
   async addSpaceWithOptions(request: AddSpaceRequest, headers: AddSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<AddSpaceResponse> {
     Util.validateModel(request);
@@ -4056,10 +4995,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新建空间
-   *
-   * @param request AddSpaceRequest
-   * @return AddSpaceResponse
+   * 新建空间
+   * 
+   * @param request - AddSpaceRequest
+   * @returns AddSpaceResponse
    */
   async addSpace(request: AddSpaceRequest): Promise<AddSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4068,12 +5007,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清空回收站文件
-   *
-   * @param request ClearRecycleFilesRequest
-   * @param headers ClearRecycleFilesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ClearRecycleFilesResponse
+   * 清空回收站文件
+   * 
+   * @param request - ClearRecycleFilesRequest
+   * @param headers - ClearRecycleFilesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ClearRecycleFilesResponse
    */
   async clearRecycleFilesWithOptions(request: ClearRecycleFilesRequest, headers: ClearRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ClearRecycleFilesResponse> {
     Util.validateModel(request);
@@ -4114,10 +5053,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清空回收站文件
-   *
-   * @param request ClearRecycleFilesRequest
-   * @return ClearRecycleFilesResponse
+   * 清空回收站文件
+   * 
+   * @param request - ClearRecycleFilesRequest
+   * @returns ClearRecycleFilesResponse
    */
   async clearRecycleFiles(request: ClearRecycleFilesRequest): Promise<ClearRecycleFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4126,12 +5065,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 拷贝文件
-   *
-   * @param request CopyFileRequest
-   * @param headers CopyFileHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CopyFileResponse
+   * 拷贝文件
+   * 
+   * @param request - CopyFileRequest
+   * @param headers - CopyFileHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CopyFileResponse
    */
   async copyFileWithOptions(spaceId: string, fileId: string, request: CopyFileRequest, headers: CopyFileHeaders, runtime: $Util.RuntimeOptions): Promise<CopyFileResponse> {
     Util.validateModel(request);
@@ -4180,10 +5119,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 拷贝文件
-   *
-   * @param request CopyFileRequest
-   * @return CopyFileResponse
+   * 拷贝文件
+   * 
+   * @param request - CopyFileRequest
+   * @returns CopyFileResponse
    */
   async copyFile(spaceId: string, fileId: string, request: CopyFileRequest): Promise<CopyFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4192,12 +5131,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除文件
-   *
-   * @param request DeleteFileRequest
-   * @param headers DeleteFileHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteFileResponse
+   * 删除文件
+   * 
+   * @param request - DeleteFileRequest
+   * @param headers - DeleteFileHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteFileResponse
    */
   async deleteFileWithOptions(spaceId: string, fileId: string, request: DeleteFileRequest, headers: DeleteFileHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteFileResponse> {
     Util.validateModel(request);
@@ -4238,10 +5177,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除文件
-   *
-   * @param request DeleteFileRequest
-   * @return DeleteFileResponse
+   * 删除文件
+   * 
+   * @param request - DeleteFileRequest
+   * @returns DeleteFileResponse
    */
   async deleteFile(spaceId: string, fileId: string, request: DeleteFileRequest): Promise<DeleteFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4250,12 +5189,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除文件（夹）
-   *
-   * @param request DeleteFilesRequest
-   * @param headers DeleteFilesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteFilesResponse
+   * 批量删除文件（夹）
+   * 
+   * @param request - DeleteFilesRequest
+   * @param headers - DeleteFilesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteFilesResponse
    */
   async deleteFilesWithOptions(spaceId: string, request: DeleteFilesRequest, headers: DeleteFilesHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteFilesResponse> {
     Util.validateModel(request);
@@ -4300,10 +5239,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除文件（夹）
-   *
-   * @param request DeleteFilesRequest
-   * @return DeleteFilesResponse
+   * 批量删除文件（夹）
+   * 
+   * @param request - DeleteFilesRequest
+   * @returns DeleteFilesResponse
    */
   async deleteFiles(spaceId: string, request: DeleteFilesRequest): Promise<DeleteFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4312,12 +5251,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除权限
-   *
-   * @param request DeletePermissionRequest
-   * @param headers DeletePermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeletePermissionResponse
+   * 删除权限
+   * 
+   * @param request - DeletePermissionRequest
+   * @param headers - DeletePermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeletePermissionResponse
    */
   async deletePermissionWithOptions(spaceId: string, fileId: string, request: DeletePermissionRequest, headers: DeletePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePermissionResponse> {
     Util.validateModel(request);
@@ -4362,10 +5301,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除权限
-   *
-   * @param request DeletePermissionRequest
-   * @return DeletePermissionResponse
+   * 删除权限
+   * 
+   * @param request - DeletePermissionRequest
+   * @returns DeletePermissionResponse
    */
   async deletePermission(spaceId: string, fileId: string, request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4374,12 +5313,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 彻底删除回收站文件
-   *
-   * @param request DeleteRecycleFilesRequest
-   * @param headers DeleteRecycleFilesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteRecycleFilesResponse
+   * 彻底删除回收站文件
+   * 
+   * @param request - DeleteRecycleFilesRequest
+   * @param headers - DeleteRecycleFilesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteRecycleFilesResponse
    */
   async deleteRecycleFilesWithOptions(request: DeleteRecycleFilesRequest, headers: DeleteRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRecycleFilesResponse> {
     Util.validateModel(request);
@@ -4424,10 +5363,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 彻底删除回收站文件
-   *
-   * @param request DeleteRecycleFilesRequest
-   * @return DeleteRecycleFilesResponse
+   * 彻底删除回收站文件
+   * 
+   * @param request - DeleteRecycleFilesRequest
+   * @returns DeleteRecycleFilesResponse
    */
   async deleteRecycleFiles(request: DeleteRecycleFilesRequest): Promise<DeleteRecycleFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4436,12 +5375,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除空间
-   *
-   * @param request DeleteSpaceRequest
-   * @param headers DeleteSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteSpaceResponse
+   * 删除空间
+   * 
+   * @param request - DeleteSpaceRequest
+   * @param headers - DeleteSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteSpaceResponse
    */
   async deleteSpaceWithOptions(spaceId: string, request: DeleteSpaceRequest, headers: DeleteSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSpaceResponse> {
     Util.validateModel(request);
@@ -4478,10 +5417,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除空间
-   *
-   * @param request DeleteSpaceRequest
-   * @return DeleteSpaceResponse
+   * 删除空间
+   * 
+   * @param request - DeleteSpaceRequest
+   * @returns DeleteSpaceResponse
    */
   async deleteSpace(spaceId: string, request: DeleteSpaceRequest): Promise<DeleteSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4490,12 +5429,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取异步任务信息
-   *
-   * @param request GetAsyncTaskInfoRequest
-   * @param headers GetAsyncTaskInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAsyncTaskInfoResponse
+   * 获取异步任务信息
+   * 
+   * @param request - GetAsyncTaskInfoRequest
+   * @param headers - GetAsyncTaskInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAsyncTaskInfoResponse
    */
   async getAsyncTaskInfoWithOptions(taskId: string, request: GetAsyncTaskInfoRequest, headers: GetAsyncTaskInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetAsyncTaskInfoResponse> {
     Util.validateModel(request);
@@ -4532,10 +5471,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取异步任务信息
-   *
-   * @param request GetAsyncTaskInfoRequest
-   * @return GetAsyncTaskInfoResponse
+   * 获取异步任务信息
+   * 
+   * @param request - GetAsyncTaskInfoRequest
+   * @returns GetAsyncTaskInfoResponse
    */
   async getAsyncTaskInfo(taskId: string, request: GetAsyncTaskInfoRequest): Promise<GetAsyncTaskInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4544,12 +5483,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取下载信息
-   *
-   * @param request GetDownloadInfoRequest
-   * @param headers GetDownloadInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDownloadInfoResponse
+   * 获取下载信息
+   * 
+   * @param request - GetDownloadInfoRequest
+   * @param headers - GetDownloadInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDownloadInfoResponse
    */
   async getDownloadInfoWithOptions(spaceId: string, fileId: string, request: GetDownloadInfoRequest, headers: GetDownloadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDownloadInfoResponse> {
     Util.validateModel(request);
@@ -4594,10 +5533,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取下载信息
-   *
-   * @param request GetDownloadInfoRequest
-   * @return GetDownloadInfoResponse
+   * 获取下载信息
+   * 
+   * @param request - GetDownloadInfoRequest
+   * @returns GetDownloadInfoResponse
    */
   async getDownloadInfo(spaceId: string, fileId: string, request: GetDownloadInfoRequest): Promise<GetDownloadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4606,12 +5545,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件信息
-   *
-   * @param request GetFileInfoRequest
-   * @param headers GetFileInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFileInfoResponse
+   * 获取文件信息
+   * 
+   * @param request - GetFileInfoRequest
+   * @param headers - GetFileInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFileInfoResponse
    */
   async getFileInfoWithOptions(spaceId: string, fileId: string, request: GetFileInfoRequest, headers: GetFileInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileInfoResponse> {
     Util.validateModel(request);
@@ -4648,10 +5587,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件信息
-   *
-   * @param request GetFileInfoRequest
-   * @return GetFileInfoResponse
+   * 获取文件信息
+   * 
+   * @param request - GetFileInfoRequest
+   * @returns GetFileInfoResponse
    */
   async getFileInfo(spaceId: string, fileId: string, request: GetFileInfoRequest): Promise<GetFileInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4660,12 +5599,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取我的工作空间信息
-   *
-   * @param request GetMySpaceInfoRequest
-   * @param headers GetMySpaceInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMySpaceInfoResponse
+   * 获取我的工作空间信息
+   * 
+   * @param request - GetMySpaceInfoRequest
+   * @param headers - GetMySpaceInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMySpaceInfoResponse
    */
   async getMySpaceInfoWithOptions(request: GetMySpaceInfoRequest, headers: GetMySpaceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetMySpaceInfoResponse> {
     Util.validateModel(request);
@@ -4702,10 +5641,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取我的工作空间信息
-   *
-   * @param request GetMySpaceInfoRequest
-   * @return GetMySpaceInfoResponse
+   * 获取我的工作空间信息
+   * 
+   * @param request - GetMySpaceInfoRequest
+   * @returns GetMySpaceInfoResponse
    */
   async getMySpaceInfo(request: GetMySpaceInfoRequest): Promise<GetMySpaceInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4714,12 +5653,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取预览信息
-   *
-   * @param request GetPreviewInfoRequest
-   * @param headers GetPreviewInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPreviewInfoResponse
+   * 获取预览信息
+   * 
+   * @param request - GetPreviewInfoRequest
+   * @param headers - GetPreviewInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPreviewInfoResponse
    */
   async getPreviewInfoWithOptions(spaceId: string, fileId: string, request: GetPreviewInfoRequest, headers: GetPreviewInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPreviewInfoResponse> {
     Util.validateModel(request);
@@ -4764,10 +5703,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取预览信息
-   *
-   * @param request GetPreviewInfoRequest
-   * @return GetPreviewInfoResponse
+   * 获取预览信息
+   * 
+   * @param request - GetPreviewInfoRequest
+   * @returns GetPreviewInfoResponse
    */
   async getPreviewInfo(spaceId: string, fileId: string, request: GetPreviewInfoRequest): Promise<GetPreviewInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4776,12 +5715,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取权限点信息
-   *
-   * @param request GetPrivilegeInfoRequest
-   * @param headers GetPrivilegeInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPrivilegeInfoResponse
+   * 获取权限点信息
+   * 
+   * @param request - GetPrivilegeInfoRequest
+   * @param headers - GetPrivilegeInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPrivilegeInfoResponse
    */
   async getPrivilegeInfoWithOptions(spaceId: string, fileId: string, request: GetPrivilegeInfoRequest, headers: GetPrivilegeInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPrivilegeInfoResponse> {
     Util.validateModel(request);
@@ -4818,10 +5757,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取权限点信息
-   *
-   * @param request GetPrivilegeInfoRequest
-   * @return GetPrivilegeInfoResponse
+   * 获取权限点信息
+   * 
+   * @param request - GetPrivilegeInfoRequest
+   * @returns GetPrivilegeInfoResponse
    */
   async getPrivilegeInfo(spaceId: string, fileId: string, request: GetPrivilegeInfoRequest): Promise<GetPrivilegeInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4830,12 +5769,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取容量信息列表
-   *
-   * @param request GetQuotaInfosRequest
-   * @param headers GetQuotaInfosHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetQuotaInfosResponse
+   * 获取容量信息列表
+   * 
+   * @param request - GetQuotaInfosRequest
+   * @param headers - GetQuotaInfosHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetQuotaInfosResponse
    */
   async getQuotaInfosWithOptions(request: GetQuotaInfosRequest, headers: GetQuotaInfosHeaders, runtime: $Util.RuntimeOptions): Promise<GetQuotaInfosResponse> {
     Util.validateModel(request);
@@ -4880,10 +5819,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取容量信息列表
-   *
-   * @param request GetQuotaInfosRequest
-   * @return GetQuotaInfosResponse
+   * 获取容量信息列表
+   * 
+   * @param request - GetQuotaInfosRequest
+   * @returns GetQuotaInfosResponse
    */
   async getQuotaInfos(request: GetQuotaInfosRequest): Promise<GetQuotaInfosResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4892,12 +5831,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取上传信息
-   *
-   * @param request GetUploadInfoRequest
-   * @param headers GetUploadInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUploadInfoResponse
+   * 获取上传信息
+   * 
+   * @param request - GetUploadInfoRequest
+   * @param headers - GetUploadInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUploadInfoResponse
    */
   async getUploadInfoWithOptions(spaceId: string, parentId: string, request: GetUploadInfoRequest, headers: GetUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadInfoResponse> {
     Util.validateModel(request);
@@ -4966,10 +5905,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取上传信息
-   *
-   * @param request GetUploadInfoRequest
-   * @return GetUploadInfoResponse
+   * 获取上传信息
+   * 
+   * @param request - GetUploadInfoRequest
+   * @returns GetUploadInfoResponse
    */
   async getUploadInfo(spaceId: string, parentId: string, request: GetUploadInfoRequest): Promise<GetUploadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -4978,12 +5917,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加自定义空间权限
-   *
-   * @param request GrantPrivilegeOfCustomSpaceRequest
-   * @param headers GrantPrivilegeOfCustomSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GrantPrivilegeOfCustomSpaceResponse
+   * 添加自定义空间权限
+   * 
+   * @param request - GrantPrivilegeOfCustomSpaceRequest
+   * @param headers - GrantPrivilegeOfCustomSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GrantPrivilegeOfCustomSpaceResponse
    */
   async grantPrivilegeOfCustomSpaceWithOptions(spaceId: string, request: GrantPrivilegeOfCustomSpaceRequest, headers: GrantPrivilegeOfCustomSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GrantPrivilegeOfCustomSpaceResponse> {
     Util.validateModel(request);
@@ -5036,10 +5975,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加自定义空间权限
-   *
-   * @param request GrantPrivilegeOfCustomSpaceRequest
-   * @return GrantPrivilegeOfCustomSpaceResponse
+   * 添加自定义空间权限
+   * 
+   * @param request - GrantPrivilegeOfCustomSpaceRequest
+   * @returns GrantPrivilegeOfCustomSpaceResponse
    */
   async grantPrivilegeOfCustomSpace(spaceId: string, request: GrantPrivilegeOfCustomSpaceRequest): Promise<GrantPrivilegeOfCustomSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5048,12 +5987,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取空间信息
-   *
-   * @param request InfoSpaceRequest
-   * @param headers InfoSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InfoSpaceResponse
+   * 获取空间信息
+   * 
+   * @param request - InfoSpaceRequest
+   * @param headers - InfoSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InfoSpaceResponse
    */
   async infoSpaceWithOptions(spaceId: string, request: InfoSpaceRequest, headers: InfoSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<InfoSpaceResponse> {
     Util.validateModel(request);
@@ -5090,10 +6029,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取空间信息
-   *
-   * @param request InfoSpaceRequest
-   * @return InfoSpaceResponse
+   * 获取空间信息
+   * 
+   * @param request - InfoSpaceRequest
+   * @returns InfoSpaceResponse
    */
   async infoSpace(spaceId: string, request: InfoSpaceRequest): Promise<InfoSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5102,12 +6041,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件列表
-   *
-   * @param request ListFilesRequest
-   * @param headers ListFilesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListFilesResponse
+   * 获取文件列表
+   * 
+   * @param request - ListFilesRequest
+   * @param headers - ListFilesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListFilesResponse
    */
   async listFilesWithOptions(spaceId: string, request: ListFilesRequest, headers: ListFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ListFilesResponse> {
     Util.validateModel(request);
@@ -5164,10 +6103,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取文件列表
-   *
-   * @param request ListFilesRequest
-   * @return ListFilesResponse
+   * 获取文件列表
+   * 
+   * @param request - ListFilesRequest
+   * @returns ListFilesResponse
    */
   async listFiles(spaceId: string, request: ListFilesRequest): Promise<ListFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5176,12 +6115,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取权限列表
-   *
-   * @param request ListPermissionsRequest
-   * @param headers ListPermissionsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListPermissionsResponse
+   * 获取权限列表
+   * 
+   * @param request - ListPermissionsRequest
+   * @param headers - ListPermissionsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListPermissionsResponse
    */
   async listPermissionsWithOptions(spaceId: string, fileId: string, request: ListPermissionsRequest, headers: ListPermissionsHeaders, runtime: $Util.RuntimeOptions): Promise<ListPermissionsResponse> {
     Util.validateModel(request);
@@ -5218,10 +6157,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取权限列表
-   *
-   * @param request ListPermissionsRequest
-   * @return ListPermissionsResponse
+   * 获取权限列表
+   * 
+   * @param request - ListPermissionsRequest
+   * @returns ListPermissionsResponse
    */
   async listPermissions(spaceId: string, fileId: string, request: ListPermissionsRequest): Promise<ListPermissionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5230,12 +6169,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取回收站文件列表
-   *
-   * @param request ListRecycleFilesRequest
-   * @param headers ListRecycleFilesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListRecycleFilesResponse
+   * 获取回收站文件列表
+   * 
+   * @param request - ListRecycleFilesRequest
+   * @param headers - ListRecycleFilesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListRecycleFilesResponse
    */
   async listRecycleFilesWithOptions(request: ListRecycleFilesRequest, headers: ListRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<ListRecycleFilesResponse> {
     Util.validateModel(request);
@@ -5288,10 +6227,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取回收站文件列表
-   *
-   * @param request ListRecycleFilesRequest
-   * @return ListRecycleFilesResponse
+   * 获取回收站文件列表
+   * 
+   * @param request - ListRecycleFilesRequest
+   * @returns ListRecycleFilesResponse
    */
   async listRecycleFiles(request: ListRecycleFilesRequest): Promise<ListRecycleFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5300,12 +6239,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取空间列表
-   *
-   * @param request ListSpacesRequest
-   * @param headers ListSpacesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListSpacesResponse
+   * 获取空间列表
+   * 
+   * @param request - ListSpacesRequest
+   * @param headers - ListSpacesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListSpacesResponse
    */
   async listSpacesWithOptions(request: ListSpacesRequest, headers: ListSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<ListSpacesResponse> {
     Util.validateModel(request);
@@ -5354,10 +6293,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取空间列表
-   *
-   * @param request ListSpacesRequest
-   * @return ListSpacesResponse
+   * 获取空间列表
+   * 
+   * @param request - ListSpacesRequest
+   * @returns ListSpacesResponse
    */
   async listSpaces(request: ListSpacesRequest): Promise<ListSpacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5366,12 +6305,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 管理侧购买容量
-   *
-   * @param request ManagementBuyQuotaRequest
-   * @param headers ManagementBuyQuotaHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ManagementBuyQuotaResponse
+   * 管理侧购买容量
+   * 
+   * @param request - ManagementBuyQuotaRequest
+   * @param headers - ManagementBuyQuotaHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ManagementBuyQuotaResponse
    */
   async managementBuyQuotaWithOptions(request: ManagementBuyQuotaRequest, headers: ManagementBuyQuotaHeaders, runtime: $Util.RuntimeOptions): Promise<ManagementBuyQuotaResponse> {
     Util.validateModel(request);
@@ -5416,10 +6355,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 管理侧购买容量
-   *
-   * @param request ManagementBuyQuotaRequest
-   * @return ManagementBuyQuotaResponse
+   * 管理侧购买容量
+   * 
+   * @param request - ManagementBuyQuotaRequest
+   * @returns ManagementBuyQuotaResponse
    */
   async managementBuyQuota(request: ManagementBuyQuotaRequest): Promise<ManagementBuyQuotaResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5428,12 +6367,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 管理侧获取空间列表
-   *
-   * @param request ManagementListSpacesRequest
-   * @param headers ManagementListSpacesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ManagementListSpacesResponse
+   * 管理侧获取空间列表
+   * 
+   * @param request - ManagementListSpacesRequest
+   * @param headers - ManagementListSpacesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ManagementListSpacesResponse
    */
   async managementListSpacesWithOptions(request: ManagementListSpacesRequest, headers: ManagementListSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<ManagementListSpacesResponse> {
     Util.validateModel(request);
@@ -5474,10 +6413,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 管理侧获取空间列表
-   *
-   * @param request ManagementListSpacesRequest
-   * @return ManagementListSpacesResponse
+   * 管理侧获取空间列表
+   * 
+   * @param request - ManagementListSpacesRequest
+   * @returns ManagementListSpacesResponse
    */
   async managementListSpaces(request: ManagementListSpacesRequest): Promise<ManagementListSpacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5486,12 +6425,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 管理侧修改空间信息
-   *
-   * @param request ManagementModifySpaceRequest
-   * @param headers ManagementModifySpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ManagementModifySpaceResponse
+   * 管理侧修改空间信息
+   * 
+   * @param request - ManagementModifySpaceRequest
+   * @param headers - ManagementModifySpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ManagementModifySpaceResponse
    */
   async managementModifySpaceWithOptions(request: ManagementModifySpaceRequest, headers: ManagementModifySpaceHeaders, runtime: $Util.RuntimeOptions): Promise<ManagementModifySpaceResponse> {
     Util.validateModel(request);
@@ -5536,10 +6475,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 管理侧修改空间信息
-   *
-   * @param request ManagementModifySpaceRequest
-   * @return ManagementModifySpaceResponse
+   * 管理侧修改空间信息
+   * 
+   * @param request - ManagementModifySpaceRequest
+   * @returns ManagementModifySpaceResponse
    */
   async managementModifySpace(request: ManagementModifySpaceRequest): Promise<ManagementModifySpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5548,12 +6487,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改权限
-   *
-   * @param request ModifyPermissionRequest
-   * @param headers ModifyPermissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ModifyPermissionResponse
+   * 修改权限
+   * 
+   * @param request - ModifyPermissionRequest
+   * @param headers - ModifyPermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ModifyPermissionResponse
    */
   async modifyPermissionWithOptions(spaceId: string, fileId: string, request: ModifyPermissionRequest, headers: ModifyPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyPermissionResponse> {
     Util.validateModel(request);
@@ -5598,10 +6537,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改权限
-   *
-   * @param request ModifyPermissionRequest
-   * @return ModifyPermissionResponse
+   * 修改权限
+   * 
+   * @param request - ModifyPermissionRequest
+   * @returns ModifyPermissionResponse
    */
   async modifyPermission(spaceId: string, fileId: string, request: ModifyPermissionRequest): Promise<ModifyPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5610,12 +6549,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 移动文件
-   *
-   * @param request MoveFileRequest
-   * @param headers MoveFileHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MoveFileResponse
+   * 移动文件
+   * 
+   * @param request - MoveFileRequest
+   * @param headers - MoveFileHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MoveFileResponse
    */
   async moveFileWithOptions(spaceId: string, fileId: string, request: MoveFileRequest, headers: MoveFileHeaders, runtime: $Util.RuntimeOptions): Promise<MoveFileResponse> {
     Util.validateModel(request);
@@ -5664,10 +6603,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 移动文件
-   *
-   * @param request MoveFileRequest
-   * @return MoveFileResponse
+   * 移动文件
+   * 
+   * @param request - MoveFileRequest
+   * @returns MoveFileResponse
    */
   async moveFile(spaceId: string, fileId: string, request: MoveFileRequest): Promise<MoveFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5676,12 +6615,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量移动文件（夹）
-   *
-   * @param request MoveFilesRequest
-   * @param headers MoveFilesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return MoveFilesResponse
+   * 批量移动文件（夹）
+   * 
+   * @param request - MoveFilesRequest
+   * @param headers - MoveFilesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MoveFilesResponse
    */
   async moveFilesWithOptions(spaceId: string, request: MoveFilesRequest, headers: MoveFilesHeaders, runtime: $Util.RuntimeOptions): Promise<MoveFilesResponse> {
     Util.validateModel(request);
@@ -5734,10 +6673,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量移动文件（夹）
-   *
-   * @param request MoveFilesRequest
-   * @return MoveFilesResponse
+   * 批量移动文件（夹）
+   * 
+   * @param request - MoveFilesRequest
+   * @returns MoveFilesResponse
    */
   async moveFiles(spaceId: string, request: MoveFilesRequest): Promise<MoveFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5746,12 +6685,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 还原回收站文件
-   *
-   * @param request RecoverRecycleFilesRequest
-   * @param headers RecoverRecycleFilesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RecoverRecycleFilesResponse
+   * 还原回收站文件
+   * 
+   * @param request - RecoverRecycleFilesRequest
+   * @param headers - RecoverRecycleFilesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RecoverRecycleFilesResponse
    */
   async recoverRecycleFilesWithOptions(request: RecoverRecycleFilesRequest, headers: RecoverRecycleFilesHeaders, runtime: $Util.RuntimeOptions): Promise<RecoverRecycleFilesResponse> {
     Util.validateModel(request);
@@ -5796,10 +6735,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 还原回收站文件
-   *
-   * @param request RecoverRecycleFilesRequest
-   * @return RecoverRecycleFilesResponse
+   * 还原回收站文件
+   * 
+   * @param request - RecoverRecycleFilesRequest
+   * @returns RecoverRecycleFilesResponse
    */
   async recoverRecycleFiles(request: RecoverRecycleFilesRequest): Promise<RecoverRecycleFilesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -5808,12 +6747,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 重命名文件
-   *
-   * @param request RenameFileRequest
-   * @param headers RenameFileHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RenameFileResponse
+   * 重命名文件
+   * 
+   * @param request - RenameFileRequest
+   * @param headers - RenameFileHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RenameFileResponse
    */
   async renameFileWithOptions(spaceId: string, fileId: string, request: RenameFileRequest, headers: RenameFileHeaders, runtime: $Util.RuntimeOptions): Promise<RenameFileResponse> {
     Util.validateModel(request);
@@ -5854,10 +6793,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 重命名文件
-   *
-   * @param request RenameFileRequest
-   * @return RenameFileResponse
+   * 重命名文件
+   * 
+   * @param request - RenameFileRequest
+   * @returns RenameFileResponse
    */
   async renameFile(spaceId: string, fileId: string, request: RenameFileRequest): Promise<RenameFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });

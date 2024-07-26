@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,9 +30,31 @@ export class CreateUserHeaders extends $tea.Model {
 }
 
 export class CreateUserRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user@yourcompany.org
+   */
   email?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   employeeType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * password
+   */
   password?: string;
   static names(): { [key: string]: string } {
     return {
@@ -189,12 +209,36 @@ export class ListMailFoldersResponse extends $tea.Model {
 }
 
 export class ListMailFoldersResponseBodyFolders extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   childFolderCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   displayName?: string;
   extensions?: { [key: string]: string };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   parentFolderId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   totalItemCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unreadItemCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -227,12 +271,11 @@ export class ListMailFoldersResponseBodyFolders extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -242,12 +285,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 创建企业邮箱用户
-   *
-   * @param request CreateUserRequest
-   * @param headers CreateUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateUserResponse
+   * 创建企业邮箱用户
+   * 
+   * @param request - CreateUserRequest
+   * @param headers - CreateUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateUserResponse
    */
   async createUserWithOptions(request: CreateUserRequest, headers: CreateUserHeaders, runtime: $Util.RuntimeOptions): Promise<CreateUserResponse> {
     Util.validateModel(request);
@@ -296,10 +339,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建企业邮箱用户
-   *
-   * @param request CreateUserRequest
-   * @return CreateUserResponse
+   * 创建企业邮箱用户
+   * 
+   * @param request - CreateUserRequest
+   * @returns CreateUserResponse
    */
   async createUser(request: CreateUserRequest): Promise<CreateUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -308,12 +351,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定文件夹的子文件夹列表
-   *
-   * @param request ListMailFoldersRequest
-   * @param headers ListMailFoldersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListMailFoldersResponse
+   * 获取指定文件夹的子文件夹列表
+   * 
+   * @param request - ListMailFoldersRequest
+   * @param headers - ListMailFoldersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListMailFoldersResponse
    */
   async listMailFoldersWithOptions(email: string, request: ListMailFoldersRequest, headers: ListMailFoldersHeaders, runtime: $Util.RuntimeOptions): Promise<ListMailFoldersResponse> {
     Util.validateModel(request);
@@ -350,10 +393,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定文件夹的子文件夹列表
-   *
-   * @param request ListMailFoldersRequest
-   * @return ListMailFoldersResponse
+   * 获取指定文件夹的子文件夹列表
+   * 
+   * @param request - ListMailFoldersRequest
+   * @returns ListMailFoldersResponse
    */
   async listMailFolders(email: string, request: ListMailFoldersRequest): Promise<ListMailFoldersResponse> {
     let runtime = new $Util.RuntimeOptions({ });

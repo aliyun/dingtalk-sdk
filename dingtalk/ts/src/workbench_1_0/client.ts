@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,8 +30,26 @@ export class AddRecentUserAppListHeaders extends $tea.Model {
 }
 
 export class AddRecentUserAppListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding48143d56cd15327624f2f5cc6abecb85
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   usedAppDetailList?: AddRecentUserAppListRequestUsedAppDetailList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 642325391030949
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -57,6 +73,13 @@ export class AddRecentUserAppListRequest extends $tea.Model {
 }
 
 export class AddRecentUserAppListResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -123,7 +146,15 @@ export class GetDingPortalDetailHeaders extends $tea.Model {
 }
 
 export class GetDingPortalDetailResponseBody extends $tea.Model {
+  /**
+   * @example
+   * SWAPP-XXX
+   */
   appUuid?: string;
+  /**
+   * @example
+   * 我的自定义工作台
+   */
   dingPortalName?: string;
   pages?: GetDingPortalDetailResponseBodyPages[];
   static names(): { [key: string]: string } {
@@ -368,8 +399,26 @@ export class ListWorkBenchGroupHeaders extends $tea.Model {
 }
 
 export class ListWorkBenchGroupRequest extends $tea.Model {
+  /**
+   * @example
+   * corpId
+   */
   ecologicalCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 首页 = WORK_HOME 全部页 = WORK_ALL_APP
+   */
   groupType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx
+   */
   opUnionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -459,11 +508,43 @@ export class ModifyWorkbenchBadgeHeaders extends $tea.Model {
 }
 
 export class ModifyWorkbenchBadgeRequest extends $tea.Model {
+  /**
+   * **if can be null:**
+   * false
+   */
   bizIdList?: string[];
   isAdded?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * full
+   */
   modifyMode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 5000000004278081/test
+   */
   redDotRelationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * workbench_component
+   */
   redDotType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0123465
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -697,9 +778,28 @@ export class UndoDeletionHeaders extends $tea.Model {
 }
 
 export class UndoDeletionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   redDotRelationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * workbench_component
+   */
   redDotType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -791,6 +891,13 @@ export class UpdateDingPortalPageScopeHeaders extends $tea.Model {
 }
 
 export class UpdateDingPortalPageScopeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * false
+   */
   allVisible?: boolean;
   deptIds?: number[];
   roleIds?: number[];
@@ -841,6 +948,13 @@ export class UpdateDingPortalPageScopeResponse extends $tea.Model {
 }
 
 export class AddRecentUserAppListRequestUsedAppDetailList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2636835622
+   */
   agentId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -860,9 +974,21 @@ export class AddRecentUserAppListRequestUsedAppDetailList extends $tea.Model {
 }
 
 export class GetDingPortalDetailResponseBodyPages extends $tea.Model {
+  /**
+   * @example
+   * false
+   */
   allVisible?: boolean;
   deptIds?: number[];
+  /**
+   * @example
+   * 我的工作台页面
+   */
   pageName?: string;
+  /**
+   * @example
+   * XX-XX-XX
+   */
   pageUuid?: string;
   roleIds?: number[];
   userids?: string[];
@@ -894,7 +1020,15 @@ export class GetDingPortalDetailResponseBodyPages extends $tea.Model {
 }
 
 export class ListWorkBenchGroupResponseBodyGroupList extends $tea.Model {
+  /**
+   * @example
+   * desc
+   */
   componentId?: string;
+  /**
+   * @example
+   * name
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -917,12 +1051,11 @@ export class ListWorkBenchGroupResponseBodyGroupList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -932,12 +1065,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 批量添加最近使用记录
-   *
-   * @param request AddRecentUserAppListRequest
-   * @param headers AddRecentUserAppListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddRecentUserAppListResponse
+   * 批量添加最近使用记录
+   * 
+   * @param request - AddRecentUserAppListRequest
+   * @param headers - AddRecentUserAppListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddRecentUserAppListResponse
    */
   async addRecentUserAppListWithOptions(request: AddRecentUserAppListRequest, headers: AddRecentUserAppListHeaders, runtime: $Util.RuntimeOptions): Promise<AddRecentUserAppListResponse> {
     Util.validateModel(request);
@@ -982,10 +1115,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量添加最近使用记录
-   *
-   * @param request AddRecentUserAppListRequest
-   * @return AddRecentUserAppListResponse
+   * 批量添加最近使用记录
+   * 
+   * @param request - AddRecentUserAppListRequest
+   * @returns AddRecentUserAppListResponse
    */
   async addRecentUserAppList(request: AddRecentUserAppListRequest): Promise<AddRecentUserAppListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -994,11 +1127,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询自定义工作台
-   *
-   * @param headers GetDingPortalDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDingPortalDetailResponse
+   * 查询自定义工作台
+   * 
+   * @param headers - GetDingPortalDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDingPortalDetailResponse
    */
   async getDingPortalDetailWithOptions(appUuid: string, headers: GetDingPortalDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingPortalDetailResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1028,9 +1161,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询自定义工作台
-   *
-   * @return GetDingPortalDetailResponse
+   * 查询自定义工作台
+   * @returns GetDingPortalDetailResponse
    */
   async getDingPortalDetail(appUuid: string): Promise<GetDingPortalDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1039,12 +1171,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工作台插件的权限点
-   *
-   * @param request GetPluginPermissionPointRequest
-   * @param headers GetPluginPermissionPointHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPluginPermissionPointResponse
+   * 获取工作台插件的权限点
+   * 
+   * @param request - GetPluginPermissionPointRequest
+   * @param headers - GetPluginPermissionPointHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPluginPermissionPointResponse
    */
   async getPluginPermissionPointWithOptions(request: GetPluginPermissionPointRequest, headers: GetPluginPermissionPointHeaders, runtime: $Util.RuntimeOptions): Promise<GetPluginPermissionPointResponse> {
     Util.validateModel(request);
@@ -1081,10 +1213,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工作台插件的权限点
-   *
-   * @param request GetPluginPermissionPointRequest
-   * @return GetPluginPermissionPointResponse
+   * 获取工作台插件的权限点
+   * 
+   * @param request - GetPluginPermissionPointRequest
+   * @returns GetPluginPermissionPointResponse
    */
   async getPluginPermissionPoint(request: GetPluginPermissionPointRequest): Promise<GetPluginPermissionPointResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1093,12 +1225,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取插件的校验规则
-   *
-   * @param request GetPluginRuleCheckInfoRequest
-   * @param headers GetPluginRuleCheckInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPluginRuleCheckInfoResponse
+   * 获取插件的校验规则
+   * 
+   * @param request - GetPluginRuleCheckInfoRequest
+   * @param headers - GetPluginRuleCheckInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPluginRuleCheckInfoResponse
    */
   async getPluginRuleCheckInfoWithOptions(request: GetPluginRuleCheckInfoRequest, headers: GetPluginRuleCheckInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPluginRuleCheckInfoResponse> {
     Util.validateModel(request);
@@ -1135,10 +1267,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取插件的校验规则
-   *
-   * @param request GetPluginRuleCheckInfoRequest
-   * @return GetPluginRuleCheckInfoResponse
+   * 获取插件的校验规则
+   * 
+   * @param request - GetPluginRuleCheckInfoRequest
+   * @returns GetPluginRuleCheckInfoResponse
    */
   async getPluginRuleCheckInfo(request: GetPluginRuleCheckInfoRequest): Promise<GetPluginRuleCheckInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1147,12 +1279,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工作台分组列表
-   *
-   * @param request ListWorkBenchGroupRequest
-   * @param headers ListWorkBenchGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListWorkBenchGroupResponse
+   * 获取工作台分组列表
+   * 
+   * @param request - ListWorkBenchGroupRequest
+   * @param headers - ListWorkBenchGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListWorkBenchGroupResponse
    */
   async listWorkBenchGroupWithOptions(request: ListWorkBenchGroupRequest, headers: ListWorkBenchGroupHeaders, runtime: $Util.RuntimeOptions): Promise<ListWorkBenchGroupResponse> {
     Util.validateModel(request);
@@ -1197,10 +1329,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取工作台分组列表
-   *
-   * @param request ListWorkBenchGroupRequest
-   * @return ListWorkBenchGroupResponse
+   * 获取工作台分组列表
+   * 
+   * @param request - ListWorkBenchGroupRequest
+   * @returns ListWorkBenchGroupResponse
    */
   async listWorkBenchGroup(request: ListWorkBenchGroupRequest): Promise<ListWorkBenchGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1209,12 +1341,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工作台支持数字红点
-   *
-   * @param request ModifyWorkbenchBadgeRequest
-   * @param headers ModifyWorkbenchBadgeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ModifyWorkbenchBadgeResponse
+   * 工作台支持数字红点
+   * 
+   * @param request - ModifyWorkbenchBadgeRequest
+   * @param headers - ModifyWorkbenchBadgeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ModifyWorkbenchBadgeResponse
    */
   async modifyWorkbenchBadgeWithOptions(request: ModifyWorkbenchBadgeRequest, headers: ModifyWorkbenchBadgeHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyWorkbenchBadgeResponse> {
     Util.validateModel(request);
@@ -1271,10 +1403,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工作台支持数字红点
-   *
-   * @param request ModifyWorkbenchBadgeRequest
-   * @return ModifyWorkbenchBadgeResponse
+   * 工作台支持数字红点
+   * 
+   * @param request - ModifyWorkbenchBadgeRequest
+   * @returns ModifyWorkbenchBadgeResponse
    */
   async modifyWorkbenchBadge(request: ModifyWorkbenchBadgeRequest): Promise<ModifyWorkbenchBadgeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1283,11 +1415,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工作台组件授权范围查询
-   *
-   * @param headers QueryComponentScopesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryComponentScopesResponse
+   * 工作台组件授权范围查询
+   * 
+   * @param headers - QueryComponentScopesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryComponentScopesResponse
    */
   async queryComponentScopesWithOptions(componentId: string, headers: QueryComponentScopesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryComponentScopesResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1317,9 +1449,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工作台组件授权范围查询
-   *
-   * @return QueryComponentScopesResponse
+   * 工作台组件授权范围查询
+   * @returns QueryComponentScopesResponse
    */
   async queryComponentScopes(componentId: string): Promise<QueryComponentScopesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1328,11 +1459,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询快捷方式可见范围
-   *
-   * @param headers QueryShortcutScopesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryShortcutScopesResponse
+   * 查询快捷方式可见范围
+   * 
+   * @param headers - QueryShortcutScopesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryShortcutScopesResponse
    */
   async queryShortcutScopesWithOptions(shortcutKey: string, headers: QueryShortcutScopesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryShortcutScopesResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1362,9 +1493,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询快捷方式可见范围
-   *
-   * @return QueryShortcutScopesResponse
+   * 查询快捷方式可见范围
+   * @returns QueryShortcutScopesResponse
    */
   async queryShortcutScopes(shortcutKey: string): Promise<QueryShortcutScopesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1373,12 +1503,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工作台数字红点支持撤销已被删除的资源
-   *
-   * @param request UndoDeletionRequest
-   * @param headers UndoDeletionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UndoDeletionResponse
+   * 工作台数字红点支持撤销已被删除的资源
+   * 
+   * @param request - UndoDeletionRequest
+   * @param headers - UndoDeletionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UndoDeletionResponse
    */
   async undoDeletionWithOptions(request: UndoDeletionRequest, headers: UndoDeletionHeaders, runtime: $Util.RuntimeOptions): Promise<UndoDeletionResponse> {
     Util.validateModel(request);
@@ -1427,10 +1557,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 工作台数字红点支持撤销已被删除的资源
-   *
-   * @param request UndoDeletionRequest
-   * @return UndoDeletionResponse
+   * 工作台数字红点支持撤销已被删除的资源
+   * 
+   * @param request - UndoDeletionRequest
+   * @returns UndoDeletionResponse
    */
   async undoDeletion(request: UndoDeletionRequest): Promise<UndoDeletionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1439,12 +1569,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新自定义工作台页面可见性
-   *
-   * @param request UpdateDingPortalPageScopeRequest
-   * @param headers UpdateDingPortalPageScopeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateDingPortalPageScopeResponse
+   * 更新自定义工作台页面可见性
+   * 
+   * @param request - UpdateDingPortalPageScopeRequest
+   * @param headers - UpdateDingPortalPageScopeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateDingPortalPageScopeResponse
    */
   async updateDingPortalPageScopeWithOptions(pageUuid: string, appUuid: string, request: UpdateDingPortalPageScopeRequest, headers: UpdateDingPortalPageScopeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDingPortalPageScopeResponse> {
     Util.validateModel(request);
@@ -1493,10 +1623,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新自定义工作台页面可见性
-   *
-   * @param request UpdateDingPortalPageScopeRequest
-   * @return UpdateDingPortalPageScopeResponse
+   * 更新自定义工作台页面可见性
+   * 
+   * @param request - UpdateDingPortalPageScopeRequest
+   * @returns UpdateDingPortalPageScopeResponse
    */
   async updateDingPortalPageScope(pageUuid: string, appUuid: string, request: UpdateDingPortalPageScopeRequest): Promise<UpdateDingPortalPageScopeResponse> {
     let runtime = new $Util.RuntimeOptions({ });

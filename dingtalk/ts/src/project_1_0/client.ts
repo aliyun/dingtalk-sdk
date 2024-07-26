@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,6 +30,10 @@ export class AddProjectMemberHeaders extends $tea.Model {
 }
 
 export class AddProjectMemberRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -249,15 +251,66 @@ export class CreateOrganizationTaskHeaders extends $tea.Model {
 }
 
 export class CreateOrganizationTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 明天12点前完成周报撰写
+   */
   content?: string;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * false
+   * 
+   * **if can be null:**
+   * true
+   */
   disableActivity?: boolean;
+  /**
+   * @example
+   * false
+   * 
+   * **if can be null:**
+   * true
+   */
   disableNotification?: boolean;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   dueDate?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   executorId?: string;
   involveMembers?: string[];
+  /**
+   * @example
+   * 我是一条任务备注
+   */
   note?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * -10
+   */
   priority?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * members
+   */
   visible?: string;
   static names(): { [key: string]: string } {
     return {
@@ -361,15 +414,79 @@ export class CreatePlanTimeHeaders extends $tea.Model {
 }
 
 export class CreatePlanTimeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2022-09-05
+   */
   endDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   executorId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   includesHolidays?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isDuration?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 63186e54e07f18003fea6b90
+   */
   objectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * task
+   */
   objectType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3600000
+   */
   planTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2022-09-05
+   */
   startDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   submitterId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * organization
+   */
   tenantType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -473,6 +590,10 @@ export class CreateProjectHeaders extends $tea.Model {
 }
 
 export class CreateProjectRequest extends $tea.Model {
+  /**
+   * @example
+   * 项目1
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -558,7 +679,21 @@ export class CreateProjectByTemplateHeaders extends $tea.Model {
 }
 
 export class CreateProjectByTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 项目1
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 578cae9dbf83e5xxxx
+   */
   templateId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -646,9 +781,25 @@ export class CreateProjectCustomfieldStatusHeaders extends $tea.Model {
 }
 
 export class CreateProjectCustomfieldStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * 63a5301e420637003f5dxxxx
+   */
   customFieldId?: string;
+  /**
+   * @example
+   * 64a5301e420637003f5dxxxx
+   */
   customFieldInstanceId?: string;
+  /**
+   * @example
+   * 项目进度
+   */
   customFieldName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   value?: CreateProjectCustomfieldStatusRequestValue[];
   static names(): { [key: string]: string } {
     return {
@@ -740,17 +891,67 @@ export class CreateTaskHeaders extends $tea.Model {
 }
 
 export class CreateTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 任务标题
+   */
   content?: string;
   customfields?: CreateTaskRequestCustomfields[];
+  /**
+   * @example
+   * 2022-06-13T07:36:50.318Z
+   */
   dueDate?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   executorId?: string;
+  /**
+   * @example
+   * 我是一条任务备注
+   */
   note?: string;
+  /**
+   * @example
+   * 62c25e3b376exxxxxx
+   */
   parentTaskId?: string;
+  /**
+   * @example
+   * -10
+   */
   priority?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 62c25e3b376exxxxxx
+   */
   projectId?: string;
+  /**
+   * @example
+   * 62c25e3b376exxxxxx
+   */
   scenariofieldconfigId?: string;
+  /**
+   * @example
+   * 62c25e3b376exxxxxx
+   */
   stageId?: string;
+  /**
+   * @example
+   * 2022-06-13T07:36:50.318Z
+   */
   startDate?: string;
+  /**
+   * @example
+   * members
+   */
   visible?: string;
   static names(): { [key: string]: string } {
     return {
@@ -944,15 +1145,76 @@ export class CreateWorkTimeHeaders extends $tea.Model {
 
 export class CreateWorkTimeRequest extends $tea.Model {
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2022-09-05
+   */
   endDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   executorId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   includesHolidays?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isDuration?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 63186e54e07f18003fea6b90
+   */
   objectId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * task
+   */
   objectType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2022-09-05
+   */
   startDate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   submitterId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * organization
+   */
   tenantType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1058,6 +1320,10 @@ export class CreateWorkTimeApproveHeaders extends $tea.Model {
 }
 
 export class CreateWorkTimeApproveRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workTimeIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1077,7 +1343,15 @@ export class CreateWorkTimeApproveRequest extends $tea.Model {
 }
 
 export class CreateWorkTimeApproveResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 执行成功
+   */
   message?: string;
+  /**
+   * @example
+   * 1234
+   */
   requestId?: string;
   result?: CreateWorkTimeApproveResponseBodyResult;
   static names(): { [key: string]: string } {
@@ -1149,6 +1423,10 @@ export class DeleteProjectMemberHeaders extends $tea.Model {
 }
 
 export class DeleteProjectMemberRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1506,6 +1784,13 @@ export class GetOrganizatioTaskByIdsHeaders extends $tea.Model {
 }
 
 export class GetOrganizatioTaskByIdsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 62a010c153c2ef5244xxxx, 62a010c153c2ef524xxxxxx
+   */
   taskIds?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1723,7 +2008,15 @@ export class GetProjectGroupHeaders extends $tea.Model {
 }
 
 export class GetProjectGroupRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 01525006000512579xxx
+   */
   viewerId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1811,9 +2104,25 @@ export class GetProjectMemebersHeaders extends $tea.Model {
 }
 
 export class GetProjectMemebersRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   projectRoleId?: string;
+  /**
+   * @example
+   * 55
+   */
   skip?: number;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
+   */
   userIds?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1971,7 +2280,15 @@ export class GetTaskByIdsHeaders extends $tea.Model {
 }
 
 export class GetTaskByIdsRequest extends $tea.Model {
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   parentTaskId?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   taskId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2059,6 +2376,13 @@ export class GetTbOrgIdByDingOrgIdHeaders extends $tea.Model {
 }
 
 export class GetTbOrgIdByDingOrgIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0175xxxx
+   */
   optUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2078,6 +2402,10 @@ export class GetTbOrgIdByDingOrgIdRequest extends $tea.Model {
 }
 
 export class GetTbOrgIdByDingOrgIdResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: GetTbOrgIdByDingOrgIdResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -2159,6 +2487,13 @@ export class GetTbProjectGrayHeaders extends $tea.Model {
 }
 
 export class GetTbProjectGrayRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * project_teambition
+   */
   label?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2179,6 +2514,10 @@ export class GetTbProjectGrayRequest extends $tea.Model {
 
 export class GetTbProjectGrayResponseBody extends $tea.Model {
   requestId?: string;
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2262,6 +2601,10 @@ export class GetTbProjectSourceHeaders extends $tea.Model {
 }
 
 export class GetTbProjectSourceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * ”0“
+   */
   installSource?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2328,7 +2671,21 @@ export class GetTbUserIdByStaffIdHeaders extends $tea.Model {
 }
 
 export class GetTbUserIdByStaffIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0175xxxx
+   */
   optUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0175xxxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2350,6 +2707,10 @@ export class GetTbUserIdByStaffIdRequest extends $tea.Model {
 }
 
 export class GetTbUserIdByStaffIdResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: GetTbUserIdByStaffIdResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -2416,7 +2777,15 @@ export class GetUserJoinedProjectHeaders extends $tea.Model {
 }
 
 export class GetUserJoinedProjectRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * f279e812xxxxxx
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2438,6 +2807,10 @@ export class GetUserJoinedProjectRequest extends $tea.Model {
 }
 
 export class GetUserJoinedProjectResponseBody extends $tea.Model {
+  /**
+   * @example
+   * f279e812xxxxxx
+   */
   nextToken?: string;
   result?: string[];
   static names(): { [key: string]: string } {
@@ -2507,10 +2880,30 @@ export class QueryProjectHeaders extends $tea.Model {
 }
 
 export class QueryProjectRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 测试项目
+   */
   name?: string;
+  /**
+   * @example
+   * f279e812xxxxxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   projectIds?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   sourceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2538,7 +2931,15 @@ export class QueryProjectRequest extends $tea.Model {
 }
 
 export class QueryProjectResponseBody extends $tea.Model {
+  /**
+   * @example
+   * "10"
+   */
   nextToken?: string;
+  /**
+   * @example
+   * c825b82b-a87a-49f3-a8b2-7a948b979975
+   */
   requestId?: string;
   result?: QueryProjectResponseBodyResult[];
   static names(): { [key: string]: string } {
@@ -2610,8 +3011,20 @@ export class QueryTaskOfProjectHeaders extends $tea.Model {
 }
 
 export class QueryTaskOfProjectRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * f279e812-e431-428d-846d-cxxxxxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * involveMembers NOT IN ["0612xx"] AND executorId="057xxx" AND content~标题2
+   */
   query?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2635,8 +3048,22 @@ export class QueryTaskOfProjectRequest extends $tea.Model {
 }
 
 export class QueryTaskOfProjectResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * f279e812-e431-428d-846d-cxxxxxx
+   */
   nextToken?: string;
   result?: QueryTaskOfProjectResponseBodyResult[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 35
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2707,10 +3134,30 @@ export class SeachTaskStageHeaders extends $tea.Model {
 }
 
 export class SeachTaskStageRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * f279e812xxxxxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 自定义列1
+   */
   query?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   taskListId?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
+   */
   taskStageIds?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2738,6 +3185,10 @@ export class SeachTaskStageRequest extends $tea.Model {
 }
 
 export class SeachTaskStageResponseBody extends $tea.Model {
+  /**
+   * @example
+   * f279e812-e431-428d-846d-cxxxxxx
+   */
   nextToken?: string;
   result?: SeachTaskStageResponseBodyResult[];
   static names(): { [key: string]: string } {
@@ -2807,8 +3258,20 @@ export class SearchAllTasksByTqlHeaders extends $tea.Model {
 }
 
 export class SearchAllTasksByTqlRequest extends $tea.Model {
+  /**
+   * @example
+   * 50
+   */
   maxResults?: number;
+  /**
+   * @example
+   * DXF1ZXJ5QW5kRmV0Y2gBAAAAAAKC9p4WVjNKbUstaldRX3lOOHNBbElzcjA5Zw==
+   */
   nextToken?: string;
+  /**
+   * @example
+   * isDone = false
+   */
   tql?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2832,9 +3295,21 @@ export class SearchAllTasksByTqlRequest extends $tea.Model {
 }
 
 export class SearchAllTasksByTqlResponseBody extends $tea.Model {
+  /**
+   * @example
+   * f279e812-e431-428d-846d-cxxxxxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 60BEE277-347B-1D5E-B6A4-E90788531911
+   */
   requestId?: string;
   result?: string[];
+  /**
+   * @example
+   * 1
+   */
   totalSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2907,11 +3382,35 @@ export class SearchOranizationCustomfieldHeaders extends $tea.Model {
 }
 
 export class SearchOranizationCustomfieldRequest extends $tea.Model {
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   customFieldIds?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   instanceIds?: string;
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * f279e812xxxxxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
+   */
   projectIds?: string;
+  /**
+   * @example
+   * 自定义字段1
+   */
   query?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2941,6 +3440,10 @@ export class SearchOranizationCustomfieldRequest extends $tea.Model {
 }
 
 export class SearchOranizationCustomfieldResponseBody extends $tea.Model {
+  /**
+   * @example
+   * f279e812-e431-428d-846d-cxxxxxx
+   */
   nextToken?: string;
   result?: SearchOranizationCustomfieldResponseBodyResult[];
   static names(): { [key: string]: string } {
@@ -3010,11 +3513,35 @@ export class SearchProjectCustomfieldHeaders extends $tea.Model {
 }
 
 export class SearchProjectCustomfieldRequest extends $tea.Model {
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
+   */
   customFieldIds?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
+   */
   instanceIds?: string;
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * f279e812xxxxxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 自定义字段名1
+   */
   query?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   scenarioFieldConfigId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3044,6 +3571,10 @@ export class SearchProjectCustomfieldRequest extends $tea.Model {
 }
 
 export class SearchProjectCustomfieldResponseBody extends $tea.Model {
+  /**
+   * @example
+   * f279e812-e431-428d-846d-cxxxxxx
+   */
   nextToken?: string;
   result?: SearchProjectCustomfieldResponseBodyResult[];
   static names(): { [key: string]: string } {
@@ -3113,6 +3644,10 @@ export class SearchProjectTemplateHeaders extends $tea.Model {
 }
 
 export class SearchProjectTemplateRequest extends $tea.Model {
+  /**
+   * @example
+   * 模板1
+   */
   keyword?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3198,9 +3733,25 @@ export class SearchTaskFlowHeaders extends $tea.Model {
 }
 
 export class SearchTaskFlowRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * f279e812xxxxxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 工作流1
+   */
   query?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
+   */
   taskflowIds?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3292,9 +3843,25 @@ export class SearchTaskListHeaders extends $tea.Model {
 }
 
 export class SearchTaskListRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * f279e812xxxxxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 自定义分组1
+   */
   query?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
+   */
   taskListIds?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3320,6 +3887,10 @@ export class SearchTaskListRequest extends $tea.Model {
 }
 
 export class SearchTaskListResponseBody extends $tea.Model {
+  /**
+   * @example
+   * f279e812-e431-428d-846d-cxxxxxx
+   */
   nextToken?: string;
   result?: SearchTaskListResponseBodyResult[];
   static names(): { [key: string]: string } {
@@ -3389,10 +3960,30 @@ export class SearchTaskflowStatusHeaders extends $tea.Model {
 }
 
 export class SearchTaskflowStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * f279e812xxxxxx
+   */
   nextToken?: string;
+  /**
+   * @example
+   * 未开始
+   */
   query?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
+   */
   tfIds?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
+   */
   tfsIds?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3488,6 +4079,10 @@ export class SearchUserTaskHeaders extends $tea.Model {
 export class SearchUserTaskRequest extends $tea.Model {
   maxResults?: number;
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleTypes?: string;
   tql?: string;
   static names(): { [key: string]: string } {
@@ -3514,7 +4109,15 @@ export class SearchUserTaskRequest extends $tea.Model {
 }
 
 export class SearchUserTaskResponseBody extends $tea.Model {
+  /**
+   * @example
+   * DXF1ZXJ5QW5kRmV0Y2gBAAAAAAbMXT4WVjNKbUstaldRX3lOOHNBbElzcjA5Zw==
+   */
   nextToken?: string;
+  /**
+   * @example
+   * F86698E9-E4F5-1231-AC99-2ECFC0D37BDE
+   */
   requestId?: string;
   result?: SearchUserTaskResponseBodyResult[];
   static names(): { [key: string]: string } {
@@ -3718,8 +4321,20 @@ export class UpdateCustomfieldValueHeaders extends $tea.Model {
 }
 
 export class UpdateCustomfieldValueRequest extends $tea.Model {
+  /**
+   * @example
+   * 62a010c153c2ef52xxxx
+   */
   customFieldId?: string;
+  /**
+   * @example
+   * 自定义字段-文本
+   */
   customFieldName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   value?: UpdateCustomfieldValueRequestValue[];
   static names(): { [key: string]: string } {
     return {
@@ -3809,8 +4424,23 @@ export class UpdateOrganizationTaskContentHeaders extends $tea.Model {
 }
 
 export class UpdateOrganizationTaskContentRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 后天交周报
+   */
   content?: string;
+  /**
+   * @example
+   * true
+   */
   disableActivity?: boolean;
+  /**
+   * @example
+   * true
+   */
   disableNotification?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -3900,8 +4530,23 @@ export class UpdateOrganizationTaskDueDateHeaders extends $tea.Model {
 }
 
 export class UpdateOrganizationTaskDueDateRequest extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   disableActivity?: boolean;
+  /**
+   * @example
+   * true
+   */
   disableNotification?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2022-06-13T03:30:42.830Z
+   */
   dueDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3993,6 +4638,10 @@ export class UpdateOrganizationTaskExecutorHeaders extends $tea.Model {
 export class UpdateOrganizationTaskExecutorRequest extends $tea.Model {
   disableActivity?: boolean;
   disableNotification?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   executorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4084,7 +4733,15 @@ export class UpdateOrganizationTaskInvolveMembersHeaders extends $tea.Model {
 export class UpdateOrganizationTaskInvolveMembersRequest extends $tea.Model {
   addInvolvers?: string[];
   delInvolvers?: string[];
+  /**
+   * @example
+   * true
+   */
   disableActivity?: boolean;
+  /**
+   * @example
+   * true
+   */
   disableNotification?: boolean;
   involveMembers?: string[];
   static names(): { [key: string]: string } {
@@ -4179,8 +4836,23 @@ export class UpdateOrganizationTaskNoteHeaders extends $tea.Model {
 }
 
 export class UpdateOrganizationTaskNoteRequest extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   disableActivity?: boolean;
+  /**
+   * @example
+   * true
+   */
   disableNotification?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 我是一条备注哦
+   */
   note?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4270,8 +4942,23 @@ export class UpdateOrganizationTaskPriorityHeaders extends $tea.Model {
 }
 
 export class UpdateOrganizationTaskPriorityRequest extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   disableActivity?: boolean;
+  /**
+   * @example
+   * true
+   */
   disableNotification?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * -10
+   */
   priority?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4361,8 +5048,23 @@ export class UpdateOrganizationTaskStatusHeaders extends $tea.Model {
 }
 
 export class UpdateOrganizationTaskStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * false
+   */
   disableActivity?: boolean;
+  /**
+   * @example
+   * false
+   */
   disableNotification?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   isDone?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4540,6 +5242,10 @@ export class UpdateTaskContentHeaders extends $tea.Model {
 }
 
 export class UpdateTaskContentRequest extends $tea.Model {
+  /**
+   * @example
+   * 更改后的标题
+   */
   content?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4625,6 +5331,10 @@ export class UpdateTaskDueDateHeaders extends $tea.Model {
 }
 
 export class UpdateTaskDueDateRequest extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   dueDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4710,6 +5420,10 @@ export class UpdateTaskExecutorHeaders extends $tea.Model {
 }
 
 export class UpdateTaskExecutorRequest extends $tea.Model {
+  /**
+   * @example
+   * 0517xxxxxxx
+   */
   executorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4886,6 +5600,10 @@ export class UpdateTaskNoteHeaders extends $tea.Model {
 }
 
 export class UpdateTaskNoteRequest extends $tea.Model {
+  /**
+   * @example
+   * 更改后的备注
+   */
   note?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4971,6 +5689,10 @@ export class UpdateTaskPriorityHeaders extends $tea.Model {
 }
 
 export class UpdateTaskPriorityRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   priority?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5056,6 +5778,10 @@ export class UpdateTaskStageHeaders extends $tea.Model {
 }
 
 export class UpdateTaskStageRequest extends $tea.Model {
+  /**
+   * @example
+   * 64ba333e4206372f3f5cxxxx
+   */
   taskStageId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5141,6 +5867,10 @@ export class UpdateTaskStartdateHeaders extends $tea.Model {
 }
 
 export class UpdateTaskStartdateRequest extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   startDate?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5226,7 +5956,15 @@ export class UpdateTaskTaskflowstatusHeaders extends $tea.Model {
 }
 
 export class UpdateTaskTaskflowstatusRequest extends $tea.Model {
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   taskflowStatusId?: string;
+  /**
+   * @example
+   * 说明。
+   */
   taskflowStatusUpdateNote?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5314,11 +6052,35 @@ export class UpdateWorkTimeApproveHeaders extends $tea.Model {
 }
 
 export class UpdateWorkTimeApproveRequest extends $tea.Model {
+  /**
+   * @example
+   * 2023-04-04T00:00:00.000Z
+   */
   finishTime?: string;
+  /**
+   * @example
+   * 1233
+   */
   instanceId?: string;
+  /**
+   * @example
+   * NEW
+   */
   status?: string;
+  /**
+   * @example
+   * 2023-04-04T00:00:00.000Z
+   */
   submitTime?: string;
+  /**
+   * @example
+   * xxxx 用工申请
+   */
   title?: string;
+  /**
+   * @example
+   * https://xxxbpms.xxx/xxxx
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5348,7 +6110,15 @@ export class UpdateWorkTimeApproveRequest extends $tea.Model {
 }
 
 export class UpdateWorkTimeApproveResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 执行成功
+   */
   message?: string;
+  /**
+   * @example
+   * 1234
+   */
   requestId?: string;
   result?: UpdateWorkTimeApproveResponseBodyResult;
   static names(): { [key: string]: string } {
@@ -5420,7 +6190,15 @@ export class AddProjectMemberResponseBodyResult extends $tea.Model {
 }
 
 export class ArchiveProjectResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   isArchived?: boolean;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5442,6 +6220,10 @@ export class ArchiveProjectResponseBodyResult extends $tea.Model {
 }
 
 export class ArchiveTaskResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5461,8 +6243,20 @@ export class ArchiveTaskResponseBodyResult extends $tea.Model {
 }
 
 export class CreateOrganizationTaskResponseBodyResultCreator extends $tea.Model {
+  /**
+   * @example
+   * https://xxxxxxxxxx
+   */
   avatarUrl?: string;
+  /**
+   * @example
+   * 鬼斩
+   */
   name?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5486,8 +6280,20 @@ export class CreateOrganizationTaskResponseBodyResultCreator extends $tea.Model 
 }
 
 export class CreateOrganizationTaskResponseBodyResultExecutor extends $tea.Model {
+  /**
+   * @example
+   * https://xxxxxxxxxx
+   */
   avatarUrl?: string;
+  /**
+   * @example
+   * 鬼斩
+   */
   name?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5511,8 +6317,20 @@ export class CreateOrganizationTaskResponseBodyResultExecutor extends $tea.Model
 }
 
 export class CreateOrganizationTaskResponseBodyResultInvolvers extends $tea.Model {
+  /**
+   * @example
+   * httpx://xxx
+   */
   avatarUrl?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   id?: string;
+  /**
+   * @example
+   * 鬼斩
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5537,23 +6355,79 @@ export class CreateOrganizationTaskResponseBodyResultInvolvers extends $tea.Mode
 
 export class CreateOrganizationTaskResponseBodyResult extends $tea.Model {
   ancestorIds?: string[];
+  /**
+   * @example
+   * 0
+   */
   attachmentsCount?: number;
+  /**
+   * @example
+   * 明天12点前写好周报
+   */
   content?: string;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   created?: string;
   creator?: CreateOrganizationTaskResponseBodyResultCreator;
+  /**
+   * @example
+   * 173xxxx
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   dueDate?: string;
   executor?: CreateOrganizationTaskResponseBodyResultExecutor;
+  /**
+   * @example
+   * 173xxxx
+   */
   executorId?: string;
+  /**
+   * @example
+   * false
+   */
   hasReminder?: boolean;
+  /**
+   * @example
+   * 62a697c053c2ef5xxxxxx
+   */
   id?: string;
   involveMembers?: string[];
   involvers?: CreateOrganizationTaskResponseBodyResultInvolvers[];
+  /**
+   * @example
+   * false
+   */
   isDeleted?: boolean;
+  /**
+   * @example
+   * false
+   */
   isDone?: string;
+  /**
+   * @example
+   * 我是一条备注哦
+   */
   note?: string;
+  /**
+   * @example
+   * -10
+   */
   priority?: number;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   updated?: string;
+  /**
+   * @example
+   * members
+   */
   visible?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5609,8 +6483,20 @@ export class CreateOrganizationTaskResponseBodyResult extends $tea.Model {
 }
 
 export class CreatePlanTimeResponseBodyResultBody extends $tea.Model {
+  /**
+   * @example
+   * 2022-09-05T00:00:00.000Z
+   */
   date?: string;
+  /**
+   * @example
+   * 63186e54e07f18003fea6b90
+   */
   objectId?: string;
+  /**
+   * @example
+   * 360000
+   */
   planTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5635,6 +6521,10 @@ export class CreatePlanTimeResponseBodyResultBody extends $tea.Model {
 
 export class CreatePlanTimeResponseBodyResult extends $tea.Model {
   body?: CreatePlanTimeResponseBodyResultBody[];
+  /**
+   * @example
+   * 创建工时成功
+   */
   message?: string;
   ok?: boolean;
   static names(): { [key: string]: string } {
@@ -5709,21 +6599,81 @@ export class CreateProjectResponseBodyResultCustomFields extends $tea.Model {
 }
 
 export class CreateProjectResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 0517xxxxxxx
+   */
   creatorId?: string;
   customFields?: CreateProjectResponseBodyResultCustomFields[];
+  /**
+   * @example
+   * 6398042ec98a4e4e33xxxxxx
+   */
   defaultCollectionId?: string;
+  /**
+   * @example
+   * false
+   */
   isArchived?: boolean;
+  /**
+   * @example
+   * false
+   */
   isSuspended?: boolean;
+  /**
+   * @example
+   * false
+   */
   isTemplate?: boolean;
+  /**
+   * @example
+   * "https://tcs-ga.teambition.net/thumb/xxxxxxx
+   */
   logo?: string;
+  /**
+   * @example
+   * 项目1
+   */
   name?: string;
+  /**
+   * @example
+   * taskflow
+   */
   normalType?: string;
+  /**
+   * @example
+   * 62c25e3b376ecxxxxxxx
+   */
   projectId?: string;
+  /**
+   * @example
+   * 6398042ec98a4e4e33
+   */
   rootCollectionId?: string;
+  /**
+   * @example
+   * 62c25e3b376ecxxxxxxx
+   */
   sourceId?: string;
+  /**
+   * @example
+   * ""
+   */
   uniqueIdPrefix?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
+  /**
+   * @example
+   * project
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5773,9 +6723,25 @@ export class CreateProjectResponseBodyResult extends $tea.Model {
 }
 
 export class CreateProjectByTemplateResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-08-01T09:50:31.275Z
+   */
   created?: string;
+  /**
+   * @example
+   * 62e7a1e721d20b5aexxx
+   */
   id?: string;
+  /**
+   * @example
+   * https://www.xxx.com/xxxxx
+   */
   logo?: string;
+  /**
+   * @example
+   * 项目1
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5801,8 +6767,20 @@ export class CreateProjectByTemplateResponseBodyResult extends $tea.Model {
 }
 
 export class CreateProjectCustomfieldStatusRequestValue extends $tea.Model {
+  /**
+   * @example
+   * 63a5301e420637003f5dxxxx
+   */
   customFieldValueId?: string;
+  /**
+   * @example
+   * {}
+   */
   metaString?: string;
+  /**
+   * @example
+   * 进行中
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5826,8 +6804,16 @@ export class CreateProjectCustomfieldStatusRequestValue extends $tea.Model {
 }
 
 export class CreateProjectCustomfieldStatusResponseBodyResultValue extends $tea.Model {
+  /**
+   * @example
+   * 63a5301e420637003f5dxxxx
+   */
   customFieldValueId?: string;
   metaString?: string;
+  /**
+   * @example
+   * 13
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5851,10 +6837,30 @@ export class CreateProjectCustomfieldStatusResponseBodyResultValue extends $tea.
 }
 
 export class CreateProjectCustomfieldStatusResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * lookup2
+   */
   advancedCustomFieldObjectType?: string;
+  /**
+   * @example
+   * 63a5301e420637003f5dxxxx
+   */
   customFieldId?: string;
+  /**
+   * @example
+   * 项目进度
+   */
   name?: string;
+  /**
+   * @example
+   * 62a5301e420637003f5dxxxx
+   */
   originalId?: string;
+  /**
+   * @example
+   * number
+   */
   type?: string;
   value?: CreateProjectCustomfieldStatusResponseBodyResultValue[];
   static names(): { [key: string]: string } {
@@ -5885,6 +6891,10 @@ export class CreateProjectCustomfieldStatusResponseBodyResult extends $tea.Model
 }
 
 export class CreateTaskRequestCustomfieldsValue extends $tea.Model {
+  /**
+   * @example
+   * 我是自定义字段显示值
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5904,7 +6914,15 @@ export class CreateTaskRequestCustomfieldsValue extends $tea.Model {
 }
 
 export class CreateTaskRequestCustomfields extends $tea.Model {
+  /**
+   * @example
+   * 62fb0bxxxxxxx
+   */
   customfieldId?: string;
+  /**
+   * @example
+   * 自定义字段-文本
+   */
   customfieldName?: string;
   value?: CreateTaskRequestCustomfieldsValue[];
   static names(): { [key: string]: string } {
@@ -5929,6 +6947,10 @@ export class CreateTaskRequestCustomfields extends $tea.Model {
 }
 
 export class CreateTaskResponseBodyResultCustomfieldsValue extends $tea.Model {
+  /**
+   * @example
+   * 我是自定义字段显示值
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5948,6 +6970,10 @@ export class CreateTaskResponseBodyResultCustomfieldsValue extends $tea.Model {
 }
 
 export class CreateTaskResponseBodyResultCustomfields extends $tea.Model {
+  /**
+   * @example
+   * 625bcxdxxxxxx
+   */
   customfieldId?: string;
   value?: CreateTaskResponseBodyResultCustomfieldsValue[];
   static names(): { [key: string]: string } {
@@ -5970,17 +6996,57 @@ export class CreateTaskResponseBodyResultCustomfields extends $tea.Model {
 }
 
 export class CreateTaskResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 任务标题
+   */
   content?: string;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   created?: string;
+  /**
+   * @example
+   * 173xxxxx
+   */
   creatorId?: string;
   customfields?: CreateTaskResponseBodyResultCustomfields[];
+  /**
+   * @example
+   * 2022-08-13T07:36:50.318Z
+   */
   dueDate?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   executorId?: string;
   involveMembers?: string[];
+  /**
+   * @example
+   * 我是一条备注
+   */
   note?: string;
+  /**
+   * @example
+   * -10
+   */
   priority?: number;
+  /**
+   * @example
+   * 62c25e3b376ecxxxxxx
+   */
   projectId?: string;
+  /**
+   * @example
+   * 62a697c053c2ef5xxxxxx
+   */
   taskId?: string;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6022,9 +7088,31 @@ export class CreateTaskResponseBodyResult extends $tea.Model {
 }
 
 export class CreateTaskObjectLinkRequestLinkedData extends $tea.Model {
+  /**
+   * @example
+   * 我是内容
+   */
   content?: string;
+  /**
+   * @example
+   * https://abc.com/url
+   */
   thumbnailUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 我是标题
+   */
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://abcd.com/url
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6050,7 +7138,15 @@ export class CreateTaskObjectLinkRequestLinkedData extends $tea.Model {
 }
 
 export class CreateTaskObjectLinkResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   created?: string;
+  /**
+   * @example
+   * xxxx
+   */
   objectLinkId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6072,8 +7168,20 @@ export class CreateTaskObjectLinkResponseBodyResult extends $tea.Model {
 }
 
 export class CreateWorkTimeResponseBodyResultBody extends $tea.Model {
+  /**
+   * @example
+   * 2022-09-05T00:00:00.000Z
+   */
   date?: string;
+  /**
+   * @example
+   * 63186e54e07f18003fea6b90
+   */
   taskId?: string;
+  /**
+   * @example
+   * 3600000
+   */
   workTime?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6098,6 +7206,10 @@ export class CreateWorkTimeResponseBodyResultBody extends $tea.Model {
 
 export class CreateWorkTimeResponseBodyResult extends $tea.Model {
   body?: CreateWorkTimeResponseBodyResultBody[];
+  /**
+   * @example
+   * 创建成功
+   */
   message?: string;
   ok?: boolean;
   static names(): { [key: string]: string } {
@@ -6122,14 +7234,50 @@ export class CreateWorkTimeResponseBodyResult extends $tea.Model {
 }
 
 export class CreateWorkTimeApproveResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 636c9634b183ac0040ee85b4
+   */
   approveOpenId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   createdAt?: string;
+  /**
+   * @example
+   * 6446626a9fb5a70c05fc3fc3
+   */
   creatorId?: string;
+  /**
+   * @example
+   * ding123xxx
+   */
   organizationId?: string;
+  /**
+   * @example
+   * NEW
+   */
   status?: string;
+  /**
+   * @example
+   * 636c9634b183ac0040ee85b4
+   */
   taskId?: string;
+  /**
+   * @example
+   * 100000
+   */
   time?: number;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updatedAt?: string;
+  /**
+   * @example
+   * 6446626a9fb5a70c05fc3fc3
+   */
   userId?: string;
   workTimeIds?: string[];
   static names(): { [key: string]: string } {
@@ -6237,20 +7385,72 @@ export class GetEmpsByOrgIdResponseBodyEmpList extends $tea.Model {
 
 export class GetOrganizatioTaskByIdsResponseBodyResult extends $tea.Model {
   ancestorIds?: string[];
+  /**
+   * @example
+   * 明天12点前写好周报
+   */
   content?: string;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   created?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   dueDate?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   executorId?: string;
   involveMembers?: string[];
+  /**
+   * @example
+   * false
+   */
   isDeleted?: boolean;
+  /**
+   * @example
+   * false
+   */
   isDone?: boolean;
   labels?: string[];
+  /**
+   * @example
+   * 我是一条备注哦
+   */
   note?: string;
+  /**
+   * @example
+   * -10
+   */
   priority?: number;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   startDate?: string;
+  /**
+   * @example
+   * 62a010c153c2efxxxxxxx
+   */
   taskId?: string;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   updated?: string;
+  /**
+   * @example
+   * members
+   */
   visible?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6300,9 +7500,25 @@ export class GetOrganizatioTaskByIdsResponseBodyResult extends $tea.Model {
 }
 
 export class GetOrganizationPriorityListResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * blue
+   */
   color?: string;
+  /**
+   * @example
+   * 普通
+   */
   name?: string;
+  /**
+   * @example
+   * 1
+   */
   priority?: string;
+  /**
+   * @example
+   * 5e870bc35b79b70xxxxx
+   */
   priorityId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6329,20 +7545,72 @@ export class GetOrganizationPriorityListResponseBodyResult extends $tea.Model {
 
 export class GetOrganizationTaskResponseBodyResult extends $tea.Model {
   ancestorIds?: string[];
+  /**
+   * @example
+   * 明天12点前写好周报
+   */
   content?: string;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   created?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   dueDate?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   executorId?: string;
   involveMembers?: string[];
+  /**
+   * @example
+   * false
+   */
   isDeleted?: boolean;
+  /**
+   * @example
+   * false
+   */
   isDone?: boolean;
   labels?: string[];
+  /**
+   * @example
+   * 我是一条备注哦
+   */
   note?: string;
+  /**
+   * @example
+   * -10
+   */
   priority?: number;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   startDate?: string;
+  /**
+   * @example
+   * 62a010c153c2exxxxxxxxx
+   */
   taskId?: string;
+  /**
+   * @example
+   * 2021-08-13T07:36:50.318Z
+   */
   updated?: string;
+  /**
+   * @example
+   * members
+   */
   visible?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6392,10 +7660,30 @@ export class GetOrganizationTaskResponseBodyResult extends $tea.Model {
 }
 
 export class GetProjectGroupResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-06-13T07:36:50.318Z
+   */
   created?: string;
+  /**
+   * @example
+   * 6215dce28972510xxxxx
+   */
   id?: string;
+  /**
+   * @example
+   * 分组1
+   */
   name?: string;
+  /**
+   * @example
+   * 2022-06-13T07:36:50.318Z
+   */
   updated?: string;
+  /**
+   * @example
+   * organization
+   */
   visible?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6423,9 +7711,23 @@ export class GetProjectGroupResponseBodyResult extends $tea.Model {
 }
 
 export class GetProjectMemebersResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 62c25e3b376ec29c45xxxxx
+   * 
+   * @deprecated
+   */
   memberId?: string;
+  /**
+   * @example
+   * 0
+   */
   role?: number;
   roleIds?: string[];
+  /**
+   * @example
+   * 0715153011125xxxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6451,11 +7753,35 @@ export class GetProjectMemebersResponseBodyResult extends $tea.Model {
 }
 
 export class GetProjectStatusListResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 进度正常，详细说明
+   */
   content?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 0715153011xxxxxx
+   */
   creatorId?: string;
+  /**
+   * @example
+   * normal
+   */
   degree?: string;
+  /**
+   * @example
+   * 进度正常
+   */
   name?: string;
+  /**
+   * @example
+   * 62c25e3b376ecxxxxxxx
+   */
   projectId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6485,8 +7811,20 @@ export class GetProjectStatusListResponseBodyResult extends $tea.Model {
 }
 
 export class GetTaskByIdsResponseBodyResultCustomFieldsValue extends $tea.Model {
+  /**
+   * @example
+   * 6722223xxxxxxxx
+   */
   customFieldValueId?: string;
+  /**
+   * @example
+   * 拓展数据
+   */
   metaString?: string;
+  /**
+   * @example
+   * 自定义字段1
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6510,6 +7848,10 @@ export class GetTaskByIdsResponseBodyResultCustomFieldsValue extends $tea.Model 
 }
 
 export class GetTaskByIdsResponseBodyResultCustomFields extends $tea.Model {
+  /**
+   * @example
+   * 61122xxxxxxxx
+   */
   customFieldId?: string;
   type?: string;
   value?: GetTaskByIdsResponseBodyResultCustomFieldsValue[];
@@ -6535,33 +7877,125 @@ export class GetTaskByIdsResponseBodyResultCustomFields extends $tea.Model {
 }
 
 export class GetTaskByIdsResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   accomplishTime?: string;
   ancestorIds?: string[];
+  /**
+   * @example
+   * 任务标题
+   */
   content?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 0517xxxxxxx
+   */
   creatorId?: string;
   customFields?: GetTaskByIdsResponseBodyResultCustomFields[];
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   dueDate?: string;
+  /**
+   * @example
+   * 0517xxxxxxx
+   */
   executorId?: string;
   involveMembers?: string[];
+  /**
+   * @example
+   * false
+   */
   isArchived?: boolean;
+  /**
+   * @example
+   * true
+   */
   isDone?: boolean;
+  /**
+   * @example
+   * 任务备注
+   */
   note?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   parentTaskId?: string;
+  /**
+   * @example
+   * 0
+   */
   priority?: number;
+  /**
+   * @example
+   * 62c25e3b376ecxxxxxxx
+   */
   projectId?: string;
   recurrence?: string[];
+  /**
+   * @example
+   * 6922xxxxxxxx
+   */
   scenarioFieldConfigId?: string;
+  /**
+   * @example
+   * 61922xxxxxxxx
+   */
   sprintId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   startDate?: string;
+  /**
+   * @example
+   * 1
+   */
   storyPoint?: string;
   tagIds?: string[];
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   taskId?: string;
+  /**
+   * @example
+   * 6922xxxxxxxx
+   */
   taskListId?: string;
+  /**
+   * @example
+   * 6622134xxxxxx
+   */
   taskStageId?: string;
+  /**
+   * @example
+   * 6722xxxxxxxx
+   */
   taskflowStatusId?: string;
+  /**
+   * @example
+   * 0
+   */
   uniqueId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
+  /**
+   * @example
+   * member
+   */
   visible?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6635,6 +8069,13 @@ export class GetTaskByIdsResponseBodyResult extends $tea.Model {
 }
 
 export class GetTbOrgIdByDingOrgIdResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 50c32afae8cf1439xxxx
+   */
   tbOrganizationId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6654,6 +8095,13 @@ export class GetTbOrgIdByDingOrgIdResponseBodyResult extends $tea.Model {
 }
 
 export class GetTbUserIdByStaffIdResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 601fdeb17f8681c9xxxx
+   */
   tbUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6673,8 +8121,20 @@ export class GetTbUserIdByStaffIdResponseBodyResult extends $tea.Model {
 }
 
 export class QueryProjectResponseBodyResultCustomFieldsValue extends $tea.Model {
+  /**
+   * @example
+   * 64ba333e4206372f3f5cxxxx
+   */
   customFieldValueId?: string;
+  /**
+   * @example
+   * 3
+   */
   metaString?: string;
+  /**
+   * @example
+   * 自定义字段1
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6698,7 +8158,15 @@ export class QueryProjectResponseBodyResultCustomFieldsValue extends $tea.Model 
 }
 
 export class QueryProjectResponseBodyResultCustomFields extends $tea.Model {
+  /**
+   * @example
+   * 64ba333e4206372f3f5cxxxx
+   */
   customFieldId?: string;
+  /**
+   * @example
+   * number
+   */
   type?: string;
   value?: QueryProjectResponseBodyResultCustomFieldsValue[];
   static names(): { [key: string]: string } {
@@ -6723,21 +8191,81 @@ export class QueryProjectResponseBodyResultCustomFields extends $tea.Model {
 }
 
 export class QueryProjectResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 0715153011125xxxx
+   */
   creatorId?: string;
   customFields?: QueryProjectResponseBodyResultCustomFields[];
+  /**
+   * @example
+   * 描述内容
+   */
   description?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   endDate?: string;
+  /**
+   * @example
+   * false
+   */
   isArchived?: boolean;
+  /**
+   * @example
+   * false
+   */
   isSuspended?: boolean;
+  /**
+   * @example
+   * false
+   */
   isTemplate?: boolean;
+  /**
+   * @example
+   * http://xxxxx
+   */
   logo?: string;
+  /**
+   * @example
+   * 测试项目
+   */
   name?: string;
+  /**
+   * @example
+   * dingc23b7b9682b4xxxx
+   */
   organizationId?: string;
+  /**
+   * @example
+   * 64ba333e4206372f3f5cxxxx
+   */
   projectId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   startDate?: string;
+  /**
+   * @example
+   * UNI
+   */
   uniqueIdPrefix?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
+  /**
+   * @example
+   * organization
+   */
   visibility?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6787,6 +8315,10 @@ export class QueryProjectResponseBodyResult extends $tea.Model {
 }
 
 export class QueryTaskOfProjectResponseBodyResultCustomfields extends $tea.Model {
+  /**
+   * @example
+   * 62c25e3bbxx0xxx
+   */
   customfieldId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6806,32 +8338,124 @@ export class QueryTaskOfProjectResponseBodyResultCustomfields extends $tea.Model
 }
 
 export class QueryTaskOfProjectResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   accomplished?: string;
   ancestorIds?: string[];
+  /**
+   * @example
+   * 标题2
+   */
   content?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 62c25e3bba7ce40xxx
+   */
   creatorId?: string;
   customfields?: QueryTaskOfProjectResponseBodyResultCustomfields[];
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   dueDate?: string;
+  /**
+   * @example
+   * 62cxxxxxxx
+   */
   executorId?: string;
   involveMembers?: string[];
+  /**
+   * @example
+   * true
+   */
   isArchived?: boolean;
+  /**
+   * @example
+   * true
+   */
   isDeleted?: boolean;
+  /**
+   * @example
+   * true
+   */
   isDone?: boolean;
   labels?: string[];
+  /**
+   * @example
+   * 备注
+   */
   note?: string;
+  /**
+   * @example
+   * 0
+   */
   priority?: number;
+  /**
+   * @example
+   * 0
+   */
   progress?: number;
+  /**
+   * @example
+   * 62c25e3bbaxxxxx
+   */
   projectId?: string;
+  /**
+   * @example
+   * 62c25e3bbxx0xxx
+   */
   scenariofieldconfigId?: string;
+  /**
+   * @example
+   * 62c25e3bbxx0xxx
+   */
   sprintId?: string;
+  /**
+   * @example
+   * 62c25e3bbxx0xxx
+   */
   stageId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   startDate?: string;
+  /**
+   * @example
+   * 2
+   */
   storyPoint?: number;
+  /**
+   * @example
+   * 62c25e3bbxx0xxx
+   */
   tagIds?: string[];
+  /**
+   * @example
+   * 62c25e3bbaxxx
+   */
   taskId?: string;
+  /**
+   * @example
+   * 62c25e3bbxx0xxx
+   */
   taskflowstatusId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
+  /**
+   * @example
+   * member
+   */
   visible?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6903,13 +8527,45 @@ export class QueryTaskOfProjectResponseBodyResult extends $tea.Model {
 }
 
 export class SeachTaskStageResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 0715153011125xxxx
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 描述...
+   */
   description?: string;
+  /**
+   * @example
+   * 自定义列1
+   */
   name?: string;
+  /**
+   * @example
+   * 62c25e3b376ecxxxxxxx
+   */
   projectId?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   taskListId?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   taskStageId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6943,7 +8599,15 @@ export class SeachTaskStageResponseBodyResult extends $tea.Model {
 }
 
 export class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField extends $tea.Model {
+  /**
+   * @example
+   * 63a5301e420637003f5dxxxx
+   */
   advancedCustomFieldId?: string;
+  /**
+   * @example
+   * 所思文档
+   */
   name?: string;
   objectType?: string;
   static names(): { [key: string]: string } {
@@ -6968,7 +8632,15 @@ export class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField e
 }
 
 export class SearchOranizationCustomfieldResponseBodyResultChoices extends $tea.Model {
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   choiceId?: string;
+  /**
+   * @example
+   * 选项一
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6992,11 +8664,35 @@ export class SearchOranizationCustomfieldResponseBodyResultChoices extends $tea.
 export class SearchOranizationCustomfieldResponseBodyResult extends $tea.Model {
   advancedCustomField?: SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField;
   choices?: SearchOranizationCustomfieldResponseBodyResultChoices[];
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 0715153011125xxxx
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   customFieldsId?: string;
+  /**
+   * @example
+   * 自定义字段
+   */
   name?: string;
+  /**
+   * @example
+   * {"_appId":"5937b10b83963200444b1ff8","kanbanCardAddCustomfieldDisable":true,"locales":{"name":{"en":"Progress update time","zh":"进展更新时间"}}}
+   */
   payload?: { [key: string]: any };
+  /**
+   * @example
+   * number
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7030,8 +8726,20 @@ export class SearchOranizationCustomfieldResponseBodyResult extends $tea.Model {
 }
 
 export class SearchProjectCustomfieldResponseBodyResultAdvancedCustomField extends $tea.Model {
+  /**
+   * @example
+   * 63a5301e420637003f5dxxxx
+   */
   advancedCustomFieldId?: string;
+  /**
+   * @example
+   * 所思文档
+   */
   name?: string;
+  /**
+   * @example
+   * thoughts.document
+   */
   objectType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7055,7 +8763,15 @@ export class SearchProjectCustomfieldResponseBodyResultAdvancedCustomField exten
 }
 
 export class SearchProjectCustomfieldResponseBodyResultChoices extends $tea.Model {
+  /**
+   * @example
+   * 63a5301e420637003f5dxxxx
+   */
   choiceId?: string;
+  /**
+   * @example
+   * 选项一
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7078,14 +8794,46 @@ export class SearchProjectCustomfieldResponseBodyResultChoices extends $tea.Mode
 
 export class SearchProjectCustomfieldResponseBodyResult extends $tea.Model {
   advancedCustomField?: SearchProjectCustomfieldResponseBodyResultAdvancedCustomField;
+  /**
+   * @example
+   * 63a5301e420637003f5dxxxx
+   */
   boundToObjectId?: string;
   choices?: SearchProjectCustomfieldResponseBodyResultChoices[];
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 0715153011125xxxx
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 63a5301e420637003f5dxxxx
+   */
   customFieldId?: string;
+  /**
+   * @example
+   * 名字1
+   */
   name?: string;
+  /**
+   * @example
+   * 63a5301e420637003f5dxxxx
+   */
   originalId?: string;
+  /**
+   * @example
+   * {"_appId":"5937b10b83963200444b1ff8","kanbanCardAddCustomfieldDisable":true,"locales":{"name":{"en":"Progress update time","zh":"进展更新时间"}}}
+   */
   payload?: { [key: string]: any };
+  /**
+   * @example
+   * number
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7123,14 +8871,50 @@ export class SearchProjectCustomfieldResponseBodyResult extends $tea.Model {
 }
 
 export class SearchProjectTemplateResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-06-13T07:36:50.318Z
+   */
   created?: string;
+  /**
+   * @example
+   * 我是描述内容
+   */
   description?: string;
+  /**
+   * @example
+   * 62e0a88c0axxxx
+   */
   id?: string;
+  /**
+   * @example
+   * false
+   */
   isDeleted?: boolean;
+  /**
+   * @example
+   * false
+   */
   isDemo?: boolean;
+  /**
+   * @example
+   * https://www.xxx.com/xxxx
+   */
   logo?: string;
+  /**
+   * @example
+   * 模板1
+   */
   name?: string;
+  /**
+   * @example
+   * 2022-06-13T07:36:50.318Z
+   */
   updated?: string;
+  /**
+   * @example
+   * organization
+   */
   visible?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7166,13 +8950,45 @@ export class SearchProjectTemplateResponseBodyResult extends $tea.Model {
 }
 
 export class SearchTaskFlowResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 62c25e3b376ecxxxxxxx
+   */
   boundToObjectId?: string;
+  /**
+   * @example
+   * project
+   */
   boundToObjectType?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 07151530111xxxxx
+   */
   creatorId?: string;
+  /**
+   * @example
+   * false
+   */
   isDeleted?: boolean;
+  /**
+   * @example
+   * 工作流1
+   */
   name?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   taskflowId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7206,12 +9022,40 @@ export class SearchTaskFlowResponseBodyResult extends $tea.Model {
 }
 
 export class SearchTaskListResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 0715153011125xxxx
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 描述...
+   */
   description?: string;
+  /**
+   * @example
+   * 62c25e3b376ecxxxxxxx
+   */
   projectId?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   taskListId?: string;
+  /**
+   * @example
+   * 自定义分组1
+   */
   title?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7243,16 +9087,56 @@ export class SearchTaskListResponseBodyResult extends $tea.Model {
 }
 
 export class SearchTaskflowStatusResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 601fdeb17f86xxxxxxxx
+   */
   creatorId?: string;
+  /**
+   * @example
+   * false
+   */
   isDeleted?: boolean;
+  /**
+   * @example
+   * false
+   */
   isTaskflowstatusruleexector?: boolean;
+  /**
+   * @example
+   * start
+   */
   kind?: string;
+  /**
+   * @example
+   * 未开始
+   */
   name?: string;
+  /**
+   * @example
+   * 0
+   */
   pos?: number;
   rejectStatusIds?: string[];
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   taskflowId?: string;
+  /**
+   * @example
+   * 60a2187eb72xxxxxxx
+   */
   taskflowStatusId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7292,8 +9176,20 @@ export class SearchTaskflowStatusResponseBodyResult extends $tea.Model {
 }
 
 export class SearchUserTaskResponseBodyResultCustomFieldsValue extends $tea.Model {
+  /**
+   * @example
+   * 642fb16c4a622b2e3184229c
+   */
   customFieldValueId?: string;
+  /**
+   * @example
+   * 元数据内容
+   */
   metaString?: string;
+  /**
+   * @example
+   * 标题
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7318,6 +9214,10 @@ export class SearchUserTaskResponseBodyResultCustomFieldsValue extends $tea.Mode
 
 export class SearchUserTaskResponseBodyResultCustomFields extends $tea.Model {
   customFieldId?: string;
+  /**
+   * @example
+   * number
+   */
   type?: string;
   value?: SearchUserTaskResponseBodyResultCustomFieldsValue[];
   static names(): { [key: string]: string } {
@@ -7342,33 +9242,113 @@ export class SearchUserTaskResponseBodyResultCustomFields extends $tea.Model {
 }
 
 export class SearchUserTaskResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2023-04-12T03:39:54.918Z
+   */
   accomplishTime?: string;
   ancestorIds?: string[];
+  /**
+   * @example
+   * 任务内容
+   */
   content?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   created?: string;
+  /**
+   * @example
+   * 63a9207a042f7c254f60519c
+   */
   creatorId?: string;
   customFields?: SearchUserTaskResponseBodyResultCustomFields[];
+  /**
+   * @example
+   * 2022-07-05T03:29:34.770Z
+   */
   dueDate?: string;
+  /**
+   * @example
+   * 63a9207a042f7c254f60519c
+   */
   executorId?: string;
   involveMembers?: string[];
   isArchived?: boolean;
   isDone?: boolean;
+  /**
+   * @example
+   * 备注内容
+   */
   note?: string;
+  /**
+   * @example
+   * 644b6f4cca369863fbc8abbb
+   */
   parentTaskId?: string;
   priority?: number;
+  /**
+   * @example
+   * 643394f81502a928dbd5ba37
+   */
   projectId?: string;
   recurrence?: string[];
+  /**
+   * @example
+   * 64099d5b2f404400174d7fc1
+   */
   scenarioFieldConfigId?: string;
+  /**
+   * @example
+   * 64099d5b2f404400174d7fc1
+   */
   sprintId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   startDate?: string;
+  /**
+   * @example
+   * 0
+   */
   storyPoint?: string;
   tagIds?: string[];
+  /**
+   * @example
+   * 642befe827feb683f91bd529
+   */
   taskId?: string;
+  /**
+   * @example
+   * 6436278ea14fe435351668a2
+   */
   taskListId?: string;
+  /**
+   * @example
+   * 6436278ea14fe435351668a4
+   */
   taskStageId?: string;
+  /**
+   * @example
+   * 64099d5b2f404400174d7fbb
+   */
   taskflowStatusId?: string;
+  /**
+   * @example
+   * 3
+   */
   uniqueId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
+  /**
+   * @example
+   * projectMembers
+   */
   visible?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7442,6 +9422,10 @@ export class SearchUserTaskResponseBodyResult extends $tea.Model {
 }
 
 export class SuspendProjectResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-06-08T07:32:48.958Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7461,6 +9445,10 @@ export class SuspendProjectResponseBodyResult extends $tea.Model {
 }
 
 export class UnSuspendProjectResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-06-08T07:32:48.958Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7480,6 +9468,13 @@ export class UnSuspendProjectResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateCustomfieldValueRequestValue extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 我是具体显示值
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7499,6 +9494,10 @@ export class UpdateCustomfieldValueRequestValue extends $tea.Model {
 }
 
 export class UpdateCustomfieldValueResponseBodyResultCustomFieldsValue extends $tea.Model {
+  /**
+   * @example
+   * 我是具体显示值
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7518,6 +9517,10 @@ export class UpdateCustomfieldValueResponseBodyResultCustomFieldsValue extends $
 }
 
 export class UpdateCustomfieldValueResponseBodyResultCustomFields extends $tea.Model {
+  /**
+   * @example
+   * 62fb0b77xxxxx
+   */
   customFieldId?: string;
   value?: UpdateCustomfieldValueResponseBodyResultCustomFieldsValue[];
   static names(): { [key: string]: string } {
@@ -7559,7 +9562,15 @@ export class UpdateCustomfieldValueResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateOrganizationTaskContentResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 后天交周报
+   */
   content?: string;
+  /**
+   * @example
+   * 2022-06-08T07:32:48.958Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7581,7 +9592,15 @@ export class UpdateOrganizationTaskContentResponseBodyResult extends $tea.Model 
 }
 
 export class UpdateOrganizationTaskDueDateResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-06-13T03:30:42.830Z
+   */
   dueDate?: string;
+  /**
+   * @example
+   * 2022-06-13T03:30:42.830Z
+   */
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7603,8 +9622,20 @@ export class UpdateOrganizationTaskDueDateResponseBodyResult extends $tea.Model 
 }
 
 export class UpdateOrganizationTaskExecutorResponseBodyResultExecutor extends $tea.Model {
+  /**
+   * @example
+   * http://xxxxx
+   */
   avatarUrl?: string;
+  /**
+   * @example
+   * 鬼斩
+   */
   name?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7628,8 +9659,20 @@ export class UpdateOrganizationTaskExecutorResponseBodyResultExecutor extends $t
 }
 
 export class UpdateOrganizationTaskExecutorResponseBodyResultInvolvers extends $tea.Model {
+  /**
+   * @example
+   * http://xxxxx
+   */
   avatarUrl?: string;
+  /**
+   * @example
+   * 鬼斩
+   */
   name?: string;
+  /**
+   * @example
+   * 173xxxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7654,8 +9697,16 @@ export class UpdateOrganizationTaskExecutorResponseBodyResultInvolvers extends $
 
 export class UpdateOrganizationTaskExecutorResponseBodyResult extends $tea.Model {
   executor?: UpdateOrganizationTaskExecutorResponseBodyResultExecutor;
+  /**
+   * @example
+   * 173xxxx
+   */
   executorId?: string;
   involvers?: UpdateOrganizationTaskExecutorResponseBodyResultInvolvers[];
+  /**
+   * @example
+   * 2022-06-08T03:00:17.031Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7681,8 +9732,20 @@ export class UpdateOrganizationTaskExecutorResponseBodyResult extends $tea.Model
 }
 
 export class UpdateOrganizationTaskInvolveMembersResponseBodyResultInvolvers extends $tea.Model {
+  /**
+   * @example
+   * http://xxxx
+   */
   avatarUrl?: string;
+  /**
+   * @example
+   * 鬼斩
+   */
   name?: string;
+  /**
+   * @example
+   * 173xxxxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7707,6 +9770,10 @@ export class UpdateOrganizationTaskInvolveMembersResponseBodyResultInvolvers ext
 
 export class UpdateOrganizationTaskInvolveMembersResponseBodyResult extends $tea.Model {
   involvers?: UpdateOrganizationTaskInvolveMembersResponseBodyResultInvolvers[];
+  /**
+   * @example
+   * 2022-06-13T05:33:42.826Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7728,7 +9795,15 @@ export class UpdateOrganizationTaskInvolveMembersResponseBodyResult extends $tea
 }
 
 export class UpdateOrganizationTaskNoteResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 我是一条备注哦
+   */
   note?: string;
+  /**
+   * @example
+   * 2022-06-13T05:48:45.788Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7750,7 +9825,15 @@ export class UpdateOrganizationTaskNoteResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateOrganizationTaskPriorityResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * -10
+   */
   priority?: number;
+  /**
+   * @example
+   * 2022-06-13T06:02:44.835Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7772,7 +9855,15 @@ export class UpdateOrganizationTaskPriorityResponseBodyResult extends $tea.Model
 }
 
 export class UpdateOrganizationTaskStatusResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   isDone?: boolean;
+  /**
+   * @example
+   * 2022-06-08T07:32:48.958Z
+   */
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7794,6 +9885,10 @@ export class UpdateOrganizationTaskStatusResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateProjectGroupResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   ok?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -7813,7 +9908,15 @@ export class UpdateProjectGroupResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateTaskContentResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 更改后的标题
+   */
   content?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7835,7 +9938,15 @@ export class UpdateTaskContentResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateTaskDueDateResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   dueDate?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7857,7 +9968,15 @@ export class UpdateTaskDueDateResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateTaskExecutorResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 0517xxxxxxx
+   */
   executorId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7880,6 +9999,10 @@ export class UpdateTaskExecutorResponseBodyResult extends $tea.Model {
 
 export class UpdateTaskInvolvemembersResponseBodyResult extends $tea.Model {
   involveMembers?: string[];
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7901,7 +10024,15 @@ export class UpdateTaskInvolvemembersResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateTaskNoteResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 更改后的备注
+   */
   note?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7923,7 +10054,15 @@ export class UpdateTaskNoteResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateTaskPriorityResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   priority?: number;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7945,12 +10084,40 @@ export class UpdateTaskPriorityResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateTaskStageResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   accomplishTime?: string;
+  /**
+   * @example
+   * false
+   */
   isDone?: boolean;
+  /**
+   * @example
+   * 64a5301e420637003f5dxxxx
+   */
   projectId?: string;
+  /**
+   * @example
+   * 63a5301e420637003f5dxxxx
+   */
   taskId?: string;
+  /**
+   * @example
+   * 66a5301e420637003f5dxxxx
+   */
   taskListId?: string;
+  /**
+   * @example
+   * 69a5301e420637003f5dxxxx
+   */
   taskStageId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7982,7 +10149,15 @@ export class UpdateTaskStageResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateTaskStartdateResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   startDate?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8004,6 +10179,10 @@ export class UpdateTaskStartdateResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateTaskTaskflowstatusResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updated?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8023,19 +10202,75 @@ export class UpdateTaskTaskflowstatusResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateWorkTimeApproveResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 6446626a9fb5a70c05fc3fc3
+   */
   approveOpenId?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   createdAt?: string;
+  /**
+   * @example
+   * 6446626a9fb5a70c05fc3fc3
+   */
   creatorId?: string;
+  /**
+   * @example
+   * 2023-04-04T00:00:00.000Z
+   */
   finishTime?: string;
+  /**
+   * @example
+   * 12345
+   */
   instanceId?: string;
+  /**
+   * @example
+   * dingxxxx
+   */
   organizationId?: string;
+  /**
+   * @example
+   * NEW
+   */
   status?: string;
+  /**
+   * @example
+   * 2023-04-04T00:00:00.000Z
+   */
   submitTime?: string;
+  /**
+   * @example
+   * 6446626a9fb5a70c05fc3fc3
+   */
   taskId?: string;
+  /**
+   * @example
+   * 10000
+   */
   time?: number;
+  /**
+   * @example
+   * xxx用工申请
+   */
   title?: string;
+  /**
+   * @example
+   * 2022-07-04T03:29:34.770Z
+   */
   updatedAt?: string;
+  /**
+   * @example
+   * https://xxxbpms.xxx/xxxx
+   */
   url?: string;
+  /**
+   * @example
+   * 6446626a9fb5a70c05fc3fc3
+   */
   userId?: string;
   workTimeIds?: string[];
   static names(): { [key: string]: string } {
@@ -8085,12 +10320,11 @@ export class UpdateWorkTimeApproveResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -8100,12 +10334,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 增加项目成员
-   *
-   * @param request AddProjectMemberRequest
-   * @param headers AddProjectMemberHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddProjectMemberResponse
+   * 增加项目成员
+   * 
+   * @param request - AddProjectMemberRequest
+   * @param headers - AddProjectMemberHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddProjectMemberResponse
    */
   async addProjectMemberWithOptions(userId: string, projectId: string, request: AddProjectMemberRequest, headers: AddProjectMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddProjectMemberResponse> {
     Util.validateModel(request);
@@ -8142,10 +10376,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 增加项目成员
-   *
-   * @param request AddProjectMemberRequest
-   * @return AddProjectMemberResponse
+   * 增加项目成员
+   * 
+   * @param request - AddProjectMemberRequest
+   * @returns AddProjectMemberResponse
    */
   async addProjectMember(userId: string, projectId: string, request: AddProjectMemberRequest): Promise<AddProjectMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8154,11 +10388,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 项目放入回收站
-   *
-   * @param headers ArchiveProjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ArchiveProjectResponse
+   * 项目放入回收站
+   * 
+   * @param headers - ArchiveProjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ArchiveProjectResponse
    */
   async archiveProjectWithOptions(userId: string, projectId: string, headers: ArchiveProjectHeaders, runtime: $Util.RuntimeOptions): Promise<ArchiveProjectResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -8188,9 +10422,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 项目放入回收站
-   *
-   * @return ArchiveProjectResponse
+   * 项目放入回收站
+   * @returns ArchiveProjectResponse
    */
   async archiveProject(userId: string, projectId: string): Promise<ArchiveProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8199,11 +10432,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 任务迁移至回收站
-   *
-   * @param headers ArchiveTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ArchiveTaskResponse
+   * 任务迁移至回收站
+   * 
+   * @param headers - ArchiveTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ArchiveTaskResponse
    */
   async archiveTaskWithOptions(userId: string, taskId: string, headers: ArchiveTaskHeaders, runtime: $Util.RuntimeOptions): Promise<ArchiveTaskResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -8233,9 +10466,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 任务迁移至回收站
-   *
-   * @return ArchiveTaskResponse
+   * 任务迁移至回收站
+   * @returns ArchiveTaskResponse
    */
   async archiveTask(userId: string, taskId: string): Promise<ArchiveTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8244,12 +10476,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建自由任务
-   *
-   * @param request CreateOrganizationTaskRequest
-   * @param headers CreateOrganizationTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateOrganizationTaskResponse
+   * 创建自由任务
+   * 
+   * @param request - CreateOrganizationTaskRequest
+   * @param headers - CreateOrganizationTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateOrganizationTaskResponse
    */
   async createOrganizationTaskWithOptions(userId: string, request: CreateOrganizationTaskRequest, headers: CreateOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrganizationTaskResponse> {
     Util.validateModel(request);
@@ -8322,10 +10554,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建自由任务
-   *
-   * @param request CreateOrganizationTaskRequest
-   * @return CreateOrganizationTaskResponse
+   * 创建自由任务
+   * 
+   * @param request - CreateOrganizationTaskRequest
+   * @returns CreateOrganizationTaskResponse
    */
   async createOrganizationTask(userId: string, request: CreateOrganizationTaskRequest): Promise<CreateOrganizationTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8334,12 +10566,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 录入计划工时
-   *
-   * @param request CreatePlanTimeRequest
-   * @param headers CreatePlanTimeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreatePlanTimeResponse
+   * 录入计划工时
+   * 
+   * @param request - CreatePlanTimeRequest
+   * @param headers - CreatePlanTimeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreatePlanTimeResponse
    */
   async createPlanTimeWithOptions(userId: string, request: CreatePlanTimeRequest, headers: CreatePlanTimeHeaders, runtime: $Util.RuntimeOptions): Promise<CreatePlanTimeResponse> {
     Util.validateModel(request);
@@ -8414,10 +10646,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 录入计划工时
-   *
-   * @param request CreatePlanTimeRequest
-   * @return CreatePlanTimeResponse
+   * 录入计划工时
+   * 
+   * @param request - CreatePlanTimeRequest
+   * @returns CreatePlanTimeResponse
    */
   async createPlanTime(userId: string, request: CreatePlanTimeRequest): Promise<CreatePlanTimeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8426,12 +10658,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建项目
-   *
-   * @param request CreateProjectRequest
-   * @param headers CreateProjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateProjectResponse
+   * 创建项目
+   * 
+   * @param request - CreateProjectRequest
+   * @param headers - CreateProjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateProjectResponse
    */
   async createProjectWithOptions(userId: string, request: CreateProjectRequest, headers: CreateProjectHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProjectResponse> {
     Util.validateModel(request);
@@ -8468,10 +10700,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建项目
-   *
-   * @param request CreateProjectRequest
-   * @return CreateProjectResponse
+   * 创建项目
+   * 
+   * @param request - CreateProjectRequest
+   * @returns CreateProjectResponse
    */
   async createProject(userId: string, request: CreateProjectRequest): Promise<CreateProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8480,12 +10712,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据项目模板创建项目
-   *
-   * @param request CreateProjectByTemplateRequest
-   * @param headers CreateProjectByTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateProjectByTemplateResponse
+   * 根据项目模板创建项目
+   * 
+   * @param request - CreateProjectByTemplateRequest
+   * @param headers - CreateProjectByTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateProjectByTemplateResponse
    */
   async createProjectByTemplateWithOptions(userId: string, request: CreateProjectByTemplateRequest, headers: CreateProjectByTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProjectByTemplateResponse> {
     Util.validateModel(request);
@@ -8526,10 +10758,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据项目模板创建项目
-   *
-   * @param request CreateProjectByTemplateRequest
-   * @return CreateProjectByTemplateResponse
+   * 根据项目模板创建项目
+   * 
+   * @param request - CreateProjectByTemplateRequest
+   * @returns CreateProjectByTemplateResponse
    */
   async createProjectByTemplate(userId: string, request: CreateProjectByTemplateRequest): Promise<CreateProjectByTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8538,12 +10770,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建或更新项目概览中自定义字段值
-   *
-   * @param request CreateProjectCustomfieldStatusRequest
-   * @param headers CreateProjectCustomfieldStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateProjectCustomfieldStatusResponse
+   * 创建或更新项目概览中自定义字段值
+   * 
+   * @param request - CreateProjectCustomfieldStatusRequest
+   * @param headers - CreateProjectCustomfieldStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateProjectCustomfieldStatusResponse
    */
   async createProjectCustomfieldStatusWithOptions(userId: string, projectId: string, request: CreateProjectCustomfieldStatusRequest, headers: CreateProjectCustomfieldStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProjectCustomfieldStatusResponse> {
     Util.validateModel(request);
@@ -8592,10 +10824,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建或更新项目概览中自定义字段值
-   *
-   * @param request CreateProjectCustomfieldStatusRequest
-   * @return CreateProjectCustomfieldStatusResponse
+   * 创建或更新项目概览中自定义字段值
+   * 
+   * @param request - CreateProjectCustomfieldStatusRequest
+   * @returns CreateProjectCustomfieldStatusResponse
    */
   async createProjectCustomfieldStatus(userId: string, projectId: string, request: CreateProjectCustomfieldStatusRequest): Promise<CreateProjectCustomfieldStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8604,12 +10836,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建项目任务
-   *
-   * @param request CreateTaskRequest
-   * @param headers CreateTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateTaskResponse
+   * 创建项目任务
+   * 
+   * @param request - CreateTaskRequest
+   * @param headers - CreateTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateTaskResponse
    */
   async createTaskWithOptions(userId: string, request: CreateTaskRequest, headers: CreateTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTaskResponse> {
     Util.validateModel(request);
@@ -8690,10 +10922,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建项目任务
-   *
-   * @param request CreateTaskRequest
-   * @return CreateTaskResponse
+   * 创建项目任务
+   * 
+   * @param request - CreateTaskRequest
+   * @returns CreateTaskResponse
    */
   async createTask(userId: string, request: CreateTaskRequest): Promise<CreateTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8702,12 +10934,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建任务关联对象
-   *
-   * @param request CreateTaskObjectLinkRequest
-   * @param headers CreateTaskObjectLinkHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateTaskObjectLinkResponse
+   * 创建任务关联对象
+   * 
+   * @param request - CreateTaskObjectLinkRequest
+   * @param headers - CreateTaskObjectLinkHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateTaskObjectLinkResponse
    */
   async createTaskObjectLinkWithOptions(userId: string, taskId: string, request: CreateTaskObjectLinkRequest, headers: CreateTaskObjectLinkHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTaskObjectLinkResponse> {
     Util.validateModel(request);
@@ -8744,10 +10976,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建任务关联对象
-   *
-   * @param request CreateTaskObjectLinkRequest
-   * @return CreateTaskObjectLinkResponse
+   * 创建任务关联对象
+   * 
+   * @param request - CreateTaskObjectLinkRequest
+   * @returns CreateTaskObjectLinkResponse
    */
   async createTaskObjectLink(userId: string, taskId: string, request: CreateTaskObjectLinkRequest): Promise<CreateTaskObjectLinkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8756,12 +10988,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 录入实际工时接口
-   *
-   * @param request CreateWorkTimeRequest
-   * @param headers CreateWorkTimeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateWorkTimeResponse
+   * 录入实际工时接口
+   * 
+   * @param request - CreateWorkTimeRequest
+   * @param headers - CreateWorkTimeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateWorkTimeResponse
    */
   async createWorkTimeWithOptions(userId: string, request: CreateWorkTimeRequest, headers: CreateWorkTimeHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkTimeResponse> {
     Util.validateModel(request);
@@ -8840,10 +11072,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 录入实际工时接口
-   *
-   * @param request CreateWorkTimeRequest
-   * @return CreateWorkTimeResponse
+   * 录入实际工时接口
+   * 
+   * @param request - CreateWorkTimeRequest
+   * @returns CreateWorkTimeResponse
    */
   async createWorkTime(userId: string, request: CreateWorkTimeRequest): Promise<CreateWorkTimeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8852,12 +11084,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建实际工时审批对象。
-   *
-   * @param request CreateWorkTimeApproveRequest
-   * @param headers CreateWorkTimeApproveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateWorkTimeApproveResponse
+   * 创建实际工时审批对象。
+   * 
+   * @param request - CreateWorkTimeApproveRequest
+   * @param headers - CreateWorkTimeApproveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateWorkTimeApproveResponse
    */
   async createWorkTimeApproveWithOptions(userId: string, request: CreateWorkTimeApproveRequest, headers: CreateWorkTimeApproveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkTimeApproveResponse> {
     Util.validateModel(request);
@@ -8894,10 +11126,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建实际工时审批对象。
-   *
-   * @param request CreateWorkTimeApproveRequest
-   * @return CreateWorkTimeApproveResponse
+   * 创建实际工时审批对象。
+   * 
+   * @param request - CreateWorkTimeApproveRequest
+   * @returns CreateWorkTimeApproveResponse
    */
   async createWorkTimeApprove(userId: string, request: CreateWorkTimeApproveRequest): Promise<CreateWorkTimeApproveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8906,12 +11138,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除项目成员
-   *
-   * @param request DeleteProjectMemberRequest
-   * @param headers DeleteProjectMemberHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteProjectMemberResponse
+   * 删除项目成员
+   * 
+   * @param request - DeleteProjectMemberRequest
+   * @param headers - DeleteProjectMemberHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteProjectMemberResponse
    */
   async deleteProjectMemberWithOptions(userId: string, projectId: string, request: DeleteProjectMemberRequest, headers: DeleteProjectMemberHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteProjectMemberResponse> {
     Util.validateModel(request);
@@ -8948,10 +11180,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除项目成员
-   *
-   * @param request DeleteProjectMemberRequest
-   * @return DeleteProjectMemberResponse
+   * 删除项目成员
+   * 
+   * @param request - DeleteProjectMemberRequest
+   * @returns DeleteProjectMemberResponse
    */
   async deleteProjectMember(userId: string, projectId: string, request: DeleteProjectMemberRequest): Promise<DeleteProjectMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8960,11 +11192,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除任务
-   *
-   * @param headers DeleteTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteTaskResponse
+   * 删除任务
+   * 
+   * @param headers - DeleteTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteTaskResponse
    */
   async deleteTaskWithOptions(userId: string, taskId: string, headers: DeleteTaskHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTaskResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -8994,9 +11226,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除任务
-   *
-   * @return DeleteTaskResponse
+   * 删除任务
+   * @returns DeleteTaskResponse
    */
   async deleteTask(userId: string, taskId: string): Promise<DeleteTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9005,12 +11236,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据企业Id获取部门
-   *
-   * @param request GetDeptsByOrgIdRequest
-   * @param headers GetDeptsByOrgIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDeptsByOrgIdResponse
+   * 根据企业Id获取部门
+   * 
+   * @param request - GetDeptsByOrgIdRequest
+   * @param headers - GetDeptsByOrgIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDeptsByOrgIdResponse
    */
   async getDeptsByOrgIdWithOptions(request: GetDeptsByOrgIdRequest, headers: GetDeptsByOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetDeptsByOrgIdResponse> {
     Util.validateModel(request);
@@ -9059,10 +11290,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据企业Id获取部门
-   *
-   * @param request GetDeptsByOrgIdRequest
-   * @return GetDeptsByOrgIdResponse
+   * 根据企业Id获取部门
+   * 
+   * @param request - GetDeptsByOrgIdRequest
+   * @returns GetDeptsByOrgIdResponse
    */
   async getDeptsByOrgId(request: GetDeptsByOrgIdRequest): Promise<GetDeptsByOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9071,12 +11302,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据企业Id获取企业内的员工信息
-   *
-   * @param request GetEmpsByOrgIdRequest
-   * @param headers GetEmpsByOrgIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetEmpsByOrgIdResponse
+   * 根据企业Id获取企业内的员工信息
+   * 
+   * @param request - GetEmpsByOrgIdRequest
+   * @param headers - GetEmpsByOrgIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetEmpsByOrgIdResponse
    */
   async getEmpsByOrgIdWithOptions(request: GetEmpsByOrgIdRequest, headers: GetEmpsByOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmpsByOrgIdResponse> {
     Util.validateModel(request);
@@ -9129,10 +11360,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据企业Id获取企业内的员工信息
-   *
-   * @param request GetEmpsByOrgIdRequest
-   * @return GetEmpsByOrgIdResponse
+   * 根据企业Id获取企业内的员工信息
+   * 
+   * @param request - GetEmpsByOrgIdRequest
+   * @returns GetEmpsByOrgIdResponse
    */
   async getEmpsByOrgId(request: GetEmpsByOrgIdRequest): Promise<GetEmpsByOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9141,12 +11372,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取任务详情
-   *
-   * @param request GetOrganizatioTaskByIdsRequest
-   * @param headers GetOrganizatioTaskByIdsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetOrganizatioTaskByIdsResponse
+   * 批量获取任务详情
+   * 
+   * @param request - GetOrganizatioTaskByIdsRequest
+   * @param headers - GetOrganizatioTaskByIdsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOrganizatioTaskByIdsResponse
    */
   async getOrganizatioTaskByIdsWithOptions(userId: string, request: GetOrganizatioTaskByIdsRequest, headers: GetOrganizatioTaskByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizatioTaskByIdsResponse> {
     Util.validateModel(request);
@@ -9183,10 +11414,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取任务详情
-   *
-   * @param request GetOrganizatioTaskByIdsRequest
-   * @return GetOrganizatioTaskByIdsResponse
+   * 批量获取任务详情
+   * 
+   * @param request - GetOrganizatioTaskByIdsRequest
+   * @returns GetOrganizatioTaskByIdsResponse
    */
   async getOrganizatioTaskByIds(userId: string, request: GetOrganizatioTaskByIdsRequest): Promise<GetOrganizatioTaskByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9195,11 +11426,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业优先级列表
-   *
-   * @param headers GetOrganizationPriorityListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetOrganizationPriorityListResponse
+   * 获取企业优先级列表
+   * 
+   * @param headers - GetOrganizationPriorityListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOrganizationPriorityListResponse
    */
   async getOrganizationPriorityListWithOptions(userId: string, headers: GetOrganizationPriorityListHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationPriorityListResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9229,9 +11460,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业优先级列表
-   *
-   * @return GetOrganizationPriorityListResponse
+   * 获取企业优先级列表
+   * @returns GetOrganizationPriorityListResponse
    */
   async getOrganizationPriorityList(userId: string): Promise<GetOrganizationPriorityListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9240,11 +11470,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取自由任务详情
-   *
-   * @param headers GetOrganizationTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetOrganizationTaskResponse
+   * 获取自由任务详情
+   * 
+   * @param headers - GetOrganizationTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOrganizationTaskResponse
    */
   async getOrganizationTaskWithOptions(taskId: string, userId: string, headers: GetOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationTaskResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9274,9 +11504,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取自由任务详情
-   *
-   * @return GetOrganizationTaskResponse
+   * 获取自由任务详情
+   * @returns GetOrganizationTaskResponse
    */
   async getOrganizationTask(taskId: string, userId: string): Promise<GetOrganizationTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9285,12 +11514,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询可见的项目分组
-   *
-   * @param request GetProjectGroupRequest
-   * @param headers GetProjectGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetProjectGroupResponse
+   * 查询可见的项目分组
+   * 
+   * @param request - GetProjectGroupRequest
+   * @param headers - GetProjectGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProjectGroupResponse
    */
   async getProjectGroupWithOptions(userId: string, request: GetProjectGroupRequest, headers: GetProjectGroupHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectGroupResponse> {
     Util.validateModel(request);
@@ -9331,10 +11560,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询可见的项目分组
-   *
-   * @param request GetProjectGroupRequest
-   * @return GetProjectGroupResponse
+   * 查询可见的项目分组
+   * 
+   * @param request - GetProjectGroupRequest
+   * @returns GetProjectGroupResponse
    */
   async getProjectGroup(userId: string, request: GetProjectGroupRequest): Promise<GetProjectGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9343,12 +11572,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取项目成员
-   *
-   * @param request GetProjectMemebersRequest
-   * @param headers GetProjectMemebersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetProjectMemebersResponse
+   * 获取项目成员
+   * 
+   * @param request - GetProjectMemebersRequest
+   * @param headers - GetProjectMemebersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProjectMemebersResponse
    */
   async getProjectMemebersWithOptions(userId: string, projectId: string, request: GetProjectMemebersRequest, headers: GetProjectMemebersHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectMemebersResponse> {
     Util.validateModel(request);
@@ -9397,10 +11626,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取项目成员
-   *
-   * @param request GetProjectMemebersRequest
-   * @return GetProjectMemebersResponse
+   * 获取项目成员
+   * 
+   * @param request - GetProjectMemebersRequest
+   * @returns GetProjectMemebersResponse
    */
   async getProjectMemebers(userId: string, projectId: string, request: GetProjectMemebersRequest): Promise<GetProjectMemebersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9409,11 +11638,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询项目状态
-   *
-   * @param headers GetProjectStatusListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetProjectStatusListResponse
+   * 查询项目状态
+   * 
+   * @param headers - GetProjectStatusListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProjectStatusListResponse
    */
   async getProjectStatusListWithOptions(userId: string, projectId: string, headers: GetProjectStatusListHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectStatusListResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9443,9 +11672,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询项目状态
-   *
-   * @return GetProjectStatusListResponse
+   * 查询项目状态
+   * @returns GetProjectStatusListResponse
    */
   async getProjectStatusList(userId: string, projectId: string): Promise<GetProjectStatusListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9454,12 +11682,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取任务详情
-   *
-   * @param request GetTaskByIdsRequest
-   * @param headers GetTaskByIdsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTaskByIdsResponse
+   * 获取任务详情
+   * 
+   * @param request - GetTaskByIdsRequest
+   * @param headers - GetTaskByIdsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTaskByIdsResponse
    */
   async getTaskByIdsWithOptions(userId: string, request: GetTaskByIdsRequest, headers: GetTaskByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskByIdsResponse> {
     Util.validateModel(request);
@@ -9500,10 +11728,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取任务详情
-   *
-   * @param request GetTaskByIdsRequest
-   * @return GetTaskByIdsResponse
+   * 获取任务详情
+   * 
+   * @param request - GetTaskByIdsRequest
+   * @returns GetTaskByIdsResponse
    */
   async getTaskByIds(userId: string, request: GetTaskByIdsRequest): Promise<GetTaskByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9512,12 +11740,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取Teambition企业Id
-   *
-   * @param request GetTbOrgIdByDingOrgIdRequest
-   * @param headers GetTbOrgIdByDingOrgIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTbOrgIdByDingOrgIdResponse
+   * 获取Teambition企业Id
+   * 
+   * @param request - GetTbOrgIdByDingOrgIdRequest
+   * @param headers - GetTbOrgIdByDingOrgIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTbOrgIdByDingOrgIdResponse
    */
   async getTbOrgIdByDingOrgIdWithOptions(request: GetTbOrgIdByDingOrgIdRequest, headers: GetTbOrgIdByDingOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbOrgIdByDingOrgIdResponse> {
     Util.validateModel(request);
@@ -9554,10 +11782,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取Teambition企业Id
-   *
-   * @param request GetTbOrgIdByDingOrgIdRequest
-   * @return GetTbOrgIdByDingOrgIdResponse
+   * 获取Teambition企业Id
+   * 
+   * @param request - GetTbOrgIdByDingOrgIdRequest
+   * @returns GetTbOrgIdByDingOrgIdResponse
    */
   async getTbOrgIdByDingOrgId(request: GetTbOrgIdByDingOrgIdRequest): Promise<GetTbOrgIdByDingOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9566,12 +11794,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取项目灰度标
-   *
-   * @param request GetTbProjectGrayRequest
-   * @param headers GetTbProjectGrayHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTbProjectGrayResponse
+   * 获取项目灰度标
+   * 
+   * @param request - GetTbProjectGrayRequest
+   * @param headers - GetTbProjectGrayHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTbProjectGrayResponse
    */
   async getTbProjectGrayWithOptions(request: GetTbProjectGrayRequest, headers: GetTbProjectGrayHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbProjectGrayResponse> {
     Util.validateModel(request);
@@ -9628,10 +11856,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取项目灰度标
-   *
-   * @param request GetTbProjectGrayRequest
-   * @return GetTbProjectGrayResponse
+   * 获取项目灰度标
+   * 
+   * @param request - GetTbProjectGrayRequest
+   * @returns GetTbProjectGrayResponse
    */
   async getTbProjectGray(request: GetTbProjectGrayRequest): Promise<GetTbProjectGrayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9640,11 +11868,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取项目来源
-   *
-   * @param headers GetTbProjectSourceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTbProjectSourceResponse
+   * 获取项目来源
+   * 
+   * @param headers - GetTbProjectSourceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTbProjectSourceResponse
    */
   async getTbProjectSourceWithOptions(headers: GetTbProjectSourceHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbProjectSourceResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9694,9 +11922,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取项目来源
-   *
-   * @return GetTbProjectSourceResponse
+   * 获取项目来源
+   * @returns GetTbProjectSourceResponse
    */
   async getTbProjectSource(): Promise<GetTbProjectSourceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9705,12 +11932,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据钉钉UserId获取Teambition用户Id
-   *
-   * @param request GetTbUserIdByStaffIdRequest
-   * @param headers GetTbUserIdByStaffIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTbUserIdByStaffIdResponse
+   * 根据钉钉UserId获取Teambition用户Id
+   * 
+   * @param request - GetTbUserIdByStaffIdRequest
+   * @param headers - GetTbUserIdByStaffIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTbUserIdByStaffIdResponse
    */
   async getTbUserIdByStaffIdWithOptions(request: GetTbUserIdByStaffIdRequest, headers: GetTbUserIdByStaffIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbUserIdByStaffIdResponse> {
     Util.validateModel(request);
@@ -9751,10 +11978,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据钉钉UserId获取Teambition用户Id
-   *
-   * @param request GetTbUserIdByStaffIdRequest
-   * @return GetTbUserIdByStaffIdResponse
+   * 根据钉钉UserId获取Teambition用户Id
+   * 
+   * @param request - GetTbUserIdByStaffIdRequest
+   * @returns GetTbUserIdByStaffIdResponse
    */
   async getTbUserIdByStaffId(request: GetTbUserIdByStaffIdRequest): Promise<GetTbUserIdByStaffIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9763,12 +11990,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户加入的项目
-   *
-   * @param request GetUserJoinedProjectRequest
-   * @param headers GetUserJoinedProjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserJoinedProjectResponse
+   * 获取用户加入的项目
+   * 
+   * @param request - GetUserJoinedProjectRequest
+   * @param headers - GetUserJoinedProjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserJoinedProjectResponse
    */
   async getUserJoinedProjectWithOptions(userId: string, request: GetUserJoinedProjectRequest, headers: GetUserJoinedProjectHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserJoinedProjectResponse> {
     Util.validateModel(request);
@@ -9809,10 +12036,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户加入的项目
-   *
-   * @param request GetUserJoinedProjectRequest
-   * @return GetUserJoinedProjectResponse
+   * 获取用户加入的项目
+   * 
+   * @param request - GetUserJoinedProjectRequest
+   * @returns GetUserJoinedProjectResponse
    */
   async getUserJoinedProject(userId: string, request: GetUserJoinedProjectRequest): Promise<GetUserJoinedProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9821,12 +12048,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询项目
-   *
-   * @param request QueryProjectRequest
-   * @param headers QueryProjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryProjectResponse
+   * 查询项目
+   * 
+   * @param request - QueryProjectRequest
+   * @param headers - QueryProjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryProjectResponse
    */
   async queryProjectWithOptions(userId: string, request: QueryProjectRequest, headers: QueryProjectHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProjectResponse> {
     Util.validateModel(request);
@@ -9879,10 +12106,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询项目
-   *
-   * @param request QueryProjectRequest
-   * @return QueryProjectResponse
+   * 查询项目
+   * 
+   * @param request - QueryProjectRequest
+   * @returns QueryProjectResponse
    */
   async queryProject(userId: string, request: QueryProjectRequest): Promise<QueryProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9891,12 +12118,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询项目中的任务
-   *
-   * @param request QueryTaskOfProjectRequest
-   * @param headers QueryTaskOfProjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryTaskOfProjectResponse
+   * 查询项目中的任务
+   * 
+   * @param request - QueryTaskOfProjectRequest
+   * @param headers - QueryTaskOfProjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryTaskOfProjectResponse
    */
   async queryTaskOfProjectWithOptions(userId: string, projectId: string, request: QueryTaskOfProjectRequest, headers: QueryTaskOfProjectHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTaskOfProjectResponse> {
     Util.validateModel(request);
@@ -9941,10 +12168,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询项目中的任务
-   *
-   * @param request QueryTaskOfProjectRequest
-   * @return QueryTaskOfProjectResponse
+   * 查询项目中的任务
+   * 
+   * @param request - QueryTaskOfProjectRequest
+   * @returns QueryTaskOfProjectResponse
    */
   async queryTaskOfProject(userId: string, projectId: string, request: QueryTaskOfProjectRequest): Promise<QueryTaskOfProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9953,12 +12180,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取任务列表
-   *
-   * @param request SeachTaskStageRequest
-   * @param headers SeachTaskStageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SeachTaskStageResponse
+   * 获取任务列表
+   * 
+   * @param request - SeachTaskStageRequest
+   * @param headers - SeachTaskStageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SeachTaskStageResponse
    */
   async seachTaskStageWithOptions(userId: string, projectId: string, request: SeachTaskStageRequest, headers: SeachTaskStageHeaders, runtime: $Util.RuntimeOptions): Promise<SeachTaskStageResponse> {
     Util.validateModel(request);
@@ -10011,10 +12238,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取任务列表
-   *
-   * @param request SeachTaskStageRequest
-   * @return SeachTaskStageResponse
+   * 获取任务列表
+   * 
+   * @param request - SeachTaskStageRequest
+   * @returns SeachTaskStageResponse
    */
   async seachTaskStage(userId: string, projectId: string, request: SeachTaskStageRequest): Promise<SeachTaskStageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10023,12 +12250,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过TQL搜索自由任务和项目任务ID。
-   *
-   * @param request SearchAllTasksByTqlRequest
-   * @param headers SearchAllTasksByTqlHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchAllTasksByTqlResponse
+   * 通过TQL搜索自由任务和项目任务ID。
+   * 
+   * @param request - SearchAllTasksByTqlRequest
+   * @param headers - SearchAllTasksByTqlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchAllTasksByTqlResponse
    */
   async searchAllTasksByTqlWithOptions(userId: string, request: SearchAllTasksByTqlRequest, headers: SearchAllTasksByTqlHeaders, runtime: $Util.RuntimeOptions): Promise<SearchAllTasksByTqlResponse> {
     Util.validateModel(request);
@@ -10073,10 +12300,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过TQL搜索自由任务和项目任务ID。
-   *
-   * @param request SearchAllTasksByTqlRequest
-   * @return SearchAllTasksByTqlResponse
+   * 通过TQL搜索自由任务和项目任务ID。
+   * 
+   * @param request - SearchAllTasksByTqlRequest
+   * @returns SearchAllTasksByTqlResponse
    */
   async searchAllTasksByTql(userId: string, request: SearchAllTasksByTqlRequest): Promise<SearchAllTasksByTqlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10085,12 +12312,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询企业自定义字段
-   *
-   * @param request SearchOranizationCustomfieldRequest
-   * @param headers SearchOranizationCustomfieldHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchOranizationCustomfieldResponse
+   * 查询企业自定义字段
+   * 
+   * @param request - SearchOranizationCustomfieldRequest
+   * @param headers - SearchOranizationCustomfieldHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchOranizationCustomfieldResponse
    */
   async searchOranizationCustomfieldWithOptions(userId: string, request: SearchOranizationCustomfieldRequest, headers: SearchOranizationCustomfieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchOranizationCustomfieldResponse> {
     Util.validateModel(request);
@@ -10147,10 +12374,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询企业自定义字段
-   *
-   * @param request SearchOranizationCustomfieldRequest
-   * @return SearchOranizationCustomfieldResponse
+   * 查询企业自定义字段
+   * 
+   * @param request - SearchOranizationCustomfieldRequest
+   * @returns SearchOranizationCustomfieldResponse
    */
   async searchOranizationCustomfield(userId: string, request: SearchOranizationCustomfieldRequest): Promise<SearchOranizationCustomfieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10159,12 +12386,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询项目自定义字段
-   *
-   * @param request SearchProjectCustomfieldRequest
-   * @param headers SearchProjectCustomfieldHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchProjectCustomfieldResponse
+   * 查询项目自定义字段
+   * 
+   * @param request - SearchProjectCustomfieldRequest
+   * @param headers - SearchProjectCustomfieldHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchProjectCustomfieldResponse
    */
   async searchProjectCustomfieldWithOptions(userId: string, projectId: string, request: SearchProjectCustomfieldRequest, headers: SearchProjectCustomfieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchProjectCustomfieldResponse> {
     Util.validateModel(request);
@@ -10221,10 +12448,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询项目自定义字段
-   *
-   * @param request SearchProjectCustomfieldRequest
-   * @return SearchProjectCustomfieldResponse
+   * 查询项目自定义字段
+   * 
+   * @param request - SearchProjectCustomfieldRequest
+   * @returns SearchProjectCustomfieldResponse
    */
   async searchProjectCustomfield(userId: string, projectId: string, request: SearchProjectCustomfieldRequest): Promise<SearchProjectCustomfieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10233,12 +12460,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 按项目模板名字搜索企业自定义模板
-   *
-   * @param request SearchProjectTemplateRequest
-   * @param headers SearchProjectTemplateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchProjectTemplateResponse
+   * 按项目模板名字搜索企业自定义模板
+   * 
+   * @param request - SearchProjectTemplateRequest
+   * @param headers - SearchProjectTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchProjectTemplateResponse
    */
   async searchProjectTemplateWithOptions(userId: string, request: SearchProjectTemplateRequest, headers: SearchProjectTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SearchProjectTemplateResponse> {
     Util.validateModel(request);
@@ -10275,10 +12502,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 按项目模板名字搜索企业自定义模板
-   *
-   * @param request SearchProjectTemplateRequest
-   * @return SearchProjectTemplateResponse
+   * 按项目模板名字搜索企业自定义模板
+   * 
+   * @param request - SearchProjectTemplateRequest
+   * @returns SearchProjectTemplateResponse
    */
   async searchProjectTemplate(userId: string, request: SearchProjectTemplateRequest): Promise<SearchProjectTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10287,12 +12514,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询任务工作流
-   *
-   * @param request SearchTaskFlowRequest
-   * @param headers SearchTaskFlowHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchTaskFlowResponse
+   * 查询任务工作流
+   * 
+   * @param request - SearchTaskFlowRequest
+   * @param headers - SearchTaskFlowHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchTaskFlowResponse
    */
   async searchTaskFlowWithOptions(userId: string, projectId: string, request: SearchTaskFlowRequest, headers: SearchTaskFlowHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTaskFlowResponse> {
     Util.validateModel(request);
@@ -10341,10 +12568,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询任务工作流
-   *
-   * @param request SearchTaskFlowRequest
-   * @return SearchTaskFlowResponse
+   * 查询任务工作流
+   * 
+   * @param request - SearchTaskFlowRequest
+   * @returns SearchTaskFlowResponse
    */
   async searchTaskFlow(userId: string, projectId: string, request: SearchTaskFlowRequest): Promise<SearchTaskFlowResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10353,12 +12580,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询任务分组
-   *
-   * @param request SearchTaskListRequest
-   * @param headers SearchTaskListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchTaskListResponse
+   * 查询任务分组
+   * 
+   * @param request - SearchTaskListRequest
+   * @param headers - SearchTaskListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchTaskListResponse
    */
   async searchTaskListWithOptions(userId: string, projectId: string, request: SearchTaskListRequest, headers: SearchTaskListHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTaskListResponse> {
     Util.validateModel(request);
@@ -10407,10 +12634,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询任务分组
-   *
-   * @param request SearchTaskListRequest
-   * @return SearchTaskListResponse
+   * 查询任务分组
+   * 
+   * @param request - SearchTaskListRequest
+   * @returns SearchTaskListResponse
    */
   async searchTaskList(userId: string, projectId: string, request: SearchTaskListRequest): Promise<SearchTaskListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10419,12 +12646,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索任务工作流状态
-   *
-   * @param request SearchTaskflowStatusRequest
-   * @param headers SearchTaskflowStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchTaskflowStatusResponse
+   * 搜索任务工作流状态
+   * 
+   * @param request - SearchTaskflowStatusRequest
+   * @param headers - SearchTaskflowStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchTaskflowStatusResponse
    */
   async searchTaskflowStatusWithOptions(userId: string, projectId: string, request: SearchTaskflowStatusRequest, headers: SearchTaskflowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTaskflowStatusResponse> {
     Util.validateModel(request);
@@ -10477,10 +12704,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索任务工作流状态
-   *
-   * @param request SearchTaskflowStatusRequest
-   * @return SearchTaskflowStatusResponse
+   * 搜索任务工作流状态
+   * 
+   * @param request - SearchTaskflowStatusRequest
+   * @returns SearchTaskflowStatusResponse
    */
   async searchTaskflowStatus(userId: string, projectId: string, request: SearchTaskflowStatusRequest): Promise<SearchTaskflowStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10489,12 +12716,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户任务列表
-   *
-   * @param request SearchUserTaskRequest
-   * @param headers SearchUserTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchUserTaskResponse
+   * 查询用户任务列表
+   * 
+   * @param request - SearchUserTaskRequest
+   * @param headers - SearchUserTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchUserTaskResponse
    */
   async searchUserTaskWithOptions(userId: string, request: SearchUserTaskRequest, headers: SearchUserTaskHeaders, runtime: $Util.RuntimeOptions): Promise<SearchUserTaskResponse> {
     Util.validateModel(request);
@@ -10543,10 +12770,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户任务列表
-   *
-   * @param request SearchUserTaskRequest
-   * @return SearchUserTaskResponse
+   * 查询用户任务列表
+   * 
+   * @param request - SearchUserTaskRequest
+   * @returns SearchUserTaskResponse
    */
   async searchUserTask(userId: string, request: SearchUserTaskRequest): Promise<SearchUserTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10555,11 +12782,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 归档项目
-   *
-   * @param headers SuspendProjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SuspendProjectResponse
+   * 归档项目
+   * 
+   * @param headers - SuspendProjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SuspendProjectResponse
    */
   async suspendProjectWithOptions(projectId: string, userId: string, headers: SuspendProjectHeaders, runtime: $Util.RuntimeOptions): Promise<SuspendProjectResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -10589,9 +12816,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 归档项目
-   *
-   * @return SuspendProjectResponse
+   * 归档项目
+   * @returns SuspendProjectResponse
    */
   async suspendProject(projectId: string, userId: string): Promise<SuspendProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10600,11 +12826,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 恢复项目归档
-   *
-   * @param headers UnSuspendProjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UnSuspendProjectResponse
+   * 恢复项目归档
+   * 
+   * @param headers - UnSuspendProjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UnSuspendProjectResponse
    */
   async unSuspendProjectWithOptions(projectId: string, userId: string, headers: UnSuspendProjectHeaders, runtime: $Util.RuntimeOptions): Promise<UnSuspendProjectResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -10634,9 +12860,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 恢复项目归档
-   *
-   * @return UnSuspendProjectResponse
+   * 恢复项目归档
+   * @returns UnSuspendProjectResponse
    */
   async unSuspendProject(projectId: string, userId: string): Promise<UnSuspendProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10645,12 +12870,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务自定义字段的值
-   *
-   * @param request UpdateCustomfieldValueRequest
-   * @param headers UpdateCustomfieldValueHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateCustomfieldValueResponse
+   * 更新任务自定义字段的值
+   * 
+   * @param request - UpdateCustomfieldValueRequest
+   * @param headers - UpdateCustomfieldValueHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateCustomfieldValueResponse
    */
   async updateCustomfieldValueWithOptions(userId: string, taskId: string, request: UpdateCustomfieldValueRequest, headers: UpdateCustomfieldValueHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCustomfieldValueResponse> {
     Util.validateModel(request);
@@ -10695,10 +12920,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务自定义字段的值
-   *
-   * @param request UpdateCustomfieldValueRequest
-   * @return UpdateCustomfieldValueResponse
+   * 更新任务自定义字段的值
+   * 
+   * @param request - UpdateCustomfieldValueRequest
+   * @returns UpdateCustomfieldValueResponse
    */
   async updateCustomfieldValue(userId: string, taskId: string, request: UpdateCustomfieldValueRequest): Promise<UpdateCustomfieldValueResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10707,12 +12932,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改自由任务标题
-   *
-   * @param request UpdateOrganizationTaskContentRequest
-   * @param headers UpdateOrganizationTaskContentHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateOrganizationTaskContentResponse
+   * 更改自由任务标题
+   * 
+   * @param request - UpdateOrganizationTaskContentRequest
+   * @param headers - UpdateOrganizationTaskContentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateOrganizationTaskContentResponse
    */
   async updateOrganizationTaskContentWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskContentRequest, headers: UpdateOrganizationTaskContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskContentResponse> {
     Util.validateModel(request);
@@ -10757,10 +12982,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改自由任务标题
-   *
-   * @param request UpdateOrganizationTaskContentRequest
-   * @return UpdateOrganizationTaskContentResponse
+   * 更改自由任务标题
+   * 
+   * @param request - UpdateOrganizationTaskContentRequest
+   * @returns UpdateOrganizationTaskContentResponse
    */
   async updateOrganizationTaskContent(taskId: string, userId: string, request: UpdateOrganizationTaskContentRequest): Promise<UpdateOrganizationTaskContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10769,12 +12994,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新自由任务截止时间
-   *
-   * @param request UpdateOrganizationTaskDueDateRequest
-   * @param headers UpdateOrganizationTaskDueDateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateOrganizationTaskDueDateResponse
+   * 更新自由任务截止时间
+   * 
+   * @param request - UpdateOrganizationTaskDueDateRequest
+   * @param headers - UpdateOrganizationTaskDueDateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateOrganizationTaskDueDateResponse
    */
   async updateOrganizationTaskDueDateWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskDueDateRequest, headers: UpdateOrganizationTaskDueDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskDueDateResponse> {
     Util.validateModel(request);
@@ -10819,10 +13044,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新自由任务截止时间
-   *
-   * @param request UpdateOrganizationTaskDueDateRequest
-   * @return UpdateOrganizationTaskDueDateResponse
+   * 更新自由任务截止时间
+   * 
+   * @param request - UpdateOrganizationTaskDueDateRequest
+   * @returns UpdateOrganizationTaskDueDateResponse
    */
   async updateOrganizationTaskDueDate(taskId: string, userId: string, request: UpdateOrganizationTaskDueDateRequest): Promise<UpdateOrganizationTaskDueDateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10831,12 +13056,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改自由任务执行者
-   *
-   * @param request UpdateOrganizationTaskExecutorRequest
-   * @param headers UpdateOrganizationTaskExecutorHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateOrganizationTaskExecutorResponse
+   * 更改自由任务执行者
+   * 
+   * @param request - UpdateOrganizationTaskExecutorRequest
+   * @param headers - UpdateOrganizationTaskExecutorHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateOrganizationTaskExecutorResponse
    */
   async updateOrganizationTaskExecutorWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskExecutorRequest, headers: UpdateOrganizationTaskExecutorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskExecutorResponse> {
     Util.validateModel(request);
@@ -10881,10 +13106,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改自由任务执行者
-   *
-   * @param request UpdateOrganizationTaskExecutorRequest
-   * @return UpdateOrganizationTaskExecutorResponse
+   * 更改自由任务执行者
+   * 
+   * @param request - UpdateOrganizationTaskExecutorRequest
+   * @returns UpdateOrganizationTaskExecutorResponse
    */
   async updateOrganizationTaskExecutor(taskId: string, userId: string, request: UpdateOrganizationTaskExecutorRequest): Promise<UpdateOrganizationTaskExecutorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10893,12 +13118,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新自由任务参与者
-   *
-   * @param request UpdateOrganizationTaskInvolveMembersRequest
-   * @param headers UpdateOrganizationTaskInvolveMembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateOrganizationTaskInvolveMembersResponse
+   * 更新自由任务参与者
+   * 
+   * @param request - UpdateOrganizationTaskInvolveMembersRequest
+   * @param headers - UpdateOrganizationTaskInvolveMembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateOrganizationTaskInvolveMembersResponse
    */
   async updateOrganizationTaskInvolveMembersWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskInvolveMembersRequest, headers: UpdateOrganizationTaskInvolveMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
     Util.validateModel(request);
@@ -10951,10 +13176,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新自由任务参与者
-   *
-   * @param request UpdateOrganizationTaskInvolveMembersRequest
-   * @return UpdateOrganizationTaskInvolveMembersResponse
+   * 更新自由任务参与者
+   * 
+   * @param request - UpdateOrganizationTaskInvolveMembersRequest
+   * @returns UpdateOrganizationTaskInvolveMembersResponse
    */
   async updateOrganizationTaskInvolveMembers(taskId: string, userId: string, request: UpdateOrganizationTaskInvolveMembersRequest): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10963,12 +13188,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改自由任务备注
-   *
-   * @param request UpdateOrganizationTaskNoteRequest
-   * @param headers UpdateOrganizationTaskNoteHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateOrganizationTaskNoteResponse
+   * 更改自由任务备注
+   * 
+   * @param request - UpdateOrganizationTaskNoteRequest
+   * @param headers - UpdateOrganizationTaskNoteHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateOrganizationTaskNoteResponse
    */
   async updateOrganizationTaskNoteWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskNoteRequest, headers: UpdateOrganizationTaskNoteHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskNoteResponse> {
     Util.validateModel(request);
@@ -11013,10 +13238,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改自由任务备注
-   *
-   * @param request UpdateOrganizationTaskNoteRequest
-   * @return UpdateOrganizationTaskNoteResponse
+   * 更改自由任务备注
+   * 
+   * @param request - UpdateOrganizationTaskNoteRequest
+   * @returns UpdateOrganizationTaskNoteResponse
    */
   async updateOrganizationTaskNote(taskId: string, userId: string, request: UpdateOrganizationTaskNoteRequest): Promise<UpdateOrganizationTaskNoteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11025,12 +13250,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新自由任务优先级
-   *
-   * @param request UpdateOrganizationTaskPriorityRequest
-   * @param headers UpdateOrganizationTaskPriorityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateOrganizationTaskPriorityResponse
+   * 更新自由任务优先级
+   * 
+   * @param request - UpdateOrganizationTaskPriorityRequest
+   * @param headers - UpdateOrganizationTaskPriorityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateOrganizationTaskPriorityResponse
    */
   async updateOrganizationTaskPriorityWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskPriorityRequest, headers: UpdateOrganizationTaskPriorityHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskPriorityResponse> {
     Util.validateModel(request);
@@ -11075,10 +13300,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新自由任务优先级
-   *
-   * @param request UpdateOrganizationTaskPriorityRequest
-   * @return UpdateOrganizationTaskPriorityResponse
+   * 更新自由任务优先级
+   * 
+   * @param request - UpdateOrganizationTaskPriorityRequest
+   * @returns UpdateOrganizationTaskPriorityResponse
    */
   async updateOrganizationTaskPriority(taskId: string, userId: string, request: UpdateOrganizationTaskPriorityRequest): Promise<UpdateOrganizationTaskPriorityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11087,12 +13312,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改自由任务状态
-   *
-   * @param request UpdateOrganizationTaskStatusRequest
-   * @param headers UpdateOrganizationTaskStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateOrganizationTaskStatusResponse
+   * 更改自由任务状态
+   * 
+   * @param request - UpdateOrganizationTaskStatusRequest
+   * @param headers - UpdateOrganizationTaskStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateOrganizationTaskStatusResponse
    */
   async updateOrganizationTaskStatusWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskStatusRequest, headers: UpdateOrganizationTaskStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskStatusResponse> {
     Util.validateModel(request);
@@ -11137,10 +13362,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更改自由任务状态
-   *
-   * @param request UpdateOrganizationTaskStatusRequest
-   * @return UpdateOrganizationTaskStatusResponse
+   * 更改自由任务状态
+   * 
+   * @param request - UpdateOrganizationTaskStatusRequest
+   * @returns UpdateOrganizationTaskStatusResponse
    */
   async updateOrganizationTaskStatus(taskId: string, userId: string, request: UpdateOrganizationTaskStatusRequest): Promise<UpdateOrganizationTaskStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11149,12 +13374,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新项目的分组
-   *
-   * @param request UpdateProjectGroupRequest
-   * @param headers UpdateProjectGroupHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateProjectGroupResponse
+   * 更新项目的分组
+   * 
+   * @param request - UpdateProjectGroupRequest
+   * @param headers - UpdateProjectGroupHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateProjectGroupResponse
    */
   async updateProjectGroupWithOptions(userId: string, projectId: string, request: UpdateProjectGroupRequest, headers: UpdateProjectGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateProjectGroupResponse> {
     Util.validateModel(request);
@@ -11195,10 +13420,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新项目的分组
-   *
-   * @param request UpdateProjectGroupRequest
-   * @return UpdateProjectGroupResponse
+   * 更新项目的分组
+   * 
+   * @param request - UpdateProjectGroupRequest
+   * @returns UpdateProjectGroupResponse
    */
   async updateProjectGroup(userId: string, projectId: string, request: UpdateProjectGroupRequest): Promise<UpdateProjectGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11207,12 +13432,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务标题
-   *
-   * @param request UpdateTaskContentRequest
-   * @param headers UpdateTaskContentHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTaskContentResponse
+   * 更新任务标题
+   * 
+   * @param request - UpdateTaskContentRequest
+   * @param headers - UpdateTaskContentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTaskContentResponse
    */
   async updateTaskContentWithOptions(userId: string, taskId: string, request: UpdateTaskContentRequest, headers: UpdateTaskContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskContentResponse> {
     Util.validateModel(request);
@@ -11249,10 +13474,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务标题
-   *
-   * @param request UpdateTaskContentRequest
-   * @return UpdateTaskContentResponse
+   * 更新任务标题
+   * 
+   * @param request - UpdateTaskContentRequest
+   * @returns UpdateTaskContentResponse
    */
   async updateTaskContent(userId: string, taskId: string, request: UpdateTaskContentRequest): Promise<UpdateTaskContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11261,12 +13486,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务截止时间
-   *
-   * @param request UpdateTaskDueDateRequest
-   * @param headers UpdateTaskDueDateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTaskDueDateResponse
+   * 更新任务截止时间
+   * 
+   * @param request - UpdateTaskDueDateRequest
+   * @param headers - UpdateTaskDueDateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTaskDueDateResponse
    */
   async updateTaskDueDateWithOptions(userId: string, taskId: string, request: UpdateTaskDueDateRequest, headers: UpdateTaskDueDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskDueDateResponse> {
     Util.validateModel(request);
@@ -11303,10 +13528,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务截止时间
-   *
-   * @param request UpdateTaskDueDateRequest
-   * @return UpdateTaskDueDateResponse
+   * 更新任务截止时间
+   * 
+   * @param request - UpdateTaskDueDateRequest
+   * @returns UpdateTaskDueDateResponse
    */
   async updateTaskDueDate(userId: string, taskId: string, request: UpdateTaskDueDateRequest): Promise<UpdateTaskDueDateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11315,12 +13540,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务执行者
-   *
-   * @param request UpdateTaskExecutorRequest
-   * @param headers UpdateTaskExecutorHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTaskExecutorResponse
+   * 更新任务执行者
+   * 
+   * @param request - UpdateTaskExecutorRequest
+   * @param headers - UpdateTaskExecutorHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTaskExecutorResponse
    */
   async updateTaskExecutorWithOptions(userId: string, taskId: string, request: UpdateTaskExecutorRequest, headers: UpdateTaskExecutorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskExecutorResponse> {
     Util.validateModel(request);
@@ -11357,10 +13582,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务执行者
-   *
-   * @param request UpdateTaskExecutorRequest
-   * @return UpdateTaskExecutorResponse
+   * 更新任务执行者
+   * 
+   * @param request - UpdateTaskExecutorRequest
+   * @returns UpdateTaskExecutorResponse
    */
   async updateTaskExecutor(userId: string, taskId: string, request: UpdateTaskExecutorRequest): Promise<UpdateTaskExecutorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11369,12 +13594,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务参与者
-   *
-   * @param request UpdateTaskInvolvemembersRequest
-   * @param headers UpdateTaskInvolvemembersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTaskInvolvemembersResponse
+   * 更新任务参与者
+   * 
+   * @param request - UpdateTaskInvolvemembersRequest
+   * @param headers - UpdateTaskInvolvemembersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTaskInvolvemembersResponse
    */
   async updateTaskInvolvemembersWithOptions(userId: string, taskId: string, request: UpdateTaskInvolvemembersRequest, headers: UpdateTaskInvolvemembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskInvolvemembersResponse> {
     Util.validateModel(request);
@@ -11419,10 +13644,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务参与者
-   *
-   * @param request UpdateTaskInvolvemembersRequest
-   * @return UpdateTaskInvolvemembersResponse
+   * 更新任务参与者
+   * 
+   * @param request - UpdateTaskInvolvemembersRequest
+   * @returns UpdateTaskInvolvemembersResponse
    */
   async updateTaskInvolvemembers(userId: string, taskId: string, request: UpdateTaskInvolvemembersRequest): Promise<UpdateTaskInvolvemembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11431,12 +13656,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务备注
-   *
-   * @param request UpdateTaskNoteRequest
-   * @param headers UpdateTaskNoteHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTaskNoteResponse
+   * 更新任务备注
+   * 
+   * @param request - UpdateTaskNoteRequest
+   * @param headers - UpdateTaskNoteHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTaskNoteResponse
    */
   async updateTaskNoteWithOptions(userId: string, taskId: string, request: UpdateTaskNoteRequest, headers: UpdateTaskNoteHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskNoteResponse> {
     Util.validateModel(request);
@@ -11473,10 +13698,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务备注
-   *
-   * @param request UpdateTaskNoteRequest
-   * @return UpdateTaskNoteResponse
+   * 更新任务备注
+   * 
+   * @param request - UpdateTaskNoteRequest
+   * @returns UpdateTaskNoteResponse
    */
   async updateTaskNote(userId: string, taskId: string, request: UpdateTaskNoteRequest): Promise<UpdateTaskNoteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11485,12 +13710,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务优先级
-   *
-   * @param request UpdateTaskPriorityRequest
-   * @param headers UpdateTaskPriorityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTaskPriorityResponse
+   * 更新任务优先级
+   * 
+   * @param request - UpdateTaskPriorityRequest
+   * @param headers - UpdateTaskPriorityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTaskPriorityResponse
    */
   async updateTaskPriorityWithOptions(userId: string, taskId: string, request: UpdateTaskPriorityRequest, headers: UpdateTaskPriorityHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskPriorityResponse> {
     Util.validateModel(request);
@@ -11527,10 +13752,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务优先级
-   *
-   * @param request UpdateTaskPriorityRequest
-   * @return UpdateTaskPriorityResponse
+   * 更新任务优先级
+   * 
+   * @param request - UpdateTaskPriorityRequest
+   * @returns UpdateTaskPriorityResponse
    */
   async updateTaskPriority(userId: string, taskId: string, request: UpdateTaskPriorityRequest): Promise<UpdateTaskPriorityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11539,12 +13764,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务列表
-   *
-   * @param request UpdateTaskStageRequest
-   * @param headers UpdateTaskStageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTaskStageResponse
+   * 更新任务列表
+   * 
+   * @param request - UpdateTaskStageRequest
+   * @param headers - UpdateTaskStageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTaskStageResponse
    */
   async updateTaskStageWithOptions(userId: string, taskId: string, request: UpdateTaskStageRequest, headers: UpdateTaskStageHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskStageResponse> {
     Util.validateModel(request);
@@ -11581,10 +13806,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务列表
-   *
-   * @param request UpdateTaskStageRequest
-   * @return UpdateTaskStageResponse
+   * 更新任务列表
+   * 
+   * @param request - UpdateTaskStageRequest
+   * @returns UpdateTaskStageResponse
    */
   async updateTaskStage(userId: string, taskId: string, request: UpdateTaskStageRequest): Promise<UpdateTaskStageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11593,12 +13818,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务开始时间
-   *
-   * @param request UpdateTaskStartdateRequest
-   * @param headers UpdateTaskStartdateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTaskStartdateResponse
+   * 更新任务开始时间
+   * 
+   * @param request - UpdateTaskStartdateRequest
+   * @param headers - UpdateTaskStartdateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTaskStartdateResponse
    */
   async updateTaskStartdateWithOptions(userId: string, taskId: string, request: UpdateTaskStartdateRequest, headers: UpdateTaskStartdateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskStartdateResponse> {
     Util.validateModel(request);
@@ -11635,10 +13860,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务开始时间
-   *
-   * @param request UpdateTaskStartdateRequest
-   * @return UpdateTaskStartdateResponse
+   * 更新任务开始时间
+   * 
+   * @param request - UpdateTaskStartdateRequest
+   * @returns UpdateTaskStartdateResponse
    */
   async updateTaskStartdate(userId: string, taskId: string, request: UpdateTaskStartdateRequest): Promise<UpdateTaskStartdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11647,12 +13872,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务工作流状态
-   *
-   * @param request UpdateTaskTaskflowstatusRequest
-   * @param headers UpdateTaskTaskflowstatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateTaskTaskflowstatusResponse
+   * 更新任务工作流状态
+   * 
+   * @param request - UpdateTaskTaskflowstatusRequest
+   * @param headers - UpdateTaskTaskflowstatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateTaskTaskflowstatusResponse
    */
   async updateTaskTaskflowstatusWithOptions(userId: string, taskId: string, request: UpdateTaskTaskflowstatusRequest, headers: UpdateTaskTaskflowstatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskTaskflowstatusResponse> {
     Util.validateModel(request);
@@ -11693,10 +13918,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新任务工作流状态
-   *
-   * @param request UpdateTaskTaskflowstatusRequest
-   * @return UpdateTaskTaskflowstatusResponse
+   * 更新任务工作流状态
+   * 
+   * @param request - UpdateTaskTaskflowstatusRequest
+   * @returns UpdateTaskTaskflowstatusResponse
    */
   async updateTaskTaskflowstatus(userId: string, taskId: string, request: UpdateTaskTaskflowstatusRequest): Promise<UpdateTaskTaskflowstatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11705,12 +13930,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新工时审批对象
-   *
-   * @param request UpdateWorkTimeApproveRequest
-   * @param headers UpdateWorkTimeApproveHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateWorkTimeApproveResponse
+   * 更新工时审批对象
+   * 
+   * @param request - UpdateWorkTimeApproveRequest
+   * @param headers - UpdateWorkTimeApproveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateWorkTimeApproveResponse
    */
   async updateWorkTimeApproveWithOptions(userId: string, approveOpenId: string, request: UpdateWorkTimeApproveRequest, headers: UpdateWorkTimeApproveHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkTimeApproveResponse> {
     Util.validateModel(request);
@@ -11767,10 +13992,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新工时审批对象
-   *
-   * @param request UpdateWorkTimeApproveRequest
-   * @return UpdateWorkTimeApproveResponse
+   * 更新工时审批对象
+   * 
+   * @param request - UpdateWorkTimeApproveRequest
+   * @returns UpdateWorkTimeApproveResponse
    */
   async updateWorkTimeApprove(userId: string, approveOpenId: string, request: UpdateWorkTimeApproveRequest): Promise<UpdateWorkTimeApproveResponse> {
     let runtime = new $Util.RuntimeOptions({ });

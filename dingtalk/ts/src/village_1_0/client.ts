@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,15 @@ export class GetDeptHeaders extends $tea.Model {
 }
 
 export class GetDeptRequest extends $tea.Model {
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -54,10 +60,30 @@ export class GetDeptRequest extends $tea.Model {
 }
 
 export class GetDeptResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fromUnionOrg?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   order?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   parentDepartmentId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -132,6 +158,10 @@ export class GetResidentDeptHeaders extends $tea.Model {
 }
 
 export class GetResidentDeptRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -151,10 +181,30 @@ export class GetResidentDeptRequest extends $tea.Model {
 }
 
 export class GetResidentDeptResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   contactType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   deptType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   feature?: string;
   static names(): { [key: string]: string } {
     return {
@@ -229,6 +279,10 @@ export class GetResidentUserInfoHeaders extends $tea.Model {
 }
 
 export class GetResidentUserInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -248,10 +302,30 @@ export class GetResidentUserInfoRequest extends $tea.Model {
 }
 
 export class GetResidentUserInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   feature?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roles?: GetResidentUserInfoResponseBodyRoles[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -326,7 +400,15 @@ export class GetUserHeaders extends $tea.Model {
 }
 
 export class GetUserRequest extends $tea.Model {
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -477,8 +559,20 @@ export class GetUserByUnionIdHeaders extends $tea.Model {
 }
 
 export class GetUserByUnionIdRequest extends $tea.Model {
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -502,7 +596,15 @@ export class GetUserByUnionIdRequest extends $tea.Model {
 }
 
 export class GetUserByUnionIdResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   contactType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -571,8 +673,23 @@ export class GetVillageOrgInfoHeaders extends $tea.Model {
 }
 
 export class GetVillageOrgInfoResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   regionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   regionLocation?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 省份：PROVINCE;城市：CITY;县区：COUNTRY;乡镇：TOWN;村：VILLAGE
+   */
   regionType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -677,9 +794,25 @@ export class ListDeptSimpleUsersRequest extends $tea.Model {
 }
 
 export class ListDeptSimpleUsersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextCursor?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   totalCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userList?: ListDeptSimpleUsersResponseBodyUserList[];
   static names(): { [key: string]: string } {
     return {
@@ -771,6 +904,10 @@ export class ListDeptUserIdsRequest extends $tea.Model {
 }
 
 export class ListDeptUserIdsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIdList?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -871,8 +1008,20 @@ export class ListDeptUsersRequest extends $tea.Model {
 }
 
 export class ListDeptUsersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextCursor?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userList?: ListDeptUsersResponseBodyUserList[];
   static names(): { [key: string]: string } {
     return {
@@ -943,7 +1092,15 @@ export class ListParentByDeptHeaders extends $tea.Model {
 }
 
 export class ListParentByDeptRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -965,6 +1122,10 @@ export class ListParentByDeptRequest extends $tea.Model {
 }
 
 export class ListParentByDeptResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentIdList?: number[];
   static names(): { [key: string]: string } {
     return {
@@ -1031,7 +1192,15 @@ export class ListParentByUserHeaders extends $tea.Model {
 }
 
 export class ListParentByUserRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1053,6 +1222,10 @@ export class ListParentByUserRequest extends $tea.Model {
 }
 
 export class ListParentByUserResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentIdList?: number[];
   static names(): { [key: string]: string } {
     return {
@@ -1119,9 +1292,21 @@ export class ListResidentDeptUsersHeaders extends $tea.Model {
 }
 
 export class ListResidentDeptUsersRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   cursor?: number;
   role?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   size?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1147,8 +1332,20 @@ export class ListResidentDeptUsersRequest extends $tea.Model {
 }
 
 export class ListResidentDeptUsersResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextCursor?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userList?: ListResidentDeptUsersResponseBodyUserList[];
   static names(): { [key: string]: string } {
     return {
@@ -1219,8 +1416,20 @@ export class ListResidentSubDeptsHeaders extends $tea.Model {
 }
 
 export class ListResidentSubDeptsRequest extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   cursor?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   size?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1244,9 +1453,25 @@ export class ListResidentSubDeptsRequest extends $tea.Model {
 }
 
 export class ListResidentSubDeptsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentList?: ListResidentSubDeptsResponseBodyDepartmentList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextCursor?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   total?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1319,7 +1544,15 @@ export class ListResidentUserInfosHeaders extends $tea.Model {
 }
 
 export class ListResidentUserInfosRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -1341,7 +1574,15 @@ export class ListResidentUserInfosRequest extends $tea.Model {
 }
 
 export class ListResidentUserInfosShrinkRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userIdsShrink?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1363,6 +1604,10 @@ export class ListResidentUserInfosShrinkRequest extends $tea.Model {
 }
 
 export class ListResidentUserInfosResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userList?: ListResidentUserInfosResponseBodyUserList[];
   static names(): { [key: string]: string } {
     return {
@@ -1457,8 +1702,20 @@ export class ListSimpleUsersByRoleRequest extends $tea.Model {
 }
 
 export class ListSimpleUsersByRoleResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextCursor?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userList?: ListSimpleUsersByRoleResponseBodyUserList[];
   static names(): { [key: string]: string } {
     return {
@@ -1529,8 +1786,20 @@ export class ListSubCorpsHeaders extends $tea.Model {
 }
 
 export class ListSubCorpsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   isOnlyDirect?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
+  /**
+   * @example
+   * county|community
+   */
   types?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1620,7 +1889,15 @@ export class ListSubDeptHeaders extends $tea.Model {
 }
 
 export class ListSubDeptRequest extends $tea.Model {
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1642,6 +1919,10 @@ export class ListSubDeptRequest extends $tea.Model {
 }
 
 export class ListSubDeptResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: ListSubDeptResponseBodyResult[];
   static names(): { [key: string]: string } {
     return {
@@ -1708,6 +1989,10 @@ export class ListSubDeptIdsHeaders extends $tea.Model {
 }
 
 export class ListSubDeptIdsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   subCorpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1727,6 +2012,10 @@ export class ListSubDeptIdsRequest extends $tea.Model {
 }
 
 export class ListSubDeptIdsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentIdList?: number[];
   static names(): { [key: string]: string } {
     return {
@@ -1771,8 +2060,20 @@ export class ListSubDeptIdsResponse extends $tea.Model {
 }
 
 export class GetResidentUserInfoResponseBodyRoles extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roleName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tagCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1912,7 +2213,15 @@ export class GetUserResponseBodyUnionEmpExt extends $tea.Model {
 }
 
 export class ListDeptSimpleUsersResponseBodyUserList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1934,11 +2243,35 @@ export class ListDeptSimpleUsersResponseBodyUserList extends $tea.Model {
 }
 
 export class ListDeptUsersResponseBodyUserList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   active?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentList?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   jobNumber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1968,8 +2301,20 @@ export class ListDeptUsersResponseBodyUserList extends $tea.Model {
 }
 
 export class ListResidentDeptUsersResponseBodyUserListRoles extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tagCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tagId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tagName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1993,10 +2338,30 @@ export class ListResidentDeptUsersResponseBodyUserListRoles extends $tea.Model {
 }
 
 export class ListResidentDeptUsersResponseBodyUserList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   feature?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roles?: ListResidentDeptUsersResponseBodyUserListRoles[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2024,8 +2389,20 @@ export class ListResidentDeptUsersResponseBodyUserList extends $tea.Model {
 }
 
 export class ListResidentSubDeptsResponseBodyDepartmentList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   superDepartmentId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2049,8 +2426,20 @@ export class ListResidentSubDeptsResponseBodyDepartmentList extends $tea.Model {
 }
 
 export class ListResidentUserInfosResponseBodyUserListRoles extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tagCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tagId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tagName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2074,10 +2463,30 @@ export class ListResidentUserInfosResponseBodyUserListRoles extends $tea.Model {
 }
 
 export class ListResidentUserInfosResponseBodyUserList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   feature?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   roles?: ListResidentUserInfosResponseBodyUserListRoles[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2105,9 +2514,25 @@ export class ListResidentUserInfosResponseBodyUserList extends $tea.Model {
 }
 
 export class ListSimpleUsersByRoleResponseBodyUserList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   jobNumber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   unionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2133,12 +2558,39 @@ export class ListSimpleUsersByRoleResponseBodyUserList extends $tea.Model {
 }
 
 export class ListSubCorpsResponseBodyCorpList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   industry?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 149 区县，148 乡镇街道，145 村， 150 社区， 151 小区
+   */
   industryCode?: number;
   regionId?: string;
+  /**
+   * @example
+   * 浙江省_杭州市_余杭区_仓前街道
+   */
   regionLocation?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   regionType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2170,7 +2622,15 @@ export class ListSubCorpsResponseBodyCorpList extends $tea.Model {
 }
 
 export class ListSubDeptResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   departmentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2193,12 +2653,11 @@ export class ListSubDeptResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2208,12 +2667,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 获取部门详情
-   *
-   * @param request GetDeptRequest
-   * @param headers GetDeptHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDeptResponse
+   * 获取部门详情
+   * 
+   * @param request - GetDeptRequest
+   * @param headers - GetDeptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDeptResponse
    */
   async getDeptWithOptions(departmentId: string, request: GetDeptRequest, headers: GetDeptHeaders, runtime: $Util.RuntimeOptions): Promise<GetDeptResponse> {
     Util.validateModel(request);
@@ -2254,10 +2713,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取部门详情
-   *
-   * @param request GetDeptRequest
-   * @return GetDeptResponse
+   * 获取部门详情
+   * 
+   * @param request - GetDeptRequest
+   * @returns GetDeptResponse
    */
   async getDept(departmentId: string, request: GetDeptRequest): Promise<GetDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2266,12 +2725,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 居民通讯录获取部门信息
-   *
-   * @param request GetResidentDeptRequest
-   * @param headers GetResidentDeptHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetResidentDeptResponse
+   * 居民通讯录获取部门信息
+   * 
+   * @param request - GetResidentDeptRequest
+   * @param headers - GetResidentDeptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetResidentDeptResponse
    */
   async getResidentDeptWithOptions(departmentId: string, request: GetResidentDeptRequest, headers: GetResidentDeptHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentDeptResponse> {
     Util.validateModel(request);
@@ -2308,10 +2767,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 居民通讯录获取部门信息
-   *
-   * @param request GetResidentDeptRequest
-   * @return GetResidentDeptResponse
+   * 居民通讯录获取部门信息
+   * 
+   * @param request - GetResidentDeptRequest
+   * @returns GetResidentDeptResponse
    */
   async getResidentDept(departmentId: string, request: GetResidentDeptRequest): Promise<GetResidentDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2320,12 +2779,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 居民通讯录获取部门下某个人的详细信息
-   *
-   * @param request GetResidentUserInfoRequest
-   * @param headers GetResidentUserInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetResidentUserInfoResponse
+   * 居民通讯录获取部门下某个人的详细信息
+   * 
+   * @param request - GetResidentUserInfoRequest
+   * @param headers - GetResidentUserInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetResidentUserInfoResponse
    */
   async getResidentUserInfoWithOptions(departmentId: string, userId: string, request: GetResidentUserInfoRequest, headers: GetResidentUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentUserInfoResponse> {
     Util.validateModel(request);
@@ -2362,10 +2821,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 居民通讯录获取部门下某个人的详细信息
-   *
-   * @param request GetResidentUserInfoRequest
-   * @return GetResidentUserInfoResponse
+   * 居民通讯录获取部门下某个人的详细信息
+   * 
+   * @param request - GetResidentUserInfoRequest
+   * @returns GetResidentUserInfoResponse
    */
   async getResidentUserInfo(departmentId: string, userId: string, request: GetResidentUserInfoRequest): Promise<GetResidentUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2374,12 +2833,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户详情
-   *
-   * @param request GetUserRequest
-   * @param headers GetUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserResponse
+   * 查询用户详情
+   * 
+   * @param request - GetUserRequest
+   * @param headers - GetUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserResponse
    */
   async getUserWithOptions(userId: string, request: GetUserRequest, headers: GetUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserResponse> {
     Util.validateModel(request);
@@ -2420,10 +2879,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户详情
-   *
-   * @param request GetUserRequest
-   * @return GetUserResponse
+   * 查询用户详情
+   * 
+   * @param request - GetUserRequest
+   * @returns GetUserResponse
    */
   async getUser(userId: string, request: GetUserRequest): Promise<GetUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2432,12 +2891,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据unionId查询用户详情
-   *
-   * @param request GetUserByUnionIdRequest
-   * @param headers GetUserByUnionIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserByUnionIdResponse
+   * 根据unionId查询用户详情
+   * 
+   * @param request - GetUserByUnionIdRequest
+   * @param headers - GetUserByUnionIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserByUnionIdResponse
    */
   async getUserByUnionIdWithOptions(request: GetUserByUnionIdRequest, headers: GetUserByUnionIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserByUnionIdResponse> {
     Util.validateModel(request);
@@ -2482,10 +2941,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据unionId查询用户详情
-   *
-   * @param request GetUserByUnionIdRequest
-   * @return GetUserByUnionIdResponse
+   * 根据unionId查询用户详情
+   * 
+   * @param request - GetUserByUnionIdRequest
+   * @returns GetUserByUnionIdResponse
    */
   async getUserByUnionId(request: GetUserByUnionIdRequest): Promise<GetUserByUnionIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2494,11 +2953,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取对外开放的企业信息
-   *
-   * @param headers GetVillageOrgInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetVillageOrgInfoResponse
+   * 获取对外开放的企业信息
+   * 
+   * @param headers - GetVillageOrgInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetVillageOrgInfoResponse
    */
   async getVillageOrgInfoWithOptions(subCorpId: string, headers: GetVillageOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetVillageOrgInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -2528,9 +2987,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取对外开放的企业信息
-   *
-   * @return GetVillageOrgInfoResponse
+   * 获取对外开放的企业信息
+   * @returns GetVillageOrgInfoResponse
    */
   async getVillageOrgInfo(subCorpId: string): Promise<GetVillageOrgInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2539,12 +2997,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询部门下简略用户列表
-   *
-   * @param request ListDeptSimpleUsersRequest
-   * @param headers ListDeptSimpleUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListDeptSimpleUsersResponse
+   * 查询部门下简略用户列表
+   * 
+   * @param request - ListDeptSimpleUsersRequest
+   * @param headers - ListDeptSimpleUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListDeptSimpleUsersResponse
    */
   async listDeptSimpleUsersWithOptions(departmentId: string, request: ListDeptSimpleUsersRequest, headers: ListDeptSimpleUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptSimpleUsersResponse> {
     Util.validateModel(request);
@@ -2601,10 +3059,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询部门下简略用户列表
-   *
-   * @param request ListDeptSimpleUsersRequest
-   * @return ListDeptSimpleUsersResponse
+   * 查询部门下简略用户列表
+   * 
+   * @param request - ListDeptSimpleUsersRequest
+   * @returns ListDeptSimpleUsersResponse
    */
   async listDeptSimpleUsers(departmentId: string, request: ListDeptSimpleUsersRequest): Promise<ListDeptSimpleUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2613,12 +3071,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询部门下userid列表
-   *
-   * @param request ListDeptUserIdsRequest
-   * @param headers ListDeptUserIdsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListDeptUserIdsResponse
+   * 查询部门下userid列表
+   * 
+   * @param request - ListDeptUserIdsRequest
+   * @param headers - ListDeptUserIdsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListDeptUserIdsResponse
    */
   async listDeptUserIdsWithOptions(departmentId: string, request: ListDeptUserIdsRequest, headers: ListDeptUserIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptUserIdsResponse> {
     Util.validateModel(request);
@@ -2655,10 +3113,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询部门下userid列表
-   *
-   * @param request ListDeptUserIdsRequest
-   * @return ListDeptUserIdsResponse
+   * 查询部门下userid列表
+   * 
+   * @param request - ListDeptUserIdsRequest
+   * @returns ListDeptUserIdsResponse
    */
   async listDeptUserIds(departmentId: string, request: ListDeptUserIdsRequest): Promise<ListDeptUserIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2667,12 +3125,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询部门下user完整信息
-   *
-   * @param request ListDeptUsersRequest
-   * @param headers ListDeptUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListDeptUsersResponse
+   * 查询部门下user完整信息
+   * 
+   * @param request - ListDeptUsersRequest
+   * @param headers - ListDeptUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListDeptUsersResponse
    */
   async listDeptUsersWithOptions(departmentId: string, request: ListDeptUsersRequest, headers: ListDeptUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListDeptUsersResponse> {
     Util.validateModel(request);
@@ -2729,10 +3187,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询部门下user完整信息
-   *
-   * @param request ListDeptUsersRequest
-   * @return ListDeptUsersResponse
+   * 查询部门下user完整信息
+   * 
+   * @param request - ListDeptUsersRequest
+   * @returns ListDeptUsersResponse
    */
   async listDeptUsers(departmentId: string, request: ListDeptUsersRequest): Promise<ListDeptUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2741,12 +3199,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询部门所有父部门列表
-   *
-   * @param request ListParentByDeptRequest
-   * @param headers ListParentByDeptHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListParentByDeptResponse
+   * 查询部门所有父部门列表
+   * 
+   * @param request - ListParentByDeptRequest
+   * @param headers - ListParentByDeptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListParentByDeptResponse
    */
   async listParentByDeptWithOptions(request: ListParentByDeptRequest, headers: ListParentByDeptHeaders, runtime: $Util.RuntimeOptions): Promise<ListParentByDeptResponse> {
     Util.validateModel(request);
@@ -2787,10 +3245,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询部门所有父部门列表
-   *
-   * @param request ListParentByDeptRequest
-   * @return ListParentByDeptResponse
+   * 查询部门所有父部门列表
+   * 
+   * @param request - ListParentByDeptRequest
+   * @returns ListParentByDeptResponse
    */
   async listParentByDept(request: ListParentByDeptRequest): Promise<ListParentByDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2799,12 +3257,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户所有父部门列表
-   *
-   * @param request ListParentByUserRequest
-   * @param headers ListParentByUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListParentByUserResponse
+   * 查询用户所有父部门列表
+   * 
+   * @param request - ListParentByUserRequest
+   * @param headers - ListParentByUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListParentByUserResponse
    */
   async listParentByUserWithOptions(request: ListParentByUserRequest, headers: ListParentByUserHeaders, runtime: $Util.RuntimeOptions): Promise<ListParentByUserResponse> {
     Util.validateModel(request);
@@ -2845,10 +3303,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户所有父部门列表
-   *
-   * @param request ListParentByUserRequest
-   * @return ListParentByUserResponse
+   * 查询用户所有父部门列表
+   * 
+   * @param request - ListParentByUserRequest
+   * @returns ListParentByUserResponse
    */
   async listParentByUser(request: ListParentByUserRequest): Promise<ListParentByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2857,12 +3315,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 居民通讯录获取部门下人员信息
-   *
-   * @param request ListResidentDeptUsersRequest
-   * @param headers ListResidentDeptUsersHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListResidentDeptUsersResponse
+   * 居民通讯录获取部门下人员信息
+   * 
+   * @param request - ListResidentDeptUsersRequest
+   * @param headers - ListResidentDeptUsersHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListResidentDeptUsersResponse
    */
   async listResidentDeptUsersWithOptions(departmentId: string, request: ListResidentDeptUsersRequest, headers: ListResidentDeptUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentDeptUsersResponse> {
     Util.validateModel(request);
@@ -2911,10 +3369,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 居民通讯录获取部门下人员信息
-   *
-   * @param request ListResidentDeptUsersRequest
-   * @return ListResidentDeptUsersResponse
+   * 居民通讯录获取部门下人员信息
+   * 
+   * @param request - ListResidentDeptUsersRequest
+   * @returns ListResidentDeptUsersResponse
    */
   async listResidentDeptUsers(departmentId: string, request: ListResidentDeptUsersRequest): Promise<ListResidentDeptUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2923,12 +3381,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 居民通讯录获取子部门列表
-   *
-   * @param request ListResidentSubDeptsRequest
-   * @param headers ListResidentSubDeptsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListResidentSubDeptsResponse
+   * 居民通讯录获取子部门列表
+   * 
+   * @param request - ListResidentSubDeptsRequest
+   * @param headers - ListResidentSubDeptsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListResidentSubDeptsResponse
    */
   async listResidentSubDeptsWithOptions(departmentId: string, request: ListResidentSubDeptsRequest, headers: ListResidentSubDeptsHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentSubDeptsResponse> {
     Util.validateModel(request);
@@ -2973,10 +3431,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 居民通讯录获取子部门列表
-   *
-   * @param request ListResidentSubDeptsRequest
-   * @return ListResidentSubDeptsResponse
+   * 居民通讯录获取子部门列表
+   * 
+   * @param request - ListResidentSubDeptsRequest
+   * @returns ListResidentSubDeptsResponse
    */
   async listResidentSubDepts(departmentId: string, request: ListResidentSubDeptsRequest): Promise<ListResidentSubDeptsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2985,12 +3443,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 居民通讯录批量获取用户详细信息
-   *
-   * @param tmpReq ListResidentUserInfosRequest
-   * @param headers ListResidentUserInfosHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListResidentUserInfosResponse
+   * 居民通讯录批量获取用户详细信息
+   * 
+   * @param tmpReq - ListResidentUserInfosRequest
+   * @param headers - ListResidentUserInfosHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListResidentUserInfosResponse
    */
   async listResidentUserInfosWithOptions(tmpReq: ListResidentUserInfosRequest, headers: ListResidentUserInfosHeaders, runtime: $Util.RuntimeOptions): Promise<ListResidentUserInfosResponse> {
     Util.validateModel(tmpReq);
@@ -3037,10 +3495,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 居民通讯录批量获取用户详细信息
-   *
-   * @param request ListResidentUserInfosRequest
-   * @return ListResidentUserInfosResponse
+   * 居民通讯录批量获取用户详细信息
+   * 
+   * @param request - ListResidentUserInfosRequest
+   * @returns ListResidentUserInfosResponse
    */
   async listResidentUserInfos(request: ListResidentUserInfosRequest): Promise<ListResidentUserInfosResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3049,12 +3507,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据角色获取用户列表
-   *
-   * @param request ListSimpleUsersByRoleRequest
-   * @param headers ListSimpleUsersByRoleHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListSimpleUsersByRoleResponse
+   * 根据角色获取用户列表
+   * 
+   * @param request - ListSimpleUsersByRoleRequest
+   * @param headers - ListSimpleUsersByRoleHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListSimpleUsersByRoleResponse
    */
   async listSimpleUsersByRoleWithOptions(request: ListSimpleUsersByRoleRequest, headers: ListSimpleUsersByRoleHeaders, runtime: $Util.RuntimeOptions): Promise<ListSimpleUsersByRoleResponse> {
     Util.validateModel(request);
@@ -3103,10 +3561,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据角色获取用户列表
-   *
-   * @param request ListSimpleUsersByRoleRequest
-   * @return ListSimpleUsersByRoleResponse
+   * 根据角色获取用户列表
+   * 
+   * @param request - ListSimpleUsersByRoleRequest
+   * @returns ListSimpleUsersByRoleResponse
    */
   async listSimpleUsersByRole(request: ListSimpleUsersByRoleRequest): Promise<ListSimpleUsersByRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3115,12 +3573,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取下级指定区域层级组织
-   *
-   * @param request ListSubCorpsRequest
-   * @param headers ListSubCorpsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListSubCorpsResponse
+   * 获取下级指定区域层级组织
+   * 
+   * @param request - ListSubCorpsRequest
+   * @param headers - ListSubCorpsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListSubCorpsResponse
    */
   async listSubCorpsWithOptions(request: ListSubCorpsRequest, headers: ListSubCorpsHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubCorpsResponse> {
     Util.validateModel(request);
@@ -3165,10 +3623,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取下级指定区域层级组织
-   *
-   * @param request ListSubCorpsRequest
-   * @return ListSubCorpsResponse
+   * 获取下级指定区域层级组织
+   * 
+   * @param request - ListSubCorpsRequest
+   * @returns ListSubCorpsResponse
    */
   async listSubCorps(request: ListSubCorpsRequest): Promise<ListSubCorpsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3177,12 +3635,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询子部门列表
-   *
-   * @param request ListSubDeptRequest
-   * @param headers ListSubDeptHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListSubDeptResponse
+   * 查询子部门列表
+   * 
+   * @param request - ListSubDeptRequest
+   * @param headers - ListSubDeptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListSubDeptResponse
    */
   async listSubDeptWithOptions(departmentId: string, request: ListSubDeptRequest, headers: ListSubDeptHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubDeptResponse> {
     Util.validateModel(request);
@@ -3223,10 +3681,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询子部门列表
-   *
-   * @param request ListSubDeptRequest
-   * @return ListSubDeptResponse
+   * 查询子部门列表
+   * 
+   * @param request - ListSubDeptRequest
+   * @returns ListSubDeptResponse
    */
   async listSubDept(departmentId: string, request: ListSubDeptRequest): Promise<ListSubDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3235,12 +3693,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询部门下的子部门ID列表，不会递归查询，只包含ID
-   *
-   * @param request ListSubDeptIdsRequest
-   * @param headers ListSubDeptIdsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListSubDeptIdsResponse
+   * 查询部门下的子部门ID列表，不会递归查询，只包含ID
+   * 
+   * @param request - ListSubDeptIdsRequest
+   * @param headers - ListSubDeptIdsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListSubDeptIdsResponse
    */
   async listSubDeptIdsWithOptions(departmentId: string, request: ListSubDeptIdsRequest, headers: ListSubDeptIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubDeptIdsResponse> {
     Util.validateModel(request);
@@ -3277,10 +3735,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询部门下的子部门ID列表，不会递归查询，只包含ID
-   *
-   * @param request ListSubDeptIdsRequest
-   * @return ListSubDeptIdsResponse
+   * 查询部门下的子部门ID列表，不会递归查询，只包含ID
+   * 
+   * @param request - ListSubDeptIdsRequest
+   * @returns ListSubDeptIdsResponse
    */
   async listSubDeptIds(departmentId: string, request: ListSubDeptIdsRequest): Promise<ListSubDeptIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });

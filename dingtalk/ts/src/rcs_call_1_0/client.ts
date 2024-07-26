@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,9 +30,37 @@ export class RunCallUserHeaders extends $tea.Model {
 }
 
 export class RunCallUserRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * corpidxxxxx
+   */
   authorizeCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxxx
+   */
   authorizeUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxx
+   */
   orderId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxx
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -60,6 +86,10 @@ export class RunCallUserRequest extends $tea.Model {
 }
 
 export class RunCallUserResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true、false
+   */
   success?: string;
   static names(): { [key: string]: string } {
     return {
@@ -105,12 +135,11 @@ export class RunCallUserResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -120,12 +149,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 主叫方发起免费电话给授权企业人员，关联订单id
-   *
-   * @param request RunCallUserRequest
-   * @param headers RunCallUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RunCallUserResponse
+   * 主叫方发起免费电话给授权企业人员，关联订单id
+   * 
+   * @param request - RunCallUserRequest
+   * @param headers - RunCallUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RunCallUserResponse
    */
   async runCallUserWithOptions(request: RunCallUserRequest, headers: RunCallUserHeaders, runtime: $Util.RuntimeOptions): Promise<RunCallUserResponse> {
     Util.validateModel(request);
@@ -174,10 +203,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 主叫方发起免费电话给授权企业人员，关联订单id
-   *
-   * @param request RunCallUserRequest
-   * @return RunCallUserResponse
+   * 主叫方发起免费电话给授权企业人员，关联订单id
+   * 
+   * @param request - RunCallUserRequest
+   * @returns RunCallUserResponse
    */
   async runCallUser(request: RunCallUserRequest): Promise<RunCallUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });

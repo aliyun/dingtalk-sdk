@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,6 +30,13 @@ export class GetRelationUkSettingHeaders extends $tea.Model {
 }
 
 export class GetRelationUkSettingRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * crm_customer
+   */
   relationType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -159,12 +164,11 @@ export class GetRelationUkSettingResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -174,12 +178,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 获取关系数据查重规则
-   *
-   * @param request GetRelationUkSettingRequest
-   * @param headers GetRelationUkSettingHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRelationUkSettingResponse
+   * 获取关系数据查重规则
+   * 
+   * @param request - GetRelationUkSettingRequest
+   * @param headers - GetRelationUkSettingHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRelationUkSettingResponse
    */
   async getRelationUkSettingWithOptions(request: GetRelationUkSettingRequest, headers: GetRelationUkSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetRelationUkSettingResponse> {
     Util.validateModel(request);
@@ -216,10 +220,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取关系数据查重规则
-   *
-   * @param request GetRelationUkSettingRequest
-   * @return GetRelationUkSettingResponse
+   * 获取关系数据查重规则
+   * 
+   * @param request - GetRelationUkSettingRequest
+   * @returns GetRelationUkSettingResponse
    */
   async getRelationUkSetting(request: GetRelationUkSettingRequest): Promise<GetRelationUkSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });

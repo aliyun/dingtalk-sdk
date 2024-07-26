@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,8 +30,16 @@ export class BankGatewayInvokeHeaders extends $tea.Model {
 }
 
 export class BankGatewayInvokeRequest extends $tea.Model {
+  /**
+   * @example
+   * bankHttp
+   */
   actionType?: string;
   inputData?: string;
+  /**
+   * @example
+   * https://cdc.cmbchina.com/cdcserver/api/v2
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -124,6 +130,10 @@ export class BatchDeleteReceiptHeaders extends $tea.Model {
 
 export class BatchDeleteReceiptRequest extends $tea.Model {
   instanceIdList?: string[];
+  /**
+   * @example
+   * 504XX
+   */
   operator?: string;
   static names(): { [key: string]: string } {
     return {
@@ -296,6 +306,13 @@ export class GetCategoryHeaders extends $tea.Model {
 }
 
 export class GetCategoryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INCOME_XXX
+   */
   code?: string;
   static names(): { [key: string]: string } {
     return {
@@ -316,11 +333,51 @@ export class GetCategoryRequest extends $tea.Model {
 
 export class GetCategoryResponseBody extends $tea.Model {
   accountantBookIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INCOME_XXX
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * false
+   */
   isDir?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 汽车
+   */
   name?: string;
+  /**
+   * @example
+   * DIR_XXX
+   */
   parentCode?: string;
+  remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * income
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -329,6 +386,7 @@ export class GetCategoryResponseBody extends $tea.Model {
       isDir: 'isDir',
       name: 'name',
       parentCode: 'parentCode',
+      remark: 'remark',
       status: 'status',
       type: 'type',
     };
@@ -341,6 +399,7 @@ export class GetCategoryResponseBody extends $tea.Model {
       isDir: 'boolean',
       name: 'string',
       parentCode: 'string',
+      remark: 'string',
       status: 'string',
       type: 'string',
     };
@@ -399,6 +458,10 @@ export class GetFinanceAccountHeaders extends $tea.Model {
 }
 
 export class GetFinanceAccountRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   accountCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -418,16 +481,59 @@ export class GetFinanceAccountRequest extends $tea.Model {
 }
 
 export class GetFinanceAccountResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   accountCode?: string;
+  /**
+   * @example
+   * test@alipay.com
+   */
   accountId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 测试
+   */
   accountName?: string;
   accountRemark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ALIPAY
+   */
   accountType?: string;
   accountantBookIdList?: string[];
+  /**
+   * @example
+   * 50000.55
+   */
   amount?: string;
   bankCode?: string;
   bankName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1631526550994
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcdef
+   */
   creator?: string;
   static names(): { [key: string]: string } {
     return {
@@ -514,6 +620,13 @@ export class GetProjectHeaders extends $tea.Model {
 }
 
 export class GetProjectRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROJ-xxx
+   */
   code?: string;
   static names(): { [key: string]: string } {
     return {
@@ -535,12 +648,54 @@ export class GetProjectRequest extends $tea.Model {
 export class GetProjectResponseBody extends $tea.Model {
   accountantBookIdList?: string[];
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1631526550994
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * aaa
+   */
   creator?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 和外部合作
+   */
   description?: string;
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROJ-XXX
+   */
   projectCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 外包项目
+   */
   projectName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -626,7 +781,21 @@ export class GetReceiptHeaders extends $tea.Model {
 }
 
 export class GetReceiptRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 19b98a1c-5a31-4d78-9da7-0e347593820a
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EM-1017F28E03350B1738B3000X
+   */
   modelId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -648,9 +817,37 @@ export class GetReceiptRequest extends $tea.Model {
 }
 
 export class GetReceiptResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234
+   */
   appId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"operatorUserId":"015865244722391178","data":{"amount":{"amountStr":"566"},"code":"d0d54815-32c5-4b18-8391-e79713bba95e","payeeAt":1637251200000,"departmentCode":"-1","project":{"projectCode":"PROJ_101761F3FF6B21362ECA000N","projectName":"客户合作项目"},"principalId":"015865244722391178","enterpriseAccount":{},"approvedAt":1637305373000,"title":"地狱猫提交的智能财务-收款","createAt":1637305353000,"paymentAt":1637251200000,"supplier":{},"operateUserId":"015865244722391178","applicantEmployeeId":"015865244722391178","comment":"ffff","category":{"categoryCode":"INC_1016D6CB3C181E28F0120009","categoryName":"销售收入"},"customer":{"customerCode":"CUS_10178592ECEC2133C893000F","customerName":"钉钉"},"status":"agree"}}
+   */
   data?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * EM-1017F28E03350B1738B3000X
+   */
   modelId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * approval
+   */
   source?: string;
   static names(): { [key: string]: string } {
     return {
@@ -723,6 +920,13 @@ export class GetSupplierHeaders extends $tea.Model {
 }
 
 export class GetSupplierRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SUP_XXX
+   */
   code?: string;
   static names(): { [key: string]: string } {
     return {
@@ -743,10 +947,45 @@ export class GetSupplierRequest extends $tea.Model {
 
 export class GetSupplierResponseBody extends $tea.Model {
   accountantBookIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SUP_XXX
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1634786828686
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 原材料供应商
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XX公司
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -826,9 +1065,25 @@ export class LinkCommonInvokeHeaders extends $tea.Model {
 }
 
 export class LinkCommonInvokeRequest extends $tea.Model {
+  /**
+   * @example
+   * TEST
+   */
   bizType?: string;
+  /**
+   * @example
+   * "{\"key\":\"value\"}"
+   */
   data?: string;
+  /**
+   * @example
+   * INOVKE_XXX
+   */
   invokeId?: string;
+  /**
+   * @example
+   * abc
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -926,8 +1181,29 @@ export class QueryCategoryByPageHeaders extends $tea.Model {
 }
 
 export class QueryCategoryByPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -951,7 +1227,18 @@ export class QueryCategoryByPageRequest extends $tea.Model {
 }
 
 export class QueryCategoryByPageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryCategoryByPageResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -1020,7 +1307,21 @@ export class QueryCustomerByPageHeaders extends $tea.Model {
 }
 
 export class QueryCustomerByPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1042,7 +1343,18 @@ export class QueryCustomerByPageRequest extends $tea.Model {
 }
 
 export class QueryCustomerByPageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryCustomerByPageResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -1111,7 +1423,21 @@ export class QueryEnterpriseAccountByPageHeaders extends $tea.Model {
 }
 
 export class QueryEnterpriseAccountByPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1133,7 +1459,18 @@ export class QueryEnterpriseAccountByPageRequest extends $tea.Model {
 }
 
 export class QueryEnterpriseAccountByPageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryEnterpriseAccountByPageResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -1202,6 +1539,10 @@ export class QueryInstancePaymentOrderDetailHeaders extends $tea.Model {
 }
 
 export class QueryInstancePaymentOrderDetailRequest extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   orderNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1305,7 +1646,21 @@ export class QueryProjectByPageHeaders extends $tea.Model {
 }
 
 export class QueryProjectByPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1327,7 +1682,18 @@ export class QueryProjectByPageRequest extends $tea.Model {
 }
 
 export class QueryProjectByPageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QueryProjectByPageResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -1396,7 +1762,21 @@ export class QuerySupplierByPageHeaders extends $tea.Model {
 }
 
 export class QuerySupplierByPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1418,7 +1798,18 @@ export class QuerySupplierByPageRequest extends $tea.Model {
 }
 
 export class QuerySupplierByPageResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   list?: QuerySupplierByPageResponseBodyList[];
   static names(): { [key: string]: string } {
     return {
@@ -1487,7 +1878,15 @@ export class QueryUserRoleListHeaders extends $tea.Model {
 }
 
 export class QueryUserRoleListRequest extends $tea.Model {
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
+  /**
+   * @example
+   * 12312231231
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1509,6 +1908,10 @@ export class QueryUserRoleListRequest extends $tea.Model {
 }
 
 export class QueryUserRoleListResponseBody extends $tea.Model {
+  /**
+   * @example
+   * COM_DEFAULT
+   */
   companyCode?: string;
   financeEmpDeptOpenList?: QueryUserRoleListResponseBodyFinanceEmpDeptOpenList[];
   roleVOList?: QueryUserRoleListResponseBodyRoleVOList[];
@@ -1581,10 +1984,36 @@ export class SignEnterpriseAccountHeaders extends $tea.Model {
 }
 
 export class SignEnterpriseAccountRequest extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   bankCardNo?: string;
+  /**
+   * @example
+   * 123
+   * 
+   * **if can be null:**
+   * true
+   */
   bankOpenId?: string;
+  /**
+   * @example
+   * COMM_UNIONPAY
+   * 
+   * **if can be null:**
+   * true
+   */
   channelType?: string;
+  /**
+   * @example
+   * 123
+   */
   operator?: string;
+  /**
+   * @example
+   * signed
+   */
   signOperateType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1678,8 +2107,20 @@ export class SyncReceiptRecallHeaders extends $tea.Model {
 }
 
 export class SyncReceiptRecallRequest extends $tea.Model {
+  /**
+   * @example
+   * https:xxxx.pdf
+   */
   fileDownloadUrl?: string;
+  /**
+   * @example
+   * 1234.pdf
+   */
   fileName?: string;
+  /**
+   * @example
+   * 123
+   */
   orderNo?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1769,12 +2210,36 @@ export class UpdateInstanceOrderInfoHeaders extends $tea.Model {
 }
 
 export class UpdateInstanceOrderInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * xxx错误
+   */
   failReason?: string;
+  /**
+   * @example
+   * abc
+   */
   orderNo?: string;
+  /**
+   * @example
+   * 123
+   */
   outOrderNo?: string;
   payerBank?: UpdateInstanceOrderInfoRequestPayerBank;
+  /**
+   * @example
+   * 1709691000682
+   */
   paymentTime?: number;
+  /**
+   * @example
+   * PAYING
+   */
   status?: string;
+  /**
+   * @example
+   * 123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1806,12 +2271,36 @@ export class UpdateInstanceOrderInfoRequest extends $tea.Model {
 }
 
 export class UpdateInstanceOrderInfoShrinkRequest extends $tea.Model {
+  /**
+   * @example
+   * xxx错误
+   */
   failReason?: string;
+  /**
+   * @example
+   * abc
+   */
   orderNo?: string;
+  /**
+   * @example
+   * 123
+   */
   outOrderNo?: string;
   payerBankShrink?: string;
+  /**
+   * @example
+   * 1709691000682
+   */
   paymentTime?: number;
+  /**
+   * @example
+   * PAYING
+   */
   status?: string;
+  /**
+   * @example
+   * 123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1887,9 +2376,25 @@ export class UpdateInstanceOrderInfoResponse extends $tea.Model {
 }
 
 export class BatchSyncBankReceiptRequestBody extends $tea.Model {
+  /**
+   * @example
+   * https://xxxxx
+   */
   fileDownloadUrl?: string;
+  /**
+   * @example
+   * xxxx回单.pdf
+   */
   fileName?: string;
+  /**
+   * @example
+   * 2024000001902335
+   */
   messageId?: string;
+  /**
+   * @example
+   * detailId
+   */
   messageIdType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1915,11 +2420,51 @@ export class BatchSyncBankReceiptRequestBody extends $tea.Model {
 }
 
 export class QueryCategoryByPageResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * INCOME_XXX
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * false
+   */
   isDir?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 汽车
+   */
   name?: string;
+  /**
+   * @example
+   * INCOM_XXX
+   */
   parentCode?: string;
+  remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * income
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1927,6 +2472,7 @@ export class QueryCategoryByPageResponseBodyList extends $tea.Model {
       isDir: 'isDir',
       name: 'name',
       parentCode: 'parentCode',
+      remark: 'remark',
       status: 'status',
       type: 'type',
     };
@@ -1938,6 +2484,7 @@ export class QueryCategoryByPageResponseBodyList extends $tea.Model {
       isDir: 'boolean',
       name: 'string',
       parentCode: 'string',
+      remark: 'string',
       status: 'string',
       type: 'string',
     };
@@ -1949,10 +2496,45 @@ export class QueryCategoryByPageResponseBodyList extends $tea.Model {
 }
 
 export class QueryCustomerByPageResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * CUS_XXX
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1634786828686
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 重要客户
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XX有限公司
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -1983,15 +2565,62 @@ export class QueryCustomerByPageResponseBodyList extends $tea.Model {
 }
 
 export class QueryEnterpriseAccountByPageResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
   accountCode?: string;
+  /**
+   * @example
+   * test@alipay.com
+   */
   accountId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 网商银行
+   */
   accountName?: string;
+  /**
+   * @example
+   * test
+   */
   accountRemark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ALIPAY
+   */
   accountType?: string;
+  /**
+   * @example
+   * 10000.33
+   */
   amount?: string;
   bankCode?: string;
   bankName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1631526550994
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * aaa
+   */
   creator?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2146,12 +2775,51 @@ export class QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO extends 
 export class QueryProjectByPageResponseBodyList extends $tea.Model {
   caode?: string;
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1631524595555
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * aaaa
+   */
   creator?: string;
+  /**
+   * @example
+   * 外派项目
+   */
   description?: string;
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROJ-xxx
+   */
   projectCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 外派项目
+   */
   projectName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -2190,10 +2858,45 @@ export class QueryProjectByPageResponseBodyList extends $tea.Model {
 }
 
 export class QuerySupplierByPageResponseBodyList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SUP_XXX
+   */
   code?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1634786828686
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 原材料供应商
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * XX供应商
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * valid
+   */
   status?: string;
   userDefineCode?: string;
   static names(): { [key: string]: string } {
@@ -2252,7 +2955,15 @@ export class QueryUserRoleListResponseBodyFinanceEmpDeptOpenList extends $tea.Mo
 }
 
 export class QueryUserRoleListResponseBodyRoleVOList extends $tea.Model {
+  /**
+   * @example
+   * applicationManager
+   */
   roleCode?: string;
+  /**
+   * @example
+   * 应用管理员
+   */
   roleName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2274,7 +2985,15 @@ export class QueryUserRoleListResponseBodyRoleVOList extends $tea.Model {
 }
 
 export class UpdateInstanceOrderInfoRequestPayerBank extends $tea.Model {
+  /**
+   * @example
+   * 64112222
+   */
   cardNo?: string;
+  /**
+   * @example
+   * 招商银行
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2297,12 +3016,11 @@ export class UpdateInstanceOrderInfoRequestPayerBank extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2312,12 +3030,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 银行接入层通用接口
-   *
-   * @param request BankGatewayInvokeRequest
-   * @param headers BankGatewayInvokeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BankGatewayInvokeResponse
+   * 银行接入层通用接口
+   * 
+   * @param request - BankGatewayInvokeRequest
+   * @param headers - BankGatewayInvokeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BankGatewayInvokeResponse
    */
   async bankGatewayInvokeWithOptions(request: BankGatewayInvokeRequest, headers: BankGatewayInvokeHeaders, runtime: $Util.RuntimeOptions): Promise<BankGatewayInvokeResponse> {
     Util.validateModel(request);
@@ -2362,10 +3080,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 银行接入层通用接口
-   *
-   * @param request BankGatewayInvokeRequest
-   * @return BankGatewayInvokeResponse
+   * 银行接入层通用接口
+   * 
+   * @param request - BankGatewayInvokeRequest
+   * @returns BankGatewayInvokeResponse
    */
   async bankGatewayInvoke(request: BankGatewayInvokeRequest): Promise<BankGatewayInvokeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2374,12 +3092,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除智能财务单据
-   *
-   * @param request BatchDeleteReceiptRequest
-   * @param headers BatchDeleteReceiptHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchDeleteReceiptResponse
+   * 批量删除智能财务单据
+   * 
+   * @param request - BatchDeleteReceiptRequest
+   * @param headers - BatchDeleteReceiptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchDeleteReceiptResponse
    */
   async batchDeleteReceiptWithOptions(request: BatchDeleteReceiptRequest, headers: BatchDeleteReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<BatchDeleteReceiptResponse> {
     Util.validateModel(request);
@@ -2420,10 +3138,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除智能财务单据
-   *
-   * @param request BatchDeleteReceiptRequest
-   * @return BatchDeleteReceiptResponse
+   * 批量删除智能财务单据
+   * 
+   * @param request - BatchDeleteReceiptRequest
+   * @returns BatchDeleteReceiptResponse
    */
   async batchDeleteReceipt(request: BatchDeleteReceiptRequest): Promise<BatchDeleteReceiptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2432,12 +3150,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量同步银行回单
-   *
-   * @param request BatchSyncBankReceiptRequest
-   * @param headers BatchSyncBankReceiptHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchSyncBankReceiptResponse
+   * 批量同步银行回单
+   * 
+   * @param request - BatchSyncBankReceiptRequest
+   * @param headers - BatchSyncBankReceiptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchSyncBankReceiptResponse
    */
   async batchSyncBankReceiptWithOptions(request: BatchSyncBankReceiptRequest, headers: BatchSyncBankReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSyncBankReceiptResponse> {
     Util.validateModel(request);
@@ -2469,10 +3187,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量同步银行回单
-   *
-   * @param request BatchSyncBankReceiptRequest
-   * @return BatchSyncBankReceiptResponse
+   * 批量同步银行回单
+   * 
+   * @param request - BatchSyncBankReceiptRequest
+   * @returns BatchSyncBankReceiptResponse
    */
   async batchSyncBankReceipt(request: BatchSyncBankReceiptRequest): Promise<BatchSyncBankReceiptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2481,12 +3199,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取费用类别
-   *
-   * @param request GetCategoryRequest
-   * @param headers GetCategoryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCategoryResponse
+   * 获取费用类别
+   * 
+   * @param request - GetCategoryRequest
+   * @param headers - GetCategoryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCategoryResponse
    */
   async getCategoryWithOptions(request: GetCategoryRequest, headers: GetCategoryHeaders, runtime: $Util.RuntimeOptions): Promise<GetCategoryResponse> {
     Util.validateModel(request);
@@ -2523,10 +3241,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取费用类别
-   *
-   * @param request GetCategoryRequest
-   * @return GetCategoryResponse
+   * 获取费用类别
+   * 
+   * @param request - GetCategoryRequest
+   * @returns GetCategoryResponse
    */
   async getCategory(request: GetCategoryRequest): Promise<GetCategoryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2535,12 +3253,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业账户
-   *
-   * @param request GetFinanceAccountRequest
-   * @param headers GetFinanceAccountHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFinanceAccountResponse
+   * 获取企业账户
+   * 
+   * @param request - GetFinanceAccountRequest
+   * @param headers - GetFinanceAccountHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFinanceAccountResponse
    */
   async getFinanceAccountWithOptions(request: GetFinanceAccountRequest, headers: GetFinanceAccountHeaders, runtime: $Util.RuntimeOptions): Promise<GetFinanceAccountResponse> {
     Util.validateModel(request);
@@ -2577,10 +3295,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取企业账户
-   *
-   * @param request GetFinanceAccountRequest
-   * @return GetFinanceAccountResponse
+   * 获取企业账户
+   * 
+   * @param request - GetFinanceAccountRequest
+   * @returns GetFinanceAccountResponse
    */
   async getFinanceAccount(request: GetFinanceAccountRequest): Promise<GetFinanceAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2589,12 +3307,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取单条项目
-   *
-   * @param request GetProjectRequest
-   * @param headers GetProjectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetProjectResponse
+   * 获取单条项目
+   * 
+   * @param request - GetProjectRequest
+   * @param headers - GetProjectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProjectResponse
    */
   async getProjectWithOptions(request: GetProjectRequest, headers: GetProjectHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectResponse> {
     Util.validateModel(request);
@@ -2631,10 +3349,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取单条项目
-   *
-   * @param request GetProjectRequest
-   * @return GetProjectResponse
+   * 获取单条项目
+   * 
+   * @param request - GetProjectRequest
+   * @returns GetProjectResponse
    */
   async getProject(request: GetProjectRequest): Promise<GetProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2643,12 +3361,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务单据详情
-   *
-   * @param request GetReceiptRequest
-   * @param headers GetReceiptHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetReceiptResponse
+   * 获取智能财务单据详情
+   * 
+   * @param request - GetReceiptRequest
+   * @param headers - GetReceiptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetReceiptResponse
    */
   async getReceiptWithOptions(request: GetReceiptRequest, headers: GetReceiptHeaders, runtime: $Util.RuntimeOptions): Promise<GetReceiptResponse> {
     Util.validateModel(request);
@@ -2689,10 +3407,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务单据详情
-   *
-   * @param request GetReceiptRequest
-   * @return GetReceiptResponse
+   * 获取智能财务单据详情
+   * 
+   * @param request - GetReceiptRequest
+   * @returns GetReceiptResponse
    */
   async getReceipt(request: GetReceiptRequest): Promise<GetReceiptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2701,12 +3419,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务应用内维护的供应商信息
-   *
-   * @param request GetSupplierRequest
-   * @param headers GetSupplierHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSupplierResponse
+   * 获取智能财务应用内维护的供应商信息
+   * 
+   * @param request - GetSupplierRequest
+   * @param headers - GetSupplierHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSupplierResponse
    */
   async getSupplierWithOptions(request: GetSupplierRequest, headers: GetSupplierHeaders, runtime: $Util.RuntimeOptions): Promise<GetSupplierResponse> {
     Util.validateModel(request);
@@ -2743,10 +3461,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取智能财务应用内维护的供应商信息
-   *
-   * @param request GetSupplierRequest
-   * @return GetSupplierResponse
+   * 获取智能财务应用内维护的供应商信息
+   * 
+   * @param request - GetSupplierRequest
+   * @returns GetSupplierResponse
    */
   async getSupplier(request: GetSupplierRequest): Promise<GetSupplierResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2755,12 +3473,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据不同的bizType查询不同的数据
-   *
-   * @param request LinkCommonInvokeRequest
-   * @param headers LinkCommonInvokeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return LinkCommonInvokeResponse
+   * 根据不同的bizType查询不同的数据
+   * 
+   * @param request - LinkCommonInvokeRequest
+   * @param headers - LinkCommonInvokeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns LinkCommonInvokeResponse
    */
   async linkCommonInvokeWithOptions(request: LinkCommonInvokeRequest, headers: LinkCommonInvokeHeaders, runtime: $Util.RuntimeOptions): Promise<LinkCommonInvokeResponse> {
     Util.validateModel(request);
@@ -2809,10 +3527,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据不同的bizType查询不同的数据
-   *
-   * @param request LinkCommonInvokeRequest
-   * @return LinkCommonInvokeResponse
+   * 根据不同的bizType查询不同的数据
+   * 
+   * @param request - LinkCommonInvokeRequest
+   * @returns LinkCommonInvokeResponse
    */
   async linkCommonInvoke(request: LinkCommonInvokeRequest): Promise<LinkCommonInvokeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2821,12 +3539,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取费用类别
-   *
-   * @param request QueryCategoryByPageRequest
-   * @param headers QueryCategoryByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCategoryByPageResponse
+   * 批量获取费用类别
+   * 
+   * @param request - QueryCategoryByPageRequest
+   * @param headers - QueryCategoryByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCategoryByPageResponse
    */
   async queryCategoryByPageWithOptions(request: QueryCategoryByPageRequest, headers: QueryCategoryByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCategoryByPageResponse> {
     Util.validateModel(request);
@@ -2871,10 +3589,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取费用类别
-   *
-   * @param request QueryCategoryByPageRequest
-   * @return QueryCategoryByPageResponse
+   * 批量获取费用类别
+   * 
+   * @param request - QueryCategoryByPageRequest
+   * @returns QueryCategoryByPageResponse
    */
   async queryCategoryByPage(request: QueryCategoryByPageRequest): Promise<QueryCategoryByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2883,12 +3601,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页批量获取智能财务应用内维护的客户信息
-   *
-   * @param request QueryCustomerByPageRequest
-   * @param headers QueryCustomerByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryCustomerByPageResponse
+   * 分页批量获取智能财务应用内维护的客户信息
+   * 
+   * @param request - QueryCustomerByPageRequest
+   * @param headers - QueryCustomerByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCustomerByPageResponse
    */
   async queryCustomerByPageWithOptions(request: QueryCustomerByPageRequest, headers: QueryCustomerByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomerByPageResponse> {
     Util.validateModel(request);
@@ -2929,10 +3647,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页批量获取智能财务应用内维护的客户信息
-   *
-   * @param request QueryCustomerByPageRequest
-   * @return QueryCustomerByPageResponse
+   * 分页批量获取智能财务应用内维护的客户信息
+   * 
+   * @param request - QueryCustomerByPageRequest
+   * @returns QueryCustomerByPageResponse
    */
   async queryCustomerByPage(request: QueryCustomerByPageRequest): Promise<QueryCustomerByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2941,12 +3659,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取企业账户
-   *
-   * @param request QueryEnterpriseAccountByPageRequest
-   * @param headers QueryEnterpriseAccountByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryEnterpriseAccountByPageResponse
+   * 批量获取企业账户
+   * 
+   * @param request - QueryEnterpriseAccountByPageRequest
+   * @param headers - QueryEnterpriseAccountByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryEnterpriseAccountByPageResponse
    */
   async queryEnterpriseAccountByPageWithOptions(request: QueryEnterpriseAccountByPageRequest, headers: QueryEnterpriseAccountByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEnterpriseAccountByPageResponse> {
     Util.validateModel(request);
@@ -2987,10 +3705,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取企业账户
-   *
-   * @param request QueryEnterpriseAccountByPageRequest
-   * @return QueryEnterpriseAccountByPageResponse
+   * 批量获取企业账户
+   * 
+   * @param request - QueryEnterpriseAccountByPageRequest
+   * @returns QueryEnterpriseAccountByPageResponse
    */
   async queryEnterpriseAccountByPage(request: QueryEnterpriseAccountByPageRequest): Promise<QueryEnterpriseAccountByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2999,12 +3717,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询支付订单详情
-   *
-   * @param request QueryInstancePaymentOrderDetailRequest
-   * @param headers QueryInstancePaymentOrderDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryInstancePaymentOrderDetailResponse
+   * 查询支付订单详情
+   * 
+   * @param request - QueryInstancePaymentOrderDetailRequest
+   * @param headers - QueryInstancePaymentOrderDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryInstancePaymentOrderDetailResponse
    */
   async queryInstancePaymentOrderDetailWithOptions(instanceId: string, request: QueryInstancePaymentOrderDetailRequest, headers: QueryInstancePaymentOrderDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryInstancePaymentOrderDetailResponse> {
     Util.validateModel(request);
@@ -3041,10 +3759,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询支付订单详情
-   *
-   * @param request QueryInstancePaymentOrderDetailRequest
-   * @return QueryInstancePaymentOrderDetailResponse
+   * 查询支付订单详情
+   * 
+   * @param request - QueryInstancePaymentOrderDetailRequest
+   * @returns QueryInstancePaymentOrderDetailResponse
    */
   async queryInstancePaymentOrderDetail(instanceId: string, request: QueryInstancePaymentOrderDetailRequest): Promise<QueryInstancePaymentOrderDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3053,12 +3771,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取项目信息
-   *
-   * @param request QueryProjectByPageRequest
-   * @param headers QueryProjectByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryProjectByPageResponse
+   * 批量获取项目信息
+   * 
+   * @param request - QueryProjectByPageRequest
+   * @param headers - QueryProjectByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryProjectByPageResponse
    */
   async queryProjectByPageWithOptions(request: QueryProjectByPageRequest, headers: QueryProjectByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProjectByPageResponse> {
     Util.validateModel(request);
@@ -3099,10 +3817,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取项目信息
-   *
-   * @param request QueryProjectByPageRequest
-   * @return QueryProjectByPageResponse
+   * 批量获取项目信息
+   * 
+   * @param request - QueryProjectByPageRequest
+   * @returns QueryProjectByPageResponse
    */
   async queryProjectByPage(request: QueryProjectByPageRequest): Promise<QueryProjectByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3111,12 +3829,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页批量获取智能财务应用内维护的供应商信息
-   *
-   * @param request QuerySupplierByPageRequest
-   * @param headers QuerySupplierByPageHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QuerySupplierByPageResponse
+   * 分页批量获取智能财务应用内维护的供应商信息
+   * 
+   * @param request - QuerySupplierByPageRequest
+   * @param headers - QuerySupplierByPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QuerySupplierByPageResponse
    */
   async querySupplierByPageWithOptions(request: QuerySupplierByPageRequest, headers: QuerySupplierByPageHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySupplierByPageResponse> {
     Util.validateModel(request);
@@ -3157,10 +3875,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页批量获取智能财务应用内维护的供应商信息
-   *
-   * @param request QuerySupplierByPageRequest
-   * @return QuerySupplierByPageResponse
+   * 分页批量获取智能财务应用内维护的供应商信息
+   * 
+   * @param request - QuerySupplierByPageRequest
+   * @returns QuerySupplierByPageResponse
    */
   async querySupplierByPage(request: QuerySupplierByPageRequest): Promise<QuerySupplierByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3169,12 +3887,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户角色成员，支持分页，可获取某个企业主体下的角色成员
-   *
-   * @param request QueryUserRoleListRequest
-   * @param headers QueryUserRoleListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryUserRoleListResponse
+   * 查询用户角色成员，支持分页，可获取某个企业主体下的角色成员
+   * 
+   * @param request - QueryUserRoleListRequest
+   * @param headers - QueryUserRoleListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryUserRoleListResponse
    */
   async queryUserRoleListWithOptions(request: QueryUserRoleListRequest, headers: QueryUserRoleListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserRoleListResponse> {
     Util.validateModel(request);
@@ -3215,10 +3933,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户角色成员，支持分页，可获取某个企业主体下的角色成员
-   *
-   * @param request QueryUserRoleListRequest
-   * @return QueryUserRoleListResponse
+   * 查询用户角色成员，支持分页，可获取某个企业主体下的角色成员
+   * 
+   * @param request - QueryUserRoleListRequest
+   * @returns QueryUserRoleListResponse
    */
   async queryUserRoleList(request: QueryUserRoleListRequest): Promise<QueryUserRoleListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3227,12 +3945,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 签约企业账户
-   *
-   * @param request SignEnterpriseAccountRequest
-   * @param headers SignEnterpriseAccountHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SignEnterpriseAccountResponse
+   * 签约企业账户
+   * 
+   * @param request - SignEnterpriseAccountRequest
+   * @param headers - SignEnterpriseAccountHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SignEnterpriseAccountResponse
    */
   async signEnterpriseAccountWithOptions(request: SignEnterpriseAccountRequest, headers: SignEnterpriseAccountHeaders, runtime: $Util.RuntimeOptions): Promise<SignEnterpriseAccountResponse> {
     Util.validateModel(request);
@@ -3285,10 +4003,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 签约企业账户
-   *
-   * @param request SignEnterpriseAccountRequest
-   * @return SignEnterpriseAccountResponse
+   * 签约企业账户
+   * 
+   * @param request - SignEnterpriseAccountRequest
+   * @returns SignEnterpriseAccountResponse
    */
   async signEnterpriseAccount(request: SignEnterpriseAccountRequest): Promise<SignEnterpriseAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3297,12 +4015,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送银企支付回单文件信息
-   *
-   * @param request SyncReceiptRecallRequest
-   * @param headers SyncReceiptRecallHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SyncReceiptRecallResponse
+   * 发送银企支付回单文件信息
+   * 
+   * @param request - SyncReceiptRecallRequest
+   * @param headers - SyncReceiptRecallHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncReceiptRecallResponse
    */
   async syncReceiptRecallWithOptions(request: SyncReceiptRecallRequest, headers: SyncReceiptRecallHeaders, runtime: $Util.RuntimeOptions): Promise<SyncReceiptRecallResponse> {
     Util.validateModel(request);
@@ -3347,10 +4065,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发送银企支付回单文件信息
-   *
-   * @param request SyncReceiptRecallRequest
-   * @return SyncReceiptRecallResponse
+   * 发送银企支付回单文件信息
+   * 
+   * @param request - SyncReceiptRecallRequest
+   * @returns SyncReceiptRecallResponse
    */
   async syncReceiptRecall(request: SyncReceiptRecallRequest): Promise<SyncReceiptRecallResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3359,12 +4077,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新单据的支付状态
-   *
-   * @param tmpReq UpdateInstanceOrderInfoRequest
-   * @param headers UpdateInstanceOrderInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInstanceOrderInfoResponse
+   * 更新单据的支付状态
+   * 
+   * @param tmpReq - UpdateInstanceOrderInfoRequest
+   * @param headers - UpdateInstanceOrderInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInstanceOrderInfoResponse
    */
   async updateInstanceOrderInfoWithOptions(instanceId: string, tmpReq: UpdateInstanceOrderInfoRequest, headers: UpdateInstanceOrderInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInstanceOrderInfoResponse> {
     Util.validateModel(tmpReq);
@@ -3431,10 +4149,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新单据的支付状态
-   *
-   * @param request UpdateInstanceOrderInfoRequest
-   * @return UpdateInstanceOrderInfoResponse
+   * 更新单据的支付状态
+   * 
+   * @param request - UpdateInstanceOrderInfoRequest
+   * @returns UpdateInstanceOrderInfoResponse
    */
   async updateInstanceOrderInfo(instanceId: string, request: UpdateInstanceOrderInfoRequest): Promise<UpdateInstanceOrderInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });

@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,7 +30,15 @@ export class DeleteKnowledgeHeaders extends $tea.Model {
 }
 
 export class DeleteKnowledgeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   assistantId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   studyId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -381,6 +387,10 @@ export class RelearnKnowledgeHeaders extends $tea.Model {
 }
 
 export class RelearnKnowledgeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   assistantId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -476,12 +486,11 @@ export class GetKnowledgeListResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -491,12 +500,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 删除助理知识
-   *
-   * @param request DeleteKnowledgeRequest
-   * @param headers DeleteKnowledgeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteKnowledgeResponse
+   * 删除助理知识
+   * 
+   * @param request - DeleteKnowledgeRequest
+   * @param headers - DeleteKnowledgeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteKnowledgeResponse
    */
   async deleteKnowledgeWithOptions(request: DeleteKnowledgeRequest, headers: DeleteKnowledgeHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteKnowledgeResponse> {
     Util.validateModel(request);
@@ -537,10 +546,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除助理知识
-   *
-   * @param request DeleteKnowledgeRequest
-   * @return DeleteKnowledgeResponse
+   * 删除助理知识
+   * 
+   * @param request - DeleteKnowledgeRequest
+   * @returns DeleteKnowledgeResponse
    */
   async deleteKnowledge(request: DeleteKnowledgeRequest): Promise<DeleteKnowledgeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -549,12 +558,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取助理知识列表
-   *
-   * @param request GetKnowledgeListRequest
-   * @param headers GetKnowledgeListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetKnowledgeListResponse
+   * 获取助理知识列表
+   * 
+   * @param request - GetKnowledgeListRequest
+   * @param headers - GetKnowledgeListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetKnowledgeListResponse
    */
   async getKnowledgeListWithOptions(request: GetKnowledgeListRequest, headers: GetKnowledgeListHeaders, runtime: $Util.RuntimeOptions): Promise<GetKnowledgeListResponse> {
     Util.validateModel(request);
@@ -591,10 +600,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取助理知识列表
-   *
-   * @param request GetKnowledgeListRequest
-   * @return GetKnowledgeListResponse
+   * 获取助理知识列表
+   * 
+   * @param request - GetKnowledgeListRequest
+   * @returns GetKnowledgeListResponse
    */
   async getKnowledgeList(request: GetKnowledgeListRequest): Promise<GetKnowledgeListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -603,12 +612,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 安装助理
-   *
-   * @param request InstallAssistantRequest
-   * @param headers InstallAssistantHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InstallAssistantResponse
+   * 安装助理
+   * 
+   * @param request - InstallAssistantRequest
+   * @param headers - InstallAssistantHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InstallAssistantResponse
    */
   async installAssistantWithOptions(request: InstallAssistantRequest, headers: InstallAssistantHeaders, runtime: $Util.RuntimeOptions): Promise<InstallAssistantResponse> {
     Util.validateModel(request);
@@ -645,10 +654,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 安装助理
-   *
-   * @param request InstallAssistantRequest
-   * @return InstallAssistantResponse
+   * 安装助理
+   * 
+   * @param request - InstallAssistantRequest
+   * @returns InstallAssistantResponse
    */
   async installAssistant(request: InstallAssistantRequest): Promise<InstallAssistantResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -657,12 +666,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 助理学习知识
-   *
-   * @param request LearnKnowledgeRequest
-   * @param headers LearnKnowledgeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return LearnKnowledgeResponse
+   * 助理学习知识
+   * 
+   * @param request - LearnKnowledgeRequest
+   * @param headers - LearnKnowledgeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns LearnKnowledgeResponse
    */
   async learnKnowledgeWithOptions(request: LearnKnowledgeRequest, headers: LearnKnowledgeHeaders, runtime: $Util.RuntimeOptions): Promise<LearnKnowledgeResponse> {
     Util.validateModel(request);
@@ -703,10 +712,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 助理学习知识
-   *
-   * @param request LearnKnowledgeRequest
-   * @return LearnKnowledgeResponse
+   * 助理学习知识
+   * 
+   * @param request - LearnKnowledgeRequest
+   * @returns LearnKnowledgeResponse
    */
   async learnKnowledge(request: LearnKnowledgeRequest): Promise<LearnKnowledgeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -715,12 +724,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 助理学习增量知识
-   *
-   * @param request RelearnKnowledgeRequest
-   * @param headers RelearnKnowledgeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RelearnKnowledgeResponse
+   * 助理学习增量知识
+   * 
+   * @param request - RelearnKnowledgeRequest
+   * @param headers - RelearnKnowledgeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RelearnKnowledgeResponse
    */
   async relearnKnowledgeWithOptions(request: RelearnKnowledgeRequest, headers: RelearnKnowledgeHeaders, runtime: $Util.RuntimeOptions): Promise<RelearnKnowledgeResponse> {
     Util.validateModel(request);
@@ -757,10 +766,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 助理学习增量知识
-   *
-   * @param request RelearnKnowledgeRequest
-   * @return RelearnKnowledgeResponse
+   * 助理学习增量知识
+   * 
+   * @param request - RelearnKnowledgeRequest
+   * @returns RelearnKnowledgeResponse
    */
   async relearnKnowledge(request: RelearnKnowledgeRequest): Promise<RelearnKnowledgeResponse> {
     let runtime = new $Util.RuntimeOptions({ });

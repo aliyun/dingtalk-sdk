@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,11 +30,31 @@ export class CreateMiniAppHeaders extends $tea.Model {
 }
 
 export class CreateMiniAppRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizType?: number;
   bundleId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   desc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -132,11 +150,31 @@ export class CreateMiniAppPluginHeaders extends $tea.Model {
 }
 
 export class CreateMiniAppPluginRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizType?: number;
   bundleId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   desc?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -523,6 +561,10 @@ export class GetSettingByMiniAppIdHeaders extends $tea.Model {
 }
 
 export class GetSettingByMiniAppIdResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -589,8 +631,20 @@ export class InvokeHtmlBundleBuildHeaders extends $tea.Model {
 }
 
 export class InvokeHtmlBundleBuildRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bundleId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   miniAppId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   version?: string;
   static names(): { [key: string]: string } {
     return {
@@ -614,6 +668,10 @@ export class InvokeHtmlBundleBuildRequest extends $tea.Model {
 }
 
 export class InvokeHtmlBundleBuildResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -680,10 +738,30 @@ export class ListAvaiableVersionHeaders extends $tea.Model {
 }
 
 export class ListAvaiableVersionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bundleId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   miniAppId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pageNum?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   versionTypeSet?: number[];
   static names(): { [key: string]: string } {
     return {
@@ -802,6 +880,10 @@ export class QueryHtmlBundleBuildRequest extends $tea.Model {
 }
 
 export class QueryHtmlBundleBuildResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -846,9 +928,25 @@ export class QueryHtmlBundleBuildResponse extends $tea.Model {
 }
 
 export class RollBackVersionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bundleId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   miniAppId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   rollbackVersion?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   targetVersion?: string;
   static names(): { [key: string]: string } {
     return {
@@ -940,7 +1038,15 @@ export class SetExtendSettingHeaders extends $tea.Model {
 }
 
 export class SetExtendSettingRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   buildH5Bundle?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   miniAppId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -962,6 +1068,10 @@ export class SetExtendSettingRequest extends $tea.Model {
 }
 
 export class SetExtendSettingResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1028,9 +1138,21 @@ export class UpdateVersionStatusHeaders extends $tea.Model {
 }
 
 export class UpdateVersionStatusRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bundleId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   miniAppId?: string;
   version?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   versionType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1056,6 +1178,10 @@ export class UpdateVersionStatusRequest extends $tea.Model {
 }
 
 export class UpdateVersionStatusResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1119,10 +1245,30 @@ export class GetMiniAppMetaDataResponseBodyResult extends $tea.Model {
 }
 
 export class ListAvaiableVersionResponseBodyVersions extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   buildStatus?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   h5Bundle?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   packageSize?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   packageUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   version?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1151,12 +1297,11 @@ export class ListAvaiableVersionResponseBodyVersions extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
@@ -1167,12 +1312,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 创建小程序
-   *
-   * @param request CreateMiniAppRequest
-   * @param headers CreateMiniAppHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateMiniAppResponse
+   * 创建小程序
+   * 
+   * @param request - CreateMiniAppRequest
+   * @param headers - CreateMiniAppHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateMiniAppResponse
    */
   async createMiniAppWithOptions(request: CreateMiniAppRequest, headers: CreateMiniAppHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMiniAppResponse> {
     Util.validateModel(request);
@@ -1229,10 +1374,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建小程序
-   *
-   * @param request CreateMiniAppRequest
-   * @return CreateMiniAppResponse
+   * 创建小程序
+   * 
+   * @param request - CreateMiniAppRequest
+   * @returns CreateMiniAppResponse
    */
   async createMiniApp(request: CreateMiniAppRequest): Promise<CreateMiniAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1241,12 +1386,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建小程序组件
-   *
-   * @param request CreateMiniAppPluginRequest
-   * @param headers CreateMiniAppPluginHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateMiniAppPluginResponse
+   * 创建小程序组件
+   * 
+   * @param request - CreateMiniAppPluginRequest
+   * @param headers - CreateMiniAppPluginHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateMiniAppPluginResponse
    */
   async createMiniAppPluginWithOptions(request: CreateMiniAppPluginRequest, headers: CreateMiniAppPluginHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMiniAppPluginResponse> {
     Util.validateModel(request);
@@ -1303,10 +1448,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建小程序组件
-   *
-   * @param request CreateMiniAppPluginRequest
-   * @return CreateMiniAppPluginResponse
+   * 创建小程序组件
+   * 
+   * @param request - CreateMiniAppPluginRequest
+   * @returns CreateMiniAppPluginResponse
    */
   async createMiniAppPlugin(request: CreateMiniAppPluginRequest): Promise<CreateMiniAppPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1315,12 +1460,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 小程序多端发布版本
-   *
-   * @param request CreateVersionAcrossBundleRequest
-   * @param headers CreateVersionAcrossBundleHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateVersionAcrossBundleResponse
+   * 小程序多端发布版本
+   * 
+   * @param request - CreateVersionAcrossBundleRequest
+   * @param headers - CreateVersionAcrossBundleHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateVersionAcrossBundleResponse
    */
   async createVersionAcrossBundleWithOptions(request: CreateVersionAcrossBundleRequest, headers: CreateVersionAcrossBundleHeaders, runtime: $Util.RuntimeOptions): Promise<CreateVersionAcrossBundleResponse> {
     Util.validateModel(request);
@@ -1373,10 +1518,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 小程序多端发布版本
-   *
-   * @param request CreateVersionAcrossBundleRequest
-   * @return CreateVersionAcrossBundleResponse
+   * 小程序多端发布版本
+   * 
+   * @param request - CreateVersionAcrossBundleRequest
+   * @returns CreateVersionAcrossBundleResponse
    */
   async createVersionAcrossBundle(request: CreateVersionAcrossBundleRequest): Promise<CreateVersionAcrossBundleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1385,12 +1530,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取小程序最大的构建版本
-   *
-   * @param request GetMaxVersionRequest
-   * @param headers GetMaxVersionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMaxVersionResponse
+   * 获取小程序最大的构建版本
+   * 
+   * @param request - GetMaxVersionRequest
+   * @param headers - GetMaxVersionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMaxVersionResponse
    */
   async getMaxVersionWithOptions(request: GetMaxVersionRequest, headers: GetMaxVersionHeaders, runtime: $Util.RuntimeOptions): Promise<GetMaxVersionResponse> {
     Util.validateModel(request);
@@ -1435,10 +1580,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取小程序最大的构建版本
-   *
-   * @param request GetMaxVersionRequest
-   * @return GetMaxVersionResponse
+   * 获取小程序最大的构建版本
+   * 
+   * @param request - GetMaxVersionRequest
+   * @returns GetMaxVersionResponse
    */
   async getMaxVersion(request: GetMaxVersionRequest): Promise<GetMaxVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1447,12 +1592,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步小程序元数据
-   *
-   * @param request GetMiniAppMetaDataRequest
-   * @param headers GetMiniAppMetaDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMiniAppMetaDataResponse
+   * 同步小程序元数据
+   * 
+   * @param request - GetMiniAppMetaDataRequest
+   * @param headers - GetMiniAppMetaDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMiniAppMetaDataResponse
    */
   async getMiniAppMetaDataWithOptions(request: GetMiniAppMetaDataRequest, headers: GetMiniAppMetaDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetMiniAppMetaDataResponse> {
     Util.validateModel(request);
@@ -1501,10 +1646,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同步小程序元数据
-   *
-   * @param request GetMiniAppMetaDataRequest
-   * @return GetMiniAppMetaDataResponse
+   * 同步小程序元数据
+   * 
+   * @param request - GetMiniAppMetaDataRequest
+   * @returns GetMiniAppMetaDataResponse
    */
   async getMiniAppMetaData(request: GetMiniAppMetaDataRequest): Promise<GetMiniAppMetaDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1513,11 +1658,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询小程序配置
-   *
-   * @param headers GetSettingByMiniAppIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSettingByMiniAppIdResponse
+   * 查询小程序配置
+   * 
+   * @param headers - GetSettingByMiniAppIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSettingByMiniAppIdResponse
    */
   async getSettingByMiniAppIdWithOptions(miniAppId: string, headers: GetSettingByMiniAppIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetSettingByMiniAppIdResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1547,9 +1692,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询小程序配置
-   *
-   * @return GetSettingByMiniAppIdResponse
+   * 查询小程序配置
+   * @returns GetSettingByMiniAppIdResponse
    */
   async getSettingByMiniAppId(miniAppId: string): Promise<GetSettingByMiniAppIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1558,12 +1702,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 构建H5Bundle
-   *
-   * @param request InvokeHtmlBundleBuildRequest
-   * @param headers InvokeHtmlBundleBuildHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InvokeHtmlBundleBuildResponse
+   * 构建H5Bundle
+   * 
+   * @param request - InvokeHtmlBundleBuildRequest
+   * @param headers - InvokeHtmlBundleBuildHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InvokeHtmlBundleBuildResponse
    */
   async invokeHtmlBundleBuildWithOptions(request: InvokeHtmlBundleBuildRequest, headers: InvokeHtmlBundleBuildHeaders, runtime: $Util.RuntimeOptions): Promise<InvokeHtmlBundleBuildResponse> {
     Util.validateModel(request);
@@ -1608,10 +1752,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 构建H5Bundle
-   *
-   * @param request InvokeHtmlBundleBuildRequest
-   * @return InvokeHtmlBundleBuildResponse
+   * 构建H5Bundle
+   * 
+   * @param request - InvokeHtmlBundleBuildRequest
+   * @returns InvokeHtmlBundleBuildResponse
    */
   async invokeHtmlBundleBuild(request: InvokeHtmlBundleBuildRequest): Promise<InvokeHtmlBundleBuildResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1620,12 +1764,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取小程序版本列表
-   *
-   * @param request ListAvaiableVersionRequest
-   * @param headers ListAvaiableVersionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListAvaiableVersionResponse
+   * 获取小程序版本列表
+   * 
+   * @param request - ListAvaiableVersionRequest
+   * @param headers - ListAvaiableVersionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListAvaiableVersionResponse
    */
   async listAvaiableVersionWithOptions(request: ListAvaiableVersionRequest, headers: ListAvaiableVersionHeaders, runtime: $Util.RuntimeOptions): Promise<ListAvaiableVersionResponse> {
     Util.validateModel(request);
@@ -1678,10 +1822,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取小程序版本列表
-   *
-   * @param request ListAvaiableVersionRequest
-   * @return ListAvaiableVersionResponse
+   * 获取小程序版本列表
+   * 
+   * @param request - ListAvaiableVersionRequest
+   * @returns ListAvaiableVersionResponse
    */
   async listAvaiableVersion(request: ListAvaiableVersionRequest): Promise<ListAvaiableVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1690,12 +1834,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询H5构建结果
-   *
-   * @param request QueryHtmlBundleBuildRequest
-   * @param headers QueryHtmlBundleBuildHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryHtmlBundleBuildResponse
+   * 查询H5构建结果
+   * 
+   * @param request - QueryHtmlBundleBuildRequest
+   * @param headers - QueryHtmlBundleBuildHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryHtmlBundleBuildResponse
    */
   async queryHtmlBundleBuildWithOptions(request: QueryHtmlBundleBuildRequest, headers: QueryHtmlBundleBuildHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHtmlBundleBuildResponse> {
     Util.validateModel(request);
@@ -1740,10 +1884,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询H5构建结果
-   *
-   * @param request QueryHtmlBundleBuildRequest
-   * @return QueryHtmlBundleBuildResponse
+   * 查询H5构建结果
+   * 
+   * @param request - QueryHtmlBundleBuildRequest
+   * @returns QueryHtmlBundleBuildResponse
    */
   async queryHtmlBundleBuild(request: QueryHtmlBundleBuildRequest): Promise<QueryHtmlBundleBuildResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1752,12 +1896,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 回滚版本
-   *
-   * @param request RollBackVersionRequest
-   * @param headers map
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RollBackVersionResponse
+   * 回滚版本
+   * 
+   * @param request - RollBackVersionRequest
+   * @param headers - map
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RollBackVersionResponse
    */
   async rollBackVersionWithOptions(request: RollBackVersionRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<RollBackVersionResponse> {
     Util.validateModel(request);
@@ -1797,10 +1941,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 回滚版本
-   *
-   * @param request RollBackVersionRequest
-   * @return RollBackVersionResponse
+   * 回滚版本
+   * 
+   * @param request - RollBackVersionRequest
+   * @returns RollBackVersionResponse
    */
   async rollBackVersion(request: RollBackVersionRequest): Promise<RollBackVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1809,12 +1953,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改小程序配置
-   *
-   * @param request SetExtendSettingRequest
-   * @param headers SetExtendSettingHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SetExtendSettingResponse
+   * 修改小程序配置
+   * 
+   * @param request - SetExtendSettingRequest
+   * @param headers - SetExtendSettingHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SetExtendSettingResponse
    */
   async setExtendSettingWithOptions(request: SetExtendSettingRequest, headers: SetExtendSettingHeaders, runtime: $Util.RuntimeOptions): Promise<SetExtendSettingResponse> {
     Util.validateModel(request);
@@ -1855,10 +1999,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 修改小程序配置
-   *
-   * @param request SetExtendSettingRequest
-   * @return SetExtendSettingResponse
+   * 修改小程序配置
+   * 
+   * @param request - SetExtendSettingRequest
+   * @returns SetExtendSettingResponse
    */
   async setExtendSetting(request: SetExtendSettingRequest): Promise<SetExtendSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1867,12 +2011,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发布版本
-   *
-   * @param request UpdateVersionStatusRequest
-   * @param headers UpdateVersionStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateVersionStatusResponse
+   * 发布版本
+   * 
+   * @param request - UpdateVersionStatusRequest
+   * @param headers - UpdateVersionStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateVersionStatusResponse
    */
   async updateVersionStatusWithOptions(request: UpdateVersionStatusRequest, headers: UpdateVersionStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateVersionStatusResponse> {
     Util.validateModel(request);
@@ -1921,10 +2065,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发布版本
-   *
-   * @param request UpdateVersionStatusRequest
-   * @return UpdateVersionStatusResponse
+   * 发布版本
+   * 
+   * @param request - UpdateVersionStatusRequest
+   * @returns UpdateVersionStatusResponse
    */
   async updateVersionStatus(request: UpdateVersionStatusRequest): Promise<UpdateVersionStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });

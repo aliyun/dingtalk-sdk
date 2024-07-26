@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,8 +30,22 @@ export class AddTeamHeaders extends $tea.Model {
 }
 
 export class AddTeamRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * team_name
+   */
   name?: string;
   option?: AddTeamRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -123,8 +135,22 @@ export class AddWorkspaceHeaders extends $tea.Model {
 }
 
 export class AddWorkspaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * workspace_name
+   */
   name?: string;
   option?: AddWorkspaceRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -214,6 +240,13 @@ export class DeleteTeamHeaders extends $tea.Model {
 }
 
 export class DeleteTeamRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -233,6 +266,10 @@ export class DeleteTeamRequest extends $tea.Model {
 }
 
 export class DeleteTeamResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -299,6 +336,13 @@ export class GetDefaultHandOverUserHeaders extends $tea.Model {
 }
 
 export class GetDefaultHandOverUserRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -318,6 +362,10 @@ export class GetDefaultHandOverUserRequest extends $tea.Model {
 }
 
 export class GetDefaultHandOverUserResponseBody extends $tea.Model {
+  /**
+   * @example
+   * staff_id
+   */
   defaultHandoverUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -384,6 +432,13 @@ export class GetMineWorkspaceHeaders extends $tea.Model {
 }
 
 export class GetMineWorkspaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -469,8 +524,23 @@ export class GetNodeHeaders extends $tea.Model {
 }
 
 export class GetNodeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
+  /**
+   * @example
+   * false
+   */
   withPermissionRole?: boolean;
+  /**
+   * @example
+   * false
+   */
   withStatisticalInfo?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -561,7 +631,21 @@ export class GetNodeByUrlHeaders extends $tea.Model {
 
 export class GetNodeByUrlRequest extends $tea.Model {
   option?: GetNodeByUrlRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * node_url
+   */
   url?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -651,8 +735,19 @@ export class GetNodesHeaders extends $tea.Model {
 }
 
 export class GetNodesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nodeIds?: string[];
   option?: GetNodesRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -742,6 +837,13 @@ export class GetTeamHeaders extends $tea.Model {
 }
 
 export class GetTeamRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -827,7 +929,18 @@ export class GetWorkspaceHeaders extends $tea.Model {
 }
 
 export class GetWorkspaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
+  /**
+   * @example
+   * false
+   */
   withPermissionRole?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -916,7 +1029,18 @@ export class GetWorkspacesHeaders extends $tea.Model {
 
 export class GetWorkspacesRequest extends $tea.Model {
   option?: GetWorkspacesRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workspaceIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1006,9 +1130,37 @@ export class HandOverWorkspaceHeaders extends $tea.Model {
 }
 
 export class HandOverWorkspaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * source_owner_id
+   */
   sourceOwnerId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * source_owner_id
+   */
   targetOwnerId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * workspace_id
+   */
   workspaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1034,6 +1186,10 @@ export class HandOverWorkspaceRequest extends $tea.Model {
 }
 
 export class HandOverWorkspaceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1100,10 +1256,36 @@ export class ListNodesHeaders extends $tea.Model {
 }
 
 export class ListNodesRequest extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * parent_node_id
+   */
   parentNodeId?: string;
+  /**
+   * @example
+   * false
+   */
   withPermissionRole?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1131,6 +1313,10 @@ export class ListNodesRequest extends $tea.Model {
 }
 
 export class ListNodesResponseBody extends $tea.Model {
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   nodes?: ListNodesResponseBodyNodes[];
   static names(): { [key: string]: string } {
@@ -1200,8 +1386,23 @@ export class ListTeamsHeaders extends $tea.Model {
 }
 
 export class ListTeamsRequest extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1225,6 +1426,10 @@ export class ListTeamsRequest extends $tea.Model {
 }
 
 export class ListTeamsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   teams?: ListTeamsResponseBodyTeams[];
   static names(): { [key: string]: string } {
@@ -1294,11 +1499,38 @@ export class ListWorkspacesHeaders extends $tea.Model {
 }
 
 export class ListWorkspacesRequest extends $tea.Model {
+  /**
+   * @example
+   * 30
+   */
   maxResults?: number;
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
+  /**
+   * @example
+   * VIEW_TIME_DESC
+   */
   orderBy?: string;
+  /**
+   * @example
+   * team_id
+   */
   teamId?: string;
+  /**
+   * @example
+   * false
+   */
   withPermissionRole?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1328,6 +1560,10 @@ export class ListWorkspacesRequest extends $tea.Model {
 }
 
 export class ListWorkspacesResponseBody extends $tea.Model {
+  /**
+   * @example
+   * next_token
+   */
   nextToken?: string;
   workspaces?: ListWorkspacesResponseBodyWorkspaces[];
   static names(): { [key: string]: string } {
@@ -1397,7 +1633,18 @@ export class SetDefaultHandOverUserHeaders extends $tea.Model {
 }
 
 export class SetDefaultHandOverUserRequest extends $tea.Model {
+  /**
+   * @example
+   * staff_id
+   */
   defaultHandoverUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
   operatorId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1419,6 +1666,10 @@ export class SetDefaultHandOverUserRequest extends $tea.Model {
 }
 
 export class SetDefaultHandOverUserResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1463,7 +1714,15 @@ export class SetDefaultHandOverUserResponse extends $tea.Model {
 }
 
 export class AddTeamRequestOptionIcon extends $tea.Model {
+  /**
+   * @example
+   * URL
+   */
   type?: string;
+  /**
+   * @example
+   * icon_url
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1485,7 +1744,15 @@ export class AddTeamRequestOptionIcon extends $tea.Model {
 }
 
 export class AddTeamRequestOption extends $tea.Model {
+  /**
+   * @example
+   * team_cover
+   */
   cover?: string;
+  /**
+   * @example
+   * team_description
+   */
   description?: string;
   icon?: AddTeamRequestOptionIcon;
   static names(): { [key: string]: string } {
@@ -1510,7 +1777,15 @@ export class AddTeamRequestOption extends $tea.Model {
 }
 
 export class AddTeamResponseBodyTeamIcon extends $tea.Model {
+  /**
+   * @example
+   * URL
+   */
   type?: string;
+  /**
+   * @example
+   * icon_url
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1532,15 +1807,51 @@ export class AddTeamResponseBodyTeamIcon extends $tea.Model {
 }
 
 export class AddTeamResponseBodyTeam extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * team_cover
+   */
   cover?: string;
+  /**
+   * @example
+   * team_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * team_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * team_description
+   */
   description?: string;
   icon?: AddTeamResponseBodyTeamIcon;
+  /**
+   * @example
+   * team_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * team_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * team_name
+   */
   name?: string;
+  /**
+   * @example
+   * team_id
+   */
   teamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1578,7 +1889,15 @@ export class AddTeamResponseBodyTeam extends $tea.Model {
 }
 
 export class AddWorkspaceRequestOption extends $tea.Model {
+  /**
+   * @example
+   * workspace_description
+   */
   description?: string;
+  /**
+   * @example
+   * team_id
+   */
   teamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1600,7 +1919,15 @@ export class AddWorkspaceRequestOption extends $tea.Model {
 }
 
 export class AddWorkspaceResponseBodyWorkspaceIcon extends $tea.Model {
+  /**
+   * @example
+   * URL
+   */
   type?: string;
+  /**
+   * @example
+   * icon_url
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1622,20 +1949,76 @@ export class AddWorkspaceResponseBodyWorkspaceIcon extends $tea.Model {
 }
 
 export class AddWorkspaceResponseBodyWorkspace extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * workspace_cover
+   */
   cover?: string;
+  /**
+   * @example
+   * workspace_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * workspace_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * workspace_description
+   */
   description?: string;
   icon?: AddWorkspaceResponseBodyWorkspaceIcon;
+  /**
+   * @example
+   * workspace_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * workspace_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * workspace_name
+   */
   name?: string;
+  /**
+   * @example
+   * READER
+   */
   permissionRole?: string;
+  /**
+   * @example
+   * root_node_uuid
+   */
   rootNodeId?: string;
+  /**
+   * @example
+   * team_id
+   */
   teamId?: string;
+  /**
+   * @example
+   * TEAM
+   */
   type?: string;
+  /**
+   * @example
+   * workspace_url
+   */
   url?: string;
+  /**
+   * @example
+   * workspace_id
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1683,7 +2066,15 @@ export class AddWorkspaceResponseBodyWorkspace extends $tea.Model {
 }
 
 export class GetMineWorkspaceResponseBodyWorkspaceIcon extends $tea.Model {
+  /**
+   * @example
+   * URL
+   */
   type?: string;
+  /**
+   * @example
+   * icon_url
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1705,20 +2096,76 @@ export class GetMineWorkspaceResponseBodyWorkspaceIcon extends $tea.Model {
 }
 
 export class GetMineWorkspaceResponseBodyWorkspace extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * workspace_cover
+   */
   cover?: string;
+  /**
+   * @example
+   * workspace_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * workspace_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * workspace_description
+   */
   description?: string;
   icon?: GetMineWorkspaceResponseBodyWorkspaceIcon;
+  /**
+   * @example
+   * workspace_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * workspace_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * workspace_name
+   */
   name?: string;
+  /**
+   * @example
+   * READER
+   */
   permissionRole?: string;
+  /**
+   * @example
+   * root_node_uuid
+   */
   rootNodeId?: string;
+  /**
+   * @example
+   * team_id
+   */
   teamId?: string;
+  /**
+   * @example
+   * TEAM
+   */
   type?: string;
+  /**
+   * @example
+   * workspace_url
+   */
   url?: string;
+  /**
+   * @example
+   * workspace_id
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1766,6 +2213,10 @@ export class GetMineWorkspaceResponseBodyWorkspace extends $tea.Model {
 }
 
 export class GetNodeResponseBodyNodeStatisticalInfo extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   wordCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1785,20 +2236,76 @@ export class GetNodeResponseBodyNodeStatisticalInfo extends $tea.Model {
 }
 
 export class GetNodeResponseBodyNode extends $tea.Model {
+  /**
+   * @example
+   * ALIDOC
+   */
   category?: string;
+  /**
+   * @example
+   * node_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * node_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * adoc
+   */
   extension?: string;
+  /**
+   * @example
+   * false
+   */
   hasChildren?: boolean;
+  /**
+   * @example
+   * node_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * node_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * node_name
+   */
   name?: string;
+  /**
+   * @example
+   * node_id
+   */
   nodeId?: string;
+  /**
+   * @example
+   * READER
+   */
   permissionRole?: string;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
   statisticalInfo?: GetNodeResponseBodyNodeStatisticalInfo;
+  /**
+   * @example
+   * FILE
+   */
   type?: string;
+  /**
+   * @example
+   * node_url
+   */
   url?: string;
+  /**
+   * @example
+   * workspace_id
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1846,7 +2353,15 @@ export class GetNodeResponseBodyNode extends $tea.Model {
 }
 
 export class GetNodeByUrlRequestOption extends $tea.Model {
+  /**
+   * @example
+   * false
+   */
   withPermissionRole?: boolean;
+  /**
+   * @example
+   * false
+   */
   withStatisticalInfo?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1868,6 +2383,10 @@ export class GetNodeByUrlRequestOption extends $tea.Model {
 }
 
 export class GetNodeByUrlResponseBodyNodeStatisticalInfo extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   wordCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1887,20 +2406,76 @@ export class GetNodeByUrlResponseBodyNodeStatisticalInfo extends $tea.Model {
 }
 
 export class GetNodeByUrlResponseBodyNode extends $tea.Model {
+  /**
+   * @example
+   * ALIDOC
+   */
   category?: string;
+  /**
+   * @example
+   * node_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * node_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * adoc
+   */
   extension?: string;
+  /**
+   * @example
+   * false
+   */
   hasChildren?: boolean;
+  /**
+   * @example
+   * node_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * node_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * node_name
+   */
   name?: string;
+  /**
+   * @example
+   * node_id
+   */
   nodeId?: string;
+  /**
+   * @example
+   * READER
+   */
   permissionRole?: string;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
   statisticalInfo?: GetNodeByUrlResponseBodyNodeStatisticalInfo;
+  /**
+   * @example
+   * FILE
+   */
   type?: string;
+  /**
+   * @example
+   * node_url
+   */
   url?: string;
+  /**
+   * @example
+   * workspace_id
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1948,7 +2523,15 @@ export class GetNodeByUrlResponseBodyNode extends $tea.Model {
 }
 
 export class GetNodesRequestOption extends $tea.Model {
+  /**
+   * @example
+   * false
+   */
   withPermissionRole?: boolean;
+  /**
+   * @example
+   * false
+   */
   withStatisticalInfo?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1970,6 +2553,10 @@ export class GetNodesRequestOption extends $tea.Model {
 }
 
 export class GetNodesResponseBodyNodesStatisticalInfo extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   wordCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1989,20 +2576,76 @@ export class GetNodesResponseBodyNodesStatisticalInfo extends $tea.Model {
 }
 
 export class GetNodesResponseBodyNodes extends $tea.Model {
+  /**
+   * @example
+   * ALIDOC
+   */
   category?: string;
+  /**
+   * @example
+   * node_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * node_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * adoc
+   */
   extension?: string;
+  /**
+   * @example
+   * false
+   */
   hasChildren?: boolean;
+  /**
+   * @example
+   * node_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * node_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * node_name
+   */
   name?: string;
+  /**
+   * @example
+   * node_id
+   */
   nodeId?: string;
+  /**
+   * @example
+   * READER
+   */
   permissionRole?: string;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
   statisticalInfo?: GetNodesResponseBodyNodesStatisticalInfo;
+  /**
+   * @example
+   * FILE
+   */
   type?: string;
+  /**
+   * @example
+   * node_url
+   */
   url?: string;
+  /**
+   * @example
+   * workspace_id
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2050,7 +2693,15 @@ export class GetNodesResponseBodyNodes extends $tea.Model {
 }
 
 export class GetTeamResponseBodyTeamIcon extends $tea.Model {
+  /**
+   * @example
+   * URL
+   */
   type?: string;
+  /**
+   * @example
+   * icon_url
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2072,15 +2723,51 @@ export class GetTeamResponseBodyTeamIcon extends $tea.Model {
 }
 
 export class GetTeamResponseBodyTeam extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * team_cover
+   */
   cover?: string;
+  /**
+   * @example
+   * team_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * team_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * team_description
+   */
   description?: string;
   icon?: GetTeamResponseBodyTeamIcon;
+  /**
+   * @example
+   * team_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * team_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * team_name
+   */
   name?: string;
+  /**
+   * @example
+   * team_id
+   */
   teamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2118,7 +2805,15 @@ export class GetTeamResponseBodyTeam extends $tea.Model {
 }
 
 export class GetWorkspaceResponseBodyWorkspaceIcon extends $tea.Model {
+  /**
+   * @example
+   * URL
+   */
   type?: string;
+  /**
+   * @example
+   * icon_url
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2140,20 +2835,76 @@ export class GetWorkspaceResponseBodyWorkspaceIcon extends $tea.Model {
 }
 
 export class GetWorkspaceResponseBodyWorkspace extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * workspace_cover
+   */
   cover?: string;
+  /**
+   * @example
+   * workspace_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * workspace_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * workspace_description
+   */
   description?: string;
   icon?: GetWorkspaceResponseBodyWorkspaceIcon;
+  /**
+   * @example
+   * workspace_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * workspace_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * workspace_name
+   */
   name?: string;
+  /**
+   * @example
+   * READER
+   */
   permissionRole?: string;
+  /**
+   * @example
+   * root_node_uuid
+   */
   rootNodeId?: string;
+  /**
+   * @example
+   * team_id
+   */
   teamId?: string;
+  /**
+   * @example
+   * TEAM
+   */
   type?: string;
+  /**
+   * @example
+   * workspace_url
+   */
   url?: string;
+  /**
+   * @example
+   * workspace_id
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2201,6 +2952,10 @@ export class GetWorkspaceResponseBodyWorkspace extends $tea.Model {
 }
 
 export class GetWorkspacesRequestOption extends $tea.Model {
+  /**
+   * @example
+   * false
+   */
   withPermissionRole?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2220,7 +2975,15 @@ export class GetWorkspacesRequestOption extends $tea.Model {
 }
 
 export class GetWorkspacesResponseBodyWorkspacesIcon extends $tea.Model {
+  /**
+   * @example
+   * URL
+   */
   type?: string;
+  /**
+   * @example
+   * icon_url
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2242,20 +3005,76 @@ export class GetWorkspacesResponseBodyWorkspacesIcon extends $tea.Model {
 }
 
 export class GetWorkspacesResponseBodyWorkspaces extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * workspace_cover
+   */
   cover?: string;
+  /**
+   * @example
+   * workspace_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * workspace_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * workspace_description
+   */
   description?: string;
   icon?: GetWorkspacesResponseBodyWorkspacesIcon;
+  /**
+   * @example
+   * workspace_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * workspace_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * workspace_name
+   */
   name?: string;
+  /**
+   * @example
+   * READER
+   */
   permissionRole?: string;
+  /**
+   * @example
+   * root_node_uuid
+   */
   rootNodeId?: string;
+  /**
+   * @example
+   * team_id
+   */
   teamId?: string;
+  /**
+   * @example
+   * TEAM
+   */
   type?: string;
+  /**
+   * @example
+   * workspace_url
+   */
   url?: string;
+  /**
+   * @example
+   * workspace_id
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2303,6 +3122,10 @@ export class GetWorkspacesResponseBodyWorkspaces extends $tea.Model {
 }
 
 export class ListNodesResponseBodyNodesStatisticalInfo extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   wordCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2322,20 +3145,76 @@ export class ListNodesResponseBodyNodesStatisticalInfo extends $tea.Model {
 }
 
 export class ListNodesResponseBodyNodes extends $tea.Model {
+  /**
+   * @example
+   * ALIDOC
+   */
   category?: string;
+  /**
+   * @example
+   * node_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * node_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * adoc
+   */
   extension?: string;
+  /**
+   * @example
+   * false
+   */
   hasChildren?: boolean;
+  /**
+   * @example
+   * node_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * node_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * node_name
+   */
   name?: string;
+  /**
+   * @example
+   * node_id
+   */
   nodeId?: string;
+  /**
+   * @example
+   * READER
+   */
   permissionRole?: string;
+  /**
+   * @example
+   * 512
+   */
   size?: number;
   statisticalInfo?: ListNodesResponseBodyNodesStatisticalInfo;
+  /**
+   * @example
+   * FILE
+   */
   type?: string;
+  /**
+   * @example
+   * node_url
+   */
   url?: string;
+  /**
+   * @example
+   * workspace_id
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2383,7 +3262,15 @@ export class ListNodesResponseBodyNodes extends $tea.Model {
 }
 
 export class ListTeamsResponseBodyTeamsIcon extends $tea.Model {
+  /**
+   * @example
+   * URL
+   */
   type?: string;
+  /**
+   * @example
+   * icon_url
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2405,15 +3292,51 @@ export class ListTeamsResponseBodyTeamsIcon extends $tea.Model {
 }
 
 export class ListTeamsResponseBodyTeams extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * team_cover
+   */
   cover?: string;
+  /**
+   * @example
+   * team_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * team_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * team_description
+   */
   description?: string;
   icon?: ListTeamsResponseBodyTeamsIcon;
+  /**
+   * @example
+   * team_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * team_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * team_name
+   */
   name?: string;
+  /**
+   * @example
+   * team_id
+   */
   teamId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2451,7 +3374,15 @@ export class ListTeamsResponseBodyTeams extends $tea.Model {
 }
 
 export class ListWorkspacesResponseBodyWorkspacesIcon extends $tea.Model {
+  /**
+   * @example
+   * URL
+   */
   type?: string;
+  /**
+   * @example
+   * icon_url
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2473,20 +3404,76 @@ export class ListWorkspacesResponseBodyWorkspacesIcon extends $tea.Model {
 }
 
 export class ListWorkspacesResponseBodyWorkspaces extends $tea.Model {
+  /**
+   * @example
+   * corp_id
+   */
   corpId?: string;
+  /**
+   * @example
+   * workspace_cover
+   */
   cover?: string;
+  /**
+   * @example
+   * workspace_create_time
+   */
   createTime?: string;
+  /**
+   * @example
+   * workspace_creator_id
+   */
   creatorId?: string;
+  /**
+   * @example
+   * workspace_description
+   */
   description?: string;
   icon?: ListWorkspacesResponseBodyWorkspacesIcon;
+  /**
+   * @example
+   * workspace_modified_time
+   */
   modifiedTime?: string;
+  /**
+   * @example
+   * workspace_modifier_id
+   */
   modifierId?: string;
+  /**
+   * @example
+   * workspace_name
+   */
   name?: string;
+  /**
+   * @example
+   * READER
+   */
   permissionRole?: string;
+  /**
+   * @example
+   * root_node_uuid
+   */
   rootNodeId?: string;
+  /**
+   * @example
+   * team_id
+   */
   teamId?: string;
+  /**
+   * @example
+   * TEAM
+   */
   type?: string;
+  /**
+   * @example
+   * workspace_url
+   */
   url?: string;
+  /**
+   * @example
+   * workspace_id
+   */
   workspaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2535,12 +3522,11 @@ export class ListWorkspacesResponseBodyWorkspaces extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2550,12 +3536,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 新建知识小组
-   *
-   * @param request AddTeamRequest
-   * @param headers AddTeamHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddTeamResponse
+   * 新建知识小组
+   * 
+   * @param request - AddTeamRequest
+   * @param headers - AddTeamHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddTeamResponse
    */
   async addTeamWithOptions(request: AddTeamRequest, headers: AddTeamHeaders, runtime: $Util.RuntimeOptions): Promise<AddTeamResponse> {
     Util.validateModel(request);
@@ -2602,10 +3588,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新建知识小组
-   *
-   * @param request AddTeamRequest
-   * @return AddTeamResponse
+   * 新建知识小组
+   * 
+   * @param request - AddTeamRequest
+   * @returns AddTeamResponse
    */
   async addTeam(request: AddTeamRequest): Promise<AddTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2614,12 +3600,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新建知识库
-   *
-   * @param request AddWorkspaceRequest
-   * @param headers AddWorkspaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddWorkspaceResponse
+   * 新建知识库
+   * 
+   * @param request - AddWorkspaceRequest
+   * @param headers - AddWorkspaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddWorkspaceResponse
    */
   async addWorkspaceWithOptions(request: AddWorkspaceRequest, headers: AddWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceResponse> {
     Util.validateModel(request);
@@ -2666,10 +3652,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新建知识库
-   *
-   * @param request AddWorkspaceRequest
-   * @return AddWorkspaceResponse
+   * 新建知识库
+   * 
+   * @param request - AddWorkspaceRequest
+   * @returns AddWorkspaceResponse
    */
   async addWorkspace(request: AddWorkspaceRequest): Promise<AddWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2678,12 +3664,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除知识小组
-   *
-   * @param request DeleteTeamRequest
-   * @param headers DeleteTeamHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteTeamResponse
+   * 删除知识小组
+   * 
+   * @param request - DeleteTeamRequest
+   * @param headers - DeleteTeamHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteTeamResponse
    */
   async deleteTeamWithOptions(teamId: string, request: DeleteTeamRequest, headers: DeleteTeamHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTeamResponse> {
     Util.validateModel(request);
@@ -2720,10 +3706,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除知识小组
-   *
-   * @param request DeleteTeamRequest
-   * @return DeleteTeamResponse
+   * 删除知识小组
+   * 
+   * @param request - DeleteTeamRequest
+   * @returns DeleteTeamResponse
    */
   async deleteTeam(teamId: string, request: DeleteTeamRequest): Promise<DeleteTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2732,12 +3718,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询员工离职时知识库默认转交人
-   *
-   * @param request GetDefaultHandOverUserRequest
-   * @param headers GetDefaultHandOverUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDefaultHandOverUserResponse
+   * 查询员工离职时知识库默认转交人
+   * 
+   * @param request - GetDefaultHandOverUserRequest
+   * @param headers - GetDefaultHandOverUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDefaultHandOverUserResponse
    */
   async getDefaultHandOverUserWithOptions(request: GetDefaultHandOverUserRequest, headers: GetDefaultHandOverUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetDefaultHandOverUserResponse> {
     Util.validateModel(request);
@@ -2774,10 +3760,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询员工离职时知识库默认转交人
-   *
-   * @param request GetDefaultHandOverUserRequest
-   * @return GetDefaultHandOverUserResponse
+   * 查询员工离职时知识库默认转交人
+   * 
+   * @param request - GetDefaultHandOverUserRequest
+   * @returns GetDefaultHandOverUserResponse
    */
   async getDefaultHandOverUser(request: GetDefaultHandOverUserRequest): Promise<GetDefaultHandOverUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2786,12 +3772,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取我的文档
-   *
-   * @param request GetMineWorkspaceRequest
-   * @param headers GetMineWorkspaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMineWorkspaceResponse
+   * 获取我的文档
+   * 
+   * @param request - GetMineWorkspaceRequest
+   * @param headers - GetMineWorkspaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMineWorkspaceResponse
    */
   async getMineWorkspaceWithOptions(request: GetMineWorkspaceRequest, headers: GetMineWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetMineWorkspaceResponse> {
     Util.validateModel(request);
@@ -2828,10 +3814,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取我的文档
-   *
-   * @param request GetMineWorkspaceRequest
-   * @return GetMineWorkspaceResponse
+   * 获取我的文档
+   * 
+   * @param request - GetMineWorkspaceRequest
+   * @returns GetMineWorkspaceResponse
    */
   async getMineWorkspace(request: GetMineWorkspaceRequest): Promise<GetMineWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2840,12 +3826,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取节点
-   *
-   * @param request GetNodeRequest
-   * @param headers GetNodeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetNodeResponse
+   * 获取节点
+   * 
+   * @param request - GetNodeRequest
+   * @param headers - GetNodeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetNodeResponse
    */
   async getNodeWithOptions(nodeId: string, request: GetNodeRequest, headers: GetNodeHeaders, runtime: $Util.RuntimeOptions): Promise<GetNodeResponse> {
     Util.validateModel(request);
@@ -2890,10 +3876,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取节点
-   *
-   * @param request GetNodeRequest
-   * @return GetNodeResponse
+   * 获取节点
+   * 
+   * @param request - GetNodeRequest
+   * @returns GetNodeResponse
    */
   async getNode(nodeId: string, request: GetNodeRequest): Promise<GetNodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2902,12 +3888,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过链接获取节点
-   *
-   * @param request GetNodeByUrlRequest
-   * @param headers GetNodeByUrlHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetNodeByUrlResponse
+   * 通过链接获取节点
+   * 
+   * @param request - GetNodeByUrlRequest
+   * @param headers - GetNodeByUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetNodeByUrlResponse
    */
   async getNodeByUrlWithOptions(request: GetNodeByUrlRequest, headers: GetNodeByUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetNodeByUrlResponse> {
     Util.validateModel(request);
@@ -2954,10 +3940,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过链接获取节点
-   *
-   * @param request GetNodeByUrlRequest
-   * @return GetNodeByUrlResponse
+   * 通过链接获取节点
+   * 
+   * @param request - GetNodeByUrlRequest
+   * @returns GetNodeByUrlResponse
    */
   async getNodeByUrl(request: GetNodeByUrlRequest): Promise<GetNodeByUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -2966,12 +3952,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取节点
-   *
-   * @param request GetNodesRequest
-   * @param headers GetNodesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetNodesResponse
+   * 批量获取节点
+   * 
+   * @param request - GetNodesRequest
+   * @param headers - GetNodesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetNodesResponse
    */
   async getNodesWithOptions(request: GetNodesRequest, headers: GetNodesHeaders, runtime: $Util.RuntimeOptions): Promise<GetNodesResponse> {
     Util.validateModel(request);
@@ -3018,10 +4004,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取节点
-   *
-   * @param request GetNodesRequest
-   * @return GetNodesResponse
+   * 批量获取节点
+   * 
+   * @param request - GetNodesRequest
+   * @returns GetNodesResponse
    */
   async getNodes(request: GetNodesRequest): Promise<GetNodesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3030,12 +4016,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识小组
-   *
-   * @param request GetTeamRequest
-   * @param headers GetTeamHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTeamResponse
+   * 获取知识小组
+   * 
+   * @param request - GetTeamRequest
+   * @param headers - GetTeamHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTeamResponse
    */
   async getTeamWithOptions(teamId: string, request: GetTeamRequest, headers: GetTeamHeaders, runtime: $Util.RuntimeOptions): Promise<GetTeamResponse> {
     Util.validateModel(request);
@@ -3072,10 +4058,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识小组
-   *
-   * @param request GetTeamRequest
-   * @return GetTeamResponse
+   * 获取知识小组
+   * 
+   * @param request - GetTeamRequest
+   * @returns GetTeamResponse
    */
   async getTeam(teamId: string, request: GetTeamRequest): Promise<GetTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3084,12 +4070,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识库
-   *
-   * @param request GetWorkspaceRequest
-   * @param headers GetWorkspaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetWorkspaceResponse
+   * 获取知识库
+   * 
+   * @param request - GetWorkspaceRequest
+   * @param headers - GetWorkspaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetWorkspaceResponse
    */
   async getWorkspaceWithOptions(workspaceId: string, request: GetWorkspaceRequest, headers: GetWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkspaceResponse> {
     Util.validateModel(request);
@@ -3130,10 +4116,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识库
-   *
-   * @param request GetWorkspaceRequest
-   * @return GetWorkspaceResponse
+   * 获取知识库
+   * 
+   * @param request - GetWorkspaceRequest
+   * @returns GetWorkspaceResponse
    */
   async getWorkspace(workspaceId: string, request: GetWorkspaceRequest): Promise<GetWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3142,12 +4128,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取知识库
-   *
-   * @param request GetWorkspacesRequest
-   * @param headers GetWorkspacesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetWorkspacesResponse
+   * 批量获取知识库
+   * 
+   * @param request - GetWorkspacesRequest
+   * @param headers - GetWorkspacesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetWorkspacesResponse
    */
   async getWorkspacesWithOptions(request: GetWorkspacesRequest, headers: GetWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkspacesResponse> {
     Util.validateModel(request);
@@ -3194,10 +4180,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取知识库
-   *
-   * @param request GetWorkspacesRequest
-   * @return GetWorkspacesResponse
+   * 批量获取知识库
+   * 
+   * @param request - GetWorkspacesRequest
+   * @returns GetWorkspacesResponse
    */
   async getWorkspaces(request: GetWorkspacesRequest): Promise<GetWorkspacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3206,12 +4192,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转交知识库
-   *
-   * @param request HandOverWorkspaceRequest
-   * @param headers HandOverWorkspaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return HandOverWorkspaceResponse
+   * 转交知识库
+   * 
+   * @param request - HandOverWorkspaceRequest
+   * @param headers - HandOverWorkspaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns HandOverWorkspaceResponse
    */
   async handOverWorkspaceWithOptions(request: HandOverWorkspaceRequest, headers: HandOverWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<HandOverWorkspaceResponse> {
     Util.validateModel(request);
@@ -3262,10 +4248,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转交知识库
-   *
-   * @param request HandOverWorkspaceRequest
-   * @return HandOverWorkspaceResponse
+   * 转交知识库
+   * 
+   * @param request - HandOverWorkspaceRequest
+   * @returns HandOverWorkspaceResponse
    */
   async handOverWorkspace(request: HandOverWorkspaceRequest): Promise<HandOverWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3274,12 +4260,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取节点列表
-   *
-   * @param request ListNodesRequest
-   * @param headers ListNodesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListNodesResponse
+   * 获取节点列表
+   * 
+   * @param request - ListNodesRequest
+   * @param headers - ListNodesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListNodesResponse
    */
   async listNodesWithOptions(request: ListNodesRequest, headers: ListNodesHeaders, runtime: $Util.RuntimeOptions): Promise<ListNodesResponse> {
     Util.validateModel(request);
@@ -3332,10 +4318,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取节点列表
-   *
-   * @param request ListNodesRequest
-   * @return ListNodesResponse
+   * 获取节点列表
+   * 
+   * @param request - ListNodesRequest
+   * @returns ListNodesResponse
    */
   async listNodes(request: ListNodesRequest): Promise<ListNodesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3344,12 +4330,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识小组列表
-   *
-   * @param request ListTeamsRequest
-   * @param headers ListTeamsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListTeamsResponse
+   * 获取知识小组列表
+   * 
+   * @param request - ListTeamsRequest
+   * @param headers - ListTeamsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListTeamsResponse
    */
   async listTeamsWithOptions(request: ListTeamsRequest, headers: ListTeamsHeaders, runtime: $Util.RuntimeOptions): Promise<ListTeamsResponse> {
     Util.validateModel(request);
@@ -3394,10 +4380,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识小组列表
-   *
-   * @param request ListTeamsRequest
-   * @return ListTeamsResponse
+   * 获取知识小组列表
+   * 
+   * @param request - ListTeamsRequest
+   * @returns ListTeamsResponse
    */
   async listTeams(request: ListTeamsRequest): Promise<ListTeamsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3406,12 +4392,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识库列表
-   *
-   * @param request ListWorkspacesRequest
-   * @param headers ListWorkspacesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListWorkspacesResponse
+   * 获取知识库列表
+   * 
+   * @param request - ListWorkspacesRequest
+   * @param headers - ListWorkspacesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListWorkspacesResponse
    */
   async listWorkspacesWithOptions(request: ListWorkspacesRequest, headers: ListWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<ListWorkspacesResponse> {
     Util.validateModel(request);
@@ -3468,10 +4454,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取知识库列表
-   *
-   * @param request ListWorkspacesRequest
-   * @return ListWorkspacesResponse
+   * 获取知识库列表
+   * 
+   * @param request - ListWorkspacesRequest
+   * @returns ListWorkspacesResponse
    */
   async listWorkspaces(request: ListWorkspacesRequest): Promise<ListWorkspacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -3480,12 +4466,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置员工离职时知识库默认转交人
-   *
-   * @param request SetDefaultHandOverUserRequest
-   * @param headers SetDefaultHandOverUserHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SetDefaultHandOverUserResponse
+   * 设置员工离职时知识库默认转交人
+   * 
+   * @param request - SetDefaultHandOverUserRequest
+   * @param headers - SetDefaultHandOverUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SetDefaultHandOverUserResponse
    */
   async setDefaultHandOverUserWithOptions(request: SetDefaultHandOverUserRequest, headers: SetDefaultHandOverUserHeaders, runtime: $Util.RuntimeOptions): Promise<SetDefaultHandOverUserResponse> {
     Util.validateModel(request);
@@ -3528,10 +4514,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 设置员工离职时知识库默认转交人
-   *
-   * @param request SetDefaultHandOverUserRequest
-   * @return SetDefaultHandOverUserResponse
+   * 设置员工离职时知识库默认转交人
+   * 
+   * @param request - SetDefaultHandOverUserRequest
+   * @returns SetDefaultHandOverUserResponse
    */
   async setDefaultHandOverUser(request: SetDefaultHandOverUserRequest): Promise<SetDefaultHandOverUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });

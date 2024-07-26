@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,11 +30,41 @@ export class QueryScoreHeaders extends $tea.Model {
 }
 
 export class QueryScoreRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * MD5
+   */
   encryption?: string;
+  /**
+   * @example
+   * a0fbf479272cd38c220fbf726678d8d6
+   */
   fullName?: string;
+  /**
+   * @example
+   * b04a604cf00e64136b386e83444245c3
+   */
   idCardCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * e10adc3949ba59abbe56e057f20f883e
+   */
   mobile?: string;
+  /**
+   * @example
+   * aca03c931768ea4b0244531aca9a19ee
+   */
   orgName?: string;
+  /**
+   * @example
+   * a57d7bf49b6e44180b21b1fea80eec0a
+   */
   uniScCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -175,12 +203,11 @@ export class QueryScoreResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -190,12 +217,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 查询用户金融评分数据
-   *
-   * @param request QueryScoreRequest
-   * @param headers QueryScoreHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryScoreResponse
+   * 查询用户金融评分数据
+   * 
+   * @param request - QueryScoreRequest
+   * @param headers - QueryScoreHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryScoreResponse
    */
   async queryScoreWithOptions(request: QueryScoreRequest, headers: QueryScoreHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScoreResponse> {
     Util.validateModel(request);
@@ -252,10 +279,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户金融评分数据
-   *
-   * @param request QueryScoreRequest
-   * @return QueryScoreResponse
+   * 查询用户金融评分数据
+   * 
+   * @param request - QueryScoreRequest
+   * @returns QueryScoreResponse
    */
   async queryScore(request: QueryScoreRequest): Promise<QueryScoreResponse> {
     let runtime = new $Util.RuntimeOptions({ });

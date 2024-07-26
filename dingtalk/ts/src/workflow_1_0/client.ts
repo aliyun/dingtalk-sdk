@@ -1,16 +1,28 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
 export class AvaliableTemplate extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 出差申请
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-abcd
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -33,7 +45,18 @@ export class AvaliableTemplate extends $tea.Model {
 
 export class FormComponent extends $tea.Model {
   children?: FormComponent[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TextField
+   */
   componentType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   props?: FormComponentProps;
   static names(): { [key: string]: string } {
     return {
@@ -57,39 +80,163 @@ export class FormComponent extends $tea.Model {
 }
 
 export class FormComponentProps extends $tea.Model {
+  /**
+   * @example
+   * 增加明细
+   */
   actionName?: string;
   addressModel?: string;
+  /**
+   * @example
+   * top
+   */
   align?: string;
+  /**
+   * @example
+   * true
+   */
   asyncCondition?: boolean;
   availableTemplates?: AvaliableTemplate[];
+  /**
+   * @example
+   * finance_name
+   */
   bizAlias?: string;
+  /**
+   * @example
+   * attendance.leave
+   */
   bizType?: string;
+  /**
+   * @example
+   * 0
+   * 
+   * **if can be null:**
+   * true
+   */
   choice?: string;
+  /**
+   * @example
+   * custom_view
+   */
   commonBizType?: string;
+  /**
+   * @example
+   * TextField-abcd
+   */
   componentId?: string;
+  /**
+   * @example
+   * 我是说明文字控件
+   */
   content?: string;
   dataSource?: FormDataSource;
+  /**
+   * @example
+   * true
+   */
   disabled?: boolean;
+  /**
+   * @example
+   * true
+   */
   duration?: boolean;
+  /**
+   * @example
+   * 时长
+   */
   durationLabel?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   format?: string;
   formula?: string;
+  /**
+   * @example
+   * true
+   */
   invisible?: boolean;
+  /**
+   * @example
+   * 姓名
+   */
   label?: string;
+  /**
+   * @example
+   * 5
+   */
   limit?: number;
+  /**
+   * @example
+   * http://www.
+   */
   link?: string;
+  /**
+   * @example
+   * 20
+   */
   maxLength?: number;
+  /**
+   * @example
+   * phone_tel
+   */
   mode?: string;
+  /**
+   * @example
+   * true
+   */
   multiple?: boolean;
   options?: SelectOption[];
+  /**
+   * @example
+   * 请输入
+   */
   placeholder?: string;
+  /**
+   * @example
+   * 2
+   * 
+   * **if can be null:**
+   * true
+   */
   precision?: number;
+  /**
+   * @example
+   * 1
+   * 
+   * **if can be null:**
+   * true
+   */
   print?: string;
+  /**
+   * @example
+   * true
+   */
   required?: boolean;
   statField?: FormComponentPropsStatField[];
+  /**
+   * @example
+   * table
+   */
   tableViewMode?: string;
+  /**
+   * @example
+   * 天
+   */
   unit?: string;
+  /**
+   * @example
+   * 1
+   * 
+   * **if can be null:**
+   * true
+   */
   upper?: string;
+  /**
+   * @example
+   * true
+   */
   verticalPrint?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -175,7 +322,15 @@ export class FormComponentProps extends $tea.Model {
 }
 
 export class FormDataSource extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   target?: FormDataSourceTarget;
+  /**
+   * @example
+   * form
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -197,7 +352,15 @@ export class FormDataSource extends $tea.Model {
 }
 
 export class SelectOption extends $tea.Model {
+  /**
+   * @example
+   * finance
+   */
   key?: string;
+  /**
+   * @example
+   * 财务
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -263,7 +426,18 @@ export class AddApproveDentryAuthHeaders extends $tea.Model {
 }
 
 export class AddApproveDentryAuthRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fileInfos?: AddApproveDentryAuthRequestFileInfos[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -285,7 +459,15 @@ export class AddApproveDentryAuthRequest extends $tea.Model {
 }
 
 export class AddApproveDentryAuthResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -354,9 +536,30 @@ export class AddProcessInstanceCommentHeaders extends $tea.Model {
 }
 
 export class AddProcessInstanceCommentRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user123
+   */
   commentUserId?: string;
   file?: AddProcessInstanceCommentRequestFile;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a171de6c-8bxxxx
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 同意。
+   */
   text?: string;
   static names(): { [key: string]: string } {
     return {
@@ -382,7 +585,15 @@ export class AddProcessInstanceCommentRequest extends $tea.Model {
 }
 
 export class AddProcessInstanceCommentResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -451,9 +662,27 @@ export class BatchExecuteProcessInstancesHeaders extends $tea.Model {
 }
 
 export class BatchExecuteProcessInstancesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 67583405630
+   */
   actionerUserId?: string;
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * agree
+   */
   result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   taskInfoList?: BatchExecuteProcessInstancesRequestTaskInfoList[];
   static names(): { [key: string]: string } {
     return {
@@ -548,9 +777,37 @@ export class BatchTasksRedirectHeaders extends $tea.Model {
 }
 
 export class BatchTasksRedirectRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * staffId-B
+   */
   handoverUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager-12
+   */
   managerUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * **if can be null:**
+   * false
+   */
   taskIds?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * staffId-A
+   */
   transfereeUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -730,8 +987,29 @@ export class CancelIntegratedTaskHeaders extends $tea.Model {
 }
 
 export class CancelIntegratedTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * act_xxxx
+   */
   activityId?: string;
+  /**
+   * **if can be null:**
+   * true
+   */
   activityIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * tPr_FB_mT_xxxxxxxxx2hQ05201655306463
+   * 
+   * **if can be null:**
+   * false
+   */
   processInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -821,7 +1099,21 @@ export class CleanProcessDataHeaders extends $tea.Model {
 }
 
 export class CleanProcessDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding1234
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-EF6YJL35
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -910,7 +1202,18 @@ export class CopyProcessHeaders extends $tea.Model {
 
 export class CopyProcessRequest extends $tea.Model {
   copyOptions?: CopyProcessRequestCopyOptions;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingabc
+   */
   sourceCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   sourceProcessVOList?: CopyProcessRequestSourceProcessVOList[];
   static names(): { [key: string]: string } {
     return {
@@ -1000,9 +1303,24 @@ export class CreateIntegratedTaskHeaders extends $tea.Model {
 }
 
 export class CreateIntegratedTaskRequest extends $tea.Model {
+  /**
+   * @example
+   * act_xxxx
+   */
   activityId?: string;
   featureConfig?: CreateIntegratedTaskRequestFeatureConfig;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * tPr_FB_mT_xxxxxxxxx2hQ05201655306463
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tasks?: CreateIntegratedTaskRequestTasks[];
   static names(): { [key: string]: string } {
     return {
@@ -1097,7 +1415,18 @@ export class DeleteDirHeaders extends $tea.Model {
 }
 
 export class DeleteDirRequest extends $tea.Model {
+  /**
+   * @example
+   * oaDirIdxxx
+   */
   dirId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user001
+   */
   operateUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1186,6 +1515,13 @@ export class DeleteProcessHeaders extends $tea.Model {
 
 export class DeleteProcessRequest extends $tea.Model {
   cleanRunningTask?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * proc-abc
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1273,11 +1609,43 @@ export class ExecuteProcessInstanceHeaders extends $tea.Model {
 }
 
 export class ExecuteProcessInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 133743186427339452
+   */
   actionerUserId?: string;
   file?: ExecuteProcessInstanceRequestFile;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a171de6c-8bxxxx
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * 同意。
+   */
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * agree
+   */
   result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 67583405630
+   */
   taskId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1307,7 +1675,15 @@ export class ExecuteProcessInstanceRequest extends $tea.Model {
 }
 
 export class ExecuteProcessInstanceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1376,8 +1752,23 @@ export class FormCreateHeaders extends $tea.Model {
 }
 
 export class FormCreateRequest extends $tea.Model {
+  /**
+   * @example
+   * 用于员工差旅费用报销使用
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formComponents?: FormComponent[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 出差报销审批
+   */
   name?: string;
   processCode?: string;
   templateConfig?: FormCreateRequestTemplateConfig;
@@ -1473,7 +1864,18 @@ export class GetAttachmentSpaceHeaders extends $tea.Model {
 }
 
 export class GetAttachmentSpaceRequest extends $tea.Model {
+  /**
+   * @example
+   * 8345000
+   */
   agentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1496,6 +1898,10 @@ export class GetAttachmentSpaceRequest extends $tea.Model {
 
 export class GetAttachmentSpaceResponseBody extends $tea.Model {
   result?: GetAttachmentSpaceResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1564,7 +1970,18 @@ export class GetConditionFormComponentHeaders extends $tea.Model {
 }
 
 export class GetConditionFormComponentRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   agentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-xxx
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1718,7 +2135,21 @@ export class GetFieldModifiedHistoryHeaders extends $tea.Model {
 }
 
 export class GetFieldModifiedHistoryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TextField-abcd
+   */
   fieldId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * proc-FF6Y2xxxx
+   */
   processInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1741,6 +2172,10 @@ export class GetFieldModifiedHistoryRequest extends $tea.Model {
 
 export class GetFieldModifiedHistoryResponseBody extends $tea.Model {
   result?: GetFieldModifiedHistoryResponseBodyResult[];
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1809,6 +2244,13 @@ export class GetManageProcessByStaffIdHeaders extends $tea.Model {
 }
 
 export class GetManageProcessByStaffIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager7078
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1829,6 +2271,10 @@ export class GetManageProcessByStaffIdRequest extends $tea.Model {
 
 export class GetManageProcessByStaffIdResponseBody extends $tea.Model {
   result?: GetManageProcessByStaffIdResponseBodyResult[];
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -1897,6 +2343,13 @@ export class GetProcessCodeByNameHeaders extends $tea.Model {
 }
 
 export class GetProcessCodeByNameRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abc
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1982,6 +2435,13 @@ export class GetProcessConfigHeaders extends $tea.Model {
 }
 
 export class GetProcessConfigRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-BEFC22B7-EA64-4336-86EB-AB773AA2EB12
+   */
   procCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2067,6 +2527,13 @@ export class GetProcessInstanceHeaders extends $tea.Model {
 }
 
 export class GetProcessInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a171de6c-8bxxxx
+   */
   processInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2087,6 +2554,10 @@ export class GetProcessInstanceRequest extends $tea.Model {
 
 export class GetProcessInstanceResponseBody extends $tea.Model {
   result?: GetProcessInstanceResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
   success?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2259,11 +2730,40 @@ export class GetSpaceWithDownloadAuthHeaders extends $tea.Model {
 }
 
 export class GetSpaceWithDownloadAuthRequest extends $tea.Model {
+  /**
+   * @example
+   * 8345000
+   */
   agentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   fileId?: string;
   fileIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a17444d1-075b-4a4d-xxxx
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user123
+   */
   userId?: string;
+  /**
+   * **if can be null:**
+   * true
+   */
   withCommentAttatchment?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2294,6 +2794,10 @@ export class GetSpaceWithDownloadAuthRequest extends $tea.Model {
 
 export class GetSpaceWithDownloadAuthResponseBody extends $tea.Model {
   result?: GetSpaceWithDownloadAuthResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2362,6 +2866,13 @@ export class GetUserTodoTaskSumHeaders extends $tea.Model {
 }
 
 export class GetUserTodoTaskSumRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2381,6 +2892,10 @@ export class GetUserTodoTaskSumRequest extends $tea.Model {
 }
 
 export class GetUserTodoTaskSumResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   result?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2447,9 +2962,34 @@ export class GrantCspaceAuthorizationHeaders extends $tea.Model {
 }
 
 export class GrantCspaceAuthorizationRequest extends $tea.Model {
+  /**
+   * @example
+   * 3600
+   */
   durationSeconds?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 163xxxx658
+   */
   spaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * add
+   */
   type?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 26652461xxxx5992
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2519,8 +3059,26 @@ export class GrantProcessInstanceForDownloadFileHeaders extends $tea.Model {
 }
 
 export class GrantProcessInstanceForDownloadFileRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   fileId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a17444d1-075b-4a4d-xxxx
+   */
   processInstanceId?: string;
+  /**
+   * **if can be null:**
+   * true
+   */
   withCommentAttatchment?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2545,6 +3103,10 @@ export class GrantProcessInstanceForDownloadFileRequest extends $tea.Model {
 
 export class GrantProcessInstanceForDownloadFileResponseBody extends $tea.Model {
   result?: GrantProcessInstanceForDownloadFileResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2613,10 +3175,36 @@ export class InsertOrUpdateDirHeaders extends $tea.Model {
 }
 
 export class InsertOrUpdateDirRequest extends $tea.Model {
+  /**
+   * @example
+   * administeration
+   */
   bizGroup?: string;
+  /**
+   * @example
+   * 分组描述信息
+   */
   description?: string;
+  /**
+   * @example
+   * 行政管理
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {\"en_US\":\"test\",\"ja_JP\":\"test\",\"vi_VN\":\"test\",\"zh_CN\":\"测试\",\"zh_HK\":\"测试\",\"zh_TW\":\"测试\"}
+   */
   name18n?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user001
+   */
   operateUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2714,7 +3302,18 @@ export class InstallAppHeaders extends $tea.Model {
 
 export class InstallAppRequest extends $tea.Model {
   bizGroup?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   installOption?: InstallAppRequestInstallOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * finance
+   */
   sourceDirName?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2804,10 +3403,42 @@ export class ListProcessInstanceIdsHeaders extends $tea.Model {
 }
 
 export class ListProcessInstanceIdsRequest extends $tea.Model {
+  /**
+   * @example
+   * 1496678400000
+   */
   endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-FF6Y2xxxx
+   */
   processCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1496678400000
+   */
   startTime?: number;
   statuses?: string[];
   userIds?: string[];
@@ -2842,6 +3473,10 @@ export class ListProcessInstanceIdsRequest extends $tea.Model {
 
 export class ListProcessInstanceIdsResponseBody extends $tea.Model {
   result?: ListProcessInstanceIdsResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -2910,9 +3545,37 @@ export class ListTodoWorkRecordsHeaders extends $tea.Model {
 }
 
 export class ListTodoWorkRecordsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager001
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3004,8 +3667,26 @@ export class ListUserVisibleBpmsProcessesHeaders extends $tea.Model {
 }
 
 export class ListUserVisibleBpmsProcessesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
+  /**
+   * @example
+   * manager7078
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3096,10 +3777,26 @@ export class PagesExportInstancesHeaders extends $tea.Model {
 
 export class PagesExportInstancesRequest extends $tea.Model {
   endTimeInMills?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: string;
   orderBy?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   startTimeInMills?: number;
   status?: string;
   static names(): { [key: string]: string } {
@@ -3198,9 +3895,34 @@ export class ProcessForecastHeaders extends $tea.Model {
 }
 
 export class ProcessForecastRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   deptId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formComponentValues?: ProcessForecastRequestFormComponentValues[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-EF6YJL35P2-SCKICSB7P750S0YISYKV3-xxxx-1
+   */
   processCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager432
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3292,9 +4014,31 @@ export class QueryAllFormInstancesHeaders extends $tea.Model {
 }
 
 export class QueryAllFormInstancesRequest extends $tea.Model {
+  /**
+   * @example
+   * SWAPP-dacdsa-example
+   */
   appUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-daccea-example
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 100010
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3320,6 +4064,10 @@ export class QueryAllFormInstancesRequest extends $tea.Model {
 }
 
 export class QueryAllFormInstancesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: QueryAllFormInstancesResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -3386,11 +4134,44 @@ export class QueryAllProcessInstancesHeaders extends $tea.Model {
 }
 
 export class QueryAllProcessInstancesRequest extends $tea.Model {
+  /**
+   * @example
+   * SWAPP-4C2F4B-example
+   */
   appUuid?: string;
+  /**
+   * @example
+   * 1633795200000
+   */
   endTimeInMills?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @example
+   * 1
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-C53-example
+   */
   processCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1631289600000
+   */
   startTimeInMills?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3486,7 +4267,18 @@ export class QueryFormByBizTypeHeaders extends $tea.Model {
 }
 
 export class QueryFormByBizTypeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * SWAPP-abcdef-example
+   */
   appUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizTypes?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -3574,8 +4366,26 @@ export class QueryFormInstanceHeaders extends $tea.Model {
 }
 
 export class QueryFormInstanceRequest extends $tea.Model {
+  /**
+   * @example
+   * SWAPP-dfeacds-example
+   */
   appUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-abcdef-example
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 951a8-8828-430c-b3e-example
+   */
   formInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3599,17 +4409,70 @@ export class QueryFormInstanceRequest extends $tea.Model {
 }
 
 export class QueryFormInstanceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * SWAPP-dfeacds-example
+   */
   appUuid?: string;
   attributes?: { [key: string]: any };
+  /**
+   * @example
+   * 1631870043000
+   */
   createTimestamp?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 00003
+   */
   creator?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-abcdef-example
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formInstDataList?: QueryFormInstanceResponseBodyFormInstDataList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 951a8-8828-430c-b3e-example
+   */
   formInstanceId?: string;
+  /**
+   * @example
+   * 000025
+   */
   modifier?: string;
+  /**
+   * @example
+   * 1631870043000
+   */
   modifyTimestamp?: number;
+  /**
+   * @example
+   * PROC-abcdef-example
+   */
   outBizCode?: string;
+  /**
+   * @example
+   * 951a8-8828-430c-b3e-example
+   */
   outInstanceId?: string;
+  /**
+   * @example
+   * xxx提交的表单数据
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3698,9 +4561,34 @@ export class QueryIntegratedTodoTaskHeaders extends $tea.Model {
 }
 
 export class QueryIntegratedTodoTaskRequest extends $tea.Model {
+  /**
+   * @example
+   * 1660036833411
+   */
   createBefore?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager001
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3792,7 +4680,18 @@ export class QueryProcessByBizCategoryIdHeaders extends $tea.Model {
 }
 
 export class QueryProcessByBizCategoryIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abc
+   */
   bizType?: string;
+  /**
+   * @example
+   * manager123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3881,6 +4780,13 @@ export class QuerySchemaAndProcessHeaders extends $tea.Model {
 
 export class QuerySchemaAndProcessRequest extends $tea.Model {
   appUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-17428B8C-6C60-xxxx-924C-64F1037AE067
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3969,6 +4875,13 @@ export class QuerySchemaByProcessCodeHeaders extends $tea.Model {
 
 export class QuerySchemaByProcessCodeRequest extends $tea.Model {
   appUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-17428B8C-6C60-xxxx-924C-64F1037AE067
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3990,6 +4903,10 @@ export class QuerySchemaByProcessCodeRequest extends $tea.Model {
 }
 
 export class QuerySchemaByProcessCodeResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   result?: QuerySchemaByProcessCodeResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
@@ -4056,11 +4973,40 @@ export class RedirectWorkflowTaskHeaders extends $tea.Model {
 }
 
 export class RedirectWorkflowTaskRequest extends $tea.Model {
+  /**
+   * @example
+   * test
+   */
   actionName?: string;
   file?: RedirectWorkflowTaskRequestFile;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager001
+   */
   operateUserId?: string;
+  /**
+   * @example
+   * 请XX帮忙审批一下
+   */
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234567
+   */
   taskId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager001
+   */
   toUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4156,13 +5102,32 @@ export class SaveIntegratedInstanceHeaders extends $tea.Model {
 }
 
 export class SaveIntegratedInstanceRequest extends $tea.Model {
+  /**
+   * @example
+   * "{\"mykey\": \"myData\"}"
+   */
   bizData?: string;
   featureConfig?: SaveIntegratedInstanceRequestFeatureConfig;
   formComponentValueList?: SaveIntegratedInstanceRequestFormComponentValueList[];
   notifiers?: SaveIntegratedInstanceRequestNotifiers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   originatorUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processCode?: string;
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://www.dingtalk.com/
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4262,11 +5227,36 @@ export class SaveProcessHeaders extends $tea.Model {
 }
 
 export class SaveProcessRequest extends $tea.Model {
+  /**
+   * @example
+   * 用于员工差旅费用报销使用
+   */
   description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formComponents?: FormComponent[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 出差报销审批
+   */
   name?: string;
+  /**
+   * @example
+   * proc-abc
+   */
   processCode?: string;
   processFeatureConfig?: SaveProcessRequestProcessFeatureConfig;
+  /**
+   * **if can be null:**
+   * true
+   * 
+   * @deprecated
+   */
   templateConfig?: SaveProcessRequestTemplateConfig;
   static names(): { [key: string]: string } {
     return {
@@ -4364,11 +5354,41 @@ export class StartProcessInstanceHeaders extends $tea.Model {
 export class StartProcessInstanceRequest extends $tea.Model {
   approvers?: StartProcessInstanceRequestApprovers[];
   ccList?: string[];
+  /**
+   * @example
+   * START、FINISH、START_FINISH
+   */
   ccPosition?: string;
+  /**
+   * @example
+   * 1
+   */
   deptId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formComponentValues?: StartProcessInstanceRequestFormComponentValues[];
+  /**
+   * @example
+   * 41605932
+   */
   microappAgentId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager432
+   */
   originatorUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-EF6YJL35P2-SCKICSB7P750S0YISYKV3-xxxx-1
+   */
   processCode?: string;
   targetSelectActioners?: StartProcessInstanceRequestTargetSelectActioners[];
   static names(): { [key: string]: string } {
@@ -4405,6 +5425,13 @@ export class StartProcessInstanceRequest extends $tea.Model {
 }
 
 export class StartProcessInstanceResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 91ef1076-c3ed-4a78-a7a5-fa29ef2d6252
+   */
   instanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4472,8 +5499,23 @@ export class TerminateProcessInstanceHeaders extends $tea.Model {
 
 export class TerminateProcessInstanceRequest extends $tea.Model {
   isSystem?: boolean;
+  /**
+   * @example
+   * 133743186427339452
+   */
   operatingUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a171de6c-8bxxxx
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * 终止说明。
+   */
   remark?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4499,7 +5541,15 @@ export class TerminateProcessInstanceRequest extends $tea.Model {
 }
 
 export class TerminateProcessInstanceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   result?: boolean;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -4568,9 +5618,34 @@ export class TodoTasksHeaders extends $tea.Model {
 }
 
 export class TodoTasksRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * staffId123
+   */
   actionerUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager123
+   */
   managerUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4662,7 +5737,18 @@ export class UpdateIntegratedTaskHeaders extends $tea.Model {
 }
 
 export class UpdateIntegratedTaskRequest extends $tea.Model {
+  /**
+   * @example
+   * tPr_FB_mT_xxxxxxxxx2hQ05201655306463
+   * 
+   * **if can be null:**
+   * false
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   tasks?: UpdateIntegratedTaskRequestTasks[];
   static names(): { [key: string]: string } {
     return {
@@ -4751,8 +5837,26 @@ export class UpdateProcessInstanceHeaders extends $tea.Model {
 
 export class UpdateProcessInstanceRequest extends $tea.Model {
   notifiers?: UpdateProcessInstanceRequestNotifiers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abc
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * agree
+   */
   result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * COMPLETED
+   */
   status?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4822,8 +5926,29 @@ export class UpdateProcessInstanceResponse extends $tea.Model {
 }
 
 export class FormComponentPropsStatField extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * NumberField-abcd
+   */
   componentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 金额
+   */
   label?: string;
+  /**
+   * @example
+   * 1
+   * 
+   * **if can be null:**
+   * true
+   */
   upper?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4847,9 +5972,24 @@ export class FormComponentPropsStatField extends $tea.Model {
 }
 
 export class FormDataSourceTarget extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   appType?: number;
+  /**
+   * @example
+   * SWAPP-abcd
+   */
   appUuid?: string;
   bizType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4875,7 +6015,21 @@ export class FormDataSourceTarget extends $tea.Model {
 }
 
 export class AddApproveDentryAuthRequestFileInfos extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * B1oQixxxx
+   */
   fileId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 111
+   */
   spaceId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4897,10 +6051,30 @@ export class AddApproveDentryAuthRequestFileInfos extends $tea.Model {
 }
 
 export class AddProcessInstanceCommentRequestFileAttachments extends $tea.Model {
+  /**
+   * @example
+   * B1oQixxxx
+   */
   fileId?: string;
+  /**
+   * @example
+   * 文件名称。
+   */
   fileName?: string;
+  /**
+   * @example
+   * 1024
+   */
   fileSize?: string;
+  /**
+   * @example
+   * file
+   */
   fileType?: string;
+  /**
+   * @example
+   * 123
+   */
   spaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4950,7 +6124,18 @@ export class AddProcessInstanceCommentRequestFile extends $tea.Model {
 }
 
 export class BatchExecuteProcessInstancesRequestTaskInfoList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a171de6c-8bxxxx
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   taskId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4972,8 +6157,26 @@ export class BatchExecuteProcessInstancesRequestTaskInfoList extends $tea.Model 
 }
 
 export class BatchTasksRedirectResponseBodyResultRedirectResults extends $tea.Model {
+  /**
+   * @example
+   * 外部流程不允许转交
+   */
   errorMsg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
   success?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234567
+   */
   taskId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4997,8 +6200,26 @@ export class BatchTasksRedirectResponseBodyResultRedirectResults extends $tea.Mo
 }
 
 export class BatchTasksRedirectResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   failCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   redirectResults?: BatchTasksRedirectResponseBodyResultRedirectResults[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5022,6 +6243,13 @@ export class BatchTasksRedirectResponseBodyResult extends $tea.Model {
 }
 
 export class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager001
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5042,8 +6270,26 @@ export class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotif
 
 export class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests extends $tea.Model {
   notifiers?: BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abc
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * agree
+   */
   result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * COMPLETED
+   */
   status?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5069,6 +6315,10 @@ export class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequests exte
 }
 
 export class CopyProcessRequestCopyOptions extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   copyType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5088,8 +6338,23 @@ export class CopyProcessRequestCopyOptions extends $tea.Model {
 }
 
 export class CopyProcessRequestSourceProcessVOList extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   bizType?: string;
+  /**
+   * @example
+   * abc
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * proc-abc
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5113,8 +6378,20 @@ export class CopyProcessRequestSourceProcessVOList extends $tea.Model {
 }
 
 export class CopyProcessResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   bizType?: string;
+  /**
+   * @example
+   * abc
+   */
   name?: string;
+  /**
+   * @example
+   * proc-abc
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5138,8 +6415,20 @@ export class CopyProcessResponseBodyResult extends $tea.Model {
 }
 
 export class CreateIntegratedTaskRequestFeatureConfigFeaturesCallback extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   apiKey?: string;
+  /**
+   * @example
+   * abc
+   */
   appUuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5164,10 +6453,30 @@ export class CreateIntegratedTaskRequestFeatureConfigFeaturesCallback extends $t
 
 export class CreateIntegratedTaskRequestFeatureConfigFeatures extends $tea.Model {
   callback?: CreateIntegratedTaskRequestFeatureConfigFeaturesCallback;
+  /**
+   * **if can be null:**
+   * true
+   */
   config?: string;
+  /**
+   * @example
+   * www.dingtalk.com
+   */
   mobileUrl?: string;
+  /**
+   * @example
+   * abc
+   */
   name?: string;
+  /**
+   * @example
+   * www.dingtalk.com
+   */
   pcUrl?: string;
+  /**
+   * @example
+   * ORIGIN
+   */
   runType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5216,8 +6525,20 @@ export class CreateIntegratedTaskRequestFeatureConfig extends $tea.Model {
 }
 
 export class CreateIntegratedTaskRequestTasks extends $tea.Model {
+  /**
+   * @example
+   * {\"id\":\"12345\"}
+   */
   customData?: string;
+  /**
+   * @example
+   * https://www.dingtalk.com
+   */
   url?: string;
+  /**
+   * @example
+   * manager001
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5263,6 +6584,10 @@ export class CreateIntegratedTaskResponseBodyResult extends $tea.Model {
 }
 
 export class DeleteProcessResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * proc-abc
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5282,10 +6607,30 @@ export class DeleteProcessResponseBodyResult extends $tea.Model {
 }
 
 export class ExecuteProcessInstanceRequestFileAttachments extends $tea.Model {
+  /**
+   * @example
+   * B1oQixxxx
+   */
   fileId?: string;
+  /**
+   * @example
+   * 文件名称。
+   */
   fileName?: string;
+  /**
+   * @example
+   * 1024
+   */
   fileSize?: string;
+  /**
+   * @example
+   * file
+   */
   fileType?: string;
+  /**
+   * @example
+   * 123
+   */
   spaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5335,13 +6680,45 @@ export class ExecuteProcessInstanceRequestFile extends $tea.Model {
 }
 
 export class FormCreateRequestTemplateConfig extends $tea.Model {
+  /**
+   * @example
+   * abcd
+   */
   dirId?: string;
+  /**
+   * @example
+   * true
+   */
   disableDeleteProcess?: boolean;
+  /**
+   * @example
+   * true
+   */
   disableFormEdit?: boolean;
+  /**
+   * @example
+   * true
+   */
   disableHomepage?: boolean;
+  /**
+   * @example
+   * true
+   */
   disableResubmit?: boolean;
+  /**
+   * @example
+   * true
+   */
   disableStopProcessButton?: boolean;
+  /**
+   * @example
+   * true
+   */
   hidden?: boolean;
+  /**
+   * @example
+   * efgh
+   */
   originDirId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5375,6 +6752,13 @@ export class FormCreateRequestTemplateConfig extends $tea.Model {
 }
 
 export class FormCreateResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-abcdef-example
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5394,6 +6778,10 @@ export class FormCreateResponseBodyResult extends $tea.Model {
 }
 
 export class GetAttachmentSpaceResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 3996960664
+   */
   spaceId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5413,7 +6801,21 @@ export class GetAttachmentSpaceResponseBodyResult extends $tea.Model {
 }
 
 export class GetConditionFormComponentResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TextField
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 输入框
+   */
   label?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5435,10 +6837,33 @@ export class GetConditionFormComponentResponseBodyResult extends $tea.Model {
 }
 
 export class GetFieldModifiedHistoryResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2024-04-02T11:52Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * TextField-abcd
+   */
   fieldId?: string;
+  /**
+   * @example
+   * 钉钉1
+   */
   name?: string;
+  /**
+   * @example
+   * userId1
+   */
   userId?: string;
+  /**
+   * @example
+   * 从 111 修改到 222
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5466,12 +6891,43 @@ export class GetFieldModifiedHistoryResponseBodyResult extends $tea.Model {
 }
 
 export class GetManageProcessByStaffIdResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   attendanceType?: number;
+  /**
+   * @example
+   * 通用审批
+   */
   flowTitle?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2020-07-14 14:24:59
+   */
   gmtModified?: string;
+  /**
+   * @example
+   * common
+   */
   iconName?: string;
+  /**
+   * @example
+   * https://gw.alicdn.com/tfs/xxxx-112-112.png
+   */
   iconUrl?: string;
+  /**
+   * @example
+   * true
+   */
   newProcess?: boolean;
+  /**
+   * @example
+   * PROC-44E84FC1-16E2-4A69-BB3C-xxxx
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5503,7 +6959,23 @@ export class GetManageProcessByStaffIdResponseBodyResult extends $tea.Model {
 }
 
 export class GetProcessCodeByNameResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2024-03-22T11:50Z
+   */
   gmtModified?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-abcdef-example
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5525,6 +6997,10 @@ export class GetProcessCodeByNameResponseBodyResult extends $tea.Model {
 }
 
 export class GetProcessConfigResponseBodyResultCommentConf extends $tea.Model {
+  /**
+   * @example
+   * 评论描述
+   */
   commentDescription?: string;
   commentHiddenForProposer?: boolean;
   commentRequired?: boolean;
@@ -5572,8 +7048,20 @@ export class GetProcessConfigResponseBodyResultHandSignConf extends $tea.Model {
 }
 
 export class GetProcessConfigResponseBodyResultSubstituteSubmitConfSubmitterList extends $tea.Model {
+  /**
+   * @example
+   * 钉三多
+   */
   name?: string;
+  /**
+   * @example
+   * approval
+   */
   type?: string;
+  /**
+   * @example
+   * manager1234
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5619,7 +7107,15 @@ export class GetProcessConfigResponseBodyResultSubstituteSubmitConf extends $tea
 }
 
 export class GetProcessConfigResponseBodyResultTitleGenRule extends $tea.Model {
+  /**
+   * @example
+   * #{originator}#{formName}#{createTime}
+   */
   express?: string;
+  /**
+   * @example
+   * 2
+   */
   type?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5641,7 +7137,15 @@ export class GetProcessConfigResponseBodyResultTitleGenRule extends $tea.Model {
 }
 
 export class GetProcessConfigResponseBodyResultVisibility extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   type?: number;
+  /**
+   * @example
+   * manager345
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5664,19 +7168,47 @@ export class GetProcessConfigResponseBodyResultVisibility extends $tea.Model {
 
 export class GetProcessConfigResponseBodyResult extends $tea.Model {
   abstractGenRule?: string[];
+  /**
+   * @example
+   * {"sid_instStart":[{"fieldId":"TextField-K2AD4O5B","fieldBehavior":"HIDDEN","componentName":"TextField","disableBehaviors":[]}],"1918_5cd3":[{"fieldId":"TextField-K2AD4O5B","fieldBehavior":"HIDDEN","componentName":"TextField","disableBehaviors":[]}],"d01c_a677":[{"fieldId":"TextField-K2AD4O5B","fieldBehavior":"NORMAL","componentName":"TextField","disableBehaviors":[]}]}
+   */
   activityAuth?: string;
   allowRevoke?: boolean;
   appendEnable?: boolean;
   autoExecuteOriginatorTasks?: boolean;
+  /**
+   * @example
+   * alitrip.business
+   */
   bizCategoryId?: string;
+  /**
+   * @example
+   * crm_customer
+   */
   bizType?: string;
   commentConf?: GetProcessConfigResponseBodyResultCommentConf;
+  /**
+   * @example
+   * continuousFirst
+   */
   duplicateRemoval?: string;
+  /**
+   * @example
+   * {"items":[]}
+   */
   formSchema?: string;
   handSignConf?: GetProcessConfigResponseBodyResultHandSignConf;
   managers?: string[];
+  /**
+   * @example
+   * 模板名称
+   */
   name?: string;
   processAppType?: boolean;
+  /**
+   * @example
+   * {"type":"","properties":{},"childNode":{}}
+   */
   processConfig?: string;
   staticProc?: boolean;
   substituteSubmitConf?: GetProcessConfigResponseBodyResultSubstituteSubmitConf;
@@ -5736,11 +7268,35 @@ export class GetProcessConfigResponseBodyResult extends $tea.Model {
 }
 
 export class GetProcessInstanceResponseBodyResultFormComponentValues extends $tea.Model {
+  /**
+   * @example
+   * TextField-bizAlias
+   */
   bizAlias?: string;
+  /**
+   * @example
+   * DDSelectField
+   */
   componentType?: string;
+  /**
+   * @example
+   * 示例值
+   */
   extValue?: string;
+  /**
+   * @example
+   * DDHolidayField-J2Bxxxx
+   */
   id?: string;
+  /**
+   * @example
+   * 组件1
+   */
   name?: string;
+  /**
+   * @example
+   * 示例值
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5770,9 +7326,25 @@ export class GetProcessInstanceResponseBodyResultFormComponentValues extends $te
 }
 
 export class GetProcessInstanceResponseBodyResultOperationRecordsAttachments extends $tea.Model {
+  /**
+   * @example
+   * 111
+   */
   fileId?: string;
+  /**
+   * @example
+   * 学历证明
+   */
   fileName?: string;
+  /**
+   * @example
+   * 1024
+   */
   fileSize?: string;
+  /**
+   * @example
+   * pdf
+   */
   fileType?: string;
   spaceId?: string;
   static names(): { [key: string]: string } {
@@ -5804,12 +7376,35 @@ export class GetProcessInstanceResponseBodyResultOperationRecords extends $tea.M
   activityId?: string;
   attachments?: GetProcessInstanceResponseBodyResultOperationRecordsAttachments[];
   ccUserIds?: string[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-08-31T11:52Z
+   */
   date?: string;
   images?: string[];
+  /**
+   * @example
+   * 评论
+   */
   remark?: string;
+  /**
+   * @example
+   * AGREE
+   */
   result?: string;
   showName?: string;
+  /**
+   * @example
+   * EXECUTE_TASK_NORMAL
+   */
   type?: string;
+  /**
+   * @example
+   * manager1
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5847,15 +7442,61 @@ export class GetProcessInstanceResponseBodyResultOperationRecords extends $tea.M
 }
 
 export class GetProcessInstanceResponseBodyResultTasks extends $tea.Model {
+  /**
+   * @example
+   * 111
+   */
   activityId?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-08-31T11:52Z
+   */
   createTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-08-31T11:52Z
+   */
   finishTime?: string;
+  /**
+   * @example
+   * https://www.xxxx.com
+   */
   mobileUrl?: string;
+  /**
+   * @example
+   * https://www.xxxx.com
+   */
   pcUrl?: string;
+  /**
+   * @example
+   * 111
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * REDIRECTED
+   */
   result?: string;
+  /**
+   * @example
+   * NEW
+   */
   status?: string;
+  /**
+   * @example
+   * 111
+   */
   taskId?: number;
+  /**
+   * @example
+   * manager1
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5894,22 +7535,77 @@ export class GetProcessInstanceResponseBodyResultTasks extends $tea.Model {
 
 export class GetProcessInstanceResponseBodyResult extends $tea.Model {
   approverUserIds?: string[];
+  /**
+   * @example
+   * ["instance1","instance2"]
+   */
   attachedProcessInstanceIds?: string[];
+  /**
+   * @example
+   * MODIFY
+   */
   bizAction?: string;
+  /**
+   * @example
+   * {"mykey": "myData"}
+   */
   bizData?: string;
+  /**
+   * @example
+   * 111
+   */
   businessId?: string;
   ccUserIds?: string[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-08-31T11:52Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * 2022-08-31T11:52Z
+   */
   finishTime?: string;
   formComponentValues?: GetProcessInstanceResponseBodyResultFormComponentValues[];
+  /**
+   * @example
+   * AG3U12xWRFex63h6bCPUWw10221698052827
+   */
   mainProcessInstanceId?: string;
   operationRecords?: GetProcessInstanceResponseBodyResultOperationRecords[];
+  /**
+   * @example
+   * -1
+   */
   originatorDeptId?: string;
+  /**
+   * @example
+   * 测试
+   */
   originatorDeptName?: string;
+  /**
+   * @example
+   * manager1
+   */
   originatorUserId?: string;
+  /**
+   * @example
+   * agree
+   */
   result?: string;
+  /**
+   * @example
+   * NEW
+   */
   status?: string;
   tasks?: GetProcessInstanceResponseBodyResultTasks[];
+  /**
+   * @example
+   * xx提交的请假申请
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6021,6 +7717,10 @@ export class GetSchemaAndProcessconfigBatchllyResponseBodyResult extends $tea.Mo
 }
 
 export class GetSpaceWithDownloadAuthResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 3996960664
+   */
   spaceId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6040,8 +7740,20 @@ export class GetSpaceWithDownloadAuthResponseBodyResult extends $tea.Model {
 }
 
 export class GrantProcessInstanceForDownloadFileResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * http://lippi-space-zjk.oss-cn-zhangjiakou.aliyuncs.com/xxxxx
+   */
   downloadUri?: string;
+  /**
+   * @example
+   * 26748422566
+   */
   fileId?: string;
+  /**
+   * @example
+   * 3996960664
+   */
   spaceId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6065,7 +7777,15 @@ export class GrantProcessInstanceForDownloadFileResponseBodyResult extends $tea.
 }
 
 export class InsertOrUpdateDirResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * {应用appId}_administeration
+   */
   bizGroup?: string;
+  /**
+   * @example
+   * oaDirIdxxx
+   */
   dirId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6106,8 +7826,20 @@ export class InstallAppRequestInstallOption extends $tea.Model {
 }
 
 export class InstallAppResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   bizType?: string;
+  /**
+   * @example
+   * abc
+   */
   name?: string;
+  /**
+   * @example
+   * PROC-ABC
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6132,6 +7864,10 @@ export class InstallAppResponseBodyResult extends $tea.Model {
 
 export class ListProcessInstanceIdsResponseBodyResult extends $tea.Model {
   list?: string[];
+  /**
+   * @example
+   * 10
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6153,7 +7889,15 @@ export class ListProcessInstanceIdsResponseBodyResult extends $tea.Model {
 }
 
 export class ListTodoWorkRecordsResponseBodyResultListForms extends $tea.Model {
+  /**
+   * @example
+   * 钉三多
+   */
   content?: string;
+  /**
+   * @example
+   * 入职员工姓名
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6176,9 +7920,25 @@ export class ListTodoWorkRecordsResponseBodyResultListForms extends $tea.Model {
 
 export class ListTodoWorkRecordsResponseBodyResultList extends $tea.Model {
   forms?: ListTodoWorkRecordsResponseBodyResultListForms[];
+  /**
+   * @example
+   * Siw2WNVZS4KiUt3tTmaNKg04*****809950
+   */
   instanceId?: string;
+  /**
+   * @example
+   * 1234567
+   */
   taskId?: number;
+  /**
+   * @example
+   * xxx提交的入职审批
+   */
   title?: string;
+  /**
+   * @example
+   * https://www.dingtalk.com
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6228,11 +7988,35 @@ export class ListTodoWorkRecordsResponseBodyResult extends $tea.Model {
 }
 
 export class ListUserVisibleBpmsProcessesResponseBodyResultProcessList extends $tea.Model {
+  /**
+   * @example
+   * 12347899
+   */
   dirId?: string;
+  /**
+   * @example
+   * 财务管理
+   */
   dirName?: string;
+  /**
+   * @example
+   * https://gw.xxxx/T-102-102.png
+   */
   iconUrl?: string;
+  /**
+   * @example
+   * 物品领用
+   */
   name?: string;
+  /**
+   * @example
+   * PROC-YMLA1-xxxx-11WFJ-1
+   */
   processCode?: string;
+  /**
+   * @example
+   * https://aflow.dingtalk.com/dingtalk/mobile/homepage.htm?xxxx
+   */
   url?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6262,6 +8046,10 @@ export class ListUserVisibleBpmsProcessesResponseBodyResultProcessList extends $
 }
 
 export class ListUserVisibleBpmsProcessesResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
   nextToken?: number;
   processList?: ListUserVisibleBpmsProcessesResponseBodyResultProcessList[];
   static names(): { [key: string]: string } {
@@ -6285,9 +8073,34 @@ export class ListUserVisibleBpmsProcessesResponseBodyResult extends $tea.Model {
 
 export class PagesExportInstancesResponseBodyResultListFormComponentValues extends $tea.Model {
   componentName?: string;
+  /**
+   * @example
+   * {"staffId":"abcd"}
+   */
   extValue?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TextField-a32bcdef
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 姓名
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6315,9 +8128,25 @@ export class PagesExportInstancesResponseBodyResultListFormComponentValues exten
 }
 
 export class PagesExportInstancesResponseBodyResultListOperationRecordsAttachments extends $tea.Model {
+  /**
+   * @example
+   * 1234567
+   */
   fileId?: string;
+  /**
+   * @example
+   * 附件
+   */
   fileName?: string;
+  /**
+   * @example
+   * 123
+   */
   fileSize?: string;
+  /**
+   * @example
+   * pdf
+   */
   fileType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6343,14 +8172,46 @@ export class PagesExportInstancesResponseBodyResultListOperationRecordsAttachmen
 }
 
 export class PagesExportInstancesResponseBodyResultListOperationRecords extends $tea.Model {
+  /**
+   * @example
+   * 1234_abcd
+   */
   activityId?: string;
   attachments?: PagesExportInstancesResponseBodyResultListOperationRecordsAttachments[];
+  /**
+   * @example
+   * []
+   */
   images?: string[];
+  /**
+   * @example
+   * EXECUTE_TASK_NORMAL（正常执行任务），EXECUTE_TASK_AGENT（代理人执行任务），APPEND_TASK_BEFORE（前加签任务），APPEND_TASK_AFTER（后加签任务），REDIRECT_TASK（转交任务），START_PROCESS_INSTANCE（发起流程实例），TERMINATE_PROCESS_INSTANCE（终止(撤销)流程实例），FINISH_PROCESS_INSTANCE（结束流程实例），ADD_REMARK（添加评论）
+   */
   operationType?: string;
+  /**
+   * @example
+   * 同意
+   */
   remark?: string;
+  /**
+   * @example
+   * AGREE（同意），REFUSE（拒绝），NONE（未知）
+   */
   result?: string;
+  /**
+   * @example
+   * 12345
+   */
   taskId?: number;
+  /**
+   * @example
+   * 1657522271000
+   */
   timestamp?: number;
+  /**
+   * @example
+   * manager1
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6386,12 +8247,46 @@ export class PagesExportInstancesResponseBodyResultListOperationRecords extends 
 }
 
 export class PagesExportInstancesResponseBodyResultListTasks extends $tea.Model {
+  /**
+   * @example
+   * 1234_abcd
+   */
   activityId?: string;
+  /**
+   * @example
+   * 1657522271000
+   */
   createTimestamp?: number;
+  /**
+   * @example
+   * 1657522271000
+   */
   finishTimestamp?: number;
+  /**
+   * @example
+   * 分为AGREE（同意），REFUSE（拒绝），REDIRECTED（转交）
+   */
   result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * NEW（未启动），RUNNING（处理中），PAUSED（暂停），CANCELED（取消），COMPLETED（完成），TERMINATED（终止）
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   taskId?: number;
+  /**
+   * @example
+   * staff1234
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6423,19 +8318,100 @@ export class PagesExportInstancesResponseBodyResultListTasks extends $tea.Model 
 }
 
 export class PagesExportInstancesResponseBodyResultList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cdef-dae2fd2-example
+   */
   attachedProcessInstanceIds?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 202110111558000355024
+   */
   businessId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1635165470201
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1633795200000
+   */
   finishTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formComponentValues?: PagesExportInstancesResponseBodyResultListFormComponentValues[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dcdse-dae2fd2-example
+   */
   mainProcessInstanceId?: string;
   operationRecords?: PagesExportInstancesResponseBodyResultListOperationRecords[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 默认-1，企业根部门
+   */
   originatorDeptId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * staff1234
+   */
   originatorUserid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcdse-dse-example
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * AGREE同意，REFUSE拒绝
+   */
   result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * RUNNING审批中、TERMINATED撤销、COMPLETED审批完成、CANCELED取消
+   */
   status?: string;
   tasks?: PagesExportInstancesResponseBodyResultListTasks[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 员工A提交的小肖审批单
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6481,8 +8457,22 @@ export class PagesExportInstancesResponseBodyResultList extends $tea.Model {
 }
 
 export class PagesExportInstancesResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
   list?: PagesExportInstancesResponseBodyResultList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6506,11 +8496,31 @@ export class PagesExportInstancesResponseBodyResult extends $tea.Model {
 }
 
 export class ProcessForecastRequestFormComponentValuesDetailsDetails extends $tea.Model {
+  /**
+   * @example
+   * Phone
+   */
   bizAlias?: string;
   componentType?: string;
+  /**
+   * @example
+   * 总个数:1
+   */
   extValue?: string;
+  /**
+   * @example
+   * PhoneField_IZI2LP8QF6O0
+   */
   id?: string;
+  /**
+   * @example
+   * PhoneField
+   */
   name?: string;
+  /**
+   * @example
+   * 123xxxxxxxx
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6540,11 +8550,31 @@ export class ProcessForecastRequestFormComponentValuesDetailsDetails extends $te
 }
 
 export class ProcessForecastRequestFormComponentValuesDetails extends $tea.Model {
+  /**
+   * @example
+   * Phone
+   */
   bizAlias?: string;
   details?: ProcessForecastRequestFormComponentValuesDetailsDetails[];
+  /**
+   * @example
+   * 总个数:1
+   */
   extValue?: string;
+  /**
+   * @example
+   * PhoneField_IZI2LP8QF6O0
+   */
   id?: string;
+  /**
+   * @example
+   * PhoneField
+   */
   name?: string;
+  /**
+   * @example
+   * 123xxxxxxxx
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6574,12 +8604,38 @@ export class ProcessForecastRequestFormComponentValuesDetails extends $tea.Model
 }
 
 export class ProcessForecastRequestFormComponentValues extends $tea.Model {
+  /**
+   * @example
+   * Phone
+   */
   bizAlias?: string;
   componentType?: string;
   details?: ProcessForecastRequestFormComponentValuesDetails[];
+  /**
+   * @example
+   * 总个数:1
+   */
   extValue?: string;
+  /**
+   * @example
+   * PhoneField_IZI2LP8QF6O0
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PhoneField
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123xxxxxxxx
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6677,14 +8733,46 @@ export class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor
 }
 
 export class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor extends $tea.Model {
+  /**
+   * @example
+   * ALL:并行，ONE_BY_ONE:串行
+   */
   actorActivateType?: string;
+  /**
+   * @example
+   * manual_e203_14a3_895a_45ad
+   */
   actorKey?: string;
   actorSelectionRange?: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange;
+  /**
+   * @example
+   * allStaff：全公司，approvals：指定成员，labels：角色
+   */
   actorSelectionType?: string;
+  /**
+   * @example
+   * approver:审批人，notifier:抄送人，audit：办理人
+   */
   actorType?: string;
+  /**
+   * @example
+   * true
+   */
   allowedMulti?: boolean;
+  /**
+   * @example
+   * ONE_BY_ONE：依次审批，AND：会签审批，OR：或签审批
+   */
   approvalMethod?: string;
+  /**
+   * @example
+   * MANUAL:人工审批，AUTO_AGREE:自动通过，AUTO_REFUSE:自动拒绝
+   */
   approvalType?: string;
+  /**
+   * @example
+   * true
+   */
   required?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -6720,10 +8808,30 @@ export class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor
 }
 
 export class ProcessForecastResponseBodyResultWorkflowActivityRules extends $tea.Model {
+  /**
+   * @example
+   * 1918_5cd3
+   */
   activityId?: string;
+  /**
+   * @example
+   * 审批人
+   */
   activityName?: string;
+  /**
+   * @example
+   * 包括 target_select、target_approval 等
+   */
   activityType?: string;
+  /**
+   * @example
+   * true
+   */
   isTargetSelect?: boolean;
+  /**
+   * @example
+   * 1918_5cd3
+   */
   prevActivityId?: string;
   workflowActor?: ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor;
   static names(): { [key: string]: string } {
@@ -6754,7 +8862,21 @@ export class ProcessForecastResponseBodyResultWorkflowActivityRules extends $tea
 }
 
 export class ProcessForecastResponseBodyResultWorkflowForecastNodes extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1cc3_959a
+   */
   activityId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * line-random-1cc3_959a-831a_607b
+   */
   outId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6776,12 +8898,51 @@ export class ProcessForecastResponseBodyResultWorkflowForecastNodes extends $tea
 }
 
 export class ProcessForecastResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   isForecastSuccess?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   isStaticWorkflow?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-2B60E506-D6CB-43F3-B661-359B27F90947
+   */
   processCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 63657309999
+   */
   processId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2665246100805992
+   */
   userId?: string;
   workflowActivityRules?: ProcessForecastResponseBodyResultWorkflowActivityRules[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   workflowForecastNodes?: ProcessForecastResponseBodyResultWorkflowForecastNodes[];
   static names(): { [key: string]: string } {
     return {
@@ -6813,11 +8974,47 @@ export class ProcessForecastResponseBodyResult extends $tea.Model {
 }
 
 export class QueryAllFormInstancesResponseBodyResultValuesFormInstDataList extends $tea.Model {
+  /**
+   * @example
+   * staff_name
+   */
   bizAlias?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 具体参见审批控件列表
+   */
   componentType?: string;
+  /**
+   * @example
+   * {"key":"value}
+   */
   extendValue?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TextField-abcdefg
+   */
   key?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 员工姓名
+   */
   label?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6847,17 +9044,79 @@ export class QueryAllFormInstancesResponseBodyResultValuesFormInstDataList exten
 }
 
 export class QueryAllFormInstancesResponseBodyResultValues extends $tea.Model {
+  /**
+   * @example
+   * SWAPP-abcd-example
+   */
   appUuid?: string;
   attributes?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1635151039000
+   */
   createTimestamp?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 30314512
+   */
   creator?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-abcd-example
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formInstDataList?: QueryAllFormInstancesResponseBodyResultValuesFormInstDataList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcd-eaf-acde12f
+   */
   formInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 032142312
+   */
   modifier?: string;
+  /**
+   * @example
+   * 1635151039000
+   */
   modifyTimestamp?: number;
+  /**
+   * @example
+   * abcd
+   */
   outBizCode?: string;
+  /**
+   * @example
+   * 323
+   */
   outInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxx提交的数据
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6899,9 +9158,34 @@ export class QueryAllFormInstancesResponseBodyResultValues extends $tea.Model {
 }
 
 export class QueryAllFormInstancesResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   values?: QueryAllFormInstancesResponseBodyResultValues[];
   static names(): { [key: string]: string } {
     return {
@@ -6927,9 +9211,34 @@ export class QueryAllFormInstancesResponseBodyResult extends $tea.Model {
 }
 
 export class QueryAllProcessInstancesResponseBodyResultListFormComponentValues extends $tea.Model {
+  /**
+   * @example
+   * {"staffId":"abcd"}
+   */
   extValue?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TextField-a32bcdef
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 姓名
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6955,9 +9264,25 @@ export class QueryAllProcessInstancesResponseBodyResultListFormComponentValues e
 }
 
 export class QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments extends $tea.Model {
+  /**
+   * @example
+   * 1234567
+   */
   fileId?: string;
+  /**
+   * @example
+   * 附件
+   */
   fileName?: string;
+  /**
+   * @example
+   * 123
+   */
   fileSize?: string;
+  /**
+   * @example
+   * pdf
+   */
   fileType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6984,10 +9309,30 @@ export class QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttac
 
 export class QueryAllProcessInstancesResponseBodyResultListOperationRecords extends $tea.Model {
   attachments?: QueryAllProcessInstancesResponseBodyResultListOperationRecordsAttachments[];
+  /**
+   * @example
+   * EXECUTE_TASK_NORMAL（正常执行任务），EXECUTE_TASK_AGENT（代理人执行任务），APPEND_TASK_BEFORE（前加签任务），APPEND_TASK_AFTER（后加签任务），REDIRECT_TASK（转交任务），START_PROCESS_INSTANCE（发起流程实例），TERMINATE_PROCESS_INSTANCE（终止(撤销)流程实例），FINISH_PROCESS_INSTANCE（结束流程实例），ADD_REMARK（添加评论）
+   */
   operationType?: string;
+  /**
+   * @example
+   * 同意
+   */
   remark?: string;
+  /**
+   * @example
+   * AGREE（同意），REFUSE（拒绝），NONE（未知）
+   */
   result?: string;
+  /**
+   * @example
+   * 1657522271000
+   */
   timestamp?: number;
+  /**
+   * @example
+   * manager1
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7017,12 +9362,46 @@ export class QueryAllProcessInstancesResponseBodyResultListOperationRecords exte
 }
 
 export class QueryAllProcessInstancesResponseBodyResultListTasks extends $tea.Model {
+  /**
+   * @example
+   * 1234_abcd
+   */
   activityId?: string;
+  /**
+   * @example
+   * 1657522271000
+   */
   createTimestamp?: number;
+  /**
+   * @example
+   * 1657522271000
+   */
   finishTimestamp?: number;
+  /**
+   * @example
+   * 分为AGREE（同意），REFUSE（拒绝），REDIRECTED（转交）
+   */
   result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * NEW（未启动），RUNNING（处理中），PAUSED（暂停），CANCELED（取消），COMPLETED（完成），TERMINATED（终止）
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   taskId?: number;
+  /**
+   * @example
+   * staff1234
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7054,19 +9433,100 @@ export class QueryAllProcessInstancesResponseBodyResultListTasks extends $tea.Mo
 }
 
 export class QueryAllProcessInstancesResponseBodyResultList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cdef-dae2fd2-example
+   */
   attachedProcessInstanceIds?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 202110111558000355024
+   */
   businessId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1635165470201
+   */
   createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1633795200000
+   */
   finishTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   formComponentValues?: QueryAllProcessInstancesResponseBodyResultListFormComponentValues[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dcdse-dae2fd2-example
+   */
   mainProcessInstanceId?: string;
   operationRecords?: QueryAllProcessInstancesResponseBodyResultListOperationRecords[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 默认-1，企业根部门
+   */
   originatorDeptId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * staff1234
+   */
   originatorUserid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcdse-dse-example
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * AGREE同意，REFUSE拒绝
+   */
   result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * RUNNING审批中、TERMINATED撤销、COMPLETED审批完成、CANCELED取消
+   */
   status?: string;
   tasks?: QueryAllProcessInstancesResponseBodyResultListTasks[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 员工A提交的小肖审批单
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7112,9 +9572,30 @@ export class QueryAllProcessInstancesResponseBodyResultList extends $tea.Model {
 }
 
 export class QueryAllProcessInstancesResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
   hasMore?: boolean;
   list?: QueryAllProcessInstancesResponseBodyResultList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   nextToken?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7140,18 +9621,85 @@ export class QueryAllProcessInstancesResponseBodyResult extends $tea.Model {
 }
 
 export class QueryFormByBizTypeResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 应用类型
+   */
   appType?: number;
+  /**
+   * @example
+   * SWAPP-abcdef-example
+   */
   appUuid?: string;
+  /**
+   * @example
+   * 表单业务标识
+   */
   bizType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   content?: string;
+  /**
+   * @example
+   * 1635151039000
+   */
   createTime?: number;
+  /**
+   * @example
+   * 02501234567890
+   */
   creator?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-abcdef-example
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-example
+   */
   formUuid?: string;
+  /**
+   * @example
+   * 用于收集休假信息
+   */
   memo?: string;
+  /**
+   * @example
+   * 1635151039000
+   */
   modifedTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 休假申请
+   */
   name?: string;
+  /**
+   * @example
+   * 02501234567890
+   */
   ownerId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PUBLISHED(启用), INVALID(停用), SAVED(草稿)
+   */
   status?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7195,11 +9743,35 @@ export class QueryFormByBizTypeResponseBodyResult extends $tea.Model {
 }
 
 export class QueryFormInstanceResponseBodyFormInstDataList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   bizAlias?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   componentType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   extendValue?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   key?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   label?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7229,13 +9801,45 @@ export class QueryFormInstanceResponseBodyFormInstDataList extends $tea.Model {
 }
 
 export class QueryIntegratedTodoTaskResponseBodyResultList extends $tea.Model {
+  /**
+   * @example
+   * act_0001
+   */
   activityId?: string;
+  /**
+   * @example
+   * 2022-10-17T15:12Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * 2022-10-17T15:12Z
+   */
   finishTime?: string;
+  /**
+   * @example
+   * Siw2WNVZS4KiUt3tTmaNKg04*****809950
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * agree
+   */
   result?: string;
+  /**
+   * @example
+   * RUNNING
+   */
   status?: string;
+  /**
+   * @example
+   * 1234567
+   */
   taskId?: number;
+  /**
+   * @example
+   * manager001
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7354,6 +9958,10 @@ export class QuerySchemaAndProcessResponseBodyResult extends $tea.Model {
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps extends $tea.Model {
   bizAlias?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
   label?: string;
   options?: string[];
@@ -7384,7 +9992,18 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildre
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TextField
+   */
   componentName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   props?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps;
   static names(): { [key: string]: string } {
     return {
@@ -7406,7 +10025,15 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildre
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets extends $tea.Model {
+  /**
+   * @example
+   * xxxx
+   */
   behavior?: string;
+  /**
+   * @example
+   * TextField-K2AD4O5B
+   */
   fieldId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7429,6 +10056,10 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBe
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage extends $tea.Model {
   targets?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets[];
+  /**
+   * @example
+   * xxxx
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7469,8 +10100,20 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsOb
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   attendanceRule?: number;
+  /**
+   * @example
+   * 1
+   */
   pushSwitch?: number;
+  /**
+   * @example
+   * xxxx
+   */
   pushTag?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7494,9 +10137,25 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPu
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField extends $tea.Model {
+  /**
+   * @example
+   * TextField-K2AD4O5B
+   */
   id?: string;
+  /**
+   * @example
+   * 单行输入框
+   */
   label?: string;
+  /**
+   * @example
+   * xxxx
+   */
   unit?: string;
+  /**
+   * @example
+   * true
+   */
   upper?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -7522,51 +10181,217 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsSt
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps extends $tea.Model {
+  /**
+   * @example
+   * 添加
+   */
   actionName?: string;
+  /**
+   * @example
+   * top
+   */
   align?: string;
+  /**
+   * @example
+   * 1234567
+   */
   appId?: number;
+  /**
+   * @example
+   * true
+   */
   asyncCondition?: boolean;
+  /**
+   * @example
+   * 请假
+   */
   attendTypeLabel?: string;
   behaviorLinkage?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage[];
+  /**
+   * @example
+   * 我的单行输入框
+   */
   bizAlias?: string;
+  /**
+   * @example
+   * hrm.xxxx
+   */
   bizType?: string;
   childFieldVisible?: { [key: string]: boolean };
+  /**
+   * @example
+   * 1
+   */
   choice?: number;
+  /**
+   * @example
+   * xxxx
+   */
   commonBizType?: string;
+  /**
+   * @example
+   * true
+   */
   disabled?: boolean;
+  /**
+   * @example
+   * true
+   */
   duration?: boolean;
+  /**
+   * @example
+   * xxxx
+   */
   durationLabel?: string;
+  /**
+   * @example
+   * true
+   */
   eSign?: boolean;
+  /**
+   * @example
+   * true
+   */
   extract?: boolean;
+  /**
+   * @example
+   * xxxx
+   */
   fieldsInfo?: string;
+  /**
+   * @example
+   * yyyy-MM-dd
+   */
   format?: string;
+  /**
+   * @example
+   * xxxx
+   */
   formula?: string;
+  /**
+   * @example
+   * true
+   */
   hidden?: boolean;
+  /**
+   * @example
+   * true
+   */
   hiddenInApprovalDetail?: boolean;
+  /**
+   * @example
+   * true
+   */
   hideLabel?: boolean;
+  /**
+   * @example
+   * "[{\"name\":\"\open"}]"
+   */
   holidayOptions?: { [key: string]: string }[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TextField-K2AD4O5B
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 单行输入框
+   */
   label?: string;
+  /**
+   * @example
+   * true
+   */
   labelEditableFreeze?: boolean;
+  /**
+   * @example
+   * xxxx
+   */
   link?: string;
+  /**
+   * @example
+   * xxxx
+   */
   mainTitle?: string;
+  /**
+   * @example
+   * 1
+   */
   notPrint?: string;
+  /**
+   * @example
+   * 1
+   */
   notUpper?: string;
   objOptions?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsObjOptions[];
   options?: string[];
+  /**
+   * @example
+   * true
+   */
   payEnable?: boolean;
+  /**
+   * @example
+   * 请输入文字
+   */
   placeholder?: string;
   push?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush;
+  /**
+   * @example
+   * true
+   */
   pushToAttendance?: boolean;
+  /**
+   * @example
+   * 1
+   */
   pushToCalendar?: number;
+  /**
+   * @example
+   * true
+   */
   required?: boolean;
+  /**
+   * @example
+   * true
+   */
   requiredEditableFreeze?: boolean;
+  /**
+   * @example
+   * true
+   */
   showAttendOptions?: boolean;
+  /**
+   * @example
+   * true
+   */
   staffStatusEnabled?: boolean;
   statField?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField[];
+  /**
+   * @example
+   * list
+   */
   tableViewMode?: string;
+  /**
+   * @example
+   * 天
+   */
   unit?: string;
+  /**
+   * @example
+   * true
+   */
   useCalendar?: boolean;
+  /**
+   * @example
+   * true
+   */
   verticalPrint?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -7677,7 +10502,18 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps e
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems extends $tea.Model {
   children?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TextField
+   */
   componentName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   props?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps;
   static names(): { [key: string]: string } {
     return {
@@ -7701,8 +10537,23 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems extend
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResultSchemaContent extends $tea.Model {
+  /**
+   * @example
+   * common
+   */
   icon?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   items?: QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 示例模板
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7726,24 +10577,124 @@ export class QuerySchemaByProcessCodeResponseBodyResultSchemaContent extends $te
 }
 
 export class QuerySchemaByProcessCodeResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   appType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xxxx
+   */
   appUuid?: string;
+  /**
+   * @example
+   * hrm.xxxx
+   */
   bizType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 26652461xxxx5992
+   */
   creatorUserId?: string;
+  /**
+   * @example
+   * null
+   */
   customSetting?: string;
+  /**
+   * @example
+   * 0
+   */
   engineType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-17428B8C-6C60-470E-xxxx-64F1037AE067
+   */
   formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-28215C3E-00E3-4118-xxxx-4091F828AF2F
+   */
   formUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-12-01T10:49Z
+   */
   gmtCreate?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2021-12-01T10:49Z
+   */
   gmtModified?: string;
+  /**
+   * @example
+   * null
+   */
   icon?: string;
+  /**
+   * @example
+   * 1
+   */
   listOrder?: number;
+  /**
+   * @example
+   * xxxx
+   */
   memo?: string;
+  /**
+   * @example
+   * 示例模板
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 25xxxx01
+   */
   ownerIdType?: string;
+  /**
+   * @example
+   * inner
+   */
   procType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   schemaContent?: QuerySchemaByProcessCodeResponseBodyResultSchemaContent;
+  /**
+   * @example
+   * PUBLISHED
+   */
   status?: string;
+  /**
+   * @example
+   * PRIVATE
+   */
   visibleRange?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7799,10 +10750,30 @@ export class QuerySchemaByProcessCodeResponseBodyResult extends $tea.Model {
 }
 
 export class RedirectWorkflowTaskRequestFileAttachments extends $tea.Model {
+  /**
+   * @example
+   * B1oQixxxx
+   */
   fileId?: string;
+  /**
+   * @example
+   * 文件名称。
+   */
   fileName?: string;
+  /**
+   * @example
+   * 1024
+   */
   fileSize?: string;
+  /**
+   * @example
+   * file
+   */
   fileType?: string;
+  /**
+   * @example
+   * 123
+   */
   spaceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7852,8 +10823,20 @@ export class RedirectWorkflowTaskRequestFile extends $tea.Model {
 }
 
 export class SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   apiKey?: string;
+  /**
+   * @example
+   * abc
+   */
   appUuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7878,10 +10861,30 @@ export class SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback extends 
 
 export class SaveIntegratedInstanceRequestFeatureConfigFeatures extends $tea.Model {
   callback?: SaveIntegratedInstanceRequestFeatureConfigFeaturesCallback;
+  /**
+   * **if can be null:**
+   * true
+   */
   config?: string;
+  /**
+   * @example
+   * www.dingtalk.com
+   */
   mobileUrl?: string;
+  /**
+   * @example
+   * abc
+   */
   name?: string;
+  /**
+   * @example
+   * www.dingtalk.com
+   */
   pcUrl?: string;
+  /**
+   * @example
+   * ORIGIN
+   */
   runType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7964,7 +10967,15 @@ export class SaveIntegratedInstanceRequestFormComponentValueList extends $tea.Mo
 }
 
 export class SaveIntegratedInstanceRequestNotifiers extends $tea.Model {
+  /**
+   * @example
+   * start
+   */
   position?: string;
+  /**
+   * @example
+   * manager001
+   */
   userid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7986,6 +10997,10 @@ export class SaveIntegratedInstanceRequestNotifiers extends $tea.Model {
 }
 
 export class SaveIntegratedInstanceResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * proc-abc
+   */
   processInstanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8005,8 +11020,20 @@ export class SaveIntegratedInstanceResponseBodyResult extends $tea.Model {
 }
 
 export class SaveProcessRequestProcessFeatureConfigFeaturesCallback extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   apiKey?: string;
+  /**
+   * @example
+   * abc
+   */
   appUuid?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8031,10 +11058,30 @@ export class SaveProcessRequestProcessFeatureConfigFeaturesCallback extends $tea
 
 export class SaveProcessRequestProcessFeatureConfigFeatures extends $tea.Model {
   callback?: SaveProcessRequestProcessFeatureConfigFeaturesCallback;
+  /**
+   * **if can be null:**
+   * true
+   */
   config?: string;
+  /**
+   * @example
+   * www.dingtalk.com
+   */
   mobileUrl?: string;
+  /**
+   * @example
+   * abc
+   */
   name?: string;
+  /**
+   * @example
+   * www.dingtalk.com
+   */
   pcUrl?: string;
+  /**
+   * @example
+   * ORIGIN
+   */
   runType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8083,10 +11130,39 @@ export class SaveProcessRequestProcessFeatureConfig extends $tea.Model {
 }
 
 export class SaveProcessRequestTemplateConfig extends $tea.Model {
+  /**
+   * @example
+   * https://open.dingtalk.com/
+   * 
+   * @deprecated
+   */
   createInstanceMobileUrl?: string;
+  /**
+   * @example
+   * https://open.dingtalk.com/
+   * 
+   * @deprecated
+   */
   createInstancePcUrl?: string;
+  /**
+   * **if can be null:**
+   * true
+   */
   disableSendCard?: boolean;
+  /**
+   * @example
+   * true
+   */
   hidden?: boolean;
+  /**
+   * @example
+   * https://open.dingtalk.com/
+   * 
+   * **if can be null:**
+   * true
+   * 
+   * @deprecated
+   */
   templateEditUrl?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8114,6 +11190,13 @@ export class SaveProcessRequestTemplateConfig extends $tea.Model {
 }
 
 export class SaveProcessResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-abcdef-example
+   */
   processCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8133,6 +11216,10 @@ export class SaveProcessResponseBodyResult extends $tea.Model {
 }
 
 export class StartProcessInstanceRequestApprovers extends $tea.Model {
+  /**
+   * @example
+   * 会签：AND；或签：OR；单人：NONE
+   */
   actionType?: string;
   userIds?: string[];
   static names(): { [key: string]: string } {
@@ -8155,11 +11242,31 @@ export class StartProcessInstanceRequestApprovers extends $tea.Model {
 }
 
 export class StartProcessInstanceRequestFormComponentValuesDetailsDetails extends $tea.Model {
+  /**
+   * @example
+   * Phone
+   */
   bizAlias?: string;
   componentType?: string;
+  /**
+   * @example
+   * 总个数:1
+   */
   extValue?: string;
+  /**
+   * @example
+   * PhoneField_IZI2LP8QF6O0
+   */
   id?: string;
+  /**
+   * @example
+   * PhoneField
+   */
   name?: string;
+  /**
+   * @example
+   * 123xxxxxxxx
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8189,11 +11296,31 @@ export class StartProcessInstanceRequestFormComponentValuesDetailsDetails extend
 }
 
 export class StartProcessInstanceRequestFormComponentValuesDetails extends $tea.Model {
+  /**
+   * @example
+   * Phone
+   */
   bizAlias?: string;
   details?: StartProcessInstanceRequestFormComponentValuesDetailsDetails[];
+  /**
+   * @example
+   * 总个数:1
+   */
   extValue?: string;
+  /**
+   * @example
+   * PhoneField_IZI2LP8QF6O0
+   */
   id?: string;
+  /**
+   * @example
+   * PhoneField
+   */
   name?: string;
+  /**
+   * @example
+   * 123xxxxxxxx
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8223,12 +11350,38 @@ export class StartProcessInstanceRequestFormComponentValuesDetails extends $tea.
 }
 
 export class StartProcessInstanceRequestFormComponentValues extends $tea.Model {
+  /**
+   * @example
+   * Phone
+   */
   bizAlias?: string;
   componentType?: string;
   details?: StartProcessInstanceRequestFormComponentValuesDetails[];
+  /**
+   * @example
+   * 总个数:1
+   */
   extValue?: string;
+  /**
+   * @example
+   * PhoneField_IZI2LP8QF6O0
+   */
   id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PhoneField
+   */
   name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123xxxxxxxx
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8260,6 +11413,10 @@ export class StartProcessInstanceRequestFormComponentValues extends $tea.Model {
 }
 
 export class StartProcessInstanceRequestTargetSelectActioners extends $tea.Model {
+  /**
+   * @example
+   * manual_1918_5cd3_5e19_6a98
+   */
   actionerKey?: string;
   actionerUserIds?: string[];
   static names(): { [key: string]: string } {
@@ -8282,13 +11439,37 @@ export class StartProcessInstanceRequestTargetSelectActioners extends $tea.Model
 }
 
 export class TodoTasksResponseBodyResultList extends $tea.Model {
+  /**
+   * @example
+   * RUNNING
+   */
   businessId?: string;
   canRedirect?: boolean;
   createTime?: number;
+  /**
+   * @example
+   * act_0001
+   */
   processCode?: string;
+  /**
+   * @example
+   * Siw2WNVZS4KiUt3tTmaNKg04*****809950
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * 1234567
+   */
   taskId?: number;
+  /**
+   * @example
+   * manager001
+   */
   title?: string;
+  /**
+   * @example
+   * 2022-10-17T15:12Z
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8344,8 +11525,26 @@ export class TodoTasksResponseBodyResult extends $tea.Model {
 }
 
 export class UpdateIntegratedTaskRequestTasks extends $tea.Model {
+  /**
+   * @example
+   * AGREE
+   */
   result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * COMPLETED
+   */
   status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * **if can be null:**
+   * true
+   */
   taskId?: number;
   static names(): { [key: string]: string } {
     return {
@@ -8369,6 +11568,13 @@ export class UpdateIntegratedTaskRequestTasks extends $tea.Model {
 }
 
 export class UpdateProcessInstanceRequestNotifiers extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager001
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8389,12 +11595,11 @@ export class UpdateProcessInstanceRequestNotifiers extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -8404,12 +11609,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 授权下载审批钉盘文件
-   *
-   * @param request AddApproveDentryAuthRequest
-   * @param headers AddApproveDentryAuthHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddApproveDentryAuthResponse
+   * 授权下载审批钉盘文件
+   * 
+   * @param request - AddApproveDentryAuthRequest
+   * @param headers - AddApproveDentryAuthHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddApproveDentryAuthResponse
    */
   async addApproveDentryAuthWithOptions(request: AddApproveDentryAuthRequest, headers: AddApproveDentryAuthHeaders, runtime: $Util.RuntimeOptions): Promise<AddApproveDentryAuthResponse> {
     Util.validateModel(request);
@@ -8450,10 +11655,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 授权下载审批钉盘文件
-   *
-   * @param request AddApproveDentryAuthRequest
-   * @return AddApproveDentryAuthResponse
+   * 授权下载审批钉盘文件
+   * 
+   * @param request - AddApproveDentryAuthRequest
+   * @returns AddApproveDentryAuthResponse
    */
   async addApproveDentryAuth(request: AddApproveDentryAuthRequest): Promise<AddApproveDentryAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8462,12 +11667,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加审批评论
-   *
-   * @param request AddProcessInstanceCommentRequest
-   * @param headers AddProcessInstanceCommentHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AddProcessInstanceCommentResponse
+   * 添加审批评论
+   * 
+   * @param request - AddProcessInstanceCommentRequest
+   * @param headers - AddProcessInstanceCommentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddProcessInstanceCommentResponse
    */
   async addProcessInstanceCommentWithOptions(request: AddProcessInstanceCommentRequest, headers: AddProcessInstanceCommentHeaders, runtime: $Util.RuntimeOptions): Promise<AddProcessInstanceCommentResponse> {
     Util.validateModel(request);
@@ -8516,10 +11721,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 添加审批评论
-   *
-   * @param request AddProcessInstanceCommentRequest
-   * @return AddProcessInstanceCommentResponse
+   * 添加审批评论
+   * 
+   * @param request - AddProcessInstanceCommentRequest
+   * @returns AddProcessInstanceCommentResponse
    */
   async addProcessInstanceComment(request: AddProcessInstanceCommentRequest): Promise<AddProcessInstanceCommentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8528,12 +11733,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量同意或拒绝审批任务
-   *
-   * @param request BatchExecuteProcessInstancesRequest
-   * @param headers BatchExecuteProcessInstancesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchExecuteProcessInstancesResponse
+   * 批量同意或拒绝审批任务
+   * 
+   * @param request - BatchExecuteProcessInstancesRequest
+   * @param headers - BatchExecuteProcessInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchExecuteProcessInstancesResponse
    */
   async batchExecuteProcessInstancesWithOptions(request: BatchExecuteProcessInstancesRequest, headers: BatchExecuteProcessInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<BatchExecuteProcessInstancesResponse> {
     Util.validateModel(request);
@@ -8582,10 +11787,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量同意或拒绝审批任务
-   *
-   * @param request BatchExecuteProcessInstancesRequest
-   * @return BatchExecuteProcessInstancesResponse
+   * 批量同意或拒绝审批任务
+   * 
+   * @param request - BatchExecuteProcessInstancesRequest
+   * @returns BatchExecuteProcessInstancesResponse
    */
   async batchExecuteProcessInstances(request: BatchExecuteProcessInstancesRequest): Promise<BatchExecuteProcessInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8594,12 +11799,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量流程审批任务转交
-   *
-   * @param request BatchTasksRedirectRequest
-   * @param headers BatchTasksRedirectHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchTasksRedirectResponse
+   * 批量流程审批任务转交
+   * 
+   * @param request - BatchTasksRedirectRequest
+   * @param headers - BatchTasksRedirectHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchTasksRedirectResponse
    */
   async batchTasksRedirectWithOptions(request: BatchTasksRedirectRequest, headers: BatchTasksRedirectHeaders, runtime: $Util.RuntimeOptions): Promise<BatchTasksRedirectResponse> {
     Util.validateModel(request);
@@ -8648,10 +11853,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量流程审批任务转交
-   *
-   * @param request BatchTasksRedirectRequest
-   * @return BatchTasksRedirectResponse
+   * 批量流程审批任务转交
+   * 
+   * @param request - BatchTasksRedirectRequest
+   * @returns BatchTasksRedirectResponse
    */
   async batchTasksRedirect(request: BatchTasksRedirectRequest): Promise<BatchTasksRedirectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8660,12 +11865,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量更新实例状态
-   *
-   * @param request BatchUpdateProcessInstanceRequest
-   * @param headers BatchUpdateProcessInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchUpdateProcessInstanceResponse
+   * 批量更新实例状态
+   * 
+   * @param request - BatchUpdateProcessInstanceRequest
+   * @param headers - BatchUpdateProcessInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchUpdateProcessInstanceResponse
    */
   async batchUpdateProcessInstanceWithOptions(request: BatchUpdateProcessInstanceRequest, headers: BatchUpdateProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateProcessInstanceResponse> {
     Util.validateModel(request);
@@ -8702,10 +11907,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量更新实例状态
-   *
-   * @param request BatchUpdateProcessInstanceRequest
-   * @return BatchUpdateProcessInstanceResponse
+   * 批量更新实例状态
+   * 
+   * @param request - BatchUpdateProcessInstanceRequest
+   * @returns BatchUpdateProcessInstanceResponse
    */
   async batchUpdateProcessInstance(request: BatchUpdateProcessInstanceRequest): Promise<BatchUpdateProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8714,12 +11919,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量取消流程中心待处理任务
-   *
-   * @param request CancelIntegratedTaskRequest
-   * @param headers CancelIntegratedTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CancelIntegratedTaskResponse
+   * 批量取消流程中心待处理任务
+   * 
+   * @param request - CancelIntegratedTaskRequest
+   * @param headers - CancelIntegratedTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CancelIntegratedTaskResponse
    */
   async cancelIntegratedTaskWithOptions(request: CancelIntegratedTaskRequest, headers: CancelIntegratedTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CancelIntegratedTaskResponse> {
     Util.validateModel(request);
@@ -8764,10 +11969,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量取消流程中心待处理任务
-   *
-   * @param request CancelIntegratedTaskRequest
-   * @return CancelIntegratedTaskResponse
+   * 批量取消流程中心待处理任务
+   * 
+   * @param request - CancelIntegratedTaskRequest
+   * @returns CancelIntegratedTaskResponse
    */
   async cancelIntegratedTask(request: CancelIntegratedTaskRequest): Promise<CancelIntegratedTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8776,12 +11981,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清理审批数据
-   *
-   * @param request CleanProcessDataRequest
-   * @param headers CleanProcessDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CleanProcessDataResponse
+   * 清理审批数据
+   * 
+   * @param request - CleanProcessDataRequest
+   * @param headers - CleanProcessDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CleanProcessDataResponse
    */
   async cleanProcessDataWithOptions(request: CleanProcessDataRequest, headers: CleanProcessDataHeaders, runtime: $Util.RuntimeOptions): Promise<CleanProcessDataResponse> {
     Util.validateModel(request);
@@ -8822,10 +12027,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 清理审批数据
-   *
-   * @param request CleanProcessDataRequest
-   * @return CleanProcessDataResponse
+   * 清理审批数据
+   * 
+   * @param request - CleanProcessDataRequest
+   * @returns CleanProcessDataResponse
    */
   async cleanProcessData(request: CleanProcessDataRequest): Promise<CleanProcessDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8834,12 +12039,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 复制审批流
-   *
-   * @param request CopyProcessRequest
-   * @param headers CopyProcessHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CopyProcessResponse
+   * 复制审批流
+   * 
+   * @param request - CopyProcessRequest
+   * @param headers - CopyProcessHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CopyProcessResponse
    */
   async copyProcessWithOptions(request: CopyProcessRequest, headers: CopyProcessHeaders, runtime: $Util.RuntimeOptions): Promise<CopyProcessResponse> {
     Util.validateModel(request);
@@ -8884,10 +12089,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 复制审批流
-   *
-   * @param request CopyProcessRequest
-   * @return CopyProcessResponse
+   * 复制审批流
+   * 
+   * @param request - CopyProcessRequest
+   * @returns CopyProcessResponse
    */
   async copyProcess(request: CopyProcessRequest): Promise<CopyProcessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8896,12 +12101,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建流程中心待处理任务
-   *
-   * @param request CreateIntegratedTaskRequest
-   * @param headers CreateIntegratedTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateIntegratedTaskResponse
+   * 创建流程中心待处理任务
+   * 
+   * @param request - CreateIntegratedTaskRequest
+   * @param headers - CreateIntegratedTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateIntegratedTaskResponse
    */
   async createIntegratedTaskWithOptions(request: CreateIntegratedTaskRequest, headers: CreateIntegratedTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateIntegratedTaskResponse> {
     Util.validateModel(request);
@@ -8950,10 +12155,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建流程中心待处理任务
-   *
-   * @param request CreateIntegratedTaskRequest
-   * @return CreateIntegratedTaskResponse
+   * 创建流程中心待处理任务
+   * 
+   * @param request - CreateIntegratedTaskRequest
+   * @returns CreateIntegratedTaskResponse
    */
   async createIntegratedTask(request: CreateIntegratedTaskRequest): Promise<CreateIntegratedTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -8962,12 +12167,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除分组
-   *
-   * @param request DeleteDirRequest
-   * @param headers DeleteDirHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteDirResponse
+   * 删除分组
+   * 
+   * @param request - DeleteDirRequest
+   * @param headers - DeleteDirHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteDirResponse
    */
   async deleteDirWithOptions(request: DeleteDirRequest, headers: DeleteDirHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDirResponse> {
     Util.validateModel(request);
@@ -9008,10 +12213,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除分组
-   *
-   * @param request DeleteDirRequest
-   * @return DeleteDirResponse
+   * 删除分组
+   * 
+   * @param request - DeleteDirRequest
+   * @returns DeleteDirResponse
    */
   async deleteDir(request: DeleteDirRequest): Promise<DeleteDirResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9020,12 +12225,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除模板
-   *
-   * @param request DeleteProcessRequest
-   * @param headers DeleteProcessHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteProcessResponse
+   * 删除模板
+   * 
+   * @param request - DeleteProcessRequest
+   * @param headers - DeleteProcessHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteProcessResponse
    */
   async deleteProcessWithOptions(request: DeleteProcessRequest, headers: DeleteProcessHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteProcessResponse> {
     Util.validateModel(request);
@@ -9066,10 +12271,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除模板
-   *
-   * @param request DeleteProcessRequest
-   * @return DeleteProcessResponse
+   * 删除模板
+   * 
+   * @param request - DeleteProcessRequest
+   * @returns DeleteProcessResponse
    */
   async deleteProcess(request: DeleteProcessRequest): Promise<DeleteProcessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9078,12 +12283,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同意或拒绝审批任务
-   *
-   * @param request ExecuteProcessInstanceRequest
-   * @param headers ExecuteProcessInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ExecuteProcessInstanceResponse
+   * 同意或拒绝审批任务
+   * 
+   * @param request - ExecuteProcessInstanceRequest
+   * @param headers - ExecuteProcessInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ExecuteProcessInstanceResponse
    */
   async executeProcessInstanceWithOptions(request: ExecuteProcessInstanceRequest, headers: ExecuteProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteProcessInstanceResponse> {
     Util.validateModel(request);
@@ -9140,10 +12345,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 同意或拒绝审批任务
-   *
-   * @param request ExecuteProcessInstanceRequest
-   * @return ExecuteProcessInstanceResponse
+   * 同意或拒绝审批任务
+   * 
+   * @param request - ExecuteProcessInstanceRequest
+   * @returns ExecuteProcessInstanceResponse
    */
   async executeProcessInstance(request: ExecuteProcessInstanceRequest): Promise<ExecuteProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9152,12 +12357,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建或更新审批表单模板
-   *
-   * @param request FormCreateRequest
-   * @param headers FormCreateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return FormCreateResponse
+   * 创建或更新审批表单模板
+   * 
+   * @param request - FormCreateRequest
+   * @param headers - FormCreateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns FormCreateResponse
    */
   async formCreateWithOptions(request: FormCreateRequest, headers: FormCreateHeaders, runtime: $Util.RuntimeOptions): Promise<FormCreateResponse> {
     Util.validateModel(request);
@@ -9210,10 +12415,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建或更新审批表单模板
-   *
-   * @param request FormCreateRequest
-   * @return FormCreateResponse
+   * 创建或更新审批表单模板
+   * 
+   * @param request - FormCreateRequest
+   * @returns FormCreateResponse
    */
   async formCreate(request: FormCreateRequest): Promise<FormCreateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9222,12 +12427,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取审批钉盘空间信息
-   *
-   * @param request GetAttachmentSpaceRequest
-   * @param headers GetAttachmentSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAttachmentSpaceResponse
+   * 获取审批钉盘空间信息
+   * 
+   * @param request - GetAttachmentSpaceRequest
+   * @param headers - GetAttachmentSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAttachmentSpaceResponse
    */
   async getAttachmentSpaceWithOptions(request: GetAttachmentSpaceRequest, headers: GetAttachmentSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetAttachmentSpaceResponse> {
     Util.validateModel(request);
@@ -9268,10 +12473,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取审批钉盘空间信息
-   *
-   * @param request GetAttachmentSpaceRequest
-   * @return GetAttachmentSpaceResponse
+   * 获取审批钉盘空间信息
+   * 
+   * @param request - GetAttachmentSpaceRequest
+   * @returns GetAttachmentSpaceResponse
    */
   async getAttachmentSpace(request: GetAttachmentSpaceRequest): Promise<GetAttachmentSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9280,12 +12485,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询已设置为条件的表单组件
-   *
-   * @param request GetConditionFormComponentRequest
-   * @param headers GetConditionFormComponentHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetConditionFormComponentResponse
+   * 查询已设置为条件的表单组件
+   * 
+   * @param request - GetConditionFormComponentRequest
+   * @param headers - GetConditionFormComponentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetConditionFormComponentResponse
    */
   async getConditionFormComponentWithOptions(request: GetConditionFormComponentRequest, headers: GetConditionFormComponentHeaders, runtime: $Util.RuntimeOptions): Promise<GetConditionFormComponentResponse> {
     Util.validateModel(request);
@@ -9326,10 +12531,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询已设置为条件的表单组件
-   *
-   * @param request GetConditionFormComponentRequest
-   * @return GetConditionFormComponentResponse
+   * 查询已设置为条件的表单组件
+   * 
+   * @param request - GetConditionFormComponentRequest
+   * @returns GetConditionFormComponentResponse
    */
   async getConditionFormComponent(request: GetConditionFormComponentRequest): Promise<GetConditionFormComponentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9338,11 +12543,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取CRM所有流程code
-   *
-   * @param headers GetCrmProcCodesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCrmProcCodesResponse
+   * 获取CRM所有流程code
+   * 
+   * @param headers - GetCrmProcCodesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCrmProcCodesResponse
    */
   async getCrmProcCodesWithOptions(headers: GetCrmProcCodesHeaders, runtime: $Util.RuntimeOptions): Promise<GetCrmProcCodesResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -9372,9 +12577,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取CRM所有流程code
-   *
-   * @return GetCrmProcCodesResponse
+   * 获取CRM所有流程code
+   * @returns GetCrmProcCodesResponse
    */
   async getCrmProcCodes(): Promise<GetCrmProcCodesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9383,12 +12587,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取表单字段修改历史
-   *
-   * @param request GetFieldModifiedHistoryRequest
-   * @param headers GetFieldModifiedHistoryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFieldModifiedHistoryResponse
+   * 获取表单字段修改历史
+   * 
+   * @param request - GetFieldModifiedHistoryRequest
+   * @param headers - GetFieldModifiedHistoryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFieldModifiedHistoryResponse
    */
   async getFieldModifiedHistoryWithOptions(request: GetFieldModifiedHistoryRequest, headers: GetFieldModifiedHistoryHeaders, runtime: $Util.RuntimeOptions): Promise<GetFieldModifiedHistoryResponse> {
     Util.validateModel(request);
@@ -9429,10 +12633,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取表单字段修改历史
-   *
-   * @param request GetFieldModifiedHistoryRequest
-   * @return GetFieldModifiedHistoryResponse
+   * 获取表单字段修改历史
+   * 
+   * @param request - GetFieldModifiedHistoryRequest
+   * @returns GetFieldModifiedHistoryResponse
    */
   async getFieldModifiedHistory(request: GetFieldModifiedHistoryRequest): Promise<GetFieldModifiedHistoryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9441,12 +12645,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取当前企业所有可管理的表单
-   *
-   * @param request GetManageProcessByStaffIdRequest
-   * @param headers GetManageProcessByStaffIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetManageProcessByStaffIdResponse
+   * 获取当前企业所有可管理的表单
+   * 
+   * @param request - GetManageProcessByStaffIdRequest
+   * @param headers - GetManageProcessByStaffIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetManageProcessByStaffIdResponse
    */
   async getManageProcessByStaffIdWithOptions(request: GetManageProcessByStaffIdRequest, headers: GetManageProcessByStaffIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetManageProcessByStaffIdResponse> {
     Util.validateModel(request);
@@ -9483,10 +12687,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取当前企业所有可管理的表单
-   *
-   * @param request GetManageProcessByStaffIdRequest
-   * @return GetManageProcessByStaffIdResponse
+   * 获取当前企业所有可管理的表单
+   * 
+   * @param request - GetManageProcessByStaffIdRequest
+   * @returns GetManageProcessByStaffIdResponse
    */
   async getManageProcessByStaffId(request: GetManageProcessByStaffIdRequest): Promise<GetManageProcessByStaffIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9495,12 +12699,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取模板code
-   *
-   * @param request GetProcessCodeByNameRequest
-   * @param headers GetProcessCodeByNameHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetProcessCodeByNameResponse
+   * 获取模板code
+   * 
+   * @param request - GetProcessCodeByNameRequest
+   * @param headers - GetProcessCodeByNameHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProcessCodeByNameResponse
    */
   async getProcessCodeByNameWithOptions(request: GetProcessCodeByNameRequest, headers: GetProcessCodeByNameHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessCodeByNameResponse> {
     Util.validateModel(request);
@@ -9537,10 +12741,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取模板code
-   *
-   * @param request GetProcessCodeByNameRequest
-   * @return GetProcessCodeByNameResponse
+   * 获取模板code
+   * 
+   * @param request - GetProcessCodeByNameRequest
+   * @returns GetProcessCodeByNameResponse
    */
   async getProcessCodeByName(request: GetProcessCodeByNameRequest): Promise<GetProcessCodeByNameResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9549,12 +12753,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程配置
-   *
-   * @param request GetProcessConfigRequest
-   * @param headers GetProcessConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetProcessConfigResponse
+   * 获取流程配置
+   * 
+   * @param request - GetProcessConfigRequest
+   * @param headers - GetProcessConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProcessConfigResponse
    */
   async getProcessConfigWithOptions(request: GetProcessConfigRequest, headers: GetProcessConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessConfigResponse> {
     Util.validateModel(request);
@@ -9591,10 +12795,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程配置
-   *
-   * @param request GetProcessConfigRequest
-   * @return GetProcessConfigResponse
+   * 获取流程配置
+   * 
+   * @param request - GetProcessConfigRequest
+   * @returns GetProcessConfigResponse
    */
   async getProcessConfig(request: GetProcessConfigRequest): Promise<GetProcessConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9603,12 +12807,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取单个审批实例详情
-   *
-   * @param request GetProcessInstanceRequest
-   * @param headers GetProcessInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetProcessInstanceResponse
+   * 获取单个审批实例详情
+   * 
+   * @param request - GetProcessInstanceRequest
+   * @param headers - GetProcessInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProcessInstanceResponse
    */
   async getProcessInstanceWithOptions(request: GetProcessInstanceRequest, headers: GetProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessInstanceResponse> {
     Util.validateModel(request);
@@ -9645,10 +12849,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取单个审批实例详情
-   *
-   * @param request GetProcessInstanceRequest
-   * @return GetProcessInstanceResponse
+   * 获取单个审批实例详情
+   * 
+   * @param request - GetProcessInstanceRequest
+   * @returns GetProcessInstanceResponse
    */
   async getProcessInstance(request: GetProcessInstanceRequest): Promise<GetProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9657,12 +12861,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据模版code列表批量查询模板最新表单和流程配置
-   *
-   * @param tmpReq GetSchemaAndProcessconfigBatchllyRequest
-   * @param headers GetSchemaAndProcessconfigBatchllyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSchemaAndProcessconfigBatchllyResponse
+   * 根据模版code列表批量查询模板最新表单和流程配置
+   * 
+   * @param tmpReq - GetSchemaAndProcessconfigBatchllyRequest
+   * @param headers - GetSchemaAndProcessconfigBatchllyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSchemaAndProcessconfigBatchllyResponse
    */
   async getSchemaAndProcessconfigBatchllyWithOptions(tmpReq: GetSchemaAndProcessconfigBatchllyRequest, headers: GetSchemaAndProcessconfigBatchllyHeaders, runtime: $Util.RuntimeOptions): Promise<GetSchemaAndProcessconfigBatchllyResponse> {
     Util.validateModel(tmpReq);
@@ -9705,10 +12909,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据模版code列表批量查询模板最新表单和流程配置
-   *
-   * @param request GetSchemaAndProcessconfigBatchllyRequest
-   * @return GetSchemaAndProcessconfigBatchllyResponse
+   * 根据模版code列表批量查询模板最新表单和流程配置
+   * 
+   * @param request - GetSchemaAndProcessconfigBatchllyRequest
+   * @returns GetSchemaAndProcessconfigBatchllyResponse
    */
   async getSchemaAndProcessconfigBatchlly(request: GetSchemaAndProcessconfigBatchllyRequest): Promise<GetSchemaAndProcessconfigBatchllyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9717,12 +12921,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 授权预览审批附件
-   *
-   * @param request GetSpaceWithDownloadAuthRequest
-   * @param headers GetSpaceWithDownloadAuthHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSpaceWithDownloadAuthResponse
+   * 授权预览审批附件
+   * 
+   * @param request - GetSpaceWithDownloadAuthRequest
+   * @param headers - GetSpaceWithDownloadAuthHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSpaceWithDownloadAuthResponse
    */
   async getSpaceWithDownloadAuthWithOptions(request: GetSpaceWithDownloadAuthRequest, headers: GetSpaceWithDownloadAuthHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceWithDownloadAuthResponse> {
     Util.validateModel(request);
@@ -9779,10 +12983,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 授权预览审批附件
-   *
-   * @param request GetSpaceWithDownloadAuthRequest
-   * @return GetSpaceWithDownloadAuthResponse
+   * 授权预览审批附件
+   * 
+   * @param request - GetSpaceWithDownloadAuthRequest
+   * @returns GetSpaceWithDownloadAuthResponse
    */
   async getSpaceWithDownloadAuth(request: GetSpaceWithDownloadAuthRequest): Promise<GetSpaceWithDownloadAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9791,12 +12995,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户待审批数量
-   *
-   * @param request GetUserTodoTaskSumRequest
-   * @param headers GetUserTodoTaskSumHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetUserTodoTaskSumResponse
+   * 获取用户待审批数量
+   * 
+   * @param request - GetUserTodoTaskSumRequest
+   * @param headers - GetUserTodoTaskSumHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetUserTodoTaskSumResponse
    */
   async getUserTodoTaskSumWithOptions(request: GetUserTodoTaskSumRequest, headers: GetUserTodoTaskSumHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserTodoTaskSumResponse> {
     Util.validateModel(request);
@@ -9833,10 +13037,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户待审批数量
-   *
-   * @param request GetUserTodoTaskSumRequest
-   * @return GetUserTodoTaskSumResponse
+   * 获取用户待审批数量
+   * 
+   * @param request - GetUserTodoTaskSumRequest
+   * @returns GetUserTodoTaskSumResponse
    */
   async getUserTodoTaskSum(request: GetUserTodoTaskSumRequest): Promise<GetUserTodoTaskSumResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9845,12 +13049,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  授权用户钉盘空间权限
-   *
-   * @param request GrantCspaceAuthorizationRequest
-   * @param headers GrantCspaceAuthorizationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GrantCspaceAuthorizationResponse
+   * 授权用户钉盘空间权限
+   * 
+   * @param request - GrantCspaceAuthorizationRequest
+   * @param headers - GrantCspaceAuthorizationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GrantCspaceAuthorizationResponse
    */
   async grantCspaceAuthorizationWithOptions(request: GrantCspaceAuthorizationRequest, headers: GrantCspaceAuthorizationHeaders, runtime: $Util.RuntimeOptions): Promise<GrantCspaceAuthorizationResponse> {
     Util.validateModel(request);
@@ -9899,10 +13103,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  授权用户钉盘空间权限
-   *
-   * @param request GrantCspaceAuthorizationRequest
-   * @return GrantCspaceAuthorizationResponse
+   * 授权用户钉盘空间权限
+   * 
+   * @param request - GrantCspaceAuthorizationRequest
+   * @returns GrantCspaceAuthorizationResponse
    */
   async grantCspaceAuthorization(request: GrantCspaceAuthorizationRequest): Promise<GrantCspaceAuthorizationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9911,12 +13115,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 下载审批附件
-   *
-   * @param request GrantProcessInstanceForDownloadFileRequest
-   * @param headers GrantProcessInstanceForDownloadFileHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GrantProcessInstanceForDownloadFileResponse
+   * 下载审批附件
+   * 
+   * @param request - GrantProcessInstanceForDownloadFileRequest
+   * @param headers - GrantProcessInstanceForDownloadFileHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GrantProcessInstanceForDownloadFileResponse
    */
   async grantProcessInstanceForDownloadFileWithOptions(request: GrantProcessInstanceForDownloadFileRequest, headers: GrantProcessInstanceForDownloadFileHeaders, runtime: $Util.RuntimeOptions): Promise<GrantProcessInstanceForDownloadFileResponse> {
     Util.validateModel(request);
@@ -9961,10 +13165,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 下载审批附件
-   *
-   * @param request GrantProcessInstanceForDownloadFileRequest
-   * @return GrantProcessInstanceForDownloadFileResponse
+   * 下载审批附件
+   * 
+   * @param request - GrantProcessInstanceForDownloadFileRequest
+   * @returns GrantProcessInstanceForDownloadFileResponse
    */
   async grantProcessInstanceForDownloadFile(request: GrantProcessInstanceForDownloadFileRequest): Promise<GrantProcessInstanceForDownloadFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -9973,12 +13177,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建或更新分组
-   *
-   * @param request InsertOrUpdateDirRequest
-   * @param headers InsertOrUpdateDirHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InsertOrUpdateDirResponse
+   * 创建或更新分组
+   * 
+   * @param request - InsertOrUpdateDirRequest
+   * @param headers - InsertOrUpdateDirHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InsertOrUpdateDirResponse
    */
   async insertOrUpdateDirWithOptions(request: InsertOrUpdateDirRequest, headers: InsertOrUpdateDirHeaders, runtime: $Util.RuntimeOptions): Promise<InsertOrUpdateDirResponse> {
     Util.validateModel(request);
@@ -10031,10 +13235,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建或更新分组
-   *
-   * @param request InsertOrUpdateDirRequest
-   * @return InsertOrUpdateDirResponse
+   * 创建或更新分组
+   * 
+   * @param request - InsertOrUpdateDirRequest
+   * @returns InsertOrUpdateDirResponse
    */
   async insertOrUpdateDir(request: InsertOrUpdateDirRequest): Promise<InsertOrUpdateDirResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10043,12 +13247,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 应用安装
-   *
-   * @param request InstallAppRequest
-   * @param headers InstallAppHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InstallAppResponse
+   * 应用安装
+   * 
+   * @param request - InstallAppRequest
+   * @param headers - InstallAppHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InstallAppResponse
    */
   async installAppWithOptions(request: InstallAppRequest, headers: InstallAppHeaders, runtime: $Util.RuntimeOptions): Promise<InstallAppResponse> {
     Util.validateModel(request);
@@ -10093,10 +13297,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 应用安装
-   *
-   * @param request InstallAppRequest
-   * @return InstallAppResponse
+   * 应用安装
+   * 
+   * @param request - InstallAppRequest
+   * @returns InstallAppResponse
    */
   async installApp(request: InstallAppRequest): Promise<InstallAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10105,12 +13309,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取审批实例ID列表
-   *
-   * @param request ListProcessInstanceIdsRequest
-   * @param headers ListProcessInstanceIdsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListProcessInstanceIdsResponse
+   * 获取审批实例ID列表
+   * 
+   * @param request - ListProcessInstanceIdsRequest
+   * @param headers - ListProcessInstanceIdsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListProcessInstanceIdsResponse
    */
   async listProcessInstanceIdsWithOptions(request: ListProcessInstanceIdsRequest, headers: ListProcessInstanceIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListProcessInstanceIdsResponse> {
     Util.validateModel(request);
@@ -10171,10 +13375,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取审批实例ID列表
-   *
-   * @param request ListProcessInstanceIdsRequest
-   * @return ListProcessInstanceIdsResponse
+   * 获取审批实例ID列表
+   * 
+   * @param request - ListProcessInstanceIdsRequest
+   * @returns ListProcessInstanceIdsResponse
    */
   async listProcessInstanceIds(request: ListProcessInstanceIdsRequest): Promise<ListProcessInstanceIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10183,12 +13387,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户待办事项
-   *
-   * @param request ListTodoWorkRecordsRequest
-   * @param headers ListTodoWorkRecordsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListTodoWorkRecordsResponse
+   * 查询用户待办事项
+   * 
+   * @param request - ListTodoWorkRecordsRequest
+   * @param headers - ListTodoWorkRecordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListTodoWorkRecordsResponse
    */
   async listTodoWorkRecordsWithOptions(request: ListTodoWorkRecordsRequest, headers: ListTodoWorkRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<ListTodoWorkRecordsResponse> {
     Util.validateModel(request);
@@ -10237,10 +13441,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户待办事项
-   *
-   * @param request ListTodoWorkRecordsRequest
-   * @return ListTodoWorkRecordsResponse
+   * 查询用户待办事项
+   * 
+   * @param request - ListTodoWorkRecordsRequest
+   * @returns ListTodoWorkRecordsResponse
    */
   async listTodoWorkRecords(request: ListTodoWorkRecordsRequest): Promise<ListTodoWorkRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10249,12 +13453,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定用户可见的审批表单列表
-   *
-   * @param request ListUserVisibleBpmsProcessesRequest
-   * @param headers ListUserVisibleBpmsProcessesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListUserVisibleBpmsProcessesResponse
+   * 获取指定用户可见的审批表单列表
+   * 
+   * @param request - ListUserVisibleBpmsProcessesRequest
+   * @param headers - ListUserVisibleBpmsProcessesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListUserVisibleBpmsProcessesResponse
    */
   async listUserVisibleBpmsProcessesWithOptions(request: ListUserVisibleBpmsProcessesRequest, headers: ListUserVisibleBpmsProcessesHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserVisibleBpmsProcessesResponse> {
     Util.validateModel(request);
@@ -10299,10 +13503,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取指定用户可见的审批表单列表
-   *
-   * @param request ListUserVisibleBpmsProcessesRequest
-   * @return ListUserVisibleBpmsProcessesResponse
+   * 获取指定用户可见的审批表单列表
+   * 
+   * @param request - ListUserVisibleBpmsProcessesRequest
+   * @returns ListUserVisibleBpmsProcessesResponse
    */
   async listUserVisibleBpmsProcesses(request: ListUserVisibleBpmsProcessesRequest): Promise<ListUserVisibleBpmsProcessesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10311,12 +13515,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询实例数据
-   *
-   * @param request PagesExportInstancesRequest
-   * @param headers PagesExportInstancesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PagesExportInstancesResponse
+   * 分页查询实例数据
+   * 
+   * @param request - PagesExportInstancesRequest
+   * @param headers - PagesExportInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PagesExportInstancesResponse
    */
   async pagesExportInstancesWithOptions(request: PagesExportInstancesRequest, headers: PagesExportInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<PagesExportInstancesResponse> {
     Util.validateModel(request);
@@ -10377,10 +13581,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询实例数据
-   *
-   * @param request PagesExportInstancesRequest
-   * @return PagesExportInstancesResponse
+   * 分页查询实例数据
+   * 
+   * @param request - PagesExportInstancesRequest
+   * @returns PagesExportInstancesResponse
    */
   async pagesExportInstances(request: PagesExportInstancesRequest): Promise<PagesExportInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10389,12 +13593,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 审批流程预测
-   *
-   * @param request ProcessForecastRequest
-   * @param headers ProcessForecastHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ProcessForecastResponse
+   * 审批流程预测
+   * 
+   * @param request - ProcessForecastRequest
+   * @param headers - ProcessForecastHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ProcessForecastResponse
    */
   async processForecastWithOptions(request: ProcessForecastRequest, headers: ProcessForecastHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessForecastResponse> {
     Util.validateModel(request);
@@ -10443,10 +13647,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 审批流程预测
-   *
-   * @param request ProcessForecastRequest
-   * @return ProcessForecastResponse
+   * 审批流程预测
+   * 
+   * @param request - ProcessForecastRequest
+   * @returns ProcessForecastResponse
    */
   async processForecast(request: ProcessForecastRequest): Promise<ProcessForecastResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10455,12 +13659,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据processCode分页获取表单数据
-   *
-   * @param request QueryAllFormInstancesRequest
-   * @param headers QueryAllFormInstancesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryAllFormInstancesResponse
+   * 根据processCode分页获取表单数据
+   * 
+   * @param request - QueryAllFormInstancesRequest
+   * @param headers - QueryAllFormInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryAllFormInstancesResponse
    */
   async queryAllFormInstancesWithOptions(request: QueryAllFormInstancesRequest, headers: QueryAllFormInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllFormInstancesResponse> {
     Util.validateModel(request);
@@ -10509,10 +13713,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据processCode分页获取表单数据
-   *
-   * @param request QueryAllFormInstancesRequest
-   * @return QueryAllFormInstancesResponse
+   * 根据processCode分页获取表单数据
+   * 
+   * @param request - QueryAllFormInstancesRequest
+   * @returns QueryAllFormInstancesResponse
    */
   async queryAllFormInstances(request: QueryAllFormInstancesRequest): Promise<QueryAllFormInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10521,12 +13725,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询审批流程实例
-   *
-   * @param request QueryAllProcessInstancesRequest
-   * @param headers QueryAllProcessInstancesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryAllProcessInstancesResponse
+   * 批量查询审批流程实例
+   * 
+   * @param request - QueryAllProcessInstancesRequest
+   * @param headers - QueryAllProcessInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryAllProcessInstancesResponse
    */
   async queryAllProcessInstancesWithOptions(request: QueryAllProcessInstancesRequest, headers: QueryAllProcessInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllProcessInstancesResponse> {
     Util.validateModel(request);
@@ -10583,10 +13787,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量查询审批流程实例
-   *
-   * @param request QueryAllProcessInstancesRequest
-   * @return QueryAllProcessInstancesResponse
+   * 批量查询审批流程实例
+   * 
+   * @param request - QueryAllProcessInstancesRequest
+   * @returns QueryAllProcessInstancesResponse
    */
   async queryAllProcessInstances(request: QueryAllProcessInstancesRequest): Promise<QueryAllProcessInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10595,12 +13799,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据业务标识查询表单描述信息
-   *
-   * @param request QueryFormByBizTypeRequest
-   * @param headers QueryFormByBizTypeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryFormByBizTypeResponse
+   * 根据业务标识查询表单描述信息
+   * 
+   * @param request - QueryFormByBizTypeRequest
+   * @param headers - QueryFormByBizTypeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryFormByBizTypeResponse
    */
   async queryFormByBizTypeWithOptions(request: QueryFormByBizTypeRequest, headers: QueryFormByBizTypeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFormByBizTypeResponse> {
     Util.validateModel(request);
@@ -10641,10 +13845,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据业务标识查询表单描述信息
-   *
-   * @param request QueryFormByBizTypeRequest
-   * @return QueryFormByBizTypeResponse
+   * 根据业务标识查询表单描述信息
+   * 
+   * @param request - QueryFormByBizTypeRequest
+   * @returns QueryFormByBizTypeResponse
    */
   async queryFormByBizType(request: QueryFormByBizTypeRequest): Promise<QueryFormByBizTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10653,12 +13857,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询数据表单
-   *
-   * @param request QueryFormInstanceRequest
-   * @param headers QueryFormInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryFormInstanceResponse
+   * 查询数据表单
+   * 
+   * @param request - QueryFormInstanceRequest
+   * @param headers - QueryFormInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryFormInstanceResponse
    */
   async queryFormInstanceWithOptions(request: QueryFormInstanceRequest, headers: QueryFormInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFormInstanceResponse> {
     Util.validateModel(request);
@@ -10703,10 +13907,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询数据表单
-   *
-   * @param request QueryFormInstanceRequest
-   * @return QueryFormInstanceResponse
+   * 查询数据表单
+   * 
+   * @param request - QueryFormInstanceRequest
+   * @returns QueryFormInstanceResponse
    */
   async queryFormInstance(request: QueryFormInstanceRequest): Promise<QueryFormInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10715,12 +13919,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询通过流程中心集成的OA审批任务
-   *
-   * @param request QueryIntegratedTodoTaskRequest
-   * @param headers QueryIntegratedTodoTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryIntegratedTodoTaskResponse
+   * 查询通过流程中心集成的OA审批任务
+   * 
+   * @param request - QueryIntegratedTodoTaskRequest
+   * @param headers - QueryIntegratedTodoTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryIntegratedTodoTaskResponse
    */
   async queryIntegratedTodoTaskWithOptions(request: QueryIntegratedTodoTaskRequest, headers: QueryIntegratedTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<QueryIntegratedTodoTaskResponse> {
     Util.validateModel(request);
@@ -10769,10 +13973,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询通过流程中心集成的OA审批任务
-   *
-   * @param request QueryIntegratedTodoTaskRequest
-   * @return QueryIntegratedTodoTaskResponse
+   * 查询通过流程中心集成的OA审批任务
+   * 
+   * @param request - QueryIntegratedTodoTaskRequest
+   * @returns QueryIntegratedTodoTaskResponse
    */
   async queryIntegratedTodoTask(request: QueryIntegratedTodoTaskRequest): Promise<QueryIntegratedTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10781,12 +13985,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据业务标识查询模板
-   *
-   * @param request QueryProcessByBizCategoryIdRequest
-   * @param headers QueryProcessByBizCategoryIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryProcessByBizCategoryIdResponse
+   * 根据业务标识查询模板
+   * 
+   * @param request - QueryProcessByBizCategoryIdRequest
+   * @param headers - QueryProcessByBizCategoryIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryProcessByBizCategoryIdResponse
    */
   async queryProcessByBizCategoryIdWithOptions(request: QueryProcessByBizCategoryIdRequest, headers: QueryProcessByBizCategoryIdHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProcessByBizCategoryIdResponse> {
     Util.validateModel(request);
@@ -10827,10 +14031,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据业务标识查询模板
-   *
-   * @param request QueryProcessByBizCategoryIdRequest
-   * @return QueryProcessByBizCategoryIdResponse
+   * 根据业务标识查询模板
+   * 
+   * @param request - QueryProcessByBizCategoryIdRequest
+   * @returns QueryProcessByBizCategoryIdResponse
    */
   async queryProcessByBizCategoryId(request: QueryProcessByBizCategoryIdRequest): Promise<QueryProcessByBizCategoryIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10839,12 +14043,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 蓝凌获取schema和流程信息
-   *
-   * @param request QuerySchemaAndProcessRequest
-   * @param headers QuerySchemaAndProcessHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QuerySchemaAndProcessResponse
+   * 蓝凌获取schema和流程信息
+   * 
+   * @param request - QuerySchemaAndProcessRequest
+   * @param headers - QuerySchemaAndProcessHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QuerySchemaAndProcessResponse
    */
   async querySchemaAndProcessWithOptions(request: QuerySchemaAndProcessRequest, headers: QuerySchemaAndProcessHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySchemaAndProcessResponse> {
     Util.validateModel(request);
@@ -10885,10 +14089,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 蓝凌获取schema和流程信息
-   *
-   * @param request QuerySchemaAndProcessRequest
-   * @return QuerySchemaAndProcessResponse
+   * 蓝凌获取schema和流程信息
+   * 
+   * @param request - QuerySchemaAndProcessRequest
+   * @returns QuerySchemaAndProcessResponse
    */
   async querySchemaAndProcess(request: QuerySchemaAndProcessRequest): Promise<QuerySchemaAndProcessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10897,12 +14101,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  通过 processCode 获取表单 schema 信息
-   *
-   * @param request QuerySchemaByProcessCodeRequest
-   * @param headers QuerySchemaByProcessCodeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QuerySchemaByProcessCodeResponse
+   * 通过 processCode 获取表单 schema 信息
+   * 
+   * @param request - QuerySchemaByProcessCodeRequest
+   * @param headers - QuerySchemaByProcessCodeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QuerySchemaByProcessCodeResponse
    */
   async querySchemaByProcessCodeWithOptions(request: QuerySchemaByProcessCodeRequest, headers: QuerySchemaByProcessCodeHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySchemaByProcessCodeResponse> {
     Util.validateModel(request);
@@ -10943,10 +14147,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary  通过 processCode 获取表单 schema 信息
-   *
-   * @param request QuerySchemaByProcessCodeRequest
-   * @return QuerySchemaByProcessCodeResponse
+   * 通过 processCode 获取表单 schema 信息
+   * 
+   * @param request - QuerySchemaByProcessCodeRequest
+   * @returns QuerySchemaByProcessCodeResponse
    */
   async querySchemaByProcessCode(request: QuerySchemaByProcessCodeRequest): Promise<QuerySchemaByProcessCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -10955,12 +14159,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转交OA审批任务
-   *
-   * @param request RedirectWorkflowTaskRequest
-   * @param headers RedirectWorkflowTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RedirectWorkflowTaskResponse
+   * 转交OA审批任务
+   * 
+   * @param request - RedirectWorkflowTaskRequest
+   * @param headers - RedirectWorkflowTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RedirectWorkflowTaskResponse
    */
   async redirectWorkflowTaskWithOptions(request: RedirectWorkflowTaskRequest, headers: RedirectWorkflowTaskHeaders, runtime: $Util.RuntimeOptions): Promise<RedirectWorkflowTaskResponse> {
     Util.validateModel(request);
@@ -11017,10 +14221,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 转交OA审批任务
-   *
-   * @param request RedirectWorkflowTaskRequest
-   * @return RedirectWorkflowTaskResponse
+   * 转交OA审批任务
+   * 
+   * @param request - RedirectWorkflowTaskRequest
+   * @returns RedirectWorkflowTaskResponse
    */
   async redirectWorkflowTask(request: RedirectWorkflowTaskRequest): Promise<RedirectWorkflowTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11029,12 +14233,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建实例
-   *
-   * @param request SaveIntegratedInstanceRequest
-   * @param headers SaveIntegratedInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SaveIntegratedInstanceResponse
+   * 创建实例
+   * 
+   * @param request - SaveIntegratedInstanceRequest
+   * @param headers - SaveIntegratedInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SaveIntegratedInstanceResponse
    */
   async saveIntegratedInstanceWithOptions(request: SaveIntegratedInstanceRequest, headers: SaveIntegratedInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<SaveIntegratedInstanceResponse> {
     Util.validateModel(request);
@@ -11099,10 +14303,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建实例
-   *
-   * @param request SaveIntegratedInstanceRequest
-   * @return SaveIntegratedInstanceResponse
+   * 创建实例
+   * 
+   * @param request - SaveIntegratedInstanceRequest
+   * @returns SaveIntegratedInstanceResponse
    */
   async saveIntegratedInstance(request: SaveIntegratedInstanceRequest): Promise<SaveIntegratedInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11111,12 +14315,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建或更新审批模板
-   *
-   * @param request SaveProcessRequest
-   * @param headers SaveProcessHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SaveProcessResponse
+   * 创建或更新审批模板
+   * 
+   * @param request - SaveProcessRequest
+   * @param headers - SaveProcessHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SaveProcessResponse
    */
   async saveProcessWithOptions(request: SaveProcessRequest, headers: SaveProcessHeaders, runtime: $Util.RuntimeOptions): Promise<SaveProcessResponse> {
     Util.validateModel(request);
@@ -11173,10 +14377,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建或更新审批模板
-   *
-   * @param request SaveProcessRequest
-   * @return SaveProcessResponse
+   * 创建或更新审批模板
+   * 
+   * @param request - SaveProcessRequest
+   * @returns SaveProcessResponse
    */
   async saveProcess(request: SaveProcessRequest): Promise<SaveProcessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11185,12 +14389,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建审批实例
-   *
-   * @param request StartProcessInstanceRequest
-   * @param headers StartProcessInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return StartProcessInstanceResponse
+   * 创建审批实例
+   * 
+   * @param request - StartProcessInstanceRequest
+   * @param headers - StartProcessInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns StartProcessInstanceResponse
    */
   async startProcessInstanceWithOptions(request: StartProcessInstanceRequest, headers: StartProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<StartProcessInstanceResponse> {
     Util.validateModel(request);
@@ -11259,10 +14463,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建审批实例
-   *
-   * @param request StartProcessInstanceRequest
-   * @return StartProcessInstanceResponse
+   * 创建审批实例
+   * 
+   * @param request - StartProcessInstanceRequest
+   * @returns StartProcessInstanceResponse
    */
   async startProcessInstance(request: StartProcessInstanceRequest): Promise<StartProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11271,12 +14475,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤销审批实例
-   *
-   * @param request TerminateProcessInstanceRequest
-   * @param headers TerminateProcessInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return TerminateProcessInstanceResponse
+   * 撤销审批实例
+   * 
+   * @param request - TerminateProcessInstanceRequest
+   * @param headers - TerminateProcessInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TerminateProcessInstanceResponse
    */
   async terminateProcessInstanceWithOptions(request: TerminateProcessInstanceRequest, headers: TerminateProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<TerminateProcessInstanceResponse> {
     Util.validateModel(request);
@@ -11325,10 +14529,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 撤销审批实例
-   *
-   * @param request TerminateProcessInstanceRequest
-   * @return TerminateProcessInstanceResponse
+   * 撤销审批实例
+   * 
+   * @param request - TerminateProcessInstanceRequest
+   * @returns TerminateProcessInstanceResponse
    */
   async terminateProcessInstance(request: TerminateProcessInstanceRequest): Promise<TerminateProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11337,12 +14541,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 流程转交待处理任务查询
-   *
-   * @param request TodoTasksRequest
-   * @param headers TodoTasksHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return TodoTasksResponse
+   * 流程转交待处理任务查询
+   * 
+   * @param request - TodoTasksRequest
+   * @param headers - TodoTasksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TodoTasksResponse
    */
   async todoTasksWithOptions(request: TodoTasksRequest, headers: TodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<TodoTasksResponse> {
     Util.validateModel(request);
@@ -11391,10 +14595,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 流程转交待处理任务查询
-   *
-   * @param request TodoTasksRequest
-   * @return TodoTasksResponse
+   * 流程转交待处理任务查询
+   * 
+   * @param request - TodoTasksRequest
+   * @returns TodoTasksResponse
    */
   async todoTasks(request: TodoTasksRequest): Promise<TodoTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11403,12 +14607,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新流程中心任务状态
-   *
-   * @param request UpdateIntegratedTaskRequest
-   * @param headers UpdateIntegratedTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateIntegratedTaskResponse
+   * 更新流程中心任务状态
+   * 
+   * @param request - UpdateIntegratedTaskRequest
+   * @param headers - UpdateIntegratedTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateIntegratedTaskResponse
    */
   async updateIntegratedTaskWithOptions(request: UpdateIntegratedTaskRequest, headers: UpdateIntegratedTaskHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateIntegratedTaskResponse> {
     Util.validateModel(request);
@@ -11449,10 +14653,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新流程中心任务状态
-   *
-   * @param request UpdateIntegratedTaskRequest
-   * @return UpdateIntegratedTaskResponse
+   * 更新流程中心任务状态
+   * 
+   * @param request - UpdateIntegratedTaskRequest
+   * @returns UpdateIntegratedTaskResponse
    */
   async updateIntegratedTask(request: UpdateIntegratedTaskRequest): Promise<UpdateIntegratedTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -11461,12 +14665,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新实例状态
-   *
-   * @param request UpdateProcessInstanceRequest
-   * @param headers UpdateProcessInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateProcessInstanceResponse
+   * 更新实例状态
+   * 
+   * @param request - UpdateProcessInstanceRequest
+   * @param headers - UpdateProcessInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateProcessInstanceResponse
    */
   async updateProcessInstanceWithOptions(request: UpdateProcessInstanceRequest, headers: UpdateProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateProcessInstanceResponse> {
     Util.validateModel(request);
@@ -11515,10 +14719,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新实例状态
-   *
-   * @param request UpdateProcessInstanceRequest
-   * @return UpdateProcessInstanceResponse
+   * 更新实例状态
+   * 
+   * @param request - UpdateProcessInstanceRequest
+   * @returns UpdateProcessInstanceResponse
    */
   async updateProcessInstance(request: UpdateProcessInstanceRequest): Promise<UpdateProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });

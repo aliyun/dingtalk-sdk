@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,6 +30,10 @@ export class GetFormInstanceHeaders extends $tea.Model {
 }
 
 export class GetFormInstanceRequest extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   bizType?: number;
   static names(): { [key: string]: string } {
     return {
@@ -52,6 +54,10 @@ export class GetFormInstanceRequest extends $tea.Model {
 
 export class GetFormInstanceResponseBody extends $tea.Model {
   result?: GetFormInstanceResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -120,9 +126,31 @@ export class ListFormInstancesHeaders extends $tea.Model {
 }
 
 export class ListFormInstancesRequest extends $tea.Model {
+  /**
+   * @example
+   * 2019-01-01
+   */
   actionDate?: string;
+  /**
+   * @example
+   * 0
+   */
   bizType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 15
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -217,9 +245,31 @@ export class ListFormSchemasByCreatorHeaders extends $tea.Model {
 }
 
 export class ListFormSchemasByCreatorRequest extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   bizType?: number;
+  /**
+   * @example
+   * user123
+   */
   creator?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
   maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -246,6 +296,10 @@ export class ListFormSchemasByCreatorRequest extends $tea.Model {
 
 export class ListFormSchemasByCreatorResponseBody extends $tea.Model {
   result?: ListFormSchemasByCreatorResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -292,8 +346,20 @@ export class ListFormSchemasByCreatorResponse extends $tea.Model {
 }
 
 export class GetFormInstanceResponseBodyResultForms extends $tea.Model {
+  /**
+   * @example
+   * TextareaField_KGAW58AQ
+   */
   key?: string;
+  /**
+   * @example
+   * 你希望的主题
+   */
   label?: string;
+  /**
+   * @example
+   * 操作演示
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -317,11 +383,37 @@ export class GetFormInstanceResponseBodyResultForms extends $tea.Model {
 }
 
 export class GetFormInstanceResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-07-27T18:53Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * manager4220
+   */
   creator?: string;
+  /**
+   * @example
+   * PROC-E5BD2166-B6F4-xxxx
+   */
   formCode?: string;
   forms?: GetFormInstanceResponseBodyResultForms[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-07-27T18:53Z
+   */
   modifyTime?: string;
+  /**
+   * @example
+   * 智能填表测试
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -351,8 +443,20 @@ export class GetFormInstanceResponseBodyResult extends $tea.Model {
 }
 
 export class ListFormInstancesResponseBodyResultListForms extends $tea.Model {
+  /**
+   * @example
+   * TextareaField_KGAW58AQ
+   */
   key?: string;
+  /**
+   * @example
+   * 你希望的主题
+   */
   label?: string;
+  /**
+   * @example
+   * 操作演示
+   */
   value?: string;
   static names(): { [key: string]: string } {
     return {
@@ -376,17 +480,67 @@ export class ListFormInstancesResponseBodyResultListForms extends $tea.Model {
 }
 
 export class ListFormInstancesResponseBodyResultList extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-07-27T18:53Z
+   */
   createTime?: string;
+  /**
+   * @example
+   * PROC-E5BD2166-B6F4-xxxx
+   */
   formCode?: string;
+  /**
+   * @example
+   * 11125769-fxxxx
+   */
   formInstanceId?: string;
   forms?: ListFormInstancesResponseBodyResultListForms[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-07-27T18:53Z
+   */
   modifyTime?: string;
+  /**
+   * @example
+   * 1
+   */
   studentClassId?: string;
+  /**
+   * @example
+   * 三年二班
+   */
   studentClassName?: string;
+  /**
+   * @example
+   * 钉三多
+   */
   studentName?: string;
+  /**
+   * @example
+   * 1
+   */
   studentUserId?: string;
+  /**
+   * @example
+   * user123
+   */
   submitterUserId?: string;
+  /**
+   * @example
+   * 钉三多
+   */
   submitterUserName?: string;
+  /**
+   * @example
+   * 智能填表测试
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -428,8 +582,16 @@ export class ListFormInstancesResponseBodyResultList extends $tea.Model {
 }
 
 export class ListFormInstancesResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
   list?: ListFormInstancesResponseBodyResultList[];
+  /**
+   * @example
+   * 10
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -453,12 +615,42 @@ export class ListFormInstancesResponseBodyResult extends $tea.Model {
 }
 
 export class ListFormSchemasByCreatorResponseBodyResultListSetting extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
   bizType?: number;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-07-27T18:53Z
+   */
   createTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-07-27T18:53Z
+   */
   endTime?: string;
+  /**
+   * @example
+   * 0
+   */
   formType?: number;
   loopDays?: number[];
+  /**
+   * @example
+   * 18:00
+   */
   loopTime?: string;
+  /**
+   * @example
+   * true
+   */
   stop?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -490,9 +682,25 @@ export class ListFormSchemasByCreatorResponseBodyResultListSetting extends $tea.
 }
 
 export class ListFormSchemasByCreatorResponseBodyResultList extends $tea.Model {
+  /**
+   * @example
+   * user123
+   */
   creator?: string;
+  /**
+   * @example
+   * PROC-E5BD2166-B6F4-xxxx
+   */
   formCode?: string;
+  /**
+   * @example
+   * 请大家仔细填写，谢谢合作
+   */
   memo?: string;
+  /**
+   * @example
+   * 智能填表测试
+   */
   name?: string;
   setting?: ListFormSchemasByCreatorResponseBodyResultListSetting;
   static names(): { [key: string]: string } {
@@ -521,8 +729,16 @@ export class ListFormSchemasByCreatorResponseBodyResultList extends $tea.Model {
 }
 
 export class ListFormSchemasByCreatorResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
   list?: ListFormSchemasByCreatorResponseBodyResultList[];
+  /**
+   * @example
+   * 10
+   */
   nextToken?: number;
   static names(): { [key: string]: string } {
     return {
@@ -547,12 +763,11 @@ export class ListFormSchemasByCreatorResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -562,12 +777,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 获取单个填表实例详情接口
-   *
-   * @param request GetFormInstanceRequest
-   * @param headers GetFormInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFormInstanceResponse
+   * 获取单个填表实例详情接口
+   * 
+   * @param request - GetFormInstanceRequest
+   * @param headers - GetFormInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFormInstanceResponse
    */
   async getFormInstanceWithOptions(formInstanceId: string, request: GetFormInstanceRequest, headers: GetFormInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormInstanceResponse> {
     Util.validateModel(request);
@@ -604,10 +819,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取单个填表实例详情接口
-   *
-   * @param request GetFormInstanceRequest
-   * @return GetFormInstanceResponse
+   * 获取单个填表实例详情接口
+   * 
+   * @param request - GetFormInstanceRequest
+   * @returns GetFormInstanceResponse
    */
   async getFormInstance(formInstanceId: string, request: GetFormInstanceRequest): Promise<GetFormInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -616,12 +831,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取填表模版下的填表实例列表接口
-   *
-   * @param request ListFormInstancesRequest
-   * @param headers ListFormInstancesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListFormInstancesResponse
+   * 获取填表模版下的填表实例列表接口
+   * 
+   * @param request - ListFormInstancesRequest
+   * @param headers - ListFormInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListFormInstancesResponse
    */
   async listFormInstancesWithOptions(formCode: string, request: ListFormInstancesRequest, headers: ListFormInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<ListFormInstancesResponse> {
     Util.validateModel(request);
@@ -670,10 +885,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取填表模版下的填表实例列表接口
-   *
-   * @param request ListFormInstancesRequest
-   * @return ListFormInstancesResponse
+   * 获取填表模版下的填表实例列表接口
+   * 
+   * @param request - ListFormInstancesRequest
+   * @returns ListFormInstancesResponse
    */
   async listFormInstances(formCode: string, request: ListFormInstancesRequest): Promise<ListFormInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -682,12 +897,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户创建的填表模板列表接口
-   *
-   * @param request ListFormSchemasByCreatorRequest
-   * @param headers ListFormSchemasByCreatorHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListFormSchemasByCreatorResponse
+   * 获取用户创建的填表模板列表接口
+   * 
+   * @param request - ListFormSchemasByCreatorRequest
+   * @param headers - ListFormSchemasByCreatorHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListFormSchemasByCreatorResponse
    */
   async listFormSchemasByCreatorWithOptions(request: ListFormSchemasByCreatorRequest, headers: ListFormSchemasByCreatorHeaders, runtime: $Util.RuntimeOptions): Promise<ListFormSchemasByCreatorResponse> {
     Util.validateModel(request);
@@ -736,10 +951,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取用户创建的填表模板列表接口
-   *
-   * @param request ListFormSchemasByCreatorRequest
-   * @return ListFormSchemasByCreatorResponse
+   * 获取用户创建的填表模板列表接口
+   * 
+   * @param request - ListFormSchemasByCreatorRequest
+   * @returns ListFormSchemasByCreatorResponse
    */
   async listFormSchemasByCreator(request: ListFormSchemasByCreatorRequest): Promise<ListFormSchemasByCreatorResponse> {
     let runtime = new $Util.RuntimeOptions({ });

@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,9 +30,34 @@ export class QueryBlackboardReadUnReadHeaders extends $tea.Model {
 }
 
 export class QueryBlackboardReadUnReadRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 49dc87dc1b30cd099b13a
+   */
   blackboardId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 200
+   */
   maxResults?: number;
+  /**
+   * @example
+   * xb1dc
+   */
   nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager01
+   */
   operationUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -129,6 +152,13 @@ export class QueryBlackboardSpaceHeaders extends $tea.Model {
 }
 
 export class QueryBlackboardSpaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager01
+   */
   operationUserId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -192,8 +222,16 @@ export class QueryBlackboardSpaceResponse extends $tea.Model {
 }
 
 export class QueryBlackboardReadUnReadResponseBodyUsers extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   read?: string;
   readTimestamp?: number;
+  /**
+   * @example
+   * 12039
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -218,12 +256,11 @@ export class QueryBlackboardReadUnReadResponseBodyUsers extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -233,12 +270,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 查询公告已读未读人员列表
-   *
-   * @param request QueryBlackboardReadUnReadRequest
-   * @param headers QueryBlackboardReadUnReadHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryBlackboardReadUnReadResponse
+   * 查询公告已读未读人员列表
+   * 
+   * @param request - QueryBlackboardReadUnReadRequest
+   * @param headers - QueryBlackboardReadUnReadHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryBlackboardReadUnReadResponse
    */
   async queryBlackboardReadUnReadWithOptions(request: QueryBlackboardReadUnReadRequest, headers: QueryBlackboardReadUnReadHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBlackboardReadUnReadResponse> {
     Util.validateModel(request);
@@ -287,10 +324,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询公告已读未读人员列表
-   *
-   * @param request QueryBlackboardReadUnReadRequest
-   * @return QueryBlackboardReadUnReadResponse
+   * 查询公告已读未读人员列表
+   * 
+   * @param request - QueryBlackboardReadUnReadRequest
+   * @returns QueryBlackboardReadUnReadResponse
    */
   async queryBlackboardReadUnRead(request: QueryBlackboardReadUnReadRequest): Promise<QueryBlackboardReadUnReadResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -299,12 +336,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取公告钉盘空间信息
-   *
-   * @param request QueryBlackboardSpaceRequest
-   * @param headers QueryBlackboardSpaceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryBlackboardSpaceResponse
+   * 获取公告钉盘空间信息
+   * 
+   * @param request - QueryBlackboardSpaceRequest
+   * @param headers - QueryBlackboardSpaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryBlackboardSpaceResponse
    */
   async queryBlackboardSpaceWithOptions(request: QueryBlackboardSpaceRequest, headers: QueryBlackboardSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBlackboardSpaceResponse> {
     Util.validateModel(request);
@@ -341,10 +378,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取公告钉盘空间信息
-   *
-   * @param request QueryBlackboardSpaceRequest
-   * @return QueryBlackboardSpaceResponse
+   * 获取公告钉盘空间信息
+   * 
+   * @param request - QueryBlackboardSpaceRequest
+   * @returns QueryBlackboardSpaceResponse
    */
   async queryBlackboardSpace(request: QueryBlackboardSpaceRequest): Promise<QueryBlackboardSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });

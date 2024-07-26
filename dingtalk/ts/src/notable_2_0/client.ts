@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,8 +30,31 @@ export class CreateFieldHeaders extends $tea.Model {
 }
 
 export class CreateFieldRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @example
+   * key: id或者name
+   *     value: 对应字段值,不同类型的字段传入的value值不同
+   *       - text: "TextString"          // 文本字符串
+   *       - number: 123                 // 整数/浮点数均可
+   *       - singleSelect: "optionIdxxx1" | "optionName1" // 单选选项Id/单选选项名
+   *       - date: 1688601600000 ｜ "2023-12-20 03:00"
+   *                                     // 支持传时间戳或ISO 8601字符串
+   *       - user: [{
+   *           uid: \"1234567\"            // 用户uid
+   *         }, {
+   *           uid: \"2345678\"
+   *         }]
+   */
   property?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -59,6 +80,21 @@ export class CreateFieldRequest extends $tea.Model {
 export class CreateFieldResponseBody extends $tea.Model {
   id?: string;
   name?: string;
+  /**
+   * @example
+   * key: id或者name
+   *     value: 对应字段值,不同类型的字段传入的value值不同
+   *       - text: "TextString"          // 文本字符串
+   *       - number: 123                 // 整数/浮点数均可
+   *       - singleSelect: "optionIdxxx1" | "optionName1" // 单选选项Id/单选选项名
+   *       - date: 1688601600000 ｜ "2023-12-20 03:00"
+   *                                     // 支持传时间戳或ISO 8601字符串
+   *       - user: [{
+   *           uid: \"1234567\"            // 用户uid
+   *         }, {
+   *           uid: \"2345678\"
+   *         }]
+   */
   property?: { [key: string]: any };
   type?: string;
   static names(): { [key: string]: string } {
@@ -223,6 +259,10 @@ export class DeleteFieldHeaders extends $tea.Model {
 }
 
 export class DeleteFieldResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -289,6 +329,10 @@ export class DeleteRecordsHeaders extends $tea.Model {
 }
 
 export class DeleteRecordsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   recordIds?: string[];
   static names(): { [key: string]: string } {
     return {
@@ -308,6 +352,10 @@ export class DeleteRecordsRequest extends $tea.Model {
 }
 
 export class DeleteRecordsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -374,6 +422,10 @@ export class DeleteSheetHeaders extends $tea.Model {
 }
 
 export class DeleteSheetResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
@@ -663,7 +715,15 @@ export class GetRecordsRequest extends $tea.Model {
 }
 
 export class GetRecordsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
   hasMore?: boolean;
+  /**
+   * @example
+   * nextToken
+   */
   nextToken?: string;
   records?: GetRecordsResponseBodyRecords[];
   static names(): { [key: string]: string } {
@@ -804,6 +864,10 @@ export class InsertRecordsHeaders extends $tea.Model {
 }
 
 export class InsertRecordsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   records?: InsertRecordsRequestRecords[];
   static names(): { [key: string]: string } {
     return {
@@ -889,7 +953,26 @@ export class UpdateFieldHeaders extends $tea.Model {
 }
 
 export class UpdateFieldRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @example
+   * key: id或者name
+   *     value: 对应字段值,不同类型的字段传入的value值不同
+   *       - text: "TextString"          // 文本字符串
+   *       - number: 123                 // 整数/浮点数均可
+   *       - singleSelect: "optionIdxxx1" | "optionName1" // 单选选项Id/单选选项名
+   *       - date: 1688601600000 ｜ "2023-12-20 03:00"
+   *                                     // 支持传时间戳或ISO 8601字符串
+   *       - user: [{
+   *           uid: \"1234567\"            // 用户uid
+   *         }, {
+   *           uid: \"2345678\"
+   *         }]
+   */
   property?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
@@ -977,6 +1060,10 @@ export class UpdateRecordsHeaders extends $tea.Model {
 }
 
 export class UpdateRecordsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   records?: UpdateRecordsRequestRecords[];
   static names(): { [key: string]: string } {
     return {
@@ -1062,6 +1149,10 @@ export class UpdateSheetHeaders extends $tea.Model {
 }
 
 export class UpdateSheetRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1128,8 +1219,31 @@ export class UpdateSheetResponse extends $tea.Model {
 }
 
 export class CreateSheetRequestFields extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   name?: string;
+  /**
+   * @example
+   * key: id或者name
+   *     value: 对应字段值,不同类型的字段传入的value值不同
+   *       - text: "TextString"          // 文本字符串
+   *       - number: 123                 // 整数/浮点数均可
+   *       - singleSelect: "optionIdxxx1" | "optionName1" // 单选选项Id/单选选项名
+   *       - date: 1688601600000 ｜ "2023-12-20 03:00"
+   *                                     // 支持传时间戳或ISO 8601字符串
+   *       - user: [{
+   *           uid: \"1234567\"            // 用户uid
+   *         }, {
+   *           uid: \"2345678\"
+   *         }]
+   */
   property?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1155,6 +1269,21 @@ export class CreateSheetRequestFields extends $tea.Model {
 export class GetAllFieldsResponseBodyValue extends $tea.Model {
   id?: string;
   name?: string;
+  /**
+   * @example
+   * key: id或者name
+   *     value: 对应字段值,不同类型的字段传入的value值不同
+   *       - text: "TextString"          // 文本字符串
+   *       - number: 123                 // 整数/浮点数均可
+   *       - singleSelect: "optionIdxxx1" | "optionName1" // 单选选项Id/单选选项名
+   *       - date: 1688601600000 ｜ "2023-12-20 03:00"
+   *                                     // 支持传时间戳或ISO 8601字符串
+   *       - user: [{
+   *           uid: \"1234567\"            // 用户uid
+   *         }, {
+   *           uid: \"2345678\"
+   *         }]
+   */
   property?: { [key: string]: any };
   type?: string;
   static names(): { [key: string]: string } {
@@ -1225,6 +1354,10 @@ export class GetRecordsResponseBodyRecords extends $tea.Model {
 }
 
 export class InsertRecordsRequestRecords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fields?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
@@ -1263,7 +1396,15 @@ export class InsertRecordsResponseBodyValue extends $tea.Model {
 }
 
 export class UpdateRecordsRequestRecords extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   fields?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   id?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1305,12 +1446,11 @@ export class UpdateRecordsResponseBodyValue extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1320,12 +1460,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 新增数据表字段
-   *
-   * @param request CreateFieldRequest
-   * @param headers CreateFieldHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateFieldResponse
+   * 新增数据表字段
+   * 
+   * @param request - CreateFieldRequest
+   * @param headers - CreateFieldHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateFieldResponse
    */
   async createFieldWithOptions(baseId: string, sheetIdOrName: string, request: CreateFieldRequest, headers: CreateFieldHeaders, runtime: $Util.RuntimeOptions): Promise<CreateFieldResponse> {
     Util.validateModel(request);
@@ -1370,10 +1510,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增数据表字段
-   *
-   * @param request CreateFieldRequest
-   * @return CreateFieldResponse
+   * 新增数据表字段
+   * 
+   * @param request - CreateFieldRequest
+   * @returns CreateFieldResponse
    */
   async createField(baseId: string, sheetIdOrName: string, request: CreateFieldRequest): Promise<CreateFieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1382,12 +1522,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建数据表
-   *
-   * @param request CreateSheetRequest
-   * @param headers CreateSheetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateSheetResponse
+   * 创建数据表
+   * 
+   * @param request - CreateSheetRequest
+   * @param headers - CreateSheetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateSheetResponse
    */
   async createSheetWithOptions(baseId: string, request: CreateSheetRequest, headers: CreateSheetHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSheetResponse> {
     Util.validateModel(request);
@@ -1428,10 +1568,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 创建数据表
-   *
-   * @param request CreateSheetRequest
-   * @return CreateSheetResponse
+   * 创建数据表
+   * 
+   * @param request - CreateSheetRequest
+   * @returns CreateSheetResponse
    */
   async createSheet(baseId: string, request: CreateSheetRequest): Promise<CreateSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1440,11 +1580,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除数据表字段
-   *
-   * @param headers DeleteFieldHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteFieldResponse
+   * 删除数据表字段
+   * 
+   * @param headers - DeleteFieldHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteFieldResponse
    */
   async deleteFieldWithOptions(baseId: string, sheetIdOrName: string, fieldIdOrName: string, headers: DeleteFieldHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteFieldResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1474,9 +1614,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除数据表字段
-   *
-   * @return DeleteFieldResponse
+   * 删除数据表字段
+   * @returns DeleteFieldResponse
    */
   async deleteField(baseId: string, sheetIdOrName: string, fieldIdOrName: string): Promise<DeleteFieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1485,12 +1624,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除数据表多行记录
-   *
-   * @param request DeleteRecordsRequest
-   * @param headers DeleteRecordsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteRecordsResponse
+   * 删除数据表多行记录
+   * 
+   * @param request - DeleteRecordsRequest
+   * @param headers - DeleteRecordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteRecordsResponse
    */
   async deleteRecordsWithOptions(baseId: string, sheetIdOrName: string, request: DeleteRecordsRequest, headers: DeleteRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRecordsResponse> {
     Util.validateModel(request);
@@ -1527,10 +1666,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除数据表多行记录
-   *
-   * @param request DeleteRecordsRequest
-   * @return DeleteRecordsResponse
+   * 删除数据表多行记录
+   * 
+   * @param request - DeleteRecordsRequest
+   * @returns DeleteRecordsResponse
    */
   async deleteRecords(baseId: string, sheetIdOrName: string, request: DeleteRecordsRequest): Promise<DeleteRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1539,11 +1678,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除数据表
-   *
-   * @param headers DeleteSheetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteSheetResponse
+   * 删除数据表
+   * 
+   * @param headers - DeleteSheetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteSheetResponse
    */
   async deleteSheetWithOptions(baseId: string, sheetIdOrName: string, headers: DeleteSheetHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSheetResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1573,9 +1712,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除数据表
-   *
-   * @return DeleteSheetResponse
+   * 删除数据表
+   * @returns DeleteSheetResponse
    */
   async deleteSheet(baseId: string, sheetIdOrName: string): Promise<DeleteSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1584,11 +1722,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取所有字段
-   *
-   * @param headers GetAllFieldsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAllFieldsResponse
+   * 获取所有字段
+   * 
+   * @param headers - GetAllFieldsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAllFieldsResponse
    */
   async getAllFieldsWithOptions(baseId: string, sheetIdOrName: string, headers: GetAllFieldsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllFieldsResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1618,9 +1756,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取所有字段
-   *
-   * @return GetAllFieldsResponse
+   * 获取所有字段
+   * @returns GetAllFieldsResponse
    */
   async getAllFields(baseId: string, sheetIdOrName: string): Promise<GetAllFieldsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1629,11 +1766,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取所有数据表
-   *
-   * @param headers GetAllSheetsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAllSheetsResponse
+   * 获取所有数据表
+   * 
+   * @param headers - GetAllSheetsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAllSheetsResponse
    */
   async getAllSheetsWithOptions(baseId: string, headers: GetAllSheetsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllSheetsResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1663,9 +1800,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取所有数据表
-   *
-   * @return GetAllSheetsResponse
+   * 获取所有数据表
+   * @returns GetAllSheetsResponse
    */
   async getAllSheets(baseId: string): Promise<GetAllSheetsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1674,11 +1810,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取记录
-   *
-   * @param headers GetRecordHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRecordResponse
+   * 获取记录
+   * 
+   * @param headers - GetRecordHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRecordResponse
    */
   async getRecordWithOptions(baseId: string, sheetIdOrName: string, recordId: string, headers: GetRecordHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecordResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1708,9 +1844,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取记录
-   *
-   * @return GetRecordResponse
+   * 获取记录
+   * @returns GetRecordResponse
    */
   async getRecord(baseId: string, sheetIdOrName: string, recordId: string): Promise<GetRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1719,12 +1854,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取多行记录
-   *
-   * @param request GetRecordsRequest
-   * @param headers GetRecordsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRecordsResponse
+   * 获取多行记录
+   * 
+   * @param request - GetRecordsRequest
+   * @param headers - GetRecordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRecordsResponse
    */
   async getRecordsWithOptions(baseId: string, sheetIdOrName: string, request: GetRecordsRequest, headers: GetRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecordsResponse> {
     Util.validateModel(request);
@@ -1765,10 +1900,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取多行记录
-   *
-   * @param request GetRecordsRequest
-   * @return GetRecordsResponse
+   * 获取多行记录
+   * 
+   * @param request - GetRecordsRequest
+   * @returns GetRecordsResponse
    */
   async getRecords(baseId: string, sheetIdOrName: string, request: GetRecordsRequest): Promise<GetRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1777,11 +1912,11 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取数据表
-   *
-   * @param headers GetSheetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSheetResponse
+   * 获取数据表
+   * 
+   * @param headers - GetSheetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSheetResponse
    */
   async getSheetWithOptions(baseId: string, sheetIdOrName: string, headers: GetSheetHeaders, runtime: $Util.RuntimeOptions): Promise<GetSheetResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -1811,9 +1946,8 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取数据表
-   *
-   * @return GetSheetResponse
+   * 获取数据表
+   * @returns GetSheetResponse
    */
   async getSheet(baseId: string, sheetIdOrName: string): Promise<GetSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1822,12 +1956,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增记录
-   *
-   * @param request InsertRecordsRequest
-   * @param headers InsertRecordsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return InsertRecordsResponse
+   * 新增记录
+   * 
+   * @param request - InsertRecordsRequest
+   * @param headers - InsertRecordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InsertRecordsResponse
    */
   async insertRecordsWithOptions(baseId: string, sheetIdOrName: string, request: InsertRecordsRequest, headers: InsertRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<InsertRecordsResponse> {
     Util.validateModel(request);
@@ -1864,10 +1998,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增记录
-   *
-   * @param request InsertRecordsRequest
-   * @return InsertRecordsResponse
+   * 新增记录
+   * 
+   * @param request - InsertRecordsRequest
+   * @returns InsertRecordsResponse
    */
   async insertRecords(baseId: string, sheetIdOrName: string, request: InsertRecordsRequest): Promise<InsertRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1876,12 +2010,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新数据表字段
-   *
-   * @param request UpdateFieldRequest
-   * @param headers UpdateFieldHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateFieldResponse
+   * 更新数据表字段
+   * 
+   * @param request - UpdateFieldRequest
+   * @param headers - UpdateFieldHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateFieldResponse
    */
   async updateFieldWithOptions(baseId: string, sheetIdOrName: string, fieldIdOrName: string, request: UpdateFieldRequest, headers: UpdateFieldHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateFieldResponse> {
     Util.validateModel(request);
@@ -1922,10 +2056,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新数据表字段
-   *
-   * @param request UpdateFieldRequest
-   * @return UpdateFieldResponse
+   * 更新数据表字段
+   * 
+   * @param request - UpdateFieldRequest
+   * @returns UpdateFieldResponse
    */
   async updateField(baseId: string, sheetIdOrName: string, fieldIdOrName: string, request: UpdateFieldRequest): Promise<UpdateFieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1934,12 +2068,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新数据表多行记录
-   *
-   * @param request UpdateRecordsRequest
-   * @param headers UpdateRecordsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateRecordsResponse
+   * 更新数据表多行记录
+   * 
+   * @param request - UpdateRecordsRequest
+   * @param headers - UpdateRecordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateRecordsResponse
    */
   async updateRecordsWithOptions(baseId: string, sheetIdOrName: string, request: UpdateRecordsRequest, headers: UpdateRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRecordsResponse> {
     Util.validateModel(request);
@@ -1976,10 +2110,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新数据表多行记录
-   *
-   * @param request UpdateRecordsRequest
-   * @return UpdateRecordsResponse
+   * 更新数据表多行记录
+   * 
+   * @param request - UpdateRecordsRequest
+   * @returns UpdateRecordsResponse
    */
   async updateRecords(baseId: string, sheetIdOrName: string, request: UpdateRecordsRequest): Promise<UpdateRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -1988,12 +2122,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新数据表
-   *
-   * @param request UpdateSheetRequest
-   * @param headers UpdateSheetHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateSheetResponse
+   * 更新数据表
+   * 
+   * @param request - UpdateSheetRequest
+   * @param headers - UpdateSheetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateSheetResponse
    */
   async updateSheetWithOptions(baseId: string, sheetIdOrName: string, request: UpdateSheetRequest, headers: UpdateSheetHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSheetResponse> {
     Util.validateModel(request);
@@ -2030,10 +2164,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新数据表
-   *
-   * @param request UpdateSheetRequest
-   * @return UpdateSheetResponse
+   * 更新数据表
+   * 
+   * @param request - UpdateSheetRequest
+   * @returns UpdateSheetResponse
    */
   async updateSheet(baseId: string, sheetIdOrName: string, request: UpdateSheetRequest): Promise<UpdateSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });

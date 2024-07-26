@@ -1,9 +1,7 @@
 // This file is auto-generated, don't edit it
 /**
- *
  */
 import Util, * as $Util from '@alicloud/tea-util';
-import SPI from '@alicloud/gateway-spi';
 import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
@@ -32,10 +30,36 @@ export class AppLoginCodeGenHeaders extends $tea.Model {
 }
 
 export class AppLoginCodeGenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   signTimestampStr?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   signature?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://www.aliwork.com/APP_xx/workbench
+   */
   fullUrl?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -129,11 +153,50 @@ export class BatchGetFormDataByIdListHeaders extends $tea.Model {
 }
 
 export class BatchGetFormDataByIdListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
+   */
   formInstanceIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * true
+   */
   needFormInstanceValue?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -229,12 +292,55 @@ export class BatchRemovalByFormInstanceIdListHeaders extends $tea.Model {
 }
 
 export class BatchRemovalByFormInstanceIdListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @example
+   * true
+   */
   asynchronousExecution?: boolean;
+  /**
+   * @example
+   * true
+   */
   executeExpression?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
+   */
   formInstanceIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -310,13 +416,60 @@ export class BatchSaveFormDataHeaders extends $tea.Model {
 }
 
 export class BatchSaveFormDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @example
+   * true
+   */
   asynchronousExecution?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * "{\"countrySelectField_l0c1cwiu\":[{\"value\":\"US\"}],\"addressField_l0c1cwiy\":{\"address\":\"111\",\"regionIds\":[460000,469027,469023401],\"regionText\":[{\"en_US\":\"hai+nan+sheng\",\"zh_CN\":\"海南省\"},{\"en_US\":\"cheng+mai+xian\",\"zh_CN\":\"澄迈县\"},{\"en_US\":\"guo+ying+hong+gang+nong+chang\",\"zh_CN\":\"国营红岗农场\"}]}}"
+   */
   formDataJsonList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * true
+   */
   keepRunningAfterException?: boolean;
+  /**
+   * @example
+   * true
+   */
   noExecuteExpression?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -416,15 +569,73 @@ export class BatchUpdateFormDataByInstanceIdHeaders extends $tea.Model {
 }
 
 export class BatchUpdateFormDataByInstanceIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @example
+   * true
+   */
   asynchronousExecution?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
+   */
   formInstanceIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * true
+   */
   ignoreEmpty?: boolean;
+  /**
+   * @example
+   * true
+   */
   noExecuteExpression?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"countrySelectField_l0c1cwiu":[{"value":"US"}],"addressField_l0c1cwiy":{"address":"111","regionIds":[460000,469027,469023401],"regionText":[{"en_US":"hai+nan+sheng","zh_CN":"海南省"},{"en_US":"cheng+mai+xian","zh_CN":"澄迈县"},{"en_US":"guo+ying+hong+gang+nong+chang","zh_CN":"国营红岗农场"}]}}
+   */
   updateFormDataJson?: string;
+  /**
+   * @example
+   * false
+   */
   useLatestFormSchemaVersion?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -528,14 +739,65 @@ export class BatchUpdateFormDataByInstanceMapHeaders extends $tea.Model {
 }
 
 export class BatchUpdateFormDataByInstanceMapRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @example
+   * true
+   */
   asynchronousExecution?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * true
+   */
   ignoreEmpty?: boolean;
+  /**
+   * @example
+   * true
+   */
   noExecuteExpression?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"FINST-ANSFSNNDS2212NSKLKKSFD":"{\"rateField_l0c1cwis\":3,\"countrySelectField_l0c1cwiu\":[{\"value\":\"US\"}]}"}
+   */
   updateFormDataJsonMap?: { [key: string]: any };
+  /**
+   * @example
+   * false
+   */
   useLatestFormSchemaVersion?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -637,16 +899,60 @@ export class BuyAuthorizationOrderHeaders extends $tea.Model {
 }
 
 export class BuyAuthorizationOrderRequest extends $tea.Model {
+  /**
+   * @example
+   * hexaaaa
+   */
   accessKey?: string;
+  /**
+   * @example
+   * 123
+   */
   accountNumber?: string;
+  /**
+   * @example
+   * 1234123423459
+   */
   beginTimeGMT?: number;
+  /**
+   * @example
+   * 44234122
+   */
   callerUnionId?: string;
+  /**
+   * @example
+   * subscribe
+   */
   chargeType?: string;
+  /**
+   * @example
+   * subscribe
+   */
   commerceType?: string;
+  /**
+   * @example
+   * Business
+   */
   commodityType?: string;
+  /**
+   * @example
+   * 1023451234123
+   */
   endTimeGMT?: number;
+  /**
+   * @example
+   * 12
+   */
   instanceId?: string;
+  /**
+   * @example
+   * A发起的实例
+   */
   instanceName?: string;
+  /**
+   * @example
+   * yun-1234
+   */
   produceCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -752,16 +1058,60 @@ export class BuyFreshOrderHeaders extends $tea.Model {
 }
 
 export class BuyFreshOrderRequest extends $tea.Model {
+  /**
+   * @example
+   * hexaaaa
+   */
   accessKey?: string;
+  /**
+   * @example
+   * 123
+   */
   accountNumber?: string;
+  /**
+   * @example
+   * 1234567891234
+   */
   beginTimeGMT?: number;
+  /**
+   * @example
+   * 44234122
+   */
   callerUnionId?: string;
+  /**
+   * @example
+   * subscribe
+   */
   chargeType?: string;
+  /**
+   * @example
+   * subscribe
+   */
   commerceType?: string;
+  /**
+   * @example
+   * Business
+   */
   commodityType?: string;
+  /**
+   * @example
+   * 1234567891234
+   */
   endTimeGMT?: number;
+  /**
+   * @example
+   * 12
+   */
   instanceId?: string;
+  /**
+   * @example
+   * A发起的实例
+   */
   instanceName?: string;
+  /**
+   * @example
+   * yun-1234
+   */
   produceCode?: string;
   static names(): { [key: string]: string } {
     return {
@@ -952,12 +1302,58 @@ export class CreateOrUpdateFormDataHeaders extends $tea.Model {
 }
 
 export class CreateOrUpdateFormDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"countrySelectField_l0c1cwiu":[{"value":"US"}]}
+   */
   formDataJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * false
+   */
   noExecuteExpression?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * [{"key":"currentNodeName","value":"当前审批节点名称","type":"TEXT","operator":"like","componentName":"TextField"}]。详情参考 https://www.yuque.com/yida/support/agb8im#F4S8e
+   */
   searchCondition?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1055,10 +1451,42 @@ export class DeleteFormDataHeaders extends $tea.Model {
 }
 
 export class DeleteFormDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33f6d221-17f8-42b7-836a-682b95a046c2
+   */
   formInstanceId?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * helxxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1130,10 +1558,42 @@ export class DeleteInstanceHeaders extends $tea.Model {
 }
 
 export class DeleteInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * f30233fb-72e1-4af4-8cb8-c7e0ea9ee530
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1280,11 +1740,35 @@ export class DeployFunctionCallbackHeaders extends $tea.Model {
 }
 
 export class DeployFunctionCallbackRequest extends $tea.Model {
+  /**
+   * @example
+   * 202201061234
+   */
   appId?: string;
+  /**
+   * @example
+   * abc.com
+   */
   customDomain?: string;
+  /**
+   * @example
+   * RELEASE
+   */
   deployStage?: string;
+  /**
+   * @example
+   * assdfasdfWwd12212
+   */
   gateWayAppKey?: string;
+  /**
+   * @example
+   * fasdfsfasdf1212Sff
+   */
   gateWayAppSecret?: string;
+  /**
+   * @example
+   * 1111shanghai-aliyunapi.com
+   */
   gateWayDomain?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1380,11 +1864,50 @@ export class ExecuteBatchTaskHeaders extends $tea.Model {
 }
 
 export class ExecuteBatchTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 备选值：agree/disagree
+   */
   outResult?: string;
+  /**
+   * @example
+   * OK
+   */
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * [{"taskId":"2267855699","formInstId":"4d226eb1-1f4e-4348-a9cc-616477c3daa6"},{"taskId":"2267855700","formInstId":"905a922e-da05-4ef9-ba1c-db9ad60bbe60"}]
+   */
   taskInformationList?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1414,8 +1937,29 @@ export class ExecuteBatchTaskRequest extends $tea.Model {
 }
 
 export class ExecuteBatchTaskResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   failNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 2
+   */
   successNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
   total?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1486,11 +2030,31 @@ export class ExecuteCustomApiHeaders extends $tea.Model {
 }
 
 export class ExecuteCustomApiRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   data?: string;
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   serviceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1586,14 +2150,72 @@ export class ExecutePlatformTaskHeaders extends $tea.Model {
 }
 
 export class ExecutePlatformTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * 未知
+   */
   formDataJson?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * y
+   */
   noExecuteExpressions?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ●
+   * agree
+   * 
+   * ●
+   * disagree
+   */
   outResult?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * f30233fb-72e1-4af4-8cb8-c7e0ea9ee530
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 确认同意
+   */
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxyyddd
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * yida_pub_account
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1673,16 +2295,81 @@ export class ExecuteTaskHeaders extends $tea.Model {
 }
 
 export class ExecuteTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * https://tianshu-vpc.oss-cn-sahnghai.aliyuncs.com
+   */
   digitalSignUrl?: string;
+  /**
+   * @example
+   * 未知
+   */
   formDataJson?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * y
+   */
   noExecuteExpressions?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * AGREE
+   */
   outResult?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * f30233fb-72e1-4af4-8cb8-c7e0ea9ee530
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 确认同意
+   */
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxyy
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12002575
+   */
   taskId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -1945,8 +2632,26 @@ export class GetActivityButtonListHeaders extends $tea.Model {
 }
 
 export class GetActivityButtonListRequest extends $tea.Model {
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hello1234
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2133,12 +2838,54 @@ export class GetAllAuthCubesHeaders extends $tea.Model {
 }
 
 export class GetAllAuthCubesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding5d17e3add038d44535c2f4657eb6378e
+   */
   corpId?: string;
   keywords?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2170,6 +2917,13 @@ export class GetAllAuthCubesRequest extends $tea.Model {
 }
 
 export class GetAllAuthCubesResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   count?: number;
   result?: GetAllAuthCubesResponseBodyResult[];
   static names(): { [key: string]: string } {
@@ -2354,11 +3108,50 @@ export class GetAutoFlowLogDetailHeaders extends $tea.Model {
 }
 
 export class GetAutoFlowLogDetailRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding5d17e3add038d44535c2f4657eb6378e
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   procInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * B073AF673BEB044D59F8F612D65E1EA2
+   */
   token?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2389,8 +3182,20 @@ export class GetAutoFlowLogDetailRequest extends $tea.Model {
 
 export class GetAutoFlowLogDetailResponseBody extends $tea.Model {
   data?: GetAutoFlowLogDetailResponseBodyData[];
+  /**
+   * @example
+   * true
+   */
   hasMoreData?: boolean;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2463,14 +3268,53 @@ export class GetCorpAccomplishmentTasksHeaders extends $tea.Model {
 }
 
 export class GetCorpAccomplishmentTasksRequest extends $tea.Model {
+  /**
+   * @example
+   * ["APP_xxx","APP_xxx"]
+   */
   appTypes?: string;
+  /**
+   * @example
+   * 未知
+   */
   createFromTimeGMT?: number;
+  /**
+   * @example
+   * 未知
+   */
   createToTimeGMT?: number;
+  /**
+   * @example
+   * 未知
+   */
   keyword?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * ["xx","xxx"]
+   */
   processCodes?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   token?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2507,7 +3351,15 @@ export class GetCorpAccomplishmentTasksRequest extends $tea.Model {
 
 export class GetCorpAccomplishmentTasksResponseBody extends $tea.Model {
   data?: GetCorpAccomplishmentTasksResponseBodyData[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2663,16 +3515,69 @@ export class GetCorpTasksHeaders extends $tea.Model {
 }
 
 export class GetCorpTasksRequest extends $tea.Model {
+  /**
+   * @example
+   * ["APP_xxx","APP_xxx"]
+   */
   appTypes?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   corpId?: string;
+  /**
+   * @example
+   * 未知
+   */
   createFromTimeGMT?: number;
+  /**
+   * @example
+   * 未知
+   */
   createToTimeGMT?: number;
+  /**
+   * @example
+   * 未知
+   */
   keyword?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * ["xx","xxx"]
+   */
   processCodes?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   token?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2713,7 +3618,15 @@ export class GetCorpTasksRequest extends $tea.Model {
 
 export class GetCorpTasksResponseBody extends $tea.Model {
   data?: GetCorpTasksResponseBodyData[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -2784,9 +3697,37 @@ export class GetDbConfigHeaders extends $tea.Model {
 }
 
 export class GetDbConfigRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding5d17e3add038d44535c2f4657eb6378e
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1160440651754805
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2812,14 +3753,50 @@ export class GetDbConfigRequest extends $tea.Model {
 }
 
 export class GetDbConfigResponseBody extends $tea.Model {
+  /**
+   * @example
+   * {\"dbName\":\"yida_exclusive_pg_db\",\"exclusiveType\":\"DATABASE\",\"maxActive\":1600,\"minIdle\":160,\"password\":\"xxx\",\"sharding\":true,\"type\":\"POSTGRES\",\"url\":\"pgm-bp17c85t9363an74194040.pg.rds.aliyuncs.com:0000\",\"username\":\"yida_xxx\"}
+   */
   config?: string;
+  /**
+   * @example
+   * ding5d17e3add038d44535c2f4657eb6378f
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2022-02-23T14:46Z
+   */
   createTimeGMT?: string;
+  /**
+   * @example
+   * 092824253426603595
+   */
   creator?: string;
+  /**
+   * @example
+   * ding5d17e3add038d44535c2f4657eb6378f
+   */
   exclusive?: string;
+  /**
+   * @example
+   * 600001
+   */
   id?: string;
+  /**
+   * @example
+   * 2023-08-15T10:37Z
+   */
   modifiedTimeGMT?: string;
+  /**
+   * @example
+   * 5014533041684350
+   */
   modifier?: string;
+  /**
+   * @example
+   * DATABASE
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2902,9 +3879,37 @@ export class GetFieldDefByUuidHeaders extends $tea.Model {
 }
 
 export class GetFieldDefByUuidRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-J7966ZA1XN940B88DYNMNABXUXNU3F3FMLJ8L5
+   */
   formUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FO866D71GM94CE3KBMAFL4Q6WDG93MG6MLJ8L64
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 5014533041684350
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -2999,9 +4004,31 @@ export class GetFormComponentDefinitionListHeaders extends $tea.Model {
 }
 
 export class GetFormComponentDefinitionListRequest extends $tea.Model {
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
+  /**
+   * @example
+   * 1
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3093,8 +4120,20 @@ export class GetFormDataByIDHeaders extends $tea.Model {
 }
 
 export class GetFormDataByIDRequest extends $tea.Model {
+  /**
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * hexxx
+   */
   systemToken?: string;
   userId?: string;
   static names(): { [key: string]: string } {
@@ -3121,8 +4160,20 @@ export class GetFormDataByIDRequest extends $tea.Model {
 }
 
 export class GetFormDataByIDResponseBody extends $tea.Model {
+  /**
+   * @example
+   * {       "numberField_jcr0069o": 1,       "multiSelectField_jcr0069s": [         "选项三",         "选项二"       ],       "textareaField_jcr0069n": "duohang",       "employeeField_jcr0069x": [         "xxxx"       ],       "departmentField_jcr0069z": "xxxx",       "cascadeDate_jcr0069u": [         "1514736000000",         "1517328000000"       ],       "cascadeSelectField_jcr006a0": [         "part",         "part_b"       ],       "tableField_jcr006a1": [         {           "departmentField_jcr006ad": "xxxx",           "cascadeDate_jcr006aa": [             "1514736000000",             "1517328000000"           ],           "selectField_jcr006a6": "选项三",           "citySelectField_jcr006ac": [             "天津",             "天津市",             "河东区"           ],           "radioField_jcr006a5": "选项二",           "employeeField_jcr006ab": [             "xxxxxx",             "yyyyyy"           ],           "dateField_jcr006a9": 1517328000000,           "textField_jcr006a2": "明细下单行",           "textareaField_jcr006a3": "明细下多行",           "cascadeSelectField_jcr006ae": [             "product",             "product_a"           ],           "numberField_jcr006a4": 2,           "checkboxField_jcr006a7": [             "选项一",             "选项三",             "选项二"           ],           "multiSelectField_jcr006a8": [             "选项一",             "选项三",             "选项二"           ]         }       ],       "selectField_jcr0069q": "选项一",       "citySelectField_jcr0069y": [         "北京",         "北京市",         "东城区"       ],       "checkboxField_jcr0069r": [         "选项三",         "选项二"       ],       "textField_jcr0069m": "danhang",       "radioField_jcr0069p": "选项一",       "dateField_jcr0069t": 1516636800000     }
+   */
   formData?: { [key: string]: any };
+  /**
+   * @example
+   * 33f6d221-17f8-42b7-836a-682b95a046c2
+   */
   formInstId?: string;
+  /**
+   * @example
+   * 2018-01-24 11:22:01
+   */
   modifiedTimeGMT?: string;
   originator?: GetFormDataByIDResponseBodyOriginator;
   static names(): { [key: string]: string } {
@@ -3196,11 +4247,36 @@ export class GetFormListInAppHeaders extends $tea.Model {
 }
 
 export class GetFormListInAppRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * receipt,process
+   */
   formTypes?: string;
   pageNumber?: number;
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FO866D71GM94CE3KBMAFL4Q6WDG93MG6MLJ8L64
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 5014533041684350
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3299,9 +4375,34 @@ export class GetInstanceByIdHeaders extends $tea.Model {
 }
 
 export class GetInstanceByIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxyy
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3426,19 +4527,87 @@ export class GetInstanceIdListHeaders extends $tea.Model {
 }
 
 export class GetInstanceIdListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * agree
+   */
   approvedResult?: string;
+  /**
+   * @example
+   * 2018-01-01
+   */
   createFromTimeGMT?: string;
+  /**
+   * @example
+   * 2018-02-01
+   */
   createToTimeGMT?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
+   */
   formUuid?: string;
+  /**
+   * @example
+   * RUNNING
+   */
   instanceStatus?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * 2018-01-01
+   */
   modifiedFromTimeGMT?: string;
+  /**
+   * @example
+   * 2018-02-01
+   */
   modifiedToTimeGMT?: string;
+  /**
+   * @example
+   * ding123
+   */
   originatorId?: string;
+  /**
+   * @example
+   * {"text_field":"123"}
+   */
   searchFieldJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxxx
+   */
   systemToken?: string;
+  /**
+   * @example
+   * 2199132092
+   */
   taskId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding123
+   */
   userId?: string;
   pageNumber?: number;
   pageSize?: number;
@@ -3491,7 +4660,15 @@ export class GetInstanceIdListRequest extends $tea.Model {
 
 export class GetInstanceIdListResponseBody extends $tea.Model {
   data?: string[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3562,22 +4739,99 @@ export class GetInstancesHeaders extends $tea.Model {
 }
 
 export class GetInstancesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * agree
+   */
   approvedResult?: string;
+  /**
+   * @example
+   * 2018-01-01
+   */
   createFromTimeGMT?: string;
+  /**
+   * @example
+   * 2018-02-01
+   */
   createToTimeGMT?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
+   */
   formUuid?: string;
+  /**
+   * @example
+   * RUNNING
+   */
   instanceStatus?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * 2018-01-01
+   */
   modifiedFromTimeGMT?: string;
+  /**
+   * @example
+   * 2018-02-01
+   */
   modifiedToTimeGMT?: string;
+  /**
+   * @example
+   * 例如按照创建时间升序再按照文本组件值升序排序则填{\"gmt_create\":\"+\",\"textField_1234\":\"+\"} ，详情参考 https://www.yuque.com/yida/support/agb8im#CQro8
+   */
   orderConfigJson?: string;
+  /**
+   * @example
+   * manager123
+   */
   originatorId?: string;
+  /**
+   * @example
+   * 模式1：根据组件值模糊匹配，示例：{"textField_jcr0069m":"danhang","selectField_jcr0069q":"K"}     模式2: 采用数据管理的查询过滤条件，匹配功能更强大，示例：[{"key":"currentNodeName","value":"步凡","type":"TEXT","operator":"like","componentName":"TextField”}]，详情参考  https://www.yuque.com/yida/support/agb8im#F4S8e
+   */
   searchFieldJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxx
+   */
   systemToken?: string;
+  /**
+   * @example
+   * 2199132092
+   */
   taskId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3630,7 +4884,15 @@ export class GetInstancesRequest extends $tea.Model {
 
 export class GetInstancesResponseBody extends $tea.Model {
   data?: GetInstancesResponseBodyData[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3701,10 +4963,42 @@ export class GetInstancesByIdListHeaders extends $tea.Model {
 }
 
 export class GetInstancesByIdListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * f30233fb-72e1-4af4-8cb8-c7e0ea9ee530,d230233fb-72e1-4af4-8cb8-c7e0ea9ee530
+   */
   processInstanceIds?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxyy
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3798,15 +5092,61 @@ export class GetMeCorpSubmissionHeaders extends $tea.Model {
 }
 
 export class GetMeCorpSubmissionRequest extends $tea.Model {
+  /**
+   * @example
+   * ["APP_xxx","APP_xxx"]
+   */
   appTypes?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   corpId?: string;
+  /**
+   * @example
+   * 未知
+   */
   createFromTimeGMT?: number;
+  /**
+   * @example
+   * 未知
+   */
   createToTimeGMT?: number;
+  /**
+   * @example
+   * 未知
+   */
   keyword?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * ["xx","xxx"]
+   */
   processCodes?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   token?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3845,7 +5185,15 @@ export class GetMeCorpSubmissionRequest extends $tea.Model {
 
 export class GetMeCorpSubmissionResponseBody extends $tea.Model {
   data?: GetMeCorpSubmissionResponseBodyData[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3916,17 +5264,71 @@ export class GetNotifyMeHeaders extends $tea.Model {
 }
 
 export class GetNotifyMeRequest extends $tea.Model {
+  /**
+   * @example
+   * ["APP_xxx","APP_xxx"]
+   */
   appTypes?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   corpId?: string;
+  /**
+   * @example
+   * 未知
+   */
   createFromTimeGMT?: number;
+  /**
+   * @example
+   * 未知
+   */
   createToTimeGMT?: number;
+  /**
+   * @example
+   * 未知
+   */
   instanceCreateFromTimeGMT?: number;
+  /**
+   * @example
+   * 未知
+   */
   instanceCreateToTimeGMT?: number;
+  /**
+   * @example
+   * 未知
+   */
   keyword?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * ["xx","xxx"]
+   */
   processCodes?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   token?: string;
   static names(): { [key: string]: string } {
     return {
@@ -3969,7 +5371,15 @@ export class GetNotifyMeRequest extends $tea.Model {
 
 export class GetNotifyMeResponseBody extends $tea.Model {
   data?: GetNotifyMeResponseBodyData[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4040,10 +5450,39 @@ export class GetOpenUrlHeaders extends $tea.Model {
 }
 
 export class GetOpenUrlRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://www.aliwork.com/fileHandle?appType=APP_VN7I6HVKUTXES7XX4OI8&fileName=2a4103a6-44d5-4114-990d-4147a2d53811.xlsx&instId=&type=download
+   */
   fileUrl?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxxx
+   */
   systemToken?: string;
+  /**
+   * @example
+   * 60000
+   */
   timeout?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4137,10 +5576,42 @@ export class GetOperationRecordsHeaders extends $tea.Model {
 }
 
 export class GetOperationRecordsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * f30233fb-72e1-4af4-8cb8-c7e0ea9ee530
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxyy
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4346,7 +5817,18 @@ export class GetPrintAppInfoHeaders extends $tea.Model {
 }
 
 export class GetPrintAppInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
   nameLike?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4434,9 +5916,34 @@ export class GetPrintDictionaryHeaders extends $tea.Model {
 }
 
 export class GetPrintDictionaryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XABJJSJ
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-XABJJSJ
+   */
   formUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abfefw
+   */
   userId?: string;
+  /**
+   * @example
+   * 0
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -4664,10 +6171,33 @@ export class GetRunningTaskListHeaders extends $tea.Model {
 }
 
 export class GetRunningTaskListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * xaff,afdfaf,fdsfasdf
+   */
   processInstanceIdList?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4858,8 +6388,20 @@ export class GetSaleUserInfoByUserIdHeaders extends $tea.Model {
 }
 
 export class GetSaleUserInfoByUserIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   namespace?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -4958,11 +6500,53 @@ export class GetSimpleCubeModelListHeaders extends $tea.Model {
 }
 
 export class GetSimpleCubeModelListRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_Q7D2TFJZWNMDS145Z7DP
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding5d17e3add038d44535c2f4657eb6378f
+   */
   corpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM_MT866EA17HGCUHIV7GROU72YO499257KRS0KLB
+   */
   cubeCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding5d17e3add038d44535c2f4657eb6378f
+   */
   cubeTenantId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * U66663B1LLGCVCVPAF76H6955VYG2408RS0KL0
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1160440651754805
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5058,15 +6642,54 @@ export class GetTaskCopiesHeaders extends $tea.Model {
 }
 
 export class GetTaskCopiesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * 1234567891234
+   */
   createFromTimeGMT?: number;
+  /**
+   * @example
+   * 1234567891234
+   */
   createToTimeGMT?: number;
   keyword?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * ["xx","xxx"]
+   */
   processCodes?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5105,7 +6728,15 @@ export class GetTaskCopiesRequest extends $tea.Model {
 
 export class GetTaskCopiesResponseBody extends $tea.Model {
   data?: GetTaskCopiesResponseBodyData[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5176,12 +6807,49 @@ export class ListApplicationHeaders extends $tea.Model {
 }
 
 export class ListApplicationRequest extends $tea.Model {
+  /**
+   * @example
+   * createdByMe
+   */
   appFilter?: string;
+  /**
+   * @example
+   * 步凡的测试应用
+   */
   appNameSearchKeyword?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding5d17e3add038d44535c2f4657eb6378e
+   */
   corpId?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * B073AF673BEB044D59F8F612D65E1EA2
+   */
   token?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5214,7 +6882,15 @@ export class ListApplicationRequest extends $tea.Model {
 
 export class ListApplicationResponseBody extends $tea.Model {
   data?: ListApplicationResponseBodyData[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5314,8 +6990,20 @@ export class ListApplicationAuthorizationServiceApplicationInformationRequest ex
 
 export class ListApplicationAuthorizationServiceApplicationInformationResponseBody extends $tea.Model {
   applicationInformation?: ListApplicationAuthorizationServiceApplicationInformationResponseBodyApplicationInformation[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5416,9 +7104,21 @@ export class ListApplicationAuthorizationServiceConnectorInformationRequest exte
 }
 
 export class ListApplicationAuthorizationServiceConnectorInformationResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
   plugInformation?: ListApplicationAuthorizationServiceConnectorInformationResponseBodyPlugInformation[];
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5520,8 +7220,20 @@ export class ListApplicationInformationRequest extends $tea.Model {
 
 export class ListApplicationInformationResponseBody extends $tea.Model {
   applicationInformation?: ListApplicationInformationResponseBodyApplicationInformation[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5594,9 +7306,25 @@ export class ListCommodityHeaders extends $tea.Model {
 }
 
 export class ListCommodityRequest extends $tea.Model {
+  /**
+   * @example
+   * accessKey
+   */
   accessKey?: string;
+  /**
+   * @example
+   * callerUid
+   */
   callerUid?: string;
+  /**
+   * @example
+   * currentPage
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * pageSize
+   */
   pageSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5623,8 +7351,20 @@ export class ListCommodityRequest extends $tea.Model {
 
 export class ListCommodityResponseBody extends $tea.Model {
   commodityVOList?: ListCommodityResponseBodyCommodityVOList[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5725,9 +7465,21 @@ export class ListConnectorInformationRequest extends $tea.Model {
 }
 
 export class ListConnectorInformationResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
   pluginInfos?: ListConnectorInformationResponseBodyPluginInfos[];
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -5800,10 +7552,42 @@ export class ListFormRemarksHeaders extends $tea.Model {
 }
 
 export class ListFormRemarksRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @example
+   * FORM-INST-123
+   */
   formInstanceIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5831,6 +7615,10 @@ export class ListFormRemarksRequest extends $tea.Model {
 }
 
 export class ListFormRemarksResponseBody extends $tea.Model {
+  /**
+   * @example
+   * {"FINST-GW866DA1NHFZIPNE03UTM88NOAGQ27Q9VUP1L0":[{"creator":"manager9358","replyUserId":null,"images":"[]","formInstId":"FINST-GW866DA1NHFZIPNE03UTM88NOAGQ27Q9VUP1L0","replyId":null,"files":"[]","id":3261500001,"gmtCreate":1649387753000,"class":"com.alibaba.work.tianshu.api.model.form.RemarkVO","atUserId":null,"content":"评论1"}],"FINST-96766PB1LBZYTVGI52J857AFKWWR3MX3CS41LXM6":[{"creator":"manager9358","replyUserId":null,"images":"[]","formInstId":"FINST-96766PB1LBZYTVGI52J857AFKWWR3MX3CS41LXM6","replyId":null,"files":"[]","id":3261500003,"gmtCreate":1649387988000,"class":"com.alibaba.work.tianshu.api.model.form.RemarkVO","atUserId":null,"content":"评论4"}]}
+   */
   formRemarkVoMap?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
@@ -5897,10 +7685,42 @@ export class ListNavigationByFormTypeHeaders extends $tea.Model {
 }
 
 export class ListNavigationByFormTypeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   formType?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -5994,10 +7814,42 @@ export class ListOperationLogsHeaders extends $tea.Model {
 }
 
 export class ListOperationLogsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @example
+   * FORM-INST-123
+   */
   formInstanceIdList?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager9358
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6025,6 +7877,13 @@ export class ListOperationLogsRequest extends $tea.Model {
 }
 
 export class ListOperationLogsResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"FINST-GW866DA1NHFZIPNE03UTM88NOAGQ27Q9VUP1L0":[{"currentText":null,"componentType":null,"gmtModified":"2022-04-08 11:15:34","preText":null,"operationType":"CREATE","componentName":"","operator":{"userInfo":null,"tbWang":null,"depDesc":null,"displayName":"娄修俊","mastedataDeptments":null,"orderNum":null,"displayEnName":null,"userId":null,"personalPhoto":null,"status":null},"fieldId":null}]}
+   */
   operationLogMap?: { [key: string]: any };
   static names(): { [key: string]: string } {
     return {
@@ -6091,12 +7950,52 @@ export class ListTableDataByFormInstanceIdTableIdHeaders extends $tea.Model {
 }
 
 export class ListTableDataByFormInstanceIdTableIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
+   */
   formUuid?: string;
+  /**
+   * @example
+   * 10
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 50
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * tableField_ksyaujq1
+   */
   tableFieldId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6129,7 +8028,15 @@ export class ListTableDataByFormInstanceIdTableIdRequest extends $tea.Model {
 
 export class ListTableDataByFormInstanceIdTableIdResponseBody extends $tea.Model {
   data?: { [key: string]: any }[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6200,6 +8107,13 @@ export class LoginCodeGenHeaders extends $tea.Model {
 }
 
 export class LoginCodeGenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * zs123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6219,6 +8133,10 @@ export class LoginCodeGenRequest extends $tea.Model {
 }
 
 export class LoginCodeGenResponseBody extends $tea.Model {
+  /**
+   * @example
+   * cdxxxx
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6400,16 +8318,67 @@ export class PageAutoFlowLogHeaders extends $tea.Model {
 }
 
 export class PageAutoFlowLogRequest extends $tea.Model {
+  /**
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding5d17e3add038d44535c2f4657eb6378e
+   */
   corpId?: string;
+  /**
+   * @example
+   * 2021-01-01
+   */
   endTimeGMT?: number;
+  /**
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 100
+   */
   pageSize?: number;
   processCode?: string;
   startTimeGMT?: number;
+  /**
+   * @example
+   * running
+   */
   status?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * B073AF673BEB044D59F8F612D65E1EA2
+   */
   token?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6450,8 +8419,20 @@ export class PageAutoFlowLogRequest extends $tea.Model {
 
 export class PageAutoFlowLogResponseBody extends $tea.Model {
   data?: PageAutoFlowLogResponseBodyData[];
+  /**
+   * @example
+   * true
+   */
   hasMoreData?: boolean;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -6524,12 +8505,41 @@ export class PageFormBaseInfosHeaders extends $tea.Model {
 }
 
 export class PageFormBaseInfosRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appKey?: string;
   formTypeList?: string[];
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pageIndex?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * david123
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6630,13 +8640,60 @@ export class PreviewPublishedProcessHeaders extends $tea.Model {
 }
 
 export class PreviewPublishedProcessRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * 18295
+   */
   departmentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"textField_jcpm6agt": "单行","employeeField_jcos0sar": ["workno"]}
+   */
   formDataJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-NJYJZELV8YZRDEI2N5IQ7L6VEDMR1VE9GMPCJB
+   */
   formUuid?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * TPROC--EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ4
+   */
   processCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1731234567
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6736,20 +8793,95 @@ export class QueryServiceRecordHeaders extends $tea.Model {
 }
 
 export class QueryServiceRecordRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * HTTP
+   */
   hookType?: string;
+  /**
+   * @example
+   * INVOKE-E7766VC1KJ4ZVFCR346USCT2ORYI2UVRBHA1L0
+   */
   hookUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FINST-NJS33HHSLFNH533HHOFN
+   */
   instanceId?: string;
+  /**
+   * @example
+   * 2022-03-28
+   */
   invokeAfterDateGMT?: string;
+  /**
+   * @example
+   * 2022-03-29
+   */
   invokeBeforeDateGMT?: string;
+  /**
+   * @example
+   * 可选值：SUCCESS、FAIL、FINAL_SUCCESS、ERROR
+   */
   invokeStatus?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @example
+   * www.aliwork.com/query/
+   */
   requestUrl?: string;
+  /**
+   * @example
+   * INVOKE-E7766VC1KJ4ZVFCR346USCT2ORYI2UVRBHA1LI
+   */
   sourceUuid?: string;
+  /**
+   * @example
+   * true
+   */
   success?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -6797,6 +8929,10 @@ export class QueryServiceRecordRequest extends $tea.Model {
 }
 
 export class QueryServiceRecordResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   values?: QueryServiceRecordResponseBodyValues[];
   static names(): { [key: string]: string } {
@@ -6866,14 +9002,56 @@ export class RedirectTaskHeaders extends $tea.Model {
 }
 
 export class RedirectTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * y
+   */
   byManager?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   nowActionExecutorId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * task-123
+   */
   taskId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7047,8 +9225,20 @@ export class RegisterAccountsHeaders extends $tea.Model {
 }
 
 export class RegisterAccountsRequest extends $tea.Model {
+  /**
+   * @example
+   * hexaaaa
+   */
   accessKey?: string;
+  /**
+   * @example
+   * acc-1732245789
+   */
   activeCode?: string;
+  /**
+   * @example
+   * ding123
+   */
   corpId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7072,6 +9262,10 @@ export class RegisterAccountsRequest extends $tea.Model {
 }
 
 export class RegisterAccountsResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 12
+   */
   instanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7232,6 +9426,10 @@ export class RemoveTenantResourceHeaders extends $tea.Model {
 }
 
 export class RemoveTenantResourceRequest extends $tea.Model {
+  /**
+   * @example
+   * accessKey
+   */
   accessKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7318,15 +9516,47 @@ export class RenderBatchCallbackHeaders extends $tea.Model {
 
 export class RenderBatchCallbackRequest extends $tea.Model {
   appType?: string;
+  /**
+   * @example
+   * ding123
+   */
   corpId?: string;
+  /**
+   * @example
+   * 123789
+   */
   fileSize?: number;
   language?: string;
+  /**
+   * @example
+   * dingtalk
+   */
   namespace?: string;
+  /**
+   * @example
+   * https://oss/com/a/b.pdf
+   */
   ossUrl?: string;
+  /**
+   * @example
+   * seq-xxx
+   */
   sequenceId?: string;
+  /**
+   * @example
+   * 宜搭
+   */
   source?: string;
+  /**
+   * @example
+   * running
+   */
   status?: string;
   systemToken?: string;
+  /**
+   * @example
+   * GMT
+   */
   timeZone?: string;
   userId?: string;
   static names(): { [key: string]: string } {
@@ -7413,9 +9643,25 @@ export class RenewApplicationAuthorizationServiceOrderHeaders extends $tea.Model
 }
 
 export class RenewApplicationAuthorizationServiceOrderRequest extends $tea.Model {
+  /**
+   * @example
+   * hexaaaa
+   */
   accessKey?: string;
+  /**
+   * @example
+   * 44234122
+   */
   callerUnionId?: string;
+  /**
+   * @example
+   * 1234567891234
+   */
   endTimeGMT?: number;
+  /**
+   * @example
+   * 12
+   */
   instanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7507,8 +9753,20 @@ export class RenewTenantOrderHeaders extends $tea.Model {
 }
 
 export class RenewTenantOrderRequest extends $tea.Model {
+  /**
+   * @example
+   * hexaaaa
+   */
   accessKey?: string;
+  /**
+   * @example
+   * 44234122
+   */
   callerUnionId?: string;
+  /**
+   * @example
+   * 1234567891234
+   */
   endTimeGMT?: number;
   static names(): { [key: string]: string } {
     return {
@@ -7598,11 +9856,47 @@ export class SaveFormDataHeaders extends $tea.Model {
 }
 
 export class SaveFormDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"textField_jcpm6agt": "单行","employeeField_jcos0sar": ["workno"]}
+   */
   formDataJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-NJYJZELV8YZRDEI2N5IQ7L6VEDMR1VE9GMPCJB
+   */
   formUuid?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7632,6 +9926,10 @@ export class SaveFormDataRequest extends $tea.Model {
 }
 
 export class SaveFormDataResponseBody extends $tea.Model {
+  /**
+   * @example
+   * FINST-XIA66E71N7HSLK7H4KOZ388EEOP03A46YAYRK1
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7698,13 +9996,60 @@ export class SaveFormRemarkHeaders extends $tea.Model {
 }
 
 export class SaveFormRemarkRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * 多个工号,用英文逗号分隔
+   */
   atUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33f6d221-17f8-42b7-836a-682b95a046c2
+   */
   formInstanceId?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * 12
+   */
   replyId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7738,6 +10083,10 @@ export class SaveFormRemarkRequest extends $tea.Model {
 }
 
 export class SaveFormRemarkResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 123
+   */
   result?: number;
   static names(): { [key: string]: string } {
     return {
@@ -7804,15 +10153,52 @@ export class SavePrintTplDetailInfoHeaders extends $tea.Model {
 }
 
 export class SavePrintTplDetailInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   appType?: string;
   description?: string;
   fileNameConfig?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abc
+   */
   formUuid?: string;
+  /**
+   * @example
+   * 123456
+   */
   formVersion?: number;
+  /**
+   * @example
+   * 123456
+   */
   setting?: string;
+  /**
+   * @example
+   * 123456
+   */
   templateId?: number;
   title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
   userId?: string;
+  /**
+   * @example
+   * 123456
+   */
   vm?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7917,6 +10303,10 @@ export class SearchActivationCodeHeaders extends $tea.Model {
 
 export class SearchActivationCodeRequest extends $tea.Model {
   accessKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   callerUid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8134,14 +10524,52 @@ export class SearchFormDataIdListHeaders extends $tea.Model {
 }
 
 export class SearchFormDataIdListRequest extends $tea.Model {
+  /**
+   * @example
+   * 2018-01-01
+   */
   createFromTimeGMT?: string;
+  /**
+   * @example
+   * 2018-02-01
+   */
   createToTimeGMT?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * 2018-01-01
+   */
   modifiedFromTimeGMT?: string;
+  /**
+   * @example
+   * 2018-02-01
+   */
   modifiedToTimeGMT?: string;
+  /**
+   * @example
+   * dign1234
+   */
   originatorId?: string;
   searchFieldJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding1234
+   */
   userId?: string;
   pageNumber?: number;
   pageSize?: number;
@@ -8184,7 +10612,15 @@ export class SearchFormDataIdListRequest extends $tea.Model {
 
 export class SearchFormDataIdListResponseBody extends $tea.Model {
   data?: string[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -8255,18 +10691,82 @@ export class SearchFormDataRemovalTableDataHeaders extends $tea.Model {
 }
 
 export class SearchFormDataRemovalTableDataRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   createFromTimeGMT?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   createToTimeGMT?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   modifiedFromTimeGMT?: string;
+  /**
+   * @example
+   * 2021-09-10
+   */
   modifiedToTimeGMT?: string;
+  /**
+   * @example
+   * 示例: 按照创建时间和文本组件值做升序排序则填写 {\"gmt_create\":\"+\",\"textField_1234\":\"+\"}。详情参考 https://www.yuque.com/yida/support/agb8im#CQro8
+   */
   orderConfigJson?: string;
+  /**
+   * @example
+   * manager123
+   */
   originatorId?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @example
+   * 支持2种检索规则{"numberField_l0c1cwiu":1}或者[{"key":"currentNodeName","value":"步凡","type":"TEXT","operator":"like","componentName":"TextField"}], 前一种规则仅仅做模糊匹配无法设置精确匹配, 第二种可以设置精确匹配条件。详情参考 https://www.yuque.com/yida/support/agb8im#F4S8e
+   */
   searchFieldJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8311,8 +10811,20 @@ export class SearchFormDataRemovalTableDataRequest extends $tea.Model {
 
 export class SearchFormDataRemovalTableDataResponseBody extends $tea.Model {
   data?: SearchFormDataRemovalTableDataResponseBodyData[];
+  /**
+   * @example
+   * true
+   */
   hasMoreData?: boolean;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -8385,18 +10897,82 @@ export class SearchFormDataSecondGenerationHeaders extends $tea.Model {
 }
 
 export class SearchFormDataSecondGenerationRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   createFromTimeGMT?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   createToTimeGMT?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   modifiedFromTimeGMT?: string;
+  /**
+   * @example
+   * 2021-09-10
+   */
   modifiedToTimeGMT?: string;
+  /**
+   * @example
+   * 例如按照创建时间升序按照文本组件值升序排序则填{\"gmt_create\":\"+\",\"textField_1234\":\"+\"}。详情参考 https://www.yuque.com/yida/support/agb8im#CQro8
+   */
   orderConfigJson?: string;
+  /**
+   * @example
+   * manager123
+   */
   originatorId?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @example
+   * [{"key":"currentNodeName","value":"当前审批节点名称","type":"TEXT","operator":"like","componentName":"TextField"}]。详情参考 https://www.yuque.com/yida/support/agb8im#F4S8e
+   */
   searchCondition?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8441,7 +11017,15 @@ export class SearchFormDataSecondGenerationRequest extends $tea.Model {
 
 export class SearchFormDataSecondGenerationResponseBody extends $tea.Model {
   data?: SearchFormDataSecondGenerationResponseBodyData[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -8512,18 +11096,82 @@ export class SearchFormDataSecondGenerationNoTableFieldHeaders extends $tea.Mode
 }
 
 export class SearchFormDataSecondGenerationNoTableFieldRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   createFromTimeGMT?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   createToTimeGMT?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   modifiedFromTimeGMT?: string;
+  /**
+   * @example
+   * 2021-09-10
+   */
   modifiedToTimeGMT?: string;
+  /**
+   * @example
+   * 例如按照创建时间升序再按照文本组件值升序排序则填{\"gmt_create\":\"+\",\"textField_1234\":\"+\"}。详情参考 https://www.yuque.com/yida/support/agb8im#CQro8
+   */
   orderConfigJson?: string;
+  /**
+   * @example
+   * manager123
+   */
   originatorId?: string;
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   pageSize?: number;
+  /**
+   * @example
+   * [{"key":"currentNodeName","value":"当前审批节点名称","type":"TEXT","operator":"like","componentName":"TextField"}]。详情参考 https://www.yuque.com/yida/support/agb8im#F4S8e
+   */
   searchCondition?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8568,7 +11216,15 @@ export class SearchFormDataSecondGenerationNoTableFieldRequest extends $tea.Mode
 
 export class SearchFormDataSecondGenerationNoTableFieldResponseBody extends $tea.Model {
   data?: SearchFormDataSecondGenerationNoTableFieldResponseBodyData[];
+  /**
+   * @example
+   * 1
+   */
   pageNumber?: number;
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -8639,19 +11295,83 @@ export class SearchFormDatasHeaders extends $tea.Model {
 }
 
 export class SearchFormDatasRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * 2018-01-01
+   */
   createFromTimeGMT?: string;
+  /**
+   * @example
+   * 2018-02-01
+   */
   createToTimeGMT?: string;
+  /**
+   * @example
+   * 1
+   */
   currentPage?: number;
+  /**
+   * @example
+   * {"numberField_1ac":"+"}, 表示按照字段numberField_1ac升序排列
+   */
   dynamicOrder?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
+   */
   formUuid?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * 2018-01-01
+   */
   modifiedFromTimeGMT?: string;
+  /**
+   * @example
+   * 2018-02-01
+   */
   modifiedToTimeGMT?: string;
   originatorId?: string;
+  /**
+   * @example
+   * 10
+   */
   pageSize?: number;
+  /**
+   * @example
+   * {"textField_jcr0069m":"danhang","textareaField_jcr0069n":"duohang","numberField_jcr0069o":["1","10"],"radioField_jcr0069p":"选项一","selectField_jcr0069q":"选项一","checkboxField_jcr0069r":["选项二"],"multiSelectField_jcr0069s":["选项二","选项三"],"dateField_jcr0069t":[1514736000000,1517414399000],"cascadeDate_jcr0069u":[[1514736000000,1517414399000],[1514736000000,1517414399000]],"employeeField_jcr0069x":["xxxxx"],"citySelectField_jcr0069y":["110000","110100","110101"],"departmentField_jcr0069z":1123456,"cascadeSelectField_jcr006a0":["part","part_b"],"tableField_jcr006a1":"明细数据"}
+   */
   searchFieldJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 173112212211
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8697,8 +11417,16 @@ export class SearchFormDatasRequest extends $tea.Model {
 }
 
 export class SearchFormDatasResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 1
+   */
   currentPage?: number;
   data?: SearchFormDatasResponseBodyData[];
+  /**
+   * @example
+   * 100
+   */
   totalCount?: number;
   static names(): { [key: string]: string } {
     return {
@@ -8769,14 +11497,65 @@ export class StartInstanceHeaders extends $tea.Model {
 }
 
 export class StartInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * 18295
+   */
   departmentId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"textField_jcpm6agt": "单行","employeeField_jcos0sar": ["workno"]}
+   */
   formDataJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * FORM-NJYJZELV8YZRDEI2N5IQ7L6VEDMR1VE9GMPCJB
+   */
   formUuid?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @example
+   * TPROC--EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ4
+   */
   processCode?: string;
+  /**
+   * @example
+   * [{ 	"key": "__optionalApproval_node_ocltdztr2b1", 	"value": ["5014533041684350"] }, { 	"key": "__optionalApproval_node_ocltdztr2b3", 	"value": ["5014533041684350", "01536610064226180419"] }, { 	"key": "__optionalApproval_node_oclte07cwn1", 	"value": ["01432910392321237660"] }]
+   */
   processData?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1731234567
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8812,6 +11591,10 @@ export class StartInstanceRequest extends $tea.Model {
 }
 
 export class StartInstanceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * f30233fb-72e1-4af4-8cb8-c7e0ea9ee530
+   */
   result?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8878,8 +11661,20 @@ export class TerminateCloudAuthorizationHeaders extends $tea.Model {
 }
 
 export class TerminateCloudAuthorizationRequest extends $tea.Model {
+  /**
+   * @example
+   * hexaaaa
+   */
   accessKey?: string;
+  /**
+   * @example
+   * 44234122
+   */
   callerUnionId?: string;
+  /**
+   * @example
+   * 12
+   */
   instanceId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -8969,10 +11764,42 @@ export class TerminateInstanceHeaders extends $tea.Model {
 }
 
 export class TerminateInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * f30233fb-72e1-4af4-8cb8-c7e0ea9ee530
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9044,9 +11871,25 @@ export class UpdateCloudAccountInformationHeaders extends $tea.Model {
 }
 
 export class UpdateCloudAccountInformationRequest extends $tea.Model {
+  /**
+   * @example
+   * hexaaaa
+   */
   accessKey?: string;
+  /**
+   * @example
+   * 123
+   */
   accountNumber?: string;
+  /**
+   * @example
+   * 44234122
+   */
   callerUnionId?: string;
+  /**
+   * @example
+   * Business
+   */
   commodityType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9138,12 +11981,49 @@ export class UpdateFormDataHeaders extends $tea.Model {
 }
 
 export class UpdateFormDataRequest extends $tea.Model {
+  /**
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 33f6d221-17f8-42b7-836a-682b95a046c2
+   */
   formInstanceId?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxx
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"textField_jcr0069m":"danhang","textareaField_jcr0069n":"duohang","numberField_jcr0069o":1,"radioField_jcr0069p":"选项一","selectField_jcr0069q":"选项一","checkboxField_jcr0069r":["选项二","选项三"],"multiSelectField_jcr0069s":["选项二","选项三"],"dateField_jcr0069t":1516636800000,"cascadeDate_jcr0069u":["1514736000000","1517328000000"],"employeeField_jcr0069x":["xxxxx"],"citySelectField_jcr0069y":["110000","110100","110101"],"departmentField_jcr0069z":1123456,"cascadeSelectField_jcr006a0":["part","part_b"],{"attachmentField_jna1lvyb":[{"downloadUrl":"https://www.aliwork.com/fileHandle?appType=default_tianshu_app&fileName=edd07ca9-1d2e-44b5-98fe-c1e16202f90d.txt&instId=&type=download","name":"test.txt","previewUrl":"https://www.aliwork.com/inst/preview?appType=default_tianshu_app&fileName=test.txt&fileSize=4&downloadUrl=edd07ca9-1d2e-44b5-98fe-c1e16202f90d.txt","url":"https://www.aliwork.com/fileHandle?appType=default_tianshu_app&fileName=edd07ca9-1d2e-44b5-98fe-c1e16202f90d.txt&instId=&type=download","ext":"txt"}]},"tableField_jcr006a1":[{"cascadeDate_jcr006aa":["1514736000000","1517328000000"],"cascadeSelectField_jcr006ae":["product","product_a"],"checkboxField_jcr006a7":["选项一","选项二","选项三"],"citySelectField_jcr006ac":["120000","120100","120102"],"dateField_jcr006a9":1517328000000,"departmentField_jcr006ad":1123456,"employeeField_jcr006ab":["yyyyy","xxxxx"],"multiSelectField_jcr006a8":["选项一","选项二","选项三"],"numberField_jcr006a4":2,"radioField_jcr006a5":"选项二","selectField_jcr006a6":"选项三","textField_jcr006a2":"明细下单行","textareaField_jcr006a3":"明细下多行"}]}
+   */
   updateFormDataJson?: string;
+  /**
+   * @example
+   * false
+   */
   useLatestVersion?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9219,11 +12099,50 @@ export class UpdateInstanceHeaders extends $tea.Model {
 }
 
 export class UpdateInstanceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
   appType?: string;
+  /**
+   * @example
+   * zh_CN
+   */
   language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hello1234
+   */
   systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   updateFormDataJson?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 未知
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9378,9 +12297,25 @@ export class UpgradeTenantInformationHeaders extends $tea.Model {
 }
 
 export class UpgradeTenantInformationRequest extends $tea.Model {
+  /**
+   * @example
+   * hexaaaa
+   */
   accessKey?: string;
+  /**
+   * @example
+   * 123
+   */
   accountNumber?: string;
+  /**
+   * @example
+   * 44234122
+   */
   callerUnionId?: string;
+  /**
+   * @example
+   * Business
+   */
   commodityType?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9651,6 +12586,10 @@ export class ValidateApplicationServiceOrderUpgradeHeaders extends $tea.Model {
 }
 
 export class ValidateApplicationServiceOrderUpgradeRequest extends $tea.Model {
+  /**
+   * @example
+   * accessKey
+   */
   accessKey?: string;
   static names(): { [key: string]: string } {
     return {
@@ -9993,7 +12932,15 @@ export class ValidateOrderUpgradeResponse extends $tea.Model {
 }
 
 export class BatchGetFormDataByIdListResponseBodyResultModifyUserName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10016,6 +12963,10 @@ export class BatchGetFormDataByIdListResponseBodyResultModifyUserName extends $t
 
 export class BatchGetFormDataByIdListResponseBodyResultModifyUser extends $tea.Model {
   name?: BatchGetFormDataByIdListResponseBodyResultModifyUserName;
+  /**
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10037,7 +12988,15 @@ export class BatchGetFormDataByIdListResponseBodyResultModifyUser extends $tea.M
 }
 
 export class BatchGetFormDataByIdListResponseBodyResultOriginatorName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10060,6 +13019,10 @@ export class BatchGetFormDataByIdListResponseBodyResultOriginatorName extends $t
 
 export class BatchGetFormDataByIdListResponseBodyResultOriginator extends $tea.Model {
   name?: BatchGetFormDataByIdListResponseBodyResultOriginatorName;
+  /**
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10081,20 +13044,72 @@ export class BatchGetFormDataByIdListResponseBodyResultOriginator extends $tea.M
 }
 
 export class BatchGetFormDataByIdListResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2021-05-01
+   */
   createTimeGMT?: string;
+  /**
+   * @example
+   * ding12345
+   */
   creatorUserId?: string;
+  /**
+   * @example
+   * {"addressField_l0c1cwiy_id":"\"海南省/469027/国营红岗农场/111\"","associationFormField_l0c1hdz4_id":"\"[{\\\"formType\\\":\\\"receipt\\\",\\\"formUuid\\\":\\\"FORM-QQ866JB1QW8YM5XZZZ64VQB61OGM1MLWE1C0LG\\\",\\\"instanceId\\\":\\\"FINST-CC666Y6198RY0LAN39XGND212MSX3TFT95S0LN31\\\",\\\"subTitle\\\":\\\"{\\\\\\\"type\\\\\\\":\\\\\\\"div\\\\\\\",\\\\\\\"props\\\\\\\":{\\\\\\\"children\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"a\\\\\\\",\\\\\\\"props\\\\\\\":{\\\\\\\"children\\\\\\\":\\\\\\\"查看签名\\\\\\\",\\\\\\\"className\\\\\\\":\\\\\\\"inst-cell-item-link\\\\\\\",\\\\\\\"style\\\\\\\":{\\\\\\\"cursor\\\\\\\":\\\\\\\"pointer\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"#0068ff\\\\\\\"}}},\\\\\\\"className\\\\\\\":\\\\\\\"inst-cell-item\\\\\\\"}}\\\",\\\"appType\\\":\\\"APP_K6IGJJ6PFAARLPDSWKXQ\\\",\\\"title\\\":\\\"1\\\"}]\"","countrySelectField_l0c1cwiu_id":["PG"]}
+   */
   formData?: { [key: string]: any };
+  /**
+   * @example
+   * FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
+   */
   formInstanceId?: string;
+  /**
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * 12345
+   */
   id?: number;
+  /**
+   * @example
+   * 符合宜搭表单实例格式的json数据
+   */
   instanceValue?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   modifiedTimeGMT?: string;
+  /**
+   * @example
+   * manager123
+   */
   modifier?: string;
   modifyUser?: BatchGetFormDataByIdListResponseBodyResultModifyUser;
   originator?: BatchGetFormDataByIdListResponseBodyResultOriginator;
+  /**
+   * @example
+   * IMPORT-388664B1BAUVB3AYZE1RIUE88TDM1QI9WIOWK2
+   */
   sequence?: string;
+  /**
+   * @example
+   * YIDA909202202250027
+   */
   serialNumber?: string;
+  /**
+   * @example
+   * 李四发起的请购单
+   */
   title?: string;
+  /**
+   * @example
+   * 1.0
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -10142,7 +13157,15 @@ export class BatchGetFormDataByIdListResponseBodyResult extends $tea.Model {
 }
 
 export class GetActivityButtonListResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 同意
+   */
   aliasInChinese?: string;
+  /**
+   * @example
+   * agree
+   */
   aliasInEnglish?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10194,6 +13217,10 @@ export class GetAllAuthCubesResponseBodyResultCubeDataRanges extends $tea.Model 
   conditionValue?: any[];
   elementCode?: string;
   elementType?: string;
+  /**
+   * @example
+   * manager123
+   */
   operator?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10224,12 +13251,28 @@ export class GetAllAuthCubesResponseBodyResultCubeDataRanges extends $tea.Model 
 
 export class GetAllAuthCubesResponseBodyResultUserInformation extends $tea.Model {
   authProvider?: string;
+  /**
+   * @example
+   * ding5d17e3add038d44535c2f4657eb6378e
+   */
   corpId?: string;
+  /**
+   * @example
+   * 开发部
+   */
   departmentName?: string;
+  /**
+   * @example
+   * 测试应用
+   */
   name?: string;
   nickName?: string;
   realmId?: number;
   refererNamespaceCode?: string;
+  /**
+   * @example
+   * 请购类型
+   */
   showName?: string;
   workNo?: string;
   static names(): { [key: string]: string } {
@@ -10271,11 +13314,23 @@ export class GetAllAuthCubesResponseBodyResult extends $tea.Model {
   appInstanceCode?: string;
   appStoreCode?: string;
   authMode?: string;
+  /**
+   * @example
+   * all
+   */
   authorizationType?: number;
   businessProcessCode?: string;
   categoriesFirst?: string;
   categoriesSecond?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   createTimeGMT?: string;
+  /**
+   * @example
+   * ding12345
+   */
   creatorUserId?: string;
   cubeAuthType?: string;
   cubeCode?: string;
@@ -10284,19 +13339,43 @@ export class GetAllAuthCubesResponseBodyResult extends $tea.Model {
   cubeSource?: string;
   dataCacheTimeConfiguration?: string;
   dataflowCode?: string;
+  /**
+   * @example
+   * 步凡创建的宜搭应用
+   */
   description?: string;
   domainCode?: string;
   enableCache?: boolean;
+  /**
+   * @example
+   * 12345
+   */
   id?: number;
   isNeedApplication?: string;
   isTrend?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   modifiedTimeGMT?: string;
+  /**
+   * @example
+   * manager123
+   */
   modifier?: string;
+  /**
+   * @example
+   * 测试应用
+   */
   name?: string;
   namespaceCode?: string;
   owner?: string;
   sharedDataSet?: boolean;
   tenantCorpId?: string;
+  /**
+   * @example
+   * i18n
+   */
   type?: string;
   userInformation?: GetAllAuthCubesResponseBodyResultUserInformation;
   static names(): { [key: string]: string } {
@@ -10383,12 +13462,24 @@ export class GetAllAuthCubesResponseBodyResult extends $tea.Model {
 export class GetAutoFlowLogDetailResponseBodyData extends $tea.Model {
   activityKey?: string;
   elapsedTimeGMT?: number;
+  /**
+   * @example
+   * 2021-01-01
+   */
   finishTimeGMT?: string;
   flag?: string;
   inputParams?: { [key: string]: any };
+  /**
+   * @example
+   * 测试应用
+   */
   name?: string;
   others?: string;
   outputParams?: { [key: string]: any };
+  /**
+   * @example
+   * running
+   */
   status?: string;
   uuid?: string;
   static names(): { [key: string]: string } {
@@ -10641,8 +13732,20 @@ export class GetFormComponentDefinitionListResponseBodyResult extends $tea.Model
 }
 
 export class GetFormDataByIDResponseBodyOriginatorName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
+  /**
+   * @example
+   * i18n
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -10666,6 +13769,10 @@ export class GetFormDataByIDResponseBodyOriginatorName extends $tea.Model {
 }
 
 export class GetFormDataByIDResponseBodyOriginator extends $tea.Model {
+  /**
+   * @example
+   * 开发部
+   */
   departmentName?: string;
   email?: string;
   name?: GetFormDataByIDResponseBodyOriginatorName;
@@ -10772,7 +13879,15 @@ export class GetFormListInAppResponseBodyResult extends $tea.Model {
 }
 
 export class GetInstanceByIdResponseBodyActionExecutorName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   type?: string;
   static names(): { [key: string]: string } {
@@ -10825,7 +13940,15 @@ export class GetInstanceByIdResponseBodyActionExecutor extends $tea.Model {
 }
 
 export class GetInstanceByIdResponseBodyOriginatorName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   type?: string;
   static names(): { [key: string]: string } {
@@ -10878,7 +14001,15 @@ export class GetInstanceByIdResponseBodyOriginator extends $tea.Model {
 }
 
 export class GetInstancesResponseBodyDataActionExecutorName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   type?: string;
   static names(): { [key: string]: string } {
@@ -10931,7 +14062,15 @@ export class GetInstancesResponseBodyDataActionExecutor extends $tea.Model {
 }
 
 export class GetInstancesResponseBodyDataOriginatorName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   type?: string;
   static names(): { [key: string]: string } {
@@ -11036,8 +14175,20 @@ export class GetInstancesResponseBodyData extends $tea.Model {
 }
 
 export class GetInstancesByIdListResponseBodyResultActionExecutorName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
+  /**
+   * @example
+   * i18n
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11061,6 +14212,10 @@ export class GetInstancesByIdListResponseBodyResultActionExecutorName extends $t
 }
 
 export class GetInstancesByIdListResponseBodyResultActionExecutor extends $tea.Model {
+  /**
+   * @example
+   * 开发部
+   */
   departmentName?: string;
   email?: string;
   name?: GetInstancesByIdListResponseBodyResultActionExecutorName;
@@ -11089,8 +14244,20 @@ export class GetInstancesByIdListResponseBodyResultActionExecutor extends $tea.M
 }
 
 export class GetInstancesByIdListResponseBodyResultOriginatorName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
+  /**
+   * @example
+   * i18n
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11114,6 +14281,10 @@ export class GetInstancesByIdListResponseBodyResultOriginatorName extends $tea.M
 }
 
 export class GetInstancesByIdListResponseBodyResultOriginator extends $tea.Model {
+  /**
+   * @example
+   * 开发部
+   */
   departmentName?: string;
   email?: string;
   name?: GetInstancesByIdListResponseBodyResultOriginatorName;
@@ -11143,13 +14314,41 @@ export class GetInstancesByIdListResponseBodyResultOriginator extends $tea.Model
 
 export class GetInstancesByIdListResponseBodyResult extends $tea.Model {
   actionExecutor?: GetInstancesByIdListResponseBodyResultActionExecutor[];
+  /**
+   * @example
+   * agree
+   */
   approvedResult?: string;
+  /**
+   * @example
+   * {"numberField_jcr0069o":1,"multiSelectField_jcr0069s":["选项三","选项二"],"textareaField_jcr0069n":"duohang","employeeField_jcr0069x":["xxxx"],"departmentField_jcr0069z":"信息xxx平台","cascadeDate_jcr0069u":["1514736000000","1517328000000"],"cascadeSelectField_jcr006a0":["part","part_b"],"tableField_jcr006a1":[{"departmentField_jcr006ad":"信息xxx","cascadeDate_jcr006aa":["1514736000000","1517328000000"],"selectField_jcr006a6":"选项三","citySelectField_jcr006ac":["天津","天津市","河东区"],"radioField_jcr006a5":"选项二","employeeField_jcr006ab":["yyyyy","xxxxxx"],"dateField_jcr006a9":1517328000000,"textField_jcr006a2":"明细下单行","textareaField_jcr006a3":"明细下多行","cascadeSelectField_jcr006ae":["product","product_a"],"numberField_jcr006a4":2,"checkboxField_jcr006a7":["选项一","选项三","选项二"],"multiSelectField_jcr006a8":["选项一","选项三","选项二"]}],"selectField_jcr0069q":"选项一","citySelectField_jcr0069y":["北京","北京市","东城区"],"checkboxField_jcr0069r":["选项三","选项二"],"textField_jcr0069m":"danhang","radioField_jcr0069p":"选项一","dateField_jcr0069t":1516636800000}
+   */
   data?: { [key: string]: any };
+  /**
+   * @example
+   * FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
+   */
   formUuid?: string;
+  /**
+   * @example
+   * RUNNING
+   */
   instanceStatus?: string;
   originator?: GetInstancesByIdListResponseBodyResultOriginator;
+  /**
+   * @example
+   * TPROC--EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ4
+   */
   processCode?: string;
+  /**
+   * @example
+   * f30233fb-72e1-4af4-8cb8-c7e0ea9ee530
+   */
   processInstanceId?: string;
+  /**
+   * @example
+   * xxxx 发起的流程
+   */
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11384,7 +14583,15 @@ export class GetNotifyMeResponseBodyData extends $tea.Model {
   appType?: string;
   corpId?: string;
   createTimeGMT?: string;
+  /**
+   * @example
+   * ding12345
+   */
   creatorUserId?: string;
+  /**
+   * @example
+   * FORM_INST_12345
+   */
   formInstanceId?: string;
   instStatus?: string;
   mobileUrl?: string;
@@ -11435,13 +14642,45 @@ export class GetNotifyMeResponseBodyData extends $tea.Model {
 }
 
 export class GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList extends $tea.Model {
+  /**
+   * @example
+   * 开发部成立于2000年
+   */
   departmentDescription?: string;
+  /**
+   * @example
+   * 测试应用
+   */
   displayName?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   displayNameInEnglish?: string;
+  /**
+   * @example
+   * o-YDJKINSSDLLND
+   */
   orderNumber?: string;
+  /**
+   * @example
+   * https://abc.com/a.png
+   */
   personalPhoto?: string;
+  /**
+   * @example
+   * running
+   */
   status?: string;
+  /**
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
+  /**
+   * @example
+   * 张三
+   */
   userInformation?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11475,29 +14714,117 @@ export class GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList 
 }
 
 export class GetOperationRecordsResponseBodyResultDomainList extends $tea.Model {
+  /**
+   * @example
+   * return
+   */
   action?: string;
+  /**
+   * @example
+   * 2021-02-01
+   */
   activeTimeGMT?: string;
+  /**
+   * @example
+   * act-xxaanfaf
+   */
   activityId?: string;
+  /**
+   * @example
+   * https://oss.com/Signature.pdf
+   */
   digitalSignature?: string;
+  /**
+   * @example
+   * https://oss.com/a.pdf
+   */
   files?: string;
+  /**
+   * @example
+   * 同意
+   */
   formatAction?: string;
+  /**
+   * @example
+   * 2021-01-01
+   */
   operateTimeGMT?: string;
+  /**
+   * @example
+   * remove
+   */
   operateType?: string;
+  /**
+   * @example
+   * manager123
+   */
   operator?: string;
+  /**
+   * @example
+   * 1732223326,1232321888,12188991
+   */
   operatorAgentIdList?: GetOperationRecordsResponseBodyResultDomainListOperatorAgentIdList[];
+  /**
+   * @example
+   * 张三
+   */
   operatorDisplayName?: string;
+  /**
+   * @example
+   * 李四
+   */
   operatorName?: string;
+  /**
+   * @example
+   * 无冬
+   */
   operatorNickName?: string;
+  /**
+   * @example
+   * https://oss.com/a.jpeg
+   */
   operatorPhotoUrl?: string;
+  /**
+   * @example
+   * 良好
+   */
   operatorStatus?: string;
   processInstanceId?: string;
   remark?: string;
+  /**
+   * @example
+   * 请购类型
+   */
   showName?: string;
+  /**
+   * @example
+   * 12
+   */
   size?: number;
+  /**
+   * @example
+   * 同步
+   */
   taskExecuteType?: string;
+  /**
+   * @example
+   * 2021-01-01
+   */
   taskHoldTimeGMT?: number;
+  /**
+   * @example
+   * task-123
+   */
   taskId?: string;
+  /**
+   * @example
+   * append task
+   */
   taskType?: string;
+  /**
+   * @example
+   * i18n
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -11676,6 +15003,10 @@ export class GetPrintAppInfoResponseBodyResultFormInfoList extends $tea.Model {
 }
 
 export class GetPrintAppInfoResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 李四的宜搭应用
+   */
   appName?: string;
   appType?: string;
   formInfoList?: GetPrintAppInfoResponseBodyResultFormInfoList[];
@@ -11935,10 +15266,26 @@ export class GetProcessDefinitionResponseBodyTasks extends $tea.Model {
 }
 
 export class GetRunningTaskListResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 2021-02-01
+   */
   activeTimeGMT?: string;
+  /**
+   * @example
+   * manager123
+   */
   actualActionExecutorId?: string;
   appType?: string;
+  /**
+   * @example
+   * 2021-01-01
+   */
   createTimeGMT?: string;
+  /**
+   * @example
+   * 2021-01-01
+   */
   finishTimeGMT?: string;
   originatorEmail?: string;
   originatorId?: string;
@@ -11950,10 +15297,30 @@ export class GetRunningTaskListResponseBodyResult extends $tea.Model {
   outResult?: string;
   outResultName?: string;
   processInstanceId?: string;
+  /**
+   * @example
+   * running
+   */
   status?: string;
+  /**
+   * @example
+   * task-123
+   */
   taskId?: string;
+  /**
+   * @example
+   * append task
+   */
   taskType?: string;
+  /**
+   * @example
+   * 李四发起的请购单
+   */
   title?: string;
+  /**
+   * @example
+   * title A
+   */
   titleInEnglish?: string;
   static names(): { [key: string]: string } {
     return {
@@ -12093,6 +15460,10 @@ export class GetSimpleCubeModelListResponseBodyResultChildren extends $tea.Model
   dataType?: string;
   dimensionType?: string;
   fieldCode?: string;
+  /**
+   * @example
+   * 12345
+   */
   id?: string;
   isDimension?: string;
   isVisible?: string;
@@ -12141,6 +15512,10 @@ export class GetSimpleCubeModelListResponseBodyResultChildren extends $tea.Model
 
 export class GetSimpleCubeModelListResponseBodyResult extends $tea.Model {
   children?: GetSimpleCubeModelListResponseBodyResultChildren[];
+  /**
+   * @example
+   * 12345
+   */
   id?: string;
   isDimension?: string;
   text?: string;
@@ -12168,10 +15543,30 @@ export class GetSimpleCubeModelListResponseBodyResult extends $tea.Model {
 }
 
 export class GetTaskCopiesResponseBodyDataCurrentActivityInstances extends $tea.Model {
+  /**
+   * @example
+   * act-xxaanfaf
+   */
   activityId?: string;
+  /**
+   * @example
+   * running
+   */
   activityInstanceStatus?: string;
+  /**
+   * @example
+   * activity-124
+   */
   activityName?: string;
+  /**
+   * @example
+   * redirect task
+   */
   activityNameInEnglish?: string;
+  /**
+   * @example
+   * 12345
+   */
   id?: number;
   static names(): { [key: string]: string } {
     return {
@@ -12203,13 +15598,25 @@ export class GetTaskCopiesResponseBodyData extends $tea.Model {
   actionExecutorName?: string[];
   appType?: string;
   carbonActivityId?: string;
+  /**
+   * @example
+   * 2021-01-01
+   */
   createTimeGMT?: string;
   currentActivityInstances?: GetTaskCopiesResponseBodyDataCurrentActivityInstances[];
   dataMap?: { [key: string]: any };
   dataType?: string;
+  /**
+   * @example
+   * 2021-01-01
+   */
   finishTimeGMT?: string;
   formInstanceId?: string;
   formUuid?: string;
+  /**
+   * @example
+   * 符合宜搭表单实例格式的json数据
+   */
   instanceValue?: string;
   modifiedTimeGMT?: string;
   originatorAvatar?: string;
@@ -12218,13 +15625,29 @@ export class GetTaskCopiesResponseBodyData extends $tea.Model {
   processApprovedResult?: string;
   processApprovedResultText?: string;
   processCode?: string;
+  /**
+   * @example
+   * proc-123
+   */
   processId?: number;
   processInstanceId?: string;
   processInstanceStatus?: string;
   processInstanceStatusText?: string;
   processName?: string;
+  /**
+   * @example
+   * ser-BNANFAHHYDFNK
+   */
   serialNumber?: string;
+  /**
+   * @example
+   * 李四发起的请购单
+   */
   title?: string;
+  /**
+   * @example
+   * 1.0
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -12296,15 +15719,55 @@ export class GetTaskCopiesResponseBodyData extends $tea.Model {
 }
 
 export class ListApplicationResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * {"ODIN_TOPIC_ID":"2560649","APPPROVIDER":"vigo","NEEDAYALYSIS":"n","NAVTYPE":"top_side","SHOWICON":"n","REPORT_SUPPORT_META_3":"y","ALLOW_EXTERNAL_ADDRESS_BOOK":"y","REPORTVERSION":"V5","FORM_SCHEMA_VERSION":"V5","EXCEL_SOURCE":"LOCAL","DEVICETYPE":"web,mobile","ENABLE_CSRF_SWITCH":"y","NEW_ALLOW_EXTERNAL_ADDRESS_BOOK":"y","COLOUR":"blue","DINGTALK_CID":"LOCAL","APPMODE":"normal","NAVLAYOUT":"auto","SHOWNAV":"y","SHOWCRUMB":"y","SUPPORT_META_3":"y","SUPPORT_META_2":"y","SYSTEMLINK":"https://www.aliwork.com/APP_LDYQVBGT167NAON5KB1X/workbench","DATA_QUERY_VERSION":"V1","DB_SOURCE_TYPE":"TDDL_MYSQL","ISTODINGAPPCENTER":"n","REVERSION":"5.9.16","EDS_DB_INDEX":"24","NAVIGATION":"TODO,DONE,SUBMIT","APPTYPE":"single"}
+   */
   appConfig?: string;
+  /**
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
+  /**
+   * @example
+   * 上线:ONLINE，下线:OFFLINE
+   */
   applicationStatus?: string;
+  /**
+   * @example
+   * ding5d17e3add038d44535c2f4657eb6378e
+   */
   corpId?: string;
+  /**
+   * @example
+   * ding12345
+   */
   creatorUserId?: string;
+  /**
+   * @example
+   * 步凡创建的宜搭应用
+   */
   description?: string;
+  /**
+   * @example
+   * appdiqiu%%#0089FF
+   */
   icon?: string;
+  /**
+   * @example
+   * 已删除:y，未删除:n
+   */
   inexistence?: string;
+  /**
+   * @example
+   * 测试应用
+   */
   name?: string;
+  /**
+   * @example
+   * ding8eaadfkksj45343wksff334
+   */
   subCorpId?: string;
   systemToken?: string;
   static names(): { [key: string]: string } {
@@ -12609,7 +16072,15 @@ export class ListConnectorInformationResponseBodyPluginInfos extends $tea.Model 
 }
 
 export class ListNavigationByFormTypeResponseBodyResultTitle extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   type?: string;
   static names(): { [key: string]: string } {
@@ -12659,14 +16130,26 @@ export class ListNavigationByFormTypeResponseBodyResult extends $tea.Model {
 }
 
 export class PageAutoFlowLogResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * APP_XCE0EVXS6DYG3YDYC5RD
+   */
   appType?: string;
   elapsedTimeGMT?: number;
+  /**
+   * @example
+   * 2021-01-01
+   */
   finishTimeGMT?: string;
   flag?: string;
   procInstanceId?: string;
   processCode?: string;
   srcProcInstanceFinishTimeGMT?: string;
   srcProcInstanceId?: string;
+  /**
+   * @example
+   * running
+   */
   status?: number;
   static names(): { [key: string]: string } {
     return {
@@ -12871,18 +16354,70 @@ export class PreviewPublishedProcessResponseBodyResult extends $tea.Model {
 }
 
 export class QueryServiceRecordResponseBodyValues extends $tea.Model {
+  /**
+   * @example
+   * FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
+   */
   formInstanceId?: string;
+  /**
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * HTTP
+   */
   hookType?: string;
+  /**
+   * @example
+   * INVOKE-E7766VC1KJ4ZVFCR346USCT2ORYI2UVRBHA1L0
+   */
   hookUuid?: string;
+  /**
+   * @example
+   * {"parameter1":"测试服务执行"}
+   */
   invokeParameter?: string;
+  /**
+   * @example
+   * {"content":{"currentPage":1,"data":[{"industry_id":"互联网","role":"人事","textField_kzi3b7ql":"场景","textField_kzi3b7qk":"角色","description":"用于企业员工假期请假、值班、就近办公等信息统计，便于假期工作事项安排。","orderNum":5,"industry":"互联网","textField_kzi3b7qj":"推荐","usageNum_value":"3365","textField_kzi3b7qm":"能力","scene":"企业应用","usageNum":3365,"role_id":"人事","suggest_id":"快速入门","imageUrl":"https://tianshu-vpc.oss-cn-shanghai.aliyuncs.com/49315603-3a20-4bd8-aeb0-a1430be3177a.jpg","templateTitle":"员工排班表","guide":"","orderNum_value":"5","author":"宜搭官方","appTplUuid":"TPL_RAOW06MPQBKKNENFMD5U","textField_kzp6ix74":"行业","scene_id":"企业应用","suggest":"快速入门","tags":["表单"],"isShow":"显示","isShow_id":"y","tags_id":["表单"]},{"industry_id":"互联网","role":"行政","textField_kzi3b7ql":"场景","textField_kzi3b7qk":"角色","description":"1.可用于公司内部收集员工意见。\n2.可意见类型对意见进行整理。\n由杭州鑫峰维网络科技有限公司免费提供，可钉钉沟通或电话咨询 肖经理：15869116881","orderNum":14,"industry":"互联网","textField_kzi3b7qj":"推荐","usageNum_value":"678","textField_kzi3b7qm":"能力","scene":"人事行政","usageNum":678,"role_id":"行政","suggest_id":"快速入门","imageUrl":"https://tianshu-vpc.oss-cn-shanghai.aliyuncs.com/72c0dcce-dded-417c-a003-db4679cc1c96.jpg","templateTitle":"意见反馈表","guide":"","orderNum_value":"14","author":"杭州鑫蜂维网络科技有限公司","appTplUuid":"TPL_KI4RE0NWXGTA1DV028XR","textField_kzp6ix74":"行业","scene_id":"人事行政","suggest":"快速入门","tags":["表单"],"isShow":"显示","isShow_id":"y","tags_id":["表单"]},{"industry_id":"制造业","role":"生产","textField_kzi3b7ql":"场景","textField_kzi3b7qk":"角色","description":"一物一码，为每台设备生成二维码，并制作成标牌。业务巡检人员使用钉钉扫码，添加巡检和维修记录，上传现场照片，实现无纸化巡检。","orderNum":29,"industry":"制造业","textField_kzi3b7qj":"推荐","usageNum_value":"145","textField_kzi3b7qm":"能力","scene":"不展示","usageNum":145,"category_id":"NEW","role_id":"生产","suggest_id":"快速入门","imageUrl":"https://tianshu-vpc.oss-cn-shanghai.aliyuncs.com/bb437d98-4015-4830-9224-42d90cfe6089.jpeg","templateTitle":"设备扫码巡检","guide":"一物一码，为每台设备生成二维码，并制作成标牌。业务巡检人员使用钉钉扫码，添加巡检和维修记录，上传现场照片，实现无纸化巡检。","orderNum_value":"29","author":"宜搭官方","appTplUuid":"TPL_G4P53OFFXISLNOWZW0QT","textField_kzp6ix74":"行业","scene_id":"不展示","suggest":"快速入门","tags":["二维码"],"isShow":"显示","isShow_id":"y","tags_id":["二维码"],"category":"NEW"},{"industry_id":"互联网","role":"行政","textField_kzi3b7ql":"场景","textField_kzi3b7qk":"角色","description":"是基于企业办公物品领用或申请的场景下，\n1、对物品自定义的录入和信息维护。\n2、库存流水，库存汇总的报表展示。\n由杭州鑫峰维网络科技有限公司免费提供，可钉钉沟通或电话咨询 肖经理：15869116881","orderNum":74,"industry":"互联网","textField_kzi3b7qj":"推荐","usageNum_value":"16238","textField_kzi3b7qm":"能力","scene":"人事行政","usageNum":16238,"role_id":"行政","suggest_id":"快速入门","imageUrl":"https://tianshu-vpc.oss-cn-shanghai.aliyuncs.com/8c6d63b2-8a9f-4b05-8299-79e7dd97efc9.jpg","templateTitle":"办公物品申请","guide":"","orderNum_value":"74","author":"杭州鑫蜂维网络科技有限公司","appTplUuid":"TPL_WDGWQFTJD6FCG44NM4JC","textField_kzp6ix74":"行业","scene_id":"人事行政","suggest":"快速入门","tags":["流程表单"],"isShow":"显示","isShow_id":"y","tags_id":["流程表单"]},{"industry_id":"互联网","role":"行政","textField_kzi3b7ql":"场景","textField_kzi3b7qk":"角色","description":"借用宜搭最新连接器能力，活动报名申请通过后自动拉入指定群。","orderNum":145,"industry":"互联网","textField_kzi3b7qj":"推荐","usageNum_value":"2522","textField_kzi3b7qm":"能力","scene":"人事行政","usageNum":2522,"role_id":"行政","suggest_id":"快速入门","imageUrl":"https://tianshu-vpc.oss-cn-shanghai.aliyuncs.com/9b6d7f1a-135b-435a-88c5-97e9fed7e75c.jpg","templateTitle":"活动报名","guide":"","orderNum_value":"145","author":"宜搭官方","appTplUuid":"TPL_GLXCK24WLMDCRV8EMU0K","textField_kzp6ix74":"行业","scene_id":"人事行政","suggest":"快速入门","tags":["连接器"],"isShow":"显示","isShow_id":"y","tags_id":["连接器"]},{"industry_id":"互联网","role":"人事","textField_kzi3b7ql":"场景","textField_kzi3b7qk":"角色","description":"一键导入工资，生成工资条消息，钉钉消息查看工资条","orderNum":277,"industry":"互联网","textField_kzi3b7qj":"推荐","usageNum_value":"746","textField_kzi3b7qm":"能力","scene":"人事行政","usageNum":746,"role_id":"人事","suggest_id":"快速入门","imageUrl":"https://tianshu-vpc.oss-cn-shanghai.aliyuncs.com/462be093-cc4f-4e7e-a72e-bdf15c2edfb7.jpg","templateTitle":"工资条","guide":"","orderNum_value":"277","author":"广州汇华信息科技有限公司","appTplUuid":"TPL_DQXKIBK2E06KKOP2BX2B","textField_kzp6ix74":"行业","scene_id":"人事行政","suggest":"快速入门","tags":["表单","快捷消息"],"isShow":"显示","isShow_id":"y","tags_id":["快捷消息","表单"]},{"industry_id":"教育行业","role":"行政","textField_kzi3b7ql":"场景","textField_kzi3b7qk":"角色","description":"多岗位、多校区、涉及人员多，班次多，调班多；\n值班岗位，值班人员一目了然；线上调班，值班表信息同步；\n值班通知，系统自动推送；值班日志，记录留痕可查；\n值班阅览室，最新公告、流程汇总可查","orderNum":318,"industry":"教育行业","textField_kzi3b7qj":"推荐","usageNum_value":"608","textField_kzi3b7qm":"能力","scene":"不展示","usageNum":608,"role_id":"行政","suggest_id":"快速入门","imageUrl":"https://tianshu-vpc.oss-cn-shanghai.aliyuncs.com/16d71251-a7ef-4a23-bcb0-77563bd3f7a9.jpg?x-oss-process=image/resize,m_fixed,h_380,w_680","templateTitle":"值班管理系统","guide":"多岗位、多校区、涉及人员多，班次多，调班多；\n值班岗位，值班人员一目了然；线上调班，值班表信息同步；\n值班通知，系统自动推送；值班日志，记录留痕可查；\n值班阅览室，最新公告、流程汇总可查","orderNum_value":"318","author":"宜搭官方","appTplUuid":"TPL_HC18Z4Y3SQDWO2SH1ZT9","textField_kzp6ix74":"行业","scene_id":"不展示","suggest":"快速入门","tags":["流程表单"],"isShow":"显示","isShow_id":"y","tags_id":["流程表单"]}],"entities":null,"hasMore":false,"idCursor":0,"totalCount":7},"errorCode":"","errorExtInfo":null,"errorLevel":"","errorMsg":"","success":true,"throwable":""}
+   */
   invokeResult?: string;
+  /**
+   * @example
+   * 可选值：SUCCESS、FAIL、FINAL_SUCCESS、ERROR
+   */
   invokeStatus?: string;
+  /**
+   * @example
+   * 成功：y，失败：n
+   */
   invokeSuccess?: string;
+  /**
+   * @example
+   * https://www.aliwork.com/query/loginFreeFormData/listFormDataByType.json?type=templateCenter&searchFieldJson=%7B%22isShow%22%3A%22y%22%2C%22suggest%22%3A%22%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%22%2C%22industry%22%3A%22%22%2C%22role%22%3A%22%22%2C%22tags%22%3A%22%22%2C%22templateTitle%22%3A%22%22%7D&dynamicOrder=%7B%22orderNum%22%3A%22%2B%22%7D&pageSize=48&currentPage=1
+   */
   invokeUrl?: string;
+  /**
+   * @example
+   * {"url":"https://www.aliwork.com/query/loginFreeFormData/listFormDataByType.json?type=templateCenter&searchFieldJson=%7B%22isShow%22%3A%22y%22%2C%22suggest%22%3A%22%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%22%2C%22industry%22%3A%22%22%2C%22role%22%3A%22%22%2C%22tags%22%3A%22%22%2C%22templateTitle%22%3A%22%22%7D&dynamicOrder=%7B%22orderNum%22%3A%22%2B%22%7D&pageSize=48&currentPage=1","isMd5":null,"signature":"","isSHA":null,"hmacSecret":"","type":"HttpExt","params":[{"field":"name","value":"name","label":{"zh_CN":"name","en_US":"name","type":"i18n"},"type":"java.lang.String"}]}
+   */
   serviceContent?: string;
+  /**
+   * @example
+   * 查询宜搭模板
+   */
   serviceName?: string;
+  /**
+   * @example
+   * {"parameter1":"测试服务执行"}
+   */
   serviceParameter?: string;
+  /**
+   * @example
+   * INVOKE-E7766VC1KJ4ZVFCR346USCT2ORYI2UVRBHA1LI
+   */
   sourceUuid?: string;
   static names(): { [key: string]: string } {
     return {
@@ -12926,7 +16461,15 @@ export class QueryServiceRecordResponseBodyValues extends $tea.Model {
 }
 
 export class SearchFormDataRemovalTableDataResponseBodyDataModifyUserName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   static names(): { [key: string]: string } {
     return {
@@ -12948,9 +16491,21 @@ export class SearchFormDataRemovalTableDataResponseBodyDataModifyUserName extend
 }
 
 export class SearchFormDataRemovalTableDataResponseBodyDataModifyUser extends $tea.Model {
+  /**
+   * @example
+   * 开发部
+   */
   departmentName?: string;
+  /**
+   * @example
+   * abc@alimail.com
+   */
   email?: string;
   name?: SearchFormDataRemovalTableDataResponseBodyDataModifyUserName;
+  /**
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -12976,7 +16531,15 @@ export class SearchFormDataRemovalTableDataResponseBodyDataModifyUser extends $t
 }
 
 export class SearchFormDataRemovalTableDataResponseBodyDataOriginatorName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   static names(): { [key: string]: string } {
     return {
@@ -12998,9 +16561,21 @@ export class SearchFormDataRemovalTableDataResponseBodyDataOriginatorName extend
 }
 
 export class SearchFormDataRemovalTableDataResponseBodyDataOriginator extends $tea.Model {
+  /**
+   * @example
+   * 开发部
+   */
   departmentName?: string;
+  /**
+   * @example
+   * abc@alimail.com
+   */
   email?: string;
   name?: SearchFormDataRemovalTableDataResponseBodyDataOriginatorName;
+  /**
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -13026,20 +16601,72 @@ export class SearchFormDataRemovalTableDataResponseBodyDataOriginator extends $t
 }
 
 export class SearchFormDataRemovalTableDataResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * 2021-05-01
+   */
   createTimeGMT?: string;
+  /**
+   * @example
+   * ding12345
+   */
   creatorUserId?: string;
+  /**
+   * @example
+   * {"countrySelectField_l0c1cwiu":[{"value":"US"}]}
+   */
   formData?: { [key: string]: any };
+  /**
+   * @example
+   * FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
+   */
   formInstanceId?: string;
+  /**
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * 12345
+   */
   id?: number;
+  /**
+   * @example
+   * 符合宜搭表单实例格式的json数据
+   */
   instanceValue?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   modifiedTimeGMT?: string;
+  /**
+   * @example
+   * manager123
+   */
   modifier?: string;
   modifyUser?: SearchFormDataRemovalTableDataResponseBodyDataModifyUser;
   originator?: SearchFormDataRemovalTableDataResponseBodyDataOriginator;
+  /**
+   * @example
+   * IMPORT-388664B1BAUVB3AYZE1RIUE88TDM1QI9WIOWK2
+   */
   sequence?: string;
+  /**
+   * @example
+   * YIDA909202202250027
+   */
   serialNumber?: string;
+  /**
+   * @example
+   * 李四发起的请购单
+   */
   title?: string;
+  /**
+   * @example
+   * 1.0
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -13087,7 +16714,15 @@ export class SearchFormDataRemovalTableDataResponseBodyData extends $tea.Model {
 }
 
 export class SearchFormDataSecondGenerationResponseBodyDataModifyUserName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   static names(): { [key: string]: string } {
     return {
@@ -13110,6 +16745,10 @@ export class SearchFormDataSecondGenerationResponseBodyDataModifyUserName extend
 
 export class SearchFormDataSecondGenerationResponseBodyDataModifyUser extends $tea.Model {
   name?: SearchFormDataSecondGenerationResponseBodyDataModifyUserName;
+  /**
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -13131,7 +16770,15 @@ export class SearchFormDataSecondGenerationResponseBodyDataModifyUser extends $t
 }
 
 export class SearchFormDataSecondGenerationResponseBodyDataOriginatorName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   static names(): { [key: string]: string } {
     return {
@@ -13154,6 +16801,10 @@ export class SearchFormDataSecondGenerationResponseBodyDataOriginatorName extend
 
 export class SearchFormDataSecondGenerationResponseBodyDataOriginator extends $tea.Model {
   name?: SearchFormDataSecondGenerationResponseBodyDataOriginatorName;
+  /**
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -13175,20 +16826,72 @@ export class SearchFormDataSecondGenerationResponseBodyDataOriginator extends $t
 }
 
 export class SearchFormDataSecondGenerationResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * 2021-05-01
+   */
   createTimeGMT?: string;
+  /**
+   * @example
+   * ding12345
+   */
   creatorUserId?: string;
+  /**
+   * @example
+   * {"addressField_l0c1cwiy_id":"\"海南省/469027/国营红岗农场/111\"","associationFormField_l0c1hdz4_id":"\"[{\\\"formType\\\":\\\"receipt\\\",\\\"formUuid\\\":\\\"FORM-QQ866JB1QW8YM5XZZZ64VQB61OGM1MLWE1C0LG\\\",\\\"instanceId\\\":\\\"FINST-CC666Y6198RY0LAN39XGND212MSX3TFT95S0LN31\\\",\\\"subTitle\\\":\\\"{\\\\\\\"type\\\\\\\":\\\\\\\"div\\\\\\\",\\\\\\\"props\\\\\\\":{\\\\\\\"children\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"a\\\\\\\",\\\\\\\"props\\\\\\\":{\\\\\\\"children\\\\\\\":\\\\\\\"查看签名\\\\\\\",\\\\\\\"className\\\\\\\":\\\\\\\"inst-cell-item-link\\\\\\\",\\\\\\\"style\\\\\\\":{\\\\\\\"cursor\\\\\\\":\\\\\\\"pointer\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"#0068ff\\\\\\\"}}},\\\\\\\"className\\\\\\\":\\\\\\\"inst-cell-item\\\\\\\"}}\\\",\\\"appType\\\":\\\"APP_K6IGJJ6PFAARLPDSWKXQ\\\",\\\"title\\\":\\\"1\\\"}]\"","countrySelectField_l0c1cwiu_id":["PG"],"imageField_l0c1cwit":"[{\"previewUrl\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=open&process=image/resize,m_fill,w_200,h_200,limit_0/quality,q_80\",\"size\":2610734,\"name\":\"Bts2Z0e6oxA.jpg\",\"downloadUrl\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download\",\"url\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download\"}]","rateField_l0c1cwis_value":"3","editorField_l0c1cwiz":"<div><strong>你好，这是测试</strong></div>\r\n<div><span style=\"font-family: kaiti;background-color: #ff0000;color: #ffff00;\"><em><strong>测试</strong></em></span></div>\r\n<div>&nbsp;</div>","rateField_l0c1cwis":3,"countrySelectField_l0c1cwiu":[],"attachmentField_l0ghkwv3":"[{\"downloadUrl\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download\",\"name\":\"Bts2Z0e6oxA.jpg\",\"previewUrl\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=open&process=image/resize,m_fill,w_200,h_200,limit_0/quality,q_80\",\"size\":2610734,\"url\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download\"}]","addressField_l0c1cwiy":"{\"address\":\"111\",\"regionIds\":[460000,469027,469023401],\"regionText\":[{\"en_US\":\"hai+nan+sheng\",\"zh_CN\":\"海南省\"},{\"en_US\":\"cheng+mai+xian\",\"zh_CN\":\"澄迈县\"},{\"en_US\":\"guo+ying+hong+gang+nong+chang\",\"zh_CN\":\"国营红岗农场\"}]}"}
+   */
   formData?: { [key: string]: any };
+  /**
+   * @example
+   * FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
+   */
   formInstanceId?: string;
+  /**
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * 12345
+   */
   id?: number;
+  /**
+   * @example
+   * [{"componentName":"CountrySelectField","dateType":null,"fieldData":{"value":[{"text":{"en_US":"Papua New Guinea","zh_CN":"巴布亚新几内亚","type":"i18n"},"value":"PG"}]},"fieldDataUpdated":false,"fieldId":"countrySelectField_l0c1cwiu","format":null,"formatControls":null,"listNum":null,"options":[{"label":{"$ref":"$[0].fieldData.value[0].text"},"value":"PG"}],"rowId":null},{"componentName":"AssociationFormField","dateType":null,"fieldData":{"value":[{"formType":"receipt","formUuid":"FORM-QQ866JB1QW8YM5XZZZ64VQB61OGM1MLWE1C0LG","instanceId":"FINST-CC666Y6198RY0LAN39XGND212MSX3TFT95S0LN31","subTitle":"{\"type\":\"div\",\"props\":{\"children\":{\"type\":\"a\",\"props\":{\"children\":\"查看签名\",\"className\":\"inst-cell-item-link\",\"style\":{\"cursor\":\"pointer\",\"color\":\"#0068ff\"}}},\"className\":\"inst-cell-item\"}}","appType":"APP_K6IGJJ6PFAARLPDSWKXQ","title":"1"}]},"fieldDataUpdated":false,"fieldId":"associationFormField_l0c1hdz4","format":null,"formatControls":null,"listNum":null,"options":[],"rowId":null},{"componentName":"ImageField","dateType":null,"fieldData":{"value":[{"previewUrl":"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=open&process=image/resize,m_fill,w_200,h_200,limit_0/quality,q_80","size":2610734,"name":"Bts2Z0e6oxA.jpg","downloadUrl":"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download","url":"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download"}]},"fieldDataUpdated":false,"fieldId":"imageField_l0c1cwit","format":null,"formatControls":null,"listNum":null,"options":[],"rowId":null},{"componentName":"AddressField","dateType":null,"fieldData":{"value":{"address":"111","regionIds":[460000,469027,469023401],"regionText":[{"en_US":"hai+nan+sheng","zh_CN":"海南省"},{"en_US":"cheng+mai+xian","zh_CN":"澄迈县"},{"en_US":"guo+ying+hong+gang+nong+chang","zh_CN":"国营红岗农场"}]}},"fieldDataUpdated":false,"fieldId":"addressField_l0c1cwiy","format":null,"formatControls":null,"listNum":null,"options":[{"label":{"pureEn_US":"hai+nan+sheng","en_US":"hai+nan+sheng","zh_CN":"海南省","type":"i18n","key":null},"value":460000},{"label":{"pureEn_US":"cheng+mai+xian","en_US":"cheng+mai+xian","zh_CN":"澄迈县","type":"i18n","key":null},"value":469027},{"label":{"pureEn_US":"guo+ying+hong+gang+nong+chang","en_US":"guo+ying+hong+gang+nong+chang","zh_CN":"国营红岗农场","type":"i18n","key":null},"value":469023401}],"rowId":null},{"componentName":"EditorField","dateType":null,"fieldData":{"value":"<div><strong>你好，这是测试</strong></div>\r\n<div><span style=\"font-family: kaiti;background-color: #ff0000;color: #ffff00;\"><em><strong>测试</strong></em></span></div>\r\n<div>&nbsp;</div>"},"fieldDataUpdated":false,"fieldId":"editorField_l0c1cwiz","format":null,"formatControls":null,"listNum":null,"options":[],"rowId":null},{"componentName":"RateField","dateType":null,"fieldData":{"value":"3"},"fieldDataUpdated":false,"fieldId":"rateField_l0c1cwis","format":null,"formatControls":null,"listNum":null,"options":[],"rowId":null},{"componentName":"AttachmentField","dateType":null,"fieldData":{"value":[{"previewUrl":"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=open&process=image/resize,m_fill,w_200,h_200,limit_0/quality,q_80","size":2610734,"name":"Bts2Z0e6oxA.jpg","downloadUrl":"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download","url":"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download"}]},"fieldDataUpdated":false,"fieldId":"attachmentField_l0ghkwv3","format":null,"formatControls":null,"listNum":null,"options":[],"rowId":null}]
+   */
   instanceValue?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   modifiedTimeGMT?: string;
+  /**
+   * @example
+   * manager123
+   */
   modifier?: string;
   modifyUser?: SearchFormDataSecondGenerationResponseBodyDataModifyUser;
   originator?: SearchFormDataSecondGenerationResponseBodyDataOriginator;
+  /**
+   * @example
+   * IMPORT-388664B1BAUVB3AYZE1RIUE88TDM1QI9WIOWK2
+   */
   sequence?: string;
+  /**
+   * @example
+   * YIDA909202202250027
+   */
   serialNumber?: string;
+  /**
+   * @example
+   * 李四发起的请购单
+   */
   title?: string;
+  /**
+   * @example
+   * 1.0
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -13236,7 +16939,15 @@ export class SearchFormDataSecondGenerationResponseBodyData extends $tea.Model {
 }
 
 export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   static names(): { [key: string]: string } {
     return {
@@ -13259,6 +16970,10 @@ export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUse
 
 export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser extends $tea.Model {
   name?: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUserName;
+  /**
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -13280,7 +16995,15 @@ export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUse
 }
 
 export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
   static names(): { [key: string]: string } {
     return {
@@ -13303,6 +17026,10 @@ export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginato
 
 export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator extends $tea.Model {
   name?: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginatorName;
+  /**
+   * @example
+   * ding173982232112232
+   */
   userId?: string;
   static names(): { [key: string]: string } {
     return {
@@ -13324,20 +17051,72 @@ export class SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginato
 }
 
 export class SearchFormDataSecondGenerationNoTableFieldResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * 2021-05-01
+   */
   createTimeGMT?: string;
+  /**
+   * @example
+   * ding12345
+   */
   creatorUserId?: string;
+  /**
+   * @example
+   * {"addressField_l0c1cwiy_id":"\"海南省/469027/国营红岗农场/111\"","associationFormField_l0c1hdz4_id":"\"[{\\\"formType\\\":\\\"receipt\\\",\\\"formUuid\\\":\\\"FORM-QQ866JB1QW8YM5XZZZ64VQB61OGM1MLWE1C0LG\\\",\\\"instanceId\\\":\\\"FINST-CC666Y6198RY0LAN39XGND212MSX3TFT95S0LN31\\\",\\\"subTitle\\\":\\\"{\\\\\\\"type\\\\\\\":\\\\\\\"div\\\\\\\",\\\\\\\"props\\\\\\\":{\\\\\\\"children\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"a\\\\\\\",\\\\\\\"props\\\\\\\":{\\\\\\\"children\\\\\\\":\\\\\\\"查看签名\\\\\\\",\\\\\\\"className\\\\\\\":\\\\\\\"inst-cell-item-link\\\\\\\",\\\\\\\"style\\\\\\\":{\\\\\\\"cursor\\\\\\\":\\\\\\\"pointer\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"#0068ff\\\\\\\"}}},\\\\\\\"className\\\\\\\":\\\\\\\"inst-cell-item\\\\\\\"}}\\\",\\\"appType\\\":\\\"APP_K6IGJJ6PFAARLPDSWKXQ\\\",\\\"title\\\":\\\"1\\\"}]\"","countrySelectField_l0c1cwiu_id":["PG"],"imageField_l0c1cwit":"[{\"previewUrl\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=open&process=image/resize,m_fill,w_200,h_200,limit_0/quality,q_80\",\"size\":2610734,\"name\":\"Bts2Z0e6oxA.jpg\",\"downloadUrl\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download\",\"url\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download\"}]","rateField_l0c1cwis_value":"3","editorField_l0c1cwiz":"<div><strong>你好，这是测试</strong></div>\r\n<div><span style=\"font-family: kaiti;background-color: #ff0000;color: #ffff00;\"><em><strong>测试</strong></em></span></div>\r\n<div>&nbsp;</div>","rateField_l0c1cwis":3,"countrySelectField_l0c1cwiu":[],"attachmentField_l0ghkwv3":"[{\"downloadUrl\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download\",\"name\":\"Bts2Z0e6oxA.jpg\",\"previewUrl\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=open&process=image/resize,m_fill,w_200,h_200,limit_0/quality,q_80\",\"size\":2610734,\"url\":\"/ossFileHandle?appType=APP_K6IGJJ6PFAARLPDSWKXQ&fileName=APP_K6IGJJ6PFAARLPDSWKXQ_MTczMjU1NjYyMzg3MzI0NF8wUDk2NlQ2MVIzR1lHV1RaMjMxQ1A5U1Y1NU1NM1lMWVY1QzBMMQ$$.jpg&instId=&type=download\"}]","addressField_l0c1cwiy":"{\"address\":\"111\",\"regionIds\":[460000,469027,469023401],\"regionText\":[{\"en_US\":\"hai+nan+sheng\",\"zh_CN\":\"海南省\"},{\"en_US\":\"cheng+mai+xian\",\"zh_CN\":\"澄迈县\"},{\"en_US\":\"guo+ying+hong+gang+nong+chang\",\"zh_CN\":\"国营红岗农场\"}]}"}
+   */
   formData?: { [key: string]: any };
+  /**
+   * @example
+   * FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
+   */
   formInstanceId?: string;
+  /**
+   * @example
+   * FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+   */
   formUuid?: string;
+  /**
+   * @example
+   * 12345
+   */
   id?: number;
+  /**
+   * @example
+   * [{"componentName":"AddressField","dateType":null,"fieldData":{"value":{"address":"白帝城","regionIds":[340000,340800,340803,340803401],"regionText":[{"en_US":"an hui sheng","zh_CN":"安徽省"},{"en_US":"an qing shi","zh_CN":"安庆市"},{"en_US":"da guan qu","zh_CN":"大观区"},{"en_US":"an hui an qing hai kou jing ji kai fa qu","zh_CN":"安徽安庆海口经济开发区"}]}},"fieldDataUpdated":false,"fieldId":"addressField_kwod1oza","format":null,"formatControls":null,"listNum":null,"options":[{"label":{"pureEn_US":"an hui sheng","en_US":"an hui sheng","zh_CN":"安徽省","type":"i18n","key":null},"value":340000},{"label":{"pureEn_US":"an qing shi","en_US":"an qing shi","zh_CN":"安庆市","type":"i18n","key":null},"value":340800},{"label":{"pureEn_US":"da guan qu","en_US":"da guan qu","zh_CN":"大观区","type":"i18n","key":null},"value":340803},{"label":{"pureEn_US":"an hui an qing hai kou jing ji kai fa qu","en_US":"an hui an qing hai kou jing ji kai fa qu","zh_CN":"安徽安庆海口经济开发区","type":"i18n","key":null},"value":340803401}],"rowId":null}]
+   */
   instanceValue?: string;
+  /**
+   * @example
+   * 2021-05-01
+   */
   modifiedTimeGMT?: string;
+  /**
+   * @example
+   * manager123
+   */
   modifier?: string;
   modifyUser?: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataModifyUser;
   originator?: SearchFormDataSecondGenerationNoTableFieldResponseBodyDataOriginator;
+  /**
+   * @example
+   * IMPORT-388664B1BAUVB3AYZE1RIUE88TDM1QI9WIOWK2
+   */
   sequence?: string;
+  /**
+   * @example
+   * YIDA909202202250027
+   */
   serialNumber?: string;
+  /**
+   * @example
+   * 李四发起的请购单
+   */
   title?: string;
+  /**
+   * @example
+   * 1.0
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -13385,8 +17164,20 @@ export class SearchFormDataSecondGenerationNoTableFieldResponseBodyData extends 
 }
 
 export class SearchFormDatasResponseBodyDataModifyUserUserName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
+  /**
+   * @example
+   * i18n
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -13432,8 +17223,20 @@ export class SearchFormDatasResponseBodyDataModifyUser extends $tea.Model {
 }
 
 export class SearchFormDatasResponseBodyDataOriginatorUserName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
   nameInChinese?: string;
+  /**
+   * @example
+   * ZhangSan
+   */
   nameInEnglish?: string;
+  /**
+   * @example
+   * i18n
+   */
   type?: string;
   static names(): { [key: string]: string } {
     return {
@@ -13479,21 +17282,73 @@ export class SearchFormDatasResponseBodyDataOriginator extends $tea.Model {
 }
 
 export class SearchFormDatasResponseBodyData extends $tea.Model {
+  /**
+   * @example
+   * 2018-01-24 11:22:01
+   */
   createdTimeGMT?: string;
+  /**
+   * @example
+   * 1731234567
+   */
   creatorUserId?: string;
+  /**
+   * @example
+   * 1002
+   */
   dataId?: number;
+  /**
+   * @example
+   * {"numberField_jcr0069o":1,"multiSelectField_jcr0069s":["选项三","选项二"],"textareaField_jcr0069n":"duohang","employeeField_jcr0069x":["xxxx"],"departmentField_jcr0069z":"xxxx","cascadeDate_jcr0069u":["1514736000000","1517328000000"],"cascadeSelectField_jcr006a0":["part","part_b"],"tableField_jcr006a1":[{"departmentField_jcr006ad":"xxxx","cascadeDate_jcr006aa":["1514736000000","1517328000000"],"selectField_jcr006a6":"选项三","citySelectField_jcr006ac":["天津","天津市","河东区"],"radioField_jcr006a5":"选项二","employeeField_jcr006ab":["xxxxxx","yyyyyy"],"dateField_jcr006a9":1517328000000,"textField_jcr006a2":"明细下单行","textareaField_jcr006a3":"明细下多行","cascadeSelectField_jcr006ae":["product","product_a"],"numberField_jcr006a4":2,"checkboxField_jcr006a7":["选项一","选项三","选项二"],"multiSelectField_jcr006a8":["选项一","选项三","选项二"]}],"selectField_jcr0069q":"选项一","citySelectField_jcr0069y":["北京","北京市","东城区"],"checkboxField_jcr0069r":["选项三","选项二"],"textField_jcr0069m":"danhang","radioField_jcr0069p":"选项一","dateField_jcr0069t":1516636800000}
+   */
   formData?: { [key: string]: any };
+  /**
+   * @example
+   * FINST-BNKJDRF
+   */
   formInstanceId?: string;
+  /**
+   * @example
+   * FORM-EF6Y93URN24F1SCX15VA2P918LPEIJ2H3UFORCJ1
+   */
   formUuid?: string;
+  /**
+   * @example
+   * {"textField":"124"}
+   */
   instanceValue?: string;
   modelUuid?: string;
+  /**
+   * @example
+   * 2018-01-24 11:22:01
+   */
   modifiedTimeGMT?: string;
+  /**
+   * @example
+   * 1731234567
+   */
   modifierUserId?: string;
   modifyUser?: SearchFormDatasResponseBodyDataModifyUser;
   originator?: SearchFormDatasResponseBodyDataOriginator;
+  /**
+   * @example
+   * Squence-XXX
+   */
   sequence?: string;
+  /**
+   * @example
+   * 1234
+   */
   serialNo?: string;
+  /**
+   * @example
+   * 张三发起的表单
+   */
   title?: string;
+  /**
+   * @example
+   * 3
+   */
   version?: number;
   static names(): { [key: string]: string } {
     return {
@@ -13544,12 +17399,11 @@ export class SearchFormDatasResponseBodyData extends $tea.Model {
 
 
 export default class Client extends OpenApi {
-  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
-    this._client = new GatewayClient();
-    this._spi = this._client;
+    let gatewayClient = new GatewayClient();
+    this._spi = gatewayClient;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -13559,12 +17413,12 @@ export default class Client extends OpenApi {
 
 
   /**
-   * @summary 生成登录态传递用的code
-   *
-   * @param request AppLoginCodeGenRequest
-   * @param headers AppLoginCodeGenHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return AppLoginCodeGenResponse
+   * 生成登录态传递用的code
+   * 
+   * @param request - AppLoginCodeGenRequest
+   * @param headers - AppLoginCodeGenHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AppLoginCodeGenResponse
    */
   async appLoginCodeGenWithOptions(request: AppLoginCodeGenRequest, headers: AppLoginCodeGenHeaders, runtime: $Util.RuntimeOptions): Promise<AppLoginCodeGenResponse> {
     Util.validateModel(request);
@@ -13619,10 +17473,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生成登录态传递用的code
-   *
-   * @param request AppLoginCodeGenRequest
-   * @return AppLoginCodeGenResponse
+   * 生成登录态传递用的code
+   * 
+   * @param request - AppLoginCodeGenRequest
+   * @returns AppLoginCodeGenResponse
    */
   async appLoginCodeGen(request: AppLoginCodeGenRequest): Promise<AppLoginCodeGenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13631,12 +17485,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取指定表单实例ID列表对应的表单实例数据
-   *
-   * @param request BatchGetFormDataByIdListRequest
-   * @param headers BatchGetFormDataByIdListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchGetFormDataByIdListResponse
+   * 批量获取指定表单实例ID列表对应的表单实例数据
+   * 
+   * @param request - BatchGetFormDataByIdListRequest
+   * @param headers - BatchGetFormDataByIdListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchGetFormDataByIdListResponse
    */
   async batchGetFormDataByIdListWithOptions(request: BatchGetFormDataByIdListRequest, headers: BatchGetFormDataByIdListHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetFormDataByIdListResponse> {
     Util.validateModel(request);
@@ -13693,10 +17547,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量获取指定表单实例ID列表对应的表单实例数据
-   *
-   * @param request BatchGetFormDataByIdListRequest
-   * @return BatchGetFormDataByIdListResponse
+   * 批量获取指定表单实例ID列表对应的表单实例数据
+   * 
+   * @param request - BatchGetFormDataByIdListRequest
+   * @returns BatchGetFormDataByIdListResponse
    */
   async batchGetFormDataByIdList(request: BatchGetFormDataByIdListRequest): Promise<BatchGetFormDataByIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13705,12 +17559,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除指定的表单实例
-   *
-   * @param request BatchRemovalByFormInstanceIdListRequest
-   * @param headers BatchRemovalByFormInstanceIdListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchRemovalByFormInstanceIdListResponse
+   * 批量删除指定的表单实例
+   * 
+   * @param request - BatchRemovalByFormInstanceIdListRequest
+   * @param headers - BatchRemovalByFormInstanceIdListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchRemovalByFormInstanceIdListResponse
    */
   async batchRemovalByFormInstanceIdListWithOptions(request: BatchRemovalByFormInstanceIdListRequest, headers: BatchRemovalByFormInstanceIdListHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRemovalByFormInstanceIdListResponse> {
     Util.validateModel(request);
@@ -13771,10 +17625,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量删除指定的表单实例
-   *
-   * @param request BatchRemovalByFormInstanceIdListRequest
-   * @return BatchRemovalByFormInstanceIdListResponse
+   * 批量删除指定的表单实例
+   * 
+   * @param request - BatchRemovalByFormInstanceIdListRequest
+   * @returns BatchRemovalByFormInstanceIdListResponse
    */
   async batchRemovalByFormInstanceIdList(request: BatchRemovalByFormInstanceIdListRequest): Promise<BatchRemovalByFormInstanceIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13783,12 +17637,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量保存表单实例数据
-   *
-   * @param request BatchSaveFormDataRequest
-   * @param headers BatchSaveFormDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchSaveFormDataResponse
+   * 批量保存表单实例数据
+   * 
+   * @param request - BatchSaveFormDataRequest
+   * @param headers - BatchSaveFormDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchSaveFormDataResponse
    */
   async batchSaveFormDataWithOptions(request: BatchSaveFormDataRequest, headers: BatchSaveFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSaveFormDataResponse> {
     Util.validateModel(request);
@@ -13853,10 +17707,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量保存表单实例数据
-   *
-   * @param request BatchSaveFormDataRequest
-   * @return BatchSaveFormDataResponse
+   * 批量保存表单实例数据
+   * 
+   * @param request - BatchSaveFormDataRequest
+   * @returns BatchSaveFormDataResponse
    */
   async batchSaveFormData(request: BatchSaveFormDataRequest): Promise<BatchSaveFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13865,12 +17719,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 将多条表单实例的指定表单组件更新成指定值
-   *
-   * @param request BatchUpdateFormDataByInstanceIdRequest
-   * @param headers BatchUpdateFormDataByInstanceIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchUpdateFormDataByInstanceIdResponse
+   * 将多条表单实例的指定表单组件更新成指定值
+   * 
+   * @param request - BatchUpdateFormDataByInstanceIdRequest
+   * @param headers - BatchUpdateFormDataByInstanceIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchUpdateFormDataByInstanceIdResponse
    */
   async batchUpdateFormDataByInstanceIdWithOptions(request: BatchUpdateFormDataByInstanceIdRequest, headers: BatchUpdateFormDataByInstanceIdHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateFormDataByInstanceIdResponse> {
     Util.validateModel(request);
@@ -13943,10 +17797,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 将多条表单实例的指定表单组件更新成指定值
-   *
-   * @param request BatchUpdateFormDataByInstanceIdRequest
-   * @return BatchUpdateFormDataByInstanceIdResponse
+   * 将多条表单实例的指定表单组件更新成指定值
+   * 
+   * @param request - BatchUpdateFormDataByInstanceIdRequest
+   * @returns BatchUpdateFormDataByInstanceIdResponse
    */
   async batchUpdateFormDataByInstanceId(request: BatchUpdateFormDataByInstanceIdRequest): Promise<BatchUpdateFormDataByInstanceIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -13955,12 +17809,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过表单实例数据批量更新表单实例
-   *
-   * @param request BatchUpdateFormDataByInstanceMapRequest
-   * @param headers BatchUpdateFormDataByInstanceMapHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BatchUpdateFormDataByInstanceMapResponse
+   * 通过表单实例数据批量更新表单实例
+   * 
+   * @param request - BatchUpdateFormDataByInstanceMapRequest
+   * @param headers - BatchUpdateFormDataByInstanceMapHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BatchUpdateFormDataByInstanceMapResponse
    */
   async batchUpdateFormDataByInstanceMapWithOptions(request: BatchUpdateFormDataByInstanceMapRequest, headers: BatchUpdateFormDataByInstanceMapHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateFormDataByInstanceMapResponse> {
     Util.validateModel(request);
@@ -14029,10 +17883,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过表单实例数据批量更新表单实例
-   *
-   * @param request BatchUpdateFormDataByInstanceMapRequest
-   * @return BatchUpdateFormDataByInstanceMapResponse
+   * 通过表单实例数据批量更新表单实例
+   * 
+   * @param request - BatchUpdateFormDataByInstanceMapRequest
+   * @returns BatchUpdateFormDataByInstanceMapResponse
    */
   async batchUpdateFormDataByInstanceMap(request: BatchUpdateFormDataByInstanceMapRequest): Promise<BatchUpdateFormDataByInstanceMapResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14041,12 +17895,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道新购(通过应用授权服务)
-   *
-   * @param request BuyAuthorizationOrderRequest
-   * @param headers BuyAuthorizationOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BuyAuthorizationOrderResponse
+   * 多渠道新购(通过应用授权服务)
+   * 
+   * @param request - BuyAuthorizationOrderRequest
+   * @param headers - BuyAuthorizationOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BuyAuthorizationOrderResponse
    */
   async buyAuthorizationOrderWithOptions(request: BuyAuthorizationOrderRequest, headers: BuyAuthorizationOrderHeaders, runtime: $Util.RuntimeOptions): Promise<BuyAuthorizationOrderResponse> {
     Util.validateModel(request);
@@ -14123,10 +17977,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道新购(通过应用授权服务)
-   *
-   * @param request BuyAuthorizationOrderRequest
-   * @return BuyAuthorizationOrderResponse
+   * 多渠道新购(通过应用授权服务)
+   * 
+   * @param request - BuyAuthorizationOrderRequest
+   * @returns BuyAuthorizationOrderResponse
    */
   async buyAuthorizationOrder(request: BuyAuthorizationOrderRequest): Promise<BuyAuthorizationOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14135,12 +17989,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新购宜搭产品
-   *
-   * @param request BuyFreshOrderRequest
-   * @param headers BuyFreshOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return BuyFreshOrderResponse
+   * 新购宜搭产品
+   * 
+   * @param request - BuyFreshOrderRequest
+   * @param headers - BuyFreshOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns BuyFreshOrderResponse
    */
   async buyFreshOrderWithOptions(request: BuyFreshOrderRequest, headers: BuyFreshOrderHeaders, runtime: $Util.RuntimeOptions): Promise<BuyFreshOrderResponse> {
     Util.validateModel(request);
@@ -14217,10 +18071,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新购宜搭产品
-   *
-   * @param request BuyFreshOrderRequest
-   * @return BuyFreshOrderResponse
+   * 新购宜搭产品
+   * 
+   * @param request - BuyFreshOrderRequest
+   * @returns BuyFreshOrderResponse
    */
   async buyFreshOrder(request: BuyFreshOrderRequest): Promise<BuyFreshOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14229,12 +18083,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据阿里云账号验证激活结果
-   *
-   * @param request CheckCloudAccountStatusRequest
-   * @param headers CheckCloudAccountStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CheckCloudAccountStatusResponse
+   * 根据阿里云账号验证激活结果
+   * 
+   * @param request - CheckCloudAccountStatusRequest
+   * @param headers - CheckCloudAccountStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CheckCloudAccountStatusResponse
    */
   async checkCloudAccountStatusWithOptions(callerUid: string, request: CheckCloudAccountStatusRequest, headers: CheckCloudAccountStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckCloudAccountStatusResponse> {
     Util.validateModel(request);
@@ -14271,10 +18125,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据阿里云账号验证激活结果
-   *
-   * @param request CheckCloudAccountStatusRequest
-   * @return CheckCloudAccountStatusResponse
+   * 根据阿里云账号验证激活结果
+   * 
+   * @param request - CheckCloudAccountStatusRequest
+   * @returns CheckCloudAccountStatusResponse
    */
   async checkCloudAccountStatus(callerUid: string, request: CheckCloudAccountStatusRequest): Promise<CheckCloudAccountStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14283,12 +18137,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增或更新表单实例
-   *
-   * @param request CreateOrUpdateFormDataRequest
-   * @param headers CreateOrUpdateFormDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return CreateOrUpdateFormDataResponse
+   * 新增或更新表单实例
+   * 
+   * @param request - CreateOrUpdateFormDataRequest
+   * @param headers - CreateOrUpdateFormDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateOrUpdateFormDataResponse
    */
   async createOrUpdateFormDataWithOptions(request: CreateOrUpdateFormDataRequest, headers: CreateOrUpdateFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrUpdateFormDataResponse> {
     Util.validateModel(request);
@@ -14349,10 +18203,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增或更新表单实例
-   *
-   * @param request CreateOrUpdateFormDataRequest
-   * @return CreateOrUpdateFormDataResponse
+   * 新增或更新表单实例
+   * 
+   * @param request - CreateOrUpdateFormDataRequest
+   * @returns CreateOrUpdateFormDataResponse
    */
   async createOrUpdateFormData(request: CreateOrUpdateFormDataRequest): Promise<CreateOrUpdateFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14361,12 +18215,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除表单实例
-   *
-   * @param request DeleteFormDataRequest
-   * @param headers DeleteFormDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteFormDataResponse
+   * 删除表单实例
+   * 
+   * @param request - DeleteFormDataRequest
+   * @param headers - DeleteFormDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteFormDataResponse
    */
   async deleteFormDataWithOptions(request: DeleteFormDataRequest, headers: DeleteFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteFormDataResponse> {
     Util.validateModel(request);
@@ -14419,10 +18273,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除表单实例
-   *
-   * @param request DeleteFormDataRequest
-   * @return DeleteFormDataResponse
+   * 删除表单实例
+   * 
+   * @param request - DeleteFormDataRequest
+   * @returns DeleteFormDataResponse
    */
   async deleteFormData(request: DeleteFormDataRequest): Promise<DeleteFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14431,12 +18285,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除流程实例
-   *
-   * @param request DeleteInstanceRequest
-   * @param headers DeleteInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteInstanceResponse
+   * 删除流程实例
+   * 
+   * @param request - DeleteInstanceRequest
+   * @param headers - DeleteInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteInstanceResponse
    */
   async deleteInstanceWithOptions(request: DeleteInstanceRequest, headers: DeleteInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteInstanceResponse> {
     Util.validateModel(request);
@@ -14489,10 +18343,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 删除流程实例
-   *
-   * @param request DeleteInstanceRequest
-   * @return DeleteInstanceResponse
+   * 删除流程实例
+   * 
+   * @param request - DeleteInstanceRequest
+   * @returns DeleteInstanceResponse
    */
   async deleteInstance(request: DeleteInstanceRequest): Promise<DeleteInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14501,12 +18355,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary deleteSequence
-   *
-   * @param request DeleteSequenceRequest
-   * @param headers DeleteSequenceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeleteSequenceResponse
+   * deleteSequence
+   * 
+   * @param request - DeleteSequenceRequest
+   * @param headers - DeleteSequenceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteSequenceResponse
    */
   async deleteSequenceWithOptions(request: DeleteSequenceRequest, headers: DeleteSequenceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSequenceResponse> {
     Util.validateModel(request);
@@ -14559,10 +18413,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary deleteSequence
-   *
-   * @param request DeleteSequenceRequest
-   * @return DeleteSequenceResponse
+   * deleteSequence
+   * 
+   * @param request - DeleteSequenceRequest
+   * @returns DeleteSequenceResponse
    */
   async deleteSequence(request: DeleteSequenceRequest): Promise<DeleteSequenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14571,12 +18425,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 云开发平台函数计算部署完成回调宜搭
-   *
-   * @param request DeployFunctionCallbackRequest
-   * @param headers DeployFunctionCallbackHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return DeployFunctionCallbackResponse
+   * 云开发平台函数计算部署完成回调宜搭
+   * 
+   * @param request - DeployFunctionCallbackRequest
+   * @param headers - DeployFunctionCallbackHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeployFunctionCallbackResponse
    */
   async deployFunctionCallbackWithOptions(request: DeployFunctionCallbackRequest, headers: DeployFunctionCallbackHeaders, runtime: $Util.RuntimeOptions): Promise<DeployFunctionCallbackResponse> {
     Util.validateModel(request);
@@ -14633,10 +18487,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 云开发平台函数计算部署完成回调宜搭
-   *
-   * @param request DeployFunctionCallbackRequest
-   * @return DeployFunctionCallbackResponse
+   * 云开发平台函数计算部署完成回调宜搭
+   * 
+   * @param request - DeployFunctionCallbackRequest
+   * @returns DeployFunctionCallbackResponse
    */
   async deployFunctionCallback(request: DeployFunctionCallbackRequest): Promise<DeployFunctionCallbackResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14645,12 +18499,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量审批
-   *
-   * @param request ExecuteBatchTaskRequest
-   * @param headers ExecuteBatchTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ExecuteBatchTaskResponse
+   * 批量审批
+   * 
+   * @param request - ExecuteBatchTaskRequest
+   * @param headers - ExecuteBatchTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ExecuteBatchTaskResponse
    */
   async executeBatchTaskWithOptions(request: ExecuteBatchTaskRequest, headers: ExecuteBatchTaskHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteBatchTaskResponse> {
     Util.validateModel(request);
@@ -14707,10 +18561,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 批量审批
-   *
-   * @param request ExecuteBatchTaskRequest
-   * @return ExecuteBatchTaskResponse
+   * 批量审批
+   * 
+   * @param request - ExecuteBatchTaskRequest
+   * @returns ExecuteBatchTaskResponse
    */
   async executeBatchTask(request: ExecuteBatchTaskRequest): Promise<ExecuteBatchTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14719,12 +18573,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行用户自定义的API接口
-   *
-   * @param request ExecuteCustomApiRequest
-   * @param headers ExecuteCustomApiHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ExecuteCustomApiResponse
+   * 执行用户自定义的API接口
+   * 
+   * @param request - ExecuteCustomApiRequest
+   * @param headers - ExecuteCustomApiHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ExecuteCustomApiResponse
    */
   async executeCustomApiWithOptions(request: ExecuteCustomApiRequest, headers: ExecuteCustomApiHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteCustomApiResponse> {
     Util.validateModel(request);
@@ -14781,10 +18635,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行用户自定义的API接口
-   *
-   * @param request ExecuteCustomApiRequest
-   * @return ExecuteCustomApiResponse
+   * 执行用户自定义的API接口
+   * 
+   * @param request - ExecuteCustomApiRequest
+   * @returns ExecuteCustomApiResponse
    */
   async executeCustomApi(request: ExecuteCustomApiRequest): Promise<ExecuteCustomApiResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14793,12 +18647,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行宜搭平台的审批任务
-   *
-   * @param request ExecutePlatformTaskRequest
-   * @param headers ExecutePlatformTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ExecutePlatformTaskResponse
+   * 执行宜搭平台的审批任务
+   * 
+   * @param request - ExecutePlatformTaskRequest
+   * @param headers - ExecutePlatformTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ExecutePlatformTaskResponse
    */
   async executePlatformTaskWithOptions(request: ExecutePlatformTaskRequest, headers: ExecutePlatformTaskHeaders, runtime: $Util.RuntimeOptions): Promise<ExecutePlatformTaskResponse> {
     Util.validateModel(request);
@@ -14867,10 +18721,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行宜搭平台的审批任务
-   *
-   * @param request ExecutePlatformTaskRequest
-   * @return ExecutePlatformTaskResponse
+   * 执行宜搭平台的审批任务
+   * 
+   * @param request - ExecutePlatformTaskRequest
+   * @returns ExecutePlatformTaskResponse
    */
   async executePlatformTask(request: ExecutePlatformTaskRequest): Promise<ExecutePlatformTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14879,12 +18733,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行审批任务
-   *
-   * @param request ExecuteTaskRequest
-   * @param headers ExecuteTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ExecuteTaskResponse
+   * 执行审批任务
+   * 
+   * @param request - ExecuteTaskRequest
+   * @param headers - ExecuteTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ExecuteTaskResponse
    */
   async executeTaskWithOptions(request: ExecuteTaskRequest, headers: ExecuteTaskHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteTaskResponse> {
     Util.validateModel(request);
@@ -14961,10 +18815,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行审批任务
-   *
-   * @param request ExecuteTaskRequest
-   * @return ExecuteTaskResponse
+   * 执行审批任务
+   * 
+   * @param request - ExecuteTaskRequest
+   * @returns ExecuteTaskResponse
    */
   async executeTask(request: ExecuteTaskRequest): Promise<ExecuteTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -14973,12 +18827,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道到期
-   *
-   * @param request ExpireCommodityRequest
-   * @param headers ExpireCommodityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ExpireCommodityResponse
+   * 多渠道到期
+   * 
+   * @param request - ExpireCommodityRequest
+   * @param headers - ExpireCommodityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ExpireCommodityResponse
    */
   async expireCommodityWithOptions(request: ExpireCommodityRequest, headers: ExpireCommodityHeaders, runtime: $Util.RuntimeOptions): Promise<ExpireCommodityResponse> {
     Util.validateModel(request);
@@ -15023,10 +18877,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道到期
-   *
-   * @param request ExpireCommodityRequest
-   * @return ExpireCommodityResponse
+   * 多渠道到期
+   * 
+   * @param request - ExpireCommodityRequest
+   * @returns ExpireCommodityResponse
    */
   async expireCommodity(request: ExpireCommodityRequest): Promise<ExpireCommodityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15035,12 +18889,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据阿里云账号获取激活码
-   *
-   * @param request GetActivationCodeByCallerUnionIdRequest
-   * @param headers GetActivationCodeByCallerUnionIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetActivationCodeByCallerUnionIdResponse
+   * 根据阿里云账号获取激活码
+   * 
+   * @param request - GetActivationCodeByCallerUnionIdRequest
+   * @param headers - GetActivationCodeByCallerUnionIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetActivationCodeByCallerUnionIdResponse
    */
   async getActivationCodeByCallerUnionIdWithOptions(callerUid: string, request: GetActivationCodeByCallerUnionIdRequest, headers: GetActivationCodeByCallerUnionIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetActivationCodeByCallerUnionIdResponse> {
     Util.validateModel(request);
@@ -15077,10 +18931,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据阿里云账号获取激活码
-   *
-   * @param request GetActivationCodeByCallerUnionIdRequest
-   * @return GetActivationCodeByCallerUnionIdResponse
+   * 根据阿里云账号获取激活码
+   * 
+   * @param request - GetActivationCodeByCallerUnionIdRequest
+   * @returns GetActivationCodeByCallerUnionIdResponse
    */
   async getActivationCodeByCallerUnionId(callerUid: string, request: GetActivationCodeByCallerUnionIdRequest): Promise<GetActivationCodeByCallerUnionIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15089,12 +18943,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程实例可操作功能列表
-   *
-   * @param request GetActivityButtonListRequest
-   * @param headers GetActivityButtonListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetActivityButtonListResponse
+   * 获取流程实例可操作功能列表
+   * 
+   * @param request - GetActivityButtonListRequest
+   * @param headers - GetActivityButtonListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetActivityButtonListResponse
    */
   async getActivityButtonListWithOptions(appType: string, processCode: string, activityId: string, request: GetActivityButtonListRequest, headers: GetActivityButtonListHeaders, runtime: $Util.RuntimeOptions): Promise<GetActivityButtonListResponse> {
     Util.validateModel(request);
@@ -15139,10 +18993,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程实例可操作功能列表
-   *
-   * @param request GetActivityButtonListRequest
-   * @return GetActivityButtonListResponse
+   * 获取流程实例可操作功能列表
+   * 
+   * @param request - GetActivityButtonListRequest
+   * @returns GetActivityButtonListResponse
    */
   async getActivityButtonList(appType: string, processCode: string, activityId: string, request: GetActivityButtonListRequest): Promise<GetActivityButtonListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15151,12 +19005,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程设计的节点信息
-   *
-   * @param request GetActivityListRequest
-   * @param headers GetActivityListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetActivityListResponse
+   * 获取流程设计的节点信息
+   * 
+   * @param request - GetActivityListRequest
+   * @param headers - GetActivityListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetActivityListResponse
    */
   async getActivityListWithOptions(request: GetActivityListRequest, headers: GetActivityListHeaders, runtime: $Util.RuntimeOptions): Promise<GetActivityListResponse> {
     Util.validateModel(request);
@@ -15209,10 +19063,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程设计的节点信息
-   *
-   * @param request GetActivityListRequest
-   * @return GetActivityListResponse
+   * 获取流程设计的节点信息
+   * 
+   * @param request - GetActivityListRequest
+   * @returns GetActivityListResponse
    */
   async getActivityList(request: GetActivityListRequest): Promise<GetActivityListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15221,12 +19075,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询表单的接口，支持分页、表单名称模糊查询
-   *
-   * @param request GetAllAuthCubesRequest
-   * @param headers GetAllAuthCubesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAllAuthCubesResponse
+   * 查询表单的接口，支持分页、表单名称模糊查询
+   * 
+   * @param request - GetAllAuthCubesRequest
+   * @param headers - GetAllAuthCubesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAllAuthCubesResponse
    */
   async getAllAuthCubesWithOptions(request: GetAllAuthCubesRequest, headers: GetAllAuthCubesHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllAuthCubesResponse> {
     Util.validateModel(request);
@@ -15287,10 +19141,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询表单的接口，支持分页、表单名称模糊查询
-   *
-   * @param request GetAllAuthCubesRequest
-   * @return GetAllAuthCubesResponse
+   * 查询表单的接口，支持分页、表单名称模糊查询
+   * 
+   * @param request - GetAllAuthCubesRequest
+   * @returns GetAllAuthCubesResponse
    */
   async getAllAuthCubes(request: GetAllAuthCubesRequest): Promise<GetAllAuthCubesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15299,12 +19153,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道平台概览接口
-   *
-   * @param request GetApplicationAuthorizationServicePlatformResourceRequest
-   * @param headers GetApplicationAuthorizationServicePlatformResourceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetApplicationAuthorizationServicePlatformResourceResponse
+   * 多渠道平台概览接口
+   * 
+   * @param request - GetApplicationAuthorizationServicePlatformResourceRequest
+   * @param headers - GetApplicationAuthorizationServicePlatformResourceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetApplicationAuthorizationServicePlatformResourceResponse
    */
   async getApplicationAuthorizationServicePlatformResourceWithOptions(request: GetApplicationAuthorizationServicePlatformResourceRequest, headers: GetApplicationAuthorizationServicePlatformResourceHeaders, runtime: $Util.RuntimeOptions): Promise<GetApplicationAuthorizationServicePlatformResourceResponse> {
     Util.validateModel(request);
@@ -15349,10 +19203,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道平台概览接口
-   *
-   * @param request GetApplicationAuthorizationServicePlatformResourceRequest
-   * @return GetApplicationAuthorizationServicePlatformResourceResponse
+   * 多渠道平台概览接口
+   * 
+   * @param request - GetApplicationAuthorizationServicePlatformResourceRequest
+   * @returns GetApplicationAuthorizationServicePlatformResourceResponse
    */
   async getApplicationAuthorizationServicePlatformResource(request: GetApplicationAuthorizationServicePlatformResourceRequest): Promise<GetApplicationAuthorizationServicePlatformResourceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15361,12 +19215,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取自动化流日志详情
-   *
-   * @param request GetAutoFlowLogDetailRequest
-   * @param headers GetAutoFlowLogDetailHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetAutoFlowLogDetailResponse
+   * 获取自动化流日志详情
+   * 
+   * @param request - GetAutoFlowLogDetailRequest
+   * @param headers - GetAutoFlowLogDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAutoFlowLogDetailResponse
    */
   async getAutoFlowLogDetailWithOptions(request: GetAutoFlowLogDetailRequest, headers: GetAutoFlowLogDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetAutoFlowLogDetailResponse> {
     Util.validateModel(request);
@@ -15423,10 +19277,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取自动化流日志详情
-   *
-   * @param request GetAutoFlowLogDetailRequest
-   * @return GetAutoFlowLogDetailResponse
+   * 获取自动化流日志详情
+   * 
+   * @param request - GetAutoFlowLogDetailRequest
+   * @returns GetAutoFlowLogDetailResponse
    */
   async getAutoFlowLogDetail(request: GetAutoFlowLogDetailRequest): Promise<GetAutoFlowLogDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15435,12 +19289,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询已完成任务列表
-   *
-   * @param request GetCorpAccomplishmentTasksRequest
-   * @param headers GetCorpAccomplishmentTasksHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCorpAccomplishmentTasksResponse
+   * 查询已完成任务列表
+   * 
+   * @param request - GetCorpAccomplishmentTasksRequest
+   * @param headers - GetCorpAccomplishmentTasksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCorpAccomplishmentTasksResponse
    */
   async getCorpAccomplishmentTasksWithOptions(corpId: string, userId: string, request: GetCorpAccomplishmentTasksRequest, headers: GetCorpAccomplishmentTasksHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpAccomplishmentTasksResponse> {
     Util.validateModel(request);
@@ -15509,10 +19363,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询已完成任务列表
-   *
-   * @param request GetCorpAccomplishmentTasksRequest
-   * @return GetCorpAccomplishmentTasksResponse
+   * 查询已完成任务列表
+   * 
+   * @param request - GetCorpAccomplishmentTasksRequest
+   * @returns GetCorpAccomplishmentTasksResponse
    */
   async getCorpAccomplishmentTasks(corpId: string, userId: string, request: GetCorpAccomplishmentTasksRequest): Promise<GetCorpAccomplishmentTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15521,12 +19375,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据accountId获取企业等级
-   *
-   * @param request GetCorpLevelByAccountIdRequest
-   * @param headers GetCorpLevelByAccountIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCorpLevelByAccountIdResponse
+   * 根据accountId获取企业等级
+   * 
+   * @param request - GetCorpLevelByAccountIdRequest
+   * @param headers - GetCorpLevelByAccountIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCorpLevelByAccountIdResponse
    */
   async getCorpLevelByAccountIdWithOptions(request: GetCorpLevelByAccountIdRequest, headers: GetCorpLevelByAccountIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpLevelByAccountIdResponse> {
     Util.validateModel(request);
@@ -15563,10 +19417,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据accountId获取企业等级
-   *
-   * @param request GetCorpLevelByAccountIdRequest
-   * @return GetCorpLevelByAccountIdResponse
+   * 根据accountId获取企业等级
+   * 
+   * @param request - GetCorpLevelByAccountIdRequest
+   * @returns GetCorpLevelByAccountIdResponse
    */
   async getCorpLevelByAccountId(request: GetCorpLevelByAccountIdRequest): Promise<GetCorpLevelByAccountIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15575,12 +19429,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询待办任务列表
-   *
-   * @param request GetCorpTasksRequest
-   * @param headers GetCorpTasksHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetCorpTasksResponse
+   * 查询待办任务列表
+   * 
+   * @param request - GetCorpTasksRequest
+   * @param headers - GetCorpTasksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCorpTasksResponse
    */
   async getCorpTasksWithOptions(request: GetCorpTasksRequest, headers: GetCorpTasksHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpTasksResponse> {
     Util.validateModel(request);
@@ -15657,10 +19511,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询待办任务列表
-   *
-   * @param request GetCorpTasksRequest
-   * @return GetCorpTasksResponse
+   * 查询待办任务列表
+   * 
+   * @param request - GetCorpTasksRequest
+   * @returns GetCorpTasksResponse
    */
   async getCorpTasks(request: GetCorpTasksRequest): Promise<GetCorpTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15669,12 +19523,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取数据库连接串信息
-   *
-   * @param request GetDbConfigRequest
-   * @param headers GetDbConfigHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetDbConfigResponse
+   * 获取数据库连接串信息
+   * 
+   * @param request - GetDbConfigRequest
+   * @param headers - GetDbConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDbConfigResponse
    */
   async getDbConfigWithOptions(request: GetDbConfigRequest, headers: GetDbConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetDbConfigResponse> {
     Util.validateModel(request);
@@ -15723,10 +19577,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取数据库连接串信息
-   *
-   * @param request GetDbConfigRequest
-   * @return GetDbConfigResponse
+   * 获取数据库连接串信息
+   * 
+   * @param request - GetDbConfigRequest
+   * @returns GetDbConfigResponse
    */
   async getDbConfig(request: GetDbConfigRequest): Promise<GetDbConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15735,12 +19589,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据表单ID获取字段信息
-   *
-   * @param request GetFieldDefByUuidRequest
-   * @param headers GetFieldDefByUuidHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFieldDefByUuidResponse
+   * 根据表单ID获取字段信息
+   * 
+   * @param request - GetFieldDefByUuidRequest
+   * @param headers - GetFieldDefByUuidHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFieldDefByUuidResponse
    */
   async getFieldDefByUuidWithOptions(request: GetFieldDefByUuidRequest, headers: GetFieldDefByUuidHeaders, runtime: $Util.RuntimeOptions): Promise<GetFieldDefByUuidResponse> {
     Util.validateModel(request);
@@ -15789,10 +19643,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据表单ID获取字段信息
-   *
-   * @param request GetFieldDefByUuidRequest
-   * @return GetFieldDefByUuidResponse
+   * 根据表单ID获取字段信息
+   * 
+   * @param request - GetFieldDefByUuidRequest
+   * @returns GetFieldDefByUuidResponse
    */
   async getFieldDefByUuid(request: GetFieldDefByUuidRequest): Promise<GetFieldDefByUuidResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15801,12 +19655,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取表单定义
-   *
-   * @param request GetFormComponentDefinitionListRequest
-   * @param headers GetFormComponentDefinitionListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFormComponentDefinitionListResponse
+   * 获取表单定义
+   * 
+   * @param request - GetFormComponentDefinitionListRequest
+   * @param headers - GetFormComponentDefinitionListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFormComponentDefinitionListResponse
    */
   async getFormComponentDefinitionListWithOptions(appType: string, formUuid: string, request: GetFormComponentDefinitionListRequest, headers: GetFormComponentDefinitionListHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormComponentDefinitionListResponse> {
     Util.validateModel(request);
@@ -15855,10 +19709,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取表单定义
-   *
-   * @param request GetFormComponentDefinitionListRequest
-   * @return GetFormComponentDefinitionListResponse
+   * 获取表单定义
+   * 
+   * @param request - GetFormComponentDefinitionListRequest
+   * @returns GetFormComponentDefinitionListResponse
    */
   async getFormComponentDefinitionList(appType: string, formUuid: string, request: GetFormComponentDefinitionListRequest): Promise<GetFormComponentDefinitionListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15867,12 +19721,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据表单 ID 查询实例详情
-   *
-   * @param request GetFormDataByIDRequest
-   * @param headers GetFormDataByIDHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFormDataByIDResponse
+   * 根据表单 ID 查询实例详情
+   * 
+   * @param request - GetFormDataByIDRequest
+   * @param headers - GetFormDataByIDHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFormDataByIDResponse
    */
   async getFormDataByIDWithOptions(id: string, request: GetFormDataByIDRequest, headers: GetFormDataByIDHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormDataByIDResponse> {
     Util.validateModel(request);
@@ -15921,10 +19775,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据表单 ID 查询实例详情
-   *
-   * @param request GetFormDataByIDRequest
-   * @return GetFormDataByIDResponse
+   * 根据表单 ID 查询实例详情
+   * 
+   * @param request - GetFormDataByIDRequest
+   * @returns GetFormDataByIDResponse
    */
   async getFormDataByID(id: string, request: GetFormDataByIDRequest): Promise<GetFormDataByIDResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -15933,12 +19787,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取应用内表单列表信息
-   *
-   * @param request GetFormListInAppRequest
-   * @param headers GetFormListInAppHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetFormListInAppResponse
+   * 获取应用内表单列表信息
+   * 
+   * @param request - GetFormListInAppRequest
+   * @param headers - GetFormListInAppHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFormListInAppResponse
    */
   async getFormListInAppWithOptions(request: GetFormListInAppRequest, headers: GetFormListInAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormListInAppResponse> {
     Util.validateModel(request);
@@ -15995,10 +19849,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取应用内表单列表信息
-   *
-   * @param request GetFormListInAppRequest
-   * @return GetFormListInAppResponse
+   * 获取应用内表单列表信息
+   * 
+   * @param request - GetFormListInAppRequest
+   * @returns GetFormListInAppResponse
    */
   async getFormListInApp(request: GetFormListInAppRequest): Promise<GetFormListInAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16007,12 +19861,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据实例 ID 获取流程实例详情
-   *
-   * @param request GetInstanceByIdRequest
-   * @param headers GetInstanceByIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetInstanceByIdResponse
+   * 根据实例 ID 获取流程实例详情
+   * 
+   * @param request - GetInstanceByIdRequest
+   * @param headers - GetInstanceByIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetInstanceByIdResponse
    */
   async getInstanceByIdWithOptions(id: string, request: GetInstanceByIdRequest, headers: GetInstanceByIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetInstanceByIdResponse> {
     Util.validateModel(request);
@@ -16061,10 +19915,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据实例 ID 获取流程实例详情
-   *
-   * @param request GetInstanceByIdRequest
-   * @return GetInstanceByIdResponse
+   * 根据实例 ID 获取流程实例详情
+   * 
+   * @param request - GetInstanceByIdRequest
+   * @returns GetInstanceByIdResponse
    */
   async getInstanceById(id: string, request: GetInstanceByIdRequest): Promise<GetInstanceByIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16073,12 +19927,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据条件搜索流程实例 ID
-   *
-   * @param request GetInstanceIdListRequest
-   * @param headers GetInstanceIdListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetInstanceIdListResponse
+   * 根据条件搜索流程实例 ID
+   * 
+   * @param request - GetInstanceIdListRequest
+   * @param headers - GetInstanceIdListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetInstanceIdListResponse
    */
   async getInstanceIdListWithOptions(request: GetInstanceIdListRequest, headers: GetInstanceIdListHeaders, runtime: $Util.RuntimeOptions): Promise<GetInstanceIdListResponse> {
     Util.validateModel(request);
@@ -16177,10 +20031,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据条件搜索流程实例 ID
-   *
-   * @param request GetInstanceIdListRequest
-   * @return GetInstanceIdListResponse
+   * 根据条件搜索流程实例 ID
+   * 
+   * @param request - GetInstanceIdListRequest
+   * @returns GetInstanceIdListResponse
    */
   async getInstanceIdList(request: GetInstanceIdListRequest): Promise<GetInstanceIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16189,12 +20043,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据搜索条件获取流程表单实例详情
-   *
-   * @param request GetInstancesRequest
-   * @param headers GetInstancesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetInstancesResponse
+   * 根据搜索条件获取流程表单实例详情
+   * 
+   * @param request - GetInstancesRequest
+   * @param headers - GetInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetInstancesResponse
    */
   async getInstancesWithOptions(request: GetInstancesRequest, headers: GetInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<GetInstancesResponse> {
     Util.validateModel(request);
@@ -16297,10 +20151,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据搜索条件获取流程表单实例详情
-   *
-   * @param request GetInstancesRequest
-   * @return GetInstancesResponse
+   * 根据搜索条件获取流程表单实例详情
+   * 
+   * @param request - GetInstancesRequest
+   * @returns GetInstancesResponse
    */
   async getInstances(request: GetInstancesRequest): Promise<GetInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16309,12 +20163,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据实例 ID 列表批量获取流程实例详情
-   *
-   * @param request GetInstancesByIdListRequest
-   * @param headers GetInstancesByIdListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetInstancesByIdListResponse
+   * 根据实例 ID 列表批量获取流程实例详情
+   * 
+   * @param request - GetInstancesByIdListRequest
+   * @param headers - GetInstancesByIdListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetInstancesByIdListResponse
    */
   async getInstancesByIdListWithOptions(request: GetInstancesByIdListRequest, headers: GetInstancesByIdListHeaders, runtime: $Util.RuntimeOptions): Promise<GetInstancesByIdListResponse> {
     Util.validateModel(request);
@@ -16367,10 +20221,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据实例 ID 列表批量获取流程实例详情
-   *
-   * @param request GetInstancesByIdListRequest
-   * @return GetInstancesByIdListResponse
+   * 根据实例 ID 列表批量获取流程实例详情
+   * 
+   * @param request - GetInstancesByIdListRequest
+   * @returns GetInstancesByIdListResponse
    */
   async getInstancesByIdList(request: GetInstancesByIdListRequest): Promise<GetInstancesByIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16379,12 +20233,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询已提交任务列表
-   *
-   * @param request GetMeCorpSubmissionRequest
-   * @param headers GetMeCorpSubmissionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetMeCorpSubmissionResponse
+   * 查询已提交任务列表
+   * 
+   * @param request - GetMeCorpSubmissionRequest
+   * @param headers - GetMeCorpSubmissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetMeCorpSubmissionResponse
    */
   async getMeCorpSubmissionWithOptions(userId: string, request: GetMeCorpSubmissionRequest, headers: GetMeCorpSubmissionHeaders, runtime: $Util.RuntimeOptions): Promise<GetMeCorpSubmissionResponse> {
     Util.validateModel(request);
@@ -16457,10 +20311,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询已提交任务列表
-   *
-   * @param request GetMeCorpSubmissionRequest
-   * @return GetMeCorpSubmissionResponse
+   * 查询已提交任务列表
+   * 
+   * @param request - GetMeCorpSubmissionRequest
+   * @returns GetMeCorpSubmissionResponse
    */
   async getMeCorpSubmission(userId: string, request: GetMeCorpSubmissionRequest): Promise<GetMeCorpSubmissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16469,12 +20323,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询抄送我的任务列表（企业维度）
-   *
-   * @param request GetNotifyMeRequest
-   * @param headers GetNotifyMeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetNotifyMeResponse
+   * 查询抄送我的任务列表（企业维度）
+   * 
+   * @param request - GetNotifyMeRequest
+   * @param headers - GetNotifyMeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetNotifyMeResponse
    */
   async getNotifyMeWithOptions(userId: string, request: GetNotifyMeRequest, headers: GetNotifyMeHeaders, runtime: $Util.RuntimeOptions): Promise<GetNotifyMeResponse> {
     Util.validateModel(request);
@@ -16555,10 +20409,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询抄送我的任务列表（企业维度）
-   *
-   * @param request GetNotifyMeRequest
-   * @return GetNotifyMeResponse
+   * 查询抄送我的任务列表（企业维度）
+   * 
+   * @param request - GetNotifyMeRequest
+   * @returns GetNotifyMeResponse
    */
   async getNotifyMe(userId: string, request: GetNotifyMeRequest): Promise<GetNotifyMeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16567,12 +20421,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 附件地址转临时免登地址
-   *
-   * @param request GetOpenUrlRequest
-   * @param headers GetOpenUrlHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetOpenUrlResponse
+   * 附件地址转临时免登地址
+   * 
+   * @param request - GetOpenUrlRequest
+   * @param headers - GetOpenUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOpenUrlResponse
    */
   async getOpenUrlWithOptions(appType: string, request: GetOpenUrlRequest, headers: GetOpenUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetOpenUrlResponse> {
     Util.validateModel(request);
@@ -16625,10 +20479,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 附件地址转临时免登地址
-   *
-   * @param request GetOpenUrlRequest
-   * @return GetOpenUrlResponse
+   * 附件地址转临时免登地址
+   * 
+   * @param request - GetOpenUrlRequest
+   * @returns GetOpenUrlResponse
    */
   async getOpenUrl(appType: string, request: GetOpenUrlRequest): Promise<GetOpenUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16637,12 +20491,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取审批记录
-   *
-   * @param request GetOperationRecordsRequest
-   * @param headers GetOperationRecordsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetOperationRecordsResponse
+   * 获取审批记录
+   * 
+   * @param request - GetOperationRecordsRequest
+   * @param headers - GetOperationRecordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOperationRecordsResponse
    */
   async getOperationRecordsWithOptions(request: GetOperationRecordsRequest, headers: GetOperationRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<GetOperationRecordsResponse> {
     Util.validateModel(request);
@@ -16695,10 +20549,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取审批记录
-   *
-   * @param request GetOperationRecordsRequest
-   * @return GetOperationRecordsResponse
+   * 获取审批记录
+   * 
+   * @param request - GetOperationRecordsRequest
+   * @returns GetOperationRecordsResponse
    */
   async getOperationRecords(request: GetOperationRecordsRequest): Promise<GetOperationRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16707,12 +20561,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道平台概览接口
-   *
-   * @param request GetPlatformResourceRequest
-   * @param headers GetPlatformResourceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPlatformResourceResponse
+   * 多渠道平台概览接口
+   * 
+   * @param request - GetPlatformResourceRequest
+   * @param headers - GetPlatformResourceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPlatformResourceResponse
    */
   async getPlatformResourceWithOptions(request: GetPlatformResourceRequest, headers: GetPlatformResourceHeaders, runtime: $Util.RuntimeOptions): Promise<GetPlatformResourceResponse> {
     Util.validateModel(request);
@@ -16757,10 +20611,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道平台概览接口
-   *
-   * @param request GetPlatformResourceRequest
-   * @return GetPlatformResourceResponse
+   * 多渠道平台概览接口
+   * 
+   * @param request - GetPlatformResourceRequest
+   * @returns GetPlatformResourceResponse
    */
   async getPlatformResource(request: GetPlatformResourceRequest): Promise<GetPlatformResourceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16769,12 +20623,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户开通打印模板的应用信息
-   *
-   * @param request GetPrintAppInfoRequest
-   * @param headers GetPrintAppInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPrintAppInfoResponse
+   * 查询用户开通打印模板的应用信息
+   * 
+   * @param request - GetPrintAppInfoRequest
+   * @param headers - GetPrintAppInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPrintAppInfoResponse
    */
   async getPrintAppInfoWithOptions(request: GetPrintAppInfoRequest, headers: GetPrintAppInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPrintAppInfoResponse> {
     Util.validateModel(request);
@@ -16815,10 +20669,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询用户开通打印模板的应用信息
-   *
-   * @param request GetPrintAppInfoRequest
-   * @return GetPrintAppInfoResponse
+   * 查询用户开通打印模板的应用信息
+   * 
+   * @param request - GetPrintAppInfoRequest
+   * @returns GetPrintAppInfoResponse
    */
   async getPrintAppInfo(request: GetPrintAppInfoRequest): Promise<GetPrintAppInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16827,12 +20681,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取打印所需的表单与流程节点
-   *
-   * @param request GetPrintDictionaryRequest
-   * @param headers GetPrintDictionaryHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetPrintDictionaryResponse
+   * 获取打印所需的表单与流程节点
+   * 
+   * @param request - GetPrintDictionaryRequest
+   * @param headers - GetPrintDictionaryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPrintDictionaryResponse
    */
   async getPrintDictionaryWithOptions(request: GetPrintDictionaryRequest, headers: GetPrintDictionaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetPrintDictionaryResponse> {
     Util.validateModel(request);
@@ -16881,10 +20735,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取打印所需的表单与流程节点
-   *
-   * @param request GetPrintDictionaryRequest
-   * @return GetPrintDictionaryResponse
+   * 获取打印所需的表单与流程节点
+   * 
+   * @param request - GetPrintDictionaryRequest
+   * @returns GetPrintDictionaryResponse
    */
   async getPrintDictionary(request: GetPrintDictionaryRequest): Promise<GetPrintDictionaryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16893,12 +20747,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程定义
-   *
-   * @param request GetProcessDefinitionRequest
-   * @param headers GetProcessDefinitionHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetProcessDefinitionResponse
+   * 获取流程定义
+   * 
+   * @param request - GetProcessDefinitionRequest
+   * @param headers - GetProcessDefinitionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProcessDefinitionResponse
    */
   async getProcessDefinitionWithOptions(processInstanceId: string, request: GetProcessDefinitionRequest, headers: GetProcessDefinitionHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessDefinitionResponse> {
     Util.validateModel(request);
@@ -16967,10 +20821,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取流程定义
-   *
-   * @param request GetProcessDefinitionRequest
-   * @return GetProcessDefinitionResponse
+   * 获取流程定义
+   * 
+   * @param request - GetProcessDefinitionRequest
+   * @returns GetProcessDefinitionResponse
    */
   async getProcessDefinition(processInstanceId: string, request: GetProcessDefinitionRequest): Promise<GetProcessDefinitionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -16979,12 +20833,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过实例id批量获取待办任务
-   *
-   * @param request GetRunningTaskListRequest
-   * @param headers GetRunningTaskListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRunningTaskListResponse
+   * 通过实例id批量获取待办任务
+   * 
+   * @param request - GetRunningTaskListRequest
+   * @param headers - GetRunningTaskListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRunningTaskListResponse
    */
   async getRunningTaskListWithOptions(request: GetRunningTaskListRequest, headers: GetRunningTaskListHeaders, runtime: $Util.RuntimeOptions): Promise<GetRunningTaskListResponse> {
     Util.validateModel(request);
@@ -17037,10 +20891,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过实例id批量获取待办任务
-   *
-   * @param request GetRunningTaskListRequest
-   * @return GetRunningTaskListResponse
+   * 通过实例id批量获取待办任务
+   * 
+   * @param request - GetRunningTaskListRequest
+   * @returns GetRunningTaskListResponse
    */
   async getRunningTaskList(request: GetRunningTaskListRequest): Promise<GetRunningTaskListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17049,12 +20903,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询流程运行任务（vpc）
-   *
-   * @param request GetRunningTasksRequest
-   * @param headers GetRunningTasksHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetRunningTasksResponse
+   * 查询流程运行任务（vpc）
+   * 
+   * @param request - GetRunningTasksRequest
+   * @param headers - GetRunningTasksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRunningTasksResponse
    */
   async getRunningTasksWithOptions(request: GetRunningTasksRequest, headers: GetRunningTasksHeaders, runtime: $Util.RuntimeOptions): Promise<GetRunningTasksResponse> {
     Util.validateModel(request);
@@ -17107,10 +20961,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询流程运行任务（vpc）
-   *
-   * @param request GetRunningTasksRequest
-   * @return GetRunningTasksResponse
+   * 查询流程运行任务（vpc）
+   * 
+   * @param request - GetRunningTasksRequest
+   * @returns GetRunningTasksResponse
    */
   async getRunningTasks(request: GetRunningTasksRequest): Promise<GetRunningTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17119,12 +20973,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据用户employeeCode获取所在企业信息(包含售卖版本)
-   *
-   * @param request GetSaleUserInfoByUserIdRequest
-   * @param headers GetSaleUserInfoByUserIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSaleUserInfoByUserIdResponse
+   * 根据用户employeeCode获取所在企业信息(包含售卖版本)
+   * 
+   * @param request - GetSaleUserInfoByUserIdRequest
+   * @param headers - GetSaleUserInfoByUserIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSaleUserInfoByUserIdResponse
    */
   async getSaleUserInfoByUserIdWithOptions(request: GetSaleUserInfoByUserIdRequest, headers: GetSaleUserInfoByUserIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetSaleUserInfoByUserIdResponse> {
     Util.validateModel(request);
@@ -17169,10 +21023,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据用户employeeCode获取所在企业信息(包含售卖版本)
-   *
-   * @param request GetSaleUserInfoByUserIdRequest
-   * @return GetSaleUserInfoByUserIdResponse
+   * 根据用户employeeCode获取所在企业信息(包含售卖版本)
+   * 
+   * @param request - GetSaleUserInfoByUserIdRequest
+   * @returns GetSaleUserInfoByUserIdResponse
    */
   async getSaleUserInfoByUserId(request: GetSaleUserInfoByUserIdRequest): Promise<GetSaleUserInfoByUserIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17181,12 +21035,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 表单的元数据(字段)查询接口
-   *
-   * @param request GetSimpleCubeModelListRequest
-   * @param headers GetSimpleCubeModelListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetSimpleCubeModelListResponse
+   * 表单的元数据(字段)查询接口
+   * 
+   * @param request - GetSimpleCubeModelListRequest
+   * @param headers - GetSimpleCubeModelListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSimpleCubeModelListResponse
    */
   async getSimpleCubeModelListWithOptions(request: GetSimpleCubeModelListRequest, headers: GetSimpleCubeModelListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSimpleCubeModelListResponse> {
     Util.validateModel(request);
@@ -17243,10 +21097,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 表单的元数据(字段)查询接口
-   *
-   * @param request GetSimpleCubeModelListRequest
-   * @return GetSimpleCubeModelListResponse
+   * 表单的元数据(字段)查询接口
+   * 
+   * @param request - GetSimpleCubeModelListRequest
+   * @returns GetSimpleCubeModelListResponse
    */
   async getSimpleCubeModelList(request: GetSimpleCubeModelListRequest): Promise<GetSimpleCubeModelListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17255,12 +21109,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询抄送我的任务列表（应用维度）
-   *
-   * @param request GetTaskCopiesRequest
-   * @param headers GetTaskCopiesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return GetTaskCopiesResponse
+   * 查询抄送我的任务列表（应用维度）
+   * 
+   * @param request - GetTaskCopiesRequest
+   * @param headers - GetTaskCopiesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTaskCopiesResponse
    */
   async getTaskCopiesWithOptions(request: GetTaskCopiesRequest, headers: GetTaskCopiesHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskCopiesResponse> {
     Util.validateModel(request);
@@ -17333,10 +21187,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询抄送我的任务列表（应用维度）
-   *
-   * @param request GetTaskCopiesRequest
-   * @return GetTaskCopiesResponse
+   * 查询抄送我的任务列表（应用维度）
+   * 
+   * @param request - GetTaskCopiesRequest
+   * @returns GetTaskCopiesResponse
    */
   async getTaskCopies(request: GetTaskCopiesRequest): Promise<GetTaskCopiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17345,12 +21199,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织下的宜搭应用列表
-   *
-   * @param request ListApplicationRequest
-   * @param headers ListApplicationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListApplicationResponse
+   * 获取组织下的宜搭应用列表
+   * 
+   * @param request - ListApplicationRequest
+   * @param headers - ListApplicationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListApplicationResponse
    */
   async listApplicationWithOptions(request: ListApplicationRequest, headers: ListApplicationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationResponse> {
     Util.validateModel(request);
@@ -17411,10 +21265,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取组织下的宜搭应用列表
-   *
-   * @param request ListApplicationRequest
-   * @return ListApplicationResponse
+   * 获取组织下的宜搭应用列表
+   * 
+   * @param request - ListApplicationRequest
+   * @returns ListApplicationResponse
    */
   async listApplication(request: ListApplicationRequest): Promise<ListApplicationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17423,12 +21277,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道应用概览
-   *
-   * @param request ListApplicationAuthorizationServiceApplicationInformationRequest
-   * @param headers ListApplicationAuthorizationServiceApplicationInformationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListApplicationAuthorizationServiceApplicationInformationResponse
+   * 多渠道应用概览
+   * 
+   * @param request - ListApplicationAuthorizationServiceApplicationInformationRequest
+   * @param headers - ListApplicationAuthorizationServiceApplicationInformationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListApplicationAuthorizationServiceApplicationInformationResponse
    */
   async listApplicationAuthorizationServiceApplicationInformationWithOptions(instanceId: string, request: ListApplicationAuthorizationServiceApplicationInformationRequest, headers: ListApplicationAuthorizationServiceApplicationInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationAuthorizationServiceApplicationInformationResponse> {
     Util.validateModel(request);
@@ -17477,10 +21331,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道应用概览
-   *
-   * @param request ListApplicationAuthorizationServiceApplicationInformationRequest
-   * @return ListApplicationAuthorizationServiceApplicationInformationResponse
+   * 多渠道应用概览
+   * 
+   * @param request - ListApplicationAuthorizationServiceApplicationInformationRequest
+   * @returns ListApplicationAuthorizationServiceApplicationInformationResponse
    */
   async listApplicationAuthorizationServiceApplicationInformation(instanceId: string, request: ListApplicationAuthorizationServiceApplicationInformationRequest): Promise<ListApplicationAuthorizationServiceApplicationInformationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17489,12 +21343,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道插件概览
-   *
-   * @param request ListApplicationAuthorizationServiceConnectorInformationRequest
-   * @param headers ListApplicationAuthorizationServiceConnectorInformationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListApplicationAuthorizationServiceConnectorInformationResponse
+   * 多渠道插件概览
+   * 
+   * @param request - ListApplicationAuthorizationServiceConnectorInformationRequest
+   * @param headers - ListApplicationAuthorizationServiceConnectorInformationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListApplicationAuthorizationServiceConnectorInformationResponse
    */
   async listApplicationAuthorizationServiceConnectorInformationWithOptions(instanceId: string, request: ListApplicationAuthorizationServiceConnectorInformationRequest, headers: ListApplicationAuthorizationServiceConnectorInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationAuthorizationServiceConnectorInformationResponse> {
     Util.validateModel(request);
@@ -17543,10 +21397,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道插件概览
-   *
-   * @param request ListApplicationAuthorizationServiceConnectorInformationRequest
-   * @return ListApplicationAuthorizationServiceConnectorInformationResponse
+   * 多渠道插件概览
+   * 
+   * @param request - ListApplicationAuthorizationServiceConnectorInformationRequest
+   * @returns ListApplicationAuthorizationServiceConnectorInformationResponse
    */
   async listApplicationAuthorizationServiceConnectorInformation(instanceId: string, request: ListApplicationAuthorizationServiceConnectorInformationRequest): Promise<ListApplicationAuthorizationServiceConnectorInformationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17555,12 +21409,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道应用概览
-   *
-   * @param request ListApplicationInformationRequest
-   * @param headers ListApplicationInformationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListApplicationInformationResponse
+   * 多渠道应用概览
+   * 
+   * @param request - ListApplicationInformationRequest
+   * @param headers - ListApplicationInformationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListApplicationInformationResponse
    */
   async listApplicationInformationWithOptions(instanceId: string, request: ListApplicationInformationRequest, headers: ListApplicationInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationInformationResponse> {
     Util.validateModel(request);
@@ -17609,10 +21463,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道应用概览
-   *
-   * @param request ListApplicationInformationRequest
-   * @return ListApplicationInformationResponse
+   * 多渠道应用概览
+   * 
+   * @param request - ListApplicationInformationRequest
+   * @returns ListApplicationInformationResponse
    */
   async listApplicationInformation(instanceId: string, request: ListApplicationInformationRequest): Promise<ListApplicationInformationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17621,12 +21475,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道列出商品列表
-   *
-   * @param request ListCommodityRequest
-   * @param headers ListCommodityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListCommodityResponse
+   * 多渠道列出商品列表
+   * 
+   * @param request - ListCommodityRequest
+   * @param headers - ListCommodityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListCommodityResponse
    */
   async listCommodityWithOptions(request: ListCommodityRequest, headers: ListCommodityHeaders, runtime: $Util.RuntimeOptions): Promise<ListCommodityResponse> {
     Util.validateModel(request);
@@ -17675,10 +21529,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道列出商品列表
-   *
-   * @param request ListCommodityRequest
-   * @return ListCommodityResponse
+   * 多渠道列出商品列表
+   * 
+   * @param request - ListCommodityRequest
+   * @returns ListCommodityResponse
    */
   async listCommodity(request: ListCommodityRequest): Promise<ListCommodityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17687,12 +21541,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道插件概览
-   *
-   * @param request ListConnectorInformationRequest
-   * @param headers ListConnectorInformationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListConnectorInformationResponse
+   * 多渠道插件概览
+   * 
+   * @param request - ListConnectorInformationRequest
+   * @param headers - ListConnectorInformationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListConnectorInformationResponse
    */
   async listConnectorInformationWithOptions(instanceId: string, request: ListConnectorInformationRequest, headers: ListConnectorInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListConnectorInformationResponse> {
     Util.validateModel(request);
@@ -17741,10 +21595,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道插件概览
-   *
-   * @param request ListConnectorInformationRequest
-   * @return ListConnectorInformationResponse
+   * 多渠道插件概览
+   * 
+   * @param request - ListConnectorInformationRequest
+   * @returns ListConnectorInformationResponse
    */
   async listConnectorInformation(instanceId: string, request: ListConnectorInformationRequest): Promise<ListConnectorInformationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17753,12 +21607,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询表单实例评论列表
-   *
-   * @param request ListFormRemarksRequest
-   * @param headers ListFormRemarksHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListFormRemarksResponse
+   * 查询表单实例评论列表
+   * 
+   * @param request - ListFormRemarksRequest
+   * @param headers - ListFormRemarksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListFormRemarksResponse
    */
   async listFormRemarksWithOptions(request: ListFormRemarksRequest, headers: ListFormRemarksHeaders, runtime: $Util.RuntimeOptions): Promise<ListFormRemarksResponse> {
     Util.validateModel(request);
@@ -17811,10 +21665,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询表单实例评论列表
-   *
-   * @param request ListFormRemarksRequest
-   * @return ListFormRemarksResponse
+   * 查询表单实例评论列表
+   * 
+   * @param request - ListFormRemarksRequest
+   * @returns ListFormRemarksResponse
    */
   async listFormRemarks(request: ListFormRemarksRequest): Promise<ListFormRemarksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17823,12 +21677,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取应用下的页面列表
-   *
-   * @param request ListNavigationByFormTypeRequest
-   * @param headers ListNavigationByFormTypeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListNavigationByFormTypeResponse
+   * 获取应用下的页面列表
+   * 
+   * @param request - ListNavigationByFormTypeRequest
+   * @param headers - ListNavigationByFormTypeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListNavigationByFormTypeResponse
    */
   async listNavigationByFormTypeWithOptions(request: ListNavigationByFormTypeRequest, headers: ListNavigationByFormTypeHeaders, runtime: $Util.RuntimeOptions): Promise<ListNavigationByFormTypeResponse> {
     Util.validateModel(request);
@@ -17881,10 +21735,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取应用下的页面列表
-   *
-   * @param request ListNavigationByFormTypeRequest
-   * @return ListNavigationByFormTypeResponse
+   * 获取应用下的页面列表
+   * 
+   * @param request - ListNavigationByFormTypeRequest
+   * @returns ListNavigationByFormTypeResponse
    */
   async listNavigationByFormType(request: ListNavigationByFormTypeRequest): Promise<ListNavigationByFormTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17893,12 +21747,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询表单的变更记录
-   *
-   * @param request ListOperationLogsRequest
-   * @param headers ListOperationLogsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListOperationLogsResponse
+   * 查询表单的变更记录
+   * 
+   * @param request - ListOperationLogsRequest
+   * @param headers - ListOperationLogsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListOperationLogsResponse
    */
   async listOperationLogsWithOptions(request: ListOperationLogsRequest, headers: ListOperationLogsHeaders, runtime: $Util.RuntimeOptions): Promise<ListOperationLogsResponse> {
     Util.validateModel(request);
@@ -17951,10 +21805,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询表单的变更记录
-   *
-   * @param request ListOperationLogsRequest
-   * @return ListOperationLogsResponse
+   * 查询表单的变更记录
+   * 
+   * @param request - ListOperationLogsRequest
+   * @returns ListOperationLogsResponse
    */
   async listOperationLogs(request: ListOperationLogsRequest): Promise<ListOperationLogsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -17963,12 +21817,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取子表单数据
-   *
-   * @param request ListTableDataByFormInstanceIdTableIdRequest
-   * @param headers ListTableDataByFormInstanceIdTableIdHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ListTableDataByFormInstanceIdTableIdResponse
+   * 获取子表单数据
+   * 
+   * @param request - ListTableDataByFormInstanceIdTableIdRequest
+   * @param headers - ListTableDataByFormInstanceIdTableIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListTableDataByFormInstanceIdTableIdResponse
    */
   async listTableDataByFormInstanceIdTableIdWithOptions(formInstanceId: string, request: ListTableDataByFormInstanceIdTableIdRequest, headers: ListTableDataByFormInstanceIdTableIdHeaders, runtime: $Util.RuntimeOptions): Promise<ListTableDataByFormInstanceIdTableIdResponse> {
     Util.validateModel(request);
@@ -18029,10 +21883,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取子表单数据
-   *
-   * @param request ListTableDataByFormInstanceIdTableIdRequest
-   * @return ListTableDataByFormInstanceIdTableIdResponse
+   * 获取子表单数据
+   * 
+   * @param request - ListTableDataByFormInstanceIdTableIdRequest
+   * @returns ListTableDataByFormInstanceIdTableIdResponse
    */
   async listTableDataByFormInstanceIdTableId(formInstanceId: string, request: ListTableDataByFormInstanceIdTableIdRequest): Promise<ListTableDataByFormInstanceIdTableIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18041,12 +21895,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生成宜搭登录态穿透用的code
-   *
-   * @param request LoginCodeGenRequest
-   * @param headers LoginCodeGenHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return LoginCodeGenResponse
+   * 生成宜搭登录态穿透用的code
+   * 
+   * @param request - LoginCodeGenRequest
+   * @param headers - LoginCodeGenHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns LoginCodeGenResponse
    */
   async loginCodeGenWithOptions(request: LoginCodeGenRequest, headers: LoginCodeGenHeaders, runtime: $Util.RuntimeOptions): Promise<LoginCodeGenResponse> {
     Util.validateModel(request);
@@ -18083,10 +21937,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 生成宜搭登录态穿透用的code
-   *
-   * @param request LoginCodeGenRequest
-   * @return LoginCodeGenResponse
+   * 生成宜搭登录态穿透用的code
+   * 
+   * @param request - LoginCodeGenRequest
+   * @returns LoginCodeGenResponse
    */
   async loginCodeGen(request: LoginCodeGenRequest): Promise<LoginCodeGenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18095,12 +21949,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通知宜搭授权(购买)结果
-   *
-   * @param request NotifyAuthorizationResultRequest
-   * @param headers NotifyAuthorizationResultHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return NotifyAuthorizationResultResponse
+   * 通知宜搭授权(购买)结果
+   * 
+   * @param request - NotifyAuthorizationResultRequest
+   * @param headers - NotifyAuthorizationResultHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns NotifyAuthorizationResultResponse
    */
   async notifyAuthorizationResultWithOptions(request: NotifyAuthorizationResultRequest, headers: NotifyAuthorizationResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyAuthorizationResultResponse> {
     Util.validateModel(request);
@@ -18177,10 +22031,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通知宜搭授权(购买)结果
-   *
-   * @param request NotifyAuthorizationResultRequest
-   * @return NotifyAuthorizationResultResponse
+   * 通知宜搭授权(购买)结果
+   * 
+   * @param request - NotifyAuthorizationResultRequest
+   * @returns NotifyAuthorizationResultResponse
    */
   async notifyAuthorizationResult(request: NotifyAuthorizationResultRequest): Promise<NotifyAuthorizationResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18189,12 +22043,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询宜搭流程自动化运行记录
-   *
-   * @param request PageAutoFlowLogRequest
-   * @param headers PageAutoFlowLogHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PageAutoFlowLogResponse
+   * 分页查询宜搭流程自动化运行记录
+   * 
+   * @param request - PageAutoFlowLogRequest
+   * @param headers - PageAutoFlowLogHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PageAutoFlowLogResponse
    */
   async pageAutoFlowLogWithOptions(request: PageAutoFlowLogRequest, headers: PageAutoFlowLogHeaders, runtime: $Util.RuntimeOptions): Promise<PageAutoFlowLogResponse> {
     Util.validateModel(request);
@@ -18271,10 +22125,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页查询宜搭流程自动化运行记录
-   *
-   * @param request PageAutoFlowLogRequest
-   * @return PageAutoFlowLogResponse
+   * 分页查询宜搭流程自动化运行记录
+   * 
+   * @param request - PageAutoFlowLogRequest
+   * @returns PageAutoFlowLogResponse
    */
   async pageAutoFlowLog(request: PageAutoFlowLogRequest): Promise<PageAutoFlowLogResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18283,12 +22137,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取应用下表单列表
-   *
-   * @param request PageFormBaseInfosRequest
-   * @param headers PageFormBaseInfosHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PageFormBaseInfosResponse
+   * 分页获取应用下表单列表
+   * 
+   * @param request - PageFormBaseInfosRequest
+   * @param headers - PageFormBaseInfosHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PageFormBaseInfosResponse
    */
   async pageFormBaseInfosWithOptions(request: PageFormBaseInfosRequest, headers: PageFormBaseInfosHeaders, runtime: $Util.RuntimeOptions): Promise<PageFormBaseInfosResponse> {
     Util.validateModel(request);
@@ -18349,10 +22203,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 分页获取应用下表单列表
-   *
-   * @param request PageFormBaseInfosRequest
-   * @return PageFormBaseInfosResponse
+   * 分页获取应用下表单列表
+   * 
+   * @param request - PageFormBaseInfosRequest
+   * @returns PageFormBaseInfosResponse
    */
   async pageFormBaseInfos(request: PageFormBaseInfosRequest): Promise<PageFormBaseInfosResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18361,12 +22215,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 预览审批流程
-   *
-   * @param request PreviewPublishedProcessRequest
-   * @param headers PreviewPublishedProcessHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return PreviewPublishedProcessResponse
+   * 预览审批流程
+   * 
+   * @param request - PreviewPublishedProcessRequest
+   * @param headers - PreviewPublishedProcessHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PreviewPublishedProcessResponse
    */
   async previewPublishedProcessWithOptions(request: PreviewPublishedProcessRequest, headers: PreviewPublishedProcessHeaders, runtime: $Util.RuntimeOptions): Promise<PreviewPublishedProcessResponse> {
     Util.validateModel(request);
@@ -18431,10 +22285,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 预览审批流程
-   *
-   * @param request PreviewPublishedProcessRequest
-   * @return PreviewPublishedProcessResponse
+   * 预览审批流程
+   * 
+   * @param request - PreviewPublishedProcessRequest
+   * @returns PreviewPublishedProcessResponse
    */
   async previewPublishedProcess(request: PreviewPublishedProcessRequest): Promise<PreviewPublishedProcessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18443,12 +22297,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询服务调用记录
-   *
-   * @param request QueryServiceRecordRequest
-   * @param headers QueryServiceRecordHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return QueryServiceRecordResponse
+   * 查询服务调用记录
+   * 
+   * @param request - QueryServiceRecordRequest
+   * @param headers - QueryServiceRecordHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryServiceRecordResponse
    */
   async queryServiceRecordWithOptions(request: QueryServiceRecordRequest, headers: QueryServiceRecordHeaders, runtime: $Util.RuntimeOptions): Promise<QueryServiceRecordResponse> {
     Util.validateModel(request);
@@ -18541,10 +22395,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询服务调用记录
-   *
-   * @param request QueryServiceRecordRequest
-   * @return QueryServiceRecordResponse
+   * 查询服务调用记录
+   * 
+   * @param request - QueryServiceRecordRequest
+   * @returns QueryServiceRecordResponse
    */
   async queryServiceRecord(request: QueryServiceRecordRequest): Promise<QueryServiceRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18553,12 +22407,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行转交任务
-   *
-   * @param request RedirectTaskRequest
-   * @param headers RedirectTaskHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RedirectTaskResponse
+   * 执行转交任务
+   * 
+   * @param request - RedirectTaskRequest
+   * @param headers - RedirectTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RedirectTaskResponse
    */
   async redirectTaskWithOptions(request: RedirectTaskRequest, headers: RedirectTaskHeaders, runtime: $Util.RuntimeOptions): Promise<RedirectTaskResponse> {
     Util.validateModel(request);
@@ -18627,10 +22481,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 执行转交任务
-   *
-   * @param request RedirectTaskRequest
-   * @return RedirectTaskResponse
+   * 执行转交任务
+   * 
+   * @param request - RedirectTaskRequest
+   * @returns RedirectTaskResponse
    */
   async redirectTask(request: RedirectTaskRequest): Promise<RedirectTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18639,12 +22493,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道退款
-   *
-   * @param request RefundCommodityRequest
-   * @param headers RefundCommodityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RefundCommodityResponse
+   * 多渠道退款
+   * 
+   * @param request - RefundCommodityRequest
+   * @param headers - RefundCommodityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RefundCommodityResponse
    */
   async refundCommodityWithOptions(request: RefundCommodityRequest, headers: RefundCommodityHeaders, runtime: $Util.RuntimeOptions): Promise<RefundCommodityResponse> {
     Util.validateModel(request);
@@ -18689,10 +22543,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道退款
-   *
-   * @param request RefundCommodityRequest
-   * @return RefundCommodityResponse
+   * 多渠道退款
+   * 
+   * @param request - RefundCommodityRequest
+   * @returns RefundCommodityResponse
    */
   async refundCommodity(request: RefundCommodityRequest): Promise<RefundCommodityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18701,12 +22555,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道注册
-   *
-   * @param request RegisterAccountsRequest
-   * @param headers RegisterAccountsHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RegisterAccountsResponse
+   * 多渠道注册
+   * 
+   * @param request - RegisterAccountsRequest
+   * @param headers - RegisterAccountsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RegisterAccountsResponse
    */
   async registerAccountsWithOptions(request: RegisterAccountsRequest, headers: RegisterAccountsHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterAccountsResponse> {
     Util.validateModel(request);
@@ -18751,10 +22605,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道注册
-   *
-   * @param request RegisterAccountsRequest
-   * @return RegisterAccountsResponse
+   * 多渠道注册
+   * 
+   * @param request - RegisterAccountsRequest
+   * @returns RegisterAccountsResponse
    */
   async registerAccounts(request: RegisterAccountsRequest): Promise<RegisterAccountsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18763,12 +22617,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道释放
-   *
-   * @param request ReleaseCommodityRequest
-   * @param headers ReleaseCommodityHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ReleaseCommodityResponse
+   * 多渠道释放
+   * 
+   * @param request - ReleaseCommodityRequest
+   * @param headers - ReleaseCommodityHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ReleaseCommodityResponse
    */
   async releaseCommodityWithOptions(request: ReleaseCommodityRequest, headers: ReleaseCommodityHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseCommodityResponse> {
     Util.validateModel(request);
@@ -18813,10 +22667,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道释放
-   *
-   * @param request ReleaseCommodityRequest
-   * @return ReleaseCommodityResponse
+   * 多渠道释放
+   * 
+   * @param request - ReleaseCommodityRequest
+   * @returns ReleaseCommodityResponse
    */
   async releaseCommodity(request: ReleaseCommodityRequest): Promise<ReleaseCommodityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18825,12 +22679,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 租户到期30天后, 删除租户关联的资源
-   *
-   * @param request RemoveTenantResourceRequest
-   * @param headers RemoveTenantResourceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RemoveTenantResourceResponse
+   * 租户到期30天后, 删除租户关联的资源
+   * 
+   * @param request - RemoveTenantResourceRequest
+   * @param headers - RemoveTenantResourceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RemoveTenantResourceResponse
    */
   async removeTenantResourceWithOptions(callerUid: string, request: RemoveTenantResourceRequest, headers: RemoveTenantResourceHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveTenantResourceResponse> {
     Util.validateModel(request);
@@ -18867,10 +22721,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 租户到期30天后, 删除租户关联的资源
-   *
-   * @param request RemoveTenantResourceRequest
-   * @return RemoveTenantResourceResponse
+   * 租户到期30天后, 删除租户关联的资源
+   * 
+   * @param request - RemoveTenantResourceRequest
+   * @returns RemoveTenantResourceResponse
    */
   async removeTenantResource(callerUid: string, request: RemoveTenantResourceRequest): Promise<RemoveTenantResourceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18879,12 +22733,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 宜搭vpc批量打印回调
-   *
-   * @param request RenderBatchCallbackRequest
-   * @param headers RenderBatchCallbackHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RenderBatchCallbackResponse
+   * 宜搭vpc批量打印回调
+   * 
+   * @param request - RenderBatchCallbackRequest
+   * @param headers - RenderBatchCallbackHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RenderBatchCallbackResponse
    */
   async renderBatchCallbackWithOptions(request: RenderBatchCallbackRequest, headers: RenderBatchCallbackHeaders, runtime: $Util.RuntimeOptions): Promise<RenderBatchCallbackResponse> {
     Util.validateModel(request);
@@ -18965,10 +22819,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 宜搭vpc批量打印回调
-   *
-   * @param request RenderBatchCallbackRequest
-   * @return RenderBatchCallbackResponse
+   * 宜搭vpc批量打印回调
+   * 
+   * @param request - RenderBatchCallbackRequest
+   * @returns RenderBatchCallbackResponse
    */
   async renderBatchCallback(request: RenderBatchCallbackRequest): Promise<RenderBatchCallbackResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -18977,12 +22831,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道续费
-   *
-   * @param request RenewApplicationAuthorizationServiceOrderRequest
-   * @param headers RenewApplicationAuthorizationServiceOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RenewApplicationAuthorizationServiceOrderResponse
+   * 多渠道续费
+   * 
+   * @param request - RenewApplicationAuthorizationServiceOrderRequest
+   * @param headers - RenewApplicationAuthorizationServiceOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RenewApplicationAuthorizationServiceOrderResponse
    */
   async renewApplicationAuthorizationServiceOrderWithOptions(request: RenewApplicationAuthorizationServiceOrderRequest, headers: RenewApplicationAuthorizationServiceOrderHeaders, runtime: $Util.RuntimeOptions): Promise<RenewApplicationAuthorizationServiceOrderResponse> {
     Util.validateModel(request);
@@ -19031,10 +22885,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道续费
-   *
-   * @param request RenewApplicationAuthorizationServiceOrderRequest
-   * @return RenewApplicationAuthorizationServiceOrderResponse
+   * 多渠道续费
+   * 
+   * @param request - RenewApplicationAuthorizationServiceOrderRequest
+   * @returns RenewApplicationAuthorizationServiceOrderResponse
    */
   async renewApplicationAuthorizationServiceOrder(request: RenewApplicationAuthorizationServiceOrderRequest): Promise<RenewApplicationAuthorizationServiceOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -19043,12 +22897,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 续费租户
-   *
-   * @param request RenewTenantOrderRequest
-   * @param headers RenewTenantOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return RenewTenantOrderResponse
+   * 续费租户
+   * 
+   * @param request - RenewTenantOrderRequest
+   * @param headers - RenewTenantOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RenewTenantOrderResponse
    */
   async renewTenantOrderWithOptions(request: RenewTenantOrderRequest, headers: RenewTenantOrderHeaders, runtime: $Util.RuntimeOptions): Promise<RenewTenantOrderResponse> {
     Util.validateModel(request);
@@ -19093,10 +22947,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 续费租户
-   *
-   * @param request RenewTenantOrderRequest
-   * @return RenewTenantOrderResponse
+   * 续费租户
+   * 
+   * @param request - RenewTenantOrderRequest
+   * @returns RenewTenantOrderResponse
    */
   async renewTenantOrder(request: RenewTenantOrderRequest): Promise<RenewTenantOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -19105,12 +22959,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增表单实例
-   *
-   * @param request SaveFormDataRequest
-   * @param headers SaveFormDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SaveFormDataResponse
+   * 新增表单实例
+   * 
+   * @param request - SaveFormDataRequest
+   * @param headers - SaveFormDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SaveFormDataResponse
    */
   async saveFormDataWithOptions(request: SaveFormDataRequest, headers: SaveFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<SaveFormDataResponse> {
     Util.validateModel(request);
@@ -19167,10 +23021,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 新增表单实例
-   *
-   * @param request SaveFormDataRequest
-   * @return SaveFormDataResponse
+   * 新增表单实例
+   * 
+   * @param request - SaveFormDataRequest
+   * @returns SaveFormDataResponse
    */
   async saveFormData(request: SaveFormDataRequest): Promise<SaveFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -19179,12 +23033,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 提交表单/流程实例下的评论
-   *
-   * @param request SaveFormRemarkRequest
-   * @param headers SaveFormRemarkHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SaveFormRemarkResponse
+   * 提交表单/流程实例下的评论
+   * 
+   * @param request - SaveFormRemarkRequest
+   * @param headers - SaveFormRemarkHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SaveFormRemarkResponse
    */
   async saveFormRemarkWithOptions(request: SaveFormRemarkRequest, headers: SaveFormRemarkHeaders, runtime: $Util.RuntimeOptions): Promise<SaveFormRemarkResponse> {
     Util.validateModel(request);
@@ -19249,10 +23103,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 提交表单/流程实例下的评论
-   *
-   * @param request SaveFormRemarkRequest
-   * @return SaveFormRemarkResponse
+   * 提交表单/流程实例下的评论
+   * 
+   * @param request - SaveFormRemarkRequest
+   * @returns SaveFormRemarkResponse
    */
   async saveFormRemark(request: SaveFormRemarkRequest): Promise<SaveFormRemarkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -19261,12 +23115,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 保存用户设计的模板结构
-   *
-   * @param request SavePrintTplDetailInfoRequest
-   * @param headers SavePrintTplDetailInfoHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SavePrintTplDetailInfoResponse
+   * 保存用户设计的模板结构
+   * 
+   * @param request - SavePrintTplDetailInfoRequest
+   * @param headers - SavePrintTplDetailInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SavePrintTplDetailInfoResponse
    */
   async savePrintTplDetailInfoWithOptions(request: SavePrintTplDetailInfoRequest, headers: SavePrintTplDetailInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SavePrintTplDetailInfoResponse> {
     Util.validateModel(request);
@@ -19339,10 +23193,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 保存用户设计的模板结构
-   *
-   * @param request SavePrintTplDetailInfoRequest
-   * @return SavePrintTplDetailInfoResponse
+   * 保存用户设计的模板结构
+   * 
+   * @param request - SavePrintTplDetailInfoRequest
+   * @returns SavePrintTplDetailInfoResponse
    */
   async savePrintTplDetailInfo(request: SavePrintTplDetailInfoRequest): Promise<SavePrintTplDetailInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -19351,12 +23205,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取阿里云账号购买宜搭的账号信息
-   *
-   * @param request SearchActivationCodeRequest
-   * @param headers SearchActivationCodeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchActivationCodeResponse
+   * 获取阿里云账号购买宜搭的账号信息
+   * 
+   * @param request - SearchActivationCodeRequest
+   * @param headers - SearchActivationCodeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchActivationCodeResponse
    */
   async searchActivationCodeWithOptions(request: SearchActivationCodeRequest, headers: SearchActivationCodeHeaders, runtime: $Util.RuntimeOptions): Promise<SearchActivationCodeResponse> {
     Util.validateModel(request);
@@ -19397,10 +23251,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 获取阿里云账号购买宜搭的账号信息
-   *
-   * @param request SearchActivationCodeRequest
-   * @return SearchActivationCodeResponse
+   * 获取阿里云账号购买宜搭的账号信息
+   * 
+   * @param request - SearchActivationCodeRequest
+   * @returns SearchActivationCodeResponse
    */
   async searchActivationCode(request: SearchActivationCodeRequest): Promise<SearchActivationCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -19409,12 +23263,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索表单中指定人员组件的值
-   *
-   * @param request SearchEmployeeFieldValuesRequest
-   * @param headers SearchEmployeeFieldValuesHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchEmployeeFieldValuesResponse
+   * 搜索表单中指定人员组件的值
+   * 
+   * @param request - SearchEmployeeFieldValuesRequest
+   * @param headers - SearchEmployeeFieldValuesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchEmployeeFieldValuesResponse
    */
   async searchEmployeeFieldValuesWithOptions(request: SearchEmployeeFieldValuesRequest, headers: SearchEmployeeFieldValuesHeaders, runtime: $Util.RuntimeOptions): Promise<SearchEmployeeFieldValuesResponse> {
     Util.validateModel(request);
@@ -19495,10 +23349,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 搜索表单中指定人员组件的值
-   *
-   * @param request SearchEmployeeFieldValuesRequest
-   * @return SearchEmployeeFieldValuesResponse
+   * 搜索表单中指定人员组件的值
+   * 
+   * @param request - SearchEmployeeFieldValuesRequest
+   * @returns SearchEmployeeFieldValuesResponse
    */
   async searchEmployeeFieldValues(request: SearchEmployeeFieldValuesRequest): Promise<SearchEmployeeFieldValuesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -19507,12 +23361,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据条件搜索表单实例 ID 列表
-   *
-   * @param request SearchFormDataIdListRequest
-   * @param headers SearchFormDataIdListHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchFormDataIdListResponse
+   * 根据条件搜索表单实例 ID 列表
+   * 
+   * @param request - SearchFormDataIdListRequest
+   * @param headers - SearchFormDataIdListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchFormDataIdListResponse
    */
   async searchFormDataIdListWithOptions(appType: string, formUuid: string, request: SearchFormDataIdListRequest, headers: SearchFormDataIdListHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataIdListResponse> {
     Util.validateModel(request);
@@ -19591,10 +23445,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据条件搜索表单实例 ID 列表
-   *
-   * @param request SearchFormDataIdListRequest
-   * @return SearchFormDataIdListResponse
+   * 根据条件搜索表单实例 ID 列表
+   * 
+   * @param request - SearchFormDataIdListRequest
+   * @returns SearchFormDataIdListResponse
    */
   async searchFormDataIdList(appType: string, formUuid: string, request: SearchFormDataIdListRequest): Promise<SearchFormDataIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -19603,12 +23457,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询表单实例数据(不返回表单的子表单组件数据)
-   *
-   * @param request SearchFormDataRemovalTableDataRequest
-   * @param headers SearchFormDataRemovalTableDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchFormDataRemovalTableDataResponse
+   * 查询表单实例数据(不返回表单的子表单组件数据)
+   * 
+   * @param request - SearchFormDataRemovalTableDataRequest
+   * @param headers - SearchFormDataRemovalTableDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchFormDataRemovalTableDataResponse
    */
   async searchFormDataRemovalTableDataWithOptions(request: SearchFormDataRemovalTableDataRequest, headers: SearchFormDataRemovalTableDataHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataRemovalTableDataResponse> {
     Util.validateModel(request);
@@ -19693,10 +23547,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 查询表单实例数据(不返回表单的子表单组件数据)
-   *
-   * @param request SearchFormDataRemovalTableDataRequest
-   * @return SearchFormDataRemovalTableDataResponse
+   * 查询表单实例数据(不返回表单的子表单组件数据)
+   * 
+   * @param request - SearchFormDataRemovalTableDataRequest
+   * @returns SearchFormDataRemovalTableDataResponse
    */
   async searchFormDataRemovalTableData(request: SearchFormDataRemovalTableDataRequest): Promise<SearchFormDataRemovalTableDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -19705,12 +23559,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过高级检索条件查询表单实例
-   *
-   * @param request SearchFormDataSecondGenerationRequest
-   * @param headers SearchFormDataSecondGenerationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchFormDataSecondGenerationResponse
+   * 通过高级检索条件查询表单实例
+   * 
+   * @param request - SearchFormDataSecondGenerationRequest
+   * @param headers - SearchFormDataSecondGenerationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchFormDataSecondGenerationResponse
    */
   async searchFormDataSecondGenerationWithOptions(request: SearchFormDataSecondGenerationRequest, headers: SearchFormDataSecondGenerationHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataSecondGenerationResponse> {
     Util.validateModel(request);
@@ -19795,10 +23649,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过高级检索条件查询表单实例
-   *
-   * @param request SearchFormDataSecondGenerationRequest
-   * @return SearchFormDataSecondGenerationResponse
+   * 通过高级检索条件查询表单实例
+   * 
+   * @param request - SearchFormDataSecondGenerationRequest
+   * @returns SearchFormDataSecondGenerationResponse
    */
   async searchFormDataSecondGeneration(request: SearchFormDataSecondGenerationRequest): Promise<SearchFormDataSecondGenerationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -19807,12 +23661,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过高级查询条件查询表单实例数据(不返回子表单组件数据)
-   *
-   * @param request SearchFormDataSecondGenerationNoTableFieldRequest
-   * @param headers SearchFormDataSecondGenerationNoTableFieldHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchFormDataSecondGenerationNoTableFieldResponse
+   * 通过高级查询条件查询表单实例数据(不返回子表单组件数据)
+   * 
+   * @param request - SearchFormDataSecondGenerationNoTableFieldRequest
+   * @param headers - SearchFormDataSecondGenerationNoTableFieldHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchFormDataSecondGenerationNoTableFieldResponse
    */
   async searchFormDataSecondGenerationNoTableFieldWithOptions(request: SearchFormDataSecondGenerationNoTableFieldRequest, headers: SearchFormDataSecondGenerationNoTableFieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataSecondGenerationNoTableFieldResponse> {
     Util.validateModel(request);
@@ -19897,10 +23751,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 通过高级查询条件查询表单实例数据(不返回子表单组件数据)
-   *
-   * @param request SearchFormDataSecondGenerationNoTableFieldRequest
-   * @return SearchFormDataSecondGenerationNoTableFieldResponse
+   * 通过高级查询条件查询表单实例数据(不返回子表单组件数据)
+   * 
+   * @param request - SearchFormDataSecondGenerationNoTableFieldRequest
+   * @returns SearchFormDataSecondGenerationNoTableFieldResponse
    */
   async searchFormDataSecondGenerationNoTableField(request: SearchFormDataSecondGenerationNoTableFieldRequest): Promise<SearchFormDataSecondGenerationNoTableFieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -19909,12 +23763,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据条件搜索表单实例详情列表,对应原searchFormDatas
-   *
-   * @param request SearchFormDatasRequest
-   * @param headers SearchFormDatasHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return SearchFormDatasResponse
+   * 根据条件搜索表单实例详情列表,对应原searchFormDatas
+   * 
+   * @param request - SearchFormDatasRequest
+   * @param headers - SearchFormDatasHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SearchFormDatasResponse
    */
   async searchFormDatasWithOptions(request: SearchFormDatasRequest, headers: SearchFormDatasHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDatasResponse> {
     Util.validateModel(request);
@@ -20003,10 +23857,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 根据条件搜索表单实例详情列表,对应原searchFormDatas
-   *
-   * @param request SearchFormDatasRequest
-   * @return SearchFormDatasResponse
+   * 根据条件搜索表单实例详情列表,对应原searchFormDatas
+   * 
+   * @param request - SearchFormDatasRequest
+   * @returns SearchFormDatasResponse
    */
   async searchFormDatas(request: SearchFormDatasRequest): Promise<SearchFormDatasResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20015,12 +23869,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发起新的流程实例
-   *
-   * @param request StartInstanceRequest
-   * @param headers StartInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return StartInstanceResponse
+   * 发起新的流程实例
+   * 
+   * @param request - StartInstanceRequest
+   * @param headers - StartInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns StartInstanceResponse
    */
   async startInstanceWithOptions(request: StartInstanceRequest, headers: StartInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<StartInstanceResponse> {
     Util.validateModel(request);
@@ -20089,10 +23943,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 发起新的流程实例
-   *
-   * @param request StartInstanceRequest
-   * @return StartInstanceResponse
+   * 发起新的流程实例
+   * 
+   * @param request - StartInstanceRequest
+   * @returns StartInstanceResponse
    */
   async startInstance(request: StartInstanceRequest): Promise<StartInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20101,12 +23955,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 阿里云合同到期终止
-   *
-   * @param request TerminateCloudAuthorizationRequest
-   * @param headers TerminateCloudAuthorizationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return TerminateCloudAuthorizationResponse
+   * 阿里云合同到期终止
+   * 
+   * @param request - TerminateCloudAuthorizationRequest
+   * @param headers - TerminateCloudAuthorizationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TerminateCloudAuthorizationResponse
    */
   async terminateCloudAuthorizationWithOptions(request: TerminateCloudAuthorizationRequest, headers: TerminateCloudAuthorizationHeaders, runtime: $Util.RuntimeOptions): Promise<TerminateCloudAuthorizationResponse> {
     Util.validateModel(request);
@@ -20151,10 +24005,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 阿里云合同到期终止
-   *
-   * @param request TerminateCloudAuthorizationRequest
-   * @return TerminateCloudAuthorizationResponse
+   * 阿里云合同到期终止
+   * 
+   * @param request - TerminateCloudAuthorizationRequest
+   * @returns TerminateCloudAuthorizationResponse
    */
   async terminateCloudAuthorization(request: TerminateCloudAuthorizationRequest): Promise<TerminateCloudAuthorizationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20163,12 +24017,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 终止流程实例
-   *
-   * @param request TerminateInstanceRequest
-   * @param headers TerminateInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return TerminateInstanceResponse
+   * 终止流程实例
+   * 
+   * @param request - TerminateInstanceRequest
+   * @param headers - TerminateInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TerminateInstanceResponse
    */
   async terminateInstanceWithOptions(request: TerminateInstanceRequest, headers: TerminateInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<TerminateInstanceResponse> {
     Util.validateModel(request);
@@ -20221,10 +24075,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 终止流程实例
-   *
-   * @param request TerminateInstanceRequest
-   * @return TerminateInstanceResponse
+   * 终止流程实例
+   * 
+   * @param request - TerminateInstanceRequest
+   * @returns TerminateInstanceResponse
    */
   async terminateInstance(request: TerminateInstanceRequest): Promise<TerminateInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20233,12 +24087,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 变配阿里云账号对应的租户信息
-   *
-   * @param request UpdateCloudAccountInformationRequest
-   * @param headers UpdateCloudAccountInformationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateCloudAccountInformationResponse
+   * 变配阿里云账号对应的租户信息
+   * 
+   * @param request - UpdateCloudAccountInformationRequest
+   * @param headers - UpdateCloudAccountInformationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateCloudAccountInformationResponse
    */
   async updateCloudAccountInformationWithOptions(request: UpdateCloudAccountInformationRequest, headers: UpdateCloudAccountInformationHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCloudAccountInformationResponse> {
     Util.validateModel(request);
@@ -20287,10 +24141,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 变配阿里云账号对应的租户信息
-   *
-   * @param request UpdateCloudAccountInformationRequest
-   * @return UpdateCloudAccountInformationResponse
+   * 变配阿里云账号对应的租户信息
+   * 
+   * @param request - UpdateCloudAccountInformationRequest
+   * @returns UpdateCloudAccountInformationResponse
    */
   async updateCloudAccountInformation(request: UpdateCloudAccountInformationRequest): Promise<UpdateCloudAccountInformationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20299,12 +24153,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新表单实例
-   *
-   * @param request UpdateFormDataRequest
-   * @param headers UpdateFormDataHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateFormDataResponse
+   * 更新表单实例
+   * 
+   * @param request - UpdateFormDataRequest
+   * @param headers - UpdateFormDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateFormDataResponse
    */
   async updateFormDataWithOptions(request: UpdateFormDataRequest, headers: UpdateFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateFormDataResponse> {
     Util.validateModel(request);
@@ -20365,10 +24219,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新表单实例
-   *
-   * @param request UpdateFormDataRequest
-   * @return UpdateFormDataResponse
+   * 更新表单实例
+   * 
+   * @param request - UpdateFormDataRequest
+   * @returns UpdateFormDataResponse
    */
   async updateFormData(request: UpdateFormDataRequest): Promise<UpdateFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20377,12 +24231,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新流程实例
-   *
-   * @param request UpdateInstanceRequest
-   * @param headers UpdateInstanceHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateInstanceResponse
+   * 更新流程实例
+   * 
+   * @param request - UpdateInstanceRequest
+   * @param headers - UpdateInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateInstanceResponse
    */
   async updateInstanceWithOptions(request: UpdateInstanceRequest, headers: UpdateInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInstanceResponse> {
     Util.validateModel(request);
@@ -20439,10 +24293,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 更新流程实例
-   *
-   * @param request UpdateInstanceRequest
-   * @return UpdateInstanceResponse
+   * 更新流程实例
+   * 
+   * @param request - UpdateInstanceRequest
+   * @returns UpdateInstanceResponse
    */
   async updateInstance(request: UpdateInstanceRequest): Promise<UpdateInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20451,12 +24305,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 未知
-   *
-   * @param request UpdateStatusRequest
-   * @param headers UpdateStatusHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpdateStatusResponse
+   * 未知
+   * 
+   * @param request - UpdateStatusRequest
+   * @param headers - UpdateStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateStatusResponse
    */
   async updateStatusWithOptions(request: UpdateStatusRequest, headers: UpdateStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateStatusResponse> {
     Util.validateModel(request);
@@ -20517,10 +24371,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 未知
-   *
-   * @param request UpdateStatusRequest
-   * @return UpdateStatusResponse
+   * 未知
+   * 
+   * @param request - UpdateStatusRequest
+   * @returns UpdateStatusResponse
    */
   async updateStatus(request: UpdateStatusRequest): Promise<UpdateStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20529,12 +24383,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 变配阿里云账号对应的租户信息
-   *
-   * @param request UpgradeTenantInformationRequest
-   * @param headers UpgradeTenantInformationHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return UpgradeTenantInformationResponse
+   * 变配阿里云账号对应的租户信息
+   * 
+   * @param request - UpgradeTenantInformationRequest
+   * @param headers - UpgradeTenantInformationHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpgradeTenantInformationResponse
    */
   async upgradeTenantInformationWithOptions(request: UpgradeTenantInformationRequest, headers: UpgradeTenantInformationHeaders, runtime: $Util.RuntimeOptions): Promise<UpgradeTenantInformationResponse> {
     Util.validateModel(request);
@@ -20583,10 +24437,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 变配阿里云账号对应的租户信息
-   *
-   * @param request UpgradeTenantInformationRequest
-   * @return UpgradeTenantInformationResponse
+   * 变配阿里云账号对应的租户信息
+   * 
+   * @param request - UpgradeTenantInformationRequest
+   * @returns UpgradeTenantInformationResponse
    */
   async upgradeTenantInformation(request: UpgradeTenantInformationRequest): Promise<UpgradeTenantInformationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20595,12 +24449,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道续费前校验
-   *
-   * @param request ValidateApplicationAuthorizationOrderRequest
-   * @param headers ValidateApplicationAuthorizationOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ValidateApplicationAuthorizationOrderResponse
+   * 多渠道续费前校验
+   * 
+   * @param request - ValidateApplicationAuthorizationOrderRequest
+   * @param headers - ValidateApplicationAuthorizationOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ValidateApplicationAuthorizationOrderResponse
    */
   async validateApplicationAuthorizationOrderWithOptions(instanceId: string, request: ValidateApplicationAuthorizationOrderRequest, headers: ValidateApplicationAuthorizationOrderHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateApplicationAuthorizationOrderResponse> {
     Util.validateModel(request);
@@ -20641,10 +24495,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道续费前校验
-   *
-   * @param request ValidateApplicationAuthorizationOrderRequest
-   * @return ValidateApplicationAuthorizationOrderResponse
+   * 多渠道续费前校验
+   * 
+   * @param request - ValidateApplicationAuthorizationOrderRequest
+   * @returns ValidateApplicationAuthorizationOrderResponse
    */
   async validateApplicationAuthorizationOrder(instanceId: string, request: ValidateApplicationAuthorizationOrderRequest): Promise<ValidateApplicationAuthorizationOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20653,12 +24507,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道新购校验
-   *
-   * @param request ValidateApplicationAuthorizationServiceOrderRequest
-   * @param headers ValidateApplicationAuthorizationServiceOrderHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ValidateApplicationAuthorizationServiceOrderResponse
+   * 多渠道新购校验
+   * 
+   * @param request - ValidateApplicationAuthorizationServiceOrderRequest
+   * @param headers - ValidateApplicationAuthorizationServiceOrderHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ValidateApplicationAuthorizationServiceOrderResponse
    */
   async validateApplicationAuthorizationServiceOrderWithOptions(callerUid: string, request: ValidateApplicationAuthorizationServiceOrderRequest, headers: ValidateApplicationAuthorizationServiceOrderHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateApplicationAuthorizationServiceOrderResponse> {
     Util.validateModel(request);
@@ -20695,10 +24549,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道新购校验
-   *
-   * @param request ValidateApplicationAuthorizationServiceOrderRequest
-   * @return ValidateApplicationAuthorizationServiceOrderResponse
+   * 多渠道新购校验
+   * 
+   * @param request - ValidateApplicationAuthorizationServiceOrderRequest
+   * @returns ValidateApplicationAuthorizationServiceOrderResponse
    */
   async validateApplicationAuthorizationServiceOrder(callerUid: string, request: ValidateApplicationAuthorizationServiceOrderRequest): Promise<ValidateApplicationAuthorizationServiceOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20707,12 +24561,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 校验变配
-   *
-   * @param request ValidateApplicationServiceOrderUpgradeRequest
-   * @param headers ValidateApplicationServiceOrderUpgradeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ValidateApplicationServiceOrderUpgradeResponse
+   * 校验变配
+   * 
+   * @param request - ValidateApplicationServiceOrderUpgradeRequest
+   * @param headers - ValidateApplicationServiceOrderUpgradeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ValidateApplicationServiceOrderUpgradeResponse
    */
   async validateApplicationServiceOrderUpgradeWithOptions(callerUnionid: string, request: ValidateApplicationServiceOrderUpgradeRequest, headers: ValidateApplicationServiceOrderUpgradeHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateApplicationServiceOrderUpgradeResponse> {
     Util.validateModel(request);
@@ -20749,10 +24603,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 校验变配
-   *
-   * @param request ValidateApplicationServiceOrderUpgradeRequest
-   * @return ValidateApplicationServiceOrderUpgradeResponse
+   * 校验变配
+   * 
+   * @param request - ValidateApplicationServiceOrderUpgradeRequest
+   * @returns ValidateApplicationServiceOrderUpgradeResponse
    */
   async validateApplicationServiceOrderUpgrade(callerUnionid: string, request: ValidateApplicationServiceOrderUpgradeRequest): Promise<ValidateApplicationServiceOrderUpgradeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20761,12 +24615,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道新购校验
-   *
-   * @param request ValidateOrderBuyRequest
-   * @param headers ValidateOrderBuyHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ValidateOrderBuyResponse
+   * 多渠道新购校验
+   * 
+   * @param request - ValidateOrderBuyRequest
+   * @param headers - ValidateOrderBuyHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ValidateOrderBuyResponse
    */
   async validateOrderBuyWithOptions(request: ValidateOrderBuyRequest, headers: ValidateOrderBuyHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateOrderBuyResponse> {
     Util.validateModel(request);
@@ -20807,10 +24661,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道新购校验
-   *
-   * @param request ValidateOrderBuyRequest
-   * @return ValidateOrderBuyResponse
+   * 多渠道新购校验
+   * 
+   * @param request - ValidateOrderBuyRequest
+   * @returns ValidateOrderBuyResponse
    */
   async validateOrderBuy(request: ValidateOrderBuyRequest): Promise<ValidateOrderBuyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20819,12 +24673,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道续费前校验
-   *
-   * @param request ValidateOrderUpdateRequest
-   * @param headers ValidateOrderUpdateHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ValidateOrderUpdateResponse
+   * 多渠道续费前校验
+   * 
+   * @param request - ValidateOrderUpdateRequest
+   * @param headers - ValidateOrderUpdateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ValidateOrderUpdateResponse
    */
   async validateOrderUpdateWithOptions(instanceId: string, request: ValidateOrderUpdateRequest, headers: ValidateOrderUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateOrderUpdateResponse> {
     Util.validateModel(request);
@@ -20865,10 +24719,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道续费前校验
-   *
-   * @param request ValidateOrderUpdateRequest
-   * @return ValidateOrderUpdateResponse
+   * 多渠道续费前校验
+   * 
+   * @param request - ValidateOrderUpdateRequest
+   * @returns ValidateOrderUpdateResponse
    */
   async validateOrderUpdate(instanceId: string, request: ValidateOrderUpdateRequest): Promise<ValidateOrderUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
@@ -20877,12 +24731,12 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道升配前校验
-   *
-   * @param request ValidateOrderUpgradeRequest
-   * @param headers ValidateOrderUpgradeHeaders
-   * @param runtime runtime options for this request RuntimeOptions
-   * @return ValidateOrderUpgradeResponse
+   * 多渠道升配前校验
+   * 
+   * @param request - ValidateOrderUpgradeRequest
+   * @param headers - ValidateOrderUpgradeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ValidateOrderUpgradeResponse
    */
   async validateOrderUpgradeWithOptions(request: ValidateOrderUpgradeRequest, headers: ValidateOrderUpgradeHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateOrderUpgradeResponse> {
     Util.validateModel(request);
@@ -20927,10 +24781,10 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * @summary 多渠道升配前校验
-   *
-   * @param request ValidateOrderUpgradeRequest
-   * @return ValidateOrderUpgradeResponse
+   * 多渠道升配前校验
+   * 
+   * @param request - ValidateOrderUpgradeRequest
+   * @returns ValidateOrderUpgradeResponse
    */
   async validateOrderUpgrade(request: ValidateOrderUpgradeRequest): Promise<ValidateOrderUpgradeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
