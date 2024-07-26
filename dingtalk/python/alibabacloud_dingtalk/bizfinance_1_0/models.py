@@ -3347,6 +3347,7 @@ class GetCategoryResponseBody(TeaModel):
         is_dir: bool = None,
         name: str = None,
         parent_code: str = None,
+        remark: str = None,
         status: str = None,
         type: str = None,
     ):
@@ -3358,6 +3359,7 @@ class GetCategoryResponseBody(TeaModel):
         # This parameter is required.
         self.name = name
         self.parent_code = parent_code
+        self.remark = remark
         # This parameter is required.
         self.status = status
         # This parameter is required.
@@ -3382,6 +3384,8 @@ class GetCategoryResponseBody(TeaModel):
             result['name'] = self.name
         if self.parent_code is not None:
             result['parentCode'] = self.parent_code
+        if self.remark is not None:
+            result['remark'] = self.remark
         if self.status is not None:
             result['status'] = self.status
         if self.type is not None:
@@ -3400,6 +3404,8 @@ class GetCategoryResponseBody(TeaModel):
             self.name = m.get('name')
         if m.get('parentCode') is not None:
             self.parent_code = m.get('parentCode')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('type') is not None:
@@ -5323,6 +5329,7 @@ class GetProductResponseBody(TeaModel):
         code: str = None,
         create_time: int = None,
         description: str = None,
+        information: str = None,
         name: str = None,
         specification: str = None,
         status: str = None,
@@ -5333,6 +5340,7 @@ class GetProductResponseBody(TeaModel):
         self.code = code
         self.create_time = create_time
         self.description = description
+        self.information = information
         self.name = name
         self.specification = specification
         self.status = status
@@ -5356,6 +5364,8 @@ class GetProductResponseBody(TeaModel):
             result['createTime'] = self.create_time
         if self.description is not None:
             result['description'] = self.description
+        if self.information is not None:
+            result['information'] = self.information
         if self.name is not None:
             result['name'] = self.name
         if self.specification is not None:
@@ -5378,6 +5388,8 @@ class GetProductResponseBody(TeaModel):
             self.create_time = m.get('createTime')
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('information') is not None:
+            self.information = m.get('information')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('specification') is not None:
@@ -6785,6 +6797,7 @@ class QueryCategoryByPageResponseBodyList(TeaModel):
         is_dir: bool = None,
         name: str = None,
         parent_code: str = None,
+        remark: str = None,
         status: str = None,
         type: str = None,
     ):
@@ -6795,6 +6808,7 @@ class QueryCategoryByPageResponseBodyList(TeaModel):
         # This parameter is required.
         self.name = name
         self.parent_code = parent_code
+        self.remark = remark
         # This parameter is required.
         self.status = status
         # This parameter is required.
@@ -6817,6 +6831,8 @@ class QueryCategoryByPageResponseBodyList(TeaModel):
             result['name'] = self.name
         if self.parent_code is not None:
             result['parentCode'] = self.parent_code
+        if self.remark is not None:
+            result['remark'] = self.remark
         if self.status is not None:
             result['status'] = self.status
         if self.type is not None:
@@ -6833,6 +6849,8 @@ class QueryCategoryByPageResponseBodyList(TeaModel):
             self.name = m.get('name')
         if m.get('parentCode') is not None:
             self.parent_code = m.get('parentCode')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('type') is not None:
@@ -8649,6 +8667,7 @@ class QueryProductByPageResponseBodyList(TeaModel):
         code: str = None,
         create_time: int = None,
         description: str = None,
+        information: str = None,
         name: str = None,
         specification: str = None,
         status: str = None,
@@ -8658,6 +8677,7 @@ class QueryProductByPageResponseBodyList(TeaModel):
         self.code = code
         self.create_time = create_time
         self.description = description
+        self.information = information
         self.name = name
         self.specification = specification
         self.status = status
@@ -8679,6 +8699,8 @@ class QueryProductByPageResponseBodyList(TeaModel):
             result['createTime'] = self.create_time
         if self.description is not None:
             result['description'] = self.description
+        if self.information is not None:
+            result['information'] = self.information
         if self.name is not None:
             result['name'] = self.name
         if self.specification is not None:
@@ -8699,6 +8721,8 @@ class QueryProductByPageResponseBodyList(TeaModel):
             self.create_time = m.get('createTime')
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('information') is not None:
+            self.information = m.get('information')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('specification') is not None:

@@ -11638,9 +11638,11 @@ class ShiftAddRequestSettingTopRestTimeList(TeaModel):
         self,
         across: int = None,
         check_time: int = None,
+        check_type: str = None,
     ):
         self.across = across
         self.check_time = check_time
+        self.check_type = check_type
 
     def validate(self):
         pass
@@ -11655,6 +11657,8 @@ class ShiftAddRequestSettingTopRestTimeList(TeaModel):
             result['across'] = self.across
         if self.check_time is not None:
             result['checkTime'] = self.check_time
+        if self.check_type is not None:
+            result['checkType'] = self.check_type
         return result
 
     def from_map(self, m: dict = None):
@@ -11663,6 +11667,8 @@ class ShiftAddRequestSettingTopRestTimeList(TeaModel):
             self.across = m.get('across')
         if m.get('checkTime') is not None:
             self.check_time = m.get('checkTime')
+        if m.get('checkType') is not None:
+            self.check_type = m.get('checkType')
         return self
 
 

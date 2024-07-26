@@ -528,6 +528,7 @@ class GetCategoryResponseBody(TeaModel):
         is_dir: bool = None,
         name: str = None,
         parent_code: str = None,
+        remark: str = None,
         status: str = None,
         type: str = None,
     ):
@@ -539,6 +540,7 @@ class GetCategoryResponseBody(TeaModel):
         # This parameter is required.
         self.name = name
         self.parent_code = parent_code
+        self.remark = remark
         # This parameter is required.
         self.status = status
         # This parameter is required.
@@ -563,6 +565,8 @@ class GetCategoryResponseBody(TeaModel):
             result['name'] = self.name
         if self.parent_code is not None:
             result['parentCode'] = self.parent_code
+        if self.remark is not None:
+            result['remark'] = self.remark
         if self.status is not None:
             result['status'] = self.status
         if self.type is not None:
@@ -581,6 +585,8 @@ class GetCategoryResponseBody(TeaModel):
             self.name = m.get('name')
         if m.get('parentCode') is not None:
             self.parent_code = m.get('parentCode')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('type') is not None:
@@ -1580,6 +1586,7 @@ class QueryCategoryByPageResponseBodyList(TeaModel):
         is_dir: bool = None,
         name: str = None,
         parent_code: str = None,
+        remark: str = None,
         status: str = None,
         type: str = None,
     ):
@@ -1590,6 +1597,7 @@ class QueryCategoryByPageResponseBodyList(TeaModel):
         # This parameter is required.
         self.name = name
         self.parent_code = parent_code
+        self.remark = remark
         # This parameter is required.
         self.status = status
         # This parameter is required.
@@ -1612,6 +1620,8 @@ class QueryCategoryByPageResponseBodyList(TeaModel):
             result['name'] = self.name
         if self.parent_code is not None:
             result['parentCode'] = self.parent_code
+        if self.remark is not None:
+            result['remark'] = self.remark
         if self.status is not None:
             result['status'] = self.status
         if self.type is not None:
@@ -1628,6 +1638,8 @@ class QueryCategoryByPageResponseBodyList(TeaModel):
             self.name = m.get('name')
         if m.get('parentCode') is not None:
             self.parent_code = m.get('parentCode')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('type') is not None:
