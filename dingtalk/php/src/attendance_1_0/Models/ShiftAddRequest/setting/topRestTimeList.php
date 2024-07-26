@@ -21,9 +21,17 @@ class topRestTimeList extends Model
      * @var int
      */
     public $checkTime;
+
+    /**
+     * @example OnDuty
+     *
+     * @var string
+     */
+    public $checkType;
     protected $_name = [
         'across'    => 'across',
         'checkTime' => 'checkTime',
+        'checkType' => 'checkType',
     ];
 
     public function validate()
@@ -38,6 +46,9 @@ class topRestTimeList extends Model
         }
         if (null !== $this->checkTime) {
             $res['checkTime'] = $this->checkTime;
+        }
+        if (null !== $this->checkType) {
+            $res['checkType'] = $this->checkType;
         }
 
         return $res;
@@ -56,6 +67,9 @@ class topRestTimeList extends Model
         }
         if (isset($map['checkTime'])) {
             $model->checkTime = $map['checkTime'];
+        }
+        if (isset($map['checkType'])) {
+            $model->checkType = $map['checkType'];
         }
 
         return $model;

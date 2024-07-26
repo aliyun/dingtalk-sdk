@@ -48,6 +48,11 @@ class GetCategoryResponseBody extends Model
     public $parentCode;
 
     /**
+     * @var string
+     */
+    public $remark;
+
+    /**
      * @description This parameter is required.
      *
      * @example valid
@@ -70,6 +75,7 @@ class GetCategoryResponseBody extends Model
         'isDir'                => 'isDir',
         'name'                 => 'name',
         'parentCode'           => 'parentCode',
+        'remark'               => 'remark',
         'status'               => 'status',
         'type'                 => 'type',
     ];
@@ -95,6 +101,9 @@ class GetCategoryResponseBody extends Model
         }
         if (null !== $this->parentCode) {
             $res['parentCode'] = $this->parentCode;
+        }
+        if (null !== $this->remark) {
+            $res['remark'] = $this->remark;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -130,6 +139,9 @@ class GetCategoryResponseBody extends Model
         }
         if (isset($map['parentCode'])) {
             $model->parentCode = $map['parentCode'];
+        }
+        if (isset($map['remark'])) {
+            $model->remark = $map['remark'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

@@ -35,6 +35,11 @@ class GetProductResponseBody extends Model
     public $description;
 
     /**
+     * @var string
+     */
+    public $information;
+
+    /**
      * @example 外包商品
      *
      * @var string
@@ -71,6 +76,7 @@ class GetProductResponseBody extends Model
         'code'                 => 'code',
         'createTime'           => 'createTime',
         'description'          => 'description',
+        'information'          => 'information',
         'name'                 => 'name',
         'specification'        => 'specification',
         'status'               => 'status',
@@ -96,6 +102,9 @@ class GetProductResponseBody extends Model
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
+        }
+        if (null !== $this->information) {
+            $res['information'] = $this->information;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -137,6 +146,9 @@ class GetProductResponseBody extends Model
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];
+        }
+        if (isset($map['information'])) {
+            $model->information = $map['information'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

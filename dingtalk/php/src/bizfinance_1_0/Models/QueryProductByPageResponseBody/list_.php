@@ -26,6 +26,11 @@ class list_ extends Model
     /**
      * @var string
      */
+    public $information;
+
+    /**
+     * @var string
+     */
     public $name;
 
     /**
@@ -51,6 +56,7 @@ class list_ extends Model
         'code'           => 'code',
         'createTime'     => 'createTime',
         'description'    => 'description',
+        'information'    => 'information',
         'name'           => 'name',
         'specification'  => 'specification',
         'status'         => 'status',
@@ -73,6 +79,9 @@ class list_ extends Model
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
+        }
+        if (null !== $this->information) {
+            $res['information'] = $this->information;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -109,6 +118,9 @@ class list_ extends Model
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];
+        }
+        if (isset($map['information'])) {
+            $model->information = $map['information'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
