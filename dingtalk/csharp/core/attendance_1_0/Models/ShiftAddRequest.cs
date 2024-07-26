@@ -119,6 +119,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 [Validation(Required=false)]
                 public long? CheckTime { get; set; }
 
+                [NameInMap("checkType")]
+                [Validation(Required=false)]
+                public string CheckType { get; set; }
+
             }
 
         }

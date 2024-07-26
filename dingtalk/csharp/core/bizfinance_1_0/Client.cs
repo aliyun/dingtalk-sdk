@@ -3585,7 +3585,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCategoryByPageResponse>(Execute(params_, req, runtime));
@@ -3638,7 +3638,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryCategoryByPageResponse>(await ExecuteAsync(params_, req, runtime));
