@@ -41,6 +41,9 @@ public class GetCategoryResponseBody extends TeaModel {
     @NameInMap("parentCode")
     public String parentCode;
 
+    @NameInMap("remark")
+    public String remark;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -102,6 +105,14 @@ public class GetCategoryResponseBody extends TeaModel {
     }
     public String getParentCode() {
         return this.parentCode;
+    }
+
+    public GetCategoryResponseBody setRemark(String remark) {
+        this.remark = remark;
+        return this;
+    }
+    public String getRemark() {
+        return this.remark;
     }
 
     public GetCategoryResponseBody setStatus(String status) {

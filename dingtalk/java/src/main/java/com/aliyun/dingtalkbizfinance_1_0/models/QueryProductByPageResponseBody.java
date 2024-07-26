@@ -41,6 +41,9 @@ public class QueryProductByPageResponseBody extends TeaModel {
         @NameInMap("description")
         public String description;
 
+        @NameInMap("information")
+        public String information;
+
         @NameInMap("name")
         public String name;
 
@@ -83,6 +86,14 @@ public class QueryProductByPageResponseBody extends TeaModel {
         }
         public String getDescription() {
             return this.description;
+        }
+
+        public QueryProductByPageResponseBodyList setInformation(String information) {
+            this.information = information;
+            return this;
+        }
+        public String getInformation() {
+            return this.information;
         }
 
         public QueryProductByPageResponseBodyList setName(String name) {

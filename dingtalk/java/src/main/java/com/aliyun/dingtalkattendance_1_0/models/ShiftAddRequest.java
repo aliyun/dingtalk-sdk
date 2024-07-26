@@ -261,6 +261,13 @@ public class ShiftAddRequest extends TeaModel {
         @NameInMap("checkTime")
         public Long checkTime;
 
+        /**
+         * <strong>example:</strong>
+         * <p>OnDuty</p>
+         */
+        @NameInMap("checkType")
+        public String checkType;
+
         public static ShiftAddRequestSettingTopRestTimeList build(java.util.Map<String, ?> map) throws Exception {
             ShiftAddRequestSettingTopRestTimeList self = new ShiftAddRequestSettingTopRestTimeList();
             return TeaModel.build(map, self);
@@ -280,6 +287,14 @@ public class ShiftAddRequest extends TeaModel {
         }
         public Long getCheckTime() {
             return this.checkTime;
+        }
+
+        public ShiftAddRequestSettingTopRestTimeList setCheckType(String checkType) {
+            this.checkType = checkType;
+            return this;
+        }
+        public String getCheckType() {
+            return this.checkType;
         }
 
     }

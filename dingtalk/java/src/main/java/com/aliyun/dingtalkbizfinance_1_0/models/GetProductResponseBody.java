@@ -28,6 +28,9 @@ public class GetProductResponseBody extends TeaModel {
     @NameInMap("description")
     public String description;
 
+    @NameInMap("information")
+    public String information;
+
     /**
      * <strong>example:</strong>
      * <p>外包商品</p>
@@ -94,6 +97,14 @@ public class GetProductResponseBody extends TeaModel {
     }
     public String getDescription() {
         return this.description;
+    }
+
+    public GetProductResponseBody setInformation(String information) {
+        this.information = information;
+        return this;
+    }
+    public String getInformation() {
+        return this.information;
     }
 
     public GetProductResponseBody setName(String name) {

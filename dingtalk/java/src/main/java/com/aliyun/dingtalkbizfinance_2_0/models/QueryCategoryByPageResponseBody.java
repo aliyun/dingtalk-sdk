@@ -75,6 +75,9 @@ public class QueryCategoryByPageResponseBody extends TeaModel {
         @NameInMap("parentCode")
         public String parentCode;
 
+        @NameInMap("remark")
+        public String remark;
+
         /**
          * <p>This parameter is required.</p>
          * 
@@ -128,6 +131,14 @@ public class QueryCategoryByPageResponseBody extends TeaModel {
         }
         public String getParentCode() {
             return this.parentCode;
+        }
+
+        public QueryCategoryByPageResponseBodyList setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
         }
 
         public QueryCategoryByPageResponseBodyList setStatus(String status) {
