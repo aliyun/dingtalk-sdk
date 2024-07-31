@@ -256,6 +256,149 @@ class MemberModelMapValue(TeaModel):
         return self
 
 
+class AddRecordPermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddRecordPermissionRequest(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        owner_union_id: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.biz_type = biz_type
+        # This parameter is required.
+        self.owner_union_id = owner_union_id
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.owner_union_id is not None:
+            result['ownerUnionId'] = self.owner_union_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('ownerUnionId') is not None:
+            self.owner_union_id = m.get('ownerUnionId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class AddRecordPermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+    ):
+        self.code = code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        return self
+
+
+class AddRecordPermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddRecordPermissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddRecordPermissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CancelScheduleConferenceHeaders(TeaModel):
     def __init__(
         self,
@@ -5820,6 +5963,177 @@ class QueryMinutesTextResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMinutesTextResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryRecordMinutesUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryRecordMinutesUrlRequest(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        recorder_union_id: str = None,
+    ):
+        # This parameter is required.
+        self.biz_type = biz_type
+        # This parameter is required.
+        self.recorder_union_id = recorder_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.recorder_union_id is not None:
+            result['recorderUnionId'] = self.recorder_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('recorderUnionId') is not None:
+            self.recorder_union_id = m.get('recorderUnionId')
+        return self
+
+
+class QueryRecordMinutesUrlResponseBodyRecordMinutesUrls(TeaModel):
+    def __init__(
+        self,
+        record_minutes_url: str = None,
+    ):
+        self.record_minutes_url = record_minutes_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.record_minutes_url is not None:
+            result['recordMinutesUrl'] = self.record_minutes_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('recordMinutesUrl') is not None:
+            self.record_minutes_url = m.get('recordMinutesUrl')
+        return self
+
+
+class QueryRecordMinutesUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        record_minutes_urls: List[QueryRecordMinutesUrlResponseBodyRecordMinutesUrls] = None,
+    ):
+        self.record_minutes_urls = record_minutes_urls
+
+    def validate(self):
+        if self.record_minutes_urls:
+            for k in self.record_minutes_urls:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['recordMinutesUrls'] = []
+        if self.record_minutes_urls is not None:
+            for k in self.record_minutes_urls:
+                result['recordMinutesUrls'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.record_minutes_urls = []
+        if m.get('recordMinutesUrls') is not None:
+            for k in m.get('recordMinutesUrls'):
+                temp_model = QueryRecordMinutesUrlResponseBodyRecordMinutesUrls()
+                self.record_minutes_urls.append(temp_model.from_map(k))
+        return self
+
+
+class QueryRecordMinutesUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryRecordMinutesUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryRecordMinutesUrlResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

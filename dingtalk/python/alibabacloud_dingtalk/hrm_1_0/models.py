@@ -5003,6 +5003,298 @@ class MasterDataTenantQueyResponse(TeaModel):
         return self
 
 
+class MasterDatasGetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class MasterDatasGetRequest(TeaModel):
+    def __init__(
+        self,
+        obj_id: str = None,
+        scope_code: str = None,
+        tenant_id: int = None,
+        view_entity_code: str = None,
+    ):
+        # This parameter is required.
+        self.obj_id = obj_id
+        # This parameter is required.
+        self.scope_code = scope_code
+        # This parameter is required.
+        self.tenant_id = tenant_id
+        # This parameter is required.
+        self.view_entity_code = view_entity_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.obj_id is not None:
+            result['objId'] = self.obj_id
+        if self.scope_code is not None:
+            result['scopeCode'] = self.scope_code
+        if self.tenant_id is not None:
+            result['tenantId'] = self.tenant_id
+        if self.view_entity_code is not None:
+            result['viewEntityCode'] = self.view_entity_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('objId') is not None:
+            self.obj_id = m.get('objId')
+        if m.get('scopeCode') is not None:
+            self.scope_code = m.get('scopeCode')
+        if m.get('tenantId') is not None:
+            self.tenant_id = m.get('tenantId')
+        if m.get('viewEntityCode') is not None:
+            self.view_entity_code = m.get('viewEntityCode')
+        return self
+
+
+class MasterDatasGetResponseBodyResultViewEntityFieldVOListFieldDataVO(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        self.key = key
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class MasterDatasGetResponseBodyResultViewEntityFieldVOList(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        field_data_vo: MasterDatasGetResponseBodyResultViewEntityFieldVOListFieldDataVO = None,
+        field_name: str = None,
+        field_type: str = None,
+    ):
+        self.field_code = field_code
+        self.field_data_vo = field_data_vo
+        self.field_name = field_name
+        self.field_type = field_type
+
+    def validate(self):
+        if self.field_data_vo:
+            self.field_data_vo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_data_vo is not None:
+            result['fieldDataVO'] = self.field_data_vo.to_map()
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldDataVO') is not None:
+            temp_model = MasterDatasGetResponseBodyResultViewEntityFieldVOListFieldDataVO()
+            self.field_data_vo = temp_model.from_map(m['fieldDataVO'])
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        return self
+
+
+class MasterDatasGetResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        obj_id: str = None,
+        relation_id: str = None,
+        scope_code: str = None,
+        view_entity_code: str = None,
+        view_entity_field_volist: List[MasterDatasGetResponseBodyResultViewEntityFieldVOList] = None,
+    ):
+        self.obj_id = obj_id
+        # This parameter is required.
+        self.relation_id = relation_id
+        self.scope_code = scope_code
+        self.view_entity_code = view_entity_code
+        self.view_entity_field_volist = view_entity_field_volist
+
+    def validate(self):
+        if self.view_entity_field_volist:
+            for k in self.view_entity_field_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.obj_id is not None:
+            result['objId'] = self.obj_id
+        if self.relation_id is not None:
+            result['relationId'] = self.relation_id
+        if self.scope_code is not None:
+            result['scopeCode'] = self.scope_code
+        if self.view_entity_code is not None:
+            result['viewEntityCode'] = self.view_entity_code
+        result['viewEntityFieldVOList'] = []
+        if self.view_entity_field_volist is not None:
+            for k in self.view_entity_field_volist:
+                result['viewEntityFieldVOList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('objId') is not None:
+            self.obj_id = m.get('objId')
+        if m.get('relationId') is not None:
+            self.relation_id = m.get('relationId')
+        if m.get('scopeCode') is not None:
+            self.scope_code = m.get('scopeCode')
+        if m.get('viewEntityCode') is not None:
+            self.view_entity_code = m.get('viewEntityCode')
+        self.view_entity_field_volist = []
+        if m.get('viewEntityFieldVOList') is not None:
+            for k in m.get('viewEntityFieldVOList'):
+                temp_model = MasterDatasGetResponseBodyResultViewEntityFieldVOList()
+                self.view_entity_field_volist.append(temp_model.from_map(k))
+        return self
+
+
+class MasterDatasGetResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: MasterDatasGetResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = MasterDatasGetResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class MasterDatasGetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: MasterDatasGetResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = MasterDatasGetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class MasterDatasQueryHeaders(TeaModel):
     def __init__(
         self,

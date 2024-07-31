@@ -2716,6 +2716,132 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.MasterDataTenantQueyHeaders()
         return await self.master_data_tenant_quey_with_options_async(request, headers, runtime)
 
+    def master_datas_get_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDatasGetRequest,
+        headers: dingtalkhrm__1__0_models.MasterDatasGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.MasterDatasGetResponse:
+        """
+        @summary 只能认输主数据根据ID获取
+        
+        @param request: MasterDatasGetRequest
+        @param headers: MasterDatasGetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MasterDatasGetResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.obj_id):
+            body['objId'] = request.obj_id
+        if not UtilClient.is_unset(request.scope_code):
+            body['scopeCode'] = request.scope_code
+        if not UtilClient.is_unset(request.tenant_id):
+            body['tenantId'] = request.tenant_id
+        if not UtilClient.is_unset(request.view_entity_code):
+            body['viewEntityCode'] = request.view_entity_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='MasterDatasGet',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masterDatas/objects/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.MasterDatasGetResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def master_datas_get_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDatasGetRequest,
+        headers: dingtalkhrm__1__0_models.MasterDatasGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.MasterDatasGetResponse:
+        """
+        @summary 只能认输主数据根据ID获取
+        
+        @param request: MasterDatasGetRequest
+        @param headers: MasterDatasGetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MasterDatasGetResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.obj_id):
+            body['objId'] = request.obj_id
+        if not UtilClient.is_unset(request.scope_code):
+            body['scopeCode'] = request.scope_code
+        if not UtilClient.is_unset(request.tenant_id):
+            body['tenantId'] = request.tenant_id
+        if not UtilClient.is_unset(request.view_entity_code):
+            body['viewEntityCode'] = request.view_entity_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='MasterDatasGet',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masterDatas/objects/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.MasterDatasGetResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def master_datas_get(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDatasGetRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDatasGetResponse:
+        """
+        @summary 只能认输主数据根据ID获取
+        
+        @param request: MasterDatasGetRequest
+        @return: MasterDatasGetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.MasterDatasGetHeaders()
+        return self.master_datas_get_with_options(request, headers, runtime)
+
+    async def master_datas_get_async(
+        self,
+        request: dingtalkhrm__1__0_models.MasterDatasGetRequest,
+    ) -> dingtalkhrm__1__0_models.MasterDatasGetResponse:
+        """
+        @summary 只能认输主数据根据ID获取
+        
+        @param request: MasterDatasGetRequest
+        @return: MasterDatasGetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.MasterDatasGetHeaders()
+        return await self.master_datas_get_with_options_async(request, headers, runtime)
+
     def master_datas_query_with_options(
         self,
         request: dingtalkhrm__1__0_models.MasterDatasQueryRequest,

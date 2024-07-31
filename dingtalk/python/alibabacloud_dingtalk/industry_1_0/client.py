@@ -2722,6 +2722,124 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders()
         return await self.campus_update_renter_member_with_options_async(request, headers, runtime)
 
+    def chat_ai_travel_list_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAiTravelListRequest,
+        headers: dingtalkindustry__1__0_models.ChatAiTravelListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatAiTravelListResponse:
+        """
+        @summary 获取差旅单列表
+        
+        @param request: ChatAiTravelListRequest
+        @param headers: ChatAiTravelListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatAiTravelListResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param_list):
+            body['paramList'] = request.param_list
+        if not UtilClient.is_unset(request.travel_id):
+            body['travelId'] = request.travel_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatAiTravelList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/travelLists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatAiTravelListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_ai_travel_list_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAiTravelListRequest,
+        headers: dingtalkindustry__1__0_models.ChatAiTravelListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatAiTravelListResponse:
+        """
+        @summary 获取差旅单列表
+        
+        @param request: ChatAiTravelListRequest
+        @param headers: ChatAiTravelListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatAiTravelListResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param_list):
+            body['paramList'] = request.param_list
+        if not UtilClient.is_unset(request.travel_id):
+            body['travelId'] = request.travel_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatAiTravelList',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/travelLists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatAiTravelListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_ai_travel_list(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAiTravelListRequest,
+    ) -> dingtalkindustry__1__0_models.ChatAiTravelListResponse:
+        """
+        @summary 获取差旅单列表
+        
+        @param request: ChatAiTravelListRequest
+        @return: ChatAiTravelListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatAiTravelListHeaders()
+        return self.chat_ai_travel_list_with_options(request, headers, runtime)
+
+    async def chat_ai_travel_list_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAiTravelListRequest,
+    ) -> dingtalkindustry__1__0_models.ChatAiTravelListResponse:
+        """
+        @summary 获取差旅单列表
+        
+        @param request: ChatAiTravelListRequest
+        @return: ChatAiTravelListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatAiTravelListHeaders()
+        return await self.chat_ai_travel_list_with_options_async(request, headers, runtime)
+
     def chat_form_get_data_for_api_access_with_options(
         self,
         request: dingtalkindustry__1__0_models.ChatFormGetDataForApiAccessRequest,

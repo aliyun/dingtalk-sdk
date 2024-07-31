@@ -10904,6 +10904,278 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.SpecialRuleBatchReceiverHeaders()
         return await self.special_rule_batch_receiver_with_options_async(request, headers, runtime)
 
+    def task_info_add_del_task_person_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonRequest,
+        headers: dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonResponse:
+        """
+        @summary 增加/删除任务人员
+        
+        @param request: TaskInfoAddDelTaskPersonRequest
+        @param headers: TaskInfoAddDelTaskPersonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TaskInfoAddDelTaskPersonResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        if not UtilClient.is_unset(request.operator_account):
+            body['operatorAccount'] = request.operator_account
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        if not UtilClient.is_unset(request.proj_id):
+            body['projId'] = request.proj_id
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.task_execute_person_dtos):
+            body['taskExecutePersonDTOS'] = request.task_execute_person_dtos
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TaskInfoAddDelTaskPerson',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/taskCenters/taskInfos/addDelTaskPerson',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def task_info_add_del_task_person_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonRequest,
+        headers: dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonResponse:
+        """
+        @summary 增加/删除任务人员
+        
+        @param request: TaskInfoAddDelTaskPersonRequest
+        @param headers: TaskInfoAddDelTaskPersonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TaskInfoAddDelTaskPersonResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        if not UtilClient.is_unset(request.operator_account):
+            body['operatorAccount'] = request.operator_account
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        if not UtilClient.is_unset(request.proj_id):
+            body['projId'] = request.proj_id
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.task_execute_person_dtos):
+            body['taskExecutePersonDTOS'] = request.task_execute_person_dtos
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TaskInfoAddDelTaskPerson',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/taskCenters/taskInfos/addDelTaskPerson',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def task_info_add_del_task_person(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonRequest,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonResponse:
+        """
+        @summary 增加/删除任务人员
+        
+        @param request: TaskInfoAddDelTaskPersonRequest
+        @return: TaskInfoAddDelTaskPersonResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonHeaders()
+        return self.task_info_add_del_task_person_with_options(request, headers, runtime)
+
+    async def task_info_add_del_task_person_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonRequest,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonResponse:
+        """
+        @summary 增加/删除任务人员
+        
+        @param request: TaskInfoAddDelTaskPersonRequest
+        @return: TaskInfoAddDelTaskPersonResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TaskInfoAddDelTaskPersonHeaders()
+        return await self.task_info_add_del_task_person_with_options_async(request, headers, runtime)
+
+    def task_info_cancel_or_del_task_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskRequest,
+        headers: dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskResponse:
+        """
+        @summary 删除任务
+        
+        @param request: TaskInfoCancelOrDelTaskRequest
+        @param headers: TaskInfoCancelOrDelTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TaskInfoCancelOrDelTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_dto):
+            body['cardDTO'] = request.card_dto
+        if not UtilClient.is_unset(request.operator_account):
+            body['operatorAccount'] = request.operator_account
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        if not UtilClient.is_unset(request.proj_id):
+            body['projId'] = request.proj_id
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.send_msg_flag):
+            body['sendMsgFlag'] = request.send_msg_flag
+        if not UtilClient.is_unset(request.task_execute_person_dtos):
+            body['taskExecutePersonDTOS'] = request.task_execute_person_dtos
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TaskInfoCancelOrDelTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/taskCenters/taskInfos/cancelOrDelTask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def task_info_cancel_or_del_task_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskRequest,
+        headers: dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskResponse:
+        """
+        @summary 删除任务
+        
+        @param request: TaskInfoCancelOrDelTaskRequest
+        @param headers: TaskInfoCancelOrDelTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TaskInfoCancelOrDelTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_dto):
+            body['cardDTO'] = request.card_dto
+        if not UtilClient.is_unset(request.operator_account):
+            body['operatorAccount'] = request.operator_account
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        if not UtilClient.is_unset(request.proj_id):
+            body['projId'] = request.proj_id
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.send_msg_flag):
+            body['sendMsgFlag'] = request.send_msg_flag
+        if not UtilClient.is_unset(request.task_execute_person_dtos):
+            body['taskExecutePersonDTOS'] = request.task_execute_person_dtos
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TaskInfoCancelOrDelTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/taskCenters/taskInfos/cancelOrDelTask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def task_info_cancel_or_del_task(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskResponse:
+        """
+        @summary 删除任务
+        
+        @param request: TaskInfoCancelOrDelTaskRequest
+        @return: TaskInfoCancelOrDelTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskHeaders()
+        return self.task_info_cancel_or_del_task_with_options(request, headers, runtime)
+
+    async def task_info_cancel_or_del_task_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskResponse:
+        """
+        @summary 删除任务
+        
+        @param request: TaskInfoCancelOrDelTaskRequest
+        @return: TaskInfoCancelOrDelTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TaskInfoCancelOrDelTaskHeaders()
+        return await self.task_info_cancel_or_del_task_with_options_async(request, headers, runtime)
+
     def task_info_create_and_start_task_with_options(
         self,
         request: dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskRequest,
@@ -11129,6 +11401,334 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.TaskInfoCreateAndStartTaskHeaders()
         return await self.task_info_create_and_start_task_with_options_async(request, headers, runtime)
+
+    def task_info_finish_task_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoFinishTaskRequest,
+        headers: dingtalkexclusive__1__0_models.TaskInfoFinishTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoFinishTaskResponse:
+        """
+        @summary 完成任务
+        
+        @param request: TaskInfoFinishTaskRequest
+        @param headers: TaskInfoFinishTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TaskInfoFinishTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_dto):
+            body['cardDTO'] = request.card_dto
+        if not UtilClient.is_unset(request.operator_account):
+            body['operatorAccount'] = request.operator_account
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        if not UtilClient.is_unset(request.proj_id):
+            body['projId'] = request.proj_id
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.send_msg_flag):
+            body['sendMsgFlag'] = request.send_msg_flag
+        if not UtilClient.is_unset(request.task_execute_person_dtos):
+            body['taskExecutePersonDTOS'] = request.task_execute_person_dtos
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TaskInfoFinishTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/taskCenters/taskInfos/finishTask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TaskInfoFinishTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def task_info_finish_task_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoFinishTaskRequest,
+        headers: dingtalkexclusive__1__0_models.TaskInfoFinishTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoFinishTaskResponse:
+        """
+        @summary 完成任务
+        
+        @param request: TaskInfoFinishTaskRequest
+        @param headers: TaskInfoFinishTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TaskInfoFinishTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_dto):
+            body['cardDTO'] = request.card_dto
+        if not UtilClient.is_unset(request.operator_account):
+            body['operatorAccount'] = request.operator_account
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        if not UtilClient.is_unset(request.proj_id):
+            body['projId'] = request.proj_id
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.send_msg_flag):
+            body['sendMsgFlag'] = request.send_msg_flag
+        if not UtilClient.is_unset(request.task_execute_person_dtos):
+            body['taskExecutePersonDTOS'] = request.task_execute_person_dtos
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TaskInfoFinishTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/taskCenters/taskInfos/finishTask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TaskInfoFinishTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def task_info_finish_task(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoFinishTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoFinishTaskResponse:
+        """
+        @summary 完成任务
+        
+        @param request: TaskInfoFinishTaskRequest
+        @return: TaskInfoFinishTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TaskInfoFinishTaskHeaders()
+        return self.task_info_finish_task_with_options(request, headers, runtime)
+
+    async def task_info_finish_task_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoFinishTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoFinishTaskResponse:
+        """
+        @summary 完成任务
+        
+        @param request: TaskInfoFinishTaskRequest
+        @return: TaskInfoFinishTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TaskInfoFinishTaskHeaders()
+        return await self.task_info_finish_task_with_options_async(request, headers, runtime)
+
+    def task_info_update_task_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoUpdateTaskRequest,
+        headers: dingtalkexclusive__1__0_models.TaskInfoUpdateTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoUpdateTaskResponse:
+        """
+        @summary 更新任务
+        
+        @param request: TaskInfoUpdateTaskRequest
+        @param headers: TaskInfoUpdateTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TaskInfoUpdateTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attr):
+            body['attr'] = request.attr
+        if not UtilClient.is_unset(request.canceldel_task_card_id):
+            body['canceldelTaskCardId'] = request.canceldel_task_card_id
+        if not UtilClient.is_unset(request.card_dto):
+            body['cardDTO'] = request.card_dto
+        if not UtilClient.is_unset(request.detail_url):
+            body['detailUrl'] = request.detail_url
+        if not UtilClient.is_unset(request.finish_task_card_id):
+            body['finishTaskCardId'] = request.finish_task_card_id
+        if not UtilClient.is_unset(request.list_open_conversation_id):
+            body['listOpenConversationId'] = request.list_open_conversation_id
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        if not UtilClient.is_unset(request.operator_account):
+            body['operatorAccount'] = request.operator_account
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        if not UtilClient.is_unset(request.proj_id):
+            body['projId'] = request.proj_id
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.send_msg_flag):
+            body['sendMsgFlag'] = request.send_msg_flag
+        if not UtilClient.is_unset(request.start_task_card_id):
+            body['startTaskCardId'] = request.start_task_card_id
+        if not UtilClient.is_unset(request.task_content):
+            body['taskContent'] = request.task_content
+        if not UtilClient.is_unset(request.task_end_time):
+            body['taskEndTime'] = request.task_end_time
+        if not UtilClient.is_unset(request.task_execute_person_dtos):
+            body['taskExecutePersonDTOS'] = request.task_execute_person_dtos
+        if not UtilClient.is_unset(request.task_title):
+            body['taskTitle'] = request.task_title
+        if not UtilClient.is_unset(request.task_url_mobile):
+            body['taskUrlMobile'] = request.task_url_mobile
+        if not UtilClient.is_unset(request.task_url_pc):
+            body['taskUrlPc'] = request.task_url_pc
+        if not UtilClient.is_unset(request.update_task_card_id):
+            body['updateTaskCardId'] = request.update_task_card_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TaskInfoUpdateTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/taskCenters/taskInfos/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TaskInfoUpdateTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def task_info_update_task_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoUpdateTaskRequest,
+        headers: dingtalkexclusive__1__0_models.TaskInfoUpdateTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoUpdateTaskResponse:
+        """
+        @summary 更新任务
+        
+        @param request: TaskInfoUpdateTaskRequest
+        @param headers: TaskInfoUpdateTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TaskInfoUpdateTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attr):
+            body['attr'] = request.attr
+        if not UtilClient.is_unset(request.canceldel_task_card_id):
+            body['canceldelTaskCardId'] = request.canceldel_task_card_id
+        if not UtilClient.is_unset(request.card_dto):
+            body['cardDTO'] = request.card_dto
+        if not UtilClient.is_unset(request.detail_url):
+            body['detailUrl'] = request.detail_url
+        if not UtilClient.is_unset(request.finish_task_card_id):
+            body['finishTaskCardId'] = request.finish_task_card_id
+        if not UtilClient.is_unset(request.list_open_conversation_id):
+            body['listOpenConversationId'] = request.list_open_conversation_id
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        if not UtilClient.is_unset(request.operator_account):
+            body['operatorAccount'] = request.operator_account
+        if not UtilClient.is_unset(request.out_task_id):
+            body['outTaskId'] = request.out_task_id
+        if not UtilClient.is_unset(request.proj_id):
+            body['projId'] = request.proj_id
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        if not UtilClient.is_unset(request.send_msg_flag):
+            body['sendMsgFlag'] = request.send_msg_flag
+        if not UtilClient.is_unset(request.start_task_card_id):
+            body['startTaskCardId'] = request.start_task_card_id
+        if not UtilClient.is_unset(request.task_content):
+            body['taskContent'] = request.task_content
+        if not UtilClient.is_unset(request.task_end_time):
+            body['taskEndTime'] = request.task_end_time
+        if not UtilClient.is_unset(request.task_execute_person_dtos):
+            body['taskExecutePersonDTOS'] = request.task_execute_person_dtos
+        if not UtilClient.is_unset(request.task_title):
+            body['taskTitle'] = request.task_title
+        if not UtilClient.is_unset(request.task_url_mobile):
+            body['taskUrlMobile'] = request.task_url_mobile
+        if not UtilClient.is_unset(request.task_url_pc):
+            body['taskUrlPc'] = request.task_url_pc
+        if not UtilClient.is_unset(request.update_task_card_id):
+            body['updateTaskCardId'] = request.update_task_card_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TaskInfoUpdateTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/taskCenters/taskInfos/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TaskInfoUpdateTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def task_info_update_task(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoUpdateTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoUpdateTaskResponse:
+        """
+        @summary 更新任务
+        
+        @param request: TaskInfoUpdateTaskRequest
+        @return: TaskInfoUpdateTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TaskInfoUpdateTaskHeaders()
+        return self.task_info_update_task_with_options(request, headers, runtime)
+
+    async def task_info_update_task_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TaskInfoUpdateTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.TaskInfoUpdateTaskResponse:
+        """
+        @summary 更新任务
+        
+        @param request: TaskInfoUpdateTaskRequest
+        @return: TaskInfoUpdateTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TaskInfoUpdateTaskHeaders()
+        return await self.task_info_update_task_with_options_async(request, headers, runtime)
 
     def update_category_name_with_options(
         self,

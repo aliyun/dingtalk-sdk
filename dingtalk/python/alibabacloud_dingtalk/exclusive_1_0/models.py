@@ -17799,6 +17799,497 @@ class SpecialRuleBatchReceiverResponse(TeaModel):
         return self
 
 
+class TaskInfoAddDelTaskPersonHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TaskInfoAddDelTaskPersonRequestTaskExecutePersonDTOS(TeaModel):
+    def __init__(
+        self,
+        employee_code: str = None,
+        person_type: int = None,
+    ):
+        self.employee_code = employee_code
+        self.person_type = person_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.employee_code is not None:
+            result['employeeCode'] = self.employee_code
+        if self.person_type is not None:
+            result['personType'] = self.person_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('employeeCode') is not None:
+            self.employee_code = m.get('employeeCode')
+        if m.get('personType') is not None:
+            self.person_type = m.get('personType')
+        return self
+
+
+class TaskInfoAddDelTaskPersonRequest(TeaModel):
+    def __init__(
+        self,
+        operate_type: int = None,
+        operator_account: str = None,
+        out_task_id: str = None,
+        proj_id: str = None,
+        secret_key: str = None,
+        task_execute_person_dtos: List[TaskInfoAddDelTaskPersonRequestTaskExecutePersonDTOS] = None,
+    ):
+        # This parameter is required.
+        self.operate_type = operate_type
+        # This parameter is required.
+        self.operator_account = operator_account
+        # This parameter is required.
+        self.out_task_id = out_task_id
+        # This parameter is required.
+        self.proj_id = proj_id
+        # This parameter is required.
+        self.secret_key = secret_key
+        # This parameter is required.
+        self.task_execute_person_dtos = task_execute_person_dtos
+
+    def validate(self):
+        if self.task_execute_person_dtos:
+            for k in self.task_execute_person_dtos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operate_type is not None:
+            result['operateType'] = self.operate_type
+        if self.operator_account is not None:
+            result['operatorAccount'] = self.operator_account
+        if self.out_task_id is not None:
+            result['outTaskId'] = self.out_task_id
+        if self.proj_id is not None:
+            result['projId'] = self.proj_id
+        if self.secret_key is not None:
+            result['secretKey'] = self.secret_key
+        result['taskExecutePersonDTOS'] = []
+        if self.task_execute_person_dtos is not None:
+            for k in self.task_execute_person_dtos:
+                result['taskExecutePersonDTOS'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operateType') is not None:
+            self.operate_type = m.get('operateType')
+        if m.get('operatorAccount') is not None:
+            self.operator_account = m.get('operatorAccount')
+        if m.get('outTaskId') is not None:
+            self.out_task_id = m.get('outTaskId')
+        if m.get('projId') is not None:
+            self.proj_id = m.get('projId')
+        if m.get('secretKey') is not None:
+            self.secret_key = m.get('secretKey')
+        self.task_execute_person_dtos = []
+        if m.get('taskExecutePersonDTOS') is not None:
+            for k in m.get('taskExecutePersonDTOS'):
+                temp_model = TaskInfoAddDelTaskPersonRequestTaskExecutePersonDTOS()
+                self.task_execute_person_dtos.append(temp_model.from_map(k))
+        return self
+
+
+class TaskInfoAddDelTaskPersonResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: int = None,
+        data: Any = None,
+        message: str = None,
+    ):
+        self.code = code
+        self.data = data
+        self.message = message
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.data is not None:
+            result['data'] = self.data
+        if self.message is not None:
+            result['message'] = self.message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        return self
+
+
+class TaskInfoAddDelTaskPersonResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TaskInfoAddDelTaskPersonResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TaskInfoAddDelTaskPersonResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TaskInfoCancelOrDelTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TaskInfoCancelOrDelTaskRequestCardDTO(TeaModel):
+    def __init__(
+        self,
+        at_account: str = None,
+        card_callback_url: str = None,
+        content: Any = None,
+        is_at_all: bool = None,
+        receiver_account: str = None,
+    ):
+        self.at_account = at_account
+        self.card_callback_url = card_callback_url
+        self.content = content
+        self.is_at_all = is_at_all
+        self.receiver_account = receiver_account
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_account is not None:
+            result['atAccount'] = self.at_account
+        if self.card_callback_url is not None:
+            result['cardCallbackUrl'] = self.card_callback_url
+        if self.content is not None:
+            result['content'] = self.content
+        if self.is_at_all is not None:
+            result['isAtAll'] = self.is_at_all
+        if self.receiver_account is not None:
+            result['receiverAccount'] = self.receiver_account
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atAccount') is not None:
+            self.at_account = m.get('atAccount')
+        if m.get('cardCallbackUrl') is not None:
+            self.card_callback_url = m.get('cardCallbackUrl')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('isAtAll') is not None:
+            self.is_at_all = m.get('isAtAll')
+        if m.get('receiverAccount') is not None:
+            self.receiver_account = m.get('receiverAccount')
+        return self
+
+
+class TaskInfoCancelOrDelTaskRequestTaskExecutePersonDTOS(TeaModel):
+    def __init__(
+        self,
+        employee_code: str = None,
+        person_type: int = None,
+    ):
+        self.employee_code = employee_code
+        self.person_type = person_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.employee_code is not None:
+            result['employeeCode'] = self.employee_code
+        if self.person_type is not None:
+            result['personType'] = self.person_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('employeeCode') is not None:
+            self.employee_code = m.get('employeeCode')
+        if m.get('personType') is not None:
+            self.person_type = m.get('personType')
+        return self
+
+
+class TaskInfoCancelOrDelTaskRequest(TeaModel):
+    def __init__(
+        self,
+        card_dto: TaskInfoCancelOrDelTaskRequestCardDTO = None,
+        operator_account: str = None,
+        out_task_id: str = None,
+        proj_id: str = None,
+        secret_key: str = None,
+        send_msg_flag: int = None,
+        task_execute_person_dtos: List[TaskInfoCancelOrDelTaskRequestTaskExecutePersonDTOS] = None,
+    ):
+        self.card_dto = card_dto
+        # This parameter is required.
+        self.operator_account = operator_account
+        self.out_task_id = out_task_id
+        # This parameter is required.
+        self.proj_id = proj_id
+        # This parameter is required.
+        self.secret_key = secret_key
+        self.send_msg_flag = send_msg_flag
+        self.task_execute_person_dtos = task_execute_person_dtos
+
+    def validate(self):
+        if self.card_dto:
+            self.card_dto.validate()
+        if self.task_execute_person_dtos:
+            for k in self.task_execute_person_dtos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_dto is not None:
+            result['cardDTO'] = self.card_dto.to_map()
+        if self.operator_account is not None:
+            result['operatorAccount'] = self.operator_account
+        if self.out_task_id is not None:
+            result['outTaskId'] = self.out_task_id
+        if self.proj_id is not None:
+            result['projId'] = self.proj_id
+        if self.secret_key is not None:
+            result['secretKey'] = self.secret_key
+        if self.send_msg_flag is not None:
+            result['sendMsgFlag'] = self.send_msg_flag
+        result['taskExecutePersonDTOS'] = []
+        if self.task_execute_person_dtos is not None:
+            for k in self.task_execute_person_dtos:
+                result['taskExecutePersonDTOS'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardDTO') is not None:
+            temp_model = TaskInfoCancelOrDelTaskRequestCardDTO()
+            self.card_dto = temp_model.from_map(m['cardDTO'])
+        if m.get('operatorAccount') is not None:
+            self.operator_account = m.get('operatorAccount')
+        if m.get('outTaskId') is not None:
+            self.out_task_id = m.get('outTaskId')
+        if m.get('projId') is not None:
+            self.proj_id = m.get('projId')
+        if m.get('secretKey') is not None:
+            self.secret_key = m.get('secretKey')
+        if m.get('sendMsgFlag') is not None:
+            self.send_msg_flag = m.get('sendMsgFlag')
+        self.task_execute_person_dtos = []
+        if m.get('taskExecutePersonDTOS') is not None:
+            for k in m.get('taskExecutePersonDTOS'):
+                temp_model = TaskInfoCancelOrDelTaskRequestTaskExecutePersonDTOS()
+                self.task_execute_person_dtos.append(temp_model.from_map(k))
+        return self
+
+
+class TaskInfoCancelOrDelTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: int = None,
+        data: Any = None,
+        message: str = None,
+    ):
+        self.code = code
+        self.data = data
+        self.message = message
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.data is not None:
+            result['data'] = self.data
+        if self.message is not None:
+            result['message'] = self.message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        return self
+
+
+class TaskInfoCancelOrDelTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TaskInfoCancelOrDelTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TaskInfoCancelOrDelTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class TaskInfoCreateAndStartTaskHeaders(TeaModel):
     def __init__(
         self,
@@ -18490,6 +18981,815 @@ class TaskInfoCreateAndStartTaskResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = TaskInfoCreateAndStartTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TaskInfoFinishTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TaskInfoFinishTaskRequestCardDTO(TeaModel):
+    def __init__(
+        self,
+        at_account: str = None,
+        card_callback_url: str = None,
+        content: Any = None,
+        is_at_all: bool = None,
+        receiver_account: str = None,
+    ):
+        self.at_account = at_account
+        self.card_callback_url = card_callback_url
+        self.content = content
+        self.is_at_all = is_at_all
+        self.receiver_account = receiver_account
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_account is not None:
+            result['atAccount'] = self.at_account
+        if self.card_callback_url is not None:
+            result['cardCallbackUrl'] = self.card_callback_url
+        if self.content is not None:
+            result['content'] = self.content
+        if self.is_at_all is not None:
+            result['isAtAll'] = self.is_at_all
+        if self.receiver_account is not None:
+            result['receiverAccount'] = self.receiver_account
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atAccount') is not None:
+            self.at_account = m.get('atAccount')
+        if m.get('cardCallbackUrl') is not None:
+            self.card_callback_url = m.get('cardCallbackUrl')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('isAtAll') is not None:
+            self.is_at_all = m.get('isAtAll')
+        if m.get('receiverAccount') is not None:
+            self.receiver_account = m.get('receiverAccount')
+        return self
+
+
+class TaskInfoFinishTaskRequestTaskExecutePersonDTOS(TeaModel):
+    def __init__(
+        self,
+        employee_code: str = None,
+        person_type: int = None,
+    ):
+        self.employee_code = employee_code
+        self.person_type = person_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.employee_code is not None:
+            result['employeeCode'] = self.employee_code
+        if self.person_type is not None:
+            result['personType'] = self.person_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('employeeCode') is not None:
+            self.employee_code = m.get('employeeCode')
+        if m.get('personType') is not None:
+            self.person_type = m.get('personType')
+        return self
+
+
+class TaskInfoFinishTaskRequest(TeaModel):
+    def __init__(
+        self,
+        card_dto: TaskInfoFinishTaskRequestCardDTO = None,
+        operator_account: str = None,
+        out_task_id: str = None,
+        proj_id: str = None,
+        secret_key: str = None,
+        send_msg_flag: int = None,
+        task_execute_person_dtos: List[TaskInfoFinishTaskRequestTaskExecutePersonDTOS] = None,
+    ):
+        self.card_dto = card_dto
+        # This parameter is required.
+        self.operator_account = operator_account
+        self.out_task_id = out_task_id
+        # This parameter is required.
+        self.proj_id = proj_id
+        # This parameter is required.
+        self.secret_key = secret_key
+        self.send_msg_flag = send_msg_flag
+        self.task_execute_person_dtos = task_execute_person_dtos
+
+    def validate(self):
+        if self.card_dto:
+            self.card_dto.validate()
+        if self.task_execute_person_dtos:
+            for k in self.task_execute_person_dtos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.card_dto is not None:
+            result['cardDTO'] = self.card_dto.to_map()
+        if self.operator_account is not None:
+            result['operatorAccount'] = self.operator_account
+        if self.out_task_id is not None:
+            result['outTaskId'] = self.out_task_id
+        if self.proj_id is not None:
+            result['projId'] = self.proj_id
+        if self.secret_key is not None:
+            result['secretKey'] = self.secret_key
+        if self.send_msg_flag is not None:
+            result['sendMsgFlag'] = self.send_msg_flag
+        result['taskExecutePersonDTOS'] = []
+        if self.task_execute_person_dtos is not None:
+            for k in self.task_execute_person_dtos:
+                result['taskExecutePersonDTOS'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cardDTO') is not None:
+            temp_model = TaskInfoFinishTaskRequestCardDTO()
+            self.card_dto = temp_model.from_map(m['cardDTO'])
+        if m.get('operatorAccount') is not None:
+            self.operator_account = m.get('operatorAccount')
+        if m.get('outTaskId') is not None:
+            self.out_task_id = m.get('outTaskId')
+        if m.get('projId') is not None:
+            self.proj_id = m.get('projId')
+        if m.get('secretKey') is not None:
+            self.secret_key = m.get('secretKey')
+        if m.get('sendMsgFlag') is not None:
+            self.send_msg_flag = m.get('sendMsgFlag')
+        self.task_execute_person_dtos = []
+        if m.get('taskExecutePersonDTOS') is not None:
+            for k in m.get('taskExecutePersonDTOS'):
+                temp_model = TaskInfoFinishTaskRequestTaskExecutePersonDTOS()
+                self.task_execute_person_dtos.append(temp_model.from_map(k))
+        return self
+
+
+class TaskInfoFinishTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: int = None,
+        data: Any = None,
+        message: str = None,
+    ):
+        self.code = code
+        self.data = data
+        self.message = message
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.data is not None:
+            result['data'] = self.data
+        if self.message is not None:
+            result['message'] = self.message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        return self
+
+
+class TaskInfoFinishTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TaskInfoFinishTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TaskInfoFinishTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TaskInfoUpdateTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TaskInfoUpdateTaskRequestAttrListTaskDynamicAttr(TeaModel):
+    def __init__(
+        self,
+        attr_code: str = None,
+        list_attr_options_code: List[str] = None,
+    ):
+        self.attr_code = attr_code
+        self.list_attr_options_code = list_attr_options_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attr_code is not None:
+            result['attrCode'] = self.attr_code
+        if self.list_attr_options_code is not None:
+            result['listAttrOptionsCode'] = self.list_attr_options_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attrCode') is not None:
+            self.attr_code = m.get('attrCode')
+        if m.get('listAttrOptionsCode') is not None:
+            self.list_attr_options_code = m.get('listAttrOptionsCode')
+        return self
+
+
+class TaskInfoUpdateTaskRequestAttr(TeaModel):
+    def __init__(
+        self,
+        list_task_dynamic_attr: List[TaskInfoUpdateTaskRequestAttrListTaskDynamicAttr] = None,
+    ):
+        self.list_task_dynamic_attr = list_task_dynamic_attr
+
+    def validate(self):
+        if self.list_task_dynamic_attr:
+            for k in self.list_task_dynamic_attr:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['listTaskDynamicAttr'] = []
+        if self.list_task_dynamic_attr is not None:
+            for k in self.list_task_dynamic_attr:
+                result['listTaskDynamicAttr'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.list_task_dynamic_attr = []
+        if m.get('listTaskDynamicAttr') is not None:
+            for k in m.get('listTaskDynamicAttr'):
+                temp_model = TaskInfoUpdateTaskRequestAttrListTaskDynamicAttr()
+                self.list_task_dynamic_attr.append(temp_model.from_map(k))
+        return self
+
+
+class TaskInfoUpdateTaskRequestCardDTO(TeaModel):
+    def __init__(
+        self,
+        at_account: str = None,
+        card_callback_url: str = None,
+        content: Any = None,
+        is_at_all: bool = None,
+        receiver_account: str = None,
+    ):
+        self.at_account = at_account
+        self.card_callback_url = card_callback_url
+        self.content = content
+        self.is_at_all = is_at_all
+        self.receiver_account = receiver_account
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_account is not None:
+            result['atAccount'] = self.at_account
+        if self.card_callback_url is not None:
+            result['cardCallbackUrl'] = self.card_callback_url
+        if self.content is not None:
+            result['content'] = self.content
+        if self.is_at_all is not None:
+            result['isAtAll'] = self.is_at_all
+        if self.receiver_account is not None:
+            result['receiverAccount'] = self.receiver_account
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atAccount') is not None:
+            self.at_account = m.get('atAccount')
+        if m.get('cardCallbackUrl') is not None:
+            self.card_callback_url = m.get('cardCallbackUrl')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('isAtAll') is not None:
+            self.is_at_all = m.get('isAtAll')
+        if m.get('receiverAccount') is not None:
+            self.receiver_account = m.get('receiverAccount')
+        return self
+
+
+class TaskInfoUpdateTaskRequestDetailUrl(TeaModel):
+    def __init__(
+        self,
+        app_url: str = None,
+        pc_url: str = None,
+    ):
+        self.app_url = app_url
+        self.pc_url = pc_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_url is not None:
+            result['appUrl'] = self.app_url
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUrl') is not None:
+            self.app_url = m.get('appUrl')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        return self
+
+
+class TaskInfoUpdateTaskRequestTaskExecutePersonDTOS(TeaModel):
+    def __init__(
+        self,
+        employee_code: str = None,
+        person_type: int = None,
+    ):
+        self.employee_code = employee_code
+        self.person_type = person_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.employee_code is not None:
+            result['employeeCode'] = self.employee_code
+        if self.person_type is not None:
+            result['personType'] = self.person_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('employeeCode') is not None:
+            self.employee_code = m.get('employeeCode')
+        if m.get('personType') is not None:
+            self.person_type = m.get('personType')
+        return self
+
+
+class TaskInfoUpdateTaskRequest(TeaModel):
+    def __init__(
+        self,
+        attr: TaskInfoUpdateTaskRequestAttr = None,
+        canceldel_task_card_id: str = None,
+        card_dto: TaskInfoUpdateTaskRequestCardDTO = None,
+        detail_url: TaskInfoUpdateTaskRequestDetailUrl = None,
+        finish_task_card_id: str = None,
+        list_open_conversation_id: List[str] = None,
+        operate_type: int = None,
+        operator_account: str = None,
+        out_task_id: str = None,
+        proj_id: str = None,
+        secret_key: str = None,
+        send_msg_flag: int = None,
+        start_task_card_id: str = None,
+        task_content: str = None,
+        task_end_time: int = None,
+        task_execute_person_dtos: List[TaskInfoUpdateTaskRequestTaskExecutePersonDTOS] = None,
+        task_title: str = None,
+        task_url_mobile: str = None,
+        task_url_pc: str = None,
+        update_task_card_id: str = None,
+    ):
+        self.attr = attr
+        self.canceldel_task_card_id = canceldel_task_card_id
+        self.card_dto = card_dto
+        self.detail_url = detail_url
+        self.finish_task_card_id = finish_task_card_id
+        self.list_open_conversation_id = list_open_conversation_id
+        self.operate_type = operate_type
+        # This parameter is required.
+        self.operator_account = operator_account
+        self.out_task_id = out_task_id
+        # This parameter is required.
+        self.proj_id = proj_id
+        # This parameter is required.
+        self.secret_key = secret_key
+        self.send_msg_flag = send_msg_flag
+        self.start_task_card_id = start_task_card_id
+        self.task_content = task_content
+        self.task_end_time = task_end_time
+        self.task_execute_person_dtos = task_execute_person_dtos
+        self.task_title = task_title
+        self.task_url_mobile = task_url_mobile
+        self.task_url_pc = task_url_pc
+        self.update_task_card_id = update_task_card_id
+
+    def validate(self):
+        if self.attr:
+            self.attr.validate()
+        if self.card_dto:
+            self.card_dto.validate()
+        if self.detail_url:
+            self.detail_url.validate()
+        if self.task_execute_person_dtos:
+            for k in self.task_execute_person_dtos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attr is not None:
+            result['attr'] = self.attr.to_map()
+        if self.canceldel_task_card_id is not None:
+            result['canceldelTaskCardId'] = self.canceldel_task_card_id
+        if self.card_dto is not None:
+            result['cardDTO'] = self.card_dto.to_map()
+        if self.detail_url is not None:
+            result['detailUrl'] = self.detail_url.to_map()
+        if self.finish_task_card_id is not None:
+            result['finishTaskCardId'] = self.finish_task_card_id
+        if self.list_open_conversation_id is not None:
+            result['listOpenConversationId'] = self.list_open_conversation_id
+        if self.operate_type is not None:
+            result['operateType'] = self.operate_type
+        if self.operator_account is not None:
+            result['operatorAccount'] = self.operator_account
+        if self.out_task_id is not None:
+            result['outTaskId'] = self.out_task_id
+        if self.proj_id is not None:
+            result['projId'] = self.proj_id
+        if self.secret_key is not None:
+            result['secretKey'] = self.secret_key
+        if self.send_msg_flag is not None:
+            result['sendMsgFlag'] = self.send_msg_flag
+        if self.start_task_card_id is not None:
+            result['startTaskCardId'] = self.start_task_card_id
+        if self.task_content is not None:
+            result['taskContent'] = self.task_content
+        if self.task_end_time is not None:
+            result['taskEndTime'] = self.task_end_time
+        result['taskExecutePersonDTOS'] = []
+        if self.task_execute_person_dtos is not None:
+            for k in self.task_execute_person_dtos:
+                result['taskExecutePersonDTOS'].append(k.to_map() if k else None)
+        if self.task_title is not None:
+            result['taskTitle'] = self.task_title
+        if self.task_url_mobile is not None:
+            result['taskUrlMobile'] = self.task_url_mobile
+        if self.task_url_pc is not None:
+            result['taskUrlPc'] = self.task_url_pc
+        if self.update_task_card_id is not None:
+            result['updateTaskCardId'] = self.update_task_card_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attr') is not None:
+            temp_model = TaskInfoUpdateTaskRequestAttr()
+            self.attr = temp_model.from_map(m['attr'])
+        if m.get('canceldelTaskCardId') is not None:
+            self.canceldel_task_card_id = m.get('canceldelTaskCardId')
+        if m.get('cardDTO') is not None:
+            temp_model = TaskInfoUpdateTaskRequestCardDTO()
+            self.card_dto = temp_model.from_map(m['cardDTO'])
+        if m.get('detailUrl') is not None:
+            temp_model = TaskInfoUpdateTaskRequestDetailUrl()
+            self.detail_url = temp_model.from_map(m['detailUrl'])
+        if m.get('finishTaskCardId') is not None:
+            self.finish_task_card_id = m.get('finishTaskCardId')
+        if m.get('listOpenConversationId') is not None:
+            self.list_open_conversation_id = m.get('listOpenConversationId')
+        if m.get('operateType') is not None:
+            self.operate_type = m.get('operateType')
+        if m.get('operatorAccount') is not None:
+            self.operator_account = m.get('operatorAccount')
+        if m.get('outTaskId') is not None:
+            self.out_task_id = m.get('outTaskId')
+        if m.get('projId') is not None:
+            self.proj_id = m.get('projId')
+        if m.get('secretKey') is not None:
+            self.secret_key = m.get('secretKey')
+        if m.get('sendMsgFlag') is not None:
+            self.send_msg_flag = m.get('sendMsgFlag')
+        if m.get('startTaskCardId') is not None:
+            self.start_task_card_id = m.get('startTaskCardId')
+        if m.get('taskContent') is not None:
+            self.task_content = m.get('taskContent')
+        if m.get('taskEndTime') is not None:
+            self.task_end_time = m.get('taskEndTime')
+        self.task_execute_person_dtos = []
+        if m.get('taskExecutePersonDTOS') is not None:
+            for k in m.get('taskExecutePersonDTOS'):
+                temp_model = TaskInfoUpdateTaskRequestTaskExecutePersonDTOS()
+                self.task_execute_person_dtos.append(temp_model.from_map(k))
+        if m.get('taskTitle') is not None:
+            self.task_title = m.get('taskTitle')
+        if m.get('taskUrlMobile') is not None:
+            self.task_url_mobile = m.get('taskUrlMobile')
+        if m.get('taskUrlPc') is not None:
+            self.task_url_pc = m.get('taskUrlPc')
+        if m.get('updateTaskCardId') is not None:
+            self.update_task_card_id = m.get('updateTaskCardId')
+        return self
+
+
+class TaskInfoUpdateTaskResponseBodyDataGroupVoList(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        open_conversation_id: str = None,
+    ):
+        self.corp_id = corp_id
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class TaskInfoUpdateTaskResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        group_vo_list: List[TaskInfoUpdateTaskResponseBodyDataGroupVoList] = None,
+        task_id: str = None,
+    ):
+        self.group_vo_list = group_vo_list
+        self.task_id = task_id
+
+    def validate(self):
+        if self.group_vo_list:
+            for k in self.group_vo_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupVoList'] = []
+        if self.group_vo_list is not None:
+            for k in self.group_vo_list:
+                result['groupVoList'].append(k.to_map() if k else None)
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_vo_list = []
+        if m.get('groupVoList') is not None:
+            for k in m.get('groupVoList'):
+                temp_model = TaskInfoUpdateTaskResponseBodyDataGroupVoList()
+                self.group_vo_list.append(temp_model.from_map(k))
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class TaskInfoUpdateTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: int = None,
+        data: TaskInfoUpdateTaskResponseBodyData = None,
+        message: str = None,
+    ):
+        self.code = code
+        self.data = data
+        self.message = message
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.message is not None:
+            result['message'] = self.message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('data') is not None:
+            temp_model = TaskInfoUpdateTaskResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        return self
+
+
+class TaskInfoUpdateTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TaskInfoUpdateTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TaskInfoUpdateTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

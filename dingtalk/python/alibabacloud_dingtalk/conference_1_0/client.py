@@ -26,6 +26,132 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_record_permission_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.AddRecordPermissionRequest,
+        headers: dingtalkconference__1__0_models.AddRecordPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.AddRecordPermissionResponse:
+        """
+        @summary 增加闪记权限
+        
+        @param request: AddRecordPermissionRequest
+        @param headers: AddRecordPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRecordPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.owner_union_id):
+            body['ownerUnionId'] = request.owner_union_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddRecordPermission',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/flashMinutes/recordPermissions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.AddRecordPermissionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_record_permission_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.AddRecordPermissionRequest,
+        headers: dingtalkconference__1__0_models.AddRecordPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.AddRecordPermissionResponse:
+        """
+        @summary 增加闪记权限
+        
+        @param request: AddRecordPermissionRequest
+        @param headers: AddRecordPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRecordPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.owner_union_id):
+            body['ownerUnionId'] = request.owner_union_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddRecordPermission',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/flashMinutes/recordPermissions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.AddRecordPermissionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_record_permission(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.AddRecordPermissionRequest,
+    ) -> dingtalkconference__1__0_models.AddRecordPermissionResponse:
+        """
+        @summary 增加闪记权限
+        
+        @param request: AddRecordPermissionRequest
+        @return: AddRecordPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.AddRecordPermissionHeaders()
+        return self.add_record_permission_with_options(conference_id, request, headers, runtime)
+
+    async def add_record_permission_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.AddRecordPermissionRequest,
+    ) -> dingtalkconference__1__0_models.AddRecordPermissionResponse:
+        """
+        @summary 增加闪记权限
+        
+        @param request: AddRecordPermissionRequest
+        @return: AddRecordPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.AddRecordPermissionHeaders()
+        return await self.add_record_permission_with_options_async(conference_id, request, headers, runtime)
+
     def cancel_schedule_conference_with_options(
         self,
         request: dingtalkconference__1__0_models.CancelScheduleConferenceRequest,
@@ -3215,6 +3341,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.QueryMinutesTextHeaders()
         return await self.query_minutes_text_with_options_async(conference_id, request, headers, runtime)
+
+    def query_record_minutes_url_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryRecordMinutesUrlRequest,
+        headers: dingtalkconference__1__0_models.QueryRecordMinutesUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryRecordMinutesUrlResponse:
+        """
+        @summary 查询闪记链接
+        
+        @param request: QueryRecordMinutesUrlRequest
+        @param headers: QueryRecordMinutesUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRecordMinutesUrlResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.recorder_union_id):
+            query['recorderUnionId'] = request.recorder_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryRecordMinutesUrl',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/flashMinutes/recordUrls',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryRecordMinutesUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_record_minutes_url_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryRecordMinutesUrlRequest,
+        headers: dingtalkconference__1__0_models.QueryRecordMinutesUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryRecordMinutesUrlResponse:
+        """
+        @summary 查询闪记链接
+        
+        @param request: QueryRecordMinutesUrlRequest
+        @param headers: QueryRecordMinutesUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRecordMinutesUrlResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.recorder_union_id):
+            query['recorderUnionId'] = request.recorder_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryRecordMinutesUrl',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/flashMinutes/recordUrls',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryRecordMinutesUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_record_minutes_url(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryRecordMinutesUrlRequest,
+    ) -> dingtalkconference__1__0_models.QueryRecordMinutesUrlResponse:
+        """
+        @summary 查询闪记链接
+        
+        @param request: QueryRecordMinutesUrlRequest
+        @return: QueryRecordMinutesUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryRecordMinutesUrlHeaders()
+        return self.query_record_minutes_url_with_options(conference_id, request, headers, runtime)
+
+    async def query_record_minutes_url_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryRecordMinutesUrlRequest,
+    ) -> dingtalkconference__1__0_models.QueryRecordMinutesUrlResponse:
+        """
+        @summary 查询闪记链接
+        
+        @param request: QueryRecordMinutesUrlRequest
+        @return: QueryRecordMinutesUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryRecordMinutesUrlHeaders()
+        return await self.query_record_minutes_url_with_options_async(conference_id, request, headers, runtime)
 
     def query_schedule_conf_settings_with_options(
         self,
