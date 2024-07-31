@@ -2986,6 +2986,146 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
+         * @summary 只能认输主数据根据ID获取
+         *
+         * @param request MasterDatasGetRequest
+         * @param headers MasterDatasGetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return MasterDatasGetResponse
+         */
+        public MasterDatasGetResponse MasterDatasGetWithOptions(MasterDatasGetRequest request, MasterDatasGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjId))
+            {
+                body["objId"] = request.ObjId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScopeCode))
+            {
+                body["scopeCode"] = request.ScopeCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantId))
+            {
+                body["tenantId"] = request.TenantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewEntityCode))
+            {
+                body["viewEntityCode"] = request.ViewEntityCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MasterDatasGet",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masterDatas/objects/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MasterDatasGetResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 只能认输主数据根据ID获取
+         *
+         * @param request MasterDatasGetRequest
+         * @param headers MasterDatasGetHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return MasterDatasGetResponse
+         */
+        public async Task<MasterDatasGetResponse> MasterDatasGetWithOptionsAsync(MasterDatasGetRequest request, MasterDatasGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjId))
+            {
+                body["objId"] = request.ObjId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScopeCode))
+            {
+                body["scopeCode"] = request.ScopeCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantId))
+            {
+                body["tenantId"] = request.TenantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewEntityCode))
+            {
+                body["viewEntityCode"] = request.ViewEntityCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MasterDatasGet",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masterDatas/objects/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MasterDatasGetResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 只能认输主数据根据ID获取
+         *
+         * @param request MasterDatasGetRequest
+         * @return MasterDatasGetResponse
+         */
+        public MasterDatasGetResponse MasterDatasGet(MasterDatasGetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            MasterDatasGetHeaders headers = new MasterDatasGetHeaders();
+            return MasterDatasGetWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 只能认输主数据根据ID获取
+         *
+         * @param request MasterDatasGetRequest
+         * @return MasterDatasGetResponse
+         */
+        public async Task<MasterDatasGetResponse> MasterDatasGetAsync(MasterDatasGetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            MasterDatasGetHeaders headers = new MasterDatasGetHeaders();
+            return await MasterDatasGetWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 智能人事主数据查询服务
          *
          * @param request MasterDatasQueryRequest

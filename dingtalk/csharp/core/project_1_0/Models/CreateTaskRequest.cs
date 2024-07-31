@@ -32,6 +32,14 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public List<CreateTaskRequestCustomfieldsValue> Value { get; set; }
             public class CreateTaskRequestCustomfieldsValue : TeaModel {
+                [NameInMap("id")]
+                [Validation(Required=false)]
+                public string Id { get; set; }
+
+                [NameInMap("thumbUrl")]
+                [Validation(Required=false)]
+                public string ThumbUrl { get; set; }
+
                 [NameInMap("title")]
                 [Validation(Required=false)]
                 public string Title { get; set; }

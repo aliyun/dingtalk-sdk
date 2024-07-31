@@ -3009,6 +3009,130 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
         }
 
         /**
+         * @summary 获取差旅单列表
+         *
+         * @param request ChatAiTravelListRequest
+         * @param headers ChatAiTravelListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ChatAiTravelListResponse
+         */
+        public ChatAiTravelListResponse ChatAiTravelListWithOptions(ChatAiTravelListRequest request, ChatAiTravelListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParamList))
+            {
+                body["paramList"] = request.ParamList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TravelId))
+            {
+                body["travelId"] = request.TravelId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatAiTravelList",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/ai/travelLists/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatAiTravelListResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取差旅单列表
+         *
+         * @param request ChatAiTravelListRequest
+         * @param headers ChatAiTravelListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ChatAiTravelListResponse
+         */
+        public async Task<ChatAiTravelListResponse> ChatAiTravelListWithOptionsAsync(ChatAiTravelListRequest request, ChatAiTravelListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParamList))
+            {
+                body["paramList"] = request.ParamList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TravelId))
+            {
+                body["travelId"] = request.TravelId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatAiTravelList",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/ai/travelLists/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatAiTravelListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取差旅单列表
+         *
+         * @param request ChatAiTravelListRequest
+         * @return ChatAiTravelListResponse
+         */
+        public ChatAiTravelListResponse ChatAiTravelList(ChatAiTravelListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatAiTravelListHeaders headers = new ChatAiTravelListHeaders();
+            return ChatAiTravelListWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取差旅单列表
+         *
+         * @param request ChatAiTravelListRequest
+         * @return ChatAiTravelListResponse
+         */
+        public async Task<ChatAiTravelListResponse> ChatAiTravelListAsync(ChatAiTravelListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatAiTravelListHeaders headers = new ChatAiTravelListHeaders();
+            return await ChatAiTravelListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary ChatForm查询表单识别结果
          *
          * @param request ChatFormGetDataForApiAccessRequest
