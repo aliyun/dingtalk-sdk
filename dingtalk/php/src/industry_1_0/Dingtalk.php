@@ -69,6 +69,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterMemberReque
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiTravelListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiTravelListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiTravelListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatFormGetDataForApiAccessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatFormGetDataForApiAccessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatFormGetDataForApiAccessResponse;
@@ -1874,6 +1877,66 @@ class Dingtalk extends OpenApiClient
         $headers = new CampusUpdateRenterMemberHeaders([]);
 
         return $this->campusUpdateRenterMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取差旅单列表
+     *  *
+     * @param ChatAiTravelListRequest $request ChatAiTravelListRequest
+     * @param ChatAiTravelListHeaders $headers ChatAiTravelListHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatAiTravelListResponse ChatAiTravelListResponse
+     */
+    public function chatAiTravelListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->paramList)) {
+            $body['paramList'] = $request->paramList;
+        }
+        if (!Utils::isUnset($request->travelId)) {
+            $body['travelId'] = $request->travelId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatAiTravelList',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/ai/travelLists/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatAiTravelListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取差旅单列表
+     *  *
+     * @param ChatAiTravelListRequest $request ChatAiTravelListRequest
+     *
+     * @return ChatAiTravelListResponse ChatAiTravelListResponse
+     */
+    public function chatAiTravelList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatAiTravelListHeaders([]);
+
+        return $this->chatAiTravelListWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -64,6 +64,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataSaveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDatasGetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDatasGetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDatasGetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDatasQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDatasQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDatasQueryResponse;
@@ -1537,6 +1540,72 @@ class Dingtalk extends OpenApiClient
         $headers = new MasterDataTenantQueyHeaders([]);
 
         return $this->masterDataTenantQueyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 只能认输主数据根据ID获取
+     *  *
+     * @param MasterDatasGetRequest $request MasterDatasGetRequest
+     * @param MasterDatasGetHeaders $headers MasterDatasGetHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return MasterDatasGetResponse MasterDatasGetResponse
+     */
+    public function masterDatasGetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->objId)) {
+            $body['objId'] = $request->objId;
+        }
+        if (!Utils::isUnset($request->scopeCode)) {
+            $body['scopeCode'] = $request->scopeCode;
+        }
+        if (!Utils::isUnset($request->tenantId)) {
+            $body['tenantId'] = $request->tenantId;
+        }
+        if (!Utils::isUnset($request->viewEntityCode)) {
+            $body['viewEntityCode'] = $request->viewEntityCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'MasterDatasGet',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masterDatas/objects/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return MasterDatasGetResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 只能认输主数据根据ID获取
+     *  *
+     * @param MasterDatasGetRequest $request MasterDatasGetRequest
+     *
+     * @return MasterDatasGetResponse MasterDatasGetResponse
+     */
+    public function masterDatasGet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MasterDatasGetHeaders([]);
+
+        return $this->masterDatasGetWithOptions($request, $headers, $runtime);
     }
 
     /**

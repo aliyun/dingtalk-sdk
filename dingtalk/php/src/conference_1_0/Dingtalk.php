@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vconference_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\AddRecordPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\AddRecordPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\AddRecordPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CancelScheduleConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CancelScheduleConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CancelScheduleConferenceResponse;
@@ -82,6 +85,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesSummaryResponse
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesTextHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesTextRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesTextResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryRecordMinutesUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryRecordMinutesUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryRecordMinutesUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryScheduleConferenceInfoRequest;
@@ -141,6 +147,71 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 增加闪记权限
+     *  *
+     * @param string                     $conferenceId
+     * @param AddRecordPermissionRequest $request      AddRecordPermissionRequest
+     * @param AddRecordPermissionHeaders $headers      AddRecordPermissionHeaders
+     * @param RuntimeOptions             $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return AddRecordPermissionResponse AddRecordPermissionResponse
+     */
+    public function addRecordPermissionWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->ownerUnionId)) {
+            $body['ownerUnionId'] = $request->ownerUnionId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddRecordPermission',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/recordPermissions',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddRecordPermissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 增加闪记权限
+     *  *
+     * @param string                     $conferenceId
+     * @param AddRecordPermissionRequest $request      AddRecordPermissionRequest
+     *
+     * @return AddRecordPermissionResponse AddRecordPermissionResponse
+     */
+    public function addRecordPermission($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddRecordPermissionHeaders([]);
+
+        return $this->addRecordPermissionWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**
@@ -1778,6 +1849,68 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMinutesTextHeaders([]);
 
         return $this->queryMinutesTextWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询闪记链接
+     *  *
+     * @param string                       $conferenceId
+     * @param QueryRecordMinutesUrlRequest $request      QueryRecordMinutesUrlRequest
+     * @param QueryRecordMinutesUrlHeaders $headers      QueryRecordMinutesUrlHeaders
+     * @param RuntimeOptions               $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return QueryRecordMinutesUrlResponse QueryRecordMinutesUrlResponse
+     */
+    public function queryRecordMinutesUrlWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizType)) {
+            $query['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->recorderUnionId)) {
+            $query['recorderUnionId'] = $request->recorderUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryRecordMinutesUrl',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/recordUrls',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryRecordMinutesUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询闪记链接
+     *  *
+     * @param string                       $conferenceId
+     * @param QueryRecordMinutesUrlRequest $request      QueryRecordMinutesUrlRequest
+     *
+     * @return QueryRecordMinutesUrlResponse QueryRecordMinutesUrlResponse
+     */
+    public function queryRecordMinutesUrl($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryRecordMinutesUrlHeaders([]);
+
+        return $this->queryRecordMinutesUrlWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**

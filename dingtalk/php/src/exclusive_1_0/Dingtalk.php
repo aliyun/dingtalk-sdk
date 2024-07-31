@@ -264,9 +264,21 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumResp
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoAddDelTaskPersonHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoAddDelTaskPersonRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoAddDelTaskPersonResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoCancelOrDelTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoCancelOrDelTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoCancelOrDelTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoCreateAndStartTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoCreateAndStartTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoCreateAndStartTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoFinishTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoFinishTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoFinishTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoUpdateTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoUpdateTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoUpdateTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameResponse;
@@ -5964,6 +5976,153 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 增加/删除任务人员
+     *  *
+     * @param TaskInfoAddDelTaskPersonRequest $request TaskInfoAddDelTaskPersonRequest
+     * @param TaskInfoAddDelTaskPersonHeaders $headers TaskInfoAddDelTaskPersonHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TaskInfoAddDelTaskPersonResponse TaskInfoAddDelTaskPersonResponse
+     */
+    public function taskInfoAddDelTaskPersonWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operateType)) {
+            $body['operateType'] = $request->operateType;
+        }
+        if (!Utils::isUnset($request->operatorAccount)) {
+            $body['operatorAccount'] = $request->operatorAccount;
+        }
+        if (!Utils::isUnset($request->outTaskId)) {
+            $body['outTaskId'] = $request->outTaskId;
+        }
+        if (!Utils::isUnset($request->projId)) {
+            $body['projId'] = $request->projId;
+        }
+        if (!Utils::isUnset($request->secretKey)) {
+            $body['secretKey'] = $request->secretKey;
+        }
+        if (!Utils::isUnset($request->taskExecutePersonDTOS)) {
+            $body['taskExecutePersonDTOS'] = $request->taskExecutePersonDTOS;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TaskInfoAddDelTaskPerson',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/taskCenters/taskInfos/addDelTaskPerson',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TaskInfoAddDelTaskPersonResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 增加/删除任务人员
+     *  *
+     * @param TaskInfoAddDelTaskPersonRequest $request TaskInfoAddDelTaskPersonRequest
+     *
+     * @return TaskInfoAddDelTaskPersonResponse TaskInfoAddDelTaskPersonResponse
+     */
+    public function taskInfoAddDelTaskPerson($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TaskInfoAddDelTaskPersonHeaders([]);
+
+        return $this->taskInfoAddDelTaskPersonWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除任务
+     *  *
+     * @param TaskInfoCancelOrDelTaskRequest $request TaskInfoCancelOrDelTaskRequest
+     * @param TaskInfoCancelOrDelTaskHeaders $headers TaskInfoCancelOrDelTaskHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TaskInfoCancelOrDelTaskResponse TaskInfoCancelOrDelTaskResponse
+     */
+    public function taskInfoCancelOrDelTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cardDTO)) {
+            $body['cardDTO'] = $request->cardDTO;
+        }
+        if (!Utils::isUnset($request->operatorAccount)) {
+            $body['operatorAccount'] = $request->operatorAccount;
+        }
+        if (!Utils::isUnset($request->outTaskId)) {
+            $body['outTaskId'] = $request->outTaskId;
+        }
+        if (!Utils::isUnset($request->projId)) {
+            $body['projId'] = $request->projId;
+        }
+        if (!Utils::isUnset($request->secretKey)) {
+            $body['secretKey'] = $request->secretKey;
+        }
+        if (!Utils::isUnset($request->sendMsgFlag)) {
+            $body['sendMsgFlag'] = $request->sendMsgFlag;
+        }
+        if (!Utils::isUnset($request->taskExecutePersonDTOS)) {
+            $body['taskExecutePersonDTOS'] = $request->taskExecutePersonDTOS;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TaskInfoCancelOrDelTask',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/taskCenters/taskInfos/cancelOrDelTask',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TaskInfoCancelOrDelTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除任务
+     *  *
+     * @param TaskInfoCancelOrDelTaskRequest $request TaskInfoCancelOrDelTaskRequest
+     *
+     * @return TaskInfoCancelOrDelTaskResponse TaskInfoCancelOrDelTaskResponse
+     */
+    public function taskInfoCancelOrDelTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TaskInfoCancelOrDelTaskHeaders([]);
+
+        return $this->taskInfoCancelOrDelTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建并启动任务
      *  *
      * @param TaskInfoCreateAndStartTaskRequest $request TaskInfoCreateAndStartTaskRequest
@@ -6102,6 +6261,195 @@ class Dingtalk extends OpenApiClient
         $headers = new TaskInfoCreateAndStartTaskHeaders([]);
 
         return $this->taskInfoCreateAndStartTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 完成任务
+     *  *
+     * @param TaskInfoFinishTaskRequest $request TaskInfoFinishTaskRequest
+     * @param TaskInfoFinishTaskHeaders $headers TaskInfoFinishTaskHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TaskInfoFinishTaskResponse TaskInfoFinishTaskResponse
+     */
+    public function taskInfoFinishTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cardDTO)) {
+            $body['cardDTO'] = $request->cardDTO;
+        }
+        if (!Utils::isUnset($request->operatorAccount)) {
+            $body['operatorAccount'] = $request->operatorAccount;
+        }
+        if (!Utils::isUnset($request->outTaskId)) {
+            $body['outTaskId'] = $request->outTaskId;
+        }
+        if (!Utils::isUnset($request->projId)) {
+            $body['projId'] = $request->projId;
+        }
+        if (!Utils::isUnset($request->secretKey)) {
+            $body['secretKey'] = $request->secretKey;
+        }
+        if (!Utils::isUnset($request->sendMsgFlag)) {
+            $body['sendMsgFlag'] = $request->sendMsgFlag;
+        }
+        if (!Utils::isUnset($request->taskExecutePersonDTOS)) {
+            $body['taskExecutePersonDTOS'] = $request->taskExecutePersonDTOS;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TaskInfoFinishTask',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/taskCenters/taskInfos/finishTask',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TaskInfoFinishTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 完成任务
+     *  *
+     * @param TaskInfoFinishTaskRequest $request TaskInfoFinishTaskRequest
+     *
+     * @return TaskInfoFinishTaskResponse TaskInfoFinishTaskResponse
+     */
+    public function taskInfoFinishTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TaskInfoFinishTaskHeaders([]);
+
+        return $this->taskInfoFinishTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新任务
+     *  *
+     * @param TaskInfoUpdateTaskRequest $request TaskInfoUpdateTaskRequest
+     * @param TaskInfoUpdateTaskHeaders $headers TaskInfoUpdateTaskHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TaskInfoUpdateTaskResponse TaskInfoUpdateTaskResponse
+     */
+    public function taskInfoUpdateTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attr)) {
+            $body['attr'] = $request->attr;
+        }
+        if (!Utils::isUnset($request->canceldelTaskCardId)) {
+            $body['canceldelTaskCardId'] = $request->canceldelTaskCardId;
+        }
+        if (!Utils::isUnset($request->cardDTO)) {
+            $body['cardDTO'] = $request->cardDTO;
+        }
+        if (!Utils::isUnset($request->detailUrl)) {
+            $body['detailUrl'] = $request->detailUrl;
+        }
+        if (!Utils::isUnset($request->finishTaskCardId)) {
+            $body['finishTaskCardId'] = $request->finishTaskCardId;
+        }
+        if (!Utils::isUnset($request->listOpenConversationId)) {
+            $body['listOpenConversationId'] = $request->listOpenConversationId;
+        }
+        if (!Utils::isUnset($request->operateType)) {
+            $body['operateType'] = $request->operateType;
+        }
+        if (!Utils::isUnset($request->operatorAccount)) {
+            $body['operatorAccount'] = $request->operatorAccount;
+        }
+        if (!Utils::isUnset($request->outTaskId)) {
+            $body['outTaskId'] = $request->outTaskId;
+        }
+        if (!Utils::isUnset($request->projId)) {
+            $body['projId'] = $request->projId;
+        }
+        if (!Utils::isUnset($request->secretKey)) {
+            $body['secretKey'] = $request->secretKey;
+        }
+        if (!Utils::isUnset($request->sendMsgFlag)) {
+            $body['sendMsgFlag'] = $request->sendMsgFlag;
+        }
+        if (!Utils::isUnset($request->startTaskCardId)) {
+            $body['startTaskCardId'] = $request->startTaskCardId;
+        }
+        if (!Utils::isUnset($request->taskContent)) {
+            $body['taskContent'] = $request->taskContent;
+        }
+        if (!Utils::isUnset($request->taskEndTime)) {
+            $body['taskEndTime'] = $request->taskEndTime;
+        }
+        if (!Utils::isUnset($request->taskExecutePersonDTOS)) {
+            $body['taskExecutePersonDTOS'] = $request->taskExecutePersonDTOS;
+        }
+        if (!Utils::isUnset($request->taskTitle)) {
+            $body['taskTitle'] = $request->taskTitle;
+        }
+        if (!Utils::isUnset($request->taskUrlMobile)) {
+            $body['taskUrlMobile'] = $request->taskUrlMobile;
+        }
+        if (!Utils::isUnset($request->taskUrlPc)) {
+            $body['taskUrlPc'] = $request->taskUrlPc;
+        }
+        if (!Utils::isUnset($request->updateTaskCardId)) {
+            $body['updateTaskCardId'] = $request->updateTaskCardId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TaskInfoUpdateTask',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/taskCenters/taskInfos/update',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TaskInfoUpdateTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新任务
+     *  *
+     * @param TaskInfoUpdateTaskRequest $request TaskInfoUpdateTaskRequest
+     *
+     * @return TaskInfoUpdateTaskResponse TaskInfoUpdateTaskResponse
+     */
+    public function taskInfoUpdateTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TaskInfoUpdateTaskHeaders([]);
+
+        return $this->taskInfoUpdateTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
