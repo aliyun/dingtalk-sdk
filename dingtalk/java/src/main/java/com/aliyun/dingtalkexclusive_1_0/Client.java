@@ -5714,6 +5714,162 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>增加/删除任务人员</p>
+     * 
+     * @param request TaskInfoAddDelTaskPersonRequest
+     * @param headers TaskInfoAddDelTaskPersonHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TaskInfoAddDelTaskPersonResponse
+     */
+    public TaskInfoAddDelTaskPersonResponse taskInfoAddDelTaskPersonWithOptions(TaskInfoAddDelTaskPersonRequest request, TaskInfoAddDelTaskPersonHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operateType)) {
+            body.put("operateType", request.operateType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorAccount)) {
+            body.put("operatorAccount", request.operatorAccount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outTaskId)) {
+            body.put("outTaskId", request.outTaskId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.projId)) {
+            body.put("projId", request.projId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.secretKey)) {
+            body.put("secretKey", request.secretKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskExecutePersonDTOS)) {
+            body.put("taskExecutePersonDTOS", request.taskExecutePersonDTOS);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TaskInfoAddDelTaskPerson"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/taskCenters/taskInfos/addDelTaskPerson"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TaskInfoAddDelTaskPersonResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>增加/删除任务人员</p>
+     * 
+     * @param request TaskInfoAddDelTaskPersonRequest
+     * @return TaskInfoAddDelTaskPersonResponse
+     */
+    public TaskInfoAddDelTaskPersonResponse taskInfoAddDelTaskPerson(TaskInfoAddDelTaskPersonRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TaskInfoAddDelTaskPersonHeaders headers = new TaskInfoAddDelTaskPersonHeaders();
+        return this.taskInfoAddDelTaskPersonWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除任务</p>
+     * 
+     * @param request TaskInfoCancelOrDelTaskRequest
+     * @param headers TaskInfoCancelOrDelTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TaskInfoCancelOrDelTaskResponse
+     */
+    public TaskInfoCancelOrDelTaskResponse taskInfoCancelOrDelTaskWithOptions(TaskInfoCancelOrDelTaskRequest request, TaskInfoCancelOrDelTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.cardDTO)) {
+            body.put("cardDTO", request.cardDTO);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorAccount)) {
+            body.put("operatorAccount", request.operatorAccount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outTaskId)) {
+            body.put("outTaskId", request.outTaskId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.projId)) {
+            body.put("projId", request.projId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.secretKey)) {
+            body.put("secretKey", request.secretKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sendMsgFlag)) {
+            body.put("sendMsgFlag", request.sendMsgFlag);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskExecutePersonDTOS)) {
+            body.put("taskExecutePersonDTOS", request.taskExecutePersonDTOS);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TaskInfoCancelOrDelTask"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/taskCenters/taskInfos/cancelOrDelTask"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TaskInfoCancelOrDelTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除任务</p>
+     * 
+     * @param request TaskInfoCancelOrDelTaskRequest
+     * @return TaskInfoCancelOrDelTaskResponse
+     */
+    public TaskInfoCancelOrDelTaskResponse taskInfoCancelOrDelTask(TaskInfoCancelOrDelTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TaskInfoCancelOrDelTaskHeaders headers = new TaskInfoCancelOrDelTaskHeaders();
+        return this.taskInfoCancelOrDelTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建并启动任务</p>
      * 
      * @param request TaskInfoCreateAndStartTaskRequest
@@ -5878,6 +6034,218 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         TaskInfoCreateAndStartTaskHeaders headers = new TaskInfoCreateAndStartTaskHeaders();
         return this.taskInfoCreateAndStartTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>完成任务</p>
+     * 
+     * @param request TaskInfoFinishTaskRequest
+     * @param headers TaskInfoFinishTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TaskInfoFinishTaskResponse
+     */
+    public TaskInfoFinishTaskResponse taskInfoFinishTaskWithOptions(TaskInfoFinishTaskRequest request, TaskInfoFinishTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.cardDTO)) {
+            body.put("cardDTO", request.cardDTO);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorAccount)) {
+            body.put("operatorAccount", request.operatorAccount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outTaskId)) {
+            body.put("outTaskId", request.outTaskId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.projId)) {
+            body.put("projId", request.projId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.secretKey)) {
+            body.put("secretKey", request.secretKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sendMsgFlag)) {
+            body.put("sendMsgFlag", request.sendMsgFlag);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskExecutePersonDTOS)) {
+            body.put("taskExecutePersonDTOS", request.taskExecutePersonDTOS);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TaskInfoFinishTask"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/taskCenters/taskInfos/finishTask"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TaskInfoFinishTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>完成任务</p>
+     * 
+     * @param request TaskInfoFinishTaskRequest
+     * @return TaskInfoFinishTaskResponse
+     */
+    public TaskInfoFinishTaskResponse taskInfoFinishTask(TaskInfoFinishTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TaskInfoFinishTaskHeaders headers = new TaskInfoFinishTaskHeaders();
+        return this.taskInfoFinishTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新任务</p>
+     * 
+     * @param request TaskInfoUpdateTaskRequest
+     * @param headers TaskInfoUpdateTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TaskInfoUpdateTaskResponse
+     */
+    public TaskInfoUpdateTaskResponse taskInfoUpdateTaskWithOptions(TaskInfoUpdateTaskRequest request, TaskInfoUpdateTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.attr)) {
+            body.put("attr", request.attr);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.canceldelTaskCardId)) {
+            body.put("canceldelTaskCardId", request.canceldelTaskCardId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardDTO)) {
+            body.put("cardDTO", request.cardDTO);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.detailUrl)) {
+            body.put("detailUrl", request.detailUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.finishTaskCardId)) {
+            body.put("finishTaskCardId", request.finishTaskCardId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.listOpenConversationId)) {
+            body.put("listOpenConversationId", request.listOpenConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateType)) {
+            body.put("operateType", request.operateType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorAccount)) {
+            body.put("operatorAccount", request.operatorAccount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outTaskId)) {
+            body.put("outTaskId", request.outTaskId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.projId)) {
+            body.put("projId", request.projId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.secretKey)) {
+            body.put("secretKey", request.secretKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sendMsgFlag)) {
+            body.put("sendMsgFlag", request.sendMsgFlag);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTaskCardId)) {
+            body.put("startTaskCardId", request.startTaskCardId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskContent)) {
+            body.put("taskContent", request.taskContent);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskEndTime)) {
+            body.put("taskEndTime", request.taskEndTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskExecutePersonDTOS)) {
+            body.put("taskExecutePersonDTOS", request.taskExecutePersonDTOS);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskTitle)) {
+            body.put("taskTitle", request.taskTitle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskUrlMobile)) {
+            body.put("taskUrlMobile", request.taskUrlMobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskUrlPc)) {
+            body.put("taskUrlPc", request.taskUrlPc);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.updateTaskCardId)) {
+            body.put("updateTaskCardId", request.updateTaskCardId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TaskInfoUpdateTask"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/taskCenters/taskInfos/update"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TaskInfoUpdateTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新任务</p>
+     * 
+     * @param request TaskInfoUpdateTaskRequest
+     * @return TaskInfoUpdateTaskResponse
+     */
+    public TaskInfoUpdateTaskResponse taskInfoUpdateTask(TaskInfoUpdateTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TaskInfoUpdateTaskHeaders headers = new TaskInfoUpdateTaskHeaders();
+        return this.taskInfoUpdateTaskWithOptions(request, headers, runtime);
     }
 
     /**

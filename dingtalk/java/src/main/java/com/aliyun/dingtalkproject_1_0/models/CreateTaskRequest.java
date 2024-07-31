@@ -190,6 +190,12 @@ public class CreateTaskRequest extends TeaModel {
     }
 
     public static class CreateTaskRequestCustomfieldsValue extends TeaModel {
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("thumbUrl")
+        public String thumbUrl;
+
         /**
          * <strong>example:</strong>
          * <p>我是自定义字段显示值</p>
@@ -200,6 +206,22 @@ public class CreateTaskRequest extends TeaModel {
         public static CreateTaskRequestCustomfieldsValue build(java.util.Map<String, ?> map) throws Exception {
             CreateTaskRequestCustomfieldsValue self = new CreateTaskRequestCustomfieldsValue();
             return TeaModel.build(map, self);
+        }
+
+        public CreateTaskRequestCustomfieldsValue setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public CreateTaskRequestCustomfieldsValue setThumbUrl(String thumbUrl) {
+            this.thumbUrl = thumbUrl;
+            return this;
+        }
+        public String getThumbUrl() {
+            return this.thumbUrl;
         }
 
         public CreateTaskRequestCustomfieldsValue setTitle(String title) {

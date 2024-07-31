@@ -20,6 +20,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>增加闪记权限</p>
+     * 
+     * @param request AddRecordPermissionRequest
+     * @param headers AddRecordPermissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddRecordPermissionResponse
+     */
+    public AddRecordPermissionResponse addRecordPermissionWithOptions(String conferenceId, AddRecordPermissionRequest request, AddRecordPermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            body.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ownerUnionId)) {
+            body.put("ownerUnionId", request.ownerUnionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddRecordPermission"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/videoConferences/" + conferenceId + "/flashMinutes/recordPermissions"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddRecordPermissionResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>增加闪记权限</p>
+     * 
+     * @param request AddRecordPermissionRequest
+     * @return AddRecordPermissionResponse
+     */
+    public AddRecordPermissionResponse addRecordPermission(String conferenceId, AddRecordPermissionRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddRecordPermissionHeaders headers = new AddRecordPermissionHeaders();
+        return this.addRecordPermissionWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>取消预约会议</p>
      * 
      * @param request CancelScheduleConferenceRequest
@@ -1626,6 +1690,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMinutesTextHeaders headers = new QueryMinutesTextHeaders();
         return this.queryMinutesTextWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询闪记链接</p>
+     * 
+     * @param request QueryRecordMinutesUrlRequest
+     * @param headers QueryRecordMinutesUrlHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryRecordMinutesUrlResponse
+     */
+    public QueryRecordMinutesUrlResponse queryRecordMinutesUrlWithOptions(String conferenceId, QueryRecordMinutesUrlRequest request, QueryRecordMinutesUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            query.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.recorderUnionId)) {
+            query.put("recorderUnionId", request.recorderUnionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryRecordMinutesUrl"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/videoConferences/" + conferenceId + "/flashMinutes/recordUrls"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryRecordMinutesUrlResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询闪记链接</p>
+     * 
+     * @param request QueryRecordMinutesUrlRequest
+     * @return QueryRecordMinutesUrlResponse
+     */
+    public QueryRecordMinutesUrlResponse queryRecordMinutesUrl(String conferenceId, QueryRecordMinutesUrlRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryRecordMinutesUrlHeaders headers = new QueryRecordMinutesUrlHeaders();
+        return this.queryRecordMinutesUrlWithOptions(conferenceId, request, headers, runtime);
     }
 
     /**
