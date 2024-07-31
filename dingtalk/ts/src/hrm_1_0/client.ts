@@ -2526,6 +2526,128 @@ export class MasterDataTenantQueyResponse extends $tea.Model {
   }
 }
 
+export class MasterDatasGetHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasGetRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * uk1231
+   */
+  objId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PERFORMANCE
+   */
+  scopeCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3
+   */
+  tenantId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * base
+   */
+  viewEntityCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      objId: 'objId',
+      scopeCode: 'scopeCode',
+      tenantId: 'tenantId',
+      viewEntityCode: 'viewEntityCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      objId: 'string',
+      scopeCode: 'string',
+      tenantId: 'number',
+      viewEntityCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasGetResponseBody extends $tea.Model {
+  result?: MasterDatasGetResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: MasterDatasGetResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasGetResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: MasterDatasGetResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: MasterDatasGetResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MasterDatasQueryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6111,6 +6233,126 @@ export class MasterDataTenantQueyResponseBodyResult extends $tea.Model {
   }
 }
 
+export class MasterDatasGetResponseBodyResultViewEntityFieldVOListFieldDataVO extends $tea.Model {
+  /**
+   * @example
+   * 100
+   */
+  key?: string;
+  /**
+   * @example
+   * 100
+   */
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      key: 'key',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      key: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasGetResponseBodyResultViewEntityFieldVOList extends $tea.Model {
+  /**
+   * @example
+   * performanceValue
+   */
+  fieldCode?: string;
+  fieldDataVO?: MasterDatasGetResponseBodyResultViewEntityFieldVOListFieldDataVO;
+  /**
+   * @example
+   * 绩效等级
+   */
+  fieldName?: string;
+  /**
+   * @example
+   * 1
+   */
+  fieldType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      fieldDataVO: 'fieldDataVO',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      fieldDataVO: MasterDatasGetResponseBodyResultViewEntityFieldVOListFieldDataVO,
+      fieldName: 'string',
+      fieldType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class MasterDatasGetResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * uk123123
+   */
+  objId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * admind123
+   */
+  relationId?: string;
+  /**
+   * @example
+   * PERFORMANCE
+   */
+  scopeCode?: string;
+  /**
+   * @example
+   * base
+   */
+  viewEntityCode?: string;
+  viewEntityFieldVOList?: MasterDatasGetResponseBodyResultViewEntityFieldVOList[];
+  static names(): { [key: string]: string } {
+    return {
+      objId: 'objId',
+      relationId: 'relationId',
+      scopeCode: 'scopeCode',
+      viewEntityCode: 'viewEntityCode',
+      viewEntityFieldVOList: 'viewEntityFieldVOList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      objId: 'string',
+      relationId: 'string',
+      scopeCode: 'string',
+      viewEntityCode: 'string',
+      viewEntityFieldVOList: { 'type': 'array', 'itemType': MasterDatasGetResponseBodyResultViewEntityFieldVOList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class MasterDatasQueryRequestQueryParamsConditionList extends $tea.Model {
   /**
    * @example
@@ -8394,6 +8636,72 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MasterDataTenantQueyHeaders({ });
     return await this.masterDataTenantQueyWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 只能认输主数据根据ID获取
+   * 
+   * @param request - MasterDatasGetRequest
+   * @param headers - MasterDatasGetHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns MasterDatasGetResponse
+   */
+  async masterDatasGetWithOptions(request: MasterDatasGetRequest, headers: MasterDatasGetHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDatasGetResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.objId)) {
+      body["objId"] = request.objId;
+    }
+
+    if (!Util.isUnset(request.scopeCode)) {
+      body["scopeCode"] = request.scopeCode;
+    }
+
+    if (!Util.isUnset(request.tenantId)) {
+      body["tenantId"] = request.tenantId;
+    }
+
+    if (!Util.isUnset(request.viewEntityCode)) {
+      body["viewEntityCode"] = request.viewEntityCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "MasterDatasGet",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masterDatas/objects/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MasterDatasGetResponse>(await this.execute(params, req, runtime), new MasterDatasGetResponse({}));
+  }
+
+  /**
+   * 只能认输主数据根据ID获取
+   * 
+   * @param request - MasterDatasGetRequest
+   * @returns MasterDatasGetResponse
+   */
+  async masterDatasGet(request: MasterDatasGetRequest): Promise<MasterDatasGetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new MasterDatasGetHeaders({ });
+    return await this.masterDatasGetWithOptions(request, headers, runtime);
   }
 
   /**

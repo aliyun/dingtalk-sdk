@@ -9929,6 +9929,257 @@ export class SpecialRuleBatchReceiverResponse extends $tea.Model {
   }
 }
 
+export class TaskInfoAddDelTaskPersonHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoAddDelTaskPersonRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  operateType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  operatorAccount?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  outTaskId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  projId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  secretKey?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  taskExecutePersonDTOS?: TaskInfoAddDelTaskPersonRequestTaskExecutePersonDTOS[];
+  static names(): { [key: string]: string } {
+    return {
+      operateType: 'operateType',
+      operatorAccount: 'operatorAccount',
+      outTaskId: 'outTaskId',
+      projId: 'projId',
+      secretKey: 'secretKey',
+      taskExecutePersonDTOS: 'taskExecutePersonDTOS',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operateType: 'number',
+      operatorAccount: 'string',
+      outTaskId: 'string',
+      projId: 'string',
+      secretKey: 'string',
+      taskExecutePersonDTOS: { 'type': 'array', 'itemType': TaskInfoAddDelTaskPersonRequestTaskExecutePersonDTOS },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoAddDelTaskPersonResponseBody extends $tea.Model {
+  code?: number;
+  data?: any;
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      data: 'data',
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'number',
+      data: 'any',
+      message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoAddDelTaskPersonResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: TaskInfoAddDelTaskPersonResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TaskInfoAddDelTaskPersonResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCancelOrDelTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCancelOrDelTaskRequest extends $tea.Model {
+  cardDTO?: TaskInfoCancelOrDelTaskRequestCardDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  operatorAccount?: string;
+  outTaskId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  projId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  secretKey?: string;
+  sendMsgFlag?: number;
+  taskExecutePersonDTOS?: TaskInfoCancelOrDelTaskRequestTaskExecutePersonDTOS[];
+  static names(): { [key: string]: string } {
+    return {
+      cardDTO: 'cardDTO',
+      operatorAccount: 'operatorAccount',
+      outTaskId: 'outTaskId',
+      projId: 'projId',
+      secretKey: 'secretKey',
+      sendMsgFlag: 'sendMsgFlag',
+      taskExecutePersonDTOS: 'taskExecutePersonDTOS',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardDTO: TaskInfoCancelOrDelTaskRequestCardDTO,
+      operatorAccount: 'string',
+      outTaskId: 'string',
+      projId: 'string',
+      secretKey: 'string',
+      sendMsgFlag: 'number',
+      taskExecutePersonDTOS: { 'type': 'array', 'itemType': TaskInfoCancelOrDelTaskRequestTaskExecutePersonDTOS },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCancelOrDelTaskResponseBody extends $tea.Model {
+  code?: number;
+  data?: any;
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      data: 'data',
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'number',
+      data: 'any',
+      message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCancelOrDelTaskResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: TaskInfoCancelOrDelTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TaskInfoCancelOrDelTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class TaskInfoCreateAndStartTaskHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10128,6 +10379,287 @@ export class TaskInfoCreateAndStartTaskResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: TaskInfoCreateAndStartTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoFinishTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoFinishTaskRequest extends $tea.Model {
+  cardDTO?: TaskInfoFinishTaskRequestCardDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  operatorAccount?: string;
+  outTaskId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  projId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  secretKey?: string;
+  sendMsgFlag?: number;
+  taskExecutePersonDTOS?: TaskInfoFinishTaskRequestTaskExecutePersonDTOS[];
+  static names(): { [key: string]: string } {
+    return {
+      cardDTO: 'cardDTO',
+      operatorAccount: 'operatorAccount',
+      outTaskId: 'outTaskId',
+      projId: 'projId',
+      secretKey: 'secretKey',
+      sendMsgFlag: 'sendMsgFlag',
+      taskExecutePersonDTOS: 'taskExecutePersonDTOS',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardDTO: TaskInfoFinishTaskRequestCardDTO,
+      operatorAccount: 'string',
+      outTaskId: 'string',
+      projId: 'string',
+      secretKey: 'string',
+      sendMsgFlag: 'number',
+      taskExecutePersonDTOS: { 'type': 'array', 'itemType': TaskInfoFinishTaskRequestTaskExecutePersonDTOS },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoFinishTaskResponseBody extends $tea.Model {
+  code?: number;
+  data?: any;
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      data: 'data',
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'number',
+      data: 'any',
+      message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoFinishTaskResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: TaskInfoFinishTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TaskInfoFinishTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoUpdateTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoUpdateTaskRequest extends $tea.Model {
+  attr?: TaskInfoUpdateTaskRequestAttr;
+  canceldelTaskCardId?: string;
+  cardDTO?: TaskInfoUpdateTaskRequestCardDTO;
+  detailUrl?: TaskInfoUpdateTaskRequestDetailUrl;
+  finishTaskCardId?: string;
+  listOpenConversationId?: string[];
+  operateType?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  operatorAccount?: string;
+  outTaskId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  projId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  secretKey?: string;
+  sendMsgFlag?: number;
+  startTaskCardId?: string;
+  taskContent?: string;
+  taskEndTime?: number;
+  taskExecutePersonDTOS?: TaskInfoUpdateTaskRequestTaskExecutePersonDTOS[];
+  taskTitle?: string;
+  taskUrlMobile?: string;
+  taskUrlPc?: string;
+  updateTaskCardId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attr: 'attr',
+      canceldelTaskCardId: 'canceldelTaskCardId',
+      cardDTO: 'cardDTO',
+      detailUrl: 'detailUrl',
+      finishTaskCardId: 'finishTaskCardId',
+      listOpenConversationId: 'listOpenConversationId',
+      operateType: 'operateType',
+      operatorAccount: 'operatorAccount',
+      outTaskId: 'outTaskId',
+      projId: 'projId',
+      secretKey: 'secretKey',
+      sendMsgFlag: 'sendMsgFlag',
+      startTaskCardId: 'startTaskCardId',
+      taskContent: 'taskContent',
+      taskEndTime: 'taskEndTime',
+      taskExecutePersonDTOS: 'taskExecutePersonDTOS',
+      taskTitle: 'taskTitle',
+      taskUrlMobile: 'taskUrlMobile',
+      taskUrlPc: 'taskUrlPc',
+      updateTaskCardId: 'updateTaskCardId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attr: TaskInfoUpdateTaskRequestAttr,
+      canceldelTaskCardId: 'string',
+      cardDTO: TaskInfoUpdateTaskRequestCardDTO,
+      detailUrl: TaskInfoUpdateTaskRequestDetailUrl,
+      finishTaskCardId: 'string',
+      listOpenConversationId: { 'type': 'array', 'itemType': 'string' },
+      operateType: 'number',
+      operatorAccount: 'string',
+      outTaskId: 'string',
+      projId: 'string',
+      secretKey: 'string',
+      sendMsgFlag: 'number',
+      startTaskCardId: 'string',
+      taskContent: 'string',
+      taskEndTime: 'number',
+      taskExecutePersonDTOS: { 'type': 'array', 'itemType': TaskInfoUpdateTaskRequestTaskExecutePersonDTOS },
+      taskTitle: 'string',
+      taskUrlMobile: 'string',
+      taskUrlPc: 'string',
+      updateTaskCardId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoUpdateTaskResponseBody extends $tea.Model {
+  code?: number;
+  data?: TaskInfoUpdateTaskResponseBodyData;
+  message?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+      data: 'data',
+      message: 'message',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'number',
+      data: TaskInfoUpdateTaskResponseBodyData,
+      message: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoUpdateTaskResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: TaskInfoUpdateTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TaskInfoUpdateTaskResponseBody,
     };
   }
 
@@ -14597,6 +15129,81 @@ export class SpecialRuleBatchReceiverResponseBodyRows extends $tea.Model {
   }
 }
 
+export class TaskInfoAddDelTaskPersonRequestTaskExecutePersonDTOS extends $tea.Model {
+  employeeCode?: string;
+  personType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      employeeCode: 'employeeCode',
+      personType: 'personType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      employeeCode: 'string',
+      personType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCancelOrDelTaskRequestCardDTO extends $tea.Model {
+  atAccount?: string;
+  cardCallbackUrl?: string;
+  content?: any;
+  isAtAll?: boolean;
+  receiverAccount?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atAccount: 'atAccount',
+      cardCallbackUrl: 'cardCallbackUrl',
+      content: 'content',
+      isAtAll: 'isAtAll',
+      receiverAccount: 'receiverAccount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atAccount: 'string',
+      cardCallbackUrl: 'string',
+      content: 'any',
+      isAtAll: 'boolean',
+      receiverAccount: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoCancelOrDelTaskRequestTaskExecutePersonDTOS extends $tea.Model {
+  employeeCode?: string;
+  personType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      employeeCode: 'employeeCode',
+      personType: 'personType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      employeeCode: 'string',
+      personType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class TaskInfoCreateAndStartTaskRequestAttrListTaskDynamicAttr extends $tea.Model {
   attrCode?: string;
   listAttrOptionsCode?: string[];
@@ -14808,6 +15415,219 @@ export class TaskInfoCreateAndStartTaskResponseBodyData extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       groupVoList: { 'type': 'array', 'itemType': TaskInfoCreateAndStartTaskResponseBodyDataGroupVoList },
+      taskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoFinishTaskRequestCardDTO extends $tea.Model {
+  atAccount?: string;
+  cardCallbackUrl?: string;
+  content?: any;
+  isAtAll?: boolean;
+  receiverAccount?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atAccount: 'atAccount',
+      cardCallbackUrl: 'cardCallbackUrl',
+      content: 'content',
+      isAtAll: 'isAtAll',
+      receiverAccount: 'receiverAccount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atAccount: 'string',
+      cardCallbackUrl: 'string',
+      content: 'any',
+      isAtAll: 'boolean',
+      receiverAccount: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoFinishTaskRequestTaskExecutePersonDTOS extends $tea.Model {
+  employeeCode?: string;
+  personType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      employeeCode: 'employeeCode',
+      personType: 'personType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      employeeCode: 'string',
+      personType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoUpdateTaskRequestAttrListTaskDynamicAttr extends $tea.Model {
+  attrCode?: string;
+  listAttrOptionsCode?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      attrCode: 'attrCode',
+      listAttrOptionsCode: 'listAttrOptionsCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attrCode: 'string',
+      listAttrOptionsCode: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoUpdateTaskRequestAttr extends $tea.Model {
+  listTaskDynamicAttr?: TaskInfoUpdateTaskRequestAttrListTaskDynamicAttr[];
+  static names(): { [key: string]: string } {
+    return {
+      listTaskDynamicAttr: 'listTaskDynamicAttr',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      listTaskDynamicAttr: { 'type': 'array', 'itemType': TaskInfoUpdateTaskRequestAttrListTaskDynamicAttr },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoUpdateTaskRequestCardDTO extends $tea.Model {
+  atAccount?: string;
+  cardCallbackUrl?: string;
+  content?: any;
+  isAtAll?: boolean;
+  receiverAccount?: string;
+  static names(): { [key: string]: string } {
+    return {
+      atAccount: 'atAccount',
+      cardCallbackUrl: 'cardCallbackUrl',
+      content: 'content',
+      isAtAll: 'isAtAll',
+      receiverAccount: 'receiverAccount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      atAccount: 'string',
+      cardCallbackUrl: 'string',
+      content: 'any',
+      isAtAll: 'boolean',
+      receiverAccount: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoUpdateTaskRequestDetailUrl extends $tea.Model {
+  appUrl?: string;
+  pcUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appUrl: 'appUrl',
+      pcUrl: 'pcUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUrl: 'string',
+      pcUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoUpdateTaskRequestTaskExecutePersonDTOS extends $tea.Model {
+  employeeCode?: string;
+  personType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      employeeCode: 'employeeCode',
+      personType: 'personType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      employeeCode: 'string',
+      personType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoUpdateTaskResponseBodyDataGroupVoList extends $tea.Model {
+  corpId?: string;
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TaskInfoUpdateTaskResponseBodyData extends $tea.Model {
+  groupVoList?: TaskInfoUpdateTaskResponseBodyDataGroupVoList[];
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupVoList: 'groupVoList',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupVoList: { 'type': 'array', 'itemType': TaskInfoUpdateTaskResponseBodyDataGroupVoList },
       taskId: 'string',
     };
   }
@@ -20414,6 +21234,158 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 增加/删除任务人员
+   * 
+   * @param request - TaskInfoAddDelTaskPersonRequest
+   * @param headers - TaskInfoAddDelTaskPersonHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TaskInfoAddDelTaskPersonResponse
+   */
+  async taskInfoAddDelTaskPersonWithOptions(request: TaskInfoAddDelTaskPersonRequest, headers: TaskInfoAddDelTaskPersonHeaders, runtime: $Util.RuntimeOptions): Promise<TaskInfoAddDelTaskPersonResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operateType)) {
+      body["operateType"] = request.operateType;
+    }
+
+    if (!Util.isUnset(request.operatorAccount)) {
+      body["operatorAccount"] = request.operatorAccount;
+    }
+
+    if (!Util.isUnset(request.outTaskId)) {
+      body["outTaskId"] = request.outTaskId;
+    }
+
+    if (!Util.isUnset(request.projId)) {
+      body["projId"] = request.projId;
+    }
+
+    if (!Util.isUnset(request.secretKey)) {
+      body["secretKey"] = request.secretKey;
+    }
+
+    if (!Util.isUnset(request.taskExecutePersonDTOS)) {
+      body["taskExecutePersonDTOS"] = request.taskExecutePersonDTOS;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "TaskInfoAddDelTaskPerson",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/taskCenters/taskInfos/addDelTaskPerson`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TaskInfoAddDelTaskPersonResponse>(await this.execute(params, req, runtime), new TaskInfoAddDelTaskPersonResponse({}));
+  }
+
+  /**
+   * 增加/删除任务人员
+   * 
+   * @param request - TaskInfoAddDelTaskPersonRequest
+   * @returns TaskInfoAddDelTaskPersonResponse
+   */
+  async taskInfoAddDelTaskPerson(request: TaskInfoAddDelTaskPersonRequest): Promise<TaskInfoAddDelTaskPersonResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TaskInfoAddDelTaskPersonHeaders({ });
+    return await this.taskInfoAddDelTaskPersonWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 删除任务
+   * 
+   * @param request - TaskInfoCancelOrDelTaskRequest
+   * @param headers - TaskInfoCancelOrDelTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TaskInfoCancelOrDelTaskResponse
+   */
+  async taskInfoCancelOrDelTaskWithOptions(request: TaskInfoCancelOrDelTaskRequest, headers: TaskInfoCancelOrDelTaskHeaders, runtime: $Util.RuntimeOptions): Promise<TaskInfoCancelOrDelTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.cardDTO)) {
+      body["cardDTO"] = request.cardDTO;
+    }
+
+    if (!Util.isUnset(request.operatorAccount)) {
+      body["operatorAccount"] = request.operatorAccount;
+    }
+
+    if (!Util.isUnset(request.outTaskId)) {
+      body["outTaskId"] = request.outTaskId;
+    }
+
+    if (!Util.isUnset(request.projId)) {
+      body["projId"] = request.projId;
+    }
+
+    if (!Util.isUnset(request.secretKey)) {
+      body["secretKey"] = request.secretKey;
+    }
+
+    if (!Util.isUnset(request.sendMsgFlag)) {
+      body["sendMsgFlag"] = request.sendMsgFlag;
+    }
+
+    if (!Util.isUnset(request.taskExecutePersonDTOS)) {
+      body["taskExecutePersonDTOS"] = request.taskExecutePersonDTOS;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "TaskInfoCancelOrDelTask",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/taskCenters/taskInfos/cancelOrDelTask`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TaskInfoCancelOrDelTaskResponse>(await this.execute(params, req, runtime), new TaskInfoCancelOrDelTaskResponse({}));
+  }
+
+  /**
+   * 删除任务
+   * 
+   * @param request - TaskInfoCancelOrDelTaskRequest
+   * @returns TaskInfoCancelOrDelTaskResponse
+   */
+  async taskInfoCancelOrDelTask(request: TaskInfoCancelOrDelTaskRequest): Promise<TaskInfoCancelOrDelTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TaskInfoCancelOrDelTaskHeaders({ });
+    return await this.taskInfoCancelOrDelTaskWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 创建并启动任务
    * 
    * @param request - TaskInfoCreateAndStartTaskRequest
@@ -20577,6 +21549,214 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new TaskInfoCreateAndStartTaskHeaders({ });
     return await this.taskInfoCreateAndStartTaskWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 完成任务
+   * 
+   * @param request - TaskInfoFinishTaskRequest
+   * @param headers - TaskInfoFinishTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TaskInfoFinishTaskResponse
+   */
+  async taskInfoFinishTaskWithOptions(request: TaskInfoFinishTaskRequest, headers: TaskInfoFinishTaskHeaders, runtime: $Util.RuntimeOptions): Promise<TaskInfoFinishTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.cardDTO)) {
+      body["cardDTO"] = request.cardDTO;
+    }
+
+    if (!Util.isUnset(request.operatorAccount)) {
+      body["operatorAccount"] = request.operatorAccount;
+    }
+
+    if (!Util.isUnset(request.outTaskId)) {
+      body["outTaskId"] = request.outTaskId;
+    }
+
+    if (!Util.isUnset(request.projId)) {
+      body["projId"] = request.projId;
+    }
+
+    if (!Util.isUnset(request.secretKey)) {
+      body["secretKey"] = request.secretKey;
+    }
+
+    if (!Util.isUnset(request.sendMsgFlag)) {
+      body["sendMsgFlag"] = request.sendMsgFlag;
+    }
+
+    if (!Util.isUnset(request.taskExecutePersonDTOS)) {
+      body["taskExecutePersonDTOS"] = request.taskExecutePersonDTOS;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "TaskInfoFinishTask",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/taskCenters/taskInfos/finishTask`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TaskInfoFinishTaskResponse>(await this.execute(params, req, runtime), new TaskInfoFinishTaskResponse({}));
+  }
+
+  /**
+   * 完成任务
+   * 
+   * @param request - TaskInfoFinishTaskRequest
+   * @returns TaskInfoFinishTaskResponse
+   */
+  async taskInfoFinishTask(request: TaskInfoFinishTaskRequest): Promise<TaskInfoFinishTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TaskInfoFinishTaskHeaders({ });
+    return await this.taskInfoFinishTaskWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 更新任务
+   * 
+   * @param request - TaskInfoUpdateTaskRequest
+   * @param headers - TaskInfoUpdateTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TaskInfoUpdateTaskResponse
+   */
+  async taskInfoUpdateTaskWithOptions(request: TaskInfoUpdateTaskRequest, headers: TaskInfoUpdateTaskHeaders, runtime: $Util.RuntimeOptions): Promise<TaskInfoUpdateTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.attr)) {
+      body["attr"] = request.attr;
+    }
+
+    if (!Util.isUnset(request.canceldelTaskCardId)) {
+      body["canceldelTaskCardId"] = request.canceldelTaskCardId;
+    }
+
+    if (!Util.isUnset(request.cardDTO)) {
+      body["cardDTO"] = request.cardDTO;
+    }
+
+    if (!Util.isUnset(request.detailUrl)) {
+      body["detailUrl"] = request.detailUrl;
+    }
+
+    if (!Util.isUnset(request.finishTaskCardId)) {
+      body["finishTaskCardId"] = request.finishTaskCardId;
+    }
+
+    if (!Util.isUnset(request.listOpenConversationId)) {
+      body["listOpenConversationId"] = request.listOpenConversationId;
+    }
+
+    if (!Util.isUnset(request.operateType)) {
+      body["operateType"] = request.operateType;
+    }
+
+    if (!Util.isUnset(request.operatorAccount)) {
+      body["operatorAccount"] = request.operatorAccount;
+    }
+
+    if (!Util.isUnset(request.outTaskId)) {
+      body["outTaskId"] = request.outTaskId;
+    }
+
+    if (!Util.isUnset(request.projId)) {
+      body["projId"] = request.projId;
+    }
+
+    if (!Util.isUnset(request.secretKey)) {
+      body["secretKey"] = request.secretKey;
+    }
+
+    if (!Util.isUnset(request.sendMsgFlag)) {
+      body["sendMsgFlag"] = request.sendMsgFlag;
+    }
+
+    if (!Util.isUnset(request.startTaskCardId)) {
+      body["startTaskCardId"] = request.startTaskCardId;
+    }
+
+    if (!Util.isUnset(request.taskContent)) {
+      body["taskContent"] = request.taskContent;
+    }
+
+    if (!Util.isUnset(request.taskEndTime)) {
+      body["taskEndTime"] = request.taskEndTime;
+    }
+
+    if (!Util.isUnset(request.taskExecutePersonDTOS)) {
+      body["taskExecutePersonDTOS"] = request.taskExecutePersonDTOS;
+    }
+
+    if (!Util.isUnset(request.taskTitle)) {
+      body["taskTitle"] = request.taskTitle;
+    }
+
+    if (!Util.isUnset(request.taskUrlMobile)) {
+      body["taskUrlMobile"] = request.taskUrlMobile;
+    }
+
+    if (!Util.isUnset(request.taskUrlPc)) {
+      body["taskUrlPc"] = request.taskUrlPc;
+    }
+
+    if (!Util.isUnset(request.updateTaskCardId)) {
+      body["updateTaskCardId"] = request.updateTaskCardId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "TaskInfoUpdateTask",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/taskCenters/taskInfos/update`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TaskInfoUpdateTaskResponse>(await this.execute(params, req, runtime), new TaskInfoUpdateTaskResponse({}));
+  }
+
+  /**
+   * 更新任务
+   * 
+   * @param request - TaskInfoUpdateTaskRequest
+   * @returns TaskInfoUpdateTaskResponse
+   */
+  async taskInfoUpdateTask(request: TaskInfoUpdateTaskRequest): Promise<TaskInfoUpdateTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TaskInfoUpdateTaskHeaders({ });
+    return await this.taskInfoUpdateTaskWithOptions(request, headers, runtime);
   }
 
   /**

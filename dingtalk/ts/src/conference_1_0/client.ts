@@ -284,6 +284,118 @@ export class MemberModelMapValue extends $tea.Model {
   }
 }
 
+export class AddRecordPermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddRecordPermissionRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cloud_record
+   */
+  bizType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * lJcRnm39OsU4jlFFXXXXXXX
+   */
+  ownerUnionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * lJcRnm39OsU4jlFVmRGXXXXX
+   */
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      ownerUnionId: 'ownerUnionId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'string',
+      ownerUnionId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddRecordPermissionResponseBody extends $tea.Model {
+  code?: string;
+  static names(): { [key: string]: string } {
+    return {
+      code: 'code',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      code: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddRecordPermissionResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddRecordPermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddRecordPermissionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CancelScheduleConferenceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3079,6 +3191,108 @@ export class QueryMinutesTextResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryMinutesTextResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRecordMinutesUrlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRecordMinutesUrlRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cloud_record
+   */
+  bizType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * lJcRnm39OsU4jlFVmRG9KXXXX
+   */
+  recorderUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      recorderUnionId: 'recorderUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'string',
+      recorderUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRecordMinutesUrlResponseBody extends $tea.Model {
+  recordMinutesUrls?: QueryRecordMinutesUrlResponseBodyRecordMinutesUrls[];
+  static names(): { [key: string]: string } {
+    return {
+      recordMinutesUrls: 'recordMinutesUrls',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      recordMinutesUrls: { 'type': 'array', 'itemType': QueryRecordMinutesUrlResponseBodyRecordMinutesUrls },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryRecordMinutesUrlResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryRecordMinutesUrlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryRecordMinutesUrlResponseBody,
     };
   }
 
@@ -6008,6 +6222,25 @@ export class QueryMinutesTextResponseBodyParagraphList extends $tea.Model {
   }
 }
 
+export class QueryRecordMinutesUrlResponseBodyRecordMinutesUrls extends $tea.Model {
+  recordMinutesUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      recordMinutesUrl: 'recordMinutesUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      recordMinutesUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryScheduleConfSettingsResponseBodyScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings extends $tea.Model {
   autoOpenMode?: string;
   clientId?: string;
@@ -6336,6 +6569,68 @@ export default class Client extends OpenApi {
 
   }
 
+
+  /**
+   * 增加闪记权限
+   * 
+   * @param request - AddRecordPermissionRequest
+   * @param headers - AddRecordPermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddRecordPermissionResponse
+   */
+  async addRecordPermissionWithOptions(conferenceId: string, request: AddRecordPermissionRequest, headers: AddRecordPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<AddRecordPermissionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizType)) {
+      body["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.ownerUnionId)) {
+      body["ownerUnionId"] = request.ownerUnionId;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      body["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddRecordPermission",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/flashMinutes/recordPermissions`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddRecordPermissionResponse>(await this.execute(params, req, runtime), new AddRecordPermissionResponse({}));
+  }
+
+  /**
+   * 增加闪记权限
+   * 
+   * @param request - AddRecordPermissionRequest
+   * @returns AddRecordPermissionResponse
+   */
+  async addRecordPermission(conferenceId: string, request: AddRecordPermissionRequest): Promise<AddRecordPermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddRecordPermissionHeaders({ });
+    return await this.addRecordPermissionWithOptions(conferenceId, request, headers, runtime);
+  }
 
   /**
    * 取消预约会议
@@ -7893,6 +8188,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMinutesTextHeaders({ });
     return await this.queryMinutesTextWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  /**
+   * 查询闪记链接
+   * 
+   * @param request - QueryRecordMinutesUrlRequest
+   * @param headers - QueryRecordMinutesUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryRecordMinutesUrlResponse
+   */
+  async queryRecordMinutesUrlWithOptions(conferenceId: string, request: QueryRecordMinutesUrlRequest, headers: QueryRecordMinutesUrlHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRecordMinutesUrlResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizType)) {
+      query["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.recorderUnionId)) {
+      query["recorderUnionId"] = request.recorderUnionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryRecordMinutesUrl",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/flashMinutes/recordUrls`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryRecordMinutesUrlResponse>(await this.execute(params, req, runtime), new QueryRecordMinutesUrlResponse({}));
+  }
+
+  /**
+   * 查询闪记链接
+   * 
+   * @param request - QueryRecordMinutesUrlRequest
+   * @returns QueryRecordMinutesUrlResponse
+   */
+  async queryRecordMinutesUrl(conferenceId: string, request: QueryRecordMinutesUrlRequest): Promise<QueryRecordMinutesUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryRecordMinutesUrlHeaders({ });
+    return await this.queryRecordMinutesUrlWithOptions(conferenceId, request, headers, runtime);
   }
 
   /**

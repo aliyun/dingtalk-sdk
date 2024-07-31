@@ -2574,6 +2574,98 @@ export class CampusUpdateRenterMemberResponse extends $tea.Model {
   }
 }
 
+export class ChatAiTravelListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAiTravelListRequest extends $tea.Model {
+  paramList?: ChatAiTravelListRequestParamList[];
+  /**
+   * @example
+   * qaz12345900
+   */
+  travelId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      paramList: 'paramList',
+      travelId: 'travelId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      paramList: { 'type': 'array', 'itemType': ChatAiTravelListRequestParamList },
+      travelId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAiTravelListResponseBody extends $tea.Model {
+  content?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAiTravelListResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ChatAiTravelListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatAiTravelListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ChatFormGetDataForApiAccessHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -18207,6 +18299,36 @@ export class CampusListRenterMembersResponseBodyResult extends $tea.Model {
   }
 }
 
+export class ChatAiTravelListRequestParamList extends $tea.Model {
+  /**
+   * @example
+   * qaz1234567
+   */
+  itineraryId?: string;
+  /**
+   * @example
+   * {"lineNumber":1}
+   */
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      itineraryId: 'itineraryId',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      itineraryId: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ChatMemoAddGeneralFileRequestTagList extends $tea.Model {
   /**
    * @example
@@ -25654,6 +25776,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CampusUpdateRenterMemberHeaders({ });
     return await this.campusUpdateRenterMemberWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取差旅单列表
+   * 
+   * @param request - ChatAiTravelListRequest
+   * @param headers - ChatAiTravelListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ChatAiTravelListResponse
+   */
+  async chatAiTravelListWithOptions(request: ChatAiTravelListRequest, headers: ChatAiTravelListHeaders, runtime: $Util.RuntimeOptions): Promise<ChatAiTravelListResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.paramList)) {
+      body["paramList"] = request.paramList;
+    }
+
+    if (!Util.isUnset(request.travelId)) {
+      body["travelId"] = request.travelId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatAiTravelList",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/ai/travelLists/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatAiTravelListResponse>(await this.execute(params, req, runtime), new ChatAiTravelListResponse({}));
+  }
+
+  /**
+   * 获取差旅单列表
+   * 
+   * @param request - ChatAiTravelListRequest
+   * @returns ChatAiTravelListResponse
+   */
+  async chatAiTravelList(request: ChatAiTravelListRequest): Promise<ChatAiTravelListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatAiTravelListHeaders({ });
+    return await this.chatAiTravelListWithOptions(request, headers, runtime);
   }
 
   /**

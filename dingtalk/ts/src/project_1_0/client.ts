@@ -6891,6 +6891,8 @@ export class CreateProjectCustomfieldStatusResponseBodyResult extends $tea.Model
 }
 
 export class CreateTaskRequestCustomfieldsValue extends $tea.Model {
+  id?: string;
+  thumbUrl?: string;
   /**
    * @example
    * 我是自定义字段显示值
@@ -6898,12 +6900,16 @@ export class CreateTaskRequestCustomfieldsValue extends $tea.Model {
   title?: string;
   static names(): { [key: string]: string } {
     return {
+      id: 'id',
+      thumbUrl: 'thumbUrl',
       title: 'title',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      id: 'string',
+      thumbUrl: 'string',
       title: 'string',
     };
   }
