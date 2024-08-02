@@ -5,9 +5,21 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vassistant_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddDomainWordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddDomainWordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddDomainWordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeleteDomainWordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeleteDomainWordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeleteDomainWordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeleteKnowledgeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeleteKnowledgeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeleteKnowledgeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAskDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAskDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAskDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetDomainWordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetDomainWordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetDomainWordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetKnowledgeListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetKnowledgeListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetKnowledgeListResponse;
@@ -38,6 +50,126 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 助理添加专业词汇
+     *  *
+     * @param AddDomainWordsRequest $request AddDomainWordsRequest
+     * @param AddDomainWordsHeaders $headers AddDomainWordsHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddDomainWordsResponse AddDomainWordsResponse
+     */
+    public function addDomainWordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->assistantId)) {
+            $body['assistantId'] = $request->assistantId;
+        }
+        if (!Utils::isUnset($request->domainWords)) {
+            $body['domainWords'] = $request->domainWords;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddDomainWords',
+            'version'     => 'assistant_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/assistant/domainWords',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddDomainWordsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 助理添加专业词汇
+     *  *
+     * @param AddDomainWordsRequest $request AddDomainWordsRequest
+     *
+     * @return AddDomainWordsResponse AddDomainWordsResponse
+     */
+    public function addDomainWords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddDomainWordsHeaders([]);
+
+        return $this->addDomainWordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 助理删除专业词汇
+     *  *
+     * @param DeleteDomainWordsRequest $request DeleteDomainWordsRequest
+     * @param DeleteDomainWordsHeaders $headers DeleteDomainWordsHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteDomainWordsResponse DeleteDomainWordsResponse
+     */
+    public function deleteDomainWordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->assistantId)) {
+            $body['assistantId'] = $request->assistantId;
+        }
+        if (!Utils::isUnset($request->domainWords)) {
+            $body['domainWords'] = $request->domainWords;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteDomainWords',
+            'version'     => 'assistant_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/assistant/domainWords/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteDomainWordsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 助理删除专业词汇
+     *  *
+     * @param DeleteDomainWordsRequest $request DeleteDomainWordsRequest
+     *
+     * @return DeleteDomainWordsResponse DeleteDomainWordsResponse
+     */
+    public function deleteDomainWords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteDomainWordsHeaders([]);
+
+        return $this->deleteDomainWordsWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -98,6 +230,132 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteKnowledgeHeaders([]);
 
         return $this->deleteKnowledgeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取助理问答明细
+     *  *
+     * @param GetAskDetailRequest $request GetAskDetailRequest
+     * @param GetAskDetailHeaders $headers GetAskDetailHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetAskDetailResponse GetAskDetailResponse
+     */
+    public function getAskDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->assistantId)) {
+            $query['assistantId'] = $request->assistantId;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->offset)) {
+            $query['offset'] = $request->offset;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAskDetail',
+            'version'     => 'assistant_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/assistant/askDetails',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetAskDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取助理问答明细
+     *  *
+     * @param GetAskDetailRequest $request GetAskDetailRequest
+     *
+     * @return GetAskDetailResponse GetAskDetailResponse
+     */
+    public function getAskDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAskDetailHeaders([]);
+
+        return $this->getAskDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取助理专业词汇
+     *  *
+     * @param GetDomainWordsRequest $request GetDomainWordsRequest
+     * @param GetDomainWordsHeaders $headers GetDomainWordsHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetDomainWordsResponse GetDomainWordsResponse
+     */
+    public function getDomainWordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->assistantId)) {
+            $query['assistantId'] = $request->assistantId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDomainWords',
+            'version'     => 'assistant_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/assistant/domainWords',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetDomainWordsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取助理专业词汇
+     *  *
+     * @param GetDomainWordsRequest $request GetDomainWordsRequest
+     *
+     * @return GetDomainWordsResponse GetDomainWordsResponse
+     */
+    public function getDomainWords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDomainWordsHeaders([]);
+
+        return $this->getDomainWordsWithOptions($request, $headers, $runtime);
     }
 
     /**

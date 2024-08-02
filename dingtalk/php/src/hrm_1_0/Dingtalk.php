@@ -89,6 +89,12 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobRanksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryJobsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryMicroAppStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryMicroAppStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryMicroAppStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryMicroAppViewHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryMicroAppViewRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryMicroAppViewResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsResponse;
@@ -2001,6 +2007,123 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryJobsHeaders([]);
 
         return $this->queryJobsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 智能人事查询微应用状态
+     *  *
+     * @param QueryMicroAppStatusRequest $request QueryMicroAppStatusRequest
+     * @param QueryMicroAppStatusHeaders $headers QueryMicroAppStatusHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryMicroAppStatusResponse QueryMicroAppStatusResponse
+     */
+    public function queryMicroAppStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tenantIdList)) {
+            $body['tenantIdList'] = $request->tenantIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryMicroAppStatus',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/microApps/statuses/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryMicroAppStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 智能人事查询微应用状态
+     *  *
+     * @param QueryMicroAppStatusRequest $request QueryMicroAppStatusRequest
+     *
+     * @return QueryMicroAppStatusResponse QueryMicroAppStatusResponse
+     */
+    public function queryMicroAppStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMicroAppStatusHeaders([]);
+
+        return $this->queryMicroAppStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 智能人事查询微应用可见性
+     *  *
+     * @param QueryMicroAppViewRequest $request QueryMicroAppViewRequest
+     * @param QueryMicroAppViewHeaders $headers QueryMicroAppViewHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryMicroAppViewResponse QueryMicroAppViewResponse
+     */
+    public function queryMicroAppViewWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tenantIdList)) {
+            $body['tenantIdList'] = $request->tenantIdList;
+        }
+        if (!Utils::isUnset($request->viewUserId)) {
+            $body['viewUserId'] = $request->viewUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryMicroAppView',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/microApps/visibilities/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryMicroAppViewResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 智能人事查询微应用可见性
+     *  *
+     * @param QueryMicroAppViewRequest $request QueryMicroAppViewRequest
+     *
+     * @return QueryMicroAppViewResponse QueryMicroAppViewResponse
+     */
+    public function queryMicroAppView($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMicroAppViewHeaders([]);
+
+        return $this->queryMicroAppViewWithOptions($request, $headers, $runtime);
     }
 
     /**

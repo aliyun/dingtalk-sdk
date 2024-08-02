@@ -129,7 +129,7 @@ class Dingtalk extends OpenApiClient
             'action'      => 'ListMailFolders',
             'version'     => 'mail_1.0',
             'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/mail/users/emails/' . $email . '/mailFolders',
+            'pathname'    => '/v1.0/mail/users/' . $email . '/mailFolders',
             'method'      => 'GET',
             'authType'    => 'AK',
             'style'       => 'ROA',

@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class phoneInviteeList extends Model
 {
     /**
+     * @example false
+     *
+     * @var bool
+     */
+    public $inviteClient;
+
+    /**
      * @example 测试电话用户
      *
      * @var string
@@ -21,9 +28,18 @@ class phoneInviteeList extends Model
      * @var string
      */
     public $phoneNumber;
+
+    /**
+     * @example 86
+     *
+     * @var string
+     */
+    public $statusCode;
     protected $_name = [
-        'nick'        => 'nick',
-        'phoneNumber' => 'phoneNumber',
+        'inviteClient' => 'inviteClient',
+        'nick'         => 'nick',
+        'phoneNumber'  => 'phoneNumber',
+        'statusCode'   => 'statusCode',
     ];
 
     public function validate()
@@ -33,11 +49,17 @@ class phoneInviteeList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->inviteClient) {
+            $res['inviteClient'] = $this->inviteClient;
+        }
         if (null !== $this->nick) {
             $res['nick'] = $this->nick;
         }
         if (null !== $this->phoneNumber) {
             $res['phoneNumber'] = $this->phoneNumber;
+        }
+        if (null !== $this->statusCode) {
+            $res['statusCode'] = $this->statusCode;
         }
 
         return $res;
@@ -51,11 +73,17 @@ class phoneInviteeList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['inviteClient'])) {
+            $model->inviteClient = $map['inviteClient'];
+        }
         if (isset($map['nick'])) {
             $model->nick = $map['nick'];
         }
         if (isset($map['phoneNumber'])) {
             $model->phoneNumber = $map['phoneNumber'];
+        }
+        if (isset($map['statusCode'])) {
+            $model->statusCode = $map['statusCode'];
         }
 
         return $model;
