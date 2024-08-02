@@ -7,6 +7,25 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class ResultValue extends $tea.Model {
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddHrmLegalEntityHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3358,6 +3377,195 @@ export class QueryJobsResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryJobsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMicroAppStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMicroAppStatusRequest extends $tea.Model {
+  tenantIdList?: number[];
+  static names(): { [key: string]: string } {
+    return {
+      tenantIdList: 'tenantIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tenantIdList: { 'type': 'array', 'itemType': 'number' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMicroAppStatusResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: { [key: string]: ResultValue };
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: { 'type': 'map', 'keyType': 'string', 'valueType': ResultValue },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMicroAppStatusResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMicroAppStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryMicroAppStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMicroAppViewHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMicroAppViewRequest extends $tea.Model {
+  tenantIdList?: number[];
+  /**
+   * @example
+   * 2163515669935611
+   */
+  viewUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      tenantIdList: 'tenantIdList',
+      viewUserId: 'viewUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tenantIdList: { 'type': 'array', 'itemType': 'number' },
+      viewUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMicroAppViewResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: { [key: string]: boolean };
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: { 'type': 'map', 'keyType': 'string', 'valueType': 'boolean' },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMicroAppViewResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMicroAppViewResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryMicroAppViewResponseBody,
     };
   }
 
@@ -9096,6 +9304,118 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryJobsHeaders({ });
     return await this.queryJobsWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 智能人事查询微应用状态
+   * 
+   * @param request - QueryMicroAppStatusRequest
+   * @param headers - QueryMicroAppStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMicroAppStatusResponse
+   */
+  async queryMicroAppStatusWithOptions(request: QueryMicroAppStatusRequest, headers: QueryMicroAppStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMicroAppStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.tenantIdList)) {
+      body["tenantIdList"] = request.tenantIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryMicroAppStatus",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/microApps/statuses/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMicroAppStatusResponse>(await this.execute(params, req, runtime), new QueryMicroAppStatusResponse({}));
+  }
+
+  /**
+   * 智能人事查询微应用状态
+   * 
+   * @param request - QueryMicroAppStatusRequest
+   * @returns QueryMicroAppStatusResponse
+   */
+  async queryMicroAppStatus(request: QueryMicroAppStatusRequest): Promise<QueryMicroAppStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryMicroAppStatusHeaders({ });
+    return await this.queryMicroAppStatusWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 智能人事查询微应用可见性
+   * 
+   * @param request - QueryMicroAppViewRequest
+   * @param headers - QueryMicroAppViewHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMicroAppViewResponse
+   */
+  async queryMicroAppViewWithOptions(request: QueryMicroAppViewRequest, headers: QueryMicroAppViewHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMicroAppViewResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.tenantIdList)) {
+      body["tenantIdList"] = request.tenantIdList;
+    }
+
+    if (!Util.isUnset(request.viewUserId)) {
+      body["viewUserId"] = request.viewUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryMicroAppView",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/microApps/visibilities/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMicroAppViewResponse>(await this.execute(params, req, runtime), new QueryMicroAppViewResponse({}));
+  }
+
+  /**
+   * 智能人事查询微应用可见性
+   * 
+   * @param request - QueryMicroAppViewRequest
+   * @returns QueryMicroAppViewResponse
+   */
+  async queryMicroAppView(request: QueryMicroAppViewRequest): Promise<QueryMicroAppViewResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryMicroAppViewHeaders({ });
+    return await this.queryMicroAppViewWithOptions(request, headers, runtime);
   }
 
   /**

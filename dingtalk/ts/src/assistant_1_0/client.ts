@@ -7,6 +7,198 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AddDomainWordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddDomainWordsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  assistantId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  domainWords?: AddDomainWordsRequestDomainWords[];
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      domainWords: 'domainWords',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      domainWords: { 'type': 'array', 'itemType': AddDomainWordsRequestDomainWords },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddDomainWordsResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddDomainWordsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddDomainWordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddDomainWordsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDomainWordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDomainWordsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  assistantId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  domainWords?: DeleteDomainWordsRequestDomainWords[];
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      domainWords: 'domainWords',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      domainWords: { 'type': 'array', 'itemType': DeleteDomainWordsRequestDomainWords },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDomainWordsResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDomainWordsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteDomainWordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeleteDomainWordsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteKnowledgeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -95,6 +287,210 @@ export class DeleteKnowledgeResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: DeleteKnowledgeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAskDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAskDetailRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  assistantId?: string;
+  endTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  offset?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  pageSize?: number;
+  startTime?: number;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      endTime: 'endTime',
+      offset: 'offset',
+      pageSize: 'pageSize',
+      startTime: 'startTime',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      endTime: 'number',
+      offset: 'number',
+      pageSize: 'number',
+      startTime: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAskDetailResponseBody extends $tea.Model {
+  result?: GetAskDetailResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetAskDetailResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAskDetailResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetAskDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetAskDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDomainWordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDomainWordsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  assistantId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDomainWordsResponseBody extends $tea.Model {
+  result?: string[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': 'string' },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetDomainWordsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetDomainWordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetDomainWordsResponseBody,
     };
   }
 
@@ -453,6 +849,146 @@ export class RelearnKnowledgeResponse extends $tea.Model {
   }
 }
 
+export class AddDomainWordsRequestDomainWords extends $tea.Model {
+  description?: string;
+  domainWord?: string;
+  formalWords?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      domainWord: 'domainWord',
+      formalWords: 'formalWords',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      domainWord: 'string',
+      formalWords: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteDomainWordsRequestDomainWords extends $tea.Model {
+  description?: string;
+  domainWord?: string;
+  formalWords?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      domainWord: 'domainWord',
+      formalWords: 'formalWords',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      domainWord: 'string',
+      formalWords: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAskDetailResponseBodyResultListReferences extends $tea.Model {
+  name?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAskDetailResponseBodyResultList extends $tea.Model {
+  answer?: string;
+  answerResult?: string;
+  commentTags?: string[];
+  isMarkResolved?: boolean;
+  nick?: string;
+  question?: string;
+  references?: GetAskDetailResponseBodyResultListReferences[];
+  time?: number;
+  static names(): { [key: string]: string } {
+    return {
+      answer: 'answer',
+      answerResult: 'answerResult',
+      commentTags: 'commentTags',
+      isMarkResolved: 'isMarkResolved',
+      nick: 'nick',
+      question: 'question',
+      references: 'references',
+      time: 'time',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      answer: 'string',
+      answerResult: 'string',
+      commentTags: { 'type': 'array', 'itemType': 'string' },
+      isMarkResolved: 'boolean',
+      nick: 'string',
+      question: 'string',
+      references: { 'type': 'array', 'itemType': GetAskDetailResponseBodyResultListReferences },
+      time: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetAskDetailResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  list?: GetAskDetailResponseBodyResultList[];
+  nextCursor?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextCursor: 'nextCursor',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': GetAskDetailResponseBodyResultList },
+      nextCursor: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetKnowledgeListResponseBodyResult extends $tea.Model {
   docFormat?: string;
   docName?: string;
@@ -498,6 +1034,122 @@ export default class Client extends OpenApi {
 
   }
 
+
+  /**
+   * 助理添加专业词汇
+   * 
+   * @param request - AddDomainWordsRequest
+   * @param headers - AddDomainWordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddDomainWordsResponse
+   */
+  async addDomainWordsWithOptions(request: AddDomainWordsRequest, headers: AddDomainWordsHeaders, runtime: $Util.RuntimeOptions): Promise<AddDomainWordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.assistantId)) {
+      body["assistantId"] = request.assistantId;
+    }
+
+    if (!Util.isUnset(request.domainWords)) {
+      body["domainWords"] = request.domainWords;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddDomainWords",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/domainWords`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddDomainWordsResponse>(await this.execute(params, req, runtime), new AddDomainWordsResponse({}));
+  }
+
+  /**
+   * 助理添加专业词汇
+   * 
+   * @param request - AddDomainWordsRequest
+   * @returns AddDomainWordsResponse
+   */
+  async addDomainWords(request: AddDomainWordsRequest): Promise<AddDomainWordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddDomainWordsHeaders({ });
+    return await this.addDomainWordsWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 助理删除专业词汇
+   * 
+   * @param request - DeleteDomainWordsRequest
+   * @param headers - DeleteDomainWordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteDomainWordsResponse
+   */
+  async deleteDomainWordsWithOptions(request: DeleteDomainWordsRequest, headers: DeleteDomainWordsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDomainWordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.assistantId)) {
+      body["assistantId"] = request.assistantId;
+    }
+
+    if (!Util.isUnset(request.domainWords)) {
+      body["domainWords"] = request.domainWords;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteDomainWords",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/domainWords/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteDomainWordsResponse>(await this.execute(params, req, runtime), new DeleteDomainWordsResponse({}));
+  }
+
+  /**
+   * 助理删除专业词汇
+   * 
+   * @param request - DeleteDomainWordsRequest
+   * @returns DeleteDomainWordsResponse
+   */
+  async deleteDomainWords(request: DeleteDomainWordsRequest): Promise<DeleteDomainWordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteDomainWordsHeaders({ });
+    return await this.deleteDomainWordsWithOptions(request, headers, runtime);
+  }
 
   /**
    * 删除助理知识
@@ -555,6 +1207,130 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DeleteKnowledgeHeaders({ });
     return await this.deleteKnowledgeWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取助理问答明细
+   * 
+   * @param request - GetAskDetailRequest
+   * @param headers - GetAskDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetAskDetailResponse
+   */
+  async getAskDetailWithOptions(request: GetAskDetailRequest, headers: GetAskDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetAskDetailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.assistantId)) {
+      query["assistantId"] = request.assistantId;
+    }
+
+    if (!Util.isUnset(request.endTime)) {
+      query["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.offset)) {
+      query["offset"] = request.offset;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.startTime)) {
+      query["startTime"] = request.startTime;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetAskDetail",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/askDetails`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAskDetailResponse>(await this.execute(params, req, runtime), new GetAskDetailResponse({}));
+  }
+
+  /**
+   * 获取助理问答明细
+   * 
+   * @param request - GetAskDetailRequest
+   * @returns GetAskDetailResponse
+   */
+  async getAskDetail(request: GetAskDetailRequest): Promise<GetAskDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetAskDetailHeaders({ });
+    return await this.getAskDetailWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取助理专业词汇
+   * 
+   * @param request - GetDomainWordsRequest
+   * @param headers - GetDomainWordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetDomainWordsResponse
+   */
+  async getDomainWordsWithOptions(request: GetDomainWordsRequest, headers: GetDomainWordsHeaders, runtime: $Util.RuntimeOptions): Promise<GetDomainWordsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.assistantId)) {
+      query["assistantId"] = request.assistantId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetDomainWords",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/domainWords`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDomainWordsResponse>(await this.execute(params, req, runtime), new GetDomainWordsResponse({}));
+  }
+
+  /**
+   * 获取助理专业词汇
+   * 
+   * @param request - GetDomainWordsRequest
+   * @returns GetDomainWordsResponse
+   */
+  async getDomainWords(request: GetDomainWordsRequest): Promise<GetDomainWordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDomainWordsHeaders({ });
+    return await this.getDomainWordsWithOptions(request, headers, runtime);
   }
 
   /**

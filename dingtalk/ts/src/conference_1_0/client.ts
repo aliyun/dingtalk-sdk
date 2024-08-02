@@ -5221,6 +5221,11 @@ export class InviteUsersRequestInviteeList extends $tea.Model {
 export class InviteUsersRequestPhoneInviteeList extends $tea.Model {
   /**
    * @example
+   * false
+   */
+  inviteClient?: boolean;
+  /**
+   * @example
    * 测试电话用户
    */
   nick?: string;
@@ -5229,17 +5234,26 @@ export class InviteUsersRequestPhoneInviteeList extends $tea.Model {
    * 1xxxxxxxxxx9
    */
   phoneNumber?: string;
+  /**
+   * @example
+   * 86
+   */
+  statusCode?: string;
   static names(): { [key: string]: string } {
     return {
+      inviteClient: 'inviteClient',
       nick: 'nick',
       phoneNumber: 'phoneNumber',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      inviteClient: 'boolean',
       nick: 'string',
       phoneNumber: 'string',
+      statusCode: 'string',
     };
   }
 
