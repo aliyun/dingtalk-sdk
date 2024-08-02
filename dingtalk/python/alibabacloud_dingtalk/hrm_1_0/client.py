@@ -3598,6 +3598,238 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.QueryJobsHeaders()
         return await self.query_jobs_with_options_async(request, headers, runtime)
 
+    def query_micro_app_status_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.QueryMicroAppStatusRequest,
+        headers: dingtalkhrm__1__0_models.QueryMicroAppStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.QueryMicroAppStatusResponse:
+        """
+        @summary 智能人事查询微应用状态
+        
+        @param request: QueryMicroAppStatusRequest
+        @param headers: QueryMicroAppStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMicroAppStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tenant_id_list):
+            body['tenantIdList'] = request.tenant_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryMicroAppStatus',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/microApps/statuses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.QueryMicroAppStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_micro_app_status_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.QueryMicroAppStatusRequest,
+        headers: dingtalkhrm__1__0_models.QueryMicroAppStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.QueryMicroAppStatusResponse:
+        """
+        @summary 智能人事查询微应用状态
+        
+        @param request: QueryMicroAppStatusRequest
+        @param headers: QueryMicroAppStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMicroAppStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tenant_id_list):
+            body['tenantIdList'] = request.tenant_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryMicroAppStatus',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/microApps/statuses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.QueryMicroAppStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_micro_app_status(
+        self,
+        request: dingtalkhrm__1__0_models.QueryMicroAppStatusRequest,
+    ) -> dingtalkhrm__1__0_models.QueryMicroAppStatusResponse:
+        """
+        @summary 智能人事查询微应用状态
+        
+        @param request: QueryMicroAppStatusRequest
+        @return: QueryMicroAppStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.QueryMicroAppStatusHeaders()
+        return self.query_micro_app_status_with_options(request, headers, runtime)
+
+    async def query_micro_app_status_async(
+        self,
+        request: dingtalkhrm__1__0_models.QueryMicroAppStatusRequest,
+    ) -> dingtalkhrm__1__0_models.QueryMicroAppStatusResponse:
+        """
+        @summary 智能人事查询微应用状态
+        
+        @param request: QueryMicroAppStatusRequest
+        @return: QueryMicroAppStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.QueryMicroAppStatusHeaders()
+        return await self.query_micro_app_status_with_options_async(request, headers, runtime)
+
+    def query_micro_app_view_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.QueryMicroAppViewRequest,
+        headers: dingtalkhrm__1__0_models.QueryMicroAppViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.QueryMicroAppViewResponse:
+        """
+        @summary 智能人事查询微应用可见性
+        
+        @param request: QueryMicroAppViewRequest
+        @param headers: QueryMicroAppViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMicroAppViewResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tenant_id_list):
+            body['tenantIdList'] = request.tenant_id_list
+        if not UtilClient.is_unset(request.view_user_id):
+            body['viewUserId'] = request.view_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryMicroAppView',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/microApps/visibilities/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.QueryMicroAppViewResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_micro_app_view_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.QueryMicroAppViewRequest,
+        headers: dingtalkhrm__1__0_models.QueryMicroAppViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.QueryMicroAppViewResponse:
+        """
+        @summary 智能人事查询微应用可见性
+        
+        @param request: QueryMicroAppViewRequest
+        @param headers: QueryMicroAppViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMicroAppViewResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tenant_id_list):
+            body['tenantIdList'] = request.tenant_id_list
+        if not UtilClient.is_unset(request.view_user_id):
+            body['viewUserId'] = request.view_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryMicroAppView',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/microApps/visibilities/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.QueryMicroAppViewResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_micro_app_view(
+        self,
+        request: dingtalkhrm__1__0_models.QueryMicroAppViewRequest,
+    ) -> dingtalkhrm__1__0_models.QueryMicroAppViewResponse:
+        """
+        @summary 智能人事查询微应用可见性
+        
+        @param request: QueryMicroAppViewRequest
+        @return: QueryMicroAppViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.QueryMicroAppViewHeaders()
+        return self.query_micro_app_view_with_options(request, headers, runtime)
+
+    async def query_micro_app_view_async(
+        self,
+        request: dingtalkhrm__1__0_models.QueryMicroAppViewRequest,
+    ) -> dingtalkhrm__1__0_models.QueryMicroAppViewResponse:
+        """
+        @summary 智能人事查询微应用可见性
+        
+        @param request: QueryMicroAppViewRequest
+        @return: QueryMicroAppViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.QueryMicroAppViewHeaders()
+        return await self.query_micro_app_view_with_options_async(request, headers, runtime)
+
     def query_positions_with_options(
         self,
         request: dingtalkhrm__1__0_models.QueryPositionsRequest,

@@ -2743,11 +2743,15 @@ class InviteUsersRequestInviteeList(TeaModel):
 class InviteUsersRequestPhoneInviteeList(TeaModel):
     def __init__(
         self,
+        invite_client: bool = None,
         nick: str = None,
         phone_number: str = None,
+        status_code: str = None,
     ):
+        self.invite_client = invite_client
         self.nick = nick
         self.phone_number = phone_number
+        self.status_code = status_code
 
     def validate(self):
         pass
@@ -2758,18 +2762,26 @@ class InviteUsersRequestPhoneInviteeList(TeaModel):
             return _map
 
         result = dict()
+        if self.invite_client is not None:
+            result['inviteClient'] = self.invite_client
         if self.nick is not None:
             result['nick'] = self.nick
         if self.phone_number is not None:
             result['phoneNumber'] = self.phone_number
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('inviteClient') is not None:
+            self.invite_client = m.get('inviteClient')
         if m.get('nick') is not None:
             self.nick = m.get('nick')
         if m.get('phoneNumber') is not None:
             self.phone_number = m.get('phoneNumber')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
         return self
 
 

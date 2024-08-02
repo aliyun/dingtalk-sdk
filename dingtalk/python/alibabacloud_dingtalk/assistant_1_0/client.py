@@ -26,6 +26,242 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_domain_words_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.AddDomainWordsRequest,
+        headers: dingtalkassistant__1__0_models.AddDomainWordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.AddDomainWordsResponse:
+        """
+        @summary 助理添加专业词汇
+        
+        @param request: AddDomainWordsRequest
+        @param headers: AddDomainWordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddDomainWordsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            body['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.domain_words):
+            body['domainWords'] = request.domain_words
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddDomainWords',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/domainWords',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.AddDomainWordsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_domain_words_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.AddDomainWordsRequest,
+        headers: dingtalkassistant__1__0_models.AddDomainWordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.AddDomainWordsResponse:
+        """
+        @summary 助理添加专业词汇
+        
+        @param request: AddDomainWordsRequest
+        @param headers: AddDomainWordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddDomainWordsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            body['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.domain_words):
+            body['domainWords'] = request.domain_words
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddDomainWords',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/domainWords',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.AddDomainWordsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_domain_words(
+        self,
+        request: dingtalkassistant__1__0_models.AddDomainWordsRequest,
+    ) -> dingtalkassistant__1__0_models.AddDomainWordsResponse:
+        """
+        @summary 助理添加专业词汇
+        
+        @param request: AddDomainWordsRequest
+        @return: AddDomainWordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.AddDomainWordsHeaders()
+        return self.add_domain_words_with_options(request, headers, runtime)
+
+    async def add_domain_words_async(
+        self,
+        request: dingtalkassistant__1__0_models.AddDomainWordsRequest,
+    ) -> dingtalkassistant__1__0_models.AddDomainWordsResponse:
+        """
+        @summary 助理添加专业词汇
+        
+        @param request: AddDomainWordsRequest
+        @return: AddDomainWordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.AddDomainWordsHeaders()
+        return await self.add_domain_words_with_options_async(request, headers, runtime)
+
+    def delete_domain_words_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.DeleteDomainWordsRequest,
+        headers: dingtalkassistant__1__0_models.DeleteDomainWordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.DeleteDomainWordsResponse:
+        """
+        @summary 助理删除专业词汇
+        
+        @param request: DeleteDomainWordsRequest
+        @param headers: DeleteDomainWordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteDomainWordsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            body['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.domain_words):
+            body['domainWords'] = request.domain_words
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteDomainWords',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/domainWords/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.DeleteDomainWordsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_domain_words_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.DeleteDomainWordsRequest,
+        headers: dingtalkassistant__1__0_models.DeleteDomainWordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.DeleteDomainWordsResponse:
+        """
+        @summary 助理删除专业词汇
+        
+        @param request: DeleteDomainWordsRequest
+        @param headers: DeleteDomainWordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteDomainWordsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            body['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.domain_words):
+            body['domainWords'] = request.domain_words
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteDomainWords',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/domainWords/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.DeleteDomainWordsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_domain_words(
+        self,
+        request: dingtalkassistant__1__0_models.DeleteDomainWordsRequest,
+    ) -> dingtalkassistant__1__0_models.DeleteDomainWordsResponse:
+        """
+        @summary 助理删除专业词汇
+        
+        @param request: DeleteDomainWordsRequest
+        @return: DeleteDomainWordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.DeleteDomainWordsHeaders()
+        return self.delete_domain_words_with_options(request, headers, runtime)
+
+    async def delete_domain_words_async(
+        self,
+        request: dingtalkassistant__1__0_models.DeleteDomainWordsRequest,
+    ) -> dingtalkassistant__1__0_models.DeleteDomainWordsResponse:
+        """
+        @summary 助理删除专业词汇
+        
+        @param request: DeleteDomainWordsRequest
+        @return: DeleteDomainWordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.DeleteDomainWordsHeaders()
+        return await self.delete_domain_words_with_options_async(request, headers, runtime)
+
     def delete_knowledge_with_options(
         self,
         request: dingtalkassistant__1__0_models.DeleteKnowledgeRequest,
@@ -143,6 +379,250 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkassistant__1__0_models.DeleteKnowledgeHeaders()
         return await self.delete_knowledge_with_options_async(request, headers, runtime)
+
+    def get_ask_detail_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.GetAskDetailRequest,
+        headers: dingtalkassistant__1__0_models.GetAskDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.GetAskDetailResponse:
+        """
+        @summary 获取助理问答明细
+        
+        @param request: GetAskDetailRequest
+        @param headers: GetAskDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAskDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.offset):
+            query['offset'] = request.offset
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAskDetail',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/askDetails',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.GetAskDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_ask_detail_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.GetAskDetailRequest,
+        headers: dingtalkassistant__1__0_models.GetAskDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.GetAskDetailResponse:
+        """
+        @summary 获取助理问答明细
+        
+        @param request: GetAskDetailRequest
+        @param headers: GetAskDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAskDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.offset):
+            query['offset'] = request.offset
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAskDetail',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/askDetails',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.GetAskDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_ask_detail(
+        self,
+        request: dingtalkassistant__1__0_models.GetAskDetailRequest,
+    ) -> dingtalkassistant__1__0_models.GetAskDetailResponse:
+        """
+        @summary 获取助理问答明细
+        
+        @param request: GetAskDetailRequest
+        @return: GetAskDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.GetAskDetailHeaders()
+        return self.get_ask_detail_with_options(request, headers, runtime)
+
+    async def get_ask_detail_async(
+        self,
+        request: dingtalkassistant__1__0_models.GetAskDetailRequest,
+    ) -> dingtalkassistant__1__0_models.GetAskDetailResponse:
+        """
+        @summary 获取助理问答明细
+        
+        @param request: GetAskDetailRequest
+        @return: GetAskDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.GetAskDetailHeaders()
+        return await self.get_ask_detail_with_options_async(request, headers, runtime)
+
+    def get_domain_words_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.GetDomainWordsRequest,
+        headers: dingtalkassistant__1__0_models.GetDomainWordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.GetDomainWordsResponse:
+        """
+        @summary 获取助理专业词汇
+        
+        @param request: GetDomainWordsRequest
+        @param headers: GetDomainWordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDomainWordsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDomainWords',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/domainWords',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.GetDomainWordsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_domain_words_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.GetDomainWordsRequest,
+        headers: dingtalkassistant__1__0_models.GetDomainWordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.GetDomainWordsResponse:
+        """
+        @summary 获取助理专业词汇
+        
+        @param request: GetDomainWordsRequest
+        @param headers: GetDomainWordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDomainWordsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDomainWords',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/domainWords',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.GetDomainWordsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_domain_words(
+        self,
+        request: dingtalkassistant__1__0_models.GetDomainWordsRequest,
+    ) -> dingtalkassistant__1__0_models.GetDomainWordsResponse:
+        """
+        @summary 获取助理专业词汇
+        
+        @param request: GetDomainWordsRequest
+        @return: GetDomainWordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.GetDomainWordsHeaders()
+        return self.get_domain_words_with_options(request, headers, runtime)
+
+    async def get_domain_words_async(
+        self,
+        request: dingtalkassistant__1__0_models.GetDomainWordsRequest,
+    ) -> dingtalkassistant__1__0_models.GetDomainWordsResponse:
+        """
+        @summary 获取助理专业词汇
+        
+        @param request: GetDomainWordsRequest
+        @return: GetDomainWordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.GetDomainWordsHeaders()
+        return await self.get_domain_words_with_options_async(request, headers, runtime)
 
     def get_knowledge_list_with_options(
         self,
