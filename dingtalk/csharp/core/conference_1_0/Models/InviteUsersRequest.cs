@@ -30,6 +30,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         [Validation(Required=false)]
         public List<InviteUsersRequestPhoneInviteeList> PhoneInviteeList { get; set; }
         public class InviteUsersRequestPhoneInviteeList : TeaModel {
+            [NameInMap("inviteClient")]
+            [Validation(Required=false)]
+            public bool? InviteClient { get; set; }
+
             [NameInMap("nick")]
             [Validation(Required=false)]
             public string Nick { get; set; }
@@ -37,6 +41,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             [NameInMap("phoneNumber")]
             [Validation(Required=false)]
             public string PhoneNumber { get; set; }
+
+            [NameInMap("statusCode")]
+            [Validation(Required=false)]
+            public string StatusCode { get; set; }
 
         }
 

@@ -29,6 +29,254 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
 
 
         /**
+         * @summary 助理添加专业词汇
+         *
+         * @param request AddDomainWordsRequest
+         * @param headers AddDomainWordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddDomainWordsResponse
+         */
+        public AddDomainWordsResponse AddDomainWordsWithOptions(AddDomainWordsRequest request, AddDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                body["assistantId"] = request.AssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DomainWords))
+            {
+                body["domainWords"] = request.DomainWords;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddDomainWords",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/domainWords",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddDomainWordsResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 助理添加专业词汇
+         *
+         * @param request AddDomainWordsRequest
+         * @param headers AddDomainWordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddDomainWordsResponse
+         */
+        public async Task<AddDomainWordsResponse> AddDomainWordsWithOptionsAsync(AddDomainWordsRequest request, AddDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                body["assistantId"] = request.AssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DomainWords))
+            {
+                body["domainWords"] = request.DomainWords;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddDomainWords",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/domainWords",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddDomainWordsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 助理添加专业词汇
+         *
+         * @param request AddDomainWordsRequest
+         * @return AddDomainWordsResponse
+         */
+        public AddDomainWordsResponse AddDomainWords(AddDomainWordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddDomainWordsHeaders headers = new AddDomainWordsHeaders();
+            return AddDomainWordsWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 助理添加专业词汇
+         *
+         * @param request AddDomainWordsRequest
+         * @return AddDomainWordsResponse
+         */
+        public async Task<AddDomainWordsResponse> AddDomainWordsAsync(AddDomainWordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddDomainWordsHeaders headers = new AddDomainWordsHeaders();
+            return await AddDomainWordsWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 助理删除专业词汇
+         *
+         * @param request DeleteDomainWordsRequest
+         * @param headers DeleteDomainWordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteDomainWordsResponse
+         */
+        public DeleteDomainWordsResponse DeleteDomainWordsWithOptions(DeleteDomainWordsRequest request, DeleteDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                body["assistantId"] = request.AssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DomainWords))
+            {
+                body["domainWords"] = request.DomainWords;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteDomainWords",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/domainWords/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteDomainWordsResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 助理删除专业词汇
+         *
+         * @param request DeleteDomainWordsRequest
+         * @param headers DeleteDomainWordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteDomainWordsResponse
+         */
+        public async Task<DeleteDomainWordsResponse> DeleteDomainWordsWithOptionsAsync(DeleteDomainWordsRequest request, DeleteDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                body["assistantId"] = request.AssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DomainWords))
+            {
+                body["domainWords"] = request.DomainWords;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteDomainWords",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/domainWords/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteDomainWordsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 助理删除专业词汇
+         *
+         * @param request DeleteDomainWordsRequest
+         * @return DeleteDomainWordsResponse
+         */
+        public DeleteDomainWordsResponse DeleteDomainWords(DeleteDomainWordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteDomainWordsHeaders headers = new DeleteDomainWordsHeaders();
+            return DeleteDomainWordsWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 助理删除专业词汇
+         *
+         * @param request DeleteDomainWordsRequest
+         * @return DeleteDomainWordsResponse
+         */
+        public async Task<DeleteDomainWordsResponse> DeleteDomainWordsAsync(DeleteDomainWordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteDomainWordsHeaders headers = new DeleteDomainWordsHeaders();
+            return await DeleteDomainWordsWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 删除助理知识
          *
          * @param request DeleteKnowledgeRequest
@@ -150,6 +398,270 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteKnowledgeHeaders headers = new DeleteKnowledgeHeaders();
             return await DeleteKnowledgeWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取助理问答明细
+         *
+         * @param request GetAskDetailRequest
+         * @param headers GetAskDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetAskDetailResponse
+         */
+        public GetAskDetailResponse GetAskDetailWithOptions(GetAskDetailRequest request, GetAskDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                query["assistantId"] = request.AssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                query["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Offset))
+            {
+                query["offset"] = request.Offset;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAskDetail",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/askDetails",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAskDetailResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取助理问答明细
+         *
+         * @param request GetAskDetailRequest
+         * @param headers GetAskDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetAskDetailResponse
+         */
+        public async Task<GetAskDetailResponse> GetAskDetailWithOptionsAsync(GetAskDetailRequest request, GetAskDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                query["assistantId"] = request.AssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                query["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Offset))
+            {
+                query["offset"] = request.Offset;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAskDetail",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/askDetails",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAskDetailResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取助理问答明细
+         *
+         * @param request GetAskDetailRequest
+         * @return GetAskDetailResponse
+         */
+        public GetAskDetailResponse GetAskDetail(GetAskDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAskDetailHeaders headers = new GetAskDetailHeaders();
+            return GetAskDetailWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取助理问答明细
+         *
+         * @param request GetAskDetailRequest
+         * @return GetAskDetailResponse
+         */
+        public async Task<GetAskDetailResponse> GetAskDetailAsync(GetAskDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAskDetailHeaders headers = new GetAskDetailHeaders();
+            return await GetAskDetailWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取助理专业词汇
+         *
+         * @param request GetDomainWordsRequest
+         * @param headers GetDomainWordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetDomainWordsResponse
+         */
+        public GetDomainWordsResponse GetDomainWordsWithOptions(GetDomainWordsRequest request, GetDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                query["assistantId"] = request.AssistantId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDomainWords",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/domainWords",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDomainWordsResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取助理专业词汇
+         *
+         * @param request GetDomainWordsRequest
+         * @param headers GetDomainWordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetDomainWordsResponse
+         */
+        public async Task<GetDomainWordsResponse> GetDomainWordsWithOptionsAsync(GetDomainWordsRequest request, GetDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                query["assistantId"] = request.AssistantId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDomainWords",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/domainWords",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDomainWordsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取助理专业词汇
+         *
+         * @param request GetDomainWordsRequest
+         * @return GetDomainWordsResponse
+         */
+        public GetDomainWordsResponse GetDomainWords(GetDomainWordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDomainWordsHeaders headers = new GetDomainWordsHeaders();
+            return GetDomainWordsWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取助理专业词汇
+         *
+         * @param request GetDomainWordsRequest
+         * @return GetDomainWordsResponse
+         */
+        public async Task<GetDomainWordsResponse> GetDomainWordsAsync(GetDomainWordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDomainWordsHeaders headers = new GetDomainWordsHeaders();
+            return await GetDomainWordsWithOptionsAsync(request, headers, runtime);
         }
 
         /**

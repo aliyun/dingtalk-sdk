@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
 {
-    public class DeleteKnowledgeHeaders : TeaModel {
-        [NameInMap("commonHeaders")]
+    public class GetDomainWordsResponseBody : TeaModel {
+        [NameInMap("result")]
         [Validation(Required=false)]
-        public Dictionary<string, string> CommonHeaders { get; set; }
+        public List<string> Result { get; set; }
 
-        [NameInMap("x-acs-dingtalk-access-token")]
+        [NameInMap("success")]
         [Validation(Required=false)]
-        public string XAcsDingtalkAccessToken { get; set; }
+        public bool? Success { get; set; }
 
     }
 

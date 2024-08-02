@@ -3962,6 +3962,246 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
+         * @summary 智能人事查询微应用状态
+         *
+         * @param request QueryMicroAppStatusRequest
+         * @param headers QueryMicroAppStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryMicroAppStatusResponse
+         */
+        public QueryMicroAppStatusResponse QueryMicroAppStatusWithOptions(QueryMicroAppStatusRequest request, QueryMicroAppStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantIdList))
+            {
+                body["tenantIdList"] = request.TenantIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMicroAppStatus",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/microApps/statuses/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMicroAppStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 智能人事查询微应用状态
+         *
+         * @param request QueryMicroAppStatusRequest
+         * @param headers QueryMicroAppStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryMicroAppStatusResponse
+         */
+        public async Task<QueryMicroAppStatusResponse> QueryMicroAppStatusWithOptionsAsync(QueryMicroAppStatusRequest request, QueryMicroAppStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantIdList))
+            {
+                body["tenantIdList"] = request.TenantIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMicroAppStatus",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/microApps/statuses/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMicroAppStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 智能人事查询微应用状态
+         *
+         * @param request QueryMicroAppStatusRequest
+         * @return QueryMicroAppStatusResponse
+         */
+        public QueryMicroAppStatusResponse QueryMicroAppStatus(QueryMicroAppStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMicroAppStatusHeaders headers = new QueryMicroAppStatusHeaders();
+            return QueryMicroAppStatusWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 智能人事查询微应用状态
+         *
+         * @param request QueryMicroAppStatusRequest
+         * @return QueryMicroAppStatusResponse
+         */
+        public async Task<QueryMicroAppStatusResponse> QueryMicroAppStatusAsync(QueryMicroAppStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMicroAppStatusHeaders headers = new QueryMicroAppStatusHeaders();
+            return await QueryMicroAppStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 智能人事查询微应用可见性
+         *
+         * @param request QueryMicroAppViewRequest
+         * @param headers QueryMicroAppViewHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryMicroAppViewResponse
+         */
+        public QueryMicroAppViewResponse QueryMicroAppViewWithOptions(QueryMicroAppViewRequest request, QueryMicroAppViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantIdList))
+            {
+                body["tenantIdList"] = request.TenantIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewUserId))
+            {
+                body["viewUserId"] = request.ViewUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMicroAppView",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/microApps/visibilities/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMicroAppViewResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 智能人事查询微应用可见性
+         *
+         * @param request QueryMicroAppViewRequest
+         * @param headers QueryMicroAppViewHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryMicroAppViewResponse
+         */
+        public async Task<QueryMicroAppViewResponse> QueryMicroAppViewWithOptionsAsync(QueryMicroAppViewRequest request, QueryMicroAppViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantIdList))
+            {
+                body["tenantIdList"] = request.TenantIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewUserId))
+            {
+                body["viewUserId"] = request.ViewUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMicroAppView",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/microApps/visibilities/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMicroAppViewResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 智能人事查询微应用可见性
+         *
+         * @param request QueryMicroAppViewRequest
+         * @return QueryMicroAppViewResponse
+         */
+        public QueryMicroAppViewResponse QueryMicroAppView(QueryMicroAppViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMicroAppViewHeaders headers = new QueryMicroAppViewHeaders();
+            return QueryMicroAppViewWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 智能人事查询微应用可见性
+         *
+         * @param request QueryMicroAppViewRequest
+         * @return QueryMicroAppViewResponse
+         */
+        public async Task<QueryMicroAppViewResponse> QueryMicroAppViewAsync(QueryMicroAppViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMicroAppViewHeaders headers = new QueryMicroAppViewHeaders();
+            return await QueryMicroAppViewWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 分页查询企业职位信息
          *
          * @param request QueryPositionsRequest
