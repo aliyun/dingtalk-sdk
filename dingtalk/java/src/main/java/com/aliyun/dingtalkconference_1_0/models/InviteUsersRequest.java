@@ -89,6 +89,13 @@ public class InviteUsersRequest extends TeaModel {
     public static class InviteUsersRequestPhoneInviteeList extends TeaModel {
         /**
          * <strong>example:</strong>
+         * <p>false</p>
+         */
+        @NameInMap("inviteClient")
+        public Boolean inviteClient;
+
+        /**
+         * <strong>example:</strong>
          * <p>测试电话用户</p>
          */
         @NameInMap("nick")
@@ -101,9 +108,24 @@ public class InviteUsersRequest extends TeaModel {
         @NameInMap("phoneNumber")
         public String phoneNumber;
 
+        /**
+         * <strong>example:</strong>
+         * <p>86</p>
+         */
+        @NameInMap("statusCode")
+        public String statusCode;
+
         public static InviteUsersRequestPhoneInviteeList build(java.util.Map<String, ?> map) throws Exception {
             InviteUsersRequestPhoneInviteeList self = new InviteUsersRequestPhoneInviteeList();
             return TeaModel.build(map, self);
+        }
+
+        public InviteUsersRequestPhoneInviteeList setInviteClient(Boolean inviteClient) {
+            this.inviteClient = inviteClient;
+            return this;
+        }
+        public Boolean getInviteClient() {
+            return this.inviteClient;
         }
 
         public InviteUsersRequestPhoneInviteeList setNick(String nick) {
@@ -120,6 +142,14 @@ public class InviteUsersRequest extends TeaModel {
         }
         public String getPhoneNumber() {
             return this.phoneNumber;
+        }
+
+        public InviteUsersRequestPhoneInviteeList setStatusCode(String statusCode) {
+            this.statusCode = statusCode;
+            return this;
+        }
+        public String getStatusCode() {
+            return this.statusCode;
         }
 
     }

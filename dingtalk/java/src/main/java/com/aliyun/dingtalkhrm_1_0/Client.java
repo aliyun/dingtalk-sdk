@@ -1927,6 +1927,122 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>智能人事查询微应用状态</p>
+     * 
+     * @param request QueryMicroAppStatusRequest
+     * @param headers QueryMicroAppStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMicroAppStatusResponse
+     */
+    public QueryMicroAppStatusResponse queryMicroAppStatusWithOptions(QueryMicroAppStatusRequest request, QueryMicroAppStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.tenantIdList)) {
+            body.put("tenantIdList", request.tenantIdList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryMicroAppStatus"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/microApps/statuses/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryMicroAppStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>智能人事查询微应用状态</p>
+     * 
+     * @param request QueryMicroAppStatusRequest
+     * @return QueryMicroAppStatusResponse
+     */
+    public QueryMicroAppStatusResponse queryMicroAppStatus(QueryMicroAppStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryMicroAppStatusHeaders headers = new QueryMicroAppStatusHeaders();
+        return this.queryMicroAppStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>智能人事查询微应用可见性</p>
+     * 
+     * @param request QueryMicroAppViewRequest
+     * @param headers QueryMicroAppViewHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMicroAppViewResponse
+     */
+    public QueryMicroAppViewResponse queryMicroAppViewWithOptions(QueryMicroAppViewRequest request, QueryMicroAppViewHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.tenantIdList)) {
+            body.put("tenantIdList", request.tenantIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.viewUserId)) {
+            body.put("viewUserId", request.viewUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryMicroAppView"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/microApps/visibilities/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryMicroAppViewResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>智能人事查询微应用可见性</p>
+     * 
+     * @param request QueryMicroAppViewRequest
+     * @return QueryMicroAppViewResponse
+     */
+    public QueryMicroAppViewResponse queryMicroAppView(QueryMicroAppViewRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryMicroAppViewHeaders headers = new QueryMicroAppViewHeaders();
+        return this.queryMicroAppViewWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>分页查询企业职位信息</p>
      * 
      * @param request QueryPositionsRequest

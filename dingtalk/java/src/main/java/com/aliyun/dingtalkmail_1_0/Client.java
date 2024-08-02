@@ -119,7 +119,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("action", "ListMailFolders"),
             new TeaPair("version", "mail_1.0"),
             new TeaPair("protocol", "HTTP"),
-            new TeaPair("pathname", "/v1.0/mail/users/emails/" + email + "/mailFolders"),
+            new TeaPair("pathname", "/v1.0/mail/users/" + email + "/mailFolders"),
             new TeaPair("method", "GET"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
