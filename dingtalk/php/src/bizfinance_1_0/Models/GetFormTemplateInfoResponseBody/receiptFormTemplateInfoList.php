@@ -4,10 +4,16 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetFormTemplateInfoResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetFormTemplateInfoResponseBody\receiptFormTemplateInfoList\componentList;
 use AlibabaCloud\Tea\Model;
 
 class receiptFormTemplateInfoList extends Model
 {
+    /**
+     * @var componentList[]
+     */
+    public $componentList;
+
     /**
      * @example "报销套件"
      *
@@ -34,10 +40,11 @@ class receiptFormTemplateInfoList extends Model
      */
     public $suiteId;
     protected $_name = [
-        'name'        => 'name',
-        'processCode' => 'processCode',
-        'status'      => 'status',
-        'suiteId'     => 'suiteId',
+        'componentList' => 'componentList',
+        'name'          => 'name',
+        'processCode'   => 'processCode',
+        'status'        => 'status',
+        'suiteId'       => 'suiteId',
     ];
 
     public function validate()
@@ -47,6 +54,15 @@ class receiptFormTemplateInfoList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->componentList) {
+            $res['componentList'] = [];
+            if (null !== $this->componentList && \is_array($this->componentList)) {
+                $n = 0;
+                foreach ($this->componentList as $item) {
+                    $res['componentList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
@@ -71,6 +87,15 @@ class receiptFormTemplateInfoList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['componentList'])) {
+            if (!empty($map['componentList'])) {
+                $model->componentList = [];
+                $n                    = 0;
+                foreach ($map['componentList'] as $item) {
+                    $model->componentList[$n++] = null !== $item ? componentList::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }

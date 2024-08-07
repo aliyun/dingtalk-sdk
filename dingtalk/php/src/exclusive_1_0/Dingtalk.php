@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BanOrOpenGroupWordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateDlpTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateDlpTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateDlpTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateMessageCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateMessageCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateMessageCategoryResponse;
@@ -29,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceBatchResp
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateVirusScanTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateVirusScanTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateVirusScanTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DataSyncHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DataSyncRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DataSyncResponse;
@@ -165,6 +171,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserRealPeopleStateRespon
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserStayLengthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserStayLengthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserStayLengthResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetVirusScanResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetVirusScanResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetVirusScanResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogResponse;
@@ -573,6 +582,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建文件检测任务
+     *  *
+     * @param CreateDlpTaskRequest $request CreateDlpTaskRequest
+     * @param CreateDlpTaskHeaders $headers CreateDlpTaskHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateDlpTaskResponse CreateDlpTaskResponse
+     */
+    public function createDlpTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dentryId)) {
+            $body['dentryId'] = $request->dentryId;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            $body['spaceId'] = $request->spaceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateDlpTask',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/dlpTasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateDlpTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建文件检测任务
+     *  *
+     * @param CreateDlpTaskRequest $request CreateDlpTaskRequest
+     *
+     * @return CreateDlpTaskResponse CreateDlpTaskResponse
+     */
+    public function createDlpTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateDlpTaskHeaders([]);
+
+        return $this->createDlpTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建分组并绑定会话
      *  *
      * @param CreateMessageCategoryRequest $request CreateMessageCategoryRequest
@@ -819,6 +891,84 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateTrustedDeviceBatchHeaders([]);
 
         return $this->createTrustedDeviceBatchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 触发文件病毒扫描任务
+     *  *
+     * @param CreateVirusScanTaskRequest $request CreateVirusScanTaskRequest
+     * @param CreateVirusScanTaskHeaders $headers CreateVirusScanTaskHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateVirusScanTaskResponse CreateVirusScanTaskResponse
+     */
+    public function createVirusScanTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dentryId)) {
+            $body['dentryId'] = $request->dentryId;
+        }
+        if (!Utils::isUnset($request->downloadUrl)) {
+            $body['downloadUrl'] = $request->downloadUrl;
+        }
+        if (!Utils::isUnset($request->fileMd5)) {
+            $body['fileMd5'] = $request->fileMd5;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            $body['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->fileSize)) {
+            $body['fileSize'] = $request->fileSize;
+        }
+        if (!Utils::isUnset($request->source)) {
+            $body['source'] = $request->source;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            $body['spaceId'] = $request->spaceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateVirusScanTask',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/virusScanTasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateVirusScanTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 触发文件病毒扫描任务
+     *  *
+     * @param CreateVirusScanTaskRequest $request CreateVirusScanTaskRequest
+     *
+     * @return CreateVirusScanTaskResponse CreateVirusScanTaskResponse
+     */
+    public function createVirusScanTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateVirusScanTaskHeaders([]);
+
+        return $this->createVirusScanTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3797,6 +3947,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetUserStayLengthHeaders([]);
 
         return $this->getUserStayLengthWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取文件病毒扫描结果
+     *  *
+     * @param GetVirusScanResultRequest $request GetVirusScanResultRequest
+     * @param GetVirusScanResultHeaders $headers GetVirusScanResultHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetVirusScanResultResponse GetVirusScanResultResponse
+     */
+    public function getVirusScanResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetVirusScanResult',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/virusScanTasks/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetVirusScanResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取文件病毒扫描结果
+     *  *
+     * @param GetVirusScanResultRequest $request GetVirusScanResultRequest
+     *
+     * @return GetVirusScanResultResponse GetVirusScanResultResponse
+     */
+    public function getVirusScanResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetVirusScanResultHeaders([]);
+
+        return $this->getVirusScanResultWithOptions($request, $headers, $runtime);
     }
 
     /**

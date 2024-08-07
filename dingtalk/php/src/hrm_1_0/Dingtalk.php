@@ -73,6 +73,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDatasQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataTenantQueyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataTenantQueyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataTenantQueyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\OpenOemMicroAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\OpenOemMicroAppRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\OpenOemMicroAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryCustomEntryProcessesResponse;
@@ -1549,7 +1552,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 只能认输主数据根据ID获取
+     * @summary 智能人事主数据根据ID获取
      *  *
      * @param MasterDatasGetRequest $request MasterDatasGetRequest
      * @param MasterDatasGetHeaders $headers MasterDatasGetHeaders
@@ -1600,7 +1603,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 只能认输主数据根据ID获取
+     * @summary 智能人事主数据根据ID获取
      *  *
      * @param MasterDatasGetRequest $request MasterDatasGetRequest
      *
@@ -1690,6 +1693,63 @@ class Dingtalk extends OpenApiClient
         $headers = new MasterDatasQueryHeaders([]);
 
         return $this->masterDatasQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary oem 老用户数据迁移时，开通oem 应用
+     *  *
+     * @param OpenOemMicroAppRequest $request OpenOemMicroAppRequest
+     * @param OpenOemMicroAppHeaders $headers OpenOemMicroAppHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenOemMicroAppResponse OpenOemMicroAppResponse
+     */
+    public function openOemMicroAppWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->tenantId)) {
+            $query['tenantId'] = $request->tenantId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenOemMicroApp',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/oem/microApps/open',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpenOemMicroAppResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary oem 老用户数据迁移时，开通oem 应用
+     *  *
+     * @param OpenOemMicroAppRequest $request OpenOemMicroAppRequest
+     *
+     * @return OpenOemMicroAppResponse OpenOemMicroAppResponse
+     */
+    public function openOemMicroApp($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenOemMicroAppHeaders([]);
+
+        return $this->openOemMicroAppWithOptions($request, $headers, $runtime);
     }
 
     /**

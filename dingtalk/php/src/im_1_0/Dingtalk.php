@@ -39,6 +39,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ChatSubAdminUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CheckUserIsGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CheckUserIsGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CheckUserIsGroupMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CopyUnfurlingRegisterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CopyUnfurlingRegisterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CopyUnfurlingRegisterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsResponse;
@@ -974,6 +977,69 @@ class Dingtalk extends OpenApiClient
         $headers = new CheckUserIsGroupMemberHeaders([]);
 
         return $this->checkUserIsGroupMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 链接增强规则拷贝
+     *  *
+     * @param CopyUnfurlingRegisterRequest $request CopyUnfurlingRegisterRequest
+     * @param CopyUnfurlingRegisterHeaders $headers CopyUnfurlingRegisterHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CopyUnfurlingRegisterResponse CopyUnfurlingRegisterResponse
+     */
+    public function copyUnfurlingRegisterWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->id)) {
+            $body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CopyUnfurlingRegister',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/unfurling/rules/copy',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CopyUnfurlingRegisterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 链接增强规则拷贝
+     *  *
+     * @param CopyUnfurlingRegisterRequest $request CopyUnfurlingRegisterRequest
+     *
+     * @return CopyUnfurlingRegisterResponse CopyUnfurlingRegisterResponse
+     */
+    public function copyUnfurlingRegister($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CopyUnfurlingRegisterHeaders([]);
+
+        return $this->copyUnfurlingRegisterWithOptions($request, $headers, $runtime);
     }
 
     /**
