@@ -506,6 +506,128 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.CreateCategoryAndBindingGroupsHeaders()
         return await self.create_category_and_binding_groups_with_options_async(request, headers, runtime)
 
+    def create_dlp_task_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateDlpTaskRequest,
+        headers: dingtalkexclusive__1__0_models.CreateDlpTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CreateDlpTaskResponse:
+        """
+        @summary 创建文件检测任务
+        
+        @param request: CreateDlpTaskRequest
+        @param headers: CreateDlpTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDlpTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dentry_id):
+            body['dentryId'] = request.dentry_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateDlpTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/dlpTasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CreateDlpTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_dlp_task_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateDlpTaskRequest,
+        headers: dingtalkexclusive__1__0_models.CreateDlpTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CreateDlpTaskResponse:
+        """
+        @summary 创建文件检测任务
+        
+        @param request: CreateDlpTaskRequest
+        @param headers: CreateDlpTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateDlpTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dentry_id):
+            body['dentryId'] = request.dentry_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateDlpTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/dlpTasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CreateDlpTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_dlp_task(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateDlpTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.CreateDlpTaskResponse:
+        """
+        @summary 创建文件检测任务
+        
+        @param request: CreateDlpTaskRequest
+        @return: CreateDlpTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CreateDlpTaskHeaders()
+        return self.create_dlp_task_with_options(request, headers, runtime)
+
+    async def create_dlp_task_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateDlpTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.CreateDlpTaskResponse:
+        """
+        @summary 创建文件检测任务
+        
+        @param request: CreateDlpTaskRequest
+        @return: CreateDlpTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CreateDlpTaskHeaders()
+        return await self.create_dlp_task_with_options_async(request, headers, runtime)
+
     def create_message_category_with_options(
         self,
         request: dingtalkexclusive__1__0_models.CreateMessageCategoryRequest,
@@ -989,6 +1111,148 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.CreateTrustedDeviceBatchHeaders()
         return await self.create_trusted_device_batch_with_options_async(request, headers, runtime)
+
+    def create_virus_scan_task_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateVirusScanTaskRequest,
+        headers: dingtalkexclusive__1__0_models.CreateVirusScanTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CreateVirusScanTaskResponse:
+        """
+        @summary 触发文件病毒扫描任务
+        
+        @param request: CreateVirusScanTaskRequest
+        @param headers: CreateVirusScanTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateVirusScanTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dentry_id):
+            body['dentryId'] = request.dentry_id
+        if not UtilClient.is_unset(request.download_url):
+            body['downloadUrl'] = request.download_url
+        if not UtilClient.is_unset(request.file_md_5):
+            body['fileMd5'] = request.file_md_5
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_size):
+            body['fileSize'] = request.file_size
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateVirusScanTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/virusScanTasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CreateVirusScanTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_virus_scan_task_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateVirusScanTaskRequest,
+        headers: dingtalkexclusive__1__0_models.CreateVirusScanTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CreateVirusScanTaskResponse:
+        """
+        @summary 触发文件病毒扫描任务
+        
+        @param request: CreateVirusScanTaskRequest
+        @param headers: CreateVirusScanTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateVirusScanTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dentry_id):
+            body['dentryId'] = request.dentry_id
+        if not UtilClient.is_unset(request.download_url):
+            body['downloadUrl'] = request.download_url
+        if not UtilClient.is_unset(request.file_md_5):
+            body['fileMd5'] = request.file_md_5
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_size):
+            body['fileSize'] = request.file_size
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateVirusScanTask',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/virusScanTasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CreateVirusScanTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_virus_scan_task(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateVirusScanTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.CreateVirusScanTaskResponse:
+        """
+        @summary 触发文件病毒扫描任务
+        
+        @param request: CreateVirusScanTaskRequest
+        @return: CreateVirusScanTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CreateVirusScanTaskHeaders()
+        return self.create_virus_scan_task_with_options(request, headers, runtime)
+
+    async def create_virus_scan_task_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CreateVirusScanTaskRequest,
+    ) -> dingtalkexclusive__1__0_models.CreateVirusScanTaskResponse:
+        """
+        @summary 触发文件病毒扫描任务
+        
+        @param request: CreateVirusScanTaskRequest
+        @return: CreateVirusScanTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CreateVirusScanTaskHeaders()
+        return await self.create_virus_scan_task_with_options_async(request, headers, runtime)
 
     def data_sync_with_options(
         self,
@@ -6757,6 +7021,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.GetUserStayLengthHeaders()
         return await self.get_user_stay_length_with_options_async(request, headers, runtime)
+
+    def get_virus_scan_result_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetVirusScanResultRequest,
+        headers: dingtalkexclusive__1__0_models.GetVirusScanResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetVirusScanResultResponse:
+        """
+        @summary 获取文件病毒扫描结果
+        
+        @param request: GetVirusScanResultRequest
+        @param headers: GetVirusScanResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetVirusScanResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetVirusScanResult',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/virusScanTasks/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetVirusScanResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_virus_scan_result_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetVirusScanResultRequest,
+        headers: dingtalkexclusive__1__0_models.GetVirusScanResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetVirusScanResultResponse:
+        """
+        @summary 获取文件病毒扫描结果
+        
+        @param request: GetVirusScanResultRequest
+        @param headers: GetVirusScanResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetVirusScanResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetVirusScanResult',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/virusScanTasks/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetVirusScanResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_virus_scan_result(
+        self,
+        request: dingtalkexclusive__1__0_models.GetVirusScanResultRequest,
+    ) -> dingtalkexclusive__1__0_models.GetVirusScanResultResponse:
+        """
+        @summary 获取文件病毒扫描结果
+        
+        @param request: GetVirusScanResultRequest
+        @return: GetVirusScanResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetVirusScanResultHeaders()
+        return self.get_virus_scan_result_with_options(request, headers, runtime)
+
+    async def get_virus_scan_result_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetVirusScanResultRequest,
+    ) -> dingtalkexclusive__1__0_models.GetVirusScanResultResponse:
+        """
+        @summary 获取文件病毒扫描结果
+        
+        @param request: GetVirusScanResultRequest
+        @return: GetVirusScanResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetVirusScanResultHeaders()
+        return await self.get_virus_scan_result_with_options_async(request, headers, runtime)
 
     def list_audit_log_with_options(
         self,

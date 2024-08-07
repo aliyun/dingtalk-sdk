@@ -2723,7 +2723,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrm__1__0_models.MasterDatasGetResponse:
         """
-        @summary 只能认输主数据根据ID获取
+        @summary 智能人事主数据根据ID获取
         
         @param request: MasterDatasGetRequest
         @param headers: MasterDatasGetHeaders
@@ -2772,7 +2772,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkhrm__1__0_models.MasterDatasGetResponse:
         """
-        @summary 只能认输主数据根据ID获取
+        @summary 智能人事主数据根据ID获取
         
         @param request: MasterDatasGetRequest
         @param headers: MasterDatasGetHeaders
@@ -2819,7 +2819,7 @@ class Client(OpenApiClient):
         request: dingtalkhrm__1__0_models.MasterDatasGetRequest,
     ) -> dingtalkhrm__1__0_models.MasterDatasGetResponse:
         """
-        @summary 只能认输主数据根据ID获取
+        @summary 智能人事主数据根据ID获取
         
         @param request: MasterDatasGetRequest
         @return: MasterDatasGetResponse
@@ -2833,7 +2833,7 @@ class Client(OpenApiClient):
         request: dingtalkhrm__1__0_models.MasterDatasGetRequest,
     ) -> dingtalkhrm__1__0_models.MasterDatasGetResponse:
         """
-        @summary 只能认输主数据根据ID获取
+        @summary 智能人事主数据根据ID获取
         
         @param request: MasterDatasGetRequest
         @return: MasterDatasGetResponse
@@ -2983,6 +2983,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.MasterDatasQueryHeaders()
         return await self.master_datas_query_with_options_async(request, headers, runtime)
+
+    def open_oem_micro_app_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.OpenOemMicroAppRequest,
+        headers: dingtalkhrm__1__0_models.OpenOemMicroAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.OpenOemMicroAppResponse:
+        """
+        @summary oem 老用户数据迁移时，开通oem 应用
+        
+        @param request: OpenOemMicroAppRequest
+        @param headers: OpenOemMicroAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenOemMicroAppResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.tenant_id):
+            query['tenantId'] = request.tenant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OpenOemMicroApp',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/oem/microApps/open',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.OpenOemMicroAppResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def open_oem_micro_app_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.OpenOemMicroAppRequest,
+        headers: dingtalkhrm__1__0_models.OpenOemMicroAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.OpenOemMicroAppResponse:
+        """
+        @summary oem 老用户数据迁移时，开通oem 应用
+        
+        @param request: OpenOemMicroAppRequest
+        @param headers: OpenOemMicroAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenOemMicroAppResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.tenant_id):
+            query['tenantId'] = request.tenant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OpenOemMicroApp',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/oem/microApps/open',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.OpenOemMicroAppResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def open_oem_micro_app(
+        self,
+        request: dingtalkhrm__1__0_models.OpenOemMicroAppRequest,
+    ) -> dingtalkhrm__1__0_models.OpenOemMicroAppResponse:
+        """
+        @summary oem 老用户数据迁移时，开通oem 应用
+        
+        @param request: OpenOemMicroAppRequest
+        @return: OpenOemMicroAppResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.OpenOemMicroAppHeaders()
+        return self.open_oem_micro_app_with_options(request, headers, runtime)
+
+    async def open_oem_micro_app_async(
+        self,
+        request: dingtalkhrm__1__0_models.OpenOemMicroAppRequest,
+    ) -> dingtalkhrm__1__0_models.OpenOemMicroAppResponse:
+        """
+        @summary oem 老用户数据迁移时，开通oem 应用
+        
+        @param request: OpenOemMicroAppRequest
+        @return: OpenOemMicroAppResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.OpenOemMicroAppHeaders()
+        return await self.open_oem_micro_app_with_options_async(request, headers, runtime)
 
     def query_custom_entry_processes_with_options(
         self,

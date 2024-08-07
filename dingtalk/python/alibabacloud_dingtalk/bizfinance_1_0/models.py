@@ -3851,18 +3851,18 @@ class GetFormTemplateInfoHeaders(TeaModel):
         return self
 
 
-class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList(TeaModel):
+class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList(TeaModel):
     def __init__(
         self,
+        binding_val: str = None,
+        code: str = None,
         name: str = None,
-        process_code: str = None,
-        status: str = None,
-        suite_id: str = None,
+        type: str = None,
     ):
+        self.binding_val = binding_val
+        self.code = code
         self.name = name
-        self.process_code = process_code
-        self.status = status
-        self.suite_id = suite_id
+        self.type = type
 
     def validate(self):
         pass
@@ -3873,6 +3873,60 @@ class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList(TeaModel):
             return _map
 
         result = dict()
+        if self.binding_val is not None:
+            result['bindingVal'] = self.binding_val
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bindingVal') is not None:
+            self.binding_val = m.get('bindingVal')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList(TeaModel):
+    def __init__(
+        self,
+        component_list: List[GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList] = None,
+        name: str = None,
+        process_code: str = None,
+        status: str = None,
+        suite_id: str = None,
+    ):
+        self.component_list = component_list
+        self.name = name
+        self.process_code = process_code
+        self.status = status
+        self.suite_id = suite_id
+
+    def validate(self):
+        if self.component_list:
+            for k in self.component_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['componentList'] = []
+        if self.component_list is not None:
+            for k in self.component_list:
+                result['componentList'].append(k.to_map() if k else None)
         if self.name is not None:
             result['name'] = self.name
         if self.process_code is not None:
@@ -3885,6 +3939,11 @@ class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.component_list = []
+        if m.get('componentList') is not None:
+            for k in m.get('componentList'):
+                temp_model = GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList()
+                self.component_list.append(temp_model.from_map(k))
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('processCode') is not None:

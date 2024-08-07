@@ -1344,6 +1344,128 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.CheckUserIsGroupMemberHeaders()
         return await self.check_user_is_group_member_with_options_async(request, headers, runtime)
 
+    def copy_unfurling_register_with_options(
+        self,
+        request: dingtalkim__1__0_models.CopyUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.CopyUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CopyUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则拷贝
+        
+        @param request: CopyUnfurlingRegisterRequest
+        @param headers: CopyUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/copy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CopyUnfurlingRegisterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def copy_unfurling_register_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.CopyUnfurlingRegisterRequest,
+        headers: dingtalkim__1__0_models.CopyUnfurlingRegisterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CopyUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则拷贝
+        
+        @param request: CopyUnfurlingRegisterRequest
+        @param headers: CopyUnfurlingRegisterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyUnfurlingRegisterResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyUnfurlingRegister',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/unfurling/rules/copy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CopyUnfurlingRegisterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def copy_unfurling_register(
+        self,
+        request: dingtalkim__1__0_models.CopyUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.CopyUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则拷贝
+        
+        @param request: CopyUnfurlingRegisterRequest
+        @return: CopyUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CopyUnfurlingRegisterHeaders()
+        return self.copy_unfurling_register_with_options(request, headers, runtime)
+
+    async def copy_unfurling_register_async(
+        self,
+        request: dingtalkim__1__0_models.CopyUnfurlingRegisterRequest,
+    ) -> dingtalkim__1__0_models.CopyUnfurlingRegisterResponse:
+        """
+        @summary 链接增强规则拷贝
+        
+        @param request: CopyUnfurlingRegisterRequest
+        @return: CopyUnfurlingRegisterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CopyUnfurlingRegisterHeaders()
+        return await self.copy_unfurling_register_with_options_async(request, headers, runtime)
+
     def count_open_msg_scene_groups_with_options(
         self,
         request: dingtalkim__1__0_models.CountOpenMsgSceneGroupsRequest,
