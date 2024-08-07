@@ -23,7 +23,78 @@ public class GetFormTemplateInfoResponseBody extends TeaModel {
         return this.receiptFormTemplateInfoList;
     }
 
+    public static class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;100&quot;</p>
+         */
+        @NameInMap("bindingVal")
+        public String bindingVal;
+
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;xxx&quot;</p>
+         */
+        @NameInMap("code")
+        public String code;
+
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;报销金额&quot;</p>
+         */
+        @NameInMap("name")
+        public String name;
+
+        /**
+         * <strong>example:</strong>
+         * <p>&quot;amount&quot;</p>
+         */
+        @NameInMap("type")
+        public String type;
+
+        public static GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList build(java.util.Map<String, ?> map) throws Exception {
+            GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList self = new GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList();
+            return TeaModel.build(map, self);
+        }
+
+        public GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList setBindingVal(String bindingVal) {
+            this.bindingVal = bindingVal;
+            return this;
+        }
+        public String getBindingVal() {
+            return this.bindingVal;
+        }
+
+        public GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
+        public GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
+    }
+
     public static class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList extends TeaModel {
+        @NameInMap("componentList")
+        public java.util.List<GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList> componentList;
+
         /**
          * <strong>example:</strong>
          * <p>&quot;报销套件&quot;</p>
@@ -51,6 +122,14 @@ public class GetFormTemplateInfoResponseBody extends TeaModel {
         public static GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList build(java.util.Map<String, ?> map) throws Exception {
             GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList self = new GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList();
             return TeaModel.build(map, self);
+        }
+
+        public GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList setComponentList(java.util.List<GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList> componentList) {
+            this.componentList = componentList;
+            return this;
+        }
+        public java.util.List<GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList> getComponentList() {
+            return this.componentList;
         }
 
         public GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList setName(String name) {

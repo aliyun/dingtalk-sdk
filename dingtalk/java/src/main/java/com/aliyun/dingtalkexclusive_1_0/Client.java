@@ -268,6 +268,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建文件检测任务</p>
+     * 
+     * @param request CreateDlpTaskRequest
+     * @param headers CreateDlpTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateDlpTaskResponse
+     */
+    public CreateDlpTaskResponse createDlpTaskWithOptions(CreateDlpTaskRequest request, CreateDlpTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dentryId)) {
+            body.put("dentryId", request.dentryId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.spaceId)) {
+            body.put("spaceId", request.spaceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateDlpTask"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/dlpTasks"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateDlpTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建文件检测任务</p>
+     * 
+     * @param request CreateDlpTaskRequest
+     * @return CreateDlpTaskResponse
+     */
+    public CreateDlpTaskResponse createDlpTask(CreateDlpTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateDlpTaskHeaders headers = new CreateDlpTaskHeaders();
+        return this.createDlpTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建分组并绑定会话</p>
      * 
      * @param request CreateMessageCategoryRequest
@@ -516,6 +580,90 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateTrustedDeviceBatchHeaders headers = new CreateTrustedDeviceBatchHeaders();
         return this.createTrustedDeviceBatchWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>触发文件病毒扫描任务</p>
+     * 
+     * @param request CreateVirusScanTaskRequest
+     * @param headers CreateVirusScanTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateVirusScanTaskResponse
+     */
+    public CreateVirusScanTaskResponse createVirusScanTaskWithOptions(CreateVirusScanTaskRequest request, CreateVirusScanTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dentryId)) {
+            body.put("dentryId", request.dentryId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.downloadUrl)) {
+            body.put("downloadUrl", request.downloadUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileMd5)) {
+            body.put("fileMd5", request.fileMd5);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileName)) {
+            body.put("fileName", request.fileName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileSize)) {
+            body.put("fileSize", request.fileSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.source)) {
+            body.put("source", request.source);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.spaceId)) {
+            body.put("spaceId", request.spaceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateVirusScanTask"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/virusScanTasks"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateVirusScanTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>触发文件病毒扫描任务</p>
+     * 
+     * @param request CreateVirusScanTaskRequest
+     * @return CreateVirusScanTaskResponse
+     */
+    public CreateVirusScanTaskResponse createVirusScanTask(CreateVirusScanTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateVirusScanTaskHeaders headers = new CreateVirusScanTaskHeaders();
+        return this.createVirusScanTaskWithOptions(request, headers, runtime);
     }
 
     /**
@@ -3474,6 +3622,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetUserStayLengthHeaders headers = new GetUserStayLengthHeaders();
         return this.getUserStayLengthWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取文件病毒扫描结果</p>
+     * 
+     * @param request GetVirusScanResultRequest
+     * @param headers GetVirusScanResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetVirusScanResultResponse
+     */
+    public GetVirusScanResultResponse getVirusScanResultWithOptions(GetVirusScanResultRequest request, GetVirusScanResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("taskId", request.taskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetVirusScanResult"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/virusScanTasks/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetVirusScanResultResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取文件病毒扫描结果</p>
+     * 
+     * @param request GetVirusScanResultRequest
+     * @return GetVirusScanResultResponse
+     */
+    public GetVirusScanResultResponse getVirusScanResult(GetVirusScanResultRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetVirusScanResultHeaders headers = new GetVirusScanResultHeaders();
+        return this.getVirusScanResultWithOptions(request, headers, runtime);
     }
 
     /**
