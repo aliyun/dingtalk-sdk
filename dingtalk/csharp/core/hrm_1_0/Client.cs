@@ -2986,7 +2986,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
-         * @summary 只能认输主数据根据ID获取
+         * @summary 智能人事主数据根据ID获取
          *
          * @param request MasterDatasGetRequest
          * @param headers MasterDatasGetHeaders
@@ -3043,7 +3043,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
-         * @summary 只能认输主数据根据ID获取
+         * @summary 智能人事主数据根据ID获取
          *
          * @param request MasterDatasGetRequest
          * @param headers MasterDatasGetHeaders
@@ -3100,7 +3100,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
-         * @summary 只能认输主数据根据ID获取
+         * @summary 智能人事主数据根据ID获取
          *
          * @param request MasterDatasGetRequest
          * @return MasterDatasGetResponse
@@ -3113,7 +3113,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
-         * @summary 只能认输主数据根据ID获取
+         * @summary 智能人事主数据根据ID获取
          *
          * @param request MasterDatasGetRequest
          * @return MasterDatasGetResponse
@@ -3295,6 +3295,122 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             MasterDatasQueryHeaders headers = new MasterDatasQueryHeaders();
             return await MasterDatasQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary oem 老用户数据迁移时，开通oem 应用
+         *
+         * @param request OpenOemMicroAppRequest
+         * @param headers OpenOemMicroAppHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenOemMicroAppResponse
+         */
+        public OpenOemMicroAppResponse OpenOemMicroAppWithOptions(OpenOemMicroAppRequest request, OpenOemMicroAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantId))
+            {
+                query["tenantId"] = request.TenantId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenOemMicroApp",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/oem/microApps/open",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenOemMicroAppResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary oem 老用户数据迁移时，开通oem 应用
+         *
+         * @param request OpenOemMicroAppRequest
+         * @param headers OpenOemMicroAppHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return OpenOemMicroAppResponse
+         */
+        public async Task<OpenOemMicroAppResponse> OpenOemMicroAppWithOptionsAsync(OpenOemMicroAppRequest request, OpenOemMicroAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantId))
+            {
+                query["tenantId"] = request.TenantId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OpenOemMicroApp",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/oem/microApps/open",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OpenOemMicroAppResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary oem 老用户数据迁移时，开通oem 应用
+         *
+         * @param request OpenOemMicroAppRequest
+         * @return OpenOemMicroAppResponse
+         */
+        public OpenOemMicroAppResponse OpenOemMicroApp(OpenOemMicroAppRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenOemMicroAppHeaders headers = new OpenOemMicroAppHeaders();
+            return OpenOemMicroAppWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary oem 老用户数据迁移时，开通oem 应用
+         *
+         * @param request OpenOemMicroAppRequest
+         * @return OpenOemMicroAppResponse
+         */
+        public async Task<OpenOemMicroAppResponse> OpenOemMicroAppAsync(OpenOemMicroAppRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OpenOemMicroAppHeaders headers = new OpenOemMicroAppHeaders();
+            return await OpenOemMicroAppWithOptionsAsync(request, headers, runtime);
         }
 
         /**

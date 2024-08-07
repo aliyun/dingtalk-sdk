@@ -541,6 +541,138 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         }
 
         /**
+         * @summary 创建文件检测任务
+         *
+         * @param request CreateDlpTaskRequest
+         * @param headers CreateDlpTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateDlpTaskResponse
+         */
+        public CreateDlpTaskResponse CreateDlpTaskWithOptions(CreateDlpTaskRequest request, CreateDlpTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryId))
+            {
+                body["dentryId"] = request.DentryId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceId))
+            {
+                body["spaceId"] = request.SpaceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateDlpTask",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/dlpTasks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateDlpTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建文件检测任务
+         *
+         * @param request CreateDlpTaskRequest
+         * @param headers CreateDlpTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateDlpTaskResponse
+         */
+        public async Task<CreateDlpTaskResponse> CreateDlpTaskWithOptionsAsync(CreateDlpTaskRequest request, CreateDlpTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryId))
+            {
+                body["dentryId"] = request.DentryId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceId))
+            {
+                body["spaceId"] = request.SpaceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateDlpTask",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/dlpTasks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateDlpTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建文件检测任务
+         *
+         * @param request CreateDlpTaskRequest
+         * @return CreateDlpTaskResponse
+         */
+        public CreateDlpTaskResponse CreateDlpTask(CreateDlpTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateDlpTaskHeaders headers = new CreateDlpTaskHeaders();
+            return CreateDlpTaskWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建文件检测任务
+         *
+         * @param request CreateDlpTaskRequest
+         * @return CreateDlpTaskResponse
+         */
+        public async Task<CreateDlpTaskResponse> CreateDlpTaskAsync(CreateDlpTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateDlpTaskHeaders headers = new CreateDlpTaskHeaders();
+            return await CreateDlpTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 创建分组并绑定会话
          *
          * @param request CreateMessageCategoryRequest
@@ -1058,6 +1190,178 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateTrustedDeviceBatchHeaders headers = new CreateTrustedDeviceBatchHeaders();
             return await CreateTrustedDeviceBatchWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 触发文件病毒扫描任务
+         *
+         * @param request CreateVirusScanTaskRequest
+         * @param headers CreateVirusScanTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateVirusScanTaskResponse
+         */
+        public CreateVirusScanTaskResponse CreateVirusScanTaskWithOptions(CreateVirusScanTaskRequest request, CreateVirusScanTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryId))
+            {
+                body["dentryId"] = request.DentryId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DownloadUrl))
+            {
+                body["downloadUrl"] = request.DownloadUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileMd5))
+            {
+                body["fileMd5"] = request.FileMd5;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
+            {
+                body["fileName"] = request.FileName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSize))
+            {
+                body["fileSize"] = request.FileSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Source))
+            {
+                body["source"] = request.Source;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceId))
+            {
+                body["spaceId"] = request.SpaceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateVirusScanTask",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/virusScanTasks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateVirusScanTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 触发文件病毒扫描任务
+         *
+         * @param request CreateVirusScanTaskRequest
+         * @param headers CreateVirusScanTaskHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateVirusScanTaskResponse
+         */
+        public async Task<CreateVirusScanTaskResponse> CreateVirusScanTaskWithOptionsAsync(CreateVirusScanTaskRequest request, CreateVirusScanTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryId))
+            {
+                body["dentryId"] = request.DentryId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DownloadUrl))
+            {
+                body["downloadUrl"] = request.DownloadUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileMd5))
+            {
+                body["fileMd5"] = request.FileMd5;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
+            {
+                body["fileName"] = request.FileName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSize))
+            {
+                body["fileSize"] = request.FileSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Source))
+            {
+                body["source"] = request.Source;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceId))
+            {
+                body["spaceId"] = request.SpaceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateVirusScanTask",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/virusScanTasks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateVirusScanTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 触发文件病毒扫描任务
+         *
+         * @param request CreateVirusScanTaskRequest
+         * @return CreateVirusScanTaskResponse
+         */
+        public CreateVirusScanTaskResponse CreateVirusScanTask(CreateVirusScanTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateVirusScanTaskHeaders headers = new CreateVirusScanTaskHeaders();
+            return CreateVirusScanTaskWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 触发文件病毒扫描任务
+         *
+         * @param request CreateVirusScanTaskRequest
+         * @return CreateVirusScanTaskResponse
+         */
+        public async Task<CreateVirusScanTaskResponse> CreateVirusScanTaskAsync(CreateVirusScanTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateVirusScanTaskHeaders headers = new CreateVirusScanTaskHeaders();
+            return await CreateVirusScanTaskWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -7192,6 +7496,122 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetUserStayLengthHeaders headers = new GetUserStayLengthHeaders();
             return await GetUserStayLengthWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取文件病毒扫描结果
+         *
+         * @param request GetVirusScanResultRequest
+         * @param headers GetVirusScanResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetVirusScanResultResponse
+         */
+        public GetVirusScanResultResponse GetVirusScanResultWithOptions(GetVirusScanResultRequest request, GetVirusScanResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetVirusScanResult",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/virusScanTasks/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetVirusScanResultResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取文件病毒扫描结果
+         *
+         * @param request GetVirusScanResultRequest
+         * @param headers GetVirusScanResultHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetVirusScanResultResponse
+         */
+        public async Task<GetVirusScanResultResponse> GetVirusScanResultWithOptionsAsync(GetVirusScanResultRequest request, GetVirusScanResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetVirusScanResult",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/virusScanTasks/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetVirusScanResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取文件病毒扫描结果
+         *
+         * @param request GetVirusScanResultRequest
+         * @return GetVirusScanResultResponse
+         */
+        public GetVirusScanResultResponse GetVirusScanResult(GetVirusScanResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetVirusScanResultHeaders headers = new GetVirusScanResultHeaders();
+            return GetVirusScanResultWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取文件病毒扫描结果
+         *
+         * @param request GetVirusScanResultRequest
+         * @return GetVirusScanResultResponse
+         */
+        public async Task<GetVirusScanResultResponse> GetVirusScanResultAsync(GetVirusScanResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetVirusScanResultHeaders headers = new GetVirusScanResultHeaders();
+            return await GetVirusScanResultWithOptionsAsync(request, headers, runtime);
         }
 
         /**

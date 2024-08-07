@@ -1469,6 +1469,138 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         }
 
         /**
+         * @summary 链接增强规则拷贝
+         *
+         * @param request CopyUnfurlingRegisterRequest
+         * @param headers CopyUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CopyUnfurlingRegisterResponse
+         */
+        public CopyUnfurlingRegisterResponse CopyUnfurlingRegisterWithOptions(CopyUnfurlingRegisterRequest request, CopyUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CopyUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/copy",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CopyUnfurlingRegisterResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 链接增强规则拷贝
+         *
+         * @param request CopyUnfurlingRegisterRequest
+         * @param headers CopyUnfurlingRegisterHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CopyUnfurlingRegisterResponse
+         */
+        public async Task<CopyUnfurlingRegisterResponse> CopyUnfurlingRegisterWithOptionsAsync(CopyUnfurlingRegisterRequest request, CopyUnfurlingRegisterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CopyUnfurlingRegister",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/unfurling/rules/copy",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CopyUnfurlingRegisterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 链接增强规则拷贝
+         *
+         * @param request CopyUnfurlingRegisterRequest
+         * @return CopyUnfurlingRegisterResponse
+         */
+        public CopyUnfurlingRegisterResponse CopyUnfurlingRegister(CopyUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyUnfurlingRegisterHeaders headers = new CopyUnfurlingRegisterHeaders();
+            return CopyUnfurlingRegisterWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 链接增强规则拷贝
+         *
+         * @param request CopyUnfurlingRegisterRequest
+         * @return CopyUnfurlingRegisterResponse
+         */
+        public async Task<CopyUnfurlingRegisterResponse> CopyUnfurlingRegisterAsync(CopyUnfurlingRegisterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyUnfurlingRegisterHeaders headers = new CopyUnfurlingRegisterHeaders();
+            return await CopyUnfurlingRegisterWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 查询消息开放群模板下群计数
          *
          * @param request CountOpenMsgSceneGroupsRequest

@@ -16,6 +16,28 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public List<GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList> ReceiptFormTemplateInfoList { get; set; }
         public class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList : TeaModel {
+            [NameInMap("componentList")]
+            [Validation(Required=false)]
+            public List<GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList> ComponentList { get; set; }
+            public class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList : TeaModel {
+                [NameInMap("bindingVal")]
+                [Validation(Required=false)]
+                public string BindingVal { get; set; }
+
+                [NameInMap("code")]
+                [Validation(Required=false)]
+                public string Code { get; set; }
+
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+                [NameInMap("type")]
+                [Validation(Required=false)]
+                public string Type { get; set; }
+
+            }
+
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
