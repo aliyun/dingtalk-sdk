@@ -1250,6 +1250,115 @@ export class CheckUserIsGroupMemberResponse extends $tea.Model {
   }
 }
 
+export class CopyUnfurlingRegisterHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyUnfurlingRegisterRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 3102xxxxxxx
+   */
+  appId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  id?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 37xxxxx
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      id: 'id',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'string',
+      id: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyUnfurlingRegisterResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyUnfurlingRegisterResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CopyUnfurlingRegisterResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CopyUnfurlingRegisterResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CountOpenMsgSceneGroupsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -13026,6 +13135,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CheckUserIsGroupMemberHeaders({ });
     return await this.checkUserIsGroupMemberWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 链接增强规则拷贝
+   * 
+   * @param request - CopyUnfurlingRegisterRequest
+   * @param headers - CopyUnfurlingRegisterHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CopyUnfurlingRegisterResponse
+   */
+  async copyUnfurlingRegisterWithOptions(request: CopyUnfurlingRegisterRequest, headers: CopyUnfurlingRegisterHeaders, runtime: $Util.RuntimeOptions): Promise<CopyUnfurlingRegisterResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CopyUnfurlingRegister",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/unfurling/rules/copy`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CopyUnfurlingRegisterResponse>(await this.execute(params, req, runtime), new CopyUnfurlingRegisterResponse({}));
+  }
+
+  /**
+   * 链接增强规则拷贝
+   * 
+   * @param request - CopyUnfurlingRegisterRequest
+   * @returns CopyUnfurlingRegisterResponse
+   */
+  async copyUnfurlingRegister(request: CopyUnfurlingRegisterRequest): Promise<CopyUnfurlingRegisterResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CopyUnfurlingRegisterHeaders({ });
+    return await this.copyUnfurlingRegisterWithOptions(request, headers, runtime);
   }
 
   /**

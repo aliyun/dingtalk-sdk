@@ -2840,6 +2840,98 @@ export class MasterDatasQueryResponse extends $tea.Model {
   }
 }
 
+export class OpenOemMicroAppHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenOemMicroAppRequest extends $tea.Model {
+  /**
+   * @example
+   * 12
+   */
+  tenantId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      tenantId: 'tenantId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tenantId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenOemMicroAppResponseBody extends $tea.Model {
+  requestId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OpenOemMicroAppResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OpenOemMicroAppResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OpenOemMicroAppResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCustomEntryProcessesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -8847,7 +8939,7 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * 只能认输主数据根据ID获取
+   * 智能人事主数据根据ID获取
    * 
    * @param request - MasterDatasGetRequest
    * @param headers - MasterDatasGetHeaders
@@ -8901,7 +8993,7 @@ export default class Client extends OpenApi {
   }
 
   /**
-   * 只能认输主数据根据ID获取
+   * 智能人事主数据根据ID获取
    * 
    * @param request - MasterDatasGetRequest
    * @returns MasterDatasGetResponse
@@ -8992,6 +9084,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MasterDatasQueryHeaders({ });
     return await this.masterDatasQueryWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * oem 老用户数据迁移时，开通oem 应用
+   * 
+   * @param request - OpenOemMicroAppRequest
+   * @param headers - OpenOemMicroAppHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OpenOemMicroAppResponse
+   */
+  async openOemMicroAppWithOptions(request: OpenOemMicroAppRequest, headers: OpenOemMicroAppHeaders, runtime: $Util.RuntimeOptions): Promise<OpenOemMicroAppResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.tenantId)) {
+      query["tenantId"] = request.tenantId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "OpenOemMicroApp",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/oem/microApps/open`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OpenOemMicroAppResponse>(await this.execute(params, req, runtime), new OpenOemMicroAppResponse({}));
+  }
+
+  /**
+   * oem 老用户数据迁移时，开通oem 应用
+   * 
+   * @param request - OpenOemMicroAppRequest
+   * @returns OpenOemMicroAppResponse
+   */
+  async openOemMicroApp(request: OpenOemMicroAppRequest): Promise<OpenOemMicroAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OpenOemMicroAppHeaders({ });
+    return await this.openOemMicroAppWithOptions(request, headers, runtime);
   }
 
   /**

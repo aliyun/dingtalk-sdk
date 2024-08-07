@@ -8113,7 +8113,52 @@ export class DeleteReceiptResponseBodyResults extends $tea.Model {
   }
 }
 
+export class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList extends $tea.Model {
+  /**
+   * @example
+   * \"100\"
+   */
+  bindingVal?: string;
+  /**
+   * @example
+   * \"xxx\"
+   */
+  code?: string;
+  /**
+   * @example
+   * "报销金额"
+   */
+  name?: string;
+  /**
+   * @example
+   * \"amount\"
+   */
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bindingVal: 'bindingVal',
+      code: 'code',
+      name: 'name',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bindingVal: 'string',
+      code: 'string',
+      name: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList extends $tea.Model {
+  componentList?: GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList[];
   /**
    * @example
    * "报销套件"
@@ -8132,6 +8177,7 @@ export class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList extends 
   suiteId?: string;
   static names(): { [key: string]: string } {
     return {
+      componentList: 'componentList',
       name: 'name',
       processCode: 'processCode',
       status: 'status',
@@ -8141,6 +8187,7 @@ export class GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoList extends 
 
   static types(): { [key: string]: any } {
     return {
+      componentList: { 'type': 'array', 'itemType': GetFormTemplateInfoResponseBodyReceiptFormTemplateInfoListComponentList },
       name: 'string',
       processCode: 'string',
       status: 'string',

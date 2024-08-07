@@ -431,6 +431,109 @@ export class CreateCategoryAndBindingGroupsResponse extends $tea.Model {
   }
 }
 
+export class CreateDlpTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDlpTaskRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  dentryId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  spaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dentryId: 'dentryId',
+      spaceId: 'spaceId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dentryId: 'string',
+      spaceId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDlpTaskResponseBody extends $tea.Model {
+  requestId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateDlpTaskResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateDlpTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateDlpTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateMessageCategoryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -850,6 +953,120 @@ export class CreateTrustedDeviceBatchResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: CreateTrustedDeviceBatchResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateVirusScanTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateVirusScanTaskRequest extends $tea.Model {
+  dentryId?: string;
+  downloadUrl?: string;
+  fileMd5?: string;
+  fileName?: string;
+  fileSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  source?: number;
+  spaceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dentryId: 'dentryId',
+      downloadUrl: 'downloadUrl',
+      fileMd5: 'fileMd5',
+      fileName: 'fileName',
+      fileSize: 'fileSize',
+      source: 'source',
+      spaceId: 'spaceId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dentryId: 'string',
+      downloadUrl: 'string',
+      fileMd5: 'string',
+      fileName: 'string',
+      fileSize: 'number',
+      source: 'number',
+      spaceId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateVirusScanTaskResponseBody extends $tea.Model {
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateVirusScanTaskResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateVirusScanTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateVirusScanTaskResponseBody,
     };
   }
 
@@ -6078,6 +6295,98 @@ export class GetUserStayLengthResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetUserStayLengthResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetVirusScanResultHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetVirusScanResultRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  taskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetVirusScanResultResponseBody extends $tea.Model {
+  reason?: string;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      reason: 'reason',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      reason: 'string',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetVirusScanResultResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetVirusScanResultResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetVirusScanResultResponseBody,
     };
   }
 
@@ -15960,6 +16269,68 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 创建文件检测任务
+   * 
+   * @param request - CreateDlpTaskRequest
+   * @param headers - CreateDlpTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateDlpTaskResponse
+   */
+  async createDlpTaskWithOptions(request: CreateDlpTaskRequest, headers: CreateDlpTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDlpTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dentryId)) {
+      body["dentryId"] = request.dentryId;
+    }
+
+    if (!Util.isUnset(request.spaceId)) {
+      body["spaceId"] = request.spaceId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateDlpTask",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/dlpTasks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateDlpTaskResponse>(await this.execute(params, req, runtime), new CreateDlpTaskResponse({}));
+  }
+
+  /**
+   * 创建文件检测任务
+   * 
+   * @param request - CreateDlpTaskRequest
+   * @returns CreateDlpTaskResponse
+   */
+  async createDlpTask(request: CreateDlpTaskRequest): Promise<CreateDlpTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateDlpTaskHeaders({ });
+    return await this.createDlpTaskWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 创建分组并绑定会话
    * 
    * @param request - CreateMessageCategoryRequest
@@ -16201,6 +16572,88 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateTrustedDeviceBatchHeaders({ });
     return await this.createTrustedDeviceBatchWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 触发文件病毒扫描任务
+   * 
+   * @param request - CreateVirusScanTaskRequest
+   * @param headers - CreateVirusScanTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateVirusScanTaskResponse
+   */
+  async createVirusScanTaskWithOptions(request: CreateVirusScanTaskRequest, headers: CreateVirusScanTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateVirusScanTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dentryId)) {
+      body["dentryId"] = request.dentryId;
+    }
+
+    if (!Util.isUnset(request.downloadUrl)) {
+      body["downloadUrl"] = request.downloadUrl;
+    }
+
+    if (!Util.isUnset(request.fileMd5)) {
+      body["fileMd5"] = request.fileMd5;
+    }
+
+    if (!Util.isUnset(request.fileName)) {
+      body["fileName"] = request.fileName;
+    }
+
+    if (!Util.isUnset(request.fileSize)) {
+      body["fileSize"] = request.fileSize;
+    }
+
+    if (!Util.isUnset(request.source)) {
+      body["source"] = request.source;
+    }
+
+    if (!Util.isUnset(request.spaceId)) {
+      body["spaceId"] = request.spaceId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateVirusScanTask",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/virusScanTasks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateVirusScanTaskResponse>(await this.execute(params, req, runtime), new CreateVirusScanTaskResponse({}));
+  }
+
+  /**
+   * 触发文件病毒扫描任务
+   * 
+   * @param request - CreateVirusScanTaskRequest
+   * @returns CreateVirusScanTaskResponse
+   */
+  async createVirusScanTask(request: CreateVirusScanTaskRequest): Promise<CreateVirusScanTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateVirusScanTaskHeaders({ });
+    return await this.createVirusScanTaskWithOptions(request, headers, runtime);
   }
 
   /**
@@ -19061,6 +19514,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserStayLengthHeaders({ });
     return await this.getUserStayLengthWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取文件病毒扫描结果
+   * 
+   * @param request - GetVirusScanResultRequest
+   * @param headers - GetVirusScanResultHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetVirusScanResultResponse
+   */
+  async getVirusScanResultWithOptions(request: GetVirusScanResultRequest, headers: GetVirusScanResultHeaders, runtime: $Util.RuntimeOptions): Promise<GetVirusScanResultResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.taskId)) {
+      body["taskId"] = request.taskId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetVirusScanResult",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/virusScanTasks/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetVirusScanResultResponse>(await this.execute(params, req, runtime), new GetVirusScanResultResponse({}));
+  }
+
+  /**
+   * 获取文件病毒扫描结果
+   * 
+   * @param request - GetVirusScanResultRequest
+   * @returns GetVirusScanResultResponse
+   */
+  async getVirusScanResult(request: GetVirusScanResultRequest): Promise<GetVirusScanResultResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetVirusScanResultHeaders({ });
+    return await this.getVirusScanResultWithOptions(request, headers, runtime);
   }
 
   /**

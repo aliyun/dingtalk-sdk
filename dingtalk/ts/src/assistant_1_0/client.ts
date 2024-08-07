@@ -103,6 +103,505 @@ export class AddDomainWordsResponse extends $tea.Model {
   }
 }
 
+export class CreateAssistantMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAssistantMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  content?: string;
+  metadata?: { [key: string]: any };
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  role?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      metadata: 'metadata',
+      role: 'role',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      metadata: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      role: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAssistantMessageResponseBody extends $tea.Model {
+  assistantId?: string;
+  content?: any[];
+  createdAt?: number;
+  id?: string;
+  metadata?: { [key: string]: any };
+  object?: string;
+  role?: string;
+  runId?: string;
+  threadId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      content: 'content',
+      createdAt: 'createdAt',
+      id: 'id',
+      metadata: 'metadata',
+      object: 'object',
+      role: 'role',
+      runId: 'runId',
+      threadId: 'threadId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      content: { 'type': 'array', 'itemType': 'any' },
+      createdAt: 'number',
+      id: 'string',
+      metadata: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      object: 'string',
+      role: 'string',
+      runId: 'string',
+      threadId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAssistantMessageResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateAssistantMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateAssistantMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAssistantRunHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAssistantRunRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  assistantId?: string;
+  instructions?: string;
+  metadata?: { [key: string]: any };
+  stream?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      instructions: 'instructions',
+      metadata: 'metadata',
+      stream: 'stream',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      instructions: 'string',
+      metadata: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      stream: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAssistantRunResponseBody extends $tea.Model {
+  assistantId?: string;
+  cancelledAt?: number;
+  completedAt?: number;
+  createdAt?: number;
+  expiresAt?: number;
+  failedAt?: number;
+  id?: string;
+  lastErrorMsg?: string;
+  metadata?: { [key: string]: any };
+  object?: string;
+  startedAt?: number;
+  status?: string;
+  threadId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      cancelledAt: 'cancelledAt',
+      completedAt: 'completedAt',
+      createdAt: 'createdAt',
+      expiresAt: 'expiresAt',
+      failedAt: 'failedAt',
+      id: 'id',
+      lastErrorMsg: 'lastErrorMsg',
+      metadata: 'metadata',
+      object: 'object',
+      startedAt: 'startedAt',
+      status: 'status',
+      threadId: 'threadId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      cancelledAt: 'number',
+      completedAt: 'number',
+      createdAt: 'number',
+      expiresAt: 'number',
+      failedAt: 'number',
+      id: 'string',
+      lastErrorMsg: 'string',
+      metadata: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      object: 'string',
+      startedAt: 'number',
+      status: 'string',
+      threadId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAssistantRunResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateAssistantRunResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateAssistantRunResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAssistantThreadHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAssistantThreadRequest extends $tea.Model {
+  /**
+   * **if can be null:**
+   * true
+   */
+  metadata?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      metadata: 'metadata',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      metadata: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAssistantThreadResponseBody extends $tea.Model {
+  createdAt?: number;
+  id?: string;
+  metadata?: { [key: string]: any };
+  object?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createdAt: 'createdAt',
+      id: 'id',
+      metadata: 'metadata',
+      object: 'object',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createdAt: 'number',
+      id: 'string',
+      metadata: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      object: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateAssistantThreadResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateAssistantThreadResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateAssistantThreadResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteAssistantMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteAssistantMessageResponseBody extends $tea.Model {
+  deleted?: boolean;
+  id?: string;
+  object?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deleted: 'deleted',
+      id: 'id',
+      object: 'object',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deleted: 'boolean',
+      id: 'string',
+      object: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteAssistantMessageResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteAssistantMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeleteAssistantMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteAssistantThreadHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteAssistantThreadResponseBody extends $tea.Model {
+  deleted?: boolean;
+  id?: string;
+  object?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deleted: 'deleted',
+      id: 'id',
+      object: 'object',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deleted: 'boolean',
+      id: 'string',
+      object: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteAssistantThreadResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteAssistantThreadResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeleteAssistantThreadResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeleteDomainWordsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -760,6 +1259,191 @@ export class LearnKnowledgeResponse extends $tea.Model {
   }
 }
 
+export class ListAssistantMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantMessageRequest extends $tea.Model {
+  limit?: number;
+  order?: string;
+  runId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      limit: 'limit',
+      order: 'order',
+      runId: 'runId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      limit: 'number',
+      order: 'string',
+      runId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantMessageResponseBody extends $tea.Model {
+  data?: ListAssistantMessageResponseBodyData[];
+  object?: string;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      object: 'object',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': ListAssistantMessageResponseBodyData },
+      object: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantMessageResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListAssistantMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListAssistantMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantRunHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantRunRequest extends $tea.Model {
+  limit?: number;
+  order?: string;
+  static names(): { [key: string]: string } {
+    return {
+      limit: 'limit',
+      order: 'order',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      limit: 'number',
+      order: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantRunResponseBody extends $tea.Model {
+  data?: ListAssistantRunResponseBodyData[];
+  object?: string;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      object: 'object',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': ListAssistantRunResponseBodyData },
+      object: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantRunResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListAssistantRunResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListAssistantRunResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RelearnKnowledgeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -841,6 +1525,273 @@ export class RelearnKnowledgeResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: RelearnKnowledgeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantMessageResponseBody extends $tea.Model {
+  assisantId?: string;
+  content?: any[];
+  createdAt?: number;
+  id?: string;
+  metadata?: { [key: string]: any };
+  object?: string;
+  role?: string;
+  runId?: string;
+  threadId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assisantId: 'assisantId',
+      content: 'content',
+      createdAt: 'createdAt',
+      id: 'id',
+      metadata: 'metadata',
+      object: 'object',
+      role: 'role',
+      runId: 'runId',
+      threadId: 'threadId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assisantId: 'string',
+      content: { 'type': 'array', 'itemType': 'any' },
+      createdAt: 'number',
+      id: 'string',
+      metadata: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      object: 'string',
+      role: 'string',
+      runId: 'string',
+      threadId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantMessageResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RetrieveAssistantMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RetrieveAssistantMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantRunHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantRunResponseBody extends $tea.Model {
+  assistantId?: string;
+  cancelledAt?: number;
+  completedAt?: number;
+  createdAt?: number;
+  expiresAt?: number;
+  failedAt?: number;
+  id?: string;
+  lastErrorMsg?: string;
+  metadata?: { [key: string]: any };
+  object?: string;
+  startedAt?: number;
+  status?: string;
+  threadId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      cancelledAt: 'cancelledAt',
+      completedAt: 'completedAt',
+      createdAt: 'createdAt',
+      expiresAt: 'expiresAt',
+      failedAt: 'failedAt',
+      id: 'id',
+      lastErrorMsg: 'lastErrorMsg',
+      metadata: 'metadata',
+      object: 'object',
+      startedAt: 'startedAt',
+      status: 'status',
+      threadId: 'threadId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      cancelledAt: 'number',
+      completedAt: 'number',
+      createdAt: 'number',
+      expiresAt: 'number',
+      failedAt: 'number',
+      id: 'string',
+      lastErrorMsg: 'string',
+      metadata: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      object: 'string',
+      startedAt: 'number',
+      status: 'string',
+      threadId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantRunResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RetrieveAssistantRunResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RetrieveAssistantRunResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantThreadHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantThreadResponseBody extends $tea.Model {
+  createdAt?: number;
+  id?: string;
+  metadata?: { [key: string]: any };
+  object?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createdAt: 'createdAt',
+      id: 'id',
+      metadata: 'metadata',
+      object: 'object',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createdAt: 'number',
+      id: 'string',
+      metadata: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      object: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantThreadResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RetrieveAssistantThreadResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RetrieveAssistantThreadResponseBody,
     };
   }
 
@@ -1020,6 +1971,104 @@ export class GetKnowledgeListResponseBodyResult extends $tea.Model {
   }
 }
 
+export class ListAssistantMessageResponseBodyData extends $tea.Model {
+  assistantId?: string;
+  content?: any[];
+  createdAt?: number;
+  id?: string;
+  metadata?: { [key: string]: any };
+  object?: string;
+  role?: string;
+  runId?: string;
+  threadId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      content: 'content',
+      createdAt: 'createdAt',
+      id: 'id',
+      metadata: 'metadata',
+      object: 'object',
+      role: 'role',
+      runId: 'runId',
+      threadId: 'threadId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      content: { 'type': 'array', 'itemType': 'any' },
+      createdAt: 'number',
+      id: 'string',
+      metadata: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      object: 'string',
+      role: 'string',
+      runId: 'string',
+      threadId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantRunResponseBodyData extends $tea.Model {
+  assistantId?: string;
+  cancelledAt?: number;
+  completedAt?: number;
+  createdAt?: number;
+  expiresAt?: number;
+  failedAt?: number;
+  id?: string;
+  lastErrorMsg?: string;
+  metadata?: { [key: string]: any };
+  object?: string;
+  startedAt?: number;
+  status?: string;
+  threadId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      cancelledAt: 'cancelledAt',
+      completedAt: 'completedAt',
+      createdAt: 'createdAt',
+      expiresAt: 'expiresAt',
+      failedAt: 'failedAt',
+      id: 'id',
+      lastErrorMsg: 'lastErrorMsg',
+      metadata: 'metadata',
+      object: 'object',
+      startedAt: 'startedAt',
+      status: 'status',
+      threadId: 'threadId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      cancelledAt: 'number',
+      completedAt: 'number',
+      createdAt: 'number',
+      expiresAt: 'number',
+      failedAt: 'number',
+      id: 'string',
+      lastErrorMsg: 'string',
+      metadata: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      object: 'string',
+      startedAt: 'number',
+      status: 'string',
+      threadId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -1091,6 +2140,276 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddDomainWordsHeaders({ });
     return await this.addDomainWordsWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 创建AI助理的消息体
+   * 
+   * @param request - CreateAssistantMessageRequest
+   * @param headers - CreateAssistantMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateAssistantMessageResponse
+   */
+  async createAssistantMessageWithOptions(threadId: string, request: CreateAssistantMessageRequest, headers: CreateAssistantMessageHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAssistantMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.metadata)) {
+      body["metadata"] = request.metadata;
+    }
+
+    if (!Util.isUnset(request.role)) {
+      body["role"] = request.role;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateAssistantMessage",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/threads/${threadId}/messages`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateAssistantMessageResponse>(await this.execute(params, req, runtime), new CreateAssistantMessageResponse({}));
+  }
+
+  /**
+   * 创建AI助理的消息体
+   * 
+   * @param request - CreateAssistantMessageRequest
+   * @returns CreateAssistantMessageResponse
+   */
+  async createAssistantMessage(threadId: string, request: CreateAssistantMessageRequest): Promise<CreateAssistantMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateAssistantMessageHeaders({ });
+    return await this.createAssistantMessageWithOptions(threadId, request, headers, runtime);
+  }
+
+  /**
+   * 创建AI助理的运行任务
+   * 
+   * @param request - CreateAssistantRunRequest
+   * @param headers - CreateAssistantRunHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateAssistantRunResponse
+   */
+  async createAssistantRunWithOptions(threadId: string, request: CreateAssistantRunRequest, headers: CreateAssistantRunHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAssistantRunResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.assistantId)) {
+      body["assistantId"] = request.assistantId;
+    }
+
+    if (!Util.isUnset(request.instructions)) {
+      body["instructions"] = request.instructions;
+    }
+
+    if (!Util.isUnset(request.metadata)) {
+      body["metadata"] = request.metadata;
+    }
+
+    if (!Util.isUnset(request.stream)) {
+      body["stream"] = request.stream;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateAssistantRun",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/threads/${threadId}/runs`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateAssistantRunResponse>(await this.execute(params, req, runtime), new CreateAssistantRunResponse({}));
+  }
+
+  /**
+   * 创建AI助理的运行任务
+   * 
+   * @param request - CreateAssistantRunRequest
+   * @returns CreateAssistantRunResponse
+   */
+  async createAssistantRun(threadId: string, request: CreateAssistantRunRequest): Promise<CreateAssistantRunResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateAssistantRunHeaders({ });
+    return await this.createAssistantRunWithOptions(threadId, request, headers, runtime);
+  }
+
+  /**
+   * 创建AI助理线程实例
+   * 
+   * @param request - CreateAssistantThreadRequest
+   * @param headers - CreateAssistantThreadHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateAssistantThreadResponse
+   */
+  async createAssistantThreadWithOptions(request: CreateAssistantThreadRequest, headers: CreateAssistantThreadHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAssistantThreadResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.metadata)) {
+      body["metadata"] = request.metadata;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateAssistantThread",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/threads`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateAssistantThreadResponse>(await this.execute(params, req, runtime), new CreateAssistantThreadResponse({}));
+  }
+
+  /**
+   * 创建AI助理线程实例
+   * 
+   * @param request - CreateAssistantThreadRequest
+   * @returns CreateAssistantThreadResponse
+   */
+  async createAssistantThread(request: CreateAssistantThreadRequest): Promise<CreateAssistantThreadResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateAssistantThreadHeaders({ });
+    return await this.createAssistantThreadWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 删除AI助理的消息体
+   * 
+   * @param headers - DeleteAssistantMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteAssistantMessageResponse
+   */
+  async deleteAssistantMessageWithOptions(threadId: string, messageId: string, headers: DeleteAssistantMessageHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteAssistantMessageResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteAssistantMessage",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/threads/${threadId}/messages/${messageId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteAssistantMessageResponse>(await this.execute(params, req, runtime), new DeleteAssistantMessageResponse({}));
+  }
+
+  /**
+   * 删除AI助理的消息体
+   * @returns DeleteAssistantMessageResponse
+   */
+  async deleteAssistantMessage(threadId: string, messageId: string): Promise<DeleteAssistantMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteAssistantMessageHeaders({ });
+    return await this.deleteAssistantMessageWithOptions(threadId, messageId, headers, runtime);
+  }
+
+  /**
+   * 删除AI助理线程实例
+   * 
+   * @param headers - DeleteAssistantThreadHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteAssistantThreadResponse
+   */
+  async deleteAssistantThreadWithOptions(threadId: string, headers: DeleteAssistantThreadHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteAssistantThreadResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteAssistantThread",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/threads/${threadId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteAssistantThreadResponse>(await this.execute(params, req, runtime), new DeleteAssistantThreadResponse({}));
+  }
+
+  /**
+   * 删除AI助理线程实例
+   * @returns DeleteAssistantThreadResponse
+   */
+  async deleteAssistantThread(threadId: string): Promise<DeleteAssistantThreadResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteAssistantThreadHeaders({ });
+    return await this.deleteAssistantThreadWithOptions(threadId, headers, runtime);
   }
 
   /**
@@ -1500,6 +2819,126 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 获取AI助理消息列表
+   * 
+   * @param request - ListAssistantMessageRequest
+   * @param headers - ListAssistantMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListAssistantMessageResponse
+   */
+  async listAssistantMessageWithOptions(threadId: string, request: ListAssistantMessageRequest, headers: ListAssistantMessageHeaders, runtime: $Util.RuntimeOptions): Promise<ListAssistantMessageResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.limit)) {
+      query["limit"] = request.limit;
+    }
+
+    if (!Util.isUnset(request.order)) {
+      query["order"] = request.order;
+    }
+
+    if (!Util.isUnset(request.runId)) {
+      query["runId"] = request.runId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListAssistantMessage",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/threads/${threadId}/messages`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAssistantMessageResponse>(await this.execute(params, req, runtime), new ListAssistantMessageResponse({}));
+  }
+
+  /**
+   * 获取AI助理消息列表
+   * 
+   * @param request - ListAssistantMessageRequest
+   * @returns ListAssistantMessageResponse
+   */
+  async listAssistantMessage(threadId: string, request: ListAssistantMessageRequest): Promise<ListAssistantMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListAssistantMessageHeaders({ });
+    return await this.listAssistantMessageWithOptions(threadId, request, headers, runtime);
+  }
+
+  /**
+   * 获取AI助理的运行任务的列表
+   * 
+   * @param request - ListAssistantRunRequest
+   * @param headers - ListAssistantRunHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListAssistantRunResponse
+   */
+  async listAssistantRunWithOptions(threadId: string, request: ListAssistantRunRequest, headers: ListAssistantRunHeaders, runtime: $Util.RuntimeOptions): Promise<ListAssistantRunResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.limit)) {
+      query["limit"] = request.limit;
+    }
+
+    if (!Util.isUnset(request.order)) {
+      query["order"] = request.order;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListAssistantRun",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/threads/${threadId}/runs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAssistantRunResponse>(await this.execute(params, req, runtime), new ListAssistantRunResponse({}));
+  }
+
+  /**
+   * 获取AI助理的运行任务的列表
+   * 
+   * @param request - ListAssistantRunRequest
+   * @returns ListAssistantRunResponse
+   */
+  async listAssistantRun(threadId: string, request: ListAssistantRunRequest): Promise<ListAssistantRunResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListAssistantRunHeaders({ });
+    return await this.listAssistantRunWithOptions(threadId, request, headers, runtime);
+  }
+
+  /**
    * 助理学习增量知识
    * 
    * @param request - RelearnKnowledgeRequest
@@ -1551,6 +2990,138 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RelearnKnowledgeHeaders({ });
     return await this.relearnKnowledgeWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取AI助理的消息体
+   * 
+   * @param headers - RetrieveAssistantMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RetrieveAssistantMessageResponse
+   */
+  async retrieveAssistantMessageWithOptions(threadId: string, messageId: string, headers: RetrieveAssistantMessageHeaders, runtime: $Util.RuntimeOptions): Promise<RetrieveAssistantMessageResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "RetrieveAssistantMessage",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/threads/${threadId}/messages/${messageId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RetrieveAssistantMessageResponse>(await this.execute(params, req, runtime), new RetrieveAssistantMessageResponse({}));
+  }
+
+  /**
+   * 获取AI助理的消息体
+   * @returns RetrieveAssistantMessageResponse
+   */
+  async retrieveAssistantMessage(threadId: string, messageId: string): Promise<RetrieveAssistantMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RetrieveAssistantMessageHeaders({ });
+    return await this.retrieveAssistantMessageWithOptions(threadId, messageId, headers, runtime);
+  }
+
+  /**
+   * 检索AI助理的运行任务
+   * 
+   * @param headers - RetrieveAssistantRunHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RetrieveAssistantRunResponse
+   */
+  async retrieveAssistantRunWithOptions(threadId: string, runId: string, headers: RetrieveAssistantRunHeaders, runtime: $Util.RuntimeOptions): Promise<RetrieveAssistantRunResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "RetrieveAssistantRun",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/threads/${threadId}/runs/${runId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RetrieveAssistantRunResponse>(await this.execute(params, req, runtime), new RetrieveAssistantRunResponse({}));
+  }
+
+  /**
+   * 检索AI助理的运行任务
+   * @returns RetrieveAssistantRunResponse
+   */
+  async retrieveAssistantRun(threadId: string, runId: string): Promise<RetrieveAssistantRunResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RetrieveAssistantRunHeaders({ });
+    return await this.retrieveAssistantRunWithOptions(threadId, runId, headers, runtime);
+  }
+
+  /**
+   * 检索AI助理线程实例
+   * 
+   * @param headers - RetrieveAssistantThreadHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RetrieveAssistantThreadResponse
+   */
+  async retrieveAssistantThreadWithOptions(threadId: string, headers: RetrieveAssistantThreadHeaders, runtime: $Util.RuntimeOptions): Promise<RetrieveAssistantThreadResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "RetrieveAssistantThread",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/threads/${threadId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RetrieveAssistantThreadResponse>(await this.execute(params, req, runtime), new RetrieveAssistantThreadResponse({}));
+  }
+
+  /**
+   * 检索AI助理线程实例
+   * @returns RetrieveAssistantThreadResponse
+   */
+  async retrieveAssistantThread(threadId: string): Promise<RetrieveAssistantThreadResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RetrieveAssistantThreadHeaders({ });
+    return await this.retrieveAssistantThreadWithOptions(threadId, headers, runtime);
   }
 
 }
