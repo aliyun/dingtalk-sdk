@@ -13,7 +13,7 @@ public class QueryMinutesTextResponseBody extends TeaModel {
 
     /**
      * <strong>example:</strong>
-     * <p>1631172045153000||7940</p>
+     * <p>1631172045153000_7940</p>
      */
     @NameInMap("nextToken")
     public String nextToken;

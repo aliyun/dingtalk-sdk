@@ -13,6 +13,9 @@ public class QueryGeneralDataServiceBatchRequest extends TeaModel {
     @NameInMap("endDate")
     public String endDate;
 
+    @NameInMap("filters")
+    public java.util.List<QueryGeneralDataServiceBatchRequestFilters> filters;
+
     /**
      * <p>This parameter is required.</p>
      */
@@ -64,6 +67,14 @@ public class QueryGeneralDataServiceBatchRequest extends TeaModel {
         return this.endDate;
     }
 
+    public QueryGeneralDataServiceBatchRequest setFilters(java.util.List<QueryGeneralDataServiceBatchRequestFilters> filters) {
+        this.filters = filters;
+        return this;
+    }
+    public java.util.List<QueryGeneralDataServiceBatchRequestFilters> getFilters() {
+        return this.filters;
+    }
+
     public QueryGeneralDataServiceBatchRequest setPageNumber(Long pageNumber) {
         this.pageNumber = pageNumber;
         return this;
@@ -110,6 +121,47 @@ public class QueryGeneralDataServiceBatchRequest extends TeaModel {
     }
     public java.util.List<String> getUserIds() {
         return this.userIds;
+    }
+
+    public static class QueryGeneralDataServiceBatchRequestFilters extends TeaModel {
+        @NameInMap("fieldId")
+        public String fieldId;
+
+        @NameInMap("operator")
+        public String operator;
+
+        @NameInMap("value")
+        public String value;
+
+        public static QueryGeneralDataServiceBatchRequestFilters build(java.util.Map<String, ?> map) throws Exception {
+            QueryGeneralDataServiceBatchRequestFilters self = new QueryGeneralDataServiceBatchRequestFilters();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryGeneralDataServiceBatchRequestFilters setFieldId(String fieldId) {
+            this.fieldId = fieldId;
+            return this;
+        }
+        public String getFieldId() {
+            return this.fieldId;
+        }
+
+        public QueryGeneralDataServiceBatchRequestFilters setOperator(String operator) {
+            this.operator = operator;
+            return this;
+        }
+        public String getOperator() {
+            return this.operator;
+        }
+
+        public QueryGeneralDataServiceBatchRequestFilters setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
     }
 
 }

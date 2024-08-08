@@ -2872,6 +2872,142 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取某个和oa关联的表单的具体数据</p>
+     * 
+     * @param request GetRelatedViewTabDataRequest
+     * @param headers GetRelatedViewTabDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetRelatedViewTabDataResponse
+     */
+    public GetRelatedViewTabDataResponse getRelatedViewTabDataWithOptions(GetRelatedViewTabDataRequest request, GetRelatedViewTabDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.formCode)) {
+            body.put("formCode", request.formCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            body.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relatedField)) {
+            body.put("relatedField", request.relatedField);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relatedInstId)) {
+            body.put("relatedInstId", request.relatedInstId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.viewUserId)) {
+            body.put("viewUserId", request.viewUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetRelatedViewTabData"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/formRelatedTabs/datas/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetRelatedViewTabDataResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取某个和oa关联的表单的具体数据</p>
+     * 
+     * @param request GetRelatedViewTabDataRequest
+     * @return GetRelatedViewTabDataResponse
+     */
+    public GetRelatedViewTabDataResponse getRelatedViewTabData(GetRelatedViewTabDataRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetRelatedViewTabDataHeaders headers = new GetRelatedViewTabDataHeaders();
+        return this.getRelatedViewTabDataWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取和oa关联的表单tab信息</p>
+     * 
+     * @param request GetRelatedViewTabMetaRequest
+     * @param headers GetRelatedViewTabMetaHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetRelatedViewTabMetaResponse
+     */
+    public GetRelatedViewTabMetaResponse getRelatedViewTabMetaWithOptions(GetRelatedViewTabMetaRequest request, GetRelatedViewTabMetaHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.formCode)) {
+            body.put("formCode", request.formCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.viewUserId)) {
+            body.put("viewUserId", request.viewUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetRelatedViewTabMeta"),
+            new TeaPair("version", "crm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/crm/formRelatedTabs/meta/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetRelatedViewTabMetaResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取和oa关联的表单tab信息</p>
+     * 
+     * @param request GetRelatedViewTabMetaRequest
+     * @return GetRelatedViewTabMetaResponse
+     */
+    public GetRelatedViewTabMetaResponse getRelatedViewTabMeta(GetRelatedViewTabMetaRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetRelatedViewTabMetaHeaders headers = new GetRelatedViewTabMetaHeaders();
+        return this.getRelatedViewTabMetaWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取关系数据查重规则</p>
      * 
      * @param request GetRelationUkSettingRequest

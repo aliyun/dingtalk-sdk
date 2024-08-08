@@ -780,6 +780,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取AI助理列表</p>
+     * 
+     * @param request ListAssistantRequest
+     * @param headers ListAssistantHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListAssistantResponse
+     */
+    public ListAssistantResponse listAssistantWithOptions(ListAssistantRequest request, ListAssistantHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
+            query.put("cursor", request.cursor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListAssistant"),
+            new TeaPair("version", "assistant_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/assistant/list"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListAssistantResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取AI助理列表</p>
+     * 
+     * @param request ListAssistantRequest
+     * @return ListAssistantResponse
+     */
+    public ListAssistantResponse listAssistant(ListAssistantRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListAssistantHeaders headers = new ListAssistantHeaders();
+        return this.listAssistantWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取AI助理消息列表</p>
      * 
      * @param request ListAssistantMessageRequest
@@ -960,6 +1024,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询 AI 助理的基本信息</p>
+     * 
+     * @param request RetrieveAssistantBasicInfoRequest
+     * @param headers RetrieveAssistantBasicInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RetrieveAssistantBasicInfoResponse
+     */
+    public RetrieveAssistantBasicInfoResponse retrieveAssistantBasicInfoWithOptions(RetrieveAssistantBasicInfoRequest request, RetrieveAssistantBasicInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.assistantId)) {
+            query.put("assistantId", request.assistantId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RetrieveAssistantBasicInfo"),
+            new TeaPair("version", "assistant_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/assistant/basicInfo"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RetrieveAssistantBasicInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询 AI 助理的基本信息</p>
+     * 
+     * @param request RetrieveAssistantBasicInfoRequest
+     * @return RetrieveAssistantBasicInfoResponse
+     */
+    public RetrieveAssistantBasicInfoResponse retrieveAssistantBasicInfo(RetrieveAssistantBasicInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RetrieveAssistantBasicInfoHeaders headers = new RetrieveAssistantBasicInfoHeaders();
+        return this.retrieveAssistantBasicInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取AI助理的消息体</p>
      * 
      * @param headers RetrieveAssistantMessageHeaders
@@ -1094,5 +1218,69 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RetrieveAssistantThreadHeaders headers = new RetrieveAssistantThreadHeaders();
         return this.retrieveAssistantThreadWithOptions(threadId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新 AI 助理使用范围</p>
+     * 
+     * @param request UpdateAssistantScopeRequest
+     * @param headers UpdateAssistantScopeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateAssistantScopeResponse
+     */
+    public UpdateAssistantScopeResponse updateAssistantScopeWithOptions(UpdateAssistantScopeRequest request, UpdateAssistantScopeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.assistantId)) {
+            body.put("assistantId", request.assistantId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUnionId)) {
+            body.put("operatorUnionId", request.operatorUnionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sharing)) {
+            body.put("sharing", request.sharing);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateAssistantScope"),
+            new TeaPair("version", "assistant_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/assistant/scope"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "any")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateAssistantScopeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新 AI 助理使用范围</p>
+     * 
+     * @param request UpdateAssistantScopeRequest
+     * @return UpdateAssistantScopeResponse
+     */
+    public UpdateAssistantScopeResponse updateAssistantScope(UpdateAssistantScopeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateAssistantScopeHeaders headers = new UpdateAssistantScopeHeaders();
+        return this.updateAssistantScopeWithOptions(request, headers, runtime);
     }
 }

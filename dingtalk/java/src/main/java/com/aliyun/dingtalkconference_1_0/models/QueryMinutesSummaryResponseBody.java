@@ -304,7 +304,7 @@ public class QueryMinutesSummaryResponseBody extends TeaModel {
 
     public static class QueryMinutesSummaryResponseBodySummary extends TeaModel {
         @NameInMap("actions")
-        public QueryMinutesSummaryResponseBodySummaryActions actions;
+        public java.util.List<QueryMinutesSummaryResponseBodySummaryActions> actions;
 
         @NameInMap("autoChapters")
         public java.util.List<QueryMinutesSummaryResponseBodySummaryAutoChapters> autoChapters;
@@ -313,7 +313,7 @@ public class QueryMinutesSummaryResponseBody extends TeaModel {
         public java.util.List<QueryMinutesSummaryResponseBodySummaryConversationalSummary> conversationalSummary;
 
         @NameInMap("keySentences")
-        public QueryMinutesSummaryResponseBodySummaryKeySentences keySentences;
+        public java.util.List<QueryMinutesSummaryResponseBodySummaryKeySentences> keySentences;
 
         @NameInMap("keywords")
         public java.util.List<String> keywords;
@@ -329,11 +329,11 @@ public class QueryMinutesSummaryResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public QueryMinutesSummaryResponseBodySummary setActions(QueryMinutesSummaryResponseBodySummaryActions actions) {
+        public QueryMinutesSummaryResponseBodySummary setActions(java.util.List<QueryMinutesSummaryResponseBodySummaryActions> actions) {
             this.actions = actions;
             return this;
         }
-        public QueryMinutesSummaryResponseBodySummaryActions getActions() {
+        public java.util.List<QueryMinutesSummaryResponseBodySummaryActions> getActions() {
             return this.actions;
         }
 
@@ -353,11 +353,11 @@ public class QueryMinutesSummaryResponseBody extends TeaModel {
             return this.conversationalSummary;
         }
 
-        public QueryMinutesSummaryResponseBodySummary setKeySentences(QueryMinutesSummaryResponseBodySummaryKeySentences keySentences) {
+        public QueryMinutesSummaryResponseBodySummary setKeySentences(java.util.List<QueryMinutesSummaryResponseBodySummaryKeySentences> keySentences) {
             this.keySentences = keySentences;
             return this;
         }
-        public QueryMinutesSummaryResponseBodySummaryKeySentences getKeySentences() {
+        public java.util.List<QueryMinutesSummaryResponseBodySummaryKeySentences> getKeySentences() {
             return this.keySentences;
         }
 

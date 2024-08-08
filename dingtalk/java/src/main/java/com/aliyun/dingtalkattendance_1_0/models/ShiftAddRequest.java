@@ -246,6 +246,74 @@ public class ShiftAddRequest extends TeaModel {
 
     }
 
+    public static class ShiftAddRequestSettingLateBackSettingSections extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>120</p>
+         */
+        @NameInMap("extra")
+        public Integer extra;
+
+        /**
+         * <strong>example:</strong>
+         * <p>60</p>
+         */
+        @NameInMap("late")
+        public Integer late;
+
+        public static ShiftAddRequestSettingLateBackSettingSections build(java.util.Map<String, ?> map) throws Exception {
+            ShiftAddRequestSettingLateBackSettingSections self = new ShiftAddRequestSettingLateBackSettingSections();
+            return TeaModel.build(map, self);
+        }
+
+        public ShiftAddRequestSettingLateBackSettingSections setExtra(Integer extra) {
+            this.extra = extra;
+            return this;
+        }
+        public Integer getExtra() {
+            return this.extra;
+        }
+
+        public ShiftAddRequestSettingLateBackSettingSections setLate(Integer late) {
+            this.late = late;
+            return this;
+        }
+        public Integer getLate() {
+            return this.late;
+        }
+
+    }
+
+    public static class ShiftAddRequestSettingLateBackSetting extends TeaModel {
+        @NameInMap("enable")
+        public Boolean enable;
+
+        @NameInMap("sections")
+        public java.util.List<ShiftAddRequestSettingLateBackSettingSections> sections;
+
+        public static ShiftAddRequestSettingLateBackSetting build(java.util.Map<String, ?> map) throws Exception {
+            ShiftAddRequestSettingLateBackSetting self = new ShiftAddRequestSettingLateBackSetting();
+            return TeaModel.build(map, self);
+        }
+
+        public ShiftAddRequestSettingLateBackSetting setEnable(Boolean enable) {
+            this.enable = enable;
+            return this;
+        }
+        public Boolean getEnable() {
+            return this.enable;
+        }
+
+        public ShiftAddRequestSettingLateBackSetting setSections(java.util.List<ShiftAddRequestSettingLateBackSettingSections> sections) {
+            this.sections = sections;
+            return this;
+        }
+        public java.util.List<ShiftAddRequestSettingLateBackSettingSections> getSections() {
+            return this.sections;
+        }
+
+    }
+
     public static class ShiftAddRequestSettingTopRestTimeList extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -314,11 +382,24 @@ public class ShiftAddRequest extends TeaModel {
         @NameInMap("attendDays")
         public Double attendDays;
 
+        /**
+         * <strong>example:</strong>
+         * <p>480</p>
+         */
+        @NameInMap("demandWorkTimeMinutes")
+        public Integer demandWorkTimeMinutes;
+
+        @NameInMap("enableOutsideLateBack")
+        public Boolean enableOutsideLateBack;
+
         @NameInMap("extras")
         public java.util.Map<String, ?> extras;
 
         @NameInMap("isFlexible")
         public Boolean isFlexible;
+
+        @NameInMap("lateBackSetting")
+        public ShiftAddRequestSettingLateBackSetting lateBackSetting;
 
         /**
          * <strong>example:</strong>
@@ -358,6 +439,22 @@ public class ShiftAddRequest extends TeaModel {
             return this.attendDays;
         }
 
+        public ShiftAddRequestSetting setDemandWorkTimeMinutes(Integer demandWorkTimeMinutes) {
+            this.demandWorkTimeMinutes = demandWorkTimeMinutes;
+            return this;
+        }
+        public Integer getDemandWorkTimeMinutes() {
+            return this.demandWorkTimeMinutes;
+        }
+
+        public ShiftAddRequestSetting setEnableOutsideLateBack(Boolean enableOutsideLateBack) {
+            this.enableOutsideLateBack = enableOutsideLateBack;
+            return this;
+        }
+        public Boolean getEnableOutsideLateBack() {
+            return this.enableOutsideLateBack;
+        }
+
         public ShiftAddRequestSetting setExtras(java.util.Map<String, ?> extras) {
             this.extras = extras;
             return this;
@@ -372,6 +469,14 @@ public class ShiftAddRequest extends TeaModel {
         }
         public Boolean getIsFlexible() {
             return this.isFlexible;
+        }
+
+        public ShiftAddRequestSetting setLateBackSetting(ShiftAddRequestSettingLateBackSetting lateBackSetting) {
+            this.lateBackSetting = lateBackSetting;
+            return this;
+        }
+        public ShiftAddRequestSettingLateBackSetting getLateBackSetting() {
+            return this.lateBackSetting;
         }
 
         public ShiftAddRequestSetting setSeriousLateMinutes(Integer seriousLateMinutes) {
