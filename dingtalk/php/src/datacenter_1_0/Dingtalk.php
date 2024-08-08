@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CloseDataDeliverResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateDataDeliverHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateDataDeliverRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateDataDeliverResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateScreenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateScreenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\CreateScreenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAbnormalOperationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAbnormalOperationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\GetAbnormalOperationResponse;
@@ -187,6 +190,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryRedEnvelopeSendStatist
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryReportStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryReportStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryReportStatisticalDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryScreenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryScreenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryScreenResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryScreenTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryScreenTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryScreenTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QuerySingleMessageStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QuerySingleMessageStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QuerySingleMessageStatisticalDataResponse;
@@ -474,6 +483,66 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateDataDeliverHeaders([]);
 
         return $this->createDataDeliverWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 新增数据大屏
+     *  *
+     * @param CreateScreenRequest $request CreateScreenRequest
+     * @param CreateScreenHeaders $headers CreateScreenHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateScreenResponse CreateScreenResponse
+     */
+    public function createScreenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $query['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateScreen',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/screens',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateScreenResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 新增数据大屏
+     *  *
+     * @param CreateScreenRequest $request CreateScreenRequest
+     *
+     * @return CreateScreenResponse CreateScreenResponse
+     */
+    public function createScreen($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateScreenHeaders([]);
+
+        return $this->createScreenWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3183,6 +3252,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->endDate)) {
             $body['endDate'] = $request->endDate;
         }
+        if (!Utils::isUnset($request->filters)) {
+            $body['filters'] = $request->filters;
+        }
         if (!Utils::isUnset($request->pageNumber)) {
             $body['pageNumber'] = $request->pageNumber;
         }
@@ -4056,6 +4128,123 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryReportStatisticalDataHeaders([]);
 
         return $this->queryReportStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询数据大屏
+     *  *
+     * @param QueryScreenRequest $request QueryScreenRequest
+     * @param QueryScreenHeaders $headers QueryScreenHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryScreenResponse QueryScreenResponse
+     */
+    public function queryScreenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryScreen',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/screens',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryScreenResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询数据大屏
+     *  *
+     * @param QueryScreenRequest $request QueryScreenRequest
+     *
+     * @return QueryScreenResponse QueryScreenResponse
+     */
+    public function queryScreen($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryScreenHeaders([]);
+
+        return $this->queryScreenWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询数据大屏模版
+     *  *
+     * @param QueryScreenTemplateRequest $request QueryScreenTemplateRequest
+     * @param QueryScreenTemplateHeaders $headers QueryScreenTemplateHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryScreenTemplateResponse QueryScreenTemplateResponse
+     */
+    public function queryScreenTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->sample)) {
+            $query['sample'] = $request->sample;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryScreenTemplate',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/screenTemplates',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryScreenTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询数据大屏模版
+     *  *
+     * @param QueryScreenTemplateRequest $request QueryScreenTemplateRequest
+     *
+     * @return QueryScreenTemplateResponse QueryScreenTemplateResponse
+     */
+    public function queryScreenTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryScreenTemplateHeaders([]);
+
+        return $this->queryScreenTemplateWithOptions($request, $headers, $runtime);
     }
 
     /**

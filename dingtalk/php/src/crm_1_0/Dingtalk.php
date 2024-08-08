@@ -135,6 +135,12 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountContactsResponse
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountOTOMessageResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountOTOMessageResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetOfficialAccountOTOMessageResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabMetaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabMetaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabMetaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelationUkSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelationUkSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelationUkSettingResponse;
@@ -3056,6 +3062,138 @@ class Dingtalk extends OpenApiClient
         $headers = new GetOfficialAccountOTOMessageResultHeaders([]);
 
         return $this->getOfficialAccountOTOMessageResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取某个和oa关联的表单的具体数据
+     *  *
+     * @param GetRelatedViewTabDataRequest $request GetRelatedViewTabDataRequest
+     * @param GetRelatedViewTabDataHeaders $headers GetRelatedViewTabDataHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetRelatedViewTabDataResponse GetRelatedViewTabDataResponse
+     */
+    public function getRelatedViewTabDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->formCode)) {
+            $body['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->relatedField)) {
+            $body['relatedField'] = $request->relatedField;
+        }
+        if (!Utils::isUnset($request->relatedInstId)) {
+            $body['relatedInstId'] = $request->relatedInstId;
+        }
+        if (!Utils::isUnset($request->viewUserId)) {
+            $body['viewUserId'] = $request->viewUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetRelatedViewTabData',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/formRelatedTabs/datas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetRelatedViewTabDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取某个和oa关联的表单的具体数据
+     *  *
+     * @param GetRelatedViewTabDataRequest $request GetRelatedViewTabDataRequest
+     *
+     * @return GetRelatedViewTabDataResponse GetRelatedViewTabDataResponse
+     */
+    public function getRelatedViewTabData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRelatedViewTabDataHeaders([]);
+
+        return $this->getRelatedViewTabDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取和oa关联的表单tab信息
+     *  *
+     * @param GetRelatedViewTabMetaRequest $request GetRelatedViewTabMetaRequest
+     * @param GetRelatedViewTabMetaHeaders $headers GetRelatedViewTabMetaHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetRelatedViewTabMetaResponse GetRelatedViewTabMetaResponse
+     */
+    public function getRelatedViewTabMetaWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->formCode)) {
+            $body['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->viewUserId)) {
+            $body['viewUserId'] = $request->viewUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetRelatedViewTabMeta',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/formRelatedTabs/meta/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetRelatedViewTabMetaResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取和oa关联的表单tab信息
+     *  *
+     * @param GetRelatedViewTabMetaRequest $request GetRelatedViewTabMetaRequest
+     *
+     * @return GetRelatedViewTabMetaResponse GetRelatedViewTabMetaResponse
+     */
+    public function getRelatedViewTabMeta($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRelatedViewTabMetaHeaders([]);
+
+        return $this->getRelatedViewTabMetaWithOptions($request, $headers, $runtime);
     }
 
     /**

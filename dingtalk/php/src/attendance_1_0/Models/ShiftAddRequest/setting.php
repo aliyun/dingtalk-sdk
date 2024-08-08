@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ShiftAddRequest;
 
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ShiftAddRequest\setting\lateBackSetting;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ShiftAddRequest\setting\topRestTimeList;
 use AlibabaCloud\Tea\Model;
 
@@ -24,6 +25,18 @@ class setting extends Model
     public $attendDays;
 
     /**
+     * @example 480
+     *
+     * @var int
+     */
+    public $demandWorkTimeMinutes;
+
+    /**
+     * @var bool
+     */
+    public $enableOutsideLateBack;
+
+    /**
      * @var mixed[]
      */
     public $extras;
@@ -32,6 +45,11 @@ class setting extends Model
      * @var bool
      */
     public $isFlexible;
+
+    /**
+     * @var lateBackSetting
+     */
+    public $lateBackSetting;
 
     /**
      * @example 31
@@ -54,8 +72,11 @@ class setting extends Model
     protected $_name = [
         'absenteeismLateMinutes' => 'absenteeismLateMinutes',
         'attendDays'             => 'attendDays',
+        'demandWorkTimeMinutes'  => 'demandWorkTimeMinutes',
+        'enableOutsideLateBack'  => 'enableOutsideLateBack',
         'extras'                 => 'extras',
         'isFlexible'             => 'isFlexible',
+        'lateBackSetting'        => 'lateBackSetting',
         'seriousLateMinutes'     => 'seriousLateMinutes',
         'tags'                   => 'tags',
         'topRestTimeList'        => 'topRestTimeList',
@@ -74,11 +95,20 @@ class setting extends Model
         if (null !== $this->attendDays) {
             $res['attendDays'] = $this->attendDays;
         }
+        if (null !== $this->demandWorkTimeMinutes) {
+            $res['demandWorkTimeMinutes'] = $this->demandWorkTimeMinutes;
+        }
+        if (null !== $this->enableOutsideLateBack) {
+            $res['enableOutsideLateBack'] = $this->enableOutsideLateBack;
+        }
         if (null !== $this->extras) {
             $res['extras'] = $this->extras;
         }
         if (null !== $this->isFlexible) {
             $res['isFlexible'] = $this->isFlexible;
+        }
+        if (null !== $this->lateBackSetting) {
+            $res['lateBackSetting'] = null !== $this->lateBackSetting ? $this->lateBackSetting->toMap() : null;
         }
         if (null !== $this->seriousLateMinutes) {
             $res['seriousLateMinutes'] = $this->seriousLateMinutes;
@@ -113,11 +143,20 @@ class setting extends Model
         if (isset($map['attendDays'])) {
             $model->attendDays = $map['attendDays'];
         }
+        if (isset($map['demandWorkTimeMinutes'])) {
+            $model->demandWorkTimeMinutes = $map['demandWorkTimeMinutes'];
+        }
+        if (isset($map['enableOutsideLateBack'])) {
+            $model->enableOutsideLateBack = $map['enableOutsideLateBack'];
+        }
         if (isset($map['extras'])) {
             $model->extras = $map['extras'];
         }
         if (isset($map['isFlexible'])) {
             $model->isFlexible = $map['isFlexible'];
+        }
+        if (isset($map['lateBackSetting'])) {
+            $model->lateBackSetting = lateBackSetting::fromMap($map['lateBackSetting']);
         }
         if (isset($map['seriousLateMinutes'])) {
             $model->seriousLateMinutes = $map['seriousLateMinutes'];

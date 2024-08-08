@@ -17,7 +17,7 @@ class QueryMinutesTextResponseBody extends Model
     public $hasMore;
 
     /**
-     * @example 1631172045153000||7940
+     * @example 1631172045153000_7940
      *
      * @var string
      */

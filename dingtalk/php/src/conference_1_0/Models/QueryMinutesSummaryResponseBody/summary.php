@@ -14,7 +14,7 @@ use AlibabaCloud\Tea\Model;
 class summary extends Model
 {
     /**
-     * @var actions
+     * @var actions[]
      */
     public $actions;
 
@@ -29,7 +29,7 @@ class summary extends Model
     public $conversationalSummary;
 
     /**
-     * @var keySentences
+     * @var keySentences[]
      */
     public $keySentences;
 
@@ -65,7 +65,13 @@ class summary extends Model
     {
         $res = [];
         if (null !== $this->actions) {
-            $res['actions'] = null !== $this->actions ? $this->actions->toMap() : null;
+            $res['actions'] = [];
+            if (null !== $this->actions && \is_array($this->actions)) {
+                $n = 0;
+                foreach ($this->actions as $item) {
+                    $res['actions'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->autoChapters) {
             $res['autoChapters'] = [];
@@ -86,7 +92,13 @@ class summary extends Model
             }
         }
         if (null !== $this->keySentences) {
-            $res['keySentences'] = null !== $this->keySentences ? $this->keySentences->toMap() : null;
+            $res['keySentences'] = [];
+            if (null !== $this->keySentences && \is_array($this->keySentences)) {
+                $n = 0;
+                foreach ($this->keySentences as $item) {
+                    $res['keySentences'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->keywords) {
             $res['keywords'] = $this->keywords;
@@ -116,7 +128,13 @@ class summary extends Model
     {
         $model = new self();
         if (isset($map['actions'])) {
-            $model->actions = actions::fromMap($map['actions']);
+            if (!empty($map['actions'])) {
+                $model->actions = [];
+                $n              = 0;
+                foreach ($map['actions'] as $item) {
+                    $model->actions[$n++] = null !== $item ? actions::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['autoChapters'])) {
             if (!empty($map['autoChapters'])) {
@@ -137,7 +155,13 @@ class summary extends Model
             }
         }
         if (isset($map['keySentences'])) {
-            $model->keySentences = keySentences::fromMap($map['keySentences']);
+            if (!empty($map['keySentences'])) {
+                $model->keySentences = [];
+                $n                   = 0;
+                foreach ($map['keySentences'] as $item) {
+                    $model->keySentences[$n++] = null !== $item ? keySentences::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['keywords'])) {
             if (!empty($map['keywords'])) {

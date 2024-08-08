@@ -55,6 +55,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetCrmProcCodesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetFieldModifiedHistoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetFieldModifiedHistoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetFieldModifiedHistoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetHandSignDownloadUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetHandSignDownloadUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetHandSignDownloadUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetManageProcessByStaffIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetManageProcessByStaffIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetManageProcessByStaffIdResponse;
@@ -67,6 +70,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessInstanceWithExtraHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessInstanceWithExtraRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetProcessInstanceWithExtraResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetSchemaAndProcessconfigBatchllyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetSchemaAndProcessconfigBatchllyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\GetSchemaAndProcessconfigBatchllyResponse;
@@ -1229,6 +1235,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取手写签名的下载链接
+     *  *
+     * @param GetHandSignDownloadUrlRequest $request GetHandSignDownloadUrlRequest
+     * @param GetHandSignDownloadUrlHeaders $headers GetHandSignDownloadUrlHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetHandSignDownloadUrlResponse GetHandSignDownloadUrlResponse
+     */
+    public function getHandSignDownloadUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->handSignToken)) {
+            $body['handSignToken'] = $request->handSignToken;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetHandSignDownloadUrl',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processInstances/handSigns/downloadUrls/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetHandSignDownloadUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取手写签名的下载链接
+     *  *
+     * @param GetHandSignDownloadUrlRequest $request GetHandSignDownloadUrlRequest
+     *
+     * @return GetHandSignDownloadUrlResponse GetHandSignDownloadUrlResponse
+     */
+    public function getHandSignDownloadUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetHandSignDownloadUrlHeaders([]);
+
+        return $this->getHandSignDownloadUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取当前企业所有可管理的表单
      *  *
      * @param GetManageProcessByStaffIdRequest $request GetManageProcessByStaffIdRequest
@@ -1454,6 +1520,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetProcessInstanceHeaders([]);
 
         return $this->getProcessInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+     *  *
+     * @param GetProcessInstanceWithExtraRequest $request GetProcessInstanceWithExtraRequest
+     * @param GetProcessInstanceWithExtraHeaders $headers GetProcessInstanceWithExtraHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetProcessInstanceWithExtraResponse GetProcessInstanceWithExtraResponse
+     */
+    public function getProcessInstanceWithExtraWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $query['processInstanceId'] = $request->processInstanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetProcessInstanceWithExtra',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processInstances',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetProcessInstanceWithExtraResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+     *  *
+     * @param GetProcessInstanceWithExtraRequest $request GetProcessInstanceWithExtraRequest
+     *
+     * @return GetProcessInstanceWithExtraResponse GetProcessInstanceWithExtraResponse
+     */
+    public function getProcessInstanceWithExtra($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetProcessInstanceWithExtraHeaders([]);
+
+        return $this->getProcessInstanceWithExtraWithOptions($request, $headers, $runtime);
     }
 
     /**

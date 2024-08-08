@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryGeneralDataServiceBatchRequest\filters;
 use AlibabaCloud\Tea\Model;
 
 class QueryGeneralDataServiceBatchRequest extends Model
@@ -19,6 +20,11 @@ class QueryGeneralDataServiceBatchRequest extends Model
      * @var string
      */
     public $endDate;
+
+    /**
+     * @var filters[]
+     */
+    public $filters;
 
     /**
      * @description This parameter is required.
@@ -60,6 +66,7 @@ class QueryGeneralDataServiceBatchRequest extends Model
     protected $_name = [
         'deptIds'    => 'deptIds',
         'endDate'    => 'endDate',
+        'filters'    => 'filters',
         'pageNumber' => 'pageNumber',
         'pageSize'   => 'pageSize',
         'serviceId'  => 'serviceId',
@@ -80,6 +87,15 @@ class QueryGeneralDataServiceBatchRequest extends Model
         }
         if (null !== $this->endDate) {
             $res['endDate'] = $this->endDate;
+        }
+        if (null !== $this->filters) {
+            $res['filters'] = [];
+            if (null !== $this->filters && \is_array($this->filters)) {
+                $n = 0;
+                foreach ($this->filters as $item) {
+                    $res['filters'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
@@ -118,6 +134,15 @@ class QueryGeneralDataServiceBatchRequest extends Model
         }
         if (isset($map['endDate'])) {
             $model->endDate = $map['endDate'];
+        }
+        if (isset($map['filters'])) {
+            if (!empty($map['filters'])) {
+                $model->filters = [];
+                $n              = 0;
+                foreach ($map['filters'] as $item) {
+                    $model->filters[$n++] = null !== $item ? filters::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
