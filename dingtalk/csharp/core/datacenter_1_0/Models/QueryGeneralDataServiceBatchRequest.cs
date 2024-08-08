@@ -20,6 +20,24 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         [Validation(Required=false)]
         public string EndDate { get; set; }
 
+        [NameInMap("filters")]
+        [Validation(Required=false)]
+        public List<QueryGeneralDataServiceBatchRequestFilters> Filters { get; set; }
+        public class QueryGeneralDataServiceBatchRequestFilters : TeaModel {
+            [NameInMap("fieldId")]
+            [Validation(Required=false)]
+            public string FieldId { get; set; }
+
+            [NameInMap("operator")]
+            [Validation(Required=false)]
+            public string Operator { get; set; }
+
+            [NameInMap("value")]
+            [Validation(Required=false)]
+            public string Value { get; set; }
+
+        }
+
         /// <summary>
         /// This parameter is required.
         /// </summary>

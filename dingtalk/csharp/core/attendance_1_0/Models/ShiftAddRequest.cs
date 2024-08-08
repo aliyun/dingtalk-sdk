@@ -91,6 +91,14 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [Validation(Required=false)]
             public double? AttendDays { get; set; }
 
+            [NameInMap("demandWorkTimeMinutes")]
+            [Validation(Required=false)]
+            public int? DemandWorkTimeMinutes { get; set; }
+
+            [NameInMap("enableOutsideLateBack")]
+            [Validation(Required=false)]
+            public bool? EnableOutsideLateBack { get; set; }
+
             [NameInMap("extras")]
             [Validation(Required=false)]
             public Dictionary<string, object> Extras { get; set; }
@@ -98,6 +106,30 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [NameInMap("isFlexible")]
             [Validation(Required=false)]
             public bool? IsFlexible { get; set; }
+
+            [NameInMap("lateBackSetting")]
+            [Validation(Required=false)]
+            public ShiftAddRequestSettingLateBackSetting LateBackSetting { get; set; }
+            public class ShiftAddRequestSettingLateBackSetting : TeaModel {
+                [NameInMap("enable")]
+                [Validation(Required=false)]
+                public bool? Enable { get; set; }
+
+                [NameInMap("sections")]
+                [Validation(Required=false)]
+                public List<ShiftAddRequestSettingLateBackSettingSections> Sections { get; set; }
+                public class ShiftAddRequestSettingLateBackSettingSections : TeaModel {
+                    [NameInMap("extra")]
+                    [Validation(Required=false)]
+                    public int? Extra { get; set; }
+
+                    [NameInMap("late")]
+                    [Validation(Required=false)]
+                    public int? Late { get; set; }
+
+                }
+
+            }
 
             [NameInMap("seriousLateMinutes")]
             [Validation(Required=false)]

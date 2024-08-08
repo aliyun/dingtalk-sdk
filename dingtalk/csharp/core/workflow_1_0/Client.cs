@@ -2239,6 +2239,130 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         }
 
         /**
+         * @summary 获取手写签名的下载链接
+         *
+         * @param request GetHandSignDownloadUrlRequest
+         * @param headers GetHandSignDownloadUrlHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetHandSignDownloadUrlResponse
+         */
+        public GetHandSignDownloadUrlResponse GetHandSignDownloadUrlWithOptions(GetHandSignDownloadUrlRequest request, GetHandSignDownloadUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HandSignToken))
+            {
+                body["handSignToken"] = request.HandSignToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetHandSignDownloadUrl",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/processInstances/handSigns/downloadUrls/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetHandSignDownloadUrlResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取手写签名的下载链接
+         *
+         * @param request GetHandSignDownloadUrlRequest
+         * @param headers GetHandSignDownloadUrlHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetHandSignDownloadUrlResponse
+         */
+        public async Task<GetHandSignDownloadUrlResponse> GetHandSignDownloadUrlWithOptionsAsync(GetHandSignDownloadUrlRequest request, GetHandSignDownloadUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HandSignToken))
+            {
+                body["handSignToken"] = request.HandSignToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetHandSignDownloadUrl",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/processInstances/handSigns/downloadUrls/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetHandSignDownloadUrlResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取手写签名的下载链接
+         *
+         * @param request GetHandSignDownloadUrlRequest
+         * @return GetHandSignDownloadUrlResponse
+         */
+        public GetHandSignDownloadUrlResponse GetHandSignDownloadUrl(GetHandSignDownloadUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetHandSignDownloadUrlHeaders headers = new GetHandSignDownloadUrlHeaders();
+            return GetHandSignDownloadUrlWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取手写签名的下载链接
+         *
+         * @param request GetHandSignDownloadUrlRequest
+         * @return GetHandSignDownloadUrlResponse
+         */
+        public async Task<GetHandSignDownloadUrlResponse> GetHandSignDownloadUrlAsync(GetHandSignDownloadUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetHandSignDownloadUrlHeaders headers = new GetHandSignDownloadUrlHeaders();
+            return await GetHandSignDownloadUrlWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取当前企业所有可管理的表单
          *
          * @param request GetManageProcessByStaffIdRequest
@@ -2700,6 +2824,122 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetProcessInstanceHeaders headers = new GetProcessInstanceHeaders();
             return await GetProcessInstanceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+         *
+         * @param request GetProcessInstanceWithExtraRequest
+         * @param headers GetProcessInstanceWithExtraHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetProcessInstanceWithExtraResponse
+         */
+        public GetProcessInstanceWithExtraResponse GetProcessInstanceWithExtraWithOptions(GetProcessInstanceWithExtraRequest request, GetProcessInstanceWithExtraHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                query["processInstanceId"] = request.ProcessInstanceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetProcessInstanceWithExtra",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/processInstances",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetProcessInstanceWithExtraResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+         *
+         * @param request GetProcessInstanceWithExtraRequest
+         * @param headers GetProcessInstanceWithExtraHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetProcessInstanceWithExtraResponse
+         */
+        public async Task<GetProcessInstanceWithExtraResponse> GetProcessInstanceWithExtraWithOptionsAsync(GetProcessInstanceWithExtraRequest request, GetProcessInstanceWithExtraHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                query["processInstanceId"] = request.ProcessInstanceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetProcessInstanceWithExtra",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/processInstances",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetProcessInstanceWithExtraResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+         *
+         * @param request GetProcessInstanceWithExtraRequest
+         * @return GetProcessInstanceWithExtraResponse
+         */
+        public GetProcessInstanceWithExtraResponse GetProcessInstanceWithExtra(GetProcessInstanceWithExtraRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetProcessInstanceWithExtraHeaders headers = new GetProcessInstanceWithExtraHeaders();
+            return GetProcessInstanceWithExtraWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+         *
+         * @param request GetProcessInstanceWithExtraRequest
+         * @return GetProcessInstanceWithExtraResponse
+         */
+        public async Task<GetProcessInstanceWithExtraResponse> GetProcessInstanceWithExtraAsync(GetProcessInstanceWithExtraRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetProcessInstanceWithExtraHeaders headers = new GetProcessInstanceWithExtraHeaders();
+            return await GetProcessInstanceWithExtraWithOptionsAsync(request, headers, runtime);
         }
 
         /**

@@ -313,6 +313,130 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
         }
 
         /**
+         * @summary 新增数据大屏
+         *
+         * @param request CreateScreenRequest
+         * @param headers CreateScreenHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateScreenResponse
+         */
+        public CreateScreenResponse CreateScreenWithOptions(CreateScreenRequest request, CreateScreenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                query["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateScreen",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/screens",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateScreenResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 新增数据大屏
+         *
+         * @param request CreateScreenRequest
+         * @param headers CreateScreenHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateScreenResponse
+         */
+        public async Task<CreateScreenResponse> CreateScreenWithOptionsAsync(CreateScreenRequest request, CreateScreenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                query["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateScreen",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/screens",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateScreenResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 新增数据大屏
+         *
+         * @param request CreateScreenRequest
+         * @return CreateScreenResponse
+         */
+        public CreateScreenResponse CreateScreen(CreateScreenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateScreenHeaders headers = new CreateScreenHeaders();
+            return CreateScreenWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 新增数据大屏
+         *
+         * @param request CreateScreenRequest
+         * @return CreateScreenResponse
+         */
+        public async Task<CreateScreenResponse> CreateScreenAsync(CreateScreenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateScreenHeaders headers = new CreateScreenHeaders();
+            return await CreateScreenWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 工商-经营异常
          *
          * @param request GetAbnormalOperationRequest
@@ -5922,6 +6046,10 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
             {
                 body["endDate"] = request.EndDate;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Filters))
+            {
+                body["filters"] = request.Filters;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 body["pageNumber"] = request.PageNumber;
@@ -5994,6 +6122,10 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
             {
                 body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Filters))
+            {
+                body["filters"] = request.Filters;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
@@ -7744,6 +7876,246 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryReportStatisticalDataHeaders headers = new QueryReportStatisticalDataHeaders();
             return await QueryReportStatisticalDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询数据大屏
+         *
+         * @param request QueryScreenRequest
+         * @param headers QueryScreenHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScreenResponse
+         */
+        public QueryScreenResponse QueryScreenWithOptions(QueryScreenRequest request, QueryScreenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryScreen",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/screens",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryScreenResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询数据大屏
+         *
+         * @param request QueryScreenRequest
+         * @param headers QueryScreenHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScreenResponse
+         */
+        public async Task<QueryScreenResponse> QueryScreenWithOptionsAsync(QueryScreenRequest request, QueryScreenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryScreen",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/screens",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryScreenResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询数据大屏
+         *
+         * @param request QueryScreenRequest
+         * @return QueryScreenResponse
+         */
+        public QueryScreenResponse QueryScreen(QueryScreenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryScreenHeaders headers = new QueryScreenHeaders();
+            return QueryScreenWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询数据大屏
+         *
+         * @param request QueryScreenRequest
+         * @return QueryScreenResponse
+         */
+        public async Task<QueryScreenResponse> QueryScreenAsync(QueryScreenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryScreenHeaders headers = new QueryScreenHeaders();
+            return await QueryScreenWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询数据大屏模版
+         *
+         * @param request QueryScreenTemplateRequest
+         * @param headers QueryScreenTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScreenTemplateResponse
+         */
+        public QueryScreenTemplateResponse QueryScreenTemplateWithOptions(QueryScreenTemplateRequest request, QueryScreenTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sample))
+            {
+                query["sample"] = request.Sample;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryScreenTemplate",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/screenTemplates",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryScreenTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询数据大屏模版
+         *
+         * @param request QueryScreenTemplateRequest
+         * @param headers QueryScreenTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryScreenTemplateResponse
+         */
+        public async Task<QueryScreenTemplateResponse> QueryScreenTemplateWithOptionsAsync(QueryScreenTemplateRequest request, QueryScreenTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sample))
+            {
+                query["sample"] = request.Sample;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryScreenTemplate",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/screenTemplates",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryScreenTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询数据大屏模版
+         *
+         * @param request QueryScreenTemplateRequest
+         * @return QueryScreenTemplateResponse
+         */
+        public QueryScreenTemplateResponse QueryScreenTemplate(QueryScreenTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryScreenTemplateHeaders headers = new QueryScreenTemplateHeaders();
+            return QueryScreenTemplateWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询数据大屏模版
+         *
+         * @param request QueryScreenTemplateRequest
+         * @return QueryScreenTemplateResponse
+         */
+        public async Task<QueryScreenTemplateResponse> QueryScreenTemplateAsync(QueryScreenTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryScreenTemplateHeaders headers = new QueryScreenTemplateHeaders();
+            return await QueryScreenTemplateWithOptionsAsync(request, headers, runtime);
         }
 
         /**

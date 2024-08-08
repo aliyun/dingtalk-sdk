@@ -1605,6 +1605,138 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
         }
 
         /**
+         * @summary 获取AI助理列表
+         *
+         * @param request ListAssistantRequest
+         * @param headers ListAssistantHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListAssistantResponse
+         */
+        public ListAssistantResponse ListAssistantWithOptions(ListAssistantRequest request, ListAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
+            {
+                query["cursor"] = request.Cursor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListAssistant",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/list",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListAssistantResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取AI助理列表
+         *
+         * @param request ListAssistantRequest
+         * @param headers ListAssistantHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListAssistantResponse
+         */
+        public async Task<ListAssistantResponse> ListAssistantWithOptionsAsync(ListAssistantRequest request, ListAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
+            {
+                query["cursor"] = request.Cursor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListAssistant",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/list",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListAssistantResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取AI助理列表
+         *
+         * @param request ListAssistantRequest
+         * @return ListAssistantResponse
+         */
+        public ListAssistantResponse ListAssistant(ListAssistantRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListAssistantHeaders headers = new ListAssistantHeaders();
+            return ListAssistantWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取AI助理列表
+         *
+         * @param request ListAssistantRequest
+         * @return ListAssistantResponse
+         */
+        public async Task<ListAssistantResponse> ListAssistantAsync(ListAssistantRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListAssistantHeaders headers = new ListAssistantHeaders();
+            return await ListAssistantWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取AI助理消息列表
          *
          * @param request ListAssistantMessageRequest
@@ -1977,6 +2109,130 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
         }
 
         /**
+         * @summary 查询 AI 助理的基本信息
+         *
+         * @param request RetrieveAssistantBasicInfoRequest
+         * @param headers RetrieveAssistantBasicInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RetrieveAssistantBasicInfoResponse
+         */
+        public RetrieveAssistantBasicInfoResponse RetrieveAssistantBasicInfoWithOptions(RetrieveAssistantBasicInfoRequest request, RetrieveAssistantBasicInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                query["assistantId"] = request.AssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RetrieveAssistantBasicInfo",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/basicInfo",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RetrieveAssistantBasicInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询 AI 助理的基本信息
+         *
+         * @param request RetrieveAssistantBasicInfoRequest
+         * @param headers RetrieveAssistantBasicInfoHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RetrieveAssistantBasicInfoResponse
+         */
+        public async Task<RetrieveAssistantBasicInfoResponse> RetrieveAssistantBasicInfoWithOptionsAsync(RetrieveAssistantBasicInfoRequest request, RetrieveAssistantBasicInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                query["assistantId"] = request.AssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RetrieveAssistantBasicInfo",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/basicInfo",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RetrieveAssistantBasicInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询 AI 助理的基本信息
+         *
+         * @param request RetrieveAssistantBasicInfoRequest
+         * @return RetrieveAssistantBasicInfoResponse
+         */
+        public RetrieveAssistantBasicInfoResponse RetrieveAssistantBasicInfo(RetrieveAssistantBasicInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RetrieveAssistantBasicInfoHeaders headers = new RetrieveAssistantBasicInfoHeaders();
+            return RetrieveAssistantBasicInfoWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询 AI 助理的基本信息
+         *
+         * @param request RetrieveAssistantBasicInfoRequest
+         * @return RetrieveAssistantBasicInfoResponse
+         */
+        public async Task<RetrieveAssistantBasicInfoResponse> RetrieveAssistantBasicInfoAsync(RetrieveAssistantBasicInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RetrieveAssistantBasicInfoHeaders headers = new RetrieveAssistantBasicInfoHeaders();
+            return await RetrieveAssistantBasicInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取AI助理的消息体
          *
          * @param headers RetrieveAssistantMessageHeaders
@@ -2268,6 +2524,138 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             RetrieveAssistantThreadHeaders headers = new RetrieveAssistantThreadHeaders();
             return await RetrieveAssistantThreadWithOptionsAsync(threadId, headers, runtime);
+        }
+
+        /**
+         * @summary 更新 AI 助理使用范围
+         *
+         * @param request UpdateAssistantScopeRequest
+         * @param headers UpdateAssistantScopeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateAssistantScopeResponse
+         */
+        public UpdateAssistantScopeResponse UpdateAssistantScopeWithOptions(UpdateAssistantScopeRequest request, UpdateAssistantScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                body["assistantId"] = request.AssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUnionId))
+            {
+                body["operatorUnionId"] = request.OperatorUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sharing))
+            {
+                body["sharing"] = request.Sharing;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateAssistantScope",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/scope",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "any",
+            };
+            return TeaModel.ToObject<UpdateAssistantScopeResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新 AI 助理使用范围
+         *
+         * @param request UpdateAssistantScopeRequest
+         * @param headers UpdateAssistantScopeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateAssistantScopeResponse
+         */
+        public async Task<UpdateAssistantScopeResponse> UpdateAssistantScopeWithOptionsAsync(UpdateAssistantScopeRequest request, UpdateAssistantScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                body["assistantId"] = request.AssistantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUnionId))
+            {
+                body["operatorUnionId"] = request.OperatorUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sharing))
+            {
+                body["sharing"] = request.Sharing;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateAssistantScope",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/scope",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "any",
+            };
+            return TeaModel.ToObject<UpdateAssistantScopeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新 AI 助理使用范围
+         *
+         * @param request UpdateAssistantScopeRequest
+         * @return UpdateAssistantScopeResponse
+         */
+        public UpdateAssistantScopeResponse UpdateAssistantScope(UpdateAssistantScopeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateAssistantScopeHeaders headers = new UpdateAssistantScopeHeaders();
+            return UpdateAssistantScopeWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新 AI 助理使用范围
+         *
+         * @param request UpdateAssistantScopeRequest
+         * @return UpdateAssistantScopeResponse
+         */
+        public async Task<UpdateAssistantScopeResponse> UpdateAssistantScopeAsync(UpdateAssistantScopeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateAssistantScopeHeaders headers = new UpdateAssistantScopeHeaders();
+            return await UpdateAssistantScopeWithOptionsAsync(request, headers, runtime);
         }
 
     }

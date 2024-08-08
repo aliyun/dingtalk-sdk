@@ -5913,6 +5913,286 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0
         }
 
         /**
+         * @summary 获取某个和oa关联的表单的具体数据
+         *
+         * @param request GetRelatedViewTabDataRequest
+         * @param headers GetRelatedViewTabDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetRelatedViewTabDataResponse
+         */
+        public GetRelatedViewTabDataResponse GetRelatedViewTabDataWithOptions(GetRelatedViewTabDataRequest request, GetRelatedViewTabDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
+            {
+                body["formCode"] = request.FormCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelatedField))
+            {
+                body["relatedField"] = request.RelatedField;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelatedInstId))
+            {
+                body["relatedInstId"] = request.RelatedInstId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewUserId))
+            {
+                body["viewUserId"] = request.ViewUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRelatedViewTabData",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/formRelatedTabs/datas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRelatedViewTabDataResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取某个和oa关联的表单的具体数据
+         *
+         * @param request GetRelatedViewTabDataRequest
+         * @param headers GetRelatedViewTabDataHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetRelatedViewTabDataResponse
+         */
+        public async Task<GetRelatedViewTabDataResponse> GetRelatedViewTabDataWithOptionsAsync(GetRelatedViewTabDataRequest request, GetRelatedViewTabDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
+            {
+                body["formCode"] = request.FormCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelatedField))
+            {
+                body["relatedField"] = request.RelatedField;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelatedInstId))
+            {
+                body["relatedInstId"] = request.RelatedInstId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewUserId))
+            {
+                body["viewUserId"] = request.ViewUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRelatedViewTabData",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/formRelatedTabs/datas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRelatedViewTabDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取某个和oa关联的表单的具体数据
+         *
+         * @param request GetRelatedViewTabDataRequest
+         * @return GetRelatedViewTabDataResponse
+         */
+        public GetRelatedViewTabDataResponse GetRelatedViewTabData(GetRelatedViewTabDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetRelatedViewTabDataHeaders headers = new GetRelatedViewTabDataHeaders();
+            return GetRelatedViewTabDataWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取某个和oa关联的表单的具体数据
+         *
+         * @param request GetRelatedViewTabDataRequest
+         * @return GetRelatedViewTabDataResponse
+         */
+        public async Task<GetRelatedViewTabDataResponse> GetRelatedViewTabDataAsync(GetRelatedViewTabDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetRelatedViewTabDataHeaders headers = new GetRelatedViewTabDataHeaders();
+            return await GetRelatedViewTabDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取和oa关联的表单tab信息
+         *
+         * @param request GetRelatedViewTabMetaRequest
+         * @param headers GetRelatedViewTabMetaHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetRelatedViewTabMetaResponse
+         */
+        public GetRelatedViewTabMetaResponse GetRelatedViewTabMetaWithOptions(GetRelatedViewTabMetaRequest request, GetRelatedViewTabMetaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
+            {
+                body["formCode"] = request.FormCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewUserId))
+            {
+                body["viewUserId"] = request.ViewUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRelatedViewTabMeta",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/formRelatedTabs/meta/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRelatedViewTabMetaResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取和oa关联的表单tab信息
+         *
+         * @param request GetRelatedViewTabMetaRequest
+         * @param headers GetRelatedViewTabMetaHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetRelatedViewTabMetaResponse
+         */
+        public async Task<GetRelatedViewTabMetaResponse> GetRelatedViewTabMetaWithOptionsAsync(GetRelatedViewTabMetaRequest request, GetRelatedViewTabMetaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormCode))
+            {
+                body["formCode"] = request.FormCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewUserId))
+            {
+                body["viewUserId"] = request.ViewUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRelatedViewTabMeta",
+                Version = "crm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/crm/formRelatedTabs/meta/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRelatedViewTabMetaResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取和oa关联的表单tab信息
+         *
+         * @param request GetRelatedViewTabMetaRequest
+         * @return GetRelatedViewTabMetaResponse
+         */
+        public GetRelatedViewTabMetaResponse GetRelatedViewTabMeta(GetRelatedViewTabMetaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetRelatedViewTabMetaHeaders headers = new GetRelatedViewTabMetaHeaders();
+            return GetRelatedViewTabMetaWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取和oa关联的表单tab信息
+         *
+         * @param request GetRelatedViewTabMetaRequest
+         * @return GetRelatedViewTabMetaResponse
+         */
+        public async Task<GetRelatedViewTabMetaResponse> GetRelatedViewTabMetaAsync(GetRelatedViewTabMetaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetRelatedViewTabMetaHeaders headers = new GetRelatedViewTabMetaHeaders();
+            return await GetRelatedViewTabMetaWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取关系数据查重规则
          *
          * @param request GetRelationUkSettingRequest

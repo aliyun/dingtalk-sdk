@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         public class QueryMinutesSummaryResponseBodySummary : TeaModel {
             [NameInMap("actions")]
             [Validation(Required=false)]
-            public QueryMinutesSummaryResponseBodySummaryActions Actions { get; set; }
+            public List<QueryMinutesSummaryResponseBodySummaryActions> Actions { get; set; }
             public class QueryMinutesSummaryResponseBodySummaryActions : TeaModel {
                 [NameInMap("end")]
                 [Validation(Required=false)]
@@ -85,7 +85,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 
             [NameInMap("keySentences")]
             [Validation(Required=false)]
-            public QueryMinutesSummaryResponseBodySummaryKeySentences KeySentences { get; set; }
+            public List<QueryMinutesSummaryResponseBodySummaryKeySentences> KeySentences { get; set; }
             public class QueryMinutesSummaryResponseBodySummaryKeySentences : TeaModel {
                 [NameInMap("end")]
                 [Validation(Required=false)]
