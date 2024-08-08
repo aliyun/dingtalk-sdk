@@ -9483,6 +9483,58 @@ export class ShiftAddRequestSections extends $tea.Model {
   }
 }
 
+export class ShiftAddRequestSettingLateBackSettingSections extends $tea.Model {
+  /**
+   * @example
+   * 120
+   */
+  extra?: number;
+  /**
+   * @example
+   * 60
+   */
+  late?: number;
+  static names(): { [key: string]: string } {
+    return {
+      extra: 'extra',
+      late: 'late',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extra: 'number',
+      late: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ShiftAddRequestSettingLateBackSetting extends $tea.Model {
+  enable?: boolean;
+  sections?: ShiftAddRequestSettingLateBackSettingSections[];
+  static names(): { [key: string]: string } {
+    return {
+      enable: 'enable',
+      sections: 'sections',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enable: 'boolean',
+      sections: { 'type': 'array', 'itemType': ShiftAddRequestSettingLateBackSettingSections },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ShiftAddRequestSettingTopRestTimeList extends $tea.Model {
   /**
    * @example
@@ -9531,8 +9583,15 @@ export class ShiftAddRequestSetting extends $tea.Model {
    * 0.8
    */
   attendDays?: number;
+  /**
+   * @example
+   * 480
+   */
+  demandWorkTimeMinutes?: number;
+  enableOutsideLateBack?: boolean;
   extras?: { [key: string]: any };
   isFlexible?: boolean;
+  lateBackSetting?: ShiftAddRequestSettingLateBackSetting;
   /**
    * @example
    * 31
@@ -9548,8 +9607,11 @@ export class ShiftAddRequestSetting extends $tea.Model {
     return {
       absenteeismLateMinutes: 'absenteeismLateMinutes',
       attendDays: 'attendDays',
+      demandWorkTimeMinutes: 'demandWorkTimeMinutes',
+      enableOutsideLateBack: 'enableOutsideLateBack',
       extras: 'extras',
       isFlexible: 'isFlexible',
+      lateBackSetting: 'lateBackSetting',
       seriousLateMinutes: 'seriousLateMinutes',
       tags: 'tags',
       topRestTimeList: 'topRestTimeList',
@@ -9560,8 +9622,11 @@ export class ShiftAddRequestSetting extends $tea.Model {
     return {
       absenteeismLateMinutes: 'number',
       attendDays: 'number',
+      demandWorkTimeMinutes: 'number',
+      enableOutsideLateBack: 'boolean',
       extras: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       isFlexible: 'boolean',
+      lateBackSetting: ShiftAddRequestSettingLateBackSetting,
       seriousLateMinutes: 'number',
       tags: 'string',
       topRestTimeList: { 'type': 'array', 'itemType': ShiftAddRequestSettingTopRestTimeList },

@@ -1259,6 +1259,114 @@ export class LearnKnowledgeResponse extends $tea.Model {
   }
 }
 
+export class ListAssistantHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantRequest extends $tea.Model {
+  cursor?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      cursor: 'cursor',
+      pageSize: 'pageSize',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cursor: 'number',
+      pageSize: 'number',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantResponseBody extends $tea.Model {
+  hasMore?: boolean;
+  list?: ListAssistantResponseBodyList[];
+  nextCursor?: number;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextCursor: 'nextCursor',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': ListAssistantResponseBodyList },
+      nextCursor: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListAssistantResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListAssistantResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListAssistantMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1525,6 +1633,141 @@ export class RelearnKnowledgeResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: RelearnKnowledgeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantBasicInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantBasicInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  assistantId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantBasicInfoResponseBody extends $tea.Model {
+  actionNames?: string[];
+  assistantId?: string;
+  createdAt?: number;
+  creatorUnionId?: string;
+  description?: string;
+  fallbackContent?: string;
+  icon?: string;
+  instructions?: string;
+  knowledgeFileNames?: string[];
+  model?: string;
+  name?: string;
+  recommendPrompts?: string[];
+  unifiedAppId?: string;
+  welcomeContent?: string;
+  static names(): { [key: string]: string } {
+    return {
+      actionNames: 'actionNames',
+      assistantId: 'assistantId',
+      createdAt: 'createdAt',
+      creatorUnionId: 'creatorUnionId',
+      description: 'description',
+      fallbackContent: 'fallbackContent',
+      icon: 'icon',
+      instructions: 'instructions',
+      knowledgeFileNames: 'knowledgeFileNames',
+      model: 'model',
+      name: 'name',
+      recommendPrompts: 'recommendPrompts',
+      unifiedAppId: 'unifiedAppId',
+      welcomeContent: 'welcomeContent',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionNames: { 'type': 'array', 'itemType': 'string' },
+      assistantId: 'string',
+      createdAt: 'number',
+      creatorUnionId: 'string',
+      description: 'string',
+      fallbackContent: 'string',
+      icon: 'string',
+      instructions: 'string',
+      knowledgeFileNames: { 'type': 'array', 'itemType': 'string' },
+      model: 'string',
+      name: 'string',
+      recommendPrompts: { 'type': 'array', 'itemType': 'string' },
+      unifiedAppId: 'string',
+      welcomeContent: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantBasicInfoResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RetrieveAssistantBasicInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RetrieveAssistantBasicInfoResponseBody,
     };
   }
 
@@ -1800,6 +2043,86 @@ export class RetrieveAssistantThreadResponse extends $tea.Model {
   }
 }
 
+export class UpdateAssistantScopeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateAssistantScopeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  assistantId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  operatorUnionId?: string;
+  sharing?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      operatorUnionId: 'operatorUnionId',
+      sharing: 'sharing',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      operatorUnionId: 'string',
+      sharing: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateAssistantScopeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: any;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: 'any',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddDomainWordsRequestDomainWords extends $tea.Model {
   description?: string;
   domainWord?: string;
@@ -1963,6 +2286,40 @@ export class GetKnowledgeListResponseBodyResult extends $tea.Model {
       docUrl: 'string',
       status: 'string',
       studyId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListAssistantResponseBodyList extends $tea.Model {
+  assistantId?: string;
+  createdAt?: number;
+  creatorUnionId?: string;
+  description?: string;
+  icon?: string;
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      createdAt: 'createdAt',
+      creatorUnionId: 'creatorUnionId',
+      description: 'description',
+      icon: 'icon',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      createdAt: 'number',
+      creatorUnionId: 'string',
+      description: 'string',
+      icon: 'string',
+      name: 'string',
     };
   }
 
@@ -2819,6 +3176,68 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 获取AI助理列表
+   * 
+   * @param request - ListAssistantRequest
+   * @param headers - ListAssistantHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListAssistantResponse
+   */
+  async listAssistantWithOptions(request: ListAssistantRequest, headers: ListAssistantHeaders, runtime: $Util.RuntimeOptions): Promise<ListAssistantResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.cursor)) {
+      query["cursor"] = request.cursor;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListAssistant",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/list`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAssistantResponse>(await this.execute(params, req, runtime), new ListAssistantResponse({}));
+  }
+
+  /**
+   * 获取AI助理列表
+   * 
+   * @param request - ListAssistantRequest
+   * @returns ListAssistantResponse
+   */
+  async listAssistant(request: ListAssistantRequest): Promise<ListAssistantResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListAssistantHeaders({ });
+    return await this.listAssistantWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 获取AI助理消息列表
    * 
    * @param request - ListAssistantMessageRequest
@@ -2993,6 +3412,64 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 查询 AI 助理的基本信息
+   * 
+   * @param request - RetrieveAssistantBasicInfoRequest
+   * @param headers - RetrieveAssistantBasicInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RetrieveAssistantBasicInfoResponse
+   */
+  async retrieveAssistantBasicInfoWithOptions(request: RetrieveAssistantBasicInfoRequest, headers: RetrieveAssistantBasicInfoHeaders, runtime: $Util.RuntimeOptions): Promise<RetrieveAssistantBasicInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.assistantId)) {
+      query["assistantId"] = request.assistantId;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "RetrieveAssistantBasicInfo",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/basicInfo`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RetrieveAssistantBasicInfoResponse>(await this.execute(params, req, runtime), new RetrieveAssistantBasicInfoResponse({}));
+  }
+
+  /**
+   * 查询 AI 助理的基本信息
+   * 
+   * @param request - RetrieveAssistantBasicInfoRequest
+   * @returns RetrieveAssistantBasicInfoResponse
+   */
+  async retrieveAssistantBasicInfo(request: RetrieveAssistantBasicInfoRequest): Promise<RetrieveAssistantBasicInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RetrieveAssistantBasicInfoHeaders({ });
+    return await this.retrieveAssistantBasicInfoWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 获取AI助理的消息体
    * 
    * @param headers - RetrieveAssistantMessageHeaders
@@ -3122,6 +3599,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RetrieveAssistantThreadHeaders({ });
     return await this.retrieveAssistantThreadWithOptions(threadId, headers, runtime);
+  }
+
+  /**
+   * 更新 AI 助理使用范围
+   * 
+   * @param request - UpdateAssistantScopeRequest
+   * @param headers - UpdateAssistantScopeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateAssistantScopeResponse
+   */
+  async updateAssistantScopeWithOptions(request: UpdateAssistantScopeRequest, headers: UpdateAssistantScopeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateAssistantScopeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.assistantId)) {
+      body["assistantId"] = request.assistantId;
+    }
+
+    if (!Util.isUnset(request.operatorUnionId)) {
+      body["operatorUnionId"] = request.operatorUnionId;
+    }
+
+    if (!Util.isUnset(request.sharing)) {
+      body["sharing"] = request.sharing;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateAssistantScope",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/scope`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "any",
+    });
+    return $tea.cast<UpdateAssistantScopeResponse>(await this.execute(params, req, runtime), new UpdateAssistantScopeResponse({}));
+  }
+
+  /**
+   * 更新 AI 助理使用范围
+   * 
+   * @param request - UpdateAssistantScopeRequest
+   * @returns UpdateAssistantScopeResponse
+   */
+  async updateAssistantScope(request: UpdateAssistantScopeRequest): Promise<UpdateAssistantScopeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateAssistantScopeHeaders({ });
+    return await this.updateAssistantScopeWithOptions(request, headers, runtime);
   }
 
 }

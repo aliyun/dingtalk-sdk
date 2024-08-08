@@ -2221,6 +2221,111 @@ export class GetFieldModifiedHistoryResponse extends $tea.Model {
   }
 }
 
+export class GetHandSignDownloadUrlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetHandSignDownloadUrlRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * AzBltRlvKukX3Wxxxx
+   */
+  handSignToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ag187wewxxxx
+   */
+  processInstanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      handSignToken: 'handSignToken',
+      processInstanceId: 'processInstanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      handSignToken: 'string',
+      processInstanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetHandSignDownloadUrlResponseBody extends $tea.Model {
+  result?: GetHandSignDownloadUrlResponseBodyResult;
+  success?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetHandSignDownloadUrlResponseBodyResult,
+      success: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetHandSignDownloadUrlResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetHandSignDownloadUrlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetHandSignDownloadUrlResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetManageProcessByStaffIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2595,6 +2700,105 @@ export class GetProcessInstanceResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetProcessInstanceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessInstanceWithExtraHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessInstanceWithExtraRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a171de6c-8bxxxx
+   */
+  processInstanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processInstanceId: 'processInstanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processInstanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessInstanceWithExtraResponseBody extends $tea.Model {
+  result?: GetProcessInstanceWithExtraResponseBodyResult;
+  /**
+   * @example
+   * true
+   */
+  success?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetProcessInstanceWithExtraResponseBodyResult,
+      success: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessInstanceWithExtraResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetProcessInstanceWithExtraResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetProcessInstanceWithExtraResponseBody,
     };
   }
 
@@ -6890,6 +7094,32 @@ export class GetFieldModifiedHistoryResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetHandSignDownloadUrlResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * https://dingding-file-zjk.oss-cn-zhangjiakouxxxx
+   */
+  downloadUrl?: string;
+  expireIn?: number;
+  static names(): { [key: string]: string } {
+    return {
+      downloadUrl: 'downloadUrl',
+      expireIn: 'expireIn',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      downloadUrl: 'string',
+      expireIn: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetManageProcessByStaffIdResponseBodyResult extends $tea.Model {
   /**
    * @example
@@ -7649,6 +7879,380 @@ export class GetProcessInstanceResponseBodyResult extends $tea.Model {
       result: 'string',
       status: 'string',
       tasks: { 'type': 'array', 'itemType': GetProcessInstanceResponseBodyResultTasks },
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessInstanceWithExtraResponseBodyResultFormComponentValues extends $tea.Model {
+  bizAlias?: string;
+  componentType?: string;
+  extValue?: string;
+  /**
+   * @example
+   * DDHolidayField-J2Bxxxx
+   */
+  id?: string;
+  /**
+   * @example
+   * 组件1
+   */
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizAlias: 'bizAlias',
+      componentType: 'componentType',
+      extValue: 'extValue',
+      id: 'id',
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizAlias: 'string',
+      componentType: 'string',
+      extValue: 'string',
+      id: 'string',
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessInstanceWithExtraResponseBodyResultOperationRecordsAttachments extends $tea.Model {
+  /**
+   * @example
+   * 12345
+   */
+  fileId?: string;
+  /**
+   * @example
+   * 学历证明
+   */
+  fileName?: string;
+  /**
+   * @example
+   * 50000
+   */
+  fileSize?: string;
+  /**
+   * @example
+   * .pdf
+   */
+  fileType?: string;
+  /**
+   * @example
+   * 158469
+   */
+  spaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileId: 'fileId',
+      fileName: 'fileName',
+      fileSize: 'fileSize',
+      fileType: 'fileType',
+      spaceId: 'spaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileId: 'string',
+      fileName: 'string',
+      fileSize: 'string',
+      fileType: 'string',
+      spaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessInstanceWithExtraResponseBodyResultOperationRecords extends $tea.Model {
+  /**
+   * @example
+   * aacc_ddee
+   */
+  activityId?: string;
+  attachments?: GetProcessInstanceWithExtraResponseBodyResultOperationRecordsAttachments[];
+  ccUserIds?: string[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-08-31T11:52Z
+   */
+  date?: string;
+  /**
+   * @example
+   * AzBltRlvKukX3WsbLxpDnTZskRNK5GtVfuDlDQ_Qxsp
+   */
+  handSignToken?: string;
+  images?: string[];
+  remark?: string;
+  /**
+   * @example
+   * AGREE
+   */
+  result?: string;
+  /**
+   * @example
+   * 审批人节点
+   */
+  showName?: string;
+  /**
+   * @example
+   * EXECUTE_TASK_NORMAL
+   */
+  type?: string;
+  /**
+   * @example
+   * manager123
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activityId: 'activityId',
+      attachments: 'attachments',
+      ccUserIds: 'ccUserIds',
+      date: 'date',
+      handSignToken: 'handSignToken',
+      images: 'images',
+      remark: 'remark',
+      result: 'result',
+      showName: 'showName',
+      type: 'type',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityId: 'string',
+      attachments: { 'type': 'array', 'itemType': GetProcessInstanceWithExtraResponseBodyResultOperationRecordsAttachments },
+      ccUserIds: { 'type': 'array', 'itemType': 'string' },
+      date: 'string',
+      handSignToken: 'string',
+      images: { 'type': 'array', 'itemType': 'string' },
+      remark: 'string',
+      result: 'string',
+      showName: 'string',
+      type: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessInstanceWithExtraResponseBodyResultTasks extends $tea.Model {
+  /**
+   * @example
+   * aabb_ccdd
+   */
+  activityId?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2024-06-12T14:17Z
+   */
+  createTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2024-06-12T14:17Z
+   */
+  finishTime?: string;
+  /**
+   * @example
+   * aflow.dingtalk.com?procInsId=lTGxxx
+   */
+  mobileUrl?: string;
+  /**
+   * @example
+   * aflow.dingtalk.com?procInsId=lTGxxx
+   */
+  pcUrl?: string;
+  /**
+   * @example
+   * fewferxxxx
+   */
+  processInstanceId?: string;
+  /**
+   * @example
+   * REDIRECTED
+   */
+  result?: string;
+  /**
+   * @example
+   * CANCELED
+   */
+  status?: string;
+  taskId?: number;
+  /**
+   * @example
+   * manager123
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activityId: 'activityId',
+      createTime: 'createTime',
+      finishTime: 'finishTime',
+      mobileUrl: 'mobileUrl',
+      pcUrl: 'pcUrl',
+      processInstanceId: 'processInstanceId',
+      result: 'result',
+      status: 'status',
+      taskId: 'taskId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityId: 'string',
+      createTime: 'string',
+      finishTime: 'string',
+      mobileUrl: 'string',
+      pcUrl: 'string',
+      processInstanceId: 'string',
+      result: 'string',
+      status: 'string',
+      taskId: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessInstanceWithExtraResponseBodyResult extends $tea.Model {
+  approverUserIds?: string[];
+  attachedProcessInstanceIds?: string[];
+  /**
+   * @example
+   * MODIFY
+   */
+  bizAction?: string;
+  bizData?: string;
+  /**
+   * @example
+   * 20240505xxxx
+   */
+  businessId?: string;
+  ccUserIds?: string[];
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2022-08-31T11:52Z
+   */
+  createTime?: string;
+  /**
+   * @example
+   * 2022-08-31T11:52Z
+   */
+  finishTime?: string;
+  formComponentValues?: GetProcessInstanceWithExtraResponseBodyResultFormComponentValues[];
+  /**
+   * @example
+   * fvdsfxxxxxx
+   */
+  mainProcessInstanceId?: string;
+  operationRecords?: GetProcessInstanceWithExtraResponseBodyResultOperationRecords[];
+  /**
+   * @example
+   * 25489
+   */
+  originatorDeptId?: string;
+  /**
+   * @example
+   * 测试部门
+   */
+  originatorDeptName?: string;
+  /**
+   * @example
+   * manager1
+   */
+  originatorUserId?: string;
+  /**
+   * @example
+   * agree
+   */
+  result?: string;
+  status?: string;
+  tasks?: GetProcessInstanceWithExtraResponseBodyResultTasks[];
+  /**
+   * @example
+   * xx提交的请假申请
+   */
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      approverUserIds: 'approverUserIds',
+      attachedProcessInstanceIds: 'attachedProcessInstanceIds',
+      bizAction: 'bizAction',
+      bizData: 'bizData',
+      businessId: 'businessId',
+      ccUserIds: 'ccUserIds',
+      createTime: 'createTime',
+      finishTime: 'finishTime',
+      formComponentValues: 'formComponentValues',
+      mainProcessInstanceId: 'mainProcessInstanceId',
+      operationRecords: 'operationRecords',
+      originatorDeptId: 'originatorDeptId',
+      originatorDeptName: 'originatorDeptName',
+      originatorUserId: 'originatorUserId',
+      result: 'result',
+      status: 'status',
+      tasks: 'tasks',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      approverUserIds: { 'type': 'array', 'itemType': 'string' },
+      attachedProcessInstanceIds: { 'type': 'array', 'itemType': 'string' },
+      bizAction: 'string',
+      bizData: 'string',
+      businessId: 'string',
+      ccUserIds: { 'type': 'array', 'itemType': 'string' },
+      createTime: 'string',
+      finishTime: 'string',
+      formComponentValues: { 'type': 'array', 'itemType': GetProcessInstanceWithExtraResponseBodyResultFormComponentValues },
+      mainProcessInstanceId: 'string',
+      operationRecords: { 'type': 'array', 'itemType': GetProcessInstanceWithExtraResponseBodyResultOperationRecords },
+      originatorDeptId: 'string',
+      originatorDeptName: 'string',
+      originatorUserId: 'string',
+      result: 'string',
+      status: 'string',
+      tasks: { 'type': 'array', 'itemType': GetProcessInstanceWithExtraResponseBodyResultTasks },
       title: 'string',
     };
   }
@@ -12645,6 +13249,64 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 获取手写签名的下载链接
+   * 
+   * @param request - GetHandSignDownloadUrlRequest
+   * @param headers - GetHandSignDownloadUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetHandSignDownloadUrlResponse
+   */
+  async getHandSignDownloadUrlWithOptions(request: GetHandSignDownloadUrlRequest, headers: GetHandSignDownloadUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetHandSignDownloadUrlResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.handSignToken)) {
+      body["handSignToken"] = request.handSignToken;
+    }
+
+    if (!Util.isUnset(request.processInstanceId)) {
+      body["processInstanceId"] = request.processInstanceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetHandSignDownloadUrl",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processInstances/handSigns/downloadUrls/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetHandSignDownloadUrlResponse>(await this.execute(params, req, runtime), new GetHandSignDownloadUrlResponse({}));
+  }
+
+  /**
+   * 获取手写签名的下载链接
+   * 
+   * @param request - GetHandSignDownloadUrlRequest
+   * @returns GetHandSignDownloadUrlResponse
+   */
+  async getHandSignDownloadUrl(request: GetHandSignDownloadUrlRequest): Promise<GetHandSignDownloadUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetHandSignDownloadUrlHeaders({ });
+    return await this.getHandSignDownloadUrlWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 获取当前企业所有可管理的表单
    * 
    * @param request - GetManageProcessByStaffIdRequest
@@ -12858,6 +13520,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetProcessInstanceHeaders({ });
     return await this.getProcessInstanceWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+   * 
+   * @param request - GetProcessInstanceWithExtraRequest
+   * @param headers - GetProcessInstanceWithExtraHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProcessInstanceWithExtraResponse
+   */
+  async getProcessInstanceWithExtraWithOptions(request: GetProcessInstanceWithExtraRequest, headers: GetProcessInstanceWithExtraHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessInstanceWithExtraResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.processInstanceId)) {
+      query["processInstanceId"] = request.processInstanceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetProcessInstanceWithExtra",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processInstances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetProcessInstanceWithExtraResponse>(await this.execute(params, req, runtime), new GetProcessInstanceWithExtraResponse({}));
+  }
+
+  /**
+   * 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+   * 
+   * @param request - GetProcessInstanceWithExtraRequest
+   * @returns GetProcessInstanceWithExtraResponse
+   */
+  async getProcessInstanceWithExtra(request: GetProcessInstanceWithExtraRequest): Promise<GetProcessInstanceWithExtraResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetProcessInstanceWithExtraHeaders({ });
+    return await this.getProcessInstanceWithExtraWithOptions(request, headers, runtime);
   }
 
   /**

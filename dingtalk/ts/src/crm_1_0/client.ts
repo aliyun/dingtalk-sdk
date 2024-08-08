@@ -5054,6 +5054,229 @@ export class GetOfficialAccountOTOMessageResultResponse extends $tea.Model {
   }
 }
 
+export class GetRelatedViewTabDataHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedViewTabDataRequest extends $tea.Model {
+  /**
+   * @example
+   * PROC-62829702-A377-42A9-9CB3-E1C691A0CEDB
+   */
+  formCode?: string;
+  /**
+   * @example
+   * 10
+   */
+  maxResults?: number;
+  /**
+   * @example
+   * 0
+   */
+  nextToken?: number;
+  /**
+   * @example
+   * OpenDataField_OV2K4SOW2ZGG
+   */
+  relatedField?: string;
+  /**
+   * @example
+   * u_dxcugzT0aPQvcK2PIkzQ00841721291058
+   */
+  relatedInstId?: string;
+  /**
+   * @example
+   * manager6034
+   */
+  viewUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formCode: 'formCode',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      relatedField: 'relatedField',
+      relatedInstId: 'relatedInstId',
+      viewUserId: 'viewUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formCode: 'string',
+      maxResults: 'number',
+      nextToken: 'number',
+      relatedField: 'string',
+      relatedInstId: 'string',
+      viewUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedViewTabDataResponseBody extends $tea.Model {
+  relatedViewTabDataResponse?: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse;
+  static names(): { [key: string]: string } {
+    return {
+      relatedViewTabDataResponse: 'relatedViewTabDataResponse',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      relatedViewTabDataResponse: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedViewTabDataResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetRelatedViewTabDataResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetRelatedViewTabDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedViewTabMetaHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedViewTabMetaRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-2DB0FF86-CE29-41FF-B0FE-BFDE5BD9A0C1
+   */
+  formCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  viewUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formCode: 'formCode',
+      viewUserId: 'viewUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formCode: 'string',
+      viewUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedViewTabMetaResponseBody extends $tea.Model {
+  baseViewTabModels?: GetRelatedViewTabMetaResponseBodyBaseViewTabModels[];
+  static names(): { [key: string]: string } {
+    return {
+      baseViewTabModels: 'baseViewTabModels',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      baseViewTabModels: { 'type': 'array', 'itemType': GetRelatedViewTabMetaResponseBodyBaseViewTabModels },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedViewTabMetaResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetRelatedViewTabMetaResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetRelatedViewTabMetaResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetRelationUkSettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -18397,6 +18620,135 @@ export class GetOfficialAccountOTOMessageResultResponseBodyResult extends $tea.M
   }
 }
 
+export class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList extends $tea.Model {
+  /**
+   * @example
+   * 西游四人组:孙悟空
+   */
+  abstractMessage?: string;
+  /**
+   * @example
+   * 1722059884000
+   */
+  createTime?: string;
+  /**
+   * @example
+   * 王凯提交的楚衣的流程表单2
+   */
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      abstractMessage: 'abstractMessage',
+      createTime: 'createTime',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      abstractMessage: 'string',
+      createTime: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData extends $tea.Model {
+  hasMore?: boolean;
+  list?: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList[];
+  /**
+   * @example
+   * 10
+   */
+  nextToken?: number;
+  /**
+   * @example
+   * 5
+   */
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList },
+      nextToken: 'number',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse extends $tea.Model {
+  relatedViewTabPageData?: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData;
+  static names(): { [key: string]: string } {
+    return {
+      relatedViewTabPageData: 'relatedViewTabPageData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      relatedViewTabPageData: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetRelatedViewTabMetaResponseBodyBaseViewTabModels extends $tea.Model {
+  /**
+   * @example
+   * PROC-C9EA3AB8-8BCD-4FAD-857D-18D579663366
+   */
+  formCode?: string;
+  /**
+   * @example
+   * OpenDataField_S0RIE8G0YAKG",             "sourceFormUuid": "PROC-C9EA3AB8-8BCD-4FAD-857D-18D579663366
+   */
+  relateComponentId?: string;
+  /**
+   * @example
+   * 楚衣的流程表单1
+   */
+  tabTitle?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formCode: 'formCode',
+      relateComponentId: 'relateComponentId',
+      tabTitle: 'tabTitle',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formCode: 'string',
+      relateComponentId: 'string',
+      tabTitle: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetRelationUkSettingResponseBodyResult extends $tea.Model {
   /**
    * @example
@@ -23686,6 +24038,138 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetOfficialAccountOTOMessageResultHeaders({ });
     return await this.getOfficialAccountOTOMessageResultWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取某个和oa关联的表单的具体数据
+   * 
+   * @param request - GetRelatedViewTabDataRequest
+   * @param headers - GetRelatedViewTabDataHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRelatedViewTabDataResponse
+   */
+  async getRelatedViewTabDataWithOptions(request: GetRelatedViewTabDataRequest, headers: GetRelatedViewTabDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetRelatedViewTabDataResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.formCode)) {
+      body["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.relatedField)) {
+      body["relatedField"] = request.relatedField;
+    }
+
+    if (!Util.isUnset(request.relatedInstId)) {
+      body["relatedInstId"] = request.relatedInstId;
+    }
+
+    if (!Util.isUnset(request.viewUserId)) {
+      body["viewUserId"] = request.viewUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetRelatedViewTabData",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/formRelatedTabs/datas/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRelatedViewTabDataResponse>(await this.execute(params, req, runtime), new GetRelatedViewTabDataResponse({}));
+  }
+
+  /**
+   * 获取某个和oa关联的表单的具体数据
+   * 
+   * @param request - GetRelatedViewTabDataRequest
+   * @returns GetRelatedViewTabDataResponse
+   */
+  async getRelatedViewTabData(request: GetRelatedViewTabDataRequest): Promise<GetRelatedViewTabDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetRelatedViewTabDataHeaders({ });
+    return await this.getRelatedViewTabDataWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取和oa关联的表单tab信息
+   * 
+   * @param request - GetRelatedViewTabMetaRequest
+   * @param headers - GetRelatedViewTabMetaHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetRelatedViewTabMetaResponse
+   */
+  async getRelatedViewTabMetaWithOptions(request: GetRelatedViewTabMetaRequest, headers: GetRelatedViewTabMetaHeaders, runtime: $Util.RuntimeOptions): Promise<GetRelatedViewTabMetaResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.formCode)) {
+      body["formCode"] = request.formCode;
+    }
+
+    if (!Util.isUnset(request.viewUserId)) {
+      body["viewUserId"] = request.viewUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetRelatedViewTabMeta",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/formRelatedTabs/meta/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRelatedViewTabMetaResponse>(await this.execute(params, req, runtime), new GetRelatedViewTabMetaResponse({}));
+  }
+
+  /**
+   * 获取和oa关联的表单tab信息
+   * 
+   * @param request - GetRelatedViewTabMetaRequest
+   * @returns GetRelatedViewTabMetaResponse
+   */
+  async getRelatedViewTabMeta(request: GetRelatedViewTabMetaRequest): Promise<GetRelatedViewTabMetaResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetRelatedViewTabMetaHeaders({ });
+    return await this.getRelatedViewTabMetaWithOptions(request, headers, runtime);
   }
 
   /**

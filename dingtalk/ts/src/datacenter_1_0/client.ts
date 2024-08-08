@@ -209,6 +209,97 @@ export class CreateDataDeliverResponse extends $tea.Model {
   }
 }
 
+export class CreateScreenHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateScreenRequest extends $tea.Model {
+  operatorId?: string;
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateScreenResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateScreenResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateScreenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateScreenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetAbnormalOperationHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4811,6 +4902,7 @@ export class QueryGeneralDataServiceBatchRequest extends $tea.Model {
    * This parameter is required.
    */
   endDate?: string;
+  filters?: QueryGeneralDataServiceBatchRequestFilters[];
   /**
    * @remarks
    * This parameter is required.
@@ -4837,6 +4929,7 @@ export class QueryGeneralDataServiceBatchRequest extends $tea.Model {
     return {
       deptIds: 'deptIds',
       endDate: 'endDate',
+      filters: 'filters',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
       serviceId: 'serviceId',
@@ -4850,6 +4943,7 @@ export class QueryGeneralDataServiceBatchRequest extends $tea.Model {
     return {
       deptIds: { 'type': 'array', 'itemType': 'string' },
       endDate: 'string',
+      filters: { 'type': 'array', 'itemType': QueryGeneralDataServiceBatchRequestFilters },
       pageNumber: 'number',
       pageSize: 'number',
       serviceId: 'string',
@@ -6205,6 +6299,185 @@ export class QueryReportStatisticalDataResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryReportStatisticalDataResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScreenHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScreenRequest extends $tea.Model {
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScreenResponseBody extends $tea.Model {
+  result?: QueryScreenResponseBodyResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': QueryScreenResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScreenResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryScreenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryScreenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScreenTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScreenTemplateRequest extends $tea.Model {
+  operatorId?: string;
+  sample?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      operatorId: 'operatorId',
+      sample: 'sample',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatorId: 'string',
+      sample: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScreenTemplateResponseBody extends $tea.Model {
+  result?: QueryScreenTemplateResponseBodyResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': QueryScreenTemplateResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScreenTemplateResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryScreenTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryScreenTemplateResponseBody,
     };
   }
 
@@ -11124,6 +11397,31 @@ export class QueryGeneralDataServiceResponseBodyMetaList extends $tea.Model {
   }
 }
 
+export class QueryGeneralDataServiceBatchRequestFilters extends $tea.Model {
+  fieldId?: string;
+  operator?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      operator: 'operator',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      operator: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryGeneralDataServiceBatchResponseBodyMetaList extends $tea.Model {
   /**
    * @remarks
@@ -11662,6 +11960,68 @@ export class QueryReportStatisticalDataResponseBodyMetaList extends $tea.Model {
       kpiName: 'string',
       period: 'string',
       unit: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScreenResponseBodyResult extends $tea.Model {
+  operatePermission?: string;
+  screenId?: number;
+  screenName?: string;
+  state?: string;
+  thumbUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      operatePermission: 'operatePermission',
+      screenId: 'screenId',
+      screenName: 'screenName',
+      state: 'state',
+      thumbUrl: 'thumbUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      operatePermission: 'string',
+      screenId: 'number',
+      screenName: 'string',
+      state: 'string',
+      thumbUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryScreenTemplateResponseBodyResult extends $tea.Model {
+  previewUrl?: string;
+  screenSize?: string;
+  templateId?: string;
+  templateName?: string;
+  thumbUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      previewUrl: 'previewUrl',
+      screenSize: 'screenSize',
+      templateId: 'templateId',
+      templateName: 'templateName',
+      thumbUrl: 'thumbUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      previewUrl: 'string',
+      screenSize: 'string',
+      templateId: 'string',
+      templateName: 'string',
+      thumbUrl: 'string',
     };
   }
 
@@ -13959,6 +14319,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateDataDeliverHeaders({ });
     return await this.createDataDeliverWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 新增数据大屏
+   * 
+   * @param request - CreateScreenRequest
+   * @param headers - CreateScreenHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateScreenResponse
+   */
+  async createScreenWithOptions(request: CreateScreenRequest, headers: CreateScreenHeaders, runtime: $Util.RuntimeOptions): Promise<CreateScreenResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      query["templateId"] = request.templateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateScreen",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/screens`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateScreenResponse>(await this.execute(params, req, runtime), new CreateScreenResponse({}));
+  }
+
+  /**
+   * 新增数据大屏
+   * 
+   * @param request - CreateScreenRequest
+   * @returns CreateScreenResponse
+   */
+  async createScreen(request: CreateScreenRequest): Promise<CreateScreenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateScreenHeaders({ });
+    return await this.createScreenWithOptions(request, headers, runtime);
   }
 
   /**
@@ -16598,6 +17016,10 @@ export default class Client extends OpenApi {
       body["endDate"] = request.endDate;
     }
 
+    if (!Util.isUnset(request.filters)) {
+      body["filters"] = request.filters;
+    }
+
     if (!Util.isUnset(request.pageNumber)) {
       body["pageNumber"] = request.pageNumber;
     }
@@ -17439,6 +17861,118 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryReportStatisticalDataHeaders({ });
     return await this.queryReportStatisticalDataWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询数据大屏
+   * 
+   * @param request - QueryScreenRequest
+   * @param headers - QueryScreenHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryScreenResponse
+   */
+  async queryScreenWithOptions(request: QueryScreenRequest, headers: QueryScreenHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScreenResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryScreen",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/screens`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryScreenResponse>(await this.execute(params, req, runtime), new QueryScreenResponse({}));
+  }
+
+  /**
+   * 查询数据大屏
+   * 
+   * @param request - QueryScreenRequest
+   * @returns QueryScreenResponse
+   */
+  async queryScreen(request: QueryScreenRequest): Promise<QueryScreenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryScreenHeaders({ });
+    return await this.queryScreenWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询数据大屏模版
+   * 
+   * @param request - QueryScreenTemplateRequest
+   * @param headers - QueryScreenTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryScreenTemplateResponse
+   */
+  async queryScreenTemplateWithOptions(request: QueryScreenTemplateRequest, headers: QueryScreenTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<QueryScreenTemplateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    if (!Util.isUnset(request.sample)) {
+      query["sample"] = request.sample;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryScreenTemplate",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/screenTemplates`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryScreenTemplateResponse>(await this.execute(params, req, runtime), new QueryScreenTemplateResponse({}));
+  }
+
+  /**
+   * 查询数据大屏模版
+   * 
+   * @param request - QueryScreenTemplateRequest
+   * @returns QueryScreenTemplateResponse
+   */
+  async queryScreenTemplate(request: QueryScreenTemplateRequest): Promise<QueryScreenTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryScreenTemplateHeaders({ });
+    return await this.queryScreenTemplateWithOptions(request, headers, runtime);
   }
 
   /**

@@ -3149,7 +3149,7 @@ export class QueryMinutesTextResponseBody extends $tea.Model {
   hasMore?: boolean;
   /**
    * @example
-   * 1631172045153000||7940
+   * 1631172045153000_7940
    */
   nextToken?: string;
   paragraphList?: QueryMinutesTextResponseBodyParagraphList[];
@@ -6045,10 +6045,10 @@ export class QueryMinutesSummaryResponseBodySummaryQuestionsAnsweringSummary ext
 }
 
 export class QueryMinutesSummaryResponseBodySummary extends $tea.Model {
-  actions?: QueryMinutesSummaryResponseBodySummaryActions;
+  actions?: QueryMinutesSummaryResponseBodySummaryActions[];
   autoChapters?: QueryMinutesSummaryResponseBodySummaryAutoChapters[];
   conversationalSummary?: QueryMinutesSummaryResponseBodySummaryConversationalSummary[];
-  keySentences?: QueryMinutesSummaryResponseBodySummaryKeySentences;
+  keySentences?: QueryMinutesSummaryResponseBodySummaryKeySentences[];
   keywords?: string[];
   paragraphSummary?: string;
   questionsAnsweringSummary?: QueryMinutesSummaryResponseBodySummaryQuestionsAnsweringSummary[];
@@ -6066,10 +6066,10 @@ export class QueryMinutesSummaryResponseBodySummary extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      actions: QueryMinutesSummaryResponseBodySummaryActions,
+      actions: { 'type': 'array', 'itemType': QueryMinutesSummaryResponseBodySummaryActions },
       autoChapters: { 'type': 'array', 'itemType': QueryMinutesSummaryResponseBodySummaryAutoChapters },
       conversationalSummary: { 'type': 'array', 'itemType': QueryMinutesSummaryResponseBodySummaryConversationalSummary },
-      keySentences: QueryMinutesSummaryResponseBodySummaryKeySentences,
+      keySentences: { 'type': 'array', 'itemType': QueryMinutesSummaryResponseBodySummaryKeySentences },
       keywords: { 'type': 'array', 'itemType': 'string' },
       paragraphSummary: 'string',
       questionsAnsweringSummary: { 'type': 'array', 'itemType': QueryMinutesSummaryResponseBodySummaryQuestionsAnsweringSummary },
