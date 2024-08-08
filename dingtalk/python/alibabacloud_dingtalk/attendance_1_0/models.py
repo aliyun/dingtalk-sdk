@@ -11633,6 +11633,80 @@ class ShiftAddRequestSections(TeaModel):
         return self
 
 
+class ShiftAddRequestSettingLateBackSettingSections(TeaModel):
+    def __init__(
+        self,
+        extra: int = None,
+        late: int = None,
+    ):
+        self.extra = extra
+        self.late = late
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extra is not None:
+            result['extra'] = self.extra
+        if self.late is not None:
+            result['late'] = self.late
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extra') is not None:
+            self.extra = m.get('extra')
+        if m.get('late') is not None:
+            self.late = m.get('late')
+        return self
+
+
+class ShiftAddRequestSettingLateBackSetting(TeaModel):
+    def __init__(
+        self,
+        enable: bool = None,
+        sections: List[ShiftAddRequestSettingLateBackSettingSections] = None,
+    ):
+        self.enable = enable
+        self.sections = sections
+
+    def validate(self):
+        if self.sections:
+            for k in self.sections:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable is not None:
+            result['enable'] = self.enable
+        result['sections'] = []
+        if self.sections is not None:
+            for k in self.sections:
+                result['sections'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
+        self.sections = []
+        if m.get('sections') is not None:
+            for k in m.get('sections'):
+                temp_model = ShiftAddRequestSettingLateBackSettingSections()
+                self.sections.append(temp_model.from_map(k))
+        return self
+
+
 class ShiftAddRequestSettingTopRestTimeList(TeaModel):
     def __init__(
         self,
@@ -11677,21 +11751,29 @@ class ShiftAddRequestSetting(TeaModel):
         self,
         absenteeism_late_minutes: int = None,
         attend_days: float = None,
+        demand_work_time_minutes: int = None,
+        enable_outside_late_back: bool = None,
         extras: Dict[str, Any] = None,
         is_flexible: bool = None,
+        late_back_setting: ShiftAddRequestSettingLateBackSetting = None,
         serious_late_minutes: int = None,
         tags: str = None,
         top_rest_time_list: List[ShiftAddRequestSettingTopRestTimeList] = None,
     ):
         self.absenteeism_late_minutes = absenteeism_late_minutes
         self.attend_days = attend_days
+        self.demand_work_time_minutes = demand_work_time_minutes
+        self.enable_outside_late_back = enable_outside_late_back
         self.extras = extras
         self.is_flexible = is_flexible
+        self.late_back_setting = late_back_setting
         self.serious_late_minutes = serious_late_minutes
         self.tags = tags
         self.top_rest_time_list = top_rest_time_list
 
     def validate(self):
+        if self.late_back_setting:
+            self.late_back_setting.validate()
         if self.top_rest_time_list:
             for k in self.top_rest_time_list:
                 if k:
@@ -11707,10 +11789,16 @@ class ShiftAddRequestSetting(TeaModel):
             result['absenteeismLateMinutes'] = self.absenteeism_late_minutes
         if self.attend_days is not None:
             result['attendDays'] = self.attend_days
+        if self.demand_work_time_minutes is not None:
+            result['demandWorkTimeMinutes'] = self.demand_work_time_minutes
+        if self.enable_outside_late_back is not None:
+            result['enableOutsideLateBack'] = self.enable_outside_late_back
         if self.extras is not None:
             result['extras'] = self.extras
         if self.is_flexible is not None:
             result['isFlexible'] = self.is_flexible
+        if self.late_back_setting is not None:
+            result['lateBackSetting'] = self.late_back_setting.to_map()
         if self.serious_late_minutes is not None:
             result['seriousLateMinutes'] = self.serious_late_minutes
         if self.tags is not None:
@@ -11727,10 +11815,17 @@ class ShiftAddRequestSetting(TeaModel):
             self.absenteeism_late_minutes = m.get('absenteeismLateMinutes')
         if m.get('attendDays') is not None:
             self.attend_days = m.get('attendDays')
+        if m.get('demandWorkTimeMinutes') is not None:
+            self.demand_work_time_minutes = m.get('demandWorkTimeMinutes')
+        if m.get('enableOutsideLateBack') is not None:
+            self.enable_outside_late_back = m.get('enableOutsideLateBack')
         if m.get('extras') is not None:
             self.extras = m.get('extras')
         if m.get('isFlexible') is not None:
             self.is_flexible = m.get('isFlexible')
+        if m.get('lateBackSetting') is not None:
+            temp_model = ShiftAddRequestSettingLateBackSetting()
+            self.late_back_setting = temp_model.from_map(m['lateBackSetting'])
         if m.get('seriousLateMinutes') is not None:
             self.serious_late_minutes = m.get('seriousLateMinutes')
         if m.get('tags') is not None:

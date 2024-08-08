@@ -308,6 +308,146 @@ class CreateDataDeliverResponse(TeaModel):
         return self
 
 
+class CreateScreenHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateScreenRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+        template_id: str = None,
+    ):
+        self.operator_id = operator_id
+        self.template_id = template_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        return self
+
+
+class CreateScreenResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: str = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateScreenResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateScreenResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateScreenResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetAbnormalOperationHeaders(TeaModel):
     def __init__(
         self,
@@ -7540,11 +7680,51 @@ class QueryGeneralDataServiceBatchHeaders(TeaModel):
         return self
 
 
+class QueryGeneralDataServiceBatchRequestFilters(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        operator: str = None,
+        value: str = None,
+    ):
+        self.field_id = field_id
+        self.operator = operator
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
 class QueryGeneralDataServiceBatchRequest(TeaModel):
     def __init__(
         self,
         dept_ids: List[str] = None,
         end_date: str = None,
+        filters: List[QueryGeneralDataServiceBatchRequestFilters] = None,
         page_number: int = None,
         page_size: int = None,
         service_id: str = None,
@@ -7555,6 +7735,7 @@ class QueryGeneralDataServiceBatchRequest(TeaModel):
         self.dept_ids = dept_ids
         # This parameter is required.
         self.end_date = end_date
+        self.filters = filters
         # This parameter is required.
         self.page_number = page_number
         # This parameter is required.
@@ -7567,7 +7748,10 @@ class QueryGeneralDataServiceBatchRequest(TeaModel):
         self.user_ids = user_ids
 
     def validate(self):
-        pass
+        if self.filters:
+            for k in self.filters:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -7579,6 +7763,10 @@ class QueryGeneralDataServiceBatchRequest(TeaModel):
             result['deptIds'] = self.dept_ids
         if self.end_date is not None:
             result['endDate'] = self.end_date
+        result['filters'] = []
+        if self.filters is not None:
+            for k in self.filters:
+                result['filters'].append(k.to_map() if k else None)
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -7599,6 +7787,11 @@ class QueryGeneralDataServiceBatchRequest(TeaModel):
             self.dept_ids = m.get('deptIds')
         if m.get('endDate') is not None:
             self.end_date = m.get('endDate')
+        self.filters = []
+        if m.get('filters') is not None:
+            for k in m.get('filters'):
+                temp_model = QueryGeneralDataServiceBatchRequestFilters()
+                self.filters.append(temp_model.from_map(k))
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
@@ -10338,6 +10531,398 @@ class QueryReportStatisticalDataResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryReportStatisticalDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryScreenHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryScreenRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class QueryScreenResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        operate_permission: str = None,
+        screen_id: int = None,
+        screen_name: str = None,
+        state: str = None,
+        thumb_url: str = None,
+    ):
+        self.operate_permission = operate_permission
+        self.screen_id = screen_id
+        self.screen_name = screen_name
+        self.state = state
+        self.thumb_url = thumb_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operate_permission is not None:
+            result['operatePermission'] = self.operate_permission
+        if self.screen_id is not None:
+            result['screenId'] = self.screen_id
+        if self.screen_name is not None:
+            result['screenName'] = self.screen_name
+        if self.state is not None:
+            result['state'] = self.state
+        if self.thumb_url is not None:
+            result['thumbUrl'] = self.thumb_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatePermission') is not None:
+            self.operate_permission = m.get('operatePermission')
+        if m.get('screenId') is not None:
+            self.screen_id = m.get('screenId')
+        if m.get('screenName') is not None:
+            self.screen_name = m.get('screenName')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        if m.get('thumbUrl') is not None:
+            self.thumb_url = m.get('thumbUrl')
+        return self
+
+
+class QueryScreenResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryScreenResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryScreenResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryScreenResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryScreenResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryScreenResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryScreenTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryScreenTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+        sample: bool = None,
+    ):
+        self.operator_id = operator_id
+        self.sample = sample
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.sample is not None:
+            result['sample'] = self.sample
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('sample') is not None:
+            self.sample = m.get('sample')
+        return self
+
+
+class QueryScreenTemplateResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        preview_url: str = None,
+        screen_size: str = None,
+        template_id: str = None,
+        template_name: str = None,
+        thumb_url: str = None,
+    ):
+        self.preview_url = preview_url
+        self.screen_size = screen_size
+        self.template_id = template_id
+        self.template_name = template_name
+        self.thumb_url = thumb_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.preview_url is not None:
+            result['previewUrl'] = self.preview_url
+        if self.screen_size is not None:
+            result['screenSize'] = self.screen_size
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.template_name is not None:
+            result['templateName'] = self.template_name
+        if self.thumb_url is not None:
+            result['thumbUrl'] = self.thumb_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('previewUrl') is not None:
+            self.preview_url = m.get('previewUrl')
+        if m.get('screenSize') is not None:
+            self.screen_size = m.get('screenSize')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('templateName') is not None:
+            self.template_name = m.get('templateName')
+        if m.get('thumbUrl') is not None:
+            self.thumb_url = m.get('thumbUrl')
+        return self
+
+
+class QueryScreenTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryScreenTemplateResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryScreenTemplateResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryScreenTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryScreenTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryScreenTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

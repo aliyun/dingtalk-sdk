@@ -282,6 +282,124 @@ class Client(OpenApiClient):
         headers = dingtalkdatacenter__1__0_models.CreateDataDeliverHeaders()
         return await self.create_data_deliver_with_options_async(request, headers, runtime)
 
+    def create_screen_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.CreateScreenRequest,
+        headers: dingtalkdatacenter__1__0_models.CreateScreenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.CreateScreenResponse:
+        """
+        @summary 新增数据大屏
+        
+        @param request: CreateScreenRequest
+        @param headers: CreateScreenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateScreenResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.template_id):
+            query['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CreateScreen',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/screens',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.CreateScreenResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_screen_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.CreateScreenRequest,
+        headers: dingtalkdatacenter__1__0_models.CreateScreenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.CreateScreenResponse:
+        """
+        @summary 新增数据大屏
+        
+        @param request: CreateScreenRequest
+        @param headers: CreateScreenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateScreenResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.template_id):
+            query['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CreateScreen',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/screens',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.CreateScreenResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_screen(
+        self,
+        request: dingtalkdatacenter__1__0_models.CreateScreenRequest,
+    ) -> dingtalkdatacenter__1__0_models.CreateScreenResponse:
+        """
+        @summary 新增数据大屏
+        
+        @param request: CreateScreenRequest
+        @return: CreateScreenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.CreateScreenHeaders()
+        return self.create_screen_with_options(request, headers, runtime)
+
+    async def create_screen_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.CreateScreenRequest,
+    ) -> dingtalkdatacenter__1__0_models.CreateScreenResponse:
+        """
+        @summary 新增数据大屏
+        
+        @param request: CreateScreenRequest
+        @return: CreateScreenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.CreateScreenHeaders()
+        return await self.create_screen_with_options_async(request, headers, runtime)
+
     def get_abnormal_operation_with_options(
         self,
         request: dingtalkdatacenter__1__0_models.GetAbnormalOperationRequest,
@@ -5548,6 +5666,8 @@ class Client(OpenApiClient):
             body['deptIds'] = request.dept_ids
         if not UtilClient.is_unset(request.end_date):
             body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.filters):
+            body['filters'] = request.filters
         if not UtilClient.is_unset(request.page_number):
             body['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -5605,6 +5725,8 @@ class Client(OpenApiClient):
             body['deptIds'] = request.dept_ids
         if not UtilClient.is_unset(request.end_date):
             body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.filters):
+            body['filters'] = request.filters
         if not UtilClient.is_unset(request.page_number):
             body['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -7289,6 +7411,238 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdatacenter__1__0_models.QueryReportStatisticalDataHeaders()
         return await self.query_report_statistical_data_with_options_async(request, headers, runtime)
+
+    def query_screen_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryScreenRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryScreenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryScreenResponse:
+        """
+        @summary 查询数据大屏
+        
+        @param request: QueryScreenRequest
+        @param headers: QueryScreenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScreenResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryScreen',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/screens',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryScreenResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_screen_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryScreenRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryScreenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryScreenResponse:
+        """
+        @summary 查询数据大屏
+        
+        @param request: QueryScreenRequest
+        @param headers: QueryScreenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScreenResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryScreen',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/screens',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryScreenResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_screen(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryScreenRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryScreenResponse:
+        """
+        @summary 查询数据大屏
+        
+        @param request: QueryScreenRequest
+        @return: QueryScreenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryScreenHeaders()
+        return self.query_screen_with_options(request, headers, runtime)
+
+    async def query_screen_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryScreenRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryScreenResponse:
+        """
+        @summary 查询数据大屏
+        
+        @param request: QueryScreenRequest
+        @return: QueryScreenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryScreenHeaders()
+        return await self.query_screen_with_options_async(request, headers, runtime)
+
+    def query_screen_template_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryScreenTemplateRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryScreenTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryScreenTemplateResponse:
+        """
+        @summary 查询数据大屏模版
+        
+        @param request: QueryScreenTemplateRequest
+        @param headers: QueryScreenTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScreenTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.sample):
+            query['sample'] = request.sample
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryScreenTemplate',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/screenTemplates',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryScreenTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_screen_template_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryScreenTemplateRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryScreenTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryScreenTemplateResponse:
+        """
+        @summary 查询数据大屏模版
+        
+        @param request: QueryScreenTemplateRequest
+        @param headers: QueryScreenTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryScreenTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.sample):
+            query['sample'] = request.sample
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryScreenTemplate',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/screenTemplates',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryScreenTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_screen_template(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryScreenTemplateRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryScreenTemplateResponse:
+        """
+        @summary 查询数据大屏模版
+        
+        @param request: QueryScreenTemplateRequest
+        @return: QueryScreenTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryScreenTemplateHeaders()
+        return self.query_screen_template_with_options(request, headers, runtime)
+
+    async def query_screen_template_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryScreenTemplateRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryScreenTemplateResponse:
+        """
+        @summary 查询数据大屏模版
+        
+        @param request: QueryScreenTemplateRequest
+        @return: QueryScreenTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryScreenTemplateHeaders()
+        return await self.query_screen_template_with_options_async(request, headers, runtime)
 
     def query_single_message_statistical_data_with_options(
         self,

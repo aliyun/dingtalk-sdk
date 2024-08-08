@@ -5469,10 +5469,10 @@ class QueryMinutesSummaryResponseBodySummaryQuestionsAnsweringSummary(TeaModel):
 class QueryMinutesSummaryResponseBodySummary(TeaModel):
     def __init__(
         self,
-        actions: QueryMinutesSummaryResponseBodySummaryActions = None,
+        actions: List[QueryMinutesSummaryResponseBodySummaryActions] = None,
         auto_chapters: List[QueryMinutesSummaryResponseBodySummaryAutoChapters] = None,
         conversational_summary: List[QueryMinutesSummaryResponseBodySummaryConversationalSummary] = None,
-        key_sentences: QueryMinutesSummaryResponseBodySummaryKeySentences = None,
+        key_sentences: List[QueryMinutesSummaryResponseBodySummaryKeySentences] = None,
         keywords: List[str] = None,
         paragraph_summary: str = None,
         questions_answering_summary: List[QueryMinutesSummaryResponseBodySummaryQuestionsAnsweringSummary] = None,
@@ -5487,7 +5487,9 @@ class QueryMinutesSummaryResponseBodySummary(TeaModel):
 
     def validate(self):
         if self.actions:
-            self.actions.validate()
+            for k in self.actions:
+                if k:
+                    k.validate()
         if self.auto_chapters:
             for k in self.auto_chapters:
                 if k:
@@ -5497,7 +5499,9 @@ class QueryMinutesSummaryResponseBodySummary(TeaModel):
                 if k:
                     k.validate()
         if self.key_sentences:
-            self.key_sentences.validate()
+            for k in self.key_sentences:
+                if k:
+                    k.validate()
         if self.questions_answering_summary:
             for k in self.questions_answering_summary:
                 if k:
@@ -5509,8 +5513,10 @@ class QueryMinutesSummaryResponseBodySummary(TeaModel):
             return _map
 
         result = dict()
+        result['actions'] = []
         if self.actions is not None:
-            result['actions'] = self.actions.to_map()
+            for k in self.actions:
+                result['actions'].append(k.to_map() if k else None)
         result['autoChapters'] = []
         if self.auto_chapters is not None:
             for k in self.auto_chapters:
@@ -5519,8 +5525,10 @@ class QueryMinutesSummaryResponseBodySummary(TeaModel):
         if self.conversational_summary is not None:
             for k in self.conversational_summary:
                 result['conversationalSummary'].append(k.to_map() if k else None)
+        result['keySentences'] = []
         if self.key_sentences is not None:
-            result['keySentences'] = self.key_sentences.to_map()
+            for k in self.key_sentences:
+                result['keySentences'].append(k.to_map() if k else None)
         if self.keywords is not None:
             result['keywords'] = self.keywords
         if self.paragraph_summary is not None:
@@ -5533,9 +5541,11 @@ class QueryMinutesSummaryResponseBodySummary(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.actions = []
         if m.get('actions') is not None:
-            temp_model = QueryMinutesSummaryResponseBodySummaryActions()
-            self.actions = temp_model.from_map(m['actions'])
+            for k in m.get('actions'):
+                temp_model = QueryMinutesSummaryResponseBodySummaryActions()
+                self.actions.append(temp_model.from_map(k))
         self.auto_chapters = []
         if m.get('autoChapters') is not None:
             for k in m.get('autoChapters'):
@@ -5546,9 +5556,11 @@ class QueryMinutesSummaryResponseBodySummary(TeaModel):
             for k in m.get('conversationalSummary'):
                 temp_model = QueryMinutesSummaryResponseBodySummaryConversationalSummary()
                 self.conversational_summary.append(temp_model.from_map(k))
+        self.key_sentences = []
         if m.get('keySentences') is not None:
-            temp_model = QueryMinutesSummaryResponseBodySummaryKeySentences()
-            self.key_sentences = temp_model.from_map(m['keySentences'])
+            for k in m.get('keySentences'):
+                temp_model = QueryMinutesSummaryResponseBodySummaryKeySentences()
+                self.key_sentences.append(temp_model.from_map(k))
         if m.get('keywords') is not None:
             self.keywords = m.get('keywords')
         if m.get('paragraphSummary') is not None:

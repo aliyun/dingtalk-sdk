@@ -18835,6 +18835,470 @@ class GetOfficialAccountOTOMessageResultResponse(TeaModel):
         return self
 
 
+class GetRelatedViewTabDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetRelatedViewTabDataRequest(TeaModel):
+    def __init__(
+        self,
+        form_code: str = None,
+        max_results: int = None,
+        next_token: int = None,
+        related_field: str = None,
+        related_inst_id: str = None,
+        view_user_id: str = None,
+    ):
+        self.form_code = form_code
+        self.max_results = max_results
+        self.next_token = next_token
+        self.related_field = related_field
+        self.related_inst_id = related_inst_id
+        self.view_user_id = view_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.related_field is not None:
+            result['relatedField'] = self.related_field
+        if self.related_inst_id is not None:
+            result['relatedInstId'] = self.related_inst_id
+        if self.view_user_id is not None:
+            result['viewUserId'] = self.view_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('relatedField') is not None:
+            self.related_field = m.get('relatedField')
+        if m.get('relatedInstId') is not None:
+            self.related_inst_id = m.get('relatedInstId')
+        if m.get('viewUserId') is not None:
+            self.view_user_id = m.get('viewUserId')
+        return self
+
+
+class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList(TeaModel):
+    def __init__(
+        self,
+        abstract_message: str = None,
+        create_time: str = None,
+        title: str = None,
+    ):
+        self.abstract_message = abstract_message
+        self.create_time = create_time
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.abstract_message is not None:
+            result['abstractMessage'] = self.abstract_message
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('abstractMessage') is not None:
+            self.abstract_message = m.get('abstractMessage')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList] = None,
+        next_token: int = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+        self.next_token = next_token
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse(TeaModel):
+    def __init__(
+        self,
+        related_view_tab_page_data: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData = None,
+    ):
+        self.related_view_tab_page_data = related_view_tab_page_data
+
+    def validate(self):
+        if self.related_view_tab_page_data:
+            self.related_view_tab_page_data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.related_view_tab_page_data is not None:
+            result['relatedViewTabPageData'] = self.related_view_tab_page_data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relatedViewTabPageData') is not None:
+            temp_model = GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData()
+            self.related_view_tab_page_data = temp_model.from_map(m['relatedViewTabPageData'])
+        return self
+
+
+class GetRelatedViewTabDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        related_view_tab_data_response: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse = None,
+    ):
+        self.related_view_tab_data_response = related_view_tab_data_response
+
+    def validate(self):
+        if self.related_view_tab_data_response:
+            self.related_view_tab_data_response.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.related_view_tab_data_response is not None:
+            result['relatedViewTabDataResponse'] = self.related_view_tab_data_response.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('relatedViewTabDataResponse') is not None:
+            temp_model = GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse()
+            self.related_view_tab_data_response = temp_model.from_map(m['relatedViewTabDataResponse'])
+        return self
+
+
+class GetRelatedViewTabDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetRelatedViewTabDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetRelatedViewTabDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetRelatedViewTabMetaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetRelatedViewTabMetaRequest(TeaModel):
+    def __init__(
+        self,
+        form_code: str = None,
+        view_user_id: str = None,
+    ):
+        # This parameter is required.
+        self.form_code = form_code
+        # This parameter is required.
+        self.view_user_id = view_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.view_user_id is not None:
+            result['viewUserId'] = self.view_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('viewUserId') is not None:
+            self.view_user_id = m.get('viewUserId')
+        return self
+
+
+class GetRelatedViewTabMetaResponseBodyBaseViewTabModels(TeaModel):
+    def __init__(
+        self,
+        form_code: str = None,
+        relate_component_id: str = None,
+        tab_title: str = None,
+    ):
+        self.form_code = form_code
+        self.relate_component_id = relate_component_id
+        self.tab_title = tab_title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.relate_component_id is not None:
+            result['relateComponentId'] = self.relate_component_id
+        if self.tab_title is not None:
+            result['tabTitle'] = self.tab_title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('relateComponentId') is not None:
+            self.relate_component_id = m.get('relateComponentId')
+        if m.get('tabTitle') is not None:
+            self.tab_title = m.get('tabTitle')
+        return self
+
+
+class GetRelatedViewTabMetaResponseBody(TeaModel):
+    def __init__(
+        self,
+        base_view_tab_models: List[GetRelatedViewTabMetaResponseBodyBaseViewTabModels] = None,
+    ):
+        self.base_view_tab_models = base_view_tab_models
+
+    def validate(self):
+        if self.base_view_tab_models:
+            for k in self.base_view_tab_models:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['baseViewTabModels'] = []
+        if self.base_view_tab_models is not None:
+            for k in self.base_view_tab_models:
+                result['baseViewTabModels'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.base_view_tab_models = []
+        if m.get('baseViewTabModels') is not None:
+            for k in m.get('baseViewTabModels'):
+                temp_model = GetRelatedViewTabMetaResponseBodyBaseViewTabModels()
+                self.base_view_tab_models.append(temp_model.from_map(k))
+        return self
+
+
+class GetRelatedViewTabMetaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetRelatedViewTabMetaResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetRelatedViewTabMetaResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetRelationUkSettingHeaders(TeaModel):
     def __init__(
         self,

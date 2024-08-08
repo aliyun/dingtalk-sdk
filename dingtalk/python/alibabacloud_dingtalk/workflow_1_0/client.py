@@ -2070,6 +2070,124 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.GetFieldModifiedHistoryHeaders()
         return await self.get_field_modified_history_with_options_async(request, headers, runtime)
 
+    def get_hand_sign_download_url_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.GetHandSignDownloadUrlRequest,
+        headers: dingtalkworkflow__1__0_models.GetHandSignDownloadUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GetHandSignDownloadUrlResponse:
+        """
+        @summary 获取手写签名的下载链接
+        
+        @param request: GetHandSignDownloadUrlRequest
+        @param headers: GetHandSignDownloadUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetHandSignDownloadUrlResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.hand_sign_token):
+            body['handSignToken'] = request.hand_sign_token
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetHandSignDownloadUrl',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/handSigns/downloadUrls/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GetHandSignDownloadUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_hand_sign_download_url_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.GetHandSignDownloadUrlRequest,
+        headers: dingtalkworkflow__1__0_models.GetHandSignDownloadUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GetHandSignDownloadUrlResponse:
+        """
+        @summary 获取手写签名的下载链接
+        
+        @param request: GetHandSignDownloadUrlRequest
+        @param headers: GetHandSignDownloadUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetHandSignDownloadUrlResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.hand_sign_token):
+            body['handSignToken'] = request.hand_sign_token
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetHandSignDownloadUrl',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/handSigns/downloadUrls/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GetHandSignDownloadUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_hand_sign_download_url(
+        self,
+        request: dingtalkworkflow__1__0_models.GetHandSignDownloadUrlRequest,
+    ) -> dingtalkworkflow__1__0_models.GetHandSignDownloadUrlResponse:
+        """
+        @summary 获取手写签名的下载链接
+        
+        @param request: GetHandSignDownloadUrlRequest
+        @return: GetHandSignDownloadUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GetHandSignDownloadUrlHeaders()
+        return self.get_hand_sign_download_url_with_options(request, headers, runtime)
+
+    async def get_hand_sign_download_url_async(
+        self,
+        request: dingtalkworkflow__1__0_models.GetHandSignDownloadUrlRequest,
+    ) -> dingtalkworkflow__1__0_models.GetHandSignDownloadUrlResponse:
+        """
+        @summary 获取手写签名的下载链接
+        
+        @param request: GetHandSignDownloadUrlRequest
+        @return: GetHandSignDownloadUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GetHandSignDownloadUrlHeaders()
+        return await self.get_hand_sign_download_url_with_options_async(request, headers, runtime)
+
     def get_manage_process_by_staff_id_with_options(
         self,
         request: dingtalkworkflow__1__0_models.GetManageProcessByStaffIdRequest,
@@ -2525,6 +2643,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkflow__1__0_models.GetProcessInstanceHeaders()
         return await self.get_process_instance_with_options_async(request, headers, runtime)
+
+    def get_process_instance_with_extra_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraRequest,
+        headers: dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraResponse:
+        """
+        @summary 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+        
+        @param request: GetProcessInstanceWithExtraRequest
+        @param headers: GetProcessInstanceWithExtraHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetProcessInstanceWithExtraResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.process_instance_id):
+            query['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetProcessInstanceWithExtra',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_process_instance_with_extra_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraRequest,
+        headers: dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraResponse:
+        """
+        @summary 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+        
+        @param request: GetProcessInstanceWithExtraRequest
+        @param headers: GetProcessInstanceWithExtraHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetProcessInstanceWithExtraResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.process_instance_id):
+            query['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetProcessInstanceWithExtra',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_process_instance_with_extra(
+        self,
+        request: dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraRequest,
+    ) -> dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraResponse:
+        """
+        @summary 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+        
+        @param request: GetProcessInstanceWithExtraRequest
+        @return: GetProcessInstanceWithExtraResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraHeaders()
+        return self.get_process_instance_with_extra_with_options(request, headers, runtime)
+
+    async def get_process_instance_with_extra_async(
+        self,
+        request: dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraRequest,
+    ) -> dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraResponse:
+        """
+        @summary 获取审批单详情高级接口，可以返回审批流程中的手写签名密码消息
+        
+        @param request: GetProcessInstanceWithExtraRequest
+        @return: GetProcessInstanceWithExtraResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.GetProcessInstanceWithExtraHeaders()
+        return await self.get_process_instance_with_extra_with_options_async(request, headers, runtime)
 
     def get_schema_and_processconfig_batchlly_with_options(
         self,

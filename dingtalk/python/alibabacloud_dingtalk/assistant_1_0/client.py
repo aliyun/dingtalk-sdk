@@ -1544,6 +1544,128 @@ class Client(OpenApiClient):
         headers = dingtalkassistant__1__0_models.LearnKnowledgeHeaders()
         return await self.learn_knowledge_with_options_async(request, headers, runtime)
 
+    def list_assistant_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.ListAssistantRequest,
+        headers: dingtalkassistant__1__0_models.ListAssistantHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.ListAssistantResponse:
+        """
+        @summary 获取AI助理列表
+        
+        @param request: ListAssistantRequest
+        @param headers: ListAssistantHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAssistantResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListAssistant',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.ListAssistantResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_assistant_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.ListAssistantRequest,
+        headers: dingtalkassistant__1__0_models.ListAssistantHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.ListAssistantResponse:
+        """
+        @summary 获取AI助理列表
+        
+        @param request: ListAssistantRequest
+        @param headers: ListAssistantHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAssistantResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListAssistant',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.ListAssistantResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_assistant(
+        self,
+        request: dingtalkassistant__1__0_models.ListAssistantRequest,
+    ) -> dingtalkassistant__1__0_models.ListAssistantResponse:
+        """
+        @summary 获取AI助理列表
+        
+        @param request: ListAssistantRequest
+        @return: ListAssistantResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.ListAssistantHeaders()
+        return self.list_assistant_with_options(request, headers, runtime)
+
+    async def list_assistant_async(
+        self,
+        request: dingtalkassistant__1__0_models.ListAssistantRequest,
+    ) -> dingtalkassistant__1__0_models.ListAssistantResponse:
+        """
+        @summary 获取AI助理列表
+        
+        @param request: ListAssistantRequest
+        @return: ListAssistantResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.ListAssistantHeaders()
+        return await self.list_assistant_with_options_async(request, headers, runtime)
+
     def list_assistant_message_with_options(
         self,
         thread_id: str,
@@ -1906,6 +2028,124 @@ class Client(OpenApiClient):
         headers = dingtalkassistant__1__0_models.RelearnKnowledgeHeaders()
         return await self.relearn_knowledge_with_options_async(request, headers, runtime)
 
+    def retrieve_assistant_basic_info_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoRequest,
+        headers: dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoResponse:
+        """
+        @summary 查询 AI 助理的基本信息
+        
+        @param request: RetrieveAssistantBasicInfoRequest
+        @param headers: RetrieveAssistantBasicInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RetrieveAssistantBasicInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RetrieveAssistantBasicInfo',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/basicInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def retrieve_assistant_basic_info_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoRequest,
+        headers: dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoResponse:
+        """
+        @summary 查询 AI 助理的基本信息
+        
+        @param request: RetrieveAssistantBasicInfoRequest
+        @param headers: RetrieveAssistantBasicInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RetrieveAssistantBasicInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RetrieveAssistantBasicInfo',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/basicInfo',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def retrieve_assistant_basic_info(
+        self,
+        request: dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoRequest,
+    ) -> dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoResponse:
+        """
+        @summary 查询 AI 助理的基本信息
+        
+        @param request: RetrieveAssistantBasicInfoRequest
+        @return: RetrieveAssistantBasicInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoHeaders()
+        return self.retrieve_assistant_basic_info_with_options(request, headers, runtime)
+
+    async def retrieve_assistant_basic_info_async(
+        self,
+        request: dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoRequest,
+    ) -> dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoResponse:
+        """
+        @summary 查询 AI 助理的基本信息
+        
+        @param request: RetrieveAssistantBasicInfoRequest
+        @return: RetrieveAssistantBasicInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.RetrieveAssistantBasicInfoHeaders()
+        return await self.retrieve_assistant_basic_info_with_options_async(request, headers, runtime)
+
     def retrieve_assistant_message_with_options(
         self,
         thread_id: str,
@@ -2213,3 +2453,125 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkassistant__1__0_models.RetrieveAssistantThreadHeaders()
         return await self.retrieve_assistant_thread_with_options_async(thread_id, headers, runtime)
+
+    def update_assistant_scope_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.UpdateAssistantScopeRequest,
+        headers: dingtalkassistant__1__0_models.UpdateAssistantScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.UpdateAssistantScopeResponse:
+        """
+        @summary 更新 AI 助理使用范围
+        
+        @param request: UpdateAssistantScopeRequest
+        @param headers: UpdateAssistantScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateAssistantScopeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            body['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.sharing):
+            body['sharing'] = request.sharing
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateAssistantScope',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/scope',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='any'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.UpdateAssistantScopeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_assistant_scope_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.UpdateAssistantScopeRequest,
+        headers: dingtalkassistant__1__0_models.UpdateAssistantScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.UpdateAssistantScopeResponse:
+        """
+        @summary 更新 AI 助理使用范围
+        
+        @param request: UpdateAssistantScopeRequest
+        @param headers: UpdateAssistantScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateAssistantScopeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            body['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.sharing):
+            body['sharing'] = request.sharing
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateAssistantScope',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/scope',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='any'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.UpdateAssistantScopeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_assistant_scope(
+        self,
+        request: dingtalkassistant__1__0_models.UpdateAssistantScopeRequest,
+    ) -> dingtalkassistant__1__0_models.UpdateAssistantScopeResponse:
+        """
+        @summary 更新 AI 助理使用范围
+        
+        @param request: UpdateAssistantScopeRequest
+        @return: UpdateAssistantScopeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.UpdateAssistantScopeHeaders()
+        return self.update_assistant_scope_with_options(request, headers, runtime)
+
+    async def update_assistant_scope_async(
+        self,
+        request: dingtalkassistant__1__0_models.UpdateAssistantScopeRequest,
+    ) -> dingtalkassistant__1__0_models.UpdateAssistantScopeResponse:
+        """
+        @summary 更新 AI 助理使用范围
+        
+        @param request: UpdateAssistantScopeRequest
+        @return: UpdateAssistantScopeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.UpdateAssistantScopeHeaders()
+        return await self.update_assistant_scope_with_options_async(request, headers, runtime)

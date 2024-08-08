@@ -5434,6 +5434,258 @@ class Client(OpenApiClient):
         headers = dingtalkcrm__1__0_models.GetOfficialAccountOTOMessageResultHeaders()
         return await self.get_official_account_otomessage_result_with_options_async(request, headers, runtime)
 
+    def get_related_view_tab_data_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetRelatedViewTabDataRequest,
+        headers: dingtalkcrm__1__0_models.GetRelatedViewTabDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetRelatedViewTabDataResponse:
+        """
+        @summary 获取某个和oa关联的表单的具体数据
+        
+        @param request: GetRelatedViewTabDataRequest
+        @param headers: GetRelatedViewTabDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRelatedViewTabDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.related_field):
+            body['relatedField'] = request.related_field
+        if not UtilClient.is_unset(request.related_inst_id):
+            body['relatedInstId'] = request.related_inst_id
+        if not UtilClient.is_unset(request.view_user_id):
+            body['viewUserId'] = request.view_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetRelatedViewTabData',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/formRelatedTabs/datas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetRelatedViewTabDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_related_view_tab_data_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetRelatedViewTabDataRequest,
+        headers: dingtalkcrm__1__0_models.GetRelatedViewTabDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetRelatedViewTabDataResponse:
+        """
+        @summary 获取某个和oa关联的表单的具体数据
+        
+        @param request: GetRelatedViewTabDataRequest
+        @param headers: GetRelatedViewTabDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRelatedViewTabDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.related_field):
+            body['relatedField'] = request.related_field
+        if not UtilClient.is_unset(request.related_inst_id):
+            body['relatedInstId'] = request.related_inst_id
+        if not UtilClient.is_unset(request.view_user_id):
+            body['viewUserId'] = request.view_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetRelatedViewTabData',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/formRelatedTabs/datas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetRelatedViewTabDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_related_view_tab_data(
+        self,
+        request: dingtalkcrm__1__0_models.GetRelatedViewTabDataRequest,
+    ) -> dingtalkcrm__1__0_models.GetRelatedViewTabDataResponse:
+        """
+        @summary 获取某个和oa关联的表单的具体数据
+        
+        @param request: GetRelatedViewTabDataRequest
+        @return: GetRelatedViewTabDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetRelatedViewTabDataHeaders()
+        return self.get_related_view_tab_data_with_options(request, headers, runtime)
+
+    async def get_related_view_tab_data_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetRelatedViewTabDataRequest,
+    ) -> dingtalkcrm__1__0_models.GetRelatedViewTabDataResponse:
+        """
+        @summary 获取某个和oa关联的表单的具体数据
+        
+        @param request: GetRelatedViewTabDataRequest
+        @return: GetRelatedViewTabDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetRelatedViewTabDataHeaders()
+        return await self.get_related_view_tab_data_with_options_async(request, headers, runtime)
+
+    def get_related_view_tab_meta_with_options(
+        self,
+        request: dingtalkcrm__1__0_models.GetRelatedViewTabMetaRequest,
+        headers: dingtalkcrm__1__0_models.GetRelatedViewTabMetaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetRelatedViewTabMetaResponse:
+        """
+        @summary 获取和oa关联的表单tab信息
+        
+        @param request: GetRelatedViewTabMetaRequest
+        @param headers: GetRelatedViewTabMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRelatedViewTabMetaResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.view_user_id):
+            body['viewUserId'] = request.view_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetRelatedViewTabMeta',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/formRelatedTabs/meta/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetRelatedViewTabMetaResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_related_view_tab_meta_with_options_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetRelatedViewTabMetaRequest,
+        headers: dingtalkcrm__1__0_models.GetRelatedViewTabMetaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcrm__1__0_models.GetRelatedViewTabMetaResponse:
+        """
+        @summary 获取和oa关联的表单tab信息
+        
+        @param request: GetRelatedViewTabMetaRequest
+        @param headers: GetRelatedViewTabMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRelatedViewTabMetaResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_code):
+            body['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.view_user_id):
+            body['viewUserId'] = request.view_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetRelatedViewTabMeta',
+            version='crm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/crm/formRelatedTabs/meta/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcrm__1__0_models.GetRelatedViewTabMetaResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_related_view_tab_meta(
+        self,
+        request: dingtalkcrm__1__0_models.GetRelatedViewTabMetaRequest,
+    ) -> dingtalkcrm__1__0_models.GetRelatedViewTabMetaResponse:
+        """
+        @summary 获取和oa关联的表单tab信息
+        
+        @param request: GetRelatedViewTabMetaRequest
+        @return: GetRelatedViewTabMetaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetRelatedViewTabMetaHeaders()
+        return self.get_related_view_tab_meta_with_options(request, headers, runtime)
+
+    async def get_related_view_tab_meta_async(
+        self,
+        request: dingtalkcrm__1__0_models.GetRelatedViewTabMetaRequest,
+    ) -> dingtalkcrm__1__0_models.GetRelatedViewTabMetaResponse:
+        """
+        @summary 获取和oa关联的表单tab信息
+        
+        @param request: GetRelatedViewTabMetaRequest
+        @return: GetRelatedViewTabMetaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcrm__1__0_models.GetRelatedViewTabMetaHeaders()
+        return await self.get_related_view_tab_meta_with_options_async(request, headers, runtime)
+
     def get_relation_uk_setting_with_options(
         self,
         request: dingtalkcrm__1__0_models.GetRelationUkSettingRequest,
