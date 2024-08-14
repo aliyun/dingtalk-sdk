@@ -18,9 +18,15 @@ class QueryGeneralDataServiceResponseBody extends Model
      * @var metaList[]
      */
     public $metaList;
+
+    /**
+     * @var string
+     */
+    public $total;
     protected $_name = [
         'dataList' => 'dataList',
         'metaList' => 'metaList',
+        'total'    => 'total',
     ];
 
     public function validate()
@@ -41,6 +47,9 @@ class QueryGeneralDataServiceResponseBody extends Model
                     $res['metaList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->total) {
+            $res['total'] = $this->total;
         }
 
         return $res;
@@ -67,6 +76,9 @@ class QueryGeneralDataServiceResponseBody extends Model
                     $model->metaList[$n++] = null !== $item ? metaList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['total'])) {
+            $model->total = $map['total'];
         }
 
         return $model;

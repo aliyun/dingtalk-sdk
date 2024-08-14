@@ -3183,6 +3183,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->pageSize)) {
             $query['pageSize'] = $request->pageSize;
         }
+        if (!Utils::isUnset($request->returnTotal)) {
+            $query['returnTotal'] = $request->returnTotal;
+        }
         if (!Utils::isUnset($request->serviceId)) {
             $query['serviceId'] = $request->serviceId;
         }
@@ -3260,6 +3263,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->pageSize)) {
             $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->returnTotal)) {
+            $body['returnTotal'] = $request->returnTotal;
         }
         if (!Utils::isUnset($request->serviceId)) {
             $body['serviceId'] = $request->serviceId;

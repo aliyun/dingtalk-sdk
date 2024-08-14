@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetFileUploadInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetPermissionInheritanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetPermissionInheritanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetPermissionInheritanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetPermissionShareScopeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetPermissionShareScopeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetPermissionShareScopeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsResponse;
@@ -41,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SearchWorkspacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SetPermissionInheritanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SetPermissionInheritanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SetPermissionInheritanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SetPermissionShareScopeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SetPermissionShareScopeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\SetPermissionShareScopeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\UpdatePermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\UpdatePermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\UpdatePermissionResponse;
@@ -395,6 +401,65 @@ class Dingtalk extends OpenApiClient
         $headers = new GetPermissionInheritanceHeaders([]);
 
         return $this->getPermissionInheritanceWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取分享范围
+     *  *
+     * @param string                         $dentryUuid
+     * @param GetPermissionShareScopeRequest $request    GetPermissionShareScopeRequest
+     * @param GetPermissionShareScopeHeaders $headers    GetPermissionShareScopeHeaders
+     * @param RuntimeOptions                 $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return GetPermissionShareScopeResponse GetPermissionShareScopeResponse
+     */
+    public function getPermissionShareScopeWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetPermissionShareScope',
+            'version'     => 'storage_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/storage/spaces/dentries/' . $dentryUuid . '/permissions/scopes',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetPermissionShareScopeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取分享范围
+     *  *
+     * @param string                         $dentryUuid
+     * @param GetPermissionShareScopeRequest $request    GetPermissionShareScopeRequest
+     *
+     * @return GetPermissionShareScopeResponse GetPermissionShareScopeResponse
+     */
+    public function getPermissionShareScope($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPermissionShareScopeHeaders([]);
+
+        return $this->getPermissionShareScopeWithOptions($dentryUuid, $request, $headers, $runtime);
     }
 
     /**
@@ -840,6 +905,73 @@ class Dingtalk extends OpenApiClient
         $headers = new SetPermissionInheritanceHeaders([]);
 
         return $this->setPermissionInheritanceWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 设置分享范围
+     *  *
+     * @param string                         $dentryUuid
+     * @param SetPermissionShareScopeRequest $request    SetPermissionShareScopeRequest
+     * @param SetPermissionShareScopeHeaders $headers    SetPermissionShareScopeHeaders
+     * @param RuntimeOptions                 $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return SetPermissionShareScopeResponse SetPermissionShareScopeResponse
+     */
+    public function setPermissionShareScopeWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->scope)) {
+            $body['scope'] = $request->scope;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetPermissionShareScope',
+            'version'     => 'storage_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/storage/spaces/dentries/' . $dentryUuid . '/permissions/scopes',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetPermissionShareScopeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置分享范围
+     *  *
+     * @param string                         $dentryUuid
+     * @param SetPermissionShareScopeRequest $request    SetPermissionShareScopeRequest
+     *
+     * @return SetPermissionShareScopeResponse SetPermissionShareScopeResponse
+     */
+    public function setPermissionShareScope($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetPermissionShareScopeHeaders([]);
+
+        return $this->setPermissionShareScopeWithOptions($dentryUuid, $request, $headers, $runtime);
     }
 
     /**

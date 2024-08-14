@@ -39,6 +39,11 @@ class QueryGeneralDataServiceRequest extends Model
     public $pageSize;
 
     /**
+     * @var bool
+     */
+    public $returnTotal;
+
+    /**
      * @description This parameter is required.
      *
      * @example API-7fa754fd-f53e-46ee-9b77-898aa6eb590c
@@ -65,13 +70,14 @@ class QueryGeneralDataServiceRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'deptId'     => 'deptId',
-        'endDate'    => 'endDate',
-        'pageNumber' => 'pageNumber',
-        'pageSize'   => 'pageSize',
-        'serviceId'  => 'serviceId',
-        'startDate'  => 'startDate',
-        'userId'     => 'userId',
+        'deptId'      => 'deptId',
+        'endDate'     => 'endDate',
+        'pageNumber'  => 'pageNumber',
+        'pageSize'    => 'pageSize',
+        'returnTotal' => 'returnTotal',
+        'serviceId'   => 'serviceId',
+        'startDate'   => 'startDate',
+        'userId'      => 'userId',
     ];
 
     public function validate()
@@ -92,6 +98,9 @@ class QueryGeneralDataServiceRequest extends Model
         }
         if (null !== $this->pageSize) {
             $res['pageSize'] = $this->pageSize;
+        }
+        if (null !== $this->returnTotal) {
+            $res['returnTotal'] = $this->returnTotal;
         }
         if (null !== $this->serviceId) {
             $res['serviceId'] = $this->serviceId;
@@ -125,6 +134,9 @@ class QueryGeneralDataServiceRequest extends Model
         }
         if (isset($map['pageSize'])) {
             $model->pageSize = $map['pageSize'];
+        }
+        if (isset($map['returnTotal'])) {
+            $model->returnTotal = $map['returnTotal'];
         }
         if (isset($map['serviceId'])) {
             $model->serviceId = $map['serviceId'];

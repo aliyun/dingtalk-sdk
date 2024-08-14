@@ -81,6 +81,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vim_2_0\\": "src/im_2_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vimpaas_1_0\\": "src/impaas_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vindustry_1_0\\": "src/industry_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vjobs_1_0\\": "src/jobs_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vjzcrm_1_0\\": "src/jzcrm_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vlink_1_0\\": "src/link_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vlive_activities_1_0\\": "src/live_activities_1_0/",

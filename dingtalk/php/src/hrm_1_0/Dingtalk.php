@@ -116,6 +116,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskInitResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SolutionTaskSaveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncSolutionStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncSolutionStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncSolutionStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateResponse;
@@ -2641,6 +2644,75 @@ class Dingtalk extends OpenApiClient
         $headers = new SolutionTaskSaveHeaders([]);
 
         return $this->solutionTaskSaveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 同步解决方案状态
+     *  *
+     * @param SyncSolutionStatusRequest $request SyncSolutionStatusRequest
+     * @param SyncSolutionStatusHeaders $headers SyncSolutionStatusHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SyncSolutionStatusResponse SyncSolutionStatusResponse
+     */
+    public function syncSolutionStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->solutionStatus)) {
+            $body['solutionStatus'] = $request->solutionStatus;
+        }
+        if (!Utils::isUnset($request->solutionType)) {
+            $body['solutionType'] = $request->solutionType;
+        }
+        if (!Utils::isUnset($request->tenantId)) {
+            $body['tenantId'] = $request->tenantId;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SyncSolutionStatus',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/solutions/statuses/sync',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SyncSolutionStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 同步解决方案状态
+     *  *
+     * @param SyncSolutionStatusRequest $request SyncSolutionStatusRequest
+     *
+     * @return SyncSolutionStatusResponse SyncSolutionStatusResponse
+     */
+    public function syncSolutionStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncSolutionStatusHeaders([]);
+
+        return $this->syncSolutionStatusWithOptions($request, $headers, $runtime);
     }
 
     /**
