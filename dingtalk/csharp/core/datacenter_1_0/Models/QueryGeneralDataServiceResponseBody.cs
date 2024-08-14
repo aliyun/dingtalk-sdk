@@ -47,6 +47,10 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 
         }
 
+        [NameInMap("total")]
+        [Validation(Required=false)]
+        public string Total { get; set; }
+
     }
 
 }

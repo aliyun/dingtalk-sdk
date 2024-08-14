@@ -28,6 +28,10 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         [Validation(Required=false)]
         public long? PageSize { get; set; }
 
+        [NameInMap("returnTotal")]
+        [Validation(Required=false)]
+        public bool? ReturnTotal { get; set; }
+
         /// <summary>
         /// This parameter is required.
         /// </summary>

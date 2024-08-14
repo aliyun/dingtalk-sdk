@@ -705,6 +705,122 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0
         }
 
         /**
+         * @summary 获取分享范围
+         *
+         * @param request GetPermissionShareScopeRequest
+         * @param headers GetPermissionShareScopeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetPermissionShareScopeResponse
+         */
+        public GetPermissionShareScopeResponse GetPermissionShareScopeWithOptions(string dentryUuid, GetPermissionShareScopeRequest request, GetPermissionShareScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPermissionShareScope",
+                Version = "storage_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/storage/spaces/dentries/" + dentryUuid + "/permissions/scopes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPermissionShareScopeResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取分享范围
+         *
+         * @param request GetPermissionShareScopeRequest
+         * @param headers GetPermissionShareScopeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetPermissionShareScopeResponse
+         */
+        public async Task<GetPermissionShareScopeResponse> GetPermissionShareScopeWithOptionsAsync(string dentryUuid, GetPermissionShareScopeRequest request, GetPermissionShareScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPermissionShareScope",
+                Version = "storage_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/storage/spaces/dentries/" + dentryUuid + "/permissions/scopes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPermissionShareScopeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取分享范围
+         *
+         * @param request GetPermissionShareScopeRequest
+         * @return GetPermissionShareScopeResponse
+         */
+        public GetPermissionShareScopeResponse GetPermissionShareScope(string dentryUuid, GetPermissionShareScopeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPermissionShareScopeHeaders headers = new GetPermissionShareScopeHeaders();
+            return GetPermissionShareScopeWithOptions(dentryUuid, request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取分享范围
+         *
+         * @param request GetPermissionShareScopeRequest
+         * @return GetPermissionShareScopeResponse
+         */
+        public async Task<GetPermissionShareScopeResponse> GetPermissionShareScopeAsync(string dentryUuid, GetPermissionShareScopeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPermissionShareScopeHeaders headers = new GetPermissionShareScopeHeaders();
+            return await GetPermissionShareScopeWithOptionsAsync(dentryUuid, request, headers, runtime);
+        }
+
+        /**
          * @summary 获取权限列表
          *
          * @param request ListPermissionsRequest
@@ -1618,6 +1734,142 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SetPermissionInheritanceHeaders headers = new SetPermissionInheritanceHeaders();
             return await SetPermissionInheritanceWithOptionsAsync(dentryUuid, request, headers, runtime);
+        }
+
+        /**
+         * @summary 设置分享范围
+         *
+         * @param request SetPermissionShareScopeRequest
+         * @param headers SetPermissionShareScopeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SetPermissionShareScopeResponse
+         */
+        public SetPermissionShareScopeResponse SetPermissionShareScopeWithOptions(string dentryUuid, SetPermissionShareScopeRequest request, SetPermissionShareScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Option))
+            {
+                body["option"] = request.Option;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
+            {
+                body["scope"] = request.Scope;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetPermissionShareScope",
+                Version = "storage_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/storage/spaces/dentries/" + dentryUuid + "/permissions/scopes",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetPermissionShareScopeResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 设置分享范围
+         *
+         * @param request SetPermissionShareScopeRequest
+         * @param headers SetPermissionShareScopeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SetPermissionShareScopeResponse
+         */
+        public async Task<SetPermissionShareScopeResponse> SetPermissionShareScopeWithOptionsAsync(string dentryUuid, SetPermissionShareScopeRequest request, SetPermissionShareScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Option))
+            {
+                body["option"] = request.Option;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
+            {
+                body["scope"] = request.Scope;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetPermissionShareScope",
+                Version = "storage_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/storage/spaces/dentries/" + dentryUuid + "/permissions/scopes",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetPermissionShareScopeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 设置分享范围
+         *
+         * @param request SetPermissionShareScopeRequest
+         * @return SetPermissionShareScopeResponse
+         */
+        public SetPermissionShareScopeResponse SetPermissionShareScope(string dentryUuid, SetPermissionShareScopeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetPermissionShareScopeHeaders headers = new SetPermissionShareScopeHeaders();
+            return SetPermissionShareScopeWithOptions(dentryUuid, request, headers, runtime);
+        }
+
+        /**
+         * @summary 设置分享范围
+         *
+         * @param request SetPermissionShareScopeRequest
+         * @return SetPermissionShareScopeResponse
+         */
+        public async Task<SetPermissionShareScopeResponse> SetPermissionShareScopeAsync(string dentryUuid, SetPermissionShareScopeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetPermissionShareScopeHeaders headers = new SetPermissionShareScopeHeaders();
+            return await SetPermissionShareScopeWithOptionsAsync(dentryUuid, request, headers, runtime);
         }
 
         /**

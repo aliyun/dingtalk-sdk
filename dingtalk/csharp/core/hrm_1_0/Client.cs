@@ -5314,6 +5314,154 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
+         * @summary 同步解决方案状态
+         *
+         * @param request SyncSolutionStatusRequest
+         * @param headers SyncSolutionStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SyncSolutionStatusResponse
+         */
+        public SyncSolutionStatusResponse SyncSolutionStatusWithOptions(SyncSolutionStatusRequest request, SyncSolutionStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SolutionStatus))
+            {
+                body["solutionStatus"] = request.SolutionStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SolutionType))
+            {
+                body["solutionType"] = request.SolutionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantId))
+            {
+                body["tenantId"] = request.TenantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncSolutionStatus",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/solutions/statuses/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncSolutionStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 同步解决方案状态
+         *
+         * @param request SyncSolutionStatusRequest
+         * @param headers SyncSolutionStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SyncSolutionStatusResponse
+         */
+        public async Task<SyncSolutionStatusResponse> SyncSolutionStatusWithOptionsAsync(SyncSolutionStatusRequest request, SyncSolutionStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SolutionStatus))
+            {
+                body["solutionStatus"] = request.SolutionStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SolutionType))
+            {
+                body["solutionType"] = request.SolutionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TenantId))
+            {
+                body["tenantId"] = request.TenantId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncSolutionStatus",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/solutions/statuses/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncSolutionStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 同步解决方案状态
+         *
+         * @param request SyncSolutionStatusRequest
+         * @return SyncSolutionStatusResponse
+         */
+        public SyncSolutionStatusResponse SyncSolutionStatus(SyncSolutionStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncSolutionStatusHeaders headers = new SyncSolutionStatusHeaders();
+            return SyncSolutionStatusWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 同步解决方案状态
+         *
+         * @param request SyncSolutionStatusRequest
+         * @return SyncSolutionStatusResponse
+         */
+        public async Task<SyncSolutionStatusResponse> SyncSolutionStatusAsync(SyncSolutionStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncSolutionStatusHeaders headers = new SyncSolutionStatusHeaders();
+            return await SyncSolutionStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 同步解决方案任务模版
          *
          * @param request SyncTaskTemplateRequest
