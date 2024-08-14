@@ -1,0 +1,1 @@
+module.exports = require('./dist').jobs_1_0;

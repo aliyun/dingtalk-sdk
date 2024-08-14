@@ -4511,6 +4511,139 @@ export class SolutionTaskSaveResponse extends $tea.Model {
   }
 }
 
+export class SyncSolutionStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncSolutionStatusRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
+  bizId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * start
+   */
+  solutionStatus?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * onboarding_v2
+   */
+  solutionType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12
+   */
+  tenantId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      bizId: 'bizId',
+      solutionStatus: 'solutionStatus',
+      solutionType: 'solutionType',
+      tenantId: 'tenantId',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizId: 'string',
+      solutionStatus: 'string',
+      solutionType: 'string',
+      tenantId: 'number',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncSolutionStatusResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SyncSolutionStatusResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SyncSolutionStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SyncSolutionStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SyncTaskTemplateHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10036,6 +10169,76 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SolutionTaskSaveHeaders({ });
     return await this.solutionTaskSaveWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 同步解决方案状态
+   * 
+   * @param request - SyncSolutionStatusRequest
+   * @param headers - SyncSolutionStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SyncSolutionStatusResponse
+   */
+  async syncSolutionStatusWithOptions(request: SyncSolutionStatusRequest, headers: SyncSolutionStatusHeaders, runtime: $Util.RuntimeOptions): Promise<SyncSolutionStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizId)) {
+      body["bizId"] = request.bizId;
+    }
+
+    if (!Util.isUnset(request.solutionStatus)) {
+      body["solutionStatus"] = request.solutionStatus;
+    }
+
+    if (!Util.isUnset(request.solutionType)) {
+      body["solutionType"] = request.solutionType;
+    }
+
+    if (!Util.isUnset(request.tenantId)) {
+      body["tenantId"] = request.tenantId;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SyncSolutionStatus",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/solutions/statuses/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncSolutionStatusResponse>(await this.execute(params, req, runtime), new SyncSolutionStatusResponse({}));
+  }
+
+  /**
+   * 同步解决方案状态
+   * 
+   * @param request - SyncSolutionStatusRequest
+   * @returns SyncSolutionStatusResponse
+   */
+  async syncSolutionStatus(request: SyncSolutionStatusRequest): Promise<SyncSolutionStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncSolutionStatusHeaders({ });
+    return await this.syncSolutionStatusWithOptions(request, headers, runtime);
   }
 
   /**

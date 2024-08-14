@@ -4773,6 +4773,7 @@ export class QueryGeneralDataServiceRequest extends $tea.Model {
    * 10
    */
   pageSize?: number;
+  returnTotal?: boolean;
   /**
    * @remarks
    * This parameter is required.
@@ -4803,6 +4804,7 @@ export class QueryGeneralDataServiceRequest extends $tea.Model {
       endDate: 'endDate',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
+      returnTotal: 'returnTotal',
       serviceId: 'serviceId',
       startDate: 'startDate',
       userId: 'userId',
@@ -4815,6 +4817,7 @@ export class QueryGeneralDataServiceRequest extends $tea.Model {
       endDate: 'string',
       pageNumber: 'number',
       pageSize: 'number',
+      returnTotal: 'boolean',
       serviceId: 'string',
       startDate: 'string',
       userId: 'string',
@@ -4829,10 +4832,12 @@ export class QueryGeneralDataServiceRequest extends $tea.Model {
 export class QueryGeneralDataServiceResponseBody extends $tea.Model {
   dataList?: { [key: string]: any }[];
   metaList?: QueryGeneralDataServiceResponseBodyMetaList[];
+  total?: string;
   static names(): { [key: string]: string } {
     return {
       dataList: 'dataList',
       metaList: 'metaList',
+      total: 'total',
     };
   }
 
@@ -4840,6 +4845,7 @@ export class QueryGeneralDataServiceResponseBody extends $tea.Model {
     return {
       dataList: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'any' } },
       metaList: { 'type': 'array', 'itemType': QueryGeneralDataServiceResponseBodyMetaList },
+      total: 'string',
     };
   }
 
@@ -4913,6 +4919,7 @@ export class QueryGeneralDataServiceBatchRequest extends $tea.Model {
    * This parameter is required.
    */
   pageSize?: number;
+  returnTotal?: boolean;
   /**
    * @remarks
    * This parameter is required.
@@ -4932,6 +4939,7 @@ export class QueryGeneralDataServiceBatchRequest extends $tea.Model {
       filters: 'filters',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
+      returnTotal: 'returnTotal',
       serviceId: 'serviceId',
       startDate: 'startDate',
       userId: 'userId',
@@ -4946,6 +4954,7 @@ export class QueryGeneralDataServiceBatchRequest extends $tea.Model {
       filters: { 'type': 'array', 'itemType': QueryGeneralDataServiceBatchRequestFilters },
       pageNumber: 'number',
       pageSize: 'number',
+      returnTotal: 'boolean',
       serviceId: 'string',
       startDate: 'string',
       userId: 'string',
@@ -4961,10 +4970,12 @@ export class QueryGeneralDataServiceBatchRequest extends $tea.Model {
 export class QueryGeneralDataServiceBatchResponseBody extends $tea.Model {
   dataList?: { [key: string]: any }[];
   metaList?: QueryGeneralDataServiceBatchResponseBodyMetaList[];
+  total?: number;
   static names(): { [key: string]: string } {
     return {
       dataList: 'dataList',
       metaList: 'metaList',
+      total: 'total',
     };
   }
 
@@ -4972,6 +4983,7 @@ export class QueryGeneralDataServiceBatchResponseBody extends $tea.Model {
     return {
       dataList: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'any' } },
       metaList: { 'type': 'array', 'itemType': QueryGeneralDataServiceBatchResponseBodyMetaList },
+      total: 'number',
     };
   }
 
@@ -16946,6 +16958,10 @@ export default class Client extends OpenApi {
       query["pageSize"] = request.pageSize;
     }
 
+    if (!Util.isUnset(request.returnTotal)) {
+      query["returnTotal"] = request.returnTotal;
+    }
+
     if (!Util.isUnset(request.serviceId)) {
       query["serviceId"] = request.serviceId;
     }
@@ -17026,6 +17042,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.pageSize)) {
       body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.returnTotal)) {
+      body["returnTotal"] = request.returnTotal;
     }
 
     if (!Util.isUnset(request.serviceId)) {

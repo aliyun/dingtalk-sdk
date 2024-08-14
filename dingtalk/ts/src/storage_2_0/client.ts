@@ -610,6 +610,102 @@ export class GetPermissionInheritanceResponse extends $tea.Model {
   }
 }
 
+export class GetPermissionShareScopeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPermissionShareScopeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPermissionShareScopeResponseBody extends $tea.Model {
+  /**
+   * @example
+   * ORG_READ
+   */
+  scope?: string;
+  static names(): { [key: string]: string } {
+    return {
+      scope: 'scope',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      scope: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetPermissionShareScopeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetPermissionShareScopeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetPermissionShareScopeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListPermissionsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1355,6 +1451,115 @@ export class SetPermissionInheritanceResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: SetPermissionInheritanceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetPermissionShareScopeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetPermissionShareScopeRequest extends $tea.Model {
+  option?: SetPermissionShareScopeRequestOption;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * ORG_READ
+   */
+  scope?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      option: 'option',
+      scope: 'scope',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      option: SetPermissionShareScopeRequestOption,
+      scope: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetPermissionShareScopeResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SetPermissionShareScopeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SetPermissionShareScopeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SetPermissionShareScopeResponseBody,
     };
   }
 
@@ -2479,6 +2684,29 @@ export class SearchWorkspacesResponseBodyItems extends $tea.Model {
   }
 }
 
+export class SetPermissionShareScopeRequestOption extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
+  canSearch?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      canSearch: 'canSearch',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      canSearch: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdatePermissionRequestMembers extends $tea.Model {
   /**
    * @example
@@ -2876,6 +3104,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetPermissionInheritanceHeaders({ });
     return await this.getPermissionInheritanceWithOptions(dentryUuid, request, headers, runtime);
+  }
+
+  /**
+   * 获取分享范围
+   * 
+   * @param request - GetPermissionShareScopeRequest
+   * @param headers - GetPermissionShareScopeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetPermissionShareScopeResponse
+   */
+  async getPermissionShareScopeWithOptions(dentryUuid: string, request: GetPermissionShareScopeRequest, headers: GetPermissionShareScopeHeaders, runtime: $Util.RuntimeOptions): Promise<GetPermissionShareScopeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetPermissionShareScope",
+      version: "storage_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/storage/spaces/dentries/${dentryUuid}/permissions/scopes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPermissionShareScopeResponse>(await this.execute(params, req, runtime), new GetPermissionShareScopeResponse({}));
+  }
+
+  /**
+   * 获取分享范围
+   * 
+   * @param request - GetPermissionShareScopeRequest
+   * @returns GetPermissionShareScopeResponse
+   */
+  async getPermissionShareScope(dentryUuid: string, request: GetPermissionShareScopeRequest): Promise<GetPermissionShareScopeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetPermissionShareScopeHeaders({ });
+    return await this.getPermissionShareScopeWithOptions(dentryUuid, request, headers, runtime);
   }
 
   /**
@@ -3306,6 +3588,70 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SetPermissionInheritanceHeaders({ });
     return await this.setPermissionInheritanceWithOptions(dentryUuid, request, headers, runtime);
+  }
+
+  /**
+   * 设置分享范围
+   * 
+   * @param request - SetPermissionShareScopeRequest
+   * @param headers - SetPermissionShareScopeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SetPermissionShareScopeResponse
+   */
+  async setPermissionShareScopeWithOptions(dentryUuid: string, request: SetPermissionShareScopeRequest, headers: SetPermissionShareScopeHeaders, runtime: $Util.RuntimeOptions): Promise<SetPermissionShareScopeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    if (!Util.isUnset(request.scope)) {
+      body["scope"] = request.scope;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SetPermissionShareScope",
+      version: "storage_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/storage/spaces/dentries/${dentryUuid}/permissions/scopes`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SetPermissionShareScopeResponse>(await this.execute(params, req, runtime), new SetPermissionShareScopeResponse({}));
+  }
+
+  /**
+   * 设置分享范围
+   * 
+   * @param request - SetPermissionShareScopeRequest
+   * @returns SetPermissionShareScopeResponse
+   */
+  async setPermissionShareScope(dentryUuid: string, request: SetPermissionShareScopeRequest): Promise<SetPermissionShareScopeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SetPermissionShareScopeHeaders({ });
+    return await this.setPermissionShareScopeWithOptions(dentryUuid, request, headers, runtime);
   }
 
   /**

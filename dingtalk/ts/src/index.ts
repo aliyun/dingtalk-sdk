@@ -59,6 +59,7 @@ import * as im_1_0 from './im_1_0/client';
 import * as im_2_0 from './im_2_0/client';
 import * as impaas_1_0 from './impaas_1_0/client';
 import * as industry_1_0 from './industry_1_0/client';
+import * as jobs_1_0 from './jobs_1_0/client';
 import * as jzcrm_1_0 from './jzcrm_1_0/client';
 import * as link_1_0 from './link_1_0/client';
 import * as live_1_0 from './live_1_0/client';
@@ -167,6 +168,7 @@ export = {
   im_2_0,
   impaas_1_0,
   industry_1_0,
+  jobs_1_0,
   jzcrm_1_0,
   link_1_0,
   live_1_0,
