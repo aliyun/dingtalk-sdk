@@ -10,6 +10,9 @@ public class QueryGeneralDataServiceResponseBody extends TeaModel {
     @NameInMap("metaList")
     public java.util.List<QueryGeneralDataServiceResponseBodyMetaList> metaList;
 
+    @NameInMap("total")
+    public String total;
+
     public static QueryGeneralDataServiceResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryGeneralDataServiceResponseBody self = new QueryGeneralDataServiceResponseBody();
         return TeaModel.build(map, self);
@@ -29,6 +32,14 @@ public class QueryGeneralDataServiceResponseBody extends TeaModel {
     }
     public java.util.List<QueryGeneralDataServiceResponseBodyMetaList> getMetaList() {
         return this.metaList;
+    }
+
+    public QueryGeneralDataServiceResponseBody setTotal(String total) {
+        this.total = total;
+        return this;
+    }
+    public String getTotal() {
+        return this.total;
     }
 
     public static class QueryGeneralDataServiceResponseBodyMetaList extends TeaModel {

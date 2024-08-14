@@ -34,6 +34,9 @@ public class QueryGeneralDataServiceRequest extends TeaModel {
     @NameInMap("pageSize")
     public Long pageSize;
 
+    @NameInMap("returnTotal")
+    public Boolean returnTotal;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -96,6 +99,14 @@ public class QueryGeneralDataServiceRequest extends TeaModel {
     }
     public Long getPageSize() {
         return this.pageSize;
+    }
+
+    public QueryGeneralDataServiceRequest setReturnTotal(Boolean returnTotal) {
+        this.returnTotal = returnTotal;
+        return this;
+    }
+    public Boolean getReturnTotal() {
+        return this.returnTotal;
     }
 
     public QueryGeneralDataServiceRequest setServiceId(String serviceId) {
