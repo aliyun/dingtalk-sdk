@@ -672,6 +672,124 @@ class Client(OpenApiClient):
         headers = dingtalkstorage__2__0_models.GetPermissionInheritanceHeaders()
         return await self.get_permission_inheritance_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def get_permission_share_scope_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkstorage__2__0_models.GetPermissionShareScopeRequest,
+        headers: dingtalkstorage__2__0_models.GetPermissionShareScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.GetPermissionShareScopeResponse:
+        """
+        @summary 获取分享范围
+        
+        @param request: GetPermissionShareScopeRequest
+        @param headers: GetPermissionShareScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPermissionShareScopeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetPermissionShareScope',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/spaces/dentries/{dentry_uuid}/permissions/scopes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.GetPermissionShareScopeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_permission_share_scope_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkstorage__2__0_models.GetPermissionShareScopeRequest,
+        headers: dingtalkstorage__2__0_models.GetPermissionShareScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.GetPermissionShareScopeResponse:
+        """
+        @summary 获取分享范围
+        
+        @param request: GetPermissionShareScopeRequest
+        @param headers: GetPermissionShareScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPermissionShareScopeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetPermissionShareScope',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/spaces/dentries/{dentry_uuid}/permissions/scopes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.GetPermissionShareScopeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_permission_share_scope(
+        self,
+        dentry_uuid: str,
+        request: dingtalkstorage__2__0_models.GetPermissionShareScopeRequest,
+    ) -> dingtalkstorage__2__0_models.GetPermissionShareScopeResponse:
+        """
+        @summary 获取分享范围
+        
+        @param request: GetPermissionShareScopeRequest
+        @return: GetPermissionShareScopeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.GetPermissionShareScopeHeaders()
+        return self.get_permission_share_scope_with_options(dentry_uuid, request, headers, runtime)
+
+    async def get_permission_share_scope_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkstorage__2__0_models.GetPermissionShareScopeRequest,
+    ) -> dingtalkstorage__2__0_models.GetPermissionShareScopeResponse:
+        """
+        @summary 获取分享范围
+        
+        @param request: GetPermissionShareScopeRequest
+        @return: GetPermissionShareScopeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.GetPermissionShareScopeHeaders()
+        return await self.get_permission_share_scope_with_options_async(dentry_uuid, request, headers, runtime)
+
     def list_permissions_with_options(
         self,
         dentry_uuid: str,
@@ -1541,6 +1659,136 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.SetPermissionInheritanceHeaders()
         return await self.set_permission_inheritance_with_options_async(dentry_uuid, request, headers, runtime)
+
+    def set_permission_share_scope_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkstorage__2__0_models.SetPermissionShareScopeRequest,
+        headers: dingtalkstorage__2__0_models.SetPermissionShareScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.SetPermissionShareScopeResponse:
+        """
+        @summary 设置分享范围
+        
+        @param request: SetPermissionShareScopeRequest
+        @param headers: SetPermissionShareScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetPermissionShareScopeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetPermissionShareScope',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/spaces/dentries/{dentry_uuid}/permissions/scopes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.SetPermissionShareScopeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_permission_share_scope_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkstorage__2__0_models.SetPermissionShareScopeRequest,
+        headers: dingtalkstorage__2__0_models.SetPermissionShareScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.SetPermissionShareScopeResponse:
+        """
+        @summary 设置分享范围
+        
+        @param request: SetPermissionShareScopeRequest
+        @param headers: SetPermissionShareScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetPermissionShareScopeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.scope):
+            body['scope'] = request.scope
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetPermissionShareScope',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/spaces/dentries/{dentry_uuid}/permissions/scopes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.SetPermissionShareScopeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_permission_share_scope(
+        self,
+        dentry_uuid: str,
+        request: dingtalkstorage__2__0_models.SetPermissionShareScopeRequest,
+    ) -> dingtalkstorage__2__0_models.SetPermissionShareScopeResponse:
+        """
+        @summary 设置分享范围
+        
+        @param request: SetPermissionShareScopeRequest
+        @return: SetPermissionShareScopeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.SetPermissionShareScopeHeaders()
+        return self.set_permission_share_scope_with_options(dentry_uuid, request, headers, runtime)
+
+    async def set_permission_share_scope_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkstorage__2__0_models.SetPermissionShareScopeRequest,
+    ) -> dingtalkstorage__2__0_models.SetPermissionShareScopeResponse:
+        """
+        @summary 设置分享范围
+        
+        @param request: SetPermissionShareScopeRequest
+        @return: SetPermissionShareScopeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.SetPermissionShareScopeHeaders()
+        return await self.set_permission_share_scope_with_options_async(dentry_uuid, request, headers, runtime)
 
     def update_permission_with_options(
         self,

@@ -7456,6 +7456,7 @@ class QueryGeneralDataServiceRequest(TeaModel):
         end_date: str = None,
         page_number: int = None,
         page_size: int = None,
+        return_total: bool = None,
         service_id: str = None,
         start_date: str = None,
         user_id: str = None,
@@ -7465,6 +7466,7 @@ class QueryGeneralDataServiceRequest(TeaModel):
         self.end_date = end_date
         self.page_number = page_number
         self.page_size = page_size
+        self.return_total = return_total
         # This parameter is required.
         self.service_id = service_id
         # This parameter is required.
@@ -7489,6 +7491,8 @@ class QueryGeneralDataServiceRequest(TeaModel):
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
             result['pageSize'] = self.page_size
+        if self.return_total is not None:
+            result['returnTotal'] = self.return_total
         if self.service_id is not None:
             result['serviceId'] = self.service_id
         if self.start_date is not None:
@@ -7507,6 +7511,8 @@ class QueryGeneralDataServiceRequest(TeaModel):
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
+        if m.get('returnTotal') is not None:
+            self.return_total = m.get('returnTotal')
         if m.get('serviceId') is not None:
             self.service_id = m.get('serviceId')
         if m.get('startDate') is not None:
@@ -7570,9 +7576,11 @@ class QueryGeneralDataServiceResponseBody(TeaModel):
         self,
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryGeneralDataServiceResponseBodyMetaList] = None,
+        total: str = None,
     ):
         self.data_list = data_list
         self.meta_list = meta_list
+        self.total = total
 
     def validate(self):
         if self.meta_list:
@@ -7592,6 +7600,8 @@ class QueryGeneralDataServiceResponseBody(TeaModel):
         if self.meta_list is not None:
             for k in self.meta_list:
                 result['metaList'].append(k.to_map() if k else None)
+        if self.total is not None:
+            result['total'] = self.total
         return result
 
     def from_map(self, m: dict = None):
@@ -7603,6 +7613,8 @@ class QueryGeneralDataServiceResponseBody(TeaModel):
             for k in m.get('metaList'):
                 temp_model = QueryGeneralDataServiceResponseBodyMetaList()
                 self.meta_list.append(temp_model.from_map(k))
+        if m.get('total') is not None:
+            self.total = m.get('total')
         return self
 
 
@@ -7727,6 +7739,7 @@ class QueryGeneralDataServiceBatchRequest(TeaModel):
         filters: List[QueryGeneralDataServiceBatchRequestFilters] = None,
         page_number: int = None,
         page_size: int = None,
+        return_total: bool = None,
         service_id: str = None,
         start_date: str = None,
         user_id: str = None,
@@ -7740,6 +7753,7 @@ class QueryGeneralDataServiceBatchRequest(TeaModel):
         self.page_number = page_number
         # This parameter is required.
         self.page_size = page_size
+        self.return_total = return_total
         # This parameter is required.
         self.service_id = service_id
         # This parameter is required.
@@ -7771,6 +7785,8 @@ class QueryGeneralDataServiceBatchRequest(TeaModel):
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
             result['pageSize'] = self.page_size
+        if self.return_total is not None:
+            result['returnTotal'] = self.return_total
         if self.service_id is not None:
             result['serviceId'] = self.service_id
         if self.start_date is not None:
@@ -7796,6 +7812,8 @@ class QueryGeneralDataServiceBatchRequest(TeaModel):
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
+        if m.get('returnTotal') is not None:
+            self.return_total = m.get('returnTotal')
         if m.get('serviceId') is not None:
             self.service_id = m.get('serviceId')
         if m.get('startDate') is not None:
@@ -7861,9 +7879,11 @@ class QueryGeneralDataServiceBatchResponseBody(TeaModel):
         self,
         data_list: List[Dict[str, Any]] = None,
         meta_list: List[QueryGeneralDataServiceBatchResponseBodyMetaList] = None,
+        total: int = None,
     ):
         self.data_list = data_list
         self.meta_list = meta_list
+        self.total = total
 
     def validate(self):
         if self.meta_list:
@@ -7883,6 +7903,8 @@ class QueryGeneralDataServiceBatchResponseBody(TeaModel):
         if self.meta_list is not None:
             for k in self.meta_list:
                 result['metaList'].append(k.to_map() if k else None)
+        if self.total is not None:
+            result['total'] = self.total
         return result
 
     def from_map(self, m: dict = None):
@@ -7894,6 +7916,8 @@ class QueryGeneralDataServiceBatchResponseBody(TeaModel):
             for k in m.get('metaList'):
                 temp_model = QueryGeneralDataServiceBatchResponseBodyMetaList()
                 self.meta_list.append(temp_model.from_map(k))
+        if m.get('total') is not None:
+            self.total = m.get('total')
         return self
 
 

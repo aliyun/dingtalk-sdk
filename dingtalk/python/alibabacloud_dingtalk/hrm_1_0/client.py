@@ -4788,6 +4788,136 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.SolutionTaskSaveHeaders()
         return await self.solution_task_save_with_options_async(request, headers, runtime)
 
+    def sync_solution_status_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.SyncSolutionStatusRequest,
+        headers: dingtalkhrm__1__0_models.SyncSolutionStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SyncSolutionStatusResponse:
+        """
+        @summary 同步解决方案状态
+        
+        @param request: SyncSolutionStatusRequest
+        @param headers: SyncSolutionStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncSolutionStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.solution_status):
+            body['solutionStatus'] = request.solution_status
+        if not UtilClient.is_unset(request.solution_type):
+            body['solutionType'] = request.solution_type
+        if not UtilClient.is_unset(request.tenant_id):
+            body['tenantId'] = request.tenant_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncSolutionStatus',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/solutions/statuses/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SyncSolutionStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_solution_status_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.SyncSolutionStatusRequest,
+        headers: dingtalkhrm__1__0_models.SyncSolutionStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.SyncSolutionStatusResponse:
+        """
+        @summary 同步解决方案状态
+        
+        @param request: SyncSolutionStatusRequest
+        @param headers: SyncSolutionStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncSolutionStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.solution_status):
+            body['solutionStatus'] = request.solution_status
+        if not UtilClient.is_unset(request.solution_type):
+            body['solutionType'] = request.solution_type
+        if not UtilClient.is_unset(request.tenant_id):
+            body['tenantId'] = request.tenant_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncSolutionStatus',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/solutions/statuses/sync',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.SyncSolutionStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_solution_status(
+        self,
+        request: dingtalkhrm__1__0_models.SyncSolutionStatusRequest,
+    ) -> dingtalkhrm__1__0_models.SyncSolutionStatusResponse:
+        """
+        @summary 同步解决方案状态
+        
+        @param request: SyncSolutionStatusRequest
+        @return: SyncSolutionStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SyncSolutionStatusHeaders()
+        return self.sync_solution_status_with_options(request, headers, runtime)
+
+    async def sync_solution_status_async(
+        self,
+        request: dingtalkhrm__1__0_models.SyncSolutionStatusRequest,
+    ) -> dingtalkhrm__1__0_models.SyncSolutionStatusResponse:
+        """
+        @summary 同步解决方案状态
+        
+        @param request: SyncSolutionStatusRequest
+        @return: SyncSolutionStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.SyncSolutionStatusHeaders()
+        return await self.sync_solution_status_with_options_async(request, headers, runtime)
+
     def sync_task_template_with_options(
         self,
         request: dingtalkhrm__1__0_models.SyncTaskTemplateRequest,

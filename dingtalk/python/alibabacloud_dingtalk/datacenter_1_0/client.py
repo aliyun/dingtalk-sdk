@@ -5532,6 +5532,8 @@ class Client(OpenApiClient):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.return_total):
+            query['returnTotal'] = request.return_total
         if not UtilClient.is_unset(request.service_id):
             query['serviceId'] = request.service_id
         if not UtilClient.is_unset(request.start_date):
@@ -5587,6 +5589,8 @@ class Client(OpenApiClient):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.return_total):
+            query['returnTotal'] = request.return_total
         if not UtilClient.is_unset(request.service_id):
             query['serviceId'] = request.service_id
         if not UtilClient.is_unset(request.start_date):
@@ -5672,6 +5676,8 @@ class Client(OpenApiClient):
             body['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.return_total):
+            body['returnTotal'] = request.return_total
         if not UtilClient.is_unset(request.service_id):
             body['serviceId'] = request.service_id
         if not UtilClient.is_unset(request.start_date):
@@ -5731,6 +5737,8 @@ class Client(OpenApiClient):
             body['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
             body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.return_total):
+            body['returnTotal'] = request.return_total
         if not UtilClient.is_unset(request.service_id):
             body['serviceId'] = request.service_id
         if not UtilClient.is_unset(request.start_date):
