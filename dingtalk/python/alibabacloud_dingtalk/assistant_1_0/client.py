@@ -2354,6 +2354,120 @@ class Client(OpenApiClient):
         headers = dingtalkassistant__1__0_models.RetrieveAssistantRunHeaders()
         return await self.retrieve_assistant_run_with_options_async(thread_id, run_id, headers, runtime)
 
+    def retrieve_assistant_scope_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.RetrieveAssistantScopeRequest,
+        headers: dingtalkassistant__1__0_models.RetrieveAssistantScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.RetrieveAssistantScopeResponse:
+        """
+        @summary 获取助理的使用范围
+        
+        @param request: RetrieveAssistantScopeRequest
+        @param headers: RetrieveAssistantScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RetrieveAssistantScopeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RetrieveAssistantScope',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/scope',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.RetrieveAssistantScopeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def retrieve_assistant_scope_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.RetrieveAssistantScopeRequest,
+        headers: dingtalkassistant__1__0_models.RetrieveAssistantScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.RetrieveAssistantScopeResponse:
+        """
+        @summary 获取助理的使用范围
+        
+        @param request: RetrieveAssistantScopeRequest
+        @param headers: RetrieveAssistantScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RetrieveAssistantScopeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RetrieveAssistantScope',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/scope',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.RetrieveAssistantScopeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def retrieve_assistant_scope(
+        self,
+        request: dingtalkassistant__1__0_models.RetrieveAssistantScopeRequest,
+    ) -> dingtalkassistant__1__0_models.RetrieveAssistantScopeResponse:
+        """
+        @summary 获取助理的使用范围
+        
+        @param request: RetrieveAssistantScopeRequest
+        @return: RetrieveAssistantScopeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.RetrieveAssistantScopeHeaders()
+        return self.retrieve_assistant_scope_with_options(request, headers, runtime)
+
+    async def retrieve_assistant_scope_async(
+        self,
+        request: dingtalkassistant__1__0_models.RetrieveAssistantScopeRequest,
+    ) -> dingtalkassistant__1__0_models.RetrieveAssistantScopeResponse:
+        """
+        @summary 获取助理的使用范围
+        
+        @param request: RetrieveAssistantScopeRequest
+        @return: RetrieveAssistantScopeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.RetrieveAssistantScopeHeaders()
+        return await self.retrieve_assistant_scope_with_options_async(request, headers, runtime)
+
     def retrieve_assistant_thread_with_options(
         self,
         thread_id: str,

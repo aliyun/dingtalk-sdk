@@ -26,6 +26,136 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def agoal_create_progress_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalCreateProgressRequest,
+        headers: dingtalkagoal__1__0_models.AgoalCreateProgressHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalCreateProgressResponse:
+        """
+        @summary 创建目标进展
+        
+        @param request: AgoalCreateProgressRequest
+        @param headers: AgoalCreateProgressHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalCreateProgressResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.kr_id):
+            body['krId'] = request.kr_id
+        if not UtilClient.is_unset(request.merge_into_latest_progress):
+            body['mergeIntoLatestProgress'] = request.merge_into_latest_progress
+        if not UtilClient.is_unset(request.objective_id):
+            body['objectiveId'] = request.objective_id
+        if not UtilClient.is_unset(request.plain_text):
+            body['plainText'] = request.plain_text
+        if not UtilClient.is_unset(request.progress_merge_period):
+            body['progressMergePeriod'] = request.progress_merge_period
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AgoalCreateProgress',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/objectives/progresses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalCreateProgressResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_create_progress_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalCreateProgressRequest,
+        headers: dingtalkagoal__1__0_models.AgoalCreateProgressHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalCreateProgressResponse:
+        """
+        @summary 创建目标进展
+        
+        @param request: AgoalCreateProgressRequest
+        @param headers: AgoalCreateProgressHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalCreateProgressResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.kr_id):
+            body['krId'] = request.kr_id
+        if not UtilClient.is_unset(request.merge_into_latest_progress):
+            body['mergeIntoLatestProgress'] = request.merge_into_latest_progress
+        if not UtilClient.is_unset(request.objective_id):
+            body['objectiveId'] = request.objective_id
+        if not UtilClient.is_unset(request.plain_text):
+            body['plainText'] = request.plain_text
+        if not UtilClient.is_unset(request.progress_merge_period):
+            body['progressMergePeriod'] = request.progress_merge_period
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AgoalCreateProgress',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/objectives/progresses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalCreateProgressResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_create_progress(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalCreateProgressRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalCreateProgressResponse:
+        """
+        @summary 创建目标进展
+        
+        @param request: AgoalCreateProgressRequest
+        @return: AgoalCreateProgressResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalCreateProgressHeaders()
+        return self.agoal_create_progress_with_options(request, headers, runtime)
+
+    async def agoal_create_progress_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalCreateProgressRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalCreateProgressResponse:
+        """
+        @summary 创建目标进展
+        
+        @param request: AgoalCreateProgressRequest
+        @return: AgoalCreateProgressResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalCreateProgressHeaders()
+        return await self.agoal_create_progress_with_options_async(request, headers, runtime)
+
     def agoal_objective_key_action_list_with_options(
         self,
         request: dingtalkagoal__1__0_models.AgoalObjectiveKeyActionListRequest,

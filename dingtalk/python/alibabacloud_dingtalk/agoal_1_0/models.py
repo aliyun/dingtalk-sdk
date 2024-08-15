@@ -553,6 +553,74 @@ class OpenAgoalObjectiveDTO(TeaModel):
         return self
 
 
+class OpenAgoalProgressDTO(TeaModel):
+    def __init__(
+        self,
+        created: int = None,
+        creator: OpenAgoalUserDTO = None,
+        html_content: str = None,
+        modifier: OpenAgoalUserDTO = None,
+        progress_id: str = None,
+        updated: int = None,
+    ):
+        # This parameter is required.
+        self.created = created
+        # This parameter is required.
+        self.creator = creator
+        # This parameter is required.
+        self.html_content = html_content
+        # This parameter is required.
+        self.modifier = modifier
+        # This parameter is required.
+        self.progress_id = progress_id
+        # This parameter is required.
+        self.updated = updated
+
+    def validate(self):
+        if self.creator:
+            self.creator.validate()
+        if self.modifier:
+            self.modifier.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator is not None:
+            result['creator'] = self.creator.to_map()
+        if self.html_content is not None:
+            result['htmlContent'] = self.html_content
+        if self.modifier is not None:
+            result['modifier'] = self.modifier.to_map()
+        if self.progress_id is not None:
+            result['progressId'] = self.progress_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creator') is not None:
+            temp_model = OpenAgoalUserDTO()
+            self.creator = temp_model.from_map(m['creator'])
+        if m.get('htmlContent') is not None:
+            self.html_content = m.get('htmlContent')
+        if m.get('modifier') is not None:
+            temp_model = OpenAgoalUserDTO()
+            self.modifier = temp_model.from_map(m['modifier'])
+        if m.get('progressId') is not None:
+            self.progress_id = m.get('progressId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        return self
+
+
 class OpenUserAdminDTO(TeaModel):
     def __init__(
         self,
@@ -585,6 +653,174 @@ class OpenUserAdminDTO(TeaModel):
             self.ding_corp_id = m.get('dingCorpId')
         if m.get('dingUserId') is not None:
             self.ding_user_id = m.get('dingUserId')
+        return self
+
+
+class AgoalCreateProgressHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalCreateProgressRequest(TeaModel):
+    def __init__(
+        self,
+        kr_id: str = None,
+        merge_into_latest_progress: bool = None,
+        objective_id: str = None,
+        plain_text: str = None,
+        progress_merge_period: str = None,
+    ):
+        self.kr_id = kr_id
+        self.merge_into_latest_progress = merge_into_latest_progress
+        self.objective_id = objective_id
+        # This parameter is required.
+        self.plain_text = plain_text
+        self.progress_merge_period = progress_merge_period
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.kr_id is not None:
+            result['krId'] = self.kr_id
+        if self.merge_into_latest_progress is not None:
+            result['mergeIntoLatestProgress'] = self.merge_into_latest_progress
+        if self.objective_id is not None:
+            result['objectiveId'] = self.objective_id
+        if self.plain_text is not None:
+            result['plainText'] = self.plain_text
+        if self.progress_merge_period is not None:
+            result['progressMergePeriod'] = self.progress_merge_period
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('krId') is not None:
+            self.kr_id = m.get('krId')
+        if m.get('mergeIntoLatestProgress') is not None:
+            self.merge_into_latest_progress = m.get('mergeIntoLatestProgress')
+        if m.get('objectiveId') is not None:
+            self.objective_id = m.get('objectiveId')
+        if m.get('plainText') is not None:
+            self.plain_text = m.get('plainText')
+        if m.get('progressMergePeriod') is not None:
+            self.progress_merge_period = m.get('progressMergePeriod')
+        return self
+
+
+class AgoalCreateProgressResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: OpenAgoalProgressDTO = None,
+        request_id: str = None,
+        success: bool = None,
+    ):
+        # This parameter is required.
+        self.content = content
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = OpenAgoalProgressDTO()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalCreateProgressResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalCreateProgressResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalCreateProgressResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 
