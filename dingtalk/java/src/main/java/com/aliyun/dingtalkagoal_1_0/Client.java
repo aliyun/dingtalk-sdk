@@ -20,6 +20,78 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建目标进展</p>
+     * 
+     * @param request AgoalCreateProgressRequest
+     * @param headers AgoalCreateProgressHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AgoalCreateProgressResponse
+     */
+    public AgoalCreateProgressResponse agoalCreateProgressWithOptions(AgoalCreateProgressRequest request, AgoalCreateProgressHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.krId)) {
+            body.put("krId", request.krId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mergeIntoLatestProgress)) {
+            body.put("mergeIntoLatestProgress", request.mergeIntoLatestProgress);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.objectiveId)) {
+            body.put("objectiveId", request.objectiveId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.plainText)) {
+            body.put("plainText", request.plainText);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.progressMergePeriod)) {
+            body.put("progressMergePeriod", request.progressMergePeriod);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AgoalCreateProgress"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/objectives/progresses"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AgoalCreateProgressResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建目标进展</p>
+     * 
+     * @param request AgoalCreateProgressRequest
+     * @return AgoalCreateProgressResponse
+     */
+    public AgoalCreateProgressResponse agoalCreateProgress(AgoalCreateProgressRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AgoalCreateProgressHeaders headers = new AgoalCreateProgressHeaders();
+        return this.agoalCreateProgressWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取Agoal指定目标或者关键结果关联的关键行动</p>
      * 
      * @param request AgoalObjectiveKeyActionListRequest
