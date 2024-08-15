@@ -61,6 +61,9 @@ use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantMessageHead
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantRunHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantRunResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantScopeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantScopeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantScopeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantThreadHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantThreadResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\UpdateAssistantScopeHeaders;
@@ -1271,6 +1274,63 @@ class Dingtalk extends OpenApiClient
         $headers = new RetrieveAssistantRunHeaders([]);
 
         return $this->retrieveAssistantRunWithOptions($threadId, $runId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取助理的使用范围
+     *  *
+     * @param RetrieveAssistantScopeRequest $request RetrieveAssistantScopeRequest
+     * @param RetrieveAssistantScopeHeaders $headers RetrieveAssistantScopeHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RetrieveAssistantScopeResponse RetrieveAssistantScopeResponse
+     */
+    public function retrieveAssistantScopeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->assistantId)) {
+            $query['assistantId'] = $request->assistantId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'RetrieveAssistantScope',
+            'version'     => 'assistant_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/assistant/scope',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RetrieveAssistantScopeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取助理的使用范围
+     *  *
+     * @param RetrieveAssistantScopeRequest $request RetrieveAssistantScopeRequest
+     *
+     * @return RetrieveAssistantScopeResponse RetrieveAssistantScopeResponse
+     */
+    public function retrieveAssistantScope($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RetrieveAssistantScopeHeaders([]);
+
+        return $this->retrieveAssistantScopeWithOptions($request, $headers, $runtime);
     }
 
     /**

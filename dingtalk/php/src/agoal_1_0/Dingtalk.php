@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vagoal_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListResponse;
@@ -39,6 +42,75 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 创建目标进展
+     *  *
+     * @param AgoalCreateProgressRequest $request AgoalCreateProgressRequest
+     * @param AgoalCreateProgressHeaders $headers AgoalCreateProgressHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalCreateProgressResponse AgoalCreateProgressResponse
+     */
+    public function agoalCreateProgressWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->krId)) {
+            $body['krId'] = $request->krId;
+        }
+        if (!Utils::isUnset($request->mergeIntoLatestProgress)) {
+            $body['mergeIntoLatestProgress'] = $request->mergeIntoLatestProgress;
+        }
+        if (!Utils::isUnset($request->objectiveId)) {
+            $body['objectiveId'] = $request->objectiveId;
+        }
+        if (!Utils::isUnset($request->plainText)) {
+            $body['plainText'] = $request->plainText;
+        }
+        if (!Utils::isUnset($request->progressMergePeriod)) {
+            $body['progressMergePeriod'] = $request->progressMergePeriod;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AgoalCreateProgress',
+            'version'     => 'agoal_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/agoal/objectives/progresses',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AgoalCreateProgressResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建目标进展
+     *  *
+     * @param AgoalCreateProgressRequest $request AgoalCreateProgressRequest
+     *
+     * @return AgoalCreateProgressResponse AgoalCreateProgressResponse
+     */
+    public function agoalCreateProgress($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalCreateProgressHeaders([]);
+
+        return $this->agoalCreateProgressWithOptions($request, $headers, $runtime);
     }
 
     /**
