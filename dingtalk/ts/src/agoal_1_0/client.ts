@@ -311,6 +311,64 @@ export class OpenAgoalObjectiveDTO extends $tea.Model {
   }
 }
 
+export class OpenAgoalProgressDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  created?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  creator?: OpenAgoalUserDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  htmlContent?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  modifier?: OpenAgoalUserDTO;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  progressId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  updated?: number;
+  static names(): { [key: string]: string } {
+    return {
+      created: 'created',
+      creator: 'creator',
+      htmlContent: 'htmlContent',
+      modifier: 'modifier',
+      progressId: 'progressId',
+      updated: 'updated',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      created: 'number',
+      creator: OpenAgoalUserDTO,
+      htmlContent: 'string',
+      modifier: OpenAgoalUserDTO,
+      progressId: 'string',
+      updated: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class OpenAgoalTeamDTO extends $tea.Model {
   /**
    * @remarks
@@ -576,6 +634,136 @@ export class TitleMention extends $tea.Model {
       length: 'number',
       offset: 'number',
       user: OpenAgoalUserDTO,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AgoalCreateProgressHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AgoalCreateProgressRequest extends $tea.Model {
+  /**
+   * @example
+   * 64bf87f8d7ace3616f0a1971
+   */
+  krId?: string;
+  /**
+   * **if can be null:**
+   * false
+   */
+  mergeIntoLatestProgress?: boolean;
+  /**
+   * @example
+   * 662e006fe4b0f579bbcb10cf
+   */
+  objectiveId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 这是一条目标进展文本
+   */
+  plainText?: string;
+  /**
+   * @example
+   * naturalWeek
+   */
+  progressMergePeriod?: string;
+  static names(): { [key: string]: string } {
+    return {
+      krId: 'krId',
+      mergeIntoLatestProgress: 'mergeIntoLatestProgress',
+      objectiveId: 'objectiveId',
+      plainText: 'plainText',
+      progressMergePeriod: 'progressMergePeriod',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      krId: 'string',
+      mergeIntoLatestProgress: 'boolean',
+      objectiveId: 'string',
+      plainText: 'string',
+      progressMergePeriod: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AgoalCreateProgressResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  content?: OpenAgoalProgressDTO;
+  requestId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: OpenAgoalProgressDTO,
+      requestId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AgoalCreateProgressResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AgoalCreateProgressResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AgoalCreateProgressResponseBody,
     };
   }
 
@@ -1278,6 +1466,76 @@ export default class Client extends OpenApi {
 
   }
 
+
+  /**
+   * 创建目标进展
+   * 
+   * @param request - AgoalCreateProgressRequest
+   * @param headers - AgoalCreateProgressHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AgoalCreateProgressResponse
+   */
+  async agoalCreateProgressWithOptions(request: AgoalCreateProgressRequest, headers: AgoalCreateProgressHeaders, runtime: $Util.RuntimeOptions): Promise<AgoalCreateProgressResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.krId)) {
+      body["krId"] = request.krId;
+    }
+
+    if (!Util.isUnset(request.mergeIntoLatestProgress)) {
+      body["mergeIntoLatestProgress"] = request.mergeIntoLatestProgress;
+    }
+
+    if (!Util.isUnset(request.objectiveId)) {
+      body["objectiveId"] = request.objectiveId;
+    }
+
+    if (!Util.isUnset(request.plainText)) {
+      body["plainText"] = request.plainText;
+    }
+
+    if (!Util.isUnset(request.progressMergePeriod)) {
+      body["progressMergePeriod"] = request.progressMergePeriod;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AgoalCreateProgress",
+      version: "agoal_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/agoal/objectives/progresses`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AgoalCreateProgressResponse>(await this.execute(params, req, runtime), new AgoalCreateProgressResponse({}));
+  }
+
+  /**
+   * 创建目标进展
+   * 
+   * @param request - AgoalCreateProgressRequest
+   * @returns AgoalCreateProgressResponse
+   */
+  async agoalCreateProgress(request: AgoalCreateProgressRequest): Promise<AgoalCreateProgressResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AgoalCreateProgressHeaders({ });
+    return await this.agoalCreateProgressWithOptions(request, headers, runtime);
+  }
 
   /**
    * 获取Agoal指定目标或者关键结果关联的关键行动

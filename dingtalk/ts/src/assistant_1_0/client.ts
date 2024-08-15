@@ -1968,6 +1968,98 @@ export class RetrieveAssistantRunResponse extends $tea.Model {
   }
 }
 
+export class RetrieveAssistantScopeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantScopeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  assistantId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantScopeResponseBody extends $tea.Model {
+  assistantId?: string;
+  sharing?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      sharing: 'sharing',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      sharing: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantScopeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RetrieveAssistantScopeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RetrieveAssistantScopeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RetrieveAssistantThreadHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3555,6 +3647,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RetrieveAssistantRunHeaders({ });
     return await this.retrieveAssistantRunWithOptions(threadId, runId, headers, runtime);
+  }
+
+  /**
+   * 获取助理的使用范围
+   * 
+   * @param request - RetrieveAssistantScopeRequest
+   * @param headers - RetrieveAssistantScopeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RetrieveAssistantScopeResponse
+   */
+  async retrieveAssistantScopeWithOptions(request: RetrieveAssistantScopeRequest, headers: RetrieveAssistantScopeHeaders, runtime: $Util.RuntimeOptions): Promise<RetrieveAssistantScopeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.assistantId)) {
+      query["assistantId"] = request.assistantId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "RetrieveAssistantScope",
+      version: "assistant_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/assistant/scope`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RetrieveAssistantScopeResponse>(await this.execute(params, req, runtime), new RetrieveAssistantScopeResponse({}));
+  }
+
+  /**
+   * 获取助理的使用范围
+   * 
+   * @param request - RetrieveAssistantScopeRequest
+   * @returns RetrieveAssistantScopeResponse
+   */
+  async retrieveAssistantScope(request: RetrieveAssistantScopeRequest): Promise<RetrieveAssistantScopeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RetrieveAssistantScopeHeaders({ });
+    return await this.retrieveAssistantScopeWithOptions(request, headers, runtime);
   }
 
   /**
