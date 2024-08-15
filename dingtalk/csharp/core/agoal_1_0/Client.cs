@@ -29,6 +29,154 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
 
 
         /**
+         * @summary 创建目标进展
+         *
+         * @param request AgoalCreateProgressRequest
+         * @param headers AgoalCreateProgressHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AgoalCreateProgressResponse
+         */
+        public AgoalCreateProgressResponse AgoalCreateProgressWithOptions(AgoalCreateProgressRequest request, AgoalCreateProgressHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.KrId))
+            {
+                body["krId"] = request.KrId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MergeIntoLatestProgress))
+            {
+                body["mergeIntoLatestProgress"] = request.MergeIntoLatestProgress;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectiveId))
+            {
+                body["objectiveId"] = request.ObjectiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlainText))
+            {
+                body["plainText"] = request.PlainText;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProgressMergePeriod))
+            {
+                body["progressMergePeriod"] = request.ProgressMergePeriod;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalCreateProgress",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/objectives/progresses",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalCreateProgressResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建目标进展
+         *
+         * @param request AgoalCreateProgressRequest
+         * @param headers AgoalCreateProgressHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AgoalCreateProgressResponse
+         */
+        public async Task<AgoalCreateProgressResponse> AgoalCreateProgressWithOptionsAsync(AgoalCreateProgressRequest request, AgoalCreateProgressHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.KrId))
+            {
+                body["krId"] = request.KrId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MergeIntoLatestProgress))
+            {
+                body["mergeIntoLatestProgress"] = request.MergeIntoLatestProgress;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectiveId))
+            {
+                body["objectiveId"] = request.ObjectiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlainText))
+            {
+                body["plainText"] = request.PlainText;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProgressMergePeriod))
+            {
+                body["progressMergePeriod"] = request.ProgressMergePeriod;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalCreateProgress",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/objectives/progresses",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalCreateProgressResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建目标进展
+         *
+         * @param request AgoalCreateProgressRequest
+         * @return AgoalCreateProgressResponse
+         */
+        public AgoalCreateProgressResponse AgoalCreateProgress(AgoalCreateProgressRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalCreateProgressHeaders headers = new AgoalCreateProgressHeaders();
+            return AgoalCreateProgressWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建目标进展
+         *
+         * @param request AgoalCreateProgressRequest
+         * @return AgoalCreateProgressResponse
+         */
+        public async Task<AgoalCreateProgressResponse> AgoalCreateProgressAsync(AgoalCreateProgressRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalCreateProgressHeaders headers = new AgoalCreateProgressHeaders();
+            return await AgoalCreateProgressWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取Agoal指定目标或者关键结果关联的关键行动
          *
          * @param request AgoalObjectiveKeyActionListRequest
