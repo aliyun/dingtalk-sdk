@@ -183,6 +183,102 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建电子签签署记录</p>
+     * 
+     * @param request CreateRecordRequest
+     * @param headers CreateRecordHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateRecordResponse
+     */
+    public CreateRecordResponse createRecordWithOptions(CreateRecordRequest request, CreateRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.attachmentList)) {
+            body.put("attachmentList", request.attachmentList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            body.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldList)) {
+            body.put("fieldList", request.fieldList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupList)) {
+            body.put("groupList", request.groupList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signLastLegalEntityName)) {
+            body.put("signLastLegalEntityName", request.signLastLegalEntityName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signLegalEntityName)) {
+            body.put("signLegalEntityName", request.signLegalEntityName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signSource)) {
+            body.put("signSource", request.signSource);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signStartUserId)) {
+            body.put("signStartUserId", request.signStartUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signUserId)) {
+            body.put("signUserId", request.signUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateId)) {
+            body.put("templateId", request.templateId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateRecord"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/masters/signCenters/records"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateRecordResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建电子签签署记录</p>
+     * 
+     * @param request CreateRecordRequest
+     * @return CreateRecordResponse
+     */
+    public CreateRecordResponse createRecord(CreateRecordRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateRecordHeaders headers = new CreateRecordHeaders();
+        return this.createRecordWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>智能人事设备市场管理</p>
      * 
      * @param headers map
@@ -507,6 +603,146 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetEmployeeRosterByFieldHeaders headers = new GetEmployeeRosterByFieldHeaders();
         return this.getEmployeeRosterByFieldWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询文件模板列表及文件模板内花名册字段</p>
+     * 
+     * @param request GetFileTemplateListRequest
+     * @param headers GetFileTemplateListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetFileTemplateListResponse
+     */
+    public GetFileTemplateListResponse getFileTemplateListWithOptions(GetFileTemplateListRequest request, GetFileTemplateListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            body.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signSource)) {
+            body.put("signSource", request.signSource);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateStatus)) {
+            body.put("templateStatus", request.templateStatus);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateTypeList)) {
+            body.put("templateTypeList", request.templateTypeList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFileTemplateList"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/masters/fileTemplates/lists/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFileTemplateListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询文件模板列表及文件模板内花名册字段</p>
+     * 
+     * @param request GetFileTemplateListRequest
+     * @return GetFileTemplateListResponse
+     */
+    public GetFileTemplateListResponse getFileTemplateList(GetFileTemplateListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetFileTemplateListHeaders headers = new GetFileTemplateListHeaders();
+        return this.getFileTemplateListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址</p>
+     * 
+     * @param request GetSignRecordByUserIdRequest
+     * @param headers GetSignRecordByUserIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSignRecordByUserIdResponse
+     */
+    public GetSignRecordByUserIdResponse getSignRecordByUserIdWithOptions(GetSignRecordByUserIdRequest request, GetSignRecordByUserIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            body.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signStatus)) {
+            body.put("signStatus", request.signStatus);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signUserId)) {
+            body.put("signUserId", request.signUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetSignRecordByUserId"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/masters/signCenters/users/records/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetSignRecordByUserIdResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址</p>
+     * 
+     * @param request GetSignRecordByUserIdRequest
+     * @return GetSignRecordByUserIdResponse
+     */
+    public GetSignRecordByUserIdResponse getSignRecordByUserId(GetSignRecordByUserIdRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetSignRecordByUserIdHeaders headers = new GetSignRecordByUserIdHeaders();
+        return this.getSignRecordByUserIdWithOptions(request, headers, runtime);
     }
 
     /**
