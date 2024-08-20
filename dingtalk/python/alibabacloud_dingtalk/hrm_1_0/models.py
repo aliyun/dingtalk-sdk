@@ -802,6 +802,520 @@ class AddHrmPreentryResponse(TeaModel):
         return self
 
 
+class CreateRecordHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateRecordRequestAttachmentList(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        field_name: str = None,
+        field_type: str = None,
+        field_value: str = None,
+        group_id: str = None,
+    ):
+        self.field_code = field_code
+        self.field_name = field_name
+        self.field_type = field_type
+        self.field_value = field_value
+        self.group_id = group_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.field_value is not None:
+            result['fieldValue'] = self.field_value
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('fieldValue') is not None:
+            self.field_value = m.get('fieldValue')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        return self
+
+
+class CreateRecordRequestFieldList(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        field_name: str = None,
+        field_type: str = None,
+        field_value: str = None,
+        group_id: str = None,
+        option_id: str = None,
+        options: str = None,
+        sign_required: bool = None,
+        user_custom_field: bool = None,
+    ):
+        self.field_code = field_code
+        self.field_name = field_name
+        self.field_type = field_type
+        self.field_value = field_value
+        self.group_id = group_id
+        self.option_id = option_id
+        self.options = options
+        self.sign_required = sign_required
+        self.user_custom_field = user_custom_field
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.field_value is not None:
+            result['fieldValue'] = self.field_value
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.option_id is not None:
+            result['optionId'] = self.option_id
+        if self.options is not None:
+            result['options'] = self.options
+        if self.sign_required is not None:
+            result['signRequired'] = self.sign_required
+        if self.user_custom_field is not None:
+            result['userCustomField'] = self.user_custom_field
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('fieldValue') is not None:
+            self.field_value = m.get('fieldValue')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('optionId') is not None:
+            self.option_id = m.get('optionId')
+        if m.get('options') is not None:
+            self.options = m.get('options')
+        if m.get('signRequired') is not None:
+            self.sign_required = m.get('signRequired')
+        if m.get('userCustomField') is not None:
+            self.user_custom_field = m.get('userCustomField')
+        return self
+
+
+class CreateRecordRequestGroupListFieldList(TeaModel):
+    def __init__(
+        self,
+        field_code: str = None,
+        field_name: str = None,
+        field_type: str = None,
+        field_value: str = None,
+        options: str = None,
+        option_id: str = None,
+        group_id: str = None,
+    ):
+        self.field_code = field_code
+        self.field_name = field_name
+        self.field_type = field_type
+        self.field_value = field_value
+        self.options = options
+        self.option_id = option_id
+        self.group_id = group_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.field_value is not None:
+            result['fieldValue'] = self.field_value
+        if self.options is not None:
+            result['options'] = self.options
+        if self.option_id is not None:
+            result['optionId'] = self.option_id
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('fieldValue') is not None:
+            self.field_value = m.get('fieldValue')
+        if m.get('options') is not None:
+            self.options = m.get('options')
+        if m.get('optionId') is not None:
+            self.option_id = m.get('optionId')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        return self
+
+
+class CreateRecordRequestGroupList(TeaModel):
+    def __init__(
+        self,
+        detail_flag: bool = None,
+        field_list: List[List[CreateRecordRequestGroupListFieldList]] = None,
+        group_id: str = None,
+        group_name: str = None,
+    ):
+        self.detail_flag = detail_flag
+        self.field_list = field_list
+        self.group_id = group_id
+        self.group_name = group_name
+
+    def validate(self):
+        if self.field_list:
+            for k in self.field_list:
+                for k1 in k:
+                    if k1:
+                        k1.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.detail_flag is not None:
+            result['detailFlag'] = self.detail_flag
+        result['fieldList'] = []
+        if self.field_list is not None:
+            for k in self.field_list:
+                l1 = []
+                for k1 in k:
+                    l1.append(k1.to_map() if k1 else None)
+                result['fieldList'].append(l1)
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('detailFlag') is not None:
+            self.detail_flag = m.get('detailFlag')
+        self.field_list = []
+        if m.get('fieldList') is not None:
+            for k in m.get('fieldList'):
+                l1 = []
+                for k1 in k:
+                    temp_model = CreateRecordRequestGroupListFieldList()
+                    l1.append(temp_model.from_map(k1))
+                self.field_list.append(l1)
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        return self
+
+
+class CreateRecordRequest(TeaModel):
+    def __init__(
+        self,
+        attachment_list: List[CreateRecordRequestAttachmentList] = None,
+        dept_id: int = None,
+        field_list: List[CreateRecordRequestFieldList] = None,
+        group_list: List[CreateRecordRequestGroupList] = None,
+        remark: str = None,
+        sign_last_legal_entity_name: str = None,
+        sign_legal_entity_name: str = None,
+        sign_source: str = None,
+        sign_start_user_id: str = None,
+        sign_user_id: str = None,
+        template_id: str = None,
+    ):
+        self.attachment_list = attachment_list
+        self.dept_id = dept_id
+        self.field_list = field_list
+        self.group_list = group_list
+        self.remark = remark
+        self.sign_last_legal_entity_name = sign_last_legal_entity_name
+        self.sign_legal_entity_name = sign_legal_entity_name
+        # This parameter is required.
+        self.sign_source = sign_source
+        # This parameter is required.
+        self.sign_start_user_id = sign_start_user_id
+        # This parameter is required.
+        self.sign_user_id = sign_user_id
+        # This parameter is required.
+        self.template_id = template_id
+
+    def validate(self):
+        if self.attachment_list:
+            for k in self.attachment_list:
+                if k:
+                    k.validate()
+        if self.field_list:
+            for k in self.field_list:
+                if k:
+                    k.validate()
+        if self.group_list:
+            for k in self.group_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachmentList'] = []
+        if self.attachment_list is not None:
+            for k in self.attachment_list:
+                result['attachmentList'].append(k.to_map() if k else None)
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        result['fieldList'] = []
+        if self.field_list is not None:
+            for k in self.field_list:
+                result['fieldList'].append(k.to_map() if k else None)
+        result['groupList'] = []
+        if self.group_list is not None:
+            for k in self.group_list:
+                result['groupList'].append(k.to_map() if k else None)
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.sign_last_legal_entity_name is not None:
+            result['signLastLegalEntityName'] = self.sign_last_legal_entity_name
+        if self.sign_legal_entity_name is not None:
+            result['signLegalEntityName'] = self.sign_legal_entity_name
+        if self.sign_source is not None:
+            result['signSource'] = self.sign_source
+        if self.sign_start_user_id is not None:
+            result['signStartUserId'] = self.sign_start_user_id
+        if self.sign_user_id is not None:
+            result['signUserId'] = self.sign_user_id
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachment_list = []
+        if m.get('attachmentList') is not None:
+            for k in m.get('attachmentList'):
+                temp_model = CreateRecordRequestAttachmentList()
+                self.attachment_list.append(temp_model.from_map(k))
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        self.field_list = []
+        if m.get('fieldList') is not None:
+            for k in m.get('fieldList'):
+                temp_model = CreateRecordRequestFieldList()
+                self.field_list.append(temp_model.from_map(k))
+        self.group_list = []
+        if m.get('groupList') is not None:
+            for k in m.get('groupList'):
+                temp_model = CreateRecordRequestGroupList()
+                self.group_list.append(temp_model.from_map(k))
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('signLastLegalEntityName') is not None:
+            self.sign_last_legal_entity_name = m.get('signLastLegalEntityName')
+        if m.get('signLegalEntityName') is not None:
+            self.sign_legal_entity_name = m.get('signLegalEntityName')
+        if m.get('signSource') is not None:
+            self.sign_source = m.get('signSource')
+        if m.get('signStartUserId') is not None:
+            self.sign_start_user_id = m.get('signStartUserId')
+        if m.get('signUserId') is not None:
+            self.sign_user_id = m.get('signUserId')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        return self
+
+
+class CreateRecordResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        details: str = None,
+        item_id: str = None,
+        type: str = None,
+    ):
+        self.details = details
+        self.item_id = item_id
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.details is not None:
+            result['details'] = self.details
+        if self.item_id is not None:
+            result['itemId'] = self.item_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('details') is not None:
+            self.details = m.get('details')
+        if m.get('itemId') is not None:
+            self.item_id = m.get('itemId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CreateRecordResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateRecordResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateRecordResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateRecordResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateRecordResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateRecordResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeviceMarketManagerResponseBody(TeaModel):
     def __init__(
         self,
@@ -1740,6 +2254,883 @@ class GetEmployeeRosterByFieldResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetEmployeeRosterByFieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFileTemplateListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFileTemplateListRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: int = None,
+        sign_source: str = None,
+        template_status: int = None,
+        template_type_list: List[str] = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        # This parameter is required.
+        self.sign_source = sign_source
+        self.template_status = template_status
+        self.template_type_list = template_type_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.sign_source is not None:
+            result['signSource'] = self.sign_source
+        if self.template_status is not None:
+            result['templateStatus'] = self.template_status
+        if self.template_type_list is not None:
+            result['templateTypeList'] = self.template_type_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('signSource') is not None:
+            self.sign_source = m.get('signSource')
+        if m.get('templateStatus') is not None:
+            self.template_status = m.get('templateStatus')
+        if m.get('templateTypeList') is not None:
+            self.template_type_list = m.get('templateTypeList')
+        return self
+
+
+class GetFileTemplateListResponseBodyResultDataAttachmentList(TeaModel):
+    def __init__(
+        self,
+        desc: str = None,
+        field_code: str = None,
+        field_name: str = None,
+        field_type: str = None,
+        group_id: str = None,
+        sign_required: bool = None,
+        user_custom_field: bool = None,
+    ):
+        self.desc = desc
+        self.field_code = field_code
+        self.field_name = field_name
+        self.field_type = field_type
+        self.group_id = group_id
+        self.sign_required = sign_required
+        self.user_custom_field = user_custom_field
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.sign_required is not None:
+            result['signRequired'] = self.sign_required
+        if self.user_custom_field is not None:
+            result['userCustomField'] = self.user_custom_field
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('signRequired') is not None:
+            self.sign_required = m.get('signRequired')
+        if m.get('userCustomField') is not None:
+            self.user_custom_field = m.get('userCustomField')
+        return self
+
+
+class GetFileTemplateListResponseBodyResultDataFieldList(TeaModel):
+    def __init__(
+        self,
+        desc: str = None,
+        field_code: str = None,
+        field_name: str = None,
+        field_type: str = None,
+        group_id: str = None,
+        sign_required: bool = None,
+        user_custom_field: bool = None,
+    ):
+        self.desc = desc
+        self.field_code = field_code
+        self.field_name = field_name
+        self.field_type = field_type
+        self.group_id = group_id
+        self.sign_required = sign_required
+        self.user_custom_field = user_custom_field
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.sign_required is not None:
+            result['signRequired'] = self.sign_required
+        if self.user_custom_field is not None:
+            result['userCustomField'] = self.user_custom_field
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('signRequired') is not None:
+            self.sign_required = m.get('signRequired')
+        if m.get('userCustomField') is not None:
+            self.user_custom_field = m.get('userCustomField')
+        return self
+
+
+class GetFileTemplateListResponseBodyResultDataGroupListFieldList(TeaModel):
+    def __init__(
+        self,
+        desc: str = None,
+        field_code: str = None,
+        field_name: str = None,
+        field_type: str = None,
+        group_id: str = None,
+        sign_required: bool = None,
+        user_custom_field: bool = None,
+    ):
+        self.desc = desc
+        self.field_code = field_code
+        self.field_name = field_name
+        self.field_type = field_type
+        self.group_id = group_id
+        self.sign_required = sign_required
+        self.user_custom_field = user_custom_field
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.sign_required is not None:
+            result['signRequired'] = self.sign_required
+        if self.user_custom_field is not None:
+            result['userCustomField'] = self.user_custom_field
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('signRequired') is not None:
+            self.sign_required = m.get('signRequired')
+        if m.get('userCustomField') is not None:
+            self.user_custom_field = m.get('userCustomField')
+        return self
+
+
+class GetFileTemplateListResponseBodyResultDataGroupList(TeaModel):
+    def __init__(
+        self,
+        detail_flag: bool = None,
+        field_list: List[GetFileTemplateListResponseBodyResultDataGroupListFieldList] = None,
+        group_id: str = None,
+        group_name: str = None,
+    ):
+        self.detail_flag = detail_flag
+        self.field_list = field_list
+        self.group_id = group_id
+        self.group_name = group_name
+
+    def validate(self):
+        if self.field_list:
+            for k in self.field_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.detail_flag is not None:
+            result['detailFlag'] = self.detail_flag
+        result['fieldList'] = []
+        if self.field_list is not None:
+            for k in self.field_list:
+                result['fieldList'].append(k.to_map() if k else None)
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('detailFlag') is not None:
+            self.detail_flag = m.get('detailFlag')
+        self.field_list = []
+        if m.get('fieldList') is not None:
+            for k in m.get('fieldList'):
+                temp_model = GetFileTemplateListResponseBodyResultDataGroupListFieldList()
+                self.field_list.append(temp_model.from_map(k))
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        return self
+
+
+class GetFileTemplateListResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        attachment_list: List[GetFileTemplateListResponseBodyResultDataAttachmentList] = None,
+        corp_id: str = None,
+        field_list: List[GetFileTemplateListResponseBodyResultDataFieldList] = None,
+        group_list: List[GetFileTemplateListResponseBodyResultDataGroupList] = None,
+        template_id: str = None,
+        template_inst_name: str = None,
+        template_name: str = None,
+        template_sign_status: int = None,
+        template_status: int = None,
+        template_type: str = None,
+        tenant_id: int = None,
+    ):
+        self.attachment_list = attachment_list
+        self.corp_id = corp_id
+        self.field_list = field_list
+        self.group_list = group_list
+        self.template_id = template_id
+        self.template_inst_name = template_inst_name
+        self.template_name = template_name
+        self.template_sign_status = template_sign_status
+        self.template_status = template_status
+        self.template_type = template_type
+        self.tenant_id = tenant_id
+
+    def validate(self):
+        if self.attachment_list:
+            for k in self.attachment_list:
+                if k:
+                    k.validate()
+        if self.field_list:
+            for k in self.field_list:
+                if k:
+                    k.validate()
+        if self.group_list:
+            for k in self.group_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachmentList'] = []
+        if self.attachment_list is not None:
+            for k in self.attachment_list:
+                result['attachmentList'].append(k.to_map() if k else None)
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        result['fieldList'] = []
+        if self.field_list is not None:
+            for k in self.field_list:
+                result['fieldList'].append(k.to_map() if k else None)
+        result['groupList'] = []
+        if self.group_list is not None:
+            for k in self.group_list:
+                result['groupList'].append(k.to_map() if k else None)
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.template_inst_name is not None:
+            result['templateInstName'] = self.template_inst_name
+        if self.template_name is not None:
+            result['templateName'] = self.template_name
+        if self.template_sign_status is not None:
+            result['templateSignStatus'] = self.template_sign_status
+        if self.template_status is not None:
+            result['templateStatus'] = self.template_status
+        if self.template_type is not None:
+            result['templateType'] = self.template_type
+        if self.tenant_id is not None:
+            result['tenantId'] = self.tenant_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachment_list = []
+        if m.get('attachmentList') is not None:
+            for k in m.get('attachmentList'):
+                temp_model = GetFileTemplateListResponseBodyResultDataAttachmentList()
+                self.attachment_list.append(temp_model.from_map(k))
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        self.field_list = []
+        if m.get('fieldList') is not None:
+            for k in m.get('fieldList'):
+                temp_model = GetFileTemplateListResponseBodyResultDataFieldList()
+                self.field_list.append(temp_model.from_map(k))
+        self.group_list = []
+        if m.get('groupList') is not None:
+            for k in m.get('groupList'):
+                temp_model = GetFileTemplateListResponseBodyResultDataGroupList()
+                self.group_list.append(temp_model.from_map(k))
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('templateInstName') is not None:
+            self.template_inst_name = m.get('templateInstName')
+        if m.get('templateName') is not None:
+            self.template_name = m.get('templateName')
+        if m.get('templateSignStatus') is not None:
+            self.template_sign_status = m.get('templateSignStatus')
+        if m.get('templateStatus') is not None:
+            self.template_status = m.get('templateStatus')
+        if m.get('templateType') is not None:
+            self.template_type = m.get('templateType')
+        if m.get('tenantId') is not None:
+            self.tenant_id = m.get('tenantId')
+        return self
+
+
+class GetFileTemplateListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: List[GetFileTemplateListResponseBodyResultData] = None,
+        has_more: bool = None,
+        next_token: int = None,
+    ):
+        self.data = data
+        # This parameter is required.
+        self.has_more = has_more
+        self.next_token = next_token
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetFileTemplateListResponseBodyResultData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetFileTemplateListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetFileTemplateListResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetFileTemplateListResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetFileTemplateListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetFileTemplateListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetFileTemplateListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetSignRecordByUserIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSignRecordByUserIdRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: int = None,
+        sign_status: List[str] = None,
+        sign_user_id: str = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        self.sign_status = sign_status
+        # This parameter is required.
+        self.sign_user_id = sign_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.sign_status is not None:
+            result['signStatus'] = self.sign_status
+        if self.sign_user_id is not None:
+            result['signUserId'] = self.sign_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('signStatus') is not None:
+            self.sign_status = m.get('signStatus')
+        if m.get('signUserId') is not None:
+            self.sign_user_id = m.get('signUserId')
+        return self
+
+
+class GetSignRecordByUserIdResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        remark: str = None,
+        sign_expire_time: int = None,
+        sign_file_name: str = None,
+        sign_file_url: str = None,
+        sign_finish_time: int = None,
+        sign_legal_entity_name: str = None,
+        sign_record_id: str = None,
+        sign_start_time: int = None,
+        sign_status: str = None,
+        sign_status_remarks: str = None,
+        sign_template_type: str = None,
+        sign_user_id: str = None,
+        sign_user_name: str = None,
+        sign_way: str = None,
+    ):
+        self.corp_id = corp_id
+        self.remark = remark
+        self.sign_expire_time = sign_expire_time
+        self.sign_file_name = sign_file_name
+        self.sign_file_url = sign_file_url
+        self.sign_finish_time = sign_finish_time
+        self.sign_legal_entity_name = sign_legal_entity_name
+        self.sign_record_id = sign_record_id
+        self.sign_start_time = sign_start_time
+        self.sign_status = sign_status
+        self.sign_status_remarks = sign_status_remarks
+        self.sign_template_type = sign_template_type
+        self.sign_user_id = sign_user_id
+        self.sign_user_name = sign_user_name
+        self.sign_way = sign_way
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.sign_expire_time is not None:
+            result['signExpireTime'] = self.sign_expire_time
+        if self.sign_file_name is not None:
+            result['signFileName'] = self.sign_file_name
+        if self.sign_file_url is not None:
+            result['signFileUrl'] = self.sign_file_url
+        if self.sign_finish_time is not None:
+            result['signFinishTime'] = self.sign_finish_time
+        if self.sign_legal_entity_name is not None:
+            result['signLegalEntityName'] = self.sign_legal_entity_name
+        if self.sign_record_id is not None:
+            result['signRecordId'] = self.sign_record_id
+        if self.sign_start_time is not None:
+            result['signStartTime'] = self.sign_start_time
+        if self.sign_status is not None:
+            result['signStatus'] = self.sign_status
+        if self.sign_status_remarks is not None:
+            result['signStatusRemarks'] = self.sign_status_remarks
+        if self.sign_template_type is not None:
+            result['signTemplateType'] = self.sign_template_type
+        if self.sign_user_id is not None:
+            result['signUserId'] = self.sign_user_id
+        if self.sign_user_name is not None:
+            result['signUserName'] = self.sign_user_name
+        if self.sign_way is not None:
+            result['signWay'] = self.sign_way
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('signExpireTime') is not None:
+            self.sign_expire_time = m.get('signExpireTime')
+        if m.get('signFileName') is not None:
+            self.sign_file_name = m.get('signFileName')
+        if m.get('signFileUrl') is not None:
+            self.sign_file_url = m.get('signFileUrl')
+        if m.get('signFinishTime') is not None:
+            self.sign_finish_time = m.get('signFinishTime')
+        if m.get('signLegalEntityName') is not None:
+            self.sign_legal_entity_name = m.get('signLegalEntityName')
+        if m.get('signRecordId') is not None:
+            self.sign_record_id = m.get('signRecordId')
+        if m.get('signStartTime') is not None:
+            self.sign_start_time = m.get('signStartTime')
+        if m.get('signStatus') is not None:
+            self.sign_status = m.get('signStatus')
+        if m.get('signStatusRemarks') is not None:
+            self.sign_status_remarks = m.get('signStatusRemarks')
+        if m.get('signTemplateType') is not None:
+            self.sign_template_type = m.get('signTemplateType')
+        if m.get('signUserId') is not None:
+            self.sign_user_id = m.get('signUserId')
+        if m.get('signUserName') is not None:
+            self.sign_user_name = m.get('signUserName')
+        if m.get('signWay') is not None:
+            self.sign_way = m.get('signWay')
+        return self
+
+
+class GetSignRecordByUserIdResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: List[GetSignRecordByUserIdResponseBodyResultData] = None,
+        has_more: bool = None,
+        next_token: int = None,
+    ):
+        self.data = data
+        self.has_more = has_more
+        self.next_token = next_token
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetSignRecordByUserIdResponseBodyResultData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetSignRecordByUserIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetSignRecordByUserIdResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetSignRecordByUserIdResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetSignRecordByUserIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetSignRecordByUserIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetSignRecordByUserIdResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

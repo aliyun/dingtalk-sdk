@@ -308,6 +308,160 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.AddHrmPreentryHeaders()
         return await self.add_hrm_preentry_with_options_async(request, headers, runtime)
 
+    def create_record_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.CreateRecordRequest,
+        headers: dingtalkhrm__1__0_models.CreateRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.CreateRecordResponse:
+        """
+        @summary 创建电子签签署记录
+        
+        @param request: CreateRecordRequest
+        @param headers: CreateRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attachment_list):
+            body['attachmentList'] = request.attachment_list
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.field_list):
+            body['fieldList'] = request.field_list
+        if not UtilClient.is_unset(request.group_list):
+            body['groupList'] = request.group_list
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.sign_last_legal_entity_name):
+            body['signLastLegalEntityName'] = request.sign_last_legal_entity_name
+        if not UtilClient.is_unset(request.sign_legal_entity_name):
+            body['signLegalEntityName'] = request.sign_legal_entity_name
+        if not UtilClient.is_unset(request.sign_source):
+            body['signSource'] = request.sign_source
+        if not UtilClient.is_unset(request.sign_start_user_id):
+            body['signStartUserId'] = request.sign_start_user_id
+        if not UtilClient.is_unset(request.sign_user_id):
+            body['signUserId'] = request.sign_user_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateRecord',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/signCenters/records',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.CreateRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_record_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.CreateRecordRequest,
+        headers: dingtalkhrm__1__0_models.CreateRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.CreateRecordResponse:
+        """
+        @summary 创建电子签签署记录
+        
+        @param request: CreateRecordRequest
+        @param headers: CreateRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attachment_list):
+            body['attachmentList'] = request.attachment_list
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.field_list):
+            body['fieldList'] = request.field_list
+        if not UtilClient.is_unset(request.group_list):
+            body['groupList'] = request.group_list
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.sign_last_legal_entity_name):
+            body['signLastLegalEntityName'] = request.sign_last_legal_entity_name
+        if not UtilClient.is_unset(request.sign_legal_entity_name):
+            body['signLegalEntityName'] = request.sign_legal_entity_name
+        if not UtilClient.is_unset(request.sign_source):
+            body['signSource'] = request.sign_source
+        if not UtilClient.is_unset(request.sign_start_user_id):
+            body['signStartUserId'] = request.sign_start_user_id
+        if not UtilClient.is_unset(request.sign_user_id):
+            body['signUserId'] = request.sign_user_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateRecord',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/signCenters/records',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.CreateRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_record(
+        self,
+        request: dingtalkhrm__1__0_models.CreateRecordRequest,
+    ) -> dingtalkhrm__1__0_models.CreateRecordResponse:
+        """
+        @summary 创建电子签签署记录
+        
+        @param request: CreateRecordRequest
+        @return: CreateRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.CreateRecordHeaders()
+        return self.create_record_with_options(request, headers, runtime)
+
+    async def create_record_async(
+        self,
+        request: dingtalkhrm__1__0_models.CreateRecordRequest,
+    ) -> dingtalkhrm__1__0_models.CreateRecordResponse:
+        """
+        @summary 创建电子签签署记录
+        
+        @param request: CreateRecordRequest
+        @return: CreateRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.CreateRecordHeaders()
+        return await self.create_record_with_options_async(request, headers, runtime)
+
     def device_market_manager_with_options(
         self,
         headers: Dict[str, str],
@@ -959,6 +1113,262 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.GetEmployeeRosterByFieldHeaders()
         return await self.get_employee_roster_by_field_with_options_async(request, headers, runtime)
+
+    def get_file_template_list_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.GetFileTemplateListRequest,
+        headers: dingtalkhrm__1__0_models.GetFileTemplateListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.GetFileTemplateListResponse:
+        """
+        @summary 查询文件模板列表及文件模板内花名册字段
+        
+        @param request: GetFileTemplateListRequest
+        @param headers: GetFileTemplateListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileTemplateListResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sign_source):
+            body['signSource'] = request.sign_source
+        if not UtilClient.is_unset(request.template_status):
+            body['templateStatus'] = request.template_status
+        if not UtilClient.is_unset(request.template_type_list):
+            body['templateTypeList'] = request.template_type_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetFileTemplateList',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/fileTemplates/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.GetFileTemplateListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_file_template_list_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.GetFileTemplateListRequest,
+        headers: dingtalkhrm__1__0_models.GetFileTemplateListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.GetFileTemplateListResponse:
+        """
+        @summary 查询文件模板列表及文件模板内花名册字段
+        
+        @param request: GetFileTemplateListRequest
+        @param headers: GetFileTemplateListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileTemplateListResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sign_source):
+            body['signSource'] = request.sign_source
+        if not UtilClient.is_unset(request.template_status):
+            body['templateStatus'] = request.template_status
+        if not UtilClient.is_unset(request.template_type_list):
+            body['templateTypeList'] = request.template_type_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetFileTemplateList',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/fileTemplates/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.GetFileTemplateListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_file_template_list(
+        self,
+        request: dingtalkhrm__1__0_models.GetFileTemplateListRequest,
+    ) -> dingtalkhrm__1__0_models.GetFileTemplateListResponse:
+        """
+        @summary 查询文件模板列表及文件模板内花名册字段
+        
+        @param request: GetFileTemplateListRequest
+        @return: GetFileTemplateListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.GetFileTemplateListHeaders()
+        return self.get_file_template_list_with_options(request, headers, runtime)
+
+    async def get_file_template_list_async(
+        self,
+        request: dingtalkhrm__1__0_models.GetFileTemplateListRequest,
+    ) -> dingtalkhrm__1__0_models.GetFileTemplateListResponse:
+        """
+        @summary 查询文件模板列表及文件模板内花名册字段
+        
+        @param request: GetFileTemplateListRequest
+        @return: GetFileTemplateListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.GetFileTemplateListHeaders()
+        return await self.get_file_template_list_with_options_async(request, headers, runtime)
+
+    def get_sign_record_by_user_id_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.GetSignRecordByUserIdRequest,
+        headers: dingtalkhrm__1__0_models.GetSignRecordByUserIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.GetSignRecordByUserIdResponse:
+        """
+        @summary 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+        
+        @param request: GetSignRecordByUserIdRequest
+        @param headers: GetSignRecordByUserIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignRecordByUserIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sign_status):
+            body['signStatus'] = request.sign_status
+        if not UtilClient.is_unset(request.sign_user_id):
+            body['signUserId'] = request.sign_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetSignRecordByUserId',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/signCenters/users/records/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.GetSignRecordByUserIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_sign_record_by_user_id_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.GetSignRecordByUserIdRequest,
+        headers: dingtalkhrm__1__0_models.GetSignRecordByUserIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.GetSignRecordByUserIdResponse:
+        """
+        @summary 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+        
+        @param request: GetSignRecordByUserIdRequest
+        @param headers: GetSignRecordByUserIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSignRecordByUserIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sign_status):
+            body['signStatus'] = request.sign_status
+        if not UtilClient.is_unset(request.sign_user_id):
+            body['signUserId'] = request.sign_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetSignRecordByUserId',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/masters/signCenters/users/records/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.GetSignRecordByUserIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_sign_record_by_user_id(
+        self,
+        request: dingtalkhrm__1__0_models.GetSignRecordByUserIdRequest,
+    ) -> dingtalkhrm__1__0_models.GetSignRecordByUserIdResponse:
+        """
+        @summary 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+        
+        @param request: GetSignRecordByUserIdRequest
+        @return: GetSignRecordByUserIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.GetSignRecordByUserIdHeaders()
+        return self.get_sign_record_by_user_id_with_options(request, headers, runtime)
+
+    async def get_sign_record_by_user_id_async(
+        self,
+        request: dingtalkhrm__1__0_models.GetSignRecordByUserIdRequest,
+    ) -> dingtalkhrm__1__0_models.GetSignRecordByUserIdResponse:
+        """
+        @summary 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+        
+        @param request: GetSignRecordByUserIdRequest
+        @return: GetSignRecordByUserIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.GetSignRecordByUserIdHeaders()
+        return await self.get_sign_record_by_user_id_with_options_async(request, headers, runtime)
 
     def hrm_auth_resources_query_with_options(
         self,

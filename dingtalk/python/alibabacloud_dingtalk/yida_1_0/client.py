@@ -6212,6 +6212,132 @@ class Client(OpenApiClient):
         headers = dingtalkyida__1__0_models.GetProcessDefinitionHeaders()
         return await self.get_process_definition_with_options_async(process_instance_id, request, headers, runtime)
 
+    def get_process_design_with_options(
+        self,
+        process_id: str,
+        request: dingtalkyida__1__0_models.GetProcessDesignRequest,
+        headers: dingtalkyida__1__0_models.GetProcessDesignHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetProcessDesignResponse:
+        """
+        @summary 根据流程ID获取流程设计结构
+        
+        @param request: GetProcessDesignRequest
+        @param headers: GetProcessDesignHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetProcessDesignResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetProcessDesign',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/processes/{process_id}definitions/designs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetProcessDesignResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_process_design_with_options_async(
+        self,
+        process_id: str,
+        request: dingtalkyida__1__0_models.GetProcessDesignRequest,
+        headers: dingtalkyida__1__0_models.GetProcessDesignHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__1__0_models.GetProcessDesignResponse:
+        """
+        @summary 根据流程ID获取流程设计结构
+        
+        @param request: GetProcessDesignRequest
+        @param headers: GetProcessDesignHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetProcessDesignResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_type):
+            query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.system_token):
+            query['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetProcessDesign',
+            version='yida_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/yida/processes/{process_id}definitions/designs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__1__0_models.GetProcessDesignResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_process_design(
+        self,
+        process_id: str,
+        request: dingtalkyida__1__0_models.GetProcessDesignRequest,
+    ) -> dingtalkyida__1__0_models.GetProcessDesignResponse:
+        """
+        @summary 根据流程ID获取流程设计结构
+        
+        @param request: GetProcessDesignRequest
+        @return: GetProcessDesignResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetProcessDesignHeaders()
+        return self.get_process_design_with_options(process_id, request, headers, runtime)
+
+    async def get_process_design_async(
+        self,
+        process_id: str,
+        request: dingtalkyida__1__0_models.GetProcessDesignRequest,
+    ) -> dingtalkyida__1__0_models.GetProcessDesignResponse:
+        """
+        @summary 根据流程ID获取流程设计结构
+        
+        @param request: GetProcessDesignRequest
+        @return: GetProcessDesignResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__1__0_models.GetProcessDesignHeaders()
+        return await self.get_process_design_with_options_async(process_id, request, headers, runtime)
+
     def get_running_task_list_with_options(
         self,
         request: dingtalkyida__1__0_models.GetRunningTaskListRequest,
