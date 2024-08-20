@@ -140,6 +140,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetPrintDictionaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDefinitionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDesignHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDesignRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetProcessDesignResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTaskListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTaskListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\GetRunningTaskListResponse;
@@ -3656,6 +3659,71 @@ class Dingtalk extends OpenApiClient
         $headers = new GetProcessDefinitionHeaders([]);
 
         return $this->getProcessDefinitionWithOptions($processInstanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据流程ID获取流程设计结构
+     *  *
+     * @param string                  $processId
+     * @param GetProcessDesignRequest $request   GetProcessDesignRequest
+     * @param GetProcessDesignHeaders $headers   GetProcessDesignHeaders
+     * @param RuntimeOptions          $runtime   runtime options for this request RuntimeOptions
+     *
+     * @return GetProcessDesignResponse GetProcessDesignResponse
+     */
+    public function getProcessDesignWithOptions($processId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appType)) {
+            $query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            $query['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetProcessDesign',
+            'version'     => 'yida_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/yida/processes/' . $processId . 'definitions/designs',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetProcessDesignResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据流程ID获取流程设计结构
+     *  *
+     * @param string                  $processId
+     * @param GetProcessDesignRequest $request   GetProcessDesignRequest
+     *
+     * @return GetProcessDesignResponse GetProcessDesignResponse
+     */
+    public function getProcessDesign($processId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetProcessDesignHeaders([]);
+
+        return $this->getProcessDesignWithOptions($processId, $request, $headers, $runtime);
     }
 
     /**

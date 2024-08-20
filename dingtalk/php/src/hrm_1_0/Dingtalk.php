@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmLegalEntityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\CreateRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\CreateRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\CreateRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeviceMarketManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\DeviceMarketOrderManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryHeaders;
@@ -25,6 +28,12 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetFileTemplateListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetFileTemplateListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetFileTemplateListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmAuthResourcesQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmAuthResourcesQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmAuthResourcesQueryResponse;
@@ -302,6 +311,93 @@ class Dingtalk extends OpenApiClient
         $headers = new AddHrmPreentryHeaders([]);
 
         return $this->addHrmPreentryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建电子签签署记录
+     *  *
+     * @param CreateRecordRequest $request CreateRecordRequest
+     * @param CreateRecordHeaders $headers CreateRecordHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateRecordResponse CreateRecordResponse
+     */
+    public function createRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attachmentList)) {
+            $body['attachmentList'] = $request->attachmentList;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->fieldList)) {
+            $body['fieldList'] = $request->fieldList;
+        }
+        if (!Utils::isUnset($request->groupList)) {
+            $body['groupList'] = $request->groupList;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->signLastLegalEntityName)) {
+            $body['signLastLegalEntityName'] = $request->signLastLegalEntityName;
+        }
+        if (!Utils::isUnset($request->signLegalEntityName)) {
+            $body['signLegalEntityName'] = $request->signLegalEntityName;
+        }
+        if (!Utils::isUnset($request->signSource)) {
+            $body['signSource'] = $request->signSource;
+        }
+        if (!Utils::isUnset($request->signStartUserId)) {
+            $body['signStartUserId'] = $request->signStartUserId;
+        }
+        if (!Utils::isUnset($request->signUserId)) {
+            $body['signUserId'] = $request->signUserId;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateRecord',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masters/signCenters/records',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建电子签签署记录
+     *  *
+     * @param CreateRecordRequest $request CreateRecordRequest
+     *
+     * @return CreateRecordResponse CreateRecordResponse
+     */
+    public function createRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateRecordHeaders([]);
+
+        return $this->createRecordWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -635,6 +731,141 @@ class Dingtalk extends OpenApiClient
         $headers = new GetEmployeeRosterByFieldHeaders([]);
 
         return $this->getEmployeeRosterByFieldWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询文件模板列表及文件模板内花名册字段
+     *  *
+     * @param GetFileTemplateListRequest $request GetFileTemplateListRequest
+     * @param GetFileTemplateListHeaders $headers GetFileTemplateListHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetFileTemplateListResponse GetFileTemplateListResponse
+     */
+    public function getFileTemplateListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->signSource)) {
+            $body['signSource'] = $request->signSource;
+        }
+        if (!Utils::isUnset($request->templateStatus)) {
+            $body['templateStatus'] = $request->templateStatus;
+        }
+        if (!Utils::isUnset($request->templateTypeList)) {
+            $body['templateTypeList'] = $request->templateTypeList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetFileTemplateList',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masters/fileTemplates/lists/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetFileTemplateListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询文件模板列表及文件模板内花名册字段
+     *  *
+     * @param GetFileTemplateListRequest $request GetFileTemplateListRequest
+     *
+     * @return GetFileTemplateListResponse GetFileTemplateListResponse
+     */
+    public function getFileTemplateList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFileTemplateListHeaders([]);
+
+        return $this->getFileTemplateListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+     *  *
+     * @param GetSignRecordByUserIdRequest $request GetSignRecordByUserIdRequest
+     * @param GetSignRecordByUserIdHeaders $headers GetSignRecordByUserIdHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetSignRecordByUserIdResponse GetSignRecordByUserIdResponse
+     */
+    public function getSignRecordByUserIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->signStatus)) {
+            $body['signStatus'] = $request->signStatus;
+        }
+        if (!Utils::isUnset($request->signUserId)) {
+            $body['signUserId'] = $request->signUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSignRecordByUserId',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masters/signCenters/users/records/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetSignRecordByUserIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+     *  *
+     * @param GetSignRecordByUserIdRequest $request GetSignRecordByUserIdRequest
+     *
+     * @return GetSignRecordByUserIdResponse GetSignRecordByUserIdResponse
+     */
+    public function getSignRecordByUserId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSignRecordByUserIdHeaders([]);
+
+        return $this->getSignRecordByUserIdWithOptions($request, $headers, $runtime);
     }
 
     /**
