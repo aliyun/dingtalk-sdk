@@ -6148,6 +6148,130 @@ export class GetProcessDefinitionResponse extends $tea.Model {
   }
 }
 
+export class GetProcessDesignHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * APP_PBKT0MFBEBTDO8T7SLVP
+   */
+  appType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * hexxx
+   */
+  systemToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 02465454670427591261
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      systemToken: 'systemToken',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'string',
+      systemToken: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignResponseBody extends $tea.Model {
+  approvalSummary?: GetProcessDesignResponseBodyApprovalSummary[];
+  flowConfig?: GetProcessDesignResponseBodyFlowConfig;
+  formulaRules?: GetProcessDesignResponseBodyFormulaRules[];
+  nodes?: GetProcessDesignResponseBodyNodes[];
+  props?: GetProcessDesignResponseBodyProps;
+  static names(): { [key: string]: string } {
+    return {
+      approvalSummary: 'approvalSummary',
+      flowConfig: 'flowConfig',
+      formulaRules: 'formulaRules',
+      nodes: 'nodes',
+      props: 'props',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      approvalSummary: { 'type': 'array', 'itemType': GetProcessDesignResponseBodyApprovalSummary },
+      flowConfig: GetProcessDesignResponseBodyFlowConfig,
+      formulaRules: { 'type': 'array', 'itemType': GetProcessDesignResponseBodyFormulaRules },
+      nodes: { 'type': 'array', 'itemType': GetProcessDesignResponseBodyNodes },
+      props: GetProcessDesignResponseBodyProps,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetProcessDesignResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetProcessDesignResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetRunningTaskListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -15265,6 +15389,393 @@ export class GetProcessDefinitionResponseBodyTasks extends $tea.Model {
   }
 }
 
+export class GetProcessDesignResponseBodyApprovalSummaryTitle extends $tea.Model {
+  /**
+   * @example
+   * zhangsan
+   */
+  enUS?: string;
+  /**
+   * @example
+   * i18n
+   */
+  type?: string;
+  /**
+   * @example
+   * 张三
+   */
+  zhCN?: string;
+  static names(): { [key: string]: string } {
+    return {
+      enUS: 'en_US',
+      type: 'type',
+      zhCN: 'zh_CN',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enUS: 'string',
+      type: 'string',
+      zhCN: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignResponseBodyApprovalSummary extends $tea.Model {
+  title?: GetProcessDesignResponseBodyApprovalSummaryTitle;
+  static names(): { [key: string]: string } {
+    return {
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      title: GetProcessDesignResponseBodyApprovalSummaryTitle,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignResponseBodyFlowConfigSidInstDetail extends $tea.Model {
+  /**
+   * @example
+   * HIDDEN
+   */
+  fieldBehavior?: string;
+  /**
+   * @example
+   * textField_xxx
+   */
+  fieldId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldBehavior: 'fieldBehavior',
+      fieldId: 'fieldId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldBehavior: 'string',
+      fieldId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignResponseBodyFlowConfig extends $tea.Model {
+  sidInstDetail?: GetProcessDesignResponseBodyFlowConfigSidInstDetail[];
+  static names(): { [key: string]: string } {
+    return {
+      sidInstDetail: 'sid_instDetail',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      sidInstDetail: { 'type': 'array', 'itemType': GetProcessDesignResponseBodyFlowConfigSidInstDetail },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignResponseBodyFormulaRulesName extends $tea.Model {
+  /**
+   * @example
+   * zhangsan
+   */
+  enUS?: string;
+  /**
+   * @example
+   * 张三
+   */
+  zhCN?: string;
+  static names(): { [key: string]: string } {
+    return {
+      enUS: 'en_US',
+      zhCN: 'zh_CN',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enUS: 'string',
+      zhCN: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignResponseBodyFormulaRulesRule extends $tea.Model {
+  /**
+   * @example
+   * EQ(#{textField_xxx},1)
+   */
+  content?: string;
+  /**
+   * @example
+   * EQ(单行文本,1)
+   */
+  displayRule?: string;
+  /**
+   * @example
+   * EQ(#{textField_xxx},1)
+   */
+  source?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      displayRule: 'displayRule',
+      source: 'source',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      displayRule: 'string',
+      source: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignResponseBodyFormulaRules extends $tea.Model {
+  activityAction?: string[];
+  activityId?: string[];
+  /**
+   * @example
+   * n
+   */
+  block?: string;
+  /**
+   * @example
+   * xxx
+   */
+  message?: string;
+  name?: GetProcessDesignResponseBodyFormulaRulesName;
+  /**
+   * @example
+   * START
+   */
+  nodeType?: string;
+  rule?: GetProcessDesignResponseBodyFormulaRulesRule;
+  /**
+   * @example
+   * VALIDATOR
+   */
+  ruleType?: string;
+  /**
+   * @example
+   * null
+   */
+  triggerMode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activityAction: 'activityAction',
+      activityId: 'activityId',
+      block: 'block',
+      message: 'message',
+      name: 'name',
+      nodeType: 'nodeType',
+      rule: 'rule',
+      ruleType: 'ruleType',
+      triggerMode: 'triggerMode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityAction: { 'type': 'array', 'itemType': 'string' },
+      activityId: { 'type': 'array', 'itemType': 'string' },
+      block: 'string',
+      message: 'string',
+      name: GetProcessDesignResponseBodyFormulaRulesName,
+      nodeType: 'string',
+      rule: GetProcessDesignResponseBodyFormulaRulesRule,
+      ruleType: 'string',
+      triggerMode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignResponseBodyNodesName extends $tea.Model {
+  /**
+   * @example
+   * 张三
+   */
+  enUS?: string;
+  /**
+   * @example
+   * zhangsan
+   */
+  zhCN?: string;
+  static names(): { [key: string]: string } {
+    return {
+      enUS: 'en_US',
+      zhCN: 'zh_CN',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      enUS: 'string',
+      zhCN: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignResponseBodyNodes extends $tea.Model {
+  childNodes?: { [key: string]: any }[];
+  /**
+   * @example
+   * 请选择审批人
+   */
+  description?: string;
+  name?: GetProcessDesignResponseBodyNodesName;
+  nextId?: string[];
+  /**
+   * @example
+   * node_xxx
+   */
+  nodeId?: string;
+  /**
+   * @example
+   * node_xxx
+   */
+  prevId?: string;
+  props?: { [key: string]: any };
+  /**
+   * @example
+   * approval
+   */
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      childNodes: 'childNodes',
+      description: 'description',
+      name: 'name',
+      nextId: 'nextId',
+      nodeId: 'nodeId',
+      prevId: 'prevId',
+      props: 'props',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      childNodes: { 'type': 'array', 'itemType': { 'type': 'map', 'keyType': 'string', 'valueType': 'any' } },
+      description: 'string',
+      name: GetProcessDesignResponseBodyNodesName,
+      nextId: { 'type': 'array', 'itemType': 'string' },
+      nodeId: 'string',
+      prevId: 'string',
+      props: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetProcessDesignResponseBodyProps extends $tea.Model {
+  allowCollaboration?: boolean;
+  allowTemporaryStorage?: boolean;
+  allowWithdraw?: boolean;
+  /**
+   * @example
+   * FORM-xxx
+   */
+  bindingForm?: string;
+  noRecordRecall?: boolean;
+  /**
+   * @example
+   * TPROC--BDC66HB1FIPNPCMNE5VV787RY4D5327NBKTZL0
+   */
+  processCode?: string;
+  /**
+   * @example
+   * https://xxx
+   */
+  processDetailUrl?: string;
+  /**
+   * @example
+   * https://xxx
+   */
+  processInitUrl?: string;
+  /**
+   * @example
+   * https://xxx
+   */
+  processMobileDetailUrl?: string;
+  stopAssociationRulesIfFailed?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      allowCollaboration: 'allowCollaboration',
+      allowTemporaryStorage: 'allowTemporaryStorage',
+      allowWithdraw: 'allowWithdraw',
+      bindingForm: 'bindingForm',
+      noRecordRecall: 'noRecordRecall',
+      processCode: 'processCode',
+      processDetailUrl: 'processDetailUrl',
+      processInitUrl: 'processInitUrl',
+      processMobileDetailUrl: 'processMobileDetailUrl',
+      stopAssociationRulesIfFailed: 'stopAssociationRulesIfFailed',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      allowCollaboration: 'boolean',
+      allowTemporaryStorage: 'boolean',
+      allowWithdraw: 'boolean',
+      bindingForm: 'string',
+      noRecordRecall: 'boolean',
+      processCode: 'string',
+      processDetailUrl: 'string',
+      processInitUrl: 'string',
+      processMobileDetailUrl: 'string',
+      stopAssociationRulesIfFailed: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetRunningTaskListResponseBodyResult extends $tea.Model {
   /**
    * @example
@@ -20830,6 +21341,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetProcessDefinitionHeaders({ });
     return await this.getProcessDefinitionWithOptions(processInstanceId, request, headers, runtime);
+  }
+
+  /**
+   * 根据流程ID获取流程设计结构
+   * 
+   * @param request - GetProcessDesignRequest
+   * @param headers - GetProcessDesignHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetProcessDesignResponse
+   */
+  async getProcessDesignWithOptions(processId: string, request: GetProcessDesignRequest, headers: GetProcessDesignHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessDesignResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appType)) {
+      query["appType"] = request.appType;
+    }
+
+    if (!Util.isUnset(request.systemToken)) {
+      query["systemToken"] = request.systemToken;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetProcessDesign",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/${processId}definitions/designs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetProcessDesignResponse>(await this.execute(params, req, runtime), new GetProcessDesignResponse({}));
+  }
+
+  /**
+   * 根据流程ID获取流程设计结构
+   * 
+   * @param request - GetProcessDesignRequest
+   * @returns GetProcessDesignResponse
+   */
+  async getProcessDesign(processId: string, request: GetProcessDesignRequest): Promise<GetProcessDesignResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetProcessDesignHeaders({ });
+    return await this.getProcessDesignWithOptions(processId, request, headers, runtime);
   }
 
   /**

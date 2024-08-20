@@ -259,6 +259,168 @@ export class AddHrmPreentryResponse extends $tea.Model {
   }
 }
 
+export class CreateRecordHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRecordRequest extends $tea.Model {
+  attachmentList?: CreateRecordRequestAttachmentList[];
+  /**
+   * @example
+   * 908608088
+   */
+  deptId?: number;
+  fieldList?: CreateRecordRequestFieldList[];
+  groupList?: CreateRecordRequestGroupList[];
+  /**
+   * @example
+   * xxx员工劳动合同电子签署
+   */
+  remark?: string;
+  /**
+   * @example
+   * xxx有限公司
+   */
+  signLastLegalEntityName?: string;
+  /**
+   * @example
+   * xxx有限公司
+   */
+  signLegalEntityName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * CONTRACT
+   */
+  signSource?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 48510731071405348944
+   */
+  signStartUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 660658
+   */
+  signUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 9ad11eb3daa24a9692037079e0732f13
+   */
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attachmentList: 'attachmentList',
+      deptId: 'deptId',
+      fieldList: 'fieldList',
+      groupList: 'groupList',
+      remark: 'remark',
+      signLastLegalEntityName: 'signLastLegalEntityName',
+      signLegalEntityName: 'signLegalEntityName',
+      signSource: 'signSource',
+      signStartUserId: 'signStartUserId',
+      signUserId: 'signUserId',
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachmentList: { 'type': 'array', 'itemType': CreateRecordRequestAttachmentList },
+      deptId: 'number',
+      fieldList: { 'type': 'array', 'itemType': CreateRecordRequestFieldList },
+      groupList: { 'type': 'array', 'itemType': CreateRecordRequestGroupList },
+      remark: 'string',
+      signLastLegalEntityName: 'string',
+      signLegalEntityName: 'string',
+      signSource: 'string',
+      signStartUserId: 'string',
+      signUserId: 'string',
+      templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRecordResponseBody extends $tea.Model {
+  result?: CreateRecordResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateRecordResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRecordResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateRecordResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateRecordResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeviceMarketManagerResponseBody extends $tea.Model {
   requestId?: string;
   static names(): { [key: string]: string } {
@@ -852,6 +1014,237 @@ export class GetEmployeeRosterByFieldResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetEmployeeRosterByFieldResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFileTemplateListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFileTemplateListRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
+  maxResults?: number;
+  /**
+   * @example
+   * 0
+   */
+  nextToken?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * CONTRACT
+   */
+  signSource?: string;
+  /**
+   * @example
+   * 1
+   */
+  templateStatus?: number;
+  templateTypeList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      signSource: 'signSource',
+      templateStatus: 'templateStatus',
+      templateTypeList: 'templateTypeList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'number',
+      signSource: 'string',
+      templateStatus: 'number',
+      templateTypeList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFileTemplateListResponseBody extends $tea.Model {
+  result?: GetFileTemplateListResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetFileTemplateListResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFileTemplateListResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetFileTemplateListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetFileTemplateListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignRecordByUserIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignRecordByUserIdRequest extends $tea.Model {
+  /**
+   * @example
+   * 10
+   */
+  maxResults?: number;
+  /**
+   * @example
+   * 0
+   */
+  nextToken?: number;
+  signStatus?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 660658
+   */
+  signUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      signStatus: 'signStatus',
+      signUserId: 'signUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      maxResults: 'number',
+      nextToken: 'number',
+      signStatus: { 'type': 'array', 'itemType': 'string' },
+      signUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignRecordByUserIdResponseBody extends $tea.Model {
+  result?: GetSignRecordByUserIdResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetSignRecordByUserIdResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignRecordByUserIdResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSignRecordByUserIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetSignRecordByUserIdResponseBody,
     };
   }
 
@@ -5560,6 +5953,254 @@ export class AddHrmPreentryRequestGroups extends $tea.Model {
   }
 }
 
+export class CreateRecordRequestAttachmentList extends $tea.Model {
+  /**
+   * @example
+   * attachment_profile
+   */
+  fieldCode?: string;
+  /**
+   * @example
+   * 简历附件
+   */
+  fieldName?: string;
+  /**
+   * @example
+   * DDAttachmentField
+   */
+  fieldType?: string;
+  /**
+   * @example
+   * https://dt-staging-moka-public.oss-cn-zhangjiakou.aliyuncs.com/form/attachment/b32509e4a809cb4e18a72fc4aa75e655.pdf
+   */
+  fieldValue?: string;
+  /**
+   * @example
+   * attachment
+   */
+  groupId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+      fieldValue: 'fieldValue',
+      groupId: 'groupId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      fieldName: 'string',
+      fieldType: 'string',
+      fieldValue: 'string',
+      groupId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRecordRequestFieldList extends $tea.Model {
+  /**
+   * @example
+   * contract.contract_type
+   */
+  fieldCode?: string;
+  /**
+   * @example
+   * 合同类型
+   */
+  fieldName?: string;
+  /**
+   * @example
+   * DDSelectField
+   */
+  fieldType?: string;
+  /**
+   * @example
+   * 劳动合同
+   */
+  fieldValue?: string;
+  /**
+   * @example
+   * contract
+   */
+  groupId?: string;
+  /**
+   * @example
+   * 劳动合同
+   */
+  optionId?: string;
+  /**
+   * @example
+   * [{\"label\":\"劳动合同\",\"value\":\"劳动合同\"},{\"label\":\"保密协议\",\"value\":\"保密协议\"}]
+   */
+  options?: string;
+  signRequired?: boolean;
+  userCustomField?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+      fieldValue: 'fieldValue',
+      groupId: 'groupId',
+      optionId: 'optionId',
+      options: 'options',
+      signRequired: 'signRequired',
+      userCustomField: 'userCustomField',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      fieldName: 'string',
+      fieldType: 'string',
+      fieldValue: 'string',
+      groupId: 'string',
+      optionId: 'string',
+      options: 'string',
+      signRequired: 'boolean',
+      userCustomField: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRecordRequestGroupListFieldList extends $tea.Model {
+  /**
+   * @example
+   * contract.contract_type
+   */
+  fieldCode?: string;
+  /**
+   * @example
+   * 合同类型
+   */
+  fieldName?: string;
+  /**
+   * @example
+   * DDSelectField
+   */
+  fieldType?: string;
+  /**
+   * @example
+   * 劳动合同
+   */
+  fieldValue?: string;
+  /**
+   * @example
+   * [{\"label\":\"劳动合同\",\"value\":\"劳动合同\"},{\"label\":\"培训协议\",\"value\":\"培训协议\"}]
+   */
+  options?: string;
+  /**
+   * @example
+   * 劳动合同
+   */
+  optionId?: string;
+  /**
+   * @example
+   * contract
+   */
+  groupId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldCode: 'fieldCode',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+      fieldValue: 'fieldValue',
+      options: 'options',
+      optionId: 'optionId',
+      groupId: 'groupId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldCode: 'string',
+      fieldName: 'string',
+      fieldType: 'string',
+      fieldValue: 'string',
+      options: 'string',
+      optionId: 'string',
+      groupId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRecordRequestGroupList extends $tea.Model {
+  detailFlag?: boolean;
+  fieldList?: CreateRecordRequestGroupListFieldList[][];
+  /**
+   * @example
+   * family
+   */
+  groupId?: string;
+  /**
+   * @example
+   * 家庭成员
+   */
+  groupName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      detailFlag: 'detailFlag',
+      fieldList: 'fieldList',
+      groupId: 'groupId',
+      groupName: 'groupName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      detailFlag: 'boolean',
+      fieldList: { 'type': 'array', 'itemType': { 'type': 'array', 'itemType': CreateRecordRequestGroupListFieldList } },
+      groupId: 'string',
+      groupName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateRecordResponseBodyResult extends $tea.Model {
+  details?: string;
+  itemId?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      details: 'details',
+      itemId: 'itemId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      details: 'string',
+      itemId: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetEmployeeRosterByFieldResponseBodyResultFieldDataListFieldValueList extends $tea.Model {
   /**
    * @example
@@ -5665,6 +6306,465 @@ export class GetEmployeeRosterByFieldResponseBodyResult extends $tea.Model {
       fieldDataList: { 'type': 'array', 'itemType': GetEmployeeRosterByFieldResponseBodyResultFieldDataList },
       unionId: 'string',
       userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFileTemplateListResponseBodyResultDataAttachmentList extends $tea.Model {
+  /**
+   * @example
+   * 简历附件
+   */
+  desc?: string;
+  /**
+   * @example
+   * attachment_profile
+   */
+  fieldCode?: string;
+  /**
+   * @example
+   * 简历附件
+   */
+  fieldName?: string;
+  /**
+   * @example
+   * DDAttachmentField
+   */
+  fieldType?: string;
+  /**
+   * @example
+   * attachment
+   */
+  groupId?: string;
+  signRequired?: boolean;
+  userCustomField?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      desc: 'desc',
+      fieldCode: 'fieldCode',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+      groupId: 'groupId',
+      signRequired: 'signRequired',
+      userCustomField: 'userCustomField',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      desc: 'string',
+      fieldCode: 'string',
+      fieldName: 'string',
+      fieldType: 'string',
+      groupId: 'string',
+      signRequired: 'boolean',
+      userCustomField: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFileTemplateListResponseBodyResultDataFieldList extends $tea.Model {
+  /**
+   * @example
+   * 真实姓名字段
+   */
+  desc?: string;
+  /**
+   * @example
+   * esign_name
+   */
+  fieldCode?: string;
+  /**
+   * @example
+   * 真实姓名
+   */
+  fieldName?: string;
+  /**
+   * @example
+   * TextField
+   */
+  fieldType?: string;
+  /**
+   * @example
+   * baseInfo
+   */
+  groupId?: string;
+  signRequired?: boolean;
+  userCustomField?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      desc: 'desc',
+      fieldCode: 'fieldCode',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+      groupId: 'groupId',
+      signRequired: 'signRequired',
+      userCustomField: 'userCustomField',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      desc: 'string',
+      fieldCode: 'string',
+      fieldName: 'string',
+      fieldType: 'string',
+      groupId: 'string',
+      signRequired: 'boolean',
+      userCustomField: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFileTemplateListResponseBodyResultDataGroupListFieldList extends $tea.Model {
+  /**
+   * @example
+   * 家庭成员明细分组
+   */
+  desc?: string;
+  /**
+   * @example
+   * family.member_name
+   */
+  fieldCode?: string;
+  /**
+   * @example
+   * 成员姓名
+   */
+  fieldName?: string;
+  /**
+   * @example
+   * TextField
+   */
+  fieldType?: string;
+  /**
+   * @example
+   * family
+   */
+  groupId?: string;
+  signRequired?: boolean;
+  userCustomField?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      desc: 'desc',
+      fieldCode: 'fieldCode',
+      fieldName: 'fieldName',
+      fieldType: 'fieldType',
+      groupId: 'groupId',
+      signRequired: 'signRequired',
+      userCustomField: 'userCustomField',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      desc: 'string',
+      fieldCode: 'string',
+      fieldName: 'string',
+      fieldType: 'string',
+      groupId: 'string',
+      signRequired: 'boolean',
+      userCustomField: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFileTemplateListResponseBodyResultDataGroupList extends $tea.Model {
+  detailFlag?: boolean;
+  fieldList?: GetFileTemplateListResponseBodyResultDataGroupListFieldList[];
+  /**
+   * @example
+   * family
+   */
+  groupId?: string;
+  /**
+   * @example
+   * 家庭成员
+   */
+  groupName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      detailFlag: 'detailFlag',
+      fieldList: 'fieldList',
+      groupId: 'groupId',
+      groupName: 'groupName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      detailFlag: 'boolean',
+      fieldList: { 'type': 'array', 'itemType': GetFileTemplateListResponseBodyResultDataGroupListFieldList },
+      groupId: 'string',
+      groupName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFileTemplateListResponseBodyResultData extends $tea.Model {
+  attachmentList?: GetFileTemplateListResponseBodyResultDataAttachmentList[];
+  /**
+   * @example
+   * ding57935b18bfd13e9735c2f4657eb6378f
+   */
+  corpId?: string;
+  fieldList?: GetFileTemplateListResponseBodyResultDataFieldList[];
+  groupList?: GetFileTemplateListResponseBodyResultDataGroupList[];
+  /**
+   * @example
+   * f3ed5402e3024febaed773b3ac19feb3
+   */
+  templateId?: string;
+  templateInstName?: string;
+  /**
+   * @example
+   * 劳动合同模板
+   */
+  templateName?: string;
+  /**
+   * @example
+   * 1
+   */
+  templateSignStatus?: number;
+  /**
+   * @example
+   * 1
+   */
+  templateStatus?: number;
+  templateType?: string;
+  /**
+   * @example
+   * 24
+   */
+  tenantId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      attachmentList: 'attachmentList',
+      corpId: 'corpId',
+      fieldList: 'fieldList',
+      groupList: 'groupList',
+      templateId: 'templateId',
+      templateInstName: 'templateInstName',
+      templateName: 'templateName',
+      templateSignStatus: 'templateSignStatus',
+      templateStatus: 'templateStatus',
+      templateType: 'templateType',
+      tenantId: 'tenantId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachmentList: { 'type': 'array', 'itemType': GetFileTemplateListResponseBodyResultDataAttachmentList },
+      corpId: 'string',
+      fieldList: { 'type': 'array', 'itemType': GetFileTemplateListResponseBodyResultDataFieldList },
+      groupList: { 'type': 'array', 'itemType': GetFileTemplateListResponseBodyResultDataGroupList },
+      templateId: 'string',
+      templateInstName: 'string',
+      templateName: 'string',
+      templateSignStatus: 'number',
+      templateStatus: 'number',
+      templateType: 'string',
+      tenantId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetFileTemplateListResponseBodyResult extends $tea.Model {
+  data?: GetFileTemplateListResponseBodyResultData[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  hasMore?: boolean;
+  /**
+   * @example
+   * 10
+   */
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetFileTemplateListResponseBodyResultData },
+      hasMore: 'boolean',
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignRecordByUserIdResponseBodyResultData extends $tea.Model {
+  /**
+   * @example
+   * ding57935b18bfd13e9735c2f4657eb6378f
+   */
+  corpId?: string;
+  /**
+   * @example
+   * 劳动合同电子签签署备注
+   */
+  remark?: string;
+  /**
+   * @example
+   * 1720775436000
+   */
+  signExpireTime?: number;
+  /**
+   * @example
+   * 小明-劳动合同-20240808.pdf
+   */
+  signFileName?: string;
+  /**
+   * @example
+   * https://n.dingtalk.com/xxx
+   */
+  signFileUrl?: string;
+  /**
+   * @example
+   * 1720775436000
+   */
+  signFinishTime?: number;
+  /**
+   * @example
+   * xxx有限公司
+   */
+  signLegalEntityName?: string;
+  /**
+   * @example
+   * 38bc7b69bb6a46b8a69b9001d5c0bdf3
+   */
+  signRecordId?: string;
+  /**
+   * @example
+   * 1720775436000
+   */
+  signStartTime?: number;
+  /**
+   * @example
+   * FINISHED
+   */
+  signStatus?: string;
+  /**
+   * @example
+   * 法人公司未开通
+   */
+  signStatusRemarks?: string;
+  /**
+   * @example
+   * CONTRACT
+   */
+  signTemplateType?: string;
+  /**
+   * @example
+   * 660658
+   */
+  signUserId?: string;
+  /**
+   * @example
+   * 小明
+   */
+  signUserName?: string;
+  /**
+   * @example
+   * ON_LINE
+   */
+  signWay?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      remark: 'remark',
+      signExpireTime: 'signExpireTime',
+      signFileName: 'signFileName',
+      signFileUrl: 'signFileUrl',
+      signFinishTime: 'signFinishTime',
+      signLegalEntityName: 'signLegalEntityName',
+      signRecordId: 'signRecordId',
+      signStartTime: 'signStartTime',
+      signStatus: 'signStatus',
+      signStatusRemarks: 'signStatusRemarks',
+      signTemplateType: 'signTemplateType',
+      signUserId: 'signUserId',
+      signUserName: 'signUserName',
+      signWay: 'signWay',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      remark: 'string',
+      signExpireTime: 'number',
+      signFileName: 'string',
+      signFileUrl: 'string',
+      signFinishTime: 'number',
+      signLegalEntityName: 'string',
+      signRecordId: 'string',
+      signStartTime: 'number',
+      signStatus: 'string',
+      signStatusRemarks: 'string',
+      signTemplateType: 'string',
+      signUserId: 'string',
+      signUserName: 'string',
+      signWay: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignRecordByUserIdResponseBodyResult extends $tea.Model {
+  data?: GetSignRecordByUserIdResponseBodyResultData[];
+  hasMore?: boolean;
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      hasMore: 'hasMore',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': GetSignRecordByUserIdResponseBodyResultData },
+      hasMore: 'boolean',
+      nextToken: 'number',
     };
   }
 
@@ -7842,6 +8942,100 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 创建电子签签署记录
+   * 
+   * @param request - CreateRecordRequest
+   * @param headers - CreateRecordHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateRecordResponse
+   */
+  async createRecordWithOptions(request: CreateRecordRequest, headers: CreateRecordHeaders, runtime: $Util.RuntimeOptions): Promise<CreateRecordResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.attachmentList)) {
+      body["attachmentList"] = request.attachmentList;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.fieldList)) {
+      body["fieldList"] = request.fieldList;
+    }
+
+    if (!Util.isUnset(request.groupList)) {
+      body["groupList"] = request.groupList;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.signLastLegalEntityName)) {
+      body["signLastLegalEntityName"] = request.signLastLegalEntityName;
+    }
+
+    if (!Util.isUnset(request.signLegalEntityName)) {
+      body["signLegalEntityName"] = request.signLegalEntityName;
+    }
+
+    if (!Util.isUnset(request.signSource)) {
+      body["signSource"] = request.signSource;
+    }
+
+    if (!Util.isUnset(request.signStartUserId)) {
+      body["signStartUserId"] = request.signStartUserId;
+    }
+
+    if (!Util.isUnset(request.signUserId)) {
+      body["signUserId"] = request.signUserId;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateRecord",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/signCenters/records`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateRecordResponse>(await this.execute(params, req, runtime), new CreateRecordResponse({}));
+  }
+
+  /**
+   * 创建电子签签署记录
+   * 
+   * @param request - CreateRecordRequest
+   * @returns CreateRecordResponse
+   */
+  async createRecord(request: CreateRecordRequest): Promise<CreateRecordResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateRecordHeaders({ });
+    return await this.createRecordWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 智能人事设备市场管理
    * 
    * @param headers - map
@@ -8155,6 +9349,142 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetEmployeeRosterByFieldHeaders({ });
     return await this.getEmployeeRosterByFieldWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询文件模板列表及文件模板内花名册字段
+   * 
+   * @param request - GetFileTemplateListRequest
+   * @param headers - GetFileTemplateListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetFileTemplateListResponse
+   */
+  async getFileTemplateListWithOptions(request: GetFileTemplateListRequest, headers: GetFileTemplateListHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileTemplateListResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.signSource)) {
+      body["signSource"] = request.signSource;
+    }
+
+    if (!Util.isUnset(request.templateStatus)) {
+      body["templateStatus"] = request.templateStatus;
+    }
+
+    if (!Util.isUnset(request.templateTypeList)) {
+      body["templateTypeList"] = request.templateTypeList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetFileTemplateList",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/fileTemplates/lists/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFileTemplateListResponse>(await this.execute(params, req, runtime), new GetFileTemplateListResponse({}));
+  }
+
+  /**
+   * 查询文件模板列表及文件模板内花名册字段
+   * 
+   * @param request - GetFileTemplateListRequest
+   * @returns GetFileTemplateListResponse
+   */
+  async getFileTemplateList(request: GetFileTemplateListRequest): Promise<GetFileTemplateListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFileTemplateListHeaders({ });
+    return await this.getFileTemplateListWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+   * 
+   * @param request - GetSignRecordByUserIdRequest
+   * @param headers - GetSignRecordByUserIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSignRecordByUserIdResponse
+   */
+  async getSignRecordByUserIdWithOptions(request: GetSignRecordByUserIdRequest, headers: GetSignRecordByUserIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignRecordByUserIdResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      body["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      body["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.signStatus)) {
+      body["signStatus"] = request.signStatus;
+    }
+
+    if (!Util.isUnset(request.signUserId)) {
+      body["signUserId"] = request.signUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetSignRecordByUserId",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/signCenters/users/records/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSignRecordByUserIdResponse>(await this.execute(params, req, runtime), new GetSignRecordByUserIdResponse({}));
+  }
+
+  /**
+   * 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+   * 
+   * @param request - GetSignRecordByUserIdRequest
+   * @returns GetSignRecordByUserIdResponse
+   */
+  async getSignRecordByUserId(request: GetSignRecordByUserIdRequest): Promise<GetSignRecordByUserIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSignRecordByUserIdHeaders({ });
+    return await this.getSignRecordByUserIdWithOptions(request, headers, runtime);
   }
 
   /**
