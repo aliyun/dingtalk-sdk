@@ -362,6 +362,202 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
+         * @summary 创建电子签签署记录
+         *
+         * @param request CreateRecordRequest
+         * @param headers CreateRecordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateRecordResponse
+         */
+        public CreateRecordResponse CreateRecordWithOptions(CreateRecordRequest request, CreateRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachmentList))
+            {
+                body["attachmentList"] = request.AttachmentList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldList))
+            {
+                body["fieldList"] = request.FieldList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupList))
+            {
+                body["groupList"] = request.GroupList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignLastLegalEntityName))
+            {
+                body["signLastLegalEntityName"] = request.SignLastLegalEntityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignLegalEntityName))
+            {
+                body["signLegalEntityName"] = request.SignLegalEntityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignSource))
+            {
+                body["signSource"] = request.SignSource;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignStartUserId))
+            {
+                body["signStartUserId"] = request.SignStartUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignUserId))
+            {
+                body["signUserId"] = request.SignUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateRecord",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/records",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateRecordResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建电子签签署记录
+         *
+         * @param request CreateRecordRequest
+         * @param headers CreateRecordHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateRecordResponse
+         */
+        public async Task<CreateRecordResponse> CreateRecordWithOptionsAsync(CreateRecordRequest request, CreateRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachmentList))
+            {
+                body["attachmentList"] = request.AttachmentList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldList))
+            {
+                body["fieldList"] = request.FieldList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupList))
+            {
+                body["groupList"] = request.GroupList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignLastLegalEntityName))
+            {
+                body["signLastLegalEntityName"] = request.SignLastLegalEntityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignLegalEntityName))
+            {
+                body["signLegalEntityName"] = request.SignLegalEntityName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignSource))
+            {
+                body["signSource"] = request.SignSource;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignStartUserId))
+            {
+                body["signStartUserId"] = request.SignStartUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignUserId))
+            {
+                body["signUserId"] = request.SignUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateRecord",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/records",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateRecordResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建电子签签署记录
+         *
+         * @param request CreateRecordRequest
+         * @return CreateRecordResponse
+         */
+        public CreateRecordResponse CreateRecord(CreateRecordRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateRecordHeaders headers = new CreateRecordHeaders();
+            return CreateRecordWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建电子签签署记录
+         *
+         * @param request CreateRecordRequest
+         * @return CreateRecordResponse
+         */
+        public async Task<CreateRecordResponse> CreateRecordAsync(CreateRecordRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateRecordHeaders headers = new CreateRecordHeaders();
+            return await CreateRecordWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 智能人事设备市场管理
          *
          * @param headers map
@@ -1043,6 +1239,294 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetEmployeeRosterByFieldHeaders headers = new GetEmployeeRosterByFieldHeaders();
             return await GetEmployeeRosterByFieldWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询文件模板列表及文件模板内花名册字段
+         *
+         * @param request GetFileTemplateListRequest
+         * @param headers GetFileTemplateListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFileTemplateListResponse
+         */
+        public GetFileTemplateListResponse GetFileTemplateListWithOptions(GetFileTemplateListRequest request, GetFileTemplateListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignSource))
+            {
+                body["signSource"] = request.SignSource;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateStatus))
+            {
+                body["templateStatus"] = request.TemplateStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateTypeList))
+            {
+                body["templateTypeList"] = request.TemplateTypeList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFileTemplateList",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/fileTemplates/lists/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFileTemplateListResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询文件模板列表及文件模板内花名册字段
+         *
+         * @param request GetFileTemplateListRequest
+         * @param headers GetFileTemplateListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetFileTemplateListResponse
+         */
+        public async Task<GetFileTemplateListResponse> GetFileTemplateListWithOptionsAsync(GetFileTemplateListRequest request, GetFileTemplateListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignSource))
+            {
+                body["signSource"] = request.SignSource;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateStatus))
+            {
+                body["templateStatus"] = request.TemplateStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateTypeList))
+            {
+                body["templateTypeList"] = request.TemplateTypeList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFileTemplateList",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/fileTemplates/lists/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFileTemplateListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询文件模板列表及文件模板内花名册字段
+         *
+         * @param request GetFileTemplateListRequest
+         * @return GetFileTemplateListResponse
+         */
+        public GetFileTemplateListResponse GetFileTemplateList(GetFileTemplateListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFileTemplateListHeaders headers = new GetFileTemplateListHeaders();
+            return GetFileTemplateListWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询文件模板列表及文件模板内花名册字段
+         *
+         * @param request GetFileTemplateListRequest
+         * @return GetFileTemplateListResponse
+         */
+        public async Task<GetFileTemplateListResponse> GetFileTemplateListAsync(GetFileTemplateListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFileTemplateListHeaders headers = new GetFileTemplateListHeaders();
+            return await GetFileTemplateListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+         *
+         * @param request GetSignRecordByUserIdRequest
+         * @param headers GetSignRecordByUserIdHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSignRecordByUserIdResponse
+         */
+        public GetSignRecordByUserIdResponse GetSignRecordByUserIdWithOptions(GetSignRecordByUserIdRequest request, GetSignRecordByUserIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignStatus))
+            {
+                body["signStatus"] = request.SignStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignUserId))
+            {
+                body["signUserId"] = request.SignUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSignRecordByUserId",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/users/records/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSignRecordByUserIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+         *
+         * @param request GetSignRecordByUserIdRequest
+         * @param headers GetSignRecordByUserIdHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSignRecordByUserIdResponse
+         */
+        public async Task<GetSignRecordByUserIdResponse> GetSignRecordByUserIdWithOptionsAsync(GetSignRecordByUserIdRequest request, GetSignRecordByUserIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignStatus))
+            {
+                body["signStatus"] = request.SignStatus;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignUserId))
+            {
+                body["signUserId"] = request.SignUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSignRecordByUserId",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/users/records/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSignRecordByUserIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+         *
+         * @param request GetSignRecordByUserIdRequest
+         * @return GetSignRecordByUserIdResponse
+         */
+        public GetSignRecordByUserIdResponse GetSignRecordByUserId(GetSignRecordByUserIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSignRecordByUserIdHeaders headers = new GetSignRecordByUserIdHeaders();
+            return GetSignRecordByUserIdWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
+         *
+         * @param request GetSignRecordByUserIdRequest
+         * @return GetSignRecordByUserIdResponse
+         */
+        public async Task<GetSignRecordByUserIdResponse> GetSignRecordByUserIdAsync(GetSignRecordByUserIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSignRecordByUserIdHeaders headers = new GetSignRecordByUserIdHeaders();
+            return await GetSignRecordByUserIdWithOptionsAsync(request, headers, runtime);
         }
 
         /**

@@ -7229,6 +7229,138 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
         }
 
         /**
+         * @summary 根据流程ID获取流程设计结构
+         *
+         * @param request GetProcessDesignRequest
+         * @param headers GetProcessDesignHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetProcessDesignResponse
+         */
+        public GetProcessDesignResponse GetProcessDesignWithOptions(string processId, GetProcessDesignRequest request, GetProcessDesignHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
+            {
+                query["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemToken))
+            {
+                query["systemToken"] = request.SystemToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetProcessDesign",
+                Version = "yida_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/yida/processes/" + processId + "definitions/designs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetProcessDesignResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 根据流程ID获取流程设计结构
+         *
+         * @param request GetProcessDesignRequest
+         * @param headers GetProcessDesignHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetProcessDesignResponse
+         */
+        public async Task<GetProcessDesignResponse> GetProcessDesignWithOptionsAsync(string processId, GetProcessDesignRequest request, GetProcessDesignHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
+            {
+                query["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SystemToken))
+            {
+                query["systemToken"] = request.SystemToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetProcessDesign",
+                Version = "yida_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/yida/processes/" + processId + "definitions/designs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetProcessDesignResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 根据流程ID获取流程设计结构
+         *
+         * @param request GetProcessDesignRequest
+         * @return GetProcessDesignResponse
+         */
+        public GetProcessDesignResponse GetProcessDesign(string processId, GetProcessDesignRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetProcessDesignHeaders headers = new GetProcessDesignHeaders();
+            return GetProcessDesignWithOptions(processId, request, headers, runtime);
+        }
+
+        /**
+         * @summary 根据流程ID获取流程设计结构
+         *
+         * @param request GetProcessDesignRequest
+         * @return GetProcessDesignResponse
+         */
+        public async Task<GetProcessDesignResponse> GetProcessDesignAsync(string processId, GetProcessDesignRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetProcessDesignHeaders headers = new GetProcessDesignHeaders();
+            return await GetProcessDesignWithOptionsAsync(processId, request, headers, runtime);
+        }
+
+        /**
          * @summary 通过实例id批量获取待办任务
          *
          * @param request GetRunningTaskListRequest
