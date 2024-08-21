@@ -187,6 +187,254 @@ class AddDomainWordsResponse(TeaModel):
         return self
 
 
+class CreateAssistantHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateAssistantRequest(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        icon: str = None,
+        instructions: str = None,
+        name: str = None,
+        operator_union_id: str = None,
+        recommend_prompts: List[str] = None,
+        welcome_content: str = None,
+    ):
+        # This parameter is required.
+        self.description = description
+        # This parameter is required.
+        self.icon = icon
+        # This parameter is required.
+        self.instructions = instructions
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.operator_union_id = operator_union_id
+        self.recommend_prompts = recommend_prompts
+        # This parameter is required.
+        self.welcome_content = welcome_content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.instructions is not None:
+            result['instructions'] = self.instructions
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        if self.recommend_prompts is not None:
+            result['recommendPrompts'] = self.recommend_prompts
+        if self.welcome_content is not None:
+            result['welcomeContent'] = self.welcome_content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('instructions') is not None:
+            self.instructions = m.get('instructions')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        if m.get('recommendPrompts') is not None:
+            self.recommend_prompts = m.get('recommendPrompts')
+        if m.get('welcomeContent') is not None:
+            self.welcome_content = m.get('welcomeContent')
+        return self
+
+
+class CreateAssistantResponseBody(TeaModel):
+    def __init__(
+        self,
+        action_names: List[str] = None,
+        assistant_id: str = None,
+        created_at: int = None,
+        creator_union_id: str = None,
+        description: str = None,
+        fallback_content: str = None,
+        icon: str = None,
+        instructions: str = None,
+        knowledge_file_names: List[str] = None,
+        model: str = None,
+        name: str = None,
+        recommend_prompts: List[str] = None,
+        unified_app_id: str = None,
+        welcome_content: str = None,
+    ):
+        self.action_names = action_names
+        self.assistant_id = assistant_id
+        self.created_at = created_at
+        self.creator_union_id = creator_union_id
+        self.description = description
+        self.fallback_content = fallback_content
+        self.icon = icon
+        self.instructions = instructions
+        self.knowledge_file_names = knowledge_file_names
+        self.model = model
+        self.name = name
+        self.recommend_prompts = recommend_prompts
+        self.unified_app_id = unified_app_id
+        self.welcome_content = welcome_content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_names is not None:
+            result['actionNames'] = self.action_names
+        if self.assistant_id is not None:
+            result['assistantId'] = self.assistant_id
+        if self.created_at is not None:
+            result['createdAt'] = self.created_at
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.fallback_content is not None:
+            result['fallbackContent'] = self.fallback_content
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.instructions is not None:
+            result['instructions'] = self.instructions
+        if self.knowledge_file_names is not None:
+            result['knowledgeFileNames'] = self.knowledge_file_names
+        if self.model is not None:
+            result['model'] = self.model
+        if self.name is not None:
+            result['name'] = self.name
+        if self.recommend_prompts is not None:
+            result['recommendPrompts'] = self.recommend_prompts
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        if self.welcome_content is not None:
+            result['welcomeContent'] = self.welcome_content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionNames') is not None:
+            self.action_names = m.get('actionNames')
+        if m.get('assistantId') is not None:
+            self.assistant_id = m.get('assistantId')
+        if m.get('createdAt') is not None:
+            self.created_at = m.get('createdAt')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('fallbackContent') is not None:
+            self.fallback_content = m.get('fallbackContent')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('instructions') is not None:
+            self.instructions = m.get('instructions')
+        if m.get('knowledgeFileNames') is not None:
+            self.knowledge_file_names = m.get('knowledgeFileNames')
+        if m.get('model') is not None:
+            self.model = m.get('model')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('recommendPrompts') is not None:
+            self.recommend_prompts = m.get('recommendPrompts')
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        if m.get('welcomeContent') is not None:
+            self.welcome_content = m.get('welcomeContent')
+        return self
+
+
+class CreateAssistantResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateAssistantResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateAssistantResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateAssistantMessageHeaders(TeaModel):
     def __init__(
         self,
@@ -738,6 +986,142 @@ class CreateAssistantThreadResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateAssistantThreadResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteAssistantHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteAssistantRequest(TeaModel):
+    def __init__(
+        self,
+        assistant_id: str = None,
+        operator_union_id: str = None,
+    ):
+        # This parameter is required.
+        self.assistant_id = assistant_id
+        # This parameter is required.
+        self.operator_union_id = operator_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.assistant_id is not None:
+            result['assistantId'] = self.assistant_id
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('assistantId') is not None:
+            self.assistant_id = m.get('assistantId')
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        return self
+
+
+class DeleteAssistantResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteAssistantResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteAssistantResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteAssistantResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2904,6 +3288,231 @@ class ListAssistantRunResponse(TeaModel):
         return self
 
 
+class ListVisibleAssistantHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListVisibleAssistantRequest(TeaModel):
+    def __init__(
+        self,
+        cursor: int = None,
+        page_size: int = None,
+        union_id: str = None,
+    ):
+        self.cursor = cursor
+        # This parameter is required.
+        self.page_size = page_size
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class ListVisibleAssistantResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        assistant_id: str = None,
+        created_at: int = None,
+        creator_union_id: str = None,
+        description: str = None,
+        icon: str = None,
+        name: str = None,
+    ):
+        self.assistant_id = assistant_id
+        self.created_at = created_at
+        self.creator_union_id = creator_union_id
+        self.description = description
+        self.icon = icon
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.assistant_id is not None:
+            result['assistantId'] = self.assistant_id
+        if self.created_at is not None:
+            result['createdAt'] = self.created_at
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('assistantId') is not None:
+            self.assistant_id = m.get('assistantId')
+        if m.get('createdAt') is not None:
+            self.created_at = m.get('createdAt')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class ListVisibleAssistantResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[ListVisibleAssistantResponseBodyList] = None,
+        next_cursor: int = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+        self.next_cursor = next_cursor
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = ListVisibleAssistantResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class ListVisibleAssistantResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListVisibleAssistantResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListVisibleAssistantResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RelearnKnowledgeHeaders(TeaModel):
     def __init__(
         self,
@@ -3819,6 +4428,262 @@ class RetrieveAssistantThreadResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RetrieveAssistantThreadResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateAssistantBasicInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateAssistantBasicInfoRequest(TeaModel):
+    def __init__(
+        self,
+        assistant_id: str = None,
+        description: str = None,
+        fallback_content: str = None,
+        icon: str = None,
+        instructions: str = None,
+        name: str = None,
+        operator_union_id: str = None,
+        recommend_prompts: List[str] = None,
+        welcome_content: str = None,
+    ):
+        # This parameter is required.
+        self.assistant_id = assistant_id
+        self.description = description
+        self.fallback_content = fallback_content
+        self.icon = icon
+        self.instructions = instructions
+        self.name = name
+        # This parameter is required.
+        self.operator_union_id = operator_union_id
+        self.recommend_prompts = recommend_prompts
+        self.welcome_content = welcome_content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.assistant_id is not None:
+            result['assistantId'] = self.assistant_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.fallback_content is not None:
+            result['fallbackContent'] = self.fallback_content
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.instructions is not None:
+            result['instructions'] = self.instructions
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        if self.recommend_prompts is not None:
+            result['recommendPrompts'] = self.recommend_prompts
+        if self.welcome_content is not None:
+            result['welcomeContent'] = self.welcome_content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('assistantId') is not None:
+            self.assistant_id = m.get('assistantId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('fallbackContent') is not None:
+            self.fallback_content = m.get('fallbackContent')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('instructions') is not None:
+            self.instructions = m.get('instructions')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        if m.get('recommendPrompts') is not None:
+            self.recommend_prompts = m.get('recommendPrompts')
+        if m.get('welcomeContent') is not None:
+            self.welcome_content = m.get('welcomeContent')
+        return self
+
+
+class UpdateAssistantBasicInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        action_names: List[str] = None,
+        assistant_id: str = None,
+        created_at: int = None,
+        creator_union_id: str = None,
+        description: str = None,
+        fallback_content: str = None,
+        icon: str = None,
+        instructions: str = None,
+        knowledge_file_names: List[str] = None,
+        model: str = None,
+        name: str = None,
+        recommend_prompts: List[str] = None,
+        unified_app_id: str = None,
+        welcome_content: str = None,
+    ):
+        self.action_names = action_names
+        self.assistant_id = assistant_id
+        self.created_at = created_at
+        self.creator_union_id = creator_union_id
+        self.description = description
+        self.fallback_content = fallback_content
+        self.icon = icon
+        self.instructions = instructions
+        self.knowledge_file_names = knowledge_file_names
+        self.model = model
+        self.name = name
+        self.recommend_prompts = recommend_prompts
+        self.unified_app_id = unified_app_id
+        self.welcome_content = welcome_content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_names is not None:
+            result['actionNames'] = self.action_names
+        if self.assistant_id is not None:
+            result['assistantId'] = self.assistant_id
+        if self.created_at is not None:
+            result['createdAt'] = self.created_at
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.fallback_content is not None:
+            result['fallbackContent'] = self.fallback_content
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.instructions is not None:
+            result['instructions'] = self.instructions
+        if self.knowledge_file_names is not None:
+            result['knowledgeFileNames'] = self.knowledge_file_names
+        if self.model is not None:
+            result['model'] = self.model
+        if self.name is not None:
+            result['name'] = self.name
+        if self.recommend_prompts is not None:
+            result['recommendPrompts'] = self.recommend_prompts
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        if self.welcome_content is not None:
+            result['welcomeContent'] = self.welcome_content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionNames') is not None:
+            self.action_names = m.get('actionNames')
+        if m.get('assistantId') is not None:
+            self.assistant_id = m.get('assistantId')
+        if m.get('createdAt') is not None:
+            self.created_at = m.get('createdAt')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('fallbackContent') is not None:
+            self.fallback_content = m.get('fallbackContent')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('instructions') is not None:
+            self.instructions = m.get('instructions')
+        if m.get('knowledgeFileNames') is not None:
+            self.knowledge_file_names = m.get('knowledgeFileNames')
+        if m.get('model') is not None:
+            self.model = m.get('model')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('recommendPrompts') is not None:
+            self.recommend_prompts = m.get('recommendPrompts')
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        if m.get('welcomeContent') is not None:
+            self.welcome_content = m.get('welcomeContent')
+        return self
+
+
+class UpdateAssistantBasicInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateAssistantBasicInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateAssistantBasicInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

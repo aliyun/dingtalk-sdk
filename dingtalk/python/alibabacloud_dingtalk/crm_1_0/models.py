@@ -18925,11 +18925,11 @@ class GetRelatedViewTabDataRequest(TeaModel):
         return self
 
 
-class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList(TeaModel):
+class GetRelatedViewTabDataResponseBodyResultPageList(TeaModel):
     def __init__(
         self,
         abstract_message: str = None,
-        create_time: str = None,
+        create_time: int = None,
         title: str = None,
     ):
         self.abstract_message = abstract_message
@@ -18964,11 +18964,11 @@ class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabP
         return self
 
 
-class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData(TeaModel):
+class GetRelatedViewTabDataResponseBodyResultPage(TeaModel):
     def __init__(
         self,
         has_more: bool = None,
-        list: List[GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList] = None,
+        list: List[GetRelatedViewTabDataResponseBodyResultPageList] = None,
         next_token: int = None,
         total_count: int = None,
     ):
@@ -19008,7 +19008,7 @@ class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabP
         self.list = []
         if m.get('list') is not None:
             for k in m.get('list'):
-                temp_model = GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList()
+                temp_model = GetRelatedViewTabDataResponseBodyResultPageList()
                 self.list.append(temp_model.from_map(k))
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
@@ -19017,16 +19017,16 @@ class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabP
         return self
 
 
-class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse(TeaModel):
+class GetRelatedViewTabDataResponseBodyResult(TeaModel):
     def __init__(
         self,
-        related_view_tab_page_data: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData = None,
+        page: GetRelatedViewTabDataResponseBodyResultPage = None,
     ):
-        self.related_view_tab_page_data = related_view_tab_page_data
+        self.page = page
 
     def validate(self):
-        if self.related_view_tab_page_data:
-            self.related_view_tab_page_data.validate()
+        if self.page:
+            self.page.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -19034,28 +19034,28 @@ class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse(TeaModel):
             return _map
 
         result = dict()
-        if self.related_view_tab_page_data is not None:
-            result['relatedViewTabPageData'] = self.related_view_tab_page_data.to_map()
+        if self.page is not None:
+            result['page'] = self.page.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('relatedViewTabPageData') is not None:
-            temp_model = GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData()
-            self.related_view_tab_page_data = temp_model.from_map(m['relatedViewTabPageData'])
+        if m.get('page') is not None:
+            temp_model = GetRelatedViewTabDataResponseBodyResultPage()
+            self.page = temp_model.from_map(m['page'])
         return self
 
 
 class GetRelatedViewTabDataResponseBody(TeaModel):
     def __init__(
         self,
-        related_view_tab_data_response: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse = None,
+        result: GetRelatedViewTabDataResponseBodyResult = None,
     ):
-        self.related_view_tab_data_response = related_view_tab_data_response
+        self.result = result
 
     def validate(self):
-        if self.related_view_tab_data_response:
-            self.related_view_tab_data_response.validate()
+        if self.result:
+            self.result.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -19063,15 +19063,15 @@ class GetRelatedViewTabDataResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.related_view_tab_data_response is not None:
-            result['relatedViewTabDataResponse'] = self.related_view_tab_data_response.to_map()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('relatedViewTabDataResponse') is not None:
-            temp_model = GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse()
-            self.related_view_tab_data_response = temp_model.from_map(m['relatedViewTabDataResponse'])
+        if m.get('result') is not None:
+            temp_model = GetRelatedViewTabDataResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
         return self
 
 
@@ -19184,7 +19184,7 @@ class GetRelatedViewTabMetaRequest(TeaModel):
         return self
 
 
-class GetRelatedViewTabMetaResponseBodyBaseViewTabModels(TeaModel):
+class GetRelatedViewTabMetaResponseBodyResults(TeaModel):
     def __init__(
         self,
         form_code: str = None,
@@ -19226,13 +19226,13 @@ class GetRelatedViewTabMetaResponseBodyBaseViewTabModels(TeaModel):
 class GetRelatedViewTabMetaResponseBody(TeaModel):
     def __init__(
         self,
-        base_view_tab_models: List[GetRelatedViewTabMetaResponseBodyBaseViewTabModels] = None,
+        results: List[GetRelatedViewTabMetaResponseBodyResults] = None,
     ):
-        self.base_view_tab_models = base_view_tab_models
+        self.results = results
 
     def validate(self):
-        if self.base_view_tab_models:
-            for k in self.base_view_tab_models:
+        if self.results:
+            for k in self.results:
                 if k:
                     k.validate()
 
@@ -19242,19 +19242,19 @@ class GetRelatedViewTabMetaResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['baseViewTabModels'] = []
-        if self.base_view_tab_models is not None:
-            for k in self.base_view_tab_models:
-                result['baseViewTabModels'].append(k.to_map() if k else None)
+        result['results'] = []
+        if self.results is not None:
+            for k in self.results:
+                result['results'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.base_view_tab_models = []
-        if m.get('baseViewTabModels') is not None:
-            for k in m.get('baseViewTabModels'):
-                temp_model = GetRelatedViewTabMetaResponseBodyBaseViewTabModels()
-                self.base_view_tab_models.append(temp_model.from_map(k))
+        self.results = []
+        if m.get('results') is not None:
+            for k in m.get('results'):
+                temp_model = GetRelatedViewTabMetaResponseBodyResults()
+                self.results.append(temp_model.from_map(k))
         return self
 
 

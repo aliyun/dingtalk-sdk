@@ -194,7 +194,7 @@ class Client(OpenApiClient):
             auth_type='AK',
             style='ROA',
             req_body_type='none',
-            body_type='array'
+            body_type='json'
         )
         return TeaCore.from_map(
             dingtalkedu__1__0_models.AddCollegeAlumniDeptsResponse(),
@@ -239,7 +239,7 @@ class Client(OpenApiClient):
             auth_type='AK',
             style='ROA',
             req_body_type='none',
-            body_type='array'
+            body_type='json'
         )
         return TeaCore.from_map(
             dingtalkedu__1__0_models.AddCollegeAlumniDeptsResponse(),
@@ -8152,7 +8152,7 @@ class Client(OpenApiClient):
             auth_type='AK',
             style='ROA',
             req_body_type='none',
-            body_type='array'
+            body_type='json'
         )
         return TeaCore.from_map(
             dingtalkedu__1__0_models.GetCollegeAlumniDeptsResponse(),
@@ -8197,7 +8197,7 @@ class Client(OpenApiClient):
             auth_type='AK',
             style='ROA',
             req_body_type='none',
-            body_type='array'
+            body_type='json'
         )
         return TeaCore.from_map(
             dingtalkedu__1__0_models.GetCollegeAlumniDeptsResponse(),
