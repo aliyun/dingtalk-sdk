@@ -223,6 +223,8 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfi
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryChannelStaffInfoByMobileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryChannelStaffInfoByMobileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryChannelStaffInfoByMobileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryExclusiveBenefitsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryExclusiveBenefitsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryUserBehaviorHeaders;
@@ -5007,6 +5009,54 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryChannelStaffInfoByMobileHeaders([]);
 
         return $this->queryChannelStaffInfoByMobileWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询专属版权益
+     *  *
+     * @param QueryExclusiveBenefitsHeaders $headers QueryExclusiveBenefitsHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryExclusiveBenefitsResponse QueryExclusiveBenefitsResponse
+     */
+    public function queryExclusiveBenefitsWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'QueryExclusiveBenefits',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/benefits',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryExclusiveBenefitsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询专属版权益
+     *  *
+     * @return QueryExclusiveBenefitsResponse QueryExclusiveBenefitsResponse
+     */
+    public function queryExclusiveBenefits()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryExclusiveBenefitsHeaders([]);
+
+        return $this->queryExclusiveBenefitsWithOptions($headers, $runtime);
     }
 
     /**

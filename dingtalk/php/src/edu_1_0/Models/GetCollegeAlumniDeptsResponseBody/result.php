@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniUserInfoResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniDeptsResponseBody;
 
 use AlibabaCloud\Tea\Model;
 
-class depts extends Model
+class result extends Model
 {
     /**
      * @var string
@@ -19,25 +19,31 @@ class depts extends Model
     public $deptId;
 
     /**
+     * @var string
+     */
+    public $deptType;
+
+    /**
      * @var bool
      */
     public $hasSubDept;
 
     /**
-     * @var bool
-     */
-    public $isIndustryDept;
-
-    /**
      * @var string
      */
     public $name;
+
+    /**
+     * @var int
+     */
+    public $superId;
     protected $_name = [
-        'corpId'         => 'corpId',
-        'deptId'         => 'deptId',
-        'hasSubDept'     => 'hasSubDept',
-        'isIndustryDept' => 'isIndustryDept',
-        'name'           => 'name',
+        'corpId'     => 'corpId',
+        'deptId'     => 'deptId',
+        'deptType'   => 'deptType',
+        'hasSubDept' => 'hasSubDept',
+        'name'       => 'name',
+        'superId'    => 'superId',
     ];
 
     public function validate()
@@ -53,14 +59,17 @@ class depts extends Model
         if (null !== $this->deptId) {
             $res['deptId'] = $this->deptId;
         }
+        if (null !== $this->deptType) {
+            $res['deptType'] = $this->deptType;
+        }
         if (null !== $this->hasSubDept) {
             $res['hasSubDept'] = $this->hasSubDept;
         }
-        if (null !== $this->isIndustryDept) {
-            $res['isIndustryDept'] = $this->isIndustryDept;
-        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->superId) {
+            $res['superId'] = $this->superId;
         }
 
         return $res;
@@ -69,7 +78,7 @@ class depts extends Model
     /**
      * @param array $map
      *
-     * @return depts
+     * @return result
      */
     public static function fromMap($map = [])
     {
@@ -80,14 +89,17 @@ class depts extends Model
         if (isset($map['deptId'])) {
             $model->deptId = $map['deptId'];
         }
+        if (isset($map['deptType'])) {
+            $model->deptType = $map['deptType'];
+        }
         if (isset($map['hasSubDept'])) {
             $model->hasSubDept = $map['hasSubDept'];
         }
-        if (isset($map['isIndustryDept'])) {
-            $model->isIndustryDept = $map['isIndustryDept'];
-        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['superId'])) {
+            $model->superId = $map['superId'];
         }
 
         return $model;

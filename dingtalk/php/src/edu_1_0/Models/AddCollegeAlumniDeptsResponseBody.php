@@ -4,13 +4,13 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniUserInfoResponseBody\result;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniDeptsResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class AddCollegeAlumniUserInfoResponseBody extends Model
+class AddCollegeAlumniDeptsResponseBody extends Model
 {
     /**
-     * @var result
+     * @var result[]
      */
     public $result;
 
@@ -31,7 +31,13 @@ class AddCollegeAlumniUserInfoResponseBody extends Model
     {
         $res = [];
         if (null !== $this->result) {
-            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+            $res['result'] = [];
+            if (null !== $this->result && \is_array($this->result)) {
+                $n = 0;
+                foreach ($this->result as $item) {
+                    $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -43,13 +49,19 @@ class AddCollegeAlumniUserInfoResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return AddCollegeAlumniUserInfoResponseBody
+     * @return AddCollegeAlumniDeptsResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
-            $model->result = result::fromMap($map['result']);
+            if (!empty($map['result'])) {
+                $model->result = [];
+                $n             = 0;
+                foreach ($map['result'] as $item) {
+                    $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

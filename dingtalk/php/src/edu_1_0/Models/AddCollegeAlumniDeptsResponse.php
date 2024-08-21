@@ -4,7 +4,6 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniDeptsResponse\body;
 use AlibabaCloud\Tea\Model;
 
 class AddCollegeAlumniDeptsResponse extends Model
@@ -20,7 +19,7 @@ class AddCollegeAlumniDeptsResponse extends Model
     public $statusCode;
 
     /**
-     * @var body[]
+     * @var AddCollegeAlumniDeptsResponseBody
      */
     public $body;
     protected $_name = [
@@ -43,13 +42,7 @@ class AddCollegeAlumniDeptsResponse extends Model
             $res['statusCode'] = $this->statusCode;
         }
         if (null !== $this->body) {
-            $res['body'] = [];
-            if (null !== $this->body && \is_array($this->body)) {
-                $n = 0;
-                foreach ($this->body as $item) {
-                    $res['body'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+            $res['body'] = null !== $this->body ? $this->body->toMap() : null;
         }
 
         return $res;
@@ -70,13 +63,7 @@ class AddCollegeAlumniDeptsResponse extends Model
             $model->statusCode = $map['statusCode'];
         }
         if (isset($map['body'])) {
-            if (!empty($map['body'])) {
-                $model->body = [];
-                $n           = 0;
-                foreach ($map['body'] as $item) {
-                    $model->body[$n++] = null !== $item ? body::fromMap($item) : $item;
-                }
-            }
+            $model->body = AddCollegeAlumniDeptsResponseBody::fromMap($map['body']);
         }
 
         return $model;

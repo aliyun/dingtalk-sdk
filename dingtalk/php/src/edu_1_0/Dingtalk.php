@@ -533,7 +533,7 @@ class Dingtalk extends OpenApiClient
             'authType'    => 'AK',
             'style'       => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'array',
+            'bodyType'    => 'json',
         ]);
 
         return AddCollegeAlumniDeptsResponse::fromMap($this->execute($params, $req, $runtime));
@@ -4750,7 +4750,7 @@ class Dingtalk extends OpenApiClient
             'authType'    => 'AK',
             'style'       => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType'    => 'array',
+            'bodyType'    => 'json',
         ]);
 
         return GetCollegeAlumniDeptsResponse::fromMap($this->execute($params, $req, $runtime));

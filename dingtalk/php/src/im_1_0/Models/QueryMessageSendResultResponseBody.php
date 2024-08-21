@@ -2,19 +2,25 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabDataResponseBody\result;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMessageSendResultResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class GetRelatedViewTabDataResponseBody extends Model
+class QueryMessageSendResultResponseBody extends Model
 {
     /**
      * @var result
      */
     public $result;
+
+    /**
+     * @var bool
+     */
+    public $success;
     protected $_name = [
-        'result' => 'result',
+        'result'  => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -27,6 +33,9 @@ class GetRelatedViewTabDataResponseBody extends Model
         if (null !== $this->result) {
             $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
+        }
 
         return $res;
     }
@@ -34,13 +43,16 @@ class GetRelatedViewTabDataResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return GetRelatedViewTabDataResponseBody
+     * @return QueryMessageSendResultResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
             $model->result = result::fromMap($map['result']);
+        }
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

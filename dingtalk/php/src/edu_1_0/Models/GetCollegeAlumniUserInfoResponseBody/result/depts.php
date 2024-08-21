@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniDeptsResponse;
+namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniUserInfoResponseBody\result;
 
 use AlibabaCloud\Tea\Model;
 
-class body extends Model
+class depts extends Model
 {
     /**
      * @var string
@@ -14,36 +14,30 @@ class body extends Model
     public $corpId;
 
     /**
-     * @var string
+     * @var int
      */
     public $deptId;
+
+    /**
+     * @var bool
+     */
+    public $hasSubDept;
+
+    /**
+     * @var bool
+     */
+    public $isIndustryDept;
 
     /**
      * @var string
      */
     public $name;
-
-    /**
-     * @var string
-     */
-    public $superId;
-
-    /**
-     * @var string
-     */
-    public $hasSubDept;
-
-    /**
-     * @var string
-     */
-    public $deptType;
     protected $_name = [
-        'corpId'     => 'corpId',
-        'deptId'     => 'deptId',
-        'name'       => 'name',
-        'superId'    => 'superId',
-        'hasSubDept' => 'hasSubDept',
-        'deptType'   => 'deptType',
+        'corpId'         => 'corpId',
+        'deptId'         => 'deptId',
+        'hasSubDept'     => 'hasSubDept',
+        'isIndustryDept' => 'isIndustryDept',
+        'name'           => 'name',
     ];
 
     public function validate()
@@ -59,17 +53,14 @@ class body extends Model
         if (null !== $this->deptId) {
             $res['deptId'] = $this->deptId;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->superId) {
-            $res['superId'] = $this->superId;
-        }
         if (null !== $this->hasSubDept) {
             $res['hasSubDept'] = $this->hasSubDept;
         }
-        if (null !== $this->deptType) {
-            $res['deptType'] = $this->deptType;
+        if (null !== $this->isIndustryDept) {
+            $res['isIndustryDept'] = $this->isIndustryDept;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
 
         return $res;
@@ -78,7 +69,7 @@ class body extends Model
     /**
      * @param array $map
      *
-     * @return body
+     * @return depts
      */
     public static function fromMap($map = [])
     {
@@ -89,17 +80,14 @@ class body extends Model
         if (isset($map['deptId'])) {
             $model->deptId = $map['deptId'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['superId'])) {
-            $model->superId = $map['superId'];
-        }
         if (isset($map['hasSubDept'])) {
             $model->hasSubDept = $map['hasSubDept'];
         }
-        if (isset($map['deptType'])) {
-            $model->deptType = $map['deptType'];
+        if (isset($map['isIndustryDept'])) {
+            $model->isIndustryDept = $map['isIndustryDept'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
 
         return $model;

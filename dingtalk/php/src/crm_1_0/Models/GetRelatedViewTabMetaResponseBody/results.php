@@ -6,24 +6,24 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabMetaRespons
 
 use AlibabaCloud\Tea\Model;
 
-class baseViewTabModels extends Model
+class results extends Model
 {
     /**
-     * @example PROC-C9EA3AB8-8BCD-4FAD-857D-18D579663366
+     * @example PROC-4EFE895D-A291-4A65-9FD6-99431604DF67
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @example OpenDataField_S0RIE8G0YAKG",             "sourceFormUuid": "PROC-C9EA3AB8-8BCD-4FAD-857D-18D579663366
+     * @example OpenDataField_K99RPMMRGJ40
      *
      * @var string
      */
     public $relateComponentId;
 
     /**
-     * @example 楚衣的流程表单1
+     * @example 212
      *
      * @var string
      */
@@ -57,7 +57,7 @@ class baseViewTabModels extends Model
     /**
      * @param array $map
      *
-     * @return baseViewTabModels
+     * @return results
      */
     public static function fromMap($map = [])
     {

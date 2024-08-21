@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniDeptsResponse;
+namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniDeptsResponseBody;
 
 use AlibabaCloud\Tea\Model;
 
-class body extends Model
+class result extends Model
 {
     /**
      * @var string
@@ -21,12 +21,7 @@ class body extends Model
     /**
      * @var string
      */
-    public $name;
-
-    /**
-     * @var int
-     */
-    public $superId;
+    public $deptType;
 
     /**
      * @var bool
@@ -36,14 +31,19 @@ class body extends Model
     /**
      * @var string
      */
-    public $deptType;
+    public $name;
+
+    /**
+     * @var int
+     */
+    public $superId;
     protected $_name = [
         'corpId'     => 'corpId',
         'deptId'     => 'deptId',
+        'deptType'   => 'deptType',
+        'hasSubDept' => 'hasSubDept',
         'name'       => 'name',
         'superId'    => 'superId',
-        'hasSubDept' => 'hasSubDept',
-        'deptType'   => 'deptType',
     ];
 
     public function validate()
@@ -59,17 +59,17 @@ class body extends Model
         if (null !== $this->deptId) {
             $res['deptId'] = $this->deptId;
         }
+        if (null !== $this->deptType) {
+            $res['deptType'] = $this->deptType;
+        }
+        if (null !== $this->hasSubDept) {
+            $res['hasSubDept'] = $this->hasSubDept;
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
         if (null !== $this->superId) {
             $res['superId'] = $this->superId;
-        }
-        if (null !== $this->hasSubDept) {
-            $res['hasSubDept'] = $this->hasSubDept;
-        }
-        if (null !== $this->deptType) {
-            $res['deptType'] = $this->deptType;
         }
 
         return $res;
@@ -78,7 +78,7 @@ class body extends Model
     /**
      * @param array $map
      *
-     * @return body
+     * @return result
      */
     public static function fromMap($map = [])
     {
@@ -89,17 +89,17 @@ class body extends Model
         if (isset($map['deptId'])) {
             $model->deptId = $map['deptId'];
         }
+        if (isset($map['deptType'])) {
+            $model->deptType = $map['deptType'];
+        }
+        if (isset($map['hasSubDept'])) {
+            $model->hasSubDept = $map['hasSubDept'];
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }
         if (isset($map['superId'])) {
             $model->superId = $map['superId'];
-        }
-        if (isset($map['hasSubDept'])) {
-            $model->hasSubDept = $map['hasSubDept'];
-        }
-        if (isset($map['deptType'])) {
-            $model->deptType = $map['deptType'];
         }
 
         return $model;

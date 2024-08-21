@@ -38,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DeleteTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocContentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocContentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\DocContentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ExportDocHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ExportDocRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ExportDocResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDentryIdByUuidHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDentryIdByUuidRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDentryIdByUuidResponse;
@@ -926,6 +929,63 @@ class Dingtalk extends OpenApiClient
         $headers = new DocContentHeaders([]);
 
         return $this->docContentWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 导出文档
+     *  *
+     * @param ExportDocRequest $request ExportDocRequest
+     * @param ExportDocHeaders $headers ExportDocHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ExportDocResponse ExportDocResponse
+     */
+    public function exportDocWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ExportDoc',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/dentries/export',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ExportDocResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 导出文档
+     *  *
+     * @param ExportDocRequest $request ExportDocRequest
+     *
+     * @return ExportDocResponse ExportDocResponse
+     */
+    public function exportDoc($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExportDocHeaders([]);
+
+        return $this->exportDocWithOptions($request, $headers, $runtime);
     }
 
     /**

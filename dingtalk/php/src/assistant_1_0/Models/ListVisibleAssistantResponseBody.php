@@ -2,12 +2,12 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabDataResponseBody\relatedViewTabDataResponse;
+namespace AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabDataResponseBody\relatedViewTabDataResponse\relatedViewTabPageData\list_;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListVisibleAssistantResponseBody\list_;
 use AlibabaCloud\Tea\Model;
 
-class relatedViewTabPageData extends Model
+class ListVisibleAssistantResponseBody extends Model
 {
     /**
      * @var bool
@@ -20,22 +20,18 @@ class relatedViewTabPageData extends Model
     public $list;
 
     /**
-     * @example 10
-     *
      * @var int
      */
-    public $nextToken;
+    public $nextCursor;
 
     /**
-     * @example 5
-     *
      * @var int
      */
     public $totalCount;
     protected $_name = [
         'hasMore'    => 'hasMore',
         'list'       => 'list',
-        'nextToken'  => 'nextToken',
+        'nextCursor' => 'nextCursor',
         'totalCount' => 'totalCount',
     ];
 
@@ -58,8 +54,8 @@ class relatedViewTabPageData extends Model
                 }
             }
         }
-        if (null !== $this->nextToken) {
-            $res['nextToken'] = $this->nextToken;
+        if (null !== $this->nextCursor) {
+            $res['nextCursor'] = $this->nextCursor;
         }
         if (null !== $this->totalCount) {
             $res['totalCount'] = $this->totalCount;
@@ -71,7 +67,7 @@ class relatedViewTabPageData extends Model
     /**
      * @param array $map
      *
-     * @return relatedViewTabPageData
+     * @return ListVisibleAssistantResponseBody
      */
     public static function fromMap($map = [])
     {
@@ -88,8 +84,8 @@ class relatedViewTabPageData extends Model
                 }
             }
         }
-        if (isset($map['nextToken'])) {
-            $model->nextToken = $map['nextToken'];
+        if (isset($map['nextCursor'])) {
+            $model->nextCursor = $map['nextCursor'];
         }
         if (isset($map['totalCount'])) {
             $model->totalCount = $map['totalCount'];

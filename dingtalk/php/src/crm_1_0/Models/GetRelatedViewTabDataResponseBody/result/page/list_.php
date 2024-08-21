@@ -2,7 +2,7 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabDataResponseBody\relatedViewTabDataResponse\relatedViewTabPageData;
+namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabDataResponseBody\result\page;
 
 use AlibabaCloud\Tea\Model;
 
@@ -16,9 +16,7 @@ class list_ extends Model
     public $abstractMessage;
 
     /**
-     * @example 1722059884000
-     *
-     * @var string
+     * @var int
      */
     public $createTime;
 

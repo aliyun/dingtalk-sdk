@@ -2,25 +2,24 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniUserInfoResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniUserInfoResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class AddCollegeAlumniUserInfoResponseBody extends Model
+class result extends Model
 {
-    /**
-     * @var result
-     */
-    public $result;
-
     /**
      * @var bool
      */
     public $success;
+
+    /**
+     * @var string
+     */
+    public $type;
     protected $_name = [
-        'result'  => 'result',
         'success' => 'success',
+        'type'    => 'type',
     ];
 
     public function validate()
@@ -30,11 +29,11 @@ class AddCollegeAlumniUserInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
-        }
         if (null !== $this->success) {
             $res['success'] = $this->success;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
 
         return $res;
@@ -43,16 +42,16 @@ class AddCollegeAlumniUserInfoResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return AddCollegeAlumniUserInfoResponseBody
+     * @return result
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            $model->result = result::fromMap($map['result']);
-        }
         if (isset($map['success'])) {
             $model->success = $map['success'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
 
         return $model;

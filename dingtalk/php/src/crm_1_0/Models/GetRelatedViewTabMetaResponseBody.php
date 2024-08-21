@@ -4,17 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabMetaResponseBody\baseViewTabModels;
+use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\GetRelatedViewTabMetaResponseBody\results;
 use AlibabaCloud\Tea\Model;
 
 class GetRelatedViewTabMetaResponseBody extends Model
 {
     /**
-     * @var baseViewTabModels[]
+     * @var results[]
      */
-    public $baseViewTabModels;
+    public $results;
     protected $_name = [
-        'baseViewTabModels' => 'baseViewTabModels',
+        'results' => 'results',
     ];
 
     public function validate()
@@ -24,12 +24,12 @@ class GetRelatedViewTabMetaResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->baseViewTabModels) {
-            $res['baseViewTabModels'] = [];
-            if (null !== $this->baseViewTabModels && \is_array($this->baseViewTabModels)) {
+        if (null !== $this->results) {
+            $res['results'] = [];
+            if (null !== $this->results && \is_array($this->results)) {
                 $n = 0;
-                foreach ($this->baseViewTabModels as $item) {
-                    $res['baseViewTabModels'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->results as $item) {
+                    $res['results'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -45,12 +45,12 @@ class GetRelatedViewTabMetaResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['baseViewTabModels'])) {
-            if (!empty($map['baseViewTabModels'])) {
-                $model->baseViewTabModels = [];
-                $n                        = 0;
-                foreach ($map['baseViewTabModels'] as $item) {
-                    $model->baseViewTabModels[$n++] = null !== $item ? baseViewTabModels::fromMap($item) : $item;
+        if (isset($map['results'])) {
+            if (!empty($map['results'])) {
+                $model->results = [];
+                $n              = 0;
+                foreach ($map['results'] as $item) {
+                    $model->results[$n++] = null !== $item ? results::fromMap($item) : $item;
                 }
             }
         }

@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class GetCollegeAlumniDeptsResponse extends Model
+class ListVisibleAssistantResponse extends Model
 {
     /**
      * @var string[]
@@ -19,7 +19,7 @@ class GetCollegeAlumniDeptsResponse extends Model
     public $statusCode;
 
     /**
-     * @var GetCollegeAlumniDeptsResponseBody
+     * @var ListVisibleAssistantResponseBody
      */
     public $body;
     protected $_name = [
@@ -51,7 +51,7 @@ class GetCollegeAlumniDeptsResponse extends Model
     /**
      * @param array $map
      *
-     * @return GetCollegeAlumniDeptsResponse
+     * @return ListVisibleAssistantResponse
      */
     public static function fromMap($map = [])
     {
@@ -63,7 +63,7 @@ class GetCollegeAlumniDeptsResponse extends Model
             $model->statusCode = $map['statusCode'];
         }
         if (isset($map['body'])) {
-            $model->body = GetCollegeAlumniDeptsResponseBody::fromMap($map['body']);
+            $model->body = ListVisibleAssistantResponseBody::fromMap($map['body']);
         }
 
         return $model;

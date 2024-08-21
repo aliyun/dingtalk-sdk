@@ -170,6 +170,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryInnerGroupRecentListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMessageSendResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMessageSendResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMessageSendResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenConversationReceiveUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenConversationReceiveUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenConversationReceiveUserResponse;
@@ -3875,6 +3878,63 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMembersOfGroupRoleHeaders([]);
 
         return $this->queryMembersOfGroupRoleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据openTaskId查询消息发送结果
+     *  *
+     * @param QueryMessageSendResultRequest $request QueryMessageSendResultRequest
+     * @param QueryMessageSendResultHeaders $headers QueryMessageSendResultHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryMessageSendResultResponse QueryMessageSendResultResponse
+     */
+    public function queryMessageSendResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openTaskId)) {
+            $body['openTaskId'] = $request->openTaskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryMessageSendResult',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/messages/sendResults/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryMessageSendResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据openTaskId查询消息发送结果
+     *  *
+     * @param QueryMessageSendResultRequest $request QueryMessageSendResultRequest
+     *
+     * @return QueryMessageSendResultResponse QueryMessageSendResultResponse
+     */
+    public function queryMessageSendResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMessageSendResultHeaders([]);
+
+        return $this->queryMessageSendResultWithOptions($request, $headers, $runtime);
     }
 
     /**
