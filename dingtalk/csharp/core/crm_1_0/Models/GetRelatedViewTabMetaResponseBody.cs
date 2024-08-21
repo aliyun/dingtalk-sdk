@@ -9,10 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class GetRelatedViewTabMetaResponseBody : TeaModel {
-        [NameInMap("baseViewTabModels")]
+        [NameInMap("results")]
         [Validation(Required=false)]
-        public List<GetRelatedViewTabMetaResponseBodyBaseViewTabModels> BaseViewTabModels { get; set; }
-        public class GetRelatedViewTabMetaResponseBodyBaseViewTabModels : TeaModel {
+        public List<GetRelatedViewTabMetaResponseBodyResults> Results { get; set; }
+        public class GetRelatedViewTabMetaResponseBodyResults : TeaModel {
             [NameInMap("formCode")]
             [Validation(Required=false)]
             public string FormCode { get; set; }

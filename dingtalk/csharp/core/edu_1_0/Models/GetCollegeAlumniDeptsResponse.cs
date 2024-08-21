@@ -19,33 +19,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         [NameInMap("body")]
         [Validation(Required=false)]
-        public List<GetCollegeAlumniDeptsResponseBody> Body { get; set; }
-        public class GetCollegeAlumniDeptsResponseBody : TeaModel {
-            [NameInMap("corpId")]
-            [Validation(Required=false)]
-            public string CorpId { get; set; }
-
-            [NameInMap("deptId")]
-            [Validation(Required=false)]
-            public string DeptId { get; set; }
-
-            [NameInMap("name")]
-            [Validation(Required=false)]
-            public string Name { get; set; }
-
-            [NameInMap("superId")]
-            [Validation(Required=false)]
-            public string SuperId { get; set; }
-
-            [NameInMap("hasSubDept")]
-            [Validation(Required=false)]
-            public string HasSubDept { get; set; }
-
-            [NameInMap("deptType")]
-            [Validation(Required=false)]
-            public string DeptType { get; set; }
-
-        }
+        public GetCollegeAlumniDeptsResponseBody Body { get; set; }
 
     }
 

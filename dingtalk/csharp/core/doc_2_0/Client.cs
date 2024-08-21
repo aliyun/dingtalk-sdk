@@ -1569,6 +1569,122 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
         }
 
         /**
+         * @summary 导出文档
+         *
+         * @param request ExportDocRequest
+         * @param headers ExportDocHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ExportDocResponse
+         */
+        public ExportDocResponse ExportDocWithOptions(ExportDocRequest request, ExportDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExportDoc",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/dentries/export",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExportDocResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 导出文档
+         *
+         * @param request ExportDocRequest
+         * @param headers ExportDocHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ExportDocResponse
+         */
+        public async Task<ExportDocResponse> ExportDocWithOptionsAsync(ExportDocRequest request, ExportDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Param))
+            {
+                body["param"] = request.Param;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExportDoc",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/dentries/export",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExportDocResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 导出文档
+         *
+         * @param request ExportDocRequest
+         * @return ExportDocResponse
+         */
+        public ExportDocResponse ExportDoc(ExportDocRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExportDocHeaders headers = new ExportDocHeaders();
+            return ExportDocWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 导出文档
+         *
+         * @param request ExportDocRequest
+         * @return ExportDocResponse
+         */
+        public async Task<ExportDocResponse> ExportDocAsync(ExportDocRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExportDocHeaders headers = new ExportDocHeaders();
+            return await ExportDocWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 根据文件DentryUuid获取文件DentryId
          *
          * @param request GetDentryIdByUuidRequest

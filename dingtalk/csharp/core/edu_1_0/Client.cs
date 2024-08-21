@@ -220,7 +220,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
-                BodyType = "array",
+                BodyType = "json",
             };
             return TeaModel.ToObject<AddCollegeAlumniDeptsResponse>(Execute(params_, req, runtime));
         }
@@ -269,7 +269,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
-                BodyType = "array",
+                BodyType = "json",
             };
             return TeaModel.ToObject<AddCollegeAlumniDeptsResponse>(await ExecuteAsync(params_, req, runtime));
         }
@@ -9220,7 +9220,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
-                BodyType = "array",
+                BodyType = "json",
             };
             return TeaModel.ToObject<GetCollegeAlumniDeptsResponse>(Execute(params_, req, runtime));
         }
@@ -9269,7 +9269,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
-                BodyType = "array",
+                BodyType = "json",
             };
             return TeaModel.ToObject<GetCollegeAlumniDeptsResponse>(await ExecuteAsync(params_, req, runtime));
         }

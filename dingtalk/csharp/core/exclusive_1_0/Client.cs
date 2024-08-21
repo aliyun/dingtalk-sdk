@@ -9709,6 +9709,104 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         }
 
         /**
+         * @summary 查询专属版权益
+         *
+         * @param headers QueryExclusiveBenefitsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryExclusiveBenefitsResponse
+         */
+        public QueryExclusiveBenefitsResponse QueryExclusiveBenefitsWithOptions(QueryExclusiveBenefitsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryExclusiveBenefits",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/benefits",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryExclusiveBenefitsResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询专属版权益
+         *
+         * @param headers QueryExclusiveBenefitsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryExclusiveBenefitsResponse
+         */
+        public async Task<QueryExclusiveBenefitsResponse> QueryExclusiveBenefitsWithOptionsAsync(QueryExclusiveBenefitsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryExclusiveBenefits",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/benefits",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryExclusiveBenefitsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询专属版权益
+         *
+         * @return QueryExclusiveBenefitsResponse
+         */
+        public QueryExclusiveBenefitsResponse QueryExclusiveBenefits()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryExclusiveBenefitsHeaders headers = new QueryExclusiveBenefitsHeaders();
+            return QueryExclusiveBenefitsWithOptions(headers, runtime);
+        }
+
+        /**
+         * @summary 查询专属版权益
+         *
+         * @return QueryExclusiveBenefitsResponse
+         */
+        public async Task<QueryExclusiveBenefitsResponse> QueryExclusiveBenefitsAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryExclusiveBenefitsHeaders headers = new QueryExclusiveBenefitsHeaders();
+            return await QueryExclusiveBenefitsWithOptionsAsync(headers, runtime);
+        }
+
+        /**
          * @summary 伙伴钉根据uid查询人员的标签信息
          *
          * @param headers QueryPartnerInfoHeaders

@@ -9,29 +9,29 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class GetRelatedViewTabDataResponseBody : TeaModel {
-        [NameInMap("relatedViewTabDataResponse")]
+        [NameInMap("result")]
         [Validation(Required=false)]
-        public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse RelatedViewTabDataResponse { get; set; }
-        public class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse : TeaModel {
-            [NameInMap("relatedViewTabPageData")]
+        public GetRelatedViewTabDataResponseBodyResult Result { get; set; }
+        public class GetRelatedViewTabDataResponseBodyResult : TeaModel {
+            [NameInMap("page")]
             [Validation(Required=false)]
-            public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData RelatedViewTabPageData { get; set; }
-            public class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData : TeaModel {
+            public GetRelatedViewTabDataResponseBodyResultPage Page { get; set; }
+            public class GetRelatedViewTabDataResponseBodyResultPage : TeaModel {
                 [NameInMap("hasMore")]
                 [Validation(Required=false)]
                 public bool? HasMore { get; set; }
 
                 [NameInMap("list")]
                 [Validation(Required=false)]
-                public List<GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList> List { get; set; }
-                public class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList : TeaModel {
+                public List<GetRelatedViewTabDataResponseBodyResultPageList> List { get; set; }
+                public class GetRelatedViewTabDataResponseBodyResultPageList : TeaModel {
                     [NameInMap("abstractMessage")]
                     [Validation(Required=false)]
                     public string AbstractMessage { get; set; }
 
                     [NameInMap("createTime")]
                     [Validation(Required=false)]
-                    public string CreateTime { get; set; }
+                    public long? CreateTime { get; set; }
 
                     [NameInMap("title")]
                     [Validation(Required=false)]
