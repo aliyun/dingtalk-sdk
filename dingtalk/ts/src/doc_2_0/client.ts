@@ -1920,6 +1920,106 @@ export class DocContentResponse extends $tea.Model {
   }
 }
 
+export class ExportDocHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExportDocRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  param?: ExportDocRequestParam;
+  static names(): { [key: string]: string } {
+    return {
+      param: 'param',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      param: ExportDocRequestParam,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExportDocResponseBody extends $tea.Model {
+  /**
+   * @example
+   * 12345678
+   */
+  jobId?: string;
+  /**
+   * @example
+   * init
+   */
+  status?: string;
+  static names(): { [key: string]: string } {
+    return {
+      jobId: 'jobId',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      jobId: 'string',
+      status: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ExportDocResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ExportDocResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ExportDocResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDentryIdByUuidHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7424,6 +7524,42 @@ export class DocContentRequestOption extends $tea.Model {
   }
 }
 
+export class ExportDocRequestParam extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dentryUuid
+   */
+  dentryUuid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingTalksheetToxlsx
+   */
+  exportType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dentryUuid: 'dentryUuid',
+      exportType: 'exportType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dentryUuid: 'string',
+      exportType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class HandoverTeamWithoutAuthRequestParam extends $tea.Model {
   leave?: boolean;
   /**
@@ -10541,6 +10677,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new DocContentHeaders({ });
     return await this.docContentWithOptions(dentryUuid, request, headers, runtime);
+  }
+
+  /**
+   * 导出文档
+   * 
+   * @param request - ExportDocRequest
+   * @param headers - ExportDocHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ExportDocResponse
+   */
+  async exportDocWithOptions(request: ExportDocRequest, headers: ExportDocHeaders, runtime: $Util.RuntimeOptions): Promise<ExportDocResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ExportDoc",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/dentries/export`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ExportDocResponse>(await this.execute(params, req, runtime), new ExportDocResponse({}));
+  }
+
+  /**
+   * 导出文档
+   * 
+   * @param request - ExportDocRequest
+   * @returns ExportDocResponse
+   */
+  async exportDoc(request: ExportDocRequest): Promise<ExportDocResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ExportDocHeaders({ });
+    return await this.exportDocWithOptions(request, headers, runtime);
   }
 
   /**

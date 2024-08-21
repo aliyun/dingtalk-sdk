@@ -5135,16 +5135,16 @@ export class GetRelatedViewTabDataRequest extends $tea.Model {
 }
 
 export class GetRelatedViewTabDataResponseBody extends $tea.Model {
-  relatedViewTabDataResponse?: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse;
+  result?: GetRelatedViewTabDataResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
-      relatedViewTabDataResponse: 'relatedViewTabDataResponse',
+      result: 'result',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      relatedViewTabDataResponse: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse,
+      result: GetRelatedViewTabDataResponseBodyResult,
     };
   }
 
@@ -5234,16 +5234,16 @@ export class GetRelatedViewTabMetaRequest extends $tea.Model {
 }
 
 export class GetRelatedViewTabMetaResponseBody extends $tea.Model {
-  baseViewTabModels?: GetRelatedViewTabMetaResponseBodyBaseViewTabModels[];
+  results?: GetRelatedViewTabMetaResponseBodyResults[];
   static names(): { [key: string]: string } {
     return {
-      baseViewTabModels: 'baseViewTabModels',
+      results: 'results',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      baseViewTabModels: { 'type': 'array', 'itemType': GetRelatedViewTabMetaResponseBodyBaseViewTabModels },
+      results: { 'type': 'array', 'itemType': GetRelatedViewTabMetaResponseBodyResults },
     };
   }
 
@@ -18620,17 +18620,13 @@ export class GetOfficialAccountOTOMessageResultResponseBodyResult extends $tea.M
   }
 }
 
-export class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList extends $tea.Model {
+export class GetRelatedViewTabDataResponseBodyResultPageList extends $tea.Model {
   /**
    * @example
    * 西游四人组:孙悟空
    */
   abstractMessage?: string;
-  /**
-   * @example
-   * 1722059884000
-   */
-  createTime?: string;
+  createTime?: number;
   /**
    * @example
    * 王凯提交的楚衣的流程表单2
@@ -18647,7 +18643,7 @@ export class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedV
   static types(): { [key: string]: any } {
     return {
       abstractMessage: 'string',
-      createTime: 'string',
+      createTime: 'number',
       title: 'string',
     };
   }
@@ -18657,9 +18653,9 @@ export class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedV
   }
 }
 
-export class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData extends $tea.Model {
+export class GetRelatedViewTabDataResponseBodyResultPage extends $tea.Model {
   hasMore?: boolean;
-  list?: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList[];
+  list?: GetRelatedViewTabDataResponseBodyResultPageList[];
   /**
    * @example
    * 10
@@ -18682,7 +18678,7 @@ export class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedV
   static types(): { [key: string]: any } {
     return {
       hasMore: 'boolean',
-      list: { 'type': 'array', 'itemType': GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList },
+      list: { 'type': 'array', 'itemType': GetRelatedViewTabDataResponseBodyResultPageList },
       nextToken: 'number',
       totalCount: 'number',
     };
@@ -18693,17 +18689,17 @@ export class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedV
   }
 }
 
-export class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse extends $tea.Model {
-  relatedViewTabPageData?: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData;
+export class GetRelatedViewTabDataResponseBodyResult extends $tea.Model {
+  page?: GetRelatedViewTabDataResponseBodyResultPage;
   static names(): { [key: string]: string } {
     return {
-      relatedViewTabPageData: 'relatedViewTabPageData',
+      page: 'page',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      relatedViewTabPageData: GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData,
+      page: GetRelatedViewTabDataResponseBodyResultPage,
     };
   }
 
@@ -18712,20 +18708,20 @@ export class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse extends
   }
 }
 
-export class GetRelatedViewTabMetaResponseBodyBaseViewTabModels extends $tea.Model {
+export class GetRelatedViewTabMetaResponseBodyResults extends $tea.Model {
   /**
    * @example
-   * PROC-C9EA3AB8-8BCD-4FAD-857D-18D579663366
+   * PROC-4EFE895D-A291-4A65-9FD6-99431604DF67
    */
   formCode?: string;
   /**
    * @example
-   * OpenDataField_S0RIE8G0YAKG",             "sourceFormUuid": "PROC-C9EA3AB8-8BCD-4FAD-857D-18D579663366
+   * OpenDataField_K99RPMMRGJ40
    */
   relateComponentId?: string;
   /**
    * @example
-   * 楚衣的流程表单1
+   * 212
    */
   tabTitle?: string;
   static names(): { [key: string]: string } {

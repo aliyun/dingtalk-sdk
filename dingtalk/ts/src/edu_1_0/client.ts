@@ -191,10 +191,32 @@ export class AddCollegeAlumniDeptsRequest extends $tea.Model {
   }
 }
 
+export class AddCollegeAlumniDeptsResponseBody extends $tea.Model {
+  result?: AddCollegeAlumniDeptsResponseBodyResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': AddCollegeAlumniDeptsResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddCollegeAlumniDeptsResponse extends $tea.Model {
   headers?: { [key: string]: string };
   statusCode?: number;
-  body?: AddCollegeAlumniDeptsResponseBody[];
+  body?: AddCollegeAlumniDeptsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -207,7 +229,7 @@ export class AddCollegeAlumniDeptsResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
-      body: { 'type': 'array', 'itemType': AddCollegeAlumniDeptsResponseBody },
+      body: AddCollegeAlumniDeptsResponseBody,
     };
   }
 
@@ -298,19 +320,19 @@ export class AddCollegeAlumniUserInfoRequest extends $tea.Model {
 }
 
 export class AddCollegeAlumniUserInfoResponseBody extends $tea.Model {
+  result?: AddCollegeAlumniUserInfoResponseBodyResult;
   success?: boolean;
-  type?: string;
   static names(): { [key: string]: string } {
     return {
+      result: 'result',
       success: 'success',
-      type: 'type',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      result: AddCollegeAlumniUserInfoResponseBodyResult,
       success: 'boolean',
-      type: 'string',
     };
   }
 
@@ -8222,10 +8244,32 @@ export class GetCollegeAlumniDeptsRequest extends $tea.Model {
   }
 }
 
+export class GetCollegeAlumniDeptsResponseBody extends $tea.Model {
+  result?: GetCollegeAlumniDeptsResponseBodyResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetCollegeAlumniDeptsResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetCollegeAlumniDeptsResponse extends $tea.Model {
   headers?: { [key: string]: string };
   statusCode?: number;
-  body?: GetCollegeAlumniDeptsResponseBody[];
+  body?: GetCollegeAlumniDeptsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
@@ -8238,7 +8282,7 @@ export class GetCollegeAlumniDeptsResponse extends $tea.Model {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
-      body: { 'type': 'array', 'itemType': GetCollegeAlumniDeptsResponseBody },
+      body: GetCollegeAlumniDeptsResponseBody,
     };
   }
 
@@ -8300,49 +8344,19 @@ export class GetCollegeAlumniUserInfoRequest extends $tea.Model {
 }
 
 export class GetCollegeAlumniUserInfoResponseBody extends $tea.Model {
-  address?: string;
-  avatar?: string;
-  corpId?: string;
-  depts?: GetCollegeAlumniUserInfoResponseBodyDepts[];
-  email?: string;
-  intake?: string;
-  inviteId?: string;
-  mobile?: string;
-  name?: string;
-  outtake?: string;
-  studentNumber?: string;
-  userId?: string;
+  result?: GetCollegeAlumniUserInfoResponseBodyResult;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      address: 'address',
-      avatar: 'avatar',
-      corpId: 'corpId',
-      depts: 'depts',
-      email: 'email',
-      intake: 'intake',
-      inviteId: 'inviteId',
-      mobile: 'mobile',
-      name: 'name',
-      outtake: 'outtake',
-      studentNumber: 'studentNumber',
-      userId: 'userId',
+      result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      address: 'string',
-      avatar: 'string',
-      corpId: 'string',
-      depts: { 'type': 'array', 'itemType': GetCollegeAlumniUserInfoResponseBodyDepts },
-      email: 'string',
-      intake: 'string',
-      inviteId: 'string',
-      mobile: 'string',
-      name: 'string',
-      outtake: 'string',
-      studentNumber: 'string',
-      userId: 'string',
+      result: GetCollegeAlumniUserInfoResponseBodyResult,
+      success: 'boolean',
     };
   }
 
@@ -17101,21 +17115,21 @@ export class AddCollegeAlumniDeptsRequestDepts extends $tea.Model {
   }
 }
 
-export class AddCollegeAlumniDeptsResponseBody extends $tea.Model {
+export class AddCollegeAlumniDeptsResponseBodyResult extends $tea.Model {
   corpId?: string;
   deptId?: number;
+  deptType?: string;
+  hasSubDept?: boolean;
   name?: string;
   superId?: number;
-  hasSubDept?: boolean;
-  deptType?: string;
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
       deptId: 'deptId',
+      deptType: 'deptType',
+      hasSubDept: 'hasSubDept',
       name: 'name',
       superId: 'superId',
-      hasSubDept: 'hasSubDept',
-      deptType: 'deptType',
     };
   }
 
@@ -17123,10 +17137,32 @@ export class AddCollegeAlumniDeptsResponseBody extends $tea.Model {
     return {
       corpId: 'string',
       deptId: 'number',
+      deptType: 'string',
+      hasSubDept: 'boolean',
       name: 'string',
       superId: 'number',
-      hasSubDept: 'boolean',
-      deptType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeAlumniUserInfoResponseBodyResult extends $tea.Model {
+  success?: boolean;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+      type: 'string',
     };
   }
 
@@ -19531,32 +19567,32 @@ export class EndCourseResponseBodyUniversityCourseCommonResponse extends $tea.Mo
   }
 }
 
-export class GetCollegeAlumniDeptsResponseBody extends $tea.Model {
+export class GetCollegeAlumniDeptsResponseBodyResult extends $tea.Model {
   corpId?: string;
-  deptId?: string;
-  name?: string;
-  superId?: string;
-  hasSubDept?: string;
+  deptId?: number;
   deptType?: string;
+  hasSubDept?: boolean;
+  name?: string;
+  superId?: number;
   static names(): { [key: string]: string } {
     return {
       corpId: 'corpId',
       deptId: 'deptId',
+      deptType: 'deptType',
+      hasSubDept: 'hasSubDept',
       name: 'name',
       superId: 'superId',
-      hasSubDept: 'hasSubDept',
-      deptType: 'deptType',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       corpId: 'string',
-      deptId: 'string',
-      name: 'string',
-      superId: 'string',
-      hasSubDept: 'string',
+      deptId: 'number',
       deptType: 'string',
+      hasSubDept: 'boolean',
+      name: 'string',
+      superId: 'number',
     };
   }
 
@@ -19565,7 +19601,7 @@ export class GetCollegeAlumniDeptsResponseBody extends $tea.Model {
   }
 }
 
-export class GetCollegeAlumniUserInfoResponseBodyDepts extends $tea.Model {
+export class GetCollegeAlumniUserInfoResponseBodyResultDepts extends $tea.Model {
   corpId?: string;
   deptId?: number;
   hasSubDept?: boolean;
@@ -19588,6 +19624,58 @@ export class GetCollegeAlumniUserInfoResponseBodyDepts extends $tea.Model {
       hasSubDept: 'boolean',
       isIndustryDept: 'boolean',
       name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeAlumniUserInfoResponseBodyResult extends $tea.Model {
+  address?: string;
+  avatar?: string;
+  corpId?: string;
+  depts?: GetCollegeAlumniUserInfoResponseBodyResultDepts[];
+  email?: string;
+  intake?: string;
+  inviteId?: number;
+  mobile?: string;
+  name?: string;
+  outtake?: string;
+  studentNumber?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      avatar: 'avatar',
+      corpId: 'corpId',
+      depts: 'depts',
+      email: 'email',
+      intake: 'intake',
+      inviteId: 'inviteId',
+      mobile: 'mobile',
+      name: 'name',
+      outtake: 'outtake',
+      studentNumber: 'studentNumber',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      avatar: 'string',
+      corpId: 'string',
+      depts: { 'type': 'array', 'itemType': GetCollegeAlumniUserInfoResponseBodyResultDepts },
+      email: 'string',
+      intake: 'string',
+      inviteId: 'number',
+      mobile: 'string',
+      name: 'string',
+      outtake: 'string',
+      studentNumber: 'string',
+      userId: 'string',
     };
   }
 
@@ -23971,7 +24059,7 @@ export default class Client extends OpenApi {
       authType: "AK",
       style: "ROA",
       reqBodyType: "none",
-      bodyType: "array",
+      bodyType: "json",
     });
     return $tea.cast<AddCollegeAlumniDeptsResponse>(await this.execute(params, req, runtime), new AddCollegeAlumniDeptsResponse({}));
   }
@@ -28227,7 +28315,7 @@ export default class Client extends OpenApi {
       authType: "AK",
       style: "ROA",
       reqBodyType: "none",
-      bodyType: "array",
+      bodyType: "json",
     });
     return $tea.cast<GetCollegeAlumniDeptsResponse>(await this.execute(params, req, runtime), new GetCollegeAlumniDeptsResponse({}));
   }

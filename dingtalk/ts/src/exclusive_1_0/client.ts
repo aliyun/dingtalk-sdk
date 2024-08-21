@@ -8178,6 +8178,72 @@ export class QueryChannelStaffInfoByMobileResponse extends $tea.Model {
   }
 }
 
+export class QueryExclusiveBenefitsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryExclusiveBenefitsResponseBody extends $tea.Model {
+  benefitsList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      benefitsList: 'benefitsList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      benefitsList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryExclusiveBenefitsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryExclusiveBenefitsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryExclusiveBenefitsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryPartnerInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -20550,6 +20616,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryChannelStaffInfoByMobileHeaders({ });
     return await this.queryChannelStaffInfoByMobileWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询专属版权益
+   * 
+   * @param headers - QueryExclusiveBenefitsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryExclusiveBenefitsResponse
+   */
+  async queryExclusiveBenefitsWithOptions(headers: QueryExclusiveBenefitsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryExclusiveBenefitsResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryExclusiveBenefits",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/benefits`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryExclusiveBenefitsResponse>(await this.execute(params, req, runtime), new QueryExclusiveBenefitsResponse({}));
+  }
+
+  /**
+   * 查询专属版权益
+   * @returns QueryExclusiveBenefitsResponse
+   */
+  async queryExclusiveBenefits(): Promise<QueryExclusiveBenefitsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryExclusiveBenefitsHeaders({ });
+    return await this.queryExclusiveBenefitsWithOptions(headers, runtime);
   }
 
   /**

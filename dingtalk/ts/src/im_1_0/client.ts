@@ -6538,6 +6538,98 @@ export class QueryMembersOfGroupRoleResponse extends $tea.Model {
   }
 }
 
+export class QueryMessageSendResultHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMessageSendResultRequest extends $tea.Model {
+  /**
+   * @example
+   * dhowhi23ohdh==
+   */
+  openTaskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTaskId: 'openTaskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTaskId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMessageSendResultResponseBody extends $tea.Model {
+  result?: QueryMessageSendResultResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryMessageSendResultResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryMessageSendResultResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryMessageSendResultResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryMessageSendResultResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryOpenConversationReceiveUserHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -11682,6 +11774,36 @@ export class QueryInnerGroupRecentListResponseBodyGroupInfos extends $tea.Model 
   }
 }
 
+export class QueryMessageSendResultResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * msghcuh234
+   */
+  openMessageId?: string;
+  /**
+   * @example
+   * 1
+   */
+  sendStatus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      openMessageId: 'openMessageId',
+      sendStatus: 'sendStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openMessageId: 'string',
+      sendStatus: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryOpenConversationReceiveUserResponseBodyResultReceiveUser extends $tea.Model {
   /**
    * @remarks
@@ -16033,6 +16155,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryMembersOfGroupRoleHeaders({ });
     return await this.queryMembersOfGroupRoleWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 根据openTaskId查询消息发送结果
+   * 
+   * @param request - QueryMessageSendResultRequest
+   * @param headers - QueryMessageSendResultHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryMessageSendResultResponse
+   */
+  async queryMessageSendResultWithOptions(request: QueryMessageSendResultRequest, headers: QueryMessageSendResultHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMessageSendResultResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openTaskId)) {
+      body["openTaskId"] = request.openTaskId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryMessageSendResult",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/messages/sendResults/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMessageSendResultResponse>(await this.execute(params, req, runtime), new QueryMessageSendResultResponse({}));
+  }
+
+  /**
+   * 根据openTaskId查询消息发送结果
+   * 
+   * @param request - QueryMessageSendResultRequest
+   * @returns QueryMessageSendResultResponse
+   */
+  async queryMessageSendResult(request: QueryMessageSendResultRequest): Promise<QueryMessageSendResultResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryMessageSendResultHeaders({ });
+    return await this.queryMessageSendResultWithOptions(request, headers, runtime);
   }
 
   /**
