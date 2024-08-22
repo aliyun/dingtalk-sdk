@@ -3262,6 +3262,10 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             {
                 body["operatorUnionId"] = request.OperatorUnionId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scopes))
+            {
+                body["scopes"] = request.Scopes;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sharing))
             {
                 body["sharing"] = request.Sharing;
@@ -3314,6 +3318,10 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUnionId))
             {
                 body["operatorUnionId"] = request.OperatorUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scopes))
+            {
+                body["scopes"] = request.Scopes;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sharing))
             {
