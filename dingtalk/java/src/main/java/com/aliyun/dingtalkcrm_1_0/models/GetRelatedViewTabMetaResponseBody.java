@@ -4,50 +4,50 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRelatedViewTabMetaResponseBody extends TeaModel {
-    @NameInMap("baseViewTabModels")
-    public java.util.List<GetRelatedViewTabMetaResponseBodyBaseViewTabModels> baseViewTabModels;
+    @NameInMap("results")
+    public java.util.List<GetRelatedViewTabMetaResponseBodyResults> results;
 
     public static GetRelatedViewTabMetaResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetRelatedViewTabMetaResponseBody self = new GetRelatedViewTabMetaResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetRelatedViewTabMetaResponseBody setBaseViewTabModels(java.util.List<GetRelatedViewTabMetaResponseBodyBaseViewTabModels> baseViewTabModels) {
-        this.baseViewTabModels = baseViewTabModels;
+    public GetRelatedViewTabMetaResponseBody setResults(java.util.List<GetRelatedViewTabMetaResponseBodyResults> results) {
+        this.results = results;
         return this;
     }
-    public java.util.List<GetRelatedViewTabMetaResponseBodyBaseViewTabModels> getBaseViewTabModels() {
-        return this.baseViewTabModels;
+    public java.util.List<GetRelatedViewTabMetaResponseBodyResults> getResults() {
+        return this.results;
     }
 
-    public static class GetRelatedViewTabMetaResponseBodyBaseViewTabModels extends TeaModel {
+    public static class GetRelatedViewTabMetaResponseBodyResults extends TeaModel {
         /**
          * <strong>example:</strong>
-         * <p>PROC-C9EA3AB8-8BCD-4FAD-857D-18D579663366</p>
+         * <p>PROC-4EFE895D-A291-4A65-9FD6-99431604DF67</p>
          */
         @NameInMap("formCode")
         public String formCode;
 
         /**
          * <strong>example:</strong>
-         * <p>OpenDataField_S0RIE8G0YAKG&quot;,             &quot;sourceFormUuid&quot;: &quot;PROC-C9EA3AB8-8BCD-4FAD-857D-18D579663366</p>
+         * <p>OpenDataField_K99RPMMRGJ40</p>
          */
         @NameInMap("relateComponentId")
         public String relateComponentId;
 
         /**
          * <strong>example:</strong>
-         * <p>楚衣的流程表单1</p>
+         * <p>212</p>
          */
         @NameInMap("tabTitle")
         public String tabTitle;
 
-        public static GetRelatedViewTabMetaResponseBodyBaseViewTabModels build(java.util.Map<String, ?> map) throws Exception {
-            GetRelatedViewTabMetaResponseBodyBaseViewTabModels self = new GetRelatedViewTabMetaResponseBodyBaseViewTabModels();
+        public static GetRelatedViewTabMetaResponseBodyResults build(java.util.Map<String, ?> map) throws Exception {
+            GetRelatedViewTabMetaResponseBodyResults self = new GetRelatedViewTabMetaResponseBodyResults();
             return TeaModel.build(map, self);
         }
 
-        public GetRelatedViewTabMetaResponseBodyBaseViewTabModels setFormCode(String formCode) {
+        public GetRelatedViewTabMetaResponseBodyResults setFormCode(String formCode) {
             this.formCode = formCode;
             return this;
         }
@@ -55,7 +55,7 @@ public class GetRelatedViewTabMetaResponseBody extends TeaModel {
             return this.formCode;
         }
 
-        public GetRelatedViewTabMetaResponseBodyBaseViewTabModels setRelateComponentId(String relateComponentId) {
+        public GetRelatedViewTabMetaResponseBodyResults setRelateComponentId(String relateComponentId) {
             this.relateComponentId = relateComponentId;
             return this;
         }
@@ -63,7 +63,7 @@ public class GetRelatedViewTabMetaResponseBody extends TeaModel {
             return this.relateComponentId;
         }
 
-        public GetRelatedViewTabMetaResponseBodyBaseViewTabModels setTabTitle(String tabTitle) {
+        public GetRelatedViewTabMetaResponseBodyResults setTabTitle(String tabTitle) {
             this.tabTitle = tabTitle;
             return this;
         }

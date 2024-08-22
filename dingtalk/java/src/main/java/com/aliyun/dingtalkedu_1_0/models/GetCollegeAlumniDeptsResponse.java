@@ -11,7 +11,7 @@ public class GetCollegeAlumniDeptsResponse extends TeaModel {
     public Integer statusCode;
 
     @NameInMap("body")
-    public java.util.List<GetCollegeAlumniDeptsResponseBody> body;
+    public GetCollegeAlumniDeptsResponseBody body;
 
     public static GetCollegeAlumniDeptsResponse build(java.util.Map<String, ?> map) throws Exception {
         GetCollegeAlumniDeptsResponse self = new GetCollegeAlumniDeptsResponse();
@@ -34,86 +34,12 @@ public class GetCollegeAlumniDeptsResponse extends TeaModel {
         return this.statusCode;
     }
 
-    public GetCollegeAlumniDeptsResponse setBody(java.util.List<GetCollegeAlumniDeptsResponseBody> body) {
+    public GetCollegeAlumniDeptsResponse setBody(GetCollegeAlumniDeptsResponseBody body) {
         this.body = body;
         return this;
     }
-    public java.util.List<GetCollegeAlumniDeptsResponseBody> getBody() {
+    public GetCollegeAlumniDeptsResponseBody getBody() {
         return this.body;
-    }
-
-    public static class GetCollegeAlumniDeptsResponseBody extends TeaModel {
-        @NameInMap("corpId")
-        public String corpId;
-
-        @NameInMap("deptId")
-        public String deptId;
-
-        @NameInMap("name")
-        public String name;
-
-        @NameInMap("superId")
-        public String superId;
-
-        @NameInMap("hasSubDept")
-        public String hasSubDept;
-
-        @NameInMap("deptType")
-        public String deptType;
-
-        public static GetCollegeAlumniDeptsResponseBody build(java.util.Map<String, ?> map) throws Exception {
-            GetCollegeAlumniDeptsResponseBody self = new GetCollegeAlumniDeptsResponseBody();
-            return TeaModel.build(map, self);
-        }
-
-        public GetCollegeAlumniDeptsResponseBody setCorpId(String corpId) {
-            this.corpId = corpId;
-            return this;
-        }
-        public String getCorpId() {
-            return this.corpId;
-        }
-
-        public GetCollegeAlumniDeptsResponseBody setDeptId(String deptId) {
-            this.deptId = deptId;
-            return this;
-        }
-        public String getDeptId() {
-            return this.deptId;
-        }
-
-        public GetCollegeAlumniDeptsResponseBody setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-        public GetCollegeAlumniDeptsResponseBody setSuperId(String superId) {
-            this.superId = superId;
-            return this;
-        }
-        public String getSuperId() {
-            return this.superId;
-        }
-
-        public GetCollegeAlumniDeptsResponseBody setHasSubDept(String hasSubDept) {
-            this.hasSubDept = hasSubDept;
-            return this;
-        }
-        public String getHasSubDept() {
-            return this.hasSubDept;
-        }
-
-        public GetCollegeAlumniDeptsResponseBody setDeptType(String deptType) {
-            this.deptType = deptType;
-            return this;
-        }
-        public String getDeptType() {
-            return this.deptType;
-        }
-
     }
 
 }

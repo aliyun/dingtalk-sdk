@@ -4,23 +4,23 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRelatedViewTabDataResponseBody extends TeaModel {
-    @NameInMap("relatedViewTabDataResponse")
-    public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse relatedViewTabDataResponse;
+    @NameInMap("result")
+    public GetRelatedViewTabDataResponseBodyResult result;
 
     public static GetRelatedViewTabDataResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetRelatedViewTabDataResponseBody self = new GetRelatedViewTabDataResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetRelatedViewTabDataResponseBody setRelatedViewTabDataResponse(GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse relatedViewTabDataResponse) {
-        this.relatedViewTabDataResponse = relatedViewTabDataResponse;
+    public GetRelatedViewTabDataResponseBody setResult(GetRelatedViewTabDataResponseBodyResult result) {
+        this.result = result;
         return this;
     }
-    public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse getRelatedViewTabDataResponse() {
-        return this.relatedViewTabDataResponse;
+    public GetRelatedViewTabDataResponseBodyResult getResult() {
+        return this.result;
     }
 
-    public static class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList extends TeaModel {
+    public static class GetRelatedViewTabDataResponseBodyResultPageList extends TeaModel {
         /**
          * <strong>example:</strong>
          * <p>西游四人组:孙悟空</p>
@@ -28,12 +28,8 @@ public class GetRelatedViewTabDataResponseBody extends TeaModel {
         @NameInMap("abstractMessage")
         public String abstractMessage;
 
-        /**
-         * <strong>example:</strong>
-         * <p>1722059884000</p>
-         */
         @NameInMap("createTime")
-        public String createTime;
+        public Long createTime;
 
         /**
          * <strong>example:</strong>
@@ -42,12 +38,12 @@ public class GetRelatedViewTabDataResponseBody extends TeaModel {
         @NameInMap("title")
         public String title;
 
-        public static GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList build(java.util.Map<String, ?> map) throws Exception {
-            GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList self = new GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList();
+        public static GetRelatedViewTabDataResponseBodyResultPageList build(java.util.Map<String, ?> map) throws Exception {
+            GetRelatedViewTabDataResponseBodyResultPageList self = new GetRelatedViewTabDataResponseBodyResultPageList();
             return TeaModel.build(map, self);
         }
 
-        public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList setAbstractMessage(String abstractMessage) {
+        public GetRelatedViewTabDataResponseBodyResultPageList setAbstractMessage(String abstractMessage) {
             this.abstractMessage = abstractMessage;
             return this;
         }
@@ -55,15 +51,15 @@ public class GetRelatedViewTabDataResponseBody extends TeaModel {
             return this.abstractMessage;
         }
 
-        public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList setCreateTime(String createTime) {
+        public GetRelatedViewTabDataResponseBodyResultPageList setCreateTime(Long createTime) {
             this.createTime = createTime;
             return this;
         }
-        public String getCreateTime() {
+        public Long getCreateTime() {
             return this.createTime;
         }
 
-        public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList setTitle(String title) {
+        public GetRelatedViewTabDataResponseBodyResultPageList setTitle(String title) {
             this.title = title;
             return this;
         }
@@ -73,12 +69,12 @@ public class GetRelatedViewTabDataResponseBody extends TeaModel {
 
     }
 
-    public static class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData extends TeaModel {
+    public static class GetRelatedViewTabDataResponseBodyResultPage extends TeaModel {
         @NameInMap("hasMore")
         public Boolean hasMore;
 
         @NameInMap("list")
-        public java.util.List<GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList> list;
+        public java.util.List<GetRelatedViewTabDataResponseBodyResultPageList> list;
 
         /**
          * <strong>example:</strong>
@@ -94,12 +90,12 @@ public class GetRelatedViewTabDataResponseBody extends TeaModel {
         @NameInMap("totalCount")
         public Long totalCount;
 
-        public static GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData build(java.util.Map<String, ?> map) throws Exception {
-            GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData self = new GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData();
+        public static GetRelatedViewTabDataResponseBodyResultPage build(java.util.Map<String, ?> map) throws Exception {
+            GetRelatedViewTabDataResponseBodyResultPage self = new GetRelatedViewTabDataResponseBodyResultPage();
             return TeaModel.build(map, self);
         }
 
-        public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData setHasMore(Boolean hasMore) {
+        public GetRelatedViewTabDataResponseBodyResultPage setHasMore(Boolean hasMore) {
             this.hasMore = hasMore;
             return this;
         }
@@ -107,15 +103,15 @@ public class GetRelatedViewTabDataResponseBody extends TeaModel {
             return this.hasMore;
         }
 
-        public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData setList(java.util.List<GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList> list) {
+        public GetRelatedViewTabDataResponseBodyResultPage setList(java.util.List<GetRelatedViewTabDataResponseBodyResultPageList> list) {
             this.list = list;
             return this;
         }
-        public java.util.List<GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageDataList> getList() {
+        public java.util.List<GetRelatedViewTabDataResponseBodyResultPageList> getList() {
             return this.list;
         }
 
-        public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData setNextToken(Long nextToken) {
+        public GetRelatedViewTabDataResponseBodyResultPage setNextToken(Long nextToken) {
             this.nextToken = nextToken;
             return this;
         }
@@ -123,7 +119,7 @@ public class GetRelatedViewTabDataResponseBody extends TeaModel {
             return this.nextToken;
         }
 
-        public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData setTotalCount(Long totalCount) {
+        public GetRelatedViewTabDataResponseBodyResultPage setTotalCount(Long totalCount) {
             this.totalCount = totalCount;
             return this;
         }
@@ -133,21 +129,21 @@ public class GetRelatedViewTabDataResponseBody extends TeaModel {
 
     }
 
-    public static class GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse extends TeaModel {
-        @NameInMap("relatedViewTabPageData")
-        public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData relatedViewTabPageData;
+    public static class GetRelatedViewTabDataResponseBodyResult extends TeaModel {
+        @NameInMap("page")
+        public GetRelatedViewTabDataResponseBodyResultPage page;
 
-        public static GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse build(java.util.Map<String, ?> map) throws Exception {
-            GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse self = new GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse();
+        public static GetRelatedViewTabDataResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
+            GetRelatedViewTabDataResponseBodyResult self = new GetRelatedViewTabDataResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponse setRelatedViewTabPageData(GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData relatedViewTabPageData) {
-            this.relatedViewTabPageData = relatedViewTabPageData;
+        public GetRelatedViewTabDataResponseBodyResult setPage(GetRelatedViewTabDataResponseBodyResultPage page) {
+            this.page = page;
             return this;
         }
-        public GetRelatedViewTabDataResponseBodyRelatedViewTabDataResponseRelatedViewTabPageData getRelatedViewTabPageData() {
-            return this.relatedViewTabPageData;
+        public GetRelatedViewTabDataResponseBodyResultPage getPage() {
+            return this.page;
         }
 
     }

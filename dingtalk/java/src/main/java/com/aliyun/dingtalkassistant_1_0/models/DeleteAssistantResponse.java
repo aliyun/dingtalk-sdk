@@ -1,9 +1,9 @@
 // This file is auto-generated, don't edit it. Thanks.
-package com.aliyun.dingtalkedu_1_0.models;
+package com.aliyun.dingtalkassistant_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class AddCollegeAlumniDeptsResponse extends TeaModel {
+public class DeleteAssistantResponse extends TeaModel {
     @NameInMap("headers")
     public java.util.Map<String, String> headers;
 
@@ -11,14 +11,14 @@ public class AddCollegeAlumniDeptsResponse extends TeaModel {
     public Integer statusCode;
 
     @NameInMap("body")
-    public AddCollegeAlumniDeptsResponseBody body;
+    public DeleteAssistantResponseBody body;
 
-    public static AddCollegeAlumniDeptsResponse build(java.util.Map<String, ?> map) throws Exception {
-        AddCollegeAlumniDeptsResponse self = new AddCollegeAlumniDeptsResponse();
+    public static DeleteAssistantResponse build(java.util.Map<String, ?> map) throws Exception {
+        DeleteAssistantResponse self = new DeleteAssistantResponse();
         return TeaModel.build(map, self);
     }
 
-    public AddCollegeAlumniDeptsResponse setHeaders(java.util.Map<String, String> headers) {
+    public DeleteAssistantResponse setHeaders(java.util.Map<String, String> headers) {
         this.headers = headers;
         return this;
     }
@@ -26,7 +26,7 @@ public class AddCollegeAlumniDeptsResponse extends TeaModel {
         return this.headers;
     }
 
-    public AddCollegeAlumniDeptsResponse setStatusCode(Integer statusCode) {
+    public DeleteAssistantResponse setStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
@@ -34,11 +34,11 @@ public class AddCollegeAlumniDeptsResponse extends TeaModel {
         return this.statusCode;
     }
 
-    public AddCollegeAlumniDeptsResponse setBody(AddCollegeAlumniDeptsResponseBody body) {
+    public DeleteAssistantResponse setBody(DeleteAssistantResponseBody body) {
         this.body = body;
         return this;
     }
-    public AddCollegeAlumniDeptsResponseBody getBody() {
+    public DeleteAssistantResponseBody getBody() {
         return this.body;
     }
 
