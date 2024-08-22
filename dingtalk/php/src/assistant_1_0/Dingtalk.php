@@ -1694,6 +1694,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->operatorUnionId)) {
             $body['operatorUnionId'] = $request->operatorUnionId;
         }
+        if (!Utils::isUnset($request->scopes)) {
+            $body['scopes'] = $request->scopes;
+        }
         if (!Utils::isUnset($request->sharing)) {
             $body['sharing'] = $request->sharing;
         }

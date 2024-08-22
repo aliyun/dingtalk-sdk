@@ -4,22 +4,23 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantScopeResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
 class RetrieveAssistantScopeResponseBody extends Model
 {
     /**
-     * @var string
+     * @var result
      */
-    public $assistantId;
+    public $result;
 
     /**
      * @var bool
      */
-    public $sharing;
+    public $success;
     protected $_name = [
-        'assistantId' => 'assistantId',
-        'sharing'     => 'sharing',
+        'result'  => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -29,11 +30,11 @@ class RetrieveAssistantScopeResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->assistantId) {
-            $res['assistantId'] = $this->assistantId;
+        if (null !== $this->result) {
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
-        if (null !== $this->sharing) {
-            $res['sharing'] = $this->sharing;
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -47,11 +48,11 @@ class RetrieveAssistantScopeResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['assistantId'])) {
-            $model->assistantId = $map['assistantId'];
+        if (isset($map['result'])) {
+            $model->result = result::fromMap($map['result']);
         }
-        if (isset($map['sharing'])) {
-            $model->sharing = $map['sharing'];
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;
