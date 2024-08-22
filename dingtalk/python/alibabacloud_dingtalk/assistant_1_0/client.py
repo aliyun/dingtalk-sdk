@@ -3112,6 +3112,8 @@ class Client(OpenApiClient):
             body['assistantId'] = request.assistant_id
         if not UtilClient.is_unset(request.operator_union_id):
             body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.scopes):
+            body['scopes'] = request.scopes
         if not UtilClient.is_unset(request.sharing):
             body['sharing'] = request.sharing
         real_headers = {}
@@ -3159,6 +3161,8 @@ class Client(OpenApiClient):
             body['assistantId'] = request.assistant_id
         if not UtilClient.is_unset(request.operator_union_id):
             body['operatorUnionId'] = request.operator_union_id
+        if not UtilClient.is_unset(request.scopes):
+            body['scopes'] = request.scopes
         if not UtilClient.is_unset(request.sharing):
             body['sharing'] = request.sharing
         real_headers = {}

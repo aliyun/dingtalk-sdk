@@ -4239,14 +4239,20 @@ class RetrieveAssistantScopeRequest(TeaModel):
         return self
 
 
-class RetrieveAssistantScopeResponseBody(TeaModel):
+class RetrieveAssistantScopeResponseBodyResultScopes(TeaModel):
     def __init__(
         self,
-        assistant_id: str = None,
-        sharing: bool = None,
+        dept_visible_scopes: List[str] = None,
+        dynamic_group_scopes: List[str] = None,
+        is_admin: bool = None,
+        role_visible_scopes: List[str] = None,
+        user_visible_scopes: List[str] = None,
     ):
-        self.assistant_id = assistant_id
-        self.sharing = sharing
+        self.dept_visible_scopes = dept_visible_scopes
+        self.dynamic_group_scopes = dynamic_group_scopes
+        self.is_admin = is_admin
+        self.role_visible_scopes = role_visible_scopes
+        self.user_visible_scopes = user_visible_scopes
 
     def validate(self):
         pass
@@ -4257,8 +4263,58 @@ class RetrieveAssistantScopeResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.dept_visible_scopes is not None:
+            result['deptVisibleScopes'] = self.dept_visible_scopes
+        if self.dynamic_group_scopes is not None:
+            result['dynamicGroupScopes'] = self.dynamic_group_scopes
+        if self.is_admin is not None:
+            result['isAdmin'] = self.is_admin
+        if self.role_visible_scopes is not None:
+            result['roleVisibleScopes'] = self.role_visible_scopes
+        if self.user_visible_scopes is not None:
+            result['userVisibleScopes'] = self.user_visible_scopes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptVisibleScopes') is not None:
+            self.dept_visible_scopes = m.get('deptVisibleScopes')
+        if m.get('dynamicGroupScopes') is not None:
+            self.dynamic_group_scopes = m.get('dynamicGroupScopes')
+        if m.get('isAdmin') is not None:
+            self.is_admin = m.get('isAdmin')
+        if m.get('roleVisibleScopes') is not None:
+            self.role_visible_scopes = m.get('roleVisibleScopes')
+        if m.get('userVisibleScopes') is not None:
+            self.user_visible_scopes = m.get('userVisibleScopes')
+        return self
+
+
+class RetrieveAssistantScopeResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        assistant_id: str = None,
+        scopes: RetrieveAssistantScopeResponseBodyResultScopes = None,
+        sharing: bool = None,
+    ):
+        self.assistant_id = assistant_id
+        self.scopes = scopes
+        self.sharing = sharing
+
+    def validate(self):
+        if self.scopes:
+            self.scopes.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
         if self.assistant_id is not None:
             result['assistantId'] = self.assistant_id
+        if self.scopes is not None:
+            result['scopes'] = self.scopes.to_map()
         if self.sharing is not None:
             result['sharing'] = self.sharing
         return result
@@ -4267,8 +4323,46 @@ class RetrieveAssistantScopeResponseBody(TeaModel):
         m = m or dict()
         if m.get('assistantId') is not None:
             self.assistant_id = m.get('assistantId')
+        if m.get('scopes') is not None:
+            temp_model = RetrieveAssistantScopeResponseBodyResultScopes()
+            self.scopes = temp_model.from_map(m['scopes'])
         if m.get('sharing') is not None:
             self.sharing = m.get('sharing')
+        return self
+
+
+class RetrieveAssistantScopeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: RetrieveAssistantScopeResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = RetrieveAssistantScopeResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
         return self
 
 
@@ -4721,21 +4815,75 @@ class UpdateAssistantScopeHeaders(TeaModel):
         return self
 
 
+class UpdateAssistantScopeRequestScopes(TeaModel):
+    def __init__(
+        self,
+        dept_visible_scopes: List[str] = None,
+        dynamic_group_scopes: List[str] = None,
+        is_admin: bool = None,
+        role_visible_scopes: List[str] = None,
+        user_visible_scopes: List[str] = None,
+    ):
+        self.dept_visible_scopes = dept_visible_scopes
+        self.dynamic_group_scopes = dynamic_group_scopes
+        self.is_admin = is_admin
+        self.role_visible_scopes = role_visible_scopes
+        self.user_visible_scopes = user_visible_scopes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_visible_scopes is not None:
+            result['deptVisibleScopes'] = self.dept_visible_scopes
+        if self.dynamic_group_scopes is not None:
+            result['dynamicGroupScopes'] = self.dynamic_group_scopes
+        if self.is_admin is not None:
+            result['isAdmin'] = self.is_admin
+        if self.role_visible_scopes is not None:
+            result['roleVisibleScopes'] = self.role_visible_scopes
+        if self.user_visible_scopes is not None:
+            result['userVisibleScopes'] = self.user_visible_scopes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptVisibleScopes') is not None:
+            self.dept_visible_scopes = m.get('deptVisibleScopes')
+        if m.get('dynamicGroupScopes') is not None:
+            self.dynamic_group_scopes = m.get('dynamicGroupScopes')
+        if m.get('isAdmin') is not None:
+            self.is_admin = m.get('isAdmin')
+        if m.get('roleVisibleScopes') is not None:
+            self.role_visible_scopes = m.get('roleVisibleScopes')
+        if m.get('userVisibleScopes') is not None:
+            self.user_visible_scopes = m.get('userVisibleScopes')
+        return self
+
+
 class UpdateAssistantScopeRequest(TeaModel):
     def __init__(
         self,
         assistant_id: str = None,
         operator_union_id: str = None,
+        scopes: UpdateAssistantScopeRequestScopes = None,
         sharing: bool = None,
     ):
         # This parameter is required.
         self.assistant_id = assistant_id
         # This parameter is required.
         self.operator_union_id = operator_union_id
+        self.scopes = scopes
         self.sharing = sharing
 
     def validate(self):
-        pass
+        if self.scopes:
+            self.scopes.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -4747,6 +4895,8 @@ class UpdateAssistantScopeRequest(TeaModel):
             result['assistantId'] = self.assistant_id
         if self.operator_union_id is not None:
             result['operatorUnionId'] = self.operator_union_id
+        if self.scopes is not None:
+            result['scopes'] = self.scopes.to_map()
         if self.sharing is not None:
             result['sharing'] = self.sharing
         return result
@@ -4757,6 +4907,9 @@ class UpdateAssistantScopeRequest(TeaModel):
             self.assistant_id = m.get('assistantId')
         if m.get('operatorUnionId') is not None:
             self.operator_union_id = m.get('operatorUnionId')
+        if m.get('scopes') is not None:
+            temp_model = UpdateAssistantScopeRequestScopes()
+            self.scopes = temp_model.from_map(m['scopes'])
         if m.get('sharing') is not None:
             self.sharing = m.get('sharing')
         return self
