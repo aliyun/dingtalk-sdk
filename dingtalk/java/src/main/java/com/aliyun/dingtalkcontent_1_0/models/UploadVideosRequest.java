@@ -4,23 +4,23 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class UploadVideosRequest extends TeaModel {
-    @NameInMap("videoList")
-    public java.util.List<UploadVideosRequestVideoList> videoList;
+    @NameInMap("body")
+    public java.util.List<UploadVideosRequestBody> body;
 
     public static UploadVideosRequest build(java.util.Map<String, ?> map) throws Exception {
         UploadVideosRequest self = new UploadVideosRequest();
         return TeaModel.build(map, self);
     }
 
-    public UploadVideosRequest setVideoList(java.util.List<UploadVideosRequestVideoList> videoList) {
-        this.videoList = videoList;
+    public UploadVideosRequest setBody(java.util.List<UploadVideosRequestBody> body) {
+        this.body = body;
         return this;
     }
-    public java.util.List<UploadVideosRequestVideoList> getVideoList() {
-        return this.videoList;
+    public java.util.List<UploadVideosRequestBody> getBody() {
+        return this.body;
     }
 
-    public static class UploadVideosRequestVideoList extends TeaModel {
+    public static class UploadVideosRequestBody extends TeaModel {
         @NameInMap("authorIconUrl")
         public String authorIconUrl;
 
@@ -60,12 +60,12 @@ public class UploadVideosRequest extends TeaModel {
         @NameInMap("webpUrl")
         public String webpUrl;
 
-        public static UploadVideosRequestVideoList build(java.util.Map<String, ?> map) throws Exception {
-            UploadVideosRequestVideoList self = new UploadVideosRequestVideoList();
+        public static UploadVideosRequestBody build(java.util.Map<String, ?> map) throws Exception {
+            UploadVideosRequestBody self = new UploadVideosRequestBody();
             return TeaModel.build(map, self);
         }
 
-        public UploadVideosRequestVideoList setAuthorIconUrl(String authorIconUrl) {
+        public UploadVideosRequestBody setAuthorIconUrl(String authorIconUrl) {
             this.authorIconUrl = authorIconUrl;
             return this;
         }
@@ -73,7 +73,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.authorIconUrl;
         }
 
-        public UploadVideosRequestVideoList setAuthorId(String authorId) {
+        public UploadVideosRequestBody setAuthorId(String authorId) {
             this.authorId = authorId;
             return this;
         }
@@ -81,7 +81,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.authorId;
         }
 
-        public UploadVideosRequestVideoList setAuthorName(String authorName) {
+        public UploadVideosRequestBody setAuthorName(String authorName) {
             this.authorName = authorName;
             return this;
         }
@@ -89,7 +89,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.authorName;
         }
 
-        public UploadVideosRequestVideoList setCoverUrl(String coverUrl) {
+        public UploadVideosRequestBody setCoverUrl(String coverUrl) {
             this.coverUrl = coverUrl;
             return this;
         }
@@ -97,7 +97,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.coverUrl;
         }
 
-        public UploadVideosRequestVideoList setJumpIconUrl(String jumpIconUrl) {
+        public UploadVideosRequestBody setJumpIconUrl(String jumpIconUrl) {
             this.jumpIconUrl = jumpIconUrl;
             return this;
         }
@@ -105,7 +105,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.jumpIconUrl;
         }
 
-        public UploadVideosRequestVideoList setJumpTitle(String jumpTitle) {
+        public UploadVideosRequestBody setJumpTitle(String jumpTitle) {
             this.jumpTitle = jumpTitle;
             return this;
         }
@@ -113,7 +113,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.jumpTitle;
         }
 
-        public UploadVideosRequestVideoList setJumpUrl(String jumpUrl) {
+        public UploadVideosRequestBody setJumpUrl(String jumpUrl) {
             this.jumpUrl = jumpUrl;
             return this;
         }
@@ -121,7 +121,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.jumpUrl;
         }
 
-        public UploadVideosRequestVideoList setVideoDuration(String videoDuration) {
+        public UploadVideosRequestBody setVideoDuration(String videoDuration) {
             this.videoDuration = videoDuration;
             return this;
         }
@@ -129,7 +129,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.videoDuration;
         }
 
-        public UploadVideosRequestVideoList setVideoHeight(String videoHeight) {
+        public UploadVideosRequestBody setVideoHeight(String videoHeight) {
             this.videoHeight = videoHeight;
             return this;
         }
@@ -137,7 +137,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.videoHeight;
         }
 
-        public UploadVideosRequestVideoList setVideoId(String videoId) {
+        public UploadVideosRequestBody setVideoId(String videoId) {
             this.videoId = videoId;
             return this;
         }
@@ -145,7 +145,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.videoId;
         }
 
-        public UploadVideosRequestVideoList setVideoTitle(String videoTitle) {
+        public UploadVideosRequestBody setVideoTitle(String videoTitle) {
             this.videoTitle = videoTitle;
             return this;
         }
@@ -153,7 +153,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.videoTitle;
         }
 
-        public UploadVideosRequestVideoList setVideoWidth(String videoWidth) {
+        public UploadVideosRequestBody setVideoWidth(String videoWidth) {
             this.videoWidth = videoWidth;
             return this;
         }
@@ -161,7 +161,7 @@ public class UploadVideosRequest extends TeaModel {
             return this.videoWidth;
         }
 
-        public UploadVideosRequestVideoList setWebpUrl(String webpUrl) {
+        public UploadVideosRequestBody setWebpUrl(String webpUrl) {
             this.webpUrl = webpUrl;
             return this;
         }

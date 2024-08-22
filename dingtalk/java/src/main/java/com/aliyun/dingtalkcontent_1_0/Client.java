@@ -389,24 +389,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
      * <b>summary</b> : 
      * <p>点众上传视频信息</p>
      * 
-     * @param tmpReq UploadVideosRequest
+     * @param request UploadVideosRequest
      * @param headers UploadVideosHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return UploadVideosResponse
      */
-    public UploadVideosResponse uploadVideosWithOptions(UploadVideosRequest tmpReq, UploadVideosHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(tmpReq);
-        UploadVideosShrinkRequest request = new UploadVideosShrinkRequest();
-        com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(tmpReq.videoList)) {
-            request.videoListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.videoList, "videoList", "json");
-        }
-
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.videoListShrink)) {
-            query.put("videoList", request.videoListShrink);
-        }
-
+    public UploadVideosResponse uploadVideosWithOptions(UploadVideosRequest request, UploadVideosHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -418,7 +407,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.teautil.Common.toArray(request.body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "UploadVideos"),
