@@ -2384,19 +2384,19 @@ export class RetrieveAssistantScopeRequest extends $tea.Model {
 }
 
 export class RetrieveAssistantScopeResponseBody extends $tea.Model {
-  assistantId?: string;
-  sharing?: boolean;
+  result?: RetrieveAssistantScopeResponseBodyResult;
+  success?: boolean;
   static names(): { [key: string]: string } {
     return {
-      assistantId: 'assistantId',
-      sharing: 'sharing',
+      result: 'result',
+      success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      assistantId: 'string',
-      sharing: 'boolean',
+      result: RetrieveAssistantScopeResponseBodyResult,
+      success: 'boolean',
     };
   }
 
@@ -2694,11 +2694,13 @@ export class UpdateAssistantScopeRequest extends $tea.Model {
    * This parameter is required.
    */
   operatorUnionId?: string;
+  scopes?: UpdateAssistantScopeRequestScopes;
   sharing?: boolean;
   static names(): { [key: string]: string } {
     return {
       assistantId: 'assistantId',
       operatorUnionId: 'operatorUnionId',
+      scopes: 'scopes',
       sharing: 'sharing',
     };
   }
@@ -2707,6 +2709,7 @@ export class UpdateAssistantScopeRequest extends $tea.Model {
     return {
       assistantId: 'string',
       operatorUnionId: 'string',
+      scopes: UpdateAssistantScopeRequestScopes,
       sharing: 'boolean',
     };
   }
@@ -3070,6 +3073,93 @@ export class ListVisibleAssistantResponseBodyList extends $tea.Model {
       description: 'string',
       icon: 'string',
       name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantScopeResponseBodyResultScopes extends $tea.Model {
+  deptVisibleScopes?: string[];
+  dynamicGroupScopes?: string[];
+  isAdmin?: boolean;
+  roleVisibleScopes?: string[];
+  userVisibleScopes?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptVisibleScopes: 'deptVisibleScopes',
+      dynamicGroupScopes: 'dynamicGroupScopes',
+      isAdmin: 'isAdmin',
+      roleVisibleScopes: 'roleVisibleScopes',
+      userVisibleScopes: 'userVisibleScopes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptVisibleScopes: { 'type': 'array', 'itemType': 'string' },
+      dynamicGroupScopes: { 'type': 'array', 'itemType': 'string' },
+      isAdmin: 'boolean',
+      roleVisibleScopes: { 'type': 'array', 'itemType': 'string' },
+      userVisibleScopes: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RetrieveAssistantScopeResponseBodyResult extends $tea.Model {
+  assistantId?: string;
+  scopes?: RetrieveAssistantScopeResponseBodyResultScopes;
+  sharing?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      assistantId: 'assistantId',
+      scopes: 'scopes',
+      sharing: 'sharing',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      assistantId: 'string',
+      scopes: RetrieveAssistantScopeResponseBodyResultScopes,
+      sharing: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateAssistantScopeRequestScopes extends $tea.Model {
+  deptVisibleScopes?: string[];
+  dynamicGroupScopes?: string[];
+  isAdmin?: boolean;
+  roleVisibleScopes?: string[];
+  userVisibleScopes?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptVisibleScopes: 'deptVisibleScopes',
+      dynamicGroupScopes: 'dynamicGroupScopes',
+      isAdmin: 'isAdmin',
+      roleVisibleScopes: 'roleVisibleScopes',
+      userVisibleScopes: 'userVisibleScopes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptVisibleScopes: { 'type': 'array', 'itemType': 'string' },
+      dynamicGroupScopes: { 'type': 'array', 'itemType': 'string' },
+      isAdmin: 'boolean',
+      roleVisibleScopes: { 'type': 'array', 'itemType': 'string' },
+      userVisibleScopes: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -4608,6 +4698,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.operatorUnionId)) {
       body["operatorUnionId"] = request.operatorUnionId;
+    }
+
+    if (!Util.isUnset(request.scopes)) {
+      body["scopes"] = request.scopes;
     }
 
     if (!Util.isUnset(request.sharing)) {
