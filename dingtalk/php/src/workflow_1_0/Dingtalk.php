@@ -107,6 +107,48 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListUserVisibleBpmsProcessesR
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PagesExportInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PagesExportInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PagesExportInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumBatchExecuteProcessInstancesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumBatchExecuteProcessInstancesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumBatchExecuteProcessInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumDelDirHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumDelDirRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumDelDirResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetDoneTasksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetDoneTasksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetDoneTasksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFieldModifiedHistoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFieldModifiedHistoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFieldModifiedHistoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetNoticedInstancesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetNoticedInstancesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetNoticedInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetProcessInstancesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetProcessInstancesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetProcessInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetSubmittedInstancesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetSubmittedInstancesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetSubmittedInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetTodoTasksHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetTodoTasksRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetTodoTasksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumInsertOrUpdateDirHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumInsertOrUpdateDirRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumInsertOrUpdateDirResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumQueryTodoTasksByManagerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumQueryTodoTasksByManagerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumQueryTodoTasksByManagerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRedirectTasksByManagerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRedirectTasksByManagerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRedirectTasksByManagerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastResponse;
@@ -2308,6 +2350,954 @@ class Dingtalk extends OpenApiClient
         $headers = new PagesExportInstancesHeaders([]);
 
         return $this->pagesExportInstancesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量同意或拒绝审批任务(OA高级版专享接口)
+     *  *
+     * @param PremiumBatchExecuteProcessInstancesRequest $request PremiumBatchExecuteProcessInstancesRequest
+     * @param PremiumBatchExecuteProcessInstancesHeaders $headers PremiumBatchExecuteProcessInstancesHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumBatchExecuteProcessInstancesResponse PremiumBatchExecuteProcessInstancesResponse
+     */
+    public function premiumBatchExecuteProcessInstancesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionerUserId)) {
+            $body['actionerUserId'] = $request->actionerUserId;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->result)) {
+            $body['result'] = $request->result;
+        }
+        if (!Utils::isUnset($request->taskInfoList)) {
+            $body['taskInfoList'] = $request->taskInfoList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumBatchExecuteProcessInstances',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processInstances/batchExecute',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumBatchExecuteProcessInstancesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量同意或拒绝审批任务(OA高级版专享接口)
+     *  *
+     * @param PremiumBatchExecuteProcessInstancesRequest $request PremiumBatchExecuteProcessInstancesRequest
+     *
+     * @return PremiumBatchExecuteProcessInstancesResponse PremiumBatchExecuteProcessInstancesResponse
+     */
+    public function premiumBatchExecuteProcessInstances($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumBatchExecuteProcessInstancesHeaders([]);
+
+        return $this->premiumBatchExecuteProcessInstancesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除业务分组(高级版专享接口)
+     *  *
+     * @param PremiumDelDirRequest $request PremiumDelDirRequest
+     * @param PremiumDelDirHeaders $headers PremiumDelDirHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumDelDirResponse PremiumDelDirResponse
+     */
+    public function premiumDelDirWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dirId)) {
+            $query['dirId'] = $request->dirId;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            $query['operateUserId'] = $request->operateUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumDelDir',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processCentres/directories',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumDelDirResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除业务分组(高级版专享接口)
+     *  *
+     * @param PremiumDelDirRequest $request PremiumDelDirRequest
+     *
+     * @return PremiumDelDirResponse PremiumDelDirResponse
+     */
+    public function premiumDelDir($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumDelDirHeaders([]);
+
+        return $this->premiumDelDirWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询审批中心已处理任务列表(OA高级版专享接口)
+     *  *
+     * @param PremiumGetDoneTasksRequest $request PremiumGetDoneTasksRequest
+     * @param PremiumGetDoneTasksHeaders $headers PremiumGetDoneTasksHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetDoneTasksResponse PremiumGetDoneTasksResponse
+     */
+    public function premiumGetDoneTasksWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingClientId)) {
+            $query['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            $query['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetDoneTasks',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processCentres/doneTasks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetDoneTasksResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询审批中心已处理任务列表(OA高级版专享接口)
+     *  *
+     * @param PremiumGetDoneTasksRequest $request PremiumGetDoneTasksRequest
+     *
+     * @return PremiumGetDoneTasksResponse PremiumGetDoneTasksResponse
+     */
+    public function premiumGetDoneTasks($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetDoneTasksHeaders([]);
+
+        return $this->premiumGetDoneTasksWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取字段修改历史(高级版专享接口)
+     *  *
+     * @param PremiumGetFieldModifiedHistoryRequest $request PremiumGetFieldModifiedHistoryRequest
+     * @param PremiumGetFieldModifiedHistoryHeaders $headers PremiumGetFieldModifiedHistoryHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetFieldModifiedHistoryResponse PremiumGetFieldModifiedHistoryResponse
+     */
+    public function premiumGetFieldModifiedHistoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fieldId)) {
+            $body['fieldId'] = $request->fieldId;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetFieldModifiedHistory',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processes/fields/modifiedRecords/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetFieldModifiedHistoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取字段修改历史(高级版专享接口)
+     *  *
+     * @param PremiumGetFieldModifiedHistoryRequest $request PremiumGetFieldModifiedHistoryRequest
+     *
+     * @return PremiumGetFieldModifiedHistoryResponse PremiumGetFieldModifiedHistoryResponse
+     */
+    public function premiumGetFieldModifiedHistory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetFieldModifiedHistoryHeaders([]);
+
+        return $this->premiumGetFieldModifiedHistoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询审批中心我收到的实例列表(OA高级版专享接口)
+     *  *
+     * @param PremiumGetNoticedInstancesRequest $request PremiumGetNoticedInstancesRequest
+     * @param PremiumGetNoticedInstancesHeaders $headers PremiumGetNoticedInstancesHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetNoticedInstancesResponse PremiumGetNoticedInstancesResponse
+     */
+    public function premiumGetNoticedInstancesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingClientId)) {
+            $query['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            $query['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetNoticedInstances',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processCentres/noticedInstances',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetNoticedInstancesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询审批中心我收到的实例列表(OA高级版专享接口)
+     *  *
+     * @param PremiumGetNoticedInstancesRequest $request PremiumGetNoticedInstancesRequest
+     *
+     * @return PremiumGetNoticedInstancesResponse PremiumGetNoticedInstancesResponse
+     */
+    public function premiumGetNoticedInstances($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetNoticedInstancesHeaders([]);
+
+        return $this->premiumGetNoticedInstancesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据processCode分页获取审批流程数据(高级版专享接口)
+     *  *
+     * @param PremiumGetProcessInstancesRequest $request PremiumGetProcessInstancesRequest
+     * @param PremiumGetProcessInstancesHeaders $headers PremiumGetProcessInstancesHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetProcessInstancesResponse PremiumGetProcessInstancesResponse
+     */
+    public function premiumGetProcessInstancesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appUuid)) {
+            $query['appUuid'] = $request->appUuid;
+        }
+        if (!Utils::isUnset($request->endTimeInMills)) {
+            $query['endTimeInMills'] = $request->endTimeInMills;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $query['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->startTimeInMills)) {
+            $query['startTimeInMills'] = $request->startTimeInMills;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetProcessInstances',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processes/pages/instances',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetProcessInstancesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据processCode分页获取审批流程数据(高级版专享接口)
+     *  *
+     * @param PremiumGetProcessInstancesRequest $request PremiumGetProcessInstancesRequest
+     *
+     * @return PremiumGetProcessInstancesResponse PremiumGetProcessInstancesResponse
+     */
+    public function premiumGetProcessInstances($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetProcessInstancesHeaders([]);
+
+        return $this->premiumGetProcessInstancesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询审批中心已发起实例列表(OA高级版专享接口)
+     *  *
+     * @param PremiumGetSubmittedInstancesRequest $request PremiumGetSubmittedInstancesRequest
+     * @param PremiumGetSubmittedInstancesHeaders $headers PremiumGetSubmittedInstancesHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetSubmittedInstancesResponse PremiumGetSubmittedInstancesResponse
+     */
+    public function premiumGetSubmittedInstancesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingClientId)) {
+            $query['dingClientId'] = $request->dingClientId;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            $query['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetSubmittedInstances',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processCentres/submittedInstances',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetSubmittedInstancesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询审批中心已发起实例列表(OA高级版专享接口)
+     *  *
+     * @param PremiumGetSubmittedInstancesRequest $request PremiumGetSubmittedInstancesRequest
+     *
+     * @return PremiumGetSubmittedInstancesResponse PremiumGetSubmittedInstancesResponse
+     */
+    public function premiumGetSubmittedInstances($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetSubmittedInstancesHeaders([]);
+
+        return $this->premiumGetSubmittedInstancesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询审批中心待处理任务列表(OA高级版专享接口)
+     *  *
+     * @param PremiumGetTodoTasksRequest $request PremiumGetTodoTasksRequest
+     * @param PremiumGetTodoTasksHeaders $headers PremiumGetTodoTasksHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetTodoTasksResponse PremiumGetTodoTasksResponse
+     */
+    public function premiumGetTodoTasksWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->createBefore)) {
+            $query['createBefore'] = $request->createBefore;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            $query['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetTodoTasks',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processCentres/todoTasks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetTodoTasksResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询审批中心待处理任务列表(OA高级版专享接口)
+     *  *
+     * @param PremiumGetTodoTasksRequest $request PremiumGetTodoTasksRequest
+     *
+     * @return PremiumGetTodoTasksResponse PremiumGetTodoTasksResponse
+     */
+    public function premiumGetTodoTasks($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetTodoTasksHeaders([]);
+
+        return $this->premiumGetTodoTasksWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建或更新分组(高级版专享接口)
+     *  *
+     * @param PremiumInsertOrUpdateDirRequest $request PremiumInsertOrUpdateDirRequest
+     * @param PremiumInsertOrUpdateDirHeaders $headers PremiumInsertOrUpdateDirHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumInsertOrUpdateDirResponse PremiumInsertOrUpdateDirResponse
+     */
+    public function premiumInsertOrUpdateDirWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizGroup)) {
+            $body['bizGroup'] = $request->bizGroup;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->name18n)) {
+            $body['name18n'] = $request->name18n;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            $body['operateUserId'] = $request->operateUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumInsertOrUpdateDir',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processCentres/directories',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumInsertOrUpdateDirResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建或更新分组(高级版专享接口)
+     *  *
+     * @param PremiumInsertOrUpdateDirRequest $request PremiumInsertOrUpdateDirRequest
+     *
+     * @return PremiumInsertOrUpdateDirResponse PremiumInsertOrUpdateDirResponse
+     */
+    public function premiumInsertOrUpdateDir($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumInsertOrUpdateDirHeaders([]);
+
+        return $this->premiumInsertOrUpdateDirWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 流程转交待处理任务查询(高级版专享接口)
+     *  *
+     * @param PremiumQueryTodoTasksByManagerRequest $request PremiumQueryTodoTasksByManagerRequest
+     * @param PremiumQueryTodoTasksByManagerHeaders $headers PremiumQueryTodoTasksByManagerHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumQueryTodoTasksByManagerResponse PremiumQueryTodoTasksByManagerResponse
+     */
+    public function premiumQueryTodoTasksByManagerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->actionerUserId)) {
+            $query['actionerUserId'] = $request->actionerUserId;
+        }
+        if (!Utils::isUnset($request->managerUserId)) {
+            $query['managerUserId'] = $request->managerUserId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumQueryTodoTasksByManager',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/tasks/todoTasks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumQueryTodoTasksByManagerResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 流程转交待处理任务查询(高级版专享接口)
+     *  *
+     * @param PremiumQueryTodoTasksByManagerRequest $request PremiumQueryTodoTasksByManagerRequest
+     *
+     * @return PremiumQueryTodoTasksByManagerResponse PremiumQueryTodoTasksByManagerResponse
+     */
+    public function premiumQueryTodoTasksByManager($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumQueryTodoTasksByManagerHeaders([]);
+
+        return $this->premiumQueryTodoTasksByManagerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量流程审批任务转交(高级版专享接口)
+     *  *
+     * @param PremiumRedirectTasksByManagerRequest $request PremiumRedirectTasksByManagerRequest
+     * @param PremiumRedirectTasksByManagerHeaders $headers PremiumRedirectTasksByManagerHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumRedirectTasksByManagerResponse PremiumRedirectTasksByManagerResponse
+     */
+    public function premiumRedirectTasksByManagerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->handoverUserId)) {
+            $body['handoverUserId'] = $request->handoverUserId;
+        }
+        if (!Utils::isUnset($request->managerUserId)) {
+            $body['managerUserId'] = $request->managerUserId;
+        }
+        if (!Utils::isUnset($request->taskIds)) {
+            $body['taskIds'] = $request->taskIds;
+        }
+        if (!Utils::isUnset($request->transfereeUserId)) {
+            $body['transfereeUserId'] = $request->transfereeUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumRedirectTasksByManager',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/tasks/batchRedirect',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumRedirectTasksByManagerResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量流程审批任务转交(高级版专享接口)
+     *  *
+     * @param PremiumRedirectTasksByManagerRequest $request PremiumRedirectTasksByManagerRequest
+     *
+     * @return PremiumRedirectTasksByManagerResponse PremiumRedirectTasksByManagerResponse
+     */
+    public function premiumRedirectTasksByManager($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumRedirectTasksByManagerHeaders([]);
+
+        return $this->premiumRedirectTasksByManagerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建或更新流程中心外部集成模板(高级版专享接口)
+     *  *
+     * @param PremiumSaveIntegratedProcessRequest $request PremiumSaveIntegratedProcessRequest
+     * @param PremiumSaveIntegratedProcessHeaders $headers PremiumSaveIntegratedProcessHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumSaveIntegratedProcessResponse PremiumSaveIntegratedProcessResponse
+     */
+    public function premiumSaveIntegratedProcessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->formComponents)) {
+            $body['formComponents'] = $request->formComponents;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->processFeatureConfig)) {
+            $body['processFeatureConfig'] = $request->processFeatureConfig;
+        }
+        if (!Utils::isUnset($request->templateConfig)) {
+            $body['templateConfig'] = $request->templateConfig;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumSaveIntegratedProcess',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processCentres/schemas',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumSaveIntegratedProcessResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建或更新流程中心外部集成模板(高级版专享接口)
+     *  *
+     * @param PremiumSaveIntegratedProcessRequest $request PremiumSaveIntegratedProcessRequest
+     *
+     * @return PremiumSaveIntegratedProcessResponse PremiumSaveIntegratedProcessResponse
+     */
+    public function premiumSaveIntegratedProcess($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumSaveIntegratedProcessHeaders([]);
+
+        return $this->premiumSaveIntegratedProcessWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建流程中心外部集成实例(高级版专享接口)
+     *  *
+     * @param PremiumSaveIntegratedProcessInstanceRequest $request PremiumSaveIntegratedProcessInstanceRequest
+     * @param PremiumSaveIntegratedProcessInstanceHeaders $headers PremiumSaveIntegratedProcessInstanceHeaders
+     * @param RuntimeOptions                              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumSaveIntegratedProcessInstanceResponse PremiumSaveIntegratedProcessInstanceResponse
+     */
+    public function premiumSaveIntegratedProcessInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizData)) {
+            $body['bizData'] = $request->bizData;
+        }
+        if (!Utils::isUnset($request->formComponentValueList)) {
+            $body['formComponentValueList'] = $request->formComponentValueList;
+        }
+        if (!Utils::isUnset($request->notifiers)) {
+            $body['notifiers'] = $request->notifiers;
+        }
+        if (!Utils::isUnset($request->originatorUserId)) {
+            $body['originatorUserId'] = $request->originatorUserId;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->url)) {
+            $body['url'] = $request->url;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumSaveIntegratedProcessInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processCentres/instances',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumSaveIntegratedProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建流程中心外部集成实例(高级版专享接口)
+     *  *
+     * @param PremiumSaveIntegratedProcessInstanceRequest $request PremiumSaveIntegratedProcessInstanceRequest
+     *
+     * @return PremiumSaveIntegratedProcessInstanceResponse PremiumSaveIntegratedProcessInstanceResponse
+     */
+    public function premiumSaveIntegratedProcessInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumSaveIntegratedProcessInstanceHeaders([]);
+
+        return $this->premiumSaveIntegratedProcessInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建流程中心外部集成待处理任务(高级版专享接口)
+     *  *
+     * @param PremiumSaveIntegratedTaskRequest $request PremiumSaveIntegratedTaskRequest
+     * @param PremiumSaveIntegratedTaskHeaders $headers PremiumSaveIntegratedTaskHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumSaveIntegratedTaskResponse PremiumSaveIntegratedTaskResponse
+     */
+    public function premiumSaveIntegratedTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->activityId)) {
+            $body['activityId'] = $request->activityId;
+        }
+        if (!Utils::isUnset($request->featureConfig)) {
+            $body['featureConfig'] = $request->featureConfig;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->tasks)) {
+            $body['tasks'] = $request->tasks;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumSaveIntegratedTask',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processCentres/tasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumSaveIntegratedTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建流程中心外部集成待处理任务(高级版专享接口)
+     *  *
+     * @param PremiumSaveIntegratedTaskRequest $request PremiumSaveIntegratedTaskRequest
+     *
+     * @return PremiumSaveIntegratedTaskResponse PremiumSaveIntegratedTaskResponse
+     */
+    public function premiumSaveIntegratedTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumSaveIntegratedTaskHeaders([]);
+
+        return $this->premiumSaveIntegratedTaskWithOptions($request, $headers, $runtime);
     }
 
     /**

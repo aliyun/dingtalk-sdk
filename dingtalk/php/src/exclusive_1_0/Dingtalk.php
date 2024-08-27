@@ -290,6 +290,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoFinishTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoUpdateTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoUpdateTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TaskInfoUpdateTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TransferExclusiveAccountOrgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TransferExclusiveAccountOrgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\TransferExclusiveAccountOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\UpdateCategoryNameResponse;
@@ -1147,6 +1150,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->id)) {
+            $body['id'] = $request->id;
+        }
         if (!Utils::isUnset($request->kickOff)) {
             $body['kickOff'] = $request->kickOff;
         }
@@ -3668,6 +3674,33 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->gmtCreateEnd)) {
+            $body['gmtCreateEnd'] = $request->gmtCreateEnd;
+        }
+        if (!Utils::isUnset($request->gmtCreateStart)) {
+            $body['gmtCreateStart'] = $request->gmtCreateStart;
+        }
+        if (!Utils::isUnset($request->gmtModifiedEnd)) {
+            $body['gmtModifiedEnd'] = $request->gmtModifiedEnd;
+        }
+        if (!Utils::isUnset($request->gmtModifiedStart)) {
+            $body['gmtModifiedStart'] = $request->gmtModifiedStart;
+        }
+        if (!Utils::isUnset($request->macAddress)) {
+            $body['macAddress'] = $request->macAddress;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->platform)) {
+            $body['platform'] = $request->platform;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
         if (!Utils::isUnset($request->userIds)) {
             $body['userIds'] = $request->userIds;
         }
@@ -6707,6 +6740,69 @@ class Dingtalk extends OpenApiClient
         $headers = new TaskInfoUpdateTaskHeaders([]);
 
         return $this->taskInfoUpdateTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 切换组织归属
+     *  *
+     * @param TransferExclusiveAccountOrgRequest $request TransferExclusiveAccountOrgRequest
+     * @param TransferExclusiveAccountOrgHeaders $headers TransferExclusiveAccountOrgHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TransferExclusiveAccountOrgResponse TransferExclusiveAccountOrgResponse
+     */
+    public function transferExclusiveAccountOrgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->isSettingMainOrg)) {
+            $body['isSettingMainOrg'] = $request->isSettingMainOrg;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $body['targetCorpId'] = $request->targetCorpId;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'TransferExclusiveAccountOrg',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/organizations/transfer',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return TransferExclusiveAccountOrgResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 切换组织归属
+     *  *
+     * @param TransferExclusiveAccountOrgRequest $request TransferExclusiveAccountOrgRequest
+     *
+     * @return TransferExclusiveAccountOrgResponse TransferExclusiveAccountOrgResponse
+     */
+    public function transferExclusiveAccountOrg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TransferExclusiveAccountOrgHeaders([]);
+
+        return $this->transferExclusiveAccountOrgWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -10,13 +10,31 @@ use AlibabaCloud\Tea\Model;
 class GetTrustDeviceListResponseBody extends Model
 {
     /**
+     * @var int
+     */
+    public $currentPage;
+
+    /**
      * @description This parameter is required.
      *
      * @var data[]
      */
     public $data;
+
+    /**
+     * @var int
+     */
+    public $pageSize;
+
+    /**
+     * @var int
+     */
+    public $total;
     protected $_name = [
-        'data' => 'data',
+        'currentPage' => 'currentPage',
+        'data'        => 'data',
+        'pageSize'    => 'pageSize',
+        'total'       => 'total',
     ];
 
     public function validate()
@@ -26,6 +44,9 @@ class GetTrustDeviceListResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->currentPage) {
+            $res['currentPage'] = $this->currentPage;
+        }
         if (null !== $this->data) {
             $res['data'] = [];
             if (null !== $this->data && \is_array($this->data)) {
@@ -34,6 +55,12 @@ class GetTrustDeviceListResponseBody extends Model
                     $res['data'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->pageSize) {
+            $res['pageSize'] = $this->pageSize;
+        }
+        if (null !== $this->total) {
+            $res['total'] = $this->total;
         }
 
         return $res;
@@ -47,6 +74,9 @@ class GetTrustDeviceListResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['currentPage'])) {
+            $model->currentPage = $map['currentPage'];
+        }
         if (isset($map['data'])) {
             if (!empty($map['data'])) {
                 $model->data = [];
@@ -55,6 +85,12 @@ class GetTrustDeviceListResponseBody extends Model
                     $model->data[$n++] = null !== $item ? data::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['pageSize'])) {
+            $model->pageSize = $map['pageSize'];
+        }
+        if (isset($map['total'])) {
+            $model->total = $map['total'];
         }
 
         return $model;

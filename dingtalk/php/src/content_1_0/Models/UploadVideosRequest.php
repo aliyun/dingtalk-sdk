@@ -4,17 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\UploadVideosRequest\videoList;
+use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\UploadVideosRequest\body;
 use AlibabaCloud\Tea\Model;
 
 class UploadVideosRequest extends Model
 {
     /**
-     * @var videoList[]
+     * @var body[]
      */
-    public $videoList;
+    public $body;
     protected $_name = [
-        'videoList' => 'videoList',
+        'body' => 'body',
     ];
 
     public function validate()
@@ -24,12 +24,12 @@ class UploadVideosRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->videoList) {
-            $res['videoList'] = [];
-            if (null !== $this->videoList && \is_array($this->videoList)) {
+        if (null !== $this->body) {
+            $res['body'] = [];
+            if (null !== $this->body && \is_array($this->body)) {
                 $n = 0;
-                foreach ($this->videoList as $item) {
-                    $res['videoList'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->body as $item) {
+                    $res['body'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -45,12 +45,12 @@ class UploadVideosRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['videoList'])) {
-            if (!empty($map['videoList'])) {
-                $model->videoList = [];
-                $n                = 0;
-                foreach ($map['videoList'] as $item) {
-                    $model->videoList[$n++] = null !== $item ? videoList::fromMap($item) : $item;
+        if (isset($map['body'])) {
+            if (!empty($map['body'])) {
+                $model->body = [];
+                $n           = 0;
+                foreach ($map['body'] as $item) {
+                    $model->body[$n++] = null !== $item ? body::fromMap($item) : $item;
                 }
             }
         }

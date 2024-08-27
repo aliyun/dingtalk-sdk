@@ -16,6 +16,11 @@ class data extends Model
     public $createTime;
 
     /**
+     * @var int
+     */
+    public $id;
+
+    /**
      * @example 88:92:5a:1f:e8:24
      *
      * @var string
@@ -26,6 +31,11 @@ class data extends Model
      * @var string
      */
     public $model;
+
+    /**
+     * @var int
+     */
+    public $modifiedTime;
 
     /**
      * @example Mac
@@ -55,13 +65,15 @@ class data extends Model
      */
     public $userId;
     protected $_name = [
-        'createTime' => 'createTime',
-        'macAddress' => 'macAddress',
-        'model'      => 'model',
-        'platform'   => 'platform',
-        'status'     => 'status',
-        'title'      => 'title',
-        'userId'     => 'userId',
+        'createTime'   => 'createTime',
+        'id'           => 'id',
+        'macAddress'   => 'macAddress',
+        'model'        => 'model',
+        'modifiedTime' => 'modifiedTime',
+        'platform'     => 'platform',
+        'status'       => 'status',
+        'title'        => 'title',
+        'userId'       => 'userId',
     ];
 
     public function validate()
@@ -74,11 +86,17 @@ class data extends Model
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
         }
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
+        }
         if (null !== $this->macAddress) {
             $res['macAddress'] = $this->macAddress;
         }
         if (null !== $this->model) {
             $res['model'] = $this->model;
+        }
+        if (null !== $this->modifiedTime) {
+            $res['modifiedTime'] = $this->modifiedTime;
         }
         if (null !== $this->platform) {
             $res['platform'] = $this->platform;
@@ -107,11 +125,17 @@ class data extends Model
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
         }
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
+        }
         if (isset($map['macAddress'])) {
             $model->macAddress = $map['macAddress'];
         }
         if (isset($map['model'])) {
             $model->model = $map['model'];
+        }
+        if (isset($map['modifiedTime'])) {
+            $model->modifiedTime = $map['modifiedTime'];
         }
         if (isset($map['platform'])) {
             $model->platform = $map['platform'];

@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\UploadVideosRequest;
 
 use AlibabaCloud\Tea\Model;
 
-class videoList extends Model
+class body extends Model
 {
     /**
      * @var string
@@ -141,7 +141,7 @@ class videoList extends Model
     /**
      * @param array $map
      *
-     * @return videoList
+     * @return body
      */
     public static function fromMap($map = [])
     {

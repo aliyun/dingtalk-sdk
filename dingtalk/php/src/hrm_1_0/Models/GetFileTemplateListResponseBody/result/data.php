@@ -67,9 +67,18 @@ class data extends Model
     public $templateStatus;
 
     /**
+     * @example CONTRACT
+     *
      * @var string
      */
     public $templateType;
+
+    /**
+     * @example 合同模板
+     *
+     * @var string
+     */
+    public $templateTypeName;
 
     /**
      * @example 24
@@ -88,6 +97,7 @@ class data extends Model
         'templateSignStatus' => 'templateSignStatus',
         'templateStatus'     => 'templateStatus',
         'templateType'       => 'templateType',
+        'templateTypeName'   => 'templateTypeName',
         'tenantId'           => 'tenantId',
     ];
 
@@ -145,6 +155,9 @@ class data extends Model
         }
         if (null !== $this->templateType) {
             $res['templateType'] = $this->templateType;
+        }
+        if (null !== $this->templateTypeName) {
+            $res['templateTypeName'] = $this->templateTypeName;
         }
         if (null !== $this->tenantId) {
             $res['tenantId'] = $this->tenantId;
@@ -208,6 +221,9 @@ class data extends Model
         }
         if (isset($map['templateType'])) {
             $model->templateType = $map['templateType'];
+        }
+        if (isset($map['templateTypeName'])) {
+            $model->templateTypeName = $map['templateTypeName'];
         }
         if (isset($map['tenantId'])) {
             $model->tenantId = $map['tenantId'];

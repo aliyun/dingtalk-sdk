@@ -2,18 +2,18 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class UploadVideosShrinkRequest extends Model
+class PremiumDelDirResponseBody extends Model
 {
     /**
-     * @var string
+     * @var bool
      */
-    public $videoListShrink;
+    public $success;
     protected $_name = [
-        'videoListShrink' => 'videoList',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -23,8 +23,8 @@ class UploadVideosShrinkRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->videoListShrink) {
-            $res['videoList'] = $this->videoListShrink;
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -33,13 +33,13 @@ class UploadVideosShrinkRequest extends Model
     /**
      * @param array $map
      *
-     * @return UploadVideosShrinkRequest
+     * @return PremiumDelDirResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['videoList'])) {
-            $model->videoListShrink = $map['videoList'];
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

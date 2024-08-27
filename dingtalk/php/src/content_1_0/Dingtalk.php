@@ -26,7 +26,6 @@ use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\PageFeedResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\UploadVideosHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\UploadVideosRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\UploadVideosResponse;
-use AlibabaCloud\SDK\Dingtalk\Vcontent_1_0\Models\UploadVideosShrinkRequest;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -419,24 +418,15 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 点众上传视频信息
      *  *
-     * @param UploadVideosRequest $tmpReq  UploadVideosRequest
+     * @param UploadVideosRequest $request UploadVideosRequest
      * @param UploadVideosHeaders $headers UploadVideosHeaders
      * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
      *
      * @return UploadVideosResponse UploadVideosResponse
      */
-    public function uploadVideosWithOptions($tmpReq, $headers, $runtime)
+    public function uploadVideosWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new UploadVideosShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->videoList)) {
-            $request->videoListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->videoList, 'videoList', 'json');
-        }
-        $query = [];
-        if (!Utils::isUnset($request->videoListShrink)) {
-            $query['videoList'] = $request->videoListShrink;
-        }
+        Utils::validateModel($request);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -446,7 +436,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => Utils::toArray($request->body),
         ]);
         $params = new Params([
             'action'      => 'UploadVideos',
