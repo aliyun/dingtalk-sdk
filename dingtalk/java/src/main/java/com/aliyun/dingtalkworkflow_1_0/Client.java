@@ -2184,6 +2184,990 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>批量同意或拒绝审批任务(OA高级版专享接口)</p>
+     * 
+     * @param request PremiumBatchExecuteProcessInstancesRequest
+     * @param headers PremiumBatchExecuteProcessInstancesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumBatchExecuteProcessInstancesResponse
+     */
+    public PremiumBatchExecuteProcessInstancesResponse premiumBatchExecuteProcessInstancesWithOptions(PremiumBatchExecuteProcessInstancesRequest request, PremiumBatchExecuteProcessInstancesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionerUserId)) {
+            body.put("actionerUserId", request.actionerUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.result)) {
+            body.put("result", request.result);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskInfoList)) {
+            body.put("taskInfoList", request.taskInfoList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumBatchExecuteProcessInstances"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processInstances/batchExecute"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumBatchExecuteProcessInstancesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量同意或拒绝审批任务(OA高级版专享接口)</p>
+     * 
+     * @param request PremiumBatchExecuteProcessInstancesRequest
+     * @return PremiumBatchExecuteProcessInstancesResponse
+     */
+    public PremiumBatchExecuteProcessInstancesResponse premiumBatchExecuteProcessInstances(PremiumBatchExecuteProcessInstancesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumBatchExecuteProcessInstancesHeaders headers = new PremiumBatchExecuteProcessInstancesHeaders();
+        return this.premiumBatchExecuteProcessInstancesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除业务分组(高级版专享接口)</p>
+     * 
+     * @param request PremiumDelDirRequest
+     * @param headers PremiumDelDirHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumDelDirResponse
+     */
+    public PremiumDelDirResponse premiumDelDirWithOptions(PremiumDelDirRequest request, PremiumDelDirHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dirId)) {
+            query.put("dirId", request.dirId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
+            query.put("operateUserId", request.operateUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumDelDir"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processCentres/directories"),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumDelDirResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除业务分组(高级版专享接口)</p>
+     * 
+     * @param request PremiumDelDirRequest
+     * @return PremiumDelDirResponse
+     */
+    public PremiumDelDirResponse premiumDelDir(PremiumDelDirRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumDelDirHeaders headers = new PremiumDelDirHeaders();
+        return this.premiumDelDirWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询审批中心已处理任务列表(OA高级版专享接口)</p>
+     * 
+     * @param request PremiumGetDoneTasksRequest
+     * @param headers PremiumGetDoneTasksHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumGetDoneTasksResponse
+     */
+    public PremiumGetDoneTasksResponse premiumGetDoneTasksWithOptions(PremiumGetDoneTasksRequest request, PremiumGetDoneTasksHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingClientId)) {
+            query.put("dingClientId", request.dingClientId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
+            query.put("keyword", request.keyword);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumGetDoneTasks"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processCentres/doneTasks"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumGetDoneTasksResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询审批中心已处理任务列表(OA高级版专享接口)</p>
+     * 
+     * @param request PremiumGetDoneTasksRequest
+     * @return PremiumGetDoneTasksResponse
+     */
+    public PremiumGetDoneTasksResponse premiumGetDoneTasks(PremiumGetDoneTasksRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumGetDoneTasksHeaders headers = new PremiumGetDoneTasksHeaders();
+        return this.premiumGetDoneTasksWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取字段修改历史(高级版专享接口)</p>
+     * 
+     * @param request PremiumGetFieldModifiedHistoryRequest
+     * @param headers PremiumGetFieldModifiedHistoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumGetFieldModifiedHistoryResponse
+     */
+    public PremiumGetFieldModifiedHistoryResponse premiumGetFieldModifiedHistoryWithOptions(PremiumGetFieldModifiedHistoryRequest request, PremiumGetFieldModifiedHistoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldId)) {
+            body.put("fieldId", request.fieldId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processInstanceId)) {
+            body.put("processInstanceId", request.processInstanceId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumGetFieldModifiedHistory"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processes/fields/modifiedRecords/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumGetFieldModifiedHistoryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取字段修改历史(高级版专享接口)</p>
+     * 
+     * @param request PremiumGetFieldModifiedHistoryRequest
+     * @return PremiumGetFieldModifiedHistoryResponse
+     */
+    public PremiumGetFieldModifiedHistoryResponse premiumGetFieldModifiedHistory(PremiumGetFieldModifiedHistoryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumGetFieldModifiedHistoryHeaders headers = new PremiumGetFieldModifiedHistoryHeaders();
+        return this.premiumGetFieldModifiedHistoryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询审批中心我收到的实例列表(OA高级版专享接口)</p>
+     * 
+     * @param request PremiumGetNoticedInstancesRequest
+     * @param headers PremiumGetNoticedInstancesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumGetNoticedInstancesResponse
+     */
+    public PremiumGetNoticedInstancesResponse premiumGetNoticedInstancesWithOptions(PremiumGetNoticedInstancesRequest request, PremiumGetNoticedInstancesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingClientId)) {
+            query.put("dingClientId", request.dingClientId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
+            query.put("keyword", request.keyword);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumGetNoticedInstances"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processCentres/noticedInstances"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumGetNoticedInstancesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询审批中心我收到的实例列表(OA高级版专享接口)</p>
+     * 
+     * @param request PremiumGetNoticedInstancesRequest
+     * @return PremiumGetNoticedInstancesResponse
+     */
+    public PremiumGetNoticedInstancesResponse premiumGetNoticedInstances(PremiumGetNoticedInstancesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumGetNoticedInstancesHeaders headers = new PremiumGetNoticedInstancesHeaders();
+        return this.premiumGetNoticedInstancesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据processCode分页获取审批流程数据(高级版专享接口)</p>
+     * 
+     * @param request PremiumGetProcessInstancesRequest
+     * @param headers PremiumGetProcessInstancesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumGetProcessInstancesResponse
+     */
+    public PremiumGetProcessInstancesResponse premiumGetProcessInstancesWithOptions(PremiumGetProcessInstancesRequest request, PremiumGetProcessInstancesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appUuid)) {
+            query.put("appUuid", request.appUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endTimeInMills)) {
+            query.put("endTimeInMills", request.endTimeInMills);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processCode)) {
+            query.put("processCode", request.processCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTimeInMills)) {
+            query.put("startTimeInMills", request.startTimeInMills);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumGetProcessInstances"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processes/pages/instances"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumGetProcessInstancesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据processCode分页获取审批流程数据(高级版专享接口)</p>
+     * 
+     * @param request PremiumGetProcessInstancesRequest
+     * @return PremiumGetProcessInstancesResponse
+     */
+    public PremiumGetProcessInstancesResponse premiumGetProcessInstances(PremiumGetProcessInstancesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumGetProcessInstancesHeaders headers = new PremiumGetProcessInstancesHeaders();
+        return this.premiumGetProcessInstancesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询审批中心已发起实例列表(OA高级版专享接口)</p>
+     * 
+     * @param request PremiumGetSubmittedInstancesRequest
+     * @param headers PremiumGetSubmittedInstancesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumGetSubmittedInstancesResponse
+     */
+    public PremiumGetSubmittedInstancesResponse premiumGetSubmittedInstancesWithOptions(PremiumGetSubmittedInstancesRequest request, PremiumGetSubmittedInstancesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingClientId)) {
+            query.put("dingClientId", request.dingClientId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
+            query.put("keyword", request.keyword);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumGetSubmittedInstances"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processCentres/submittedInstances"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumGetSubmittedInstancesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询审批中心已发起实例列表(OA高级版专享接口)</p>
+     * 
+     * @param request PremiumGetSubmittedInstancesRequest
+     * @return PremiumGetSubmittedInstancesResponse
+     */
+    public PremiumGetSubmittedInstancesResponse premiumGetSubmittedInstances(PremiumGetSubmittedInstancesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumGetSubmittedInstancesHeaders headers = new PremiumGetSubmittedInstancesHeaders();
+        return this.premiumGetSubmittedInstancesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询审批中心待处理任务列表(OA高级版专享接口)</p>
+     * 
+     * @param request PremiumGetTodoTasksRequest
+     * @param headers PremiumGetTodoTasksHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumGetTodoTasksResponse
+     */
+    public PremiumGetTodoTasksResponse premiumGetTodoTasksWithOptions(PremiumGetTodoTasksRequest request, PremiumGetTodoTasksHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.createBefore)) {
+            query.put("createBefore", request.createBefore);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
+            query.put("keyword", request.keyword);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumGetTodoTasks"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processCentres/todoTasks"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumGetTodoTasksResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询审批中心待处理任务列表(OA高级版专享接口)</p>
+     * 
+     * @param request PremiumGetTodoTasksRequest
+     * @return PremiumGetTodoTasksResponse
+     */
+    public PremiumGetTodoTasksResponse premiumGetTodoTasks(PremiumGetTodoTasksRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumGetTodoTasksHeaders headers = new PremiumGetTodoTasksHeaders();
+        return this.premiumGetTodoTasksWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建或更新分组(高级版专享接口)</p>
+     * 
+     * @param request PremiumInsertOrUpdateDirRequest
+     * @param headers PremiumInsertOrUpdateDirHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumInsertOrUpdateDirResponse
+     */
+    public PremiumInsertOrUpdateDirResponse premiumInsertOrUpdateDirWithOptions(PremiumInsertOrUpdateDirRequest request, PremiumInsertOrUpdateDirHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizGroup)) {
+            body.put("bizGroup", request.bizGroup);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name18n)) {
+            body.put("name18n", request.name18n);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
+            body.put("operateUserId", request.operateUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumInsertOrUpdateDir"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processCentres/directories"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumInsertOrUpdateDirResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建或更新分组(高级版专享接口)</p>
+     * 
+     * @param request PremiumInsertOrUpdateDirRequest
+     * @return PremiumInsertOrUpdateDirResponse
+     */
+    public PremiumInsertOrUpdateDirResponse premiumInsertOrUpdateDir(PremiumInsertOrUpdateDirRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumInsertOrUpdateDirHeaders headers = new PremiumInsertOrUpdateDirHeaders();
+        return this.premiumInsertOrUpdateDirWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>流程转交待处理任务查询(高级版专享接口)</p>
+     * 
+     * @param request PremiumQueryTodoTasksByManagerRequest
+     * @param headers PremiumQueryTodoTasksByManagerHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumQueryTodoTasksByManagerResponse
+     */
+    public PremiumQueryTodoTasksByManagerResponse premiumQueryTodoTasksByManagerWithOptions(PremiumQueryTodoTasksByManagerRequest request, PremiumQueryTodoTasksByManagerHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionerUserId)) {
+            query.put("actionerUserId", request.actionerUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managerUserId)) {
+            query.put("managerUserId", request.managerUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumQueryTodoTasksByManager"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/tasks/todoTasks"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumQueryTodoTasksByManagerResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>流程转交待处理任务查询(高级版专享接口)</p>
+     * 
+     * @param request PremiumQueryTodoTasksByManagerRequest
+     * @return PremiumQueryTodoTasksByManagerResponse
+     */
+    public PremiumQueryTodoTasksByManagerResponse premiumQueryTodoTasksByManager(PremiumQueryTodoTasksByManagerRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumQueryTodoTasksByManagerHeaders headers = new PremiumQueryTodoTasksByManagerHeaders();
+        return this.premiumQueryTodoTasksByManagerWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量流程审批任务转交(高级版专享接口)</p>
+     * 
+     * @param request PremiumRedirectTasksByManagerRequest
+     * @param headers PremiumRedirectTasksByManagerHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumRedirectTasksByManagerResponse
+     */
+    public PremiumRedirectTasksByManagerResponse premiumRedirectTasksByManagerWithOptions(PremiumRedirectTasksByManagerRequest request, PremiumRedirectTasksByManagerHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.handoverUserId)) {
+            body.put("handoverUserId", request.handoverUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managerUserId)) {
+            body.put("managerUserId", request.managerUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskIds)) {
+            body.put("taskIds", request.taskIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.transfereeUserId)) {
+            body.put("transfereeUserId", request.transfereeUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumRedirectTasksByManager"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/tasks/batchRedirect"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumRedirectTasksByManagerResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量流程审批任务转交(高级版专享接口)</p>
+     * 
+     * @param request PremiumRedirectTasksByManagerRequest
+     * @return PremiumRedirectTasksByManagerResponse
+     */
+    public PremiumRedirectTasksByManagerResponse premiumRedirectTasksByManager(PremiumRedirectTasksByManagerRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumRedirectTasksByManagerHeaders headers = new PremiumRedirectTasksByManagerHeaders();
+        return this.premiumRedirectTasksByManagerWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建或更新流程中心外部集成模板(高级版专享接口)</p>
+     * 
+     * @param request PremiumSaveIntegratedProcessRequest
+     * @param headers PremiumSaveIntegratedProcessHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumSaveIntegratedProcessResponse
+     */
+    public PremiumSaveIntegratedProcessResponse premiumSaveIntegratedProcessWithOptions(PremiumSaveIntegratedProcessRequest request, PremiumSaveIntegratedProcessHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.formComponents)) {
+            body.put("formComponents", request.formComponents);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processCode)) {
+            body.put("processCode", request.processCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processFeatureConfig)) {
+            body.put("processFeatureConfig", request.processFeatureConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateConfig)) {
+            body.put("templateConfig", request.templateConfig);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumSaveIntegratedProcess"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processCentres/schemas"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumSaveIntegratedProcessResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建或更新流程中心外部集成模板(高级版专享接口)</p>
+     * 
+     * @param request PremiumSaveIntegratedProcessRequest
+     * @return PremiumSaveIntegratedProcessResponse
+     */
+    public PremiumSaveIntegratedProcessResponse premiumSaveIntegratedProcess(PremiumSaveIntegratedProcessRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumSaveIntegratedProcessHeaders headers = new PremiumSaveIntegratedProcessHeaders();
+        return this.premiumSaveIntegratedProcessWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建流程中心外部集成实例(高级版专享接口)</p>
+     * 
+     * @param request PremiumSaveIntegratedProcessInstanceRequest
+     * @param headers PremiumSaveIntegratedProcessInstanceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumSaveIntegratedProcessInstanceResponse
+     */
+    public PremiumSaveIntegratedProcessInstanceResponse premiumSaveIntegratedProcessInstanceWithOptions(PremiumSaveIntegratedProcessInstanceRequest request, PremiumSaveIntegratedProcessInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizData)) {
+            body.put("bizData", request.bizData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.formComponentValueList)) {
+            body.put("formComponentValueList", request.formComponentValueList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.notifiers)) {
+            body.put("notifiers", request.notifiers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.originatorUserId)) {
+            body.put("originatorUserId", request.originatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processCode)) {
+            body.put("processCode", request.processCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.url)) {
+            body.put("url", request.url);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumSaveIntegratedProcessInstance"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processCentres/instances"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumSaveIntegratedProcessInstanceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建流程中心外部集成实例(高级版专享接口)</p>
+     * 
+     * @param request PremiumSaveIntegratedProcessInstanceRequest
+     * @return PremiumSaveIntegratedProcessInstanceResponse
+     */
+    public PremiumSaveIntegratedProcessInstanceResponse premiumSaveIntegratedProcessInstance(PremiumSaveIntegratedProcessInstanceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumSaveIntegratedProcessInstanceHeaders headers = new PremiumSaveIntegratedProcessInstanceHeaders();
+        return this.premiumSaveIntegratedProcessInstanceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建流程中心外部集成待处理任务(高级版专享接口)</p>
+     * 
+     * @param request PremiumSaveIntegratedTaskRequest
+     * @param headers PremiumSaveIntegratedTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PremiumSaveIntegratedTaskResponse
+     */
+    public PremiumSaveIntegratedTaskResponse premiumSaveIntegratedTaskWithOptions(PremiumSaveIntegratedTaskRequest request, PremiumSaveIntegratedTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.activityId)) {
+            body.put("activityId", request.activityId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.featureConfig)) {
+            body.put("featureConfig", request.featureConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.processInstanceId)) {
+            body.put("processInstanceId", request.processInstanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tasks)) {
+            body.put("tasks", request.tasks);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PremiumSaveIntegratedTask"),
+            new TeaPair("version", "workflow_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/workflow/premium/processCentres/tasks"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PremiumSaveIntegratedTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建流程中心外部集成待处理任务(高级版专享接口)</p>
+     * 
+     * @param request PremiumSaveIntegratedTaskRequest
+     * @return PremiumSaveIntegratedTaskResponse
+     */
+    public PremiumSaveIntegratedTaskResponse premiumSaveIntegratedTask(PremiumSaveIntegratedTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PremiumSaveIntegratedTaskHeaders headers = new PremiumSaveIntegratedTaskHeaders();
+        return this.premiumSaveIntegratedTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>审批流程预测</p>
      * 
      * @param request ProcessForecastRequest

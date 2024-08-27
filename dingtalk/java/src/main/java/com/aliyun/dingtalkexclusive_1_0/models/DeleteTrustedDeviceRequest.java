@@ -4,6 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteTrustedDeviceRequest extends TeaModel {
+    @NameInMap("id")
+    public Long id;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -14,8 +17,6 @@ public class DeleteTrustedDeviceRequest extends TeaModel {
     public Boolean kickOff;
 
     /**
-     * <p>This parameter is required.</p>
-     * 
      * <strong>example:</strong>
      * <p>88:92:5a:1f:e8:24</p>
      */
@@ -34,6 +35,14 @@ public class DeleteTrustedDeviceRequest extends TeaModel {
     public static DeleteTrustedDeviceRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteTrustedDeviceRequest self = new DeleteTrustedDeviceRequest();
         return TeaModel.build(map, self);
+    }
+
+    public DeleteTrustedDeviceRequest setId(Long id) {
+        this.id = id;
+        return this;
+    }
+    public Long getId() {
+        return this.id;
     }
 
     public DeleteTrustedDeviceRequest setKickOff(Boolean kickOff) {

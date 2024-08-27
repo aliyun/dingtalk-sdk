@@ -4,15 +4,32 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTrustDeviceListResponseBody extends TeaModel {
+    @NameInMap("currentPage")
+    public Long currentPage;
+
     /**
      * <p>This parameter is required.</p>
      */
     @NameInMap("data")
     public java.util.List<GetTrustDeviceListResponseBodyData> data;
 
+    @NameInMap("pageSize")
+    public Long pageSize;
+
+    @NameInMap("total")
+    public Long total;
+
     public static GetTrustDeviceListResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetTrustDeviceListResponseBody self = new GetTrustDeviceListResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GetTrustDeviceListResponseBody setCurrentPage(Long currentPage) {
+        this.currentPage = currentPage;
+        return this;
+    }
+    public Long getCurrentPage() {
+        return this.currentPage;
     }
 
     public GetTrustDeviceListResponseBody setData(java.util.List<GetTrustDeviceListResponseBodyData> data) {
@@ -23,6 +40,22 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         return this.data;
     }
 
+    public GetTrustDeviceListResponseBody setPageSize(Long pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+    public Long getPageSize() {
+        return this.pageSize;
+    }
+
+    public GetTrustDeviceListResponseBody setTotal(Long total) {
+        this.total = total;
+        return this;
+    }
+    public Long getTotal() {
+        return this.total;
+    }
+
     public static class GetTrustDeviceListResponseBodyData extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -30,6 +63,9 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
          */
         @NameInMap("createTime")
         public Long createTime;
+
+        @NameInMap("id")
+        public Long id;
 
         /**
          * <strong>example:</strong>
@@ -40,6 +76,9 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
 
         @NameInMap("model")
         public String model;
+
+        @NameInMap("modifiedTime")
+        public Long modifiedTime;
 
         /**
          * <strong>example:</strong>
@@ -80,6 +119,14 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
             return this.createTime;
         }
 
+        public GetTrustDeviceListResponseBodyData setId(Long id) {
+            this.id = id;
+            return this;
+        }
+        public Long getId() {
+            return this.id;
+        }
+
         public GetTrustDeviceListResponseBodyData setMacAddress(String macAddress) {
             this.macAddress = macAddress;
             return this;
@@ -94,6 +141,14 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         }
         public String getModel() {
             return this.model;
+        }
+
+        public GetTrustDeviceListResponseBodyData setModifiedTime(Long modifiedTime) {
+            this.modifiedTime = modifiedTime;
+            return this;
+        }
+        public Long getModifiedTime() {
+            return this.modifiedTime;
         }
 
         public GetTrustDeviceListResponseBodyData setPlatform(String platform) {

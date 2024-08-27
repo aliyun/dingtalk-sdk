@@ -454,8 +454,19 @@ public class GetFileTemplateListResponseBody extends TeaModel {
         @NameInMap("templateStatus")
         public Integer templateStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>CONTRACT</p>
+         */
         @NameInMap("templateType")
         public String templateType;
+
+        /**
+         * <strong>example:</strong>
+         * <p>合同模板</p>
+         */
+        @NameInMap("templateTypeName")
+        public String templateTypeName;
 
         /**
          * <strong>example:</strong>
@@ -547,6 +558,14 @@ public class GetFileTemplateListResponseBody extends TeaModel {
         }
         public String getTemplateType() {
             return this.templateType;
+        }
+
+        public GetFileTemplateListResponseBodyResultData setTemplateTypeName(String templateTypeName) {
+            this.templateTypeName = templateTypeName;
+            return this;
+        }
+        public String getTemplateTypeName() {
+            return this.templateTypeName;
         }
 
         public GetFileTemplateListResponseBodyResultData setTenantId(Long tenantId) {

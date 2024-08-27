@@ -826,6 +826,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public DeleteTrustedDeviceResponse deleteTrustedDeviceWithOptions(DeleteTrustedDeviceRequest request, DeleteTrustedDeviceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.id)) {
+            body.put("id", request.id);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.kickOff)) {
             body.put("kickOff", request.kickOff);
         }
@@ -3344,6 +3348,42 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public GetTrustDeviceListResponse getTrustDeviceListWithOptions(GetTrustDeviceListRequest request, GetTrustDeviceListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.gmtCreateEnd)) {
+            body.put("gmtCreateEnd", request.gmtCreateEnd);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.gmtCreateStart)) {
+            body.put("gmtCreateStart", request.gmtCreateStart);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.gmtModifiedEnd)) {
+            body.put("gmtModifiedEnd", request.gmtModifiedEnd);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.gmtModifiedStart)) {
+            body.put("gmtModifiedStart", request.gmtModifiedStart);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.macAddress)) {
+            body.put("macAddress", request.macAddress);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.platform)) {
+            body.put("platform", request.platform);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
             body.put("userIds", request.userIds);
         }
@@ -6496,6 +6536,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         TaskInfoUpdateTaskHeaders headers = new TaskInfoUpdateTaskHeaders();
         return this.taskInfoUpdateTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>切换组织归属</p>
+     * 
+     * @param request TransferExclusiveAccountOrgRequest
+     * @param headers TransferExclusiveAccountOrgHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TransferExclusiveAccountOrgResponse
+     */
+    public TransferExclusiveAccountOrgResponse transferExclusiveAccountOrgWithOptions(TransferExclusiveAccountOrgRequest request, TransferExclusiveAccountOrgHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.isSettingMainOrg)) {
+            body.put("isSettingMainOrg", request.isSettingMainOrg);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetCorpId)) {
+            body.put("targetCorpId", request.targetCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TransferExclusiveAccountOrg"),
+            new TeaPair("version", "exclusive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/exclusive/organizations/transfer"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TransferExclusiveAccountOrgResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>切换组织归属</p>
+     * 
+     * @param request TransferExclusiveAccountOrgRequest
+     * @return TransferExclusiveAccountOrgResponse
+     */
+    public TransferExclusiveAccountOrgResponse transferExclusiveAccountOrg(TransferExclusiveAccountOrgRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TransferExclusiveAccountOrgHeaders headers = new TransferExclusiveAccountOrgHeaders();
+        return this.transferExclusiveAccountOrgWithOptions(request, headers, runtime);
     }
 
     /**
