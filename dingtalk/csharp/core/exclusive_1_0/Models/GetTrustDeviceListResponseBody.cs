@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetTrustDeviceListResponseBody : TeaModel {
+        [NameInMap("currentPage")]
+        [Validation(Required=false)]
+        public long? CurrentPage { get; set; }
+
         /// <summary>
         /// This parameter is required.
         /// </summary>
@@ -20,6 +24,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public long? CreateTime { get; set; }
 
+            [NameInMap("id")]
+            [Validation(Required=false)]
+            public long? Id { get; set; }
+
             [NameInMap("macAddress")]
             [Validation(Required=false)]
             public string MacAddress { get; set; }
@@ -27,6 +35,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [NameInMap("model")]
             [Validation(Required=false)]
             public string Model { get; set; }
+
+            [NameInMap("modifiedTime")]
+            [Validation(Required=false)]
+            public long? ModifiedTime { get; set; }
 
             [NameInMap("platform")]
             [Validation(Required=false)]
@@ -48,6 +60,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string UserId { get; set; }
 
         }
+
+        [NameInMap("pageSize")]
+        [Validation(Required=false)]
+        public long? PageSize { get; set; }
+
+        [NameInMap("total")]
+        [Validation(Required=false)]
+        public long? Total { get; set; }
 
     }
 

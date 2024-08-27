@@ -165,6 +165,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
                 [Validation(Required=false)]
                 public string TemplateType { get; set; }
 
+                [NameInMap("templateTypeName")]
+                [Validation(Required=false)]
+                public string TemplateTypeName { get; set; }
+
                 [NameInMap("tenantId")]
                 [Validation(Required=false)]
                 public long? TenantId { get; set; }

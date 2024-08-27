@@ -789,25 +789,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
         /**
          * @summary 点众上传视频信息
          *
-         * @param tmpReq UploadVideosRequest
+         * @param request UploadVideosRequest
          * @param headers UploadVideosHeaders
          * @param runtime runtime options for this request RuntimeOptions
          * @return UploadVideosResponse
          */
-        public UploadVideosResponse UploadVideosWithOptions(UploadVideosRequest tmpReq, UploadVideosHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UploadVideosResponse UploadVideosWithOptions(UploadVideosRequest request, UploadVideosHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            UploadVideosShrinkRequest request = new UploadVideosShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.VideoList))
-            {
-                request.VideoListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.VideoList, "videoList", "json");
-            }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VideoListShrink))
-            {
-                query["videoList"] = request.VideoListShrink;
-            }
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -820,7 +809,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -840,25 +829,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
         /**
          * @summary 点众上传视频信息
          *
-         * @param tmpReq UploadVideosRequest
+         * @param request UploadVideosRequest
          * @param headers UploadVideosHeaders
          * @param runtime runtime options for this request RuntimeOptions
          * @return UploadVideosResponse
          */
-        public async Task<UploadVideosResponse> UploadVideosWithOptionsAsync(UploadVideosRequest tmpReq, UploadVideosHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UploadVideosResponse> UploadVideosWithOptionsAsync(UploadVideosRequest request, UploadVideosHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            UploadVideosShrinkRequest request = new UploadVideosShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.VideoList))
-            {
-                request.VideoListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.VideoList, "videoList", "json");
-            }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VideoListShrink))
-            {
-                query["videoList"] = request.VideoListShrink;
-            }
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -871,7 +849,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {

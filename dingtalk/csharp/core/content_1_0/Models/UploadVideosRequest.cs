@@ -9,10 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontent_1_0.Models
 {
     public class UploadVideosRequest : TeaModel {
-        [NameInMap("videoList")]
+        [NameInMap("body")]
         [Validation(Required=false)]
-        public List<UploadVideosRequestVideoList> VideoList { get; set; }
-        public class UploadVideosRequestVideoList : TeaModel {
+        public List<UploadVideosRequestBody> Body { get; set; }
+        public class UploadVideosRequestBody : TeaModel {
             [NameInMap("authorIconUrl")]
             [Validation(Required=false)]
             public string AuthorIconUrl { get; set; }
