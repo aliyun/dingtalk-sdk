@@ -1317,6 +1317,7 @@ export class DeleteTrustedDeviceHeaders extends $tea.Model {
 }
 
 export class DeleteTrustedDeviceRequest extends $tea.Model {
+  id?: number;
   /**
    * @remarks
    * This parameter is required.
@@ -1326,9 +1327,6 @@ export class DeleteTrustedDeviceRequest extends $tea.Model {
    */
   kickOff?: boolean;
   /**
-   * @remarks
-   * This parameter is required.
-   * 
    * @example
    * 88:92:5a:1f:e8:24
    */
@@ -1343,6 +1341,7 @@ export class DeleteTrustedDeviceRequest extends $tea.Model {
   userId?: string;
   static names(): { [key: string]: string } {
     return {
+      id: 'id',
       kickOff: 'kickOff',
       macAddress: 'macAddress',
       userId: 'userId',
@@ -1351,6 +1350,7 @@ export class DeleteTrustedDeviceRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
+      id: 'number',
       kickOff: 'boolean',
       macAddress: 'string',
       userId: 'string',
@@ -5821,18 +5821,73 @@ export class GetTrustDeviceListHeaders extends $tea.Model {
 
 export class GetTrustDeviceListRequest extends $tea.Model {
   /**
-   * @remarks
-   * This parameter is required.
+   * @example
+   * 1721718854814
    */
+  gmtCreateEnd?: number;
+  /**
+   * @example
+   * 1721718854814
+   */
+  gmtCreateStart?: number;
+  /**
+   * @example
+   * 1721718854814
+   */
+  gmtModifiedEnd?: number;
+  /**
+   * @example
+   * 1721718854814
+   */
+  gmtModifiedStart?: number;
+  /**
+   * @example
+   * xx:xx:xx:xx:xx:xx
+   */
+  macAddress?: string;
+  /**
+   * @example
+   * 1
+   */
+  pageNumber?: number;
+  /**
+   * @example
+   * 500
+   */
+  pageSize?: number;
+  /**
+   * @example
+   * Android
+   */
+  platform?: string;
+  status?: number;
   userIds?: string[];
   static names(): { [key: string]: string } {
     return {
+      gmtCreateEnd: 'gmtCreateEnd',
+      gmtCreateStart: 'gmtCreateStart',
+      gmtModifiedEnd: 'gmtModifiedEnd',
+      gmtModifiedStart: 'gmtModifiedStart',
+      macAddress: 'macAddress',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      platform: 'platform',
+      status: 'status',
       userIds: 'userIds',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      gmtCreateEnd: 'number',
+      gmtCreateStart: 'number',
+      gmtModifiedEnd: 'number',
+      gmtModifiedStart: 'number',
+      macAddress: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      platform: 'string',
+      status: 'number',
       userIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
@@ -5843,20 +5898,29 @@ export class GetTrustDeviceListRequest extends $tea.Model {
 }
 
 export class GetTrustDeviceListResponseBody extends $tea.Model {
+  currentPage?: number;
   /**
    * @remarks
    * This parameter is required.
    */
   data?: GetTrustDeviceListResponseBodyData[];
+  pageSize?: number;
+  total?: number;
   static names(): { [key: string]: string } {
     return {
+      currentPage: 'currentPage',
       data: 'data',
+      pageSize: 'pageSize',
+      total: 'total',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      currentPage: 'number',
       data: { 'type': 'array', 'itemType': GetTrustDeviceListResponseBodyData },
+      pageSize: 'number',
+      total: 'number',
     };
   }
 
@@ -11043,6 +11107,108 @@ export class TaskInfoUpdateTaskResponse extends $tea.Model {
   }
 }
 
+export class TransferExclusiveAccountOrgHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TransferExclusiveAccountOrgRequest extends $tea.Model {
+  isSettingMainOrg?: boolean;
+  targetCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  userIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      isSettingMainOrg: 'isSettingMainOrg',
+      targetCorpId: 'targetCorpId',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isSettingMainOrg: 'boolean',
+      targetCorpId: 'string',
+      userIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TransferExclusiveAccountOrgResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TransferExclusiveAccountOrgResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: TransferExclusiveAccountOrgResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: TransferExclusiveAccountOrgResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCategoryNameHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -13959,12 +14125,14 @@ export class GetTrustDeviceListResponseBodyData extends $tea.Model {
    * 1628650483
    */
   createTime?: number;
+  id?: number;
   /**
    * @example
    * 88:92:5a:1f:e8:24
    */
   macAddress?: string;
   model?: string;
+  modifiedTime?: number;
   /**
    * @example
    * Mac
@@ -13987,8 +14155,10 @@ export class GetTrustDeviceListResponseBodyData extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       createTime: 'createTime',
+      id: 'id',
       macAddress: 'macAddress',
       model: 'model',
+      modifiedTime: 'modifiedTime',
       platform: 'platform',
       status: 'status',
       title: 'title',
@@ -13999,8 +14169,10 @@ export class GetTrustDeviceListResponseBodyData extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       createTime: 'number',
+      id: 'number',
       macAddress: 'string',
       model: 'string',
+      modifiedTime: 'number',
       platform: 'string',
       status: 'number',
       title: 'string',
@@ -16875,6 +17047,10 @@ export default class Client extends OpenApi {
   async deleteTrustedDeviceWithOptions(request: DeleteTrustedDeviceRequest, headers: DeleteTrustedDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTrustedDeviceResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.id)) {
+      body["id"] = request.id;
+    }
+
     if (!Util.isUnset(request.kickOff)) {
       body["kickOff"] = request.kickOff;
     }
@@ -19311,6 +19487,42 @@ export default class Client extends OpenApi {
   async getTrustDeviceListWithOptions(request: GetTrustDeviceListRequest, headers: GetTrustDeviceListHeaders, runtime: $Util.RuntimeOptions): Promise<GetTrustDeviceListResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.gmtCreateEnd)) {
+      body["gmtCreateEnd"] = request.gmtCreateEnd;
+    }
+
+    if (!Util.isUnset(request.gmtCreateStart)) {
+      body["gmtCreateStart"] = request.gmtCreateStart;
+    }
+
+    if (!Util.isUnset(request.gmtModifiedEnd)) {
+      body["gmtModifiedEnd"] = request.gmtModifiedEnd;
+    }
+
+    if (!Util.isUnset(request.gmtModifiedStart)) {
+      body["gmtModifiedStart"] = request.gmtModifiedStart;
+    }
+
+    if (!Util.isUnset(request.macAddress)) {
+      body["macAddress"] = request.macAddress;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      body["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      body["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.platform)) {
+      body["platform"] = request.platform;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
     if (!Util.isUnset(request.userIds)) {
       body["userIds"] = request.userIds;
     }
@@ -22374,6 +22586,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new TaskInfoUpdateTaskHeaders({ });
     return await this.taskInfoUpdateTaskWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 切换组织归属
+   * 
+   * @param request - TransferExclusiveAccountOrgRequest
+   * @param headers - TransferExclusiveAccountOrgHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns TransferExclusiveAccountOrgResponse
+   */
+  async transferExclusiveAccountOrgWithOptions(request: TransferExclusiveAccountOrgRequest, headers: TransferExclusiveAccountOrgHeaders, runtime: $Util.RuntimeOptions): Promise<TransferExclusiveAccountOrgResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.isSettingMainOrg)) {
+      body["isSettingMainOrg"] = request.isSettingMainOrg;
+    }
+
+    if (!Util.isUnset(request.targetCorpId)) {
+      body["targetCorpId"] = request.targetCorpId;
+    }
+
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "TransferExclusiveAccountOrg",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/organizations/transfer`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TransferExclusiveAccountOrgResponse>(await this.execute(params, req, runtime), new TransferExclusiveAccountOrgResponse({}));
+  }
+
+  /**
+   * 切换组织归属
+   * 
+   * @param request - TransferExclusiveAccountOrgRequest
+   * @returns TransferExclusiveAccountOrgResponse
+   */
+  async transferExclusiveAccountOrg(request: TransferExclusiveAccountOrgRequest): Promise<TransferExclusiveAccountOrgResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TransferExclusiveAccountOrgHeaders({ });
+    return await this.transferExclusiveAccountOrgWithOptions(request, headers, runtime);
   }
 
   /**

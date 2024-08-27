@@ -785,35 +785,16 @@ export class UploadVideosHeaders extends $tea.Model {
 }
 
 export class UploadVideosRequest extends $tea.Model {
-  videoList?: UploadVideosRequestVideoList[];
+  body?: UploadVideosRequestBody[];
   static names(): { [key: string]: string } {
     return {
-      videoList: 'videoList',
+      body: 'body',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      videoList: { 'type': 'array', 'itemType': UploadVideosRequestVideoList },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UploadVideosShrinkRequest extends $tea.Model {
-  videoListShrink?: string;
-  static names(): { [key: string]: string } {
-    return {
-      videoListShrink: 'videoList',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      videoListShrink: 'string',
+      body: { 'type': 'array', 'itemType': UploadVideosRequestBody },
     };
   }
 
@@ -1489,7 +1470,7 @@ export class PageFeedResponseBodyFeedList extends $tea.Model {
   }
 }
 
-export class UploadVideosRequestVideoList extends $tea.Model {
+export class UploadVideosRequestBody extends $tea.Model {
   authorIconUrl?: string;
   authorId?: string;
   authorName?: string;
@@ -1945,24 +1926,13 @@ export default class Client extends OpenApi {
   /**
    * 点众上传视频信息
    * 
-   * @param tmpReq - UploadVideosRequest
+   * @param request - UploadVideosRequest
    * @param headers - UploadVideosHeaders
    * @param runtime - runtime options for this request RuntimeOptions
    * @returns UploadVideosResponse
    */
-  async uploadVideosWithOptions(tmpReq: UploadVideosRequest, headers: UploadVideosHeaders, runtime: $Util.RuntimeOptions): Promise<UploadVideosResponse> {
-    Util.validateModel(tmpReq);
-    let request = new UploadVideosShrinkRequest({ });
-    OpenApiUtil.convert(tmpReq, request);
-    if (!Util.isUnset(tmpReq.videoList)) {
-      request.videoListShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.videoList, "videoList", "json");
-    }
-
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.videoListShrink)) {
-      query["videoList"] = request.videoListShrink;
-    }
-
+  async uploadVideosWithOptions(request: UploadVideosRequest, headers: UploadVideosHeaders, runtime: $Util.RuntimeOptions): Promise<UploadVideosResponse> {
+    Util.validateModel(request);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1974,7 +1944,7 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: Util.toArray(request.body),
     });
     let params = new $OpenApi.Params({
       action: "UploadVideos",

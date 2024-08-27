@@ -6551,7 +6551,16 @@ export class GetFileTemplateListResponseBodyResultData extends $tea.Model {
    * 1
    */
   templateStatus?: number;
+  /**
+   * @example
+   * CONTRACT
+   */
   templateType?: string;
+  /**
+   * @example
+   * 合同模板
+   */
+  templateTypeName?: string;
   /**
    * @example
    * 24
@@ -6569,6 +6578,7 @@ export class GetFileTemplateListResponseBodyResultData extends $tea.Model {
       templateSignStatus: 'templateSignStatus',
       templateStatus: 'templateStatus',
       templateType: 'templateType',
+      templateTypeName: 'templateTypeName',
       tenantId: 'tenantId',
     };
   }
@@ -6585,6 +6595,7 @@ export class GetFileTemplateListResponseBodyResultData extends $tea.Model {
       templateSignStatus: 'number',
       templateStatus: 'number',
       templateType: 'string',
+      templateTypeName: 'string',
       tenantId: 'number',
     };
   }

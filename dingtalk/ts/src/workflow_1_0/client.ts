@@ -4076,6 +4076,1676 @@ export class PagesExportInstancesResponse extends $tea.Model {
   }
 }
 
+export class PremiumBatchExecuteProcessInstancesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumBatchExecuteProcessInstancesRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 67583405630
+   */
+  actionerUserId?: string;
+  remark?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * agree
+   */
+  result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  taskInfoList?: PremiumBatchExecuteProcessInstancesRequestTaskInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      actionerUserId: 'actionerUserId',
+      remark: 'remark',
+      result: 'result',
+      taskInfoList: 'taskInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionerUserId: 'string',
+      remark: 'string',
+      result: 'string',
+      taskInfoList: { 'type': 'array', 'itemType': PremiumBatchExecuteProcessInstancesRequestTaskInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumBatchExecuteProcessInstancesResponseBody extends $tea.Model {
+  result?: { [key: string]: ResultValue };
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'map', 'keyType': 'string', 'valueType': ResultValue },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumBatchExecuteProcessInstancesResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumBatchExecuteProcessInstancesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumBatchExecuteProcessInstancesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumDelDirHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumDelDirRequest extends $tea.Model {
+  /**
+   * @example
+   * oaDirIdxxx
+   */
+  dirId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user001
+   */
+  operateUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dirId: 'dirId',
+      operateUserId: 'operateUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dirId: 'string',
+      operateUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumDelDirResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumDelDirResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumDelDirResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumDelDirResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetDoneTasksHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetDoneTasksRequest extends $tea.Model {
+  dingClientId?: string;
+  keyword?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
+  pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
+  pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager001
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingClientId: 'dingClientId',
+      keyword: 'keyword',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingClientId: 'string',
+      keyword: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetDoneTasksResponseBody extends $tea.Model {
+  result?: PremiumGetDoneTasksResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PremiumGetDoneTasksResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetDoneTasksResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumGetDoneTasksResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumGetDoneTasksResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetFieldModifiedHistoryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetFieldModifiedHistoryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TextField-abcd
+   */
+  fieldId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * proc-FF6Y2xxxx
+   */
+  processInstanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fieldId: 'fieldId',
+      processInstanceId: 'processInstanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldId: 'string',
+      processInstanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetFieldModifiedHistoryResponseBody extends $tea.Model {
+  result?: PremiumGetFieldModifiedHistoryResponseBodyResult[];
+  /**
+   * @example
+   * true
+   */
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': PremiumGetFieldModifiedHistoryResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetFieldModifiedHistoryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumGetFieldModifiedHistoryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumGetFieldModifiedHistoryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetNoticedInstancesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetNoticedInstancesRequest extends $tea.Model {
+  dingClientId?: string;
+  keyword?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
+  pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
+  pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager001
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingClientId: 'dingClientId',
+      keyword: 'keyword',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingClientId: 'string',
+      keyword: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetNoticedInstancesResponseBody extends $tea.Model {
+  result?: PremiumGetNoticedInstancesResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PremiumGetNoticedInstancesResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetNoticedInstancesResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumGetNoticedInstancesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumGetNoticedInstancesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetProcessInstancesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetProcessInstancesRequest extends $tea.Model {
+  /**
+   * @example
+   * SWAPP-4C2F4B-example
+   */
+  appUuid?: string;
+  /**
+   * @example
+   * 1633795200000
+   */
+  endTimeInMills?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
+  maxResults?: number;
+  /**
+   * @example
+   * 1
+   */
+  nextToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-C53-example
+   */
+  processCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1631289600000
+   */
+  startTimeInMills?: number;
+  static names(): { [key: string]: string } {
+    return {
+      appUuid: 'appUuid',
+      endTimeInMills: 'endTimeInMills',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      processCode: 'processCode',
+      startTimeInMills: 'startTimeInMills',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appUuid: 'string',
+      endTimeInMills: 'number',
+      maxResults: 'number',
+      nextToken: 'string',
+      processCode: 'string',
+      startTimeInMills: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetProcessInstancesResponseBody extends $tea.Model {
+  result?: PremiumGetProcessInstancesResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PremiumGetProcessInstancesResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetProcessInstancesResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumGetProcessInstancesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumGetProcessInstancesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetSubmittedInstancesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetSubmittedInstancesRequest extends $tea.Model {
+  dingClientId?: string;
+  keyword?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
+  pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
+  pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager001
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      dingClientId: 'dingClientId',
+      keyword: 'keyword',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      dingClientId: 'string',
+      keyword: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetSubmittedInstancesResponseBody extends $tea.Model {
+  result?: PremiumGetSubmittedInstancesResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PremiumGetSubmittedInstancesResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetSubmittedInstancesResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumGetSubmittedInstancesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumGetSubmittedInstancesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetTodoTasksHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetTodoTasksRequest extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
+  createBefore?: string;
+  keyword?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
+  pageNumber?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
+  pageSize?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager001
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createBefore: 'createBefore',
+      keyword: 'keyword',
+      pageNumber: 'pageNumber',
+      pageSize: 'pageSize',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createBefore: 'string',
+      keyword: 'string',
+      pageNumber: 'number',
+      pageSize: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetTodoTasksResponseBody extends $tea.Model {
+  result?: PremiumGetTodoTasksResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PremiumGetTodoTasksResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetTodoTasksResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumGetTodoTasksResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumGetTodoTasksResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumInsertOrUpdateDirHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumInsertOrUpdateDirRequest extends $tea.Model {
+  /**
+   * @example
+   * administeration
+   */
+  bizGroup?: string;
+  /**
+   * @example
+   * 分组描述信息
+   */
+  description?: string;
+  /**
+   * @example
+   * 行政管理
+   */
+  name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {\"en_US\":\"test\",\"ja_JP\":\"test\",\"vi_VN\":\"test\",\"zh_CN\":\"测试\",\"zh_HK\":\"测试\",\"zh_TW\":\"测试\"}
+   */
+  name18n?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * user001
+   */
+  operateUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizGroup: 'bizGroup',
+      description: 'description',
+      name: 'name',
+      name18n: 'name18n',
+      operateUserId: 'operateUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizGroup: 'string',
+      description: 'string',
+      name: 'string',
+      name18n: 'string',
+      operateUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumInsertOrUpdateDirResponseBody extends $tea.Model {
+  result?: PremiumInsertOrUpdateDirResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PremiumInsertOrUpdateDirResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumInsertOrUpdateDirResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumInsertOrUpdateDirResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumInsertOrUpdateDirResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumQueryTodoTasksByManagerHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumQueryTodoTasksByManagerRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * staffId123
+   */
+  actionerUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager123
+   */
+  managerUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
+  maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  nextToken?: number;
+  static names(): { [key: string]: string } {
+    return {
+      actionerUserId: 'actionerUserId',
+      managerUserId: 'managerUserId',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      actionerUserId: 'string',
+      managerUserId: 'string',
+      maxResults: 'number',
+      nextToken: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumQueryTodoTasksByManagerResponseBody extends $tea.Model {
+  result?: PremiumQueryTodoTasksByManagerResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PremiumQueryTodoTasksByManagerResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumQueryTodoTasksByManagerResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumQueryTodoTasksByManagerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumQueryTodoTasksByManagerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumRedirectTasksByManagerHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumRedirectTasksByManagerRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * staffId-B
+   */
+  handoverUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * manager-12
+   */
+  managerUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * **if can be null:**
+   * false
+   */
+  taskIds?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * staffId-A
+   */
+  transfereeUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      handoverUserId: 'handoverUserId',
+      managerUserId: 'managerUserId',
+      taskIds: 'taskIds',
+      transfereeUserId: 'transfereeUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      handoverUserId: 'string',
+      managerUserId: 'string',
+      taskIds: { 'type': 'array', 'itemType': 'number' },
+      transfereeUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumRedirectTasksByManagerResponseBody extends $tea.Model {
+  result?: PremiumRedirectTasksByManagerResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PremiumRedirectTasksByManagerResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumRedirectTasksByManagerResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumRedirectTasksByManagerResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumRedirectTasksByManagerResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessRequest extends $tea.Model {
+  /**
+   * @example
+   * 用于员工差旅费用报销使用
+   */
+  description?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  formComponents?: FormComponent[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 出差报销审批
+   */
+  name?: string;
+  /**
+   * @example
+   * proc-abc
+   */
+  processCode?: string;
+  processFeatureConfig?: PremiumSaveIntegratedProcessRequestProcessFeatureConfig;
+  /**
+   * **if can be null:**
+   * true
+   * 
+   * @deprecated
+   */
+  templateConfig?: PremiumSaveIntegratedProcessRequestTemplateConfig;
+  static names(): { [key: string]: string } {
+    return {
+      description: 'description',
+      formComponents: 'formComponents',
+      name: 'name',
+      processCode: 'processCode',
+      processFeatureConfig: 'processFeatureConfig',
+      templateConfig: 'templateConfig',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      description: 'string',
+      formComponents: { 'type': 'array', 'itemType': FormComponent },
+      name: 'string',
+      processCode: 'string',
+      processFeatureConfig: PremiumSaveIntegratedProcessRequestProcessFeatureConfig,
+      templateConfig: PremiumSaveIntegratedProcessRequestTemplateConfig,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessResponseBody extends $tea.Model {
+  result?: PremiumSaveIntegratedProcessResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PremiumSaveIntegratedProcessResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumSaveIntegratedProcessResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumSaveIntegratedProcessResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessInstanceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessInstanceRequest extends $tea.Model {
+  /**
+   * @example
+   * "{\"mykey\": \"myData\"}"
+   */
+  bizData?: string;
+  formComponentValueList?: PremiumSaveIntegratedProcessInstanceRequestFormComponentValueList[];
+  notifiers?: PremiumSaveIntegratedProcessInstanceRequestNotifiers[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  originatorUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  processCode?: string;
+  title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * https://www.dingtalk.com/
+   */
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizData: 'bizData',
+      formComponentValueList: 'formComponentValueList',
+      notifiers: 'notifiers',
+      originatorUserId: 'originatorUserId',
+      processCode: 'processCode',
+      title: 'title',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizData: 'string',
+      formComponentValueList: { 'type': 'array', 'itemType': PremiumSaveIntegratedProcessInstanceRequestFormComponentValueList },
+      notifiers: { 'type': 'array', 'itemType': PremiumSaveIntegratedProcessInstanceRequestNotifiers },
+      originatorUserId: 'string',
+      processCode: 'string',
+      title: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessInstanceResponseBody extends $tea.Model {
+  result?: PremiumSaveIntegratedProcessInstanceResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: PremiumSaveIntegratedProcessInstanceResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessInstanceResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumSaveIntegratedProcessInstanceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumSaveIntegratedProcessInstanceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedTaskHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedTaskRequest extends $tea.Model {
+  /**
+   * @example
+   * act_xxxx
+   */
+  activityId?: string;
+  featureConfig?: PremiumSaveIntegratedTaskRequestFeatureConfig;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * tPr_FB_mT_xxxxxxxxx2hQ05201655306463
+   */
+  processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  tasks?: PremiumSaveIntegratedTaskRequestTasks[];
+  static names(): { [key: string]: string } {
+    return {
+      activityId: 'activityId',
+      featureConfig: 'featureConfig',
+      processInstanceId: 'processInstanceId',
+      tasks: 'tasks',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityId: 'string',
+      featureConfig: PremiumSaveIntegratedTaskRequestFeatureConfig,
+      processInstanceId: 'string',
+      tasks: { 'type': 'array', 'itemType': PremiumSaveIntegratedTaskRequestTasks },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedTaskResponseBody extends $tea.Model {
+  result?: PremiumSaveIntegratedTaskResponseBodyResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': PremiumSaveIntegratedTaskResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedTaskResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PremiumSaveIntegratedTaskResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PremiumSaveIntegratedTaskResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ProcessForecastHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9091,6 +10761,1531 @@ export class PagesExportInstancesResponseBodyResult extends $tea.Model {
       hasMore: 'boolean',
       list: { 'type': 'array', 'itemType': PagesExportInstancesResponseBodyResultList },
       nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumBatchExecuteProcessInstancesRequestTaskInfoList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * a171de6c-8bxxxx
+   */
+  processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  taskId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      processInstanceId: 'processInstanceId',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processInstanceId: 'string',
+      taskId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetDoneTasksResponseBodyResultList extends $tea.Model {
+  activityId?: string;
+  formMassage?: string;
+  originatorId?: string;
+  originatorName?: string;
+  originatorPhoto?: string;
+  pcUrl?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
+  processCreateTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
+  processEndTime?: string;
+  processInstanceId?: string;
+  processType?: number;
+  /**
+   * @example
+   * agree
+   */
+  result?: string;
+  /**
+   * @example
+   * RUNNING
+   */
+  status?: string;
+  taskId?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activityId: 'activityId',
+      formMassage: 'formMassage',
+      originatorId: 'originatorId',
+      originatorName: 'originatorName',
+      originatorPhoto: 'originatorPhoto',
+      pcUrl: 'pcUrl',
+      processCreateTime: 'processCreateTime',
+      processEndTime: 'processEndTime',
+      processInstanceId: 'processInstanceId',
+      processType: 'processType',
+      result: 'result',
+      status: 'status',
+      taskId: 'taskId',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityId: 'string',
+      formMassage: 'string',
+      originatorId: 'string',
+      originatorName: 'string',
+      originatorPhoto: 'string',
+      pcUrl: 'string',
+      processCreateTime: 'string',
+      processEndTime: 'string',
+      processInstanceId: 'string',
+      processType: 'number',
+      result: 'string',
+      status: 'string',
+      taskId: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetDoneTasksResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  list?: PremiumGetDoneTasksResponseBodyResultList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': PremiumGetDoneTasksResponseBodyResultList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetFieldModifiedHistoryResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   * 
+   * @example
+   * 2024-04-02T11:52Z
+   */
+  createTime?: string;
+  /**
+   * @example
+   * TextField-abcd
+   */
+  fieldId?: string;
+  /**
+   * @example
+   * 钉钉1
+   */
+  name?: string;
+  /**
+   * @example
+   * userId1
+   */
+  userId?: string;
+  /**
+   * @example
+   * 从 111 修改到 222
+   */
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createTime: 'createTime',
+      fieldId: 'fieldId',
+      name: 'name',
+      userId: 'userId',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createTime: 'string',
+      fieldId: 'string',
+      name: 'string',
+      userId: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetNoticedInstancesResponseBodyResultList extends $tea.Model {
+  formMassage?: string;
+  originatorId?: string;
+  originatorName?: string;
+  originatorPhoto?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
+  processCreateTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
+  processEndTime?: string;
+  processInstanceId?: string;
+  processType?: number;
+  /**
+   * @example
+   * agree
+   */
+  result?: string;
+  /**
+   * @example
+   * RUNNING
+   */
+  status?: string;
+  title?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      formMassage: 'formMassage',
+      originatorId: 'originatorId',
+      originatorName: 'originatorName',
+      originatorPhoto: 'originatorPhoto',
+      processCreateTime: 'processCreateTime',
+      processEndTime: 'processEndTime',
+      processInstanceId: 'processInstanceId',
+      processType: 'processType',
+      result: 'result',
+      status: 'status',
+      title: 'title',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      formMassage: 'string',
+      originatorId: 'string',
+      originatorName: 'string',
+      originatorPhoto: 'string',
+      processCreateTime: 'string',
+      processEndTime: 'string',
+      processInstanceId: 'string',
+      processType: 'number',
+      result: 'string',
+      status: 'string',
+      title: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetNoticedInstancesResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  list?: PremiumGetNoticedInstancesResponseBodyResultList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': PremiumGetNoticedInstancesResponseBodyResultList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetProcessInstancesResponseBodyResultListFormComponentValues extends $tea.Model {
+  /**
+   * @example
+   * {"staffId":"abcd"}
+   */
+  extValue?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * TextField-a32bcdef
+   */
+  id?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 姓名
+   */
+  name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      extValue: 'extValue',
+      id: 'id',
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      extValue: 'string',
+      id: 'string',
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetProcessInstancesResponseBodyResultListOperationRecordsAttachments extends $tea.Model {
+  /**
+   * @example
+   * 1234567
+   */
+  fileId?: string;
+  /**
+   * @example
+   * 附件
+   */
+  fileName?: string;
+  /**
+   * @example
+   * 123
+   */
+  fileSize?: string;
+  /**
+   * @example
+   * pdf
+   */
+  fileType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileId: 'fileId',
+      fileName: 'fileName',
+      fileSize: 'fileSize',
+      fileType: 'fileType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileId: 'string',
+      fileName: 'string',
+      fileSize: 'string',
+      fileType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetProcessInstancesResponseBodyResultListOperationRecords extends $tea.Model {
+  attachments?: PremiumGetProcessInstancesResponseBodyResultListOperationRecordsAttachments[];
+  /**
+   * @example
+   * EXECUTE_TASK_NORMAL（正常执行任务），EXECUTE_TASK_AGENT（代理人执行任务），APPEND_TASK_BEFORE（前加签任务），APPEND_TASK_AFTER（后加签任务），REDIRECT_TASK（转交任务），START_PROCESS_INSTANCE（发起流程实例），TERMINATE_PROCESS_INSTANCE（终止(撤销)流程实例），FINISH_PROCESS_INSTANCE（结束流程实例），ADD_REMARK（添加评论）
+   */
+  operationType?: string;
+  /**
+   * @example
+   * 同意
+   */
+  remark?: string;
+  /**
+   * @example
+   * AGREE（同意），REFUSE（拒绝），NONE（未知）
+   */
+  result?: string;
+  /**
+   * @example
+   * 1657522271000
+   */
+  timestamp?: number;
+  /**
+   * @example
+   * manager1
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attachments: 'attachments',
+      operationType: 'operationType',
+      remark: 'remark',
+      result: 'result',
+      timestamp: 'timestamp',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachments: { 'type': 'array', 'itemType': PremiumGetProcessInstancesResponseBodyResultListOperationRecordsAttachments },
+      operationType: 'string',
+      remark: 'string',
+      result: 'string',
+      timestamp: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetProcessInstancesResponseBodyResultListTasks extends $tea.Model {
+  /**
+   * @example
+   * 1234_abcd
+   */
+  activityId?: string;
+  /**
+   * @example
+   * 1657522271000
+   */
+  createTimestamp?: number;
+  /**
+   * @example
+   * 1657522271000
+   */
+  finishTimestamp?: number;
+  /**
+   * @example
+   * 分为AGREE（同意），REFUSE（拒绝），REDIRECTED（转交）
+   */
+  result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * NEW（未启动），RUNNING（处理中），PAUSED（暂停），CANCELED（取消），COMPLETED（完成），TERMINATED（终止）
+   */
+  status?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
+  taskId?: number;
+  /**
+   * @example
+   * staff1234
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activityId: 'activityId',
+      createTimestamp: 'createTimestamp',
+      finishTimestamp: 'finishTimestamp',
+      result: 'result',
+      status: 'status',
+      taskId: 'taskId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityId: 'string',
+      createTimestamp: 'number',
+      finishTimestamp: 'number',
+      result: 'string',
+      status: 'string',
+      taskId: 'number',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetProcessInstancesResponseBodyResultList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cdef-dae2fd2-example
+   */
+  attachedProcessInstanceIds?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 202110111558000355024
+   */
+  businessId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1635165470201
+   */
+  createTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1633795200000
+   */
+  finishTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  formComponentValues?: PremiumGetProcessInstancesResponseBodyResultListFormComponentValues[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dcdse-dae2fd2-example
+   */
+  mainProcessInstanceId?: string;
+  operationRecords?: PremiumGetProcessInstancesResponseBodyResultListOperationRecords[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 默认-1，企业根部门
+   */
+  originatorDeptId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * staff1234
+   */
+  originatorUserid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * abcdse-dse-example
+   */
+  processInstanceId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * AGREE同意，REFUSE拒绝
+   */
+  result?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * RUNNING审批中、TERMINATED撤销、COMPLETED审批完成、CANCELED取消
+   */
+  status?: string;
+  tasks?: PremiumGetProcessInstancesResponseBodyResultListTasks[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 员工A提交的小肖审批单
+   */
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      attachedProcessInstanceIds: 'attachedProcessInstanceIds',
+      businessId: 'businessId',
+      createTime: 'createTime',
+      finishTime: 'finishTime',
+      formComponentValues: 'formComponentValues',
+      mainProcessInstanceId: 'mainProcessInstanceId',
+      operationRecords: 'operationRecords',
+      originatorDeptId: 'originatorDeptId',
+      originatorUserid: 'originatorUserid',
+      processInstanceId: 'processInstanceId',
+      result: 'result',
+      status: 'status',
+      tasks: 'tasks',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      attachedProcessInstanceIds: 'string',
+      businessId: 'string',
+      createTime: 'number',
+      finishTime: 'number',
+      formComponentValues: { 'type': 'array', 'itemType': PremiumGetProcessInstancesResponseBodyResultListFormComponentValues },
+      mainProcessInstanceId: 'string',
+      operationRecords: { 'type': 'array', 'itemType': PremiumGetProcessInstancesResponseBodyResultListOperationRecords },
+      originatorDeptId: 'string',
+      originatorUserid: 'string',
+      processInstanceId: 'string',
+      result: 'string',
+      status: 'string',
+      tasks: { 'type': 'array', 'itemType': PremiumGetProcessInstancesResponseBodyResultListTasks },
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetProcessInstancesResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * true
+   */
+  hasMore?: boolean;
+  list?: PremiumGetProcessInstancesResponseBodyResultList[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
+  maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': PremiumGetProcessInstancesResponseBodyResultList },
+      maxResults: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetSubmittedInstancesResponseBodyResultList extends $tea.Model {
+  appType?: number;
+  formMassage?: string;
+  originatorId?: string;
+  originatorName?: string;
+  originatorPhoto?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
+  processCreateTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
+  processEndTime?: string;
+  processInstanceId?: string;
+  processType?: number;
+  /**
+   * @example
+   * agree
+   */
+  result?: string;
+  /**
+   * @example
+   * RUNNING
+   */
+  status?: string;
+  title?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appType: 'appType',
+      formMassage: 'formMassage',
+      originatorId: 'originatorId',
+      originatorName: 'originatorName',
+      originatorPhoto: 'originatorPhoto',
+      processCreateTime: 'processCreateTime',
+      processEndTime: 'processEndTime',
+      processInstanceId: 'processInstanceId',
+      processType: 'processType',
+      result: 'result',
+      status: 'status',
+      title: 'title',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appType: 'number',
+      formMassage: 'string',
+      originatorId: 'string',
+      originatorName: 'string',
+      originatorPhoto: 'string',
+      processCreateTime: 'string',
+      processEndTime: 'string',
+      processInstanceId: 'string',
+      processType: 'number',
+      result: 'string',
+      status: 'string',
+      title: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetSubmittedInstancesResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  list?: PremiumGetSubmittedInstancesResponseBodyResultList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': PremiumGetSubmittedInstancesResponseBodyResultList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetTodoTasksResponseBodyResultList extends $tea.Model {
+  activityId?: string;
+  appType?: number;
+  formMassage?: string;
+  originatorId?: string;
+  originatorName?: string;
+  originatorPhoto?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
+  processCreateTime?: string;
+  /**
+   * @remarks
+   * Use the UTC time format: yyyy-MM-ddTHH:mmZ
+   */
+  processEndTime?: string;
+  processInstanceId?: string;
+  processType?: number;
+  /**
+   * @example
+   * agree
+   */
+  result?: string;
+  /**
+   * @example
+   * RUNNING
+   */
+  status?: string;
+  taskId?: string;
+  title?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      activityId: 'activityId',
+      appType: 'appType',
+      formMassage: 'formMassage',
+      originatorId: 'originatorId',
+      originatorName: 'originatorName',
+      originatorPhoto: 'originatorPhoto',
+      processCreateTime: 'processCreateTime',
+      processEndTime: 'processEndTime',
+      processInstanceId: 'processInstanceId',
+      processType: 'processType',
+      result: 'result',
+      status: 'status',
+      taskId: 'taskId',
+      title: 'title',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      activityId: 'string',
+      appType: 'number',
+      formMassage: 'string',
+      originatorId: 'string',
+      originatorName: 'string',
+      originatorPhoto: 'string',
+      processCreateTime: 'string',
+      processEndTime: 'string',
+      processInstanceId: 'string',
+      processType: 'number',
+      result: 'string',
+      status: 'string',
+      taskId: 'string',
+      title: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumGetTodoTasksResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  list?: PremiumGetTodoTasksResponseBodyResultList[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': PremiumGetTodoTasksResponseBodyResultList },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumInsertOrUpdateDirResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * {应用appId}_administeration
+   */
+  bizGroup?: string;
+  /**
+   * @example
+   * oaDirIdxxx
+   */
+  dirId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizGroup: 'bizGroup',
+      dirId: 'dirId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizGroup: 'string',
+      dirId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumQueryTodoTasksByManagerResponseBodyResultList extends $tea.Model {
+  /**
+   * @example
+   * RUNNING
+   */
+  businessId?: string;
+  canRedirect?: boolean;
+  createTime?: number;
+  /**
+   * @example
+   * act_0001
+   */
+  processCode?: string;
+  /**
+   * @example
+   * Siw2WNVZS4KiUt3tTmaNKg04*****809950
+   */
+  processInstanceId?: string;
+  /**
+   * @example
+   * 1234567
+   */
+  taskId?: number;
+  /**
+   * @example
+   * manager001
+   */
+  title?: string;
+  /**
+   * @example
+   * 2022-10-17T15:12Z
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      businessId: 'businessId',
+      canRedirect: 'canRedirect',
+      createTime: 'createTime',
+      processCode: 'processCode',
+      processInstanceId: 'processInstanceId',
+      taskId: 'taskId',
+      title: 'title',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      businessId: 'string',
+      canRedirect: 'boolean',
+      createTime: 'number',
+      processCode: 'string',
+      processInstanceId: 'string',
+      taskId: 'number',
+      title: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumQueryTodoTasksByManagerResponseBodyResult extends $tea.Model {
+  hasMore?: boolean;
+  list?: PremiumQueryTodoTasksByManagerResponseBodyResultList[];
+  static names(): { [key: string]: string } {
+    return {
+      hasMore: 'hasMore',
+      list: 'list',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      hasMore: 'boolean',
+      list: { 'type': 'array', 'itemType': PremiumQueryTodoTasksByManagerResponseBodyResultList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumRedirectTasksByManagerResponseBodyResultRedirectResults extends $tea.Model {
+  /**
+   * @example
+   * 外部流程不允许转交
+   */
+  errorMsg?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * success
+   */
+  success?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1234567
+   */
+  taskId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      errorMsg: 'errorMsg',
+      success: 'success',
+      taskId: 'taskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      errorMsg: 'string',
+      success: 'boolean',
+      taskId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumRedirectTasksByManagerResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 1
+   */
+  failCount?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  redirectResults?: PremiumRedirectTasksByManagerResponseBodyResultRedirectResults[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      failCount: 'failCount',
+      redirectResults: 'redirectResults',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failCount: 'number',
+      redirectResults: { 'type': 'array', 'itemType': PremiumRedirectTasksByManagerResponseBodyResultRedirectResults },
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeaturesCallback extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
+  apiKey?: string;
+  /**
+   * @example
+   * abc
+   */
+  appUuid?: string;
+  /**
+   * @example
+   * 1
+   */
+  version?: string;
+  static names(): { [key: string]: string } {
+    return {
+      apiKey: 'apiKey',
+      appUuid: 'appUuid',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiKey: 'string',
+      appUuid: 'string',
+      version: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeatures extends $tea.Model {
+  callback?: PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeaturesCallback;
+  /**
+   * @example
+   * www.dingtalk.com
+   */
+  mobileUrl?: string;
+  /**
+   * @example
+   * abc
+   */
+  name?: string;
+  /**
+   * @example
+   * www.dingtalk.com
+   */
+  pcUrl?: string;
+  /**
+   * @example
+   * ORIGIN
+   */
+  runType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      callback: 'callback',
+      mobileUrl: 'mobileUrl',
+      name: 'name',
+      pcUrl: 'pcUrl',
+      runType: 'runType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      callback: PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeaturesCallback,
+      mobileUrl: 'string',
+      name: 'string',
+      pcUrl: 'string',
+      runType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessRequestProcessFeatureConfig extends $tea.Model {
+  features?: PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeatures[];
+  static names(): { [key: string]: string } {
+    return {
+      features: 'features',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      features: { 'type': 'array', 'itemType': PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeatures },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessRequestTemplateConfig extends $tea.Model {
+  /**
+   * @example
+   * https://open.dingtalk.com/
+   * 
+   * @deprecated
+   */
+  createInstanceMobileUrl?: string;
+  /**
+   * @example
+   * https://open.dingtalk.com/
+   * 
+   * @deprecated
+   */
+  createInstancePcUrl?: string;
+  /**
+   * **if can be null:**
+   * true
+   */
+  disableSendCard?: boolean;
+  /**
+   * @example
+   * true
+   */
+  hidden?: boolean;
+  /**
+   * @example
+   * https://open.dingtalk.com/
+   * 
+   * **if can be null:**
+   * true
+   * 
+   * @deprecated
+   */
+  templateEditUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createInstanceMobileUrl: 'createInstanceMobileUrl',
+      createInstancePcUrl: 'createInstancePcUrl',
+      disableSendCard: 'disableSendCard',
+      hidden: 'hidden',
+      templateEditUrl: 'templateEditUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createInstanceMobileUrl: 'string',
+      createInstancePcUrl: 'string',
+      disableSendCard: 'boolean',
+      hidden: 'boolean',
+      templateEditUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessResponseBodyResult extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * PROC-abcdef-example
+   */
+  processCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processCode: 'processCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessInstanceRequestFormComponentValueList extends $tea.Model {
+  bizAlias?: string;
+  componentType?: string;
+  extValue?: string;
+  id?: string;
+  name?: string;
+  value?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizAlias: 'bizAlias',
+      componentType: 'componentType',
+      extValue: 'extValue',
+      id: 'id',
+      name: 'name',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizAlias: 'string',
+      componentType: 'string',
+      extValue: 'string',
+      id: 'string',
+      name: 'string',
+      value: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessInstanceRequestNotifiers extends $tea.Model {
+  /**
+   * @example
+   * start
+   */
+  position?: string;
+  /**
+   * @example
+   * manager001
+   */
+  userid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      position: 'position',
+      userid: 'userid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      position: 'string',
+      userid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedProcessInstanceResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * proc-abc
+   */
+  processInstanceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      processInstanceId: 'processInstanceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      processInstanceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedTaskRequestFeatureConfigFeaturesCallback extends $tea.Model {
+  /**
+   * @example
+   * abc
+   */
+  apiKey?: string;
+  /**
+   * @example
+   * abc
+   */
+  appUuid?: string;
+  /**
+   * @example
+   * 1
+   */
+  version?: string;
+  static names(): { [key: string]: string } {
+    return {
+      apiKey: 'apiKey',
+      appUuid: 'appUuid',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      apiKey: 'string',
+      appUuid: 'string',
+      version: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedTaskRequestFeatureConfigFeatures extends $tea.Model {
+  callback?: PremiumSaveIntegratedTaskRequestFeatureConfigFeaturesCallback;
+  /**
+   * **if can be null:**
+   * true
+   */
+  config?: string;
+  /**
+   * @example
+   * www.dingtalk.com
+   */
+  mobileUrl?: string;
+  /**
+   * @example
+   * abc
+   */
+  name?: string;
+  /**
+   * @example
+   * www.dingtalk.com
+   */
+  pcUrl?: string;
+  /**
+   * @example
+   * ORIGIN
+   */
+  runType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      callback: 'callback',
+      config: 'config',
+      mobileUrl: 'mobileUrl',
+      name: 'name',
+      pcUrl: 'pcUrl',
+      runType: 'runType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      callback: PremiumSaveIntegratedTaskRequestFeatureConfigFeaturesCallback,
+      config: 'string',
+      mobileUrl: 'string',
+      name: 'string',
+      pcUrl: 'string',
+      runType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedTaskRequestFeatureConfig extends $tea.Model {
+  features?: PremiumSaveIntegratedTaskRequestFeatureConfigFeatures[];
+  static names(): { [key: string]: string } {
+    return {
+      features: 'features',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      features: { 'type': 'array', 'itemType': PremiumSaveIntegratedTaskRequestFeatureConfigFeatures },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedTaskRequestTasks extends $tea.Model {
+  /**
+   * @example
+   * {\"id\":\"12345\"}
+   */
+  customData?: string;
+  /**
+   * @example
+   * https://www.dingtalk.com
+   */
+  url?: string;
+  /**
+   * @example
+   * manager001
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      customData: 'customData',
+      url: 'url',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customData: 'string',
+      url: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PremiumSaveIntegratedTaskResponseBodyResult extends $tea.Model {
+  taskId?: number;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      taskId: 'taskId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      taskId: 'number',
+      userId: 'string',
     };
   }
 
@@ -14306,6 +17501,962 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new PagesExportInstancesHeaders({ });
     return await this.pagesExportInstancesWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 批量同意或拒绝审批任务(OA高级版专享接口)
+   * 
+   * @param request - PremiumBatchExecuteProcessInstancesRequest
+   * @param headers - PremiumBatchExecuteProcessInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumBatchExecuteProcessInstancesResponse
+   */
+  async premiumBatchExecuteProcessInstancesWithOptions(request: PremiumBatchExecuteProcessInstancesRequest, headers: PremiumBatchExecuteProcessInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumBatchExecuteProcessInstancesResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actionerUserId)) {
+      body["actionerUserId"] = request.actionerUserId;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.result)) {
+      body["result"] = request.result;
+    }
+
+    if (!Util.isUnset(request.taskInfoList)) {
+      body["taskInfoList"] = request.taskInfoList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumBatchExecuteProcessInstances",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processInstances/batchExecute`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumBatchExecuteProcessInstancesResponse>(await this.execute(params, req, runtime), new PremiumBatchExecuteProcessInstancesResponse({}));
+  }
+
+  /**
+   * 批量同意或拒绝审批任务(OA高级版专享接口)
+   * 
+   * @param request - PremiumBatchExecuteProcessInstancesRequest
+   * @returns PremiumBatchExecuteProcessInstancesResponse
+   */
+  async premiumBatchExecuteProcessInstances(request: PremiumBatchExecuteProcessInstancesRequest): Promise<PremiumBatchExecuteProcessInstancesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumBatchExecuteProcessInstancesHeaders({ });
+    return await this.premiumBatchExecuteProcessInstancesWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 删除业务分组(高级版专享接口)
+   * 
+   * @param request - PremiumDelDirRequest
+   * @param headers - PremiumDelDirHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumDelDirResponse
+   */
+  async premiumDelDirWithOptions(request: PremiumDelDirRequest, headers: PremiumDelDirHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumDelDirResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dirId)) {
+      query["dirId"] = request.dirId;
+    }
+
+    if (!Util.isUnset(request.operateUserId)) {
+      query["operateUserId"] = request.operateUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumDelDir",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processCentres/directories`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumDelDirResponse>(await this.execute(params, req, runtime), new PremiumDelDirResponse({}));
+  }
+
+  /**
+   * 删除业务分组(高级版专享接口)
+   * 
+   * @param request - PremiumDelDirRequest
+   * @returns PremiumDelDirResponse
+   */
+  async premiumDelDir(request: PremiumDelDirRequest): Promise<PremiumDelDirResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumDelDirHeaders({ });
+    return await this.premiumDelDirWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询审批中心已处理任务列表(OA高级版专享接口)
+   * 
+   * @param request - PremiumGetDoneTasksRequest
+   * @param headers - PremiumGetDoneTasksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumGetDoneTasksResponse
+   */
+  async premiumGetDoneTasksWithOptions(request: PremiumGetDoneTasksRequest, headers: PremiumGetDoneTasksHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumGetDoneTasksResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingClientId)) {
+      query["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.keyword)) {
+      query["keyword"] = request.keyword;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumGetDoneTasks",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processCentres/doneTasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumGetDoneTasksResponse>(await this.execute(params, req, runtime), new PremiumGetDoneTasksResponse({}));
+  }
+
+  /**
+   * 查询审批中心已处理任务列表(OA高级版专享接口)
+   * 
+   * @param request - PremiumGetDoneTasksRequest
+   * @returns PremiumGetDoneTasksResponse
+   */
+  async premiumGetDoneTasks(request: PremiumGetDoneTasksRequest): Promise<PremiumGetDoneTasksResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumGetDoneTasksHeaders({ });
+    return await this.premiumGetDoneTasksWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取字段修改历史(高级版专享接口)
+   * 
+   * @param request - PremiumGetFieldModifiedHistoryRequest
+   * @param headers - PremiumGetFieldModifiedHistoryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumGetFieldModifiedHistoryResponse
+   */
+  async premiumGetFieldModifiedHistoryWithOptions(request: PremiumGetFieldModifiedHistoryRequest, headers: PremiumGetFieldModifiedHistoryHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumGetFieldModifiedHistoryResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.fieldId)) {
+      body["fieldId"] = request.fieldId;
+    }
+
+    if (!Util.isUnset(request.processInstanceId)) {
+      body["processInstanceId"] = request.processInstanceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumGetFieldModifiedHistory",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processes/fields/modifiedRecords/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumGetFieldModifiedHistoryResponse>(await this.execute(params, req, runtime), new PremiumGetFieldModifiedHistoryResponse({}));
+  }
+
+  /**
+   * 获取字段修改历史(高级版专享接口)
+   * 
+   * @param request - PremiumGetFieldModifiedHistoryRequest
+   * @returns PremiumGetFieldModifiedHistoryResponse
+   */
+  async premiumGetFieldModifiedHistory(request: PremiumGetFieldModifiedHistoryRequest): Promise<PremiumGetFieldModifiedHistoryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumGetFieldModifiedHistoryHeaders({ });
+    return await this.premiumGetFieldModifiedHistoryWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询审批中心我收到的实例列表(OA高级版专享接口)
+   * 
+   * @param request - PremiumGetNoticedInstancesRequest
+   * @param headers - PremiumGetNoticedInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumGetNoticedInstancesResponse
+   */
+  async premiumGetNoticedInstancesWithOptions(request: PremiumGetNoticedInstancesRequest, headers: PremiumGetNoticedInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumGetNoticedInstancesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingClientId)) {
+      query["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.keyword)) {
+      query["keyword"] = request.keyword;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumGetNoticedInstances",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processCentres/noticedInstances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumGetNoticedInstancesResponse>(await this.execute(params, req, runtime), new PremiumGetNoticedInstancesResponse({}));
+  }
+
+  /**
+   * 查询审批中心我收到的实例列表(OA高级版专享接口)
+   * 
+   * @param request - PremiumGetNoticedInstancesRequest
+   * @returns PremiumGetNoticedInstancesResponse
+   */
+  async premiumGetNoticedInstances(request: PremiumGetNoticedInstancesRequest): Promise<PremiumGetNoticedInstancesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumGetNoticedInstancesHeaders({ });
+    return await this.premiumGetNoticedInstancesWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 根据processCode分页获取审批流程数据(高级版专享接口)
+   * 
+   * @param request - PremiumGetProcessInstancesRequest
+   * @param headers - PremiumGetProcessInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumGetProcessInstancesResponse
+   */
+  async premiumGetProcessInstancesWithOptions(request: PremiumGetProcessInstancesRequest, headers: PremiumGetProcessInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumGetProcessInstancesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appUuid)) {
+      query["appUuid"] = request.appUuid;
+    }
+
+    if (!Util.isUnset(request.endTimeInMills)) {
+      query["endTimeInMills"] = request.endTimeInMills;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.processCode)) {
+      query["processCode"] = request.processCode;
+    }
+
+    if (!Util.isUnset(request.startTimeInMills)) {
+      query["startTimeInMills"] = request.startTimeInMills;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumGetProcessInstances",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processes/pages/instances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumGetProcessInstancesResponse>(await this.execute(params, req, runtime), new PremiumGetProcessInstancesResponse({}));
+  }
+
+  /**
+   * 根据processCode分页获取审批流程数据(高级版专享接口)
+   * 
+   * @param request - PremiumGetProcessInstancesRequest
+   * @returns PremiumGetProcessInstancesResponse
+   */
+  async premiumGetProcessInstances(request: PremiumGetProcessInstancesRequest): Promise<PremiumGetProcessInstancesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumGetProcessInstancesHeaders({ });
+    return await this.premiumGetProcessInstancesWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询审批中心已发起实例列表(OA高级版专享接口)
+   * 
+   * @param request - PremiumGetSubmittedInstancesRequest
+   * @param headers - PremiumGetSubmittedInstancesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumGetSubmittedInstancesResponse
+   */
+  async premiumGetSubmittedInstancesWithOptions(request: PremiumGetSubmittedInstancesRequest, headers: PremiumGetSubmittedInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumGetSubmittedInstancesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dingClientId)) {
+      query["dingClientId"] = request.dingClientId;
+    }
+
+    if (!Util.isUnset(request.keyword)) {
+      query["keyword"] = request.keyword;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumGetSubmittedInstances",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processCentres/submittedInstances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumGetSubmittedInstancesResponse>(await this.execute(params, req, runtime), new PremiumGetSubmittedInstancesResponse({}));
+  }
+
+  /**
+   * 查询审批中心已发起实例列表(OA高级版专享接口)
+   * 
+   * @param request - PremiumGetSubmittedInstancesRequest
+   * @returns PremiumGetSubmittedInstancesResponse
+   */
+  async premiumGetSubmittedInstances(request: PremiumGetSubmittedInstancesRequest): Promise<PremiumGetSubmittedInstancesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumGetSubmittedInstancesHeaders({ });
+    return await this.premiumGetSubmittedInstancesWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询审批中心待处理任务列表(OA高级版专享接口)
+   * 
+   * @param request - PremiumGetTodoTasksRequest
+   * @param headers - PremiumGetTodoTasksHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumGetTodoTasksResponse
+   */
+  async premiumGetTodoTasksWithOptions(request: PremiumGetTodoTasksRequest, headers: PremiumGetTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumGetTodoTasksResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.createBefore)) {
+      query["createBefore"] = request.createBefore;
+    }
+
+    if (!Util.isUnset(request.keyword)) {
+      query["keyword"] = request.keyword;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumGetTodoTasks",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processCentres/todoTasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumGetTodoTasksResponse>(await this.execute(params, req, runtime), new PremiumGetTodoTasksResponse({}));
+  }
+
+  /**
+   * 查询审批中心待处理任务列表(OA高级版专享接口)
+   * 
+   * @param request - PremiumGetTodoTasksRequest
+   * @returns PremiumGetTodoTasksResponse
+   */
+  async premiumGetTodoTasks(request: PremiumGetTodoTasksRequest): Promise<PremiumGetTodoTasksResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumGetTodoTasksHeaders({ });
+    return await this.premiumGetTodoTasksWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 创建或更新分组(高级版专享接口)
+   * 
+   * @param request - PremiumInsertOrUpdateDirRequest
+   * @param headers - PremiumInsertOrUpdateDirHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumInsertOrUpdateDirResponse
+   */
+  async premiumInsertOrUpdateDirWithOptions(request: PremiumInsertOrUpdateDirRequest, headers: PremiumInsertOrUpdateDirHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumInsertOrUpdateDirResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizGroup)) {
+      body["bizGroup"] = request.bizGroup;
+    }
+
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.name18n)) {
+      body["name18n"] = request.name18n;
+    }
+
+    if (!Util.isUnset(request.operateUserId)) {
+      body["operateUserId"] = request.operateUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumInsertOrUpdateDir",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processCentres/directories`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumInsertOrUpdateDirResponse>(await this.execute(params, req, runtime), new PremiumInsertOrUpdateDirResponse({}));
+  }
+
+  /**
+   * 创建或更新分组(高级版专享接口)
+   * 
+   * @param request - PremiumInsertOrUpdateDirRequest
+   * @returns PremiumInsertOrUpdateDirResponse
+   */
+  async premiumInsertOrUpdateDir(request: PremiumInsertOrUpdateDirRequest): Promise<PremiumInsertOrUpdateDirResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumInsertOrUpdateDirHeaders({ });
+    return await this.premiumInsertOrUpdateDirWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 流程转交待处理任务查询(高级版专享接口)
+   * 
+   * @param request - PremiumQueryTodoTasksByManagerRequest
+   * @param headers - PremiumQueryTodoTasksByManagerHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumQueryTodoTasksByManagerResponse
+   */
+  async premiumQueryTodoTasksByManagerWithOptions(request: PremiumQueryTodoTasksByManagerRequest, headers: PremiumQueryTodoTasksByManagerHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumQueryTodoTasksByManagerResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.actionerUserId)) {
+      query["actionerUserId"] = request.actionerUserId;
+    }
+
+    if (!Util.isUnset(request.managerUserId)) {
+      query["managerUserId"] = request.managerUserId;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumQueryTodoTasksByManager",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/tasks/todoTasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumQueryTodoTasksByManagerResponse>(await this.execute(params, req, runtime), new PremiumQueryTodoTasksByManagerResponse({}));
+  }
+
+  /**
+   * 流程转交待处理任务查询(高级版专享接口)
+   * 
+   * @param request - PremiumQueryTodoTasksByManagerRequest
+   * @returns PremiumQueryTodoTasksByManagerResponse
+   */
+  async premiumQueryTodoTasksByManager(request: PremiumQueryTodoTasksByManagerRequest): Promise<PremiumQueryTodoTasksByManagerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumQueryTodoTasksByManagerHeaders({ });
+    return await this.premiumQueryTodoTasksByManagerWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 批量流程审批任务转交(高级版专享接口)
+   * 
+   * @param request - PremiumRedirectTasksByManagerRequest
+   * @param headers - PremiumRedirectTasksByManagerHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumRedirectTasksByManagerResponse
+   */
+  async premiumRedirectTasksByManagerWithOptions(request: PremiumRedirectTasksByManagerRequest, headers: PremiumRedirectTasksByManagerHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumRedirectTasksByManagerResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.handoverUserId)) {
+      body["handoverUserId"] = request.handoverUserId;
+    }
+
+    if (!Util.isUnset(request.managerUserId)) {
+      body["managerUserId"] = request.managerUserId;
+    }
+
+    if (!Util.isUnset(request.taskIds)) {
+      body["taskIds"] = request.taskIds;
+    }
+
+    if (!Util.isUnset(request.transfereeUserId)) {
+      body["transfereeUserId"] = request.transfereeUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumRedirectTasksByManager",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/tasks/batchRedirect`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumRedirectTasksByManagerResponse>(await this.execute(params, req, runtime), new PremiumRedirectTasksByManagerResponse({}));
+  }
+
+  /**
+   * 批量流程审批任务转交(高级版专享接口)
+   * 
+   * @param request - PremiumRedirectTasksByManagerRequest
+   * @returns PremiumRedirectTasksByManagerResponse
+   */
+  async premiumRedirectTasksByManager(request: PremiumRedirectTasksByManagerRequest): Promise<PremiumRedirectTasksByManagerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumRedirectTasksByManagerHeaders({ });
+    return await this.premiumRedirectTasksByManagerWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 创建或更新流程中心外部集成模板(高级版专享接口)
+   * 
+   * @param request - PremiumSaveIntegratedProcessRequest
+   * @param headers - PremiumSaveIntegratedProcessHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumSaveIntegratedProcessResponse
+   */
+  async premiumSaveIntegratedProcessWithOptions(request: PremiumSaveIntegratedProcessRequest, headers: PremiumSaveIntegratedProcessHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumSaveIntegratedProcessResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.description)) {
+      body["description"] = request.description;
+    }
+
+    if (!Util.isUnset(request.formComponents)) {
+      body["formComponents"] = request.formComponents;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.processCode)) {
+      body["processCode"] = request.processCode;
+    }
+
+    if (!Util.isUnset(request.processFeatureConfig)) {
+      body["processFeatureConfig"] = request.processFeatureConfig;
+    }
+
+    if (!Util.isUnset(request.templateConfig)) {
+      body["templateConfig"] = request.templateConfig;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumSaveIntegratedProcess",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processCentres/schemas`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumSaveIntegratedProcessResponse>(await this.execute(params, req, runtime), new PremiumSaveIntegratedProcessResponse({}));
+  }
+
+  /**
+   * 创建或更新流程中心外部集成模板(高级版专享接口)
+   * 
+   * @param request - PremiumSaveIntegratedProcessRequest
+   * @returns PremiumSaveIntegratedProcessResponse
+   */
+  async premiumSaveIntegratedProcess(request: PremiumSaveIntegratedProcessRequest): Promise<PremiumSaveIntegratedProcessResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumSaveIntegratedProcessHeaders({ });
+    return await this.premiumSaveIntegratedProcessWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 创建流程中心外部集成实例(高级版专享接口)
+   * 
+   * @param request - PremiumSaveIntegratedProcessInstanceRequest
+   * @param headers - PremiumSaveIntegratedProcessInstanceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumSaveIntegratedProcessInstanceResponse
+   */
+  async premiumSaveIntegratedProcessInstanceWithOptions(request: PremiumSaveIntegratedProcessInstanceRequest, headers: PremiumSaveIntegratedProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumSaveIntegratedProcessInstanceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizData)) {
+      body["bizData"] = request.bizData;
+    }
+
+    if (!Util.isUnset(request.formComponentValueList)) {
+      body["formComponentValueList"] = request.formComponentValueList;
+    }
+
+    if (!Util.isUnset(request.notifiers)) {
+      body["notifiers"] = request.notifiers;
+    }
+
+    if (!Util.isUnset(request.originatorUserId)) {
+      body["originatorUserId"] = request.originatorUserId;
+    }
+
+    if (!Util.isUnset(request.processCode)) {
+      body["processCode"] = request.processCode;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.url)) {
+      body["url"] = request.url;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumSaveIntegratedProcessInstance",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processCentres/instances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumSaveIntegratedProcessInstanceResponse>(await this.execute(params, req, runtime), new PremiumSaveIntegratedProcessInstanceResponse({}));
+  }
+
+  /**
+   * 创建流程中心外部集成实例(高级版专享接口)
+   * 
+   * @param request - PremiumSaveIntegratedProcessInstanceRequest
+   * @returns PremiumSaveIntegratedProcessInstanceResponse
+   */
+  async premiumSaveIntegratedProcessInstance(request: PremiumSaveIntegratedProcessInstanceRequest): Promise<PremiumSaveIntegratedProcessInstanceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumSaveIntegratedProcessInstanceHeaders({ });
+    return await this.premiumSaveIntegratedProcessInstanceWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 创建流程中心外部集成待处理任务(高级版专享接口)
+   * 
+   * @param request - PremiumSaveIntegratedTaskRequest
+   * @param headers - PremiumSaveIntegratedTaskHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PremiumSaveIntegratedTaskResponse
+   */
+  async premiumSaveIntegratedTaskWithOptions(request: PremiumSaveIntegratedTaskRequest, headers: PremiumSaveIntegratedTaskHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumSaveIntegratedTaskResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.activityId)) {
+      body["activityId"] = request.activityId;
+    }
+
+    if (!Util.isUnset(request.featureConfig)) {
+      body["featureConfig"] = request.featureConfig;
+    }
+
+    if (!Util.isUnset(request.processInstanceId)) {
+      body["processInstanceId"] = request.processInstanceId;
+    }
+
+    if (!Util.isUnset(request.tasks)) {
+      body["tasks"] = request.tasks;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PremiumSaveIntegratedTask",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/premium/processCentres/tasks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PremiumSaveIntegratedTaskResponse>(await this.execute(params, req, runtime), new PremiumSaveIntegratedTaskResponse({}));
+  }
+
+  /**
+   * 创建流程中心外部集成待处理任务(高级版专享接口)
+   * 
+   * @param request - PremiumSaveIntegratedTaskRequest
+   * @returns PremiumSaveIntegratedTaskResponse
+   */
+  async premiumSaveIntegratedTask(request: PremiumSaveIntegratedTaskRequest): Promise<PremiumSaveIntegratedTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PremiumSaveIntegratedTaskHeaders({ });
+    return await this.premiumSaveIntegratedTaskWithOptions(request, headers, runtime);
   }
 
   /**
