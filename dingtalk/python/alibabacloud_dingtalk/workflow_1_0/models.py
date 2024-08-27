@@ -8906,6 +8906,4136 @@ class PagesExportInstancesResponse(TeaModel):
         return self
 
 
+class PremiumBatchExecuteProcessInstancesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumBatchExecuteProcessInstancesRequestTaskInfoList(TeaModel):
+    def __init__(
+        self,
+        process_instance_id: str = None,
+        task_id: int = None,
+    ):
+        # This parameter is required.
+        self.process_instance_id = process_instance_id
+        # This parameter is required.
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class PremiumBatchExecuteProcessInstancesRequest(TeaModel):
+    def __init__(
+        self,
+        actioner_user_id: str = None,
+        remark: str = None,
+        result: str = None,
+        task_info_list: List[PremiumBatchExecuteProcessInstancesRequestTaskInfoList] = None,
+    ):
+        # This parameter is required.
+        self.actioner_user_id = actioner_user_id
+        self.remark = remark
+        # This parameter is required.
+        self.result = result
+        # This parameter is required.
+        self.task_info_list = task_info_list
+
+    def validate(self):
+        if self.task_info_list:
+            for k in self.task_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actioner_user_id is not None:
+            result['actionerUserId'] = self.actioner_user_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.result is not None:
+            result['result'] = self.result
+        result['taskInfoList'] = []
+        if self.task_info_list is not None:
+            for k in self.task_info_list:
+                result['taskInfoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionerUserId') is not None:
+            self.actioner_user_id = m.get('actionerUserId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        self.task_info_list = []
+        if m.get('taskInfoList') is not None:
+            for k in m.get('taskInfoList'):
+                temp_model = PremiumBatchExecuteProcessInstancesRequestTaskInfoList()
+                self.task_info_list.append(temp_model.from_map(k))
+        return self
+
+
+class PremiumBatchExecuteProcessInstancesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: Dict[str, ResultValue] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for v in self.result.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = {}
+        if self.result is not None:
+            for k, v in self.result.items():
+                result['result'][k] = v.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = {}
+        if m.get('result') is not None:
+            for k, v in m.get('result').items():
+                temp_model = ResultValue()
+                self.result[k] = temp_model.from_map(v)
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumBatchExecuteProcessInstancesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumBatchExecuteProcessInstancesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumBatchExecuteProcessInstancesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumDelDirHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumDelDirRequest(TeaModel):
+    def __init__(
+        self,
+        dir_id: str = None,
+        operate_user_id: str = None,
+    ):
+        self.dir_id = dir_id
+        # This parameter is required.
+        self.operate_user_id = operate_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dir_id is not None:
+            result['dirId'] = self.dir_id
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dirId') is not None:
+            self.dir_id = m.get('dirId')
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        return self
+
+
+class PremiumDelDirResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumDelDirResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumDelDirResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumDelDirResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumGetDoneTasksHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumGetDoneTasksRequest(TeaModel):
+    def __init__(
+        self,
+        ding_client_id: str = None,
+        keyword: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        user_id: str = None,
+    ):
+        self.ding_client_id = ding_client_id
+        self.keyword = keyword
+        # This parameter is required.
+        self.page_number = page_number
+        # This parameter is required.
+        self.page_size = page_size
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_client_id is not None:
+            result['dingClientId'] = self.ding_client_id
+        if self.keyword is not None:
+            result['keyword'] = self.keyword
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingClientId') is not None:
+            self.ding_client_id = m.get('dingClientId')
+        if m.get('keyword') is not None:
+            self.keyword = m.get('keyword')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PremiumGetDoneTasksResponseBodyResultList(TeaModel):
+    def __init__(
+        self,
+        activity_id: str = None,
+        form_massage: str = None,
+        originator_id: str = None,
+        originator_name: str = None,
+        originator_photo: str = None,
+        pc_url: str = None,
+        process_create_time: str = None,
+        process_end_time: str = None,
+        process_instance_id: str = None,
+        process_type: int = None,
+        result: str = None,
+        status: str = None,
+        task_id: str = None,
+        title: str = None,
+    ):
+        self.activity_id = activity_id
+        self.form_massage = form_massage
+        self.originator_id = originator_id
+        self.originator_name = originator_name
+        self.originator_photo = originator_photo
+        self.pc_url = pc_url
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        self.process_create_time = process_create_time
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        self.process_end_time = process_end_time
+        self.process_instance_id = process_instance_id
+        self.process_type = process_type
+        self.result = result
+        self.status = status
+        self.task_id = task_id
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.form_massage is not None:
+            result['formMassage'] = self.form_massage
+        if self.originator_id is not None:
+            result['originatorId'] = self.originator_id
+        if self.originator_name is not None:
+            result['originatorName'] = self.originator_name
+        if self.originator_photo is not None:
+            result['originatorPhoto'] = self.originator_photo
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        if self.process_create_time is not None:
+            result['processCreateTime'] = self.process_create_time
+        if self.process_end_time is not None:
+            result['processEndTime'] = self.process_end_time
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.process_type is not None:
+            result['processType'] = self.process_type
+        if self.result is not None:
+            result['result'] = self.result
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('formMassage') is not None:
+            self.form_massage = m.get('formMassage')
+        if m.get('originatorId') is not None:
+            self.originator_id = m.get('originatorId')
+        if m.get('originatorName') is not None:
+            self.originator_name = m.get('originatorName')
+        if m.get('originatorPhoto') is not None:
+            self.originator_photo = m.get('originatorPhoto')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        if m.get('processCreateTime') is not None:
+            self.process_create_time = m.get('processCreateTime')
+        if m.get('processEndTime') is not None:
+            self.process_end_time = m.get('processEndTime')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('processType') is not None:
+            self.process_type = m.get('processType')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class PremiumGetDoneTasksResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[PremiumGetDoneTasksResponseBodyResultList] = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = PremiumGetDoneTasksResponseBodyResultList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class PremiumGetDoneTasksResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PremiumGetDoneTasksResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PremiumGetDoneTasksResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumGetDoneTasksResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumGetDoneTasksResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumGetDoneTasksResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumGetFieldModifiedHistoryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumGetFieldModifiedHistoryRequest(TeaModel):
+    def __init__(
+        self,
+        field_id: str = None,
+        process_instance_id: str = None,
+    ):
+        # This parameter is required.
+        self.field_id = field_id
+        # This parameter is required.
+        self.process_instance_id = process_instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        return self
+
+
+class PremiumGetFieldModifiedHistoryResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        create_time: str = None,
+        field_id: str = None,
+        name: str = None,
+        user_id: str = None,
+        value: str = None,
+    ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        self.create_time = create_time
+        self.field_id = field_id
+        self.name = name
+        self.user_id = user_id
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class PremiumGetFieldModifiedHistoryResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[PremiumGetFieldModifiedHistoryResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = PremiumGetFieldModifiedHistoryResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumGetFieldModifiedHistoryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumGetFieldModifiedHistoryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumGetFieldModifiedHistoryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumGetNoticedInstancesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumGetNoticedInstancesRequest(TeaModel):
+    def __init__(
+        self,
+        ding_client_id: str = None,
+        keyword: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        user_id: str = None,
+    ):
+        self.ding_client_id = ding_client_id
+        self.keyword = keyword
+        # This parameter is required.
+        self.page_number = page_number
+        # This parameter is required.
+        self.page_size = page_size
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_client_id is not None:
+            result['dingClientId'] = self.ding_client_id
+        if self.keyword is not None:
+            result['keyword'] = self.keyword
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingClientId') is not None:
+            self.ding_client_id = m.get('dingClientId')
+        if m.get('keyword') is not None:
+            self.keyword = m.get('keyword')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PremiumGetNoticedInstancesResponseBodyResultList(TeaModel):
+    def __init__(
+        self,
+        form_massage: str = None,
+        originator_id: str = None,
+        originator_name: str = None,
+        originator_photo: str = None,
+        process_create_time: str = None,
+        process_end_time: str = None,
+        process_instance_id: str = None,
+        process_type: int = None,
+        result: str = None,
+        status: str = None,
+        title: str = None,
+        url: str = None,
+    ):
+        self.form_massage = form_massage
+        self.originator_id = originator_id
+        self.originator_name = originator_name
+        self.originator_photo = originator_photo
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        self.process_create_time = process_create_time
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        self.process_end_time = process_end_time
+        self.process_instance_id = process_instance_id
+        self.process_type = process_type
+        self.result = result
+        self.status = status
+        self.title = title
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.form_massage is not None:
+            result['formMassage'] = self.form_massage
+        if self.originator_id is not None:
+            result['originatorId'] = self.originator_id
+        if self.originator_name is not None:
+            result['originatorName'] = self.originator_name
+        if self.originator_photo is not None:
+            result['originatorPhoto'] = self.originator_photo
+        if self.process_create_time is not None:
+            result['processCreateTime'] = self.process_create_time
+        if self.process_end_time is not None:
+            result['processEndTime'] = self.process_end_time
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.process_type is not None:
+            result['processType'] = self.process_type
+        if self.result is not None:
+            result['result'] = self.result
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('formMassage') is not None:
+            self.form_massage = m.get('formMassage')
+        if m.get('originatorId') is not None:
+            self.originator_id = m.get('originatorId')
+        if m.get('originatorName') is not None:
+            self.originator_name = m.get('originatorName')
+        if m.get('originatorPhoto') is not None:
+            self.originator_photo = m.get('originatorPhoto')
+        if m.get('processCreateTime') is not None:
+            self.process_create_time = m.get('processCreateTime')
+        if m.get('processEndTime') is not None:
+            self.process_end_time = m.get('processEndTime')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('processType') is not None:
+            self.process_type = m.get('processType')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class PremiumGetNoticedInstancesResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[PremiumGetNoticedInstancesResponseBodyResultList] = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = PremiumGetNoticedInstancesResponseBodyResultList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class PremiumGetNoticedInstancesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PremiumGetNoticedInstancesResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PremiumGetNoticedInstancesResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumGetNoticedInstancesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumGetNoticedInstancesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumGetNoticedInstancesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumGetProcessInstancesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumGetProcessInstancesRequest(TeaModel):
+    def __init__(
+        self,
+        app_uuid: str = None,
+        end_time_in_mills: int = None,
+        max_results: int = None,
+        next_token: str = None,
+        process_code: str = None,
+        start_time_in_mills: int = None,
+    ):
+        self.app_uuid = app_uuid
+        self.end_time_in_mills = end_time_in_mills
+        # This parameter is required.
+        self.max_results = max_results
+        self.next_token = next_token
+        # This parameter is required.
+        self.process_code = process_code
+        # This parameter is required.
+        self.start_time_in_mills = start_time_in_mills
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.end_time_in_mills is not None:
+            result['endTimeInMills'] = self.end_time_in_mills
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.start_time_in_mills is not None:
+            result['startTimeInMills'] = self.start_time_in_mills
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('endTimeInMills') is not None:
+            self.end_time_in_mills = m.get('endTimeInMills')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('startTimeInMills') is not None:
+            self.start_time_in_mills = m.get('startTimeInMills')
+        return self
+
+
+class PremiumGetProcessInstancesResponseBodyResultListFormComponentValues(TeaModel):
+    def __init__(
+        self,
+        ext_value: str = None,
+        id: str = None,
+        name: str = None,
+        value: str = None,
+    ):
+        self.ext_value = ext_value
+        # This parameter is required.
+        self.id = id
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class PremiumGetProcessInstancesResponseBodyResultListOperationRecordsAttachments(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: str = None,
+        file_type: str = None,
+    ):
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        return self
+
+
+class PremiumGetProcessInstancesResponseBodyResultListOperationRecords(TeaModel):
+    def __init__(
+        self,
+        attachments: List[PremiumGetProcessInstancesResponseBodyResultListOperationRecordsAttachments] = None,
+        operation_type: str = None,
+        remark: str = None,
+        result: str = None,
+        timestamp: int = None,
+        user_id: str = None,
+    ):
+        self.attachments = attachments
+        self.operation_type = operation_type
+        self.remark = remark
+        self.result = result
+        self.timestamp = timestamp
+        self.user_id = user_id
+
+    def validate(self):
+        if self.attachments:
+            for k in self.attachments:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachments'] = []
+        if self.attachments is not None:
+            for k in self.attachments:
+                result['attachments'].append(k.to_map() if k else None)
+        if self.operation_type is not None:
+            result['operationType'] = self.operation_type
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.result is not None:
+            result['result'] = self.result
+        if self.timestamp is not None:
+            result['timestamp'] = self.timestamp
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachments = []
+        if m.get('attachments') is not None:
+            for k in m.get('attachments'):
+                temp_model = PremiumGetProcessInstancesResponseBodyResultListOperationRecordsAttachments()
+                self.attachments.append(temp_model.from_map(k))
+        if m.get('operationType') is not None:
+            self.operation_type = m.get('operationType')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('timestamp') is not None:
+            self.timestamp = m.get('timestamp')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PremiumGetProcessInstancesResponseBodyResultListTasks(TeaModel):
+    def __init__(
+        self,
+        activity_id: str = None,
+        create_timestamp: int = None,
+        finish_timestamp: int = None,
+        result: str = None,
+        status: str = None,
+        task_id: int = None,
+        user_id: str = None,
+    ):
+        self.activity_id = activity_id
+        self.create_timestamp = create_timestamp
+        self.finish_timestamp = finish_timestamp
+        self.result = result
+        # This parameter is required.
+        self.status = status
+        # This parameter is required.
+        self.task_id = task_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.create_timestamp is not None:
+            result['createTimestamp'] = self.create_timestamp
+        if self.finish_timestamp is not None:
+            result['finishTimestamp'] = self.finish_timestamp
+        if self.result is not None:
+            result['result'] = self.result
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('createTimestamp') is not None:
+            self.create_timestamp = m.get('createTimestamp')
+        if m.get('finishTimestamp') is not None:
+            self.finish_timestamp = m.get('finishTimestamp')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PremiumGetProcessInstancesResponseBodyResultList(TeaModel):
+    def __init__(
+        self,
+        attached_process_instance_ids: str = None,
+        business_id: str = None,
+        create_time: int = None,
+        finish_time: int = None,
+        form_component_values: List[PremiumGetProcessInstancesResponseBodyResultListFormComponentValues] = None,
+        main_process_instance_id: str = None,
+        operation_records: List[PremiumGetProcessInstancesResponseBodyResultListOperationRecords] = None,
+        originator_dept_id: str = None,
+        originator_userid: str = None,
+        process_instance_id: str = None,
+        result: str = None,
+        status: str = None,
+        tasks: List[PremiumGetProcessInstancesResponseBodyResultListTasks] = None,
+        title: str = None,
+    ):
+        # This parameter is required.
+        self.attached_process_instance_ids = attached_process_instance_ids
+        # This parameter is required.
+        self.business_id = business_id
+        # This parameter is required.
+        self.create_time = create_time
+        # This parameter is required.
+        self.finish_time = finish_time
+        # This parameter is required.
+        self.form_component_values = form_component_values
+        # This parameter is required.
+        self.main_process_instance_id = main_process_instance_id
+        self.operation_records = operation_records
+        # This parameter is required.
+        self.originator_dept_id = originator_dept_id
+        # This parameter is required.
+        self.originator_userid = originator_userid
+        # This parameter is required.
+        self.process_instance_id = process_instance_id
+        # This parameter is required.
+        self.result = result
+        # This parameter is required.
+        self.status = status
+        self.tasks = tasks
+        # This parameter is required.
+        self.title = title
+
+    def validate(self):
+        if self.form_component_values:
+            for k in self.form_component_values:
+                if k:
+                    k.validate()
+        if self.operation_records:
+            for k in self.operation_records:
+                if k:
+                    k.validate()
+        if self.tasks:
+            for k in self.tasks:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attached_process_instance_ids is not None:
+            result['attachedProcessInstanceIds'] = self.attached_process_instance_ids
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.finish_time is not None:
+            result['finishTime'] = self.finish_time
+        result['formComponentValues'] = []
+        if self.form_component_values is not None:
+            for k in self.form_component_values:
+                result['formComponentValues'].append(k.to_map() if k else None)
+        if self.main_process_instance_id is not None:
+            result['mainProcessInstanceId'] = self.main_process_instance_id
+        result['operationRecords'] = []
+        if self.operation_records is not None:
+            for k in self.operation_records:
+                result['operationRecords'].append(k.to_map() if k else None)
+        if self.originator_dept_id is not None:
+            result['originatorDeptId'] = self.originator_dept_id
+        if self.originator_userid is not None:
+            result['originatorUserid'] = self.originator_userid
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.status is not None:
+            result['status'] = self.status
+        result['tasks'] = []
+        if self.tasks is not None:
+            for k in self.tasks:
+                result['tasks'].append(k.to_map() if k else None)
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attachedProcessInstanceIds') is not None:
+            self.attached_process_instance_ids = m.get('attachedProcessInstanceIds')
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('finishTime') is not None:
+            self.finish_time = m.get('finishTime')
+        self.form_component_values = []
+        if m.get('formComponentValues') is not None:
+            for k in m.get('formComponentValues'):
+                temp_model = PremiumGetProcessInstancesResponseBodyResultListFormComponentValues()
+                self.form_component_values.append(temp_model.from_map(k))
+        if m.get('mainProcessInstanceId') is not None:
+            self.main_process_instance_id = m.get('mainProcessInstanceId')
+        self.operation_records = []
+        if m.get('operationRecords') is not None:
+            for k in m.get('operationRecords'):
+                temp_model = PremiumGetProcessInstancesResponseBodyResultListOperationRecords()
+                self.operation_records.append(temp_model.from_map(k))
+        if m.get('originatorDeptId') is not None:
+            self.originator_dept_id = m.get('originatorDeptId')
+        if m.get('originatorUserid') is not None:
+            self.originator_userid = m.get('originatorUserid')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        self.tasks = []
+        if m.get('tasks') is not None:
+            for k in m.get('tasks'):
+                temp_model = PremiumGetProcessInstancesResponseBodyResultListTasks()
+                self.tasks.append(temp_model.from_map(k))
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class PremiumGetProcessInstancesResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[PremiumGetProcessInstancesResponseBodyResultList] = None,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        # This parameter is required.
+        self.has_more = has_more
+        self.list = list
+        # This parameter is required.
+        self.max_results = max_results
+        # This parameter is required.
+        self.next_token = next_token
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = PremiumGetProcessInstancesResponseBodyResultList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class PremiumGetProcessInstancesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PremiumGetProcessInstancesResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PremiumGetProcessInstancesResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class PremiumGetProcessInstancesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumGetProcessInstancesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumGetProcessInstancesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumGetSubmittedInstancesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumGetSubmittedInstancesRequest(TeaModel):
+    def __init__(
+        self,
+        ding_client_id: str = None,
+        keyword: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        user_id: str = None,
+    ):
+        self.ding_client_id = ding_client_id
+        self.keyword = keyword
+        # This parameter is required.
+        self.page_number = page_number
+        # This parameter is required.
+        self.page_size = page_size
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_client_id is not None:
+            result['dingClientId'] = self.ding_client_id
+        if self.keyword is not None:
+            result['keyword'] = self.keyword
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingClientId') is not None:
+            self.ding_client_id = m.get('dingClientId')
+        if m.get('keyword') is not None:
+            self.keyword = m.get('keyword')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PremiumGetSubmittedInstancesResponseBodyResultList(TeaModel):
+    def __init__(
+        self,
+        app_type: int = None,
+        form_massage: str = None,
+        originator_id: str = None,
+        originator_name: str = None,
+        originator_photo: str = None,
+        process_create_time: str = None,
+        process_end_time: str = None,
+        process_instance_id: str = None,
+        process_type: int = None,
+        result: str = None,
+        status: str = None,
+        title: str = None,
+        url: str = None,
+    ):
+        self.app_type = app_type
+        self.form_massage = form_massage
+        self.originator_id = originator_id
+        self.originator_name = originator_name
+        self.originator_photo = originator_photo
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        self.process_create_time = process_create_time
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        self.process_end_time = process_end_time
+        self.process_instance_id = process_instance_id
+        self.process_type = process_type
+        self.result = result
+        self.status = status
+        self.title = title
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.form_massage is not None:
+            result['formMassage'] = self.form_massage
+        if self.originator_id is not None:
+            result['originatorId'] = self.originator_id
+        if self.originator_name is not None:
+            result['originatorName'] = self.originator_name
+        if self.originator_photo is not None:
+            result['originatorPhoto'] = self.originator_photo
+        if self.process_create_time is not None:
+            result['processCreateTime'] = self.process_create_time
+        if self.process_end_time is not None:
+            result['processEndTime'] = self.process_end_time
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.process_type is not None:
+            result['processType'] = self.process_type
+        if self.result is not None:
+            result['result'] = self.result
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('formMassage') is not None:
+            self.form_massage = m.get('formMassage')
+        if m.get('originatorId') is not None:
+            self.originator_id = m.get('originatorId')
+        if m.get('originatorName') is not None:
+            self.originator_name = m.get('originatorName')
+        if m.get('originatorPhoto') is not None:
+            self.originator_photo = m.get('originatorPhoto')
+        if m.get('processCreateTime') is not None:
+            self.process_create_time = m.get('processCreateTime')
+        if m.get('processEndTime') is not None:
+            self.process_end_time = m.get('processEndTime')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('processType') is not None:
+            self.process_type = m.get('processType')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class PremiumGetSubmittedInstancesResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[PremiumGetSubmittedInstancesResponseBodyResultList] = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = PremiumGetSubmittedInstancesResponseBodyResultList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class PremiumGetSubmittedInstancesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PremiumGetSubmittedInstancesResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PremiumGetSubmittedInstancesResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumGetSubmittedInstancesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumGetSubmittedInstancesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumGetSubmittedInstancesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumGetTodoTasksHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumGetTodoTasksRequest(TeaModel):
+    def __init__(
+        self,
+        create_before: str = None,
+        keyword: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        user_id: str = None,
+    ):
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        self.create_before = create_before
+        self.keyword = keyword
+        # This parameter is required.
+        self.page_number = page_number
+        # This parameter is required.
+        self.page_size = page_size
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_before is not None:
+            result['createBefore'] = self.create_before
+        if self.keyword is not None:
+            result['keyword'] = self.keyword
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createBefore') is not None:
+            self.create_before = m.get('createBefore')
+        if m.get('keyword') is not None:
+            self.keyword = m.get('keyword')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PremiumGetTodoTasksResponseBodyResultList(TeaModel):
+    def __init__(
+        self,
+        activity_id: str = None,
+        app_type: int = None,
+        form_massage: str = None,
+        originator_id: str = None,
+        originator_name: str = None,
+        originator_photo: str = None,
+        process_create_time: str = None,
+        process_end_time: str = None,
+        process_instance_id: str = None,
+        process_type: int = None,
+        result: str = None,
+        status: str = None,
+        task_id: str = None,
+        title: str = None,
+        url: str = None,
+    ):
+        self.activity_id = activity_id
+        self.app_type = app_type
+        self.form_massage = form_massage
+        self.originator_id = originator_id
+        self.originator_name = originator_name
+        self.originator_photo = originator_photo
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        self.process_create_time = process_create_time
+        # Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        self.process_end_time = process_end_time
+        self.process_instance_id = process_instance_id
+        self.process_type = process_type
+        self.result = result
+        self.status = status
+        self.task_id = task_id
+        self.title = title
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.form_massage is not None:
+            result['formMassage'] = self.form_massage
+        if self.originator_id is not None:
+            result['originatorId'] = self.originator_id
+        if self.originator_name is not None:
+            result['originatorName'] = self.originator_name
+        if self.originator_photo is not None:
+            result['originatorPhoto'] = self.originator_photo
+        if self.process_create_time is not None:
+            result['processCreateTime'] = self.process_create_time
+        if self.process_end_time is not None:
+            result['processEndTime'] = self.process_end_time
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.process_type is not None:
+            result['processType'] = self.process_type
+        if self.result is not None:
+            result['result'] = self.result
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('formMassage') is not None:
+            self.form_massage = m.get('formMassage')
+        if m.get('originatorId') is not None:
+            self.originator_id = m.get('originatorId')
+        if m.get('originatorName') is not None:
+            self.originator_name = m.get('originatorName')
+        if m.get('originatorPhoto') is not None:
+            self.originator_photo = m.get('originatorPhoto')
+        if m.get('processCreateTime') is not None:
+            self.process_create_time = m.get('processCreateTime')
+        if m.get('processEndTime') is not None:
+            self.process_end_time = m.get('processEndTime')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('processType') is not None:
+            self.process_type = m.get('processType')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class PremiumGetTodoTasksResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[PremiumGetTodoTasksResponseBodyResultList] = None,
+        success: bool = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+        self.success = success
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = PremiumGetTodoTasksResponseBodyResultList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumGetTodoTasksResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PremiumGetTodoTasksResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PremiumGetTodoTasksResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class PremiumGetTodoTasksResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumGetTodoTasksResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumGetTodoTasksResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumInsertOrUpdateDirHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumInsertOrUpdateDirRequest(TeaModel):
+    def __init__(
+        self,
+        biz_group: str = None,
+        description: str = None,
+        name: str = None,
+        name_18n: str = None,
+        operate_user_id: str = None,
+    ):
+        self.biz_group = biz_group
+        self.description = description
+        self.name = name
+        # This parameter is required.
+        self.name_18n = name_18n
+        # This parameter is required.
+        self.operate_user_id = operate_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_group is not None:
+            result['bizGroup'] = self.biz_group
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.name_18n is not None:
+            result['name18n'] = self.name_18n
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizGroup') is not None:
+            self.biz_group = m.get('bizGroup')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('name18n') is not None:
+            self.name_18n = m.get('name18n')
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        return self
+
+
+class PremiumInsertOrUpdateDirResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        biz_group: str = None,
+        dir_id: str = None,
+    ):
+        self.biz_group = biz_group
+        self.dir_id = dir_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_group is not None:
+            result['bizGroup'] = self.biz_group
+        if self.dir_id is not None:
+            result['dirId'] = self.dir_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizGroup') is not None:
+            self.biz_group = m.get('bizGroup')
+        if m.get('dirId') is not None:
+            self.dir_id = m.get('dirId')
+        return self
+
+
+class PremiumInsertOrUpdateDirResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PremiumInsertOrUpdateDirResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PremiumInsertOrUpdateDirResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumInsertOrUpdateDirResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumInsertOrUpdateDirResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumInsertOrUpdateDirResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumQueryTodoTasksByManagerHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumQueryTodoTasksByManagerRequest(TeaModel):
+    def __init__(
+        self,
+        actioner_user_id: str = None,
+        manager_user_id: str = None,
+        max_results: int = None,
+        next_token: int = None,
+    ):
+        # This parameter is required.
+        self.actioner_user_id = actioner_user_id
+        # This parameter is required.
+        self.manager_user_id = manager_user_id
+        # This parameter is required.
+        self.max_results = max_results
+        # This parameter is required.
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actioner_user_id is not None:
+            result['actionerUserId'] = self.actioner_user_id
+        if self.manager_user_id is not None:
+            result['managerUserId'] = self.manager_user_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionerUserId') is not None:
+            self.actioner_user_id = m.get('actionerUserId')
+        if m.get('managerUserId') is not None:
+            self.manager_user_id = m.get('managerUserId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class PremiumQueryTodoTasksByManagerResponseBodyResultList(TeaModel):
+    def __init__(
+        self,
+        business_id: str = None,
+        can_redirect: bool = None,
+        create_time: int = None,
+        process_code: str = None,
+        process_instance_id: str = None,
+        task_id: int = None,
+        title: str = None,
+        user_id: str = None,
+    ):
+        self.business_id = business_id
+        self.can_redirect = can_redirect
+        self.create_time = create_time
+        self.process_code = process_code
+        self.process_instance_id = process_instance_id
+        self.task_id = task_id
+        self.title = title
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
+        if self.can_redirect is not None:
+            result['canRedirect'] = self.can_redirect
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
+        if m.get('canRedirect') is not None:
+            self.can_redirect = m.get('canRedirect')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PremiumQueryTodoTasksByManagerResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[PremiumQueryTodoTasksByManagerResponseBodyResultList] = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = PremiumQueryTodoTasksByManagerResponseBodyResultList()
+                self.list.append(temp_model.from_map(k))
+        return self
+
+
+class PremiumQueryTodoTasksByManagerResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PremiumQueryTodoTasksByManagerResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PremiumQueryTodoTasksByManagerResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class PremiumQueryTodoTasksByManagerResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumQueryTodoTasksByManagerResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumQueryTodoTasksByManagerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumRedirectTasksByManagerHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumRedirectTasksByManagerRequest(TeaModel):
+    def __init__(
+        self,
+        handover_user_id: str = None,
+        manager_user_id: str = None,
+        task_ids: List[int] = None,
+        transferee_user_id: str = None,
+    ):
+        # This parameter is required.
+        self.handover_user_id = handover_user_id
+        # This parameter is required.
+        self.manager_user_id = manager_user_id
+        # This parameter is required.
+        self.task_ids = task_ids
+        # This parameter is required.
+        self.transferee_user_id = transferee_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.handover_user_id is not None:
+            result['handoverUserId'] = self.handover_user_id
+        if self.manager_user_id is not None:
+            result['managerUserId'] = self.manager_user_id
+        if self.task_ids is not None:
+            result['taskIds'] = self.task_ids
+        if self.transferee_user_id is not None:
+            result['transfereeUserId'] = self.transferee_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('handoverUserId') is not None:
+            self.handover_user_id = m.get('handoverUserId')
+        if m.get('managerUserId') is not None:
+            self.manager_user_id = m.get('managerUserId')
+        if m.get('taskIds') is not None:
+            self.task_ids = m.get('taskIds')
+        if m.get('transfereeUserId') is not None:
+            self.transferee_user_id = m.get('transfereeUserId')
+        return self
+
+
+class PremiumRedirectTasksByManagerResponseBodyResultRedirectResults(TeaModel):
+    def __init__(
+        self,
+        error_msg: str = None,
+        success: bool = None,
+        task_id: int = None,
+    ):
+        self.error_msg = error_msg
+        # This parameter is required.
+        self.success = success
+        # This parameter is required.
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.success is not None:
+            result['success'] = self.success
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class PremiumRedirectTasksByManagerResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        fail_count: int = None,
+        redirect_results: List[PremiumRedirectTasksByManagerResponseBodyResultRedirectResults] = None,
+        total_count: int = None,
+    ):
+        # This parameter is required.
+        self.fail_count = fail_count
+        # This parameter is required.
+        self.redirect_results = redirect_results
+        # This parameter is required.
+        self.total_count = total_count
+
+    def validate(self):
+        if self.redirect_results:
+            for k in self.redirect_results:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fail_count is not None:
+            result['failCount'] = self.fail_count
+        result['redirectResults'] = []
+        if self.redirect_results is not None:
+            for k in self.redirect_results:
+                result['redirectResults'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('failCount') is not None:
+            self.fail_count = m.get('failCount')
+        self.redirect_results = []
+        if m.get('redirectResults') is not None:
+            for k in m.get('redirectResults'):
+                temp_model = PremiumRedirectTasksByManagerResponseBodyResultRedirectResults()
+                self.redirect_results.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class PremiumRedirectTasksByManagerResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PremiumRedirectTasksByManagerResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PremiumRedirectTasksByManagerResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumRedirectTasksByManagerResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumRedirectTasksByManagerResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumRedirectTasksByManagerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumSaveIntegratedProcessHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeaturesCallback(TeaModel):
+    def __init__(
+        self,
+        api_key: str = None,
+        app_uuid: str = None,
+        version: str = None,
+    ):
+        self.api_key = api_key
+        self.app_uuid = app_uuid
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.api_key is not None:
+            result['apiKey'] = self.api_key
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('apiKey') is not None:
+            self.api_key = m.get('apiKey')
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeatures(TeaModel):
+    def __init__(
+        self,
+        callback: PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeaturesCallback = None,
+        mobile_url: str = None,
+        name: str = None,
+        pc_url: str = None,
+        run_type: str = None,
+    ):
+        self.callback = callback
+        self.mobile_url = mobile_url
+        self.name = name
+        self.pc_url = pc_url
+        self.run_type = run_type
+
+    def validate(self):
+        if self.callback:
+            self.callback.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.callback is not None:
+            result['callback'] = self.callback.to_map()
+        if self.mobile_url is not None:
+            result['mobileUrl'] = self.mobile_url
+        if self.name is not None:
+            result['name'] = self.name
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        if self.run_type is not None:
+            result['runType'] = self.run_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('callback') is not None:
+            temp_model = PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeaturesCallback()
+            self.callback = temp_model.from_map(m['callback'])
+        if m.get('mobileUrl') is not None:
+            self.mobile_url = m.get('mobileUrl')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        if m.get('runType') is not None:
+            self.run_type = m.get('runType')
+        return self
+
+
+class PremiumSaveIntegratedProcessRequestProcessFeatureConfig(TeaModel):
+    def __init__(
+        self,
+        features: List[PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeatures] = None,
+    ):
+        self.features = features
+
+    def validate(self):
+        if self.features:
+            for k in self.features:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['features'] = []
+        if self.features is not None:
+            for k in self.features:
+                result['features'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.features = []
+        if m.get('features') is not None:
+            for k in m.get('features'):
+                temp_model = PremiumSaveIntegratedProcessRequestProcessFeatureConfigFeatures()
+                self.features.append(temp_model.from_map(k))
+        return self
+
+
+class PremiumSaveIntegratedProcessRequestTemplateConfig(TeaModel):
+    def __init__(
+        self,
+        create_instance_mobile_url: str = None,
+        create_instance_pc_url: str = None,
+        disable_send_card: bool = None,
+        hidden: bool = None,
+        template_edit_url: str = None,
+    ):
+        self.create_instance_mobile_url = create_instance_mobile_url
+        self.create_instance_pc_url = create_instance_pc_url
+        self.disable_send_card = disable_send_card
+        self.hidden = hidden
+        self.template_edit_url = template_edit_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_instance_mobile_url is not None:
+            result['createInstanceMobileUrl'] = self.create_instance_mobile_url
+        if self.create_instance_pc_url is not None:
+            result['createInstancePcUrl'] = self.create_instance_pc_url
+        if self.disable_send_card is not None:
+            result['disableSendCard'] = self.disable_send_card
+        if self.hidden is not None:
+            result['hidden'] = self.hidden
+        if self.template_edit_url is not None:
+            result['templateEditUrl'] = self.template_edit_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createInstanceMobileUrl') is not None:
+            self.create_instance_mobile_url = m.get('createInstanceMobileUrl')
+        if m.get('createInstancePcUrl') is not None:
+            self.create_instance_pc_url = m.get('createInstancePcUrl')
+        if m.get('disableSendCard') is not None:
+            self.disable_send_card = m.get('disableSendCard')
+        if m.get('hidden') is not None:
+            self.hidden = m.get('hidden')
+        if m.get('templateEditUrl') is not None:
+            self.template_edit_url = m.get('templateEditUrl')
+        return self
+
+
+class PremiumSaveIntegratedProcessRequest(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        form_components: List[FormComponent] = None,
+        name: str = None,
+        process_code: str = None,
+        process_feature_config: PremiumSaveIntegratedProcessRequestProcessFeatureConfig = None,
+        template_config: PremiumSaveIntegratedProcessRequestTemplateConfig = None,
+    ):
+        self.description = description
+        # This parameter is required.
+        self.form_components = form_components
+        # This parameter is required.
+        self.name = name
+        self.process_code = process_code
+        self.process_feature_config = process_feature_config
+        self.template_config = template_config
+
+    def validate(self):
+        if self.form_components:
+            for k in self.form_components:
+                if k:
+                    k.validate()
+        if self.process_feature_config:
+            self.process_feature_config.validate()
+        if self.template_config:
+            self.template_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        result['formComponents'] = []
+        if self.form_components is not None:
+            for k in self.form_components:
+                result['formComponents'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.process_feature_config is not None:
+            result['processFeatureConfig'] = self.process_feature_config.to_map()
+        if self.template_config is not None:
+            result['templateConfig'] = self.template_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        self.form_components = []
+        if m.get('formComponents') is not None:
+            for k in m.get('formComponents'):
+                temp_model = FormComponent()
+                self.form_components.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('processFeatureConfig') is not None:
+            temp_model = PremiumSaveIntegratedProcessRequestProcessFeatureConfig()
+            self.process_feature_config = temp_model.from_map(m['processFeatureConfig'])
+        if m.get('templateConfig') is not None:
+            temp_model = PremiumSaveIntegratedProcessRequestTemplateConfig()
+            self.template_config = temp_model.from_map(m['templateConfig'])
+        return self
+
+
+class PremiumSaveIntegratedProcessResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        process_code: str = None,
+    ):
+        # This parameter is required.
+        self.process_code = process_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        return self
+
+
+class PremiumSaveIntegratedProcessResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PremiumSaveIntegratedProcessResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PremiumSaveIntegratedProcessResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class PremiumSaveIntegratedProcessResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumSaveIntegratedProcessResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumSaveIntegratedProcessResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumSaveIntegratedProcessInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumSaveIntegratedProcessInstanceRequestFormComponentValueList(TeaModel):
+    def __init__(
+        self,
+        biz_alias: str = None,
+        component_type: str = None,
+        ext_value: str = None,
+        id: str = None,
+        name: str = None,
+        value: str = None,
+    ):
+        self.biz_alias = biz_alias
+        self.component_type = component_type
+        self.ext_value = ext_value
+        self.id = id
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_alias is not None:
+            result['bizAlias'] = self.biz_alias
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.ext_value is not None:
+            result['extValue'] = self.ext_value
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizAlias') is not None:
+            self.biz_alias = m.get('bizAlias')
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('extValue') is not None:
+            self.ext_value = m.get('extValue')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class PremiumSaveIntegratedProcessInstanceRequestNotifiers(TeaModel):
+    def __init__(
+        self,
+        position: str = None,
+        userid: str = None,
+    ):
+        self.position = position
+        self.userid = userid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.position is not None:
+            result['position'] = self.position
+        if self.userid is not None:
+            result['userid'] = self.userid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('position') is not None:
+            self.position = m.get('position')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        return self
+
+
+class PremiumSaveIntegratedProcessInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        biz_data: str = None,
+        form_component_value_list: List[PremiumSaveIntegratedProcessInstanceRequestFormComponentValueList] = None,
+        notifiers: List[PremiumSaveIntegratedProcessInstanceRequestNotifiers] = None,
+        originator_user_id: str = None,
+        process_code: str = None,
+        title: str = None,
+        url: str = None,
+    ):
+        self.biz_data = biz_data
+        self.form_component_value_list = form_component_value_list
+        self.notifiers = notifiers
+        # This parameter is required.
+        self.originator_user_id = originator_user_id
+        # This parameter is required.
+        self.process_code = process_code
+        self.title = title
+        # This parameter is required.
+        self.url = url
+
+    def validate(self):
+        if self.form_component_value_list:
+            for k in self.form_component_value_list:
+                if k:
+                    k.validate()
+        if self.notifiers:
+            for k in self.notifiers:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_data is not None:
+            result['bizData'] = self.biz_data
+        result['formComponentValueList'] = []
+        if self.form_component_value_list is not None:
+            for k in self.form_component_value_list:
+                result['formComponentValueList'].append(k.to_map() if k else None)
+        result['notifiers'] = []
+        if self.notifiers is not None:
+            for k in self.notifiers:
+                result['notifiers'].append(k.to_map() if k else None)
+        if self.originator_user_id is not None:
+            result['originatorUserId'] = self.originator_user_id
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.title is not None:
+            result['title'] = self.title
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizData') is not None:
+            self.biz_data = m.get('bizData')
+        self.form_component_value_list = []
+        if m.get('formComponentValueList') is not None:
+            for k in m.get('formComponentValueList'):
+                temp_model = PremiumSaveIntegratedProcessInstanceRequestFormComponentValueList()
+                self.form_component_value_list.append(temp_model.from_map(k))
+        self.notifiers = []
+        if m.get('notifiers') is not None:
+            for k in m.get('notifiers'):
+                temp_model = PremiumSaveIntegratedProcessInstanceRequestNotifiers()
+                self.notifiers.append(temp_model.from_map(k))
+        if m.get('originatorUserId') is not None:
+            self.originator_user_id = m.get('originatorUserId')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class PremiumSaveIntegratedProcessInstanceResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        process_instance_id: str = None,
+    ):
+        self.process_instance_id = process_instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        return self
+
+
+class PremiumSaveIntegratedProcessInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: PremiumSaveIntegratedProcessInstanceResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = PremiumSaveIntegratedProcessInstanceResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class PremiumSaveIntegratedProcessInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumSaveIntegratedProcessInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumSaveIntegratedProcessInstanceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumSaveIntegratedTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumSaveIntegratedTaskRequestFeatureConfigFeaturesCallback(TeaModel):
+    def __init__(
+        self,
+        api_key: str = None,
+        app_uuid: str = None,
+        version: str = None,
+    ):
+        self.api_key = api_key
+        self.app_uuid = app_uuid
+        self.version = version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.api_key is not None:
+            result['apiKey'] = self.api_key
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('apiKey') is not None:
+            self.api_key = m.get('apiKey')
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class PremiumSaveIntegratedTaskRequestFeatureConfigFeatures(TeaModel):
+    def __init__(
+        self,
+        callback: PremiumSaveIntegratedTaskRequestFeatureConfigFeaturesCallback = None,
+        config: str = None,
+        mobile_url: str = None,
+        name: str = None,
+        pc_url: str = None,
+        run_type: str = None,
+    ):
+        self.callback = callback
+        self.config = config
+        self.mobile_url = mobile_url
+        self.name = name
+        self.pc_url = pc_url
+        self.run_type = run_type
+
+    def validate(self):
+        if self.callback:
+            self.callback.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.callback is not None:
+            result['callback'] = self.callback.to_map()
+        if self.config is not None:
+            result['config'] = self.config
+        if self.mobile_url is not None:
+            result['mobileUrl'] = self.mobile_url
+        if self.name is not None:
+            result['name'] = self.name
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        if self.run_type is not None:
+            result['runType'] = self.run_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('callback') is not None:
+            temp_model = PremiumSaveIntegratedTaskRequestFeatureConfigFeaturesCallback()
+            self.callback = temp_model.from_map(m['callback'])
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('mobileUrl') is not None:
+            self.mobile_url = m.get('mobileUrl')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        if m.get('runType') is not None:
+            self.run_type = m.get('runType')
+        return self
+
+
+class PremiumSaveIntegratedTaskRequestFeatureConfig(TeaModel):
+    def __init__(
+        self,
+        features: List[PremiumSaveIntegratedTaskRequestFeatureConfigFeatures] = None,
+    ):
+        self.features = features
+
+    def validate(self):
+        if self.features:
+            for k in self.features:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['features'] = []
+        if self.features is not None:
+            for k in self.features:
+                result['features'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.features = []
+        if m.get('features') is not None:
+            for k in m.get('features'):
+                temp_model = PremiumSaveIntegratedTaskRequestFeatureConfigFeatures()
+                self.features.append(temp_model.from_map(k))
+        return self
+
+
+class PremiumSaveIntegratedTaskRequestTasks(TeaModel):
+    def __init__(
+        self,
+        custom_data: str = None,
+        url: str = None,
+        user_id: str = None,
+    ):
+        self.custom_data = custom_data
+        self.url = url
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom_data is not None:
+            result['customData'] = self.custom_data
+        if self.url is not None:
+            result['url'] = self.url
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customData') is not None:
+            self.custom_data = m.get('customData')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PremiumSaveIntegratedTaskRequest(TeaModel):
+    def __init__(
+        self,
+        activity_id: str = None,
+        feature_config: PremiumSaveIntegratedTaskRequestFeatureConfig = None,
+        process_instance_id: str = None,
+        tasks: List[PremiumSaveIntegratedTaskRequestTasks] = None,
+    ):
+        self.activity_id = activity_id
+        self.feature_config = feature_config
+        # This parameter is required.
+        self.process_instance_id = process_instance_id
+        # This parameter is required.
+        self.tasks = tasks
+
+    def validate(self):
+        if self.feature_config:
+            self.feature_config.validate()
+        if self.tasks:
+            for k in self.tasks:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.feature_config is not None:
+            result['featureConfig'] = self.feature_config.to_map()
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        result['tasks'] = []
+        if self.tasks is not None:
+            for k in self.tasks:
+                result['tasks'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('featureConfig') is not None:
+            temp_model = PremiumSaveIntegratedTaskRequestFeatureConfig()
+            self.feature_config = temp_model.from_map(m['featureConfig'])
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        self.tasks = []
+        if m.get('tasks') is not None:
+            for k in m.get('tasks'):
+                temp_model = PremiumSaveIntegratedTaskRequestTasks()
+                self.tasks.append(temp_model.from_map(k))
+        return self
+
+
+class PremiumSaveIntegratedTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        task_id: int = None,
+        user_id: str = None,
+    ):
+        self.task_id = task_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PremiumSaveIntegratedTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[PremiumSaveIntegratedTaskResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = PremiumSaveIntegratedTaskResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumSaveIntegratedTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumSaveIntegratedTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumSaveIntegratedTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ProcessForecastHeaders(TeaModel):
     def __init__(
         self,

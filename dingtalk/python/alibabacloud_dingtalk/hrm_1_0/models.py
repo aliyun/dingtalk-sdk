@@ -2598,6 +2598,7 @@ class GetFileTemplateListResponseBodyResultData(TeaModel):
         template_sign_status: int = None,
         template_status: int = None,
         template_type: str = None,
+        template_type_name: str = None,
         tenant_id: int = None,
     ):
         self.attachment_list = attachment_list
@@ -2610,6 +2611,7 @@ class GetFileTemplateListResponseBodyResultData(TeaModel):
         self.template_sign_status = template_sign_status
         self.template_status = template_status
         self.template_type = template_type
+        self.template_type_name = template_type_name
         self.tenant_id = tenant_id
 
     def validate(self):
@@ -2658,6 +2660,8 @@ class GetFileTemplateListResponseBodyResultData(TeaModel):
             result['templateStatus'] = self.template_status
         if self.template_type is not None:
             result['templateType'] = self.template_type
+        if self.template_type_name is not None:
+            result['templateTypeName'] = self.template_type_name
         if self.tenant_id is not None:
             result['tenantId'] = self.tenant_id
         return result
@@ -2693,6 +2697,8 @@ class GetFileTemplateListResponseBodyResultData(TeaModel):
             self.template_status = m.get('templateStatus')
         if m.get('templateType') is not None:
             self.template_type = m.get('templateType')
+        if m.get('templateTypeName') is not None:
+            self.template_type_name = m.get('templateTypeName')
         if m.get('tenantId') is not None:
             self.tenant_id = m.get('tenantId')
         return self

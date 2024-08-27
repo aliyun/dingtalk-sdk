@@ -1923,13 +1923,14 @@ class DeleteTrustedDeviceHeaders(TeaModel):
 class DeleteTrustedDeviceRequest(TeaModel):
     def __init__(
         self,
+        id: int = None,
         kick_off: bool = None,
         mac_address: str = None,
         user_id: str = None,
     ):
+        self.id = id
         # This parameter is required.
         self.kick_off = kick_off
-        # This parameter is required.
         self.mac_address = mac_address
         # This parameter is required.
         self.user_id = user_id
@@ -1943,6 +1944,8 @@ class DeleteTrustedDeviceRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.id is not None:
+            result['id'] = self.id
         if self.kick_off is not None:
             result['kickOff'] = self.kick_off
         if self.mac_address is not None:
@@ -1953,6 +1956,8 @@ class DeleteTrustedDeviceRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
         if m.get('kickOff') is not None:
             self.kick_off = m.get('kickOff')
         if m.get('macAddress') is not None:
@@ -10451,9 +10456,26 @@ class GetTrustDeviceListHeaders(TeaModel):
 class GetTrustDeviceListRequest(TeaModel):
     def __init__(
         self,
+        gmt_create_end: int = None,
+        gmt_create_start: int = None,
+        gmt_modified_end: int = None,
+        gmt_modified_start: int = None,
+        mac_address: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        platform: str = None,
+        status: int = None,
         user_ids: List[str] = None,
     ):
-        # This parameter is required.
+        self.gmt_create_end = gmt_create_end
+        self.gmt_create_start = gmt_create_start
+        self.gmt_modified_end = gmt_modified_end
+        self.gmt_modified_start = gmt_modified_start
+        self.mac_address = mac_address
+        self.page_number = page_number
+        self.page_size = page_size
+        self.platform = platform
+        self.status = status
         self.user_ids = user_ids
 
     def validate(self):
@@ -10465,12 +10487,48 @@ class GetTrustDeviceListRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.gmt_create_end is not None:
+            result['gmtCreateEnd'] = self.gmt_create_end
+        if self.gmt_create_start is not None:
+            result['gmtCreateStart'] = self.gmt_create_start
+        if self.gmt_modified_end is not None:
+            result['gmtModifiedEnd'] = self.gmt_modified_end
+        if self.gmt_modified_start is not None:
+            result['gmtModifiedStart'] = self.gmt_modified_start
+        if self.mac_address is not None:
+            result['macAddress'] = self.mac_address
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.status is not None:
+            result['status'] = self.status
         if self.user_ids is not None:
             result['userIds'] = self.user_ids
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('gmtCreateEnd') is not None:
+            self.gmt_create_end = m.get('gmtCreateEnd')
+        if m.get('gmtCreateStart') is not None:
+            self.gmt_create_start = m.get('gmtCreateStart')
+        if m.get('gmtModifiedEnd') is not None:
+            self.gmt_modified_end = m.get('gmtModifiedEnd')
+        if m.get('gmtModifiedStart') is not None:
+            self.gmt_modified_start = m.get('gmtModifiedStart')
+        if m.get('macAddress') is not None:
+            self.mac_address = m.get('macAddress')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('status') is not None:
+            self.status = m.get('status')
         if m.get('userIds') is not None:
             self.user_ids = m.get('userIds')
         return self
@@ -10480,16 +10538,20 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
     def __init__(
         self,
         create_time: int = None,
+        id: int = None,
         mac_address: str = None,
         model: str = None,
+        modified_time: int = None,
         platform: str = None,
         status: int = None,
         title: str = None,
         user_id: str = None,
     ):
         self.create_time = create_time
+        self.id = id
         self.mac_address = mac_address
         self.model = model
+        self.modified_time = modified_time
         self.platform = platform
         self.status = status
         self.title = title
@@ -10507,10 +10569,14 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         result = dict()
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.id is not None:
+            result['id'] = self.id
         if self.mac_address is not None:
             result['macAddress'] = self.mac_address
         if self.model is not None:
             result['model'] = self.model
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
         if self.platform is not None:
             result['platform'] = self.platform
         if self.status is not None:
@@ -10525,10 +10591,14 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         m = m or dict()
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('id') is not None:
+            self.id = m.get('id')
         if m.get('macAddress') is not None:
             self.mac_address = m.get('macAddress')
         if m.get('model') is not None:
             self.model = m.get('model')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
         if m.get('platform') is not None:
             self.platform = m.get('platform')
         if m.get('status') is not None:
@@ -10543,10 +10613,16 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
 class GetTrustDeviceListResponseBody(TeaModel):
     def __init__(
         self,
+        current_page: int = None,
         data: List[GetTrustDeviceListResponseBodyData] = None,
+        page_size: int = None,
+        total: int = None,
     ):
+        self.current_page = current_page
         # This parameter is required.
         self.data = data
+        self.page_size = page_size
+        self.total = total
 
     def validate(self):
         if self.data:
@@ -10560,19 +10636,31 @@ class GetTrustDeviceListResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
         result['data'] = []
         if self.data is not None:
             for k in self.data:
                 result['data'].append(k.to_map() if k else None)
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total is not None:
+            result['total'] = self.total
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
         self.data = []
         if m.get('data') is not None:
             for k in m.get('data'):
                 temp_model = GetTrustDeviceListResponseBodyData()
                 self.data.append(temp_model.from_map(k))
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('total') is not None:
+            self.total = m.get('total')
         return self
 
 
@@ -20341,6 +20429,148 @@ class TaskInfoUpdateTaskResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = TaskInfoUpdateTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TransferExclusiveAccountOrgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TransferExclusiveAccountOrgRequest(TeaModel):
+    def __init__(
+        self,
+        is_setting_main_org: bool = None,
+        target_corp_id: str = None,
+        user_ids: List[str] = None,
+    ):
+        self.is_setting_main_org = is_setting_main_org
+        self.target_corp_id = target_corp_id
+        # This parameter is required.
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_setting_main_org is not None:
+            result['isSettingMainOrg'] = self.is_setting_main_org
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isSettingMainOrg') is not None:
+            self.is_setting_main_org = m.get('isSettingMainOrg')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class TransferExclusiveAccountOrgResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        # This parameter is required.
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class TransferExclusiveAccountOrgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TransferExclusiveAccountOrgResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TransferExclusiveAccountOrgResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

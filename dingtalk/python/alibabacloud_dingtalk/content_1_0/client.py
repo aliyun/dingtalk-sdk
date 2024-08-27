@@ -750,26 +750,19 @@ class Client(OpenApiClient):
 
     def upload_videos_with_options(
         self,
-        tmp_req: dingtalkcontent__1__0_models.UploadVideosRequest,
+        request: dingtalkcontent__1__0_models.UploadVideosRequest,
         headers: dingtalkcontent__1__0_models.UploadVideosHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.UploadVideosResponse:
         """
         @summary 点众上传视频信息
         
-        @param tmp_req: UploadVideosRequest
+        @param request: UploadVideosRequest
         @param headers: UploadVideosHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: UploadVideosResponse
         """
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkcontent__1__0_models.UploadVideosShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.video_list):
-            request.video_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.video_list, 'videoList', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.video_list_shrink):
-            query['videoList'] = request.video_list_shrink
+        UtilClient.validate_model(request)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -777,7 +770,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=UtilClient.to_array(request.body)
         )
         params = open_api_models.Params(
             action='UploadVideos',
@@ -797,26 +790,19 @@ class Client(OpenApiClient):
 
     async def upload_videos_with_options_async(
         self,
-        tmp_req: dingtalkcontent__1__0_models.UploadVideosRequest,
+        request: dingtalkcontent__1__0_models.UploadVideosRequest,
         headers: dingtalkcontent__1__0_models.UploadVideosHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcontent__1__0_models.UploadVideosResponse:
         """
         @summary 点众上传视频信息
         
-        @param tmp_req: UploadVideosRequest
+        @param request: UploadVideosRequest
         @param headers: UploadVideosHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: UploadVideosResponse
         """
-        UtilClient.validate_model(tmp_req)
-        request = dingtalkcontent__1__0_models.UploadVideosShrinkRequest()
-        OpenApiUtilClient.convert(tmp_req, request)
-        if not UtilClient.is_unset(tmp_req.video_list):
-            request.video_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.video_list, 'videoList', 'json')
-        query = {}
-        if not UtilClient.is_unset(request.video_list_shrink):
-            query['videoList'] = request.video_list_shrink
+        UtilClient.validate_model(request)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -824,7 +810,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=UtilClient.to_array(request.body)
         )
         params = open_api_models.Params(
             action='UploadVideos',

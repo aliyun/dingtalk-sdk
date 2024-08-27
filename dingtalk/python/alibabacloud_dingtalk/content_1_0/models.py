@@ -1610,7 +1610,7 @@ class UploadVideosHeaders(TeaModel):
         return self
 
 
-class UploadVideosRequestVideoList(TeaModel):
+class UploadVideosRequestBody(TeaModel):
     def __init__(
         self,
         author_icon_url: str = None,
@@ -1712,13 +1712,13 @@ class UploadVideosRequestVideoList(TeaModel):
 class UploadVideosRequest(TeaModel):
     def __init__(
         self,
-        video_list: List[UploadVideosRequestVideoList] = None,
+        body: List[UploadVideosRequestBody] = None,
     ):
-        self.video_list = video_list
+        self.body = body
 
     def validate(self):
-        if self.video_list:
-            for k in self.video_list:
+        if self.body:
+            for k in self.body:
                 if k:
                     k.validate()
 
@@ -1728,46 +1728,19 @@ class UploadVideosRequest(TeaModel):
             return _map
 
         result = dict()
-        result['videoList'] = []
-        if self.video_list is not None:
-            for k in self.video_list:
-                result['videoList'].append(k.to_map() if k else None)
+        result['body'] = []
+        if self.body is not None:
+            for k in self.body:
+                result['body'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.video_list = []
-        if m.get('videoList') is not None:
-            for k in m.get('videoList'):
-                temp_model = UploadVideosRequestVideoList()
-                self.video_list.append(temp_model.from_map(k))
-        return self
-
-
-class UploadVideosShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        video_list_shrink: str = None,
-    ):
-        self.video_list_shrink = video_list_shrink
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.video_list_shrink is not None:
-            result['videoList'] = self.video_list_shrink
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('videoList') is not None:
-            self.video_list_shrink = m.get('videoList')
+        self.body = []
+        if m.get('body') is not None:
+            for k in m.get('body'):
+                temp_model = UploadVideosRequestBody()
+                self.body.append(temp_model.from_map(k))
         return self
 
 

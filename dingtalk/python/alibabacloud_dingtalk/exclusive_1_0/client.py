@@ -1588,6 +1588,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
         if not UtilClient.is_unset(request.kick_off):
             body['kickOff'] = request.kick_off
         if not UtilClient.is_unset(request.mac_address):
@@ -1635,6 +1637,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
         if not UtilClient.is_unset(request.kick_off):
             body['kickOff'] = request.kick_off
         if not UtilClient.is_unset(request.mac_address):
@@ -6452,6 +6456,24 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.gmt_create_end):
+            body['gmtCreateEnd'] = request.gmt_create_end
+        if not UtilClient.is_unset(request.gmt_create_start):
+            body['gmtCreateStart'] = request.gmt_create_start
+        if not UtilClient.is_unset(request.gmt_modified_end):
+            body['gmtModifiedEnd'] = request.gmt_modified_end
+        if not UtilClient.is_unset(request.gmt_modified_start):
+            body['gmtModifiedStart'] = request.gmt_modified_start
+        if not UtilClient.is_unset(request.mac_address):
+            body['macAddress'] = request.mac_address
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
         real_headers = {}
@@ -6495,6 +6517,24 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.gmt_create_end):
+            body['gmtCreateEnd'] = request.gmt_create_end
+        if not UtilClient.is_unset(request.gmt_create_start):
+            body['gmtCreateStart'] = request.gmt_create_start
+        if not UtilClient.is_unset(request.gmt_modified_end):
+            body['gmtModifiedEnd'] = request.gmt_modified_end
+        if not UtilClient.is_unset(request.gmt_modified_start):
+            body['gmtModifiedStart'] = request.gmt_modified_start
+        if not UtilClient.is_unset(request.mac_address):
+            body['macAddress'] = request.mac_address
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.platform):
+            body['platform'] = request.platform
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
         real_headers = {}
@@ -12199,6 +12239,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.TaskInfoUpdateTaskHeaders()
         return await self.task_info_update_task_with_options_async(request, headers, runtime)
+
+    def transfer_exclusive_account_org_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgRequest,
+        headers: dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgResponse:
+        """
+        @summary 切换组织归属
+        
+        @param request: TransferExclusiveAccountOrgRequest
+        @param headers: TransferExclusiveAccountOrgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TransferExclusiveAccountOrgResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.is_setting_main_org):
+            body['isSettingMainOrg'] = request.is_setting_main_org
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TransferExclusiveAccountOrg',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/organizations/transfer',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def transfer_exclusive_account_org_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgRequest,
+        headers: dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgResponse:
+        """
+        @summary 切换组织归属
+        
+        @param request: TransferExclusiveAccountOrgRequest
+        @param headers: TransferExclusiveAccountOrgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TransferExclusiveAccountOrgResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.is_setting_main_org):
+            body['isSettingMainOrg'] = request.is_setting_main_org
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TransferExclusiveAccountOrg',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/organizations/transfer',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def transfer_exclusive_account_org(
+        self,
+        request: dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgRequest,
+    ) -> dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgResponse:
+        """
+        @summary 切换组织归属
+        
+        @param request: TransferExclusiveAccountOrgRequest
+        @return: TransferExclusiveAccountOrgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgHeaders()
+        return self.transfer_exclusive_account_org_with_options(request, headers, runtime)
+
+    async def transfer_exclusive_account_org_async(
+        self,
+        request: dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgRequest,
+    ) -> dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgResponse:
+        """
+        @summary 切换组织归属
+        
+        @param request: TransferExclusiveAccountOrgRequest
+        @return: TransferExclusiveAccountOrgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.TransferExclusiveAccountOrgHeaders()
+        return await self.transfer_exclusive_account_org_with_options_async(request, headers, runtime)
 
     def update_category_name_with_options(
         self,

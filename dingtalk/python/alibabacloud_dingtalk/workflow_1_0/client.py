@@ -4152,6 +4152,1802 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.PagesExportInstancesHeaders()
         return await self.pages_export_instances_with_options_async(request, headers, runtime)
 
+    def premium_batch_execute_process_instances_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesResponse:
+        """
+        @summary 批量同意或拒绝审批任务(OA高级版专享接口)
+        
+        @param request: PremiumBatchExecuteProcessInstancesRequest
+        @param headers: PremiumBatchExecuteProcessInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumBatchExecuteProcessInstancesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.actioner_user_id):
+            body['actionerUserId'] = request.actioner_user_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.result):
+            body['result'] = request.result
+        if not UtilClient.is_unset(request.task_info_list):
+            body['taskInfoList'] = request.task_info_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumBatchExecuteProcessInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/batchExecute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_batch_execute_process_instances_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesResponse:
+        """
+        @summary 批量同意或拒绝审批任务(OA高级版专享接口)
+        
+        @param request: PremiumBatchExecuteProcessInstancesRequest
+        @param headers: PremiumBatchExecuteProcessInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumBatchExecuteProcessInstancesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.actioner_user_id):
+            body['actionerUserId'] = request.actioner_user_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.result):
+            body['result'] = request.result
+        if not UtilClient.is_unset(request.task_info_list):
+            body['taskInfoList'] = request.task_info_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumBatchExecuteProcessInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/batchExecute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_batch_execute_process_instances(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesResponse:
+        """
+        @summary 批量同意或拒绝审批任务(OA高级版专享接口)
+        
+        @param request: PremiumBatchExecuteProcessInstancesRequest
+        @return: PremiumBatchExecuteProcessInstancesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesHeaders()
+        return self.premium_batch_execute_process_instances_with_options(request, headers, runtime)
+
+    async def premium_batch_execute_process_instances_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesResponse:
+        """
+        @summary 批量同意或拒绝审批任务(OA高级版专享接口)
+        
+        @param request: PremiumBatchExecuteProcessInstancesRequest
+        @return: PremiumBatchExecuteProcessInstancesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesHeaders()
+        return await self.premium_batch_execute_process_instances_with_options_async(request, headers, runtime)
+
+    def premium_del_dir_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumDelDirRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumDelDirHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumDelDirResponse:
+        """
+        @summary 删除业务分组(高级版专享接口)
+        
+        @param request: PremiumDelDirRequest
+        @param headers: PremiumDelDirHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumDelDirResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dir_id):
+            query['dirId'] = request.dir_id
+        if not UtilClient.is_unset(request.operate_user_id):
+            query['operateUserId'] = request.operate_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumDelDir',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/directories',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumDelDirResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_del_dir_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumDelDirRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumDelDirHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumDelDirResponse:
+        """
+        @summary 删除业务分组(高级版专享接口)
+        
+        @param request: PremiumDelDirRequest
+        @param headers: PremiumDelDirHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumDelDirResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dir_id):
+            query['dirId'] = request.dir_id
+        if not UtilClient.is_unset(request.operate_user_id):
+            query['operateUserId'] = request.operate_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumDelDir',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/directories',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumDelDirResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_del_dir(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumDelDirRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumDelDirResponse:
+        """
+        @summary 删除业务分组(高级版专享接口)
+        
+        @param request: PremiumDelDirRequest
+        @return: PremiumDelDirResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumDelDirHeaders()
+        return self.premium_del_dir_with_options(request, headers, runtime)
+
+    async def premium_del_dir_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumDelDirRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumDelDirResponse:
+        """
+        @summary 删除业务分组(高级版专享接口)
+        
+        @param request: PremiumDelDirRequest
+        @return: PremiumDelDirResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumDelDirHeaders()
+        return await self.premium_del_dir_with_options_async(request, headers, runtime)
+
+    def premium_get_done_tasks_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetDoneTasksRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetDoneTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetDoneTasksResponse:
+        """
+        @summary 查询审批中心已处理任务列表(OA高级版专享接口)
+        
+        @param request: PremiumGetDoneTasksRequest
+        @param headers: PremiumGetDoneTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetDoneTasksResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_client_id):
+            query['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetDoneTasks',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/doneTasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetDoneTasksResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_get_done_tasks_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetDoneTasksRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetDoneTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetDoneTasksResponse:
+        """
+        @summary 查询审批中心已处理任务列表(OA高级版专享接口)
+        
+        @param request: PremiumGetDoneTasksRequest
+        @param headers: PremiumGetDoneTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetDoneTasksResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_client_id):
+            query['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetDoneTasks',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/doneTasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetDoneTasksResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_get_done_tasks(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetDoneTasksRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetDoneTasksResponse:
+        """
+        @summary 查询审批中心已处理任务列表(OA高级版专享接口)
+        
+        @param request: PremiumGetDoneTasksRequest
+        @return: PremiumGetDoneTasksResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetDoneTasksHeaders()
+        return self.premium_get_done_tasks_with_options(request, headers, runtime)
+
+    async def premium_get_done_tasks_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetDoneTasksRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetDoneTasksResponse:
+        """
+        @summary 查询审批中心已处理任务列表(OA高级版专享接口)
+        
+        @param request: PremiumGetDoneTasksRequest
+        @return: PremiumGetDoneTasksResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetDoneTasksHeaders()
+        return await self.premium_get_done_tasks_with_options_async(request, headers, runtime)
+
+    def premium_get_field_modified_history_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryResponse:
+        """
+        @summary 获取字段修改历史(高级版专享接口)
+        
+        @param request: PremiumGetFieldModifiedHistoryRequest
+        @param headers: PremiumGetFieldModifiedHistoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetFieldModifiedHistoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.field_id):
+            body['fieldId'] = request.field_id
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetFieldModifiedHistory',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processes/fields/modifiedRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_get_field_modified_history_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryResponse:
+        """
+        @summary 获取字段修改历史(高级版专享接口)
+        
+        @param request: PremiumGetFieldModifiedHistoryRequest
+        @param headers: PremiumGetFieldModifiedHistoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetFieldModifiedHistoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.field_id):
+            body['fieldId'] = request.field_id
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetFieldModifiedHistory',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processes/fields/modifiedRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_get_field_modified_history(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryResponse:
+        """
+        @summary 获取字段修改历史(高级版专享接口)
+        
+        @param request: PremiumGetFieldModifiedHistoryRequest
+        @return: PremiumGetFieldModifiedHistoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryHeaders()
+        return self.premium_get_field_modified_history_with_options(request, headers, runtime)
+
+    async def premium_get_field_modified_history_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryResponse:
+        """
+        @summary 获取字段修改历史(高级版专享接口)
+        
+        @param request: PremiumGetFieldModifiedHistoryRequest
+        @return: PremiumGetFieldModifiedHistoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryHeaders()
+        return await self.premium_get_field_modified_history_with_options_async(request, headers, runtime)
+
+    def premium_get_noticed_instances_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesResponse:
+        """
+        @summary 查询审批中心我收到的实例列表(OA高级版专享接口)
+        
+        @param request: PremiumGetNoticedInstancesRequest
+        @param headers: PremiumGetNoticedInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetNoticedInstancesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_client_id):
+            query['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetNoticedInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/noticedInstances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_get_noticed_instances_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesResponse:
+        """
+        @summary 查询审批中心我收到的实例列表(OA高级版专享接口)
+        
+        @param request: PremiumGetNoticedInstancesRequest
+        @param headers: PremiumGetNoticedInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetNoticedInstancesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_client_id):
+            query['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetNoticedInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/noticedInstances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_get_noticed_instances(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesResponse:
+        """
+        @summary 查询审批中心我收到的实例列表(OA高级版专享接口)
+        
+        @param request: PremiumGetNoticedInstancesRequest
+        @return: PremiumGetNoticedInstancesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesHeaders()
+        return self.premium_get_noticed_instances_with_options(request, headers, runtime)
+
+    async def premium_get_noticed_instances_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesResponse:
+        """
+        @summary 查询审批中心我收到的实例列表(OA高级版专享接口)
+        
+        @param request: PremiumGetNoticedInstancesRequest
+        @return: PremiumGetNoticedInstancesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetNoticedInstancesHeaders()
+        return await self.premium_get_noticed_instances_with_options_async(request, headers, runtime)
+
+    def premium_get_process_instances_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetProcessInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetProcessInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetProcessInstancesResponse:
+        """
+        @summary 根据processCode分页获取审批流程数据(高级版专享接口)
+        
+        @param request: PremiumGetProcessInstancesRequest
+        @param headers: PremiumGetProcessInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetProcessInstancesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
+        if not UtilClient.is_unset(request.end_time_in_mills):
+            query['endTimeInMills'] = request.end_time_in_mills
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.process_code):
+            query['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.start_time_in_mills):
+            query['startTimeInMills'] = request.start_time_in_mills
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetProcessInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processes/pages/instances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetProcessInstancesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_get_process_instances_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetProcessInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetProcessInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetProcessInstancesResponse:
+        """
+        @summary 根据processCode分页获取审批流程数据(高级版专享接口)
+        
+        @param request: PremiumGetProcessInstancesRequest
+        @param headers: PremiumGetProcessInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetProcessInstancesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
+        if not UtilClient.is_unset(request.end_time_in_mills):
+            query['endTimeInMills'] = request.end_time_in_mills
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.process_code):
+            query['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.start_time_in_mills):
+            query['startTimeInMills'] = request.start_time_in_mills
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetProcessInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processes/pages/instances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetProcessInstancesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_get_process_instances(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetProcessInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetProcessInstancesResponse:
+        """
+        @summary 根据processCode分页获取审批流程数据(高级版专享接口)
+        
+        @param request: PremiumGetProcessInstancesRequest
+        @return: PremiumGetProcessInstancesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetProcessInstancesHeaders()
+        return self.premium_get_process_instances_with_options(request, headers, runtime)
+
+    async def premium_get_process_instances_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetProcessInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetProcessInstancesResponse:
+        """
+        @summary 根据processCode分页获取审批流程数据(高级版专享接口)
+        
+        @param request: PremiumGetProcessInstancesRequest
+        @return: PremiumGetProcessInstancesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetProcessInstancesHeaders()
+        return await self.premium_get_process_instances_with_options_async(request, headers, runtime)
+
+    def premium_get_submitted_instances_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesResponse:
+        """
+        @summary 查询审批中心已发起实例列表(OA高级版专享接口)
+        
+        @param request: PremiumGetSubmittedInstancesRequest
+        @param headers: PremiumGetSubmittedInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetSubmittedInstancesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_client_id):
+            query['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetSubmittedInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/submittedInstances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_get_submitted_instances_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesResponse:
+        """
+        @summary 查询审批中心已发起实例列表(OA高级版专享接口)
+        
+        @param request: PremiumGetSubmittedInstancesRequest
+        @param headers: PremiumGetSubmittedInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetSubmittedInstancesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_client_id):
+            query['dingClientId'] = request.ding_client_id
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetSubmittedInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/submittedInstances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_get_submitted_instances(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesResponse:
+        """
+        @summary 查询审批中心已发起实例列表(OA高级版专享接口)
+        
+        @param request: PremiumGetSubmittedInstancesRequest
+        @return: PremiumGetSubmittedInstancesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesHeaders()
+        return self.premium_get_submitted_instances_with_options(request, headers, runtime)
+
+    async def premium_get_submitted_instances_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesResponse:
+        """
+        @summary 查询审批中心已发起实例列表(OA高级版专享接口)
+        
+        @param request: PremiumGetSubmittedInstancesRequest
+        @return: PremiumGetSubmittedInstancesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesHeaders()
+        return await self.premium_get_submitted_instances_with_options_async(request, headers, runtime)
+
+    def premium_get_todo_tasks_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetTodoTasksRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetTodoTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetTodoTasksResponse:
+        """
+        @summary 查询审批中心待处理任务列表(OA高级版专享接口)
+        
+        @param request: PremiumGetTodoTasksRequest
+        @param headers: PremiumGetTodoTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetTodoTasksResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.create_before):
+            query['createBefore'] = request.create_before
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetTodoTasks',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/todoTasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetTodoTasksResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_get_todo_tasks_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetTodoTasksRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetTodoTasksHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetTodoTasksResponse:
+        """
+        @summary 查询审批中心待处理任务列表(OA高级版专享接口)
+        
+        @param request: PremiumGetTodoTasksRequest
+        @param headers: PremiumGetTodoTasksHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetTodoTasksResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.create_before):
+            query['createBefore'] = request.create_before
+        if not UtilClient.is_unset(request.keyword):
+            query['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetTodoTasks',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/todoTasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetTodoTasksResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_get_todo_tasks(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetTodoTasksRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetTodoTasksResponse:
+        """
+        @summary 查询审批中心待处理任务列表(OA高级版专享接口)
+        
+        @param request: PremiumGetTodoTasksRequest
+        @return: PremiumGetTodoTasksResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetTodoTasksHeaders()
+        return self.premium_get_todo_tasks_with_options(request, headers, runtime)
+
+    async def premium_get_todo_tasks_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetTodoTasksRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetTodoTasksResponse:
+        """
+        @summary 查询审批中心待处理任务列表(OA高级版专享接口)
+        
+        @param request: PremiumGetTodoTasksRequest
+        @return: PremiumGetTodoTasksResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetTodoTasksHeaders()
+        return await self.premium_get_todo_tasks_with_options_async(request, headers, runtime)
+
+    def premium_insert_or_update_dir_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirResponse:
+        """
+        @summary 创建或更新分组(高级版专享接口)
+        
+        @param request: PremiumInsertOrUpdateDirRequest
+        @param headers: PremiumInsertOrUpdateDirHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumInsertOrUpdateDirResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_group):
+            body['bizGroup'] = request.biz_group
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.name_18n):
+            body['name18n'] = request.name_18n
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumInsertOrUpdateDir',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/directories',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_insert_or_update_dir_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirResponse:
+        """
+        @summary 创建或更新分组(高级版专享接口)
+        
+        @param request: PremiumInsertOrUpdateDirRequest
+        @param headers: PremiumInsertOrUpdateDirHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumInsertOrUpdateDirResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_group):
+            body['bizGroup'] = request.biz_group
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.name_18n):
+            body['name18n'] = request.name_18n
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumInsertOrUpdateDir',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/directories',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_insert_or_update_dir(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirResponse:
+        """
+        @summary 创建或更新分组(高级版专享接口)
+        
+        @param request: PremiumInsertOrUpdateDirRequest
+        @return: PremiumInsertOrUpdateDirResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirHeaders()
+        return self.premium_insert_or_update_dir_with_options(request, headers, runtime)
+
+    async def premium_insert_or_update_dir_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirResponse:
+        """
+        @summary 创建或更新分组(高级版专享接口)
+        
+        @param request: PremiumInsertOrUpdateDirRequest
+        @return: PremiumInsertOrUpdateDirResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumInsertOrUpdateDirHeaders()
+        return await self.premium_insert_or_update_dir_with_options_async(request, headers, runtime)
+
+    def premium_query_todo_tasks_by_manager_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerResponse:
+        """
+        @summary 流程转交待处理任务查询(高级版专享接口)
+        
+        @param request: PremiumQueryTodoTasksByManagerRequest
+        @param headers: PremiumQueryTodoTasksByManagerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumQueryTodoTasksByManagerResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.actioner_user_id):
+            query['actionerUserId'] = request.actioner_user_id
+        if not UtilClient.is_unset(request.manager_user_id):
+            query['managerUserId'] = request.manager_user_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumQueryTodoTasksByManager',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/tasks/todoTasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_query_todo_tasks_by_manager_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerResponse:
+        """
+        @summary 流程转交待处理任务查询(高级版专享接口)
+        
+        @param request: PremiumQueryTodoTasksByManagerRequest
+        @param headers: PremiumQueryTodoTasksByManagerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumQueryTodoTasksByManagerResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.actioner_user_id):
+            query['actionerUserId'] = request.actioner_user_id
+        if not UtilClient.is_unset(request.manager_user_id):
+            query['managerUserId'] = request.manager_user_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumQueryTodoTasksByManager',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/tasks/todoTasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_query_todo_tasks_by_manager(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerResponse:
+        """
+        @summary 流程转交待处理任务查询(高级版专享接口)
+        
+        @param request: PremiumQueryTodoTasksByManagerRequest
+        @return: PremiumQueryTodoTasksByManagerResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerHeaders()
+        return self.premium_query_todo_tasks_by_manager_with_options(request, headers, runtime)
+
+    async def premium_query_todo_tasks_by_manager_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerResponse:
+        """
+        @summary 流程转交待处理任务查询(高级版专享接口)
+        
+        @param request: PremiumQueryTodoTasksByManagerRequest
+        @return: PremiumQueryTodoTasksByManagerResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumQueryTodoTasksByManagerHeaders()
+        return await self.premium_query_todo_tasks_by_manager_with_options_async(request, headers, runtime)
+
+    def premium_redirect_tasks_by_manager_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerResponse:
+        """
+        @summary 批量流程审批任务转交(高级版专享接口)
+        
+        @param request: PremiumRedirectTasksByManagerRequest
+        @param headers: PremiumRedirectTasksByManagerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumRedirectTasksByManagerResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.handover_user_id):
+            body['handoverUserId'] = request.handover_user_id
+        if not UtilClient.is_unset(request.manager_user_id):
+            body['managerUserId'] = request.manager_user_id
+        if not UtilClient.is_unset(request.task_ids):
+            body['taskIds'] = request.task_ids
+        if not UtilClient.is_unset(request.transferee_user_id):
+            body['transfereeUserId'] = request.transferee_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumRedirectTasksByManager',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/tasks/batchRedirect',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_redirect_tasks_by_manager_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerResponse:
+        """
+        @summary 批量流程审批任务转交(高级版专享接口)
+        
+        @param request: PremiumRedirectTasksByManagerRequest
+        @param headers: PremiumRedirectTasksByManagerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumRedirectTasksByManagerResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.handover_user_id):
+            body['handoverUserId'] = request.handover_user_id
+        if not UtilClient.is_unset(request.manager_user_id):
+            body['managerUserId'] = request.manager_user_id
+        if not UtilClient.is_unset(request.task_ids):
+            body['taskIds'] = request.task_ids
+        if not UtilClient.is_unset(request.transferee_user_id):
+            body['transfereeUserId'] = request.transferee_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumRedirectTasksByManager',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/tasks/batchRedirect',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_redirect_tasks_by_manager(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerResponse:
+        """
+        @summary 批量流程审批任务转交(高级版专享接口)
+        
+        @param request: PremiumRedirectTasksByManagerRequest
+        @return: PremiumRedirectTasksByManagerResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerHeaders()
+        return self.premium_redirect_tasks_by_manager_with_options(request, headers, runtime)
+
+    async def premium_redirect_tasks_by_manager_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerResponse:
+        """
+        @summary 批量流程审批任务转交(高级版专享接口)
+        
+        @param request: PremiumRedirectTasksByManagerRequest
+        @return: PremiumRedirectTasksByManagerResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerHeaders()
+        return await self.premium_redirect_tasks_by_manager_with_options_async(request, headers, runtime)
+
+    def premium_save_integrated_process_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessResponse:
+        """
+        @summary 创建或更新流程中心外部集成模板(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedProcessRequest
+        @param headers: PremiumSaveIntegratedProcessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumSaveIntegratedProcessResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.form_components):
+            body['formComponents'] = request.form_components
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.process_feature_config):
+            body['processFeatureConfig'] = request.process_feature_config
+        if not UtilClient.is_unset(request.template_config):
+            body['templateConfig'] = request.template_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumSaveIntegratedProcess',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/schemas',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_save_integrated_process_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessResponse:
+        """
+        @summary 创建或更新流程中心外部集成模板(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedProcessRequest
+        @param headers: PremiumSaveIntegratedProcessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumSaveIntegratedProcessResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.form_components):
+            body['formComponents'] = request.form_components
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.process_feature_config):
+            body['processFeatureConfig'] = request.process_feature_config
+        if not UtilClient.is_unset(request.template_config):
+            body['templateConfig'] = request.template_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumSaveIntegratedProcess',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/schemas',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_save_integrated_process(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessResponse:
+        """
+        @summary 创建或更新流程中心外部集成模板(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedProcessRequest
+        @return: PremiumSaveIntegratedProcessResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessHeaders()
+        return self.premium_save_integrated_process_with_options(request, headers, runtime)
+
+    async def premium_save_integrated_process_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessResponse:
+        """
+        @summary 创建或更新流程中心外部集成模板(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedProcessRequest
+        @return: PremiumSaveIntegratedProcessResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessHeaders()
+        return await self.premium_save_integrated_process_with_options_async(request, headers, runtime)
+
+    def premium_save_integrated_process_instance_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceResponse:
+        """
+        @summary 创建流程中心外部集成实例(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedProcessInstanceRequest
+        @param headers: PremiumSaveIntegratedProcessInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumSaveIntegratedProcessInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.form_component_value_list):
+            body['formComponentValueList'] = request.form_component_value_list
+        if not UtilClient.is_unset(request.notifiers):
+            body['notifiers'] = request.notifiers
+        if not UtilClient.is_unset(request.originator_user_id):
+            body['originatorUserId'] = request.originator_user_id
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.url):
+            body['url'] = request.url
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumSaveIntegratedProcessInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/instances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_save_integrated_process_instance_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceResponse:
+        """
+        @summary 创建流程中心外部集成实例(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedProcessInstanceRequest
+        @param headers: PremiumSaveIntegratedProcessInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumSaveIntegratedProcessInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.form_component_value_list):
+            body['formComponentValueList'] = request.form_component_value_list
+        if not UtilClient.is_unset(request.notifiers):
+            body['notifiers'] = request.notifiers
+        if not UtilClient.is_unset(request.originator_user_id):
+            body['originatorUserId'] = request.originator_user_id
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.url):
+            body['url'] = request.url
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumSaveIntegratedProcessInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/instances',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_save_integrated_process_instance(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceResponse:
+        """
+        @summary 创建流程中心外部集成实例(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedProcessInstanceRequest
+        @return: PremiumSaveIntegratedProcessInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceHeaders()
+        return self.premium_save_integrated_process_instance_with_options(request, headers, runtime)
+
+    async def premium_save_integrated_process_instance_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceResponse:
+        """
+        @summary 创建流程中心外部集成实例(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedProcessInstanceRequest
+        @return: PremiumSaveIntegratedProcessInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumSaveIntegratedProcessInstanceHeaders()
+        return await self.premium_save_integrated_process_instance_with_options_async(request, headers, runtime)
+
+    def premium_save_integrated_task_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskResponse:
+        """
+        @summary 创建流程中心外部集成待处理任务(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedTaskRequest
+        @param headers: PremiumSaveIntegratedTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumSaveIntegratedTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.activity_id):
+            body['activityId'] = request.activity_id
+        if not UtilClient.is_unset(request.feature_config):
+            body['featureConfig'] = request.feature_config
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.tasks):
+            body['tasks'] = request.tasks
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumSaveIntegratedTask',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/tasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_save_integrated_task_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskResponse:
+        """
+        @summary 创建流程中心外部集成待处理任务(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedTaskRequest
+        @param headers: PremiumSaveIntegratedTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumSaveIntegratedTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.activity_id):
+            body['activityId'] = request.activity_id
+        if not UtilClient.is_unset(request.feature_config):
+            body['featureConfig'] = request.feature_config
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.tasks):
+            body['tasks'] = request.tasks
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumSaveIntegratedTask',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processCentres/tasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_save_integrated_task(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskResponse:
+        """
+        @summary 创建流程中心外部集成待处理任务(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedTaskRequest
+        @return: PremiumSaveIntegratedTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskHeaders()
+        return self.premium_save_integrated_task_with_options(request, headers, runtime)
+
+    async def premium_save_integrated_task_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskResponse:
+        """
+        @summary 创建流程中心外部集成待处理任务(高级版专享接口)
+        
+        @param request: PremiumSaveIntegratedTaskRequest
+        @return: PremiumSaveIntegratedTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskHeaders()
+        return await self.premium_save_integrated_task_with_options_async(request, headers, runtime)
+
     def process_forecast_with_options(
         self,
         request: dingtalkworkflow__1__0_models.ProcessForecastRequest,
