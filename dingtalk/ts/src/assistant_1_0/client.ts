@@ -189,6 +189,7 @@ export class CreateAssistantRequest extends $tea.Model {
 export class CreateAssistantResponseBody extends $tea.Model {
   actionNames?: string[];
   assistantId?: string;
+  assistantUnionId?: string;
   createdAt?: number;
   creatorUnionId?: string;
   description?: string;
@@ -205,6 +206,7 @@ export class CreateAssistantResponseBody extends $tea.Model {
     return {
       actionNames: 'actionNames',
       assistantId: 'assistantId',
+      assistantUnionId: 'assistantUnionId',
       createdAt: 'createdAt',
       creatorUnionId: 'creatorUnionId',
       description: 'description',
@@ -224,6 +226,7 @@ export class CreateAssistantResponseBody extends $tea.Model {
     return {
       actionNames: { 'type': 'array', 'itemType': 'string' },
       assistantId: 'string',
+      assistantUnionId: 'string',
       createdAt: 'number',
       creatorUnionId: 'string',
       description: 'string',
@@ -2066,6 +2069,7 @@ export class RetrieveAssistantBasicInfoRequest extends $tea.Model {
 export class RetrieveAssistantBasicInfoResponseBody extends $tea.Model {
   actionNames?: string[];
   assistantId?: string;
+  assistantUnionId?: string;
   createdAt?: number;
   creatorUnionId?: string;
   description?: string;
@@ -2082,6 +2086,7 @@ export class RetrieveAssistantBasicInfoResponseBody extends $tea.Model {
     return {
       actionNames: 'actionNames',
       assistantId: 'assistantId',
+      assistantUnionId: 'assistantUnionId',
       createdAt: 'createdAt',
       creatorUnionId: 'creatorUnionId',
       description: 'description',
@@ -2101,6 +2106,7 @@ export class RetrieveAssistantBasicInfoResponseBody extends $tea.Model {
     return {
       actionNames: { 'type': 'array', 'itemType': 'string' },
       assistantId: 'string',
+      assistantUnionId: 'string',
       createdAt: 'number',
       creatorUnionId: 'string',
       description: 'string',
@@ -2581,6 +2587,7 @@ export class UpdateAssistantBasicInfoRequest extends $tea.Model {
 export class UpdateAssistantBasicInfoResponseBody extends $tea.Model {
   actionNames?: string[];
   assistantId?: string;
+  assistantUnionId?: string;
   createdAt?: number;
   creatorUnionId?: string;
   description?: string;
@@ -2597,6 +2604,7 @@ export class UpdateAssistantBasicInfoResponseBody extends $tea.Model {
     return {
       actionNames: 'actionNames',
       assistantId: 'assistantId',
+      assistantUnionId: 'assistantUnionId',
       createdAt: 'createdAt',
       creatorUnionId: 'creatorUnionId',
       description: 'description',
@@ -2616,6 +2624,7 @@ export class UpdateAssistantBasicInfoResponseBody extends $tea.Model {
     return {
       actionNames: { 'type': 'array', 'itemType': 'string' },
       assistantId: 'string',
+      assistantUnionId: 'string',
       createdAt: 'number',
       creatorUnionId: 'string',
       description: 'string',

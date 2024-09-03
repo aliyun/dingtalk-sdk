@@ -5448,6 +5448,108 @@ export class UpdateHrmLegalEntityWithoutNameResponse extends $tea.Model {
   }
 }
 
+export class UpdateHrmVersionRollBackStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmVersionRollBackStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * show
+   */
+  configValue?: string;
+  /**
+   * @example
+   * 1231231232
+   */
+  optUserId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      configValue: 'configValue',
+      optUserId: 'optUserId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      configValue: 'string',
+      optUserId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmVersionRollBackStatusResponseBody extends $tea.Model {
+  requestId?: string;
+  result?: boolean;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      requestId: 'requestId',
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      requestId: 'string',
+      result: 'boolean',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateHrmVersionRollBackStatusResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateHrmVersionRollBackStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateHrmVersionRollBackStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateIsvCardMessageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -11814,6 +11916,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateHrmLegalEntityWithoutNameHeaders({ });
     return await this.updateHrmLegalEntityWithoutNameWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 智能人事更新版本回退按钮状态
+   * 
+   * @param request - UpdateHrmVersionRollBackStatusRequest
+   * @param headers - UpdateHrmVersionRollBackStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateHrmVersionRollBackStatusResponse
+   */
+  async updateHrmVersionRollBackStatusWithOptions(request: UpdateHrmVersionRollBackStatusRequest, headers: UpdateHrmVersionRollBackStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateHrmVersionRollBackStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.configValue)) {
+      body["configValue"] = request.configValue;
+    }
+
+    if (!Util.isUnset(request.optUserId)) {
+      body["optUserId"] = request.optUserId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateHrmVersionRollBackStatus",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/versions/rollbackButtons/statuses`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateHrmVersionRollBackStatusResponse>(await this.execute(params, req, runtime), new UpdateHrmVersionRollBackStatusResponse({}));
+  }
+
+  /**
+   * 智能人事更新版本回退按钮状态
+   * 
+   * @param request - UpdateHrmVersionRollBackStatusRequest
+   * @returns UpdateHrmVersionRollBackStatusResponse
+   */
+  async updateHrmVersionRollBackStatus(request: UpdateHrmVersionRollBackStatusRequest): Promise<UpdateHrmVersionRollBackStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateHrmVersionRollBackStatusHeaders({ });
+    return await this.updateHrmVersionRollBackStatusWithOptions(request, headers, runtime);
   }
 
   /**

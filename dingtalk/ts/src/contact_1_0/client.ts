@@ -3459,20 +3459,24 @@ export class GetUserHeaders extends $tea.Model {
 export class GetUserResponseBody extends $tea.Model {
   avatarUrl?: string;
   email?: string;
+  loginEmail?: string;
   mobile?: string;
   nick?: string;
   openId?: string;
   stateCode?: string;
   unionId?: string;
+  visitor?: boolean;
   static names(): { [key: string]: string } {
     return {
       avatarUrl: 'avatarUrl',
       email: 'email',
+      loginEmail: 'loginEmail',
       mobile: 'mobile',
       nick: 'nick',
       openId: 'openId',
       stateCode: 'stateCode',
       unionId: 'unionId',
+      visitor: 'visitor',
     };
   }
 
@@ -3480,11 +3484,13 @@ export class GetUserResponseBody extends $tea.Model {
     return {
       avatarUrl: 'string',
       email: 'string',
+      loginEmail: 'string',
       mobile: 'string',
       nick: 'string',
       openId: 'string',
       stateCode: 'string',
       unionId: 'string',
+      visitor: 'boolean',
     };
   }
 
@@ -11960,7 +11966,7 @@ export default class Client extends OpenApi {
       method: "GET",
       authType: "AK",
       style: "ROA",
-      reqBodyType: "json",
+      reqBodyType: "none",
       bodyType: "json",
     });
     return $tea.cast<GetUserResponse>(await this.execute(params, req, runtime), new GetUserResponse({}));
