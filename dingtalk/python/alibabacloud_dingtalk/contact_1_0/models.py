@@ -5796,19 +5796,23 @@ class GetUserResponseBody(TeaModel):
         self,
         avatar_url: str = None,
         email: str = None,
+        login_email: str = None,
         mobile: str = None,
         nick: str = None,
         open_id: str = None,
         state_code: str = None,
         union_id: str = None,
+        visitor: bool = None,
     ):
         self.avatar_url = avatar_url
         self.email = email
+        self.login_email = login_email
         self.mobile = mobile
         self.nick = nick
         self.open_id = open_id
         self.state_code = state_code
         self.union_id = union_id
+        self.visitor = visitor
 
     def validate(self):
         pass
@@ -5823,6 +5827,8 @@ class GetUserResponseBody(TeaModel):
             result['avatarUrl'] = self.avatar_url
         if self.email is not None:
             result['email'] = self.email
+        if self.login_email is not None:
+            result['loginEmail'] = self.login_email
         if self.mobile is not None:
             result['mobile'] = self.mobile
         if self.nick is not None:
@@ -5833,6 +5839,8 @@ class GetUserResponseBody(TeaModel):
             result['stateCode'] = self.state_code
         if self.union_id is not None:
             result['unionId'] = self.union_id
+        if self.visitor is not None:
+            result['visitor'] = self.visitor
         return result
 
     def from_map(self, m: dict = None):
@@ -5841,6 +5849,8 @@ class GetUserResponseBody(TeaModel):
             self.avatar_url = m.get('avatarUrl')
         if m.get('email') is not None:
             self.email = m.get('email')
+        if m.get('loginEmail') is not None:
+            self.login_email = m.get('loginEmail')
         if m.get('mobile') is not None:
             self.mobile = m.get('mobile')
         if m.get('nick') is not None:
@@ -5851,6 +5861,8 @@ class GetUserResponseBody(TeaModel):
             self.state_code = m.get('stateCode')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
+        if m.get('visitor') is not None:
+            self.visitor = m.get('visitor')
         return self
 
 

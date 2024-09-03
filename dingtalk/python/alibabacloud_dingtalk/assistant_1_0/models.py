@@ -294,6 +294,7 @@ class CreateAssistantResponseBody(TeaModel):
         self,
         action_names: List[str] = None,
         assistant_id: str = None,
+        assistant_union_id: str = None,
         created_at: int = None,
         creator_union_id: str = None,
         description: str = None,
@@ -309,6 +310,7 @@ class CreateAssistantResponseBody(TeaModel):
     ):
         self.action_names = action_names
         self.assistant_id = assistant_id
+        self.assistant_union_id = assistant_union_id
         self.created_at = created_at
         self.creator_union_id = creator_union_id
         self.description = description
@@ -335,6 +337,8 @@ class CreateAssistantResponseBody(TeaModel):
             result['actionNames'] = self.action_names
         if self.assistant_id is not None:
             result['assistantId'] = self.assistant_id
+        if self.assistant_union_id is not None:
+            result['assistantUnionId'] = self.assistant_union_id
         if self.created_at is not None:
             result['createdAt'] = self.created_at
         if self.creator_union_id is not None:
@@ -367,6 +371,8 @@ class CreateAssistantResponseBody(TeaModel):
             self.action_names = m.get('actionNames')
         if m.get('assistantId') is not None:
             self.assistant_id = m.get('assistantId')
+        if m.get('assistantUnionId') is not None:
+            self.assistant_union_id = m.get('assistantUnionId')
         if m.get('createdAt') is not None:
             self.created_at = m.get('createdAt')
         if m.get('creatorUnionId') is not None:
@@ -3715,6 +3721,7 @@ class RetrieveAssistantBasicInfoResponseBody(TeaModel):
         self,
         action_names: List[str] = None,
         assistant_id: str = None,
+        assistant_union_id: str = None,
         created_at: int = None,
         creator_union_id: str = None,
         description: str = None,
@@ -3730,6 +3737,7 @@ class RetrieveAssistantBasicInfoResponseBody(TeaModel):
     ):
         self.action_names = action_names
         self.assistant_id = assistant_id
+        self.assistant_union_id = assistant_union_id
         self.created_at = created_at
         self.creator_union_id = creator_union_id
         self.description = description
@@ -3756,6 +3764,8 @@ class RetrieveAssistantBasicInfoResponseBody(TeaModel):
             result['actionNames'] = self.action_names
         if self.assistant_id is not None:
             result['assistantId'] = self.assistant_id
+        if self.assistant_union_id is not None:
+            result['assistantUnionId'] = self.assistant_union_id
         if self.created_at is not None:
             result['createdAt'] = self.created_at
         if self.creator_union_id is not None:
@@ -3788,6 +3798,8 @@ class RetrieveAssistantBasicInfoResponseBody(TeaModel):
             self.action_names = m.get('actionNames')
         if m.get('assistantId') is not None:
             self.assistant_id = m.get('assistantId')
+        if m.get('assistantUnionId') is not None:
+            self.assistant_union_id = m.get('assistantUnionId')
         if m.get('createdAt') is not None:
             self.created_at = m.get('createdAt')
         if m.get('creatorUnionId') is not None:
@@ -4641,6 +4653,7 @@ class UpdateAssistantBasicInfoResponseBody(TeaModel):
         self,
         action_names: List[str] = None,
         assistant_id: str = None,
+        assistant_union_id: str = None,
         created_at: int = None,
         creator_union_id: str = None,
         description: str = None,
@@ -4656,6 +4669,7 @@ class UpdateAssistantBasicInfoResponseBody(TeaModel):
     ):
         self.action_names = action_names
         self.assistant_id = assistant_id
+        self.assistant_union_id = assistant_union_id
         self.created_at = created_at
         self.creator_union_id = creator_union_id
         self.description = description
@@ -4682,6 +4696,8 @@ class UpdateAssistantBasicInfoResponseBody(TeaModel):
             result['actionNames'] = self.action_names
         if self.assistant_id is not None:
             result['assistantId'] = self.assistant_id
+        if self.assistant_union_id is not None:
+            result['assistantUnionId'] = self.assistant_union_id
         if self.created_at is not None:
             result['createdAt'] = self.created_at
         if self.creator_union_id is not None:
@@ -4714,6 +4730,8 @@ class UpdateAssistantBasicInfoResponseBody(TeaModel):
             self.action_names = m.get('actionNames')
         if m.get('assistantId') is not None:
             self.assistant_id = m.get('assistantId')
+        if m.get('assistantUnionId') is not None:
+            self.assistant_union_id = m.get('assistantUnionId')
         if m.get('createdAt') is not None:
             self.created_at = m.get('createdAt')
         if m.get('creatorUnionId') is not None:

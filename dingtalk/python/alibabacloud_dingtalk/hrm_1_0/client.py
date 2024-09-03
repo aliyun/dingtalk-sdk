@@ -5746,6 +5746,124 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.UpdateHrmLegalEntityWithoutNameHeaders()
         return await self.update_hrm_legal_entity_without_name_with_options_async(request, headers, runtime)
 
+    def update_hrm_version_roll_back_status_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusRequest,
+        headers: dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusResponse:
+        """
+        @summary 智能人事更新版本回退按钮状态
+        
+        @param request: UpdateHrmVersionRollBackStatusRequest
+        @param headers: UpdateHrmVersionRollBackStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateHrmVersionRollBackStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.config_value):
+            body['configValue'] = request.config_value
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateHrmVersionRollBackStatus',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/versions/rollbackButtons/statuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_hrm_version_roll_back_status_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusRequest,
+        headers: dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusResponse:
+        """
+        @summary 智能人事更新版本回退按钮状态
+        
+        @param request: UpdateHrmVersionRollBackStatusRequest
+        @param headers: UpdateHrmVersionRollBackStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateHrmVersionRollBackStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.config_value):
+            body['configValue'] = request.config_value
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateHrmVersionRollBackStatus',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/versions/rollbackButtons/statuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_hrm_version_roll_back_status(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusResponse:
+        """
+        @summary 智能人事更新版本回退按钮状态
+        
+        @param request: UpdateHrmVersionRollBackStatusRequest
+        @return: UpdateHrmVersionRollBackStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusHeaders()
+        return self.update_hrm_version_roll_back_status_with_options(request, headers, runtime)
+
+    async def update_hrm_version_roll_back_status_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusResponse:
+        """
+        @summary 智能人事更新版本回退按钮状态
+        
+        @param request: UpdateHrmVersionRollBackStatusRequest
+        @return: UpdateHrmVersionRollBackStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateHrmVersionRollBackStatusHeaders()
+        return await self.update_hrm_version_roll_back_status_with_options_async(request, headers, runtime)
+
     def update_isv_card_message_with_options(
         self,
         request: dingtalkhrm__1__0_models.UpdateIsvCardMessageRequest,
