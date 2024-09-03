@@ -19,6 +19,11 @@ class RetrieveAssistantBasicInfoResponseBody extends Model
     public $assistantId;
 
     /**
+     * @var string
+     */
+    public $assistantUnionId;
+
+    /**
      * @var int
      */
     public $createdAt;
@@ -80,6 +85,7 @@ class RetrieveAssistantBasicInfoResponseBody extends Model
     protected $_name = [
         'actionNames'        => 'actionNames',
         'assistantId'        => 'assistantId',
+        'assistantUnionId'   => 'assistantUnionId',
         'createdAt'          => 'createdAt',
         'creatorUnionId'     => 'creatorUnionId',
         'description'        => 'description',
@@ -106,6 +112,9 @@ class RetrieveAssistantBasicInfoResponseBody extends Model
         }
         if (null !== $this->assistantId) {
             $res['assistantId'] = $this->assistantId;
+        }
+        if (null !== $this->assistantUnionId) {
+            $res['assistantUnionId'] = $this->assistantUnionId;
         }
         if (null !== $this->createdAt) {
             $res['createdAt'] = $this->createdAt;
@@ -162,6 +171,9 @@ class RetrieveAssistantBasicInfoResponseBody extends Model
         }
         if (isset($map['assistantId'])) {
             $model->assistantId = $map['assistantId'];
+        }
+        if (isset($map['assistantUnionId'])) {
+            $model->assistantUnionId = $map['assistantUnionId'];
         }
         if (isset($map['createdAt'])) {
             $model->createdAt = $map['createdAt'];

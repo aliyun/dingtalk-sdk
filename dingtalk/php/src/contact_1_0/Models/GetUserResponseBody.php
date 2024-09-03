@@ -21,6 +21,11 @@ class GetUserResponseBody extends Model
     /**
      * @var string
      */
+    public $loginEmail;
+
+    /**
+     * @var string
+     */
     public $mobile;
 
     /**
@@ -42,14 +47,21 @@ class GetUserResponseBody extends Model
      * @var string
      */
     public $unionId;
+
+    /**
+     * @var bool
+     */
+    public $visitor;
     protected $_name = [
-        'avatarUrl' => 'avatarUrl',
-        'email'     => 'email',
-        'mobile'    => 'mobile',
-        'nick'      => 'nick',
-        'openId'    => 'openId',
-        'stateCode' => 'stateCode',
-        'unionId'   => 'unionId',
+        'avatarUrl'  => 'avatarUrl',
+        'email'      => 'email',
+        'loginEmail' => 'loginEmail',
+        'mobile'     => 'mobile',
+        'nick'       => 'nick',
+        'openId'     => 'openId',
+        'stateCode'  => 'stateCode',
+        'unionId'    => 'unionId',
+        'visitor'    => 'visitor',
     ];
 
     public function validate()
@@ -65,6 +77,9 @@ class GetUserResponseBody extends Model
         if (null !== $this->email) {
             $res['email'] = $this->email;
         }
+        if (null !== $this->loginEmail) {
+            $res['loginEmail'] = $this->loginEmail;
+        }
         if (null !== $this->mobile) {
             $res['mobile'] = $this->mobile;
         }
@@ -79,6 +94,9 @@ class GetUserResponseBody extends Model
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
+        }
+        if (null !== $this->visitor) {
+            $res['visitor'] = $this->visitor;
         }
 
         return $res;
@@ -98,6 +116,9 @@ class GetUserResponseBody extends Model
         if (isset($map['email'])) {
             $model->email = $map['email'];
         }
+        if (isset($map['loginEmail'])) {
+            $model->loginEmail = $map['loginEmail'];
+        }
         if (isset($map['mobile'])) {
             $model->mobile = $map['mobile'];
         }
@@ -112,6 +133,9 @@ class GetUserResponseBody extends Model
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
+        }
+        if (isset($map['visitor'])) {
+            $model->visitor = $map['visitor'];
         }
 
         return $model;

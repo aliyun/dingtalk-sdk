@@ -137,6 +137,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityNameResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityWithoutNameHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityWithoutNameRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityWithoutNameResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmVersionRollBackStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmVersionRollBackStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmVersionRollBackStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageResponse;
@@ -3170,6 +3173,66 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateHrmLegalEntityWithoutNameHeaders([]);
 
         return $this->updateHrmLegalEntityWithoutNameWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 智能人事更新版本回退按钮状态
+     *  *
+     * @param UpdateHrmVersionRollBackStatusRequest $request UpdateHrmVersionRollBackStatusRequest
+     * @param UpdateHrmVersionRollBackStatusHeaders $headers UpdateHrmVersionRollBackStatusHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateHrmVersionRollBackStatusResponse UpdateHrmVersionRollBackStatusResponse
+     */
+    public function updateHrmVersionRollBackStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->configValue)) {
+            $body['configValue'] = $request->configValue;
+        }
+        if (!Utils::isUnset($request->optUserId)) {
+            $body['optUserId'] = $request->optUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateHrmVersionRollBackStatus',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/versions/rollbackButtons/statuses',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateHrmVersionRollBackStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 智能人事更新版本回退按钮状态
+     *  *
+     * @param UpdateHrmVersionRollBackStatusRequest $request UpdateHrmVersionRollBackStatusRequest
+     *
+     * @return UpdateHrmVersionRollBackStatusResponse UpdateHrmVersionRollBackStatusResponse
+     */
+    public function updateHrmVersionRollBackStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateHrmVersionRollBackStatusHeaders([]);
+
+        return $this->updateHrmVersionRollBackStatusWithOptions($request, $headers, $runtime);
     }
 
     /**
