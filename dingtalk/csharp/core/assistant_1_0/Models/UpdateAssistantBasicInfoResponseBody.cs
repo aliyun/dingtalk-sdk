@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
         [Validation(Required=false)]
         public string AssistantId { get; set; }
 
+        [NameInMap("assistantUnionId")]
+        [Validation(Required=false)]
+        public string AssistantUnionId { get; set; }
+
         [NameInMap("createdAt")]
         [Validation(Required=false)]
         public long? CreatedAt { get; set; }

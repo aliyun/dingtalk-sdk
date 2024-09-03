@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public string Email { get; set; }
 
+        [NameInMap("loginEmail")]
+        [Validation(Required=false)]
+        public string LoginEmail { get; set; }
+
         [NameInMap("mobile")]
         [Validation(Required=false)]
         public string Mobile { get; set; }
@@ -36,6 +40,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }
+
+        [NameInMap("visitor")]
+        [Validation(Required=false)]
+        public bool? Visitor { get; set; }
 
     }
 

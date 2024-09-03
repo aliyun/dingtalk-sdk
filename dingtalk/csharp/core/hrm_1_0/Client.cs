@@ -6438,6 +6438,130 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
+         * @summary 智能人事更新版本回退按钮状态
+         *
+         * @param request UpdateHrmVersionRollBackStatusRequest
+         * @param headers UpdateHrmVersionRollBackStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateHrmVersionRollBackStatusResponse
+         */
+        public UpdateHrmVersionRollBackStatusResponse UpdateHrmVersionRollBackStatusWithOptions(UpdateHrmVersionRollBackStatusRequest request, UpdateHrmVersionRollBackStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConfigValue))
+            {
+                body["configValue"] = request.ConfigValue;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUserId))
+            {
+                body["optUserId"] = request.OptUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateHrmVersionRollBackStatus",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/versions/rollbackButtons/statuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateHrmVersionRollBackStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 智能人事更新版本回退按钮状态
+         *
+         * @param request UpdateHrmVersionRollBackStatusRequest
+         * @param headers UpdateHrmVersionRollBackStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateHrmVersionRollBackStatusResponse
+         */
+        public async Task<UpdateHrmVersionRollBackStatusResponse> UpdateHrmVersionRollBackStatusWithOptionsAsync(UpdateHrmVersionRollBackStatusRequest request, UpdateHrmVersionRollBackStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ConfigValue))
+            {
+                body["configValue"] = request.ConfigValue;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUserId))
+            {
+                body["optUserId"] = request.OptUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateHrmVersionRollBackStatus",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/versions/rollbackButtons/statuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateHrmVersionRollBackStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 智能人事更新版本回退按钮状态
+         *
+         * @param request UpdateHrmVersionRollBackStatusRequest
+         * @return UpdateHrmVersionRollBackStatusResponse
+         */
+        public UpdateHrmVersionRollBackStatusResponse UpdateHrmVersionRollBackStatus(UpdateHrmVersionRollBackStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateHrmVersionRollBackStatusHeaders headers = new UpdateHrmVersionRollBackStatusHeaders();
+            return UpdateHrmVersionRollBackStatusWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 智能人事更新版本回退按钮状态
+         *
+         * @param request UpdateHrmVersionRollBackStatusRequest
+         * @return UpdateHrmVersionRollBackStatusResponse
+         */
+        public async Task<UpdateHrmVersionRollBackStatusResponse> UpdateHrmVersionRollBackStatusAsync(UpdateHrmVersionRollBackStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateHrmVersionRollBackStatusHeaders headers = new UpdateHrmVersionRollBackStatusHeaders();
+            return await UpdateHrmVersionRollBackStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary ISV更新卡片消息
          *
          * @param request UpdateIsvCardMessageRequest

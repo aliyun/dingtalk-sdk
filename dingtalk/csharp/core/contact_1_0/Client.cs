@@ -4275,7 +4275,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<GetUserResponse>(Execute(params_, req, runtime));
@@ -4312,7 +4312,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<GetUserResponse>(await ExecuteAsync(params_, req, runtime));
