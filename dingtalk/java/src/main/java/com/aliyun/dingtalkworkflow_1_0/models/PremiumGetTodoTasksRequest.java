@@ -10,9 +10,6 @@ public class PremiumGetTodoTasksRequest extends TeaModel {
     @NameInMap("createBefore")
     public String createBefore;
 
-    @NameInMap("keyword")
-    public String keyword;
-
     /**
      * <p>This parameter is required.</p>
      * 
@@ -51,14 +48,6 @@ public class PremiumGetTodoTasksRequest extends TeaModel {
     }
     public String getCreateBefore() {
         return this.createBefore;
-    }
-
-    public PremiumGetTodoTasksRequest setKeyword(String keyword) {
-        this.keyword = keyword;
-        return this;
-    }
-    public String getKeyword() {
-        return this.keyword;
     }
 
     public PremiumGetTodoTasksRequest setPageNumber(Integer pageNumber) {

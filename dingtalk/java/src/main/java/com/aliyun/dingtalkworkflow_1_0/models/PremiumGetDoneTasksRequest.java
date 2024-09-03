@@ -4,12 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class PremiumGetDoneTasksRequest extends TeaModel {
-    @NameInMap("dingClientId")
-    public String dingClientId;
-
-    @NameInMap("keyword")
-    public String keyword;
-
     /**
      * <p>This parameter is required.</p>
      * 
@@ -40,22 +34,6 @@ public class PremiumGetDoneTasksRequest extends TeaModel {
     public static PremiumGetDoneTasksRequest build(java.util.Map<String, ?> map) throws Exception {
         PremiumGetDoneTasksRequest self = new PremiumGetDoneTasksRequest();
         return TeaModel.build(map, self);
-    }
-
-    public PremiumGetDoneTasksRequest setDingClientId(String dingClientId) {
-        this.dingClientId = dingClientId;
-        return this;
-    }
-    public String getDingClientId() {
-        return this.dingClientId;
-    }
-
-    public PremiumGetDoneTasksRequest setKeyword(String keyword) {
-        this.keyword = keyword;
-        return this;
-    }
-    public String getKeyword() {
-        return this.keyword;
     }
 
     public PremiumGetDoneTasksRequest setPageNumber(Integer pageNumber) {

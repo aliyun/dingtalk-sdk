@@ -10,6 +10,9 @@ public class GetUserResponseBody extends TeaModel {
     @NameInMap("email")
     public String email;
 
+    @NameInMap("loginEmail")
+    public String loginEmail;
+
     @NameInMap("mobile")
     public String mobile;
 
@@ -24,6 +27,9 @@ public class GetUserResponseBody extends TeaModel {
 
     @NameInMap("unionId")
     public String unionId;
+
+    @NameInMap("visitor")
+    public Boolean visitor;
 
     public static GetUserResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetUserResponseBody self = new GetUserResponseBody();
@@ -44,6 +50,14 @@ public class GetUserResponseBody extends TeaModel {
     }
     public String getEmail() {
         return this.email;
+    }
+
+    public GetUserResponseBody setLoginEmail(String loginEmail) {
+        this.loginEmail = loginEmail;
+        return this;
+    }
+    public String getLoginEmail() {
+        return this.loginEmail;
     }
 
     public GetUserResponseBody setMobile(String mobile) {
@@ -84,6 +98,14 @@ public class GetUserResponseBody extends TeaModel {
     }
     public String getUnionId() {
         return this.unionId;
+    }
+
+    public GetUserResponseBody setVisitor(Boolean visitor) {
+        this.visitor = visitor;
+        return this;
+    }
+    public Boolean getVisitor() {
+        return this.visitor;
     }
 
 }

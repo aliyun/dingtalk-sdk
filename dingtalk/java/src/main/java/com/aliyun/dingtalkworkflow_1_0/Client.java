@@ -2322,14 +2322,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public PremiumGetDoneTasksResponse premiumGetDoneTasksWithOptions(PremiumGetDoneTasksRequest request, PremiumGetDoneTasksHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.dingClientId)) {
-            query.put("dingClientId", request.dingClientId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
-            query.put("keyword", request.keyword);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
             query.put("pageNumber", request.pageNumber);
         }
@@ -2454,14 +2446,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public PremiumGetNoticedInstancesResponse premiumGetNoticedInstancesWithOptions(PremiumGetNoticedInstancesRequest request, PremiumGetNoticedInstancesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.dingClientId)) {
-            query.put("dingClientId", request.dingClientId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
-            query.put("keyword", request.keyword);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
             query.put("pageNumber", request.pageNumber);
         }
@@ -2602,14 +2586,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public PremiumGetSubmittedInstancesResponse premiumGetSubmittedInstancesWithOptions(PremiumGetSubmittedInstancesRequest request, PremiumGetSubmittedInstancesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.dingClientId)) {
-            query.put("dingClientId", request.dingClientId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
-            query.put("keyword", request.keyword);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
             query.put("pageNumber", request.pageNumber);
         }
@@ -2676,10 +2652,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.createBefore)) {
             query.put("createBefore", request.createBefore);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
-            query.put("keyword", request.keyword);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {

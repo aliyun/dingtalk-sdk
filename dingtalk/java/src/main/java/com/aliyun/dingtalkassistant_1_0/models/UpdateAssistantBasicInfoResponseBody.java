@@ -10,6 +10,9 @@ public class UpdateAssistantBasicInfoResponseBody extends TeaModel {
     @NameInMap("assistantId")
     public String assistantId;
 
+    @NameInMap("assistantUnionId")
+    public String assistantUnionId;
+
     @NameInMap("createdAt")
     public Long createdAt;
 
@@ -65,6 +68,14 @@ public class UpdateAssistantBasicInfoResponseBody extends TeaModel {
     }
     public String getAssistantId() {
         return this.assistantId;
+    }
+
+    public UpdateAssistantBasicInfoResponseBody setAssistantUnionId(String assistantUnionId) {
+        this.assistantUnionId = assistantUnionId;
+        return this;
+    }
+    public String getAssistantUnionId() {
+        return this.assistantUnionId;
     }
 
     public UpdateAssistantBasicInfoResponseBody setCreatedAt(Long createdAt) {

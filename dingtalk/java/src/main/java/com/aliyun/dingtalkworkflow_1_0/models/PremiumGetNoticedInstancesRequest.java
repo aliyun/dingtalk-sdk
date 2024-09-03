@@ -4,12 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class PremiumGetNoticedInstancesRequest extends TeaModel {
-    @NameInMap("dingClientId")
-    public String dingClientId;
-
-    @NameInMap("keyword")
-    public String keyword;
-
     /**
      * <p>This parameter is required.</p>
      * 
@@ -40,22 +34,6 @@ public class PremiumGetNoticedInstancesRequest extends TeaModel {
     public static PremiumGetNoticedInstancesRequest build(java.util.Map<String, ?> map) throws Exception {
         PremiumGetNoticedInstancesRequest self = new PremiumGetNoticedInstancesRequest();
         return TeaModel.build(map, self);
-    }
-
-    public PremiumGetNoticedInstancesRequest setDingClientId(String dingClientId) {
-        this.dingClientId = dingClientId;
-        return this;
-    }
-    public String getDingClientId() {
-        return this.dingClientId;
-    }
-
-    public PremiumGetNoticedInstancesRequest setKeyword(String keyword) {
-        this.keyword = keyword;
-        return this;
-    }
-    public String getKeyword() {
-        return this.keyword;
     }
 
     public PremiumGetNoticedInstancesRequest setPageNumber(Integer pageNumber) {
